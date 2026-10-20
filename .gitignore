@@ -1,0 +1,14 @@
+node_modules/
+.test-*/
+.preview-data/
+.final-preview/
+.expansion-preview/
+artifacts/
+**/coach-state.json
+**/prototype-attempt.json
+blueprint-research.json
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log

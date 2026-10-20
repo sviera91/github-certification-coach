@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en" data-color-mode="light" data-light-theme="light" data-dark-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GitHub Certification Coach</title>
+  <script nonce="__NONCE__">
+    (() => {
+      const param = new URLSearchParams(window.location.search).get("scoutTheme");
+      const theme = ["light", "dark"].includes(param) ? param :
+        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+      document.documentElement.setAttribute("data-color-mode", theme);
+    })();
+  </script>
+  <style nonce="__NONCE__">__PRIMER__</style>
+  <style nonce="__NONCE__">__STYLE__</style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="brand"><div id="selected-badge" hidden></div><div><p id="exam-title" class="eyebrow">GITHUB CERTIFICATIONS</p><h1>Certification Coach</h1></div></div>
+      <div class="toolbar"><label for="language"><span>Language</span> <select id="language" class="form-select"><option value="en">English</option><option value="es">Español</option><option value="pt-BR">Português (Brasil)</option></select></label><span id="release-status" class="Label">Unofficial Preview</span><button id="report-canvas" class="btn">Report canvas issue</button><button id="back-catalog" class="btn" hidden>Switch certification</button></div>
+    </header>
+    <p id="notice" class="notice">Unofficial practice. AI-authored questions require human review.</p>
+    <p id="content-language-note" class="notice" hidden data-i18n="This saved attempt predates translations and remains in English. New attempts use your selected language."></p>
+    <div id="error" role="alert" hidden></div>
+    <section id="catalog" hidden>
+      <h2>Which certification are you preparing for?</h2>
+      <p class="muted">Your saved attempt is kept separately for each certification. Timed mocks keep counting down while you are away. The Agentic AI Business Professional beta is outside this release.</p>
+      <div id="exam-cards" class="exam-grid"></div>
+    </section>
+    <section id="setup" class="Box card" hidden>
+      <h2 id="prep-title">Prepare and practice</h2>
+      <h3>Official preparation resources</h3><div id="prep-resources"></div>
+      <p id="official-language-note" class="muted"></p><p class="muted">Study resources may open in English.</p>
+      <p id="blueprint" class="muted"></p><p id="coverage" class="notice"></p>
+      <button id="resume" class="btn btn-primary" hidden>Resume saved attempt</button>
+      <div id="practice-settings">
+        <h3>Choose your experience</h3>
+        <div class="study-settings">
+          <label for="study-domain">Learn / AI coach focus <select id="study-domain" class="form-select"></select></label>
+          <label id="relaxed-label" hidden><input id="relaxed" type="checkbox"> Use relaxed mock timing (120 minutes, not exam simulation)</label>
+        </div>
+        <div class="modes">
+          <button class="btn" data-mode="exam"><strong>Mock exam</strong><span id="exam-mode-description">Timed practice. Review answers after submission.</span></button>
+          <button class="btn" data-mode="learn"><strong>Learn</strong><span>Save a selection, then Check answer for an immediate explanation.</span></button>
+          <button class="btn" data-mode="coach"><strong>AI coach</strong><span>Think it through with Copilot. Reveal only when you choose.</span></button>
+        </div>
+      </div>
+      <p class="muted">AI coaching uses the attached Copilot conversation and its usage limits. No separate model API key is needed.</p>
+      <hr><h3>Human content review</h3>
+      <p id="bank-review-note" class="muted"></p><button id="bank-review" class="btn">Review question bank</button>
+    </section>
+    <section id="attempt" hidden>
+      <div class="toolbar"><span id="mode"></span><span id="timer" aria-label="Time remaining" data-i18n-label="Time remaining"></span><button id="finish" class="btn">Finish and review</button></div>
+      <p class="muted">Navigation: + answered; ? selection not checked; * flagged for review.</p>
+      <nav id="navigation" aria-label="Question navigation" data-i18n-label="Question navigation"></nav>
+      <section id="score" class="Box score-card" aria-label="Practice results" data-i18n-label="Practice results" hidden></section>
+      <div class="columns">
+        <section class="Box card">
+          <p id="domain" class="eyebrow"></p><h2 id="question"></h2>
+          <form id="answer-form"><fieldset id="choices"><legend>Choose one answer</legend></fieldset><button id="answer" class="btn btn-primary" type="submit">Check answer</button></form>
+          <p id="save-status" role="status"></p><button id="retry-save" class="btn" hidden>Retry saving selection</button>
+          <p id="feedback" role="status"></p>
+          <div class="question-actions"><button id="flag" class="btn">Flag for review</button><button id="reveal" class="btn" hidden>Show answer and explanation</button><button id="report-question" class="btn">Report question issue</button></div>
+          <section id="explanations" hidden><h3>Answer review</h3><div id="explanation-list"></div><a id="source" target="_blank" rel="noreferrer">Read the GitHub documentation</a></section>
+        </section>
+        <aside id="coaching" class="Box card" hidden>
+          <p class="eyebrow">THINK IT THROUGH</p><h2>Your Copilot coach</h2>
+          <p class="muted">Explain your reasoning. The coach offers conceptual hints, not an answer key. AI may still make mistakes or reveal too much.</p>
+          <p class="muted">Earlier chat messages stay in the language in which they were written.</p>
+          <div id="messages" role="log" aria-live="polite"></div><p id="pending" role="status" hidden>Waiting for your Copilot conversation...</p>
+          <p id="coach-error" role="alert"></p>
+          <form id="coach-form"><label for="reasoning">Your reasoning or follow-up</label>
+            <div class="composer">
+              <textarea id="reasoning" class="form-control" maxlength="1500" rows="3" placeholder="I thought this option would work because..." data-i18n-placeholder="I thought this option would work because..."></textarea>
+              <button id="send" class="btn btn-primary send-button" type="submit" aria-label="Send message" title="Send message" data-i18n-label="Send message">__SEND_ICON__</button>
+            </div>
+          </form>
+        </aside>
+      </div>
+      <div class="footer-actions"><button id="previous" class="btn">Previous</button><button id="next" class="btn">Next question</button><button id="new" class="btn btn-primary" hidden>Practice another mode</button></div>
+    </section>
+    <section id="review" class="card" aria-labelledby="review-title" hidden>
+      <div class="toolbar"><h2 id="review-title">Review before submission</h2><span id="review-timer" role="timer"></span></div>
+      <p id="review-summary" role="status"></p><p id="review-warning" class="notice"></p>
+      <label for="review-filter">Show questions <select id="review-filter" class="form-select">
+        <option value="attention">Unanswered or flagged</option><option value="unanswered">Unanswered / not checked</option>
+        <option value="flagged">Flagged</option><option value="all">All questions</option>
+      </select></label>
+      <ul id="review-list" class="review-list" tabindex="0" aria-label="Questions to review" data-i18n-label="Questions to review"></ul><p id="review-empty" hidden>No questions match this filter.</p>
+      <div class="footer-actions"><button id="return-attempt" class="btn">Return to questions</button><button id="submit-attempt" class="btn btn-primary">Submit and grade</button></div>
+    </section>
+    <section id="content-review" class="card" hidden>
+      <h2>Human question review</h2>
+      <p class="notice">Review the question, answer key, every explanation, hints, and linked source. Approve only content you personally verified. AI checks cannot supply human approval.</p>
+      <p id="content-position" class="eyebrow"></p><h3 id="content-question"></h3><div id="content-answers"></div>
+      <p id="content-hints"></p><a id="content-source" target="_blank" rel="noreferrer">Verify official documentation</a>
+      <p id="content-status" role="status"></p>
+      <label><input id="review-confirm" type="checkbox"> I personally reviewed this question revision and its supporting content.</label>
+      <div class="footer-actions"><button id="approve-question" class="btn btn-primary">Mark revision human-approved</button><button id="revoke-question" class="btn" hidden>Revoke approval</button></div>
+      <div class="footer-actions"><button id="content-previous" class="btn">Previous question</button><button id="content-next" class="btn">Next question</button><button id="content-back" class="btn">Back to preparation</button></div>
+      <form id="content-jump-form" class="footer-actions"><label for="content-jump">Question number</label><input id="content-jump" class="form-control" type="number" min="1" required><button class="btn" type="submit">Go</button></form>
+    </section>
+    <section id="report" class="card" hidden>
+      <h2 id="report-title">Report an issue</h2>
+      <p class="notice">Reports go to a public GitHub repository. Do not include secrets, personal information, private code, or coaching conversations. Nothing is submitted automatically; review the content below, then submit it on GitHub using your own account.</p>
+      <p class="muted">Timed mocks continue while you report an issue. Your draft below is temporary and is lost if this panel reloads.</p>
+      <div class="report-fields">
+        <label for="report-summary">Short summary <input id="report-summary" class="form-control" type="text" maxlength="120" required></label>
+        <label for="report-description">What is wrong? <textarea id="report-description" class="form-control" rows="4" maxlength="1200" required></textarea></label>
+        <label for="report-steps">Steps to reproduce and expected behavior <textarea id="report-steps" class="form-control" rows="3" maxlength="700"></textarea></label>
+      </div>
+      <h3>Public report preview</h3><pre id="report-preview"></pre><p id="report-help" role="status"></p>
+      <div class="footer-actions"><button id="report-cancel" class="btn">Back without reporting</button><a id="report-open" class="btn btn-primary" target="_blank" rel="noreferrer noopener" hidden>Review and submit on GitHub</a></div>
+    </section>
+    <footer><span>Unofficial learning aid. Progress is stored locally; coaching text is sent through Copilot. Closing the panel does not pause a timed mock.</span>
+      <p><span>Certification artwork identifies the exam; it does not claim an earned credential or GitHub endorsement.</span> <a href="https://learn.github.com/credentials" target="_blank" rel="noreferrer">GitHub Learn artwork source</a></p>
+    </footer>
+  </main>
+  <script type="module" nonce="__NONCE__" src="/client.mjs?token=__TOKEN__"></script>
+</body>
+</html>

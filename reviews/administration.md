@@ -1,0 +1,22969 @@
+<!-- certification-coach-review:administration:1 -->
+# GitHub Administration: human review packet
+
+225 original practice questions. No mock exam or Copilot installation is required to review this file.
+
+## How to review
+
+1. Read the English question, all four choices and explanations, the concept, hints, and linked official documentation.
+2. Expand Spanish and Brazilian Portuguese to check that they preserve the same meaning, option order, and correct answer.
+3. Change only the question's `- [ ] Human-reviewed` checkbox to `- [x] Human-reviewed` when you approve its complete multilingual revision.
+4. Leave uncertain or incorrect questions unchecked. Send the edited Markdown file back to the maintainer, with suggested corrections separately.
+
+One approval covers English, Spanish, and Brazilian Portuguese together; changing any variant invalidates that approval.
+The importer rejects stale revisions or changed question content. Do not edit prompts, answers, or explanations in this review copy.
+Unchecked boxes do not revoke existing approvals. These are honor-system human attestations, not proof of reviewer identity.
+AI must never check these boxes or attest to human review. These are original unofficial practice items, not real exam questions.
+This packet intentionally includes the full answer key. It contains no learner answers, scores, chats, or progress.
+
+Search for `- [ ] Human-reviewed` to find unreviewed items. Technical names and official documentation links may remain in English.
+
+<!-- certification-coach-question:admin-001:55111cadc05acacc1fc6f97a67b0b4028b7f737e58dab039b5d5f099338f1ea6 -->
+## Question 1: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-001`
+
+**Content revision:** `55111cadc05acacc1fc6f97a67b0b4028b7f737e58dab039b5d5f099338f1ea6`
+
+### English
+
+A company wants its identity provider to create GitHub accounts and control their entire lifecycle. Employees must not use those accounts for public contributions. Which account model fits?
+
+1. Enterprise Managed Users **[CORRECT]**
+
+   The IdP provisions managed accounts, whose collaboration is restricted to the enterprise.
+
+2. Personal accounts with organization SAML SSO
+
+   Organization SSO links personal accounts but does not make their lifecycle enterprise-managed.
+
+3. Personal accounts with mandatory email verification
+
+   Email verification does not give the IdP control of account provisioning.
+
+4. Outside collaborators with repository invitations
+
+   Outside collaboration grants repository access, not an enterprise-managed account lifecycle.
+
+**Concept:** Choosing an enterprise identity model
+
+**Authored coaching hints:**
+
+- Who must own the account lifecycle rather than just access?
+- Which collaboration boundary does the company require?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una empresa quiere que su proveedor de identidad cree cuentas GitHub y controle todo su ciclo de vida. Los empleados no deben utilizar esas cuentas para contribuciones públicas. ¿Qué modelo de cuenta encaja?
+
+1. Enterprise Managed Users **[CORRECT]**
+
+   El IdP aprovisiona cuentas administradas, cuya colaboración está restringida a la empresa.
+
+2. Cuentas personales con SAML SSO de la organización
+
+   La organización SSO vincula cuentas personales pero no hace que su ciclo de vida sea administrado por la empresa.
+
+3. Cuentas personales con verificación de correo electrónico obligatoria
+
+   La verificación por correo electrónico no le otorga al IdP el control del aprovisionamiento de cuentas.
+
+4. Colaboradores externos con invitaciones al repositorio
+
+   La colaboración externa otorga acceso al repositorio, no un ciclo de vida de cuenta administrado por la empresa.
+
+**Concept:** Elegir un modelo de identidad empresarial
+
+**Authored coaching hints:**
+
+- ¿Quién debe controlar el ciclo de vida de la cuenta, en lugar de solo controlar el acceso?
+- ¿Qué límites de colaboración requiere la empresa?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma empresa deseja que seu provedor de identidade crie contas GitHub e controle todo o seu ciclo de vida. Os funcionários não devem usar essas contas para contribuições públicas. Qual modelo de conta se adapta?
+
+1. Enterprise Managed Users **[CORRECT]**
+
+   O IdP provisiona contas gerenciadas, cuja colaboração é restrita à empresa.
+
+2. Contas pessoais com SAML SSO da organização
+
+   A organização SSO vincula contas pessoais, mas não torna seu ciclo de vida gerenciado pela empresa.
+
+3. Contas pessoais com verificação de e-mail obrigatória
+
+   A verificação de e-mail não dá ao IdP controle do provisionamento da conta.
+
+4. Colaboradores externos com convites de repositório
+
+   A colaboração externa concede acesso ao repositório, não um ciclo de vida de conta gerenciado pela empresa.
+
+**Concept:** Escolhendo um modelo de identidade empresarial
+
+**Authored coaching hints:**
+
+- Quem deve controlar o ciclo de vida da conta, em vez de apenas controlar o acesso?
+- Qual limite de colaboração a empresa exige?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/identity-and-access-management/enterprise-managed-users>
+
+<!-- certification-coach-question:admin-002:cc709e390cf0ae32c5bbca14d287726804e5b48e2470d776ce512706f1a47e70 -->
+## Question 2: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-002`
+
+**Content revision:** `cc709e390cf0ae32c5bbca14d287726804e5b48e2470d776ce512706f1a47e70`
+
+### English
+
+Engineers need to contribute to public open-source projects using the same GitHub identities they use for work. The company wants SAML protection for its enterprise resources. Which design best meets both requirements?
+
+1. Managed user accounts with public repositories enabled
+
+   Managed user accounts cannot create public content or collaborate outside their enterprise.
+
+2. Personal accounts with enterprise SAML SSO **[CORRECT]**
+
+   Personal accounts can support outside collaboration while SAML protects enterprise resources.
+
+3. One shared managed account per engineering team
+
+   Shared accounts undermine individual identity and do not remove managed-user restrictions.
+
+4. Anonymous access to private work repositories
+
+   Anonymous private-repository access does not provide authenticated enterprise collaboration.
+
+**Concept:** Personal accounts versus managed users
+
+**Authored coaching hints:**
+
+- Is control of the identity itself required here?
+- How does the account model affect contributions outside work?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Los ingenieros deben contribuir a proyectos públicos de código abierto utilizando las mismas identidades GitHub que utilizan para trabajar. La empresa quiere protección SAML para sus recursos empresariales. ¿Qué diseño cumple mejor con ambos requisitos?
+
+1. Cuentas de usuario administradas con repositorios públicos habilitados
+
+   Las cuentas de usuario administradas no pueden crear contenido público ni colaborar fuera de su empresa.
+
+2. Cuentas personales con SAML SSO empresarial **[CORRECT]**
+
+   Las cuentas personales pueden admitir la colaboración externa, mientras que SAML protege los recursos empresariales.
+
+3. Una cuenta administrada compartida por equipo de ingeniería
+
+   Las cuentas compartidas socavan la identidad individual y no eliminan las restricciones de usuarios administrados.
+
+4. Acceso anónimo a repositorios de trabajo privados
+
+   El acceso anónimo al repositorio privado no proporciona colaboración empresarial autenticada.
+
+**Concept:** Cuentas personales versus usuarios administrados
+
+**Authored coaching hints:**
+
+- ¿Se requiere aquí el control de la identidad misma?
+- ¿Cómo afecta el modelo de cuenta a las aportaciones fuera del trabajo?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Os engenheiros precisam contribuir para projetos públicos de código aberto usando as mesmas identidades GitHub que usam para trabalhar. A empresa deseja proteção SAML para seus recursos empresariais. Qual design atende melhor a ambos os requisitos?
+
+1. Contas de usuário gerenciadas com repositórios públicos ativados
+
+   As contas de usuários gerenciados não podem criar conteúdo público ou colaborar fora da empresa.
+
+2. Contas pessoais com SAML SSO empresarial **[CORRECT]**
+
+   As contas pessoais podem oferecer suporte à colaboração externa, enquanto o SAML protege os recursos da empresa.
+
+3. Uma conta gerenciada compartilhada por equipe de engenharia
+
+   As contas compartilhadas prejudicam a identidade individual e não removem as restrições de usuários gerenciados.
+
+4. Acesso anônimo a repositórios de trabalho privados
+
+   O acesso anônimo ao repositório privado não fornece colaboração empresarial autenticada.
+
+**Concept:** Contas pessoais versus usuários gerenciados
+
+**Authored coaching hints:**
+
+- O controle da própria identidade é necessário aqui?
+- Como o modelo de conta afeta as contribuições fora do trabalho?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/enterprise-fundamentals/choose-an-enterprise-type>
+
+<!-- certification-coach-question:admin-003:b1f7cee3c9721cd384a698c99183eb5c538302a1563336cc167b6e62ee0cd8c7 -->
+## Question 3: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-003`
+
+**Content revision:** `b1f7cee3c9721cd384a698c99183eb5c538302a1563336cc167b6e62ee0cd8c7`
+
+### English
+
+After SAML SSO is enabled for an organization using personal accounts, a member can sign in to GitHub but is redirected to the IdP before opening an organization's private repository. What explains this?
+
+1. The member's GitHub password must match the IdP password
+
+   SAML does not require synchronized GitHub and IdP passwords.
+
+2. SAML automatically converts the member to a managed user
+
+   Enabling organization SAML does not convert personal accounts to managed users.
+
+3. GitHub account authentication and SAML access to organization resources are separate **[CORRECT]**
+
+   Personal-account sign-in and the organization's SAML session are distinct requirements.
+
+4. The member must create another personal account for each SAML-protected organization
+
+   A personal account can be linked to the external identity without creating one account per organization.
+
+**Concept:** Authentication layers with SAML
+
+**Authored coaching hints:**
+
+- Which identity establishes the GitHub session?
+- What additional boundary protects the organization's resources?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Después de habilitar SAML SSO para una organización que utiliza cuentas personales, un miembro puede iniciar sesión en GitHub, pero se le redirige a IdP antes de abrir el repositorio privado de una organización. ¿Qué explica esto?
+
+1. La contraseña GitHub del miembro debe coincidir con la contraseña IdP
+
+   SAML no requiere contraseñas sincronizadas de GitHub y IdP.
+
+2. SAML convierte automáticamente al miembro en un usuario administrado
+
+   La organización habilitante SAML no convierte cuentas personales en usuarios administrados.
+
+3. La autenticación de cuenta GitHub y el acceso SAML a los recursos de la organización están separados **[CORRECT]**
+
+   El inicio de sesión de la cuenta personal y la sesión SAML de la organización son requisitos distintos.
+
+4. El miembro debe crear otra cuenta personal para cada organización protegida por SAML.
+
+   Una cuenta personal se puede vincular a la identidad externa sin crear una cuenta por organización.
+
+**Concept:** Capas de autenticación con SAML
+
+**Authored coaching hints:**
+
+- ¿Qué identidad establece la sesión GitHub?
+- ¿Qué límite adicional protege los recursos de la organización?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Depois que SAML SSO for habilitado para uma organização que usa contas pessoais, um membro poderá entrar em GitHub, mas será redirecionado para IdP antes de abrir o repositório privado de uma organização. O que explica isso?
+
+1. A senha GitHub do membro deve corresponder à senha IdP
+
+   SAML não requer senhas GitHub e IdP sincronizadas.
+
+2. SAML converte automaticamente o membro em um usuário gerenciado
+
+   A ativação da organização SAML não converte contas pessoais em usuários gerenciados.
+
+3. A autenticação da conta GitHub e o acesso SAML aos recursos da organização são separados **[CORRECT]**
+
+   O login na conta pessoal e a sessão SAML da organização são requisitos distintos.
+
+4. O membro deve criar outra conta pessoal para cada organização protegida por SAML
+
+   Uma conta pessoal pode ser vinculada à identidade externa sem criar uma conta por organização.
+
+**Concept:** Camadas de autenticação com SAML
+
+**Authored coaching hints:**
+
+- Qual identidade estabelece a sessão GitHub?
+- Que limite adicional protege os recursos da organização?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-saml-single-sign-on-for-your-organization/about-identity-and-access-management-with-saml-single-sign-on>
+
+<!-- certification-coach-question:admin-004:65d5b919d3785af4c22e458c4fc427cea5ee98eb98941bbea735e059c50cccec -->
+## Question 4: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-004`
+
+**Content revision:** `65d5b919d3785af4c22e458c4fc427cea5ee98eb98941bbea735e059c50cccec`
+
+### English
+
+An organization already uses SAML SSO with personal accounts. It now needs supported IdP-driven membership provisioning and removal instead of manual invitations. Which integration addresses this lifecycle requirement?
+
+1. CODEOWNERS
+
+   CODEOWNERS routes review requests rather than provisioning organization members.
+
+2. A required status check
+
+   Status checks govern changes, not identity lifecycle.
+
+3. Repository deploy keys
+
+   Deploy keys authenticate Git operations for a repository, not membership provisioning.
+
+4. SCIM provisioning **[CORRECT]**
+
+   SCIM automates identity information exchange and supported membership lifecycle operations.
+
+**Concept:** SCIM membership provisioning
+
+**Authored coaching hints:**
+
+- Does signing in automatically handle every membership lifecycle event?
+- Which standard exchanges provisioning information between identity systems?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una organización ya utiliza SAML SSO con cuentas personales. Ahora necesita aprovisionamiento y eliminación de membresías compatibles con IdP en lugar de invitaciones manuales. ¿Qué integración aborda este requisito del ciclo de vida?
+
+1. CODEOWNERS
+
+   CODEOWNERS enruta las solicitudes de revisión en lugar de aprovisionar a los miembros de la organización.
+
+2. Una verificación de estado requerida
+
+   Las comprobaciones de estado rigen los cambios, no el ciclo de vida de la identidad.
+
+3. Claves de implementación del repositorio
+
+   Las claves de implementación autentican las operaciones de Git para un repositorio, no el aprovisionamiento de membresía.
+
+4. Aprovisionamiento SCIM **[CORRECT]**
+
+   SCIM automatiza el intercambio de información de identidad y las operaciones admitidas del ciclo de vida de la membresía.
+
+**Concept:** Aprovisionamiento de membresía SCIM
+
+**Authored coaching hints:**
+
+- ¿El inicio de sesión gestiona automáticamente todos los eventos del ciclo de vida de la membresía?
+- ¿Qué estándar intercambia información de aprovisionamiento entre sistemas de identidad?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma organização já usa SAML SSO com contas pessoais. Agora ele precisa de provisionamento e remoção de associação orientados por IdP com suporte, em vez de convites manuais. Qual integração atende a esse requisito de ciclo de vida?
+
+1. CODEOWNERS
+
+   CODEOWNERS roteia solicitações de revisão em vez de provisionar membros da organização.
+
+2. Uma verificação de status obrigatória
+
+   As verificações de status regem as mudanças, não o ciclo de vida da identidade.
+
+3. Chaves de implantação do repositório
+
+   As chaves de implantação autenticam as operações do Git para um repositório, não o provisionamento de associação.
+
+4. Provisionamento SCIM **[CORRECT]**
+
+   SCIM automatiza a troca de informações de identidade e suporta operações de ciclo de vida de associação.
+
+**Concept:** Provisionamento de associação SCIM
+
+**Authored coaching hints:**
+
+- O login processa automaticamente todos os eventos do ciclo de vida da associação?
+- Qual padrão troca informações de provisionamento entre sistemas de identidade?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/organizations/managing-saml-single-sign-on-for-your-organization/about-scim-for-organizations>
+
+<!-- certification-coach-question:admin-005:7f59dd01ae9a8e3f533ea81976ec4459863cdd3bfbcd0cf101748afd2352099b -->
+## Question 5: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-005`
+
+**Content revision:** `7f59dd01ae9a8e3f533ea81976ec4459863cdd3bfbcd0cf101748afd2352099b`
+
+### English
+
+An administrator says team synchronization and SCIM are interchangeable because both involve an IdP. Which distinction is most useful when designing organization access?
+
+1. SCIM handles provisioning lifecycle; team synchronization aligns team membership with IdP groups **[CORRECT]**
+
+   These integrations solve different lifecycle and group-membership problems.
+
+2. Team synchronization replaces all GitHub authentication
+
+   Synchronizing groups is not an authentication protocol.
+
+3. SCIM defines branch approval requirements
+
+   SCIM does not configure repository review rules.
+
+4. Team synchronization automatically makes every member an organization owner
+
+   Group synchronization does not inherently grant organization ownership.
+
+**Concept:** SCIM versus team synchronization
+
+**Authored coaching hints:**
+
+- Are account lifecycle and project-group membership the same task?
+- What would need updating when a person changes departments?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un administrador dice que la sincronización del equipo y el SCIM son intercambiables porque ambos involucran un IdP. ¿Qué distinción es más útil al diseñar el acceso a la organización?
+
+1. SCIM maneja el ciclo de vida del aprovisionamiento; La sincronización del equipo alinea la membresía del equipo con los grupos IdP. **[CORRECT]**
+
+   Estas integraciones resuelven diferentes problemas de ciclo de vida y membresía de grupos.
+
+2. La sincronización del equipo reemplaza toda la autenticación GitHub
+
+   La sincronización de grupos no es un protocolo de autenticación.
+
+3. SCIM define los requisitos de aprobación de ramas
+
+   SCIM no configura reglas de revisión del repositorio.
+
+4. La sincronización del equipo convierte automáticamente a cada miembro en propietario de la organización
+
+   La sincronización de grupos no otorga inherentemente propiedad a la organización.
+
+**Concept:** SCIM versus sincronización de equipos
+
+**Authored coaching hints:**
+
+- ¿El ciclo de vida de la cuenta y la membresía en un grupo de proyectos son la misma tarea?
+- ¿Qué necesitaría actualizarse cuando una persona cambia de departamento?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um administrador diz que a sincronização de equipe e SCIM são intercambiáveis porque ambos envolvem um IdP. Qual distinção é mais útil ao projetar o acesso à organização?
+
+1. SCIM lida com o ciclo de vida de provisionamento; a sincronização da equipe alinha a associação da equipe com grupos IdP **[CORRECT]**
+
+   Essas integrações resolvem diferentes problemas de ciclo de vida e de associação a grupos.
+
+2. A sincronização da equipe substitui toda a autenticação GitHub
+
+   A sincronização de grupos não é um protocolo de autenticação.
+
+3. SCIM define requisitos de aprovação de ramificações
+
+   SCIM não configura regras de revisão de repositório.
+
+4. A sincronização da equipe torna automaticamente cada membro um proprietário da organização
+
+   A sincronização de grupo não concede inerentemente a propriedade da organização.
+
+**Concept:** SCIM versus sincronização de equipe
+
+**Authored coaching hints:**
+
+- O ciclo de vida da conta e a associação ao grupo de projetos são a mesma tarefa?
+- O que precisaria ser atualizado quando uma pessoa mudasse de departamento?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/organizations/organizing-members-into-teams/synchronizing-a-team-with-an-identity-provider-group>
+
+<!-- certification-coach-question:admin-006:ad1575aa3ab9c8ae5f4b6c858130fb226325fe2296be767cf63985648d51d713 -->
+## Question 6: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-006`
+
+**Content revision:** `ad1575aa3ab9c8ae5f4b6c858130fb226325fe2296be767cf63985648d51d713`
+
+### English
+
+A team is synchronized with an IdP group. A GitHub team maintainer needs to add another synchronized member. Where should the authoritative membership change normally be made?
+
+1. In the repository's CODEOWNERS file
+
+   CODEOWNERS assigns review responsibility without changing synchronized group membership.
+
+2. In the connected IdP group **[CORRECT]**
+
+   The connected IdP group is the membership source for the synchronized team.
+
+3. In a branch ruleset bypass list
+
+   A bypass list changes rule exceptions rather than the team's membership source.
+
+4. In the member's local Git configuration
+
+   Local Git configuration cannot update an IdP-managed team.
+
+**Concept:** Authoritative synchronized membership
+
+**Authored coaching hints:**
+
+- Which system supplies the membership list?
+- Would a repository-local setting survive an identity synchronization?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un equipo está sincronizado con un grupo IdP. Un mantenedor del equipo GitHub necesita agregar otro miembro sincronizado. ¿Dónde debería realizarse normalmente el cambio de membresía autorizada?
+
+1. En el archivo CODEOWNERS del repositorio
+
+   CODEOWNERS asigna la responsabilidad de revisión sin cambiar la membresía del grupo sincronizado.
+
+2. En el grupo IdP conectado **[CORRECT]**
+
+   El grupo IdP conectado es la fuente de membresía del equipo sincronizado.
+
+3. En la lista de excepciones de un ruleset de ramas
+
+   Una lista de omisión cambia las excepciones de las reglas en lugar de la fuente de membresía del equipo.
+
+4. En la configuración de Git local del miembro
+
+   La configuración local de Git no puede actualizar un equipo administrado por IdP.
+
+**Concept:** Fuente de autoridad de la membresía sincronizada
+
+**Authored coaching hints:**
+
+- ¿Qué sistema proporciona la lista de miembros?
+- ¿Sobreviviría una configuración local de repositorio a una sincronización de identidades?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma equipe está sincronizada com um grupo IdP. Um mantenedor da equipe GitHub precisa adicionar outro membro sincronizado. Onde normalmente deveria ser feita a mudança oficial de associação?
+
+1. No arquivo CODEOWNERS do repositório
+
+   CODEOWNERS atribui responsabilidade de revisão sem alterar a associação ao grupo sincronizado.
+
+2. No grupo IdP conectado **[CORRECT]**
+
+   O grupo IdP conectado é a origem de associação da equipe sincronizada.
+
+3. Na lista de exceções de um ruleset de ramificações
+
+   Uma lista de bypass altera as exceções de regras em vez da origem de associação da equipe.
+
+4. Na configuração Git local do membro
+
+   A configuração local do Git não pode atualizar uma equipe gerenciada por IdP.
+
+**Concept:** Fonte de autoridade da associação sincronizada
+
+**Authored coaching hints:**
+
+- Qual sistema fornece a lista de membros?
+- Uma configuração local de repositório sobreviveria a uma sincronização de identidade?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/organizations/organizing-members-into-teams/synchronizing-a-team-with-an-identity-provider-group>
+
+<!-- certification-coach-question:admin-007:f572b27d68e21a73b0140fd751785814b67801f25868962ae07f28c5b784dbfc -->
+## Question 7: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-007`
+
+**Content revision:** `f572b27d68e21a73b0140fd751785814b67801f25868962ae07f28c5b784dbfc`
+
+### English
+
+Before enforcing two-factor authentication in an organization using personal accounts, an owner wants to reduce avoidable access disruption. Which preparation is most appropriate?
+
+1. Share an owner's recovery codes with every member
+
+   Recovery codes are private credentials and must not be distributed to members.
+
+2. Disable audit logging during enforcement
+
+   Disabling observability does not prepare users for authentication requirements.
+
+3. Review readiness, notify affected collaborators, and have them configure 2FA **[CORRECT]**
+
+   Readiness review and advance communication reduce disruption from enforcement.
+
+4. Replace all repository permissions with public visibility
+
+   Public visibility exposes content and does not solve authentication readiness.
+
+**Concept:** Safe rollout of organization 2FA
+
+**Authored coaching hints:**
+
+- Who could lose access when an authentication requirement changes?
+- What can administrators establish before enforcing the policy?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Antes de imponer la autenticación de dos factores en una organización que utiliza cuentas personales, el propietario quiere reducir las interrupciones de acceso evitables. ¿Qué preparación es la más adecuada?
+
+1. Comparta los códigos de recuperación de un propietario con cada miembro
+
+   Los códigos de recuperación son credenciales privadas y no deben distribuirse a los miembros.
+
+2. Deshabilitar el registro de auditoría durante la aplicación
+
+   Deshabilitar la observabilidad no prepara a los usuarios para los requisitos de autenticación.
+
+3. Revise la preparación, notifique a los colaboradores afectados y pídales que configuren 2FA **[CORRECT]**
+
+   La revisión de la preparación y la comunicación avanzada reducen las interrupciones causadas por la aplicación de la ley.
+
+4. Reemplace todos los permisos del repositorio con visibilidad pública
+
+   La visibilidad pública expone el contenido y no resuelve la preparación de la autenticación.
+
+**Concept:** Implementación segura de la organización 2FA
+
+**Authored coaching hints:**
+
+- ¿Quién podría perder el acceso cuando cambia un requisito de autenticación?
+- ¿Qué pueden establecer los administradores antes de hacer cumplir la política?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Antes de impor a autenticação de dois fatores em uma organização que usa contas pessoais, o proprietário deseja reduzir interrupções de acesso evitáveis. Qual preparação é mais apropriada?
+
+1. Compartilhe os códigos de recuperação de um proprietário com todos os membros
+
+   Os códigos de recuperação são credenciais privadas e não devem ser distribuídos aos membros.
+
+2. Desabilitar o log de auditoria durante a aplicação
+
+   Desabilitar a observabilidade não prepara os usuários para os requisitos de autenticação.
+
+3. Revise a preparação, notifique os colaboradores afetados e peça-lhes que configurem 2FA **[CORRECT]**
+
+   A revisão da prontidão e a comunicação antecipada reduzem a interrupção da fiscalização.
+
+4. Substitua todas as permissões do repositório por visibilidade pública
+
+   A visibilidade pública expõe o conteúdo e não resolve a prontidão para autenticação.
+
+**Concept:** Implementação segura da organização 2FA
+
+**Authored coaching hints:**
+
+- Quem poderá perder o acesso quando um requisito de autenticação for alterado?
+- O que os administradores podem estabelecer antes de aplicar a política?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/organizations/keeping-your-organization-secure/managing-two-factor-authentication-for-your-organization/requiring-two-factor-authentication-in-your-organization>
+
+<!-- certification-coach-question:admin-008:bdf90eed60da66ed29de4a5ba16dd21a5c8cabcd288474318ddd14852b61e785 -->
+## Question 8: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-008`
+
+**Content revision:** `bdf90eed60da66ed29de4a5ba16dd21a5c8cabcd288474318ddd14852b61e785`
+
+### English
+
+A user successfully authenticates through SAML but still cannot open a particular private repository. Other organization repositories work. What should the administrator check first?
+
+1. Whether the organization's SAML configuration must be recreated
+
+   Successful SAML access elsewhere points away from rebuilding organization-wide authentication.
+
+2. Whether requiring signed commits would enable browser access
+
+   Commit signatures govern commit verification, not private-repository read authorization.
+
+3. Whether a required-review rule prevents reading the repository
+
+   Review requirements govern merging changes, not reading a private repository.
+
+4. Whether the user has effective permission to that repository **[CORRECT]**
+
+   Authentication does not itself grant access to every private repository.
+
+**Concept:** Authentication versus authorization
+
+**Authored coaching hints:**
+
+- Does a verified identity automatically receive access to all resources?
+- Which repository-specific assignments could explain the difference?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un usuario se autentica exitosamente a través de SAML pero aún no puede abrir un repositorio privado en particular. Otros repositorios de organizaciones funcionan. ¿Qué debería comprobar primero el administrador?
+
+1. Si se debe recrear la configuración SAML de la organización
+
+   El acceso exitoso a SAML en otros lugares aleja la reconstrucción de la autenticación en toda la organización.
+
+2. Si requerir commits firmado permitiría el acceso al navegador
+
+   Las firmas de confirmación rigen la verificación commit, no la autorización de lectura del repositorio privado.
+
+3. Si una regla de revisión obligatoria impide leer el repositorio
+
+   Los requisitos de revisión rigen la combinación de cambios, no la lectura de un repositorio privado.
+
+4. Si el usuario tiene permiso efectivo para ese repositorio **[CORRECT]**
+
+   La autenticación por sí sola no otorga acceso a todos los repositorios privados.
+
+**Concept:** Autenticación versus autorización
+
+**Authored coaching hints:**
+
+- ¿Una identidad verificada recibe automáticamente acceso a todos los recursos?
+- ¿Qué tareas específicas del repositorio podrían explicar la diferencia?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um usuário é autenticado com êxito por meio de SAML, mas ainda não consegue abrir um repositório privado específico. Outros repositórios da organização funcionam. O que o administrador deve verificar primeiro?
+
+1. Se a configuração SAML da organização deve ser recriada
+
+   O acesso SAML bem-sucedido em outros lugares aponta para longe da reconstrução da autenticação em toda a organização.
+
+2. Se a exigência de commits assinado permitiria o acesso do navegador
+
+   As assinaturas de commit controlam a verificação commit, não a autorização de leitura de repositório privado.
+
+3. Se uma regra de revisão obrigatória impede a leitura do repositório
+
+   Os requisitos de revisão regem a fusão de alterações, não a leitura de um repositório privado.
+
+4. Se o usuário tem permissão efetiva para esse repositório **[CORRECT]**
+
+   A autenticação por si só não concede acesso a todos os repositórios privados.
+
+**Concept:** Autenticação versus autorização
+
+**Authored coaching hints:**
+
+- Uma identidade verificada recebe automaticamente acesso a todos os recursos?
+- Quais atribuições específicas do repositório poderiam explicar a diferença?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization>
+
+<!-- certification-coach-question:admin-009:5ce5f835a3792cef620493a882c8aced4b97b24201b9b6159b998b34e736bbb2 -->
+## Question 9: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-009`
+
+**Content revision:** `5ce5f835a3792cef620493a882c8aced4b97b24201b9b6159b998b34e736bbb2`
+
+### English
+
+A support specialist must label and close issues in a private repository but must not push code. Which built-in repository role is the least-privileged fit?
+
+1. Triage **[CORRECT]**
+
+   Triage supports proactive issue management without code write access.
+
+2. Write
+
+   Write permits code changes beyond the stated support duties.
+
+3. Maintain
+
+   Maintain includes broader repository management than issue triage requires.
+
+4. Admin
+
+   Admin includes sensitive settings and destructive capabilities beyond this need.
+
+**Concept:** Least-privilege issue management
+
+**Authored coaching hints:**
+
+- Which tasks concern collaboration rather than code modification?
+- What is the narrowest role designed for those tasks?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un especialista de soporte debe etiquetar y cerrar issues en un repositorio privado, pero no debe enviar código. ¿Qué función del repositorio integrado es la más adecuada?
+
+1. Triage **[CORRECT]**
+
+   Triage admite la gestión proactiva de issue sin acceso de escritura de código.
+
+2. Write
+
+   Write permite cambios de código más allá de las funciones de soporte indicadas.
+
+3. Maintain
+
+   Maintain incluye una gestión de repositorios más amplia que la que requiere la clasificación de issue.
+
+4. Admin
+
+   Admin incluye configuraciones sensibles y capacidades destructivas más allá de esta necesidad.
+
+**Concept:** Gestión de privilegios mínimos issue
+
+**Authored coaching hints:**
+
+- ¿Qué tareas se refieren a la colaboración en lugar de la modificación del código?
+- ¿Cuál es el rol más limitado diseñado para esas tareas?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um especialista de suporte deve rotular e fechar issues em um repositório privado, mas não deve enviar código por push. Qual função de repositório integrada é a adequada com menos privilégios?
+
+1. Triage **[CORRECT]**
+
+   Triage suporta gerenciamento proativo de issue sem acesso de gravação de código.
+
+2. Write
+
+   Write permite alterações de código além das tarefas de suporte declaradas.
+
+3. Maintain
+
+   Maintain inclui gerenciamento de repositório mais amplo do que o exigido pela triagem issue.
+
+4. Admin
+
+   Admin inclui configurações sensíveis e recursos destrutivos além dessa necessidade.
+
+**Concept:** Gerenciamento issue com privilégios mínimos
+
+**Authored coaching hints:**
+
+- Quais tarefas dizem respeito à colaboração e não à modificação do código?
+- Qual é a função mais restrita projetada para essas tarefas?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization>
+
+<!-- certification-coach-question:admin-010:f0e3ac2f4bdbdc551c6c3d1a03ead02cd13dd28c709f0016ea4557e79041991e -->
+## Question 10: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-010`
+
+**Content revision:** `f0e3ac2f4bdbdc551c6c3d1a03ead02cd13dd28c709f0016ea4557e79041991e`
+
+### English
+
+A developer must push feature branches and contribute changes to an organization's private repository. They do not administer the repository. Which built-in role is the minimum suitable choice?
+
+1. Read
+
+   Read does not allow pushing branches to the repository.
+
+2. Write **[CORRECT]**
+
+   Write is intended for contributors who actively push code.
+
+3. Maintain
+
+   Maintain adds management capabilities unnecessary for ordinary code contribution.
+
+4. Admin
+
+   Admin grants settings and destructive privileges beyond this task.
+
+**Concept:** Code contributor permissions
+
+**Authored coaching hints:**
+
+- Is the user modifying repository content or repository governance?
+- Which minimum permission supports pushing code?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un desarrollador debe hacer push de ramas de funcionalidades y contribuir con cambios al repositorio privado de una organización. No administra el repositorio. ¿Qué rol integrado es el mínimo adecuado?
+
+1. Read
+
+   Read no permite enviar ramas al repositorio.
+
+2. Write **[CORRECT]**
+
+   Write está destinado a colaboradores que hacen push de código activamente.
+
+3. Maintain
+
+   Maintain agrega capacidades de administración innecesarias para la contribución de código normal.
+
+4. Admin
+
+   Admin otorga configuraciones y privilegios destructivos más allá de esta tarea.
+
+**Concept:** Permisos del colaborador de código
+
+**Authored coaching hints:**
+
+- ¿El usuario está modificando el contenido o la gobernanza del repositorio?
+- ¿Qué permiso mínimo admite la inserción de código?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um desenvolvedor deve enviar ramificações de recursos e contribuir com alterações para o repositório privado de uma organização. Eles não administram o repositório. Qual função integrada é a escolha mínima adequada?
+
+1. Read
+
+   Read não permite enviar ramificações para o repositório.
+
+2. Write **[CORRECT]**
+
+   Write destina-se a colaboradores que enviam código ativamente.
+
+3. Maintain
+
+   Maintain adiciona recursos de gerenciamento desnecessários para contribuição de código comum.
+
+4. Admin
+
+   Admin concede configurações e privilégios destrutivos além desta tarefa.
+
+**Concept:** Permissões de contribuidor de código
+
+**Authored coaching hints:**
+
+- O usuário está modificando o conteúdo do repositório ou a governança do repositório?
+- Qual permissão mínima oferece suporte ao envio de código?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization>
+
+<!-- certification-coach-question:admin-011:90a63ff413a016dd430f84109bfa719eb27b74d9c416a23a19601386dc4aad3e -->
+## Question 11: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-011`
+
+**Content revision:** `90a63ff413a016dd430f84109bfa719eb27b74d9c416a23a19601386dc4aad3e`
+
+### English
+
+A project coordinator needs broad day-to-day repository management without sensitive or destructive administrator operations. Which built-in role is designed for this?
+
+1. Read
+
+   Read is for viewing and discussion rather than broad repository management.
+
+2. Triage
+
+   Triage focuses on collaboration management without the wider maintenance role.
+
+3. Maintain **[CORRECT]**
+
+   Maintain targets project managers who do not need sensitive or destructive actions.
+
+4. Admin
+
+   Admin explicitly includes sensitive and destructive operations.
+
+**Concept:** Repository maintenance role
+
+**Authored coaching hints:**
+
+- How does routine project management differ from full administration?
+- Which role deliberately stops short of sensitive administrator powers?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un coordinador de proyecto necesita una gestión amplia del repositorio día a día sin operaciones administrativas sensibles o destructivas. ¿Qué función integrada está diseñada para esto?
+
+1. Read
+
+   Read es para visualización y discusión en lugar de administración amplia de repositorios.
+
+2. Triage
+
+   Triage se centra en la gestión de la colaboración sin la función de mantenimiento más amplia.
+
+3. Maintain **[CORRECT]**
+
+   Maintain está dirigido a directores de proyectos que no necesitan acciones sensibles o destructivas.
+
+4. Admin
+
+   Admin incluye explícitamente operaciones sensibles y destructivas.
+
+**Concept:** Rol de mantenimiento del repositorio
+
+**Authored coaching hints:**
+
+- ¿En qué se diferencia la gestión rutinaria de proyectos de la administración completa?
+- ¿Qué función deja deliberadamente de lado los poderes sensibles del administrador?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um coordenador de projeto precisa de um amplo gerenciamento diário de repositórios, sem operações administrativas confidenciais ou destrutivas. Qual função integrada foi projetada para isso?
+
+1. Read
+
+   Read é para visualização e discussão, em vez de amplo gerenciamento de repositório.
+
+2. Triage
+
+   Triage concentra-se no gerenciamento de colaboração sem a função mais ampla de manutenção.
+
+3. Maintain **[CORRECT]**
+
+   Maintain é direcionado a gerentes de projeto que não precisam de ações sensíveis ou destrutivas.
+
+4. Admin
+
+   Admin inclui explicitamente operações confidenciais e destrutivas.
+
+**Concept:** Função de manutenção do repositório
+
+**Authored coaching hints:**
+
+- Como o gerenciamento rotineiro de projetos difere da administração completa?
+- Qual função fica deliberadamente aquém dos poderes sensíveis do administrador?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization>
+
+<!-- certification-coach-question:admin-012:20a7b3afc18706384fed8c38631a8ae7dc41762ca69a7fc6e19d49743a7c8196 -->
+## Question 12: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-012`
+
+**Content revision:** `20a7b3afc18706384fed8c38631a8ae7dc41762ca69a7fc6e19d49743a7c8196`
+
+### English
+
+An external auditor needs to inspect code and discuss findings in one private repository, with no code changes or issue triage. Which repository role is the least-privileged fit?
+
+1. Admin
+
+   Admin would expose sensitive repository administration capabilities.
+
+2. Maintain
+
+   Maintain grants management capabilities the audit does not require.
+
+3. Write
+
+   Write permits code changes outside the auditor's remit.
+
+4. Read **[CORRECT]**
+
+   Read supports viewing and discussion without code write privileges.
+
+**Concept:** Read-only audit access
+
+**Authored coaching hints:**
+
+- What actions are explicitly outside the auditor's scope?
+- Which role supports inspection without modification?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un auditor externo necesita inspeccionar el código y discutir los hallazgos en un repositorio privado, sin cambios de código ni clasificación issue. ¿Qué función de repositorio es la más adecuada?
+
+1. Admin
+
+   Admin expondría capacidades confidenciales de administración de repositorios.
+
+2. Maintain
+
+   Maintain otorga capacidades de gestión que la auditoría no requiere.
+
+3. Write
+
+   Write permite cambios de código fuera del ámbito de competencia del auditor.
+
+4. Read **[CORRECT]**
+
+   Read admite visualización y discusión sin privilegios de escritura de código.
+
+**Concept:** Acceso de auditoría exclusivo para Read
+
+**Authored coaching hints:**
+
+- ¿Qué acciones están explícitamente fuera del alcance del auditor?
+- ¿Qué función apoya la inspección sin modificaciones?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um auditor externo precisa inspecionar o código e discutir as descobertas em um repositório privado, sem alterações de código ou triagem issue. Qual função de repositório é a adequada com menos privilégios?
+
+1. Admin
+
+   Admin exporia recursos confidenciais de administração de repositórios.
+
+2. Maintain
+
+   Maintain concede recursos de gerenciamento que a auditoria não exige.
+
+3. Write
+
+   Write permite alterações de código fora da competência do auditor.
+
+4. Read **[CORRECT]**
+
+   Read suporta visualização e discussão sem privilégios de gravação de código.
+
+**Concept:** Acesso de auditoria somente Read
+
+**Authored coaching hints:**
+
+- Quais ações estão explicitamente fora do escopo do auditor?
+- Qual função oferece suporte à inspeção sem modificação?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization>
+
+<!-- certification-coach-question:admin-013:00786aa26c01db602a9bb2909cd9adf7285fab66e857286fa6d4703f37570d4c -->
+## Question 13: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-013`
+
+**Content revision:** `00786aa26c01db602a9bb2909cd9adf7285fab66e857286fa6d4703f37570d4c`
+
+### English
+
+Every member of an organization can currently read all its private repositories through base permissions. The company wants each private repository to require an explicit grant. What is the most direct organization-level change?
+
+1. Set organization base permissions to No permission and review explicit grants **[CORRECT]**
+
+   No permission removes the blanket base grant; team and direct grants still need review.
+
+2. Set every team's repository role to Read while keeping the existing base permission
+
+   Weaker team grants do not remove access already granted by organization base permissions.
+
+3. Require signed commits on default branches
+
+   Signed commits govern commit verification rather than repository visibility permissions.
+
+4. Remove direct repository grants while keeping the existing base permission
+
+   Removing direct grants leaves the blanket base grant in place.
+
+**Concept:** Organization base permissions
+
+**Authored coaching hints:**
+
+- Which grant applies before team-specific permissions are considered?
+- What other grants remain after changing the baseline?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Actualmente, cada miembro de una organización puede leer todos sus repositorios privados mediante los permisos base. La empresa quiere que cada repositorio privado requiera un permiso otorgado explícitamente. ¿Cuál es el cambio más directo a nivel de organización?
+
+1. Establezca los permisos básicos de la organización en No permission y revise las concesiones explícitas **[CORRECT]**
+
+   No permission elimina el permiso base general; los permisos otorgados a equipos y los permisos directos aún deben revisarse.
+
+2. Establezca la función del repositorio de cada equipo en Read manteniendo el permiso base existente
+
+   Las concesiones de equipo más débiles no eliminan el acceso ya otorgado por los permisos básicos de la organización.
+
+3. Requerir commits firmado en las ramas predeterminadas
+
+   El commits firmado rige la verificación del commit en lugar de los permisos de visibilidad del repositorio.
+
+4. Elimine las concesiones directas del repositorio manteniendo el permiso base existente
+
+   Eliminar los permisos directos deja vigente el permiso base general.
+
+**Concept:** Permisos básicos de la organización
+
+**Authored coaching hints:**
+
+- ¿Qué concesión se aplica antes de que se consideren los permisos específicos del equipo?
+- ¿Qué otros permisos otorgados permanecen después de cambiar los permisos base?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Cada membro de uma organização pode atualmente ler todos os seus repositórios privados através de permissões básicas. A empresa deseja que cada repositório privado exija uma concessão explícita. Qual é a mudança mais direta no nível da organização?
+
+1. Defina as permissões básicas da organização como No permission e revise as concessões explícitas **[CORRECT]**
+
+   No permission remove a permissão base geral; permissões diretas e de equipes ainda precisam ser revisadas.
+
+2. Defina a função de repositório de cada equipe como Read, mantendo a permissão base existente
+
+   Concessões de equipe mais fracas não removem o acesso já concedido pelas permissões básicas da organização.
+
+3. Exigir commits assinados nas ramificações padrão
+
+   commits assinado rege a verificação commit em vez das permissões de visibilidade do repositório.
+
+4. Remova as concessões diretas do repositório, mantendo a permissão base existente
+
+   Remover as permissões diretas mantém a permissão base geral em vigor.
+
+**Concept:** Permissões básicas da organização
+
+**Authored coaching hints:**
+
+- Qual concessão se aplica antes que as permissões específicas da equipe sejam consideradas?
+- Que outras permissões concedidas permanecem após a alteração das permissões base?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/setting-base-permissions-for-an-organization>
+
+<!-- certification-coach-question:admin-014:e197aaad767979ef17ed81bcd39534063d4487bc5a67e356d4698c16c0438965 -->
+## Question 14: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-014`
+
+**Content revision:** `e197aaad767979ef17ed81bcd39534063d4487bc5a67e356d4698c16c0438965`
+
+### English
+
+A member has Read through one team and Write through another on the same repository. No other restrictions apply. What is their effective repository role?
+
+1. Read, because the more restrictive team wins
+
+   A weaker team grant does not override a stronger repository grant.
+
+2. Write, because access grants are cumulative **[CORRECT]**
+
+   The user's strongest applicable repository permission governs these cumulative grants.
+
+3. Triage, because GitHub averages the roles
+
+   GitHub does not average repository roles.
+
+4. No access, because multiple team grants conflict
+
+   Membership in multiple teams does not invalidate their access grants.
+
+**Concept:** Effective repository permissions
+
+**Authored coaching hints:**
+
+- Does another grant act as a denial?
+- What happens when a person receives different levels of access?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un miembro tiene Read a través de un equipo y Write a través de otro en el mismo repositorio. No se aplican otras restricciones. ¿Cuál es su función de repositorio efectiva?
+
+1. Read, porque gana el equipo más restrictivo
+
+   Una concesión de equipo más débil no anula una concesión de repositorio más sólida.
+
+2. Write, porque las concesiones de acceso son acumulativas **[CORRECT]**
+
+   El permiso de repositorio aplicable más fuerte del usuario rige estas concesiones acumulativas.
+
+3. Triage, porque GitHub promedia los roles
+
+   GitHub no promedia las funciones del repositorio.
+
+4. Sin acceso porque varios equipos otorgan conflictos
+
+   La membresía en varios equipos no invalida sus concesiones de acceso.
+
+**Concept:** Permisos de repositorio efectivos
+
+**Authored coaching hints:**
+
+- ¿Otro permiso otorgado actúa como una denegación?
+- ¿Qué sucede cuando una persona recibe diferentes niveles de acceso?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um membro possui Read por meio de uma equipe e Write por meio de outra no mesmo repositório. Nenhuma outra restrição se aplica. Qual é o seu papel efetivo no repositório?
+
+1. Read, porque o time mais restritivo vence
+
+   Uma concessão de equipe mais fraca não substitui uma concessão de repositório mais forte.
+
+2. Write, porque as concessões de acesso são cumulativas **[CORRECT]**
+
+   A permissão de repositório aplicável mais forte do usuário rege essas concessões cumulativas.
+
+3. Triage, porque GitHub calcula a média das funções
+
+   GitHub não calcula a média das funções do repositório.
+
+4. Sem acesso, porque várias concessões de equipe estão em conflito
+
+   A participação em várias equipes não invalida suas concessões de acesso.
+
+**Concept:** Permissões efetivas de repositório
+
+**Authored coaching hints:**
+
+- Outra concessão funciona como uma negação?
+- O que acontece quando uma pessoa recebe diferentes níveis de acesso?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization>
+
+<!-- certification-coach-question:admin-015:fbbf710c3c68e284eec90a3509b59c4c3f4f0d2af5a9426e151e304c4f7c4bfa -->
+## Question 15: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-015`
+
+**Content revision:** `fbbf710c3c68e284eec90a3509b59c4c3f4f0d2af5a9426e151e304c4f7c4bfa`
+
+### English
+
+A parent team has Read access to a repository. A nested child team needs Write access. Which approach matches GitHub's team permission model?
+
+1. Remove the child team because nested teams cannot access repositories
+
+   Nested child teams can access repositories and inherit parent permissions.
+
+2. Make the parent team an organization owner
+
+   Organization ownership is neither a team role nor necessary for repository contribution.
+
+3. Grant Write to the child team in addition to its inherited access **[CORRECT]**
+
+   A child inherits parent access and can receive an additional stronger grant.
+
+4. Set the parent to Write and rely on the child to deny it
+
+   Child teams cannot use a weaker role to deny inherited parent permissions.
+
+**Concept:** Nested-team inheritance
+
+**Authored coaching hints:**
+
+- What does a child team inherit from its parent?
+- Can an additional grant expand access without changing every sibling?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un equipo principal tiene acceso Read a un repositorio. Un equipo secundario anidado necesita acceso Write. ¿Qué enfoque coincide con el modelo de permisos de equipo de GitHub?
+
+1. Elimine el equipo secundario porque los equipos anidados no pueden acceder a los repositorios
+
+   Los equipos secundarios anidados pueden acceder a los repositorios y heredar los permisos principales.
+
+2. Convertir al equipo principal en propietario de la organización
+
+   La propiedad de la organización no es una función de equipo ni es necesaria para la contribución al repositorio.
+
+3. Otorgar Write al equipo secundario además de su acceso heredado **[CORRECT]**
+
+   Un equipo secundario hereda el acceso del equipo principal y puede recibir un permiso adicional más amplio.
+
+4. Configurar el equipo principal con Write y confiar en que el equipo secundario lo deniegue
+
+   Los equipos secundarios no pueden utilizar un rol más débil para denegar los permisos principales heredados.
+
+**Concept:** Herencia de equipos anidados
+
+**Authored coaching hints:**
+
+- ¿Qué hereda un equipo secundario de su equipo principal?
+- ¿Puede un permiso adicional ampliar el acceso sin modificar todos los equipos del mismo nivel?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma equipe pai tem acesso Read a um repositório. Uma equipe filha aninhada precisa de acesso Write. Qual abordagem corresponde ao modelo de permissão de equipe do GitHub?
+
+1. Remova a equipe secundária porque as equipes aninhadas não podem acessar os repositórios
+
+   As equipes filhas aninhadas podem acessar repositórios e herdar permissões dos pais.
+
+2. Tornar a equipe principal uma proprietária da organização
+
+   A propriedade da organização não é uma função da equipe nem é necessária para a contribuição do repositório.
+
+3. Conceda Write à equipe filha além de seu acesso herdado **[CORRECT]**
+
+   Uma equipe filha herda o acesso da equipe pai e pode receber uma permissão adicional mais ampla.
+
+4. Definir a equipe pai como Write e confiar que a equipe filha negue esse acesso
+
+   As equipes filhas não podem usar uma função mais fraca para negar permissões herdadas dos pais.
+
+**Concept:** Herança de equipe aninhada
+
+**Authored coaching hints:**
+
+- O que uma equipe filha herda da equipe pai?
+- Uma concessão adicional pode expandir o acesso sem alterar todos os irmãos?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/organizations/organizing-members-into-teams/about-teams>
+
+<!-- certification-coach-question:admin-016:c6d24598bb617d352622e93d2b5fdb3aae9d13b976f6f1e778bf49a2744fe75e -->
+## Question 16: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-016`
+
+**Content revision:** `c6d24598bb617d352622e93d2b5fdb3aae9d13b976f6f1e778bf49a2744fe75e`
+
+### English
+
+An agency employee needs access to one private repository but should not become an organization member. Which collaboration mechanism fits?
+
+1. Organization ownership
+
+   Organization ownership is far broader than one-repository collaboration.
+
+2. Enterprise ownership
+
+   Enterprise ownership is inappropriate for a contractor's project access.
+
+3. Membership in every internal team
+
+   Team membership requires organization membership and expands the scope unnecessarily.
+
+4. Outside collaborator access to that repository **[CORRECT]**
+
+   Outside collaborators receive access to specified repositories without organization membership.
+
+**Concept:** Outside collaborator scope
+
+**Authored coaching hints:**
+
+- Is organization-wide membership necessary for this engagement?
+- Which access mechanism is attached directly to a repository?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un empleado de una agencia necesita acceso a un repositorio privado, pero no debe convertirse en miembro de la organización. ¿Qué mecanismo de colaboración encaja?
+
+1. Propiedad de la organización
+
+   La propiedad de la organización es mucho más amplia que la colaboración de un solo repositorio.
+
+2. Propiedad de la empresa
+
+   La propiedad de la empresa es inapropiada para el acceso al proyecto de un contratista.
+
+3. Membresía en todos los equipos internos.
+
+   La membresía en un equipo requiere membresía en la organización y amplía el alcance innecesariamente.
+
+4. Acceso de colaborador externo a ese repositorio **[CORRECT]**
+
+   Los colaboradores externos reciben acceso a repositorios específicos sin ser miembros de una organización.
+
+**Concept:** Ámbito de colaborador externo
+
+**Authored coaching hints:**
+
+- ¿Es necesaria la membresía de toda la organización para este compromiso?
+- ¿Qué mecanismo de acceso se adjunta directamente a un repositorio?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um funcionário de uma agência precisa de acesso a um repositório privado, mas não deve tornar-se membro da organização. Qual mecanismo de colaboração se adapta?
+
+1. Propriedade da organização
+
+   A propriedade da organização é muito mais ampla do que a colaboração de um único repositório.
+
+2. Propriedade empresarial
+
+   A propriedade da empresa é inadequada para o acesso ao projeto por parte de um empreiteiro.
+
+3. Participação em todas as equipes internas
+
+   A adesão à equipe exige a adesão à organização e expande o escopo desnecessariamente.
+
+4. Acesso de colaborador externo a esse repositório **[CORRECT]**
+
+   Colaboradores externos recebem acesso a repositórios específicos sem serem membros da organização.
+
+**Concept:** Fora do escopo do colaborador
+
+**Authored coaching hints:**
+
+- A adesão de toda a organização é necessária para este envolvimento?
+- Qual mecanismo de acesso está anexado diretamente a um repositório?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/adding-outside-collaborators-to-repositories-in-your-organization>
+
+<!-- certification-coach-question:admin-017:bbc569666b2ab2a5f20e91f62d81738c8180f92e6d3525e08a6063c511f96976 -->
+## Question 17: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-017`
+
+**Content revision:** `bbc569666b2ab2a5f20e91f62d81738c8180f92e6d3525e08a6063c511f96976`
+
+### English
+
+A finance analyst only needs organization billing access. Which built-in organization role is more appropriate than making the analyst an owner?
+
+1. Billing manager **[CORRECT]**
+
+   Billing managers can manage organization billing without full organization ownership.
+
+2. Repository administrator
+
+   Repository administration does not provide the intended organization billing role.
+
+3. Team maintainer
+
+   Team maintainers manage teams rather than organization billing.
+
+4. Outside collaborator
+
+   Outside collaboration is repository access, not a billing-management assignment.
+
+**Concept:** Separating billing responsibilities
+
+**Authored coaching hints:**
+
+- Does the task require control over repositories and members?
+- Which responsibility can be delegated independently of organization ownership?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un analista financiero sólo necesita acceso a la facturación de la organización. ¿Qué rol integrado en la organización es más apropiado que convertir al analista en propietario?
+
+1. gerente de facturación **[CORRECT]**
+
+   Los administradores de facturación pueden administrar la facturación de la organización sin tener la propiedad total de la misma.
+
+2. Administrador del repositorio
+
+   La administración del repositorio no proporciona la función de facturación de la organización prevista.
+
+3. mantenedor del equipo
+
+   Los mantenedores de equipos administran equipos en lugar de la facturación de la organización.
+
+4. Colaborador externo
+
+   La colaboración externa es acceso al repositorio, no una tarea de gestión de facturación.
+
+**Concept:** Separar las responsabilidades de facturación
+
+**Authored coaching hints:**
+
+- ¿La tarea requiere control sobre los repositorios y los miembros?
+- ¿Qué responsabilidad se puede delegar independientemente de la propiedad de la organización?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um analista financeiro só precisa de acesso ao faturamento da organização. Qual função organizacional integrada é mais apropriada do que tornar o analista um proprietário?
+
+1. Gerente de faturamento **[CORRECT]**
+
+   Os gerentes de faturamento podem gerenciar o faturamento da organização sem propriedade total da organização.
+
+2. Administrador do repositório
+
+   A administração do repositório não fornece a função de cobrança da organização pretendida.
+
+3. Mantenedor da equipe
+
+   Os mantenedores da equipe gerenciam as equipes em vez do faturamento da organização.
+
+4. Colaborador externo
+
+   A colaboração externa é o acesso ao repositório, não uma atribuição de gerenciamento de faturamento.
+
+**Concept:** Separando responsabilidades de faturamento
+
+**Authored coaching hints:**
+
+- A tarefa requer controle sobre repositórios e membros?
+- Que responsabilidade pode ser delegada independentemente da propriedade da organização?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization>
+
+<!-- certification-coach-question:admin-018:f0c21642303a4caee7b97f825fdb71accf023264364903f8650f9b461ad151f0 -->
+## Question 18: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-018`
+
+**Content revision:** `f0c21642303a4caee7b97f825fdb71accf023264364903f8650f9b461ad151f0`
+
+### English
+
+A person must manage a team's membership and settings but should not control the whole organization. Which team role should an owner consider?
+
+1. Enterprise owner
+
+   Enterprise ownership grants unrelated authority across the enterprise.
+
+2. Team maintainer **[CORRECT]**
+
+   Team maintainers administer their team without needing organization ownership.
+
+3. Organization billing manager
+
+   Billing management does not confer team administration.
+
+4. Repository Read
+
+   A repository role does not itself delegate team management.
+
+**Concept:** Delegated team administration
+
+**Authored coaching hints:**
+
+- At which scope does the responsibility belong?
+- Can team management be delegated without granting organization-wide control?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una persona debe gestionar la membresía y la configuración de un equipo, pero no debe controlar toda la organización. ¿Qué rol en el equipo debería considerar un propietario?
+
+1. propietario de la empresa
+
+   La propiedad de la empresa otorga autoridad no relacionada en toda la empresa.
+
+2. mantenedor del equipo **[CORRECT]**
+
+   Los mantenedores de equipos administran su equipo sin necesidad de ser dueños de la organización.
+
+3. Responsable de facturación de la organización
+
+   La gestión de facturación no confiere administración del equipo.
+
+4. Repositorio Read
+
+   Una función de repositorio en sí misma no delega la gestión del equipo.
+
+**Concept:** Administración delegada del equipo
+
+**Authored coaching hints:**
+
+- ¿A qué ámbito pertenece la responsabilidad?
+- ¿Se puede delegar la gestión de equipos sin otorgar control a toda la organización?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma pessoa deve gerenciar os membros e as configurações de uma equipe, mas não deve controlar toda a organização. Qual função da equipe um proprietário deve considerar?
+
+1. Proprietário da empresa
+
+   A propriedade empresarial concede autoridade não relacionada em toda a empresa.
+
+2. Mantenedor da equipe **[CORRECT]**
+
+   Os mantenedores da equipe administram sua equipe sem precisar de propriedade da organização.
+
+3. Gerente de faturamento da organização
+
+   A gestão de faturamento não confere administração de equipe.
+
+4. Repositório Read
+
+   Uma função de repositório por si só não delega o gerenciamento da equipe.
+
+**Concept:** Administração de equipe delegada
+
+**Authored coaching hints:**
+
+- A que âmbito pertence a responsabilidade?
+- O gerenciamento de equipes pode ser delegado sem conceder controle a toda a organização?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/organizations/organizing-members-into-teams/assigning-the-team-maintainer-role-to-a-team-member>
+
+<!-- certification-coach-question:admin-019:ade6c97ab1f89636ea39c9003085b26709a1b3e9e9ef351519f392328dcfe6af -->
+## Question 19: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-019`
+
+**Content revision:** `ade6c97ab1f89636ea39c9003085b26709a1b3e9e9ef351519f392328dcfe6af`
+
+### English
+
+During an access review, a developer keeps repository Write access after being removed from the expected team. What should the owner investigate next?
+
+1. Whether commit-signature enforcement needs to be enabled
+
+   Commit-signature requirements do not identify the remaining authorization grant.
+
+2. Whether deleting the developer's SSH key alone would remove the repository role
+
+   Revoking one credential does not remove an independently granted repository role.
+
+3. Other teams, direct repository grants, and organization base permissions **[CORRECT]**
+
+   Another applicable grant can preserve access after one team's grant disappears.
+
+4. Whether the developer has local clones
+
+   Local clones retain data but do not grant live repository Write access.
+
+**Concept:** Tracing residual permissions
+
+**Authored coaching hints:**
+
+- Could the removed team have been only one access path?
+- Which grants exist above or alongside that team?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Durante una revisión de acceso, un desarrollador mantiene el acceso al repositorio Write después de ser eliminado del equipo esperado. ¿Qué debería investigar el propietario a continuación?
+
+1. Si es necesario habilitar la aplicación de firma commit
+
+   Los requisitos de firma de compromiso no identifican la concesión de autorización restante.
+
+2. Si eliminar la clave SSH del desarrollador por sí sola eliminaría la función del repositorio
+
+   Revocar una credencial no elimina una función de repositorio otorgada de forma independiente.
+
+3. Otros equipos, permisos directos al repositorio y permisos base de la organización **[CORRECT]**
+
+   Otra concesión aplicable puede preservar el acceso después de que desaparezca la concesión de un equipo.
+
+4. Si el desarrollador tiene clones locales
+
+   Los clones locales retienen los datos pero no otorgan acceso al repositorio activo Write.
+
+**Concept:** Seguimiento de permisos residuales
+
+**Authored coaching hints:**
+
+- ¿El equipo eliminado podría haber sido sólo una vía de acceso?
+- ¿Qué permisos otorgados existen por encima o además de los de ese equipo?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Durante uma revisão de acesso, um desenvolvedor mantém acesso ao repositório Write após ser removido da equipe esperada. O que o proprietário deve investigar a seguir?
+
+1. Se a aplicação da assinatura commit precisa ser habilitada
+
+   Os requisitos de assinatura de confirmação não identificam a concessão de autorização restante.
+
+2. Se a exclusão da chave SSH do desenvolvedor por si só removeria a função de repositório
+
+   A revogação de uma credencial não remove uma função de repositório concedida independentemente.
+
+3. Outras equipes, concessões diretas de repositório e permissões básicas da organização **[CORRECT]**
+
+   Outra concessão aplicável pode preservar o acesso após o desaparecimento da concessão de uma equipe.
+
+4. Se o desenvolvedor possui clones locais
+
+   Os clones locais retêm dados, mas não concedem acesso ao repositório ativo Write.
+
+**Concept:** Rastreando permissões residuais
+
+**Authored coaching hints:**
+
+- A equipe removida poderia ter sido apenas um caminho de acesso?
+- Quais bolsas existem acima ou ao lado dessa equipe?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/managing-an-individuals-access-to-an-organization-repository>
+
+<!-- certification-coach-question:admin-020:9b7676fe0d1e9a03ff019c301f5ca86c125e2e6945a997b30d58b42aeefb6757 -->
+## Question 20: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-020`
+
+**Content revision:** `9b7676fe0d1e9a03ff019c301f5ca86c125e2e6945a997b30d58b42aeefb6757`
+
+### English
+
+An enterprise owner is investigating a private repository in an organization where the owner has no repository access. Which assumption should they avoid?
+
+1. Enterprise policy administration and repository access have different scopes
+
+   This distinction correctly separates enterprise governance from repository authorization.
+
+2. A repository grant may still be needed to inspect content
+
+   Private content still requires the relevant access permissions.
+
+3. Organization owners can help establish appropriate repository access
+
+   Appropriate organization-level administrators can arrange authorized access.
+
+4. Enterprise ownership automatically grants access to every private repository **[CORRECT]**
+
+   Enterprise ownership alone does not automatically grant all private repository access.
+
+**Concept:** Enterprise ownership boundaries
+
+**Authored coaching hints:**
+
+- Does policy authority imply content access everywhere?
+- Which scope actually controls a private repository's authorization?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+El propietario de una empresa está investigando un repositorio privado en una organización donde el propietario no tiene acceso al repositorio. ¿Qué suposición deberían evitar?
+
+1. La administración de políticas empresariales y el acceso al repositorio tienen diferentes alcances
+
+   Esta distinción separa correctamente el gobierno empresarial de la autorización del repositorio.
+
+2. Es posible que aún se necesite una concesión de repositorio para inspeccionar el contenido.
+
+   El contenido privado aún requiere los permisos de acceso pertinentes.
+
+3. Los propietarios de la organización pueden ayudar a establecer el acceso adecuado al repositorio
+
+   Los administradores apropiados a nivel de organización pueden organizar el acceso autorizado.
+
+4. La propiedad empresarial otorga automáticamente acceso a cada repositorio privado **[CORRECT]**
+
+   La propiedad empresarial por sí sola no otorga automáticamente acceso a todos los repositorios privados.
+
+**Concept:** Límites de las facultades de los propietarios de la empresa
+
+**Authored coaching hints:**
+
+- ¿La autoridad política implica acceso al contenido en todas partes?
+- ¿Qué ámbito controla realmente la autorización de un repositorio privado?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+O proprietário de uma empresa está investigando um repositório privado em uma organização onde o proprietário não tem acesso ao repositório. Qual suposição eles deveriam evitar?
+
+1. A administração de políticas corporativas e o acesso a repositórios têm escopos diferentes
+
+   Esta distinção separa corretamente a governança empresarial da autorização de repositório.
+
+2. Uma concessão de repositório ainda pode ser necessária para inspecionar o conteúdo
+
+   O conteúdo privado ainda requer as permissões de acesso relevantes.
+
+3. Os proprietários da organização podem ajudar a estabelecer o acesso apropriado ao repositório
+
+   Administradores apropriados no nível da organização podem providenciar acesso autorizado.
+
+4. A propriedade empresarial concede automaticamente acesso a todos os repositórios privados **[CORRECT]**
+
+   A propriedade corporativa por si só não concede automaticamente acesso a todos os repositórios privados.
+
+**Concept:** Limites das atribuições dos proprietários da empresa
+
+**Authored coaching hints:**
+
+- A autoridade política implica acesso ao conteúdo em todos os lugares?
+- Qual escopo realmente controla a autorização de um repositório privado?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/enterprise-fundamentals/roles-in-an-enterprise>
+
+<!-- certification-coach-question:admin-021:745ef17d3d5eef32b22ec7f9bca823b9a5dd851f284a171f500146b64bd55660 -->
+## Question 21: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-021`
+
+**Content revision:** `745ef17d3d5eef32b22ec7f9bca823b9a5dd851f284a171f500146b64bd55660`
+
+### English
+
+An organization on a plan supporting custom repository roles needs a tailored responsibility beyond a standard role. What is the correct design approach?
+
+1. Choose a suitable inherited base role and add only the required supported permissions **[CORRECT]**
+
+   Custom repository roles extend an inherited base role with supported additional permissions.
+
+2. Use a custom role to subtract Write inherited from a team
+
+   Custom roles do not negate access already granted through other paths.
+
+3. Give every recipient organization ownership first
+
+   Organization ownership defeats the purpose of narrowly tailored repository permissions.
+
+4. Edit each recipient's Git client to define the new role
+
+   Repository roles are server-side authorization settings, not local Git configuration.
+
+**Concept:** Custom repository role design
+
+**Authored coaching hints:**
+
+- Is the role additive or a deny mechanism?
+- What minimum baseline fits the intended responsibility?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una organización con un plan que admita funciones de repositorio personalizadas necesita una responsabilidad personalizada más allá de una función estándar. ¿Cuál es el enfoque de diseño correcto?
+
+1. Elija un rol base heredado adecuado y agregue solo los permisos admitidos necesarios **[CORRECT]**
+
+   Los roles de repositorio personalizados amplían un rol básico heredado con permisos adicionales admitidos.
+
+2. Utilice un rol personalizado para restar Write heredado de un equipo
+
+   Los roles personalizados no niegan el acceso ya otorgado a través de otras rutas.
+
+3. Dar propiedad a cada organización receptora primero
+
+   La propiedad de la organización anula el propósito de los permisos de repositorio estrictamente personalizados.
+
+4. Edite el cliente Git de cada destinatario para definir el nuevo rol
+
+   Los roles del repositorio son configuraciones de autorización del lado del servidor, no una configuración de Git local.
+
+**Concept:** Diseño de roles de repositorio personalizado
+
+**Authored coaching hints:**
+
+- ¿El rol es aditivo o un mecanismo de negación?
+- ¿Qué línea de base mínima se ajusta a la responsabilidad prevista?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma organização com um plano de suporte a funções de repositório personalizadas precisa de uma responsabilidade personalizada além de uma função padrão. Qual é a abordagem de design correta?
+
+1. Escolha uma função base herdada adequada e adicione apenas as permissões suportadas necessárias **[CORRECT]**
+
+   As funções de repositório personalizadas estendem uma função base herdada com permissões adicionais suportadas.
+
+2. Use uma função personalizada para subtrair Write herdado de uma equipe
+
+   As funções personalizadas não negam o acesso já concedido por outros caminhos.
+
+3. Dê propriedade a cada organização beneficiária primeiro
+
+   A propriedade da organização anula o propósito de permissões de repositório estritamente personalizadas.
+
+4. Edite o cliente Git de cada destinatário para definir a nova função
+
+   As funções do repositório são configurações de autorização do lado do servidor, não configurações locais do Git.
+
+**Concept:** Design de função de repositório personalizado
+
+**Authored coaching hints:**
+
+- A função é aditiva ou um mecanismo de negação?
+- Qual linha de base mínima se ajusta à responsabilidade pretendida?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-peoples-access-to-your-organization-with-roles/managing-custom-repository-roles-for-an-organization>
+
+<!-- certification-coach-question:admin-022:2b71afcd57f36c1b80cc9c584a88911a01b44738a3aaa3c9db39fc7504962272 -->
+## Question 22: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-022`
+
+**Content revision:** `2b71afcd57f36c1b80cc9c584a88911a01b44738a3aaa3c9db39fc7504962272`
+
+### English
+
+An administrator wants the same workforce team to be available across multiple organizations in an enterprise that supports enterprise teams. Which scope best fits this requirement?
+
+1. A repository-only collaborator list
+
+   A repository collaborator list does not centrally model a cross-organization team.
+
+2. An enterprise team **[CORRECT]**
+
+   Enterprise teams provide an enterprise-level team construct across organizations.
+
+3. A CODEOWNERS entry in one repository
+
+   CODEOWNERS defines review responsibility within a repository, not enterprise membership.
+
+4. A single repository deploy key
+
+   Deploy keys authenticate Git access and do not represent workforce teams.
+
+**Concept:** Enterprise-level team scope
+
+**Authored coaching hints:**
+
+- Is the group intended to stop at one organization boundary?
+- Which administrative scope matches its reuse?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un administrador quiere que el mismo equipo de fuerza laboral esté disponible en varias organizaciones de una empresa que admita equipos empresariales. ¿Qué ámbito se adapta mejor a este requisito?
+
+1. Una lista de colaboradores exclusiva del repositorio
+
+   Una lista de colaboradores del repositorio no modela de forma centralizada un equipo entre organizaciones.
+
+2. Un equipo empresarial **[CORRECT]**
+
+   Los equipos empresariales proporcionan una estructura de equipo a nivel empresarial en todas las organizaciones.
+
+3. Una entrada CODEOWNERS en un repositorio
+
+   CODEOWNERS define la responsabilidad de revisión dentro de un repositorio, no la membresía empresarial.
+
+4. Una única clave de implementación de repositorio
+
+   Las claves de implementación autentican el acceso a Git y no representan equipos de fuerza laboral.
+
+**Concept:** Alcance del equipo a nivel empresarial
+
+**Authored coaching hints:**
+
+- ¿Se pretende que el grupo se detenga en un límite de la organización?
+- ¿Qué ámbito administrativo coincide con su reutilización?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um administrador deseja que a mesma equipe de força de trabalho esteja disponível em diversas organizações em uma empresa que ofereça suporte a equipes empresariais. Qual escopo melhor atende a esse requisito?
+
+1. Uma lista de colaboradores apenas para repositório
+
+   Uma lista de colaboradores do repositório não modela centralmente uma equipe interorganizacional.
+
+2. Uma equipe empresarial **[CORRECT]**
+
+   As equipes empresariais fornecem uma construção de equipe de nível empresarial em todas as organizações.
+
+3. Uma entrada CODEOWNERS em um repositório
+
+   CODEOWNERS define a responsabilidade de revisão dentro de um repositório, não a associação corporativa.
+
+4. Uma única chave de implantação de repositório
+
+   As chaves de implantação autenticam o acesso ao Git e não representam equipes de força de trabalho.
+
+**Concept:** Escopo da equipe de nível empresarial
+
+**Authored coaching hints:**
+
+- O grupo pretende parar em um limite da organização?
+- Qual escopo administrativo corresponde ao seu reaproveitamento?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/enterprise-fundamentals/teams-in-an-enterprise>
+
+<!-- certification-coach-question:admin-023:23d45be6c1fdabe69ce40fadb68340c7ace9ca081c9c1f46df7d2ad9370b8d1e -->
+## Question 23: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-023`
+
+**Content revision:** `23d45be6c1fdabe69ce40fadb68340c7ace9ca081c9c1f46df7d2ad9370b8d1e`
+
+### English
+
+Before selecting an IdP for Enterprise Managed Users, an architect wants the least integration uncertainty. Which choice follows GitHub's recommended paved path?
+
+1. Choose any SAML implementation without checking provisioning support
+
+   SAML compatibility alone does not establish managed-user provisioning support.
+
+2. Use separate unsupported vendors for authentication and account provisioning
+
+   Splitting unsupported integrations increases uncertainty instead of following the paved path.
+
+3. Use a supported partner IdP for both authentication and SCIM provisioning **[CORRECT]**
+
+   GitHub recommends a single partner IdP for authentication and provisioning.
+
+4. Replace provisioning with shared passwords
+
+   Shared passwords do not provide supported individual managed-user provisioning.
+
+**Concept:** Supported managed-user IdP architecture
+
+**Authored coaching hints:**
+
+- Which two identity functions must work together?
+- What reduces integration and support complexity?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Antes de seleccionar un IdP para un Enterprise Managed Users, un arquitecto quiere la menor incertidumbre de integración. ¿Qué opción sigue el camino pavimentado recomendado por GitHub?
+
+1. Elija cualquier implementación de SAML sin verificar el soporte de aprovisionamiento
+
+   La compatibilidad con SAML por sí sola no establece soporte para el aprovisionamiento de usuarios administrados.
+
+2. Utilice proveedores independientes no compatibles para la autenticación y el aprovisionamiento de cuentas
+
+   Dividir integraciones no compatibles aumenta la incertidumbre en lugar de seguir el camino pavimentado.
+
+3. Utilice un socio compatible IdP para la autenticación y el aprovisionamiento de SCIM **[CORRECT]**
+
+   GitHub recomienda un único socio IdP para la autenticación y el aprovisionamiento.
+
+4. Reemplazar el aprovisionamiento con contraseñas compartidas
+
+   Las contraseñas compartidas no proporcionan soporte para el aprovisionamiento de usuarios administrados individuales.
+
+**Concept:** Arquitectura IdP de usuario administrado compatible
+
+**Authored coaching hints:**
+
+- ¿Qué dos funciones de identidad deben trabajar juntas?
+- ¿Qué reduce la complejidad de la integración y el soporte?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Antes de selecionar um IdP para Enterprise Managed Users, um arquiteto deseja o mínimo de incerteza de integração. Qual opção segue o caminho pavimentado recomendado de GitHub?
+
+1. Escolha qualquer implementação SAML sem verificar o suporte de provisionamento
+
+   A compatibilidade do SAML por si só não estabelece suporte ao provisionamento de usuários gerenciados.
+
+2. Use fornecedores separados sem suporte para autenticação e provisionamento de conta
+
+   A divisão de integrações não suportadas aumenta a incerteza em vez de seguir o caminho pavimentado.
+
+3. Use um parceiro compatível IdP para autenticação e provisionamento SCIM **[CORRECT]**
+
+   GitHub recomenda um único parceiro IdP para autenticação e provisionamento.
+
+4. Substitua o provisionamento por senhas compartilhadas
+
+   As senhas compartilhadas não fornecem provisionamento de usuários gerenciados individuais com suporte.
+
+**Concept:** Arquitetura IdP de usuário gerenciado compatível
+
+**Authored coaching hints:**
+
+- Quais são as duas funções de identidade que devem funcionar juntas?
+- O que reduz a complexidade de integração e suporte?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/identity-and-access-management/enterprise-managed-users>
+
+<!-- certification-coach-question:admin-024:28a660b3e6a204a447ddcbaf800c7ab1bcd4d2151772add614bfbb958cd799b9 -->
+## Question 24: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-024`
+
+**Content revision:** `28a660b3e6a204a447ddcbaf800c7ab1bcd4d2151772add614bfbb958cd799b9`
+
+### English
+
+A managed employee leaves an Enterprise Managed Users enterprise. Which system should drive the account's supported deprovisioning lifecycle?
+
+1. The employee's local Git credential helper
+
+   Removing a local credential does not centrally deprovision a managed account.
+
+2. A repository branch protection rule
+
+   Branch rules restrict changes rather than account lifecycle.
+
+3. A manual edit to every CODEOWNERS file
+
+   Review-routing files are not the authority for account deprovisioning.
+
+4. The enterprise's IdP and SCIM provisioning integration **[CORRECT]**
+
+   Managed-account lifecycle is controlled through the configured identity provider integration.
+
+**Concept:** Managed-user offboarding
+
+**Authored coaching hints:**
+
+- Where was the managed identity originally provisioned?
+- How can offboarding cover the identity rather than one credential?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un empleado gestionado abandona una empresa Enterprise Managed Users. ¿Qué sistema debería impulsar el ciclo de vida de desaprovisionamiento admitido de la cuenta?
+
+1. El asistente de credenciales Git local del empleado
+
+   Quitar una credencial local no desaprovisiona centralmente una cuenta administrada.
+
+2. Una regla de protección de ramas del repositorio
+
+   Las reglas de ramas restringen los cambios, no el ciclo de vida de la cuenta.
+
+3. Una edición manual de cada archivo CODEOWNERS
+
+   Los archivos de enrutamiento de revisión no son la autoridad para dar de baja la cuenta.
+
+4. Integración de aprovisionamiento IdP y SCIM de la empresa **[CORRECT]**
+
+   El ciclo de vida de la cuenta administrada se controla mediante la integración del proveedor de identidad configurado.
+
+**Concept:** Baja de usuarios administrados
+
+**Authored coaching hints:**
+
+- ¿Dónde se aprovisionó originalmente la identidad administrada?
+- ¿Cómo puede la exclusión cubrir la identidad en lugar de una sola credencial?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um funcionário gerenciado deixa uma empresa Enterprise Managed Users. Qual sistema deve conduzir o ciclo de vida de desprovisionamento compatível da conta?
+
+1. O auxiliar de credenciais Git local do funcionário
+
+   A remoção de uma credencial local não desprovisiona centralmente uma conta gerenciada.
+
+2. Uma regra de proteção de branch de repositório
+
+   As regras de ramificações restringem alterações, não o ciclo de vida da conta.
+
+3. Uma edição manual para cada arquivo CODEOWNERS
+
+   Os arquivos de roteamento de revisão não são a autoridade para o desprovisionamento de contas.
+
+4. A integração de provisionamento IdP e SCIM da empresa **[CORRECT]**
+
+   O ciclo de vida da conta gerenciada é controlado por meio da integração configurada do provedor de identidade.
+
+**Concept:** Desativação de usuários gerenciados
+
+**Authored coaching hints:**
+
+- Onde a identidade gerenciada foi originalmente provisionada?
+- Como o offboarding pode cobrir a identidade em vez de uma credencial?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/identity-and-access-management/enterprise-managed-users>
+
+<!-- certification-coach-question:admin-025:a13cd481c0e6c658eda2aeb718c0cc6d8b4143ddbb1ee9f9d1b0a6e526b6b727 -->
+## Question 25: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-025`
+
+**Content revision:** `a13cd481c0e6c658eda2aeb718c0cc6d8b4143ddbb1ee9f9d1b0a6e526b6b727`
+
+### English
+
+A personal-account organization requires SAML SSO. A correctly scoped classic PAT works for the user's own repositories but cannot access the organization's private repository even though the user has access in the browser. Which credential-specific step should be checked?
+
+1. Whether the PAT is authorized for that organization's SAML SSO **[CORRECT]**
+
+   Classic PATs need SSO authorization to access organizations enforcing SAML SSO.
+
+2. Whether the user's SSH key is authorized instead of the PAT
+
+   SSH authorization does not authorize a separate PAT credential.
+
+3. Whether browser cookies should be embedded into the PAT value
+
+   A PAT is not extended by appending browser session material.
+
+4. Whether the user's GitHub password must be changed to match the IdP password
+
+   SAML does not require the GitHub password to match the IdP password.
+
+**Concept:** SAML authorization of classic PATs
+
+**Authored coaching hints:**
+
+- Can a browser session and an API credential have different authorization state?
+- What additional organization boundary applies to this credential?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una organización de cuenta personal requiere SAML SSO. Un PAT clásico con el alcance correcto funciona para los repositorios propios del usuario, pero no puede acceder al repositorio privado de la organización aunque el usuario tenga acceso en el navegador. ¿Qué paso específico de la credencial se debe verificar?
+
+1. Si el PAT está autorizado para el SAML SSO de esa organización. **[CORRECT]**
+
+   Las PAT clásicas necesitan autorización SSO para acceder a organizaciones que aplican SAML SSO.
+
+2. Si la clave SSH del usuario está autorizada en lugar de la PAT
+
+   La autorización SSH no autoriza una credencial PAT separada.
+
+3. Si las cookies del navegador deben integrarse en el valor PAT
+
+   Un PAT no se amplía añadiendo material de sesión del navegador.
+
+4. Si la contraseña GitHub del usuario debe cambiarse para que coincida con la contraseña IdP
+
+   SAML no requiere que la contraseña GitHub coincida con la contraseña IdP.
+
+**Concept:** SAML autorización de PAT clásicos
+
+**Authored coaching hints:**
+
+- ¿Pueden una sesión de navegador y una credencial API tener estados de autorización diferentes?
+- ¿Qué límite organizacional adicional se aplica a esta credencial?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma organização de conta pessoal requer SAML SSO. Um PAT clássico com escopo correto funciona para os repositórios do próprio usuário, mas não pode acessar o repositório privado da organização, mesmo que o usuário tenha acesso no navegador. Qual etapa específica da credencial deve ser verificada?
+
+1. Se o PAT está autorizado para o SAML SSO dessa organização **[CORRECT]**
+
+   Os PATs clássicos precisam de autorização SSO para acessar organizações que aplicam SAML SSO.
+
+2. Se a chave SSH do usuário está autorizada em vez da PAT
+
+   A autorização SSH não autoriza uma credencial PAT separada.
+
+3. Se os cookies do navegador devem ser incorporados ao valor PAT
+
+   Um PAT não é estendido anexando material de sessão do navegador.
+
+4. Se a senha GitHub do usuário deve ser alterada para corresponder à senha IdP
+
+   SAML não requer que a senha GitHub corresponda à senha IdP.
+
+**Concept:** Autorização SAML de PATs clássicos
+
+**Authored coaching hints:**
+
+- Uma sessão do navegador e uma credencial API podem ter estados de autorização diferentes?
+- Que limite organizacional adicional se aplica a esta credencial?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating-with-single-sign-on/authorizing-a-personal-access-token-for-use-with-single-sign-on>
+
+<!-- certification-coach-question:admin-026:b7320542899d6b44c07bd71351c8638850113b1ab73a7f8d8fd6b163a8980429 -->
+## Question 26: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-026`
+
+**Content revision:** `b7320542899d6b44c07bd71351c8638850113b1ab73a7f8d8fd6b163a8980429`
+
+### English
+
+A user's SSH key works with personal repositories but fails against a SAML-protected organization where the user already has repository permission. Which check is most directly related to SSO?
+
+1. Check whether the local branch is named main
+
+   Branch naming does not authorize an SSH credential for SAML.
+
+2. Check whether the SSH key is authorized for the organization's SSO **[CORRECT]**
+
+   An SSH key must be authorized for access to a SAML-protected organization.
+
+3. Change the repository license
+
+   A repository's software license does not control SSH authorization.
+
+4. Make the user an enterprise billing manager
+
+   Billing authority is unrelated to SSH SSO credential authorization.
+
+**Concept:** SAML authorization of SSH keys
+
+**Authored coaching hints:**
+
+- Which credential is this Git connection using?
+- Is that credential separately linked to the organization's identity requirement?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+La clave SSH de un usuario funciona con repositorios personales pero falla en una organización protegida por SAML donde el usuario ya tiene permiso de repositorio. ¿Qué verificación está más directamente relacionada con SSO?
+
+1. Comprobar si la rama local se llama main
+
+   El nombre de la rama no autoriza una credencial SSH para SAML.
+
+2. Compruebe si la clave SSH está autorizada para el SSO de la organización. **[CORRECT]**
+
+   Se debe autorizar una clave SSH para acceder a una organización protegida por SAML.
+
+3. Cambiar la licencia del repositorio
+
+   La licencia de software de un repositorio no controla la autorización SSH.
+
+4. Convertir al usuario en administrador de facturación empresarial
+
+   La autoridad de facturación no está relacionada con la autorización de credencial SSH SSO.
+
+**Concept:** Autorización SAML de claves SSH
+
+**Authored coaching hints:**
+
+- ¿Qué credencial utiliza esta conexión Git?
+- ¿Esa credencial está vinculada por separado al requisito de identidad de la organización?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+A chave SSH de um usuário funciona com repositórios pessoais, mas falha em uma organização protegida por SAML onde o usuário já tem permissão de repositório. Qual verificação está mais diretamente relacionada a SSO?
+
+1. Verificar se a ramificação local se chama main
+
+   O nome da ramificação não autoriza uma credencial SSH para SAML.
+
+2. Verifique se a chave SSH está autorizada para o SSO da organização **[CORRECT]**
+
+   Uma chave SSH deve ser autorizada para acesso a uma organização protegida por SAML.
+
+3. Alterar a licença do repositório
+
+   A licença de software de um repositório não controla a autorização SSH.
+
+4. Torne o usuário um gerente de faturamento corporativo
+
+   A autoridade de cobrança não está relacionada à autorização de credencial SSH SSO.
+
+**Concept:** Autorização SAML de chaves SSH
+
+**Authored coaching hints:**
+
+- Qual credencial esta conexão Git está usando?
+- Essa credencial está vinculada separadamente ao requisito de identidade da organização?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating-with-single-sign-on/authorizing-an-ssh-key-for-use-with-single-sign-on>
+
+<!-- certification-coach-question:admin-027:973b632e4c5cbcb58421e5ea4c93d1239bef42c637dba85c661cdc72fea35d0a -->
+## Question 27: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-027`
+
+**Content revision:** `973b632e4c5cbcb58421e5ea4c93d1239bef42c637dba85c661cdc72fea35d0a`
+
+### English
+
+An organization plans to enforce SAML SSO. Which preparation best protects continuity if the IdP becomes unavailable?
+
+1. Store the IdP password in a public issue
+
+   Publishing a password compromises authentication rather than preserving safe recovery.
+
+2. Turn every private repository public
+
+   Public visibility exposes data and is not an SSO recovery mechanism.
+
+3. Securely retain and test the documented SAML recovery process **[CORRECT]**
+
+   Documented recovery procedures and protected recovery codes support authorized emergency access.
+
+4. Remove all organization owners
+
+   Removing owners reduces recovery capability and operational oversight.
+
+**Concept:** SAML recovery readiness
+
+**Authored coaching hints:**
+
+- What happens if the identity service is the failed dependency?
+- Which emergency access material needs protection before enforcement?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una organización planea hacer cumplir SAML SSO. ¿Qué preparación protege mejor la continuidad si el IdP deja de estar disponible?
+
+1. Almacene la contraseña IdP en un issue público
+
+   La publicación de una contraseña compromete la autenticación en lugar de preservar la recuperación segura.
+
+2. Convertir todos los repositorios privados en públicos
+
+   La visibilidad pública expone datos y no es un mecanismo de recuperación SSO.
+
+3. Conserve y pruebe de forma segura el proceso de recuperación documentado de SAML **[CORRECT]**
+
+   Los procedimientos de recuperación documentados y los códigos de recuperación protegidos respaldan el acceso de emergencia autorizado.
+
+4. Eliminar todos los propietarios de la organización
+
+   Eliminar propietarios reduce la capacidad de recuperación y la supervisión operativa.
+
+**Concept:** Preparación de recuperación SAML
+
+**Authored coaching hints:**
+
+- ¿Qué sucede si el servicio de identidad es la dependencia fallida?
+- ¿Qué material de acceso de emergencia necesita protección antes de la aplicación de la ley?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma organização planeja impor SAML SSO. Qual preparação protege melhor a continuidade se o IdP ficar indisponível?
+
+1. Armazene a senha IdP em um issue público
+
+   A publicação de uma senha compromete a autenticação em vez de preservar a recuperação segura.
+
+2. Torne todos os repositórios privados públicos
+
+   A visibilidade pública expõe dados e não é um mecanismo de recuperação SSO.
+
+3. Retenha e teste com segurança o processo de recuperação SAML documentado **[CORRECT]**
+
+   Procedimentos de recuperação documentados e códigos de recuperação protegidos dão suporte ao acesso de emergência autorizado.
+
+4. Remover todos os proprietários da organização
+
+   A remoção dos proprietários reduz a capacidade de recuperação e a supervisão operacional.
+
+**Concept:** Prontidão de recuperação SAML
+
+**Authored coaching hints:**
+
+- O que acontece se o serviço de identidade for a dependência com falha?
+- Qual material de acesso de emergência precisa de proteção antes da aplicação?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-saml-single-sign-on-for-your-organization/accessing-your-organization-if-your-identity-provider-is-unavailable>
+
+<!-- certification-coach-question:admin-028:568dffb3abbdfd1ea7bb611abf7e7b0b9cfd8be76725955b8ad441235c5ba327 -->
+## Question 28: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-028`
+
+**Content revision:** `568dffb3abbdfd1ea7bb611abf7e7b0b9cfd8be76725955b8ad441235c5ba327`
+
+### English
+
+An organization owner wants only selected administrators to change organization membership. A proposal gives every developer the owner role for convenience. What is the strongest reason to reject it?
+
+1. Owners cannot manage membership, so the proposal would not work at all
+
+   Owners can manage organization membership; the concern is excessive authority.
+
+2. Repository Write already includes all organization settings
+
+   Repository Write does not equal organization-wide administration.
+
+3. Owner authority automatically expires after the developer's next code push
+
+   Ownership does not automatically expire after a code contribution.
+
+4. Organization ownership grants broad administrative authority beyond normal development **[CORRECT]**
+
+   Least privilege requires limiting the broad organization owner role.
+
+**Concept:** Limiting organization ownership
+
+**Authored coaching hints:**
+
+- At which scope does everyday code contribution happen?
+- What additional responsibilities come with the proposed role?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+El propietario de una organización quiere que solo los administradores seleccionados cambien la membresía de la organización. Una propuesta otorga a cada desarrollador el rol de propietario por conveniencia. ¿Cuál es la razón más fuerte para rechazarlo?
+
+1. Los propietarios no pueden gestionar la membresía, por lo que la propuesta no funcionaría en absoluto
+
+   Los propietarios pueden gestionar la membresía de la organización; la preocupación es la autoridad excesiva.
+
+2. El repositorio Write ya incluye todas las configuraciones de la organización
+
+   El repositorio Write no equivale a la administración de toda la organización.
+
+3. La autoridad del propietario caduca automáticamente después de la siguiente inserción de código del desarrollador.
+
+   La propiedad no caduca automáticamente después de una contribución de código.
+
+4. La propiedad de la organización otorga una amplia autoridad administrativa más allá del desarrollo normal. **[CORRECT]**
+
+   Un privilegio mínimo requiere limitar el rol amplio de propietario de la organización.
+
+**Concept:** Limitar la propiedad de la organización
+
+**Authored coaching hints:**
+
+- ¿En qué ámbito se produce la contribución diaria del código?
+- ¿Qué responsabilidades adicionales conlleva el puesto propuesto?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+O proprietário de uma organização deseja que apenas administradores selecionados alterem a associação à organização. Uma proposta dá a cada desenvolvedor o papel de proprietário por conveniência. Qual é a razão mais forte para rejeitá-lo?
+
+1. Os proprietários não podem gerenciar a associação, então a proposta não funcionaria de jeito nenhum
+
+   Os proprietários podem gerenciar a associação à organização; a preocupação é a autoridade excessiva.
+
+2. O repositório Write já inclui todas as configurações da organização
+
+   O repositório Write não significa administração em toda a organização.
+
+3. A autoridade do proprietário expira automaticamente após o próximo envio de código do desenvolvedor
+
+   A propriedade não expira automaticamente após uma contribuição de código.
+
+4. A propriedade da organização concede ampla autoridade administrativa além do desenvolvimento normal **[CORRECT]**
+
+   O privilégio mínimo requer a limitação da ampla função de proprietário da organização.
+
+**Concept:** Limitando a propriedade da organização
+
+**Authored coaching hints:**
+
+- Em qual escopo acontece a contribuição diária de código?
+- Que responsabilidades adicionais acompanham a função proposta?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization>
+
+<!-- certification-coach-question:admin-029:391d54b5c651ef8608fc2f479facc6fe95fe9b04a74bc20e390f694d4ae5201f -->
+## Question 29: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-029`
+
+**Content revision:** `391d54b5c651ef8608fc2f479facc6fe95fe9b04a74bc20e390f694d4ae5201f`
+
+### English
+
+A vendor contract ends. The vendor is an outside collaborator on two private repositories. What is the most targeted access-removal action?
+
+1. Remove the vendor's collaborator access from the relevant repositories **[CORRECT]**
+
+   Removing the specific collaborator grants addresses the ended engagement without unrelated disruption.
+
+2. Delete the entire organization
+
+   Deleting the organization is disproportionate and destructive.
+
+3. Remove all employee teams
+
+   Employee team removal does not specifically address the vendor's direct grants.
+
+4. Disable GitHub Actions across the enterprise
+
+   Disabling Actions does not revoke the vendor's repository access.
+
+**Concept:** Scoped collaborator offboarding
+
+**Authored coaching hints:**
+
+- Where is this person's access granted?
+- Which change removes that access without affecting unrelated work?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Finaliza un contrato de proveedor. El proveedor es un colaborador externo en dos repositorios privados. ¿Cuál es la acción de eliminación de acceso más específica?
+
+1. Eliminar el acceso de colaborador del proveedor de los repositorios relevantes **[CORRECT]**
+
+   Eliminar los permisos específicos del colaborador atiende la finalización de la colaboración sin causar interrupciones ajenas a ella.
+
+2. Eliminar toda la organización
+
+   Eliminar la organización es desproporcionado y destructivo.
+
+3. Eliminar todos los equipos de empleados
+
+   Eliminar el equipo de empleados no atiende específicamente los permisos directos del proveedor.
+
+4. Deshabilite GitHub Actions en toda la empresa
+
+   Deshabilitar Actions no revoca el acceso del proveedor al repositorio.
+
+**Concept:** Baja de colaboradores con alcance limitado
+
+**Authored coaching hints:**
+
+- ¿Dónde se concede el acceso a esta persona?
+- ¿Qué cambio elimina ese acceso sin afectar el trabajo no relacionado?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um contrato de fornecedor termina. O fornecedor é um colaborador externo em dois repositórios privados. Qual é a ação de remoção de acesso mais direcionada?
+
+1. Remova o acesso de colaborador do fornecedor dos repositórios relevantes **[CORRECT]**
+
+   A remoção das concessões específicas do colaborador resolve o envolvimento encerrado sem interrupções não relacionadas.
+
+2. Excluir toda a organização
+
+   Excluir a organização é desproporcional e destrutivo.
+
+3. Remover todas as equipes de funcionários
+
+   Remover a equipe de funcionários não trata especificamente das permissões diretas do fornecedor.
+
+4. Desative GitHub Actions em toda a empresa
+
+   Desabilitar Ações não revoga o acesso ao repositório do fornecedor.
+
+**Concept:** Desligamento de colaborador com escopo limitado
+
+**Authored coaching hints:**
+
+- Onde é concedido o acesso desta pessoa?
+- Qual mudança remove esse acesso sem afetar o trabalho não relacionado?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/removing-an-outside-collaborator-from-an-organization-repository>
+
+<!-- certification-coach-question:admin-030:d15eeb939d28656ec908daf7426027a1f357a88408d73d50aeeda4cf89f9863b -->
+## Question 30: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-030`
+
+**Content revision:** `d15eeb939d28656ec908daf7426027a1f357a88408d73d50aeeda4cf89f9863b`
+
+### English
+
+An access reviewer finds a contractor in a secret team and assumes the team has no repository permissions because it is hidden. Which correction is accurate?
+
+1. Secret teams cannot receive repository permissions
+
+   Secret teams can be granted repository access.
+
+2. Team visibility and repository access permissions are separate settings **[CORRECT]**
+
+   Hiding a team does not remove the repository permissions assigned to it.
+
+3. Secret teams automatically deny all inherited access
+
+   Visibility is not an explicit deny mechanism.
+
+4. Secret teams grant enterprise ownership to their members
+
+   Secret-team membership does not confer enterprise ownership.
+
+**Concept:** Team visibility versus authorization
+
+**Authored coaching hints:**
+
+- Does hiding a group's existence change what its members can do?
+- Which setting actually grants repository access?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un revisor de acceso encuentra un contratista en un equipo secreto y asume que el equipo no tiene permisos de repositorio porque está oculto. ¿Qué corrección es precisa?
+
+1. Los equipos secretos no pueden recibir permisos de repositorio
+
+   A los equipos secretos se les puede conceder acceso al repositorio.
+
+2. La visibilidad del equipo y los permisos de acceso al repositorio son configuraciones independientes **[CORRECT]**
+
+   Ocultar un equipo no elimina los permisos de repositorio que se le han asignado.
+
+3. Los equipos secretos niegan automáticamente todo acceso heredado
+
+   La visibilidad no es un mecanismo de negación explícito.
+
+4. Los equipos secretos otorgan la propiedad empresarial a sus miembros
+
+   La membresía en un equipo secreto no confiere propiedad de la empresa.
+
+**Concept:** Visibilidad del equipo versus autorización
+
+**Authored coaching hints:**
+
+- ¿Ocultar la existencia de un grupo cambia lo que pueden hacer sus miembros?
+- ¿Qué configuración realmente otorga acceso al repositorio?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um revisor de acesso encontra um contratado em uma equipe secreta e assume que a equipe não tem permissões de repositório porque está oculta. Qual correção é precisa?
+
+1. As equipes secretas não podem receber permissões de repositório
+
+   As equipes secretas podem receber acesso ao repositório.
+
+2. A visibilidade da equipe e as permissões de acesso ao repositório são configurações separadas **[CORRECT]**
+
+   Ocultar uma equipe não remove as permissões de repositório atribuídas a ela.
+
+3. As equipes secretas negam automaticamente todo o acesso herdado
+
+   A visibilidade não é um mecanismo de negação explícito.
+
+4. Equipes secretas concedem propriedade empresarial a seus membros
+
+   A adesão à equipe secreta não confere propriedade empresarial.
+
+**Concept:** Visibilidade da equipe versus autorização
+
+**Authored coaching hints:**
+
+- Esconder a existência de um grupo altera o que seus membros podem fazer?
+- Qual configuração realmente concede acesso ao repositório?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/organizations/organizing-members-into-teams/about-teams>
+
+<!-- certification-coach-question:admin-031:a63d3ee46c84d19e92e8d6606ce61732a1972491ca4f266836565cc06c852020 -->
+## Question 31: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-031`
+
+**Content revision:** `a63d3ee46c84d19e92e8d6606ce61732a1972491ca4f266836565cc06c852020`
+
+### English
+
+A valid CODEOWNERS entry names the database team, which has Write access. Changes can still merge without that team's approval. What additional control is needed?
+
+1. Require only a successful build status check
+
+   A build result validates CI, not the database team's approval.
+
+2. Require any one review without a code-owner condition
+
+   An arbitrary review need not come from the designated code owners.
+
+3. Require code-owner review through an applicable branch rule or ruleset **[CORRECT]**
+
+   CODEOWNERS identifies owners; an applicable rule makes their approval required.
+
+4. Require commit signatures instead of review
+
+   Commit signing does not establish code-owner approval.
+
+**Concept:** Review ownership versus enforcement
+
+**Authored coaching hints:**
+
+- Does assigning a reviewer itself block a merge?
+- Which layer turns review expectations into an enforced requirement?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una entrada válida CODEOWNERS nombra el equipo de la base de datos, que tiene acceso Write. Los cambios aún pueden fusionarse sin la aprobación de ese equipo. ¿Qué control adicional se necesita?
+
+1. Requerir solo una verificación exitosa del estado de la compilación
+
+   Un resultado de compilación valida CI, no la aprobación del equipo de la base de datos.
+
+2. Requerir cualquier revisión sin una condición de propietario del código
+
+   No es necesario que una revisión arbitraria provenga de los propietarios del código designados.
+
+3. Exigir la revisión de los propietarios del código mediante una regla de ramas o un ruleset aplicable **[CORRECT]**
+
+   CODEOWNERS identifica a los propietarios; una norma aplicable exige su aprobación.
+
+4. Requerir firmas commit en lugar de revisión
+
+   La firma del compromiso no establece la aprobación del propietario del código.
+
+**Concept:** Responsabilidad de revisión frente a exigencia de revisión
+
+**Authored coaching hints:**
+
+- ¿La asignación de un revisor bloquea una fusión?
+- ¿Qué capa convierte las expectativas de la revisión en un requisito obligatorio?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma entrada CODEOWNERS válida nomeia a equipe do banco de dados, que tem acesso Write. As alterações ainda podem ser mescladas sem a aprovação da equipe. Que controle adicional é necessário?
+
+1. Exigir apenas uma verificação de status de compilação bem-sucedida
+
+   Um resultado de construção valida CI, não a aprovação da equipe de banco de dados.
+
+2. Exigir qualquer revisão sem condição de proprietário de código
+
+   Uma revisão arbitrária não precisa vir dos proprietários designados do código.
+
+3. Exigir revisão do proprietário do código por meio de uma regra de ramificação aplicável ou ruleset **[CORRECT]**
+
+   CODEOWNERS identifica proprietários; uma regra aplicável torna necessária a sua aprovação.
+
+4. Exigir assinaturas commit em vez de revisão
+
+   A assinatura do commit não estabelece a aprovação do proprietário do código.
+
+**Concept:** Responsabilidade pela revisão versus exigência de revisão
+
+**Authored coaching hints:**
+
+- A atribuição de um revisor bloqueia uma mesclagem?
+- Qual camada transforma as expectativas de revisão em um requisito obrigatório?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners>
+
+<!-- certification-coach-question:admin-032:523d64e6fe88deb267660e6998b58138bf35b111644231d7a62ba449afd68977 -->
+## Question 32: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-032`
+
+**Content revision:** `523d64e6fe88deb267660e6998b58138bf35b111644231d7a62ba449afd68977`
+
+### English
+
+An enterprise enforces a policy preventing organization members from changing repository visibility. A repository administrator cannot select a different visibility. What is the best explanation?
+
+1. Repository Admin always overrides enterprise policy
+
+   Repository administration does not bypass an enforced enterprise restriction.
+
+2. Only the user's local Git version controls visibility changes
+
+   Visibility is controlled on GitHub, not by the local Git version.
+
+3. The restriction must be an IdP group synchronization error
+
+   An explicit enterprise visibility policy need not involve identity synchronization.
+
+4. Enterprise policy can constrain organization and repository administrators **[CORRECT]**
+
+   Higher-scope enforced policies limit the choices available at lower scopes.
+
+**Concept:** Policy hierarchy and delegated administration
+
+**Authored coaching hints:**
+
+- Can a lower-scope role exceed an enforced enterprise boundary?
+- Which administrative layer imposed the restriction?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una empresa aplica una política que impide que los miembros de la organización cambien la visibilidad del repositorio. Un administrador del repositorio no puede seleccionar una visibilidad diferente. ¿Cuál es la mejor explicación?
+
+1. El repositorio Admin siempre anula la política empresarial
+
+   La administración del repositorio no elude una restricción empresarial impuesta.
+
+2. Sólo la versión local de Git del usuario controla los cambios de visibilidad.
+
+   La visibilidad está controlada por GitHub, no por la versión local de Git.
+
+3. La restricción debe ser un error de sincronización del grupo IdP
+
+   Una política explícita de visibilidad empresarial no tiene por qué implicar sincronización de identidades.
+
+4. La política empresarial puede limitar a los administradores de la organización y del repositorio **[CORRECT]**
+
+   Las políticas aplicadas en un ámbito superior limitan las opciones disponibles en ámbitos inferiores.
+
+**Concept:** Jerarquía de políticas y administración delegada
+
+**Authored coaching hints:**
+
+- ¿Puede un rol de menor alcance exceder un límite empresarial impuesto?
+- ¿Qué nivel administrativo impuso la restricción?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma empresa impõe uma política que impede os membros da organização de alterar a visibilidade do repositório. Um administrador de repositório não pode selecionar uma visibilidade diferente. Qual é a melhor explicação?
+
+1. O repositório Admin sempre substitui a política corporativa
+
+   A administração do repositório não ignora uma restrição corporativa imposta.
+
+2. Somente a versão local do Git do usuário controla as alterações de visibilidade
+
+   A visibilidade é controlada no GitHub, não pela versão local do Git.
+
+3. A restrição deve ser um erro de sincronização de grupo IdP
+
+   Uma política explícita de visibilidade empresarial não precisa envolver sincronização de identidade.
+
+4. A política empresarial pode restringir os administradores da organização e do repositório **[CORRECT]**
+
+   As políticas aplicadas com âmbitos mais elevados limitam as escolhas disponíveis em âmbitos mais baixos.
+
+**Concept:** Hierarquia de políticas e administração delegada
+
+**Authored coaching hints:**
+
+- Uma função de escopo inferior pode exceder um limite corporativo imposto?
+- Qual camada administrativa impôs a restrição?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/enforcing-policies/enforcing-policies-for-your-enterprise/enforcing-repository-management-policies-in-your-enterprise>
+
+<!-- certification-coach-question:admin-033:c85502fb480d431559ab41b72d21b454cc61e344ab20913fdb1df131339b8c34 -->
+## Question 33: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-033`
+
+**Content revision:** `c85502fb480d431559ab41b72d21b454cc61e344ab20913fdb1df131339b8c34`
+
+### English
+
+In an enterprise using personal accounts, a repository owner wants confidential project access limited to explicitly authorized people. Why should they choose private rather than internal visibility?
+
+1. Internal repositories are generally accessible to enterprise members, not just the project team **[CORRECT]**
+
+   Internal visibility is intended for enterprise-wide collaboration rather than project-only confidentiality.
+
+2. Private repositories cannot use teams
+
+   Teams can receive private-repository permissions.
+
+3. Internal visibility automatically requires approval from CODEOWNERS to read code
+
+   CODEOWNERS governs review ownership rather than read access.
+
+4. Private visibility removes the need to assign permissions
+
+   Private repositories still require appropriate explicit access management.
+
+**Concept:** Internal repository access boundary
+
+**Authored coaching hints:**
+
+- Who is the intended audience for enterprise inner-source repositories?
+- Which visibility matches an explicitly limited project audience?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+En una empresa que utiliza cuentas personales, el propietario del repositorio desea que el acceso confidencial al proyecto se limite a personas explícitamente autorizadas. ¿Por qué deberían elegir la visibilidad privada en lugar de la interna?
+
+1. Los repositorios internos generalmente son accesibles para los miembros de la empresa, no solo para el equipo del proyecto. **[CORRECT]**
+
+   La visibilidad interna está pensada para la colaboración en toda la empresa y no para la confidencialidad únicamente del proyecto.
+
+2. Los repositorios privados no pueden usar equipos
+
+   Los equipos pueden recibir permisos de repositorio privado.
+
+3. La visibilidad interna requiere automáticamente la aprobación de CODEOWNERS para leer el código
+
+   CODEOWNERS rige la propiedad de la revisión en lugar del acceso de lectura.
+
+4. La visibilidad privada elimina la necesidad de asignar permisos
+
+   Los repositorios privados aún requieren una gestión de acceso explícita y adecuada.
+
+**Concept:** Límite de acceso al repositorio interno
+
+**Authored coaching hints:**
+
+- ¿Quién es el público objetivo de los repositorios de fuentes internas empresariales?
+- ¿Qué visibilidad coincide con una audiencia de proyecto explícitamente limitada?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Em uma empresa que usa contas pessoais, o proprietário do repositório deseja que o acesso confidencial ao projeto seja limitado a pessoas explicitamente autorizadas. Por que deveriam escolher a visibilidade privada em vez da visibilidade interna?
+
+1. Os repositórios internos são geralmente acessíveis aos membros da empresa, não apenas à equipe do projeto **[CORRECT]**
+
+   A visibilidade interna destina-se à colaboração em toda a empresa, e não à confidencialidade apenas do projeto.
+
+2. Repositórios privados não podem usar equipes
+
+   As equipes podem receber permissões de repositório privado.
+
+3. A visibilidade interna requer automaticamente a aprovação de CODEOWNERS para ler o código
+
+   CODEOWNERS rege a propriedade de revisão em vez do acesso de leitura.
+
+4. A visibilidade privada elimina a necessidade de atribuir permissões
+
+   Os repositórios privados ainda exigem gerenciamento de acesso explícito apropriado.
+
+**Concept:** Limite de acesso ao repositório interno
+
+**Authored coaching hints:**
+
+- Quem é o público-alvo dos repositórios empresariais de código-fonte interno?
+- Qual visibilidade corresponde a um público de projeto explicitamente limitado?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories>
+
+<!-- certification-coach-question:admin-034:1cd9546524a485b7ecee77a9753054c5266114ea295f02da9905c8f29ea3b208 -->
+## Question 34: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-034`
+
+**Content revision:** `1cd9546524a485b7ecee77a9753054c5266114ea295f02da9905c8f29ea3b208`
+
+### English
+
+A developer creates a fine-grained PAT with repository Contents write permission. The developer only has Read on the selected repository. Can the PAT elevate the developer to Write?
+
+1. Yes, because token permissions override repository roles
+
+   A token's requested permissions do not override the user's underlying access.
+
+2. No, the token cannot grant access the user does not have **[CORRECT]**
+
+   Personal access tokens are bounded by the generating user's access.
+
+3. Yes, if its expiration is more than one year away
+
+   Expiration length does not elevate authorization.
+
+4. No, because fine-grained PATs can never write repository contents
+
+   Fine-grained PATs can write contents when both token and user permissions allow it.
+
+**Concept:** Token permissions bounded by user access
+
+**Authored coaching hints:**
+
+- Whose identity does a PAT represent?
+- Can delegation create authority absent from that identity?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un desarrollador crea un fine-grained PAT con permiso de escritura del contenido del repositorio. El desarrollador sólo tiene Read en el repositorio seleccionado. ¿Puede el PAT elevar al desarrollador a Write?
+
+1. Sí, porque los permisos de token anulan las funciones del repositorio
+
+   Los permisos solicitados de un token no anulan el acceso subyacente del usuario.
+
+2. No, el token no puede otorgar acceso que el usuario no tiene **[CORRECT]**
+
+   Los tokens de acceso personal están limitados por el acceso del usuario generador.
+
+3. Sí, si falta más de un año para su vencimiento
+
+   La duración del vencimiento no eleva la autorización.
+
+4. No, porque las PAT fine-grained nunca pueden escribir contenidos del repositorio
+
+   Las PAT detalladas pueden escribir contenidos cuando tanto el token como los permisos del usuario lo permiten.
+
+**Concept:** Permisos de token limitados por el acceso del usuario
+
+**Authored coaching hints:**
+
+- ¿De quién es la identidad que representa un PAT?
+- ¿Puede la delegación crear autoridad ausente de esa identidad?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um desenvolvedor cria um fine-grained PAT com permissão de gravação de conteúdo do repositório. O desenvolvedor possui apenas Read no repositório selecionado. O PAT pode elevar o desenvolvedor para Write?
+
+1. Sim, porque as permissões de token substituem as funções do repositório
+
+   As permissões solicitadas por um token não substituem o acesso subjacente do usuário.
+
+2. Não, o token não pode conceder acesso que o usuário não possui **[CORRECT]**
+
+   Os tokens de acesso pessoal são limitados pelo acesso do usuário gerador.
+
+3. Sim, se o seu vencimento estiver a mais de um ano de distância
+
+   A duração da expiração não eleva a autorização.
+
+4. Não, porque os PATs fine-grained nunca podem gravar conteúdo do repositório
+
+   PATs refinados podem gravar conteúdo quando o token e as permissões do usuário permitirem.
+
+**Concept:** Permissões de token limitadas pelo acesso do usuário
+
+**Authored coaching hints:**
+
+- De quem é a identidade que um PAT representa?
+- A delegação pode criar autoridade ausente dessa identidade?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens>
+
+<!-- certification-coach-question:admin-035:9392a7a7fb902f111825c201e8bab90b95b51aa8d62e9d0bf298e31333d00dcf -->
+## Question 35: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-035`
+
+**Content revision:** `9392a7a7fb902f111825c201e8bab90b95b51aa8d62e9d0bf298e31333d00dcf`
+
+### English
+
+A user has repository Write but cannot change the repository's access-management settings. Which explanation best matches built-in repository roles?
+
+1. All authenticated users can change repository access
+
+   Authentication alone does not confer repository administration.
+
+2. Write and Admin are identical outside public repositories
+
+   Write and Admin remain distinct roles for private repositories.
+
+3. Code contribution permission does not include all repository administration **[CORRECT]**
+
+   Write supports contribution while Admin includes broader sensitive settings.
+
+4. SAML always blocks repository settings for all members
+
+   SAML does not impose a universal ban on authorized repository settings access.
+
+**Concept:** Contribution versus repository administration
+
+**Authored coaching hints:**
+
+- Does pushing code require authority to grant other people access?
+- Which role boundary separates those responsibilities?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un usuario tiene el repositorio Write pero no puede cambiar la configuración de administración de acceso del repositorio. ¿Qué explicación se adapta mejor a las funciones del repositorio integrado?
+
+1. Todos los usuarios autenticados pueden cambiar el acceso al repositorio.
+
+   La autenticación por sí sola no confiere administración del repositorio.
+
+2. Write y Admin son idénticos fuera de los repositorios públicos
+
+   Write y Admin siguen siendo funciones distintas para los repositorios privados.
+
+3. El permiso de contribución de código no incluye toda la administración del repositorio. **[CORRECT]**
+
+   Write admite contribuciones, mientras que Admin incluye configuraciones sensibles más amplias.
+
+4. SAML siempre bloquea la configuración del repositorio para todos los miembros
+
+   SAML no impone una prohibición universal al acceso autorizado a la configuración del repositorio.
+
+**Concept:** Contribución versus administración del repositorio
+
+**Authored coaching hints:**
+
+- ¿Para enviar código se requiere autoridad para otorgar acceso a otras personas?
+- ¿Qué límite de roles separa esas responsabilidades?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um usuário possui o repositório Write, mas não pode alterar as configurações de gerenciamento de acesso do repositório. Qual explicação corresponde melhor às funções de repositório integradas?
+
+1. Todos os usuários autenticados podem alterar o acesso ao repositório
+
+   A autenticação por si só não confere administração do repositório.
+
+2. Write e Admin são idênticos fora dos repositórios públicos
+
+   Write e Admin permanecem funções distintas para repositórios privados.
+
+3. A permissão de contribuição de código não inclui toda a administração do repositório **[CORRECT]**
+
+   Write suporta contribuição enquanto Admin inclui configurações sensíveis mais amplas.
+
+4. SAML sempre bloqueia as configurações do repositório para todos os membros
+
+   SAML não impõe uma proibição universal ao acesso autorizado às configurações do repositório.
+
+**Concept:** Contribuição versus administração de repositório
+
+**Authored coaching hints:**
+
+- O envio de código requer autoridade para conceder acesso a outras pessoas?
+- Qual limite de função separa essas responsabilidades?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization>
+
+<!-- certification-coach-question:admin-036:c8aa050a755b7a15b82c9ca7c9f100ac095c99079daf8334b007ebb0d655eaec -->
+## Question 36: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-036`
+
+**Content revision:** `c8aa050a755b7a15b82c9ca7c9f100ac095c99079daf8334b007ebb0d655eaec`
+
+### English
+
+A central security group needs visibility into organization security alerts without routine organization ownership. On an eligible organization, which built-in role is designed for this responsibility?
+
+1. Billing manager
+
+   Billing managers handle billing rather than organization-wide security alerts.
+
+2. Team member only
+
+   Ordinary team membership alone does not provide the security-management role.
+
+3. Outside collaborator with no repository grants
+
+   No repository grants do not establish organization-wide security visibility.
+
+4. Security manager **[CORRECT]**
+
+   Security manager delegates security responsibilities without full organization ownership.
+
+**Concept:** Delegated security management
+
+**Authored coaching hints:**
+
+- Which responsibility should be separated from general organization ownership?
+- Does the role need a security-specific organization scope?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un grupo de seguridad central necesita visibilidad de las alertas de seguridad de la organización sin propiedad rutinaria de la organización. En una organización elegible, ¿qué función incorporada está diseñada para esta responsabilidad?
+
+1. gerente de facturación
+
+   Los administradores de facturación manejan la facturación en lugar de las alertas de seguridad de toda la organización.
+
+2. Solo miembro del equipo
+
+   La pertenencia ordinaria a un equipo por sí sola no proporciona la función de gestión de la seguridad.
+
+3. Colaborador externo sin permisos otorgados a repositorios
+
+   Las concesiones sin repositorio no establecen visibilidad de seguridad en toda la organización.
+
+4. gerente de seguridad **[CORRECT]**
+
+   El administrador de seguridad delega responsabilidades de seguridad sin tener la propiedad total de la organización.
+
+**Concept:** Gestión de seguridad delegada
+
+**Authored coaching hints:**
+
+- ¿Qué responsabilidad debería separarse de la propiedad general de la organización?
+- ¿El rol necesita un alcance organizacional específico de seguridad?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um grupo de segurança central precisa de visibilidade dos alertas de segurança da organização sem propriedade rotineira da organização. Em uma organização elegível, qual função integrada foi projetada para essa responsabilidade?
+
+1. Gerente de faturamento
+
+   Os gerentes de faturamento lidam com o faturamento em vez de alertas de segurança em toda a organização.
+
+2. Somente membro da equipe
+
+   A participação comum na equipe por si só não fornece a função de gerenciamento de segurança.
+
+3. Colaborador externo sem concessões de repositório
+
+   Nenhuma concessão de repositório não estabelece visibilidade de segurança em toda a organização.
+
+4. Gerente de segurança **[CORRECT]**
+
+   O gerente de segurança delega responsabilidades de segurança sem propriedade total da organização.
+
+**Concept:** Gerenciamento de segurança delegada
+
+**Authored coaching hints:**
+
+- Qual responsabilidade deve ser separada da propriedade geral da organização?
+- A função precisa de um escopo de organização específico de segurança?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization>
+
+<!-- certification-coach-question:admin-037:758bc780bd980b4e323318de9f1295ab2a4c1e8ee09de780964b295d8f4ab559 -->
+## Question 37: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-037`
+
+**Content revision:** `758bc780bd980b4e323318de9f1295ab2a4c1e8ee09de780964b295d8f4ab559`
+
+### English
+
+A company's IdP group changes after a reorganization, but the connected GitHub team still shows former members. What is the most useful first investigation?
+
+1. Check the IdP group connection and synchronization state **[CORRECT]**
+
+   The source group mapping and sync state directly explain stale synchronized membership.
+
+2. Rewrite the repository history
+
+   Git history does not control team synchronization.
+
+3. Rotate the repository's release tag names
+
+   Release tag names do not determine workforce membership.
+
+4. Replace all branch rules with public visibility
+
+   Visibility changes do not repair identity-group synchronization and may expose data.
+
+**Concept:** Diagnosing synchronization drift
+
+**Authored coaching hints:**
+
+- Which data should have flowed from the source system?
+- Where could the mapping or synchronization process have diverged?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+El grupo IdP de una empresa cambia después de una reorganización, pero el equipo GitHub conectado todavía muestra miembros anteriores. ¿Cuál es la primera investigación más útil?
+
+1. Verifique el estado de sincronización y conexión del grupo IdP **[CORRECT]**
+
+   La asignación del grupo de origen y el estado de sincronización explican directamente la membresía sincronizada obsoleta.
+
+2. Reescribir el historial del repositorio
+
+   El historial de Git no controla la sincronización del equipo.
+
+3. Rotar los nombres de las etiquetas de lanzamiento del repositorio
+
+   Los nombres de las etiquetas de lanzamiento no determinan la membresía en la fuerza laboral.
+
+4. Reemplazar todas las reglas de ramas con visibilidad pública
+
+   Los cambios de visibilidad no reparan la sincronización del grupo de identidad y pueden exponer datos.
+
+**Concept:** Diagnóstico de deriva de sincronización
+
+**Authored coaching hints:**
+
+- ¿Qué datos deberían haber fluido desde el sistema fuente?
+- ¿Dónde podría haber divergido el proceso de mapeo o sincronización?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+O grupo IdP de uma empresa muda após uma reorganização, mas a equipe GitHub conectada ainda mostra ex-membros. Qual é a primeira investigação mais útil?
+
+1. Verifique a conexão do grupo IdP e o estado de sincronização **[CORRECT]**
+
+   O mapeamento do grupo de origem e o estado de sincronização explicam diretamente a associação sincronizada obsoleta.
+
+2. Reescrever o histórico do repositório
+
+   O histórico do Git não controla a sincronização da equipe.
+
+3. Gire os nomes das tags de lançamento do repositório
+
+   Os nomes das tags de liberação não determinam a associação à força de trabalho.
+
+4. Substituir todas as regras de ramificações por visibilidade pública
+
+   As alterações de visibilidade não reparam a sincronização do grupo de identidades e podem expor dados.
+
+**Concept:** Diagnosticando desvio de sincronização
+
+**Authored coaching hints:**
+
+- Quais dados deveriam ter fluído do sistema de origem?
+- Onde o processo de mapeamento ou sincronização poderia ter divergido?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/organizations/organizing-members-into-teams/synchronizing-a-team-with-an-identity-provider-group>
+
+<!-- certification-coach-question:admin-038:9c731e57a8bf05265c4c46e7266f8bfdf742a7013324ef7cf518cb1b4af4c7d8 -->
+## Question 38: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-038`
+
+**Content revision:** `9c731e57a8bf05265c4c46e7266f8bfdf742a7013324ef7cf518cb1b4af4c7d8`
+
+### English
+
+An organization using personal accounts removes a departing employee's organization membership. Which statement about the employee's personal GitHub account is correct?
+
+1. The account is automatically deleted from GitHub
+
+   Organization removal does not delete an independently owned personal account.
+
+2. The account remains the individual's; organization access and account existence are separate **[CORRECT]**
+
+   Personal-account lifecycle remains separate from membership in one organization.
+
+3. The account automatically becomes an enterprise managed user
+
+   Membership removal does not convert account models.
+
+4. The account's public repositories are transferred to the organization
+
+   The organization does not acquire personal public repositories through offboarding.
+
+**Concept:** Personal-account offboarding boundaries
+
+**Authored coaching hints:**
+
+- Who owns a personal account outside the organization?
+- Which relationship is actually being removed?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una organización que utiliza cuentas personales elimina la membresía de la organización de un empleado saliente. ¿Qué afirmación sobre la cuenta personal GitHub del empleado es correcta?
+
+1. La cuenta se elimina automáticamente de GitHub
+
+   La eliminación de una organización no elimina una cuenta personal de propiedad independiente.
+
+2. La cuenta sigue siendo del individuo; el acceso a la organización y la existencia de la cuenta son independientes **[CORRECT]**
+
+   El ciclo de vida de la cuenta personal permanece separado de la membresía en una organización.
+
+3. La cuenta se convierte automáticamente en un usuario administrado por la empresa.
+
+   La eliminación de la membresía no convierte los modelos de cuenta.
+
+4. Los repositorios públicos de la cuenta se transfieren a la organización.
+
+   La organización no adquiere repositorios públicos personales mediante la baja.
+
+**Concept:** Límites de salida de cuentas personales
+
+**Authored coaching hints:**
+
+- ¿Quién posee una cuenta personal fuera de la organización?
+- ¿Qué relación se está eliminando realmente?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma organização que usa contas pessoais remove a associação de um funcionário que está saindo da organização. Qual afirmação sobre a conta pessoal GitHub do funcionário está correta?
+
+1. A conta é excluída automaticamente de GitHub
+
+   A remoção da organização não exclui uma conta pessoal de propriedade independente.
+
+2. A conta continua sendo do indivíduo; o acesso da organização e a existência da conta são separados **[CORRECT]**
+
+   O ciclo de vida da conta pessoal permanece separado da associação a uma organização.
+
+3. A conta se torna automaticamente um usuário gerenciado pela empresa
+
+   A remoção da associação não converte modelos de conta.
+
+4. Os repositórios públicos da conta são transferidos para a organização
+
+   A organização não adquire repositórios públicos pessoais por meio de offboarding.
+
+**Concept:** Limites de exclusão de contas pessoais
+
+**Authored coaching hints:**
+
+- Quem possui uma conta pessoal fora da organização?
+- Qual relacionamento está realmente sendo removido?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/organizations/managing-membership-in-your-organization/removing-a-member-from-your-organization>
+
+<!-- certification-coach-question:admin-039:ad2d1fa6c78a4b51bde71aa4a5242f31a91e1bce7a92b10c80b04ea795a70c99 -->
+## Question 39: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-039`
+
+**Content revision:** `ad2d1fa6c78a4b51bde71aa4a5242f31a91e1bce7a92b10c80b04ea795a70c99`
+
+### English
+
+A new organization wants to avoid a single administrator becoming an operational point of failure. What is the most appropriate ownership practice?
+
+1. Use one shared owner login for the whole team
+
+   Shared logins weaken attribution and safe credential management.
+
+2. Grant ownership to every repository contributor
+
+   Every contributor does not need broad organization authority.
+
+3. Maintain multiple trusted individual owners with strong authentication **[CORRECT]**
+
+   Multiple trusted owners preserve continuity while retaining individual accountability.
+
+4. Remove ownership after initial setup
+
+   An organization still needs authorized owners for administration and recovery.
+
+**Concept:** Resilient organization ownership
+
+**Authored coaching hints:**
+
+- How can administrative continuity coexist with least privilege?
+- Why is individual accountability important for emergency administration?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una nueva organización quiere evitar que un único administrador se convierta en un punto de fallo operativo. ¿Cuál es la práctica de propiedad más adecuada?
+
+1. Utilice un inicio de sesión de propietario compartido para todo el equipo
+
+   Los inicios de sesión compartidos debilitan la atribución y la gestión segura de credenciales.
+
+2. Otorgar propiedad a cada contribuyente del repositorio
+
+   Cada colaborador no necesita una amplia autoridad organizacional.
+
+3. Maintain múltiples propietarios individuales confiables con autenticación sólida **[CORRECT]**
+
+   Múltiples propietarios confiables preservan la continuidad y al mismo tiempo conservan la responsabilidad individual.
+
+4. Eliminar la propiedad después de la configuración inicial
+
+   Una organización todavía necesita propietarios autorizados para su administración y recuperación.
+
+**Concept:** Propiedad de una organización resiliente
+
+**Authored coaching hints:**
+
+- ¿Cómo puede coexistir la continuidad administrativa con el mínimo privilegio?
+- ¿Por qué es importante la responsabilidad individual para la administración de emergencias?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma nova organização deseja evitar que um único administrador se torne um ponto de falha operacional. Qual é a prática de propriedade mais apropriada?
+
+1. Use um login de proprietário compartilhado para toda a equipe
+
+   Logins compartilhados enfraquecem a atribuição e o gerenciamento seguro de credenciais.
+
+2. Conceda propriedade a cada contribuidor do repositório
+
+   Cada contribuidor não precisa de ampla autoridade organizacional.
+
+3. Maintain vários proprietários individuais confiáveis com autenticação forte **[CORRECT]**
+
+   Vários proprietários confiáveis preservam a continuidade enquanto mantêm a responsabilidade individual.
+
+4. Remover propriedade após a configuração inicial
+
+   Uma organização ainda precisa de proprietários autorizados para administração e recuperação.
+
+**Concept:** Propriedade resiliente da organização
+
+**Authored coaching hints:**
+
+- Como a continuidade administrativa pode coexistir com privilégios mínimos?
+- Por que a responsabilização individual é importante para a administração de emergências?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/maintaining-ownership-continuity-for-your-organization>
+
+<!-- certification-coach-question:admin-040:3cab5cb9192691b4048fe544d68773c3f17bbe97285a7b3dacfceba7b70dce4c -->
+## Question 40: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-040`
+
+**Content revision:** `3cab5cb9192691b4048fe544d68773c3f17bbe97285a7b3dacfceba7b70dce4c`
+
+### English
+
+An administrator wants to verify who can currently access a sensitive repository, not merely who appeared in an old incident log. Which evidence is most directly useful?
+
+1. A historical export of repository contributors alone
+
+   Historical contribution does not establish present authorization.
+
+2. A list of commit author names alone
+
+   Commit author metadata does not prove current authorization.
+
+3. The organization's public member list alone
+
+   Public membership visibility omits private membership and repository-specific grants.
+
+4. Current direct, team, and inherited repository access grants **[CORRECT]**
+
+   Current effective grants establish present repository access.
+
+**Concept:** Current-state access auditing
+
+**Authored coaching hints:**
+
+- Are historical activity and current permissions the same evidence?
+- Which routes can grant access without appearing in a public member list?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un administrador quiere verificar quién puede acceder actualmente a un repositorio confidencial, no simplemente quién apareció en un registro de incidentes antiguo. ¿Qué evidencia es más directamente útil?
+
+1. Una exportación histórica solo de contribuyentes al repositorio
+
+   La contribución histórica no establece la autorización actual.
+
+2. Una lista solo de los nombres de los autores de commit
+
+   La confirmación de los metadatos del autor no prueba la autorización actual.
+
+3. Solo la lista pública de miembros de la organización.
+
+   La visibilidad pública de la membresía omite las membresías privadas y los permisos específicos de repositorios.
+
+4. Concesiones actuales de acceso directo, de equipo y heredado al repositorio **[CORRECT]**
+
+   Los permisos efectivos actuales determinan el acceso actual al repositorio.
+
+**Concept:** Auditoría de acceso al estado actual
+
+**Authored coaching hints:**
+
+- ¿La actividad histórica y los permisos actuales son la misma evidencia?
+- ¿Qué rutas pueden otorgar acceso sin aparecer en una lista pública de miembros?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um administrador deseja verificar quem pode acessar atualmente um repositório confidencial, e não apenas quem apareceu em um registro de incidente antigo. Qual evidência é mais diretamente útil?
+
+1. Uma exportação histórica apenas dos contribuidores do repositório
+
+   A contribuição histórica não estabelece autorização atual.
+
+2. Uma lista apenas de nomes de autores commit
+
+   Os metadados do autor do commit não comprovam a autorização atual.
+
+3. Somente a lista pública de membros da organização
+
+   A visibilidade da associação pública omite a associação privada e concessões específicas do repositório.
+
+4. Concessões atuais de acesso direto, de equipe e herdado ao repositório **[CORRECT]**
+
+   As atuais concessões efetivas estabelecem o acesso atual ao repositório.
+
+**Concept:** Auditoria de acesso no estado atual
+
+**Authored coaching hints:**
+
+- A atividade histórica e as permissões atuais são a mesma evidência?
+- Quais rotas podem conceder acesso sem aparecer em uma lista pública de membros?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository>
+
+<!-- certification-coach-question:admin-041:157f090113c8f4549efbe11aa455758c98a99eef75bbc91247a2393cfc5e0f1f -->
+## Question 41: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-041`
+
+**Content revision:** `157f090113c8f4549efbe11aa455758c98a99eef75bbc91247a2393cfc5e0f1f`
+
+### English
+
+A GitHub App installation is limited to a documentation repository. A developer argues that installing the app proves it should also access the finance repository. What should the administrator explain?
+
+1. Installation repository selection is an authorization boundary and must be explicitly changed if approved **[CORRECT]**
+
+   An installation receives access only to its approved repository selection and permissions.
+
+2. All installed apps automatically access every private repository
+
+   Installation does not imply unrestricted private-repository access.
+
+3. App names determine repository access through matching prefixes
+
+   Naming conventions do not authorize an app.
+
+4. The developer's browser SAML session expands the installation's repository selection
+
+   A browser session does not broaden an app installation's repository selection.
+
+**Concept:** Integration access boundaries
+
+**Authored coaching hints:**
+
+- Which repositories were actually approved for the installation?
+- Is the app using the developer's browser permissions or its own grant?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una instalación de GitHub App está limitada a un repositorio de documentación. Un desarrollador sostiene que la instalación de la aplicación demuestra que también debería acceder al repositorio de finanzas. ¿Qué debe explicar el administrador?
+
+1. La selección del repositorio de instalación es un límite de autorización y debe cambiarse explícitamente si se aprueba. **[CORRECT]**
+
+   Una instalación recibe acceso únicamente a la selección y los permisos del repositorio aprobados.
+
+2. Todas las aplicaciones instaladas acceden automáticamente a cada repositorio privado
+
+   La instalación no implica acceso ilimitado al repositorio privado.
+
+3. Los nombres de las aplicaciones determinan el acceso al repositorio mediante prefijos coincidentes
+
+   Las convenciones de nomenclatura no autorizan una aplicación.
+
+4. La sesión del navegador del desarrollador SAML amplía la selección del repositorio de instalación.
+
+   Una sesión de navegador no amplía la selección del repositorio de instalación de una aplicación.
+
+**Concept:** Límites de acceso a la integración
+
+**Authored coaching hints:**
+
+- ¿Qué repositorios fueron realmente aprobados para la instalación?
+- ¿La aplicación utiliza los permisos del navegador del desarrollador o sus propios permisos?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+A instalação do GitHub App está limitada a um repositório de documentação. Um desenvolvedor argumenta que a instalação do aplicativo prova que ele também deve acessar o repositório financeiro. O que o administrador deve explicar?
+
+1. A seleção do repositório de instalação é um limite de autorização e deve ser explicitamente alterada se aprovada **[CORRECT]**
+
+   Uma instalação recebe acesso apenas à sua seleção e permissões de repositório aprovadas.
+
+2. Todos os aplicativos instalados acessam automaticamente todos os repositórios privados
+
+   A instalação não implica acesso irrestrito ao repositório privado.
+
+3. Os nomes dos aplicativos determinam o acesso ao repositório por meio de prefixos correspondentes
+
+   As convenções de nomenclatura não autorizam um aplicativo.
+
+4. A sessão SAML do navegador do desenvolvedor expande a seleção do repositório da instalação
+
+   Uma sessão do navegador não amplia a seleção de repositório de instalação de um aplicativo.
+
+**Concept:** Limites de acesso de integração
+
+**Authored coaching hints:**
+
+- Quais repositórios foram realmente aprovados para instalação?
+- O aplicativo está usando as permissões do navegador do desenvolvedor ou sua própria concessão?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/apps/using-github-apps/installing-a-github-app-from-a-third-party>
+
+<!-- certification-coach-question:admin-042:d25044a280e5ba55004c006cfdac86693292663abfa70533009ecf7464b13e81 -->
+## Question 42: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-042`
+
+**Content revision:** `d25044a280e5ba55004c006cfdac86693292663abfa70533009ecf7464b13e81`
+
+### English
+
+A member needs temporary elevated repository access for a migration. Which administration plan best preserves least privilege after the work?
+
+1. Grant permanent organization ownership and skip review
+
+   Permanent ownership is broader and longer-lived than the temporary task.
+
+2. Grant only the required access, record the purpose, and remove it after the migration **[CORRECT]**
+
+   Scoped, attributable access with an explicit removal step limits lasting privilege.
+
+3. Share another administrator's PAT until the migration ends
+
+   Sharing a PAT removes individual accountability and exposes another user's credentials.
+
+4. Change the repository to public during the migration
+
+   Public visibility exposes data rather than safely delegating migration access.
+
+**Concept:** Time-bounded access administration
+
+**Authored coaching hints:**
+
+- What authority and duration does the work actually require?
+- How will the extra grant be identified and removed afterward?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un miembro necesita acceso temporal al repositorio elevado para una migración. ¿Qué plan de administración preserva mejor el menor privilegio después del trabajo?
+
+1. Otorgar propiedad permanente a la organización y omitir la revisión
+
+   La propiedad permanente es más amplia y duradera que la tarea temporal.
+
+2. Otorgue solo el acceso requerido, registre el propósito y elimínelo después de la migración. **[CORRECT]**
+
+   El acceso atribuible y con alcance con un paso de eliminación explícito limita los privilegios duraderos.
+
+3. Compartir el PAT de otro administrador hasta que finalice la migración
+
+   Compartir un PAT elimina la responsabilidad individual y expone las credenciales de otro usuario.
+
+4. Cambiar el repositorio a público durante la migración
+
+   La visibilidad pública expone los datos en lugar de delegar de forma segura el acceso a la migración.
+
+**Concept:** Administración de acceso con límite de tiempo
+
+**Authored coaching hints:**
+
+- ¿Qué autoridad y duración requiere realmente la obra?
+- ¿Cómo se identificará y retirará después el permiso adicional?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um membro precisa de acesso temporário ao repositório elevado para uma migração. Qual plano de administração preserva melhor o mínimo de privilégios após o trabalho?
+
+1. Conceder propriedade permanente da organização e ignorar a revisão
+
+   A propriedade permanente é mais ampla e duradoura do que a tarefa temporária.
+
+2. Conceda apenas o acesso necessário, registre a finalidade e remova-o após a migração **[CORRECT]**
+
+   O acesso atribuível e com escopo definido com uma etapa de remoção explícita limita privilégios duradouros.
+
+3. Compartilhe o PAT de outro administrador até que a migração termine
+
+   Compartilhar um PAT elimina a responsabilidade individual e expõe as credenciais de outro usuário.
+
+4. Altere o repositório para público durante a migração
+
+   A visibilidade pública expõe os dados em vez de delegar com segurança o acesso à migração.
+
+**Concept:** Administração de acesso com limite de tempo
+
+**Authored coaching hints:**
+
+- Que autoridade e duração o trabalho realmente exige?
+- Como a permissão adicional será identificada e removida posteriormente?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/managing-an-individuals-access-to-an-organization-repository>
+
+<!-- certification-coach-question:admin-043:859c0fd919822c52ecbd6d517663fe7e54530e063297b7d0d1408776cd303f2e -->
+## Question 43: Manage GitHub identities and access
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-043`
+
+**Content revision:** `859c0fd919822c52ecbd6d517663fe7e54530e063297b7d0d1408776cd303f2e`
+
+### English
+
+A user proposes creating a second personal GitHub account for corporate work and calls it an Enterprise Managed User. Which fact determines whether the account is actually enterprise-managed?
+
+1. Its username contains the company name
+
+   A naming convention does not change an account's identity model.
+
+2. Its primary email uses the company domain
+
+   A corporate email does not make a personal account enterprise-managed.
+
+3. It was provisioned and is governed through the enterprise's managed-user IdP integration **[CORRECT]**
+
+   Enterprise Managed Users depends on the configured enterprise identity provisioning model.
+
+4. Its profile lists the company as the employer
+
+   Profile employer text is not an account provisioning mechanism.
+
+**Concept:** Recognizing genuinely managed identities
+
+**Authored coaching hints:**
+
+- Is the account model determined by profile appearance?
+- Which system controls creation and lifecycle?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un usuario propone crear una segunda cuenta personal GitHub para trabajo corporativo y la llama Usuario administrado empresarial. ¿Qué hecho determina si la cuenta está realmente administrada por la empresa?
+
+1. Su nombre de usuario contiene el nombre de la empresa.
+
+   Una convención de nomenclatura no cambia el modelo de identidad de una cuenta.
+
+2. Su correo electrónico principal utiliza el dominio de la empresa.
+
+   Un correo electrónico corporativo no convierte a una cuenta personal en administrada por la empresa.
+
+3. Se aprovisionó y se rige a través de la integración de usuario administrado IdP de la empresa. **[CORRECT]**
+
+   Enterprise Managed Users depende del modelo de aprovisionamiento de identidad empresarial configurado.
+
+4. Su perfil incluye a la empresa como empleador.
+
+   El texto del perfil del empleador no es un mecanismo de aprovisionamiento de cuentas.
+
+**Concept:** Reconocer identidades genuinamente gestionadas
+
+**Authored coaching hints:**
+
+- ¿El modelo de cuenta está determinado por la apariencia del perfil?
+- ¿Qué sistema controla la creación y el ciclo de vida?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um usuário propõe a criação de uma segunda conta GitHub pessoal para trabalho corporativo e a chama de Usuário gerenciado empresarial. Qual fato determina se a conta é realmente gerenciada pela empresa?
+
+1. Seu nome de usuário contém o nome da empresa
+
+   Uma convenção de nomenclatura não altera o modelo de identidade de uma conta.
+
+2. Seu e-mail principal usa o domínio da empresa
+
+   Um e-mail corporativo não torna uma conta pessoal gerenciada pela empresa.
+
+3. Ele foi provisionado e é controlado por meio da integração de usuário gerenciado IdP da empresa **[CORRECT]**
+
+   Enterprise Managed Users depende do modelo de provisionamento de identidade empresarial configurado.
+
+4. Seu perfil lista a empresa como empregadora
+
+   O texto do perfil do empregador não é um mecanismo de provisionamento de conta.
+
+**Concept:** Reconhecendo identidades genuinamente gerenciadas
+
+**Authored coaching hints:**
+
+- O modelo da conta é determinado pela aparência do perfil?
+- Qual sistema controla a criação e o ciclo de vida?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/identity-and-access-management/enterprise-managed-users>
+
+<!-- certification-coach-question:admin-044:7f4dcf152221f126be58cd1eba7fc8d0d67088d5ef159780d36f8cf1a1bcc783 -->
+## Question 44: Administer GitHub Enterprise environment
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-044`
+
+**Content revision:** `7f4dcf152221f126be58cd1eba7fc8d0d67088d5ef159780d36f8cf1a1bcc783`
+
+### English
+
+A regulated company must run its GitHub deployment on infrastructure it administers and schedule appliance upgrades itself. Which deployment best fits?
+
+1. GitHub Enterprise Cloud with personal accounts
+
+   Personal-account Cloud enterprises remain hosted and operated by GitHub.
+
+2. GitHub Enterprise Cloud with managed users
+
+   Managed users change identity management, not who operates the Cloud deployment.
+
+3. GitHub Enterprise Cloud with data residency
+
+   Cloud data residency selects a supported region without making the service self-hosted.
+
+4. GitHub Enterprise Server **[CORRECT]**
+
+   Enterprise Server is deployed and administered on the customer's infrastructure.
+
+**Concept:** Self-hosted enterprise deployment
+
+**Authored coaching hints:**
+
+- Who must operate the application infrastructure?
+- Does regional cloud hosting equal administering an appliance?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una empresa regulada debe ejecutar su implementación GitHub en la infraestructura que administra y programar las actualizaciones de los dispositivos por sí misma. ¿Qué implementación se adapta mejor?
+
+1. GitHub Enterprise Cloud con cuentas personales
+
+   Las empresas en la nube con cuentas personales siguen alojadas y operadas por GitHub.
+
+2. GitHub Enterprise Cloud con usuarios administrados
+
+   Los usuarios administrados cambian la administración de identidades, no quién opera la implementación de la nube.
+
+3. GitHub Enterprise Cloud con residencia de datos
+
+   La residencia de datos en la nube selecciona una región compatible sin realizar el servicio self-hosted.
+
+4. GitHub Enterprise Server **[CORRECT]**
+
+   Enterprise Server se implementa y administra en la infraestructura del cliente.
+
+**Concept:** Implementación empresarial autohospedada
+
+**Authored coaching hints:**
+
+- ¿Quién debe operar la infraestructura de la aplicación?
+- ¿El alojamiento en la nube regional equivale a administrar un dispositivo?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma empresa regulamentada deve executar sua implantação GitHub na infraestrutura que ela administra e agendar atualizações de dispositivos por conta própria. Qual implantação é mais adequada?
+
+1. GitHub Enterprise Cloud com contas pessoais
+
+   As empresas de nuvem de contas pessoais permanecem hospedadas e operadas por GitHub.
+
+2. GitHub Enterprise Cloud com usuários gerenciados
+
+   Os usuários gerenciados mudam o gerenciamento de identidade, não quem opera a implantação da nuvem.
+
+3. GitHub Enterprise Cloud com residência de dados
+
+   A residência de dados na nuvem seleciona uma região suportada sem tornar o serviço self-hosted.
+
+4. GitHub Enterprise Server **[CORRECT]**
+
+   Enterprise Server é implantado e administrado na infraestrutura do cliente.
+
+**Concept:** Implantação empresarial auto-hospedada
+
+**Authored coaching hints:**
+
+- Quem deve operar a infraestrutura de aplicativos?
+- A hospedagem em nuvem regional equivale à administração de um dispositivo?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-server@latest/admin/overview/about-github-enterprise-server>
+
+<!-- certification-coach-question:admin-045:019de01800bb5d10e898df8861b30887b589047da3cdd37f8eb8eae844cb7c05 -->
+## Question 45: Administer GitHub Enterprise environment
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-045`
+
+**Content revision:** `019de01800bb5d10e898df8861b30887b589047da3cdd37f8eb8eae844cb7c05`
+
+### English
+
+An enterprise wants GitHub to operate the service, with managed identities and a choice of supported data-residency region. Which offering should the administrator evaluate?
+
+1. GitHub Enterprise Cloud with data residency **[CORRECT]**
+
+   This offering combines GitHub-operated hosting, managed users, and supported residency regions.
+
+2. A public repository on a personal Free account
+
+   A public personal repository does not provide this enterprise residency configuration.
+
+3. GitHub Enterprise Server installed on a laptop
+
+   Enterprise Server requires customer-operated infrastructure.
+
+4. An organization using personal accounts on GitHub.com without data residency
+
+   Standard GitHub.com organization hosting does not select this data-residency deployment.
+
+**Concept:** Cloud data-residency deployment
+
+**Authored coaching hints:**
+
+- Which option changes the enterprise's hosting location without self-hosting?
+- How are identities handled in that offering?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una empresa quiere que GitHub opere el servicio, con identidades administradas y una opción de región de residencia de datos compatible. ¿Qué oferta debería evaluar el administrador?
+
+1. GitHub Enterprise Cloud con residencia de datos **[CORRECT]**
+
+   Esta oferta combina alojamiento operado por GitHub, usuarios administrados y regiones de residencia admitidas.
+
+2. Un repositorio público en una cuenta personal gratuita
+
+   Un repositorio personal público no proporciona esta configuración de residencia empresarial.
+
+3. GitHub Enterprise Server instalado en una computadora portátil
+
+   Enterprise Server requiere una infraestructura operada por el cliente.
+
+4. Una organización que utiliza cuentas personales en GitHub.com sin residencia de datos
+
+   El alojamiento de organización estándar GitHub.com no selecciona esta implementación de residencia de datos.
+
+**Concept:** Implementación de residencia de datos en la nube
+
+**Authored coaching hints:**
+
+- ¿Qué opción cambia la ubicación de hosting de la empresa sin autohospedaje?
+- ¿Cómo se manejan las identidades en esa oferta?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma empresa deseja que GitHub opere o serviço, com identidades gerenciadas e uma opção de região de residência de dados com suporte. Qual oferta o administrador deve avaliar?
+
+1. GitHub Enterprise Cloud com residência de dados **[CORRECT]**
+
+   Esta oferta combina hospedagem operada por GitHub, usuários gerenciados e regiões de residência suportadas.
+
+2. Um repositório público em uma conta pessoal gratuita
+
+   Um repositório pessoal público não fornece esta configuração de residência corporativa.
+
+3. GitHub Enterprise Server instalado em um laptop
+
+   Enterprise Server requer infraestrutura operada pelo cliente.
+
+4. Uma organização que usa contas pessoais em GitHub.com sem residência de dados
+
+   A hospedagem da organização GitHub.com padrão não seleciona esta implantação de residência de dados.
+
+**Concept:** Implantação de residência de dados na nuvem
+
+**Authored coaching hints:**
+
+- Qual opção altera o local de hospedagem da empresa sem auto-hospedagem?
+- Como as identidades são tratadas nessa oferta?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/data-residency/about-github-enterprise-cloud-with-data-residency>
+
+<!-- certification-coach-question:admin-046:53fa597744a610640f4e1d53165974d6d9d6376fe9a42b98e0e65aacb9cb6e15 -->
+## Question 46: Administer GitHub Enterprise environment
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-046`
+
+**Content revision:** `53fa597744a610640f4e1d53165974d6d9d6376fe9a42b98e0e65aacb9cb6e15`
+
+### English
+
+A new employee cannot push to one private repository, while coworkers with the expected team grant can. Which response belongs with the organization's administrators before escalating to GitHub Support?
+
+1. Ask Support to replace GitHub's authentication service
+
+   A single-user access issue does not establish a platform authentication failure.
+
+2. Inspect the employee's effective permissions and credential authorization **[CORRECT]**
+
+   Administrators can inspect and correct scoped access and credential configuration.
+
+3. Generate a full enterprise disaster-recovery restore
+
+   A restore is disproportionate and does not diagnose a user-specific permission problem.
+
+4. Migrate every repository to a different deployment
+
+   A deployment migration is unrelated to the immediate authorization check.
+
+**Concept:** Administrator-resolvable access issues
+
+**Authored coaching hints:**
+
+- Is the failure broad or limited to one identity?
+- Which settings are under the organization's direct control?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un nuevo empleado no puede enviar acceso a un repositorio privado, mientras que los compañeros de trabajo con la concesión esperada del equipo sí pueden hacerlo. ¿Qué respuesta deben tener los administradores de la organización antes de escalar al soporte GitHub?
+
+1. Solicite soporte para reemplazar el servicio de autenticación de GitHub
+
+   Un acceso de usuario único issue no establece una falla de autenticación de plataforma.
+
+2. Inspeccionar los permisos efectivos y la autorización de credenciales del empleado. **[CORRECT]**
+
+   Los administradores pueden inspeccionar y corregir el acceso con alcance y la configuración de credenciales.
+
+3. Genere una restauración empresarial completa de recuperación ante desastres
+
+   Una restauración es desproporcionada y no diagnostica un problema de permisos específico del usuario.
+
+4. Migrar cada repositorio a una implementación diferente
+
+   Una migración de implementación no está relacionada con la verificación de autorización inmediata.
+
+**Concept:** Acceso resoluble por administrador issues
+
+**Authored coaching hints:**
+
+- ¿El fracaso es amplio o se limita a una identidad?
+- ¿Qué entornos están bajo el control directo de la organización?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um novo funcionário não pode enviar para um repositório privado, enquanto colegas de trabalho com a concessão de equipe esperada podem. Qual resposta pertence aos administradores da organização antes de escalar para o Suporte GitHub?
+
+1. Peça ao suporte para substituir o serviço de autenticação do GitHub
+
+   Um acesso de usuário único issue não estabelece falha na autenticação da plataforma.
+
+2. Inspecione as permissões efetivas e autorização de credenciais do funcionário **[CORRECT]**
+
+   Os administradores podem inspecionar e corrigir o acesso com escopo e a configuração de credenciais.
+
+3. Gere uma restauração completa de recuperação de desastres empresariais
+
+   Uma restauração é desproporcional e não diagnostica um problema de permissão específico do usuário.
+
+4. Migre cada repositório para uma implantação diferente
+
+   Uma migração de implantação não está relacionada à verificação de autorização imediata.
+
+**Concept:** Acesso resolvível pelo administrador issues
+
+**Authored coaching hints:**
+
+- A falha é ampla ou limitada a uma identidade?
+- Quais configurações estão sob o controle direto da organização?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/managing-an-individuals-access-to-an-organization-repository>
+
+<!-- certification-coach-question:admin-047:04ed6ddee76436805461fdf73c24a0ea8a431cd61560b7eaf29dcf35ed8eb0c0 -->
+## Question 47: Administer GitHub Enterprise environment
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-047`
+
+**Content revision:** `04ed6ddee76436805461fdf73c24a0ea8a431cd61560b7eaf29dcf35ed8eb0c0`
+
+### English
+
+A GitHub Enterprise Server incident persists after documented local checks. Support requests appliance diagnostics and recent sanitized logs. Which artifact is the best match?
+
+1. Only a GHES diagnostic file with no recent log archive
+
+   A diagnostic overview alone does not include the requested recent service-log collection.
+
+2. A Git bundle of one developer's feature branch
+
+   A Git bundle contains repository history rather than appliance diagnostics.
+
+3. A GitHub Enterprise Server support bundle **[CORRECT]**
+
+   A support bundle includes diagnostic information and sanitized service logs.
+
+4. Only an export of repository audit events
+
+   Audit events do not replace the appliance diagnostics and service logs requested.
+
+**Concept:** Support bundle purpose
+
+**Authored coaching hints:**
+
+- What evidence concerns the appliance rather than one repository?
+- Which artifact combines settings information with logs?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un incidente GitHub Enterprise Server persiste después de verificaciones locales documentadas. El soporte solicita diagnósticos de dispositivos y registros desinfectados recientes. ¿Qué artefacto es la mejor combinación?
+
+1. Sólo un archivo de diagnóstico GHES sin archivo de registro reciente
+
+   Una descripción general del diagnóstico por sí sola no incluye la recopilación de registros de servicio recientes solicitada.
+
+2. Un paquete Git de la rama de funciones de un desarrollador
+
+   Un paquete Git contiene el historial del repositorio en lugar de diagnósticos del dispositivo.
+
+3. Un paquete de soporte GitHub Enterprise Server **[CORRECT]**
+
+   Un paquete de soporte incluye información de diagnóstico y registros de servicio desinfectados.
+
+4. Sólo una exportación de eventos de auditoría del repositorio
+
+   Los eventos de auditoría no reemplazan los registros de servicio y diagnóstico del dispositivo solicitados.
+
+**Concept:** Propósito del paquete de soporte
+
+**Authored coaching hints:**
+
+- ¿Qué evidencia se refiere al dispositivo en lugar de a un repositorio?
+- ¿Qué artefacto combina información de configuración con registros?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um incidente GitHub Enterprise Server persiste após verificações locais documentadas. O suporte solicita diagnósticos do dispositivo e registros limpos recentes. Qual artefato é a melhor combinação?
+
+1. Somente um arquivo de diagnóstico GHES sem arquivo de log recente
+
+   Uma visão geral do diagnóstico por si só não inclui a coleta recente de logs de serviço solicitada.
+
+2. Um pacote Git de uma ramificação de recursos do desenvolvedor
+
+   Um pacote Git contém o histórico do repositório em vez de diagnósticos do dispositivo.
+
+3. Um pacote de suporte GitHub Enterprise Server **[CORRECT]**
+
+   Um pacote de suporte inclui informações de diagnóstico e registros de serviço limpos.
+
+4. Apenas uma exportação de eventos de auditoria de repositório
+
+   Os eventos de auditoria não substituem os diagnósticos do dispositivo e os registros de serviço solicitados.
+
+**Concept:** Finalidade do pacote de suporte
+
+**Authored coaching hints:**
+
+- Que evidências dizem respeito ao dispositivo e não a um repositório?
+- Qual artefato combina informações de configurações com logs?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-server@latest/support/contacting-github-support/providing-data-to-github-support>
+
+<!-- certification-coach-question:admin-048:1a6477bbdefdfbb47fbd6fec2e5230e3e306b8bacb71f3a923ec3148697b2a2e -->
+## Question 48: Administer GitHub Enterprise environment
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-048`
+
+**Content revision:** `1a6477bbdefdfbb47fbd6fec2e5230e3e306b8bacb71f3a923ec3148697b2a2e`
+
+### English
+
+A GHES administrator has collected a support bundle. What is the safest handling practice before sending it?
+
+1. Attach it to a public repository issue for transparency
+
+   Public posting can expose internal operational details.
+
+2. Send it to every developer through a shared chat
+
+   Broad sharing unnecessarily expands access to diagnostic information.
+
+3. Assume sanitization means the bundle contains no sensitive operational information
+
+   Sanitized logs can still contain sensitive environment and operational context.
+
+4. Treat it as sensitive and share it through the authorized support channel **[CORRECT]**
+
+   Authorized support handling limits exposure of diagnostic data.
+
+**Concept:** Protecting diagnostic artifacts
+
+**Authored coaching hints:**
+
+- Does removal of credentials eliminate all sensitive context?
+- Who actually needs this evidence to resolve the case?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un administrador de GHES ha recopilado un paquete de soporte. ¿Cuál es la práctica de manipulación más segura antes de enviarlo?
+
+1. Adjúntelo a un repositorio público issue para mayor transparencia.
+
+   La publicación pública puede exponer detalles operativos internos.
+
+2. Envíalo a todos los desarrolladores a través de un chat compartido
+
+   Un amplio intercambio amplía innecesariamente el acceso a la información de diagnóstico.
+
+3. Supongamos que la desinfección significa que el paquete no contiene información operativa confidencial.
+
+   Los registros desinfectados aún pueden contener entornos sensibles y contexto operativo.
+
+4. Trátelo como confidencial y compártalo a través del canal de soporte autorizado. **[CORRECT]**
+
+   El manejo de soporte autorizado limita la exposición de los datos de diagnóstico.
+
+**Concept:** Protección de artefactos de diagnóstico
+
+**Authored coaching hints:**
+
+- ¿La eliminación de credenciales elimina todo el contexto sensible?
+- ¿Quién necesita realmente esta evidencia para resolver el caso?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um administrador GHES coletou um pacote de suporte. Qual é a prática de manuseio mais segura antes de enviá-lo?
+
+1. Anexe-o a um repositório público issue para maior transparência
+
+   A publicação pública pode expor detalhes operacionais internos.
+
+2. Envie para todos os desenvolvedores por meio de um chat compartilhado
+
+   O amplo compartilhamento expande desnecessariamente o acesso às informações de diagnóstico.
+
+3. Suponha que a higienização significa que o pacote não contém informações operacionais confidenciais
+
+   Os logs higienizados ainda podem conter ambiente confidencial e contexto operacional.
+
+4. Trate-o como confidencial e compartilhe-o através do canal de suporte autorizado **[CORRECT]**
+
+   O tratamento de suporte autorizado limita a exposição de dados de diagnóstico.
+
+**Concept:** Protegendo artefatos de diagnóstico
+
+**Authored coaching hints:**
+
+- A remoção de credenciais elimina todo o contexto confidencial?
+- Quem realmente precisa dessas evidências para resolver o caso?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-server@latest/support/contacting-github-support/providing-data-to-github-support>
+
+<!-- certification-coach-question:admin-049:d6b393e240ec09c24d6ab150e3a3a4b3abc65e95421139e772fefc17bed35728 -->
+## Question 49: Administer GitHub Enterprise environment
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-049`
+
+**Content revision:** `d6b393e240ec09c24d6ab150e3a3a4b3abc65e95421139e772fefc17bed35728`
+
+### English
+
+Support asks for a GHES settings-and-environment overview without the larger recent-log archive. Which artifact should the administrator generate?
+
+1. A diagnostic file **[CORRECT]**
+
+   The diagnostic file summarizes instance settings and environment.
+
+2. A repository source archive
+
+   Source archives contain code rather than appliance configuration diagnostics.
+
+3. A workflow artifact from an unrelated build
+
+   An unrelated build artifact is not an instance diagnostic overview.
+
+4. A CODEOWNERS file
+
+   CODEOWNERS documents review ownership rather than system environment.
+
+**Concept:** Diagnostics versus support bundles
+
+**Authored coaching hints:**
+
+- Is the request for system context or repository contents?
+- Which support artifact omits the larger log collection?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+El soporte solicita una descripción general del entorno y la configuración de GHES sin el archivo de registro reciente más grande. ¿Qué artefacto debería generar el administrador?
+
+1. Un archivo de diagnóstico **[CORRECT]**
+
+   El archivo de diagnóstico resume la configuración y el entorno de la instancia.
+
+2. Un archivo fuente del repositorio
+
+   Los archivos fuente contienen código en lugar de diagnósticos de configuración del dispositivo.
+
+3. Un artefacto de flujo de trabajo de una compilación no relacionada
+
+   Un artefacto de compilación no relacionado no es una descripción general de diagnóstico de instancia.
+
+4. Un archivo CODEOWNERS
+
+   Los documentos CODEOWNERS revisan la propiedad en lugar del entorno del sistema.
+
+**Concept:** Paquetes de diagnóstico versus soporte
+
+**Authored coaching hints:**
+
+- ¿La solicitud es contexto del sistema o contenido del repositorio?
+- ¿Qué artefacto de soporte omite la colección de registros más grande?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+O suporte solicita uma visão geral das configurações e do ambiente do GHES sem o arquivo maior de log recente. Qual artefato o administrador deve gerar?
+
+1. Um arquivo de diagnóstico **[CORRECT]**
+
+   O arquivo de diagnóstico resume as configurações e o ambiente da instância.
+
+2. Um arquivo fonte do repositório
+
+   Os arquivos de origem contêm código em vez de diagnósticos de configuração do dispositivo.
+
+3. Um artefato de fluxo de trabalho de um build não relacionado
+
+   Um artefato de construção não relacionado não é uma visão geral do diagnóstico da instância.
+
+4. Um arquivo CODEOWNERS
+
+   Os documentos CODEOWNERS analisam a propriedade em vez do ambiente do sistema.
+
+**Concept:** Diagnóstico versus pacotes de suporte
+
+**Authored coaching hints:**
+
+- A solicitação é de contexto do sistema ou conteúdo do repositório?
+- Qual artefato de suporte omite a coleção de logs maior?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-server@latest/support/contacting-github-support/providing-data-to-github-support>
+
+<!-- certification-coach-question:admin-050:3e28dec01ce47aa178ce206d4f8009f50bbe6afe8e5b10b94f4de99a79430407 -->
+## Question 50: Administer GitHub Enterprise environment
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-050`
+
+**Content revision:** `3e28dec01ce47aa178ce206d4f8009f50bbe6afe8e5b10b94f4de99a79430407`
+
+### English
+
+Teams repeatedly merge changes without reviews despite a written two-approval standard. Which administrative improvement most directly turns the standard into a control?
+
+1. Add a pull-request template asking for two approvals but no enforcement rule
+
+   A template is guidance rather than a merge gate.
+
+2. Configure an applicable pull-request rule requiring two approvals **[CORRECT]**
+
+   A required-approval rule blocks merges that do not satisfy the configured standard.
+
+3. Require only a successful build status check
+
+   Build success does not prove that two reviewers approved.
+
+4. Enable automatic review requests without making approval required
+
+   Requesting reviews does not by itself make those reviews mandatory.
+
+**Concept:** Enforcing developer-process standards
+
+**Authored coaching hints:**
+
+- Which mechanism evaluates a pull request before merge?
+- How can the desired process be checked rather than merely described?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Los equipos fusionan repetidamente cambios sin revisiones a pesar de un estándar escrito de dos aprobaciones. ¿Qué mejora administrativa convierte más directamente la norma en un control?
+
+1. Agregue una plantilla de solicitud de extracción que solicite dos aprobaciones pero ninguna regla de cumplimiento
+
+   Una plantilla es una guía más que una puerta de fusión.
+
+2. Configurar una regla de solicitud de extracción aplicable que requiera dos aprobaciones **[CORRECT]**
+
+   Una regla de aprobación requerida bloquea las fusiones que no cumplen con el estándar configurado.
+
+3. Requerir solo una verificación exitosa del estado de la compilación
+
+   El éxito de la compilación no prueba que dos revisores hayan aprobado.
+
+4. Habilite las solicitudes de revisión automática sin necesidad de aprobación
+
+   Solicitar revisiones no las convierte en obligatorias.
+
+**Concept:** Hacer cumplir los estándares de procesos de desarrollador
+
+**Authored coaching hints:**
+
+- ¿Qué mecanismo evalúa un pull request antes de fusionarlo?
+- ¿Cómo se puede comprobar el proceso deseado en lugar de simplemente describirlo?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+As equipes mesclam alterações repetidamente sem revisões, apesar de um padrão escrito de duas aprovações. Qual melhoria administrativa transforma mais diretamente o padrão em um controle?
+
+1. Adicione um modelo de solicitação pull solicitando duas aprovações, mas nenhuma regra de aplicação
+
+   Um modelo é uma orientação e não uma porta de mesclagem.
+
+2. Configure uma regra de solicitação pull aplicável que exija duas aprovações **[CORRECT]**
+
+   Uma regra de aprovação obrigatória bloqueia mesclagens que não atendem ao padrão configurado.
+
+3. Exigir apenas uma verificação de status de compilação bem-sucedida
+
+   O sucesso da construção não prova que dois revisores aprovaram.
+
+4. Habilite solicitações de revisão automática sem exigir aprovação
+
+   Solicitar revisões não torna, por si só, essas revisões obrigatórias.
+
+**Concept:** Aplicação de padrões de processo de desenvolvedor
+
+**Authored coaching hints:**
+
+- Qual mecanismo avalia um pull request antes da mesclagem?
+- Como o processo desejado pode ser verificado em vez de meramente descrito?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets>
+
+<!-- certification-coach-question:admin-051:e2e1590c350ddff949e8b1d5fe094f761dd14b82b2d7f7f0086a57f997caa220 -->
+## Question 51: Administer GitHub Enterprise environment
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-051`
+
+**Content revision:** `e2e1590c350ddff949e8b1d5fe094f761dd14b82b2d7f7f0086a57f997caa220`
+
+### English
+
+An organization wants new repositories to start with consistent pull-request guidance and contributor expectations. Which approach provides reusable starting content without claiming to enforce reviews?
+
+1. Organization billing budgets
+
+   Billing budgets do not initialize collaboration documentation.
+
+2. A mandatory shared administrator password
+
+   Shared passwords are not a safe process-standardization mechanism.
+
+3. Repository templates containing contributor documentation and pull-request templates **[CORRECT]**
+
+   Repository templates can distribute a consistent initial structure and guidance.
+
+4. An enterprise IP allow list
+
+   IP allow lists constrain network access rather than repository content templates.
+
+**Concept:** Standardizing repository starting practices
+
+**Authored coaching hints:**
+
+- Does the requirement concern initial content or runtime access?
+- Which feature reuses a repository's structure when creating another?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una organización quiere que los nuevos repositorios comiencen con una guía consistente de solicitudes de extracción y expectativas de los contribuyentes. ¿Qué enfoque proporciona contenido inicial reutilizable sin pretender imponer revisiones?
+
+1. Presupuestos de facturación de la organización
+
+   Los presupuestos de facturación no inicializan la documentación de colaboración.
+
+2. Una contraseña de administrador compartida obligatoria
+
+   Las contraseñas compartidas no son un mecanismo seguro de estandarización de procesos.
+
+3. Plantillas de repositorio que contienen documentación de los contribuyentes y plantillas de solicitud de extracción **[CORRECT]**
+
+   Las plantillas de repositorio pueden distribuir una estructura y orientación iniciales coherentes.
+
+4. Una lista de permitidos empresarial IP
+
+   IP las listas de permisos restringen el acceso a la red en lugar de las plantillas de contenido del repositorio.
+
+**Concept:** Estandarizar las prácticas de inicio de repositorios
+
+**Authored coaching hints:**
+
+- ¿El requisito se refiere al contenido inicial o al acceso en tiempo de ejecución?
+- ¿Qué característica reutiliza la estructura de un repositorio al crear otro?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma organização deseja que novos repositórios comecem com orientações consistentes sobre solicitações pull e expectativas dos colaboradores. Qual abordagem fornece conteúdo inicial reutilizável sem a pretensão de impor revisões?
+
+1. Orçamentos de faturamento da organização
+
+   Os orçamentos de cobrança não inicializam a documentação de colaboração.
+
+2. Uma senha de administrador compartilhada obrigatória
+
+   Senhas compartilhadas não são um mecanismo seguro de padronização de processos.
+
+3. Modelos de repositório contendo documentação do contribuidor e modelos de solicitação pull **[CORRECT]**
+
+   Os modelos de repositório podem distribuir uma estrutura e orientação inicial consistente.
+
+4. Uma lista de permissões corporativas IP
+
+   As listas de permissões IP restringem o acesso à rede em vez dos modelos de conteúdo do repositório.
+
+**Concept:** Padronizando práticas de inicialização de repositório
+
+**Authored coaching hints:**
+
+- O requisito diz respeito ao conteúdo inicial ou ao acesso em tempo de execução?
+- Qual recurso reutiliza a estrutura de um repositório ao criar outro?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository>
+
+<!-- certification-coach-question:admin-052:368d4fd562fa97544e272c24e027e817f65b78d2de7f2ba52d47ba9e4a2fdc41 -->
+## Question 52: Administer GitHub Enterprise environment
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-052`
+
+**Content revision:** `368d4fd562fa97544e272c24e027e817f65b78d2de7f2ba52d47ba9e4a2fdc41`
+
+### English
+
+A company publishes production releases from tags and wants to prevent accidental tag updates or deletion. Which control should an administrator consider on a supporting plan?
+
+1. A branch-only ruleset targeting the default branch
+
+   A branch-only rule does not directly protect matching tag references.
+
+2. Only require code-owner review for pull requests
+
+   Pull-request reviews do not restrict later tag updates or deletion.
+
+3. Only require signed commits on the default branch
+
+   Commit verification does not prevent a tag reference from being moved or deleted.
+
+4. A tag ruleset targeting the release-tag pattern **[CORRECT]**
+
+   Tag rulesets can restrict updates and deletion for matching release tags.
+
+**Concept:** Release-reference governance
+
+**Authored coaching hints:**
+
+- Which Git references identify the releases?
+- What kind of rule can target those references directly?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una empresa publica lanzamientos de producción a partir de etiquetas y desea evitar actualizaciones o eliminaciones accidentales de etiquetas. ¿Qué control debería considerar un administrador en un plan de soporte?
+
+1. Un ruleset exclusivo de ramas que se aplica a la rama predeterminada
+
+   Una regla de solo rama no protege directamente las referencias de etiquetas coincidentes.
+
+2. Solo se requiere revisión del propietario del código para pull requests
+
+   Las revisiones de solicitud de extracción no restringen la eliminación o actualización de etiquetas posteriores.
+
+3. Solo requiere commits firmado en la rama predeterminada
+
+   La verificación de confirmación no impide que se mueva o elimine una referencia de etiqueta.
+
+4. Una etiqueta ruleset dirigida al patrón de etiqueta de lanzamiento **[CORRECT]**
+
+   La etiqueta rulesets puede restringir las actualizaciones y la eliminación de etiquetas de lanzamiento coincidentes.
+
+**Concept:** Gobernanza de referencia de versión
+
+**Authored coaching hints:**
+
+- ¿Qué referencias de Git identifican los lanzamientos?
+- ¿Qué tipo de regla puede apuntar directamente a esas referencias?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma empresa publica versões de produção de tags e deseja evitar atualizações ou exclusões acidentais de tags. Qual controle um administrador deve considerar em um plano de suporte?
+
+1. Um ruleset exclusivo de ramificações que se aplica à ramificação padrão
+
+   Uma regra somente de ramificação não protege diretamente as referências de tags correspondentes.
+
+2. Exigir apenas revisão do proprietário do código para pull requests
+
+   As revisões de solicitação pull não restringem atualizações ou exclusões posteriores de tags.
+
+3. Requer apenas commits assinado na ramificação padrão
+
+   A verificação de confirmação não impede que uma referência de tag seja movida ou excluída.
+
+4. Uma tag ruleset direcionada ao padrão de tag de lançamento **[CORRECT]**
+
+   A tag rulesets pode restringir atualizações e exclusões de tags de lançamento correspondentes.
+
+**Concept:** Governança de referência de lançamento
+
+**Authored coaching hints:**
+
+- Quais referências do Git identificam os lançamentos?
+- Que tipo de regra pode atingir essas referências diretamente?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets>
+
+<!-- certification-coach-question:admin-053:5ecba07a576cd540d7a4a9c74f61425413ede3685da326b63ce7a0a27d2fa0bc -->
+## Question 53: Administer GitHub Enterprise environment
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-053`
+
+**Content revision:** `5ecba07a576cd540d7a4a9c74f61425413ede3685da326b63ce7a0a27d2fa0bc`
+
+### English
+
+A GHES deployment has a high-availability replica. A stakeholder proposes canceling historical backups. What should the administrator explain?
+
+1. Replication can propagate corruption or deletion, so historical backups remain necessary **[CORRECT]**
+
+   A replica improves availability but does not replace recoverable historical snapshots.
+
+2. A replica preserves every prior state indefinitely
+
+   Replicas track live changes rather than preserving every historical state.
+
+3. High availability automatically creates off-site historical snapshots
+
+   Off-site historical backups are not automatically provided by HA replication.
+
+4. Backups and replicas serve identical recovery objectives
+
+   Availability failover and historical recovery address different failure modes.
+
+**Concept:** Availability versus historical recovery
+
+**Authored coaching hints:**
+
+- What happens when an unwanted change replicates successfully?
+- Which recovery objective requires an older known-good state?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una implementación GHES tiene una réplica de alta disponibilidad. Una parte interesada propone cancelar las copias de seguridad históricas. ¿Qué debe explicar el administrador?
+
+1. La replicación puede propagar la corrupción o la eliminación, por lo que las copias de seguridad históricas siguen siendo necesarias **[CORRECT]**
+
+   Una réplica mejora la disponibilidad pero no reemplaza las instantáneas históricas recuperables.
+
+2. Una réplica conserva cada estado anterior indefinidamente.
+
+   Las réplicas rastrean los cambios en vivo en lugar de preservar cada estado histórico.
+
+3. La alta disponibilidad crea automáticamente instantáneas históricas externas
+
+   La replicación HA no proporciona automáticamente copias de seguridad históricas fuera del sitio.
+
+4. Las copias de seguridad y las réplicas cumplen objetivos de recuperación idénticos
+
+   La conmutación por error de disponibilidad y la recuperación histórica abordan diferentes modos de error.
+
+**Concept:** Disponibilidad versus recuperación histórica
+
+**Authored coaching hints:**
+
+- ¿Qué sucede cuando un cambio no deseado se replica exitosamente?
+- ¿Qué objetivo de recuperación requiere un estado anterior en buen estado?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma implantação GHES possui uma réplica de alta disponibilidade. Uma parte interessada propõe o cancelamento dos backups históricos. O que o administrador deve explicar?
+
+1. A replicação pode propagar corrupção ou exclusão, portanto, backups históricos continuam sendo necessários **[CORRECT]**
+
+   Uma réplica melhora a disponibilidade, mas não substitui instantâneos históricos recuperáveis.
+
+2. Uma réplica preserva todos os estados anteriores indefinidamente
+
+   As réplicas rastreiam alterações em tempo real em vez de preservar todos os estados históricos.
+
+3. A alta disponibilidade cria automaticamente instantâneos históricos externos
+
+   Os backups históricos externos não são fornecidos automaticamente pela replicação HA.
+
+4. Backups e réplicas atendem a objetivos de recuperação idênticos
+
+   O failover de disponibilidade e a recuperação histórica abordam diferentes modos de falha.
+
+**Concept:** Disponibilidade versus recuperação histórica
+
+**Authored coaching hints:**
+
+- O que acontece quando uma alteração indesejada é replicada com êxito?
+- Qual objetivo de recuperação requer um estado antigo conhecido como bom?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-server@latest/admin/monitoring-and-managing-your-instance/configuring-high-availability/about-high-availability-configuration>
+
+<!-- certification-coach-question:admin-054:0f4236680807357077df78883a3fe8b67c4f21ca5ba323f9db9680f330492dfb -->
+## Question 54: Administer GitHub Enterprise environment
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-054`
+
+**Content revision:** `0f4236680807357077df78883a3fe8b67c4f21ca5ba323f9db9680f330492dfb`
+
+### English
+
+Before a GHES storage expansion, an operator suggests resizing a live volume immediately to avoid planning overhead. Which response best follows the documented operational approach?
+
+1. Proceed because storage changes cannot affect application data
+
+   Storage changes can disrupt services and require documented precautions.
+
+2. Use the version-specific procedure, plan maintenance, and confirm recovery readiness **[CORRECT]**
+
+   Supported procedures and maintenance planning reduce risk to persistent instance data.
+
+3. Delete large repositories without owner approval first
+
+   Unapproved deletion is destructive and not a safe capacity-management prerequisite.
+
+4. Disable authentication permanently before resizing
+
+   Permanent authentication removal is unrelated and unsafe.
+
+**Concept:** Controlled GHES infrastructure changes
+
+**Authored coaching hints:**
+
+- What could go wrong when changing an in-use persistent volume?
+- Which documentation and recovery prerequisites should govern the change?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Antes de una expansión del almacenamiento GHES, un operador sugiere cambiar el tamaño de un volumen activo inmediatamente para evitar gastos generales de planificación. ¿Qué respuesta sigue mejor el enfoque operativo documentado?
+
+1. Continuar porque los cambios de almacenamiento no pueden afectar los datos de la aplicación
+
+   Los cambios de almacenamiento pueden interrumpir los servicios y requerir precauciones documentadas.
+
+2. Utilice el procedimiento específico de la versión, planifique el mantenimiento y confirme la preparación para la recuperación. **[CORRECT]**
+
+   Los procedimientos admitidos y la planificación de mantenimiento reducen el riesgo para los datos de instancia persistentes.
+
+3. Eliminar repositorios grandes sin la aprobación del propietario primero
+
+   La eliminación no aprobada es destructiva y no es un requisito previo seguro para la gestión de capacidad.
+
+4. Deshabilite la autenticación permanentemente antes de cambiar el tamaño
+
+   La eliminación de la autenticación permanente no está relacionada y es insegura.
+
+**Concept:** Cambios de infraestructura controlados GHES
+
+**Authored coaching hints:**
+
+- ¿Qué podría salir mal al cambiar un volumen persistente en uso?
+- ¿Qué documentación y requisitos previos de recuperación deberían regir el cambio?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Antes de uma expansão de armazenamento GHES, um operador sugere redimensionar um volume ativo imediatamente para evitar sobrecarga de planejamento. Qual resposta segue melhor a abordagem operacional documentada?
+
+1. Prossiga porque as alterações no armazenamento não podem afetar os dados do aplicativo
+
+   As alterações no armazenamento podem interromper os serviços e exigir precauções documentadas.
+
+2. Use o procedimento específico da versão, planeje a manutenção e confirme a prontidão da recuperação **[CORRECT]**
+
+   Os procedimentos suportados e o planejamento de manutenção reduzem o risco de dados de instância persistentes.
+
+3. Exclua repositórios grandes sem a aprovação do proprietário primeiro
+
+   A exclusão não aprovada é destrutiva e não é um pré-requisito seguro de gerenciamento de capacidade.
+
+4. Desative a autenticação permanentemente antes de redimensionar
+
+   A remoção permanente da autenticação não está relacionada e é insegura.
+
+**Concept:** Mudanças controladas na infraestrutura GHES
+
+**Authored coaching hints:**
+
+- O que poderia dar errado ao alterar um volume persistente em uso?
+- Quais documentação e pré-requisitos de recuperação devem reger a mudança?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-server@latest/admin/monitoring-managing-and-updating-your-instance/updating-the-virtual-machine-and-physical-resources/increasing-storage-capacity>
+
+<!-- certification-coach-question:admin-055:cd3965603716d20e47c343a00209b958d732ba093c677231849be3e28b996a3b -->
+## Question 55: Administer GitHub Enterprise environment
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-055`
+
+**Content revision:** `cd3965603716d20e47c343a00209b958d732ba093c677231849be3e28b996a3b`
+
+### English
+
+A GHES upgrade proposal assumes the newest release can always be installed directly over any older release. What should an administrator do instead?
+
+1. Use the version number's alphabetical order
+
+   Version compatibility is not determined by alphabetical ordering.
+
+2. Skip release notes to reduce upgrade time
+
+   Release notes can contain required prerequisites and upgrade caveats.
+
+3. Check supported upgrade paths and release-specific prerequisites before scheduling **[CORRECT]**
+
+   GHES upgrades must follow documented supported paths for the installed version.
+
+4. Upgrade only the browser extensions
+
+   Browser extensions do not upgrade the GHES appliance.
+
+**Concept:** Supported GHES upgrade planning
+
+**Authored coaching hints:**
+
+- Can release distance change the allowed upgrade sequence?
+- What evidence establishes compatibility for the installed version?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una propuesta de actualización GHES supone que la versión más reciente siempre se puede instalar directamente sobre cualquier versión anterior. ¿Qué debería hacer un administrador en su lugar?
+
+1. Utilice el orden alfabético del número de versión
+
+   La compatibilidad de versiones no está determinada por el orden alfabético.
+
+2. Omita las notas de la versión para reducir el tiempo de actualización
+
+   Las notas de la versión pueden contener requisitos previos requeridos y advertencias de actualización.
+
+3. Verifique las rutas de actualización admitidas y los requisitos previos específicos de la versión antes de programar **[CORRECT]**
+
+   Las actualizaciones de GHES deben seguir rutas compatibles documentadas para la versión instalada.
+
+4. Actualice solo las extensiones del navegador
+
+   Las extensiones del navegador no actualizan el dispositivo GHES.
+
+**Concept:** Planificación de actualización compatible con GHES
+
+**Authored coaching hints:**
+
+- ¿Puede la distancia de liberación cambiar la secuencia de actualización permitida?
+- ¿Qué evidencia establece la compatibilidad de la versión instalada?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma proposta de atualização do GHES pressupõe que a versão mais recente sempre pode ser instalada diretamente sobre qualquer versão mais antiga. O que um administrador deve fazer em vez disso?
+
+1. Use a ordem alfabética do número da versão
+
+   A compatibilidade de versões não é determinada por ordem alfabética.
+
+2. Ignore as notas de versão para reduzir o tempo de atualização
+
+   As notas de versão podem conter pré-requisitos necessários e advertências de atualização.
+
+3. Verifique os caminhos de atualização suportados e os pré-requisitos específicos da versão antes de agendar **[CORRECT]**
+
+   As atualizações do GHES devem seguir caminhos documentados com suporte para a versão instalada.
+
+4. Atualize apenas as extensões do navegador
+
+   As extensões do navegador não atualizam o dispositivo GHES.
+
+**Concept:** Planejamento de atualização GHES compatível
+
+**Authored coaching hints:**
+
+- A distância de liberação pode alterar a sequência de atualização permitida?
+- Que evidências estabelecem compatibilidade para a versão instalada?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-server@latest/admin/upgrading-your-instance/preparing-to-upgrade/overview-of-the-upgrade-process>
+
+<!-- certification-coach-question:admin-056:e2474634a96cc2ede7966392e2023ea7839255dcb266a781687098cd771931fa -->
+## Question 56: Administer GitHub Enterprise environment
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-056`
+
+**Content revision:** `e2474634a96cc2ede7966392e2023ea7839255dcb266a781687098cd771931fa`
+
+### English
+
+A GHES administrator has a recent successful backup job but has never rehearsed recovery. Which activity most directly improves confidence in disaster recovery?
+
+1. Review backup completion messages without exercising a restore
+
+   Completion messages alone do not validate the full recovery procedure.
+
+2. Increase backup frequency without checking restoration
+
+   Frequency improves recovery-point options but does not prove the restore works.
+
+3. Treat HA replication health as proof of historical backup restorability
+
+   A healthy replica and a restorable historical backup are different recovery capabilities.
+
+4. Test a documented restore in an appropriate isolated environment **[CORRECT]**
+
+   A controlled restore test validates both the data and recovery process.
+
+**Concept:** Validating recovery readiness
+
+**Authored coaching hints:**
+
+- Does collecting recovery data prove it can be used?
+- How can recovery be exercised without risking production?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un administrador de GHES realizó recientemente una copia de seguridad exitosa, pero nunca ha ensayado la recuperación. ¿Qué actividad mejora más directamente la confianza en la recuperación ante desastres?
+
+1. Revisar los mensajes de finalización de la copia de seguridad sin realizar una restauración
+
+   Los mensajes de finalización por sí solos no validan el procedimiento de recuperación completo.
+
+2. Aumente la frecuencia de las copias de seguridad sin verificar la restauración
+
+   La frecuencia mejora las opciones de los puntos de recuperación, pero no prueba que la restauración funcione.
+
+3. Trate el estado de replicación de HA como prueba de la capacidad de restauración de la copia de seguridad histórica
+
+   Una réplica en buen estado y una copia de seguridad histórica restaurable son capacidades de recuperación diferentes.
+
+4. Pruebe una restauración documentada en un entorno aislado apropiado **[CORRECT]**
+
+   Una prueba de restauración controlada valida tanto los datos como el proceso de recuperación.
+
+**Concept:** Validar la preparación para la recuperación
+
+**Authored coaching hints:**
+
+- ¿La recopilación de datos de recuperación demuestra que se pueden utilizar?
+- ¿Cómo se puede ejercer la recuperación sin poner en riesgo la producción?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um administrador GHES tem uma tarefa de backup recente bem-sucedida, mas nunca ensaiou a recuperação. Qual atividade melhora mais diretamente a confiança na recuperação de desastres?
+
+1. Revise as mensagens de conclusão do backup sem realizar uma restauração
+
+   As mensagens de conclusão por si só não validam o procedimento de recuperação completo.
+
+2. Aumente a frequência de backup sem verificar a restauração
+
+   A frequência melhora as opções de ponto de recuperação, mas não prova que a restauração funciona.
+
+3. Trate a integridade da replicação HA como prova da capacidade de restauração do backup histórico
+
+   Uma réplica íntegra e um backup histórico restaurável são recursos de recuperação diferentes.
+
+4. Teste uma restauração documentada em um ambiente isolado apropriado **[CORRECT]**
+
+   Um teste de restauração controlado valida os dados e o processo de recuperação.
+
+**Concept:** Validando a prontidão de recuperação
+
+**Authored coaching hints:**
+
+- A coleta de dados de recuperação prova que eles podem ser usados?
+- Como a recuperação pode ser exercida sem arriscar a produção?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-server@latest/admin/backing-up-and-restoring-your-instance/configuring-backups-on-your-instance>
+
+<!-- certification-coach-question:admin-057:11d580f8a3b8fa63ebaa3c5683a4cb35ce3eb496fde523dace15aeea0e0b2479 -->
+## Question 57: Administer GitHub Enterprise environment
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-057`
+
+**Content revision:** `11d580f8a3b8fa63ebaa3c5683a4cb35ce3eb496fde523dace15aeea0e0b2479`
+
+### English
+
+A stakeholder asks whether GitHub Enterprise Cloud with managed users eliminates the organization's identity administration responsibilities. Which answer is accurate?
+
+1. GitHub hosts the platform, but the enterprise still administers its IdP integration and access policies **[CORRECT]**
+
+   Cloud operations and customer identity governance remain separate responsibilities.
+
+2. GitHub automatically designs all of the customer's IdP groups
+
+   The customer still governs identity-provider group design and assignments.
+
+3. Managed users remove every need for access reviews
+
+   Managed provisioning does not eliminate access governance.
+
+4. The customer must patch GitHub's Cloud application servers
+
+   GitHub operates Cloud application infrastructure rather than requiring customer patching.
+
+**Concept:** Cloud shared administration responsibilities
+
+**Authored coaching hints:**
+
+- Which responsibilities concern operating the platform?
+- Which responsibilities concern deciding who should access company resources?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una parte interesada pregunta si GitHub Enterprise Cloud con usuarios administrados elimina las responsabilidades de administración de identidades de la organización. ¿Qué respuesta es correcta?
+
+1. GitHub aloja la plataforma, pero la empresa aún administra sus políticas de acceso e integración IdP. **[CORRECT]**
+
+   Las operaciones en la nube y el gobierno de la identidad del cliente siguen siendo responsabilidades separadas.
+
+2. GitHub diseña automáticamente todos los grupos IdP del cliente
+
+   El cliente aún controla el diseño y las asignaciones del grupo de proveedores de identidad.
+
+3. Los usuarios administrados eliminan toda necesidad de revisiones de acceso
+
+   El aprovisionamiento gestionado no elimina la gobernanza del acceso.
+
+4. El cliente debe parchear los servidores de aplicaciones Cloud de GitHub
+
+   GitHub opera la infraestructura de aplicaciones en la nube en lugar de requerir parches por parte del cliente.
+
+**Concept:** Responsabilidades de administración compartida en la nube
+
+**Authored coaching hints:**
+
+- ¿Qué responsabilidades se refieren al funcionamiento de la plataforma?
+- ¿Qué responsabilidades se refieren a decidir quién debe acceder a los recursos de la empresa?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma parte interessada pergunta se o GitHub Enterprise Cloud com usuários gerenciados elimina as responsabilidades de administração de identidade da organização. Qual resposta é correta?
+
+1. GitHub hospeda a plataforma, mas a empresa ainda administra sua integração IdP e políticas de acesso **[CORRECT]**
+
+   As operações na nuvem e a governança da identidade do cliente permanecem responsabilidades separadas.
+
+2. GitHub projeta automaticamente todos os grupos IdP do cliente
+
+   O cliente ainda rege o design e as atribuições do grupo do provedor de identidade.
+
+3. Os usuários gerenciados eliminam todas as necessidades de revisões de acesso
+
+   O provisionamento gerenciado não elimina a governança de acesso.
+
+4. O cliente deve corrigir os servidores de aplicativos em nuvem do GitHub
+
+   GitHub opera infraestrutura de aplicativos em nuvem em vez de exigir patches do cliente.
+
+**Concept:** Responsabilidades de administração compartilhada na nuvem
+
+**Authored coaching hints:**
+
+- Quais responsabilidades dizem respeito à operação da plataforma?
+- Quais responsabilidades dizem respeito a decidir quem deve acessar os recursos da empresa?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/identity-and-access-management/enterprise-managed-users>
+
+<!-- certification-coach-question:admin-058:5aa64286cf520ba515064e717682870f746379fe3f3aefe87a566b447bd22df8 -->
+## Question 58: Administer GitHub Enterprise environment
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-058`
+
+**Content revision:** `5aa64286cf520ba515064e717682870f746379fe3f3aefe87a566b447bd22df8`
+
+### English
+
+A procurement team totals organization member counts to estimate enterprise licenses, counting the same employee in three organizations three times. What should the administrator clarify?
+
+1. Enterprise licenses are always billed once per repository
+
+   Enterprise seat licensing is not simply a per-repository charge.
+
+2. Enterprise seat counting accounts for unique users rather than simply summing duplicate memberships **[CORRECT]**
+
+   Duplicate memberships must be reconciled against enterprise license-consumption rules.
+
+3. Only repository owners consume seats
+
+   Licensed usage is not limited to repository owners.
+
+4. Every team creates a separate license for each member
+
+   Team membership is not independently billed as a new seat for every team.
+
+**Concept:** Unique enterprise license consumers
+
+**Authored coaching hints:**
+
+- Is a seat associated with a person or each organization membership?
+- What happens when the same identity appears in multiple organizations?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un equipo de adquisiciones suma el número de miembros de la organización para estimar las licencias empresariales, contando tres veces al mismo empleado en tres organizaciones. ¿Qué debe aclarar el administrador?
+
+1. Las licencias empresariales siempre se facturan una vez por repositorio
+
+   La concesión de licencias de puestos empresariales no es simplemente un cargo por repositorio.
+
+2. Cuentas empresariales de recuento de puestos para usuarios únicos en lugar de simplemente sumar membresías duplicadas **[CORRECT]**
+
+   Las membresías duplicadas deben conciliarse con las reglas de consumo de licencias empresariales.
+
+3. Solo los propietarios de repositorios consumen licencias
+
+   El uso con licencia no se limita a los propietarios de repositorios.
+
+4. Cada equipo crea una licencia separada para cada miembro.
+
+   La membresía del equipo no se factura de forma independiente como un nuevo puesto para cada equipo.
+
+**Concept:** Consumidores únicos de licencias empresariales
+
+**Authored coaching hints:**
+
+- ¿Una licencia está asociada con una persona o con cada membresía de una organización?
+- ¿Qué sucede cuando la misma identidad aparece en varias organizaciones?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma equipe de compras totaliza a contagem de membros da organização para estimar as licenças empresariais, contando três vezes o mesmo funcionário em três organizações. O que o administrador deve esclarecer?
+
+1. As licenças empresariais são sempre cobradas uma vez por repositório
+
+   O licenciamento de licença empresarial não é simplesmente uma cobrança por repositório.
+
+2. Contas corporativas de contagem de licenças para usuários únicos, em vez de simplesmente somar associações duplicadas **[CORRECT]**
+
+   As associações duplicadas devem ser conciliadas com as regras de consumo de licença empresarial.
+
+3. Somente proprietários de repositórios consomem licenças
+
+   O uso licenciado não está limitado aos proprietários do repositório.
+
+4. Cada equipe cria uma licença separada para cada membro
+
+   A adesão à equipe não é cobrada de forma independente como uma nova vaga para cada equipe.
+
+**Concept:** Consumidores exclusivos de licença empresarial
+
+**Authored coaching hints:**
+
+- Uma licença está associada a uma pessoa ou a cada vínculo com uma organização?
+- O que acontece quando a mesma identidade aparece em várias organizações?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/billing/managing-the-plan-for-your-github-account/about-per-user-pricing>
+
+<!-- certification-coach-question:admin-059:8fb25cc63b25c5c23bcfccf69ba93de2fbb6debc67b758a917907a82a8f7eaaf -->
+## Question 59: Administer GitHub Enterprise environment
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-059`
+
+**Content revision:** `8fb25cc63b25c5c23bcfccf69ba93de2fbb6debc67b758a917907a82a8f7eaaf`
+
+### English
+
+An organization on a paid seat-based plan adds an outside collaborator to several private repositories, excluding forks. How should the administrator approach the seat impact?
+
+1. Assume outside collaborators can never consume paid seats
+
+   Outside collaborators on private repositories can count toward paid seat usage.
+
+2. Count a separate seat for every repository invitation
+
+   A unique outside collaborator is not counted once for each repository.
+
+3. Apply the plan's rules for the collaborator as a unique seat consumer, not one seat per repository **[CORRECT]**
+
+   The documented model counts the collaborator once within the relevant account scope.
+
+4. Assume only collaborators who push daily can consume seats
+
+   Seat consumption is not determined by daily push frequency.
+
+**Concept:** Outside-collaborator licensing
+
+**Authored coaching hints:**
+
+- Does multiple-repository access create multiple identities?
+- Which collaborator category matters for paid organization seats?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una organización con un plan pago basado en puestos agrega un colaborador externo a varios repositorios privados, excluyendo forks. ¿Cómo debe abordar el administrador el impacto del puesto?
+
+1. Suponer que los colaboradores externos nunca pueden consumir licencias pagadas
+
+   Los colaboradores externos en repositorios privados pueden contar para el uso de puestos pagados.
+
+2. Contar una licencia separada por cada invitación a un repositorio
+
+   Un colaborador externo único no se cuenta una vez para cada repositorio.
+
+3. Aplicar las reglas del plan para el colaborador como consumidor de puesto único, no un puesto por repositorio. **[CORRECT]**
+
+   El modelo documentado cuenta al colaborador una vez dentro del alcance de la cuenta relevante.
+
+4. Suponer que solo los colaboradores que hacen push a diario pueden consumir licencias
+
+   El consumo de licencias no está determinado por la frecuencia diaria de los pushes.
+
+**Concept:** Licencias para colaboradores externos
+
+**Authored coaching hints:**
+
+- ¿El acceso a múltiples repositorios crea múltiples identidades?
+- ¿Qué categoría de colaborador es importante para los puestos remunerados de la organización?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma organização com um plano pago por licença adiciona um colaborador externo a vários repositórios privados, excluindo forks. Como o administrador deve avaliar o impacto no consumo de licenças?
+
+1. Suponha que colaboradores externos nunca possam consumir licenças pagas
+
+   Colaboradores externos em repositórios privados podem contar para o uso pago de licenças.
+
+2. Contar uma licença separada para cada convite a um repositório
+
+   Um colaborador externo único não é contado uma vez para cada repositório.
+
+3. Aplicar as regras do plano para o colaborador como um consumidor de licença exclusivo, e não como uma licença por repositório **[CORRECT]**
+
+   O modelo documentado conta o colaborador uma vez dentro do escopo da conta relevante.
+
+4. Supor que apenas colaboradores que fazem push diariamente podem consumir licenças
+
+   O consumo de licenças não é determinado pela frequência diária de pushes.
+
+**Concept:** Licenciamento de colaborador externo
+
+**Authored coaching hints:**
+
+- O acesso a vários repositórios cria múltiplas identidades?
+- Qual categoria de colaborador é importante para licenças pagas na organização?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/billing/managing-the-plan-for-your-github-account/about-per-user-pricing>
+
+<!-- certification-coach-question:admin-060:2bc941a14fb97969d313fd4d54719bc59e6c690c972974b06d3a76272d931689 -->
+## Question 60: Administer GitHub Enterprise environment
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-060`
+
+**Content revision:** `2bc941a14fb97969d313fd4d54719bc59e6c690c972974b06d3a76272d931689`
+
+### English
+
+A finance team asks why its GitHub bill exceeds the base enterprise seat subscription. What is the most accurate first explanation to investigate?
+
+1. Each additional team membership automatically creates another enterprise seat
+
+   Team assignments do not automatically create separate enterprise user seats.
+
+2. Enterprise pricing always charges a separate seat for each repository a user can access
+
+   Repository access is not billed as a new enterprise seat for each repository.
+
+3. SAML redirects create a separate licensed seat per login
+
+   SAML authentication frequency does not define separate licensed identities.
+
+4. The bill can include additional subscriptions and metered product usage **[CORRECT]**
+
+   Seat subscriptions and usage-based products can both contribute to the bill.
+
+**Concept:** Subscription versus consumption billing
+
+**Authored coaching hints:**
+
+- Does the account use products beyond the base plan?
+- Which billing lines reflect consumption rather than people?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un equipo de finanzas pregunta por qué su factura GitHub excede la suscripción básica de puestos empresariales. ¿Cuál es la primera explicación más precisa para investigar?
+
+1. Cada miembro adicional del equipo crea automáticamente otro puesto empresarial
+
+   Las asignaciones de equipo no crean automáticamente puestos de usuario empresarial separados.
+
+2. Los precios empresariales siempre cobran un puesto separado por cada repositorio al que puede acceder un usuario
+
+   El acceso al repositorio no se factura como un nuevo puesto empresarial para cada repositorio.
+
+3. Las redirecciones SAML crean un puesto con licencia independiente por cada inicio de sesión
+
+   La frecuencia de autenticación SAML no define identidades con licencia independientes.
+
+4. La factura puede incluir suscripciones adicionales y uso de productos medidos. **[CORRECT]**
+
+   Tanto las suscripciones por licencia como los productos basados en el uso pueden contribuir a la factura.
+
+**Concept:** Facturación de suscripción versus consumo
+
+**Authored coaching hints:**
+
+- ¿La cuenta utiliza productos más allá del plan básico?
+- ¿Qué líneas de facturación reflejan el consumo y no las personas?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma equipe financeira pergunta por que sua conta GitHub excede a assinatura básica da licença corporativa. Qual é a primeira explicação mais precisa a ser investigada?
+
+1. Cada associação adicional à equipe cria automaticamente outra licença corporativa
+
+   As atribuições de equipe não criam automaticamente licenças de usuário corporativo separadas.
+
+2. Os preços empresariais sempre cobram uma licença separada para cada repositório que um usuário pode acessar
+
+   O acesso ao repositório não é cobrado como uma nova licença corporativa para cada repositório.
+
+3. Os redirecionamentos SAML criam uma licença licenciada separada por login
+
+   A frequência de autenticação SAML não define identidades licenciadas separadas.
+
+4. A conta pode incluir assinaturas adicionais e uso medido do produto **[CORRECT]**
+
+   Assinaturas por licença e produtos baseados no uso podem contribuir para a fatura.
+
+**Concept:** Assinatura versus faturamento de consumo
+
+**Authored coaching hints:**
+
+- A conta usa produtos além do plano básico?
+- Quais linhas de faturamento refletem o consumo e não as pessoas?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/billing/managing-the-plan-for-your-github-account/about-per-user-pricing>
+
+<!-- certification-coach-question:admin-061:3f9c9b18098102b94c5d94344fe054d40b0d7390c6bf337d2dedf744090e1959 -->
+## Question 61: Administer GitHub Enterprise environment
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-061`
+
+**Content revision:** `3f9c9b18098102b94c5d94344fe054d40b0d7390c6bf337d2dedf744090e1959`
+
+### English
+
+An administrator wants a current license-utilization baseline before a renewal conversation. Which evidence should they prioritize?
+
+1. The enterprise's license-usage information and relevant billing records **[CORRECT]**
+
+   Enterprise license and billing records reflect the licensed usage being evaluated.
+
+2. Only the number of repositories created this year
+
+   Repository creation is not the unit of enterprise seat consumption.
+
+3. A sum of organization member counts without deduplicating identities
+
+   Duplicate memberships can overstate unique licensed users.
+
+4. Only contributors who pushed code in the last twenty-four hours
+
+   A one-day contribution subset misses licensed users with other valid activity patterns.
+
+**Concept:** License-utilization evidence
+
+**Authored coaching hints:**
+
+- Which source directly records entitlement and consumption?
+- Are repository-content counts a reliable proxy for licensed people?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un administrador quiere una línea base de utilización de licencia actual antes de una conversación de renovación. ¿Qué evidencia deberían priorizar?
+
+1. La información de uso de licencia de la empresa y los registros de facturación relevantes. **[CORRECT]**
+
+   Los registros de facturación y licencia empresarial reflejan el uso de la licencia que se está evaluando.
+
+2. Sólo el número de repositorios creados este año.
+
+   La creación de repositorios no es la unidad de consumo de puestos empresariales.
+
+3. Una suma de miembros de la organización cuenta sin deduplicar identidades
+
+   Las membresías duplicadas pueden exagerar los usuarios únicos con licencia.
+
+4. Solo los contribuyentes que enviaron código en las últimas veinticuatro horas.
+
+   Un subconjunto de contribución de un día omite usuarios con licencia con otros patrones de actividad válidos.
+
+**Concept:** Evidencia de utilización de licencia
+
+**Authored coaching hints:**
+
+- ¿Qué fuente registra directamente los derechos y el consumo?
+- ¿Son los recuentos de contenido del repositorio un proxy confiable para las personas con licencia?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um administrador deseja uma linha de base atual de utilização de licença antes de uma conversa de renovação. Quais evidências eles deveriam priorizar?
+
+1. As informações de uso de licença da empresa e registros de faturamento relevantes **[CORRECT]**
+
+   A licença empresarial e os registros de cobrança refletem o uso licenciado que está sendo avaliado.
+
+2. Apenas o número de repositórios criados este ano
+
+   A criação do repositório não é a unidade de consumo de licenças corporativas.
+
+3. Uma soma de contagens de membros da organização sem desduplicar identidades
+
+   Assinaturas duplicadas podem exagerar os usuários licenciados únicos.
+
+4. Somente colaboradores que enviaram código nas últimas vinte e quatro horas
+
+   Um subconjunto de contribuição de um dia perde usuários licenciados com outros padrões de atividade válidos.
+
+**Concept:** Evidência de utilização de licença
+
+**Authored coaching hints:**
+
+- Qual fonte registra diretamente o direito e o consumo?
+- As contagens de conteúdo do repositório são um proxy confiável para pessoas licenciadas?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/billing/how-tos/manage-plan-and-licenses/view-enterprise-usage>
+
+<!-- certification-coach-question:admin-062:afb6d5dd844fd396103f714bdd52385f627fc6ac5b94a896198f589211a7b3cb -->
+## Question 62: Administer GitHub Enterprise environment
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-062`
+
+**Content revision:** `afb6d5dd844fd396103f714bdd52385f627fc6ac5b94a896198f589211a7b3cb`
+
+### English
+
+A Cloud service issue affects many repositories after local access and network configuration checks. What information makes a support escalation most actionable?
+
+1. Only the phrase GitHub is broken
+
+   An unspecific report provides little diagnostic value.
+
+2. Affected scope, timestamps, reproducible symptoms, and relevant request identifiers **[CORRECT]**
+
+   Scoped and reproducible evidence helps Support correlate and investigate the failure.
+
+3. An unredacted list of all user passwords
+
+   Passwords must not be shared as diagnostic evidence.
+
+4. A demand to delete the enterprise immediately
+
+   Enterprise deletion is destructive and does not provide troubleshooting context.
+
+**Concept:** Actionable support escalation
+
+**Authored coaching hints:**
+
+- What would let another operator reproduce or locate the failing request?
+- Which details describe impact without exposing credentials?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un servicio en la nube issue afecta a muchos repositorios después de las comprobaciones de acceso local y configuración de red. ¿Qué información hace que una escalada de soporte sea más procesable?
+
+1. Sólo la frase GitHub está rota
+
+   Un informe inespecífico proporciona poco valor diagnóstico.
+
+2. Alcance afectado, marcas de tiempo, síntomas reproducibles e identificadores de solicitud relevantes **[CORRECT]**
+
+   La evidencia reproducible y con alcance ayuda al soporte a correlacionar e investigar la falla.
+
+3. Una lista sin editar de todas las contraseñas de usuario
+
+   Las contraseñas no se deben compartir como prueba de diagnóstico.
+
+4. Una exigencia de eliminar la empresa de inmediato
+
+   La eliminación empresarial es destructiva y no proporciona un contexto de solución de problemas.
+
+**Concept:** Escalamiento de soporte procesable
+
+**Authored coaching hints:**
+
+- ¿Qué permitiría a otro operador reproducir o localizar la solicitud fallida?
+- ¿Qué detalles describen el impacto sin exponer las credenciales?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um serviço em nuvem issue afeta muitos repositórios após verificações de acesso local e configuração de rede. Quais informações tornam um escalonamento de suporte mais acionável?
+
+1. Apenas a frase GitHub está quebrada
+
+   Um relatório inespecífico fornece pouco valor diagnóstico.
+
+2. Escopo afetado, carimbos de data/hora, sintomas reproduzíveis e identificadores de solicitação relevantes **[CORRECT]**
+
+   Evidências com escopo definido e reproduzíveis ajudam o Suporte a correlacionar e investigar a falha.
+
+3. Uma lista não editada de todas as senhas de usuários
+
+   As senhas não devem ser compartilhadas como prova de diagnóstico.
+
+4. Uma exigência para excluir a empresa imediatamente
+
+   A exclusão corporativa é destrutiva e não fornece contexto de solução de problemas.
+
+**Concept:** Escalação de suporte acionável
+
+**Authored coaching hints:**
+
+- O que permitiria que outro operador reproduzisse ou localizasse a solicitação com falha?
+- Quais detalhes descrevem o impacto sem expor credenciais?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/support/contacting-github-support/creating-a-support-ticket>
+
+<!-- certification-coach-question:admin-063:9b0b12c43ab8b46aad083941a2c4e35a5edb06d7b543432fcee48b5730146dca -->
+## Question 63: Administer GitHub Enterprise environment
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-063`
+
+**Content revision:** `9b0b12c43ab8b46aad083941a2c4e35a5edb06d7b543432fcee48b5730146dca`
+
+### English
+
+Before treating a widespread GitHub.com outage report as a local configuration defect, which official resource should an administrator check?
+
+1. An unrelated public repository's README
+
+   An unrelated README is not authoritative service-health information.
+
+2. A developer's local reflog
+
+   A local reflog describes local reference changes, not platform availability.
+
+3. GitHub Status **[CORRECT]**
+
+   GitHub Status reports official service incidents and operational state.
+
+4. A random social-media repost without a source
+
+   Unverified reposts are not a substitute for the official status source.
+
+**Concept:** Platform incident triage
+
+**Authored coaching hints:**
+
+- Could this be a shared upstream incident?
+- Where does the service operator publish health information?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Antes de tratar un informe de interrupción generalizada del GitHub.com como un defecto de configuración local, ¿qué recurso oficial debería comprobar un administrador?
+
+1. README de un repositorio público no relacionado
+
+   Un README no relacionado no es información autorizada sobre el estado del servicio.
+
+2. Reflog local de un desarrollador
+
+   Un reflog local describe cambios de referencia locales, no la disponibilidad de la plataforma.
+
+3. GitHub Status **[CORRECT]**
+
+   GitHub Status informa los incidentes oficiales del servicio y su estado operativo.
+
+4. Una nueva publicación aleatoria en las redes sociales sin una fuente
+
+   Las publicaciones no verificadas no sustituyen a la fuente de estado oficial.
+
+**Concept:** Clasificación de incidentes en la plataforma
+
+**Authored coaching hints:**
+
+- ¿Podría ser este un incidente ascendente compartido?
+- ¿Dónde publica el operador del servicio información de salud?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Antes de tratar um relatório de interrupção generalizada do GitHub.com como um defeito de configuração local, qual recurso oficial um administrador deve verificar?
+
+1. README de um repositório público não relacionado
+
+   Um README não relacionado não é uma informação oficial sobre a integridade do serviço.
+
+2. Reflog local de um desenvolvedor
+
+   Um reflog local descreve alterações de referência local, não a disponibilidade da plataforma.
+
+3. GitHub Status **[CORRECT]**
+
+   GitHub Status informa os incidentes oficiais do serviço e seu estado operacional.
+
+4. Uma repostagem aleatória nas redes sociais sem fonte
+
+   Repostagens não verificadas não substituem a fonte de status oficial.
+
+**Concept:** Triagem de incidentes de plataforma
+
+**Authored coaching hints:**
+
+- Este poderia ser um incidente upstream compartilhado?
+- Onde o operador de serviço publica informações de saúde?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/support/learning-about-github-support/about-github-support>
+
+<!-- certification-coach-question:admin-064:7133234eae1980641648db6e021b9f9be535226b0663319fa0c59c19500b9c5b -->
+## Question 64: Administer GitHub Enterprise environment
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-064`
+
+**Content revision:** `7133234eae1980641648db6e021b9f9be535226b0663319fa0c59c19500b9c5b`
+
+### English
+
+An enterprise plans to adopt Cloud data residency and assumes every third-party app used on GitHub.com will work unchanged. Which preparation is most appropriate?
+
+1. Assume all apps are automatically installed on the new host
+
+   App installation and host compatibility must be established rather than assumed.
+
+2. Publish private repository contents to test compatibility
+
+   Public disclosure is not a safe compatibility test.
+
+3. Disable all authentication policies indefinitely
+
+   Removing authentication is not required for integration planning.
+
+4. Review feature and integration compatibility for the GHE.com environment **[CORRECT]**
+
+   Data-residency deployments have host and feature considerations that integrations must support.
+
+**Concept:** Data-residency integration readiness
+
+**Authored coaching hints:**
+
+- Does moving to a different GitHub host affect integration endpoints?
+- Which dependencies should be checked before migration?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una empresa planea adoptar la residencia de datos en la nube y asume que todas las aplicaciones de terceros utilizadas en GitHub.com funcionarán sin cambios. ¿Qué preparación es la más adecuada?
+
+1. Suponga que todas las aplicaciones se instalan automáticamente en el nuevo host
+
+   La instalación de la aplicación y la compatibilidad del host deben establecerse en lugar de asumirse.
+
+2. Publicar contenidos de repositorios privados para probar la compatibilidad.
+
+   La divulgación pública no es una prueba de compatibilidad segura.
+
+3. Deshabilite todas las políticas de autenticación indefinidamente
+
+   No es necesario eliminar la autenticación para la planificación de la integración.
+
+4. Revisión de la compatibilidad de integración y funciones para el entorno GHE.com **[CORRECT]**
+
+   Las implementaciones de residencia de datos tienen consideraciones de host y características que las integraciones deben admitir.
+
+**Concept:** Preparación para la integración de residencia de datos
+
+**Authored coaching hints:**
+
+- ¿El cambio a un host GitHub diferente afecta los puntos finales de integración?
+- ¿Qué dependencias se deben verificar antes de la migración?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma empresa planeja adotar a residência de dados na nuvem e assume que todos os aplicativos de terceiros usados no GitHub.com funcionarão inalterados. Qual preparação é mais apropriada?
+
+1. Suponha que todos os aplicativos sejam instalados automaticamente no novo host
+
+   A instalação do aplicativo e a compatibilidade do host devem ser estabelecidas e não presumidas.
+
+2. Publique o conteúdo do repositório privado para testar a compatibilidade
+
+   A divulgação pública não é um teste de compatibilidade seguro.
+
+3. Desative todas as políticas de autenticação indefinidamente
+
+   A remoção da autenticação não é necessária para o planejamento da integração.
+
+4. Revise os recursos e a compatibilidade de integração para o ambiente GHE.com **[CORRECT]**
+
+   As implantações de residência de dados têm considerações de host e recursos que as integrações devem oferecer suporte.
+
+**Concept:** Preparação para integração de residência de dados
+
+**Authored coaching hints:**
+
+- A mudança para um host GitHub diferente afeta os endpoints de integração?
+- Quais dependências devem ser verificadas antes da migração?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/data-residency/about-github-enterprise-cloud-with-data-residency>
+
+<!-- certification-coach-question:admin-065:b464b6a669a882698acaa074d3ea62e23866302f55d19ff0c65e308e8ba878d6 -->
+## Question 65: Administer GitHub Enterprise environment
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-065`
+
+**Content revision:** `b464b6a669a882698acaa074d3ea62e23866302f55d19ff0c65e308e8ba878d6`
+
+### English
+
+A GHES administrator wants a failover replica to actively serve ordinary write traffic alongside the primary simply because it exists. Which correction matches the documented HA design?
+
+1. GHES HA uses an active/passive arrangement rather than automatic active/active writes **[CORRECT]**
+
+   The documented HA replica is a standby with replication, not an independent active writer.
+
+2. A replica is only a ZIP archive of source code
+
+   A replica is an appliance, not merely a source archive.
+
+3. All replicas accept independent writes and merge later
+
+   Independent concurrent writes are not the documented active/passive model.
+
+4. Failover never requires traffic-routing planning
+
+   Traffic redirection must be planned and managed for failover.
+
+**Concept:** GHES HA operating model
+
+**Authored coaching hints:**
+
+- Which appliance is authoritative during normal operation?
+- What does standby mean for application traffic?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un administrador GHES quiere una réplica de conmutación por error para atender activamente el tráfico de escritura normal junto con la principal simplemente porque existe. ¿Qué corrección coincide con el diseño documentado de HA?
+
+1. GHES HA utiliza una disposición active/passive en lugar de escrituras automáticas active/active **[CORRECT]**
+
+   La réplica documentada HA es una copia en espera con replicación, no un escritor activo independiente.
+
+2. Una réplica es sólo un archivo ZIP de código fuente.
+
+   Una réplica es un dispositivo, no simplemente un archivo fuente.
+
+3. Todas las réplicas aceptan escrituras independientes y se fusionan más tarde.
+
+   Las escrituras simultáneas independientes no son el modelo active/passive documentado.
+
+4. La conmutación por error nunca requiere planificación de enrutamiento del tráfico
+
+   Se debe planificar y gestionar la redirección del tráfico para la conmutación por error.
+
+**Concept:** Modelo operativo GHES HA
+
+**Authored coaching hints:**
+
+- ¿Qué aparato tiene autoridad durante el funcionamiento normal?
+- ¿Qué significa el modo de espera para el tráfico de aplicaciones?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um administrador GHES deseja que uma réplica de failover atenda ativamente ao tráfego de gravação comum junto com o primário, simplesmente porque ele existe. Qual correção corresponde ao design documentado do HA?
+
+1. GHES HA usa um arranjo active/passive em vez de gravações active/active automáticas **[CORRECT]**
+
+   A réplica HA documentada é um modo de espera com replicação, não um gravador ativo independente.
+
+2. Uma réplica é apenas um arquivo ZIP de código-fonte
+
+   Uma réplica é um dispositivo, não apenas um arquivo de origem.
+
+3. Todas as réplicas aceitam gravações independentes e mesclam posteriormente
+
+   As gravações simultâneas independentes não são o modelo active/passive documentado.
+
+4. O failover nunca requer planejamento de roteamento de tráfego
+
+   O redirecionamento de tráfego deve ser planejado e gerenciado para failover.
+
+**Concept:** Modelo operacional GHES HA
+
+**Authored coaching hints:**
+
+- Qual aparelho é autoritário durante a operação normal?
+- O que significa espera para o tráfego de aplicativos?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-server@latest/admin/monitoring-and-managing-your-instance/configuring-high-availability/about-high-availability-configuration>
+
+<!-- certification-coach-question:admin-066:067bda2e6e9a64d6abdc6757f71ed6ad3b54fa144916411ed9f4124120083fe7 -->
+## Question 66: Administer GitHub Enterprise environment
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-066`
+
+**Content revision:** `067bda2e6e9a64d6abdc6757f71ed6ad3b54fa144916411ed9f4124120083fe7`
+
+### English
+
+A GHES incident happened six days ago, and Support needs logs covering that period. The default support bundle contains only the recent default window. What should the administrator evaluate?
+
+1. A source ZIP from the default branch
+
+   A source ZIP does not provide historical appliance logs.
+
+2. An extended support bundle covering the longer documented window **[CORRECT]**
+
+   The extended bundle includes a longer recent log window than the default bundle.
+
+3. The repository's license file
+
+   A software license file is unrelated to service logs.
+
+4. Changing the appliance clock to six days earlier
+
+   Changing the system clock does not recover older logs and can create operational problems.
+
+**Concept:** Selecting diagnostic time coverage
+
+**Authored coaching hints:**
+
+- Does the requested incident fall inside the default collection window?
+- Which supported collection option broadens that coverage?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Hace seis días ocurrió un incidente GHES y el soporte necesita registros que cubran ese período. El paquete de soporte predeterminado contiene solo la ventana predeterminada reciente. ¿Qué debe evaluar el administrador?
+
+1. Una fuente ZIP de la rama predeterminada
+
+   Una fuente ZIP no proporciona registros históricos del dispositivo.
+
+2. Un paquete de soporte extendido que cubre la ventana documentada más larga **[CORRECT]**
+
+   El paquete extendido incluye una ventana de registro reciente más larga que el paquete predeterminado.
+
+3. El archivo de licencia del repositorio
+
+   Un archivo de licencia de software no está relacionado con los registros de servicio.
+
+4. Cambiar el reloj del aparato a seis días antes
+
+   Cambiar el reloj del sistema no recupera los registros más antiguos y puede crear problemas operativos.
+
+**Concept:** Selección de cobertura de tiempo de diagnóstico
+
+**Authored coaching hints:**
+
+- ¿El incidente solicitado se encuentra dentro de la ventana de recopilación predeterminada?
+- ¿Qué opción de cobro admitido amplía esa cobertura?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um incidente GHES aconteceu há seis dias e o suporte precisa de registros que cubram esse período. O pacote de suporte padrão contém apenas a janela padrão recente. O que o administrador deve avaliar?
+
+1. Uma origem ZIP da ramificação padrão
+
+   Uma origem ZIP não fornece logs históricos do dispositivo.
+
+2. Um pacote de suporte estendido cobrindo a janela documentada mais longa **[CORRECT]**
+
+   O pacote estendido inclui uma janela de log recente mais longa que o pacote padrão.
+
+3. O arquivo de licença do repositório
+
+   Um arquivo de licença de software não está relacionado aos logs de serviço.
+
+4. Alterar o relógio do aparelho para seis dias antes
+
+   Alterar o relógio do sistema não recupera logs antigos e pode criar problemas operacionais.
+
+**Concept:** Selecionando cobertura de tempo de diagnóstico
+
+**Authored coaching hints:**
+
+- O incidente solicitado está dentro da janela de coleta padrão?
+- Qual opção de coleta suportada amplia essa cobertura?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-server@latest/support/contacting-github-support/providing-data-to-github-support>
+
+<!-- certification-coach-question:admin-067:822e3e980f8e9577be419eb26bfd9eef45aa9338b7f62a7cbfbb34483d3b6a4b -->
+## Question 67: Administer GitHub Enterprise environment
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-067`
+
+**Content revision:** `822e3e980f8e9577be419eb26bfd9eef45aa9338b7f62a7cbfbb34483d3b6a4b`
+
+### English
+
+An enterprise wants consistent CI behavior across many repositories while allowing centrally maintained fixes. Which standardization mechanism should administrators recommend?
+
+1. Copy a workflow once and never track future changes
+
+   Untracked copies drift and do not receive controlled central updates.
+
+2. Store executable CI instructions only in an email
+
+   Email is not an executable, version-controlled CI standard.
+
+3. Use versioned reusable workflows governed by enterprise policy **[CORRECT]**
+
+   Reusable workflows provide a versioned shared implementation with policy governance.
+
+4. Give every repository an unrelated unreviewed workflow
+
+   Unrelated unreviewed workflows undermine consistency.
+
+**Concept:** Centrally governed workflow standards
+
+**Authored coaching hints:**
+
+- How will a common CI fix reach many repositories?
+- What makes the shared implementation auditable and reusable?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una empresa quiere un comportamiento consistente de CI en muchos repositorios y al mismo tiempo permitir correcciones mantenidas centralmente. ¿Qué mecanismo de estandarización deberían recomendar los administradores?
+
+1. Copie un flujo de trabajo una vez y nunca realice un seguimiento de cambios futuros
+
+   Las copias sin seguimiento se desvían y no reciben actualizaciones centrales controladas.
+
+2. Almacene las instrucciones ejecutables CI solo en un correo electrónico
+
+   El correo electrónico no es un estándar CI ejecutable y con versión controlada.
+
+3. Utilice flujos de trabajo reutilizables versionados y regidos por la política empresarial **[CORRECT]**
+
+   Los flujos de trabajo reutilizables proporcionan una implementación compartida versionada con gobernanza de políticas.
+
+4. Proporcione a cada repositorio un flujo de trabajo no relacionado y no revisado
+
+   Los flujos de trabajo no relacionados y no revisados socavan la coherencia.
+
+**Concept:** Estándares de flujo de trabajo gobernados centralmente
+
+**Authored coaching hints:**
+
+- ¿Cómo llegará una solución común CI a muchos repositorios?
+- ¿Qué hace que la implementación compartida sea auditable y reutilizable?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma empresa deseja um comportamento CI consistente em muitos repositórios, ao mesmo tempo que permite correções mantidas centralmente. Qual mecanismo de padronização os administradores devem recomendar?
+
+1. Copie um fluxo de trabalho uma vez e nunca acompanhe alterações futuras
+
+   As cópias não rastreadas são desviadas e não recebem atualizações centrais controladas.
+
+2. Armazene instruções executáveis CI apenas em um e-mail
+
+   Email não é um padrão CI executável e controlado por versão.
+
+3. Use fluxos de trabalho reutilizáveis com controle de versão regidos pela política empresarial **[CORRECT]**
+
+   Fluxos de trabalho reutilizáveis fornecem uma implementação compartilhada com controle de versão com governança de políticas.
+
+4. Dê a cada repositório um fluxo de trabalho não relacionado e não revisado
+
+   Fluxos de trabalho não relacionados e não revisados prejudicam a consistência.
+
+**Concept:** Padrões de fluxo de trabalho governados centralmente
+
+**Authored coaching hints:**
+
+- Como uma correção comum do CI alcançará muitos repositórios?
+- O que torna a implementação compartilhada auditável e reutilizável?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/sharing-automations/reusing-workflows>
+
+<!-- certification-coach-question:admin-068:028dccb2ed1c62c005be5bcd0cb62163d0902f5401b6de48af02f493b08ae0b6 -->
+## Question 68: Administer GitHub Enterprise environment
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-068`
+
+**Content revision:** `028dccb2ed1c62c005be5bcd0cb62163d0902f5401b6de48af02f493b08ae0b6`
+
+### English
+
+An administrator is explaining GitHub deployment choices to a risk committee. Which distinction is accurate?
+
+1. Enterprise Managed Users is a replacement for GitHub Enterprise Server backups
+
+   Managed identities do not provide backup or disaster recovery.
+
+2. Cloud data residency means the customer patches GitHub's application servers
+
+   Cloud data residency remains a GitHub-operated service.
+
+3. Personal accounts and managed users are two names for the same lifecycle model
+
+   The two account models differ in provisioning, ownership, and collaboration boundaries.
+
+4. Deployment location and identity model are related design choices but not the same concept **[CORRECT]**
+
+   Hosting, residency, and identity lifecycle must each be evaluated explicitly.
+
+**Concept:** Separating hosting and identity decisions
+
+**Authored coaching hints:**
+
+- Who operates the platform, and who governs the identities?
+- Can changing authentication alone relocate stored data?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un administrador explica las opciones de implementación de GitHub a un comité de riesgos. ¿Qué distinción es precisa?
+
+1. Enterprise Managed Users es un reemplazo para las copias de seguridad GitHub Enterprise Server
+
+   Las identidades administradas no proporcionan respaldo ni recuperación ante desastres.
+
+2. La residencia de datos en la nube significa que el cliente parchea los servidores de aplicaciones de GitHub
+
+   La residencia de datos en la nube sigue siendo un servicio operado por GitHub.
+
+3. Cuentas personales y usuarios administrados son dos nombres para el mismo modelo de ciclo de vida
+
+   Los dos modelos de cuentas difieren en los límites de aprovisionamiento, propiedad y colaboración.
+
+4. La ubicación de implementación y el modelo de identidad son opciones de diseño relacionadas, pero no son el mismo concepto. **[CORRECT]**
+
+   El alojamiento, la residencia y el ciclo de vida de la identidad deben evaluarse explícitamente.
+
+**Concept:** Separar las decisiones de alojamiento e identidad
+
+**Authored coaching hints:**
+
+- ¿Quién opera la plataforma y quién gobierna las identidades?
+- ¿El cambio de autenticación por sí solo puede reubicar los datos almacenados?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um administrador está explicando as opções de implantação do GitHub a um comitê de risco. Qual distinção é precisa?
+
+1. Enterprise Managed Users é um substituto para backups GitHub Enterprise Server
+
+   As identidades gerenciadas não fornecem backup ou recuperação de desastres.
+
+2. Residência de dados na nuvem significa que o cliente corrige os servidores de aplicativos do GitHub
+
+   A residência de dados na nuvem continua sendo um serviço operado por GitHub.
+
+3. Contas pessoais e usuários gerenciados são dois nomes para o mesmo modelo de ciclo de vida
+
+   Os dois modelos de conta diferem em termos de provisionamento, propriedade e limites de colaboração.
+
+4. O local de implantação e o modelo de identidade são opções de design relacionadas, mas não são o mesmo conceito **[CORRECT]**
+
+   Hospedagem, residência e ciclo de vida da identidade devem ser avaliados explicitamente.
+
+**Concept:** Separando decisões de hospedagem e identidade
+
+**Authored coaching hints:**
+
+- Quem opera a plataforma e quem governa as identidades?
+- A alteração da autenticação por si só pode realocar os dados armazenados?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/enterprise-fundamentals/choose-an-enterprise-type>
+
+<!-- certification-coach-question:admin-069:a9694713525bdcbec5537c761308a9d00a8334694c771923f0384a6eda6dad63 -->
+## Question 69: Administer GitHub Enterprise environment
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-069`
+
+**Content revision:** `a9694713525bdcbec5537c761308a9d00a8334694c771923f0384a6eda6dad63`
+
+### English
+
+A GHES operator finds that every repository is slow and the appliance's persistent data volume is nearly full. Which next step best fits administrator responsibility?
+
+1. Investigate capacity and follow the documented version-specific storage expansion procedure **[CORRECT]**
+
+   Instance capacity is an operational issue administrators can investigate and remediate safely.
+
+2. Give all users repository Admin to improve disk throughput
+
+   Repository role changes do not increase storage capacity.
+
+3. Remove SAML because it allocates repository storage
+
+   Removing authentication is not a storage-capacity remedy.
+
+4. Ask developers to rename their local remotes
+
+   Remote names on workstations do not expand appliance persistent storage.
+
+**Concept:** GHES capacity administration
+
+**Authored coaching hints:**
+
+- Does the symptom point to authorization or a shared resource constraint?
+- Which instance metric supports a concrete operational action?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un operador de GHES descubre que todos los repositorios son lentos y que el volumen de datos persistentes del dispositivo está casi lleno. ¿Qué siguiente paso se adapta mejor a la responsabilidad del administrador?
+
+1. Investigue la capacidad y siga el procedimiento documentado de expansión de almacenamiento específico de la versión. **[CORRECT]**
+
+   La capacidad de la instancia es un issue operativo que los administradores pueden investigar y remediar de forma segura.
+
+2. Proporcione a todos los usuarios el repositorio Admin para mejorar el rendimiento del disco.
+
+   Los cambios de función del repositorio no aumentan la capacidad de almacenamiento.
+
+3. Elimine SAML porque asigna almacenamiento de repositorio
+
+   Quitar la autenticación no es una solución para la capacidad de almacenamiento.
+
+4. Pedir a los desarrolladores que cambien el nombre de sus remotos locales de Git
+
+   Los nombres remotos en las estaciones de trabajo no amplían el almacenamiento persistente del dispositivo.
+
+**Concept:** GHES administración de capacidad
+
+**Authored coaching hints:**
+
+- ¿El síntoma apunta a una autorización o una restricción de recursos compartidos?
+- ¿Qué métrica de instancia respalda una acción operativa concreta?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um operador GHES descobre que cada repositório está lento e o volume de dados persistentes do dispositivo está quase cheio. Qual próximo passo se adapta melhor à responsabilidade do administrador?
+
+1. Investigue a capacidade e siga o procedimento documentado de expansão de armazenamento específico da versão **[CORRECT]**
+
+   A capacidade da instância é um issue operacional que os administradores podem investigar e corrigir com segurança.
+
+2. Dê a todos os usuários o repositório Admin para melhorar o rendimento do disco
+
+   As alterações na função do repositório não aumentam a capacidade de armazenamento.
+
+3. Remova SAML porque aloca armazenamento de repositório
+
+   A remoção da autenticação não é uma solução para a capacidade de armazenamento.
+
+4. Pedir aos desenvolvedores que renomeiem seus remotos locais do Git
+
+   Os nomes remotos nas estações de trabalho não expandem o armazenamento persistente do dispositivo.
+
+**Concept:** Administração de capacidade GHES
+
+**Authored coaching hints:**
+
+- O sintoma aponta para autorização ou restrição de recursos compartilhados?
+- Qual métrica de instância apoia uma ação operacional concreta?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-server@latest/admin/monitoring-managing-and-updating-your-instance/updating-the-virtual-machine-and-physical-resources/increasing-storage-capacity>
+
+<!-- certification-coach-question:admin-070:670578527f16e041dacd744470f616655fd67e9adb108278bcafbc1671bb7448 -->
+## Question 70: Administer GitHub Enterprise environment
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-070`
+
+**Content revision:** `670578527f16e041dacd744470f616655fd67e9adb108278bcafbc1671bb7448`
+
+### English
+
+A department wants each repository to identify the team responsible for reviewing infrastructure changes. Which file is purpose-built for that convention?
+
+1. dependabot.yml
+
+   Dependabot configuration controls dependency updates, not code ownership routing.
+
+2. CODEOWNERS **[CORRECT]**
+
+   CODEOWNERS maps paths to responsible people or teams for review requests.
+
+3. LICENSE
+
+   LICENSE states legal terms rather than reviewer responsibility.
+
+4. .gitignore
+
+   .gitignore excludes files from tracking rather than assigning reviewers.
+
+**Concept:** Documenting review responsibility
+
+**Authored coaching hints:**
+
+- Which convention maps paths to reviewers?
+- Is the goal dependency automation, legal terms, or ownership?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un departamento quiere que cada repositorio identifique el equipo responsable de revisar los cambios de infraestructura. ¿Qué archivo está diseñado específicamente para esa convención?
+
+1. dependabot.yml
+
+   La configuración de Dependabot controla las actualizaciones de dependencia, no el enrutamiento de propiedad del código.
+
+2. CODEOWNERS **[CORRECT]**
+
+   CODEOWNERS asigna rutas a personas o equipos responsables para solicitudes de revisión.
+
+3. LICENSE
+
+   LICENSE establece términos legales en lugar de responsabilidad del revisor.
+
+4. .gitignore
+
+   .gitignore excluye archivos del seguimiento en lugar de asignar revisores.
+
+**Concept:** Documentar la responsabilidad de la revisión
+
+**Authored coaching hints:**
+
+- ¿Qué convención asigna rutas a los revisores?
+- ¿El objetivo es la automatización de la dependencia, los términos legales o la propiedad?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um departamento deseja que cada repositório identifique a equipe responsável pela revisão das alterações na infraestrutura. Qual arquivo foi criado especificamente para essa convenção?
+
+1. dependabot.yml
+
+   A configuração Dependabot controla atualizações de dependência, não roteamento de propriedade de código.
+
+2. CODEOWNERS **[CORRECT]**
+
+   CODEOWNERS mapeia caminhos para pessoas ou equipes responsáveis para solicitações de revisão.
+
+3. LICENSE
+
+   LICENSE estabelece termos legais em vez de responsabilidade do revisor.
+
+4. .gitignore
+
+   .gitignore exclui arquivos do rastreamento em vez de atribuir revisores.
+
+**Concept:** Documentando a responsabilidade da revisão
+
+**Authored coaching hints:**
+
+- Qual convenção mapeia caminhos para os revisores?
+- A meta depende da automação, dos termos legais ou da propriedade?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners>
+
+<!-- certification-coach-question:admin-071:abf24b63653429acad2b7f5114d620720b361430e7cc78770a01b5290b496fa4 -->
+## Question 71: Administer GitHub Enterprise environment
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-071`
+
+**Content revision:** `abf24b63653429acad2b7f5114d620720b361430e7cc78770a01b5290b496fa4`
+
+### English
+
+A company publishes a branching standard but has not agreed how exceptions will be approved. What is the best administrative rollout plan?
+
+1. Give all users permanent bypass privileges
+
+   Universal permanent bypass defeats the proposed standard.
+
+2. Enforce it immediately without checking existing release workflows
+
+   Unvalidated enforcement risks disrupting legitimate release workflows.
+
+3. Pilot the controls, document scoped exceptions, and validate affected workflows before broad enforcement **[CORRECT]**
+
+   A pilot and explicit exception process balance governance with operational continuity.
+
+4. Delete branches that do not match the proposal without consulting maintainers
+
+   Unapproved branch deletion is destructive and not a responsible rollout.
+
+**Concept:** Governance change management
+
+**Authored coaching hints:**
+
+- What legitimate workflows could an untested rule interrupt?
+- How can exceptions remain explicit rather than becoming unrestricted bypass?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una empresa publica un estándar de ramificación pero no ha acordado cómo se aprobarán las excepciones. ¿Cuál es el mejor plan de implementación administrativa?
+
+1. Otorgue a todos los usuarios privilegios de omisión permanentes
+
+   La derivación permanente universal anula el estándar propuesto.
+
+2. Aplicarlo inmediatamente sin verificar los flujos de trabajo de lanzamiento existentes
+
+   La aplicación no validada corre el riesgo de interrumpir los flujos de trabajo de publicación legítimos.
+
+3. Ponga a prueba los controles, documente las excepciones de alcance y valide los flujos de trabajo afectados antes de una aplicación generalizada. **[CORRECT]**
+
+   Un proceso piloto y de excepción explícito equilibra la gobernanza con la continuidad operativa.
+
+4. Eliminar ramas que no coincidan con la propuesta sin consultar a los mantenedores
+
+   La eliminación de ramas no aprobadas es destructiva y no una implementación responsable.
+
+**Concept:** Gestión del cambio de gobernanza
+
+**Authored coaching hints:**
+
+- ¿Qué flujos de trabajo legítimos podría interrumpir una regla no probada?
+- ¿Cómo pueden las excepciones seguir siendo explícitas en lugar de convertirse en elusiones irrestrictas?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma empresa publica uma norma de ramificação, mas não chegou a um acordo sobre como as exceções serão aprovadas. Qual é o melhor plano de implementação administrativa?
+
+1. Conceda privilégios de bypass permanentes a todos os usuários
+
+   O bypass permanente universal anula o padrão proposto.
+
+2. Aplique-o imediatamente, sem verificar os fluxos de trabalho de lançamento existentes
+
+   A aplicação não validada corre o risco de interromper os fluxos de trabalho de lançamento legítimos.
+
+3. Teste os controles, documente exceções no escopo e valide os fluxos de trabalho afetados antes da aplicação ampla **[CORRECT]**
+
+   Um processo piloto e de exceção explícita equilibra a governança com a continuidade operacional.
+
+4. Exclua ramificações que não correspondam à proposta sem consultar os mantenedores
+
+   A exclusão não aprovada de ramificações é destrutiva e não é uma implementação responsável.
+
+**Concept:** Gestão de mudanças de governança
+
+**Authored coaching hints:**
+
+- Quais fluxos de trabalho legítimos uma regra não testada poderia interromper?
+- Como as exceções podem permanecer explícitas em vez de se tornarem um desvio irrestrito?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets>
+
+<!-- certification-coach-question:admin-072:bda4499808d75fd55721d324da034365030e96d6d32cc282d7e9838941809935 -->
+## Question 72: Administer GitHub Enterprise environment
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-072`
+
+**Content revision:** `bda4499808d75fd55721d324da034365030e96d6d32cc282d7e9838941809935`
+
+### English
+
+A stakeholder wants GitHub Support to decide which employees should receive Write access to a finance repository. Who should own that business authorization decision?
+
+1. Any unauthenticated visitor
+
+   Visitors have no authority to determine private business access.
+
+2. The author of the most recent commit
+
+   Commit authorship alone does not assign access-governance responsibility.
+
+3. The Git client vendor
+
+   A Git client vendor does not control the company's authorization policy.
+
+4. The organization's authorized administrators and resource owners **[CORRECT]**
+
+   Business access decisions belong to the customer's authorized governance process.
+
+**Concept:** Customer versus Support responsibilities
+
+**Authored coaching hints:**
+
+- Is the request troubleshooting a platform defect or deciding entitlement?
+- Who understands and authorizes the business need for access?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una parte interesada quiere que el soporte de GitHub decida qué empleados deben recibir acceso de Write a un repositorio financiero. ¿Quién debería ser el dueño de esa decisión de autorización comercial?
+
+1. Cualquier visitante no autenticado
+
+   Los visitantes no tienen autoridad para determinar el acceso a empresas privadas.
+
+2. El autor del más reciente commit
+
+   La autoría confirmada por sí sola no asigna responsabilidad de gobernanza del acceso.
+
+3. El proveedor del cliente Git
+
+   Un proveedor de cliente Git no controla la política de autorización de la empresa.
+
+4. Los administradores autorizados y propietarios de recursos de la organización. **[CORRECT]**
+
+   Las decisiones de acceso empresarial pertenecen al proceso de gobierno autorizado del cliente.
+
+**Concept:** Responsabilidades del cliente versus soporte
+
+**Authored coaching hints:**
+
+- ¿La solicitud soluciona un problema de la plataforma o decide un derecho?
+- ¿Quién entiende y autoriza la necesidad empresarial de acceso?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma parte interessada deseja que o Suporte GitHub decida quais funcionários devem receber acesso Write a um repositório financeiro. Quem deve ser o proprietário dessa decisão de autorização comercial?
+
+1. Qualquer visitante não autenticado
+
+   Os visitantes não têm autoridade para determinar o acesso a empresas privadas.
+
+2. O autor do commit mais recente
+
+   A autoria do commit por si só não atribui responsabilidade de governança de acesso.
+
+3. O fornecedor do cliente Git
+
+   Um fornecedor de cliente Git não controla a política de autorização da empresa.
+
+4. Os administradores autorizados e proprietários de recursos da organização **[CORRECT]**
+
+   As decisões de acesso comercial pertencem ao processo de governança autorizado do cliente.
+
+**Concept:** Responsabilidades do cliente versus suporte
+
+**Authored coaching hints:**
+
+- A solicitação está solucionando um defeito da plataforma ou decidindo o direito?
+- Quem entende e autoriza a necessidade comercial de acesso?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/managing-an-individuals-access-to-an-organization-repository>
+
+<!-- certification-coach-question:admin-073:6b41d6a651e10abb9630fa9ea7a98ce994f4b6295ebe7da9c1a9e129eb68ea6b -->
+## Question 73: Administer GitHub Enterprise environment
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-073`
+
+**Content revision:** `6b41d6a651e10abb9630fa9ea7a98ce994f4b6295ebe7da9c1a9e129eb68ea6b`
+
+### English
+
+An enterprise owns GitHub subscriptions and wants to determine whether a specific add-on is included before enabling it broadly. Which approach is safest?
+
+1. Check the current product entitlement and billing documentation for the actual account **[CORRECT]**
+
+   Entitlements and usage charges depend on the actual product and account agreement.
+
+2. Assume every enterprise feature has unlimited included usage
+
+   Enterprise subscriptions do not imply unlimited included usage for all products.
+
+3. Treat visibility of an enablement button as proof that all consumption is prepaid
+
+   A feature may be available to enable while its usage still incurs additional charges.
+
+4. Enable the add-on everywhere and investigate only after invoicing
+
+   Broad enablement without checking billing can create avoidable costs.
+
+**Concept:** Entitlement-aware administration
+
+**Authored coaching hints:**
+
+- What distinguishes availability from included consumption?
+- Which account-specific evidence should precede broad enablement?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una empresa posee suscripciones GitHub y desea determinar si se incluye un complemento específico antes de habilitarlo de manera generalizada. ¿Qué enfoque es más seguro?
+
+1. Verifique el derecho actual del producto y la documentación de facturación de la cuenta real **[CORRECT]**
+
+   Los derechos y los cargos de uso dependen del producto real y del acuerdo de cuenta.
+
+2. Suponga que cada función empresarial tiene un uso incluido ilimitado
+
+   Las suscripciones empresariales no implican un uso ilimitado incluido para todos los productos.
+
+3. Trate la visibilidad de un botón de habilitación como prueba de que todo el consumo es prepago.
+
+   Es posible que una función esté disponible para habilitarse mientras su uso todavía genera cargos adicionales.
+
+4. Habilite el complemento en todas partes e investigue solo después de la facturación
+
+   Una habilitación amplia sin verificar la facturación puede generar costos evitables.
+
+**Concept:** Administración que considera los derechos de uso
+
+**Authored coaching hints:**
+
+- ¿Qué distingue la disponibilidad del consumo incluido?
+- ¿Qué evidencia específica de la cuenta debería preceder a la habilitación amplia?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma empresa possui assinaturas GitHub e deseja determinar se um complemento específico está incluído antes de ativá-lo amplamente. Qual abordagem é mais segura?
+
+1. Verifique o direito atual do produto e a documentação de cobrança da conta real **[CORRECT]**
+
+   Os direitos e cobranças de uso dependem do produto real e do contrato da conta.
+
+2. Suponha que todos os recursos empresariais tenham uso ilimitado incluído
+
+   As assinaturas empresariais não implicam uso ilimitado e incluído para todos os produtos.
+
+3. Trate a visibilidade de um botão de ativação como prova de que todo o consumo é pré-pago
+
+   Um recurso pode estar disponível para ativação enquanto seu uso ainda incorrer em custos adicionais.
+
+4. Habilite o complemento em qualquer lugar e investigue somente após o faturamento
+
+   A ampla capacitação sem verificação do faturamento pode criar custos evitáveis.
+
+**Concept:** Administração que considera os direitos de uso
+
+**Authored coaching hints:**
+
+- O que distingue a disponibilidade do consumo incluído?
+- Quais evidências específicas da conta devem preceder a capacitação ampla?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/billing/managing-the-plan-for-your-github-account/about-per-user-pricing>
+
+<!-- certification-coach-question:admin-074:2dffbdded78e86e853aa033636fe00e5f09383ba60eb10037991c5f2ab8107df -->
+## Question 74: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-074`
+
+**Content revision:** `2dffbdded78e86e853aa033636fe00e5f09383ba60eb10037991c5f2ab8107df`
+
+### English
+
+A repository branch matches two active rulesets: one requires reviews and another requires a security status check. What must a normal non-bypass merge satisfy?
+
+1. Only the ruleset created first
+
+   Creation order does not discard other applicable active rulesets.
+
+2. Both applicable rulesets **[CORRECT]**
+
+   Applicable rulesets are layered, so both review and status requirements apply.
+
+3. Only the ruleset with the shorter name
+
+   Ruleset names do not determine precedence.
+
+4. Neither, because overlapping rulesets cancel each other
+
+   Overlapping rulesets do not cancel their requirements.
+
+**Concept:** Layered ruleset enforcement
+
+**Authored coaching hints:**
+
+- Are rulesets mutually exclusive selections?
+- What does it mean for multiple controls to apply to the same branch?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una rama del repositorio coincide con dos rulesets activos: uno requiere revisiones y otro requiere una verificación del estado de seguridad. ¿Qué debe satisfacer una fusión normal sin omisión?
+
+1. Sólo el ruleset creado primero
+
+   El orden de creación no descarta otros rulesets activos aplicables.
+
+2. Ambos rulesets aplicables **[CORRECT]**
+
+   Los rulesets aplicables están en capas, por lo que se aplican tanto los requisitos de revisión como los de estado.
+
+3. Sólo el ruleset con el nombre más corto
+
+   Los nombres de los conjuntos de reglas no determinan la prioridad.
+
+4. Ninguno de los dos, porque los rulesets superpuestos se cancelan entre sí.
+
+   La superposición de rulesets no cancela sus requisitos.
+
+**Concept:** Aplicación de ruleset en capas
+
+**Authored coaching hints:**
+
+- ¿Son las selecciones rulesets mutuamente excluyentes?
+- ¿Qué significa que se apliquen múltiples controles a la misma rama?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma ramificação do repositório corresponde a dois rulesets ativos: um requer revisões e outro requer uma verificação de status de segurança. O que uma mesclagem normal sem bypass deve satisfazer?
+
+1. Apenas o ruleset criado primeiro
+
+   A ordem de criação não descarta outros rulesets ativos aplicáveis.
+
+2. Ambos os rulesets aplicáveis **[CORRECT]**
+
+   Os rulesets aplicáveis são em camadas, portanto, aplicam-se os requisitos de revisão e status.
+
+3. Apenas o ruleset com o nome mais curto
+
+   Os nomes dos conjuntos de regras não determinam a precedência.
+
+4. Nenhum dos dois, porque os rulesets sobrepostos se cancelam
+
+   A sobreposição de rulesets não cancela seus requisitos.
+
+**Concept:** Aplicação ruleset em camadas
+
+**Authored coaching hints:**
+
+- As seleções rulesets são mutuamente exclusivas?
+- O que significa vários controles serem aplicados à mesma ramificação?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets>
+
+<!-- certification-coach-question:admin-075:fa12fceb30e4d59c2182a47d3f9e20983dd012b0ca26acfb50db9c846d806665 -->
+## Question 75: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-075`
+
+**Content revision:** `fa12fceb30e4d59c2182a47d3f9e20983dd012b0ca26acfb50db9c846d806665`
+
+### English
+
+On a plan supporting ruleset evaluation, an organization wants to observe the likely effects of a proposed rule without blocking developers yet. Which enforcement state is appropriate?
+
+1. Active with every developer granted permanent bypass
+
+   Universal bypass weakens the test and differs from nonblocking rule evaluation.
+
+2. Disabled with no evaluation data
+
+   Disabled rules do not provide the intended enforcement evaluation.
+
+3. Evaluate **[CORRECT]**
+
+   Evaluate reports rule outcomes without enforcing the rules.
+
+4. Delete the ruleset after each push
+
+   Repeated deletion prevents a stable pilot and useful evaluation history.
+
+**Concept:** Nonblocking ruleset rollout
+
+**Authored coaching hints:**
+
+- How can a control be assessed without rejecting work?
+- Which state distinguishes observation from enforcement?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+En un plan que respalda la evaluación ruleset, una organización quiere observar los efectos probables de una regla propuesta sin bloquear a los desarrolladores todavía. ¿Qué estado de aplicación es apropiado?
+
+1. Activo con todos los desarrolladores a los que se les ha concedido una omisión permanente
+
+   La omisión universal debilita la prueba y difiere de la evaluación de reglas sin bloqueo.
+
+2. Deshabilitado sin datos de evaluación
+
+   Las reglas deshabilitadas no proporcionan la evaluación de cumplimiento prevista.
+
+3. Evaluate **[CORRECT]**
+
+   Evalúe los resultados de las reglas de los informes sin hacer cumplir las reglas.
+
+4. Eliminar el ruleset después de cada push
+
+   La eliminación repetida impide un piloto estable y un historial de evaluación útil.
+
+**Concept:** Implementación sin bloqueo de ruleset
+
+**Authored coaching hints:**
+
+- ¿Cómo se puede evaluar un control sin rechazar un trabajo?
+- ¿Qué estado distingue la observación de la aplicación?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Em um plano que apoia a avaliação ruleset, uma organização deseja observar os prováveis efeitos de uma regra proposta sem bloquear ainda os desenvolvedores. Qual estado de aplicação é apropriado?
+
+1. Ativo com todos os desenvolvedores com bypass permanente concedido
+
+   O desvio universal enfraquece o teste e difere da avaliação de regras sem bloqueio.
+
+2. Desativado sem dados de avaliação
+
+   As regras desativadas não fornecem a avaliação de aplicação pretendida.
+
+3. Evaluate **[CORRECT]**
+
+   Avalie os resultados das regras dos relatórios sem aplicá-las.
+
+4. Exclua o ruleset após cada push
+
+   A exclusão repetida impede um piloto estável e um histórico de avaliação útil.
+
+**Concept:** Implementação ruleset sem bloqueio
+
+**Authored coaching hints:**
+
+- Como um controle pode ser avaliado sem rejeitar o trabalho?
+- Qual estado distingue a observação da fiscalização?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets>
+
+<!-- certification-coach-question:admin-076:db17faeeb00115d9672e3e8daf6814041b04d40c365d8189208768b87768f816 -->
+## Question 76: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-076`
+
+**Content revision:** `db17faeeb00115d9672e3e8daf6814041b04d40c365d8189208768b87768f816`
+
+### English
+
+A release automation app needs a narrowly approved exception to a branch ruleset. Which design best preserves accountability?
+
+1. Disable every branch rule for all contributors
+
+   Global removal discards unrelated protections.
+
+2. Give every organization member bypass access
+
+   Broad bypass defeats the intended limited exception.
+
+3. Have the app use an owner's shared password
+
+   Shared passwords obscure attribution and are inappropriate app credentials.
+
+4. Grant a documented bypass only to the approved app for the relevant ruleset **[CORRECT]**
+
+   A scoped app bypass keeps the exception explicit while retaining other governance.
+
+**Concept:** Scoped ruleset bypass
+
+**Authored coaching hints:**
+
+- Which principal actually needs the exception?
+- How can the rest of the contributor population remain governed?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una aplicación de automatización de lanzamiento necesita una excepción aprobada estrictamente para una rama ruleset. ¿Qué diseño preserva mejor la responsabilidad?
+
+1. Deshabilitar cada regla de rama para todos los contribuyentes
+
+   La eliminación global descarta protecciones no relacionadas.
+
+2. Otorgue acceso bypass a todos los miembros de la organización
+
+   La derivación amplia anula la excepción limitada prevista.
+
+3. Haga que la aplicación use la contraseña compartida de un propietario
+
+   Las contraseñas compartidas oscurecen la atribución y son credenciales de aplicaciones inapropiadas.
+
+4. Otorgue una derivación documentada solo a la aplicación aprobada para el ruleset correspondiente **[CORRECT]**
+
+   Una omisión de aplicación con ámbito mantiene la excepción explícita y al mismo tiempo conserva otra gobernanza.
+
+**Concept:** Excepción a un ruleset con alcance limitado
+
+**Authored coaching hints:**
+
+- ¿Qué identidad realmente necesita la excepción?
+- ¿Cómo puede seguir gobernado el resto de la población contribuyente?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um aplicativo de automação de releases precisa de uma exceção aprovada com escopo restrito para um ruleset de ramificações. Qual abordagem preserva melhor a responsabilização?
+
+1. Desative todas as regras de ramificação para todos os contribuidores
+
+   A remoção global descarta proteções não relacionadas.
+
+2. Conceda acesso de bypass a todos os membros da organização
+
+   O desvio amplo anula a exceção limitada pretendida.
+
+3. Faça com que o aplicativo use uma senha compartilhada do proprietário
+
+   As senhas compartilhadas obscurecem a atribuição e são credenciais de aplicativos inadequadas.
+
+4. Conceda um bypass documentado apenas ao aplicativo aprovado para o ruleset relevante **[CORRECT]**
+
+   Um desvio de aplicativo com escopo mantém a exceção explícita, ao mesmo tempo que mantém outra governança.
+
+**Concept:** Exceção a um ruleset com escopo limitado
+
+**Authored coaching hints:**
+
+- Qual identidade realmente precisa da exceção?
+- Como pode o resto da população contribuinte permanecer governado?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets>
+
+<!-- certification-coach-question:admin-077:63484e2d80a4494c24aaa17b1822820ce7501ce0d7f7a09f2eb187ade62f7ec7 -->
+## Question 77: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-077`
+
+**Content revision:** `63484e2d80a4494c24aaa17b1822820ce7501ce0d7f7a09f2eb187ade62f7ec7`
+
+### English
+
+An organization wants ordinary contributors to be unable to rewrite the history of its main branch with a force push. Which rule directly addresses this?
+
+1. Block force pushes on the target branch **[CORRECT]**
+
+   Blocking force pushes prevents that class of history-rewriting update.
+
+2. Require an issue template
+
+   Issue templates do not constrain Git reference updates.
+
+3. Enable dependency graph
+
+   Dependency graph identifies software dependencies rather than controlling force pushes.
+
+4. Require a repository description
+
+   Descriptions are metadata and do not protect branch history.
+
+**Concept:** Preventing branch-history rewrites
+
+**Authored coaching hints:**
+
+- Which Git operation rewrites an existing branch reference?
+- Does the proposed control govern reference updates or repository metadata?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una organización quiere impedir que los colaboradores comunes reescriban el historial de la rama principal con un force push. ¿Qué regla aborda directamente este objetivo?
+
+1. Bloquear los force pushes a la rama de destino **[CORRECT]**
+
+   Bloquear los force pushes evita ese tipo de actualización que reescribe el historial.
+
+2. Requiere una plantilla issue
+
+   Las plantillas de problemas no restringen las actualizaciones de referencias de Git.
+
+3. Habilitar gráfico de dependencia
+
+   El gráfico de dependencia identifica las dependencias del software en lugar de controlar las presiones forzadas.
+
+4. Requerir una descripción del repositorio
+
+   Las descripciones son metadatos y no protegen el historial de la rama.
+
+**Concept:** Evitar reescrituras del historial de ramas
+
+**Authored coaching hints:**
+
+- ¿Qué operación de Git reescribe una referencia de rama existente?
+- ¿El control propuesto rige las actualizaciones de referencias o los metadatos del repositorio?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma organização quer impedir que colaboradores comuns reescrevam o histórico da ramificação principal com um force push. Qual regra atende diretamente a esse objetivo?
+
+1. Bloquear force pushes na ramificação de destino **[CORRECT]**
+
+   O bloqueio de pushes forçados impede essa classe de atualização de reescrita do histórico.
+
+2. Exigir um modelo issue
+
+   Os modelos de problemas não restringem as atualizações de referência do Git.
+
+3. Habilitar gráfico de dependência
+
+   O grafo de dependências identifica dependências de software, em vez de controlar force pushes.
+
+4. Exigir uma descrição do repositório
+
+   As descrições são metadados e não protegem o histórico da ramificação.
+
+**Concept:** Impedindo reescritas do histórico de ramificações
+
+**Authored coaching hints:**
+
+- Qual operação do Git reescreve uma referência de branch existente?
+- O controle proposto rege atualizações de referência ou metadados de repositório?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets>
+
+<!-- certification-coach-question:admin-078:f8eb6903eb58e71df7227365c1b0f8a4ab069cd7c3afef8902db46a3d034b21f -->
+## Question 78: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-078`
+
+**Content revision:** `f8eb6903eb58e71df7227365c1b0f8a4ab069cd7c3afef8902db46a3d034b21f`
+
+### English
+
+A pull request receives approval, then its author pushes substantial new code. The organization wants that older approval not to satisfy the review requirement. Which setting addresses this?
+
+1. Allow force pushes
+
+   Force-push permission does not invalidate outdated approvals.
+
+2. Dismiss stale pull-request approvals when new commits are pushed **[CORRECT]**
+
+   Dismissing stale approvals requires review of changes made after the approval.
+
+3. Make the repository internal
+
+   Visibility does not determine whether an approval is stale.
+
+4. Disable required status checks
+
+   Removing status checks weakens a separate validation control.
+
+**Concept:** Review freshness
+
+**Authored coaching hints:**
+
+- What did the reviewer actually approve?
+- How should approval validity change when the reviewed code changes?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un pull request recibe la aprobación y luego su autor introduce un código nuevo sustancial. La organización quiere que esa aprobación anterior no cumpla con el requisito de revisión. ¿Qué configuración aborda esto?
+
+1. Permitir force pushes
+
+   El permiso forzado no invalida las aprobaciones obsoletas.
+
+2. Descartar aprobaciones de solicitudes de extracción obsoletas cuando se envía el nuevo commits **[CORRECT]**
+
+   Para descartar aprobaciones obsoletas es necesario revisar los cambios realizados después de la aprobación.
+
+3. Hacer el repositorio interno
+
+   La visibilidad no determina si una aprobación está obsoleta.
+
+4. Deshabilitar las comprobaciones de estado requeridas
+
+   La eliminación de las comprobaciones de estado debilita un control de validación independiente.
+
+**Concept:** Revisar frescura
+
+**Authored coaching hints:**
+
+- ¿Qué aprobó realmente el revisor?
+- ¿Cómo debería cambiar la validez de la aprobación cuando cambia el código revisado?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um pull request recebe aprovação e seu autor envia um novo código substancial. A organização deseja que a aprovação mais antiga não satisfaça o requisito de revisão. Qual configuração aborda isso?
+
+1. Permitir force pushes
+
+   A permissão de envio forçado não invalida aprovações desatualizadas.
+
+2. Dispensar aprovações de solicitação pull obsoletas quando novos commits forem enviados **[CORRECT]**
+
+   A dispensa de aprovações obsoletas requer a revisão das alterações feitas após a aprovação.
+
+3. Torne o repositório interno
+
+   A visibilidade não determina se uma aprovação está obsoleta.
+
+4. Desabilitar verificações de status necessárias
+
+   A remoção das verificações de status enfraquece um controle de validação separado.
+
+**Concept:** Revise o frescor
+
+**Authored coaching hints:**
+
+- O que o revisor realmente aprovou?
+- Como a validade da aprovação deve mudar quando o código revisado for alterado?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets>
+
+<!-- certification-coach-question:admin-079:574f07d9e14734ed77d42d1a76dd52a50bbb6158689ed08ba11a736df7d8d626 -->
+## Question 79: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-079`
+
+**Content revision:** `574f07d9e14734ed77d42d1a76dd52a50bbb6158689ed08ba11a736df7d8d626`
+
+### English
+
+A required status check must be reported by the approved CI GitHub App, not another integration using the same check name. Which configuration is most directly relevant?
+
+1. Require a check by name while accepting results from any source
+
+   A name alone does not identify the approved integration as the producer.
+
+2. Require signed commits without constraining the status-check producer
+
+   Commit signatures authenticate commits rather than status-check provenance.
+
+3. Select the expected source app for the required status check **[CORRECT]**
+
+   Binding the required check to an expected app constrains which producer satisfies it.
+
+4. Require the branch to be up to date without constraining the check source
+
+   Up-to-date requirements address tested branch state, not the check producer's identity.
+
+**Concept:** Required-check provenance
+
+**Authored coaching hints:**
+
+- Is a check's name sufficient to establish who produced it?
+- What additional identity can be associated with the requirement?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una verificación de estado requerida debe ser reportada por el CI GitHub App aprobado, no por otra integración que use el mismo nombre de verificación. ¿Qué configuración es más directamente relevante?
+
+1. Requerir una verificación por nombre al aceptar resultados de cualquier fuente
+
+   Un nombre por sí solo no identifica a la integración aprobada como productor.
+
+2. Requerir commits firmado sin restringir al productor de verificación de estado
+
+   Las firmas de confirmación autentican commits en lugar de verificar el estado de procedencia.
+
+3. Seleccione la aplicación de origen esperada para la verificación de estado requerida **[CORRECT]**
+
+   Vincular la verificación requerida a una aplicación esperada limita qué productor la satisface.
+
+4. Exigir que la rama esté actualizada sin restringir el origen de la verificación
+
+   Exigir una rama actualizada aborda el estado de la rama sometida a pruebas, no la identidad de quien genera la verificación.
+
+**Concept:** Procedencia de verificación requerida
+
+**Authored coaching hints:**
+
+- ¿Basta el nombre de una verificación para establecer quién la generó?
+- ¿Qué identidad adicional se puede asociar con el requisito?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma verificação de status necessária deve ser relatada pelo CI GitHub App aprovado, e não por outra integração usando o mesmo nome de verificação. Qual configuração é mais diretamente relevante?
+
+1. Exigir uma verificação por nome ao aceitar resultados de qualquer fonte
+
+   O nome por si só não identifica a integração aprovada como o produtor.
+
+2. Exigir commits assinado sem restringir o produtor de verificação de status
+
+   As assinaturas de confirmação autenticam commits em vez de verificar a proveniência do status.
+
+3. Selecione o aplicativo de origem esperado para a verificação de status necessária **[CORRECT]**
+
+   Vincular a verificação necessária a um aplicativo esperado restringe qual produtor a satisfaz.
+
+4. Exigir que a ramificação esteja atualizada sem restringir a origem da verificação
+
+   Exigir uma ramificação atualizada trata do estado da ramificação testada, não da identidade de quem gera a verificação.
+
+**Concept:** Origem da verificação obrigatória
+
+**Authored coaching hints:**
+
+- O nome de uma verificação é suficiente para estabelecer quem a gerou?
+- Que identidade adicional pode ser associada ao requisito?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets>
+
+<!-- certification-coach-question:admin-080:6d6221ffb0afd14e59a68c405543cc250ee53ac33574c49388f1d9ff16070ef0 -->
+## Question 80: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-080`
+
+**Content revision:** `6d6221ffb0afd14e59a68c405543cc250ee53ac33574c49388f1d9ff16070ef0`
+
+### English
+
+A compliance team wants commits on a protected branch to carry verified cryptographic signatures. Which rule is the closest match?
+
+1. Require linear history
+
+   Linear history governs merge structure rather than cryptographic signatures.
+
+2. Require two pull-request approvals
+
+   Reviewer approval does not establish a verified signature on each commit.
+
+3. Block force pushes
+
+   Force-push restrictions protect reference updates rather than verify commit signatures.
+
+4. Require signed commits **[CORRECT]**
+
+   The signed-commit rule enforces GitHub's documented signature verification requirements.
+
+**Concept:** Commit-signature requirements
+
+**Authored coaching hints:**
+
+- Which control concerns commit integrity rather than review text?
+- What evidence does GitHub verify for a signed commit?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un equipo de cumplimiento quiere que los commits de una rama protegida tengan firmas criptográficas verificadas. ¿Qué regla se ajusta mejor?
+
+1. Requerir historia lineal
+
+   El historial lineal gobierna la estructura de fusión en lugar de las firmas criptográficas.
+
+2. Requerir dos aprobaciones de solicitudes de extracción
+
+   La aprobación del revisor no establece una firma verificada en cada commit.
+
+3. Bloquear los force pushes
+
+   Las restricciones de envío forzado protegen las actualizaciones de referencia en lugar de verificar las firmas commit.
+
+4. Requerir commits firmado **[CORRECT]**
+
+   La regla firmada-commit aplica los requisitos de verificación de firma documentada de GitHub.
+
+**Concept:** Requisitos de firma de compromiso
+
+**Authored coaching hints:**
+
+- ¿Qué control se refiere a la integridad del commit en lugar del texto de revisión?
+- ¿Qué evidencia verifica GitHub para un commit firmado?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma equipe de conformidade quer que os commits de uma ramificação protegida tenham assinaturas criptográficas verificadas. Qual regra é a mais adequada?
+
+1. Exigir histórico linear
+
+   A história linear governa a estrutura de mesclagem em vez de assinaturas criptográficas.
+
+2. Exigir duas aprovações de solicitação pull
+
+   A aprovação do revisor não estabelece uma assinatura verificada em cada commit.
+
+3. Bloquear force pushes
+
+   As restrições de envio forçado protegem as atualizações de referência em vez de verificar as assinaturas commit.
+
+4. Exigir commits assinado **[CORRECT]**
+
+   A regra commit assinada impõe os requisitos de verificação de assinatura documentada de GitHub.
+
+**Concept:** Requisitos de assinatura de commit
+
+**Authored coaching hints:**
+
+- Qual controle diz respeito à integridade do commit em vez do texto de revisão?
+- Que evidências o GitHub verifica para um commit assinado?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets>
+
+<!-- certification-coach-question:admin-081:2ccc06da989b45ce589bf53a2f7c53148fe7c3c862a0bd2d84abbf335d529d49 -->
+## Question 81: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-081`
+
+**Content revision:** `2ccc06da989b45ce589bf53a2f7c53148fe7c3c862a0bd2d84abbf335d529d49`
+
+### English
+
+On a plan supporting push rulesets, an organization wants to block commits containing files matching a prohibited path pattern. Which control fits the requirement?
+
+1. A push ruleset restricting file paths **[CORRECT]**
+
+   Push rulesets can restrict matching file paths in incoming commits.
+
+2. A README warning alone
+
+   A warning is advisory and does not block a push.
+
+3. An issue milestone
+
+   Milestones track work rather than inspect incoming file paths.
+
+4. An organization billing role
+
+   Billing roles do not constrain repository contents.
+
+**Concept:** File-path restrictions on pushes
+
+**Authored coaching hints:**
+
+- Must the control act before code reaches the repository?
+- Which rule family inspects pushed content rather than only merges?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+En un plan que admite push rulesets, una organización quiere bloquear commits que contiene archivos que coinciden con un patrón de ruta prohibido. ¿Qué control se ajusta al requisito?
+
+1. Un push ruleset que restringe las rutas de los archivos **[CORRECT]**
+
+   Push rulesets puede restringir las rutas de archivos coincidentes en el commits entrante.
+
+2. Una advertencia README sola
+
+   Una advertencia es informativa y no bloquea un push.
+
+3. Un hito issue
+
+   Los hitos rastrean el trabajo en lugar de inspeccionar las rutas de los archivos entrantes.
+
+4. Una función de facturación de la organización
+
+   Las funciones de facturación no limitan el contenido del repositorio.
+
+**Concept:** Restricciones de ruta de archivo en envíos
+
+**Authored coaching hints:**
+
+- ¿Debe actuar el control antes de que el código llegue al repositorio?
+- ¿Qué familia de reglas inspecciona el contenido enviado en lugar de solo las fusiones?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Em um plano que oferece suporte ao push rulesets, uma organização deseja bloquear commits contendo arquivos que correspondam a um padrão de caminho proibido. Qual controle atende ao requisito?
+
+1. Um push ruleset restringindo caminhos de arquivo **[CORRECT]**
+
+   Push rulesets pode restringir caminhos de arquivo correspondentes no commits de entrada.
+
+2. Um aviso README sozinho
+
+   Um aviso é consultivo e não bloqueia um push.
+
+3. Um marco issue
+
+   Os marcos rastreiam o trabalho em vez de inspecionar os caminhos dos arquivos recebidos.
+
+4. Uma função de faturamento da organização
+
+   As funções de cobrança não restringem o conteúdo do repositório.
+
+**Concept:** Restrições de caminho de arquivo em pushes
+
+**Authored coaching hints:**
+
+- O controle deve agir antes que o código chegue ao repositório?
+- Qual família de regras inspeciona o conteúdo enviado em vez de apenas mesclar?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets>
+
+<!-- certification-coach-question:admin-082:a4f82b6b6d59b36090cea3ec133b37936d20eeb103099ff4087346dc1de1b61e -->
+## Question 82: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-082`
+
+**Content revision:** `a4f82b6b6d59b36090cea3ec133b37936d20eeb103099ff4087346dc1de1b61e`
+
+### English
+
+A company wants to control whether its private repositories may be forked. Which administrative surface is directly relevant?
+
+1. Only default-branch force-push restrictions
+
+   Force-push restrictions do not determine whether a private fork may be created.
+
+2. Enterprise and organization repository-forking policies **[CORRECT]**
+
+   Forking policies control whether private repository forks are permitted within supported boundaries.
+
+3. Only organization OAuth App restrictions
+
+   OAuth approval does not replace private-repository forking policy.
+
+4. Only rules requiring code-owner approval before merge
+
+   Merge approvals govern changes rather than fork creation.
+
+**Concept:** Private-repository forking governance
+
+**Authored coaching hints:**
+
+- Where can centrally enforced repository-management policies be set?
+- Is the desired restriction on changes to a branch or creation of a repository fork?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una empresa quiere controlar si sus repositorios privados pueden bifurcarse. ¿Qué superficie administrativa es directamente relevante?
+
+1. Solo restricciones de force push en la rama predeterminada
+
+   Las restricciones de envío forzado no determinan si se puede crear un fork privado.
+
+2. Políticas de bifurcación de repositorios empresariales y organizacionales **[CORRECT]**
+
+   Las políticas de bifurcación controlan si se permiten los repositorios privados forks dentro de los límites admitidos.
+
+3. Sólo organización OAuth Restricciones de la aplicación
+
+   La aprobación OAuth no reemplaza la política de bifurcación de repositorios privados.
+
+4. Sólo reglas que requieren la aprobación del propietario del código antes de la fusión
+
+   Las aprobaciones de fusión rigen los cambios en lugar de la creación de fork.
+
+**Concept:** Gobernanza de bifurcación de repositorio privado
+
+**Authored coaching hints:**
+
+- ¿Dónde se pueden establecer políticas de gestión de repositorios aplicadas de forma centralizada?
+- ¿La restricción deseada sobre cambios en una rama o creación de un repositorio es fork?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma empresa deseja controlar se seus repositórios privados podem ser bifurcados. Qual superfície administrativa é diretamente relevante?
+
+1. Somente restrições de push forçado do branch padrão
+
+   As restrições de envio forçado não determinam se um fork privado pode ser criado.
+
+2. Políticas de bifurcação de repositórios corporativos e organizacionais **[CORRECT]**
+
+   As políticas de bifurcação controlam se o repositório privado forks é permitido dentro dos limites suportados.
+
+3. Somente restrições de aplicativos da organização OAuth
+
+   A aprovação OAuth não substitui a política de bifurcação de repositório privado.
+
+4. Somente regras que exigem aprovação do proprietário do código antes da mesclagem
+
+   As aprovações de mesclagem regem as alterações em vez da criação de fork.
+
+**Concept:** Governança de bifurcação de repositório privado
+
+**Authored coaching hints:**
+
+- Onde podem ser definidas políticas de gerenciamento de repositórios aplicadas centralmente?
+- A restrição desejada para alterações em uma ramificação ou criação de um repositório é fork?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/enforcing-policies/enforcing-policies-for-your-enterprise/enforcing-repository-management-policies-in-your-enterprise>
+
+<!-- certification-coach-question:admin-083:5b66529abe826242d48d4d180b6a4ecee4876cf5c9ef11ee38614c771697d25d -->
+## Question 83: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-083`
+
+**Content revision:** `5b66529abe826242d48d4d180b6a4ecee4876cf5c9ef11ee38614c771697d25d`
+
+### English
+
+A user connects from an IP address on an enterprise allow list but lacks permission to a private repository. What should the administrator expect?
+
+1. The allow list automatically grants repository Write
+
+   An allowed network address does not grant a repository role.
+
+2. The repository becomes readable to anyone on that network
+
+   Network allowance does not make private content public to the network.
+
+3. The user still needs repository authorization **[CORRECT]**
+
+   IP restrictions are an additional access condition, not a replacement for permissions.
+
+4. The allow list substitutes for SAML and every other authentication requirement
+
+   Network policy does not replace identity and resource authorization controls.
+
+**Concept:** Network controls versus authorization
+
+**Authored coaching hints:**
+
+- Does satisfying one access condition satisfy all of them?
+- Which control determines who may read the private repository?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un usuario se conecta desde una dirección IP en una lista de permitidos empresarial, pero carece de permiso para acceder a un repositorio privado. ¿Qué debe esperar el administrador?
+
+1. La lista de permitidos otorga automáticamente el repositorio Write
+
+   Una dirección de red permitida no otorga una función de repositorio.
+
+2. El repositorio se vuelve legible para cualquier persona en esa red.
+
+   La asignación de red no hace que el contenido privado sea público en la red.
+
+3. El usuario aún necesita autorización del repositorio. **[CORRECT]**
+
+   Las restricciones IP son una condición de acceso adicional, no un reemplazo de los permisos.
+
+4. La lista de permitidos sustituye a SAML y cualquier otro requisito de autenticación.
+
+   La política de red no reemplaza los controles de autorización de identidad y recursos.
+
+**Concept:** Controles de red versus autorización
+
+**Authored coaching hints:**
+
+- ¿Satisfacer una condición de acceso las satisface todas?
+- ¿Qué control determina quién puede leer el repositorio privado?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um usuário se conecta a partir de um endereço IP em uma lista de permissões corporativas, mas não tem permissão para um repositório privado. O que o administrador deve esperar?
+
+1. A lista de permissões concede automaticamente ao repositório Write
+
+   Um endereço de rede permitido não concede uma função de repositório.
+
+2. O repositório se torna legível para qualquer pessoa nessa rede
+
+   A permissão da rede não torna o conteúdo privado público para a rede.
+
+3. O usuário ainda precisa de autorização do repositório **[CORRECT]**
+
+   As restrições IP são uma condição de acesso adicional e não uma substituição de permissões.
+
+4. A lista de permissões substitui SAML e todos os outros requisitos de autenticação
+
+   A política de rede não substitui os controles de identidade e autorização de recursos.
+
+**Concept:** Controles de rede versus autorização
+
+**Authored coaching hints:**
+
+- A satisfação de uma condição de acesso satisfaz todas elas?
+- Qual controle determina quem pode ler o repositório privado?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/configuring-settings/hardening-security-for-your-enterprise/restricting-network-traffic-to-your-enterprise-with-an-ip-allow-list>
+
+<!-- certification-coach-question:admin-084:a968a2c36056eb10e5ee3200aec858419972f1531e9f3ae05786a90ce3680f22 -->
+## Question 84: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-084`
+
+**Content revision:** `a968a2c36056eb10e5ee3200aec858419972f1531e9f3ae05786a90ce3680f22`
+
+### English
+
+A security administrator needs a repeatable bundle of repository security settings that can be applied across many eligible repositories. Which feature should they evaluate?
+
+1. Only a repository template containing a security policy document
+
+   A copied policy document does not configure live repository security features.
+
+2. Only a branch ruleset requiring reviews
+
+   Branch review rules do not bundle the repository's security feature settings.
+
+3. Only an export of existing security alerts
+
+   An alert export reports findings rather than applying feature configuration.
+
+4. Security configurations **[CORRECT]**
+
+   Security configurations group security feature settings for application at scale.
+
+**Concept:** Security configurations at scale
+
+**Authored coaching hints:**
+
+- Is the objective to report findings or apply a consistent feature configuration?
+- Which feature manages multiple security settings together?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un administrador de seguridad necesita un conjunto repetible de configuraciones de seguridad de repositorio que se puedan aplicar en muchos repositorios elegibles. ¿Qué característica deberían evaluar?
+
+1. Solo una plantilla de repositorio que contenga un documento de política de seguridad
+
+   Un documento de política copiado no configura las funciones de seguridad del repositorio en vivo.
+
+2. Solo un ruleset de ramas que exige revisiones
+
+   Las reglas de revisión de ramas no agrupan la configuración de las funciones de seguridad del repositorio.
+
+3. Sólo una exportación de alertas de seguridad existentes.
+
+   Una exportación de alerta informa los hallazgos en lugar de aplicar la configuración de funciones.
+
+4. Configuraciones de seguridad **[CORRECT]**
+
+   Las configuraciones de seguridad agrupan configuraciones de funciones de seguridad para aplicaciones a escala.
+
+**Concept:** Configuraciones de seguridad a escala
+
+**Authored coaching hints:**
+
+- ¿El objetivo es informar los hallazgos o aplicar una configuración de funciones consistente?
+- ¿Qué característica gestiona varias configuraciones de seguridad juntas?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um administrador de segurança precisa de um pacote repetível de configurações de segurança de repositório que possa ser aplicado em muitos repositórios elegíveis. Qual recurso eles devem avaliar?
+
+1. Apenas um modelo de repositório contendo um documento de política de segurança
+
+   Um documento de política copiado não configura recursos de segurança do repositório ativo.
+
+2. Apenas um ruleset de ramificações que exige revisões
+
+   As regras de revisão de ramificação não agrupam as configurações do recurso de segurança do repositório.
+
+3. Apenas uma exportação de alertas de segurança existentes
+
+   Uma exportação de alerta relata descobertas em vez de aplicar configuração de recursos.
+
+4. Configurações de segurança **[CORRECT]**
+
+   As configurações de segurança agrupam configurações de recursos de segurança para aplicativos em escala.
+
+**Concept:** Configurações de segurança em escala
+
+**Authored coaching hints:**
+
+- O objetivo é relatar descobertas ou aplicar uma configuração de recursos consistente?
+- Qual recurso gerencia várias configurações de segurança juntas?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/code-security/concepts/security-at-scale/about-security-configurations>
+
+<!-- certification-coach-question:admin-085:dd6189bcaca5bde52323d7f1a402bd06f9bc92e34099a8dc07685e1034d57a4d -->
+## Question 85: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-085`
+
+**Content revision:** `dd6189bcaca5bde52323d7f1a402bd06f9bc92e34099a8dc07685e1034d57a4d`
+
+### English
+
+An organization has attached a security configuration to repositories but wants to prevent repository administrators from overriding the managed settings where enforcement is supported. What should it configure?
+
+1. Enforcement for the security configuration **[CORRECT]**
+
+   Enforcement constrains repository-level changes to the managed configuration settings.
+
+2. A longer repository description
+
+   Descriptions do not lock security feature settings.
+
+3. A shared notification email only
+
+   Notifications do not enforce configuration consistency.
+
+4. A default issue assignee
+
+   Issue assignment is unrelated to security-setting overrides.
+
+**Concept:** Enforced security configurations
+
+**Authored coaching hints:**
+
+- Does attaching a configuration necessarily prohibit local overrides?
+- Which additional policy state controls that distinction?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una organización ha adjuntado una configuración de seguridad a los repositorios, pero quiere evitar que los administradores del repositorio anulen la configuración administrada donde se admite la aplicación. ¿Qué debería configurar?
+
+1. Enforcement de la configuración de seguridad **[CORRECT]**
+
+   La aplicación restringe los cambios a nivel de repositorio en los ajustes de configuración administrados.
+
+2. Una descripción del repositorio más larga
+
+   Las descripciones no bloquean la configuración de las funciones de seguridad.
+
+3. Solo un correo electrónico de notificación compartido
+
+   Las notificaciones no imponen la coherencia de la configuración.
+
+4. Un cesionario predeterminado de issue
+
+   La asignación de problemas no está relacionada con las anulaciones de la configuración de seguridad.
+
+**Concept:** Configuraciones de seguridad obligatorias
+
+**Authored coaching hints:**
+
+- ¿Adjuntar una configuración prohíbe necesariamente las anulaciones locales?
+- ¿Qué estado político adicional controla esa distinción?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma organização anexou uma configuração de segurança aos repositórios, mas deseja evitar que os administradores do repositório substituam as configurações gerenciadas onde a aplicação é suportada. O que ele deve configurar?
+
+1. Enforcement da configuração de segurança **[CORRECT]**
+
+   A aplicação restringe as alterações no nível do repositório às definições de configuração gerenciadas.
+
+2. Uma descrição mais longa do repositório
+
+   As descrições não bloqueiam as configurações dos recursos de segurança.
+
+3. Apenas um e-mail de notificação compartilhado
+
+   As notificações não impõem consistência de configuração.
+
+4. Um cessionário issue padrão
+
+   A atribuição de problemas não está relacionada a substituições de configurações de segurança.
+
+**Concept:** Configurações de segurança impostas
+
+**Authored coaching hints:**
+
+- Anexar uma configuração proíbe necessariamente substituições locais?
+- Qual estado político adicional controla essa distinção?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/code-security/concepts/security-at-scale/about-security-configurations>
+
+<!-- certification-coach-question:admin-086:a751bfad9d1a84ead6b5bde791c8df630eced6372617de319a6a4def280eec78 -->
+## Question 86: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-086`
+
+**Content revision:** `a751bfad9d1a84ead6b5bde791c8df630eced6372617de319a6a4def280eec78`
+
+### English
+
+A security manager wants to find repositories with missing protections and compare alert risk across the organization rather than opening each repository separately. Which view is designed for this?
+
+1. The organization audit log alone
+
+   Historical administrative events do not provide the same coverage-and-risk overview.
+
+2. Security overview **[CORRECT]**
+
+   Security overview provides organization-level visibility into coverage and security risk.
+
+3. The billing usage report alone
+
+   Product charges do not by themselves summarize missing protections and alerts.
+
+4. A single repository's dependency graph
+
+   One dependency graph does not aggregate all repository security coverage.
+
+**Concept:** Organization security posture visibility
+
+**Authored coaching hints:**
+
+- Is the required evidence repository-local or aggregated?
+- Which view joins coverage with security risk?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un gerente de seguridad quiere encontrar repositorios a los que les faltan protecciones y comparar el riesgo de alertas en toda la organización en lugar de abrir cada repositorio por separado. ¿Qué vista está diseñada para esto?
+
+1. El registro de auditoría de la organización solo
+
+   Los eventos administrativos históricos no brindan la misma descripción general de cobertura y riesgo.
+
+2. Security overview **[CORRECT]**
+
+   La descripción general de seguridad proporciona visibilidad a nivel de organización de la cobertura y el riesgo de seguridad.
+
+3. Solo el informe de uso de facturación
+
+   Los cargos por productos no resumen por sí solos las protecciones y alertas faltantes.
+
+4. Gráfico de dependencia de un único repositorio
+
+   Un gráfico de dependencia no agrega toda la cobertura de seguridad del repositorio.
+
+**Concept:** Visibilidad de la postura de seguridad de la organización
+
+**Authored coaching hints:**
+
+- ¿El depósito de evidencia requerido es local o agregado?
+- ¿Qué visión une la cobertura con el riesgo de seguridad?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um gerente de segurança deseja encontrar repositórios com proteções ausentes e comparar o risco de alerta em toda a organização, em vez de abrir cada repositório separadamente. Qual visualização foi projetada para isso?
+
+1. Somente o log de auditoria da organização
+
+   Os eventos administrativos históricos não fornecem a mesma visão geral de cobertura e risco.
+
+2. Security overview **[CORRECT]**
+
+   A visão geral da segurança fornece visibilidade em nível de organização sobre cobertura e riscos de segurança.
+
+3. Somente o relatório de uso de faturamento
+
+   As cobranças do produto por si só não resumem proteções e alertas ausentes.
+
+4. Gráfico de dependência de um único repositório
+
+   Um gráfico de dependência não agrega toda a cobertura de segurança do repositório.
+
+**Concept:** Visibilidade da postura de segurança da organização
+
+**Authored coaching hints:**
+
+- O repositório de evidências necessário é local ou agregado?
+- Qual visão une cobertura com risco de segurança?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/code-security/security-overview/about-security-overview>
+
+<!-- certification-coach-question:admin-087:cd77e45fbaefd31aa791a89a0a8aeb32f9813516346727071d28de9e4234e43e -->
+## Question 87: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-087`
+
+**Content revision:** `cd77e45fbaefd31aa791a89a0a8aeb32f9813516346727071d28de9e4234e43e`
+
+### English
+
+A GitHub Enterprise Cloud auditor sees only three months of non-Git events in the default audit-log view and needs an event from four months ago. What is the best next step within the documented retention period?
+
+1. Assume all events older than three months are permanently deleted
+
+   Default display scope is shorter than the documented non-Git audit retention.
+
+2. Search repository issue titles instead
+
+   Issue titles do not substitute for administrative audit events.
+
+3. Use an explicit created date range in the audit-log search **[CORRECT]**
+
+   An explicit date range can retrieve older retained events beyond the default view.
+
+4. Change the user's timezone to recover the event
+
+   Timezone changes do not expand the audit-log search window.
+
+**Concept:** Audit display window versus retention
+
+**Authored coaching hints:**
+
+- Are the default view and the retained data window identical?
+- Which search constraint controls the time period?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un auditor GitHub Enterprise Cloud ve solo tres meses de eventos que no son de Git en la vista de registro de auditoría predeterminada y necesita un evento de hace cuatro meses. ¿Cuál es el mejor siguiente paso dentro del período de retención documentado?
+
+1. Supongamos que todos los eventos de más de tres meses se eliminan permanentemente
+
+   El alcance de visualización predeterminado es más corto que la retención de auditoría documentada que no es de Git.
+
+2. En su lugar, busque títulos del repositorio issue
+
+   Los títulos de las cuestiones no sustituyen a los eventos de auditoría administrativa.
+
+3. Utilice un rango de fechas creado explícito en la búsqueda del registro de auditoría **[CORRECT]**
+
+   Un intervalo de fechas explícito puede recuperar eventos retenidos más antiguos más allá de la vista predeterminada.
+
+4. Cambiar la zona horaria del usuario para recuperar el evento
+
+   Los cambios de zona horaria no amplían la ventana de búsqueda del registro de auditoría.
+
+**Concept:** Ventana de visualización de auditoría versus retención
+
+**Authored coaching hints:**
+
+- ¿Son idénticas la vista predeterminada y la ventana de datos retenidos?
+- ¿Qué restricción de búsqueda controla el período de tiempo?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um auditor GitHub Enterprise Cloud vê apenas três meses de eventos não-Git na visualização de log de auditoria padrão e precisa de um evento de quatro meses atrás. Qual é o melhor próximo passo dentro do período de retenção documentado?
+
+1. Suponha que todos os eventos com mais de três meses sejam excluídos permanentemente
+
+   O escopo de exibição padrão é menor que a retenção de auditoria não-Git documentada.
+
+2. Pesquise títulos do repositório issue
+
+   Os títulos das emissões não substituem eventos de auditoria administrativa.
+
+3. Use um intervalo de datas criado explícito na pesquisa do log de auditoria **[CORRECT]**
+
+   Um intervalo de datas explícito pode recuperar eventos retidos mais antigos além da visualização padrão.
+
+4. Altere o fuso horário do usuário para recuperar o evento
+
+   As alterações de fuso horário não expandem a janela de pesquisa do log de auditoria.
+
+**Concept:** Janela de exibição de auditoria versus retenção
+
+**Authored coaching hints:**
+
+- A visualização padrão e a janela de dados retidos são idênticas?
+- Qual restrição de pesquisa controla o período de tempo?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/security-and-compliance/audit-log-for-an-enterprise>
+
+<!-- certification-coach-question:admin-088:8bc54e1811436e8ebab3a8b0814af374ebe85ed04ba6d4dd912a2c445d77058f -->
+## Question 88: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-088`
+
+**Content revision:** `8bc54e1811436e8ebab3a8b0814af374ebe85ed04ba6d4dd912a2c445d77058f`
+
+### English
+
+A compliance policy requires enterprise audit evidence to remain searchable for several years, beyond GitHub's native retention. Which design best addresses this?
+
+1. Rely on the default audit-log page forever
+
+   The native audit log has finite retention rather than indefinite storage.
+
+2. Keep only screenshots of the enterprise home page
+
+   Home-page screenshots do not preserve event-level audit evidence.
+
+3. Increase repository artifact retention and assume it affects audit events
+
+   Workflow artifact retention does not set enterprise audit-log retention.
+
+4. Stream or export audit events to an approved external retention system **[CORRECT]**
+
+   External retention can preserve audit evidence according to the organization's policy.
+
+**Concept:** Long-term compliance evidence retention
+
+**Authored coaching hints:**
+
+- What happens when the platform's retention window expires?
+- Which system must take responsibility for the longer retention obligation?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una política de cumplimiento requiere que la evidencia de auditoría empresarial pueda buscarse durante varios años, más allá de la retención nativa de GitHub. ¿Qué diseño aborda mejor esto?
+
+1. Confíe siempre en la página de registro de auditoría predeterminada
+
+   El registro de auditoría nativo tiene retención finita en lugar de almacenamiento indefinido.
+
+2. Mantenga solo capturas de pantalla de la página de inicio de la empresa
+
+   Las capturas de pantalla de la página de inicio no conservan la evidencia de auditoría a nivel de evento.
+
+3. Aumentar la retención de artefactos del repositorio y asumir que afecta los eventos de auditoría.
+
+   La retención de artefactos del flujo de trabajo no establece la retención del registro de auditoría empresarial.
+
+4. Transmita o exporte eventos de auditoría a un sistema de retención externo aprobado **[CORRECT]**
+
+   La retención externa puede preservar la evidencia de auditoría de acuerdo con la política de la organización.
+
+**Concept:** Retención de evidencia de cumplimiento a largo plazo
+
+**Authored coaching hints:**
+
+- ¿Qué sucede cuando expira la ventana de retención de la plataforma?
+- ¿Qué sistema debe asumir la responsabilidad de la obligación de retención más prolongada?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma política de conformidade exige que as evidências de auditoria corporativa permaneçam pesquisáveis por vários anos, além da retenção nativa do GitHub. Qual design aborda melhor isso?
+
+1. Confie na página de registro de auditoria padrão para sempre
+
+   O log de auditoria nativo tem retenção finita em vez de armazenamento indefinido.
+
+2. Mantenha apenas capturas de tela da página inicial da empresa
+
+   As capturas de tela da página inicial não preservam as evidências de auditoria no nível do evento.
+
+3. Aumente a retenção de artefatos do repositório e assuma que isso afeta os eventos de auditoria
+
+   A retenção de artefatos de fluxo de trabalho não define a retenção de log de auditoria empresarial.
+
+4. Transmita ou exporte eventos de auditoria para um sistema de retenção externo aprovado **[CORRECT]**
+
+   A retenção externa pode preservar as evidências de auditoria de acordo com a política da organização.
+
+**Concept:** Retenção de evidências de conformidade a longo prazo
+
+**Authored coaching hints:**
+
+- O que acontece quando a janela de retenção da plataforma expira?
+- Qual sistema deve assumir a responsabilidade pela obrigação de retenção mais longa?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/streaming-the-audit-log-for-your-enterprise>
+
+<!-- certification-coach-question:admin-089:ecb00d50312ba947b28972302d7ebf4fa20b98055dadaa4391658916f6fa8f3e -->
+## Question 89: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-089`
+
+**Content revision:** `ecb00d50312ba947b28972302d7ebf4fa20b98055dadaa4391658916f6fa8f3e`
+
+### English
+
+An investigation must connect suspicious API activity to a particular access token rather than just its user. Which enterprise audit capability is most relevant?
+
+1. Identifying audit-log events performed by an access token **[CORRECT]**
+
+   Token-specific audit identification helps trace the credential used for audited activity.
+
+2. Filtering only by actor and assuming all the actor's credentials are equivalent
+
+   Actor-only filtering cannot distinguish multiple credentials used by that person.
+
+3. Using token expiration dates alone to infer every API call
+
+   Expiration metadata does not enumerate the token's activity.
+
+4. Using repository commit author names alone to identify API credentials
+
+   Commit author attribution does not establish which API credential performed an action.
+
+**Concept:** Credential-level audit attribution
+
+**Authored coaching hints:**
+
+- Can one person use multiple independent credentials?
+- Which audit dimension distinguishes those credentials?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una investigación debe conectar la actividad sospechosa de API con un token de acceso en particular y no solo con su usuario. ¿Qué capacidad de auditoría empresarial es más relevante?
+
+1. Identificación de eventos de registro de auditoría realizados por un token de acceso **[CORRECT]**
+
+   La identificación de auditoría específica del token ayuda a rastrear la credencial utilizada para la actividad auditada.
+
+2. Filtrar solo por actor y asumir que todas las credenciales del actor son equivalentes
+
+   El filtrado exclusivo de actor no puede distinguir varias credenciales utilizadas por esa persona.
+
+3. Usar únicamente las fechas de vencimiento de los tokens para inferir cada llamada a API
+
+   Los metadatos de vencimiento no enumeran la actividad del token.
+
+4. Usar solo los nombres de autor del repositorio commit para identificar las credenciales de API
+
+   La atribución de autor de confirmación no establece qué credencial API realizó una acción.
+
+**Concept:** Atribución de auditoría a nivel de credenciales
+
+**Authored coaching hints:**
+
+- ¿Puede una persona utilizar varias credenciales independientes?
+- ¿Qué dimensión de auditoría distingue esas credenciales?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma investigação deve conectar atividades suspeitas do API a um token de acesso específico, e não apenas ao seu usuário. Qual capacidade de auditoria empresarial é mais relevante?
+
+1. Identificando eventos de log de auditoria realizados por um token de acesso **[CORRECT]**
+
+   A identificação de auditoria específica do token ajuda a rastrear a credencial usada para atividades auditadas.
+
+2. Filtrando apenas por ator e assumindo que todas as credenciais do ator são equivalentes
+
+   A filtragem somente de ator não consegue distinguir diversas credenciais usadas por essa pessoa.
+
+3. Usando apenas datas de expiração de token para inferir cada chamada API
+
+   Os metadados de expiração não enumeram a atividade do token.
+
+4. Usando apenas nomes de autores do repositório commit para identificar credenciais API
+
+   A atribuição do autor do commit não estabelece qual credencial API executou uma ação.
+
+**Concept:** Atribuição de auditoria em nível de credencial
+
+**Authored coaching hints:**
+
+- Uma pessoa pode usar várias credenciais independentes?
+- Qual dimensão de auditoria distingue essas credenciais?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/identifying-audit-log-events-performed-by-an-access-token>
+
+<!-- certification-coach-question:admin-090:108fd57a13a55067d5f7016c9dbaff9b4f2fc417fbf5fb477fcf08c1994a961a -->
+## Question 90: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-090`
+
+**Content revision:** `108fd57a13a55067d5f7016c9dbaff9b4f2fc417fbf5fb477fcf08c1994a961a`
+
+### English
+
+Secret scanning detects a live production credential in repository history. What is the most important immediate containment action?
+
+1. Only delete the visible line from the latest README
+
+   Removing a visible line does not invalidate the exposed credential or historical copies.
+
+2. Revoke or rotate the credential at its issuing service **[CORRECT]**
+
+   Revocation or rotation prevents further use of the exposed credential.
+
+3. Rename the repository
+
+   Repository naming does not change credential validity.
+
+4. Dismiss the alert because the repository is private
+
+   Private repository exposure still warrants credential containment.
+
+**Concept:** Responding to exposed credentials
+
+**Authored coaching hints:**
+
+- Can removing text invalidate a credential already copied elsewhere?
+- Where is the credential's actual authority controlled?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+El análisis de secretos detecta una credencial de producción activa en el historial del repositorio. ¿Cuál es la acción de contención inmediata más importante?
+
+1. Elimine solo la línea visible del último README
+
+   Eliminar una línea visible no invalida la credencial expuesta ni las copias históricas.
+
+2. Revocar o rotar la credencial en su servicio emisor **[CORRECT]**
+
+   La revocación o rotación impide el uso posterior de la credencial expuesta.
+
+3. Cambiar el nombre del repositorio
+
+   El nombre del repositorio no cambia la validez de las credenciales.
+
+4. Descartar la alerta porque el repositorio es privado
+
+   La exposición a los repositorios privados aún justifica la contención de credenciales.
+
+**Concept:** Responder a credenciales expuestas
+
+**Authored coaching hints:**
+
+- ¿La eliminación de texto puede invalidar una credencial ya copiada en otro lugar?
+- ¿Dónde se controla la autoridad real de la credencial?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+A verificação de segredos detecta uma credencial de produção ativa no histórico do repositório. Qual é a ação de contenção imediata mais importante?
+
+1. Exclua apenas a linha visível do README mais recente
+
+   A remoção de uma linha visível não invalida as credenciais expostas ou as cópias históricas.
+
+2. Revogar ou alternar a credencial no serviço emissor **[CORRECT]**
+
+   A revogação ou rotação impede o uso adicional da credencial exposta.
+
+3. Renomeie o repositório
+
+   A nomenclatura do repositório não altera a validade da credencial.
+
+4. Ignore o alerta porque o repositório é privado
+
+   A exposição do repositório privado ainda garante a contenção de credenciais.
+
+**Concept:** Respondendo a credenciais expostas
+
+**Authored coaching hints:**
+
+- A remoção do texto pode invalidar uma credencial já copiada em outro lugar?
+- Onde é controlada a autoridade real da credencial?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/code-security/secret-scanning/introduction/about-secret-scanning>
+
+<!-- certification-coach-question:admin-091:64250f78536e86a1b6bf15a511bb292e0894491cd1664c9895d3f540a5064b1f -->
+## Question 91: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-091`
+
+**Content revision:** `64250f78536e86a1b6bf15a511bb292e0894491cd1664c9895d3f540a5064b1f`
+
+### English
+
+A team wants supported hardcoded secrets blocked before they enter a repository, rather than relying only on alerts after the push. Which feature should it enable where available?
+
+1. Dependabot version updates
+
+   Dependency updates do not inspect pushed code for embedded credentials.
+
+2. A release-note template
+
+   Release-note templates do not block secret-bearing pushes.
+
+3. Secret scanning push protection **[CORRECT]**
+
+   Push protection checks supported secrets during a push and can block it.
+
+4. A branch description
+
+   Descriptions are not content-scanning controls.
+
+**Concept:** Preventing secret introduction
+
+**Authored coaching hints:**
+
+- At which point must the protection act?
+- Which security capability inspects credentials during the push operation?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un equipo quiere que los secretos codificados admitidos se bloqueen antes de que ingresen a un repositorio, en lugar de depender únicamente de las alertas después del envío. ¿Qué característica debería habilitar cuando esté disponible?
+
+1. Actualizaciones de la versión Dependabot
+
+   Las actualizaciones de dependencia no inspeccionan el código enviado en busca de credenciales integradas.
+
+2. Una plantilla de nota de versión
+
+   Las plantillas de notas de la versión no bloquean los envíos de secretos.
+
+3. Protección de push del análisis de secretos **[CORRECT]**
+
+   La protección de inserción comprueba los secretos admitidos durante una inserción y puede bloquearlos.
+
+4. Una descripción de la rama
+
+   Las descripciones no son controles de escaneo de contenido.
+
+**Concept:** Prevenir la introducción secreta
+
+**Authored coaching hints:**
+
+- ¿En qué momento debe actuar la protección?
+- ¿Qué capacidad de seguridad inspecciona las credenciales durante la operación de inserción?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma equipe deseja que os segredos codificados com suporte sejam bloqueados antes de entrarem em um repositório, em vez de depender apenas de alertas após o push. Qual recurso deve ser ativado quando disponível?
+
+1. Atualizações de versão Dependabot
+
+   As atualizações de dependência não inspecionam o código enviado em busca de credenciais incorporadas.
+
+2. Um modelo de nota de lançamento
+
+   Os modelos de notas de lançamento não bloqueiam pushes contendo segredos.
+
+3. Proteção de push da verificação de segredos **[CORRECT]**
+
+   A proteção push verifica os segredos suportados durante um push e pode bloqueá-lo.
+
+4. Uma descrição do ramo
+
+   As descrições não são controles de verificação de conteúdo.
+
+**Concept:** Impedindo a introdução secreta
+
+**Authored coaching hints:**
+
+- Em que ponto a proteção deve agir?
+- Qual recurso de segurança inspeciona credenciais durante a operação push?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/code-security/concepts/secret-security/about-push-protection>
+
+<!-- certification-coach-question:admin-092:9799a0728276830b9c38517a67a37a38441521538af6766144e4c2820200abae -->
+## Question 92: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-092`
+
+**Content revision:** `9799a0728276830b9c38517a67a37a38441521538af6766144e4c2820200abae`
+
+### English
+
+A repository uses delegated bypass for push protection. A developer says a detected value is a test fixture. What is the best governed response?
+
+1. Disable push protection organization-wide
+
+   Global disablement is disproportionate to one disputed detection.
+
+2. Put the value into a different file to evade the detector
+
+   Moving a secret to evade detection does not establish that it is safe.
+
+3. Give every contributor permanent bypass
+
+   Permanent universal bypass discards the delegated review boundary.
+
+4. Use the configured bypass-request process with justification and authorized review **[CORRECT]**
+
+   Delegated bypass allows an authorized decision with context instead of blanket disablement.
+
+**Concept:** Governed push-protection exceptions
+
+**Authored coaching hints:**
+
+- How can a disputed detection be assessed without weakening everyone else's protection?
+- Who is authorized to approve this exception?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un repositorio utiliza omisión delegada para protección de inserción. Un desarrollador dice que un valor detectado es un dispositivo de prueba. ¿Cuál es la respuesta mejor gobernada?
+
+1. Deshabilitar la protección push en toda la organización
+
+   La desactivación global es desproporcionada con respecto a una detección controvertida.
+
+2. Coloque el valor en un archivo diferente para evadir el detector.
+
+   Mover un secreto para evadir la detección no establece que sea seguro.
+
+3. Dar a cada colaborador un bypass permanente
+
+   La omisión universal permanente descarta el límite de revisión delegado.
+
+4. Utilice el proceso de solicitud de omisión configurado con justificación y revisión autorizada **[CORRECT]**
+
+   La omisión delegada permite una decisión autorizada con contexto en lugar de una inhabilitación general.
+
+**Concept:** Excepciones controladas de la protección de push
+
+**Authored coaching hints:**
+
+- ¿Cómo se puede evaluar una detección cuestionada sin debilitar la protección de todos los demás?
+- ¿Quién está autorizado a aprobar esta excepción?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um repositório usa bypass delegado para proteção contra push. Um desenvolvedor diz que um valor detectado é um acessório de teste. Qual é a melhor resposta governada?
+
+1. Desative a proteção contra push em toda a organização
+
+   A deficiência global é desproporcional a uma detecção contestada.
+
+2. Coloque o valor em um arquivo diferente para escapar do detector
+
+   Mover um segredo para evitar a detecção não estabelece que ele seja seguro.
+
+3. Dê a cada colaborador um bypass permanente
+
+   O desvio universal permanente descarta o limite de revisão delegada.
+
+4. Use o processo de solicitação de bypass configurado com justificativa e revisão autorizada **[CORRECT]**
+
+   O desvio delegado permite uma decisão autorizada com contexto em vez de desativação geral.
+
+**Concept:** Exceções de proteção contra push governadas
+
+**Authored coaching hints:**
+
+- Como avaliar uma detecção contestada sem enfraquecer a proteção de todos os demais?
+- Quem está autorizado a aprovar esta exceção?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/code-security/concepts/secret-security/delegated-bypass>
+
+<!-- certification-coach-question:admin-093:eac41f04d1d845a133f3c1b7378903a9c2322b472303bcdeeb1c76272d37385d -->
+## Question 93: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-093`
+
+**Content revision:** `eac41f04d1d845a133f3c1b7378903a9c2322b472303bcdeeb1c76272d37385d`
+
+### English
+
+An organization issues an internal credential format that is not covered by a supported built-in secret pattern. On an eligible plan, what should administrators evaluate?
+
+1. A tested custom secret-scanning pattern **[CORRECT]**
+
+   Custom patterns can detect organization-specific secrets and should be validated before rollout.
+
+2. Only enable validity checks for existing supported provider patterns
+
+   Validity checking existing patterns does not define a detector for the new credential format.
+
+3. Only enable dependency vulnerability alerts
+
+   Dependency vulnerability alerts do not identify custom embedded credentials.
+
+4. Only require a code-scanning status check for CodeQL findings
+
+   A CodeQL status requirement does not itself add a custom secret pattern.
+
+**Concept:** Organization-specific secret detection
+
+**Authored coaching hints:**
+
+- Does a custom credential necessarily match a built-in provider pattern?
+- How can detection be tailored and tested before broad enablement?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una organización emite credenciales con un formato interno que no está cubierto por un patrón de secretos integrado compatible. En un plan elegible, ¿qué deberían evaluar los administradores?
+
+1. Un patrón de escaneo de secretos personalizado y probado **[CORRECT]**
+
+   Los patrones personalizados pueden detectar secretos específicos de la organización y deben validarse antes de su implementación.
+
+2. Habilite solo comprobaciones de validez para patrones de proveedores compatibles existentes
+
+   La verificación de validez de los patrones existentes no define un detector para el nuevo formato de credencial.
+
+3. Habilitar solo alertas de vulnerabilidad de dependencia
+
+   Las alertas de vulnerabilidad de dependencia no identifican credenciales integradas personalizadas.
+
+4. Solo se requiere una verificación del estado del escaneo de códigos para los hallazgos de CodeQL
+
+   Un requisito de estado CodeQL no agrega en sí mismo un patrón secreto personalizado.
+
+**Concept:** Detección de secretos específicos de la organización
+
+**Authored coaching hints:**
+
+- ¿Una credencial personalizada coincide necesariamente con un patrón de proveedor integrado?
+- ¿Cómo se puede adaptar y probar la detección antes de una habilitación amplia?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma organização emite credenciais em um formato interno que não é coberto por um padrão de segredos integrado compatível. Em um plano elegível, o que os administradores devem avaliar?
+
+1. Um padrão de verificação de segredo personalizado testado **[CORRECT]**
+
+   Os padrões personalizados podem detectar segredos específicos da organização e devem ser validados antes da implementação.
+
+2. Habilite apenas verificações de validade para padrões de provedores suportados existentes
+
+   A verificação de validade dos padrões existentes não define um detector para o novo formato de credencial.
+
+3. Habilite apenas alertas de vulnerabilidade de dependência
+
+   Alertas de vulnerabilidade de dependência não identificam credenciais incorporadas personalizadas.
+
+4. Exigir apenas uma verificação de status de leitura de código para descobertas CodeQL
+
+   Um requisito de status CodeQL não adiciona por si só um padrão de segredo personalizado.
+
+**Concept:** Detecção de segredo específico da organização
+
+**Authored coaching hints:**
+
+- Uma credencial personalizada corresponde necessariamente a um padrão de provedor integrado?
+- Como a detecção pode ser adaptada e testada antes da ampla habilitação?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/code-security/how-tos/secure-your-secrets/customize-leak-detection/define-custom-patterns>
+
+<!-- certification-coach-question:admin-094:18bc15bd9f4b5017d9fff01dd90780d82cfa7255dc87e717e0ec2dcb42d4c379 -->
+## Question 94: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-094`
+
+**Content revision:** `18bc15bd9f4b5017d9fff01dd90780d82cfa7255dc87e717e0ec2dcb42d4c379`
+
+### English
+
+An administrator sees no secret-scanning alerts and concludes that the repository contains no sensitive credentials of any kind. What is the most accurate assessment?
+
+1. No alerts prove all historical data is safe
+
+   The absence of detections is not a guarantee of complete sensitive-data coverage.
+
+2. Detection coverage depends on enabled features and recognized patterns, so absence of alerts is not proof **[CORRECT]**
+
+   Coverage and configuration limit what the scanner can detect.
+
+3. Secret scanning can only inspect repository names
+
+   Secret scanning examines supported repository content, not merely names.
+
+4. A private repository can never contain an exposed secret
+
+   Secrets can be exposed to unauthorized parties even in private repositories.
+
+**Concept:** Limits of security detection evidence
+
+**Authored coaching hints:**
+
+- What assumptions about detection coverage underlie the conclusion?
+- Is no detected issue equivalent to proving no issue exists?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un administrador no ve alertas de escaneo de secretos y concluye que el repositorio no contiene credenciales confidenciales de ningún tipo. ¿Cuál es la evaluación más precisa?
+
+1. Ninguna alerta demuestra que todos los datos históricos están seguros
+
+   La ausencia de detecciones no es garantía de una cobertura completa de datos confidenciales.
+
+2. La cobertura de detección depende de las funciones habilitadas y los patrones reconocidos, por lo que la ausencia de alertas no es prueba **[CORRECT]**
+
+   La cobertura y la configuración limitan lo que el escáner puede detectar.
+
+3. El análisis de secretos solo puede inspeccionar los nombres de los repositorios
+
+   El análisis de secretos examina el contenido compatible del repositorio, no solo los nombres.
+
+4. Un repositorio privado nunca puede contener un secreto expuesto
+
+   Los secretos pueden quedar expuestos a partes no autorizadas incluso en repositorios privados.
+
+**Concept:** Límites de la evidencia de detección de seguridad
+
+**Authored coaching hints:**
+
+- ¿Qué suposiciones sobre la cobertura de detección subyacen a la conclusión?
+- ¿No detectar ningún issue equivale a demostrar que no existe ningún issue?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um administrador não vê alertas de verificação de segredos e conclui que o repositório não contém credenciais confidenciais de nenhum tipo. Qual é a avaliação mais precisa?
+
+1. Nenhum alerta prova que todos os dados históricos estão seguros
+
+   A ausência de detecções não é garantia de cobertura completa de dados sensíveis.
+
+2. A cobertura da detecção depende dos recursos habilitados e dos padrões reconhecidos, portanto a ausência de alertas não é prova **[CORRECT]**
+
+   A cobertura e a configuração limitam o que o scanner pode detectar.
+
+3. A verificação de segredos só pode inspecionar nomes de repositórios
+
+   A varredura secreta examina o conteúdo do repositório compatível, não apenas os nomes.
+
+4. Um repositório privado nunca pode conter um segredo exposto
+
+   Os segredos podem ser expostos a terceiros não autorizados, mesmo em repositórios privados.
+
+**Concept:** Limites das evidências de detecção de segurança
+
+**Authored coaching hints:**
+
+- Que suposições sobre a cobertura da detecção fundamentam a conclusão?
+- Nenhum issue detectado é equivalente a provar que não existe issue?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/code-security/secret-scanning/introduction/about-secret-scanning>
+
+<!-- certification-coach-question:admin-095:21ed5c49bb42861940d153280854fce604d4a33f24ffaedde27c42fbbac511de -->
+## Question 95: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-095`
+
+**Content revision:** `21ed5c49bb42861940d153280854fce604d4a33f24ffaedde27c42fbbac511de`
+
+### English
+
+After rotating a leaked token, a maintainer wants to close the secret-scanning alert. Which closure practice best supports future investigation?
+
+1. Choose any reason merely to reduce the open count
+
+   An arbitrary reason corrupts the incident record.
+
+2. Delete the audit evidence first
+
+   Destroying evidence undermines later review.
+
+3. Record the accurate resolution and retain relevant response context **[CORRECT]**
+
+   Accurate resolution preserves the distinction between containment and false detection.
+
+4. Mark the alert false positive even though the token was live
+
+   A live leaked token is not a false positive merely because it was rotated.
+
+**Concept:** Accurate security-alert resolution
+
+**Authored coaching hints:**
+
+- What will a future reviewer need to understand about the incident?
+- Does remediation change whether the original detection was real?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Después de rotar un token filtrado, un mantenedor quiere cerrar la alerta de análisis de secretos. ¿Qué práctica de cierre respalda mejor la investigación futura?
+
+1. Elija cualquier motivo simplemente para reducir el recuento de aperturas
+
+   Una razón arbitraria corrompe el registro del incidente.
+
+2. Eliminar primero la evidencia de auditoría
+
+   La destrucción de pruebas socava la revisión posterior.
+
+3. Registre la resolución precisa y conserve el contexto de respuesta relevante **[CORRECT]**
+
+   La resolución precisa preserva la distinción entre contención y detección falsa.
+
+4. Marcar la alerta como falso positivo aunque el token estuviera activo
+
+   Un token filtrado en vivo no es un falso positivo simplemente porque fue rotado.
+
+**Concept:** Resolución precisa de alertas de seguridad
+
+**Authored coaching hints:**
+
+- ¿Qué necesitará entender un futuro revisor sobre el incidente?
+- ¿La remediación cambia si la detección original fue real?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Depois de rotacionar um token vazado, um mantenedor quer encerrar o alerta de verificação de segredos. Qual prática de encerramento oferece melhor suporte a investigações futuras?
+
+1. Escolha qualquer motivo apenas para reduzir a contagem de aberturas
+
+   Uma razão arbitrária corrompe o registro do incidente.
+
+2. Exclua a evidência de auditoria primeiro
+
+   A destruição de evidências prejudica a revisão posterior.
+
+3. Registre a resolução precisa e retenha o contexto de resposta relevante **[CORRECT]**
+
+   A resolução precisa preserva a distinção entre contenção e detecção falsa.
+
+4. Marcar o alerta como falso positivo mesmo que o token estivesse ativo
+
+   Um token vazado ao vivo não é um falso positivo apenas porque foi rotacionado.
+
+**Concept:** Resolução precisa de alertas de segurança
+
+**Authored coaching hints:**
+
+- O que um futuro revisor precisará entender sobre o incidente?
+- A correção altera se a detecção original era real?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/code-security/secret-scanning/managing-alerts-from-secret-scanning/resolving-alerts>
+
+<!-- certification-coach-question:admin-096:48c0a6d52a9d6d7107cde7447457dc66092c81a9329700317d045f914f7981cf -->
+## Question 96: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-096`
+
+**Content revision:** `48c0a6d52a9d6d7107cde7447457dc66092c81a9329700317d045f914f7981cf`
+
+### English
+
+An eligible repository needs CodeQL scanning with minimal initial workflow configuration. Which setup should its administrator normally evaluate first?
+
+1. Handwritten SARIF with no analysis engine
+
+   SARIF is a results format and does not itself analyze source code.
+
+2. A README claiming that scans are enabled
+
+   Documentation alone does not configure analysis.
+
+3. Dependabot version updates as a complete CodeQL replacement
+
+   Dependency updates and CodeQL source analysis address different risks.
+
+4. Code scanning default setup **[CORRECT]**
+
+   GitHub recommends default setup as the starting point for eligible repositories.
+
+**Concept:** Starting CodeQL with default setup
+
+**Authored coaching hints:**
+
+- Does the repository require custom build orchestration initially?
+- Which setup minimizes the amount of workflow code to maintain?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un repositorio elegible necesita escaneo CodeQL con una configuración de flujo de trabajo inicial mínima. ¿Qué configuración normalmente debería evaluar primero su administrador?
+
+1. SARIF escrito a mano sin motor de análisis
+
+   SARIF es un formato de resultados y no analiza el código fuente por sí mismo.
+
+2. Un README que afirma que los análisis están habilitados
+
+   La documentación por sí sola no configura el análisis.
+
+3. Actualizaciones de la versión Dependabot como reemplazo completo de CodeQL
+
+   Las actualizaciones de dependencia y el análisis de fuente CodeQL abordan diferentes riesgos.
+
+4. Configuración predeterminada de escaneo de código **[CORRECT]**
+
+   GitHub recomienda la configuración predeterminada como punto de partida para los repositorios elegibles.
+
+**Concept:** Iniciando CodeQL con la configuración predeterminada
+
+**Authored coaching hints:**
+
+- ¿El repositorio requiere inicialmente una orquestación de compilación personalizada?
+- ¿Qué configuración minimiza la cantidad de código de flujo de trabajo a mantener?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um repositório elegível precisa de análise com CodeQL com configuração inicial mínima de fluxo de trabalho. Qual configuração seu administrador normalmente deve avaliar primeiro?
+
+1. SARIF manuscrito sem mecanismo de análise
+
+   SARIF é um formato de resultados e não analisa o código-fonte.
+
+2. Um README alegando que as varreduras estão habilitadas
+
+   A documentação por si só não configura a análise.
+
+3. Atualizações da versão Dependabot como uma substituição completa do CodeQL
+
+   As atualizações de dependência e a análise de origem CodeQL abordam diferentes riscos.
+
+4. Configuração padrão de verificação de código **[CORRECT]**
+
+   GitHub recomenda a configuração padrão como ponto de partida para repositórios qualificados.
+
+**Concept:** Iniciando CodeQL com configuração padrão
+
+**Authored coaching hints:**
+
+- O repositório requer orquestração de compilação personalizada inicialmente?
+- Qual configuração minimiza a quantidade de código de fluxo de trabalho a ser mantido?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/code-security/code-scanning/enabling-code-scanning/configuring-default-setup-for-code-scanning>
+
+<!-- certification-coach-question:admin-097:9fe37105a3879b14350312c9fc290ff908c0f09ae936214fdb085477885b1787 -->
+## Question 97: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-097`
+
+**Content revision:** `9fe37105a3879b14350312c9fc290ff908c0f09ae936214fdb085477885b1787`
+
+### English
+
+A repository needs a CodeQL workflow with custom build steps and analysis behavior that default setup does not provide. Which direction is appropriate?
+
+1. Use advanced setup and maintain the required analysis workflow **[CORRECT]**
+
+   Advanced setup supports customized CodeQL workflows and build configuration.
+
+2. Configure only Dependabot version-update schedules
+
+   Dependency-update schedules do not customize source-analysis builds.
+
+3. Change only the branch ruleset's required review count
+
+   Review-count requirements do not define CodeQL build steps.
+
+4. Upload an existing SARIF report and assume that configures future custom CodeQL builds
+
+   Uploading results does not establish a recurring customized CodeQL analysis workflow.
+
+**Concept:** Custom CodeQL analysis workflows
+
+**Authored coaching hints:**
+
+- Which setup offers direct control over the analysis workflow?
+- What extra maintenance comes with that control?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un repositorio necesita un flujo de trabajo CodeQL con pasos de compilación personalizados y un comportamiento de análisis que la configuración predeterminada no proporciona. ¿Qué dirección es apropiada?
+
+1. Utilice la configuración avanzada y mantenga el flujo de trabajo de análisis requerido **[CORRECT]**
+
+   La configuración avanzada admite flujos de trabajo personalizados CodeQL y configuración de compilación.
+
+2. Configure solo programas de actualización de versión Dependabot
+
+   Los programas de actualización de dependencias no personalizan las compilaciones de análisis de origen.
+
+3. Cambiar solo la cantidad de revisiones exigida por el ruleset de ramas
+
+   Los requisitos de recuento de revisiones no definen los pasos de compilación de CodeQL.
+
+4. Cargue un informe SARIF existente y asuma que configura futuras compilaciones personalizadas de CodeQL.
+
+   La carga de resultados no establece un flujo de trabajo de análisis CodeQL personalizado y recurrente.
+
+**Concept:** Flujos de trabajo de análisis personalizados de CodeQL
+
+**Authored coaching hints:**
+
+- ¿Qué configuración ofrece control directo sobre el flujo de trabajo del análisis?
+- ¿Qué mantenimiento extra viene con ese control?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um repositório precisa de um fluxo de trabalho CodeQL com etapas de construção personalizadas e comportamento de análise que a configuração padrão não fornece. Qual direção é apropriada?
+
+1. Use a configuração avançada e mantenha o fluxo de trabalho de análise necessário **[CORRECT]**
+
+   A configuração avançada oferece suporte a fluxos de trabalho CodeQL personalizados e configuração de construção.
+
+2. Configurar apenas agendamentos de atualização de versão Dependabot
+
+   Os cronogramas de atualização de dependência não personalizam compilações de análise de origem.
+
+3. Alterar apenas a quantidade de revisões exigida pelo ruleset de ramificações
+
+   Os requisitos de contagem de revisões não definem as etapas de construção CodeQL.
+
+4. Faça upload de um relatório SARIF existente e presuma que ele configura futuras compilações CodeQL personalizadas
+
+   O upload dos resultados não estabelece um fluxo de trabalho de análise CodeQL personalizado e recorrente.
+
+**Concept:** Fluxos de trabalho de análise CodeQL personalizados
+
+**Authored coaching hints:**
+
+- Qual configuração oferece controle direto sobre o fluxo de trabalho de análise?
+- Que manutenção extra vem com esse controle?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/code-security/code-scanning/creating-an-advanced-setup-for-code-scanning/configuring-advanced-setup-for-code-scanning>
+
+<!-- certification-coach-question:admin-098:ce3cca38c53556abe3e93c949429cd740d3d45fffe002015b123bbfbce7bd0f1 -->
+## Question 98: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-098`
+
+**Content revision:** `ce3cca38c53556abe3e93c949429cd740d3d45fffe002015b123bbfbce7bd0f1`
+
+### English
+
+A company already uses a third-party static analyzer and wants its supported results displayed as GitHub code-scanning alerts. Which interchange format should the integration produce?
+
+1. A ZIP of repository screenshots
+
+   Screenshots do not provide structured code-scanning result ingestion.
+
+2. SARIF **[CORRECT]**
+
+   GitHub code scanning supports appropriately formatted SARIF results.
+
+3. A plain-text list of Git branch names
+
+   Branch names are not a static-analysis findings format.
+
+4. An unstructured billing CSV
+
+   Billing CSV records do not encode code-scanning results.
+
+**Concept:** Third-party code-scanning interoperability
+
+**Authored coaching hints:**
+
+- Does GitHub require its own analyzer for every displayed finding?
+- Which standardized format represents static-analysis results?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una empresa ya utiliza un analizador estático de terceros y quiere que los resultados admitidos se muestren como alertas de escaneo de código GitHub. ¿Qué formato de intercambio debería producir la integración?
+
+1. Un ZIP de capturas de pantalla del repositorio
+
+   Las capturas de pantalla no proporcionan la ingesta de resultados de escaneo de código estructurado.
+
+2. SARIF **[CORRECT]**
+
+   El escaneo de código GitHub admite resultados SARIF con el formato adecuado.
+
+3. Una lista en texto plano de nombres de ramas de Git
+
+   Los nombres de las ramas no son un formato de resultados de análisis estático.
+
+4. Una facturación no estructurada CSV
+
+   Los registros de facturación CSV no codifican los resultados del escaneo de códigos.
+
+**Concept:** Interoperabilidad de escaneo de códigos de terceros
+
+**Authored coaching hints:**
+
+- ¿GitHub requiere su propio analizador para cada hallazgo mostrado?
+- ¿Qué formato estandarizado representa los resultados del análisis estático?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma empresa já usa um analisador estático de terceiros e deseja que seus resultados suportados sejam exibidos como alertas de verificação de código GitHub. Qual formato de intercâmbio a integração deve produzir?
+
+1. Um ZIP de capturas de tela do repositório
+
+   As capturas de tela não fornecem ingestão estruturada de resultados de verificação de código.
+
+2. SARIF **[CORRECT]**
+
+   A análise de código do GitHub oferece suporte a resultados SARIF formatados adequadamente.
+
+3. Uma lista de texto simples de nomes de ramificações do Git
+
+   Os nomes das ramificações não são um formato de resultados de análise estática.
+
+4. Um faturamento não estruturado CSV
+
+   Os registros de cobrança CSV não codificam resultados de verificação de código.
+
+**Concept:** Interoperabilidade de leitura de código de terceiros
+
+**Authored coaching hints:**
+
+- O GitHub requer seu próprio analisador para cada descoberta exibida?
+- Qual formato padronizado representa os resultados da análise estática?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/code-security/code-scanning/introduction-to-code-scanning/about-code-scanning>
+
+<!-- certification-coach-question:admin-099:774396c795e74a61a154c00f2282c6454e105a3844f55be8bd6383b52c969580 -->
+## Question 99: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-099`
+
+**Content revision:** `774396c795e74a61a154c00f2282c6454e105a3844f55be8bd6383b52c969580`
+
+### English
+
+A security team needs to detect unsafe data flow in its own application code, not just known vulnerabilities in third-party packages. Which GitHub capability best matches?
+
+1. Dependabot version updates alone
+
+   Version updates maintain dependencies rather than analyze application data flow.
+
+2. Repository license detection
+
+   License detection does not identify unsafe source-code behavior.
+
+3. Code scanning with CodeQL **[CORRECT]**
+
+   CodeQL analyzes source-code behavior using security queries.
+
+4. Organization membership visibility
+
+   Membership visibility does not inspect application code.
+
+**Concept:** Source-code analysis versus dependency maintenance
+
+**Authored coaching hints:**
+
+- Is the risk in a package version or in the application's implementation?
+- Which tool reasons about code behavior?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un equipo de seguridad necesita detectar flujos de datos inseguros en el código de su propia aplicación, no sólo vulnerabilidades conocidas en paquetes de terceros. ¿Qué capacidad del GitHub se adapta mejor?
+
+1. Actualizaciones de versión Dependabot solas
+
+   Las actualizaciones de versión mantienen dependencias en lugar de analizar el flujo de datos de la aplicación.
+
+2. Detección de licencias de repositorio
+
+   La detección de licencias no identifica comportamientos inseguros del código fuente.
+
+3. Escaneo de código con CodeQL **[CORRECT]**
+
+   CodeQL analiza el comportamiento del código fuente mediante consultas de seguridad.
+
+4. Visibilidad de la membresía de la organización
+
+   La visibilidad de la membresía no inspecciona el código de la aplicación.
+
+**Concept:** Análisis de código fuente versus mantenimiento de dependencias
+
+**Authored coaching hints:**
+
+- ¿El riesgo está en una versión del paquete o en la implementación de la aplicación?
+- ¿Qué herramienta razona sobre el comportamiento del código?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma equipe de segurança precisa detectar fluxos de dados inseguros no código de seu próprio aplicativo, e não apenas vulnerabilidades conhecidas em pacotes de terceiros. Qual capacidade GitHub melhor corresponde?
+
+1. Apenas atualizações de versão do Dependabot
+
+   As atualizações de versão mantêm dependências em vez de analisar o fluxo de dados do aplicativo.
+
+2. Detecção de licença de repositório
+
+   A detecção de licença não identifica comportamento inseguro do código-fonte.
+
+3. Análise de código com CodeQL **[CORRECT]**
+
+   CodeQL analisa o comportamento do código-fonte usando consultas de segurança.
+
+4. Visibilidade dos membros da organização
+
+   A visibilidade da associação não inspeciona o código do aplicativo.
+
+**Concept:** Análise de código-fonte versus manutenção de dependências
+
+**Authored coaching hints:**
+
+- O risco está na versão do pacote ou na implementação da aplicação?
+- Qual ferramenta raciocina sobre o comportamento do código?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/code-security/code-scanning/introduction-to-code-scanning/about-code-scanning>
+
+<!-- certification-coach-question:admin-100:d689bac2701bb66f1ba51fd442b73290b82b433ee20a96533167faa6a59cb069 -->
+## Question 100: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-100`
+
+**Content revision:** `d689bac2701bb66f1ba51fd442b73290b82b433ee20a96533167faa6a59cb069`
+
+### English
+
+A developer believes a code-scanning finding is a false positive. Which response best preserves the integrity of the security process?
+
+1. Disable all scans immediately
+
+   One disputed finding does not justify losing all analysis coverage.
+
+2. Delete the workflow so the alert is no longer visible
+
+   Removing analysis hides future findings instead of evaluating this one.
+
+3. Dismiss every alert from the same language without review
+
+   Language-wide dismissal is not an evidence-based assessment.
+
+4. Inspect the evidence and dismiss only if justified, recording the appropriate reason **[CORRECT]**
+
+   A justified, accurately recorded dismissal preserves a useful security record.
+
+**Concept:** Evidence-based code-scanning triage
+
+**Authored coaching hints:**
+
+- What evidence distinguishes a false positive from a real issue?
+- How can the decision remain understandable to another reviewer?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un desarrollador cree que un hallazgo del escaneo de código es un falso positivo. ¿Qué respuesta preserva mejor la integridad del proceso de seguridad?
+
+1. Deshabilite todos los análisis inmediatamente
+
+   Un hallazgo controvertido no justifica perder toda la cobertura del análisis.
+
+2. Elimine el flujo de trabajo para que la alerta ya no sea visible
+
+   Eliminar el análisis oculta hallazgos futuros en lugar de evaluar éste.
+
+3. Descartar todas las alertas del mismo idioma sin revisarlas
+
+   El despido en todo el idioma no es una evaluación basada en evidencia.
+
+4. Inspeccionar las pruebas y desestimar sólo si está justificado, registrando la razón apropiada. **[CORRECT]**
+
+   Un despido justificado y registrado con precisión preserva un historial de seguridad útil.
+
+**Concept:** Triaje de escaneo de códigos basado en evidencia
+
+**Authored coaching hints:**
+
+- ¿Qué evidencia distingue un falso positivo de un issue real?
+- ¿Cómo puede la decisión seguir siendo comprensible para otro revisor?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um desenvolvedor acredita que uma descoberta de verificação de código é um falso positivo. Qual resposta preserva melhor a integridade do processo de segurança?
+
+1. Desative todas as verificações imediatamente
+
+   Uma conclusão contestada não justifica a perda de toda a cobertura da análise.
+
+2. Exclua o fluxo de trabalho para que o alerta não fique mais visível
+
+   A remoção da análise oculta descobertas futuras em vez de avaliar esta.
+
+3. Dispensar todos os alertas do mesmo idioma sem revisão
+
+   A demissão em todo o idioma não é uma avaliação baseada em evidências.
+
+4. Inspecione as evidências e descarte somente se justificado, registrando o motivo apropriado **[CORRECT]**
+
+   Uma demissão justificada e registrada com precisão preserva um registro de segurança útil.
+
+**Concept:** Triagem de leitura de código baseada em evidências
+
+**Authored coaching hints:**
+
+- Que evidências distinguem um falso positivo de um issue real?
+- Como a decisão pode permanecer compreensível para outro revisor?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/code-security/code-scanning/managing-code-scanning-alerts/resolving-code-scanning-alerts>
+
+<!-- certification-coach-question:admin-101:38fc66079c7ed9cf5f5050e68f5d684bc99d142e94f0e9d5b5162ab6b94511ae -->
+## Question 101: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-101`
+
+**Content revision:** `38fc66079c7ed9cf5f5050e68f5d684bc99d142e94f0e9d5b5162ab6b94511ae`
+
+### English
+
+On a supporting plan, an organization wants merges blocked when a chosen code-scanning tool reports alerts meeting defined severity criteria. Which control is designed for this?
+
+1. A ruleset requiring code-scanning results with the selected tool and thresholds **[CORRECT]**
+
+   The code-scanning ruleset requirement can enforce tool-specific alert thresholds before merge.
+
+2. Only enable scan execution without a merge requirement
+
+   Producing analysis results does not by itself enforce the desired alert-based merge gate.
+
+3. Only require signed commits
+
+   Commit signatures do not evaluate code-scanning alert severity.
+
+4. Only require one review without a scanning condition
+
+   A human review requirement does not implement tool-specific scanning thresholds.
+
+**Concept:** Code-scanning merge protection
+
+**Authored coaching hints:**
+
+- Must this be a visible signal or an enforced gate?
+- Which control can evaluate scanning results against explicit criteria?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+En un plan de soporte, una organización quiere que se bloqueen las fusiones cuando una herramienta de escaneo de código elegida informa alertas que cumplen con los criterios de gravedad definidos. ¿Qué control está diseñado para esto?
+
+1. Un ruleset que requiere resultados de escaneo de códigos con la herramienta y los umbrales seleccionados **[CORRECT]**
+
+   El requisito de escaneo de código ruleset puede imponer umbrales de alerta específicos de la herramienta antes de la fusión.
+
+2. Habilite solo la ejecución del escaneo sin un requisito de combinación
+
+   La producción de resultados de análisis no impone por sí sola la puerta de fusión basada en alertas deseada.
+
+3. Sólo requiere commits firmado
+
+   Las firmas de confirmación no evalúan la gravedad de las alertas de escaneo de código.
+
+4. Solo requiere una revisión sin condición de escaneo
+
+   Un requisito de revisión humana no implementa umbrales de escaneo específicos de la herramienta.
+
+**Concept:** Protección de combinación de escaneo de código
+
+**Authored coaching hints:**
+
+- ¿Debe ser una señal visible o un control obligatorio que impida continuar?
+- ¿Qué control puede evaluar los resultados del escaneo según criterios explícitos?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Em um plano de suporte, uma organização deseja que as mesclagens sejam bloqueadas quando uma ferramenta de verificação de código escolhida relatar alertas que atendam aos critérios de gravidade definidos. Qual controle foi projetado para isso?
+
+1. Um ruleset que requer resultados de leitura de código com a ferramenta e limites selecionados **[CORRECT]**
+
+   O requisito de verificação de código ruleset pode impor limites de alerta específicos da ferramenta antes da mesclagem.
+
+2. Habilite apenas a execução da verificação sem um requisito de mesclagem
+
+   A produção de resultados de análise não impõe, por si só, a desejada porta de mesclagem baseada em alertas.
+
+3. Exige apenas commits assinado
+
+   As assinaturas de commit não avaliam a gravidade do alerta de verificação de código.
+
+4. Exigir apenas uma revisão sem condição de análise de código
+
+   Um requisito de revisão humana não implementa limites de verificação específicos da ferramenta.
+
+**Concept:** Proteção de mesclagem de verificação de código
+
+**Authored coaching hints:**
+
+- Deve ser um sinal visível ou um portão reforçado?
+- Qual controle pode avaliar os resultados da varredura em relação a critérios explícitos?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets>
+
+<!-- certification-coach-question:admin-102:2782b17132a380ed5083337148dc39453a640ba5562daa238663fb32a6899432 -->
+## Question 102: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-102`
+
+**Content revision:** `2782b17132a380ed5083337148dc39453a640ba5562daa238663fb32a6899432`
+
+### English
+
+A repository includes a language unsupported by CodeQL. Which administration plan is technically sound?
+
+1. Assume CodeQL analyzes every possible programming language
+
+   CodeQL language support is finite and documented.
+
+2. Check supported language coverage and use an appropriate additional analyzer where needed **[CORRECT]**
+
+   Coverage review and a suitable additional tool address actual analysis gaps.
+
+3. Mark all files as JavaScript regardless of their actual language
+
+   Mislabeling source files does not create valid language analysis.
+
+4. Disable dependency security to compensate
+
+   Removing unrelated dependency protection does not fill a source-analysis gap.
+
+**Concept:** Analysis-language coverage planning
+
+**Authored coaching hints:**
+
+- What must an analysis engine understand about the source?
+- How can unsupported code still receive meaningful analysis?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un repositorio incluye un idioma no admitido por CodeQL. ¿Qué plan de administración es técnicamente sólido?
+
+1. Supongamos que CodeQL analiza todos los lenguajes de programación posibles.
+
+   El soporte del lenguaje CodeQL es finito y está documentado.
+
+2. Verifique la cobertura de idiomas admitidos y utilice un analizador adicional apropiado cuando sea necesario **[CORRECT]**
+
+   La revisión de la cobertura y una herramienta adicional adecuada abordan las lagunas reales del análisis.
+
+3. Marcar todos los archivos como JavaScript independientemente de su idioma real
+
+   Etiquetar mal los archivos fuente no crea un análisis de lenguaje válido.
+
+4. Deshabilitar la seguridad de dependencia para compensar
+
+   Eliminar la protección de dependencias no relacionadas no llena un vacío en el análisis de fuentes.
+
+**Concept:** Planificación de cobertura del lenguaje de análisis.
+
+**Authored coaching hints:**
+
+- ¿Qué debe entender un motor de análisis sobre la fuente?
+- ¿Cómo puede el código no compatible seguir recibiendo un análisis significativo?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um repositório inclui um idioma não suportado por CodeQL. Qual plano de administração é tecnicamente sólido?
+
+1. Suponha que CodeQL analise todas as linguagens de programação possíveis
+
+   O suporte ao idioma CodeQL é finito e documentado.
+
+2. Verifique a cobertura de idiomas suportados e use um analisador adicional apropriado quando necessário **[CORRECT]**
+
+   A revisão da cobertura e uma ferramenta adicional adequada colmatam lacunas reais de análise.
+
+3. Marcar todos os arquivos como JavaScript, independentemente do idioma real
+
+   Rotular incorretamente os arquivos de origem não cria uma análise de linguagem válida.
+
+4. Desative a segurança de dependência para compensar
+
+   A remoção da proteção contra dependências não relacionadas não preenche uma lacuna na análise da origem.
+
+**Concept:** Planejamento de cobertura de linguagem de análise
+
+**Authored coaching hints:**
+
+- O que um mecanismo de análise deve entender sobre a fonte?
+- Como o código não suportado ainda pode receber uma análise significativa?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/code-security/code-scanning/introduction-to-code-scanning/about-code-scanning-with-codeql>
+
+<!-- certification-coach-question:admin-103:bc662e5b4753286c600f1c0b45a0f979544bb7363272a1dd5f65df381a830e2c -->
+## Question 103: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-103`
+
+**Content revision:** `bc662e5b4753286c600f1c0b45a0f979544bb7363272a1dd5f65df381a830e2c`
+
+### English
+
+An administrator plans to enable paid security capabilities on hundreds of private repositories. What should be checked before broad rollout?
+
+1. Only whether GitHub Actions is enabled, assuming that includes every security product
+
+   Actions availability does not establish every security-product entitlement.
+
+2. Only whether the organization uses SAML, assuming that prepays security features
+
+   SAML configuration does not determine whether security-product consumption is prepaid.
+
+3. The account's security-product entitlement and license-consumption implications **[CORRECT]**
+
+   Private-repository security features can depend on purchased products and licensed usage.
+
+4. Only whether repositories are private, assuming private visibility makes all security usage free
+
+   Private visibility does not universally include every paid security capability.
+
+**Concept:** Security feature entitlement awareness
+
+**Authored coaching hints:**
+
+- Is technical availability the same as an included entitlement?
+- What consumption could broad enablement create?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un administrador planea habilitar capacidades de seguridad pagas en cientos de repositorios privados. ¿Qué se debe comprobar antes de una implementación amplia?
+
+1. Solo si GitHub Actions está habilitado, suponiendo que incluya todos los productos de seguridad
+
+   La disponibilidad de Actions no determina los derechos de uso de todos los productos de seguridad.
+
+2. Solo si la organización utiliza SAML, asumiendo que prepaga las características de seguridad.
+
+   La configuración de SAML no determina si el consumo de productos de seguridad es prepago.
+
+3. Las implicaciones del consumo de licencias y derechos de productos de seguridad de la cuenta **[CORRECT]**
+
+   Las funciones de seguridad del repositorio privado pueden depender de los productos adquiridos y del uso con licencia.
+
+4. Solo si los repositorios son privados, suponiendo que la visibilidad privada haga que todo el uso de la seguridad sea gratuito
+
+   La visibilidad privada no incluye universalmente todas las capacidades de seguridad pagas.
+
+**Concept:** Conocimiento de derechos de funciones de seguridad
+
+**Authored coaching hints:**
+
+- ¿Es la disponibilidad técnica lo mismo que un derecho incluido?
+- ¿Qué consumo podría generar una habilitación amplia?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um administrador planeja habilitar recursos de segurança pagos em centenas de repositórios privados. O que deve ser verificado antes da implementação ampla?
+
+1. Somente se GitHub Actions estiver habilitado, assumindo que inclui todos os produtos de segurança
+
+   A disponibilidade de ações não estabelece todos os direitos de produtos de segurança.
+
+2. Somente se a organização usa SAML, assumindo que recursos de segurança pré-pagos
+
+   A configuração SAML não determina se o consumo do produto de segurança é pré-pago.
+
+3. O direito do produto de segurança da conta e as implicações no consumo de licença **[CORRECT]**
+
+   Os recursos de segurança de repositório privado podem depender dos produtos adquiridos e do uso licenciado.
+
+4. Somente se os repositórios são privados, assumir que a visibilidade privada torna todo o uso da segurança gratuito
+
+   A visibilidade privada não inclui universalmente todos os recursos de segurança pagos.
+
+**Concept:** Conscientização de direitos de recursos de segurança
+
+**Authored coaching hints:**
+
+- A disponibilidade técnica é o mesmo que um direito incluído?
+- Que consumo a capacitação ampla poderia criar?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/billing/concepts/product-billing/github-advanced-security>
+
+<!-- certification-coach-question:admin-104:9936596efc82b3a6612f56aab303e644af962dd94eb26a5c0717a485f1c21e4b -->
+## Question 104: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-104`
+
+**Content revision:** `9936596efc82b3a6612f56aab303e644af962dd94eb26a5c0717a485f1c21e4b`
+
+### English
+
+Dependabot alerts are missing for a supported dependency that the team expected GitHub to inventory. Which underlying capability should administrators inspect first?
+
+1. Secret-scanning custom patterns
+
+   Secret patterns identify credentials rather than installed package versions.
+
+2. CodeQL query-pack selection
+
+   Source-analysis query packs do not supply Dependabot's dependency inventory.
+
+3. The pull-request approval count
+
+   Review requirements do not establish which packages are known to GitHub.
+
+4. Dependency graph and its recognized dependency data **[CORRECT]**
+
+   Dependabot alerts depend on recognized dependencies in the dependency graph.
+
+**Concept:** Dependency inventory as alert input
+
+**Authored coaching hints:**
+
+- How would GitHub know which package versions the repository uses?
+- Which data source is compared against vulnerability advisories?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Faltan alertas Dependabot para una dependencia compatible que el equipo esperaba que GitHub inventariara. ¿Qué capacidad subyacente deberían inspeccionar primero los administradores?
+
+1. Patrones personalizados de análisis de secretos
+
+   Los patrones secretos identifican credenciales en lugar de versiones de paquetes instalados.
+
+2. Selección de paquete de consultas CodeQL
+
+   Los paquetes de consultas de análisis de código fuente no proporcionan el inventario de dependencias de Dependabot.
+
+3. El recuento de aprobación de solicitudes de extracción
+
+   Los requisitos de revisión no establecen qué paquetes son conocidos por GitHub.
+
+4. Gráfico de dependencia y sus datos de dependencia reconocidos. **[CORRECT]**
+
+   Las alertas Dependabot dependen de dependencias reconocidas en el gráfico de dependencias.
+
+**Concept:** Inventario de dependencia como entrada de alerta
+
+**Authored coaching hints:**
+
+- ¿Cómo sabría GitHub qué versiones de paquetes utiliza el repositorio?
+- ¿Qué fuente de datos se compara con los avisos de vulnerabilidad?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Os alertas Dependabot estão faltando para uma dependência suportada que a equipe esperava que GitHub inventariasse. Qual recurso subjacente os administradores devem inspecionar primeiro?
+
+1. Padrões personalizados de verificação de segredos
+
+   Os padrões secretos identificam credenciais em vez de versões de pacotes instalados.
+
+2. Seleção do pacote de consultas CodeQL
+
+   Os pacotes de consulta de análise de origem não fornecem o inventário de dependência de Dependabot.
+
+3. A contagem de aprovação de solicitação pull
+
+   Os requisitos de revisão não estabelecem quais pacotes são conhecidos por GitHub.
+
+4. Gráfico de dependência e seus dados de dependência reconhecidos **[CORRECT]**
+
+   Os alertas Dependabot dependem de dependências reconhecidas no gráfico de dependências.
+
+**Concept:** Inventário de dependência como entrada de alerta
+
+**Authored coaching hints:**
+
+- Como GitHub saberia quais versões de pacote o repositório usa?
+- Qual fonte de dados é comparada com os avisos de vulnerabilidade?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/code-security/dependabot/dependabot-alerts/about-dependabot-alerts>
+
+<!-- certification-coach-question:admin-105:d84650dcdb401eb3e7b3898ebc3a4f0c460bbdb4b777eff1e0da098f9303bf09 -->
+## Question 105: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-105`
+
+**Content revision:** `d84650dcdb401eb3e7b3898ebc3a4f0c460bbdb4b777eff1e0da098f9303bf09`
+
+### English
+
+A team wants automatic pull requests for routine dependency freshness even when no vulnerability is known. Which feature is the best fit?
+
+1. Dependabot version updates **[CORRECT]**
+
+   Version updates check configured dependencies on a schedule for newer versions.
+
+2. Only Dependabot alerts
+
+   Alerts report known vulnerabilities rather than routinely updating all dependencies.
+
+3. Only secret scanning
+
+   Secret scanning detects credentials, not dependency freshness.
+
+4. Only code-owner review requests
+
+   Code-owner review routes reviews without generating version-update pull requests.
+
+**Concept:** Version updates versus vulnerability alerts
+
+**Authored coaching hints:**
+
+- Is the trigger a known security advisory or routine maintenance?
+- Which dependency automation is schedule-driven?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un equipo quiere pull requests automático para la actualización de dependencias de rutina incluso cuando no se conoce ninguna vulnerabilidad. ¿Qué característica se adapta mejor?
+
+1. Actualizaciones de versión Dependabot **[CORRECT]**
+
+   Las actualizaciones de versión verifican las dependencias configuradas según un cronograma para obtener versiones más nuevas.
+
+2. Sólo alertas Dependabot
+
+   Las alertas informan sobre vulnerabilidades conocidas en lugar de actualizar periódicamente todas las dependencias.
+
+3. Solo análisis de secretos
+
+   El análisis de secretos detecta credenciales, no si las dependencias están actualizadas.
+
+4. Solo solicitudes de revisión del propietario del código
+
+   La revisión del propietario del código dirige las revisiones sin generar una actualización de versión pull requests.
+
+**Concept:** Actualizaciones de versión versus alertas de vulnerabilidad
+
+**Authored coaching hints:**
+
+- ¿El desencadenante es un aviso de seguridad conocido o un mantenimiento de rutina?
+- ¿Qué automatización de dependencias se basa en la programación?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma equipe deseja pull requests automático para atualização de dependência de rotina, mesmo quando nenhuma vulnerabilidade é conhecida. Qual recurso é o mais adequado?
+
+1. Atualizações de versão Dependabot **[CORRECT]**
+
+   As atualizações de versão verificam as dependências configuradas de acordo com uma programação para versões mais recentes.
+
+2. Apenas alertas Dependabot
+
+   Os alertas relatam vulnerabilidades conhecidas em vez de atualizar rotineiramente todas as dependências.
+
+3. Apenas verificação de segredos
+
+   A verificação de segredos detecta credenciais, não se as dependências estão atualizadas.
+
+4. Somente solicitações de revisão do proprietário do código
+
+   A revisão do proprietário do código roteia revisões sem gerar atualização de versão pull requests.
+
+**Concept:** Atualizações de versão versus alertas de vulnerabilidade
+
+**Authored coaching hints:**
+
+- O gatilho é um aviso de segurança conhecido ou uma manutenção de rotina?
+- Qual automação de dependência é orientada por cronograma?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/about-dependabot-version-updates>
+
+<!-- certification-coach-question:admin-106:95837d82091d56a2a3e123cb7d0f9182118e5f8566b8a108c469f17285d2a7f6 -->
+## Question 106: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-106`
+
+**Content revision:** `95837d82091d56a2a3e123cb7d0f9182118e5f8566b8a108c469f17285d2a7f6`
+
+### English
+
+An organization wants Dependabot version updates for npm packages in a monorepo subdirectory on a weekly schedule. Where should repository-specific package ecosystem, directory, and schedule configuration be defined?
+
+1. CODEOWNERS only
+
+   CODEOWNERS does not define dependency-update schedules.
+
+2. .github/dependabot.yml **[CORRECT]**
+
+   The Dependabot configuration file declares ecosystems, directories, and update schedules.
+
+3. Only a GitHub Actions schedule with no Dependabot configuration
+
+   An Actions cron schedule alone does not configure Dependabot version updates.
+
+4. Only the repository's security policy document
+
+   A written security policy does not define the executable update configuration.
+
+**Concept:** Dependabot version-update configuration
+
+**Authored coaching hints:**
+
+- Which configuration belongs with the version-controlled repository?
+- What information does an updater need to locate packages and choose its cadence?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una organización desea actualizaciones de la versión Dependabot para paquetes npm en un subdirectorio monorepo según un cronograma semanal. ¿Dónde se debe definir la configuración de programación, directorio y ecosistema de paquetes específicos del repositorio?
+
+1. Solo CODEOWNERS
+
+   CODEOWNERS no define programas de actualización de dependencias.
+
+2. .github/dependabot.yml **[CORRECT]**
+
+   El archivo de configuración Dependabot declara ecosistemas, directorios y programas de actualización.
+
+3. Sólo una programación GitHub Actions sin configuración Dependabot
+
+   Una programación cron de Actions por sí sola no configura las actualizaciones de versiones de Dependabot.
+
+4. Sólo el documento de política de seguridad del repositorio.
+
+   Una política de seguridad escrita no define la configuración de actualización ejecutable.
+
+**Concept:** Configuración de actualización de versión Dependabot
+
+**Authored coaching hints:**
+
+- ¿Qué configuración pertenece al repositorio controlado por versiones?
+- ¿Qué información necesita un actualizador para localizar paquetes y elegir su cadencia?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma organização deseja atualizações de versão Dependabot para pacotes npm em um subdiretório monorepo semanalmente. Onde o ecossistema de pacotes, o diretório e a configuração de agendamento específicos do repositório devem ser definidos?
+
+1. Somente CODEOWNERS
+
+   CODEOWNERS não define cronogramas de atualização de dependência.
+
+2. .github/dependabot.yml **[CORRECT]**
+
+   O arquivo de configuração Dependabot declara ecossistemas, diretórios e cronogramas de atualização.
+
+3. Somente uma programação GitHub Actions sem configuração Dependabot
+
+   Um agendamento cron de ações por si só não configura atualizações de versão Dependabot.
+
+4. Somente o documento de política de segurança do repositório
+
+   Uma política de segurança escrita não define a configuração de atualização executável.
+
+**Concept:** Configuração de atualização de versão Dependabot
+
+**Authored coaching hints:**
+
+- Qual configuração pertence ao repositório controlado por versão?
+- De quais informações um atualizador precisa para localizar pacotes e escolher sua cadência?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuring-dependabot-version-updates>
+
+<!-- certification-coach-question:admin-107:ce872668a8c58b466e5ee6e3a1dbe6f7ac5ebf640c1569eafbee1aec33a4c144 -->
+## Question 107: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-107`
+
+**Content revision:** `ce872668a8c58b466e5ee6e3a1dbe6f7ac5ebf640c1569eafbee1aec33a4c144`
+
+### English
+
+Dependabot cannot authenticate to a private package registry. The existing credential is stored only as an Actions secret. Which change should the administrator evaluate?
+
+1. Print the credential in every build log
+
+   Logging a registry credential exposes it.
+
+2. Make the private registry anonymous
+
+   Anonymous registry access unnecessarily removes authentication.
+
+3. Configure the registry in Dependabot and provide an appropriately scoped Dependabot secret **[CORRECT]**
+
+   Dependabot has its own secret context and private-registry configuration.
+
+4. Add the credential directly to dependabot.yml
+
+   Registry credentials should be referenced through secrets rather than committed as plaintext.
+
+**Concept:** Private registry authentication for Dependabot
+
+**Authored coaching hints:**
+
+- Do separate automation features automatically share the same secret store?
+- Where should the credential be referenced without committing its value?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Dependabot no puede autenticarse en un registro de paquetes privado. La credencial existente se almacena únicamente como un secreto de Actions. ¿Qué cambio debería evaluar el administrador?
+
+1. Imprima la credencial en cada registro de compilación
+
+   El registro de una credencial de registro la expone.
+
+2. Hacer anónimo el registro privado
+
+   El acceso anónimo al registro elimina innecesariamente la autenticación.
+
+3. Configure el registro en Dependabot y proporcione un secreto Dependabot con el alcance adecuado **[CORRECT]**
+
+   Dependabot tiene su propio contexto secreto y configuración de registro privado.
+
+4. Agregue la credencial directamente a dependabot.yml
+
+   Se debe hacer referencia a las credenciales de registro mediante secretos en lugar de confirmarlas como texto sin formato.
+
+**Concept:** Autenticación de registro privado para Dependabot
+
+**Authored coaching hints:**
+
+- ¿Las funciones de automatización independientes comparten automáticamente el mismo almacén secreto?
+- ¿Dónde se debe hacer referencia a la credencial sin comprometer su valor?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Dependabot não pode autenticar em um registro de pacote privado. A credencial existente é armazenada apenas como um segredo de ações. Qual mudança o administrador deve avaliar?
+
+1. Imprima a credencial em cada log de construção
+
+   Registrar uma credencial de registro a expõe.
+
+2. Tornar o registro privado anônimo
+
+   O acesso anônimo ao registro remove desnecessariamente a autenticação.
+
+3. Configure o registro em Dependabot e forneça um segredo Dependabot com escopo apropriado **[CORRECT]**
+
+   Dependabot possui seu próprio contexto secreto e configuração de registro privado.
+
+4. Adicione a credencial diretamente ao dependabot.yml
+
+   As credenciais do registro devem ser referenciadas por meio de segredos, em vez de serem confirmadas como texto simples.
+
+**Concept:** Autenticação de registro privado para Dependabot
+
+**Authored coaching hints:**
+
+- Os recursos de automação separados compartilham automaticamente o mesmo armazenamento secreto?
+- Onde a credencial deve ser referenciada sem comprometer seu valor?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/code-security/dependabot/working-with-dependabot/configuring-access-to-private-registries-for-dependabot>
+
+<!-- certification-coach-question:admin-108:43c437858904f90f5863a34c003113bfa499a8a1b8863690bac39bf3da16d992 -->
+## Question 108: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-108`
+
+**Content revision:** `43c437858904f90f5863a34c003113bfa499a8a1b8863690bac39bf3da16d992`
+
+### English
+
+A pull request updates a lock file and introduces a transitive dependency with a known vulnerability. Which feature is specifically designed to expose dependency changes and their security impact during pull-request review?
+
+1. Secret scanning
+
+   Secret scanning detects credentials rather than package-version changes.
+
+2. A repository access review
+
+   An access review evaluates authorization, not dependency diffs.
+
+3. A GitHub App installation log
+
+   Installation logs track integrations rather than package vulnerability changes.
+
+4. Dependency review **[CORRECT]**
+
+   Dependency review shows dependency changes, including indirect dependencies and known vulnerabilities.
+
+**Concept:** Dependency risk at pull-request time
+
+**Authored coaching hints:**
+
+- Which review surface understands package manifests and lock-file diffs?
+- Does the team need current inventory or the impact of this specific change?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un pull request actualiza un archivo de bloqueo e introduce una dependencia transitiva con una vulnerabilidad conocida. ¿Qué característica está diseñada específicamente para exponer los cambios de dependencia y su impacto en la seguridad durante la revisión de la solicitud de extracción?
+
+1. Análisis de secretos
+
+   El análisis de secretos detecta credenciales, no cambios en las versiones de los paquetes.
+
+2. Una revisión del acceso al repositorio
+
+   Una revisión de acceso evalúa la autorización, no las diferencias de dependencia.
+
+3. Un registro de instalación GitHub App
+
+   Los registros de instalación rastrean las integraciones en lugar de los cambios de vulnerabilidad de los paquetes.
+
+4. Revisión de dependencia **[CORRECT]**
+
+   La revisión de dependencia muestra cambios de dependencia, incluidas dependencias indirectas y vulnerabilidades conocidas.
+
+**Concept:** Riesgo de dependencia en el momento de la solicitud de extracción
+
+**Authored coaching hints:**
+
+- ¿Qué superficie de revisión comprende los manifiestos de paquetes y las diferencias de archivos de bloqueo?
+- ¿Necesita el equipo un inventario actual o el impacto de este cambio específico?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um pull request atualiza um arquivo de bloqueio e introduz uma dependência transitiva com uma vulnerabilidade conhecida. Qual recurso foi projetado especificamente para expor alterações de dependência e seu impacto na segurança durante a revisão da solicitação pull?
+
+1. Verificação de segredos
+
+   A verificação de segredos detecta credenciais, não alterações nas versões dos pacotes.
+
+2. Uma revisão de acesso ao repositório
+
+   Uma revisão de acesso avalia a autorização, não as diferenças de dependência.
+
+3. Um log de instalação GitHub App
+
+   Os logs de instalação rastreiam integrações em vez de alterações de vulnerabilidade de pacote.
+
+4. Revisão de dependência **[CORRECT]**
+
+   A revisão de dependência mostra alterações de dependência, incluindo dependências indiretas e vulnerabilidades conhecidas.
+
+**Concept:** Risco de dependência no momento da solicitação pull
+
+**Authored coaching hints:**
+
+- Qual superfície de revisão entende manifestos de pacotes e diferenças de arquivos de bloqueio?
+- A equipe precisa do inventário atual ou do impacto dessa mudança específica?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/about-dependency-review>
+
+<!-- certification-coach-question:admin-109:e78541beb1f248b5e7bf559252fcf973b550ecb6802ce9402ef8897400938b9f -->
+## Question 109: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-109`
+
+**Content revision:** `e78541beb1f248b5e7bf559252fcf973b550ecb6802ce9402ef8897400938b9f`
+
+### English
+
+A maintainer of a public repository needs to privately collaborate with selected researchers on a vulnerability before public disclosure. Which feature best supports this?
+
+1. A draft repository security advisory **[CORRECT]**
+
+   Draft security advisories support private vulnerability coordination before publication.
+
+2. A normal public issue with a security label
+
+   A label does not make a public issue confidential.
+
+3. A public discussion with only maintainers mentioned
+
+   Mentioning selected people does not restrict a public discussion's audience.
+
+4. A published release containing the exploit details immediately
+
+   Immediate public release defeats the requested private coordination period.
+
+**Concept:** Private vulnerability coordination
+
+**Authored coaching hints:**
+
+- What distinguishes pre-disclosure collaboration from ordinary public project discussion?
+- Which security feature supports a controlled publication lifecycle?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+El responsable de un repositorio público debe colaborar de forma privada con investigadores seleccionados en una vulnerabilidad antes de su divulgación pública. ¿Qué característica respalda mejor esto?
+
+1. Un borrador de aviso de seguridad del repositorio **[CORRECT]**
+
+   Los borradores de avisos de seguridad respaldan la coordinación privada de vulnerabilidades antes de su publicación.
+
+2. Un issue público normal con etiqueta de seguridad.
+
+   Una etiqueta no convierte a un issue público en confidencial.
+
+3. Una discusión pública con solo los mantenedores mencionados.
+
+   Mencionar a personas seleccionadas no restringe la audiencia de una discusión pública.
+
+4. Un comunicado publicado que contiene los detalles del exploit de inmediato.
+
+   La publicación pública inmediata anula el período de coordinación privada solicitado.
+
+**Concept:** Coordinación privada de vulnerabilidad
+
+**Authored coaching hints:**
+
+- ¿Qué distingue la colaboración previa a la divulgación de la discusión pública ordinaria de un proyecto?
+- ¿Qué característica de seguridad admite un ciclo de vida de publicación controlado?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+O mantenedor de um repositório público precisa colaborar de forma privada com pesquisadores selecionados sobre uma vulnerabilidade antes da divulgação pública. Qual recurso suporta melhor isso?
+
+1. Um rascunho de aviso de segurança do repositório **[CORRECT]**
+
+   Rascunhos de avisos de segurança apoiam a coordenação de vulnerabilidades privadas antes da publicação.
+
+2. Um issue público normal com uma etiqueta de segurança
+
+   Uma etiqueta não torna confidencial um issue público.
+
+3. Uma discussão pública apenas com os mantenedores mencionados
+
+   Mencionar pessoas selecionadas não restringe o público da discussão pública.
+
+4. Uma versão publicada contendo os detalhes da exploração imediatamente
+
+   A divulgação pública imediata anula o período de coordenação privada solicitado.
+
+**Concept:** Coordenação de vulnerabilidade privada
+
+**Authored coaching hints:**
+
+- O que distingue a colaboração pré-divulgação da discussão pública comum do projeto?
+- Qual recurso de segurança oferece suporte a um ciclo de vida de publicação controlado?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/code-security/security-advisories/working-with-repository-security-advisories/about-repository-security-advisories>
+
+<!-- certification-coach-question:admin-110:79248d799aba321d61310e2dcb000fbd4f6766443be21aabb57bd211a5bda5e2 -->
+## Question 110: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-110`
+
+**Content revision:** `79248d799aba321d61310e2dcb000fbd4f6766443be21aabb57bd211a5bda5e2`
+
+### English
+
+An organization wants researchers to know which versions it supports and how to report a vulnerability safely. Which repository document is intended for this guidance?
+
+1. CODEOWNERS
+
+   CODEOWNERS identifies reviewers, not the project's vulnerability-reporting policy.
+
+2. SECURITY.md **[CORRECT]**
+
+   SECURITY.md communicates supported versions and vulnerability-reporting instructions.
+
+3. dependabot.yml
+
+   Dependabot configuration controls updates rather than disclosure instructions.
+
+4. CODE\_OF\_CONDUCT.md
+
+   A code of conduct governs participation behavior rather than vulnerability reporting.
+
+**Concept:** Communicating a security policy
+
+**Authored coaching hints:**
+
+- Which document should a researcher consult before opening a public issue?
+- Are support versions and private reporting part of ownership or security policy?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una organización quiere que los investigadores sepan qué versiones admite y cómo informar una vulnerabilidad de forma segura. ¿Qué documento de repositorio está destinado a esta guía?
+
+1. CODEOWNERS
+
+   CODEOWNERS identifica a los revisores, no la política de informes de vulnerabilidades del proyecto.
+
+2. SECURITY.md **[CORRECT]**
+
+   SECURITY.md comunica versiones compatibles e instrucciones para informes de vulnerabilidades.
+
+3. dependabot.yml
+
+   La configuración de Dependabot controla las actualizaciones en lugar de las instrucciones de divulgación.
+
+4. CODE\_OF\_CONDUCT.md
+
+   Un código de conducta rige el comportamiento de participación en lugar de informar sobre vulnerabilidades.
+
+**Concept:** Comunicar una política de seguridad
+
+**Authored coaching hints:**
+
+- ¿Qué documento debe consultar un investigador antes de abrir un issue público?
+- ¿Las versiones de soporte y los informes privados son parte de la propiedad o de la política de seguridad?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma organização deseja que os pesquisadores saibam quais versões ela suporta e como relatar uma vulnerabilidade com segurança. Qual documento do repositório se destina a esta orientação?
+
+1. CODEOWNERS
+
+   CODEOWNERS identifica os revisores, não a política de relatório de vulnerabilidades do projeto.
+
+2. SECURITY.md **[CORRECT]**
+
+   SECURITY.md comunica versões suportadas e instruções de relatório de vulnerabilidades.
+
+3. dependabot.yml
+
+   A configuração Dependabot controla atualizações em vez de instruções de divulgação.
+
+4. CODE\_OF\_CONDUCT.md
+
+   Um código de conduta rege o comportamento de participação em vez de reportar vulnerabilidades.
+
+**Concept:** Comunicando uma política de segurança
+
+**Authored coaching hints:**
+
+- Qual documento um pesquisador deve consultar antes de abrir um issue público?
+- As versões de suporte e os relatórios privados fazem parte da propriedade ou da política de segurança?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/code-security/getting-started/adding-a-security-policy-to-your-repository>
+
+<!-- certification-coach-question:admin-111:e8bfb481c615078eefd8a7ff521253df9e3f5b07c7556e7db48f4f56727e5391 -->
+## Question 111: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-111`
+
+**Content revision:** `e8bfb481c615078eefd8a7ff521253df9e3f5b07c7556e7db48f4f56727e5391`
+
+### English
+
+A public-project maintainer has prepared a security advisory and needs a recognized vulnerability identifier as part of coordinated disclosure. Which GitHub capability should they consider?
+
+1. Create a branch with CVE in its name
+
+   Branch names do not allocate recognized CVE identifiers.
+
+2. Use an issue number as an automatic CVE replacement
+
+   Repository issue numbers are not automatically CVE identifiers.
+
+3. Request a CVE through the repository security-advisory process **[CORRECT]**
+
+   The advisory workflow supports requesting a CVE for eligible vulnerabilities.
+
+4. Tag every release as vulnerable without publishing an advisory
+
+   Release tagging alone does not request a vulnerability identifier.
+
+**Concept:** Vulnerability identification and disclosure
+
+**Authored coaching hints:**
+
+- Who allocates a standardized vulnerability identifier?
+- Which structured disclosure workflow supports that request?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un responsable de un proyecto público ha preparado un aviso de seguridad y necesita un identificador de vulnerabilidad reconocido como parte de la divulgación coordinada. ¿Qué capacidad GitHub deberían considerar?
+
+1. Crear una rama con CVE en su nombre
+
+   Los nombres de las ramas no asignan identificadores CVE reconocidos.
+
+2. Utilice un número issue como reemplazo automático de CVE
+
+   Los números del repositorio issue no son automáticamente identificadores CVE.
+
+3. Solicite un CVE a través del proceso de asesoramiento de seguridad del repositorio **[CORRECT]**
+
+   El flujo de trabajo de asesoramiento admite la solicitud de un CVE para vulnerabilidades elegibles.
+
+4. Etiquetar cada lanzamiento como vulnerable sin publicar un aviso
+
+   El etiquetado de versiones por sí solo no solicita un identificador de vulnerabilidad.
+
+**Concept:** Identificación y divulgación de vulnerabilidades
+
+**Authored coaching hints:**
+
+- ¿Quién asigna un identificador de vulnerabilidad estandarizado?
+- ¿Qué flujo de trabajo de divulgación estructurado respalda esa solicitud?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um mantenedor de projeto público preparou um comunicado de segurança e precisa de um identificador de vulnerabilidade reconhecido como parte da divulgação coordenada. Qual capacidade do GitHub eles deveriam considerar?
+
+1. Criar uma ramificação com CVE no nome
+
+   Os nomes das ramificações não atribuem identificadores CVE reconhecidos.
+
+2. Use um número issue como uma substituição automática de CVE
+
+   Os números issue do repositório não são identificadores CVE automaticamente.
+
+3. Solicite um CVE por meio do processo de aconselhamento de segurança do repositório **[CORRECT]**
+
+   O fluxo de trabalho de consultoria oferece suporte à solicitação de CVE para vulnerabilidades elegíveis.
+
+4. Marque cada versão como vulnerável sem publicar um comunicado
+
+   A marcação de versão por si só não solicita um identificador de vulnerabilidade.
+
+**Concept:** Identificação e divulgação de vulnerabilidades
+
+**Authored coaching hints:**
+
+- Quem aloca um identificador de vulnerabilidade padronizado?
+- Qual fluxo de trabalho de divulgação estruturada dá suporte a essa solicitação?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/code-security/security-advisories/working-with-repository-security-advisories/about-repository-security-advisories>
+
+<!-- certification-coach-question:admin-112:8db7100742940d451ee62bfee3fc80a8e9717f43c636a5a6e8c9f8e9f3d48c0e -->
+## Question 112: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-112`
+
+**Content revision:** `8db7100742940d451ee62bfee3fc80a8e9717f43c636a5a6e8c9f8e9f3d48c0e`
+
+### English
+
+A security queue contains many Dependabot alerts. Which prioritization approach is most defensible?
+
+1. Always remediate alphabetically by package name
+
+   Alphabetical order does not reflect security risk.
+
+2. Dismiss older alerts first regardless of impact
+
+   Age alone does not establish that an alert is safe to dismiss.
+
+3. Use severity alone and deliberately ignore exploitability and application context
+
+   Severity alone can miss important differences in exploitation likelihood and exposure.
+
+4. Use severity, exploitability signals, dependency context, and application exposure **[CORRECT]**
+
+   Multiple risk signals and actual usage context support meaningful prioritization.
+
+**Concept:** Risk-based vulnerability triage
+
+**Authored coaching hints:**
+
+- Which findings are most likely to harm this application?
+- Why might identical severity ratings still imply different operational priorities?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una cola de seguridad contiene muchas alertas Dependabot. ¿Qué enfoque de priorización es más defendible?
+
+1. Corrija siempre alfabéticamente por nombre de paquete
+
+   El orden alfabético no refleja riesgo de seguridad.
+
+2. Descartar primero las alertas más antiguas independientemente del impacto
+
+   La edad por sí sola no establece que sea seguro descartar una alerta.
+
+3. Utilice únicamente la gravedad e ignore deliberadamente la explotabilidad y el contexto de la aplicación.
+
+   La gravedad por sí sola puede pasar por alto diferencias importantes en la probabilidad de explotación y la exposición.
+
+4. Utilice gravedad, señales de explotabilidad, contexto de dependencia y exposición de la aplicación. **[CORRECT]**
+
+   Múltiples señales de riesgo y el contexto de uso real respaldan una priorización significativa.
+
+**Concept:** Triaje de vulnerabilidades basado en riesgos
+
+**Authored coaching hints:**
+
+- ¿Qué hallazgos tienen más probabilidades de perjudicar esta aplicación?
+- ¿Por qué unas clasificaciones de gravedad idénticas podrían implicar prioridades operativas diferentes?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma fila de segurança contém muitos alertas Dependabot. Qual abordagem de priorização é mais defensável?
+
+1. Sempre corrija em ordem alfabética por nome do pacote
+
+   A ordem alfabética não reflete o risco de segurança.
+
+2. Ignore alertas mais antigos primeiro, independentemente do impacto
+
+   A idade por si só não estabelece que um alerta seja seguro para ser descartado.
+
+3. Use apenas a severidade e ignore deliberadamente a explorabilidade e o contexto do aplicativo
+
+   A gravidade por si só pode ignorar diferenças importantes na probabilidade de exploração e exposição.
+
+4. Use gravidade, sinais de exploração, contexto de dependência e exposição do aplicativo **[CORRECT]**
+
+   Vários sinais de risco e contexto de uso real apoiam uma priorização significativa.
+
+**Concept:** Triagem de vulnerabilidade baseada em risco
+
+**Authored coaching hints:**
+
+- Quais descobertas têm maior probabilidade de prejudicar esta aplicação?
+- Por que razão as classificações de gravidade idênticas ainda podem implicar prioridades operacionais diferentes?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/code-security/dependabot/dependabot-alerts/viewing-and-updating-dependabot-alerts>
+
+<!-- certification-coach-question:admin-113:0d3bd79ea0c139e5ad140a3cd14659f6de3c712b3373556014ee7e150001643b -->
+## Question 113: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-113`
+
+**Content revision:** `0d3bd79ea0c139e5ad140a3cd14659f6de3c712b3373556014ee7e150001643b`
+
+### English
+
+A team accepts a Dependabot alert temporarily because the affected code path is not reachable in its deployment. What is the best recordkeeping practice?
+
+1. Document the justified disposition and revisit it if assumptions change **[CORRECT]**
+
+   Recorded rationale makes the accepted risk auditable and supports later reassessment.
+
+2. Mark the package fixed even though its version has not changed
+
+   An unchanged vulnerable package should not be falsely described as patched.
+
+3. Remove every dependency manifest to hide the alert
+
+   Removing manifests undermines dependency visibility rather than addressing risk.
+
+4. Disable all vulnerability alerts permanently
+
+   A scoped accepted risk does not justify permanently disabling every alert.
+
+**Concept:** Documented vulnerability risk acceptance
+
+**Authored coaching hints:**
+
+- What assumptions make the current decision defensible?
+- How could future deployment changes invalidate that decision?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un equipo acepta una alerta Dependabot temporalmente porque no se puede acceder a la ruta del código afectado en su implementación. ¿Cuál es la mejor práctica de mantenimiento de registros?
+
+1. Documentar la disposición justificada y revisarla si cambian los supuestos. **[CORRECT]**
+
+   La justificación registrada hace que el riesgo aceptado sea auditable y respalda una reevaluación posterior.
+
+2. Marcar el paquete como arreglado aunque su versión no haya cambiado
+
+   Un paquete vulnerable sin cambios no debe describirse falsamente como parcheado.
+
+3. Elimine todos los manifiestos de dependencia para ocultar la alerta.
+
+   La eliminación de manifiestos socava la visibilidad de la dependencia en lugar de abordar el riesgo.
+
+4. Deshabilite todas las alertas de vulnerabilidad de forma permanente
+
+   Un riesgo aceptado con alcance no justifica deshabilitar permanentemente todas las alertas.
+
+**Concept:** Aceptación documentada del riesgo de vulnerabilidad.
+
+**Authored coaching hints:**
+
+- ¿Qué supuestos hacen defendible la decisión actual?
+- ¿Cómo podrían los cambios futuros en la implementación invalidar esa decisión?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma equipe aceita um alerta Dependabot temporariamente porque o caminho do código afetado não está acessível em sua implantação. Qual é a melhor prática de manutenção de registros?
+
+1. Documente a disposição justificada e revise-a se as premissas mudarem **[CORRECT]**
+
+   A justificativa registrada torna o risco aceito auditável e apoia uma reavaliação posterior.
+
+2. Marcar o pacote como corrigido mesmo que sua versão não tenha mudado
+
+   Um pacote vulnerável inalterado não deve ser falsamente descrito como corrigido.
+
+3. Remova todos os manifestos de dependência para ocultar o alerta
+
+   A remoção de manifestos prejudica a visibilidade da dependência em vez de abordar o risco.
+
+4. Desative todos os alertas de vulnerabilidade permanentemente
+
+   Um risco aceito com escopo definido não justifica a desativação permanente de todos os alertas.
+
+**Concept:** Aceitação documentada do risco de vulnerabilidade
+
+**Authored coaching hints:**
+
+- Que suposições tornam a decisão atual defensável?
+- Como alterações futuras na implantação poderiam invalidar essa decisão?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/code-security/dependabot/dependabot-alerts/viewing-and-updating-dependabot-alerts>
+
+<!-- certification-coach-question:admin-114:38939cbe5de4467144d7c44d0a56138c241c06a57df35194738d61b2b7f00b39 -->
+## Question 114: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-114`
+
+**Content revision:** `38939cbe5de4467144d7c44d0a56138c241c06a57df35194738d61b2b7f00b39`
+
+### English
+
+An enterprise wants a practical security response plan for repository incidents. Which content is most useful?
+
+1. Only an annual target for fewer alerts
+
+   A metric alone does not tell responders how to act during an incident.
+
+2. Named responders, escalation paths, containment steps, communication rules, and evidence preservation **[CORRECT]**
+
+   Roles, escalation, containment, communication, and evidence form an actionable response process.
+
+3. Only a list of enabled scanning products with no response responsibilities
+
+   Detection coverage alone does not explain who must act on an incident or how.
+
+4. A rule to delete every affected repository before investigation
+
+   Immediate indiscriminate deletion risks data loss and destroys evidence.
+
+**Concept:** Operational security response planning
+
+**Authored coaching hints:**
+
+- What must responders know in the first minutes of an incident?
+- How will responsibility and evidence handling remain clear under pressure?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una empresa quiere un plan práctico de respuesta de seguridad para incidentes en el repositorio. ¿Qué contenido es más útil?
+
+1. Sólo un objetivo anual para menos alertas
+
+   Una métrica por sí sola no indica a quienes responden al incidente cómo actuar.
+
+2. Respondedores nombrados, rutas de escalada, pasos de contención, reglas de comunicación y preservación de evidencia **[CORRECT]**
+
+   Los roles, la escalada, la contención, la comunicación y la evidencia forman un proceso de respuesta procesable.
+
+3. Solo una lista de productos de escaneo habilitados sin responsabilidades de respuesta
+
+   La cobertura de detección por sí sola no explica quién debe actuar ante un incidente ni cómo.
+
+4. Una regla para eliminar todos los repositorios afectados antes de la investigación
+
+   La eliminación inmediata e indiscriminada corre el riesgo de perder datos y destruir pruebas.
+
+**Concept:** Planificación operativa de la respuesta de seguridad
+
+**Authored coaching hints:**
+
+- ¿Qué deben saber quienes responden al incidente en sus primeros minutos?
+- ¿Cómo se mantendrán claras la responsabilidad y el manejo de las pruebas bajo presión?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma empresa deseja um plano prático de resposta de segurança para incidentes de repositório. Qual conteúdo é mais útil?
+
+1. Apenas uma meta anual para menos alertas
+
+   Uma métrica por si só não informa aos respondentes como agir durante um incidente.
+
+2. Respondentes nomeados, caminhos de escalonamento, etapas de contenção, regras de comunicação e preservação de evidências **[CORRECT]**
+
+   Funções, escalonamento, contenção, comunicação e evidências formam um processo de resposta acionável.
+
+3. Apenas uma lista de produtos de verificação habilitados sem responsabilidades de resposta
+
+   A cobertura de detecção por si só não explica quem deve agir em um incidente ou como.
+
+4. Uma regra para excluir todos os repositórios afetados antes da investigação
+
+   A exclusão indiscriminada imediata arrisca a perda de dados e destrói evidências.
+
+**Concept:** Planejamento de resposta de segurança operacional
+
+**Authored coaching hints:**
+
+- O que os responsáveis pela resposta devem saber nos primeiros minutos de um incidente?
+- Como a responsabilidade e o tratamento das evidências permanecerão claros sob pressão?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/support/learning-about-github-support/understanding-how-github-support-can-help-during-a-security-incident>
+
+<!-- certification-coach-question:admin-115:99364a93839780bafc370962be0e3a2b905583e19c702bfcfd6b8113b56b0db3 -->
+## Question 115: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-115`
+
+**Content revision:** `99364a93839780bafc370962be0e3a2b905583e19c702bfcfd6b8113b56b0db3`
+
+### English
+
+A human user needs a supported API operation that reads issues in two organization repositories. A PAT is appropriate for this short-lived task. Which token design best follows least privilege?
+
+1. A classic token with every available scope and no expiry
+
+   Broad scopes and indefinite lifetime exceed the task's needs.
+
+2. A token belonging to an organization owner shared with the user
+
+   Sharing another person's token weakens attribution and credential safety.
+
+3. A fine-grained token limited to the organization, selected repositories, required permissions, and a suitable expiry **[CORRECT]**
+
+   Fine-grained repository and permission selection narrows the credential's authority.
+
+4. A token for all repositories with unnecessary administration permissions
+
+   Unnecessary all-repository administration access violates least privilege.
+
+**Concept:** Fine-grained PAT scope design
+
+**Authored coaching hints:**
+
+- What resources and operations does this task actually need?
+- How can the credential's duration be limited alongside its permissions?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un usuario humano necesita una operación API compatible que lea issues en dos repositorios de la organización. Un PAT es apropiado para esta tarea de corta duración. ¿Qué diseño de token sigue mejor el menor privilegio?
+
+1. Un token clásico con todos los alcances disponibles y sin vencimiento
+
+   Los amplios alcances y la vida útil indefinida superan las necesidades de la tarea.
+
+2. Un token que pertenece al propietario de una organización compartido con el usuario.
+
+   Compartir el token de otra persona debilita la atribución y la seguridad de las credenciales.
+
+3. Un token fine-grained limitado a la organización, repositorios seleccionados, permisos requeridos y una caducidad adecuada **[CORRECT]**
+
+   La selección detallada de permisos y repositorios limita la autoridad de la credencial.
+
+4. Un token para todos los repositorios con permisos de administración innecesarios
+
+   El acceso innecesario a la administración de todos los repositorios viola el privilegio mínimo.
+
+**Concept:** Diseño de alcance de grano fino PAT
+
+**Authored coaching hints:**
+
+- ¿Qué recursos y operaciones necesita realmente esta tarea?
+- ¿Cómo se puede limitar la duración de la credencial junto con sus permisos?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um usuário humano precisa de uma operação API suportada que leia issues em dois repositórios da organização. Um PAT é apropriado para esta tarefa de curta duração. Qual design de token segue melhor o menor privilégio?
+
+1. Um token clássico com todos os escopos disponíveis e sem vencimento
+
+   Escopos amplos e vida útil indefinida excedem as necessidades da tarefa.
+
+2. Um token pertencente ao proprietário de uma organização compartilhado com o usuário
+
+   Compartilhar o token de outra pessoa enfraquece a atribuição e a segurança das credenciais.
+
+3. Um token fine-grained limitado à organização, repositórios selecionados, permissões necessárias e expiração adequada **[CORRECT]**
+
+   O repositório refinado e a seleção de permissões restringem a autoridade da credencial.
+
+4. Um token para todos os repositórios com permissões de administração desnecessárias
+
+   O acesso desnecessário à administração de todos os repositórios viola o privilégio mínimo.
+
+**Concept:** Design refinado do osciloscópio PAT
+
+**Authored coaching hints:**
+
+- De quais recursos e operações essa tarefa realmente precisa?
+- Como a duração da credencial pode ser limitada juntamente com suas permissões?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens>
+
+<!-- certification-coach-question:admin-116:f832906edac8c15f704333d783c5fb5d0e26b4e9227a76fc048e7ad4e6318055 -->
+## Question 116: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-116`
+
+**Content revision:** `f832906edac8c15f704333d783c5fb5d0e26b4e9227a76fc048e7ad4e6318055`
+
+### English
+
+A member creates a fine-grained PAT for an organization that requires token approval. It remains pending and cannot access the intended private repository. What is the appropriate next action?
+
+1. Recreate it repeatedly until approval is bypassed
+
+   Recreation does not remove the organization's approval policy.
+
+2. Switch the repository to public solely for the token
+
+   Changing visibility exposes content instead of following access governance.
+
+3. Assume token creation automatically satisfies organization approval
+
+   Token creation and organization approval are distinct steps.
+
+4. Have an authorized administrator review the pending token request **[CORRECT]**
+
+   The administrator should review the requested access under the configured policy.
+
+**Concept:** Fine-grained PAT approval workflow
+
+**Authored coaching hints:**
+
+- Which policy step has not yet completed?
+- Who can decide whether the requested organization access is appropriate?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un miembro crea un fine-grained PAT para una organización que requiere aprobación de token. Permanece pendiente y no puede acceder al repositorio privado previsto. ¿Cuál es la siguiente acción apropiada?
+
+1. Vuelva a crearlo repetidamente hasta que se omita la aprobación.
+
+   La recreación no elimina la política de aprobación de la organización.
+
+2. Cambiar el repositorio a público únicamente para el token
+
+   Cambiar la visibilidad expone el contenido en lugar de seguir la gobernanza del acceso.
+
+3. Supongamos que la creación de tokens satisface automáticamente la aprobación de la organización
+
+   La creación de tokens y la aprobación de la organización son pasos distintos.
+
+4. Haga que un administrador autorizado revise la solicitud de token pendiente **[CORRECT]**
+
+   El administrador debe revisar el acceso solicitado según la política configurada.
+
+**Concept:** Flujo de trabajo de aprobación detallado de PAT
+
+**Authored coaching hints:**
+
+- ¿Qué paso político aún no se ha completado?
+- ¿Quién puede decidir si el acceso a la organización solicitada es apropiado?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um membro cria um fine-grained PAT para uma organização que requer aprovação de token. Permanece pendente e não pode acessar o repositório privado pretendido. Qual é a próxima ação apropriada?
+
+1. Recrie-o repetidamente até que a aprovação seja ignorada
+
+   A recreação não elimina a política de aprovação da organização.
+
+2. Mude o repositório para público apenas para o token
+
+   A alteração da visibilidade expõe o conteúdo em vez de seguir a governança de acesso.
+
+3. Suponha que a criação de token satisfaça automaticamente a aprovação da organização
+
+   A criação de token e a aprovação da organização são etapas distintas.
+
+4. Peça a um administrador autorizado que analise a solicitação de token pendente **[CORRECT]**
+
+   O administrador deve revisar o acesso solicitado de acordo com a política configurada.
+
+**Concept:** Fluxo de trabalho de aprovação PAT refinado
+
+**Authored coaching hints:**
+
+- Qual etapa da política ainda não foi concluída?
+- Quem pode decidir se o acesso solicitado à organização é apropriado?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/organizations/managing-programmatic-access-to-your-organization/reviewing-and-revoking-personal-access-tokens-in-your-organization>
+
+<!-- certification-coach-question:admin-117:807b2310e9815eb560d91935f5d80c6e6f2f8333a1d6978a9b11ac61cec85111 -->
+## Question 117: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-117`
+
+**Content revision:** `807b2310e9815eb560d91935f5d80c6e6f2f8333a1d6978a9b11ac61cec85111`
+
+### English
+
+An organization wants to limit the lifetime of tokens accessing its resources instead of relying only on each developer's preference. Which governance control should it evaluate?
+
+1. A supported organization PAT maximum-lifetime policy for the relevant token type **[CORRECT]**
+
+   PAT policies can constrain token lifetimes for organization access.
+
+2. A repository artifact-retention setting
+
+   Artifact retention does not control API-token expiry.
+
+3. A branch deletion restriction
+
+   Branch deletion rules do not set credential lifetimes.
+
+4. A CODEOWNERS entry for the authentication directory
+
+   Code ownership routes reviews rather than enforcing token expiration.
+
+**Concept:** Token-lifetime governance
+
+**Authored coaching hints:**
+
+- At which scope can credential rules be enforced consistently?
+- Does data retention control how long an access credential works?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una organización quiere limitar la vida útil de los tokens que acceden a sus recursos en lugar de depender únicamente de las preferencias de cada desarrollador. ¿Qué control de gobernanza debería evaluar?
+
+1. Una política de duración máxima de organización compatible PAT para el tipo de token relevante **[CORRECT]**
+
+   Las políticas PAT pueden limitar la duración de los tokens para el acceso de la organización.
+
+2. Una configuración de retención de artefactos del repositorio
+
+   La retención de artefactos no controla la caducidad del token API.
+
+3. Una restricción de eliminación de ramas
+
+   Las reglas de eliminación de ramas no establecen la duración de las credenciales.
+
+4. Una entrada CODEOWNERS para el directorio de autenticación
+
+   La propiedad del código dirige las revisiones en lugar de imponer la caducidad del token.
+
+**Concept:** Gobernanza de por vida del token
+
+**Authored coaching hints:**
+
+- ¿En qué ámbito se pueden hacer cumplir las reglas de credenciales de manera consistente?
+- ¿La retención de datos controla cuánto tiempo funciona una credencial de acceso?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma organização quer limitar a vida útil dos tokens que acessam seus recursos, em vez de depender apenas da preferência de cada desenvolvedor. Qual controle de governança ela deve avaliar?
+
+1. Uma política de vida útil máxima PAT da organização compatível para o tipo de token relevante **[CORRECT]**
+
+   As políticas PAT podem restringir a vida útil do token para acesso da organização.
+
+2. Uma configuração de retenção de artefato de repositório
+
+   A retenção de artefato não controla a expiração do token API.
+
+3. Uma restrição de exclusão de ramificação
+
+   As regras de exclusão de ramificação não definem a vida útil das credenciais.
+
+4. Uma entrada CODEOWNERS para o diretório de autenticação
+
+   A propriedade do código encaminha revisões em vez de impor a expiração do token.
+
+**Concept:** Governança vitalícia do token
+
+**Authored coaching hints:**
+
+- Em que âmbito as regras de credenciais podem ser aplicadas de forma consistente?
+- A retenção de dados controla por quanto tempo uma credencial de acesso funciona?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/organizations/managing-programmatic-access-to-your-organization/setting-a-personal-access-token-policy-for-your-organization>
+
+<!-- certification-coach-question:admin-118:9df58c4d066f35ef52015c6a6faa3b6d58a22f066cca3904c59058f56438cbd2 -->
+## Question 118: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-118`
+
+**Content revision:** `9df58c4d066f35ef52015c6a6faa3b6d58a22f066cca3904c59058f56438cbd2`
+
+### English
+
+A fine-grained PAT approved for an organization is later found to be overprivileged. The owner wants to remove that token's organization access without removing the user's legitimate membership. Which action is most targeted?
+
+1. Remove every team in the organization
+
+   Team deletion disrupts unrelated people and does not target one credential.
+
+2. Revoke that token's access through organization token management **[CORRECT]**
+
+   Token-specific revocation removes the excessive credential grant without broad membership changes.
+
+3. Delete the user's personal public repositories
+
+   The organization does not address its token exposure by deleting personal repositories.
+
+4. Disable all GitHub API access for every account
+
+   A global API ban is disproportionate to one approved token.
+
+**Concept:** Targeted token-access revocation
+
+**Authored coaching hints:**
+
+- Is the risk tied to the person or one credential?
+- Which management surface identifies the specific approved credential?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Posteriormente se descubre que un fine-grained PAT aprobado para una organización tiene privilegios excesivos. El propietario desea eliminar el acceso a la organización de ese token sin eliminar la membresía legítima del usuario. ¿Qué acción está más dirigida?
+
+1. Eliminar todos los equipos de la organización
+
+   La eliminación del equipo interrumpe a las personas no relacionadas y no tiene como objetivo una sola credencial.
+
+2. Revocar el acceso de ese token a través de la gestión de tokens de la organización **[CORRECT]**
+
+   La revocación específica de token elimina la concesión excesiva de credenciales sin cambios amplios de membresía.
+
+3. Eliminar los repositorios públicos personales del usuario
+
+   La organización no aborda la exposición de sus tokens eliminando repositorios personales.
+
+4. Deshabilite todo el acceso a GitHub API para cada cuenta
+
+   Una prohibición global de API es desproporcionada con respecto a un token aprobado.
+
+**Concept:** Revocación de acceso a tokens dirigida
+
+**Authored coaching hints:**
+
+- ¿El riesgo está ligado a la persona o a una credencial?
+- ¿Qué superficie de gestión identifica la credencial aprobada específica?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um fine-grained PAT aprovado para uma organização é posteriormente considerado superprivilegiado. O proprietário deseja remover o acesso à organização desse token sem remover a associação legítima do usuário. Qual ação é mais direcionada?
+
+1. Remova todas as equipes da organização
+
+   A exclusão da equipe perturba pessoas não relacionadas e não visa uma credencial.
+
+2. Revogar o acesso desse token por meio do gerenciamento de tokens da organização **[CORRECT]**
+
+   A revogação específica do token remove a concessão excessiva de credenciais sem grandes alterações na associação.
+
+3. Exclua os repositórios públicos pessoais do usuário
+
+   A organização não aborda a exposição ao token excluindo repositórios pessoais.
+
+4. Desative todo o acesso GitHub API para cada conta
+
+   Uma proibição global de API é desproporcional a um token aprovado.
+
+**Concept:** Revogação de acesso ao token direcionado
+
+**Authored coaching hints:**
+
+- O risco está vinculado à pessoa ou a uma credencial?
+- Qual superfície de gerenciamento identifica a credencial aprovada específica?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/organizations/managing-programmatic-access-to-your-organization/reviewing-and-revoking-personal-access-tokens-in-your-organization>
+
+<!-- certification-coach-question:admin-119:117016e92b8c14a6a290939c38337c4524ae196b9884aa0d30513bbd908675da -->
+## Question 119: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-119`
+
+**Content revision:** `117016e92b8c14a6a290939c38337c4524ae196b9884aa0d30513bbd908675da`
+
+### English
+
+A long-running organization integration uses an employee's PAT. The employee is leaving. Which redesign most directly reduces dependence on that individual's continuing access?
+
+1. Copy the PAT into more repositories
+
+   More copies increase credential exposure without changing ownership.
+
+2. Remove the PAT's expiration only
+
+   Expiry is not the only dependency; PAT access remains tied to the user.
+
+3. Use a GitHub App with an appropriate installation and narrowly scoped permissions **[CORRECT]**
+
+   An installation-based app is better suited to organization automation independent of one employee.
+
+4. Rename the PAT to service-account without changing its owner
+
+   A display name does not change the token's identity or lifecycle.
+
+**Concept:** Automation identity independence
+
+**Authored coaching hints:**
+
+- What happens to automation when its human credential owner loses access?
+- Which integration model has an installation identity?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una integración de organización de larga duración utiliza el PAT de un empleado. El empleado se va. ¿Qué rediseño reduce más directamente la dependencia del acceso continuo de ese individuo?
+
+1. Copie el PAT en más repositorios
+
+   Más copias aumentan la exposición de las credenciales sin cambiar de propietario.
+
+2. Eliminar solo la caducidad del PAT
+
+   La caducidad no es la única dependencia; El acceso a PAT queda ligado al usuario.
+
+3. Utilice un GitHub App con una instalación adecuada y permisos de alcance limitado **[CORRECT]**
+
+   Una aplicación basada en instalación se adapta mejor a la automatización de organizaciones independientes de un solo empleado.
+
+4. Cambie el nombre del PAT a cuenta de servicio sin cambiar de propietario
+
+   Un nombre para mostrar no cambia la identidad ni el ciclo de vida del token.
+
+**Concept:** Independencia de identidad de automatización
+
+**Authored coaching hints:**
+
+- ¿Qué sucede con la automatización cuando el propietario de la credencial humana pierde el acceso?
+- ¿Qué modelo de integración tiene una identidad de instalación?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma integração organizacional de longa duração usa o PAT de um funcionário. O funcionário está saindo. Qual redesenho reduz mais diretamente a dependência do acesso contínuo desse indivíduo?
+
+1. Copie o PAT em mais repositórios
+
+   Mais cópias aumentam a exposição da credencial sem alterar a propriedade.
+
+2. Remova apenas a expiração do PAT
+
+   A expiração não é a única dependência; O acesso PAT permanece vinculado ao usuário.
+
+3. Use um GitHub App com uma instalação apropriada e permissões de escopo restrito **[CORRECT]**
+
+   Um aplicativo baseado em instalação é mais adequado para automação organizacional independente de um funcionário.
+
+4. Renomeie PAT para conta de serviço sem alterar seu proprietário
+
+   Um nome de exibição não altera a identidade ou o ciclo de vida do token.
+
+**Concept:** Independência de identidade de automação
+
+**Authored coaching hints:**
+
+- O que acontece com a automação quando o proprietário da credencial humana perde o acesso?
+- Qual modelo de integração possui uma identidade de instalação?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/deciding-when-to-build-a-github-app>
+
+<!-- certification-coach-question:admin-120:351292cc838dd0bb344effc655cad3f93dbd2d8e9f0c400f0099fbd6eac02d97 -->
+## Question 120: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-120`
+
+**Content revision:** `351292cc838dd0bb344effc655cad3f93dbd2d8e9f0c400f0099fbd6eac02d97`
+
+### English
+
+A personal-account enterprise wants to restrict classic PAT access to organization resources. Which statement is important when assessing the policy's scope?
+
+1. The policy automatically revokes all SSH keys and every GitHub App
+
+   Token-type restrictions are not universal revocation of SSH and app access.
+
+2. The policy prevents everyone from reading the organization's public repositories
+
+   Public resources remain publicly accessible despite PAT restrictions.
+
+3. The policy removes the need to review fine-grained PAT settings
+
+   Classic and fine-grained token controls require their own policy assessment.
+
+4. Classic PAT restrictions do not govern every other authentication mechanism **[CORRECT]**
+
+   Administrators must separately govern other credentials and integrations.
+
+**Concept:** PAT policy boundaries
+
+**Authored coaching hints:**
+
+- Which credential type does the policy actually target?
+- What alternative authentication paths remain outside that control?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una empresa de cuenta personal quiere restringir el acceso clásico del PAT a los recursos de la organización. ¿Qué afirmación es importante a la hora de evaluar el alcance de la política?
+
+1. La política revoca automáticamente todas las claves SSH y cada GitHub App
+
+   Las restricciones de tipo token no son la revocación universal de SSH y el acceso a la aplicación.
+
+2. La política impide que todos lean los repositorios públicos de la organización.
+
+   Los recursos públicos siguen siendo accesibles públicamente a pesar de las restricciones PAT.
+
+3. La política elimina la necesidad de revisar la configuración de fine-grained PAT.
+
+   Los controles de tokens Classic y fine-grained requieren su propia evaluación de políticas.
+
+4. Las restricciones clásicas de PAT no rigen todos los demás mecanismos de autenticación **[CORRECT]**
+
+   Los administradores deben controlar por separado otras credenciales e integraciones.
+
+**Concept:** Límites de la política PAT
+
+**Authored coaching hints:**
+
+- ¿A qué tipo de credencial se dirige realmente la política?
+- ¿Qué rutas de autenticación alternativas quedan fuera de ese control?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma empresa de conta pessoal deseja restringir o acesso PAT clássico aos recursos da organização. Qual afirmação é importante ao avaliar o escopo da política?
+
+1. A política revoga automaticamente todas as chaves SSH e todas as chaves GitHub App
+
+   As restrições do tipo token não são revogação universal de SSH e acesso ao aplicativo.
+
+2. A política impede que todos leiam os repositórios públicos da organização
+
+   Os recursos públicos permanecem acessíveis ao público apesar das restrições PAT.
+
+3. A política elimina a necessidade de revisar as configurações de fine-grained PAT
+
+   Os controles de token Classic e fine-grained exigem sua própria avaliação de política.
+
+4. As restrições clássicas do PAT não regem todos os outros mecanismos de autenticação **[CORRECT]**
+
+   Os administradores devem controlar separadamente outras credenciais e integrações.
+
+**Concept:** Limites da política PAT
+
+**Authored coaching hints:**
+
+- Qual tipo de credencial a política realmente visa?
+- Quais caminhos alternativos de autenticação permanecem fora desse controle?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/organizations/managing-programmatic-access-to-your-organization/setting-a-personal-access-token-policy-for-your-organization>
+
+<!-- certification-coach-question:admin-121:9736aff15a0647c3fd8966bf94f486d060e43e169d520fd08c7253d1bfe83330 -->
+## Question 121: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-121`
+
+**Content revision:** `9736aff15a0647c3fd8966bf94f486d060e43e169d520fd08c7253d1bfe83330`
+
+### English
+
+A vendor integration only needs read-only access to repository contents on selected repositories. Why is a GitHub App generally preferable to a broadly scoped OAuth App for this design?
+
+1. GitHub Apps offer fine-grained permissions and installation repository selection **[CORRECT]**
+
+   Apps can request narrowly defined operations and selected repository access.
+
+2. GitHub Apps never require security review
+
+   Fine-grained permissions reduce risk but do not eliminate integration review.
+
+3. GitHub Apps automatically have unrestricted enterprise-owner privileges
+
+   Installation does not confer unrestricted enterprise ownership.
+
+4. OAuth Apps cannot call any GitHub API
+
+   OAuth Apps can use APIs; their authorization model differs.
+
+**Concept:** GitHub App least-privilege advantages
+
+**Authored coaching hints:**
+
+- How much authority does the integration genuinely need?
+- Which model can separate repository-content reading from broader repository control?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una integración de proveedor solo necesita acceso de solo lectura al contenido del repositorio en repositorios seleccionados. ¿Por qué es generalmente preferible una GitHub App a una aplicación OAuth de amplio alcance para este diseño?
+
+1. GitHub Apps ofrece permisos fine-grained y selección de repositorio de instalación. **[CORRECT]**
+
+   Las aplicaciones pueden solicitar operaciones estrechamente definidas y acceso al repositorio seleccionado.
+
+2. GitHub Apps nunca requiere revisión de seguridad
+
+   Los permisos detallados reducen el riesgo pero no eliminan la revisión de la integración.
+
+3. GitHub Apps tiene automáticamente privilegios de propietario empresarial sin restricciones
+
+   La instalación no confiere propiedad empresarial ilimitada.
+
+4. Las aplicaciones OAuth no pueden llamar a ningún GitHub API
+
+   Las aplicaciones OAuth pueden utilizar API; su modelo de autorización es diferente.
+
+**Concept:** Ventajas de privilegios mínimos GitHub App
+
+**Authored coaching hints:**
+
+- ¿Cuánta autoridad necesita realmente la integración?
+- ¿Qué modelo puede separar la lectura del contenido del repositorio del control más amplio del mismo?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma integração de fornecedor precisa apenas de acesso somente leitura ao conteúdo do repositório em repositórios selecionados. Por que um GitHub App geralmente é preferível a um aplicativo OAuth de escopo amplo para este design?
+
+1. GitHub Apps oferece permissões fine-grained e seleção de repositório de instalação **[CORRECT]**
+
+   Os aplicativos podem solicitar operações definidas de forma restrita e acesso a repositórios selecionados.
+
+2. GitHub Apps nunca exige revisão de segurança
+
+   Permissões refinadas reduzem o risco, mas não eliminam a revisão da integração.
+
+3. GitHub Apps tem automaticamente privilégios irrestritos de proprietário empresarial
+
+   A instalação não confere propriedade empresarial irrestrita.
+
+4. Os aplicativos OAuth não podem chamar nenhum GitHub API
+
+   Os aplicativos OAuth podem usar APIs; seu modelo de autorização é diferente.
+
+**Concept:** Vantagens de privilégio mínimo GitHub App
+
+**Authored coaching hints:**
+
+- De quanta autoridade a integração realmente precisa?
+- Qual modelo pode separar a leitura do conteúdo do repositório do controle mais amplo do repositório?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/deciding-when-to-build-a-github-app>
+
+<!-- certification-coach-question:admin-122:80bc667ef895cfd4d1c1b25749bf64fddef042b54222b6a98b83eea7ba2bcb3d -->
+## Question 122: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-122`
+
+**Content revision:** `80bc667ef895cfd4d1c1b25749bf64fddef042b54222b6a98b83eea7ba2bcb3d`
+
+### English
+
+An OAuth App requests the classic repo scope even though the business description says it only reads source. What should an administrator focus on during review?
+
+1. Only the vendor's claim that its current implementation makes read requests
+
+   Present intent does not reduce the authority granted by the requested scope.
+
+2. The actual scope's broad authority, not just the vendor's description **[CORRECT]**
+
+   The requested scope determines available authority and may exceed the stated business need.
+
+3. Only whether one employee already authorized it
+
+   One user's authorization does not substitute for organization policy review.
+
+4. Only whether the organization requires SAML, assuming that narrows OAuth scopes
+
+   SAML authentication does not redefine the capabilities of an OAuth scope.
+
+**Concept:** Reviewing OAuth scope risk
+
+**Authored coaching hints:**
+
+- Is stated intent the same as granted capability?
+- What can the requested scope authorize beyond reading source?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una aplicación OAuth solicita el alcance del repositorio clásico aunque la descripción del negocio dice que solo lee la fuente. ¿En qué debería centrarse un administrador durante la revisión?
+
+1. Sólo la afirmación del proveedor de que su implementación actual realiza solicitudes de lectura.
+
+   La presente intención no reduce la autoridad otorgada por el alcance solicitado.
+
+2. La amplia autoridad del alcance real, no solo la descripción del proveedor. **[CORRECT]**
+
+   El alcance solicitado determina la autoridad disponible y puede exceder la necesidad comercial declarada.
+
+3. Sólo si un empleado ya lo autorizó
+
+   La autorización de un usuario no sustituye la revisión de la política de la organización.
+
+4. Solo si la organización requiere SAML, suponiendo que eso reduzca los alcances de OAuth.
+
+   La autenticación SAML no redefine las capacidades de un alcance OAuth.
+
+**Concept:** Revisión del riesgo de alcance OAuth
+
+**Authored coaching hints:**
+
+- ¿Es la intención declarada lo mismo que la capacidad concedida?
+- ¿Qué puede autorizar el alcance solicitado más allá de la lectura de la fuente?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um aplicativo OAuth solicita o escopo do repositório clássico, mesmo que a descrição do negócio diga que ele lê apenas a fonte. Em que um administrador deve se concentrar durante a revisão?
+
+1. Somente a afirmação do fornecedor de que sua implementação atual faz solicitações de leitura
+
+   A intenção presente não reduz a autoridade concedida pelo escopo solicitado.
+
+2. A ampla autoridade do escopo real, não apenas a descrição do fornecedor **[CORRECT]**
+
+   O escopo solicitado determina a autoridade disponível e pode exceder a necessidade comercial declarada.
+
+3. Somente se um funcionário já autorizou
+
+   A autorização de um usuário não substitui a revisão da política da organização.
+
+4. Somente se a organização requer SAML, assumindo que isso restringe os escopos de OAuth
+
+   A autenticação SAML não redefine os recursos de um escopo OAuth.
+
+**Concept:** Revendo o risco do escopo OAuth
+
+**Authored coaching hints:**
+
+- A intenção declarada é o mesmo que a capacidade concedida?
+- O que o escopo solicitado pode autorizar além da fonte de leitura?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/scopes-for-oauth-apps>
+
+<!-- certification-coach-question:admin-123:d352a5577be876a1c976adaa5761b3a7778b562a95403d66ed1172acacfa793c -->
+## Question 123: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-123`
+
+**Content revision:** `d352a5577be876a1c976adaa5761b3a7778b562a95403d66ed1172acacfa793c`
+
+### English
+
+A GitHub App integration needs to act as its installation for repository automation rather than on behalf of a signed-in user. Which credential is appropriate?
+
+1. The app's public client ID by itself
+
+   A public client ID identifies an app but is not an installation authorization token.
+
+2. Any employee's browser cookie
+
+   Browser cookies are not appropriate installation credentials.
+
+3. An installation access token **[CORRECT]**
+
+   An installation token represents the app installation's approved access.
+
+4. A repository webhook URL without authentication
+
+   A webhook endpoint URL does not authenticate outbound GitHub API calls.
+
+**Concept:** Installation versus user authentication
+
+**Authored coaching hints:**
+
+- Which principal should appear to perform the automation?
+- Which credential represents the installed app's grant?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una integración GitHub App debe actuar como su instalación para la automatización del repositorio en lugar de en nombre de un usuario que haya iniciado sesión. ¿Qué credencial es apropiada?
+
+1. El cliente público de la aplicación ID por sí solo.
+
+   Un cliente público ID identifica una aplicación pero no es un token de autorización de instalación.
+
+2. Cookie del navegador de cualquier empleado
+
+   Las cookies del navegador no son credenciales de instalación apropiadas.
+
+3. Un token de acceso a la instalación **[CORRECT]**
+
+   Un token de instalación representa el acceso aprobado a la instalación de la aplicación.
+
+4. Un repositorio webhook URL sin autenticación
+
+   Un punto final webhook URL no autentica las llamadas salientes GitHub API.
+
+**Concept:** Instalación versus autenticación de usuario
+
+**Authored coaching hints:**
+
+- ¿Qué identidad debería figurar como ejecutora de la automatización?
+- ¿Qué credencial representa la concesión de la aplicación instalada?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma integração GitHub App precisa atuar como sua instalação para automação de repositório, e não em nome de um usuário conectado. Qual credencial é apropriada?
+
+1. O cliente público do aplicativo ID sozinho
+
+   Um cliente público ID identifica um aplicativo, mas não é um token de autorização de instalação.
+
+2. Cookie do navegador de qualquer funcionário
+
+   Os cookies do navegador não são credenciais de instalação apropriadas.
+
+3. Um token de acesso à instalação **[CORRECT]**
+
+   Um token de instalação representa o acesso aprovado da instalação do aplicativo.
+
+4. Um repositório webhook URL sem autenticação
+
+   Um terminal webhook URL não autentica chamadas de saída GitHub API.
+
+**Concept:** Instalação versus autenticação do usuário
+
+**Authored coaching hints:**
+
+- Qual identidade deve constar como executora da automação?
+- Qual credencial representa a concessão do aplicativo instalado?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-as-a-github-app-installation>
+
+<!-- certification-coach-question:admin-124:518e754792b56ee16f6cc15b5a9d39b7f8cff386be2240d6f203bff898e6b94b -->
+## Question 124: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-124`
+
+**Content revision:** `518e754792b56ee16f6cc15b5a9d39b7f8cff386be2240d6f203bff898e6b94b`
+
+### English
+
+An installed GitHub App requests additional permissions after an update. What should the organization owner do?
+
+1. Assume old approval automatically authorizes all future permissions
+
+   Additional requested permissions have their own approval decision.
+
+2. Immediately grant the app organization ownership
+
+   App permission review does not require unrestricted organization ownership.
+
+3. Share an administrator PAT so the app can bypass the request
+
+   A shared PAT bypasses the intended integration governance.
+
+4. Review the new capabilities and approve only if they meet policy and business need **[CORRECT]**
+
+   Owners can evaluate and accept or decline requested additional permissions.
+
+**Concept:** Reviewing GitHub App permission changes
+
+**Authored coaching hints:**
+
+- Does a prior decision cover a newly expanded capability set?
+- What new operations would approval permit?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un GitHub App instalado solicita permisos adicionales después de una actualización. ¿Qué debe hacer el propietario de la organización?
+
+1. Supongamos que la aprobación anterior autoriza automáticamente todos los permisos futuros
+
+   Los permisos adicionales solicitados tienen su propia decisión de aprobación.
+
+2. Otorgar inmediatamente la propiedad de la organización a la aplicación
+
+   La revisión de permisos de la aplicación no requiere propiedad de la organización sin restricciones.
+
+3. Comparta un administrador PAT para que la aplicación pueda omitir la solicitud
+
+   Un PAT compartido omite la gobernanza de integración prevista.
+
+4. Revisar las nuevas capacidades y aprobarlas solo si cumplen con las políticas y las necesidades comerciales. **[CORRECT]**
+
+   Los propietarios pueden evaluar y aceptar o rechazar los permisos adicionales solicitados.
+
+**Concept:** Revisando cambios de permisos GitHub App
+
+**Authored coaching hints:**
+
+- ¿Cubre una decisión anterior un conjunto de capacidades recientemente ampliado?
+- ¿Qué nuevas operaciones permitiría la aprobación?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um GitHub App instalado solicita permissões adicionais após uma atualização. O que o proprietário da organização deve fazer?
+
+1. Suponha que a aprovação antiga autorize automaticamente todas as permissões futuras
+
+   As permissões adicionais solicitadas têm sua própria decisão de aprovação.
+
+2. Conceda imediatamente a propriedade da organização do aplicativo
+
+   A revisão de permissão do aplicativo não exige propriedade irrestrita da organização.
+
+3. Compartilhe um administrador PAT para que o aplicativo possa ignorar a solicitação
+
+   Um PAT compartilhado ignora a governança de integração pretendida.
+
+4. Revise os novos recursos e aprove somente se eles atenderem às necessidades políticas e de negócios **[CORRECT]**
+
+   Os proprietários podem avaliar e aceitar ou recusar as permissões adicionais solicitadas.
+
+**Concept:** Revisando alterações de permissão GitHub App
+
+**Authored coaching hints:**
+
+- Uma decisão anterior abrange um conjunto de capacidades recentemente expandido?
+- Que novas operações a aprovação permitiria?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/apps/using-github-apps/approving-updated-permissions-for-a-github-app>
+
+<!-- certification-coach-question:admin-125:0cc75ffc3b10423e03355f535bbbced6f0ca68e2da343a657fd31bce71cb5316 -->
+## Question 125: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-125`
+
+**Content revision:** `0cc75ffc3b10423e03355f535bbbced6f0ca68e2da343a657fd31bce71cb5316`
+
+### English
+
+A GitHub App installed in an organization is no longer approved for any use. Which action most directly removes that installation's authorized access?
+
+1. Uninstall the app from the organization **[CORRECT]**
+
+   Uninstallation removes the organization's app installation and its access.
+
+2. Revoke one employee's unrelated PAT
+
+   An unrelated PAT does not govern the app installation's authorization.
+
+3. Remove only the app's webhook subscription while leaving its installation access intact
+
+   Disabling notifications does not itself revoke the installation's API access.
+
+4. Delete one user's local Git credential cache
+
+   A user's local credential cache does not control installation credentials.
+
+**Concept:** Retiring an organization integration
+
+**Authored coaching hints:**
+
+- Where was the integration's access granted?
+- Which action revokes that grant rather than merely hiding references to it?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un GitHub App instalado en una organización ya no está aprobado para ningún uso. ¿Qué acción elimina más directamente el acceso autorizado a esa instalación?
+
+1. Desinstalar la aplicación de la organización. **[CORRECT]**
+
+   La desinstalación elimina la instalación de la aplicación de la organización y su acceso.
+
+2. Revocar el PAT no relacionado de un empleado
+
+   Un PAT no relacionado no rige la autorización de instalación de la aplicación.
+
+3. Elimine solo la suscripción webhook de la aplicación y deje intacto su acceso a la instalación.
+
+   Deshabilitar las notificaciones no revoca en sí el acceso API a la instalación.
+
+4. Eliminar la caché de credenciales Git local de un usuario
+
+   La caché de credenciales local de un usuario no controla las credenciales de instalación.
+
+**Concept:** Retirar una integración de organización
+
+**Authored coaching hints:**
+
+- ¿Dónde se concedió el acceso a la integración?
+- ¿Qué acción revoca esa concesión en lugar de limitarse a ocultar las referencias a ella?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um GitHub App instalado em uma organização não está mais aprovado para qualquer uso. Qual ação remove mais diretamente o acesso autorizado dessa instalação?
+
+1. Desinstale o aplicativo da organização **[CORRECT]**
+
+   A desinstalação remove a instalação do aplicativo da organização e seu acesso.
+
+2. Revogar PAT não relacionado de um funcionário
+
+   Um PAT não relacionado não rege a autorização de instalação do aplicativo.
+
+3. Remova apenas a assinatura webhook do aplicativo, deixando intacto o acesso à instalação
+
+   A desativação de notificações não revoga o acesso API da instalação.
+
+4. Exclua o cache de credenciais Git local de um usuário
+
+   O cache de credenciais locais de um usuário não controla as credenciais de instalação.
+
+**Concept:** Desativando uma integração organizacional
+
+**Authored coaching hints:**
+
+- Onde foi concedido o acesso à integração?
+- Qual ação revoga essa concessão em vez de simplesmente ocultar referências a ela?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/apps/using-github-apps/reviewing-and-modifying-installed-github-apps>
+
+<!-- certification-coach-question:admin-126:579be7202714df7647ce05a0c0e8c9561d432be63bfa4f615fb74255a575175b -->
+## Question 126: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-126`
+
+**Content revision:** `579be7202714df7647ce05a0c0e8c9561d432be63bfa4f615fb74255a575175b`
+
+### English
+
+A REST API client receives a rate-limit response with x-ratelimit-remaining equal to zero. Which response behavior is appropriate?
+
+1. Retry continuously without delay
+
+   Immediate repeated retries cannot replenish the exhausted primary allowance.
+
+2. Wait until the indicated reset time and reduce unnecessary calls **[CORRECT]**
+
+   Rate-limit headers identify when the primary allowance resets.
+
+3. Create many copies of the same request in parallel
+
+   More parallel requests increase pressure instead of restoring allowance.
+
+4. Assume every rate limit can be removed by renaming the token
+
+   Token labels do not determine the underlying rate-limit policy.
+
+**Concept:** Handling primary REST rate limits
+
+**Authored coaching hints:**
+
+- Which headers describe the exhausted allowance?
+- When should the client expect capacity to become available again?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un cliente REST API recibe una respuesta de límite de velocidad con x-ratelimit-remaining igual a cero. ¿Qué comportamiento de respuesta es apropiado?
+
+1. Reintentar continuamente sin demora
+
+   Los reintentos repetidos inmediatamente no pueden reponer la asignación primaria agotada.
+
+2. Espere hasta el tiempo de reinicio indicado y reduzca las llamadas innecesarias **[CORRECT]**
+
+   Los encabezados de límite de tasa identifican cuándo se restablece la asignación principal.
+
+3. Cree muchas copias de la misma solicitud en paralelo
+
+   Más solicitudes paralelas aumentan la presión en lugar de restablecer la tolerancia.
+
+4. Supongamos que cada límite de tasa se puede eliminar cambiando el nombre del token
+
+   Las etiquetas de los tokens no determinan la política de límite de tasas subyacente.
+
+**Concept:** Manejo de límites de tasa primarios REST
+
+**Authored coaching hints:**
+
+- ¿Qué encabezados describen la asignación agotada?
+- ¿Cuándo debería esperar el cliente que la capacidad vuelva a estar disponible?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um cliente REST API recebe uma resposta de limite de taxa com x-ratelimit-remaining igual a zero. Qual comportamento de resposta é apropriado?
+
+1. Tente novamente continuamente sem demora
+
+   Tentativas repetidas imediatas não podem repor o limite primário esgotado.
+
+2. Aguarde até o tempo de reinicialização indicado e reduza chamadas desnecessárias **[CORRECT]**
+
+   Os cabeçalhos de limite de taxa indicam quando a cota primária é renovada.
+
+3. Crie muitas cópias da mesma solicitação em paralelo
+
+   Mais solicitações paralelas aumentam a pressão, em vez de restaurar a cota.
+
+4. Suponha que todo limite de taxa possa ser removido renomeando o token
+
+   Os rótulos de token não determinam a política de limite de taxa subjacente.
+
+**Concept:** Lidando com limites de taxa REST primários
+
+**Authored coaching hints:**
+
+- Quais cabeçalhos descrevem a cota esgotada?
+- Quando o cliente deve esperar que a capacidade fique disponível novamente?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api>
+
+<!-- certification-coach-question:admin-127:67b1fd12ea4dba49d4c860649000cc06e7bb3229f6f2f2f3e198d3121ca34b13 -->
+## Question 127: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-127`
+
+**Content revision:** `67b1fd12ea4dba49d4c860649000cc06e7bb3229f6f2f2f3e198d3121ca34b13`
+
+### English
+
+A REST response includes Retry-After while the client is rate limited. Which behavior follows GitHub's guidance?
+
+1. Ignore it if the client is authenticated
+
+   Authentication does not exempt clients from Retry-After guidance.
+
+2. Multiply the request concurrency immediately
+
+   Higher concurrency can worsen throttling.
+
+3. Wait for the indicated interval before retrying **[CORRECT]**
+
+   The server-provided interval indicates how long the client should wait.
+
+4. Retry only with a different User-Agent string
+
+   Changing a client header does not satisfy the required backoff.
+
+**Concept:** Respecting server-directed API backoff
+
+**Authored coaching hints:**
+
+- What does the service explicitly communicate about retry timing?
+- Could a faster retry loop improve a throttled situation?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una respuesta REST incluye Reintentar después mientras el cliente tiene una velocidad limitada. ¿Qué comportamiento sigue la guía de GitHub?
+
+1. Ignóralo si el cliente está autenticado.
+
+   La autenticación no exime a los clientes de la guía Reintentar después.
+
+2. Multiplique la concurrencia de solicitudes inmediatamente
+
+   Una mayor concurrencia puede agravar la limitación de solicitudes.
+
+3. Espere el intervalo indicado antes de volver a intentarlo. **[CORRECT]**
+
+   El intervalo proporcionado por el servidor indica cuánto tiempo debe esperar el cliente.
+
+4. Reintentar sólo con una cadena de User-Agent diferente
+
+   Cambiar el encabezado de un cliente no satisface el retroceso requerido.
+
+**Concept:** Respetar el retroceso de API dirigido por el servidor
+
+**Authored coaching hints:**
+
+- ¿Qué comunica explícitamente el servicio sobre el tiempo de reintento?
+- ¿Podría un ciclo de reintento más rápido mejorar una situación limitada?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma resposta REST inclui Retry-After enquanto o cliente tem taxa limitada. Qual comportamento segue a orientação de GitHub?
+
+1. Ignore se o cliente estiver autenticado
+
+   A autenticação não isenta os clientes da orientação Retry-After.
+
+2. Multiplique a simultaneidade da solicitação imediatamente
+
+   Uma simultaneidade maior pode piorar a limitação.
+
+3. Aguarde o intervalo indicado antes de tentar novamente **[CORRECT]**
+
+   O intervalo fornecido pelo servidor indica quanto tempo o cliente deve esperar.
+
+4. Tente novamente apenas com uma string User-Agent diferente
+
+   A alteração de um cabeçalho de cliente não satisfaz a espera necessária.
+
+**Concept:** Respeitando a espera API direcionada ao servidor
+
+**Authored coaching hints:**
+
+- O que o serviço comunica explicitamente sobre o tempo de repetição?
+- Um loop de repetição mais rápido poderia melhorar uma situação limitada?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api>
+
+<!-- certification-coach-question:admin-128:733b106cbf62c767e5b361f2ac9ac90ff2eed7150d92c339510fefd9c2d515b3 -->
+## Question 128: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-128`
+
+**Content revision:** `733b106cbf62c767e5b361f2ac9ac90ff2eed7150d92c339510fefd9c2d515b3`
+
+### English
+
+A client still has primary API allowance remaining but receives throttling after a burst of concurrent requests. Which explanation should the administrator consider?
+
+1. All authenticated requests are exempt from throttling
+
+   Authenticated clients remain subject to rate limits.
+
+2. Primary allowance guarantees unlimited concurrency
+
+   Primary remaining requests do not guarantee an acceptable request pattern.
+
+3. Only public APIs can be rate limited
+
+   Private-resource API requests can also be throttled.
+
+4. Secondary rate limits can apply independently of the primary allowance **[CORRECT]**
+
+   Secondary limits protect the service against excessive concurrency and other abusive patterns.
+
+**Concept:** Independent secondary rate limits
+
+**Authored coaching hints:**
+
+- Do request volume and request pattern represent the same constraint?
+- What additional safeguards protect API availability?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+A un cliente todavía le queda la asignación principal API, pero recibe una limitación después de una ráfaga de solicitudes simultáneas. ¿Qué explicación debería considerar el administrador?
+
+1. Todas las solicitudes autenticadas están exentas de limitación.
+
+   Los clientes autenticados siguen sujetos a límites de tarifas.
+
+2. La asignación primaria garantiza una concurrencia ilimitada
+
+   Las solicitudes restantes principales no garantizan un patrón de solicitud aceptable.
+
+3. Solo las API públicas pueden tener una tarifa limitada
+
+   Las solicitudes de recursos privados API también se pueden limitar.
+
+4. Los límites de las tasas secundarias pueden aplicarse independientemente de la asignación primaria. **[CORRECT]**
+
+   Los límites secundarios protegen el servicio contra una concurrencia excesiva y otros patrones abusivos.
+
+**Concept:** Límites de tasa secundaria independiente
+
+**Authored coaching hints:**
+
+- ¿El volumen de solicitudes y el patrón de solicitudes representan la misma restricción?
+- ¿Qué medidas de seguridad adicionales protegen la disponibilidad del API?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um cliente ainda tem permissão API primária restante, mas recebe limitação após uma explosão de solicitações simultâneas. Que explicação o administrador deve considerar?
+
+1. Todas as solicitações autenticadas estão isentas de limitação
+
+   Os clientes autenticados permanecem sujeitos a limites de taxas.
+
+2. A cota primária garante concorrência ilimitada
+
+   As solicitações primárias restantes não garantem um padrão de solicitação aceitável.
+
+3. Apenas APIs públicas podem ter taxa limitada
+
+   As solicitações API de recursos privados também podem ser limitadas.
+
+4. Os limites de taxa secundários podem se aplicar independentemente da cota primária **[CORRECT]**
+
+   Os limites secundários protegem o serviço contra simultaneidade excessiva e outros padrões abusivos.
+
+**Concept:** Limites de taxa secundária independente
+
+**Authored coaching hints:**
+
+- O volume e o padrão de solicitação representam a mesma restrição?
+- Que salvaguardas adicionais protegem a disponibilidade do API?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api>
+
+<!-- certification-coach-question:admin-129:47f2a487ad5ed64de92a9e3da50e066b2206e7ff70f767086a26d63a08048f61 -->
+## Question 129: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-129`
+
+**Content revision:** `47f2a487ad5ed64de92a9e3da50e066b2206e7ff70f767086a26d63a08048f61`
+
+### English
+
+A compliance integration repeatedly downloads unchanged repository metadata and hits API limits. Which optimization best reduces unnecessary requests while preserving freshness?
+
+1. Use event notifications where appropriate and conditional requests or caching for unchanged data **[CORRECT]**
+
+   Event-driven updates and conditional retrieval reduce redundant polling.
+
+2. Retry every failure with unlimited immediate parallelism
+
+   Unbounded retries worsen load and can trigger additional limits.
+
+3. Rotate between employees' PATs to evade throttling
+
+   Credential rotation is not a responsible substitute for efficient API use.
+
+4. Request broader token permissions without changing the call pattern
+
+   Broader permissions do not make redundant requests necessary or efficient.
+
+**Concept:** Efficient API integration design
+
+**Authored coaching hints:**
+
+- Does unchanged data need a full download every time?
+- Can the service notify the integration when relevant changes occur?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una integración de cumplimiento descarga repetidamente metadatos del repositorio sin cambios y alcanza los límites API. ¿Qué optimización reduce mejor las solicitudes innecesarias y al mismo tiempo conserva la frescura?
+
+1. Utilice notificaciones de eventos cuando corresponda y solicitudes condicionales o almacenamiento en caché para datos sin cambios **[CORRECT]**
+
+   Las actualizaciones basadas en eventos y la recuperación condicional reducen los sondeos redundantes.
+
+2. Vuelva a intentar cada error con un paralelismo inmediato ilimitado
+
+   Los reintentos ilimitados empeoran la carga y pueden activar límites adicionales.
+
+3. Rotar entre los PAT de los empleados para evadir la limitación
+
+   La rotación de credenciales no sustituye responsablemente el uso eficiente de API.
+
+4. Solicite permisos de token más amplios sin cambiar el patrón de llamada
+
+   Los permisos más amplios no hacen que las solicitudes redundantes sean necesarias ni eficientes.
+
+**Concept:** Diseño de integración eficiente API
+
+**Authored coaching hints:**
+
+- ¿Los datos sin cambios necesitan una descarga completa cada vez?
+- ¿Puede el servicio notificar a la integración cuando se produzcan cambios relevantes?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma integração de conformidade baixa repetidamente metadados de repositório inalterados e atinge os limites API. Qual otimização reduz melhor as solicitações desnecessárias e preserva a atualização?
+
+1. Use notificações de eventos quando apropriado e solicitações condicionais ou armazenamento em cache para dados inalterados **[CORRECT]**
+
+   Atualizações orientadas por eventos e recuperação condicional reduzem pesquisas redundantes.
+
+2. Tente novamente todas as falhas com paralelismo imediato ilimitado
+
+   Novas tentativas ilimitadas pioram a carga e podem acionar limites adicionais.
+
+3. Alterne entre os PATs dos funcionários para evitar a limitação
+
+   A rotação de credenciais não é um substituto responsável para o uso eficiente do API.
+
+4. Solicite permissões de token mais amplas sem alterar o padrão de chamada
+
+   Permissões mais amplas não tornam as solicitações redundantes necessárias ou eficientes.
+
+**Concept:** Design de integração API eficiente
+
+**Authored coaching hints:**
+
+- Os dados inalterados precisam sempre de um download completo?
+- O serviço pode notificar a integração quando ocorrerem alterações relevantes?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/rest/using-the-rest-api/best-practices-for-using-the-rest-api>
+
+<!-- certification-coach-question:admin-130:4cdfa747dfc7c4274ed7d78b47d24b75ab087835ea8d275487fddebf1c6e7d94 -->
+## Question 130: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-130`
+
+**Content revision:** `4cdfa747dfc7c4274ed7d78b47d24b75ab087835ea8d275487fddebf1c6e7d94`
+
+### English
+
+An architect compares a PAT-backed service with a GitHub App using installation tokens. Which rate-limit assumption is safest?
+
+1. Every credential type has the same fixed allowance in every account
+
+   Limits vary by authentication method and relevant account context.
+
+2. Check the documented limits for the credential and enterprise context; installation limits can scale under documented rules **[CORRECT]**
+
+   Installation-token limits have documented scaling and enterprise-specific behavior.
+
+3. Installation tokens are always unlimited
+
+   Installation credentials are still rate limited.
+
+4. More OAuth scopes always increase the primary limit
+
+   Broader scopes are not a general mechanism for increasing primary allowance.
+
+**Concept:** Credential-aware rate-limit planning
+
+**Authored coaching hints:**
+
+- Which identity and account context determine the allowance?
+- Why should a capacity estimate avoid a universal requests-per-hour assumption?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un arquitecto compara un servicio respaldado por PAT con un GitHub App utilizando tokens de instalación. ¿Qué supuesto de límite de tasa es más seguro?
+
+1. Cada tipo de credencial tiene la misma asignación fija en cada cuenta
+
+   Los límites varían según el método de autenticación y el contexto relevante de la cuenta.
+
+2. Verifique los límites documentados para el contexto empresarial y de credenciales; Los límites de instalación pueden escalar según reglas documentadas. **[CORRECT]**
+
+   Los límites de los tokens de instalación han documentado el escalamiento y el comportamiento específico de la empresa.
+
+3. Los tokens de instalación son siempre ilimitados
+
+   Las credenciales de instalación aún tienen una tarifa limitada.
+
+4. Más alcances OAuth siempre aumentan el límite principal
+
+   Los alcances más amplios no son un mecanismo general para aumentar la asignación primaria.
+
+**Concept:** Planificación de límite de velocidad basada en credenciales
+
+**Authored coaching hints:**
+
+- ¿Qué identidad y contexto de cuenta determinan la asignación?
+- ¿Por qué una estimación de capacidad debería evitar una suposición de solicitudes universales por hora?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um arquiteto compara um serviço apoiado por PAT com um GitHub App usando tokens de instalação. Qual suposição de limite de taxa é mais segura?
+
+1. Cada tipo de credencial tem o mesmo limite fixo em todas as contas
+
+   Os limites variam de acordo com o método de autenticação e o contexto relevante da conta.
+
+2. Verifique os limites documentados para o contexto credencial e empresarial; os limites de instalação podem ser dimensionados de acordo com regras documentadas **[CORRECT]**
+
+   Os limites do token de instalação documentaram o dimensionamento e o comportamento específico da empresa.
+
+3. Os tokens de instalação são sempre ilimitados
+
+   As credenciais de instalação ainda têm taxa limitada.
+
+4. Mais escopos OAuth sempre aumentam o limite primário
+
+   Escopos mais amplos não são um mecanismo geral para aumentar a cota primária.
+
+**Concept:** Planejamento de limite de taxa com reconhecimento de credencial
+
+**Authored coaching hints:**
+
+- Qual identidade e contexto da conta determinam a cota?
+- Por que uma estimativa de capacidade deveria evitar uma suposição universal de solicitações por hora?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api>
+
+<!-- certification-coach-question:admin-131:f24bf9e9342cc61ca7d124e62f04d74946db5fd49ce56ffaddfb7a9e9f84a598 -->
+## Question 131: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-131`
+
+**Content revision:** `f24bf9e9342cc61ca7d124e62f04d74946db5fd49ce56ffaddfb7a9e9f84a598`
+
+### English
+
+An organization wants members to request approval before third-party OAuth Apps access its organization resources. Which policy is directly relevant?
+
+1. A required signed-commit rule
+
+   Commit-signature rules do not govern third-party OAuth authorization.
+
+2. A Dependabot ignore rule
+
+   Dependency ignore rules do not approve app access.
+
+3. OAuth App access restrictions **[CORRECT]**
+
+   OAuth App restrictions let organization owners govern app access to organization resources.
+
+4. A repository release-tag naming rule
+
+   Release-tag rules do not determine OAuth access.
+
+**Concept:** Organization OAuth App governance
+
+**Authored coaching hints:**
+
+- Which integration type is being authorized?
+- Where can organization owners require review of that access?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una organización quiere que los miembros soliciten aprobación antes de que las aplicaciones OAuth de terceros accedan a los recursos de su organización. ¿Qué política es directamente relevante?
+
+1. Una regla firmada-commit requerida
+
+   Las reglas de firma de confirmación no rigen la autorización OAuth de terceros.
+
+2. Una regla de ignorar Dependabot
+
+   Las reglas de ignorar dependencia no aprueban el acceso a la aplicación.
+
+3. OAuth Restricciones de acceso a la aplicación **[CORRECT]**
+
+   OAuth Las restricciones de aplicaciones permiten a los propietarios de la organización controlar el acceso de las aplicaciones a los recursos de la organización.
+
+4. Una regla de nomenclatura de etiquetas de lanzamiento del repositorio
+
+   Las reglas de etiqueta de lanzamiento no determinan el acceso a OAuth.
+
+**Concept:** Organización OAuth Gobernanza de la aplicación
+
+**Authored coaching hints:**
+
+- ¿Qué tipo de integración se está autorizando?
+- ¿Dónde pueden los propietarios de las organizaciones exigir la revisión de ese acceso?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma organização deseja que os membros solicitem aprovação antes que os aplicativos OAuth de terceiros acessem os recursos da organização. Qual política é diretamente relevante?
+
+1. Uma regra commit assinada obrigatória
+
+   As regras de assinatura de confirmação não regem a autorização OAuth de terceiros.
+
+2. Uma regra de ignorar Dependabot
+
+   As regras para ignorar dependências não aprovam o acesso ao aplicativo.
+
+3. OAuth Restrições de acesso ao aplicativo **[CORRECT]**
+
+   OAuth As restrições de aplicativos permitem que os proprietários da organização controlem o acesso do aplicativo aos recursos da organização.
+
+4. Uma regra de nomenclatura de tag de lançamento do repositório
+
+   As regras de tag de liberação não determinam o acesso OAuth.
+
+**Concept:** Governança de aplicativos da organização OAuth
+
+**Authored coaching hints:**
+
+- Qual tipo de integração está sendo autorizada?
+- Onde os proprietários da organização podem exigir a revisão desse acesso?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/organizations/managing-oauth-access-to-your-organizations-data/about-oauth-app-access-restrictions>
+
+<!-- certification-coach-question:admin-132:81ca6c8b5fa4a4c3bd9e278870f0201d605fd525a4f83b719f63421e248499d1 -->
+## Question 132: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-132`
+
+**Content revision:** `81ca6c8b5fa4a4c3bd9e278870f0201d605fd525a4f83b719f63421e248499d1`
+
+### English
+
+A service receives GitHub webhook deliveries over HTTPS. It needs to verify that each payload came from the configured sender and was not modified. Which additional control is appropriate?
+
+1. Trust every request with GitHub in the User-Agent
+
+   User-Agent values are not cryptographic proof of origin.
+
+2. Check only that the JSON parses
+
+   Valid JSON can still be forged.
+
+3. Publish the webhook secret in the repository for verification
+
+   Publishing the secret allows attackers to forge signatures.
+
+4. Validate the webhook signature using the configured secret and a timing-safe comparison **[CORRECT]**
+
+   Signature verification authenticates the payload using the shared webhook secret.
+
+**Concept:** Webhook payload authenticity
+
+**Authored coaching hints:**
+
+- Can a network client forge ordinary request headers?
+- Which evidence depends on a secret known only to the intended parties?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un servicio recibe entregas de GitHub webhook sobre HTTPS. Debe verificar que cada carga útil provenga del remitente configurado y no haya sido modificada. ¿Qué control adicional es apropiado?
+
+1. Confíe en cada solicitud con GitHub en el User-Agent
+
+   Los valores de User-Agent no son prueba criptográfica de origen.
+
+2. Verifique solo que el JSON analice
+
+   El JSON válido todavía se puede falsificar.
+
+3. Publicar el secreto webhook en el repositorio para su verificación
+
+   La publicación del secreto permite a los atacantes falsificar firmas.
+
+4. Valide la firma webhook utilizando el secreto configurado y una comparación segura en el tiempo **[CORRECT]**
+
+   La verificación de firma autentica la carga útil utilizando el secreto webhook compartido.
+
+**Concept:** Autenticidad de la carga útil del webhook
+
+**Authored coaching hints:**
+
+- ¿Puede un cliente de red falsificar encabezados de solicitud ordinarios?
+- ¿Qué evidencia depende de un secreto conocido sólo por las partes interesadas?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um serviço recebe entregas GitHub webhook em HTTPS. Ele precisa verificar se cada carga veio do remetente configurado e não foi modificada. Qual controle adicional é apropriado?
+
+1. Confie em cada solicitação com GitHub no User-Agent
+
+   Os valores do User-Agent não são prova criptográfica de origem.
+
+2. Verifique apenas se o JSON analisa
+
+   JSON válido ainda pode ser falsificado.
+
+3. Publique o segredo webhook no repositório para verificação
+
+   A publicação do segredo permite que os invasores falsifiquem assinaturas.
+
+4. Valide a assinatura webhook usando o segredo configurado e uma comparação segura de tempo **[CORRECT]**
+
+   A verificação de assinatura autentica a carga usando o segredo webhook compartilhado.
+
+**Concept:** Autenticidade da carga útil do webhook
+
+**Authored coaching hints:**
+
+- Um cliente de rede pode forjar cabeçalhos de solicitação comuns?
+- Qual evidência depende de um segredo conhecido apenas pelas partes pretendidas?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/webhooks/using-webhooks/validating-webhook-deliveries>
+
+<!-- certification-coach-question:admin-133:f47865d14244c94ab39aa0068c37f181190a03e857557f3c64dee95c5723e3c3 -->
+## Question 133: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-133`
+
+**Content revision:** `f47865d14244c94ab39aa0068c37f181190a03e857557f3c64dee95c5723e3c3`
+
+### English
+
+An integration needs prompt notification when repositories are created and does not need to poll every few seconds. Which mechanism should an administrator evaluate?
+
+1. A supported organization or enterprise webhook for the relevant event **[CORRECT]**
+
+   Webhooks notify configured receivers of subscribed events as they occur.
+
+2. A monthly manual audit-log export
+
+   Monthly export does not meet prompt event-notification requirements.
+
+3. A required status check on one existing repository
+
+   A repository status check is not a subscription to organization repository-creation events.
+
+4. A scheduled workflow that checks once per week
+
+   Weekly polling cannot provide prompt creation notifications.
+
+**Concept:** Event-driven administrative integrations
+
+**Authored coaching hints:**
+
+- Is the desired interaction a repeated query or a notification?
+- Which event source can push relevant changes to the receiver?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una integración necesita una notificación rápida cuando se crean repositorios y no necesita realizar un sondeo cada pocos segundos. ¿Qué mecanismo debería evaluar un administrador?
+
+1. Una organización o empresa apoyada webhook para el evento relevante **[CORRECT]**
+
+   Los webhooks notifican a los receptores configurados sobre los eventos suscritos a medida que ocurren.
+
+2. Una exportación manual mensual de registros de auditoría
+
+   La exportación mensual no cumple con los requisitos de notificación inmediata de eventos.
+
+3. Una verificación de estado requerida en un repositorio existente
+
+   Una verificación del estado del repositorio no es una suscripción a eventos de creación de repositorios de una organización.
+
+4. Un flujo de trabajo programado que verifica una vez por semana.
+
+   Las encuestas semanales no pueden proporcionar notificaciones rápidas de creación.
+
+**Concept:** Integraciones administrativas basadas en eventos
+
+**Authored coaching hints:**
+
+- ¿La interacción deseada es una consulta repetida o una notificación?
+- ¿Qué origen de eventos puede enviar cambios relevantes al receptor?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma integração precisa de notificação imediata quando os repositórios são criados e não precisa fazer pesquisas a cada poucos segundos. Qual mecanismo um administrador deve avaliar?
+
+1. Uma organização ou empresa apoiada webhook para o evento relevante **[CORRECT]**
+
+   Webhooks notificam os receptores configurados sobre eventos inscritos à medida que ocorrem.
+
+2. Uma exportação manual mensal de log de auditoria
+
+   A exportação mensal não atende aos requisitos de notificação imediata de eventos.
+
+3. Uma verificação de status necessária em um repositório existente
+
+   Uma verificação de status de repositório não é uma assinatura de eventos de criação de repositório da organização.
+
+4. Um fluxo de trabalho agendado que verifica uma vez por semana
+
+   A pesquisa semanal não pode fornecer notificações imediatas de criação.
+
+**Concept:** Integrações administrativas orientadas a eventos
+
+**Authored coaching hints:**
+
+- A interação desejada é uma consulta repetida ou uma notificação?
+- Qual fonte de eventos pode enviar alterações relevantes ao receptor?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/webhooks/about-webhooks>
+
+<!-- certification-coach-question:admin-134:c1ae070cccbcea7e8106cd957660835614bfde0895cec06bc2f6e9fda0f43923 -->
+## Question 134: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-134`
+
+**Content revision:** `c1ae070cccbcea7e8106cd957660835614bfde0895cec06bc2f6e9fda0f43923`
+
+### English
+
+An enterprise ruleset requires review on a set of repositories. A repository administrator creates a local ruleset with no review requirement and claims this removes the enterprise control. What is correct?
+
+1. The newest local ruleset automatically wins
+
+   Newer local rules do not override applicable higher-scope requirements.
+
+2. The applicable enterprise requirement still applies **[CORRECT]**
+
+   Applicable rulesets layer rather than allowing local weakening of the enterprise requirement.
+
+3. An empty local ruleset deletes all inherited policies
+
+   An empty ruleset does not erase other active rulesets.
+
+4. Repository Admin silently bypasses every enterprise ruleset
+
+   Administrative role alone is not universal bypass of every ruleset.
+
+**Concept:** Non-overridable higher-scope rules
+
+**Authored coaching hints:**
+
+- Are local rules replacements or additional applicable controls?
+- What would happen to enterprise governance if an empty local rule negated it?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una empresa ruleset requiere revisión en un conjunto de repositorios. Un administrador del repositorio crea un ruleset local sin requisito de revisión y afirma que esto elimina el control empresarial. ¿Qué es correcto?
+
+1. El ruleset local más nuevo gana automáticamente
+
+   Las reglas locales más nuevas no anulan los requisitos aplicables de mayor alcance.
+
+2. El requisito empresarial aplicable todavía se aplica **[CORRECT]**
+
+   Capa rulesets aplicable en lugar de permitir el debilitamiento local de los requisitos empresariales.
+
+3. Un ruleset local vacío elimina todas las políticas heredadas
+
+   Un ruleset vacío no borra otros rulesets activos.
+
+4. El repositorio Admin omite silenciosamente todas las empresas ruleset
+
+   La función administrativa por sí sola no es una opción universal para todos los ruleset.
+
+**Concept:** Reglas de mayor alcance no anulables
+
+**Authored coaching hints:**
+
+- ¿Las reglas locales son reemplazos o controles adicionales aplicables?
+- ¿Qué pasaría con la gobernanza empresarial si una norma local vacía la negara?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma empresa ruleset requer revisão em um conjunto de repositórios. Um administrador de repositório cria um ruleset local sem nenhum requisito de revisão e afirma que isso remove o controle corporativo. O que é correto?
+
+1. O mais novo ruleset local vence automaticamente
+
+   As regras locais mais recentes não substituem os requisitos aplicáveis de âmbito mais elevado.
+
+2. O requisito empresarial aplicável ainda se aplica **[CORRECT]**
+
+   Camada rulesets aplicável em vez de permitir o enfraquecimento local dos requisitos empresariais.
+
+3. Um ruleset local vazio exclui todas as políticas herdadas
+
+   Um ruleset vazio não apaga outro rulesets ativo.
+
+4. O repositório Admin ignora silenciosamente todas as empresas ruleset
+
+   A função administrativa por si só não é um desvio universal de cada ruleset.
+
+**Concept:** Regras de escopo superior não substituíveis
+
+**Authored coaching hints:**
+
+- As regras locais são substituições ou controles adicionais aplicáveis?
+- O que aconteceria com a governança da empresa se uma regra local vazia a anulasse?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets>
+
+<!-- certification-coach-question:admin-135:24e8c19bb35b33c0c233516fb050c2913a2babcf2ba549751c70801de06b25ab -->
+## Question 135: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-135`
+
+**Content revision:** `24e8c19bb35b33c0c233516fb050c2913a2babcf2ba549751c70801de06b25ab`
+
+### English
+
+A CodeQL alert includes a path showing untrusted input reaching a sensitive operation. What should a responder inspect to assess the finding?
+
+1. Only whether all dependency versions are current
+
+   Current dependencies do not prove that application input handling is safe.
+
+2. Only whether the commit has a verified signature
+
+   A verified signature does not establish that the code is free of vulnerabilities.
+
+3. The source-to-sink flow, relevant code, and application validation context **[CORRECT]**
+
+   The reported flow and surrounding logic support a technical risk assessment.
+
+4. Only whether a reviewer approved the pull request
+
+   Prior approval is not a technical analysis of the reported data flow.
+
+**Concept:** Interpreting code-scanning evidence
+
+**Authored coaching hints:**
+
+- What evidence links the input to the sensitive operation?
+- Could surrounding validation affect whether the path is dangerous?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una alerta de CodeQL incluye una ruta que muestra cómo una entrada no confiable llega a una operación sensible. ¿Qué debe inspeccionar quien atiende la alerta para evaluar el hallazgo?
+
+1. Solo si todas las versiones de dependencia están actualizadas
+
+   Las dependencias actuales no prueban que el manejo de entradas de aplicaciones sea seguro.
+
+2. Sólo si el commit tiene una firma verificada
+
+   Una firma verificada no establece que el código esté libre de vulnerabilidades.
+
+3. El flujo de origen a receptor, el código relevante y el contexto de validación de la aplicación **[CORRECT]**
+
+   El flujo informado y la lógica circundante respaldan una evaluación de riesgos técnicos.
+
+4. Solo si un revisor aprobó el pull request
+
+   La aprobación previa no es un análisis técnico del flujo de datos reportado.
+
+**Concept:** Interpretación de la evidencia del escaneo de códigos
+
+**Authored coaching hints:**
+
+- ¿Qué evidencia vincula la entrada con la operación sensible?
+- ¿Podría la validación circundante afectar si el camino es peligroso?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um alerta CodeQL inclui um caminho que mostra uma entrada não confiável que atinge uma operação confidencial. O que um respondente deve inspecionar para avaliar a descoberta?
+
+1. Somente se todas as versões de dependência são atuais
+
+   As dependências atuais não provam que o tratamento de entrada do aplicativo seja seguro.
+
+2. Somente se o commit possui uma assinatura verificada
+
+   Uma assinatura verificada não estabelece que o código esteja livre de vulnerabilidades.
+
+3. O fluxo da origem ao coletor, o código relevante e o contexto de validação do aplicativo **[CORRECT]**
+
+   O fluxo relatado e a lógica circundante apoiam uma avaliação técnica de risco.
+
+4. Somente se um revisor aprovou o pull request
+
+   A aprovação prévia não constitui uma análise técnica do fluxo de dados reportado.
+
+**Concept:** Interpretando evidências de leitura de código
+
+**Authored coaching hints:**
+
+- Que evidências vinculam a entrada à operação sensível?
+- A validação circundante poderia afetar se o caminho é perigoso?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/code-security/code-scanning/managing-code-scanning-alerts/assessing-code-scanning-alerts-for-your-repository>
+
+<!-- certification-coach-question:admin-136:c3ce217b2d0b1d09de31645532ede085004cc2a6a3d6192a00d2d2f9be19c1ae -->
+## Question 136: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-136`
+
+**Content revision:** `c3ce217b2d0b1d09de31645532ede085004cc2a6a3d6192a00d2d2f9be19c1ae`
+
+### English
+
+A private repository has dependency alerts enabled, but the team wants Dependabot to attempt remediation pull requests for vulnerable supported dependencies. What additional capability should it enable?
+
+1. Only repository discussions
+
+   Discussions do not generate dependency remediation changes.
+
+2. Only organization SAML SSO
+
+   SSO protects access rather than repairing package versions.
+
+3. Only a required commit-signature rule
+
+   Commit signatures do not generate dependency upgrades.
+
+4. Dependabot security updates **[CORRECT]**
+
+   Security updates attempt to open fixes for supported vulnerable dependencies.
+
+**Concept:** Alerts versus automated vulnerability fixes
+
+**Authored coaching hints:**
+
+- Does identifying a vulnerable package necessarily create a fix?
+- Which automation is specifically triggered by dependency vulnerabilities?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un repositorio privado tiene habilitadas las alertas de dependencia, pero el equipo quiere que Dependabot intente corregir pull requests para las dependencias admitidas vulnerables. ¿Qué capacidad adicional debería habilitar?
+
+1. Sólo discusiones del repositorio
+
+   Las discusiones no generan cambios de corrección de dependencias.
+
+2. Sólo organización SAML SSO
+
+   SSO protege el acceso en lugar de reparar las versiones de los paquetes.
+
+3. Solo se requiere una regla de firma commit
+
+   Las firmas de confirmación no generan actualizaciones de dependencia.
+
+4. Actualizaciones de seguridad Dependabot **[CORRECT]**
+
+   Las actualizaciones de seguridad intentan abrir correcciones para las dependencias vulnerables admitidas.
+
+**Concept:** Alertas versus correcciones automáticas de vulnerabilidades
+
+**Authored coaching hints:**
+
+- ¿La identificación de un paquete vulnerable crea necesariamente una solución?
+- ¿Qué automatización se desencadena específicamente por vulnerabilidades de dependencia?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um repositório privado tem alertas de dependência habilitados, mas a equipe deseja que Dependabot tente remediar pull requests para dependências vulneráveis suportadas. Que capacidade adicional deve ser habilitada?
+
+1. Apenas discussões de repositório
+
+   As discussões não geram alterações de correção de dependências.
+
+2. Somente organização SAML SSO
+
+   SSO protege o acesso em vez de reparar versões de pacotes.
+
+3. Apenas uma regra de assinatura commit obrigatória
+
+   Assinaturas de commit não geram atualizações de dependência.
+
+4. Atualizações de segurança Dependabot **[CORRECT]**
+
+   As atualizações de segurança tentam abrir correções para dependências vulneráveis suportadas.
+
+**Concept:** Alertas versus correções automatizadas de vulnerabilidades
+
+**Authored coaching hints:**
+
+- A identificação de um pacote vulnerável cria necessariamente uma correção?
+- Qual automação é acionada especificamente por vulnerabilidades de dependência?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/code-security/dependabot/dependabot-security-updates/about-dependabot-security-updates>
+
+<!-- certification-coach-question:admin-137:6540a82d4e7cc709fd021ad985ebeef941cc241d4904a440f1b9604823ba3ed3 -->
+## Question 137: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-137`
+
+**Content revision:** `6540a82d4e7cc709fd021ad985ebeef941cc241d4904a440f1b9604823ba3ed3`
+
+### English
+
+An administrator writes a script that needs a PAT and proposes committing the token beside the script so coworkers can run it. Which alternative is appropriate?
+
+1. Keep the credential in an approved secret store and inject it only into authorized execution **[CORRECT]**
+
+   A secret store separates sensitive credentials from distributed source code.
+
+2. Base64-encode the token and commit it
+
+   Base64 is reversible encoding, not protection for a committed credential.
+
+3. Put the token in an untracked branch and assume it is inaccessible
+
+   A branch is not a secret-management boundary.
+
+4. Use a less descriptive variable name to conceal the token
+
+   Obscure variable names do not protect an exposed credential.
+
+**Concept:** Protecting administrative API credentials
+
+**Authored coaching hints:**
+
+- Who can retrieve a credential once it is in distributed repository history?
+- What separates the script's source from its runtime authority?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un administrador escribe un script que necesita un PAT y propone enviar el token junto al script para que los compañeros de trabajo puedan ejecutarlo. ¿Qué alternativa es apropiada?
+
+1. Mantenga la credencial en un almacén secreto aprobado e inyéctela solo en ejecución autorizada. **[CORRECT]**
+
+   Un almacén secreto separa las credenciales confidenciales del código fuente distribuido.
+
+2. Codificar el token en Base64 y guardarlo en un commit
+
+   Base64 es codificación reversible, no protección para una credencial comprometida.
+
+3. Coloque el token en una rama sin seguimiento y asuma que es inaccesible
+
+   Una rama no es un límite de administración de secretos.
+
+4. Utilice un nombre de variable menos descriptivo para ocultar el token
+
+   Los nombres de variables oscuros no protegen una credencial expuesta.
+
+**Concept:** Protección de credenciales administrativas API
+
+**Authored coaching hints:**
+
+- ¿Quién puede recuperar una credencial una vez que está en el historial del repositorio distribuido?
+- ¿Qué separa la fuente del script de su autoridad de ejecución?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um administrador escreve um script que precisa de um PAT e propõe confirmar o token ao lado do script para que colegas de trabalho possam executá-lo. Qual alternativa é apropriada?
+
+1. Mantenha a credencial em um armazenamento secreto aprovado e injete-a somente em execução autorizada **[CORRECT]**
+
+   Um armazenamento secreto separa credenciais confidenciais do código-fonte distribuído.
+
+2. Codificar o token em Base64 e salvá-lo em um commit
+
+   Base64 é uma codificação reversível, não uma proteção para uma credencial confirmada.
+
+3. Coloque o token em uma ramificação não rastreada e presuma que ele está inacessível
+
+   Uma ramificação não é um limite de gerenciamento de segredos.
+
+4. Use um nome de variável menos descritivo para ocultar o token
+
+   Nomes de variáveis obscuros não protegem uma credencial exposta.
+
+**Concept:** Protegendo credenciais administrativas API
+
+**Authored coaching hints:**
+
+- Quem pode recuperar uma credencial quando ela estiver no histórico do repositório distribuído?
+- O que separa a origem do script de sua autoridade em tempo de execução?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens>
+
+<!-- certification-coach-question:admin-138:53f888ce37487ecbed2e6db4714a336d7e2fdac8caa681ac12fa3711fdaf1202 -->
+## Question 138: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-138`
+
+**Content revision:** `53f888ce37487ecbed2e6db4714a336d7e2fdac8caa681ac12fa3711fdaf1202`
+
+### English
+
+An enterprise security team needs source IP addresses in its audit investigations and finds them absent from the current events. What should it check?
+
+1. Whether enabling an IP allow list alone automatically adds the audit fields
+
+   Network access restriction and audit IP-address display are distinct controls.
+
+2. Whether enterprise audit-log IP-address display has been enabled and applies to the events **[CORRECT]**
+
+   IP information is an optional audit-log setting with documented applicability.
+
+3. Whether SAML authentication alone guarantees source-IP fields in every audit event
+
+   SAML identity linkage does not guarantee this optional field for every event.
+
+4. Whether filtering by actor adds missing source-IP metadata
+
+   A search filter narrows records rather than adding uncollected metadata.
+
+**Concept:** Audit source-IP visibility
+
+**Authored coaching hints:**
+
+- Is every potentially useful audit field displayed by default?
+- Which enterprise-level setting controls this particular evidence?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un equipo de seguridad empresarial necesita direcciones de origen IP en sus investigaciones de auditoría y las encuentra ausentes de los eventos actuales. ¿Qué debería comprobar?
+
+1. Si habilitar solo una lista de permitidos IP agrega automáticamente los campos de auditoría
+
+   La restricción de acceso a la red y la visualización de la dirección IP de auditoría son controles distintos.
+
+2. Si la visualización de la dirección IP del registro de auditoría empresarial se ha habilitado y se aplica a los eventos **[CORRECT]**
+
+   La información IP es una configuración de registro de auditoría opcional con aplicabilidad documentada.
+
+3. Si la autenticación SAML por sí sola garantiza los campos fuente-IP en cada evento de auditoría
+
+   El vínculo de identidad SAML no garantiza este campo opcional para cada evento.
+
+4. Si el filtrado por actor agrega metadatos fuente-IP faltantes
+
+   Un filtro de búsqueda limita los registros en lugar de agregar metadatos no recopilados.
+
+**Concept:** Fuente de auditoría: visibilidad IP
+
+**Authored coaching hints:**
+
+- ¿Se muestran de forma predeterminada todos los campos de auditoría potencialmente útiles?
+- ¿Qué entorno a nivel empresarial controla esta evidencia en particular?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma equipe de segurança corporativa precisa dos endereços de origem IP em suas investigações de auditoria e os descobre ausentes dos eventos atuais. O que deveria verificar?
+
+1. Se ativar apenas uma lista de permissões IP adiciona automaticamente os campos de auditoria
+
+   A restrição de acesso à rede e a exibição do endereço IP de auditoria são controles distintos.
+
+2. Se a exibição do endereço IP do log de auditoria empresarial foi habilitada e se aplica aos eventos **[CORRECT]**
+
+   As informações IP são uma configuração opcional de log de auditoria com aplicabilidade documentada.
+
+3. Se a autenticação SAML por si só garante os campos source-IP em cada evento de auditoria
+
+   A vinculação de identidade SAML não garante este campo opcional para cada evento.
+
+4. Se a filtragem por ator adiciona metadados de origem IP ausentes
+
+   Um filtro de pesquisa restringe os registros em vez de adicionar metadados não coletados.
+
+**Concept:** Fonte de auditoria - visibilidade IP
+
+**Authored coaching hints:**
+
+- Todos os campos de auditoria potencialmente úteis são exibidos por padrão?
+- Qual configuração de nível empresarial controla esta evidência específica?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/displaying-ip-addresses-in-the-audit-log-for-your-enterprise>
+
+<!-- certification-coach-question:admin-139:26f34a95e48084102b3484140ac09cc90864bf6a4af42a6d1887a4077a7efe92 -->
+## Question 139: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-139`
+
+**Content revision:** `26f34a95e48084102b3484140ac09cc90864bf6a4af42a6d1887a4077a7efe92`
+
+### English
+
+Dependabot opens a pull request upgrading a vulnerable library. What is the most appropriate merge policy?
+
+1. Merge every bot change without tests because it is automatically safe
+
+   Automated authorship does not guarantee compatibility or eliminate review needs.
+
+2. Reject all automated updates regardless of vulnerability
+
+   Blanket rejection prevents useful supported vulnerability remediation.
+
+3. Apply the repository's testing and review requirements while assessing the security fix **[CORRECT]**
+
+   Security updates still need appropriate validation under the repository's governance.
+
+4. Disable branch rules whenever the author is a bot
+
+   Broadly disabling rules removes controls instead of evaluating the proposed change.
+
+**Concept:** Validating automated remediation
+
+**Authored coaching hints:**
+
+- Can a secure package upgrade still affect application behavior?
+- Which existing controls establish confidence in a change?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Dependabot abre un pull request que actualiza una biblioteca vulnerable. ¿Cuál es la política de fusión más adecuada?
+
+1. Fusione cada cambio de bot sin pruebas porque es automáticamente seguro
+
+   La autoría automatizada no garantiza la compatibilidad ni elimina las necesidades de revisión.
+
+2. Rechace todas las actualizaciones automáticas independientemente de la vulnerabilidad
+
+   El rechazo general impide la útil corrección de vulnerabilidades respaldada.
+
+3. Aplicar los requisitos de prueba y revisión del repositorio mientras se evalúa la solución de seguridad. **[CORRECT]**
+
+   Las actualizaciones de seguridad aún necesitan una validación adecuada según la gobernanza del repositorio.
+
+4. Deshabilite las reglas de rama siempre que el autor sea un bot
+
+   La desactivación general de las reglas elimina los controles en lugar de evaluar el cambio propuesto.
+
+**Concept:** Validación de la corrección automatizada
+
+**Authored coaching hints:**
+
+- ¿Puede una actualización de paquete segura seguir afectando el comportamiento de la aplicación?
+- ¿Qué controles existentes generan confianza en un cambio?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Dependabot abre um pull request atualizando uma biblioteca vulnerável. Qual é a política de mesclagem mais apropriada?
+
+1. Mesclar todas as alterações do bot sem testes porque é automaticamente seguro
+
+   A autoria automatizada não garante compatibilidade nem elimina necessidades de revisão.
+
+2. Rejeite todas as atualizações automatizadas, independentemente da vulnerabilidade
+
+   A rejeição geral impede a correção útil de vulnerabilidades com suporte.
+
+3. Aplique os requisitos de teste e revisão do repositório enquanto avalia a correção de segurança **[CORRECT]**
+
+   As atualizações de segurança ainda precisam de validação apropriada sob a governança do repositório.
+
+4. Desative regras de ramificação sempre que o autor for um bot
+
+   Desabilitar amplamente as regras remove os controles em vez de avaliar a mudança proposta.
+
+**Concept:** Validando a correção automatizada
+
+**Authored coaching hints:**
+
+- Uma atualização segura de pacote ainda pode afetar o comportamento do aplicativo?
+- Quais controles existentes estabelecem confiança em uma mudança?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/code-security/dependabot/working-with-dependabot/managing-pull-requests-for-dependency-updates>
+
+<!-- certification-coach-question:admin-140:77a8e15e4eaa497d672827f8342d097dc935d8e7ed93752728a56fe339fcfbe3 -->
+## Question 140: Implement secure software development and compliance
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-140`
+
+**Content revision:** `77a8e15e4eaa497d672827f8342d097dc935d8e7ed93752728a56fe339fcfbe3`
+
+### English
+
+An executive asks whether enabling CodeQL, Dependabot, and secret scanning guarantees compliance with every security requirement. Which response is accurate?
+
+1. Yes, enabling the three features replaces all governance and response processes
+
+   Feature enablement does not establish universal regulatory or operational compliance.
+
+2. Yes, a zero-alert dashboard is a universal compliance certificate
+
+   No alerts do not certify all requirements or prove complete detection coverage.
+
+3. No, so all automated security checks should be removed
+
+   Limits of automation do not negate its security value.
+
+4. No; these controls provide evidence and risk reduction within a broader governance, review, and response program **[CORRECT]**
+
+   Security tooling supports, rather than replaces, contextual governance and incident response.
+
+**Concept:** Security tools within compliance governance
+
+**Authored coaching hints:**
+
+- Does configuring a detector prove every organizational requirement is satisfied?
+- What responsibilities remain after tools produce findings?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un ejecutivo pregunta si habilitar CodeQL, Dependabot y el análisis de secretos garantiza el cumplimiento de todos los requisitos de seguridad. ¿Qué respuesta es precisa?
+
+1. Sí, habilitar las tres funciones reemplaza todos los procesos de gobernanza y respuesta.
+
+   La habilitación de funciones no establece un cumplimiento normativo u operativo universal.
+
+2. Sí, un panel de alerta cero es un certificado de cumplimiento universal
+
+   Ninguna alerta no certifica todos los requisitos ni demuestra una cobertura de detección completa.
+
+3. No, por lo que se deben eliminar todos los controles de seguridad automatizados.
+
+   Los límites de la automatización no niegan su valor de seguridad.
+
+4. No; Estos controles proporcionan evidencia y reducción de riesgos dentro de un programa más amplio de gobernanza, revisión y respuesta. **[CORRECT]**
+
+   Las herramientas de seguridad apoyan, en lugar de reemplazar, la gobernanza contextual y la respuesta a incidentes.
+
+**Concept:** Herramientas de seguridad dentro de la gobernanza del cumplimiento
+
+**Authored coaching hints:**
+
+- ¿La configuración de un detector demuestra que se satisfacen todos los requisitos de la organización?
+- ¿Qué responsabilidades quedan después de que las herramientas producen hallazgos?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um executivo pergunta se a ativação de CodeQL, Dependabot e varredura secreta garante a conformidade com todos os requisitos de segurança. Qual resposta é precisa?
+
+1. Sim, a ativação dos três recursos substitui todos os processos de governança e resposta
+
+   A habilitação de recursos não estabelece conformidade regulatória ou operacional universal.
+
+2. Sim, um painel de alerta zero é um certificado de conformidade universal
+
+   Nenhum alerta não certifica todos os requisitos ou comprova a cobertura completa da detecção.
+
+3. Não, portanto todas as verificações de segurança automatizadas devem ser removidas
+
+   Os limites da automação não negam o seu valor de segurança.
+
+4. Não; esses controles fornecem evidências e redução de riscos dentro de um programa mais amplo de governança, revisão e resposta **[CORRECT]**
+
+   As ferramentas de segurança apoiam, em vez de substituir, a governança contextual e a resposta a incidentes.
+
+**Concept:** Ferramentas de segurança na governança de conformidade
+
+**Authored coaching hints:**
+
+- A configuração de um detector prova que todos os requisitos organizacionais foram atendidos?
+- Que responsabilidades permanecem depois que as ferramentas produzem resultados?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/code-security/security-overview/about-security-overview>
+
+<!-- certification-coach-question:admin-141:0a518fd3e13d537acdb61ebc273e799141ab6453a1249f6ea6041078fd8d3257 -->
+## Question 141: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-141`
+
+**Content revision:** `0a518fd3e13d537acdb61ebc273e799141ab6453a1249f6ea6041078fd8d3257`
+
+### English
+
+An enterprise permits only actions and reusable workflows hosted inside the enterprise. A workflow using actions/checkout is blocked. Why?
+
+1. GitHub-authored actions are also outside the enterprise unless the policy explicitly allows them **[CORRECT]**
+
+   Enterprise-only policy also excludes GitHub-authored actions outside the enterprise.
+
+2. actions/checkout can only run in public repositories
+
+   Checkout supports private repositories with appropriate access.
+
+3. The policy applies only to reusable workflows, never actions
+
+   The policy governs both actions and reusable workflows.
+
+4. Repository Write automatically overrides the policy
+
+   Repository permissions do not override enforced enterprise Actions policy.
+
+**Concept:** Enterprise action-allowance boundaries
+
+**Authored coaching hints:**
+
+- Where is the action's source repository hosted relative to the enterprise?
+- Does official authorship automatically create a policy exception?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una empresa solo permite acciones y flujos de trabajo reutilizables alojados dentro de la empresa. Un flujo de trabajo que utiliza actions/checkout está bloqueado. ¿Por qué?
+
+1. Las acciones creadas por GitHub también están fuera de la empresa a menos que la política las permita explícitamente **[CORRECT]**
+
+   La política solo empresarial también excluye acciones creadas por GitHub fuera de la empresa.
+
+2. actions/checkout solo se puede ejecutar en repositorios públicos
+
+   Checkout admite repositorios privados con acceso adecuado.
+
+3. La política se aplica solo a flujos de trabajo reutilizables, nunca a acciones.
+
+   La política rige tanto las acciones como los flujos de trabajo reutilizables.
+
+4. El repositorio Write anula automáticamente la política
+
+   Los permisos del repositorio no anulan la política de acciones empresariales aplicada.
+
+**Concept:** Límites de las políticas empresariales que permiten acciones
+
+**Authored coaching hints:**
+
+- ¿Dónde está alojado el repositorio de origen de la acción en relación con la empresa?
+- ¿La autoría oficial crea automáticamente una excepción de política?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma empresa permite apenas ações e fluxos de trabalho reutilizáveis hospedados dentro da empresa. Um fluxo de trabalho que usa actions/checkout está bloqueado. Por que?
+
+1. As ações de autoria de GitHub também estão fora da empresa, a menos que a política as permita explicitamente **[CORRECT]**
+
+   A política somente empresarial também exclui ações de autoria de GitHub fora da empresa.
+
+2. actions/checkout só pode ser executado em repositórios públicos
+
+   Checkout oferece suporte a repositórios privados com acesso apropriado.
+
+3. A política se aplica apenas a fluxos de trabalho reutilizáveis, nunca a ações
+
+   A política rege ações e fluxos de trabalho reutilizáveis.
+
+4. O repositório Write substitui automaticamente a política
+
+   As permissões do repositório não substituem a política de ações corporativas imposta.
+
+**Concept:** Limites das permissões de uso de ações na empresa
+
+**Authored coaching hints:**
+
+- Onde está hospedado o repositório de origem da ação em relação à empresa?
+- A autoria oficial cria automaticamente uma exceção de política?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/enforcing-policies/enforcing-policies-for-your-enterprise/enforcing-policies-for-github-actions-in-your-enterprise>
+
+<!-- certification-coach-question:admin-142:400ed50ea5f90ed4855468902f4833c765dd8de8da4c0b3e7fca1298a58af4a1 -->
+## Question 142: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-142`
+
+**Content revision:** `400ed50ea5f90ed4855468902f4833c765dd8de8da4c0b3e7fca1298a58af4a1`
+
+### English
+
+An organization wants an action reference to identify an immutable source revision rather than a movable release label. Which reference is strongest?
+
+1. A mutable major-version tag
+
+   Major-version tags can be moved by the publisher.
+
+2. The action's full-length commit SHA **[CORRECT]**
+
+   A full commit SHA identifies a specific immutable action revision.
+
+3. The action repository's default branch
+
+   A default branch can change with future commits.
+
+4. The latest tag without a version
+
+   An unpinned latest tag does not establish immutable source identity.
+
+**Concept:** Immutable action references
+
+**Authored coaching hints:**
+
+- Which Git references can be moved to another revision?
+- What identifies a particular commit rather than a naming convention?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una organización quiere una referencia de acción para identificar una revisión de fuente inmutable en lugar de una etiqueta de lanzamiento móvil. ¿Qué referencia es más fuerte?
+
+1. Una etiqueta de versión principal mutable
+
+   El editor puede mover las etiquetas de la versión principal.
+
+2. El largometraje completo de la acción commit SHA **[CORRECT]**
+
+   Un commit SHA completo identifica una revisión de acción inmutable específica.
+
+3. La rama predeterminada del repositorio de acciones
+
+   Una rama predeterminada puede cambiar con el futuro commits.
+
+4. La última etiqueta sin versión.
+
+   Una etiqueta más reciente no fijada no establece una identidad de fuente inmutable.
+
+**Concept:** Referencias de acciones inmutables
+
+**Authored coaching hints:**
+
+- ¿Qué referencias de Git se pueden mover a otra revisión?
+- ¿Qué identifica a un commit en particular en lugar de una convención de nomenclatura?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma organização deseja uma referência de ação para identificar uma revisão de origem imutável, em vez de um rótulo de liberação móvel. Qual referência é mais forte?
+
+1. Uma tag mutável de versão principal
+
+   Tags de versão principal podem ser movidas pelo editor.
+
+2. O comprimento total da ação commit SHA **[CORRECT]**
+
+   Um commit SHA completo identifica uma revisão de ação imutável específica.
+
+3. O branch padrão do repositório de ações
+
+   Uma ramificação padrão pode mudar com o futuro commits.
+
+4. A tag mais recente sem versão
+
+   Uma tag mais recente não fixada não estabelece uma identidade de origem imutável.
+
+**Concept:** Referências de ação imutáveis
+
+**Authored coaching hints:**
+
+- Quais referências do Git podem ser movidas para outra revisão?
+- O que identifica um commit específico em vez de uma convenção de nomenclatura?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/reference/security/secure-use>
+
+<!-- certification-coach-question:admin-143:7c19c2194d58726b75c306e3212602d0fc76b662ed569caad845ab8a35bfd50e -->
+## Question 143: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-143`
+
+**Content revision:** `7c19c2194d58726b75c306e3212602d0fc76b662ed569caad845ab8a35bfd50e`
+
+### English
+
+An organization keeps a reusable workflow in a private repository and wants approved sibling repositories to call it. Besides caller syntax, what must administrators configure?
+
+1. Only grant the caller's GITHUB\_TOKEN contents: write
+
+   Token operation permissions alone do not enable private workflow sharing.
+
+2. Only configure the caller's runner labels
+
+   Runner labels select execution machines rather than authorize source sharing.
+
+3. The source repository's Actions access settings and applicable allowance policies **[CORRECT]**
+
+   Private sharing requires permitted access to the source and compliance with Actions policies.
+
+4. Only add the source maintainers to the caller's CODEOWNERS file
+
+   Review ownership does not grant reusable-workflow access.
+
+**Concept:** Private reusable-workflow sharing
+
+**Authored coaching hints:**
+
+- Can another repository read private automation solely because its name is known?
+- Which source-side boundary governs sharing?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una organización mantiene un flujo de trabajo reutilizable en un repositorio privado y quiere que los repositorios hermanos aprobados lo llamen. Además de la sintaxis de la persona que llama, ¿qué deben configurar los administradores?
+
+1. Otorgar únicamente contents: write al GITHUB\_TOKEN del flujo de trabajo que realiza la llamada
+
+   Los permisos de operación de token por sí solos no permiten compartir el flujo de trabajo privado.
+
+2. Configure solo las etiquetas runner de la persona que llama
+
+   Las etiquetas de los runners seleccionan máquinas de ejecución, no autorizan el uso compartido del código fuente.
+
+3. La configuración de acceso a las acciones del repositorio de origen y las políticas de asignación aplicables **[CORRECT]**
+
+   El uso compartido privado requiere acceso permitido a la fuente y el cumplimiento de las políticas de Actions.
+
+4. Agregue solo los mantenedores de origen al archivo CODEOWNERS de la persona que llama
+
+   La propiedad de la revisión no otorga acceso al flujo de trabajo reutilizable.
+
+**Concept:** Uso compartido privado de flujo de trabajo reutilizable
+
+**Authored coaching hints:**
+
+- ¿Puede otro repositorio leer la automatización privada únicamente porque se conoce su nombre?
+- ¿Qué límite del lado de la fuente rige el intercambio?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma organização mantém um fluxo de trabalho reutilizável em um repositório privado e deseja que repositórios irmãos aprovados o chamem. Além da sintaxe do chamador, o que os administradores devem configurar?
+
+1. Conceder apenas contents: write ao GITHUB\_TOKEN do fluxo de trabalho chamador
+
+   As permissões de operação de token por si só não permitem o compartilhamento privado de fluxo de trabalho.
+
+2. Configure apenas os rótulos runner do chamador
+
+   Os rótulos dos executores selecionam máquinas de execução em vez de autorizar o compartilhamento de origem.
+
+3. As configurações de acesso às ações do repositório de origem e as políticas de permissão aplicáveis **[CORRECT]**
+
+   O compartilhamento privado requer acesso permitido à fonte e conformidade com as políticas do Actions.
+
+4. Adicione apenas os mantenedores de origem ao arquivo CODEOWNERS do chamador
+
+   A propriedade da revisão não concede acesso ao fluxo de trabalho reutilizável.
+
+**Concept:** Compartilhamento privado de fluxo de trabalho reutilizável
+
+**Authored coaching hints:**
+
+- Outro repositório pode ler automação privada apenas porque seu nome é conhecido?
+- Qual limite do lado da origem rege o compartilhamento?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/sharing-automations/sharing-actions-and-workflows-with-your-organization>
+
+<!-- certification-coach-question:admin-144:2f6fa910c4aa732dd4a3f56bd3e8ed7f3ab1d8588be8de893827b10e45950d83 -->
+## Question 144: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-144`
+
+**Content revision:** `2f6fa910c4aa732dd4a3f56bd3e8ed7f3ab1d8588be8de893827b10e45950d83`
+
+### English
+
+A central workflow should be callable as a reusable workflow by repository jobs. Which trigger must its workflow definition include?
+
+1. Only schedule
+
+   A schedule triggers timed runs rather than enabling reusable-workflow calls.
+
+2. Only push
+
+   Push alone does not declare a callable reusable workflow.
+
+3. Only workflow\_dispatch
+
+   Manual dispatch is different from being called by another workflow job.
+
+4. workflow\_call **[CORRECT]**
+
+   workflow\_call declares the reusable-workflow interface.
+
+**Concept:** Reusable-workflow entry point
+
+**Authored coaching hints:**
+
+- Is this workflow started by a human, an event, or another workflow?
+- Which trigger declares inputs and secrets for a caller?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un flujo de trabajo central debe poder ser invocado como un flujo de trabajo reutilizable por trabajos de repositorio. ¿Qué disparador debe incluir su definición de flujo de trabajo?
+
+1. Sólo horario
+
+   Una programación activa ejecuciones cronometradas en lugar de permitir llamadas de flujo de trabajo reutilizables.
+
+2. Solo push
+
+   La inserción por sí sola no declara un flujo de trabajo reutilizable invocable.
+
+3. Solo workflow\_dispatch
+
+   El envío manual es diferente a ser llamado por otro trabajo de flujo de trabajo.
+
+4. workflow\_call **[CORRECT]**
+
+   workflow\_call declara la interfaz de flujo de trabajo reutilizable.
+
+**Concept:** Punto de entrada del flujo de trabajo reutilizable
+
+**Authored coaching hints:**
+
+- ¿Este flujo de trabajo lo inicia un ser humano, un evento u otro flujo de trabajo?
+- ¿Qué disparador declara entradas y secretos para una persona que llama?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um fluxo de trabalho central deve poder ser chamado como um fluxo de trabalho reutilizável por trabalhos de repositório. Qual gatilho sua definição de fluxo de trabalho deve incluir?
+
+1. Apenas agendar
+
+   Uma programação aciona execuções cronometradas em vez de permitir chamadas de fluxo de trabalho reutilizáveis.
+
+2. Apenas empurre
+
+   Push sozinho não declara um fluxo de trabalho reutilizável que pode ser chamado.
+
+3. Somente workflow\_dispatch
+
+   O despacho manual é diferente de ser chamado por outro trabalho de fluxo de trabalho.
+
+4. workflow\_call **[CORRECT]**
+
+   workflow\_call declara a interface do fluxo de trabalho reutilizável.
+
+**Concept:** Ponto de entrada do fluxo de trabalho reutilizável
+
+**Authored coaching hints:**
+
+- Este fluxo de trabalho foi iniciado por um humano, um evento ou outro fluxo de trabalho?
+- Qual gatilho declara entradas e segredos para um chamador?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/sharing-automations/reusing-workflows>
+
+<!-- certification-coach-question:admin-145:4ad73d7e9e19a0508bc0af2e035856111890dd935642aca694b6a804d49bb4c4 -->
+## Question 145: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-145`
+
+**Content revision:** `4ad73d7e9e19a0508bc0af2e035856111890dd935642aca694b6a804d49bb4c4`
+
+### English
+
+A developer puts a reusable workflow reference under steps\[\*\].uses and gets a validation error. What is the correct structure?
+
+1. Call the reusable workflow with jobs.&lt;job\_id&gt;.uses **[CORRECT]**
+
+   Reusable workflows are called at job level rather than as ordinary action steps.
+
+2. Put the workflow path in jobs.&lt;job\_id&gt;.runs-on
+
+   runs-on selects a runner rather than a callable workflow.
+
+3. Put the workflow path in jobs.&lt;job\_id&gt;.needs
+
+   needs identifies job dependencies rather than reusable workflow files.
+
+4. Put the workflow path in the caller's top-level on field
+
+   on declares triggering events rather than the reusable workflow to execute.
+
+**Concept:** Job-level reusable-workflow calls
+
+**Authored coaching hints:**
+
+- Does a reusable workflow describe a single action step or a set of jobs?
+- At which YAML level can that larger execution unit be invoked?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un desarrollador coloca una referencia de flujo de trabajo reutilizable en los pasos\[\*\].uses y obtiene un error de validación. ¿Cuál es la estructura correcta?
+
+1. Invocar el flujo de trabajo reutilizable con jobs.&lt;job\_id&gt;.uses **[CORRECT]**
+
+   Los flujos de trabajo reutilizables se llaman a nivel de trabajo y no como pasos de acción ordinarios.
+
+2. Colocar la ruta del flujo de trabajo en jobs.&lt;job\_id&gt;.runs-on
+
+   runs-on selecciona un runner, no un flujo de trabajo invocable.
+
+3. Colocar la ruta del flujo de trabajo en jobs.&lt;job\_id&gt;.needs
+
+   Las necesidades identifican las dependencias del trabajo en lugar de archivos de flujo de trabajo reutilizables.
+
+4. Coloque la ruta del flujo de trabajo en el nivel superior de la persona que llama en el campo
+
+   on declara eventos desencadenantes en lugar del flujo de trabajo reutilizable para ejecutar.
+
+**Concept:** Llamadas de flujo de trabajo reutilizables a nivel de trabajo
+
+**Authored coaching hints:**
+
+- ¿Un flujo de trabajo reutilizable describe un único paso de acción o un conjunto de trabajos?
+- ¿En qué nivel YAML se puede invocar esa unidad de ejecución más grande?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um desenvolvedor coloca uma referência de fluxo de trabalho reutilizável em steps\[\*\].uses e obtém um erro de validação. Qual é a estrutura correta?
+
+1. Chame o fluxo de trabalho reutilizável com jobs.&lt;job\_id&gt;.uses **[CORRECT]**
+
+   Os fluxos de trabalho reutilizáveis são chamados no nível do trabalho e não como etapas de ação comuns.
+
+2. Coloque o caminho do fluxo de trabalho em jobs.&lt;job\_id&gt;.runs-on
+
+   runs-on seleciona um runner, não um fluxo de trabalho reutilizável a ser chamado.
+
+3. Coloque o caminho do fluxo de trabalho em jobs.&lt;job\_id&gt;.needs
+
+   necessidades identifica dependências de trabalho em vez de arquivos de fluxo de trabalho reutilizáveis.
+
+4. Coloque o caminho do fluxo de trabalho no campo de nível superior do chamador
+
+   on declara eventos desencadeadores em vez do fluxo de trabalho reutilizável a ser executado.
+
+**Concept:** Chamadas de fluxo de trabalho reutilizáveis em nível de trabalho
+
+**Authored coaching hints:**
+
+- Um fluxo de trabalho reutilizável descreve uma única etapa de ação ou um conjunto de tarefas?
+- Em qual nível YAML essa unidade de execução maior pode ser invocada?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/sharing-automations/reusing-workflows>
+
+<!-- certification-coach-question:admin-146:40137c598eac275400958fcb58dbb1c6a71488123f5407bc0ff4f0e389a5b264 -->
+## Question 146: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-146`
+
+**Content revision:** `40137c598eac275400958fcb58dbb1c6a71488123f5407bc0ff4f0e389a5b264`
+
+### English
+
+A reusable deployment workflow needs callers to select a deployment target through a typed interface without treating the target name as a credential. What should it define?
+
+1. Only a workflow output for the target
+
+   Outputs return results rather than accept caller-selected configuration.
+
+2. A typed workflow\_call input for the target **[CORRECT]**
+
+   workflow\_call inputs provide a typed interface for nonsecret caller configuration.
+
+3. Only a secret whose value is the nonsecret target name
+
+   Secret passing does not supply the requested typed nonsecret input contract.
+
+4. Only a hardcoded target inside the called workflow
+
+   A hardcoded target does not let callers choose it through an interface.
+
+**Concept:** Reusable-workflow input contracts
+
+**Authored coaching hints:**
+
+- Is the value secret or ordinary configuration?
+- How should a reusable workflow validate what its caller supplies?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un flujo de trabajo de implementación reutilizable necesita que las personas que llaman seleccionen un destino de implementación a través de una interfaz escrita sin tratar el nombre del destino como una credencial. ¿Qué debería definir?
+
+1. Solo una salida de flujo de trabajo para el objetivo
+
+   Las salidas devuelven resultados en lugar de aceptar la configuración seleccionada por la persona que llama.
+
+2. Una entrada tipada de workflow\_call para el destino **[CORRECT]**
+
+   Las entradas de workflow\_call proporcionan una interfaz tipada para la configuración no secreta del flujo de trabajo que realiza la llamada.
+
+3. Sólo un secreto cuyo valor es el nombre del objetivo no secreto
+
+   El paso secreto no proporciona el contrato de entrada no secreto mecanografiado solicitado.
+
+4. Sólo un destino codificado dentro del flujo de trabajo llamado
+
+   Un destino codificado no permite que las personas que llaman lo elijan a través de una interfaz.
+
+**Concept:** Contratos de entrada de flujo de trabajo reutilizables
+
+**Authored coaching hints:**
+
+- ¿El valor es una configuración secreta o ordinaria?
+- ¿Cómo debería un flujo de trabajo reutilizable validar lo que proporciona su interlocutor?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um fluxo de trabalho de implantação reutilizável precisa que os chamadores selecionem um destino de implantação por meio de uma interface digitada sem tratar o nome do destino como uma credencial. O que deveria definir?
+
+1. Apenas uma saída de fluxo de trabalho para o destino
+
+   As saídas retornam resultados em vez de aceitar a configuração selecionada pelo chamador.
+
+2. Uma entrada tipada de workflow\_call para o destino **[CORRECT]**
+
+   As entradas de workflow\_call fornecem uma interface tipada para configurações não secretas do fluxo de trabalho chamador.
+
+3. Apenas um segredo cujo valor é o nome do destino não secreto
+
+   A passagem secreta não fornece o contrato de entrada não secreto digitado solicitado.
+
+4. Apenas um destino codificado dentro do fluxo de trabalho chamado
+
+   Um destino codificado não permite que os chamadores o escolham por meio de uma interface.
+
+**Concept:** Contratos de entrada de fluxo de trabalho reutilizáveis
+
+**Authored coaching hints:**
+
+- O valor é secreto ou configuração comum?
+- Como um fluxo de trabalho reutilizável deve validar o que seu chamador fornece?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/sharing-automations/reusing-workflows>
+
+<!-- certification-coach-question:admin-147:2aa830b5327f50fed73cf5d4eca9ce66c787cfca055d1603ad2443edc8c3eaeb -->
+## Question 147: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-147`
+
+**Content revision:** `2aa830b5327f50fed73cf5d4eca9ce66c787cfca055d1603ad2443edc8c3eaeb`
+
+### English
+
+A reusable workflow calls another reusable workflow that needs a deployment secret. The outer caller passed that secret only to the first workflow. What must the first called workflow do?
+
+1. Assume all secrets automatically reach every nested workflow
+
+   Secrets are passed directly to called workflows, not automatically through all nesting levels.
+
+2. Print the secret so the next workflow can read the logs
+
+   Logs are not a safe secret transport.
+
+3. Explicitly pass the needed secret onward through the supported call interface **[CORRECT]**
+
+   Each nested call must pass the secret it requires.
+
+4. Put the secret into a public workflow output
+
+   Public or broadly accessible outputs are not a safe credential channel.
+
+**Concept:** Secrets across nested reusable workflows
+
+**Authored coaching hints:**
+
+- Does a direct caller's grant automatically propagate through every later call?
+- At which boundary must the next workflow receive its credentials?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un flujo de trabajo reutilizable llama a otro flujo de trabajo reutilizable que necesita un secreto de implementación. La persona que llama externa pasó ese secreto solo al primer flujo de trabajo. ¿Qué debe hacer el primer flujo de trabajo llamado?
+
+1. Suponga que todos los secretos llegan automáticamente a cada flujo de trabajo anidado
+
+   Los secretos se pasan directamente a los flujos de trabajo llamados, no automáticamente a través de todos los niveles de anidamiento.
+
+2. Imprima el secreto para que el siguiente flujo de trabajo pueda leer los registros.
+
+   Los troncos no son un transporte secreto seguro.
+
+3. Pasar explícitamente el secreto necesario a través de la interfaz de llamada admitida **[CORRECT]**
+
+   Cada llamada anidada debe pasar el secreto que requiere.
+
+4. Ponga el secreto en una salida de flujo de trabajo público
+
+   Los resultados públicos o de acceso amplio no son un canal de credenciales seguro.
+
+**Concept:** Secretos en flujos de trabajo reutilizables anidados
+
+**Authored coaching hints:**
+
+- ¿La concesión de una persona que llama directamente se propaga automáticamente a través de cada llamada posterior?
+- ¿En qué límite debe recibir sus credenciales el siguiente flujo de trabajo?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um fluxo de trabalho reutilizável chama outro fluxo de trabalho reutilizável que precisa de um segredo de implantação. O chamador externo passou esse segredo apenas para o primeiro fluxo de trabalho. O que o primeiro fluxo de trabalho chamado deve fazer?
+
+1. Suponha que todos os segredos cheguem automaticamente a todos os fluxos de trabalho aninhados
+
+   Os segredos são passados diretamente para os fluxos de trabalho chamados, e não automaticamente por todos os níveis de aninhamento.
+
+2. Imprima o segredo para que o próximo fluxo de trabalho possa ler os logs
+
+   Os logs não são um transporte secreto seguro.
+
+3. Transmita explicitamente o segredo necessário por meio da interface de chamada suportada **[CORRECT]**
+
+   Cada chamada aninhada deve passar o segredo necessário.
+
+4. Coloque o segredo em uma saída de fluxo de trabalho pública
+
+   Os resultados públicos ou amplamente acessíveis não são um canal de credenciais seguro.
+
+**Concept:** Segredos em fluxos de trabalho reutilizáveis aninhados
+
+**Authored coaching hints:**
+
+- A concessão de um chamador direto se propaga automaticamente em todas as chamadas posteriores?
+- Em qual limite o próximo fluxo de trabalho deve receber suas credenciais?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/sharing-automations/reusing-workflows>
+
+<!-- certification-coach-question:admin-148:38d1a8ada8e626fabeb4ec553cf3fbfe9f9dc0ba3922ad02d229f880032705ea -->
+## Question 148: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-148`
+
+**Content revision:** `38d1a8ada8e626fabeb4ec553cf3fbfe9f9dc0ba3922ad02d229f880032705ea`
+
+### English
+
+A caller grants a reusable workflow a read-only GITHUB\_TOKEN. The called workflow tries to request write access. What is the relevant permission rule?
+
+1. Called workflows always receive repository Admin
+
+   Reusable workflow invocation does not grant repository administration.
+
+2. Reusable workflows ignore the caller's token permissions
+
+   Caller permissions constrain the called workflow.
+
+3. A workflow name containing deploy grants write access
+
+   Naming does not authorize token capabilities.
+
+4. A called workflow cannot elevate the token permissions granted by its caller **[CORRECT]**
+
+   Permissions can be maintained or reduced through the call chain, not elevated.
+
+**Concept:** Permission ceilings in workflow reuse
+
+**Authored coaching hints:**
+
+- Can a delegated component grant itself authority absent from its caller?
+- What should happen to privileges along a reusable call chain?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una persona que llama otorga a un flujo de trabajo reutilizable un GITHUB\_TOKEN de solo lectura. El flujo de trabajo llamado intenta solicitar acceso de escritura. ¿Cuál es la regla de permiso relevante?
+
+1. Los flujos de trabajo llamados siempre reciben el repositorio Admin
+
+   La invocación de flujo de trabajo reutilizable no otorga administración del repositorio.
+
+2. Los flujos de trabajo reutilizables ignoran los permisos del token de la persona que llama
+
+   Los permisos de la persona que llama restringen el flujo de trabajo llamado.
+
+3. Un nombre de flujo de trabajo que contenga implementación otorga acceso de escritura
+
+   La denominación no autoriza las capacidades del token.
+
+4. Un flujo de trabajo llamado no puede elevar los permisos de token otorgados por su autor de llamada **[CORRECT]**
+
+   Los permisos se pueden mantener o reducir a través de la cadena de llamadas, no elevarse.
+
+**Concept:** Límites de permisos en la reutilización del flujo de trabajo
+
+**Authored coaching hints:**
+
+- ¿Puede un componente delegado otorgarse a sí mismo autoridad sin contar con la persona que lo llama?
+- ¿Qué debería pasar con los privilegios a lo largo de una cadena de llamadas reutilizable?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um chamador concede a um fluxo de trabalho reutilizável um GITHUB\_TOKEN somente leitura. O fluxo de trabalho chamado tenta solicitar acesso de gravação. Qual é a regra de permissão relevante?
+
+1. Os fluxos de trabalho chamados sempre recebem o repositório Admin
+
+   A invocação de fluxo de trabalho reutilizável não concede administração do repositório.
+
+2. Fluxos de trabalho reutilizáveis ignoram as permissões de token do chamador
+
+   As permissões do chamador restringem o fluxo de trabalho chamado.
+
+3. Um nome de fluxo de trabalho contendo implantação concede acesso de gravação
+
+   A nomenclatura não autoriza recursos de token.
+
+4. Um fluxo de trabalho chamado não pode elevar as permissões de token concedidas pelo chamador **[CORRECT]**
+
+   As permissões podem ser mantidas ou reduzidas através da cadeia de chamadas, e não elevadas.
+
+**Concept:** Limites de permissão na reutilização de fluxo de trabalho
+
+**Authored coaching hints:**
+
+- Um componente delegado pode conceder a si mesmo autoridade ausente de seu chamador?
+- O que deveria acontecer com os privilégios ao longo de uma cadeia de chamadas reutilizável?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/sharing-automations/reusing-workflows>
+
+<!-- certification-coach-question:admin-149:911874ddddeddf3bd1922524a17c03b0d1495f6df19dc8cc7c51400f11ede639 -->
+## Question 149: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-149`
+
+**Content revision:** `911874ddddeddf3bd1922524a17c03b0d1495f6df19dc8cc7c51400f11ede639`
+
+### English
+
+A reusable build workflow must return a nonsecret package version to the caller. Which supported interface should it expose?
+
+1. A workflow output mapped from the relevant job output **[CORRECT]**
+
+   Reusable workflow outputs expose selected job results to the caller.
+
+2. Only a step-local environment variable with no output mapping
+
+   A local environment variable does not automatically become a caller-visible workflow output.
+
+3. Only a runner-local file with no transfer or output mapping
+
+   Runner-local files are not automatically shared across unrelated execution environments.
+
+4. A workflow input populated after the called workflow has completed
+
+   Inputs provide data to the called workflow rather than return its completed result.
+
+**Concept:** Reusable-workflow outputs
+
+**Authored coaching hints:**
+
+- How can a caller consume a value without depending on shared disk state?
+- Which declared interface exposes a completed workflow's result?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un flujo de trabajo de compilación reutilizable debe devolver una versión del paquete no secreta a la persona que llama. ¿Qué interfaz compatible debería exponer?
+
+1. Una salida del flujo de trabajo asignada a partir de la salida del trabajo relevante **[CORRECT]**
+
+   Las salidas de flujo de trabajo reutilizables exponen los resultados del trabajo seleccionado a la persona que llama.
+
+2. Solo una variable de entorno local de paso sin mapeo de salida
+
+   Una variable de entorno local no se convierte automáticamente en una salida de flujo de trabajo visible para la persona que llama.
+
+3. Solo un archivo local runner sin transferencia ni mapeo de salida
+
+   Los archivos locales del ejecutor no se comparten automáticamente entre entornos de ejecución no relacionados.
+
+4. Una entrada de flujo de trabajo completada después de que se haya completado el flujo de trabajo llamado
+
+   Las entradas proporcionan datos al flujo de trabajo llamado en lugar de devolver el resultado completo.
+
+**Concept:** Salidas de flujo de trabajo reutilizables
+
+**Authored coaching hints:**
+
+- ¿Cómo puede una persona que llama consumir un valor sin depender del estado del disco compartido?
+- ¿Qué interfaz declarada expone el resultado de un flujo de trabajo completo?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um fluxo de trabalho de construção reutilizável deve retornar uma versão de pacote não secreta ao chamador. Qual interface suportada deve ser exposta?
+
+1. Uma saída de fluxo de trabalho mapeada a partir da saída de trabalho relevante **[CORRECT]**
+
+   As saídas de fluxo de trabalho reutilizáveis expõem os resultados do trabalho selecionado ao chamador.
+
+2. Apenas uma variável de ambiente local em etapas sem mapeamento de saída
+
+   Uma variável de ambiente local não se torna automaticamente uma saída de fluxo de trabalho visível ao chamador.
+
+3. Somente um arquivo local runner sem transferência ou mapeamento de saída
+
+   Os arquivos locais do executor não são compartilhados automaticamente entre ambientes de execução não relacionados.
+
+4. Uma entrada de fluxo de trabalho preenchida após a conclusão do fluxo de trabalho chamado
+
+   As entradas fornecem dados ao fluxo de trabalho chamado em vez de retornar o resultado concluído.
+
+**Concept:** Saídas de fluxo de trabalho reutilizáveis
+
+**Authored coaching hints:**
+
+- Como um chamador pode consumir um valor sem depender do estado do disco compartilhado?
+- Qual interface declarada expõe o resultado de um fluxo de trabalho concluído?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/sharing-automations/reusing-workflows>
+
+<!-- certification-coach-question:admin-150:494e1d72e087b9879fafb7ceb5f83540ac87d23534cf4ce6dada768009d94b45 -->
+## Question 150: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-150`
+
+**Content revision:** `494e1d72e087b9879fafb7ceb5f83540ac87d23534cf4ce6dada768009d94b45`
+
+### English
+
+An administrator wants one central CI implementation to be called by many repositories, rather than copied into each repository at creation time. Which feature is the better fit?
+
+1. A repository template used only during creation
+
+   Creation templates produce copies that do not inherently remain linked.
+
+2. A reusable workflow **[CORRECT]**
+
+   Reusable workflows let callers reference a centrally maintained implementation.
+
+3. A pull-request description template
+
+   PR description templates do not implement CI jobs.
+
+4. A copied workflow file with no upstream reference
+
+   Unlinked copies drift and require independent maintenance.
+
+**Concept:** Reusable execution versus copied templates
+
+**Authored coaching hints:**
+
+- Should future runs execute a referenced implementation or an independent copy?
+- What will happen when the central CI logic is fixed?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un administrador quiere que muchos repositorios llamen a una implementación central CI, en lugar de copiarla en cada repositorio en el momento de la creación. ¿Qué característica se adapta mejor?
+
+1. Una plantilla de repositorio utilizada solo durante la creación
+
+   Las plantillas de creación producen copias que no permanecen inherentemente vinculadas.
+
+2. Un flujo de trabajo reutilizable **[CORRECT]**
+
+   Los flujos de trabajo reutilizables permiten a las personas que llaman hacer referencia a una implementación mantenida centralmente.
+
+3. Una plantilla de descripción de solicitud de extracción
+
+   Las plantillas de descripción PR no implementan trabajos CI.
+
+4. Un archivo de flujo de trabajo copiado sin referencia ascendente
+
+   Las copias no vinculadas se desvían y requieren mantenimiento independiente.
+
+**Concept:** Ejecución reutilizable versus plantillas copiadas
+
+**Authored coaching hints:**
+
+- ¿Las ejecuciones futuras deberían ejecutar una implementación referenciada o una copia independiente?
+- ¿Qué pasará cuando se arregle la lógica central CI?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um administrador deseja que uma implementação central CI seja chamada por vários repositórios, em vez de copiada para cada repositório no momento da criação. Qual recurso é mais adequado?
+
+1. Um modelo de repositório usado apenas durante a criação
+
+   Os modelos de criação produzem cópias que não permanecem inerentemente vinculadas.
+
+2. Um fluxo de trabalho reutilizável **[CORRECT]**
+
+   Fluxos de trabalho reutilizáveis permitem que os chamadores façam referência a uma implementação mantida centralmente.
+
+3. Um modelo de descrição de solicitação pull
+
+   Os modelos de descrição PR não implementam tarefas CI.
+
+4. Um arquivo de fluxo de trabalho copiado sem referência upstream
+
+   Cópias desvinculadas flutuam e requerem manutenção independente.
+
+**Concept:** Execução reutilizável versus modelos copiados
+
+**Authored coaching hints:**
+
+- As execuções futuras devem executar uma implementação referenciada ou uma cópia independente?
+- O que acontecerá quando a lógica central CI for corrigida?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/sharing-automations/reusing-workflows>
+
+<!-- certification-coach-question:admin-151:a3162b613a560761d01e8d8b659a93e4c4b5dfb13795f2f1e0e582440cdc1e4f -->
+## Question 151: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-151`
+
+**Content revision:** `a3162b613a560761d01e8d8b659a93e4c4b5dfb13795f2f1e0e582440cdc1e4f`
+
+### English
+
+A platform team needs a directly callable reusable unit containing several jobs with dependencies, not merely several steps inside one job. Which abstraction best fits?
+
+1. A JavaScript action alone
+
+   A JavaScript action runs as an action step rather than defining the caller's job graph.
+
+2. A composite action alone
+
+   Composite actions combine steps within a job rather than defining a multi-job graph.
+
+3. A reusable workflow **[CORRECT]**
+
+   Reusable workflows can encapsulate multiple jobs and their dependencies.
+
+4. A Docker container action alone
+
+   A container action packages step execution rather than an entire multi-job workflow.
+
+**Concept:** Actions versus reusable workflows
+
+**Authored coaching hints:**
+
+- Is the shared unit a sequence of steps or an entire job graph?
+- Which abstraction can select different runners for different jobs?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un equipo de plataforma necesita una unidad reutilizable directamente invocable que contenga varios trabajos con dependencias, no solo varios pasos dentro de un trabajo. ¿Qué abstracción encaja mejor?
+
+1. Una acción de JavaScript sola
+
+   Una acción de JavaScript se ejecuta como un paso de acción en lugar de definir el gráfico de trabajo de la persona que llama.
+
+2. Una acción compuesta sola
+
+   Las acciones compuestas combinan pasos dentro de un trabajo en lugar de definir un gráfico de múltiples trabajos.
+
+3. Un flujo de trabajo reutilizable **[CORRECT]**
+
+   Los flujos de trabajo reutilizables pueden encapsular múltiples trabajos y sus dependencias.
+
+4. Una acción de contenedor Docker sola
+
+   Una acción de contenedor empaqueta la ejecución de pasos en lugar de un flujo de trabajo completo de múltiples trabajos.
+
+**Concept:** Acciones versus flujos de trabajo reutilizables
+
+**Authored coaching hints:**
+
+- ¿La unidad compartida es una secuencia de pasos o un gráfico de trabajo completo?
+- ¿Qué abstracción puede seleccionar diferentes runners para diferentes trabajos?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma equipe de plataforma precisa de uma unidade reutilizável que possa ser chamada diretamente, contendo vários trabalhos com dependências, e não apenas várias etapas dentro de um trabalho. Qual abstração melhor se adapta?
+
+1. Uma ação JavaScript sozinha
+
+   Uma ação JavaScript é executada como uma etapa de ação em vez de definir o gráfico de trabalho do chamador.
+
+2. Uma ação composta sozinha
+
+   As ações compostas combinam etapas dentro de um trabalho em vez de definir um gráfico de vários trabalhos.
+
+3. Um fluxo de trabalho reutilizável **[CORRECT]**
+
+   Fluxos de trabalho reutilizáveis podem encapsular vários trabalhos e suas dependências.
+
+4. Uma ação de contêiner Docker sozinha
+
+   Uma ação de contêiner empacota a execução de etapas em vez de um fluxo de trabalho completo com vários trabalhos.
+
+**Concept:** Ações versus fluxos de trabalho reutilizáveis
+
+**Authored coaching hints:**
+
+- A unidade compartilhada é uma sequência de etapas ou um gráfico de trabalho inteiro?
+- Qual abstração pode selecionar runners diferentes para trabalhos diferentes?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/sharing-automations/reusing-workflows>
+
+<!-- certification-coach-question:admin-152:1d26b3a0b20902e34f54ed2fe75b590a710457961f11fa4905eb150727640611 -->
+## Question 152: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-152`
+
+**Content revision:** `1d26b3a0b20902e34f54ed2fe75b590a710457961f11fa4905eb150727640611`
+
+### English
+
+Most organization workflows only read repository contents. A few publishing jobs require write permissions. Which default token design is safest?
+
+1. Default every job to all write permissions
+
+   Universal write authority expands the impact of compromised workflows.
+
+2. Use an owner's PAT in every workflow
+
+   A shared owner PAT is broader and longer-lived than job-scoped authorization.
+
+3. Remove all token permissions from publishing jobs without changing their tasks
+
+   Publishing tasks still need their narrowly required authority.
+
+4. Use restrictive defaults and grant only the permissions required by specific jobs **[CORRECT]**
+
+   Restrictive defaults with explicit job-level exceptions follow least privilege.
+
+**Concept:** Least-privilege workflow token defaults
+
+**Authored coaching hints:**
+
+- Should every job inherit a publishing job's authority?
+- At which scope can a necessary exception be narrowed?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+La mayoría de los flujos de trabajo de las organizaciones solo leen el contenido del repositorio. Algunos trabajos de publicación requieren permisos de escritura. ¿Qué diseño de token predeterminado es el más seguro?
+
+1. Por defecto, cada trabajo tiene todos los permisos de escritura.
+
+   La autoridad de escritura universal amplía el impacto de los flujos de trabajo comprometidos.
+
+2. Utilice un PAT del propietario en cada flujo de trabajo
+
+   Una autorización de propietario compartido PAT es más amplia y duradera que la autorización de ámbito laboral.
+
+3. Elimine todos los permisos simbólicos de los trabajos de publicación sin cambiar sus tareas.
+
+   Las tareas de publicación todavía necesitan la autoridad estrictamente necesaria.
+
+4. Utilice valores predeterminados restrictivos y otorgue solo los permisos requeridos por trabajos específicos **[CORRECT]**
+
+   Los valores predeterminados restrictivos con excepciones explícitas a nivel de trabajo siguen el privilegio mínimo.
+
+**Concept:** Valores predeterminados del token de flujo de trabajo con privilegios mínimos
+
+**Authored coaching hints:**
+
+- ¿Todos los trabajos deberían heredar la autoridad de un trabajo editorial?
+- ¿A qué alcance se puede limitar una excepción necesaria?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+A maioria dos fluxos de trabalho da organização lê apenas o conteúdo do repositório. Alguns trabalhos de publicação exigem permissões de gravação. Qual design de token padrão é mais seguro?
+
+1. Padronize cada trabalho com todas as permissões de gravação
+
+   A autoridade universal de gravação amplia o impacto de fluxos de trabalho comprometidos.
+
+2. Use o PAT de um proprietário em todos os fluxos de trabalho
+
+   Um proprietário compartilhado PAT é mais amplo e duradouro do que a autorização com escopo de trabalho.
+
+3. Remova todas as permissões de token dos trabalhos de publicação sem alterar suas tarefas
+
+   As tarefas de publicação ainda precisam da autoridade estritamente exigida.
+
+4. Use padrões restritivos e conceda apenas as permissões exigidas por trabalhos específicos **[CORRECT]**
+
+   Padrões restritivos com exceções explícitas no nível do trabalho seguem o privilégio mínimo.
+
+**Concept:** Padrões de token de fluxo de trabalho com privilégios mínimos
+
+**Authored coaching hints:**
+
+- Todo trabalho deveria herdar a autoridade de um trabalho editorial?
+- Em que âmbito uma exceção necessária pode ser reduzida?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/security-for-github-actions/security-guides/automatic-token-authentication>
+
+<!-- certification-coach-question:admin-153:09b9f2297418bcfb1051f518050abc2580bbdacb221ee539803c535d30a004e1 -->
+## Question 153: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-153`
+
+**Content revision:** `09b9f2297418bcfb1051f518050abc2580bbdacb221ee539803c535d30a004e1`
+
+### English
+
+A workflow's GITHUB\_TOKEN cannot read a second private repository. The job already has contents: read for its own repository. What is the best explanation and next design step?
+
+1. The automatic token is scoped to the workflow repository; arrange separately authorized access to the second repository **[CORRECT]**
+
+   GITHUB\_TOKEN is repository-scoped; cross-repository access needs an appropriate separate grant.
+
+2. contents: read grants read access to every private repository in the enterprise
+
+   Token permissions do not automatically extend its repository boundary.
+
+3. The second repository must be made public
+
+   Public exposure is unnecessary for authorized cross-repository automation.
+
+4. Changing the token to contents: write automatically expands it to sibling repositories
+
+   Increasing an operation's privilege does not expand the token's repository boundary.
+
+**Concept:** GITHUB\_TOKEN repository boundary
+
+**Authored coaching hints:**
+
+- Does a permission specify an operation, a resource boundary, or both?
+- Which repository issued the automatic token for this run?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+El GITHUB\_TOKEN de un flujo de trabajo no puede leer un segundo repositorio privado. El trabajo ya tiene contents: read para su propio repositorio. ¿Cuál es la mejor explicación y el siguiente paso de diseño?
+
+1. El token automático tiene como ámbito el repositorio de flujo de trabajo; organizar el acceso autorizado por separado al segundo repositorio **[CORRECT]**
+
+   GITHUB\_TOKEN tiene alcance de repositorio; El acceso entre repositorios necesita una concesión separada adecuada.
+
+2. contents: read otorga acceso de lectura a todos los repositorios privados de la empresa
+
+   Los permisos de token no amplían automáticamente los límites de su repositorio.
+
+3. El segundo repositorio debe hacerse público.
+
+   La exposición pública es innecesaria para la automatización autorizada entre repositorios.
+
+4. Cambiar el token a contents: write amplía automáticamente su alcance a repositorios hermanos
+
+   Aumentar el privilegio de una operación no expande los límites del repositorio del token.
+
+**Concept:** Límite del repositorio GITHUB\_TOKEN
+
+**Authored coaching hints:**
+
+- ¿Un permiso especifica una operación, un límite de recursos o ambos?
+- ¿Qué repositorio emitió el token automático para esta ejecución?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+O GITHUB\_TOKEN de um fluxo de trabalho não pode ler um segundo repositório privado. O trabalho já tem contents: read para seu próprio repositório. Qual é a melhor explicação e a próxima etapa do design?
+
+1. O token automático tem como escopo o repositório de fluxo de trabalho; organizar acesso autorizado separadamente ao segundo repositório **[CORRECT]**
+
+   GITHUB\_TOKEN tem escopo de repositório; o acesso entre repositórios precisa de uma concessão separada apropriada.
+
+2. contents: read concede acesso de leitura a todos os repositórios privados da empresa
+
+   As permissões de token não estendem automaticamente o limite do repositório.
+
+3. O segundo repositório deve ser tornado público
+
+   A exposição pública é desnecessária para a automação autorizada entre repositórios.
+
+4. Alterar o token para contents: write expande automaticamente seu alcance para repositórios irmãos
+
+   Aumentar o privilégio de uma operação não expande o limite do repositório do token.
+
+**Concept:** Limite do repositório GITHUB\_TOKEN
+
+**Authored coaching hints:**
+
+- Uma permissão especifica uma operação, um limite de recurso ou ambos?
+- Qual repositório emitiu o token automático para esta execução?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/security-for-github-actions/security-guides/automatic-token-authentication>
+
+<!-- certification-coach-question:admin-154:715661df0a9d376760613207a59370337fdc70d1d829944d836ca0de9844be67 -->
+## Question 154: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-154`
+
+**Content revision:** `715661df0a9d376760613207a59370337fdc70d1d829944d836ca0de9844be67`
+
+### English
+
+Under default fork pull-request protections, a workflow triggered by pull\_request from an external fork cannot read the repository's deployment secret. What is the best interpretation?
+
+1. The fork author must rename the secret to match the base repository
+
+   Secret names do not override the fork execution boundary.
+
+2. Secrets are withheld from fork-triggered workflows to protect against untrusted code **[CORRECT]**
+
+   Default fork protections avoid exposing repository secrets to untrusted submissions.
+
+3. Increasing GITHUB\_TOKEN to contents: write would automatically expose every stored secret
+
+   Token operation permissions do not by themselves grant stored-secret access.
+
+4. A successful build in the fork automatically unlocks base-repository secrets
+
+   Build success does not establish the trust needed to expose deployment credentials.
+
+**Concept:** Forked pull-request secret isolation
+
+**Authored coaching hints:**
+
+- Who controls the code proposed by an external fork?
+- What would happen if that code could read deployment credentials?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Bajo las protecciones predeterminadas de solicitud de extracción fork, un flujo de trabajo activado por pull\_request desde un fork externo no puede leer el secreto de implementación del repositorio. ¿Cuál es la mejor interpretación?
+
+1. El autor de fork debe cambiar el nombre del secreto para que coincida con el repositorio base.
+
+   Los nombres secretos no anulan el límite de ejecución fork.
+
+2. Los secretos se retienen de los flujos de trabajo activados por fork para proteger contra código que no es de confianza **[CORRECT]**
+
+   Las protecciones predeterminadas fork evitan exponer los secretos del repositorio a envíos que no son de confianza.
+
+3. Aumentar los permisos de GITHUB\_TOKEN a contents: write expondría automáticamente todos los secretos almacenados
+
+   Los permisos de operación de tokens no otorgan por sí solos acceso a secretos almacenados.
+
+4. Una compilación exitosa en el fork desbloquea automáticamente los secretos del repositorio base
+
+   El éxito de la compilación no establece la confianza necesaria para exponer las credenciales de implementación.
+
+**Concept:** Aislamiento secreto de solicitud de extracción bifurcada
+
+**Authored coaching hints:**
+
+- ¿Quién controla el código propuesto por un fork externo?
+- ¿Qué pasaría si ese código pudiera leer las credenciales de implementación?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Nas proteções de solicitação pull fork padrão, um fluxo de trabalho acionado por pull\_request de um fork externo não pode ler o segredo de implantação do repositório. Qual é a melhor interpretação?
+
+1. O autor fork deve renomear o segredo para corresponder ao repositório base
+
+   Os nomes secretos não substituem o limite de execução fork.
+
+2. Os segredos são ocultados dos fluxos de trabalho acionados por fork para proteção contra códigos não confiáveis **[CORRECT]**
+
+   As proteções padrão do fork evitam a exposição de segredos do repositório a envios não confiáveis.
+
+3. Aumentar as permissões de GITHUB\_TOKEN para contents: write exporia automaticamente todos os segredos armazenados
+
+   As permissões de operação de token não concedem, por si só, acesso ao segredo armazenado.
+
+4. Uma compilação bem-sucedida no fork desbloqueia automaticamente os segredos do repositório base
+
+   O sucesso da compilação não estabelece a confiança necessária para expor as credenciais de implantação.
+
+**Concept:** Isolamento secreto de solicitação pull bifurcada
+
+**Authored coaching hints:**
+
+- Quem controla o código proposto por um fork externo?
+- O que aconteceria se esse código pudesse ler as credenciais de implantação?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions>
+
+<!-- certification-coach-question:admin-155:2050610d149224b75e21deab5741053e0884591078b030eda1c206ca036f807e -->
+## Question 155: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-155`
+
+**Content revision:** `2050610d149224b75e21deab5741053e0884591078b030eda1c206ca036f807e`
+
+### English
+
+A workflow uses pull\_request\_target with secrets and then checks out and executes code from an untrusted pull-request head. What is the central risk?
+
+1. The event guarantees that the submitted code was reviewed
+
+   The event does not establish trust in submitted pull-request code.
+
+2. The checkout operation automatically removes all privileges
+
+   Checking out untrusted code does not inherently strip the workflow's credentials.
+
+3. Untrusted code may execute in a privileged context and steal credentials **[CORRECT]**
+
+   Combining privileged execution with attacker-controlled code can expose tokens and secrets.
+
+4. Log masking prevents the code from sending credentials over the network
+
+   Log masking does not prevent malicious code from exfiltrating values through other channels.
+
+**Concept:** Privileged pull-request event risks
+
+**Authored coaching hints:**
+
+- Which code is trusted, and which context holds credentials?
+- Does the event's execution context make checked-out code safe?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un flujo de trabajo utiliza pull\_request\_target con secretos y luego verifica y ejecuta código desde un encabezado de solicitud de extracción que no es de confianza. ¿Cuál es el riesgo central?
+
+1. El evento garantiza que el código enviado fue revisado.
+
+   El evento no genera confianza en el código de solicitud de extracción enviado.
+
+2. La operación de pago elimina automáticamente todos los privilegios.
+
+   La extracción de código que no es de confianza no elimina inherentemente las credenciales del flujo de trabajo.
+
+3. El código que no es de confianza puede ejecutarse en un contexto privilegiado y robar credenciales **[CORRECT]**
+
+   Combinar la ejecución privilegiada con código controlado por atacantes puede exponer tokens y secretos.
+
+4. El enmascaramiento de registros evita que el código envíe credenciales a través de la red
+
+   El enmascaramiento de registros no impide que el código malicioso filtre valores a través de otros canales.
+
+**Concept:** Riesgos de eventos de solicitud de extracción privilegiada
+
+**Authored coaching hints:**
+
+- ¿Qué código es confiable y qué contexto contiene las credenciales?
+- ¿El contexto de ejecución del evento hace que el código extraído sea seguro?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um fluxo de trabalho usa pull\_request\_target com segredos e, em seguida, faz check-out e executa código de um cabeçalho de solicitação pull não confiável. Qual é o risco central?
+
+1. O evento garante que o código enviado foi revisado
+
+   O evento não estabelece confiança no código de solicitação pull enviado.
+
+2. A operação de checkout remove automaticamente todos os privilégios
+
+   A verificação de código não confiável não remove inerentemente as credenciais do fluxo de trabalho.
+
+3. Código não confiável pode ser executado em um contexto privilegiado e roubar credenciais **[CORRECT]**
+
+   Combinar a execução privilegiada com código controlado pelo invasor pode expor tokens e segredos.
+
+4. O mascaramento de log impede que o código envie credenciais pela rede
+
+   O mascaramento de log não impede que códigos maliciosos exfiltrem valores por meio de outros canais.
+
+**Concept:** Riscos de eventos de solicitação pull privilegiados
+
+**Authored coaching hints:**
+
+- Qual código é confiável e qual contexto contém credenciais?
+- O contexto de execução do evento torna o código verificado seguro?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/reference/security/secure-use>
+
+<!-- certification-coach-question:admin-156:f55eafe45b8db65cbeb614f1a660bd20dc22ee0d3f710286a250e20a781825cb -->
+## Question 156: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-156`
+
+**Content revision:** `f55eafe45b8db65cbeb614f1a660bd20dc22ee0d3f710286a250e20a781825cb`
+
+### English
+
+An organization wants a human gate before running workflows submitted by selected outside contributors. Which policy should administrators evaluate?
+
+1. Require code-owner review on every historical commit
+
+   Historical commit review is not the workflow-run approval policy.
+
+2. Set repository artifact retention to one day
+
+   Artifact retention does not gate execution of untrusted workflow submissions.
+
+3. Give all outside contributors repository Write
+
+   Write access expands contributor authority rather than adding an execution gate.
+
+4. Configure workflow-run approval requirements for fork pull requests **[CORRECT]**
+
+   Fork workflow approval policies define when a trusted person must approve execution.
+
+**Concept:** External workflow-run approvals
+
+**Authored coaching hints:**
+
+- Is the desired gate before execution or only before merge?
+- Which setting evaluates the outside contributor's workflow run?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una organización quiere un control de aprobación humana antes de ejecutar flujos de trabajo enviados por determinados colaboradores externos. ¿Qué política deberían evaluar los administradores?
+
+1. Requerir revisión del propietario del código en cada commit histórico
+
+   La revisión histórica de commit no es la política de aprobación de ejecución de flujo de trabajo.
+
+2. Establecer la retención de artefactos del repositorio en un día
+
+   La retención de artefactos no impide la ejecución de envíos de flujos de trabajo que no son de confianza.
+
+3. Dar a todos los contribuyentes externos el repositorio Write
+
+   El acceso Write amplía la autoridad del colaborador en lugar de agregar una puerta de ejecución.
+
+4. Configurar los requisitos de aprobación de ejecución de flujo de trabajo para fork pull requests **[CORRECT]**
+
+   Las políticas de aprobación del flujo de trabajo de bifurcación definen cuándo una persona de confianza debe aprobar la ejecución.
+
+**Concept:** Aprobaciones de ejecución de flujo de trabajo externo
+
+**Authored coaching hints:**
+
+- ¿La puerta deseada está antes de la ejecución o solo antes de la fusión?
+- ¿Qué configuración evalúa la ejecución del flujo de trabajo del colaborador externo?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma organização quer uma etapa de aprovação humana antes de executar fluxos de trabalho enviados por determinados colaboradores externos. Qual política os administradores devem avaliar?
+
+1. Exigir revisão do proprietário do código em cada commit histórico
+
+   A revisão histórica do commit não é a política de aprovação de execução de fluxo de trabalho.
+
+2. Defina a retenção de artefatos do repositório para um dia
+
+   A retenção de artefatos não impede a execução de envios de fluxo de trabalho não confiáveis.
+
+3. Dê a todos os colaboradores externos o repositório Write
+
+   O acesso Write expande a autoridade do contribuidor em vez de adicionar uma porta de execução.
+
+4. Configurar requisitos de aprovação de execução de fluxo de trabalho para fork pull requests **[CORRECT]**
+
+   As políticas de aprovação do fluxo de trabalho do fork definem quando uma pessoa confiável deve aprovar a execução.
+
+**Concept:** Aprovações externas de execução de fluxo de trabalho
+
+**Authored coaching hints:**
+
+- A porta desejada é antes da execução ou apenas antes da fusão?
+- Qual configuração avalia a execução do fluxo de trabalho do colaborador externo?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/managing-workflow-runs/approving-workflow-runs-from-public-forks>
+
+<!-- certification-coach-question:admin-157:b501cf24ef4dc4256f52e690969ad3b39cc87e170852f7ed8c25bf6afc637ac0 -->
+## Question 157: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-157`
+
+**Content revision:** `b501cf24ef4dc4256f52e690969ad3b39cc87e170852f7ed8c25bf6afc637ac0`
+
+### English
+
+A caller needs to pass only one deployment credential to a reusable workflow. Which choice best makes the credential boundary explicit?
+
+1. Declare and pass that named secret rather than unnecessarily inheriting every available secret **[CORRECT]**
+
+   Explicit named secret passing limits the called workflow to the required credential.
+
+2. Put the credential in a public workflow input default
+
+   Public defaults are not an appropriate secret store.
+
+3. Pass every organization secret regardless of need
+
+   Unneeded secret inheritance broadens credential exposure.
+
+4. Assume no declaration or forwarding is ever necessary
+
+   Reusable workflows need supported secret passing rather than assumptions.
+
+**Concept:** Minimal reusable-workflow secret interfaces
+
+**Authored coaching hints:**
+
+- How many credentials does the called workflow actually need?
+- Which interface makes the granted secret set easiest to review?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una persona que llama solo necesita pasar una credencial de implementación a un flujo de trabajo reutilizable. ¿Qué opción hace más explícito el límite de las credenciales?
+
+1. Declare y pase ese secreto con nombre en lugar de heredar innecesariamente todos los secretos disponibles. **[CORRECT]**
+
+   El paso secreto con nombre explícito limita el flujo de trabajo llamado a la credencial requerida.
+
+2. Coloque la credencial en una entrada de flujo de trabajo pública predeterminada
+
+   Los valores predeterminados públicos no son un almacén secreto apropiado.
+
+3. Pase todos los secretos de la organización independientemente de la necesidad.
+
+   La herencia secreta innecesaria amplía la exposición de las credenciales.
+
+4. Suponga que nunca es necesaria ninguna declaración o reenvío
+
+   Los flujos de trabajo reutilizables necesitan transferencias secretas compatibles en lugar de suposiciones.
+
+**Concept:** Interfaces secretas de flujo de trabajo reutilizables mínimas
+
+**Authored coaching hints:**
+
+- ¿Cuántas credenciales necesita realmente el flujo de trabajo llamado?
+- ¿Qué interfaz hace que el conjunto de secretos otorgado sea más fácil de revisar?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um chamador precisa passar apenas uma credencial de implantação para um fluxo de trabalho reutilizável. Qual opção torna melhor o limite da credencial?
+
+1. Declare e passe esse segredo nomeado em vez de herdar desnecessariamente todos os segredos disponíveis **[CORRECT]**
+
+   A passagem secreta nomeada explícita limita o fluxo de trabalho chamado à credencial necessária.
+
+2. Coloque a credencial em um padrão de entrada de fluxo de trabalho público
+
+   Os padrões públicos não são um armazenamento secreto apropriado.
+
+3. Passe todos os segredos da organização, independentemente da necessidade
+
+   A herança secreta desnecessária amplia a exposição de credenciais.
+
+4. Suponha que nenhuma declaração ou encaminhamento seja necessário
+
+   Fluxos de trabalho reutilizáveis precisam de passagem secreta suportada em vez de suposições.
+
+**Concept:** Interfaces secretas mínimas de fluxo de trabalho reutilizável
+
+**Authored coaching hints:**
+
+- De quantas credenciais o fluxo de trabalho chamado realmente precisa?
+- Qual interface torna o conjunto de segredos concedido mais fácil de revisar?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/sharing-automations/reusing-workflows>
+
+<!-- certification-coach-question:admin-158:a8980117ad74511f33d9964f1e40685107b2f67de53dbb04e5edbee3f3e012cc -->
+## Question 158: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-158`
+
+**Content revision:** `a8980117ad74511f33d9964f1e40685107b2f67de53dbb04e5edbee3f3e012cc`
+
+### English
+
+A regulated team calls a central reusable workflow and wants a reviewable, stable revision for each release. Which referencing practice best supports that goal?
+
+1. Always use the default branch with no change control
+
+   An unpinned branch can change without a caller repository change.
+
+2. Reference an approved commit SHA and update it through reviewed changes **[CORRECT]**
+
+   A reviewed SHA pin gives a stable reference and an explicit update trail.
+
+3. Omit the workflow version entirely
+
+   Remote reusable workflow references require an appropriate ref.
+
+4. Use a mutable release tag and forbid all dependency review
+
+   Mutable tags do not provide the same immutable revision guarantee.
+
+**Concept:** Controlled reusable-workflow versioning
+
+**Authored coaching hints:**
+
+- How will the caller's reviewers see a central workflow upgrade?
+- Which reference stays attached to one exact revision?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un equipo regulado llama a un flujo de trabajo central reutilizable y desea una revisión estable y revisable para cada versión. ¿Qué práctica de referenciación respalda mejor ese objetivo?
+
+1. Utilice siempre la rama predeterminada sin control de cambios
+
+   Una rama no fijada puede cambiar sin que cambie el repositorio de la persona que llama.
+
+2. Haga referencia a un commit SHA aprobado y actualícelo mediante cambios revisados **[CORRECT]**
+
+   Un pin SHA revisado proporciona una referencia estable y un rastro de actualización explícito.
+
+3. Omitir la versión del flujo de trabajo por completo
+
+   Las referencias de flujo de trabajo reutilizables remotas requieren una referencia adecuada.
+
+4. Utilice una etiqueta de versión mutable y prohíba toda revisión de dependencia
+
+   Las etiquetas mutables no ofrecen la misma garantía de revisión inmutable.
+
+**Concept:** Control de versiones del flujo de trabajo reutilizable controlado
+
+**Authored coaching hints:**
+
+- ¿Cómo verán los revisores de la persona que llama una actualización del flujo de trabajo central?
+- ¿Qué referencia queda adjunta a una revisión exacta?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma equipe regulamentada chama um fluxo de trabalho central reutilizável e deseja uma revisão estável e passível de revisão para cada versão. Qual prática de referência apoia melhor esse objetivo?
+
+1. Sempre use o branch padrão sem controle de alterações
+
+   Uma ramificação não fixada pode ser alterada sem uma alteração no repositório do chamador.
+
+2. Faça referência a um commit SHA aprovado e atualize-o por meio de alterações revisadas **[CORRECT]**
+
+   Um pino SHA revisado fornece uma referência estável e uma trilha de atualização explícita.
+
+3. Omitir totalmente a versão do fluxo de trabalho
+
+   As referências de fluxo de trabalho reutilizáveis remotos exigem uma referência apropriada.
+
+4. Use uma tag de lançamento mutável e proíba todas as revisões de dependências
+
+   Tags mutáveis não fornecem a mesma garantia de revisão imutável.
+
+**Concept:** Controle de versão de fluxo de trabalho reutilizável
+
+**Authored coaching hints:**
+
+- Como os revisores do chamador verão uma atualização do fluxo de trabalho central?
+- Qual referência permanece anexada a uma revisão exata?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/sharing-automations/reusing-workflows>
+
+<!-- certification-coach-question:admin-159:8253332be170f7dc6827c71e5363bd4c5538e0b966085d0c760bed3da2e92d1a -->
+## Question 159: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-159`
+
+**Content revision:** `8253332be170f7dc6827c71e5363bd4c5538e0b966085d0c760bed3da2e92d1a`
+
+### English
+
+A team chooses standard GitHub-hosted Ubuntu runners rather than persistent self-hosted machines. Which execution property is useful for job isolation?
+
+1. Every job permanently shares the same writable home directory
+
+   Standard hosted Ubuntu jobs do not intentionally reuse one persistent writable home directory.
+
+2. Customers must patch the underlying hosted VM operating system themselves
+
+   GitHub manages the hosted runner environment rather than requiring customer OS patching.
+
+3. Each job receives a fresh GitHub-hosted virtual machine **[CORRECT]**
+
+   Standard GitHub-hosted Ubuntu runners use fresh virtual machines for jobs.
+
+4. All job secrets are stored in the runner image permanently
+
+   Secrets are not intended to be permanently embedded in the hosted image.
+
+**Concept:** Standard hosted-runner isolation
+
+**Authored coaching hints:**
+
+- Which state should remain after a job on a disposable hosted VM?
+- How does that compare with a persistent machine the organization maintains?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un equipo elige máquinas GitHub-hosted Ubuntu runners estándar en lugar de máquinas self-hosted persistentes. ¿Qué propiedad de ejecución es útil para el aislamiento de trabajos?
+
+1. Cada trabajo comparte permanentemente el mismo directorio de inicio grabable
+
+   Los trabajos alojados estándar de Ubuntu no reutilizan intencionalmente un directorio de inicio persistente y grabable.
+
+2. Los clientes deben parchear ellos mismos el sistema operativo alojado subyacente VM
+
+   GitHub administra el entorno alojado runner en lugar de requerir parches OS del cliente.
+
+3. Cada trabajo recibe una máquina virtual GitHub-hosted nueva **[CORRECT]**
+
+   El estándar GitHub-hosted Ubuntu runners utiliza máquinas virtuales nuevas para los trabajos.
+
+4. Todos los secretos de trabajo se almacenan permanentemente en la imagen runner.
+
+   Los secretos no están destinados a integrarse permanentemente en la imagen alojada.
+
+**Concept:** Aislamiento estándar alojado-runner
+
+**Authored coaching hints:**
+
+- ¿Qué estado debería permanecer después de un trabajo en un VM alojado desechable?
+- ¿Cómo se compara eso con una máquina persistente que mantiene la organización?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma equipe escolhe o Ubuntu GitHub-hosted padrão runners em vez de máquinas self-hosted persistentes. Qual propriedade de execução é útil para isolamento de tarefas?
+
+1. Cada trabalho compartilha permanentemente o mesmo diretório inicial gravável
+
+   Os trabalhos padrão do Ubuntu hospedados não reutilizam intencionalmente um diretório inicial gravável persistente.
+
+2. Os próprios clientes devem corrigir o sistema operacional VM hospedado subjacente
+
+   GitHub gerencia o ambiente runner hospedado em vez de exigir patch OS do cliente.
+
+3. Cada trabalho recebe uma nova máquina virtual GitHub-hosted **[CORRECT]**
+
+   GitHub-hosted padrão Ubuntu runners usa máquinas virtuais novas para trabalhos.
+
+4. Todos os segredos do trabalho são armazenados permanentemente na imagem runner
+
+   Os segredos não se destinam a ser incorporados permanentemente na imagem hospedada.
+
+**Concept:** Isolamento runner hospedado padrão
+
+**Authored coaching hints:**
+
+- Qual estado deve permanecer após um trabalho em um VM hospedado descartável?
+- Como isso se compara a uma máquina persistente que a organização mantém?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/concepts/runners/github-hosted-runners>
+
+<!-- certification-coach-question:admin-160:1c3a867cff91013868f7884ac7b449aab37b54207db07fa20de91cca0b83fc56 -->
+## Question 160: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-160`
+
+**Content revision:** `1c3a867cff91013868f7884ac7b449aab37b54207db07fa20de91cca0b83fc56`
+
+### English
+
+An organization installs self-hosted runners on its own virtual machines. Who is responsible for keeping the runner operating systems and additional installed tools secure and current?
+
+1. GitHub automatically patches every customer-installed tool
+
+   GitHub does not manage the full customer-owned self-hosted environment.
+
+2. The public action author manages all customer VMs
+
+   An action author does not operate the customer's runner fleet.
+
+3. No one, because runner registration freezes the image
+
+   Registration does not eliminate ongoing patching requirements.
+
+4. The organization operating the self-hosted machines **[CORRECT]**
+
+   Self-hosted runner operators maintain their operating systems and installed software.
+
+**Concept:** Self-hosted operational ownership
+
+**Authored coaching hints:**
+
+- Who controls the underlying machine?
+- Does runner-agent registration transfer responsibility for the rest of the software stack?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una organización instala self-hosted runners en sus propias máquinas virtuales. ¿Quién es responsable de mantener seguros y actualizados los sistemas operativos runner y las herramientas adicionales instaladas?
+
+1. GitHub parchea automáticamente cada herramienta instalada por el cliente
+
+   GitHub no gestiona todo el entorno self-hosted, propiedad del cliente.
+
+2. El autor de la acción pública gestiona todas las máquinas virtuales del cliente.
+
+   Un autor de acción no opera la flota runner del cliente.
+
+3. Nadie, porque el registro runner congela la imagen.
+
+   El registro no elimina los requisitos de parches continuos.
+
+4. La organización que opera las máquinas self-hosted. **[CORRECT]**
+
+   Los operadores runner autohospedados mantienen sus sistemas operativos y el software instalado.
+
+**Concept:** Propiedad operativa autohospedada
+
+**Authored coaching hints:**
+
+- ¿Quién controla la máquina subyacente?
+- ¿El registro del agente runner transfiere la responsabilidad del resto de la pila de software?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma organização instala self-hosted runners em suas próprias máquinas virtuais. Quem é responsável por manter os sistemas operacionais runner e as ferramentas adicionais instaladas seguras e atualizadas?
+
+1. GitHub corrige automaticamente todas as ferramentas instaladas pelo cliente
+
+   GitHub não gerencia todo o ambiente self-hosted de propriedade do cliente.
+
+2. O autor da ação pública gerencia todas as VMs do cliente
+
+   Um autor de ação não opera a frota runner do cliente.
+
+3. Ninguém, porque o registro runner congela a imagem
+
+   O registro não elimina os requisitos contínuos de aplicação de patches.
+
+4. A organização que opera as máquinas self-hosted **[CORRECT]**
+
+   Operadores runner auto-hospedados mantêm seus sistemas operacionais e software instalado.
+
+**Concept:** Propriedade operacional auto-hospedada
+
+**Authored coaching hints:**
+
+- Quem controla a máquina subjacente?
+- O registro do agente runner transfere a responsabilidade pelo restante da pilha de software?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/concepts/runners/about-self-hosted-runners>
+
+<!-- certification-coach-question:admin-161:3d9d68ba3e6de01244fe07c360bdf2be49a55632a64039fe70ce80af3c1bdb38 -->
+## Question 161: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-161`
+
+**Content revision:** `3d9d68ba3e6de01244fe07c360bdf2be49a55632a64039fe70ce80af3c1bdb38`
+
+### English
+
+Two jobs run sequentially on the same persistent self-hosted runner. Why should administrators not assume the second job starts from a clean environment?
+
+1. Self-hosted runners do not inherently guarantee a fresh machine for each job **[CORRECT]**
+
+   State can persist on a self-hosted machine unless operators enforce isolation and cleanup.
+
+2. All GitHub Actions jobs intentionally share secrets across repositories
+
+   Secrets are scoped; universal cross-repository sharing is not the model.
+
+3. The second job always runs as a different operating system
+
+   Sequential jobs do not inherently change the operating system.
+
+4. Repository branch protection automatically wipes the machine
+
+   Branch protection does not reset runner disks or processes.
+
+**Concept:** Persistent runner state
+
+**Authored coaching hints:**
+
+- What happens to files and processes on a machine that is reused?
+- Which isolation properties must operators provide themselves?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Dos trabajos se ejecutan secuencialmente en el mismo self-hosted runner persistente. ¿Por qué los administradores no deberían asumir que el segundo trabajo comienza en un entorno limpio?
+
+1. runners autohospedado no garantiza inherentemente una máquina nueva para cada trabajo **[CORRECT]**
+
+   El estado puede persistir en una máquina self-hosted a menos que los operadores apliquen el aislamiento y la limpieza.
+
+2. Todos los trabajos GitHub Actions comparten secretos intencionalmente entre repositorios
+
+   Los secretos tienen un alcance; El intercambio universal entre repositorios no es el modelo.
+
+3. El segundo trabajo siempre se ejecuta con un sistema operativo diferente.
+
+   Los trabajos secuenciales no cambian inherentemente el sistema operativo.
+
+4. La protección de la rama del repositorio borra automáticamente la máquina
+
+   La protección de ramas no restablece los discos ni los procesos de los runners.
+
+**Concept:** Estado runner persistente
+
+**Authored coaching hints:**
+
+- ¿Qué sucede con los archivos y procesos en una máquina que se reutiliza?
+- ¿Qué propiedades de aislamiento deben proporcionar los propios operadores?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Duas tarefas são executadas sequencialmente no mesmo self-hosted runner persistente. Por que os administradores não deveriam presumir que o segundo trabalho começa em um ambiente limpo?
+
+1. runners auto-hospedado não garante inerentemente uma máquina nova para cada trabalho **[CORRECT]**
+
+   O estado pode persistir em uma máquina self-hosted, a menos que os operadores imponham isolamento e limpeza.
+
+2. Todos os trabalhos GitHub Actions compartilham segredos intencionalmente entre repositórios
+
+   Os segredos têm escopo; o compartilhamento universal entre repositórios não é o modelo.
+
+3. O segundo trabalho sempre é executado como um sistema operacional diferente
+
+   Os trabalhos sequenciais não alteram inerentemente o sistema operacional.
+
+4. A proteção de ramificação do repositório limpa automaticamente a máquina
+
+   A proteção de ramificação não redefine discos ou processos runner.
+
+**Concept:** Estado runner persistente
+
+**Authored coaching hints:**
+
+- O que acontece com arquivos e processos em uma máquina reutilizada?
+- Quais propriedades de isolamento os operadores devem fornecer?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/concepts/runners/about-self-hosted-runners>
+
+<!-- certification-coach-question:admin-162:09cbe9219c20824e7b9d32ca194e7c2a93deb9063e0ed429c44a820cc1b9922e -->
+## Question 162: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-162`
+
+**Content revision:** `09cbe9219c20824e7b9d32ca194e7c2a93deb9063e0ed429c44a820cc1b9922e`
+
+### English
+
+A public repository accepts untrusted pull requests. Its proposed self-hosted runner can reach an internal production network. What is the strongest concern?
+
+1. A read-only GITHUB\_TOKEN necessarily removes every operating-system and network capability
+
+   GitHub token permissions do not sandbox the underlying machine or its network.
+
+2. Untrusted workflow code could compromise the runner and reachable internal resources **[CORRECT]**
+
+   Self-hosted execution can expose the machine and its network to untrusted code.
+
+3. Removing repository secrets automatically isolates all internal network services
+
+   Secret removal alone does not remove network reachability or machine-level credentials.
+
+4. Required pull-request reviews automatically isolate the runner network
+
+   Review requirements do not themselves sandbox a machine or its network.
+
+**Concept:** Trust boundaries for self-hosted execution
+
+**Authored coaching hints:**
+
+- What can arbitrary code reach from this machine?
+- Does reviewing a merge protect every earlier workflow execution?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un repositorio público acepta pull requests que no es de confianza. Su propuesta self-hosted runner puede llegar a una red de producción interna. ¿Cuál es la preocupación más fuerte?
+
+1. Un GITHUB\_TOKEN de solo lectura elimina necesariamente todos los sistemas operativos y capacidades de red.
+
+   Los permisos de token GitHub no protegen la máquina subyacente ni su red.
+
+2. El código de flujo de trabajo que no es de confianza podría comprometer el runner y los recursos internos accesibles **[CORRECT]**
+
+   La ejecución autohospedada puede exponer la máquina y su red a código que no es de confianza.
+
+3. La eliminación de los secretos del repositorio aísla automáticamente todos los servicios de la red interna
+
+   La eliminación secreta por sí sola no elimina la accesibilidad de la red ni las credenciales a nivel de máquina.
+
+4. Las revisiones de solicitud de extracción requeridas aíslan automáticamente la red runner
+
+   Los requisitos de revisión en sí mismos no protegen una máquina o su red.
+
+**Concept:** Límites de confianza para la ejecución de self-hosted
+
+**Authored coaching hints:**
+
+- ¿Qué puede alcanzar el código arbitrario desde esta máquina?
+- ¿La revisión de una combinación protege cada ejecución anterior del flujo de trabajo?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um repositório público aceita pull requests não confiável. Sua proposta self-hosted runner pode alcançar uma rede de produção interna. Qual é a preocupação mais forte?
+
+1. Um GITHUB\_TOKEN somente leitura remove necessariamente todos os sistemas operacionais e recursos de rede
+
+   As permissões de token GitHub não colocam em sandbox a máquina subjacente ou sua rede.
+
+2. Código de fluxo de trabalho não confiável pode comprometer o runner e os recursos internos acessíveis **[CORRECT]**
+
+   A execução auto-hospedada pode expor a máquina e sua rede a códigos não confiáveis.
+
+3. A remoção dos segredos do repositório isola automaticamente todos os serviços de rede internos
+
+   A remoção do segredo por si só não remove a acessibilidade da rede ou as credenciais no nível da máquina.
+
+4. As revisões de solicitação pull necessárias isolam automaticamente a rede runner
+
+   Os requisitos de revisão não colocam em sandbox uma máquina ou sua rede.
+
+**Concept:** Limites de confiança para execução self-hosted
+
+**Authored coaching hints:**
+
+- O que o código arbitrário pode alcançar nesta máquina?
+- A revisão de uma mesclagem protege todas as execuções anteriores de fluxo de trabalho?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/reference/security/secure-use>
+
+<!-- certification-coach-question:admin-163:c36a255be19cdbf578fa2fd7ada9fdc5831bfe504642a129d80ded160e6519c0 -->
+## Question 163: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-163`
+
+**Content revision:** `c36a255be19cdbf578fa2fd7ada9fdc5831bfe504642a129d80ded160e6519c0`
+
+### English
+
+An administrator needs to authorize only selected repositories to use a sensitive self-hosted runner pool. A developer proposes using a unique runner label as the entire security boundary. What is the better design?
+
+1. Use labels only and allow all repositories into the pool
+
+   A routing label is not a replacement for a repository access policy.
+
+2. Give every workflow the runner registration token
+
+   Registration credentials should not be distributed as job authorization.
+
+3. Use runner-group access policies; use labels for routing among authorized runners **[CORRECT]**
+
+   Groups control authorized access while labels help select matching runners.
+
+4. Rely on the runner hostname being difficult to guess
+
+   Obscure hostnames do not establish authorization.
+
+**Concept:** Runner authorization versus scheduling labels
+
+**Authored coaching hints:**
+
+- Which setting grants access, and which selects a suitable machine?
+- Would knowing a label be a sufficient security approval?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un administrador debe autorizar solo los repositorios seleccionados para utilizar un grupo confidencial self-hosted runner. Un desarrollador propone utilizar una etiqueta runner única como límite de seguridad completo. ¿Cuál es el mejor diseño?
+
+1. Utilice únicamente etiquetas y permita que todos los repositorios entren al grupo
+
+   Una etiqueta de enrutamiento no reemplaza una política de acceso al repositorio.
+
+2. Otorgue a cada flujo de trabajo el token de registro runner
+
+   Las credenciales de registro no deben distribuirse como autorización laboral.
+
+3. Utilice políticas de acceso al grupo runner; Utilice etiquetas para enrutar entre runners autorizados. **[CORRECT]**
+
+   Los grupos controlan el acceso autorizado mientras que las etiquetas ayudan a seleccionar el runners coincidente.
+
+4. Confíe en que el nombre de host runner sea difícil de adivinar
+
+   Los nombres de host oscuros no establecen autorización.
+
+**Concept:** Autorización de runners frente a etiquetas de asignación
+
+**Authored coaching hints:**
+
+- ¿Qué configuración otorga acceso y cuál selecciona una máquina adecuada?
+- ¿Conocer una etiqueta sería suficiente aprobación de seguridad?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um administrador precisa autorizar apenas repositórios selecionados para usar um pool self-hosted runner confidencial. Um desenvolvedor propõe usar um rótulo runner exclusivo como todo o limite de segurança. Qual é o melhor design?
+
+1. Use apenas rótulos e permita todos os repositórios no pool
+
+   Um rótulo de roteamento não substitui uma política de acesso ao repositório.
+
+2. Dê a cada fluxo de trabalho o token de registro runner
+
+   As credenciais de registro não devem ser distribuídas como autorização de trabalho.
+
+3. Use políticas de acesso do grupo runner; use rótulos para roteamento entre runners autorizados **[CORRECT]**
+
+   Os grupos controlam o acesso autorizado enquanto os rótulos ajudam a selecionar runners correspondente.
+
+4. Confie no nome do host runner ser difícil de adivinhar
+
+   Nomes de host obscuros não estabelecem autorização.
+
+**Concept:** Autorização de runners versus rótulos de agendamento
+
+**Authored coaching hints:**
+
+- Qual configuração concede acesso e qual seleciona uma máquina adequada?
+- Conhecer um rótulo seria uma aprovação de segurança suficiente?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups>
+
+<!-- certification-coach-question:admin-164:da3ff5c750c9cd2b3bf76121bda7b48de82df9242b96b5b0c8bb4d86e3e96315 -->
+## Question 164: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-164`
+
+**Content revision:** `da3ff5c750c9cd2b3bf76121bda7b48de82df9242b96b5b0c8bb4d86e3e96315`
+
+### English
+
+A repository's jobs cannot use a self-hosted runner even though their labels match. The runner is in a group restricted to selected repositories. What should an administrator check?
+
+1. Whether contents: write would override runner-group restrictions
+
+   Repository token capabilities do not override runner-group authorization.
+
+2. Whether creating an environment secret would authorize the runner
+
+   Secret availability and runner-pool authorization are separate controls.
+
+3. Whether disabling required status checks would authorize the runner
+
+   Merge requirements do not grant runner-group access.
+
+4. Whether the repository is included in the runner group's access policy **[CORRECT]**
+
+   Matching labels are insufficient if the group does not authorize the repository.
+
+**Concept:** Diagnosing runner-group access failures
+
+**Authored coaching hints:**
+
+- Does matching the scheduling criteria prove the job is authorized?
+- Which list defines the repositories allowed to use this pool?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Los trabajos de un repositorio no pueden usar un self-hosted runner aunque sus etiquetas coincidan. El runner está en un grupo restringido a repositorios seleccionados. ¿Qué debe comprobar un administrador?
+
+1. Si contents: write anularía las restricciones del grupo de runners
+
+   Las capacidades del token del repositorio no anulan la autorización del grupo runner.
+
+2. Si la creación de un secreto de entorno autorizaría el runner
+
+   La disponibilidad secreta y la autorización del grupo runner son controles separados.
+
+3. Si deshabilitar las verificaciones de estado requeridas autorizaría el runner
+
+   Los requisitos de fusión no otorgan acceso al grupo runner.
+
+4. Si el repositorio está incluido en la política de acceso del grupo runner **[CORRECT]**
+
+   Las etiquetas coincidentes no son suficientes si el grupo no autoriza el repositorio.
+
+**Concept:** Diagnóstico de fallas de acceso al grupo runner
+
+**Authored coaching hints:**
+
+- ¿El cumplimiento de los criterios de programación demuestra que el trabajo está autorizado?
+- ¿Qué lista define los repositorios autorizados a utilizar este grupo?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Os trabalhos de um repositório não podem usar self-hosted runner mesmo que seus rótulos correspondam. O runner está em um grupo restrito a repositórios selecionados. O que um administrador deve verificar?
+
+1. Se contents: write anularia as restrições do grupo de runners
+
+   Os recursos de token de repositório não substituem a autorização do grupo runner.
+
+2. Se a criação de um segredo de ambiente autorizaria o runner
+
+   A disponibilidade secreta e a autorização do pool runner são controles separados.
+
+3. Se a desativação das verificações de status necessárias autorizaria o runner
+
+   Os requisitos de mesclagem não concedem acesso ao grupo runner.
+
+4. Se o repositório está incluído na política de acesso do grupo runner **[CORRECT]**
+
+   Os rótulos correspondentes serão insuficientes se o grupo não autorizar o repositório.
+
+**Concept:** Diagnosticando falhas de acesso ao grupo runner
+
+**Authored coaching hints:**
+
+- A correspondência aos critérios de agendamento prova que o trabalho está autorizado?
+- Qual lista define os repositórios autorizados a usar este pool?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups>
+
+<!-- certification-coach-question:admin-165:fd1b0ff5c33fedc3fea7f98614c9014f41d049d71f52886257d1c0732831bf64 -->
+## Question 165: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-165`
+
+**Content revision:** `fd1b0ff5c33fedc3fea7f98614c9014f41d049d71f52886257d1c0732831bf64`
+
+### English
+
+An enterprise shares a runner group with an organization, and that group has a restrictive enterprise access policy. Can an organization owner broaden access beyond the enterprise restriction?
+
+1. No; organization-level administration remains constrained by enterprise runner-group policy **[CORRECT]**
+
+   Enterprise restrictions bound the organization's permitted runner access.
+
+2. Yes; the organization can silently erase all inherited restrictions
+
+   Lower-scope settings do not erase enterprise-imposed boundaries.
+
+3. Yes; any repository contributor can override it through runs-on
+
+   runs-on selects execution targets rather than overriding access policy.
+
+4. Yes; granting the job a write-capable GITHUB\_TOKEN overrides the group policy
+
+   Repository token permissions do not override runner-group authorization.
+
+**Concept:** Enterprise runner-group policy hierarchy
+
+**Authored coaching hints:**
+
+- Who owns the shared runner pool?
+- Can a consumer organization grant more access than the provider permits?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una empresa comparte un grupo runner con una organización y ese grupo tiene una política de acceso empresarial restrictiva. ¿Puede el propietario de una organización ampliar el acceso más allá de la restricción empresarial?
+
+1. No; la administración a nivel de organización sigue restringida por la política de grupo empresarial runner **[CORRECT]**
+
+   Las restricciones empresariales limitan el acceso permitido a runner de la organización.
+
+2. Sí; la organización puede borrar silenciosamente todas las restricciones heredadas
+
+   Las configuraciones de menor alcance no borran los límites impuestos por la empresa.
+
+3. Sí; cualquier colaborador del repositorio puede anularla mediante runs-on
+
+   runs-on selecciona destinos de ejecución, no anula la política de acceso.
+
+4. Sí; otorgar al trabajo un GITHUB\_TOKEN con capacidad de escritura anula la política de grupo
+
+   Los permisos del token del repositorio no anulan la autorización del grupo runner.
+
+**Concept:** Jerarquía de políticas de grupo Enterprise runner
+
+**Authored coaching hints:**
+
+- ¿A quién pertenece el grupo compartido runner?
+- ¿Puede una organización de consumidores conceder más acceso del que permite el proveedor?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma empresa compartilha um grupo runner com uma organização e esse grupo tem uma política de acesso empresarial restritiva. O proprietário de uma organização pode ampliar o acesso além da restrição empresarial?
+
+1. Não; a administração em nível de organização permanece limitada pela política do grupo empresarial runner **[CORRECT]**
+
+   As restrições empresariais limitam o acesso runner permitido pela organização.
+
+2. Sim; a organização pode apagar silenciosamente todas as restrições herdadas
+
+   As configurações de escopo inferior não eliminam os limites impostos pela empresa.
+
+3. Sim; qualquer colaborador do repositório pode anulá-la por meio de runs-on
+
+   runs-on seleciona destinos de execução, em vez de anular a política de acesso.
+
+4. Sim; conceder ao trabalho um GITHUB\_TOKEN com capacidade de gravação substitui a política de grupo
+
+   As permissões de token de repositório não substituem a autorização do grupo runner.
+
+**Concept:** Hierarquia de política de grupo empresarial runner
+
+**Authored coaching hints:**
+
+- Quem é o proprietário do pool runner compartilhado?
+- Uma organização de consumidores pode conceder mais acesso do que o permitido pelo fornecedor?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups>
+
+<!-- certification-coach-question:admin-166:cd051ba6534c51fdcf23c2247e4c7d2f0513fce26a444a1b26cbd76ee698a622 -->
+## Question 166: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-166`
+
+**Content revision:** `cd051ba6534c51fdcf23c2247e4c7d2f0513fce26a444a1b26cbd76ee698a622`
+
+### English
+
+A workflow uses runs-on: \[self-hosted, linux, gpu\]. How are runners matched when the repository is authorized to use them?
+
+1. A runner needs only one of the listed labels
+
+   The label array is not an any-one-label match.
+
+2. A runner must match all listed labels **[CORRECT]**
+
+   All specified labels must match the eligible runner.
+
+3. GitHub ignores labels after self-hosted
+
+   Additional labels narrow the self-hosted selection.
+
+4. The labels are interpreted as a priority-ordered fallback list
+
+   The array is not a sequential fallback mechanism.
+
+**Concept:** Runner label intersection
+
+**Authored coaching hints:**
+
+- Is this an intersection of requirements or a list of alternatives?
+- What hardware and platform properties must one selected runner satisfy?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un flujo de trabajo utiliza runs-on: \[self-hosted, linux, gpu\]. ¿Cómo se seleccionan los runners coincidentes cuando el repositorio está autorizado a usarlos?
+
+1. Un runner necesita solo una de las etiquetas enumeradas
+
+   La matriz de etiquetas no coincide con ninguna etiqueta.
+
+2. Un runner debe coincidir con todas las etiquetas enumeradas **[CORRECT]**
+
+   Todas las etiquetas especificadas deben coincidir con el runner elegible.
+
+3. GitHub ignora las etiquetas después de self-hosted
+
+   Las etiquetas adicionales reducen la selección de self-hosted.
+
+4. Las etiquetas se interpretan como una lista alternativa ordenada por prioridad.
+
+   La matriz no es un mecanismo de reserva secuencial.
+
+**Concept:** Intersección de etiquetas de runners
+
+**Authored coaching hints:**
+
+- ¿Es esta una intersección de requisitos o una lista de alternativas?
+- ¿Qué propiedades de hardware y plataforma debe satisfacer un runner seleccionado?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um fluxo de trabalho usa runs-on: \[self-hosted, linux, gpu\]. Como os runners correspondentes são selecionados quando o repositório está autorizado a usá-los?
+
+1. Um runner precisa apenas de um dos rótulos listados
+
+   A matriz de rótulos não corresponde a nenhum rótulo.
+
+2. Um runner deve corresponder a todos os rótulos listados **[CORRECT]**
+
+   Todos os rótulos especificados devem corresponder ao runner elegível.
+
+3. GitHub ignora rótulos após self-hosted
+
+   Etiquetas adicionais restringem a seleção self-hosted.
+
+4. Os rótulos são interpretados como uma lista alternativa ordenada por prioridade
+
+   A matriz não é um mecanismo de fallback sequencial.
+
+**Concept:** Interseção de rótulos de runners
+
+**Authored coaching hints:**
+
+- Isto é uma interseção de requisitos ou uma lista de alternativas?
+- Quais propriedades de hardware e plataforma um runner selecionado deve satisfazer?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/hosting-your-own-runners/using-self-hosted-runners-in-a-workflow>
+
+<!-- certification-coach-question:admin-167:89b21f428b3ecb9c255b942a02b2ccc8396bc29de1321868c2bccb98de7e73e1 -->
+## Question 167: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-167`
+
+**Content revision:** `89b21f428b3ecb9c255b942a02b2ccc8396bc29de1321868c2bccb98de7e73e1`
+
+### English
+
+A GPU job remains queued while an online, authorized runner is idle. The runner has linux and x64 labels, but the job also requests gpu. What is the most direct diagnosis?
+
+1. The workflow needs organization billing-manager permission
+
+   Billing roles do not satisfy runner-label requirements.
+
+2. Queued jobs never use self-hosted runners
+
+   Self-hosted jobs can run when an eligible runner is available.
+
+3. No eligible runner matches the complete requested label set **[CORRECT]**
+
+   The idle runner lacks the requested gpu label and is not a full match.
+
+4. The repository must disable secret scanning
+
+   Secret scanning is unrelated to runner scheduling labels.
+
+**Concept:** Diagnosing unmatched runner labels
+
+**Authored coaching hints:**
+
+- Does online status alone make a runner suitable?
+- Which requested property is missing from the idle machine?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un trabajo GPU permanece en cola mientras un runner autorizado en línea está inactivo. El runner tiene etiquetas Linux y x64, pero el trabajo también requiere gpu. ¿Cuál es el diagnóstico más directo?
+
+1. El flujo de trabajo necesita el permiso del administrador de facturación de la organización.
+
+   Los roles de facturación no cumplen con los requisitos de la etiqueta runner.
+
+2. Los trabajos en cola nunca usan self-hosted runners
+
+   Los trabajos autohospedados se pueden ejecutar cuando hay disponible un runner elegible.
+
+3. Ningún runner elegible coincide con el conjunto completo de etiquetas solicitadas **[CORRECT]**
+
+   El runner inactivo carece de la etiqueta de gpu solicitada y no coincide completamente.
+
+4. El repositorio debe desactivar el análisis de secretos.
+
+   El análisis de secretos no está relacionado con las etiquetas de asignación de runners.
+
+**Concept:** Diagnóstico de etiquetas runner inigualables
+
+**Authored coaching hints:**
+
+- ¿El estado en línea por sí solo hace que un runner sea adecuado?
+- ¿Qué propiedad solicitada falta en la máquina inactiva?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma tarefa GPU permanece na fila enquanto uma runner autorizada on-line está ociosa. O runner possui rótulos Linux e x64, mas o trabalho também solicita GPU. Qual é o diagnóstico mais direto?
+
+1. O fluxo de trabalho precisa de permissão do gerente de faturamento da organização
+
+   As funções de cobrança não atendem aos requisitos do rótulo runner.
+
+2. Trabalhos em fila nunca usam self-hosted runners
+
+   Os trabalhos auto-hospedados podem ser executados quando um runner qualificado estiver disponível.
+
+3. Nenhum runner qualificado corresponde ao conjunto completo de rótulos solicitados **[CORRECT]**
+
+   O runner inativo não possui o rótulo GPU solicitado e não é uma correspondência completa.
+
+4. O repositório deve desabilitar a verificação de segredos
+
+   A verificação de segredos não está relacionada aos rótulos de agendamento de runners.
+
+**Concept:** Diagnosticando rótulos runner incomparáveis
+
+**Authored coaching hints:**
+
+- O status online por si só torna um runner adequado?
+- Qual propriedade solicitada está faltando na máquina ociosa?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/hosting-your-own-runners/using-self-hosted-runners-in-a-workflow>
+
+<!-- certification-coach-question:admin-168:1a542d582e00993de64a4b93dde9c6cd7f81100046f682e397f1483ee7c1aace -->
+## Question 168: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-168`
+
+**Content revision:** `1a542d582e00993de64a4b93dde9c6cd7f81100046f682e397f1483ee7c1aace`
+
+### English
+
+A previously working self-hosted runner appears offline after a firewall change. Which evidence should the administrator inspect first?
+
+1. The repository's code-owner approvals
+
+   Code-owner approvals do not diagnose runner-service connectivity.
+
+2. The workflow's application test assertion failures
+
+   Test assertions run inside jobs and do not first explain an offline runner service.
+
+3. The artifact-retention policy
+
+   Stored artifact retention does not determine service connectivity.
+
+4. Runner service logs and outbound connectivity to required GitHub endpoints **[CORRECT]**
+
+   Service logs and required outbound connections directly test the suspected network failure.
+
+**Concept:** Self-hosted connectivity troubleshooting
+
+**Authored coaching hints:**
+
+- Which component maintains the connection to GitHub?
+- What changed immediately before the runner went offline?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un self-hosted runner que funcionaba anteriormente aparece sin conexión después de un cambio de firewall. ¿Qué evidencia debería inspeccionar primero el administrador?
+
+1. Las aprobaciones del propietario del código del repositorio.
+
+   Las aprobaciones del propietario del código no diagnostican la conectividad del servicio runner.
+
+2. Fallos de aserción de prueba de aplicación del flujo de trabajo
+
+   Las aserciones de prueba se ejecutan dentro de trabajos y no explican primero un servicio runner fuera de línea.
+
+3. La política de retención de artefactos
+
+   La retención de artefactos almacenados no determina la conectividad del servicio.
+
+4. Registros del servicio del runner y conectividad saliente a los endpoints de GitHub requeridos **[CORRECT]**
+
+   Los registros de servicio y las conexiones salientes requeridas prueban directamente la falla sospechada de la red.
+
+**Concept:** Solución de problemas de conectividad autohospedada
+
+**Authored coaching hints:**
+
+- ¿Qué componente mantiene la conexión con GitHub?
+- ¿Qué cambió inmediatamente antes de que el runner se desconectara?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um self-hosted runner funcionando anteriormente aparece off-line após uma alteração no firewall. Quais evidências o administrador deve inspecionar primeiro?
+
+1. As aprovações do proprietário do código do repositório
+
+   As aprovações do proprietário do código não diagnosticam a conectividade do serviço runner.
+
+2. As falhas de asserção de teste de aplicativo do fluxo de trabalho
+
+   As asserções de teste são executadas dentro de tarefas e não explicam primeiro um serviço runner off-line.
+
+3. A política de retenção de artefatos
+
+   A retenção de artefatos armazenados não determina a conectividade do serviço.
+
+4. Logs de serviço do executor e conectividade de saída para endpoints GitHub necessários **[CORRECT]**
+
+   Os logs de serviço e as conexões de saída necessárias testam diretamente a suspeita de falha de rede.
+
+**Concept:** Solução de problemas de conectividade auto-hospedada
+
+**Authored coaching hints:**
+
+- Qual componente mantém a conexão com GitHub?
+- O que mudou imediatamente antes de o runner ficar offline?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/how-tos/manage-runners/self-hosted-runners/monitor-and-troubleshoot>
+
+<!-- certification-coach-question:admin-169:2860bbeed43fb41f4fd11a932a5189bd16a695337e8c6c71c7918d39044bbcc6 -->
+## Question 169: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-169`
+
+**Content revision:** `2860bbeed43fb41f4fd11a932a5189bd16a695337e8c6c71c7918d39044bbcc6`
+
+### English
+
+A team is designing an autoscaled self-hosted runner fleet and wants each machine to accept only one job before being replaced. Which runner lifecycle fits?
+
+1. Ephemeral self-hosted runners with external log preservation **[CORRECT]**
+
+   Ephemeral runners process one job; external logs preserve evidence after disposal.
+
+2. A single persistent runner with no cleanup
+
+   A persistent uncleaned runner does not provide one-job lifecycle isolation.
+
+3. A shared interactive workstation used by all developers
+
+   Shared workstations mix interactive activity with automation and do not meet the lifecycle goal.
+
+4. A runner that registers once and never updates
+
+   Permanent registration without updates does not provide disposable execution.
+
+**Concept:** Ephemeral runner lifecycle design
+
+**Authored coaching hints:**
+
+- What should happen to the runner after its assigned job?
+- Where will diagnostics survive if the machine is destroyed?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un equipo está diseñando una flota self-hosted runner de escala automática y quiere que cada máquina acepte solo un trabajo antes de ser reemplazada. ¿Qué ciclo de vida de runner encaja?
+
+1. Efímero self-hosted runners con preservación de registros externos **[CORRECT]**
+
+   El efímero runners procesa un trabajo; Los registros externos preservan la evidencia después de su eliminación.
+
+2. Un único runner persistente sin limpieza
+
+   Un runner persistente y sin limpiar no proporciona aislamiento del ciclo de vida de un solo trabajo.
+
+3. Una estación de trabajo interactiva compartida utilizada por todos los desarrolladores.
+
+   Las estaciones de trabajo compartidas combinan actividad interactiva con automatización y no cumplen con el objetivo del ciclo de vida.
+
+4. Un runner que se registra una vez y nunca se actualiza
+
+   El registro permanente sin actualizaciones no proporciona ejecución desechable.
+
+**Concept:** Diseño de ciclo de vida efímero runner
+
+**Authored coaching hints:**
+
+- ¿Qué debería pasar con el runner después de su trabajo asignado?
+- ¿Dónde sobrevivirán los diagnósticos si la máquina se destruye?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma equipe está projetando uma frota self-hosted runner com escalonamento automático e deseja que cada máquina aceite apenas um trabalho antes de ser substituída. Qual ciclo de vida do runner se adapta?
+
+1. self-hosted runners efêmero com preservação de log externo **[CORRECT]**
+
+   O efêmero runners processa um trabalho; os registros externos preservam as evidências após o descarte.
+
+2. Um único runner persistente sem limpeza
+
+   Um runner persistente e não limpo não fornece isolamento do ciclo de vida de uma tarefa.
+
+3. Uma estação de trabalho interativa compartilhada usada por todos os desenvolvedores
+
+   As estações de trabalho compartilhadas misturam atividade interativa com automação e não atendem à meta do ciclo de vida.
+
+4. Um runner que registra uma vez e nunca atualiza
+
+   O registro permanente sem atualizações não garante execução única.
+
+**Concept:** Projeto efêmero do ciclo de vida runner
+
+**Authored coaching hints:**
+
+- O que deve acontecer com o runner após a tarefa atribuída?
+- Onde o diagnóstico sobreviverá se a máquina for destruída?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/hosting-your-own-runners/autoscaling-with-self-hosted-runners>
+
+<!-- certification-coach-question:admin-170:1447ce84867507666fbacb9dbf204826a7501d6108116093d04c3b18d88af875 -->
+## Question 170: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-170`
+
+**Content revision:** `1447ce84867507666fbacb9dbf204826a7501d6108116093d04c3b18d88af875`
+
+### English
+
+A platform team already operates Kubernetes and wants GitHub's Kubernetes-based solution for orchestrating self-hosted runner scale sets. Which component should it evaluate?
+
+1. Dependabot dependency groups
+
+   Dependency groups organize updates, not runner pods.
+
+2. Actions Runner Controller **[CORRECT]**
+
+   Actions Runner Controller orchestrates self-hosted runner scale sets on Kubernetes.
+
+3. Repository ruleset evaluation
+
+   Ruleset evaluation observes repository rules rather than creating runner capacity.
+
+4. GitHub Pages
+
+   Pages hosts static sites rather than administering runner fleets.
+
+**Concept:** Kubernetes runner orchestration
+
+**Authored coaching hints:**
+
+- Which solution manages the lifecycle of runner workloads on Kubernetes?
+- Is the requirement CI capacity or repository governance?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un equipo de plataforma ya opera Kubernetes y quiere la solución basada en Kubernetes de GitHub para orquestar conjuntos de escalado self-hosted runner. ¿Qué componente debería evaluar?
+
+1. Grupos de dependencia Dependabot
+
+   Los grupos de dependencia organizan las actualizaciones, no los pods runner.
+
+2. Actions Runner Controller **[CORRECT]**
+
+   Actions Runner Controller organiza conjuntos de escalado self-hosted runner en Kubernetes.
+
+3. Evaluación del repositorio ruleset
+
+   La evaluación del conjunto de reglas observa las reglas del repositorio en lugar de crear capacidad runner.
+
+4. GitHub Pages
+
+   Pages aloja sitios estáticos en lugar de administrar flotas runner.
+
+**Concept:** Orquestación de Kubernetes runner
+
+**Authored coaching hints:**
+
+- ¿Qué solución gestiona el ciclo de vida de las cargas de trabajo runner en Kubernetes?
+- ¿El requisito es CI capacidad o gobernanza del repositorio?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma equipe de plataforma já opera Kubernetes e deseja a solução GitHub baseada em Kubernetes para orquestrar conjuntos de escala self-hosted runner. Qual componente ele deve avaliar?
+
+1. Grupos de dependência Dependabot
+
+   Os grupos de dependência organizam atualizações, não pods runner.
+
+2. Actions Runner Controller **[CORRECT]**
+
+   Actions Runner Controller orquestra conjuntos de escala self-hosted runner no Kubernetes.
+
+3. Avaliação do repositório ruleset
+
+   A avaliação do conjunto de regras observa as regras do repositório em vez de criar capacidade runner.
+
+4. GitHub Pages
+
+   O Pages hospeda sites estáticos em vez de administrar frotas runner.
+
+**Concept:** Orquestração Kubernetes runner
+
+**Authored coaching hints:**
+
+- Qual solução gerencia o ciclo de vida das cargas de trabalho runner no Kubernetes?
+- O requisito CI é capacidade ou governança de repositório?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners-with-actions-runner-controller/about-actions-runner-controller>
+
+<!-- certification-coach-question:admin-171:656d4a854438d93ebb322e1d537163cf0065a09cbb0c08421a05cba7def6c0e6 -->
+## Question 171: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-171`
+
+**Content revision:** `656d4a854438d93ebb322e1d537163cf0065a09cbb0c08421a05cba7def6c0e6`
+
+### English
+
+A build must reach a private internal package server. The organization is evaluating self-hosted runners on its network. Which additional administration responsibility is essential?
+
+1. Assume GitHub automatically configures every internal firewall
+
+   Self-hosted network configuration remains the operator's responsibility.
+
+2. Expose the package server publicly without authentication
+
+   Public unauthenticated access is not required for private connectivity.
+
+3. Control runner network access, machine isolation, and credentials for the private resource **[CORRECT]**
+
+   Private-network placement needs explicit network and credential boundaries.
+
+4. Grant every external pull request access to production network routes
+
+   Untrusted submissions should not inherit unnecessary production-network reachability.
+
+**Concept:** Private-resource access from self-hosted runners
+
+**Authored coaching hints:**
+
+- What authority comes from placing code execution inside the private network?
+- Which boundaries must the runner operator maintain?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una compilación debe llegar a un servidor de paquetes interno privado. La organización está evaluando self-hosted runners en su red. ¿Qué responsabilidad administrativa adicional es esencial?
+
+1. Supongamos que GitHub configura automáticamente cada firewall interno
+
+   La configuración de la red autohospedada sigue siendo responsabilidad del operador.
+
+2. Exponer el servidor de paquetes públicamente sin autenticación
+
+   No se requiere acceso público no autenticado para la conectividad privada.
+
+3. Controle el acceso a la red runner, el aislamiento de la máquina y las credenciales para el recurso privado **[CORRECT]**
+
+   La ubicación de una red privada necesita límites explícitos de red y credenciales.
+
+4. Otorgar a todos los pull request externos acceso a las rutas de la red de producción
+
+   Los envíos que no son de confianza no deben heredar una accesibilidad innecesaria a la red de producción.
+
+**Concept:** Acceso a recursos privados desde self-hosted runners
+
+**Authored coaching hints:**
+
+- ¿Qué autoridad se obtiene al colocar la ejecución de código dentro de la red privada?
+- ¿Qué límites debe mantener el operador runner?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma compilação deve alcançar um servidor de pacotes interno privado. A organização está avaliando self-hosted runners em sua rede. Que responsabilidade administrativa adicional é essencial?
+
+1. Suponha que GitHub configure automaticamente todos os firewalls internos
+
+   A configuração da rede auto-hospedada continua sendo de responsabilidade da operadora.
+
+2. Expor o servidor de pacotes publicamente sem autenticação
+
+   O acesso público não autenticado não é necessário para conectividade privada.
+
+3. Controle o acesso à rede runner, o isolamento da máquina e as credenciais do recurso privado **[CORRECT]**
+
+   A colocação em rede privada precisa de limites explícitos de rede e credenciais.
+
+4. Conceda a todos os pull request acesso externo às rotas da rede de produção
+
+   Envios não confiáveis não devem herdar acessibilidade desnecessária da rede de produção.
+
+**Concept:** Acesso a recursos privados de self-hosted runners
+
+**Authored coaching hints:**
+
+- Que autoridade vem ao colocar a execução de código dentro da rede privada?
+- Quais limites o operador runner deve manter?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/concepts/runners/about-self-hosted-runners>
+
+<!-- certification-coach-question:admin-172:d0bde383d5c23521223dae4ae84c95a169a858b1babc4fffdf0c4eb853d2a21f -->
+## Question 172: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-172`
+
+**Content revision:** `d0bde383d5c23521223dae4ae84c95a169a858b1babc4fffdf0c4eb853d2a21f`
+
+### English
+
+An eligible enterprise wants GitHub-managed runner infrastructure with private access through its Azure VNET. Which documented option should it evaluate?
+
+1. Assume any standard hosted runner automatically joins the VNET
+
+   Standard runners are not automatically attached to the enterprise's Azure network.
+
+2. Use GitHub Pages as a private network tunnel
+
+   Pages does not provide this runner-networking integration.
+
+3. Disable the VNET firewall and publish every service
+
+   Publishing internal services discards the private-network requirement.
+
+4. Azure private networking for supported GitHub-hosted larger runners **[CORRECT]**
+
+   Supported larger runners can use the enterprise's Azure private-network configuration.
+
+**Concept:** Azure private networking for hosted runners
+
+**Authored coaching hints:**
+
+- Does using managed compute rule out customer-controlled network policy?
+- Which runner category supports this documented integration?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una empresa elegible quiere una infraestructura runner administrada por GitHub con acceso privado a través de Azure VNET. ¿Qué opción documentada debería evaluar?
+
+1. Supongamos que cualquier runner alojado estándar se une automáticamente al VNET.
+
+   Los estándares runners no se conectan automáticamente a la red Azure de la empresa.
+
+2. Usar GitHub Pages como túnel de red privada
+
+   Pages no proporciona esta integración de red runner.
+
+3. Deshabilite el firewall VNET y publique todos los servicios
+
+   La publicación de servicios internos descarta el requisito de red privada.
+
+4. Redes privadas de Azure para GitHub-hosted compatibles con runners más grandes **[CORRECT]**
+
+   El runners más grande compatible puede usar la configuración de red privada de Azure de la empresa.
+
+**Concept:** Redes privadas de Azure para runners alojado
+
+**Authored coaching hints:**
+
+- ¿El uso de computación administrada descarta la política de red controlada por el cliente?
+- ¿Qué categoría runner admite esta integración documentada?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma empresa elegível deseja infraestrutura runner gerenciada por GitHub com acesso privado por meio de seu Azure VNET. Qual opção documentada deve ser avaliada?
+
+1. Suponha que qualquer runner hospedado padrão se junte automaticamente ao VNET
+
+   Os runners padrão não são automaticamente anexados à rede Azure da empresa.
+
+2. Usar GitHub Pages como um túnel de rede privada
+
+   O Pages não fornece essa integração de rede runner.
+
+3. Desative o firewall VNET e publique todos os serviços
+
+   A publicação de serviços internos descarta o requisito de rede privada.
+
+4. Rede privada do Azure para GitHub-hosted maior runners compatível **[CORRECT]**
+
+   runners maiores com suporte podem usar a configuração de rede privada do Azure da empresa.
+
+**Concept:** Rede privada do Azure para runners hospedado
+
+**Authored coaching hints:**
+
+- O uso da computação gerenciada exclui a política de rede controlada pelo cliente?
+- Qual categoria runner oferece suporte a esta integração documentada?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/configuring-settings/configuring-private-networking-for-hosted-compute-products/about-azure-private-networking-for-github-hosted-runners-in-your-enterprise>
+
+<!-- certification-coach-question:admin-173:6d23d2f644dbc4a259d66a33cbf73b4487ccfec85fa59ea63f11bf787296d5a1 -->
+## Question 173: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-173`
+
+**Content revision:** `6d23d2f644dbc4a259d66a33cbf73b4487ccfec85fa59ea63f11bf787296d5a1`
+
+### English
+
+After moving supported larger runners into Azure private networking, an organization blocks all outbound traffic and jobs stop communicating with GitHub. What should it do?
+
+1. Review required connectivity and allow documented outbound destinations while retaining deliberate network restrictions **[CORRECT]**
+
+   Private networking still requires supported service connectivity under appropriate network policy.
+
+2. Assume private networking eliminates all need to communicate with GitHub
+
+   Runner orchestration and supported Actions operations still depend on service connections.
+
+3. Change only inbound rules while continuing to deny every required outbound connection
+
+   Inbound-only changes do not restore the blocked required egress.
+
+4. Increase workflow token permissions without changing the network rules
+
+   Application permissions cannot repair denied network connectivity.
+
+**Concept:** Network policy without breaking runner control traffic
+
+**Authored coaching hints:**
+
+- Which connections are required for the runner to receive and report work?
+- Can deny-by-default coexist with explicit supported egress?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Después de mover runners más grande admitido a una red privada de Azure, una organización bloquea todo el tráfico saliente y los trabajos dejan de comunicarse con GitHub. ¿Qué debería hacer?
+
+1. Revise la conectividad requerida y permita destinos salientes documentados manteniendo restricciones de red deliberadas. **[CORRECT]**
+
+   Las redes privadas aún requieren conectividad de servicio compatible según la política de red adecuada.
+
+2. Supongamos que la red privada elimina toda necesidad de comunicarse con GitHub
+
+   La orquestación del ejecutor y las operaciones de acciones admitidas aún dependen de las conexiones del servicio.
+
+3. Cambie solo las reglas de entrada mientras continúa negando todas las conexiones salientes requeridas
+
+   Los cambios solo de entrada no restauran la salida requerida bloqueada.
+
+4. Aumente los permisos de los tokens de flujo de trabajo sin cambiar las reglas de la red
+
+   Los permisos de la aplicación no pueden reparar la conectividad de red denegada.
+
+**Concept:** Política de red sin romper el tráfico de control runner
+
+**Authored coaching hints:**
+
+- ¿Qué conexiones se requieren para que el runner reciba e informe del trabajo?
+- ¿Puede la denegación por defecto coexistir con la salida explícitamente admitida?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Depois de mover o runners maior com suporte para a rede privada do Azure, uma organização bloqueia todo o tráfego de saída e os trabalhos param de se comunicar com o GitHub. O que deveria fazer?
+
+1. Revise a conectividade necessária e permita destinos de saída documentados, mantendo as restrições de rede deliberadas **[CORRECT]**
+
+   A rede privada ainda requer conectividade de serviço compatível sob a política de rede apropriada.
+
+2. Suponha que a rede privada elimine toda a necessidade de comunicação com GitHub
+
+   A orquestração do executor e as operações de ações suportadas ainda dependem de conexões de serviço.
+
+3. Altere apenas as regras de entrada enquanto continua negando todas as conexões de saída necessárias
+
+   As alterações somente de entrada não restauram a saída necessária bloqueada.
+
+4. Aumente as permissões de token de fluxo de trabalho sem alterar as regras de rede
+
+   As permissões do aplicativo não podem reparar a conectividade de rede negada.
+
+**Concept:** Política de rede sem interromper o tráfego de controle runner
+
+**Authored coaching hints:**
+
+- Quais conexões são necessárias para que o runner receba e relate trabalhos?
+- A negação por padrão pode coexistir com a saída explícita com suporte?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/configuring-settings/configuring-private-networking-for-hosted-compute-products/about-azure-private-networking-for-github-hosted-runners-in-your-enterprise>
+
+<!-- certification-coach-question:admin-174:0ec95871c8cf633c0a7fb9387782bf4208169344a4a5c4599b74adab6d3b8bdc -->
+## Question 174: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-174`
+
+**Content revision:** `0ec95871c8cf633c0a7fb9387782bf4208169344a4a5c4599b74adab6d3b8bdc`
+
+### English
+
+A private deployment endpoint requires a small stable source-IP allow list. Standard hosted-runner ranges are too broad for the organization. Which design should administrators evaluate?
+
+1. Allow one observed standard-runner address and assume every later job reuses it
+
+   An address observed on one standard hosted run is not a stable future allocation.
+
+2. Supported larger runners with static IPs or a controlled self-hosted network egress **[CORRECT]**
+
+   These options can provide controlled stable egress appropriate to the endpoint's policy.
+
+3. Set a concurrency group to reserve a standard hosted-runner public IP
+
+   Concurrency controls scheduling rather than public-IP allocation.
+
+4. Set contents: write to allocate a fixed outbound address
+
+   Token operation permissions do not allocate networking addresses.
+
+**Concept:** Stable runner egress planning
+
+**Authored coaching hints:**
+
+- Does the endpoint require authorization by identity, network origin, or both?
+- Which runner choices give operators control over egress addresses?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un punto final de implementación privado requiere una pequeña lista de permitidos de origen estable-IP. Los rangos estándar alojados-runner son demasiado amplios para la organización. ¿Qué diseño deberían evaluar los administradores?
+
+1. Permitir una dirección estándar runner observada y asumir que cada trabajo posterior la reutiliza
+
+   Una dirección observada en una ejecución alojada estándar no es una asignación futura estable.
+
+2. Compatible con runners más grande con IP estáticas o una salida de red controlada self-hosted **[CORRECT]**
+
+   Estas opciones pueden proporcionar una salida estable controlada adecuada a la política del punto final.
+
+3. Establecer un grupo de simultaneidad para reservar un IP público alojado estándar runner
+
+   La simultaneidad controla la programación en lugar de la asignación pública-IP.
+
+4. Configurar contents: write para asignar una dirección de salida fija
+
+   Los permisos de operación de tokens no asignan direcciones de red.
+
+**Concept:** Planificación de salida estable runner
+
+**Authored coaching hints:**
+
+- ¿El punto final requiere autorización por identidad, origen de red o ambos?
+- ¿Qué opciones de runner dan a los operadores control sobre las direcciones de salida?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um endpoint de implantação privado requer uma pequena lista de permissões IP de origem estável. Os intervalos runner hospedados padrão são muito amplos para a organização. Qual design os administradores devem avaliar?
+
+1. Permitir um endereço runner padrão observado e assumir que cada trabalho posterior o reutilizará
+
+   Um endereço observado em uma execução hospedada padrão não é uma alocação futura estável.
+
+2. runners maior compatível com IPs estáticos ou saída de rede self-hosted controlada **[CORRECT]**
+
+   Essas opções podem fornecer saída estável controlada apropriada à política do endpoint.
+
+3. Definir um grupo de concorrência para reservar um IP público de um runner hospedado padrão
+
+   A simultaneidade controla o agendamento em vez da alocação pública IP.
+
+4. Definir contents: write para alocar um endereço de saída fixo
+
+   As permissões de operação de token não alocam endereços de rede.
+
+**Concept:** Planejamento de saída runner estável
+
+**Authored coaching hints:**
+
+- O endpoint requer autorização por identidade, origem de rede ou ambos?
+- Quais opções de runner dão aos operadores controle sobre endereços de saída?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/reference/runners/github-hosted-runners>
+
+<!-- certification-coach-question:admin-175:5f4f75dc641609fd0dce0d6bf358a43fc12ed129ccbd28f5a78aedfed8b22bbe -->
+## Question 175: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-175`
+
+**Content revision:** `5f4f75dc641609fd0dce0d6bf358a43fc12ed129ccbd28f5a78aedfed8b22bbe`
+
+### English
+
+A self-hosted runner sits behind a corporate HTTP proxy and cannot register. Which configuration area should the administrator inspect?
+
+1. Pull-request approval count only
+
+   Review counts do not establish runner-service internet connectivity.
+
+2. Dependency update schedules only
+
+   Dependency schedules do not configure the runner's proxy.
+
+3. The runner's supported proxy configuration and required endpoint reachability **[CORRECT]**
+
+   Runner proxy settings and endpoint access directly affect registration and communication.
+
+4. Commit-signature verification only
+
+   Commit verification does not route network requests through a proxy.
+
+**Concept:** Runner proxy administration
+
+**Authored coaching hints:**
+
+- Which process needs to use the organization's egress path?
+- What network configuration does the runner service actually inherit?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un self-hosted runner se encuentra detrás de un proxy corporativo HTTP y no puede registrarse. ¿Qué área de configuración debería inspeccionar el administrador?
+
+1. Solo la cantidad de aprobaciones de pull requests
+
+   Los recuentos de revisiones no establecen la conectividad a Internet del servicio runner.
+
+2. Solo programas de actualización de dependencias
+
+   Los programas de dependencia no configuran el proxy del runner.
+
+3. La configuración de proxy admitida del runner y la accesibilidad requerida del punto final **[CORRECT]**
+
+   La configuración del proxy del runner y el acceso a los endpoints afectan directamente el registro y la comunicación.
+
+4. Solo la verificación de firmas de commits
+
+   La verificación de confirmación no enruta las solicitudes de red a través de un proxy.
+
+**Concept:** Administración del proxy de runners
+
+**Authored coaching hints:**
+
+- ¿Qué proceso necesita utilizar la ruta de salida de la organización?
+- ¿Qué configuración de red hereda realmente el servicio runner?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um self-hosted runner fica atrás de um proxy HTTP corporativo e não pode ser registrado. Qual área de configuração o administrador deve inspecionar?
+
+1. Somente contagem de aprovação de solicitação pull
+
+   As contagens de revisão não estabelecem a conectividade com a Internet do serviço runner.
+
+2. Somente agendamentos de atualização de dependência
+
+   Os agendamentos de dependência não configuram o proxy do runner.
+
+3. A configuração de proxy suportada do runner e a acessibilidade necessária do endpoint **[CORRECT]**
+
+   As configurações de proxy do executor e o acesso ao endpoint afetam diretamente o registro e a comunicação.
+
+4. Somente verificação de assinatura de commit
+
+   A verificação de confirmação não roteia solicitações de rede por meio de um proxy.
+
+**Concept:** Administração do proxy de runners
+
+**Authored coaching hints:**
+
+- Qual processo precisa usar o caminho de saída da organização?
+- Qual configuração de rede o serviço runner realmente herda?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/hosting-your-own-runners/using-a-proxy-server-with-self-hosted-runners>
+
+<!-- certification-coach-question:admin-176:58be17561907d460023a89c612d06942cab778eb57dd2e3e5b3d91ba7f6457aa -->
+## Question 176: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-176`
+
+**Content revision:** `58be17561907d460023a89c612d06942cab778eb57dd2e3e5b3d91ba7f6457aa`
+
+### English
+
+Workflow turnaround increased, but job execution durations are unchanged. Most added time is spent queued before a runner starts. What should administrators investigate first?
+
+1. Application compiler optimization only
+
+   Unchanged execution duration does not point first to compilation speed.
+
+2. Replacing every action with a longer shell script
+
+   Longer scripts do not address waiting for a runner.
+
+3. Increasing artifact-retention days
+
+   Artifact retention does not create runner capacity.
+
+4. Runner availability, concurrency limits, and matching group or label capacity **[CORRECT]**
+
+   Queue growth points to scheduling eligibility or available execution capacity.
+
+**Concept:** Queue-time versus run-time diagnosis
+
+**Authored coaching hints:**
+
+- Where in the workflow lifecycle is the added delay?
+- Would faster code help a job that has not started?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+La respuesta al flujo de trabajo aumentó, pero las duraciones de ejecución de los trabajos no cambian. La mayor parte del tiempo añadido se dedica a hacer cola antes de que se inicie un runner. ¿Qué deberían investigar primero los administradores?
+
+1. Solo optimización del compilador de aplicaciones
+
+   La duración de ejecución sin cambios no apunta primero a la velocidad de compilación.
+
+2. Reemplazar cada acción con un script de shell más largo
+
+   Los scripts más largos no abordan la espera de un runner.
+
+3. Aumento de los días de retención de artefactos
+
+   La retención de artefactos no crea capacidad runner.
+
+4. Disponibilidad de runners, límites de concurrencia y capacidad de los grupos o etiquetas coincidentes **[CORRECT]**
+
+   El crecimiento de la cola apunta a la elegibilidad de programación o a la capacidad de ejecución disponible.
+
+**Concept:** Diagnóstico en tiempo de cola frente a tiempo de ejecución
+
+**Authored coaching hints:**
+
+- ¿En qué parte del ciclo de vida del flujo de trabajo se produce el retraso añadido?
+- ¿Un código más rápido ayudaría a un trabajo que no ha comenzado?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+O retorno do fluxo de trabalho aumentou, mas a duração da execução do trabalho permanece inalterada. A maior parte do tempo adicional é gasto na fila antes do início de um runner. O que os administradores devem investigar primeiro?
+
+1. Apenas otimização do compilador de aplicativos
+
+   A duração de execução inalterada não aponta primeiro para a velocidade de compilação.
+
+2. Substituindo cada ação por um script de shell mais longo
+
+   Scripts mais longos não abordam a espera por um runner.
+
+3. Aumentando os dias de retenção de artefatos
+
+   A retenção de artefato não cria capacidade runner.
+
+4. Disponibilidade de runners, limites de concorrência e capacidade dos grupos ou rótulos correspondentes **[CORRECT]**
+
+   O crescimento da fila aponta para a elegibilidade do agendamento ou para a capacidade de execução disponível.
+
+**Concept:** Diagnóstico em tempo de fila versus tempo de execução
+
+**Authored coaching hints:**
+
+- Onde está o atraso adicional no ciclo de vida do fluxo de trabalho?
+- Um código mais rápido ajudaria um trabalho que ainda não foi iniciado?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/hosting-your-own-runners/using-self-hosted-runners-in-a-workflow>
+
+<!-- certification-coach-question:admin-177:461c0267b2683e40e99acddcff581dd58af5b8fea0514aaffa046908938a7a50 -->
+## Question 177: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-177`
+
+**Content revision:** `461c0267b2683e40e99acddcff581dd58af5b8fea0514aaffa046908938a7a50`
+
+### English
+
+An organization intentionally disables automatic runner-agent updates in its managed self-hosted images. What obligation remains?
+
+1. Maintain a process to update the runner software within GitHub's documented support requirements **[CORRECT]**
+
+   Disabling automatic updates transfers update scheduling to the runner operator.
+
+2. Never update the image again
+
+   Outdated runner software can stop receiving jobs under GitHub's update requirements.
+
+3. Assume OS updates automatically replace the GitHub runner application
+
+   Operating-system updates do not necessarily update the separately installed runner application.
+
+4. Require users to bypass repository branch rules
+
+   Branch-rule bypass does not update runner software.
+
+**Concept:** Controlled runner-agent updates
+
+**Authored coaching hints:**
+
+- Who now owns the update cadence?
+- What happens if a managed image stays behind the required runner version?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una organización deshabilita intencionalmente las actualizaciones automáticas del agente runner en sus imágenes self-hosted administradas. ¿Qué obligación queda?
+
+1. Maintain un proceso para actualizar el software runner dentro de los requisitos de soporte documentados de GitHub **[CORRECT]**
+
+   Al deshabilitar las actualizaciones automáticas, se transfiere la programación de actualizaciones al operador runner.
+
+2. Nunca actualices la imagen nuevamente.
+
+   El software runner obsoleto puede dejar de recibir trabajos según los requisitos de actualización de GitHub.
+
+3. Supongamos que las actualizaciones de OS reemplazan automáticamente la aplicación GitHub runner.
+
+   Las actualizaciones del sistema operativo no necesariamente actualizan la aplicación runner instalada por separado.
+
+4. Requerir que los usuarios omitan las reglas de rama del repositorio
+
+   La omisión de reglas de bifurcación no actualiza el software runner.
+
+**Concept:** Actualizaciones controladas del agente runner
+
+**Authored coaching hints:**
+
+- ¿Quién posee ahora la cadencia de actualización?
+- ¿Qué sucede si una imagen administrada permanece detrás de la versión runner requerida?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma organização desativa intencionalmente as atualizações automáticas do agente runner em suas imagens self-hosted gerenciadas. Que obrigação resta?
+
+1. Maintain um processo para atualizar o software runner dentro dos requisitos de suporte documentados do GitHub **[CORRECT]**
+
+   Desativar atualizações automáticas transfere o agendamento de atualizações para o operador runner.
+
+2. Nunca atualize a imagem novamente
+
+   O software runner desatualizado pode parar de receber trabalhos de acordo com os requisitos de atualização do GitHub.
+
+3. Suponha que as atualizações OS substituam automaticamente o aplicativo GitHub runner
+
+   As atualizações do sistema operacional não atualizam necessariamente o aplicativo runner instalado separadamente.
+
+4. Exigir que os usuários ignorem as regras de ramificação do repositório
+
+   O desvio de regra de ramificação não atualiza o software runner.
+
+**Concept:** Atualizações controladas do agente runner
+
+**Authored coaching hints:**
+
+- Quem agora é o dono da cadência de atualização?
+- O que acontece se uma imagem gerenciada permanecer atrás da versão runner necessária?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/hosting-your-own-runners/autoscaling-with-self-hosted-runners>
+
+<!-- certification-coach-question:admin-178:5e8ffaa7c68d65baa4bbf91db0520c80236bcccf4e8263b07721d4fb35ceeba4 -->
+## Question 178: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-178`
+
+**Content revision:** `5e8ffaa7c68d65baa4bbf91db0520c80236bcccf4e8263b07721d4fb35ceeba4`
+
+### English
+
+A production environment requires reviewer approval and stores a deployment secret. When should a referencing job gain access to that environment secret?
+
+1. As soon as the workflow run is queued, before environment review
+
+   Queueing does not satisfy the environment's required reviewer gate.
+
+2. After the environment's required approval and protection conditions are satisfied **[CORRECT]**
+
+   Environment secrets are gated by the environment's protection requirements.
+
+3. Whenever any earlier build job succeeds, even without environment approval
+
+   Build success does not replace the environment approval requirement.
+
+4. As soon as a reviewer approves the pull request, regardless of environment review
+
+   Pull-request review and required environment approval are separate controls.
+
+**Concept:** Environment-gated deployment secrets
+
+**Authored coaching hints:**
+
+- At what boundary should production credentials become available?
+- What must happen before a protected deployment job proceeds?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un entorno de producción requiere la aprobación del revisor y almacena un secreto de implementación. ¿Cuándo debería un trabajo de referencia obtener acceso a ese entorno secreto?
+
+1. Tan pronto como la ejecución del flujo de trabajo esté en cola, antes de la revisión del entorno
+
+   La cola no satisface el umbral de revisor requerido por el entorno.
+
+2. Después de que se cumplan las condiciones de protección y aprobación requeridas por el medio ambiente. **[CORRECT]**
+
+   Los secretos ambientales están protegidos por los requisitos de protección del medio ambiente.
+
+3. Siempre que cualquier trabajo de construcción anterior tenga éxito, incluso sin la aprobación del medio ambiente.
+
+   El éxito de la construcción no reemplaza el requisito de aprobación ambiental.
+
+4. Tan pronto como un revisor apruebe el pull request, independientemente de la revisión del entorno
+
+   La revisión de la solicitud de extracción y la aprobación del entorno requerida son controles separados.
+
+**Concept:** Secretos de implementación controlados por el entorno
+
+**Authored coaching hints:**
+
+- ¿En qué límite deberían estar disponibles las credenciales de producción?
+- ¿Qué debe suceder antes de que continúe un trabajo de implementación protegida?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um ambiente de produção requer aprovação do revisor e armazena um segredo de implantação. Quando um trabalho de referência deve obter acesso a esse segredo do ambiente?
+
+1. Assim que a execução do fluxo de trabalho estiver na fila, antes da revisão do ambiente
+
+   O enfileiramento não satisfaz a porta do revisor exigida pelo ambiente.
+
+2. Depois que as condições exigidas de aprovação e proteção do meio ambiente forem satisfeitas **[CORRECT]**
+
+   Os segredos ambientais são controlados pelos requisitos de proteção do meio ambiente.
+
+3. Sempre que qualquer trabalho de construção anterior for bem-sucedido, mesmo sem aprovação do ambiente
+
+   O sucesso da compilação não substitui o requisito de aprovação do ambiente.
+
+4. Assim que um revisor aprovar o pull request, independentemente da revisão ambiental
+
+   A revisão da solicitação pull e a aprovação do ambiente necessária são controles separados.
+
+**Concept:** Segredos de implantação controlados pelo ambiente
+
+**Authored coaching hints:**
+
+- Em que limite as credenciais de produção devem ficar disponíveis?
+- O que deve acontecer antes que um trabalho de implantação protegido prossiga?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment>
+
+<!-- certification-coach-question:admin-179:f867882ba9c4e25269b3c69188a5e48c66c011d759428918377e9ee46a132c59 -->
+## Question 179: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-179`
+
+**Content revision:** `f867882ba9c4e25269b3c69188a5e48c66c011d759428918377e9ee46a132c59`
+
+### English
+
+An organization secret should be usable by only three deployment repositories. Which configuration best fits?
+
+1. Give the secret to all repositories and rely on its obscure name
+
+   An obscure name does not enforce a repository boundary.
+
+2. Commit the value to a shared repository
+
+   Committed credentials are distributed with repository history.
+
+3. Set the organization secret's repository access policy to the selected repositories **[CORRECT]**
+
+   Organization secret access policies can limit use to selected repositories.
+
+4. Expose the value as a public organization variable
+
+   Variables are not a replacement for confidential secret storage.
+
+**Concept:** Selected-repository organization secrets
+
+**Authored coaching hints:**
+
+- Which repositories have a legitimate need for this credential?
+- What setting enforces that list rather than merely documenting it?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un secreto de organización solo debe poder ser utilizado por tres repositorios de implementación. ¿Qué configuración se adapta mejor?
+
+1. Dale el secreto a todos los repositorios y confía en su oscuro nombre.
+
+   Un nombre oscuro no impone un límite de repositorio.
+
+2. Confirmar el valor en un repositorio compartido
+
+   Las credenciales confirmadas se distribuyen con el historial del repositorio.
+
+3. Establecer la política de acceso al repositorio del secreto de la organización para los repositorios seleccionados **[CORRECT]**
+
+   Las políticas de acceso secreto de la organización pueden limitar el uso a repositorios seleccionados.
+
+4. Exponer el valor como variable de organización pública.
+
+   Las variables no reemplazan el almacenamiento secreto confidencial.
+
+**Concept:** Secretos de la organización del repositorio seleccionado
+
+**Authored coaching hints:**
+
+- ¿Qué repositorios tienen una necesidad legítima de esta credencial?
+- ¿Qué entorno hace cumplir esa lista en lugar de simplemente documentarla?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um segredo de organização deve ser utilizável por apenas três repositórios de implantação. Qual configuração melhor se adapta?
+
+1. Dê o segredo a todos os repositórios e confie em seu nome obscuro
+
+   Um nome obscuro não impõe um limite de repositório.
+
+2. Confirme o valor em um repositório compartilhado
+
+   As credenciais confirmadas são distribuídas com o histórico do repositório.
+
+3. Defina a política de acesso ao repositório do segredo da organização para os repositórios selecionados **[CORRECT]**
+
+   As políticas de acesso secreto da organização podem limitar o uso a repositórios selecionados.
+
+4. Expor o valor como uma variável de organização pública
+
+   As variáveis não substituem o armazenamento secreto confidencial.
+
+**Concept:** Segredos da organização do repositório selecionado
+
+**Authored coaching hints:**
+
+- Quais repositórios têm uma necessidade legítima dessa credencial?
+- Que configuração impõe essa lista em vez de apenas documentá-la?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions>
+
+<!-- certification-coach-question:admin-180:5dddd900d774f2970cfb2ae0233bfdf6fbd362639ac87f488298101584e0465d -->
+## Question 180: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-180`
+
+**Content revision:** `5dddd900d774f2970cfb2ae0233bfdf6fbd362639ac87f488298101584e0465d`
+
+### English
+
+A job references an environment. The same secret name is configured at organization, repository, and environment scopes. Which value takes precedence for the job?
+
+1. The organization value because it is highest in the hierarchy
+
+   For duplicate secret names, the more specific scope takes precedence.
+
+2. The longest string value
+
+   Secret precedence is not based on value length.
+
+3. All three values concatenated
+
+   Duplicate secret values are not concatenated.
+
+4. The environment value **[CORRECT]**
+
+   The environment-level secret is the most specific applicable value.
+
+**Concept:** Secret-scope precedence
+
+**Authored coaching hints:**
+
+- Is this hierarchy about broad policy enforcement or value specificity?
+- Which configured scope is closest to the deployment job?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un trabajo hace referencia a un entorno. El mismo nombre secreto se configura en los ámbitos de organización, repositorio y entorno. ¿Qué valor tiene prioridad para el trabajo?
+
+1. El valor de la organización porque es el más alto en la jerarquía.
+
+   Para nombres secretos duplicados, el ámbito más específico tiene prioridad.
+
+2. El valor de cadena más largo
+
+   La precedencia secreta no se basa en la longitud del valor.
+
+3. Los tres valores concatenados
+
+   Los valores secretos duplicados no se concatenan.
+
+4. El valor del medio ambiente. **[CORRECT]**
+
+   El secreto a nivel de entorno es el valor aplicable más específico.
+
+**Concept:** Precedencia de alcance secreto
+
+**Authored coaching hints:**
+
+- ¿Se trata esta jerarquía de una aplicación amplia de políticas o de una especificidad de valores?
+- ¿Qué alcance configurado está más cerca del trabajo de implementación?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um trabalho faz referência a um ambiente. O mesmo nome secreto é configurado nos escopos de organização, repositório e ambiente. Qual valor tem precedência para o trabalho?
+
+1. O valor da organização porque é o mais alto na hierarquia
+
+   Para nomes secretos duplicados, o escopo mais específico tem precedência.
+
+2. O valor de string mais longo
+
+   A precedência secreta não é baseada no comprimento do valor.
+
+3. Todos os três valores concatenados
+
+   Valores secretos duplicados não são concatenados.
+
+4. O valor ambiental **[CORRECT]**
+
+   O segredo no nível do ambiente é o valor aplicável mais específico.
+
+**Concept:** Precedência de escopo secreto
+
+**Authored coaching hints:**
+
+- Esta hierarquia tem a ver com a aplicação ampla de políticas ou com especificidade de valores?
+- Qual escopo configurado está mais próximo do trabalho de implantação?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions>
+
+<!-- certification-coach-question:admin-181:54046b930deee488f9535a19ebbc6c0e615c374acc02d3796d058edba0a7cfb4 -->
+## Question 181: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-181`
+
+**Content revision:** `54046b930deee488f9535a19ebbc6c0e615c374acc02d3796d058edba0a7cfb4`
+
+### English
+
+A repository secret named SERVICE\_KEY exists, but a shell step reading $SERVICE\_KEY gets an empty value. The workflow never maps the secret to an environment variable. What should be changed?
+
+1. Explicitly map the secrets context value to the step's environment variable **[CORRECT]**
+
+   A step-level env mapping supplies the stored secret to the shell under the intended name.
+
+2. Assume every secret automatically becomes a shell variable
+
+   Creating a secret does not automatically export every secret to every shell.
+
+3. Reference vars.SERVICE\_KEY while leaving the value stored only as a secret
+
+   The vars context reads configuration variables, not the separate secret store.
+
+4. Add contents: write and assume that exports the secret into the process
+
+   Repository token permissions do not automatically populate shell environment variables.
+
+**Concept:** Supplying secrets to workflow steps
+
+**Authored coaching hints:**
+
+- Where does a shell process obtain its environment variables?
+- How is the stored secret referenced by the workflow definition?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Existe un secreto de repositorio denominado SERVICE\_KEY, pero un paso de shell que dice $SERVICE\_KEY obtiene un valor vacío. El flujo de trabajo nunca asigna el secreto a una variable de entorno. ¿Qué debería cambiarse?
+
+1. Asigne explícitamente el valor del contexto de los secretos a la variable de entorno del paso. **[CORRECT]**
+
+   Un mapeo de entorno de nivel de paso proporciona el secreto almacenado al shell con el nombre deseado.
+
+2. Supongamos que cada secreto se convierte automáticamente en una variable de shell
+
+   La creación de un secreto no exporta automáticamente todos los secretos a todos los shells.
+
+3. Haga referencia a vars.SERVICE\_KEY mientras deja el valor almacenado solo como un secreto
+
+   El contexto vars lee las variables de configuración, no el almacén secreto separado.
+
+4. Agregar contents: write y suponer que esto exporta el secreto al proceso
+
+   Los permisos de token del repositorio no completan automáticamente las variables de entorno del shell.
+
+**Concept:** Proporcionar secretos a los pasos del flujo de trabajo
+
+**Authored coaching hints:**
+
+- ¿De dónde obtiene un proceso de shell sus variables de entorno?
+- ¿Cómo se hace referencia al secreto almacenado en la definición del flujo de trabajo?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Existe um segredo de repositório chamado SERVICE\_KEY, mas uma etapa do shell que lê $SERVICE\_KEY obtém um valor vazio. O fluxo de trabalho nunca mapeia o segredo para uma variável de ambiente. O que deveria ser mudado?
+
+1. Mapeie explicitamente o valor do contexto dos segredos para a variável de ambiente da etapa **[CORRECT]**
+
+   Um mapeamento de ambiente em nível de etapa fornece o segredo armazenado ao shell sob o nome pretendido.
+
+2. Suponha que cada segredo se torne automaticamente uma variável shell
+
+   A criação de um segredo não exporta automaticamente todos os segredos para todos os shells.
+
+3. Faça referência a vars.SERVICE\_KEY deixando o valor armazenado apenas como segredo
+
+   O contexto vars lê variáveis de configuração, não o armazenamento secreto separado.
+
+4. Adicionar contents: write e supor que isso exporta o segredo para o processo
+
+   As permissões de token de repositório não preenchem automaticamente as variáveis de ambiente do shell.
+
+**Concept:** Fornecendo segredos para etapas do fluxo de trabalho
+
+**Authored coaching hints:**
+
+- Onde um processo shell obtém suas variáveis de ambiente?
+- Como o segredo armazenado é referenciado pela definição de fluxo de trabalho?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions>
+
+<!-- certification-coach-question:admin-182:d61cc3062b563d497429d636c7fe5e9cb29ab3ee815364d02f1898cecb9e535a -->
+## Question 182: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-182`
+
+**Content revision:** `d61cc3062b563d497429d636c7fe5e9cb29ab3ee815364d02f1898cecb9e535a`
+
+### English
+
+A workflow transforms a secret and prints the transformed result. A developer assumes GitHub's log masking guarantees it cannot leak. What is the right assessment?
+
+1. Every possible transformed secret is always automatically recognized
+
+   Masking cannot guarantee recognition of every transformed sensitive value.
+
+2. Automatic masking is not a complete guarantee; avoid logging secrets and protect derived values explicitly **[CORRECT]**
+
+   Credential-safe workflow design must avoid disclosure rather than rely exclusively on masking.
+
+3. Masking encrypts all artifacts for every repository visitor
+
+   Log masking is not universal artifact encryption.
+
+4. Base64 encoding automatically makes output safe to publish
+
+   Base64 is reversible and does not make credentials public-safe.
+
+**Concept:** Limits of automatic log redaction
+
+**Authored coaching hints:**
+
+- Would the transformed text still match the originally registered secret?
+- Can a reversible representation retain the same sensitivity?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un flujo de trabajo transforma un secreto e imprime el resultado transformado. Un desarrollador asume que el enmascaramiento de registros de GitHub garantiza que no se producirán fugas. ¿Cuál es la evaluación correcta?
+
+1. Cada posible secreto transformado siempre se reconoce automáticamente.
+
+   El enmascaramiento no puede garantizar el reconocimiento de cada valor sensible transformado.
+
+2. El enmascaramiento automático no es una garantía completa; Evite el registro de secretos y proteja los valores derivados explícitamente. **[CORRECT]**
+
+   El diseño del flujo de trabajo seguro para las credenciales debe evitar la divulgación en lugar de depender exclusivamente del enmascaramiento.
+
+3. El enmascaramiento cifra todos los artefactos para cada visitante del repositorio.
+
+   El enmascaramiento de registros no es un cifrado de artefactos universal.
+
+4. La codificación Base64 hace que la salida sea segura para publicar automáticamente
+
+   Base64 es reversible y no hace que las credenciales sean seguras para el público.
+
+**Concept:** Límites de la redacción automática de registros
+
+**Authored coaching hints:**
+
+- ¿El texto transformado seguiría coincidiendo con el secreto registrado originalmente?
+- ¿Puede una representación reversible conservar la misma sensibilidad?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um fluxo de trabalho transforma um segredo e imprime o resultado transformado. Um desenvolvedor presume que o mascaramento de log do GitHub garante que ele não poderá vazar. Qual é a avaliação correta?
+
+1. Todo segredo transformado possível é sempre reconhecido automaticamente
+
+   O mascaramento não pode garantir o reconhecimento de todos os valores sensíveis transformados.
+
+2. O mascaramento automático não é uma garantia completa; evite registrar segredos e proteja explicitamente os valores derivados **[CORRECT]**
+
+   O design do fluxo de trabalho seguro para credenciais deve evitar a divulgação, em vez de depender exclusivamente do mascaramento.
+
+3. O mascaramento criptografa todos os artefatos de cada visitante do repositório
+
+   O mascaramento de log não é uma criptografia de artefato universal.
+
+4. A codificação Base64 torna automaticamente a saída segura para publicação
+
+   Base64 é reversível e não torna as credenciais públicas seguras.
+
+**Concept:** Limites de redação automática de log
+
+**Authored coaching hints:**
+
+- O texto transformado ainda corresponderia ao segredo registrado originalmente?
+- Uma representação reversível pode reter a mesma sensibilidade?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/reference/security/secure-use>
+
+<!-- certification-coach-question:admin-183:e887163430afdadc35b7b234966989832b255273508b804a82df6e3f1b9c7dd3 -->
+## Question 183: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-183`
+
+**Content revision:** `e887163430afdadc35b7b234966989832b255273508b804a82df6e3f1b9c7dd3`
+
+### English
+
+An enterprise replaces a long-lived cloud deployment key with OIDC. Which cloud-side trust configuration is essential?
+
+1. Trust any token from any repository without restrictions
+
+   Unrestricted trust could let unrelated workflows obtain cloud authority.
+
+2. Use only the workflow's display name as the security boundary
+
+   Display names are not sufficient claim-based authorization boundaries.
+
+3. Restrict accepted OIDC claims to the intended repository and deployment context **[CORRECT]**
+
+   Cloud trust must validate the issuer, audience, and appropriate subject or other supported claims.
+
+4. Publish the former cloud key so OIDC can discover it
+
+   OIDC does not require publishing a long-lived credential.
+
+**Concept:** Scoped cloud trust for workflow OIDC
+
+**Authored coaching hints:**
+
+- Which workflow identities should the cloud provider actually trust?
+- What evidence distinguishes an authorized deployment from an unrelated workflow?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una empresa reemplaza una clave de implementación de nube de larga duración con OIDC. ¿Qué configuración de confianza del lado de la nube es esencial?
+
+1. Confía en cualquier token de cualquier repositorio sin restricciones
+
+   La confianza ilimitada podría permitir que flujos de trabajo no relacionados obtengan autoridad en la nube.
+
+2. Utilice solo el nombre para mostrar del flujo de trabajo como límite de seguridad
+
+   Los nombres para mostrar no son límites suficientes de autorización basada en notificaciones.
+
+3. Restringir las reclamaciones OIDC aceptadas al repositorio previsto y al contexto de implementación **[CORRECT]**
+
+   La confianza en la nube debe validar el emisor, la audiencia y el tema apropiado u otras afirmaciones respaldadas.
+
+4. Publique la clave de nube anterior para que OIDC pueda descubrirla
+
+   OIDC no requiere la publicación de una credencial de larga duración.
+
+**Concept:** Confianza en la nube con alcance para el flujo de trabajo OIDC
+
+**Authored coaching hints:**
+
+- ¿En qué identidades de flujo de trabajo debería confiar realmente el proveedor de la nube?
+- ¿Qué evidencia distingue una implementación autorizada de un flujo de trabajo no relacionado?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma empresa substitui uma chave de implantação em nuvem de longa duração por OIDC. Qual configuração de confiança do lado da nuvem é essencial?
+
+1. Confie em qualquer token de qualquer repositório sem restrições
+
+   A confiança irrestrita pode permitir que fluxos de trabalho não relacionados obtenham autoridade na nuvem.
+
+2. Use apenas o nome de exibição do fluxo de trabalho como limite de segurança
+
+   Os nomes de exibição não são limites de autorização baseados em declarações suficientes.
+
+3. Restringir declarações OIDC aceitas ao repositório pretendido e ao contexto de implantação **[CORRECT]**
+
+   A confiança na nuvem deve validar o emissor, o público e o assunto apropriado ou outras declarações suportadas.
+
+4. Publique a antiga chave da nuvem para que OIDC possa descobri-la
+
+   OIDC não exige a publicação de uma credencial de longa duração.
+
+**Concept:** Confiança na nuvem com escopo definido para fluxo de trabalho OIDC
+
+**Authored coaching hints:**
+
+- Em quais identidades de fluxo de trabalho o provedor de nuvem deve realmente confiar?
+- Que evidências distinguem uma implantação autorizada de um fluxo de trabalho não relacionado?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/security-for-github-actions/security-hardening-your-deployments/about-security-hardening-with-openid-connect>
+
+<!-- certification-coach-question:admin-184:be531a38b74e6365d59e7833ab5f266bdfbd7b03de98c408b1292bbe6c93d077 -->
+## Question 184: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-184`
+
+**Content revision:** `be531a38b74e6365d59e7833ab5f266bdfbd7b03de98c408b1292bbe6c93d077`
+
+### English
+
+A workflow sets id-token: write and an engineer claims this alone grants administrator access to the cloud subscription. Which correction is accurate?
+
+1. The setting grants unrestricted GitHub repository Write
+
+   The id-token permission does not grant repository-content write permissions.
+
+2. The setting installs a cloud administrator automatically
+
+   Cloud administrator roles are not automatically installed by workflow permissions.
+
+3. The setting bypasses the cloud provider's trust policy
+
+   Cloud-side validation and authorization still apply.
+
+4. It permits requesting an OIDC token; cloud trust and role assignments determine cloud authority **[CORRECT]**
+
+   OIDC token issuance and cloud authorization are separate steps.
+
+**Concept:** OIDC issuance versus cloud authorization
+
+**Authored coaching hints:**
+
+- Is obtaining identity evidence the same as granting resource permissions?
+- Which system decides what the exchanged cloud credential may do?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un flujo de trabajo establece id-token: write y un ingeniero afirma que esto por sí solo otorga acceso de administrador a la suscripción a la nube. ¿Qué corrección es precisa?
+
+1. La configuración otorga el repositorio GitHub sin restricciones Write
+
+   El permiso id-token no otorga permisos de escritura sobre el contenido del repositorio.
+
+2. La configuración instala un administrador de nube automáticamente.
+
+   Los permisos de flujo de trabajo no instalan automáticamente los roles de administrador de la nube.
+
+3. La configuración pasa por alto la política de confianza del proveedor de la nube.
+
+   La validación y autorización del lado de la nube aún se aplican.
+
+4. Permite solicitar un token OIDC; La confianza en la nube y las asignaciones de roles determinan la autoridad en la nube. **[CORRECT]**
+
+   La emisión de tokens OIDC y la autorización en la nube son pasos separados.
+
+**Concept:** Emisión de OIDC versus autorización en la nube
+
+**Authored coaching hints:**
+
+- ¿Obtener pruebas de identidad es lo mismo que otorgar permisos de recursos?
+- ¿Qué sistema decide qué puede hacer la credencial de nube intercambiada?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um fluxo de trabalho define id-token: write e um engenheiro afirma que só isso concede ao administrador acesso à assinatura da nuvem. Qual correção é precisa?
+
+1. A configuração concede repositório GitHub irrestrito Write
+
+   A permissão id-token não concede permissões de gravação de conteúdo do repositório.
+
+2. A configuração instala um administrador de nuvem automaticamente
+
+   As funções de administrador de nuvem não são instaladas automaticamente pelas permissões de fluxo de trabalho.
+
+3. A configuração ignora a política de confiança do provedor de nuvem
+
+   A validação e autorização do lado da nuvem ainda se aplicam.
+
+4. Permite solicitar um token OIDC; a confiança na nuvem e as atribuições de funções determinam a autoridade da nuvem **[CORRECT]**
+
+   A emissão do token OIDC e a autorização na nuvem são etapas separadas.
+
+**Concept:** Emissão OIDC versus autorização na nuvem
+
+**Authored coaching hints:**
+
+- Obter provas de identidade é o mesmo que conceder permissões de recursos?
+- Qual sistema decide o que a credencial de nuvem trocada pode fazer?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/security-for-github-actions/security-hardening-your-deployments/about-security-hardening-with-openid-connect>
+
+<!-- certification-coach-question:admin-185:7502679266e56323a72694283db4527400e93e1e61944d2837b4fd3e0a2becbc -->
+## Question 185: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-185`
+
+**Content revision:** `7502679266e56323a72694283db4527400e93e1e61944d2837b4fd3e0a2becbc`
+
+### English
+
+An organization keeps deployment secrets in a third-party vault and supports federated authentication. Which integration best avoids duplicating long-lived vault credentials in every repository?
+
+1. Authenticate the workflow to the vault with scoped OIDC trust and retrieve only authorized runtime secrets **[CORRECT]**
+
+   Federation can provide short-lived access subject to the vault's scoped trust and policies.
+
+2. Copy the vault root token into every workflow file
+
+   A root token in source grants excessive authority and exposes it.
+
+3. Disable vault access controls for GitHub-hosted runners
+
+   Hosted execution does not justify removing vault authorization.
+
+4. Use the repository name as the only vault password
+
+   A public repository name is not an authentication secret.
+
+**Concept:** Federated third-party vault integration
+
+**Authored coaching hints:**
+
+- Must the workflow hold a permanent bootstrap credential?
+- How can the vault authorize one workflow identity and a limited secret path?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una organización mantiene los secretos de implementación en una bóveda de terceros y admite la autenticación federada. ¿Qué integración evita mejor la duplicación de credenciales de bóveda de larga duración en cada repositorio?
+
+1. Autenticar el flujo de trabajo en el almacén con confianza OIDC con alcance y recuperar solo secretos de tiempo de ejecución autorizados. **[CORRECT]**
+
+   La federación puede proporcionar acceso de corta duración sujeto a las políticas y la confianza del ámbito del almacén.
+
+2. Copie el token raíz del almacén en cada archivo de flujo de trabajo
+
+   Un token raíz en la fuente otorga autoridad excesiva y la expone.
+
+3. Deshabilite los controles de acceso a la bóveda para GitHub-hosted runners
+
+   La ejecución alojada no justifica la eliminación de la autorización del almacén.
+
+4. Utilice el nombre del repositorio como única contraseña de la bóveda
+
+   Un nombre de repositorio público no es un secreto de autenticación.
+
+**Concept:** Integración de bóveda de terceros federada
+
+**Authored coaching hints:**
+
+- ¿El flujo de trabajo debe contener una credencial de arranque permanente?
+- ¿Cómo puede la bóveda autorizar una identidad de flujo de trabajo y una ruta secreta limitada?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma organização mantém segredos de implantação em um cofre de terceiros e oferece suporte à autenticação federada. Qual integração evita melhor a duplicação de credenciais de cofre de longa duração em todos os repositórios?
+
+1. Autentique o fluxo de trabalho no cofre com confiança OIDC com escopo definido e recupere apenas segredos de tempo de execução autorizados **[CORRECT]**
+
+   A federação pode fornecer acesso de curta duração, sujeito à confiança e às políticas do cofre.
+
+2. Copie o token raiz do vault em cada arquivo de fluxo de trabalho
+
+   Um token raiz na origem concede autoridade excessiva e a expõe.
+
+3. Desativar controles de acesso ao cofre para GitHub-hosted runners
+
+   A execução hospedada não justifica a remoção da autorização do cofre.
+
+4. Use o nome do repositório como a única senha do vault
+
+   Um nome de repositório público não é um segredo de autenticação.
+
+**Concept:** Integração federada de cofre de terceiros
+
+**Authored coaching hints:**
+
+- O fluxo de trabalho deve conter uma credencial de inicialização permanente?
+- Como o cofre pode autorizar uma identidade de fluxo de trabalho e um caminho secreto limitado?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/security-for-github-actions/security-hardening-your-deployments/about-security-hardening-with-openid-connect>
+
+<!-- certification-coach-question:admin-186:204b7d80b459a45da205d78c8a9b13b52d9670f91c6b3b3b81531d9ada7a77df -->
+## Question 186: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-186`
+
+**Content revision:** `204b7d80b459a45da205d78c8a9b13b52d9670f91c6b3b3b81531d9ada7a77df`
+
+### English
+
+An organization changes the value stored in a repository secret after a suspected cloud-key leak. Why might the incident still be uncontained?
+
+1. Repository secrets cannot be updated
+
+   Authorized administrators can update stored secrets.
+
+2. Updating GitHub's stored value does not revoke the old credential at the cloud provider **[CORRECT]**
+
+   The credential issuer must revoke or rotate the exposed key independently.
+
+3. Changing a secret always disables every external credential automatically
+
+   GitHub secret replacement does not universally revoke third-party keys.
+
+4. The secret name must be shortened before rotation works
+
+   Secret-name length does not determine external credential validity.
+
+**Concept:** Secret replacement versus issuer revocation
+
+**Authored coaching hints:**
+
+- Where is the exposed credential actually validated?
+- Can someone still use an old copied value outside GitHub?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una organización cambia el valor almacenado en un secreto de repositorio después de una sospecha de fuga de clave de nube. ¿Por qué el incidente podría seguir sin contenerse?
+
+1. Los secretos del repositorio no se pueden actualizar
+
+   Los administradores autorizados pueden actualizar los secretos almacenados.
+
+2. La actualización del valor almacenado de GitHub no revoca la credencial anterior en el proveedor de la nube **[CORRECT]**
+
+   El emisor de la credencial debe revocar o rotar la clave expuesta de forma independiente.
+
+3. Cambiar un secreto siempre desactiva todas las credenciales externas automáticamente
+
+   El reemplazo de secretos GitHub no revoca universalmente claves de terceros.
+
+4. El nombre secreto debe acortarse antes de que funcione la rotación.
+
+   La longitud del nombre secreto no determina la validez de las credenciales externas.
+
+**Concept:** Reemplazo secreto versus revocación del emisor
+
+**Authored coaching hints:**
+
+- ¿Dónde se valida realmente la credencial expuesta?
+- ¿Alguien todavía puede usar un valor copiado antiguo fuera de GitHub?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma organização altera o valor armazenado em um segredo de repositório após uma suspeita de vazamento de chave de nuvem. Por que o incidente ainda pode não ser contido?
+
+1. Os segredos do repositório não podem ser atualizados
+
+   Os administradores autorizados podem atualizar os segredos armazenados.
+
+2. A atualização do valor armazenado de GitHub não revoga a credencial antiga no provedor de nuvem **[CORRECT]**
+
+   O emissor da credencial deve revogar ou alternar a chave exposta de forma independente.
+
+3. Alterar um segredo sempre desativa automaticamente todas as credenciais externas
+
+   A substituição secreta GitHub não revoga universalmente chaves de terceiros.
+
+4. O nome secreto deve ser abreviado antes que a rotação funcione
+
+   O comprimento do nome secreto não determina a validade da credencial externa.
+
+**Concept:** Substituição secreta versus revogação do emissor
+
+**Authored coaching hints:**
+
+- Onde a credencial exposta é realmente validada?
+- Alguém ainda pode usar um valor antigo copiado fora de GitHub?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/reference/security/secure-use>
+
+<!-- certification-coach-question:admin-187:efe7acd96ba232097334178f790800f5b21bb49306efa1896fff0cc6062a6944 -->
+## Question 187: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-187`
+
+**Content revision:** `efe7acd96ba232097334178f790800f5b21bb49306efa1896fff0cc6062a6944`
+
+### English
+
+A caller passes a deployment credential as an ordinary reusable-workflow input because both inputs and secrets accept values. Which design is better?
+
+1. Use a public input default containing the credential
+
+   Public defaults expose the credential.
+
+2. Put the credential in the reusable workflow's filename
+
+   Filenames are visible metadata rather than confidential credential transport.
+
+3. Declare and pass it through the reusable workflow's secret interface **[CORRECT]**
+
+   The secret interface expresses sensitive data and uses the intended handling.
+
+4. Return the credential as a nonsecret workflow output
+
+   Nonsecret outputs unnecessarily expose credential material.
+
+**Concept:** Secrets versus ordinary workflow inputs
+
+**Authored coaching hints:**
+
+- Does the value have confidentiality requirements?
+- Which part of the reusable interface communicates and preserves that distinction?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una persona que llama pasa una credencial de implementación como una entrada de flujo de trabajo reutilizable normal porque tanto las entradas como los secretos aceptan valores. ¿Qué diseño es mejor?
+
+1. Utilice una entrada pública predeterminada que contenga la credencial
+
+   Los valores predeterminados públicos exponen la credencial.
+
+2. Coloque la credencial en el nombre de archivo del flujo de trabajo reutilizable
+
+   Los nombres de archivos son metadatos visibles en lugar de transporte de credenciales confidenciales.
+
+3. Declararlo y pasarlo a través de la interfaz secreta del flujo de trabajo reutilizable **[CORRECT]**
+
+   La interfaz secreta expresa datos confidenciales y utiliza el manejo previsto.
+
+4. Devolver la credencial como resultado de un flujo de trabajo no secreto
+
+   Las salidas no secretas exponen innecesariamente material de credenciales.
+
+**Concept:** Secretos versus entradas de flujo de trabajo ordinarias
+
+**Authored coaching hints:**
+
+- ¿El valor tiene requisitos de confidencialidad?
+- ¿Qué parte de la interfaz reutilizable comunica y preserva esa distinción?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um chamador transmite uma credencial de implantação como uma entrada comum de fluxo de trabalho reutilizável porque tanto as entradas quanto os segredos aceitam valores. Qual design é melhor?
+
+1. Use um padrão de entrada pública contendo a credencial
+
+   Os padrões públicos expõem a credencial.
+
+2. Coloque a credencial no nome do arquivo do fluxo de trabalho reutilizável
+
+   Os nomes de arquivos são metadados visíveis em vez de transporte de credenciais confidenciais.
+
+3. Declare e passe-o pela interface secreta do fluxo de trabalho reutilizável **[CORRECT]**
+
+   A interface secreta expressa dados confidenciais e utiliza o tratamento pretendido.
+
+4. Retornar a credencial como uma saída de fluxo de trabalho não secreta
+
+   Os resultados não secretos expõem desnecessariamente material de credenciais.
+
+**Concept:** Segredos versus entradas comuns de fluxo de trabalho
+
+**Authored coaching hints:**
+
+- O valor possui requisitos de confidencialidade?
+- Qual parte da interface reutilizável comunica e preserva essa distinção?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/sharing-automations/reusing-workflows>
+
+<!-- certification-coach-question:admin-188:0b5ecbd95d645c8c96d4ca1191ae9329ecb6ee0f88876264aa526a614345e0d0 -->
+## Question 188: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-188`
+
+**Content revision:** `0b5ecbd95d645c8c96d4ca1191ae9329ecb6ee0f88876264aa526a614345e0d0`
+
+### English
+
+A workflow triggered by a Dependabot pull request needs an approved registry credential, but its ordinary Actions secret is unavailable under the restricted execution context. What should administrators evaluate?
+
+1. Grant all bot workflows unrestricted enterprise ownership
+
+   Enterprise ownership is unrelated and far too broad.
+
+2. Commit the registry password so all contexts can read it
+
+   Committing credentials defeats secret isolation.
+
+3. Disable dependency updates permanently
+
+   The missing credential can be addressed without abandoning dependency maintenance.
+
+4. Configure an appropriately scoped Dependabot secret and retain the workflow's trust restrictions **[CORRECT]**
+
+   Dependabot-triggered workflows have special secret handling that administrators should configure explicitly.
+
+**Concept:** Dependabot-triggered workflow secret context
+
+**Authored coaching hints:**
+
+- Which actor triggered the workflow?
+- Does that execution context use the same available secrets as a trusted push?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un flujo de trabajo desencadenado por un Dependabot pull request necesita una credencial de registro aprobada, pero su secreto de acciones ordinario no está disponible en el contexto de ejecución restringida. ¿Qué deben evaluar los administradores?
+
+1. Otorgar a todos los flujos de trabajo de bot propiedad empresarial sin restricciones
+
+   La propiedad empresarial no está relacionada y es demasiado amplia.
+
+2. Confirme la contraseña del registro para que todos los contextos puedan leerla.
+
+   La confirmación de credenciales vence el aislamiento secreto.
+
+3. Deshabilitar las actualizaciones de dependencia permanentemente
+
+   La credencial faltante se puede solucionar sin abandonar el mantenimiento de dependencias.
+
+4. Configure un secreto Dependabot con el ámbito adecuado y conserve las restricciones de confianza del flujo de trabajo. **[CORRECT]**
+
+   Los flujos de trabajo activados por Dependabot tienen un manejo secreto especial que los administradores deben configurar explícitamente.
+
+**Concept:** Contexto secreto de flujo de trabajo activado por Dependabot
+
+**Authored coaching hints:**
+
+- ¿Qué actor desencadenó el flujo de trabajo?
+- ¿Ese contexto de ejecución utiliza los mismos secretos disponibles que un envío confiable?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um fluxo de trabalho acionado por um Dependabot pull request precisa de uma credencial de registro aprovada, mas seu segredo de ações comum não está disponível no contexto de execução restrita. O que os administradores devem avaliar?
+
+1. Conceda propriedade corporativa irrestrita a todos os fluxos de trabalho de bot
+
+   A propriedade empresarial não está relacionada e é demasiado ampla.
+
+2. Confirme a senha do registro para que todos os contextos possam lê-la
+
+   A confirmação de credenciais anula o isolamento secreto.
+
+3. Desative atualizações de dependência permanentemente
+
+   A credencial ausente pode ser resolvida sem abandonar a manutenção de dependências.
+
+4. Configure um segredo Dependabot com escopo adequado e mantenha as restrições de confiança do fluxo de trabalho **[CORRECT]**
+
+   Os fluxos de trabalho acionados por Dependabot têm tratamento secreto especial que os administradores devem configurar explicitamente.
+
+**Concept:** Contexto secreto do fluxo de trabalho acionado por Dependabot
+
+**Authored coaching hints:**
+
+- Qual ator acionou o fluxo de trabalho?
+- Esse contexto de execução usa os mesmos segredos disponíveis que um push confiável?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/code-security/dependabot/working-with-dependabot/troubleshooting-dependabot-on-github-actions>
+
+<!-- certification-coach-question:admin-189:c4d3a5b83c68e831e63a1e76ffc24269f65a2f36e07c839486e245eb509802bc -->
+## Question 189: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-189`
+
+**Content revision:** `c4d3a5b83c68e831e63a1e76ffc24269f65a2f36e07c839486e245eb509802bc`
+
+### English
+
+A workflow inserts an untrusted issue title directly into an inline shell script using an expression. What change best reduces script-injection risk?
+
+1. Pass the untrusted value through an environment variable and quote it appropriately, or use a suitable action input **[CORRECT]**
+
+   Separating data from generated shell source reduces injection risk when handled safely.
+
+2. Assume issue titles cannot contain shell metacharacters
+
+   User-controlled issue text can contain shell-significant characters.
+
+3. Grant the job more token permissions
+
+   More permissions increase impact instead of preventing injection.
+
+4. Hide the script in a longer YAML file without changing interpolation
+
+   File length does not change the unsafe interpolation behavior.
+
+**Concept:** Workflow script-injection prevention
+
+**Authored coaching hints:**
+
+- Is user-controlled text becoming executable source code?
+- How can the shell receive it as data rather than script syntax?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un flujo de trabajo inserta un título issue que no es de confianza directamente en un script de shell en línea mediante una expresión. ¿Qué cambio reduce mejor el riesgo de inyección de scripts?
+
+1. Pase el valor que no es de confianza a través de una variable de entorno y cítelo apropiadamente, o use una entrada de acción adecuada **[CORRECT]**
+
+   Separar los datos del origen del shell generado reduce el riesgo de inyección cuando se maneja de forma segura.
+
+2. Supongamos que los títulos issue no pueden contener metacaracteres de shell
+
+   El texto issue controlado por el usuario puede contener caracteres significativos para el shell.
+
+3. Conceder al trabajo más permisos simbólicos
+
+   Más permisos aumentan el impacto en lugar de prevenir la inyección.
+
+4. Ocultar el script en un archivo YAML más largo sin cambiar la interpolación
+
+   La longitud del archivo no cambia el comportamiento de interpolación inseguro.
+
+**Concept:** Prevención de inyección de scripts de flujo de trabajo
+
+**Authored coaching hints:**
+
+- ¿El texto controlado por el usuario se está convirtiendo en código fuente ejecutable?
+- ¿Cómo puede el shell recibirlos como datos en lugar de sintaxis de script?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um fluxo de trabalho insere um título issue não confiável diretamente em um script de shell embutido usando uma expressão. Qual mudança reduz melhor o risco de injeção de script?
+
+1. Passe o valor não confiável por meio de uma variável de ambiente e cite-o adequadamente ou use uma entrada de ação adequada **[CORRECT]**
+
+   Separar os dados da fonte de shell gerada reduz o risco de injeção quando manuseado com segurança.
+
+2. Suponha que os títulos issue não possam conter metacaracteres de shell
+
+   O texto issue controlado pelo usuário pode conter caracteres significativos do shell.
+
+3. Conceda ao trabalho mais permissões de token
+
+   Mais permissões aumentam o impacto em vez de impedir a injeção.
+
+4. Oculte o script em um arquivo YAML mais longo sem alterar a interpolação
+
+   O comprimento do arquivo não altera o comportamento inseguro da interpolação.
+
+**Concept:** Prevenção de injeção de script de fluxo de trabalho
+
+**Authored coaching hints:**
+
+- O texto controlado pelo usuário está se tornando código-fonte executável?
+- Como o shell pode recebê-los como dados em vez de sintaxe de script?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/reference/security/secure-use>
+
+<!-- certification-coach-question:admin-190:86b9cdc33dceba46ccbd8f24e2da6427c4fcde04b51a4b621a477ce7740ab15b -->
+## Question 190: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-190`
+
+**Content revision:** `86b9cdc33dceba46ccbd8f24e2da6427c4fcde04b51a4b621a477ce7740ab15b`
+
+### English
+
+A deployment command accepts a credential either as a command-line argument or via standard input. Why should the workflow prefer an appropriate non-argument secret channel?
+
+1. Command-line arguments automatically revoke credentials
+
+   Argument placement does not revoke a credential.
+
+2. Arguments can be exposed through process inspection or logging **[CORRECT]**
+
+   Command-line arguments may be visible to other processes or included in logs.
+
+3. Standard input always grants repository Admin
+
+   Input delivery does not determine repository authorization.
+
+4. GitHub requires all secrets to be committed before use
+
+   Secrets should not be committed to source for workflow execution.
+
+**Concept:** Avoiding credential exposure in process arguments
+
+**Authored coaching hints:**
+
+- Who might inspect the process invocation?
+- Can a command receive confidential data without putting it in its visible argument list?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un comando de implementación acepta una credencial como argumento de línea de comando o mediante entrada estándar. ¿Por qué el flujo de trabajo debería preferir un canal secreto apropiado sin argumentos?
+
+1. Los argumentos de la línea de comandos revocan automáticamente las credenciales
+
+   La colocación de argumentos no revoca una credencial.
+
+2. Los argumentos pueden exponerse mediante la inspección o el registro del proceso. **[CORRECT]**
+
+   Los argumentos de la línea de comandos pueden ser visibles para otros procesos o incluirse en los registros.
+
+3. La entrada estándar siempre otorga el repositorio Admin
+
+   La entrega de entradas no determina la autorización del repositorio.
+
+4. GitHub requiere que se confirmen todos los secretos antes de su uso
+
+   Los secretos no deben enviarse al origen para la ejecución del flujo de trabajo.
+
+**Concept:** Evitar la exposición de credenciales en argumentos de proceso
+
+**Authored coaching hints:**
+
+- ¿Quién podría inspeccionar la invocación del proceso?
+- ¿Puede un comando recibir datos confidenciales sin incluirlos en su lista de argumentos visibles?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um comando de implantação aceita uma credencial como argumento de linha de comando ou por meio de entrada padrão. Por que o fluxo de trabalho deveria preferir um canal secreto sem discussão apropriado?
+
+1. Argumentos de linha de comando revogam credenciais automaticamente
+
+   A colocação de argumentos não revoga uma credencial.
+
+2. Os argumentos podem ser expostos por meio de inspeção de processo ou registro **[CORRECT]**
+
+   Os argumentos da linha de comando podem ser visíveis para outros processos ou incluídos nos logs.
+
+3. A entrada padrão sempre concede o repositório Admin
+
+   A entrega de entrada não determina a autorização do repositório.
+
+4. GitHub exige que todos os segredos sejam confirmados antes do uso
+
+   Os segredos não devem ser confirmados na origem para execução do fluxo de trabalho.
+
+**Concept:** Evitando exposição de credenciais em argumentos de processo
+
+**Authored coaching hints:**
+
+- Quem pode inspecionar a invocação do processo?
+- Um comando pode receber dados confidenciais sem colocá-los em sua lista de argumentos visíveis?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions>
+
+<!-- certification-coach-question:admin-191:3f453d98c493d3e582b4dad70dd7ee661754e2e239804ac3f68cce8214edd2ae -->
+## Question 191: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-191`
+
+**Content revision:** `3f453d98c493d3e582b4dad70dd7ee661754e2e239804ac3f68cce8214edd2ae`
+
+### English
+
+An administrator pins a third-party action to a full commit SHA and says no code review of that revision is necessary. What is the best correction?
+
+1. Pinning guarantees the action contains no malicious behavior
+
+   An immutable revision can still contain unsafe or malicious code.
+
+2. A mutable tag is always safer than a SHA
+
+   Mutable tags provide weaker source-revision stability.
+
+3. Pinning prevents reference drift but does not prove the pinned code is trustworthy **[CORRECT]**
+
+   Integrity of the reference and trust in the referenced implementation are distinct.
+
+4. SHA pinning automatically restricts every outbound network call
+
+   Pinning does not implement network egress restrictions.
+
+**Concept:** Integrity versus trust in actions
+
+**Authored coaching hints:**
+
+- What exactly does an immutable reference guarantee?
+- Could the chosen revision already contain unwanted behavior?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un administrador fija una acción de terceros en un commit SHA completo y dice que no es necesaria ninguna revisión del código de esa revisión. ¿Cuál es la mejor corrección?
+
+1. La fijación garantiza que la acción no contiene comportamiento malicioso
+
+   Una revisión inmutable aún puede contener código malicioso o inseguro.
+
+2. Una etiqueta mutable siempre es más segura que una SHA
+
+   Las etiquetas mutables proporcionan una estabilidad de revisión de fuente más débil.
+
+3. La fijación evita la deriva de la referencia, pero no prueba que el código fijado sea confiable **[CORRECT]**
+
+   La integridad de la referencia y la confianza en la implementación a la que se hace referencia son distintas.
+
+4. La fijación SHA restringe automáticamente cada llamada de red saliente
+
+   La fijación no implementa restricciones de salida de la red.
+
+**Concept:** Integridad versus confianza en las acciones
+
+**Authored coaching hints:**
+
+- ¿Qué garantiza exactamente una referencia inmutable?
+- ¿Es posible que la revisión elegida ya contenga un comportamiento no deseado?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um administrador fixa uma ação de terceiros a um commit SHA completo e diz que nenhuma revisão de código dessa revisão é necessária. Qual é a melhor correção?
+
+1. A fixação garante que a ação não contém comportamento malicioso
+
+   Uma revisão imutável ainda pode conter código inseguro ou malicioso.
+
+2. Uma tag mutável é sempre mais segura que uma SHA
+
+   Tags mutáveis fornecem estabilidade de revisão de origem mais fraca.
+
+3. A fixação evita desvios de referência, mas não prova que o código fixado é confiável **[CORRECT]**
+
+   A integridade da referência e a confiança na implementação referenciada são distintas.
+
+4. A fixação SHA restringe automaticamente todas as chamadas de rede de saída
+
+   A fixação não implementa restrições de saída de rede.
+
+**Concept:** Integridade versus confiança nas ações
+
+**Authored coaching hints:**
+
+- O que exatamente uma referência imutável garante?
+- A revisão escolhida já pode conter comportamento indesejado?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/reference/security/secure-use>
+
+<!-- certification-coach-question:admin-192:05978d8c33aeff83cf1e35a3e488d4f3b171dd682a1555015a40374ded8bce62 -->
+## Question 192: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-192`
+
+**Content revision:** `05978d8c33aeff83cf1e35a3e488d4f3b171dd682a1555015a40374ded8bce62`
+
+### English
+
+Only the publish job needs packages: write; test jobs only need contents: read. How should token permissions be configured?
+
+1. Grant packages: write at workflow level to every job for convenience
+
+   Workflow-wide write authority unnecessarily reaches test jobs.
+
+2. Use one shared enterprise-owner PAT for all jobs
+
+   A shared owner PAT is broader than the job-specific need.
+
+3. Remove all permissions and expect publication to work
+
+   Publication requires the appropriate supported package permissions.
+
+4. Grant minimal workflow defaults and packages: write only to the publish job **[CORRECT]**
+
+   Job-specific grants confine elevated capability to the operation that needs it.
+
+**Concept:** Job-specific token permission elevation
+
+**Authored coaching hints:**
+
+- Which job actually performs the write?
+- How can a compromised test job be denied publishing authority?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Solo el trabajo de publicación necesita packages: write; los trabajos de prueba solo necesitan contents: read. ¿Cómo se deben configurar los permisos del token?
+
+1. Otorgar packages: write a nivel de flujo de trabajo para todos los trabajos por comodidad
+
+   La autoridad de escritura en todo el flujo de trabajo llega innecesariamente a los trabajos de prueba.
+
+2. Utilice un PAT de propietario empresarial compartido para todos los trabajos
+
+   Un propietario compartido PAT es más amplio que la necesidad específica del trabajo.
+
+3. Elimine todos los permisos y espere que la publicación funcione
+
+   La publicación requiere los permisos de paquete compatibles adecuados.
+
+4. Otorgar permisos predeterminados mínimos al flujo de trabajo y packages: write solo al trabajo de publicación **[CORRECT]**
+
+   Los permisos específicos de cada trabajo limitan la capacidad elevada a la operación que la necesita.
+
+**Concept:** Elevación de permiso de token específico del trabajo
+
+**Authored coaching hints:**
+
+- ¿Qué trabajo realiza realmente la escritura?
+- ¿Cómo se le puede negar la autoridad de publicación a un trabajo de prueba comprometido?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Somente o trabalho de publicação precisa de packages: write; os trabalhos de teste só precisam de contents: read. Como as permissões do token devem ser configuradas?
+
+1. Conceder packages: write no nível do fluxo de trabalho a todos os trabalhos por conveniência
+
+   A autoridade de gravação em todo o fluxo de trabalho atinge desnecessariamente os trabalhos de teste.
+
+2. Use um PAT de proprietário corporativo compartilhado para todos os trabalhos
+
+   Um proprietário compartilhado PAT é mais amplo do que a necessidade específica do trabalho.
+
+3. Remova todas as permissões e espere que a publicação funcione
+
+   A publicação requer as permissões apropriadas do pacote suportado.
+
+4. Conceder permissões padrão mínimas ao fluxo de trabalho e packages: write apenas ao trabalho de publicação **[CORRECT]**
+
+   As concessões específicas do trabalho limitam a capacidade elevada à operação que dela necessita.
+
+**Concept:** Elevação de permissão de token específico do trabalho
+
+**Authored coaching hints:**
+
+- Qual trabalho realmente executa a gravação?
+- Como pode ser negada autoridade de publicação a um trabalho de teste comprometido?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/security-for-github-actions/security-guides/automatic-token-authentication>
+
+<!-- certification-coach-question:admin-193:a0bb5505cd9ee66910e5ba0999003e974e7f022672dd42684bad6e4a7128a4e8 -->
+## Question 193: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-193`
+
+**Content revision:** `a0bb5505cd9ee66910e5ba0999003e974e7f022672dd42684bad6e4a7128a4e8`
+
+### English
+
+A branch receives frequent pushes, and stale CI runs consume runner capacity after newer commits arrive. Which workflow control can cancel obsolete runs in the same intended group?
+
+1. A concurrency group with cancel-in-progress configured appropriately **[CORRECT]**
+
+   Concurrency grouping can cancel in-progress runs superseded within the configured group.
+
+2. A longer artifact-retention period
+
+   Artifact retention affects storage, not cancellation of active stale runs.
+
+3. More organization owners
+
+   Ownership does not manage workflow concurrency.
+
+4. A secret with the same name as the branch
+
+   Secret naming does not control workflow scheduling.
+
+**Concept:** Canceling superseded workflow runs
+
+**Authored coaching hints:**
+
+- Which runs represent work superseded by a newer event?
+- How can the workflow identify the runs that should share one scheduling boundary?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una rama recibe pushes frecuentes y las ejecuciones obsoletas de CI consumen capacidad de runners después de que llegan commits más recientes. ¿Qué control de flujo de trabajo puede cancelar las ejecuciones obsoletas del mismo grupo previsto?
+
+1. Un grupo de concurrencia con cancel-in-progress configurado adecuadamente **[CORRECT]**
+
+   La agrupación simultánea puede cancelar ejecuciones en curso reemplazadas dentro del grupo configurado.
+
+2. Un período de retención de artefactos más largo
+
+   La retención de artefactos afecta el almacenamiento, no la cancelación de ejecuciones obsoletas activas.
+
+3. Más propietarios de organizaciones
+
+   La propiedad no gestiona la simultaneidad del flujo de trabajo.
+
+4. Un secreto con el mismo nombre que la rama
+
+   La denominación secreta no controla la programación del flujo de trabajo.
+
+**Concept:** Cancelar ejecuciones de flujo de trabajo reemplazadas
+
+**Authored coaching hints:**
+
+- ¿Qué ejecuciones representan trabajos reemplazados por un evento más nuevo?
+- ¿Cómo puede el flujo de trabajo identificar las ejecuciones que deberían compartir un límite de programación?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma ramificação recebe pushes frequentes, e execuções obsoletas de CI consomem capacidade de runners após a chegada de commits mais recentes. Qual controle de fluxo de trabalho pode cancelar execuções obsoletas no mesmo grupo pretendido?
+
+1. Um grupo de concorrência com cancel-in-progress configurado adequadamente **[CORRECT]**
+
+   O agrupamento de simultaneidade pode cancelar execuções em andamento substituídas no grupo configurado.
+
+2. Um período de retenção de artefato mais longo
+
+   A retenção de artefatos afeta o armazenamento, e não o cancelamento de execuções obsoletas ativas.
+
+3. Mais proprietários de organizações
+
+   A propriedade não gerencia a simultaneidade do fluxo de trabalho.
+
+4. Um segredo com o mesmo nome do branch
+
+   A nomenclatura secreta não controla o agendamento do fluxo de trabalho.
+
+**Concept:** Cancelando execuções de fluxo de trabalho substituídas
+
+**Authored coaching hints:**
+
+- Quais execuções representam um trabalho substituído por um evento mais recente?
+- Como o fluxo de trabalho pode identificar as execuções que devem compartilhar um limite de agendamento?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/using-jobs/using-concurrency>
+
+<!-- certification-coach-question:admin-194:da8971a79cc86061b9e9160bfc33a3027e813a9a92fe1ea62c690905d8a40302 -->
+## Question 194: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-194`
+
+**Content revision:** `da8971a79cc86061b9e9160bfc33a3027e813a9a92fe1ea62c690905d8a40302`
+
+### English
+
+An integration test occasionally hangs indefinitely on a self-hosted runner and blocks later work. Which workflow setting most directly bounds the job's allowed execution time?
+
+1. retention-days on an uploaded artifact
+
+   Artifact retention limits stored artifact lifetime, not job runtime.
+
+2. timeout-minutes on the job **[CORRECT]**
+
+   A job timeout stops execution after its configured runtime bound.
+
+3. The repository's base permissions
+
+   Base repository permissions do not set execution duration.
+
+4. The number of issue assignees
+
+   Issue assignment does not control runner timeouts.
+
+**Concept:** Bounding workflow execution
+
+**Authored coaching hints:**
+
+- Is the problem waiting to start or continuing too long after starting?
+- Which setting measures the job's execution duration?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+En ocasiones, una prueba de integración se bloquea indefinidamente en un self-hosted runner y bloquea el trabajo posterior. ¿Qué configuración del flujo de trabajo limita más directamente el tiempo de ejecución permitido del trabajo?
+
+1. retention-days en un artefacto cargado
+
+   La retención de artefactos limita la vida útil de los artefactos almacenados, no el tiempo de ejecución del trabajo.
+
+2. timeout-minutes en el trabajo **[CORRECT]**
+
+   El tiempo de espera de un trabajo detiene la ejecución después del límite de tiempo de ejecución configurado.
+
+3. Los permisos básicos del repositorio.
+
+   Los permisos del repositorio base no establecen la duración de la ejecución.
+
+4. El número de cesionarios issue
+
+   La asignación de problemas no controla los tiempos de espera de runner.
+
+**Concept:** Ejecución de flujo de trabajo delimitante
+
+**Authored coaching hints:**
+
+- ¿El problema está esperando para comenzar o continúa demasiado tiempo después de comenzar?
+- ¿Qué configuración mide la duración de ejecución del trabajo?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um teste de integração ocasionalmente trava indefinidamente em um self-hosted runner e bloqueia o trabalho posterior. Qual configuração de fluxo de trabalho limita mais diretamente o tempo de execução permitido do trabalho?
+
+1. retention-days em um artefato carregado
+
+   A retenção de artefatos limita a vida útil do artefato armazenado, e não o tempo de execução do trabalho.
+
+2. timeout-minutes no trabalho **[CORRECT]**
+
+   O tempo limite de um trabalho interrompe a execução após seu limite de tempo de execução configurado.
+
+3. As permissões básicas do repositório
+
+   As permissões do repositório base não definem a duração da execução.
+
+4. O número de cessionários issue
+
+   A atribuição de problemas não controla os tempos limite de runner.
+
+**Concept:** Limitando a execução do fluxo de trabalho
+
+**Authored coaching hints:**
+
+- O problema está esperando para começar ou continua por muito tempo depois de começar?
+- Qual configuração mede a duração da execução do trabalho?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax>
+
+<!-- certification-coach-question:admin-195:4abd2a4170f8483ea7daa3d26054d99093fc8f6c4fe67fa987a730b7236050b7 -->
+## Question 195: Manage GitHub Actions
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-195`
+
+**Content revision:** `4abd2a4170f8483ea7daa3d26054d99093fc8f6c4fe67fa987a730b7236050b7`
+
+### English
+
+A team wants to cache a build directory that also contains a deployment token. What should the administrator require?
+
+1. Cache the directory unchanged because cache keys are passwords
+
+   Cache keys do not create a secure credential-storage boundary.
+
+2. Use the token value itself as the cache key
+
+   Putting a token in a key exposes sensitive data in metadata.
+
+3. Exclude credentials and sensitive files from cached paths **[CORRECT]**
+
+   Workflow caches should not store secrets or other sensitive material.
+
+4. Make the cache larger to improve secret isolation
+
+   Cache size does not determine confidentiality or access isolation.
+
+**Concept:** Credential-safe workflow caching
+
+**Authored coaching hints:**
+
+- Who may be able to restore a workflow cache?
+- Is a performance optimization an appropriate secret store?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un equipo quiere almacenar en caché un directorio de compilación que también contiene un token de implementación. ¿Qué debe exigir el administrador?
+
+1. Almacene en caché el directorio sin cambios porque las claves de caché son contraseñas
+
+   Las claves de caché no crean un límite seguro de almacenamiento de credenciales.
+
+2. Utilice el valor del token en sí como clave de caché
+
+   Poner un token en una clave expone datos confidenciales en metadatos.
+
+3. Excluir credenciales y archivos confidenciales de las rutas almacenadas en caché **[CORRECT]**
+
+   Las cachés de flujo de trabajo no deben almacenar secretos ni otro material confidencial.
+
+4. Agrandar el caché para mejorar el aislamiento secreto
+
+   El tamaño de la caché no determina la confidencialidad ni el aislamiento del acceso.
+
+**Concept:** Almacenamiento en caché de flujo de trabajo seguro para credenciales
+
+**Authored coaching hints:**
+
+- ¿Quién podría restaurar la caché de un flujo de trabajo?
+- ¿Es la optimización del rendimiento un almacén secreto adecuado?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma equipe deseja armazenar em cache um diretório de construção que também contém um token de implantação. O que o administrador deve exigir?
+
+1. Armazene o diretório em cache inalterado porque as chaves de cache são senhas
+
+   As chaves de cache não criam um limite seguro de armazenamento de credenciais.
+
+2. Use o próprio valor do token como chave de cache
+
+   Colocar um token em uma chave expõe dados confidenciais em metadados.
+
+3. Exclua credenciais e arquivos confidenciais de caminhos armazenados em cache **[CORRECT]**
+
+   Os caches de fluxo de trabalho não devem armazenar segredos ou outros materiais confidenciais.
+
+4. Aumente o cache para melhorar o isolamento secreto
+
+   O tamanho do cache não determina a confidencialidade ou o isolamento do acesso.
+
+**Concept:** Cache de fluxo de trabalho seguro para credenciais
+
+**Authored coaching hints:**
+
+- Quem poderá restaurar um cache de fluxo de trabalho?
+- A otimização de desempenho é um armazenamento secreto apropriado?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows>
+
+<!-- certification-coach-question:admin-196:c2b51fadde2216aff8661587110f7e918909cdaafff7f315cac337ad09f26d9b -->
+## Question 196: Monitor and optimize GitHub usage
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-196`
+
+**Content revision:** `c2b51fadde2216aff8661587110f7e918909cdaafff7f315cac337ad09f26d9b`
+
+### English
+
+An enterprise must determine who changed an organization policy and when. Which evidence source is the best starting point?
+
+1. Only the current organization owner list
+
+   The people who could act do not establish who actually made this change.
+
+2. The current policy value alone
+
+   Current state does not identify the actor or time of a past change.
+
+3. Only repository Git commit history
+
+   Git history does not generally record organization policy administration.
+
+4. The enterprise audit log **[CORRECT]**
+
+   Audit events record supported administrative actions with actor and time information.
+
+**Concept:** Attributing administrative changes
+
+**Authored coaching hints:**
+
+- Does present configuration explain its change history?
+- Which record is designed to connect an action to an actor and timestamp?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una empresa debe determinar quién cambió la política de una organización y cuándo. ¿Qué fuente de evidencia es el mejor punto de partida?
+
+1. Solo la lista de propietarios de la organización actual
+
+   Las personas que podrían actuar no establecen quién realmente realizó este cambio.
+
+2. El valor actual de la política por sí solo
+
+   El estado actual no identifica el actor ni el momento de un cambio pasado.
+
+3. Solo historial del repositorio Git commit
+
+   El historial de Git generalmente no registra la administración de políticas de la organización.
+
+4. El registro de auditoría empresarial **[CORRECT]**
+
+   Los eventos de auditoría registran acciones administrativas respaldadas con información de actor y tiempo.
+
+**Concept:** Atribuir cambios administrativos
+
+**Authored coaching hints:**
+
+- ¿La configuración actual explica su historial de cambios?
+- ¿Qué registro está diseñado para conectar una acción con un actor y una marca de tiempo?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma empresa deve determinar quem mudou uma política da organização e quando. Qual fonte de evidência é o melhor ponto de partida?
+
+1. Somente a lista atual de proprietários da organização
+
+   As pessoas que poderiam agir não estabelecem quem realmente fez essa mudança.
+
+2. Somente o valor da política atual
+
+   O estado atual não identifica o ator ou o momento de uma mudança passada.
+
+3. Apenas histórico do repositório Git commit
+
+   O histórico do Git geralmente não registra a administração de políticas da organização.
+
+4. O log de auditoria empresarial **[CORRECT]**
+
+   Os eventos de auditoria registram ações administrativas apoiadas com informações de ator e tempo.
+
+**Concept:** Atribuição de alterações administrativas
+
+**Authored coaching hints:**
+
+- A configuração atual explica seu histórico de alterações?
+- Qual registro foi projetado para conectar uma ação a um ator e carimbo de data/hora?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/security-and-compliance/audit-log-for-an-enterprise>
+
+<!-- certification-coach-question:admin-197:4caed4cb29227f7000fc7d2b24a0f0c544655f52a2be6d9652d756dd5790ddf1 -->
+## Question 197: Monitor and optimize GitHub usage
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-197`
+
+**Content revision:** `4caed4cb29227f7000fc7d2b24a0f0c544655f52a2be6d9652d756dd5790ddf1`
+
+### English
+
+An investigator knows the actor, repository, and approximate date of a suspicious administrative action. How should they make the enterprise audit search more useful?
+
+1. Combine relevant actor, repository, and created-date filters, adding an action filter if known **[CORRECT]**
+
+   Scoped audit filters narrow the evidence without assuming an unknown action type.
+
+2. Search only the actor while deliberately ignoring the known repository and dates
+
+   Ignoring available scope and time information adds unnecessary investigation noise.
+
+3. Search local commit messages instead of administrative events
+
+   Commit messages do not substitute for administrative audit records.
+
+4. Review only the current team-membership list
+
+   Current team state does not identify the requested historical action.
+
+**Concept:** Focused audit-log searches
+
+**Authored coaching hints:**
+
+- Which known facts can reduce unrelated results?
+- How does a time-bounded search improve incident investigation?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un investigador conoce el actor, el repositorio y la fecha aproximada de una acción administrativa sospechosa. ¿Cómo deberían hacer que la búsqueda de auditoría empresarial sea más útil?
+
+1. Combine filtros relevantes de actor, repositorio y fecha de creación, agregando un filtro de acción si se conoce **[CORRECT]**
+
+   Los filtros de auditoría con alcance limitan la evidencia sin asumir un tipo de acción desconocido.
+
+2. Busque solo al actor mientras ignora deliberadamente el repositorio y las fechas conocidas.
+
+   Ignorar la información disponible sobre el alcance y el tiempo añade ruido innecesario a la investigación.
+
+3. Busque mensajes commit locales en lugar de eventos administrativos
+
+   Los mensajes de confirmación no sustituyen a los registros de auditoría administrativa.
+
+4. Revisar solo la lista actual de miembros del equipo
+
+   El estado actual del equipo no identifica la acción histórica solicitada.
+
+**Concept:** Búsquedas enfocadas en registros de auditoría
+
+**Authored coaching hints:**
+
+- ¿Qué hechos conocidos pueden reducir resultados no relacionados?
+- ¿Cómo mejora una búsqueda con límite de tiempo la investigación de incidentes?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um investigador conhece o ator, o repositório e a data aproximada de uma ação administrativa suspeita. Como eles deveriam tornar a pesquisa de auditoria empresarial mais útil?
+
+1. Combine filtros relevantes de ator, repositório e data de criação, adicionando um filtro de ação, se conhecido **[CORRECT]**
+
+   Os filtros de auditoria com escopo restringem as evidências sem assumir um tipo de ação desconhecido.
+
+2. Pesquise apenas o ator, ignorando deliberadamente o repositório e as datas conhecidas
+
+   Ignorar as informações disponíveis sobre escopo e tempo adiciona ruído desnecessário à investigação.
+
+3. Pesquise mensagens commit locais em vez de eventos administrativos
+
+   Mensagens de commit não substituem registros de auditoria administrativa.
+
+4. Revise apenas a lista atual de membros da equipe
+
+   O estado atual da equipe não identifica a ação histórica solicitada.
+
+**Concept:** Pesquisas focadas em registros de auditoria
+
+**Authored coaching hints:**
+
+- Quais fatos conhecidos podem reduzir resultados não relacionados?
+- Como uma pesquisa com limite de tempo melhora a investigação de incidentes?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/searching-the-audit-log-for-your-enterprise>
+
+<!-- certification-coach-question:admin-198:fb2d42c3fd74d2f9688ebf4baf796c51885110758d0066c93774f890086145e5 -->
+## Question 198: Monitor and optimize GitHub usage
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-198`
+
+**Content revision:** `fb2d42c3fd74d2f9688ebf4baf796c51885110758d0066c93774f890086145e5`
+
+### English
+
+A GitHub Enterprise Cloud investigator needs Git events from two weeks ago, but no external archive was configured. Which retention caveat matters?
+
+1. Git events have the same multi-year retention as an external archive
+
+   Native Git-event retention is not equivalent to an independently configured long-term archive.
+
+2. Native enterprise audit-log Git events have a shorter seven-day retention window **[CORRECT]**
+
+   Git events are retained for seven days in the enterprise audit log.
+
+3. Git events are stored indefinitely in repository issue comments
+
+   Issue comments do not automatically preserve these audit events.
+
+4. Changing the audit view's page size restores expired events
+
+   Display settings cannot restore events beyond the retention window.
+
+**Concept:** Git-event retention limits
+
+**Authored coaching hints:**
+
+- Are Git events retained for the same duration as other audit events?
+- Was an external system preserving this evidence before it expired?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un investigador GitHub Enterprise Cloud necesita eventos de Git de hace dos semanas, pero no se configuró ningún archivo externo. ¿Qué advertencia de retención es importante?
+
+1. Los eventos de Git tienen la misma retención de varios años que un archivo externo
+
+   La retención de eventos Git nativos no equivale a un archivo a largo plazo configurado de forma independiente.
+
+2. Los eventos Git de registro de auditoría empresarial nativo tienen una ventana de retención más corta de siete días **[CORRECT]**
+
+   Los eventos de Git se conservan durante siete días en el registro de auditoría empresarial.
+
+3. Los eventos de Git se almacenan indefinidamente en los comentarios del repositorio issue.
+
+   Los comentarios de problemas no preservan automáticamente estos eventos de auditoría.
+
+4. Cambiar el tamaño de página de la vista de auditoría restaura los eventos caducados
+
+   La configuración de visualización no puede restaurar eventos más allá de la ventana de retención.
+
+**Concept:** Límites de retención de eventos de Git
+
+**Authored coaching hints:**
+
+- ¿Los eventos de Git se conservan durante la misma duración que otros eventos de auditoría?
+- ¿Estaba un sistema externo preservando esta evidencia antes de que expirara?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um investigador GitHub Enterprise Cloud precisa de eventos Git de duas semanas atrás, mas nenhum arquivo externo foi configurado. Qual advertência de retenção é importante?
+
+1. Os eventos Git têm a mesma retenção plurianual que um arquivo externo
+
+   A retenção nativa de eventos Git não é equivalente a um arquivo de longo prazo configurado de forma independente.
+
+2. Os eventos Git de registro de auditoria corporativo nativo têm uma janela de retenção mais curta de sete dias **[CORRECT]**
+
+   Os eventos Git são retidos por sete dias no log de auditoria empresarial.
+
+3. Os eventos Git são armazenados indefinidamente nos comentários do repositório issue
+
+   Os comentários do problema não preservam automaticamente esses eventos de auditoria.
+
+4. Alterar o tamanho da página da visualização de auditoria restaura eventos expirados
+
+   As configurações de exibição não podem restaurar eventos além da janela de retenção.
+
+**Concept:** Limites de retenção de eventos Git
+
+**Authored coaching hints:**
+
+- Os eventos do Git são retidos pela mesma duração que outros eventos de auditoria?
+- Um sistema externo preservou essas evidências antes que elas expirassem?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/security-and-compliance/audit-log-for-an-enterprise>
+
+<!-- certification-coach-question:admin-199:cfb55384d9b9e73b0c21362d5a51f6899e46d2a1c4197c625797cb7009db2d6f -->
+## Question 199: Monitor and optimize GitHub usage
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-199`
+
+**Content revision:** `cfb55384d9b9e73b0c21362d5a51f6899e46d2a1c4197c625797cb7009db2d6f`
+
+### English
+
+An enterprise streams audit logs to a compliance system. A new dashboard shows no events for an hour, even though users are active. What should administrators investigate?
+
+1. Assume the enterprise had no activity without checking
+
+   An empty destination can reflect an ingestion failure rather than no source activity.
+
+2. Delete the destination to reset compliance history
+
+   Deletion destroys evidence and does not diagnose the pipeline.
+
+3. The streaming configuration, destination ingestion health, and recent delivery evidence **[CORRECT]**
+
+   Both source delivery and destination ingestion must work for continuous evidence.
+
+4. The names of local Git branches only
+
+   Local branch names do not establish streaming pipeline health.
+
+**Concept:** Monitoring audit-stream completeness
+
+**Authored coaching hints:**
+
+- Could the missing data reflect the reporting pipeline rather than user behavior?
+- Which stages connect the source events to the dashboard?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una empresa transmite registros de auditoría a un sistema de cumplimiento. Un nuevo panel no muestra eventos durante una hora, aunque los usuarios estén activos. ¿Qué deberían investigar los administradores?
+
+1. Supongamos que la empresa no tenía actividad sin verificar
+
+   Un destino vacío puede reflejar un error de ingesta, no necesariamente ausencia de actividad en el origen.
+
+2. Eliminar el destino para restablecer el historial de cumplimiento
+
+   La eliminación destruye la evidencia y no diagnostica el oleoducto.
+
+3. La configuración de transmisión, el estado de la ingestión del destino y la evidencia de entrega reciente **[CORRECT]**
+
+   Tanto la entrega en origen como la ingesta en destino deben funcionar para obtener evidencia continua.
+
+4. Solo los nombres de las ramas locales de Git
+
+   Los nombres de las ramas locales no permiten determinar el estado de la canalización de transmisión.
+
+**Concept:** Supervisión de la integridad del flujo de auditoría
+
+**Authored coaching hints:**
+
+- ¿Podrían los datos faltantes reflejar el proceso de generación de informes en lugar del comportamiento del usuario?
+- ¿Qué etapas conectan los eventos de origen con el panel?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma empresa transmite logs de auditoria para um sistema de conformidade. Um novo painel não mostra eventos durante uma hora, mesmo que os usuários estejam ativos. O que os administradores devem investigar?
+
+1. Suponha que a empresa não tivesse atividade sem verificar
+
+   Um destino vazio pode refletir uma falha de ingestão em vez de nenhuma atividade de origem.
+
+2. Exclua o destino para redefinir o histórico de conformidade
+
+   A exclusão destrói as evidências e não diagnostica o pipeline.
+
+3. A configuração de streaming, a integridade da ingestão de destino e as evidências de entrega recentes **[CORRECT]**
+
+   Tanto a entrega na origem quanto a ingestão no destino devem funcionar para evidências contínuas.
+
+4. Os nomes apenas das ramificações locais do Git
+
+   Os nomes das ramificações locais não permitem determinar a integridade do pipeline de streaming.
+
+**Concept:** Monitorando a integridade do fluxo de auditoria
+
+**Authored coaching hints:**
+
+- Os dados ausentes poderiam refletir o pipeline de relatórios em vez do comportamento do usuário?
+- Quais estágios conectam os eventos de origem ao painel?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/streaming-the-audit-log-for-your-enterprise>
+
+<!-- certification-coach-question:admin-200:b588e84806dda2940dd069df7f77139a0706f5ac34e14dadd7b612e54d514acc -->
+## Question 200: Monitor and optimize GitHub usage
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-200`
+
+**Content revision:** `b588e84806dda2940dd069df7f77139a0706f5ac34e14dadd7b612e54d514acc`
+
+### English
+
+A license report identifies users with little recent activity. What is the most responsible optimization step before removing access?
+
+1. Remove all low-activity users immediately, including service owners
+
+   Unreviewed removal can interrupt legitimate work and automation.
+
+2. Assume every inactive-looking user has left the company
+
+   Recent activity alone does not prove employment or access need.
+
+3. Use only the number of recent code pushes to decide who retains a license
+
+   A push-only metric misses reviewers, auditors, and other legitimate low-frequency users.
+
+4. Validate business need, identity status, automation dependencies, and the offboarding process **[CORRECT]**
+
+   Contextual review distinguishes reclaimable seats from necessary low-frequency access.
+
+**Concept:** Safe license-reclamation decisions
+
+**Authored coaching hints:**
+
+- What legitimate roles may produce little daily activity?
+- Which dependencies could break if this identity loses access?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un informe de licencia identifica a los usuarios con poca actividad reciente. ¿Cuál es el paso de optimización más responsable antes de eliminar el acceso?
+
+1. Elimine inmediatamente a todos los usuarios de baja actividad, incluidos los propietarios de servicios.
+
+   La eliminación no revisada puede interrumpir el trabajo legítimo y la automatización.
+
+2. Supongamos que todos los usuarios que parecen inactivos han abandonado la empresa.
+
+   La actividad reciente por sí sola no prueba la necesidad de empleo o acceso.
+
+3. Utilice solo el número de inserciones de código recientes para decidir quién conserva una licencia
+
+   Una métrica de solo inserción no detecta a revisores, auditores y otros usuarios legítimos de baja frecuencia.
+
+4. Validar las necesidades comerciales, el estado de identidad, las dependencias de automatización y el proceso de baja **[CORRECT]**
+
+   La revisión contextual distingue las licencias recuperables del acceso necesario pero poco frecuente.
+
+**Concept:** Decisiones seguras de recuperación de licencias
+
+**Authored coaching hints:**
+
+- ¿Qué roles legítimos pueden producir poca actividad diaria?
+- ¿Qué dependencias podrían romperse si esta identidad pierde el acceso?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um relatório de licença identifica usuários com pouca atividade recente. Qual é a etapa de otimização mais responsável antes de remover o acesso?
+
+1. Remova todos os usuários com baixa atividade imediatamente, incluindo proprietários de serviços
+
+   A remoção não revisada pode interromper o trabalho legítimo e a automação.
+
+2. Suponha que todos os usuários com aparência inativa tenham saído da empresa
+
+   A actividade recente por si só não prova a necessidade de emprego ou de acesso.
+
+3. Use apenas o número de envios de código recentes para decidir quem retém uma licença
+
+   Uma métrica somente push ignora revisores, auditores e outros usuários legítimos de baixa frequência.
+
+4. Valide a necessidade do negócio, o status da identidade, as dependências de automação e o processo de desligamento **[CORRECT]**
+
+   A revisão contextual distingue licenças recuperáveis de acessos necessários, mas pouco frequentes.
+
+**Concept:** Decisões seguras de recuperação de licença
+
+**Authored coaching hints:**
+
+- Que papéis legítimos podem produzir pouca atividade diária?
+- Quais dependências poderão ser quebradas se esta identidade perder acesso?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/billing/managing-the-plan-for-your-github-account/about-per-user-pricing>
+
+<!-- certification-coach-question:admin-201:8169138ded25067e4224031910d328f19ffa9a53d8ae990ff75d6d22da67ff76 -->
+## Question 201: Monitor and optimize GitHub usage
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-201`
+
+**Content revision:** `8169138ded25067e4224031910d328f19ffa9a53d8ae990ff75d6d22da67ff76`
+
+### English
+
+An enterprise's total GitHub spending rose while its user count stayed flat. Which breakdown is most useful before recommending seat reductions?
+
+1. Metered usage by product, SKU, time period, and responsible scope **[CORRECT]**
+
+   Product-level consumption can explain cost changes unrelated to seat counts.
+
+2. Only the total number of organization owners
+
+   Owner counts alone do not explain metered-product charges.
+
+3. Only the current total number of licensed users
+
+   An unchanged seat count does not explain growth in other consumption categories.
+
+4. Only the number of successful workflow runs, ignoring their duration and runner type
+
+   Run counts omit important compute and storage cost dimensions.
+
+**Concept:** Separating seat costs from metered growth
+
+**Authored coaching hints:**
+
+- Could the cost change come from workload consumption rather than people?
+- Which report dimensions identify the actual charging source?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+El gasto total en GitHub de una empresa aumentó mientras que su número de usuarios se mantuvo estable. ¿Qué desglose es más útil antes de recomendar una reducción de licencias?
+
+1. Uso medido por producto, SKU, período de tiempo y alcance responsable **[CORRECT]**
+
+   El consumo por producto puede explicar cambios de costos no relacionados con la cantidad de licencias.
+
+2. Solo el número total de propietarios de organizaciones.
+
+   Los recuentos del propietario por sí solos no explican los cargos por productos medidos.
+
+3. Solo el número total actual de usuarios con licencia
+
+   Una cantidad de licencias sin cambios no explica el crecimiento en otras categorías de consumo.
+
+4. Solo el número de ejecuciones exitosas del flujo de trabajo, ignorando su duración y el tipo runner
+
+   Los recuentos de ejecución omiten dimensiones importantes de costos de computación y almacenamiento.
+
+**Concept:** Separar los costos de licencias del crecimiento del consumo medido
+
+**Authored coaching hints:**
+
+- ¿Podría el cambio de costos provenir del consumo de carga de trabajo y no de personas?
+- ¿Qué dimensiones del informe identifican la fuente de carga real?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Os gastos totais de uma empresa com GitHub aumentaram, enquanto o número de usuários permaneceu estável. Qual detalhamento é mais útil antes de recomendar uma redução de licenças?
+
+1. Uso medido por produto, SKU, período de tempo e escopo responsável **[CORRECT]**
+
+   O consumo por produto pode explicar alterações de custos não relacionadas ao número de licenças.
+
+2. Somente o número total de proprietários da organização
+
+   As contagens de proprietários por si só não explicam as cobranças dos produtos medidos.
+
+3. Somente o número total atual de usuários licenciados
+
+   Uma quantidade de licenças inalterada não explica o crescimento em outras categorias de consumo.
+
+4. Apenas o número de execuções de fluxo de trabalho bem-sucedidas, ignorando sua duração e tipo runner
+
+   As contagens de execução omitem dimensões importantes de custo de computação e armazenamento.
+
+**Concept:** Separando custos de licenças do crescimento do consumo medido
+
+**Authored coaching hints:**
+
+- A mudança de custo poderia vir do consumo da carga de trabalho e não das pessoas?
+- Quais dimensões do relatório identificam a fonte de cobrança real?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/billing/tutorials/automate-usage-reporting>
+
+<!-- certification-coach-question:admin-202:1d05dc9a0c551eb099c9f006132636ee82470b906ce0fc4515c13b148d879a6e -->
+## Question 202: Monitor and optimize GitHub usage
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-202`
+
+**Content revision:** `1d05dc9a0c551eb099c9f006132636ee82470b906ce0fc4515c13b148d879a6e`
+
+### English
+
+An administrator creates a budget and assumes it always stops all GitHub product usage at the threshold. Which statement is accurate?
+
+1. Every budget universally blocks every product at exactly the same threshold
+
+   GitHub documents product-specific differences rather than a universal hard stop.
+
+2. Alerts and stop-usage behavior depend on the product and budget configuration **[CORRECT]**
+
+   Administrators must check the supported control and its configured behavior.
+
+3. Budgets automatically delete repositories to reduce costs
+
+   Budgets do not work by indiscriminately deleting repositories.
+
+4. A budget substitutes for repository authorization
+
+   Spending controls do not replace access permissions.
+
+**Concept:** Budget alerts versus usage enforcement
+
+**Authored coaching hints:**
+
+- Is notification the same thing as enforcement?
+- Which product-specific behavior must be verified?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un administrador crea un presupuesto y asume que siempre detiene todo el uso del producto GitHub en el umbral. ¿Qué afirmación es exacta?
+
+1. Cada presupuesto bloquea universalmente todos los productos exactamente en el mismo umbral.
+
+   GitHub documenta las diferencias específicas del producto en lugar de un tope universal.
+
+2. Las alertas y el comportamiento de interrupción del uso dependen de la configuración del producto y del presupuesto. **[CORRECT]**
+
+   Los administradores deben verificar el control admitido y su comportamiento configurado.
+
+3. Los presupuestos eliminan automáticamente los repositorios para reducir costos
+
+   Los presupuestos no funcionan eliminando repositorios indiscriminadamente.
+
+4. Un presupuesto sustituye a la autorización del repositorio
+
+   Los controles de gasto no reemplazan los permisos de acceso.
+
+**Concept:** Alertas de presupuesto versus aplicación de uso
+
+**Authored coaching hints:**
+
+- ¿Es lo mismo notificación que ejecución?
+- ¿Qué comportamiento específico del producto debe verificarse?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um administrador cria um orçamento e presume que ele sempre interrompe todo o uso do produto GitHub no limite. Qual afirmação é precisa?
+
+1. Cada orçamento bloqueia universalmente todos os produtos exatamente no mesmo limite
+
+   GitHub documenta diferenças específicas do produto em vez de uma parada brusca universal.
+
+2. Alertas e comportamento de interrupção do uso dependem da configuração do produto e do orçamento **[CORRECT]**
+
+   Os administradores devem verificar o controle compatível e seu comportamento configurado.
+
+3. Os orçamentos excluem repositórios automaticamente para reduzir custos
+
+   Os orçamentos não funcionam excluindo repositórios indiscriminadamente.
+
+4. Um orçamento substitui a autorização do repositório
+
+   Os controles de gastos não substituem as permissões de acesso.
+
+**Concept:** Alertas de orçamento versus aplicação de uso
+
+**Authored coaching hints:**
+
+- Notificação é a mesma coisa que fiscalização?
+- Qual comportamento específico do produto deve ser verificado?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/billing/concepts/budgets-and-alerts>
+
+<!-- certification-coach-question:admin-203:b8f6b1033c398558668be036202ee5258abbf87303f1fd6e8963e5e600a990e9 -->
+## Question 203: Monitor and optimize GitHub usage
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-203`
+
+**Content revision:** `b8f6b1033c398558668be036202ee5258abbf87303f1fd6e8963e5e600a990e9`
+
+### English
+
+An enterprise needs departmental attribution for supported metered GitHub spending. Which billing construct should it evaluate rather than maintaining only one undifferentiated enterprise total?
+
+1. A branch naming rule
+
+   Branch names do not establish a billing attribution structure.
+
+2. A security advisory draft
+
+   Advisory drafts manage vulnerabilities rather than departmental costs.
+
+3. Cost centers **[CORRECT]**
+
+   Cost centers organize supported billing attribution for enterprise resources.
+
+4. A CODEOWNERS entry alone
+
+   Code ownership does not itself assign metered spending to billing cost centers.
+
+**Concept:** Departmental cost attribution
+
+**Authored coaching hints:**
+
+- What structure connects consumed resources to a financial owner?
+- Is code-review responsibility automatically equivalent to billing attribution?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una empresa necesita atribución departamental para el gasto medido compatible con GitHub. ¿Qué concepto de facturación debería evaluar en lugar de mantener sólo un total empresarial indiferenciado?
+
+1. Una regla de nomenclatura de ramas
+
+   Los nombres de las ramas no establecen una estructura de atribución de facturación.
+
+2. Un borrador de aviso de seguridad
+
+   Los borradores de asesoramiento gestionan las vulnerabilidades en lugar de los costos departamentales.
+
+3. Centros de costos **[CORRECT]**
+
+   Los centros de costos organizan la atribución de facturación admitida para los recursos empresariales.
+
+4. Una entrada CODEOWNERS sola
+
+   La propiedad del código en sí misma no asigna gastos medidos a los centros de costos de facturación.
+
+**Concept:** Atribución de costos departamentales
+
+**Authored coaching hints:**
+
+- ¿Qué estructura conecta los recursos consumidos con un propietario financiero?
+- ¿La responsabilidad de revisión de código equivale automáticamente a la atribución de facturación?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma empresa precisa de atribuição departamental para gastos medidos com suporte de GitHub. Qual construção de faturamento deveria ser avaliada em vez de manter apenas um total indiferenciado da empresa?
+
+1. Uma regra de nomenclatura de ramificação
+
+   Os nomes das ramificações não estabelecem uma estrutura de atribuição de cobrança.
+
+2. Um rascunho de consultoria de segurança
+
+   Os rascunhos consultivos gerenciam vulnerabilidades em vez de custos departamentais.
+
+3. Centros de custo **[CORRECT]**
+
+   Os centros de custo organizam a atribuição de cobrança suportada para recursos empresariais.
+
+4. Uma entrada CODEOWNERS sozinha
+
+   A propriedade do código não atribui gastos medidos aos centros de custo de faturamento.
+
+**Concept:** Atribuição de custos departamentais
+
+**Authored coaching hints:**
+
+- Que estrutura conecta os recursos consumidos a um proprietário financeiro?
+- A responsabilidade da revisão do código é automaticamente equivalente à atribuição de cobrança?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/billing/concepts/cost-centers>
+
+<!-- certification-coach-question:admin-204:beac7aa641f047f4e73ea74dcdfca6066f595c93f5642a5df8471c6cc1e17d60 -->
+## Question 204: Monitor and optimize GitHub usage
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-204`
+
+**Content revision:** `beac7aa641f047f4e73ea74dcdfca6066f595c93f5642a5df8471c6cc1e17d60`
+
+### English
+
+A public repository moves builds from standard GitHub-hosted runners to larger runners. The team assumes public visibility makes all runner execution free. What should the administrator clarify?
+
+1. Public visibility guarantees every runner type is free
+
+   Public standard-runner treatment does not apply universally to larger runners.
+
+2. Larger runners consume only repository seat licenses
+
+   Larger-runner usage has its own billing rather than simply consuming enterprise seats.
+
+3. Larger runners always draw from the same free allowance as standard runners
+
+   Larger runners have different billing treatment from standard included-runner allowances.
+
+4. The public-repository free allowance for standard runners does not make larger runners universally free **[CORRECT]**
+
+   Runner type and documented billing rules must be assessed separately.
+
+**Concept:** Runner-class billing differences
+
+**Authored coaching hints:**
+
+- Does a billing exception apply to every compute category?
+- Which runner category did the team change?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un repositorio público mueve compilaciones del GitHub-hosted runners estándar a un runners más grande. El equipo asume que la visibilidad pública hace que toda la ejecución de runner sea gratuita. ¿Qué debe aclarar el administrador?
+
+1. La visibilidad pública garantiza que todos los tipos de runner son gratuitos
+
+   El tratamiento estándar público runner no se aplica universalmente al runners más grande.
+
+2. Los runners más grandes consumen solo licencias de puestos de repositorio
+
+   El uso más grande de runner tiene su propia facturación en lugar de simplemente consumir puestos empresariales.
+
+3. Las runners más grandes siempre reciben la misma asignación gratuita que las runners estándar.
+
+   Los runners más grandes tienen un tratamiento de facturación diferente al de las asignaciones estándar incluidas-runner.
+
+4. La asignación gratuita del repositorio público para el runners estándar no hace que el runners más grande sea universalmente gratuito. **[CORRECT]**
+
+   El tipo de runner y las reglas de facturación documentadas deben evaluarse por separado.
+
+**Concept:** Diferencias de facturación entre clases de runners
+
+**Authored coaching hints:**
+
+- ¿Se aplica una excepción de facturación a todas las categorías informáticas?
+- ¿Qué categoría runner cambió el equipo?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um repositório público move compilações do GitHub-hosted runners padrão para o runners maior. A equipe assume que a visibilidade pública torna toda a execução do runner gratuita. O que o administrador deve esclarecer?
+
+1. A visibilidade pública garante que todos os tipos de runner sejam gratuitos
+
+   O tratamento de padrão público runner não se aplica universalmente a runners maiores.
+
+2. runners maiores consomem apenas licenças de estação de repositório
+
+   O uso de Larger-runner tem seu próprio faturamento, em vez de simplesmente consumir licenças corporativas.
+
+3. Runners maiores sempre utilizam a mesma franquia gratuita que os runners padrão
+
+   runners maiores têm tratamento de cobrança diferente das licenças padrão incluídas - runner.
+
+4. A permissão gratuita de repositório público para o padrão runners não torna o runners maior universalmente gratuito **[CORRECT]**
+
+   O tipo de runner e as regras de cobrança documentadas devem ser avaliadas separadamente.
+
+**Concept:** Diferenças de faturamento da classe Runner
+
+**Authored coaching hints:**
+
+- Uma exceção de cobrança se aplica a todas as categorias de computação?
+- Qual categoria runner a equipe mudou?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/billing/managing-billing-for-your-products/managing-billing-for-github-actions/about-billing-for-github-actions>
+
+<!-- certification-coach-question:admin-205:1e5cc524093a27d6c74533e6be35651369a5e2b6f652be579f304a6d8a231eae -->
+## Question 205: Monitor and optimize GitHub usage
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-205`
+
+**Content revision:** `1e5cc524093a27d6c74533e6be35651369a5e2b6f652be579f304a6d8a231eae`
+
+### English
+
+A team stops running workflows but continues retaining large artifacts. Why might Actions-related storage usage remain relevant?
+
+1. Stored artifacts persist until expiration or deletion under the applicable retention policy **[CORRECT]**
+
+   Execution stopping does not itself remove already retained artifact data.
+
+2. Stopping workflows automatically deletes all prior artifacts immediately
+
+   Prior artifacts are not automatically deleted solely because no new workflow runs occur.
+
+3. Artifacts become free simply because their workflow is inactive
+
+   Inactivity does not universally remove storage billing implications.
+
+4. Only running jobs can occupy stored artifact space
+
+   Stored artifacts occupy space independently of current job execution.
+
+**Concept:** Persistent artifact storage consumption
+
+**Authored coaching hints:**
+
+- Is compute lifetime the same as stored-data lifetime?
+- What event actually ends retention of the artifacts?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un equipo deja de ejecutar flujos de trabajo pero continúa reteniendo artefactos grandes. ¿Por qué el uso del almacenamiento relacionado con Actions podría seguir siendo relevante?
+
+1. Los artefactos almacenados persisten hasta su vencimiento o eliminación según la política de retención aplicable. **[CORRECT]**
+
+   La detención de la ejecución no elimina por sí misma los datos de artefactos ya retenidos.
+
+2. Al detener los flujos de trabajo se eliminan automáticamente todos los artefactos anteriores inmediatamente.
+
+   Los artefactos anteriores no se eliminan automáticamente únicamente porque no se producen nuevas ejecuciones de flujo de trabajo.
+
+3. Los artefactos se vuelven gratuitos simplemente porque su flujo de trabajo está inactivo
+
+   La inactividad no elimina universalmente las implicaciones en la facturación del almacenamiento.
+
+4. Sólo los trabajos en ejecución pueden ocupar espacio de artefacto almacenado
+
+   Los artefactos almacenados ocupan espacio independientemente de la ejecución del trabajo actual.
+
+**Concept:** Consumo persistente de almacenamiento de artefactos
+
+**Authored coaching hints:**
+
+- ¿La vida útil de la computación es la misma que la vida útil de los datos almacenados?
+- ¿Qué evento realmente pone fin a la retención de los artefactos?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma equipe para de executar fluxos de trabalho, mas continua retendo artefatos grandes. Por que o uso de armazenamento relacionado ao Actions pode permanecer relevante?
+
+1. Os artefatos armazenados persistem até a expiração ou exclusão de acordo com a política de retenção aplicável **[CORRECT]**
+
+   A interrupção da execução não remove, por si só, os dados do artefato já retidos.
+
+2. A interrupção dos fluxos de trabalho exclui automaticamente todos os artefatos anteriores imediatamente
+
+   Os artefatos anteriores não são excluídos automaticamente apenas porque nenhuma nova execução de fluxo de trabalho ocorre.
+
+3. Os artefatos tornam-se gratuitos simplesmente porque seu fluxo de trabalho está inativo
+
+   A inatividade não elimina universalmente as implicações da cobrança de armazenamento.
+
+4. Somente trabalhos em execução podem ocupar espaço de artefato armazenado
+
+   Os artefatos armazenados ocupam espaço independentemente da execução atual do trabalho.
+
+**Concept:** Consumo persistente de armazenamento de artefatos
+
+**Authored coaching hints:**
+
+- A vida útil da computação é igual à vida útil dos dados armazenados?
+- Qual evento realmente encerra a retenção dos artefatos?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/billing/managing-billing-for-your-products/managing-billing-for-github-actions/about-billing-for-github-actions>
+
+<!-- certification-coach-question:admin-206:91310acbb3ef999fee102263433f08257ffdc41aed05398b15fc4713e837d03d -->
+## Question 206: Monitor and optimize GitHub usage
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-206`
+
+**Content revision:** `91310acbb3ef999fee102263433f08257ffdc41aed05398b15fc4713e837d03d`
+
+### English
+
+An organization wants lower artifact storage costs, but release evidence must be retained for an established compliance period. Which optimization is appropriate?
+
+1. Delete all artifacts regardless of purpose
+
+   Blanket deletion can violate release-evidence requirements.
+
+2. Apply purpose-specific retention and remove unnecessary artifacts without violating evidence obligations **[CORRECT]**
+
+   Different artifact classes can have different justified retention and cleanup policies.
+
+3. Increase every artifact's retention to the maximum
+
+   Maximum retention increases storage when shorter periods would suffice.
+
+4. Store production credentials inside artifacts to combine storage categories
+
+   Credentials do not belong in artifacts and do not solve retention costs.
+
+**Concept:** Evidence-aware artifact retention
+
+**Authored coaching hints:**
+
+- Which stored outputs are compliance evidence versus disposable build products?
+- How can retention reflect those different purposes?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una organización quiere reducir los costos de almacenamiento de artefactos, pero la evidencia de publicación debe conservarse durante un período de cumplimiento establecido. ¿Qué optimización es apropiada?
+
+1. Eliminar todos los artefactos independientemente de su propósito
+
+   La eliminación general puede violar los requisitos de divulgación de evidencia.
+
+2. Aplicar retención para fines específicos y eliminar artefactos innecesarios sin violar las obligaciones de evidencia. **[CORRECT]**
+
+   Diferentes clases de artefactos pueden tener diferentes políticas justificadas de retención y limpieza.
+
+3. Incrementa la retención de cada artefacto al máximo.
+
+   La retención máxima aumenta el almacenamiento cuando serían suficientes períodos más cortos.
+
+4. Almacene las credenciales de producción dentro de los artefactos para combinar categorías de almacenamiento.
+
+   Las credenciales no pertenecen a los artefactos y no resuelven los costos de retención.
+
+**Concept:** Retención de artefactos basada en evidencia
+
+**Authored coaching hints:**
+
+- ¿Qué resultados almacenados son evidencia de cumplimiento versus productos de construcción desechables?
+- ¿Cómo puede la retención reflejar esos diferentes propósitos?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma organização deseja custos mais baixos de armazenamento de artefatos, mas as evidências de liberação devem ser retidas por um período de conformidade estabelecido. Qual otimização é apropriada?
+
+1. Exclua todos os artefatos, independentemente da finalidade
+
+   A exclusão geral pode violar os requisitos de evidência de liberação.
+
+2. Aplique retenção específica para uma finalidade e remova artefatos desnecessários sem violar obrigações de evidência **[CORRECT]**
+
+   Diferentes classes de artefatos podem ter diferentes políticas justificadas de retenção e limpeza.
+
+3. Aumente ao máximo a retenção de cada artefato
+
+   A retenção máxima aumenta o armazenamento quando períodos mais curtos seriam suficientes.
+
+4. Armazene credenciais de produção dentro de artefatos para combinar categorias de armazenamento
+
+   As credenciais não pertencem aos artefatos e não resolvem os custos de retenção.
+
+**Concept:** Retenção de artefatos com reconhecimento de evidências
+
+**Authored coaching hints:**
+
+- Quais resultados armazenados são evidências de conformidade versus produtos de construção descartáveis?
+- Como a retenção pode refletir esses diferentes propósitos?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/organizations/managing-organization-settings/configuring-the-retention-period-for-github-actions-artifacts-and-logs-in-your-organization>
+
+<!-- certification-coach-question:admin-207:9de93af43fe1725bcc913007a8c9506956e21f5771bf5378ca4fcbd748863c2d -->
+## Question 207: Monitor and optimize GitHub usage
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-207`
+
+**Content revision:** `9de93af43fe1725bcc913007a8c9506956e21f5771bf5378ca4fcbd748863c2d`
+
+### English
+
+Builds repeatedly download identical dependencies, and cache-hit rates are low because every run uses a completely unique key with no useful restore strategy. What should administrators recommend?
+
+1. Disable all package verification
+
+   Removing verification weakens supply-chain security rather than improving cache design.
+
+2. Grant the workflow more repository administration permissions
+
+   Repository administration does not improve cache key reuse.
+
+3. Review cache keys and restore strategy against dependency inputs, then measure the effect **[CORRECT]**
+
+   Dependency-aware keys can improve reuse while preserving valid invalidation.
+
+4. Store all deployment secrets in the cache
+
+   Caches must not be used as secret stores.
+
+**Concept:** Measuring useful dependency-cache reuse
+
+**Authored coaching hints:**
+
+- Which changes should invalidate the dependency cache?
+- Can repeated identical dependency inputs produce a reusable key?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Las compilaciones descargan repetidamente dependencias idénticas y las tasas de aciertos de caché son bajas porque cada ejecución utiliza una clave completamente única sin una estrategia de restauración útil. ¿Qué deberían recomendar los administradores?
+
+1. Deshabilitar toda la verificación de paquetes
+
+   Eliminar la verificación debilita la seguridad de la cadena de suministro en lugar de mejorar el diseño de la caché.
+
+2. Otorgar al flujo de trabajo más permisos de administración del repositorio
+
+   La administración del repositorio no mejora la reutilización de la clave de caché.
+
+3. Revise las claves de caché y restaure la estrategia frente a las entradas de dependencia, luego mida el efecto **[CORRECT]**
+
+   Las claves que tienen en cuenta la dependencia pueden mejorar la reutilización y al mismo tiempo preservar la invalidación válida.
+
+4. Almacene todos los secretos de implementación en el caché
+
+   Los cachés no deben utilizarse como almacenes secretos.
+
+**Concept:** Medición de la reutilización útil de la caché de dependencias
+
+**Authored coaching hints:**
+
+- ¿Qué cambios deberían invalidar el caché de dependencia?
+- ¿Pueden las entradas de dependencia idénticas repetidas producir una clave reutilizable?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+As compilações baixam repetidamente dependências idênticas e as taxas de acertos no cache são baixas porque cada execução usa uma chave completamente exclusiva, sem nenhuma estratégia de restauração útil. O que os administradores devem recomendar?
+
+1. Desative todas as verificações de pacotes
+
+   A remoção da verificação enfraquece a segurança da cadeia de fornecimento em vez de melhorar o design do cache.
+
+2. Conceda ao fluxo de trabalho mais permissões de administração de repositório
+
+   A administração do repositório não melhora a reutilização de chaves de cache.
+
+3. Revise as chaves de cache e a estratégia de restauração em relação às entradas de dependência e, em seguida, meça o efeito **[CORRECT]**
+
+   Chaves com reconhecimento de dependência podem melhorar a reutilização enquanto preservam a invalidação válida.
+
+4. Armazene todos os segredos de implantação no cache
+
+   Os caches não devem ser usados como armazenamentos secretos.
+
+**Concept:** Medindo a reutilização útil do cache de dependência
+
+**Authored coaching hints:**
+
+- Quais alterações devem invalidar o cache de dependência?
+- Entradas de dependência idênticas repetidas podem produzir uma chave reutilizável?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows>
+
+<!-- certification-coach-question:admin-208:e1cdf3ba6f56bf02d8755593994eee857dbb1c58254858e7080a92a7592e07c5 -->
+## Question 208: Monitor and optimize GitHub usage
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-208`
+
+**Content revision:** `e1cdf3ba6f56bf02d8755593994eee857dbb1c58254858e7080a92a7592e07c5`
+
+### English
+
+Usage reports show many completed CI runs testing commits already superseded by newer pushes on the same branch. Which optimization best targets that waste?
+
+1. Remove every required test
+
+   Eliminating tests sacrifices validation instead of removing redundant work.
+
+2. Increase the artifact-retention window
+
+   Artifact retention does not prevent redundant execution.
+
+3. Make the repository public to avoid reviewing the workflow
+
+   Visibility changes are not an appropriate substitute for workflow optimization.
+
+4. Use carefully scoped concurrency cancellation for obsolete runs **[CORRECT]**
+
+   Canceling superseded runs can reclaim capacity without discarding current validation.
+
+**Concept:** Reducing redundant CI consumption
+
+**Authored coaching hints:**
+
+- Which runs no longer provide useful feedback?
+- Can the latest required validation continue while obsolete work is canceled?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Los informes de uso muestran que muchas ejecuciones de CI completadas que prueban commits ya fueron reemplazadas por versiones más recientes en la misma rama. ¿Qué optimización se dirige mejor a ese desperdicio?
+
+1. Eliminar todas las pruebas requeridas
+
+   La eliminación de las pruebas sacrifica la validación en lugar de eliminar el trabajo redundante.
+
+2. Aumentar la ventana de retención de artefactos
+
+   La retención de artefactos no impide la ejecución redundante.
+
+3. Hacer público el repositorio para evitar revisar el flujo de trabajo.
+
+   Los cambios de visibilidad no son un sustituto adecuado de la optimización del flujo de trabajo.
+
+4. Utilice una cancelación de simultaneidad cuidadosamente delimitada para ejecuciones obsoletas **[CORRECT]**
+
+   La cancelación de ejecuciones reemplazadas puede recuperar capacidad sin descartar la validación actual.
+
+**Concept:** Reducción del consumo redundante de CI
+
+**Authored coaching hints:**
+
+- ¿Qué ejecuciones ya no proporcionan comentarios útiles?
+- ¿Puede continuar la última validación requerida mientras se cancela el trabajo obsoleto?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Os relatórios de uso mostram muitas execuções CI concluídas, testando commits já substituídas por push mais recentes na mesma ramificação. Qual otimização visa melhor esse desperdício?
+
+1. Remova todos os testes necessários
+
+   A eliminação de testes sacrifica a validação em vez de remover o trabalho redundante.
+
+2. Aumentar a janela de retenção de artefatos
+
+   A retenção de artefato não impede a execução redundante.
+
+3. Torne o repositório público para evitar a revisão do fluxo de trabalho
+
+   As alterações de visibilidade não são um substituto apropriado para a otimização do fluxo de trabalho.
+
+4. Use o cancelamento de simultaneidade com escopo cuidadoso para execuções obsoletas **[CORRECT]**
+
+   O cancelamento de execuções substituídas pode recuperar a capacidade sem descartar a validação atual.
+
+**Concept:** Reduzindo o consumo redundante de CI
+
+**Authored coaching hints:**
+
+- Quais execuções não fornecem mais feedback útil?
+- A última validação exigida pode continuar enquanto o trabalho obsoleto é cancelado?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/using-jobs/using-concurrency>
+
+<!-- certification-coach-question:admin-209:2f75727897429f81f76077dac4e8f0e4d8a05d486b0d3f83830e90df99654dbd -->
+## Question 209: Monitor and optimize GitHub usage
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-209`
+
+**Content revision:** `2f75727897429f81f76077dac4e8f0e4d8a05d486b0d3f83830e90df99654dbd`
+
+### English
+
+A platform-independent lint job runs on a more expensive operating-system runner than necessary. How should an administrator evaluate a cost change?
+
+1. Validate it on an appropriate lower-cost runner and compare actual runtime and billed usage **[CORRECT]**
+
+   Compatibility, duration, and current pricing together determine the useful cost outcome.
+
+2. Assume all operating systems have identical rates forever
+
+   Hosted runner rates and billing treatment can vary by platform.
+
+3. Delete the lint check without evaluating alternatives
+
+   Removing required quality validation is not necessary to evaluate compute efficiency.
+
+4. Choose only the lowest advertised per-minute rate without checking compatibility or duration
+
+   A lower unit rate does not guarantee a lower total cost or a correct execution environment.
+
+**Concept:** Operating-system-aware CI cost optimization
+
+**Authored coaching hints:**
+
+- Does this workload actually require the current operating system?
+- Why should both execution time and current pricing be compared?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un trabajo de lint independiente de la plataforma se ejecuta en un sistema operativo runner más caro de lo necesario. ¿Cómo debería un administrador evaluar un cambio de costo?
+
+1. Valídelo en un runner apropiado de menor costo y compare el tiempo de ejecución real y el uso facturado. **[CORRECT]**
+
+   La compatibilidad, la duración y el precio actual determinan juntos el resultado del costo útil.
+
+2. Supongamos que todos los sistemas operativos tienen tarifas idénticas para siempre
+
+   Las tarifas alojadas de runner y el tratamiento de facturación pueden variar según la plataforma.
+
+3. Eliminar la verificación de lint sin evaluar alternativas
+
+   No es necesario eliminar la validación de calidad requerida para evaluar la eficiencia informática.
+
+4. Elija solo la tarifa por minuto más baja anunciada sin verificar la compatibilidad o la duración
+
+   Una tarifa unitaria más baja no garantiza un menor costo total ni un entorno de ejecución correcto.
+
+**Concept:** Optimización de costos CI basada en el sistema operativo
+
+**Authored coaching hints:**
+
+- ¿Esta carga de trabajo realmente requiere el sistema operativo actual?
+- ¿Por qué deberían compararse tanto el tiempo de ejecución como el precio actual?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um trabalho lint independente de plataforma é executado em um sistema operacional runner mais caro do que o necessário. Como um administrador deve avaliar uma mudança de custo?
+
+1. Valide-o em um runner apropriado e de baixo custo e compare o tempo de execução real e o uso faturado **[CORRECT]**
+
+   Compatibilidade, duração e preços atuais determinam juntos o resultado do custo útil.
+
+2. Suponha que todos os sistemas operacionais tenham taxas idênticas para sempre
+
+   As taxas runner hospedadas e o tratamento de cobrança podem variar de acordo com a plataforma.
+
+3. Exclua a verificação de lint sem avaliar alternativas
+
+   A remoção da validação de qualidade necessária não é necessária para avaliar a eficiência da computação.
+
+4. Escolha apenas a tarifa por minuto anunciada mais baixa, sem verificar a compatibilidade ou a duração
+
+   Uma taxa unitária mais baixa não garante um custo total mais baixo ou um ambiente de execução correto.
+
+**Concept:** Otimização de custos CI com reconhecimento de sistema operacional
+
+**Authored coaching hints:**
+
+- Essa carga de trabalho realmente requer o sistema operacional atual?
+- Por que o tempo de execução e o preço atual devem ser comparados?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/billing/managing-billing-for-your-products/managing-billing-for-github-actions/about-billing-for-github-actions>
+
+<!-- certification-coach-question:admin-210:80e280f1859c31dfc2330cb33e3dc84598432cc755870baf7da4a64243f0b384 -->
+## Question 210: Monitor and optimize GitHub usage
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-210`
+
+**Content revision:** `80e280f1859c31dfc2330cb33e3dc84598432cc755870baf7da4a64243f0b384`
+
+### English
+
+A team proposes moving every workflow to the largest runner because each job might finish faster. Which measurement best tests whether that is a cost optimization?
+
+1. Only the number of CPUs advertised
+
+   More CPUs do not guarantee proportional speedup or lower cost.
+
+2. End-to-end completion time and total billed consumption for representative workloads **[CORRECT]**
+
+   Representative time and consumption measurements reveal actual performance and cost tradeoffs.
+
+3. Only the workflow file's line count
+
+   YAML line count does not measure compute utilization.
+
+4. Only the number of repository contributors
+
+   Contributor count does not establish the efficiency of a runner size.
+
+**Concept:** Measured runner right-sizing
+
+**Authored coaching hints:**
+
+- Can doubling compute cost less if runtime falls enough?
+- Which workloads may not benefit from additional parallel hardware?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un equipo propone trasladar cada flujo de trabajo al runner más grande porque cada trabajo podría terminar más rápido. ¿Qué medida prueba mejor si se trata de una optimización de costos?
+
+1. Solo la cantidad de CPU anunciadas
+
+   Más CPU no garantizan una velocidad proporcional o un menor costo.
+
+2. Tiempo de finalización de un extremo a otro y consumo total facturado para cargas de trabajo representativas **[CORRECT]**
+
+   Las mediciones representativas de tiempo y consumo revelan compensaciones reales entre el rendimiento y los costos.
+
+3. Sólo el recuento de líneas del archivo de flujo de trabajo
+
+   El recuento de líneas YAML no mide la utilización de la computación.
+
+4. Sólo el número de contribuyentes al repositorio.
+
+   El recuento de contribuyentes no establece la eficiencia de un tamaño runner.
+
+**Concept:** Medido runner tamaño correcto
+
+**Authored coaching hints:**
+
+- ¿Duplicar la computación puede costar menos si el tiempo de ejecución disminuye lo suficiente?
+- ¿Qué cargas de trabajo pueden no beneficiarse del hardware paralelo adicional?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma equipe propõe mover todos os fluxos de trabalho para o maior runner porque cada trabalho pode ser concluído mais rapidamente. Qual medida testa melhor se isso é uma otimização de custos?
+
+1. Apenas o número de CPUs anunciado
+
+   Mais CPUs não garantem aceleração proporcional ou custo menor.
+
+2. Tempo de conclusão ponta a ponta e consumo total faturado para cargas de trabalho representativas **[CORRECT]**
+
+   Medições representativas de tempo e consumo revelam o desempenho real e as compensações de custos.
+
+3. Somente a contagem de linhas do arquivo de fluxo de trabalho
+
+   A contagem de linhas YAML não mede a utilização da computação.
+
+4. Apenas o número de contribuidores do repositório
+
+   A contagem de contribuidores não estabelece a eficiência de um tamanho runner.
+
+**Concept:** Dimensionamento correto do runner medido
+
+**Authored coaching hints:**
+
+- A duplicação da computação pode custar menos se o tempo de execução cair o suficiente?
+- Quais cargas de trabalho podem não se beneficiar de hardware paralelo adicional?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/using-github-hosted-runners/using-larger-runners/about-larger-runners>
+
+<!-- certification-coach-question:admin-211:4d521cdfab670731b8c2b90bd1d4b9294148ca7d3cf9881268a62ea9e2764bea -->
+## Question 211: Monitor and optimize GitHub usage
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-211`
+
+**Content revision:** `4d521cdfab670731b8c2b90bd1d4b9294148ca7d3cf9881268a62ea9e2764bea`
+
+### English
+
+An organization considers self-hosted runners because GitHub does not charge Actions execution for them. Which cost factor still belongs in the decision?
+
+1. Only the GitHub-hosted per-minute price, assuming it is billed identically for self-hosted execution
+
+   Self-hosted execution does not use the same GitHub-hosted execution billing model.
+
+2. No other costs; free execution means zero total operating expense
+
+   GitHub execution billing is not the full cost of operating a runner fleet.
+
+3. Infrastructure, patching, security isolation, scaling, and operational support **[CORRECT]**
+
+   Customer-operated compute has infrastructure and administration costs even without an Actions execution charge.
+
+4. Only the virtual machine purchase price, ignoring ongoing administration
+
+   Purchase cost alone omits continuing security and operational expense.
+
+**Concept:** Total cost of self-hosted runners
+
+**Authored coaching hints:**
+
+- Who pays for and maintains the machines?
+- What work disappears from the hosted-service bill but remains with the organization?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una organización considera runners autohospedados porque GitHub no cobra por ejecutar Actions en ellos. ¿Qué factor de costo aún debe considerarse en la decisión?
+
+1. Solo el precio por minuto GitHub-hosted, suponiendo que se facture de forma idéntica para la ejecución de self-hosted
+
+   La ejecución autohospedada no utiliza el mismo modelo de facturación de ejecución GitHub-hosted.
+
+2. Ningún otro costo; La ejecución gratuita significa cero gastos operativos totales.
+
+   La facturación de ejecución de GitHub no es el costo total de operar una flota runner.
+
+3. Infraestructura, parches, aislamiento de seguridad, escalamiento y soporte operativo **[CORRECT]**
+
+   La computación operada por el cliente tiene costos de infraestructura y administración incluso sin un cargo por ejecución de acciones.
+
+4. Sólo el precio de compra de la máquina virtual, ignorando la administración en curso.
+
+   El costo de compra por sí solo omite los gastos operativos y de seguridad continuos.
+
+**Concept:** Costo total de self-hosted runners
+
+**Authored coaching hints:**
+
+- ¿Quién paga y mantiene las máquinas?
+- ¿Qué trabajo desaparece de la factura del servicio alojado pero permanece en la organización?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma organização considera self-hosted runners porque GitHub não cobra a execução de ações por eles. Qual fator de custo ainda pertence à decisão?
+
+1. Somente o preço por minuto de GitHub-hosted, presumindo que seja cobrado de forma idêntica para a execução de self-hosted
+
+   A execução auto-hospedada não usa o mesmo modelo de cobrança de execução GitHub-hosted.
+
+2. Sem outros custos; execução livre significa zero despesa operacional total
+
+   O faturamento de execução GitHub não representa o custo total de operação de uma frota runner.
+
+3. Infraestrutura, aplicação de patches, isolamento de segurança, escalabilidade e suporte operacional **[CORRECT]**
+
+   A computação operada pelo cliente tem custos de infraestrutura e administração mesmo sem cobrança de execução de Ações.
+
+4. Apenas o preço de compra da máquina virtual, ignorando a administração contínua
+
+   O custo de aquisição por si só omite a segurança contínua e as despesas operacionais.
+
+**Concept:** Custo total de self-hosted runners
+
+**Authored coaching hints:**
+
+- Quem paga e mantém as máquinas?
+- Que trabalho desaparece da conta do serviço hospedado, mas permanece na organização?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/concepts/runners/about-self-hosted-runners>
+
+<!-- certification-coach-question:admin-212:29c7f7d45fe37f52c88f4edeffa2b8d4941c89ad45a1d9d16e8b19f833c0b72e -->
+## Question 212: Monitor and optimize GitHub usage
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-212`
+
+**Content revision:** `29c7f7d45fe37f52c88f4edeffa2b8d4941c89ad45a1d9d16e8b19f833c0b72e`
+
+### English
+
+A department has assigned many Copilot seats but low measured engagement. What is the most useful next action?
+
+1. Assume assignment proves successful adoption
+
+   Assignment measures access provision, not necessarily active use.
+
+2. Immediately remove every seat without consulting teams
+
+   Unreviewed removal may discard valuable access or interrupt adoption efforts.
+
+3. Use Git commit count alone to rank individual developers
+
+   Commit count alone is not a sound individual productivity or Copilot-value measure.
+
+4. Compare entitlement and usage evidence, then investigate onboarding and genuine business need **[CORRECT]**
+
+   Usage and entitlement context can identify both enablement gaps and reclaimable seats.
+
+**Concept:** Entitlement versus adoption
+
+**Authored coaching hints:**
+
+- Does having access mean the feature is being used effectively?
+- What nontechnical barriers might explain low engagement?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un departamento ha asignado muchos puestos de copiloto, pero ha medido una participación baja. ¿Cuál es la siguiente acción más útil?
+
+1. Supongamos que la asignación demuestra una adopción exitosa
+
+   La asignación mide la provisión de acceso, no necesariamente el uso activo.
+
+2. Retirar de inmediato todas las licencias sin consultar a los equipos
+
+   La eliminación no revisada puede descartar accesos valiosos o interrumpir los esfuerzos de adopción.
+
+3. Utilice el recuento de Git commit solo para clasificar a los desarrolladores individuales
+
+   El recuento de compromisos por sí solo no es una medida sólida de productividad individual o valor de Copilot.
+
+4. Compare la evidencia de derechos y uso, luego investigue la incorporación y la necesidad comercial genuina. **[CORRECT]**
+
+   El contexto de uso y derechos puede identificar tanto las brechas de habilitación como los puestos reclamables.
+
+**Concept:** Derecho versus adopción
+
+**Authored coaching hints:**
+
+- ¿Tener acceso significa que la función se está utilizando de forma eficaz?
+- ¿Qué barreras no técnicas podrían explicar la baja participación?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um departamento atribuiu muitas licenças do Copilot, mas o engajamento medido é baixo. Qual é a próxima ação mais útil?
+
+1. Suponha que a atribuição comprove uma adoção bem-sucedida
+
+   A atribuição mede a provisão de acesso, não necessariamente o uso ativo.
+
+2. Remover imediatamente todas as licenças sem consultar as equipes
+
+   A remoção não revisada pode descartar acesso valioso ou interromper os esforços de adoção.
+
+3. Use apenas a contagem Git commit para classificar desenvolvedores individuais
+
+   A contagem de commits, por si só, não é uma medida sólida de produtividade individual ou do valor do Copilot.
+
+4. Compare os direitos e as evidências de uso e, em seguida, investigue a integração e as necessidades comerciais genuínas **[CORRECT]**
+
+   O contexto de uso e de direitos pode identificar lacunas de capacitação e licenças recuperáveis.
+
+**Concept:** Direito versus adoção
+
+**Authored coaching hints:**
+
+- Ter acesso significa que o recurso está sendo usado de forma eficaz?
+- Que barreiras não técnicas podem explicar o baixo envolvimento?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/copilot/concepts/billing-and-usage/copilot-usage-metrics/copilot-metrics>
+
+<!-- certification-coach-question:admin-213:0d91e69f88b799cecec911a3e423310e11fed77c37d964db7ba5b2aead7861fe -->
+## Question 213: Monitor and optimize GitHub usage
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-213`
+
+**Content revision:** `0d91e69f88b799cecec911a3e423310e11fed77c37d964db7ba5b2aead7861fe`
+
+### English
+
+After a new workflow policy, average delivery time improves. A dashboard owner claims the policy alone caused the improvement. Which interpretation is more defensible?
+
+1. The timing suggests a hypothesis; compare workload mix and other changes before claiming causation **[CORRECT]**
+
+   Contextual comparison helps separate policy effects from other changing conditions.
+
+2. Any two metrics moving together establish causation
+
+   Correlation and timing alone do not prove causation.
+
+3. Faster delivery proves every security control is unnecessary
+
+   Delivery speed does not determine whether security governance is needed.
+
+4. A dashboard cannot inform any operational decision
+
+   Metrics can inform decisions when their limitations are acknowledged.
+
+**Concept:** Interpreting adoption and performance trends
+
+**Authored coaching hints:**
+
+- What else changed during the measurement period?
+- Were the compared workloads and populations similar?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Después de una nueva política de flujo de trabajo, el tiempo promedio de entrega mejora. El propietario de un panel afirma que la política por sí sola provocó la mejora. ¿Qué interpretación es más defendible?
+
+1. El momento sugiere una hipótesis; comparar la combinación de carga de trabajo y otros cambios antes de alegar causalidad **[CORRECT]**
+
+   La comparación contextual ayuda a separar los efectos de las políticas de otras condiciones cambiantes.
+
+2. Cualquier par de métricas que se muevan juntas establecen la causalidad
+
+   La correlación y el momento por sí solos no prueban la causalidad.
+
+3. La entrega más rápida demuestra que todos los controles de seguridad son innecesarios
+
+   La velocidad de entrega no determina si se necesita una gobernanza de la seguridad.
+
+4. Un panel no puede informar ninguna decisión operativa
+
+   Las métricas pueden informar las decisiones cuando se reconocen sus limitaciones.
+
+**Concept:** Interpretación de las tendencias de adopción y rendimiento
+
+**Authored coaching hints:**
+
+- ¿Qué más cambió durante el período de medición?
+- ¿Fueron similares las cargas de trabajo y las poblaciones comparadas?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Após uma nova política de fluxo de trabalho, o tempo médio de entrega melhora. O proprietário de um painel afirma que a política por si só causou a melhoria. Qual interpretação é mais defensável?
+
+1. O momento sugere uma hipótese; compare o mix de carga de trabalho e outras mudanças antes de alegar causalidade **[CORRECT]**
+
+   A comparação contextual ajuda a separar os efeitos das políticas de outras condições em mudança.
+
+2. Quaisquer duas métricas movendo-se juntas estabelecem causalidade
+
+   A correlação e o momento por si só não provam a causalidade.
+
+3. A entrega mais rápida prova que todo controle de segurança é desnecessário
+
+   A velocidade de entrega não determina se a governança de segurança é necessária.
+
+4. Um painel não pode informar nenhuma decisão operacional
+
+   As métricas podem informar as decisões quando as suas limitações são reconhecidas.
+
+**Concept:** Interpretando tendências de adoção e desempenho
+
+**Authored coaching hints:**
+
+- O que mais mudou durante o período de medição?
+- As cargas de trabalho e as populações comparadas foram semelhantes?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/billing/tutorials/automate-usage-reporting>
+
+<!-- certification-coach-question:admin-214:09a438c0624a7c3bbbd7b1f5a13bad7f261890f3b987f505b0f23d2fab937314 -->
+## Question 214: Monitor and optimize GitHub usage
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-214`
+
+**Content revision:** `09a438c0624a7c3bbbd7b1f5a13bad7f261890f3b987f505b0f23d2fab937314`
+
+### English
+
+An enterprise reports fewer active users this month but also merged several organizations and changed the reporting population. What should an administrator do before declaring adoption has declined?
+
+1. Ignore the population change
+
+   A changed population can produce misleading raw comparisons.
+
+2. Normalize the time window, population, and metric definitions before comparing periods **[CORRECT]**
+
+   Comparable definitions and populations are prerequisites for interpreting a trend.
+
+3. Use only the largest daily number from each period
+
+   Picking peaks introduces selection bias and does not normalize coverage.
+
+4. Delete the prior report because it is inconvenient
+
+   Discarding history prevents transparent analysis.
+
+**Concept:** Comparable usage-report baselines
+
+**Authored coaching hints:**
+
+- Do both reports measure the same people and period length?
+- Could a denominator change explain the apparent trend?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una empresa informa menos usuarios activos este mes, pero también fusionó varias organizaciones y cambió la población informante. ¿Qué debe hacer un administrador antes de declarar que la adopción ha declinado?
+
+1. Ignorar el cambio de población
+
+   Una población cambiada puede producir comparaciones crudas y engañosas.
+
+2. Normalice la ventana de tiempo, la población y las definiciones de métricas antes de comparar períodos. **[CORRECT]**
+
+   Definiciones y poblaciones comparables son requisitos previos para interpretar una tendencia.
+
+3. Utilice sólo el número diario más grande de cada período
+
+   Seleccionar picos introduce un sesgo de selección y no normaliza la cobertura.
+
+4. Eliminar el informe anterior porque es inconveniente.
+
+   Descartar el historial impide un análisis transparente.
+
+**Concept:** Líneas base de informes de uso comparables
+
+**Authored coaching hints:**
+
+- ¿Ambos informes miden a las mismas personas y la misma duración del período?
+- ¿Podría un cambio de denominador explicar la aparente tendencia?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma empresa relata menos usuários ativos neste mês, mas também unificou várias organizações e alterou a população do relatório. O que um administrador deve fazer antes de declarar que a adoção diminuiu?
+
+1. Ignore a mudança populacional
+
+   Uma população alterada pode produzir comparações brutas enganosas.
+
+2. Normalize a janela de tempo, a população e as definições de métricas antes de comparar os períodos **[CORRECT]**
+
+   Definições e populações comparáveis são pré-requisitos para a interpretação de uma tendência.
+
+3. Use apenas o maior número diário de cada período
+
+   A escolha dos picos introduz viés de seleção e não normaliza a cobertura.
+
+4. Exclua o relatório anterior porque é inconveniente
+
+   Descartar o histórico impede uma análise transparente.
+
+**Concept:** Linhas de base de relatórios de uso comparáveis
+
+**Authored coaching hints:**
+
+- Ambos os relatórios medem as mesmas pessoas e a mesma duração do período?
+- Poderia uma mudança no denominador explicar a tendência aparente?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/billing/tutorials/automate-usage-reporting>
+
+<!-- certification-coach-question:admin-215:cf058ff8afdd8b88bff1bfca463545a103ef200d0188c37619abc5e845b348ad -->
+## Question 215: Monitor and optimize GitHub usage
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-215`
+
+**Content revision:** `cf058ff8afdd8b88bff1bfca463545a103ef200d0188c37619abc5e845b348ad`
+
+### English
+
+A manager wants to rank developer productivity using only counts of enterprise audit events. What is the best administrative guidance?
+
+1. Audit events are a complete measure of software quality
+
+   Administrative event counts do not measure all dimensions of software quality.
+
+2. The largest event count always identifies the most productive engineer
+
+   Event volume varies by task and does not establish individual value.
+
+3. Audit logs support activity attribution and compliance, not a complete individual productivity measure **[CORRECT]**
+
+   The audit log's purpose and coverage limit how its activity counts should be interpreted.
+
+4. Delete low-count users automatically
+
+   Access removal requires authorization review rather than a simplistic activity ranking.
+
+**Concept:** Limits of audit-derived productivity metrics
+
+**Authored coaching hints:**
+
+- What kinds of work produce no relevant administrative event?
+- Was this data source designed to measure individual output quality?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un gerente quiere clasificar la productividad de los desarrolladores utilizando únicamente recuentos de eventos de auditoría empresarial. ¿Cuál es la mejor orientación administrativa?
+
+1. Los eventos de auditoría son una medida completa de la calidad del software
+
+   Los recuentos de eventos administrativos no miden todas las dimensiones de la calidad del software.
+
+2. El mayor número de eventos siempre identifica al ingeniero más productivo
+
+   El volumen de eventos varía según la tarea y no establece un valor individual.
+
+3. Los registros de auditoría respaldan la atribución y el cumplimiento de la actividad, no una medida de productividad individual completa **[CORRECT]**
+
+   El propósito y la cobertura del registro de auditoría limitan cómo se debe interpretar el conteo de su actividad.
+
+4. Eliminar usuarios con un recuento bajo automáticamente
+
+   La eliminación del acceso requiere una revisión de la autorización en lugar de una clasificación de actividad simplista.
+
+**Concept:** Límites de las métricas de productividad derivadas de auditorías
+
+**Authored coaching hints:**
+
+- ¿Qué tipos de trabajo no producen ningún hecho administrativo relevante?
+- ¿Esta fuente de datos fue diseñada para medir la calidad de la producción individual?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um gerente deseja classificar a produtividade do desenvolvedor usando apenas contagens de eventos de auditoria empresarial. Qual a melhor orientação administrativa?
+
+1. Os eventos de auditoria são uma medida completa da qualidade do software
+
+   As contagens de eventos administrativos não medem todas as dimensões da qualidade do software.
+
+2. A maior contagem de eventos sempre identifica o engenheiro mais produtivo
+
+   O volume de eventos varia de acordo com a tarefa e não estabelece valor individual.
+
+3. Os registros de auditoria apoiam a atribuição e conformidade de atividades, e não uma medida completa de produtividade individual **[CORRECT]**
+
+   A finalidade e a cobertura do registo de auditoria limitam a forma como as suas contagens de atividades devem ser interpretadas.
+
+4. Exclua usuários com contagem baixa automaticamente
+
+   A remoção de acesso requer revisão de autorização em vez de uma classificação simplista de atividades.
+
+**Concept:** Limites das métricas de produtividade derivadas de auditoria
+
+**Authored coaching hints:**
+
+- Que tipos de trabalho não produzem nenhum evento administrativo relevante?
+- Esta fonte de dados foi projetada para medir a qualidade individual dos resultados?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/security-and-compliance/audit-log-for-an-enterprise>
+
+<!-- certification-coach-question:admin-216:7cbbd7a9c3413891a13dd864fc0f5766da4e44cfeea29a415f75d0db286f92ee -->
+## Question 216: Monitor and optimize GitHub usage
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-216`
+
+**Content revision:** `7cbbd7a9c3413891a13dd864fc0f5766da4e44cfeea29a415f75d0db286f92ee`
+
+### English
+
+API throttling rises after a new compliance integration is deployed. Which evidence should administrators collect to find a useful optimization?
+
+1. Only the integration's approved permission list
+
+   Permissions describe authority but not actual request frequency and retry behavior.
+
+2. Only its token's expiration date
+
+   Expiration metadata does not explain bursts or redundant polling.
+
+3. Only the total number of organization members
+
+   Member count alone does not reveal the integration's call pattern.
+
+4. Request frequency, endpoint mix, concurrency, response headers, and retry behavior **[CORRECT]**
+
+   Request-pattern evidence identifies redundant polling, bursts, and incorrect retry handling.
+
+**Concept:** Diagnosing API consumption patterns
+
+**Authored coaching hints:**
+
+- Which characteristics can trigger primary or secondary limits?
+- What did the new integration change about the request pattern?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+La limitación de API aumenta después de implementar una nueva integración de cumplimiento. ¿Qué evidencia deberían recopilar los administradores para encontrar una optimización útil?
+
+1. Sólo la lista de permisos aprobados de la integración
+
+   Los permisos describen la autoridad, pero no la frecuencia real de las solicitudes ni el comportamiento de reintento.
+
+2. Sólo la fecha de vencimiento de su token.
+
+   Los metadatos de caducidad no explican las ráfagas ni los sondeos redundantes.
+
+3. Sólo el número total de miembros de la organización.
+
+   El recuento de miembros por sí solo no revela el patrón de llamadas de la integración.
+
+4. Frecuencia de solicitud, combinación de puntos finales, simultaneidad, encabezados de respuesta y comportamiento de reintento **[CORRECT]**
+
+   La evidencia del patrón de solicitud identifica sondeos redundantes, ráfagas y manejo de reintentos incorrectos.
+
+**Concept:** Diagnóstico de patrones de consumo API
+
+**Authored coaching hints:**
+
+- ¿Qué características pueden desencadenar límites primarios o secundarios?
+- ¿Qué cambió la nueva integración sobre el patrón de solicitud?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+A limitação do API aumenta após a implantação de uma nova integração de conformidade. Quais evidências os administradores devem coletar para encontrar uma otimização útil?
+
+1. Somente a lista de permissões aprovadas da integração
+
+   As permissões descrevem a autoridade, mas não a frequência real da solicitação e o comportamento de novas tentativas.
+
+2. Apenas a data de validade do seu token
+
+   Os metadados de expiração não explicam rajadas ou pesquisas redundantes.
+
+3. Somente o número total de membros da organização
+
+   A contagem de membros por si só não revela o padrão de chamada da integração.
+
+4. Frequência de solicitação, combinação de endpoints, simultaneidade, cabeçalhos de resposta e comportamento de repetição **[CORRECT]**
+
+   A evidência do padrão de solicitação identifica pesquisas redundantes, rajadas e tratamento incorreto de novas tentativas.
+
+**Concept:** Diagnosticando padrões de consumo API
+
+**Authored coaching hints:**
+
+- Quais características podem acionar limites primários ou secundários?
+- O que a nova integração mudou no padrão de solicitação?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/rest/using-the-rest-api/best-practices-for-using-the-rest-api>
+
+<!-- certification-coach-question:admin-217:3bb98d6f29e725c8d523f2aad92cbab3ae34f838812f506bf933f9aee192ec9b -->
+## Question 217: Monitor and optimize GitHub usage
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-217`
+
+**Content revision:** `3bb98d6f29e725c8d523f2aad92cbab3ae34f838812f506bf933f9aee192ec9b`
+
+### English
+
+Two metered-usage reports disagree because one covers a calendar month and the other a rolling thirty-day interval. What should happen before investigating a billing defect?
+
+1. Align the date ranges, scopes, units, and report definitions **[CORRECT]**
+
+   Comparable scope and periods are necessary before reconciling report totals.
+
+2. Assume the larger report must be fraudulent
+
+   A reporting-window mismatch is not evidence of fraud.
+
+3. Add the reports together as if they were disjoint
+
+   Overlapping periods cannot be summed as independent consumption.
+
+4. Remove repository permissions from every user
+
+   Authorization removal does not reconcile report definitions.
+
+**Concept:** Reconciling metered-usage reports
+
+**Authored coaching hints:**
+
+- Do the reports actually describe the same interval and resources?
+- Which definitions must match before totals should agree?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Dos informes de uso medido no están de acuerdo porque uno cubre un mes calendario y el otro un intervalo consecutivo de treinta días. ¿Qué debería pasar antes de investigar un defecto de facturación?
+
+1. Alinear los rangos de fechas, alcances, unidades y definiciones de informes **[CORRECT]**
+
+   Es necesario comparar alcances y períodos antes de conciliar los totales del informe.
+
+2. Supongamos que el informe más amplio debe ser fraudulento.
+
+   Una discrepancia en el período de presentación de informes no es evidencia de fraude.
+
+3. Sume los informes como si estuvieran separados
+
+   Los períodos superpuestos no se pueden sumar como consumo independiente.
+
+4. Eliminar permisos de repositorio de todos los usuarios
+
+   La eliminación de la autorización no concilia las definiciones de los informes.
+
+**Concept:** Conciliación de informes de uso medido
+
+**Authored coaching hints:**
+
+- ¿Los informes realmente describen el mismo intervalo y recursos?
+- ¿Qué definiciones deben coincidir antes de que los totales coincidan?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Dois relatórios de uso medido discordam porque um cobre um mês e o outro um intervalo contínuo de trinta dias. O que deve acontecer antes de investigar um defeito de faturamento?
+
+1. Alinhe os intervalos de datas, escopos, unidades e definições de relatório **[CORRECT]**
+
+   São necessários escopo e períodos comparáveis antes de reconciliar os totais do relatório.
+
+2. Suponha que o relatório maior deve ser fraudulento
+
+   Uma incompatibilidade entre janelas de relatórios não é evidência de fraude.
+
+3. Adicione os relatórios como se fossem separados
+
+   Os períodos sobrepostos não podem ser somados como consumo independente.
+
+4. Remova as permissões de repositório de todos os usuários
+
+   A remoção da autorização não reconcilia as definições do relatório.
+
+**Concept:** Reconciliando relatórios de uso medido
+
+**Authored coaching hints:**
+
+- Os relatórios realmente descrevem o mesmo intervalo e recursos?
+- Quais definições devem corresponder antes que os totais concordem?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/billing/tutorials/automate-usage-reporting>
+
+<!-- certification-coach-question:admin-218:2da5fcc1ba4cb2ebd6b8dd5ee9fd95fb4fd2987674e93f390da633ba4035df4f -->
+## Question 218: Monitor and optimize GitHub usage
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-218`
+
+**Content revision:** `2da5fcc1ba4cb2ebd6b8dd5ee9fd95fb4fd2987674e93f390da633ba4035df4f`
+
+### English
+
+Several organization owners independently report the same employee as a license consumer. A central report sums those rows and appears to exceed the enterprise's unique user count. What should be checked?
+
+1. Whether the employee has several local clones
+
+   Local clones do not create additional enterprise user identities.
+
+2. Whether the report deduplicates identities according to the enterprise licensing scope **[CORRECT]**
+
+   Repeated memberships must be reconciled to the documented unique-user licensing model.
+
+3. Whether every repository uses the same default branch name
+
+   Branch naming does not deduplicate license consumers.
+
+4. Whether all organizations use identical issue templates
+
+   Issue templates do not affect seat-count identity matching.
+
+**Concept:** Deduplicating license-consumption reporting
+
+**Authored coaching hints:**
+
+- Can the same identity appear in several source reports?
+- What is the unit being licensed rather than the number of report rows?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Varios propietarios de organizaciones informan de forma independiente que el mismo empleado es un consumidor de licencia. Un informe central suma esas filas y parece exceder el recuento de usuarios únicos de la empresa. ¿Qué se debe comprobar?
+
+1. Si el empleado tiene varios clones locales
+
+   Los clones locales no crean identidades de usuarios empresariales adicionales.
+
+2. Si el informe deduplica identidades según el alcance de la licencia empresarial **[CORRECT]**
+
+   Las membresías repetidas deben conciliarse con el modelo de licencia de usuario único documentado.
+
+3. Si cada repositorio usa el mismo nombre de rama predeterminado
+
+   La nomenclatura de ramas no elimina los duplicados entre quienes consumen licencias.
+
+4. Si todas las organizaciones utilizan plantillas issue idénticas
+
+   Las plantillas de problemas no afectan la coincidencia de identidades del recuento de puestos.
+
+**Concept:** Deduplicación de informes de consumo de licencias
+
+**Authored coaching hints:**
+
+- ¿Puede aparecer la misma identidad en varios informes fuente?
+- ¿Cuál es la unidad a la que se le otorga licencia en lugar del número de filas del informe?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Vários proprietários de organizações relatam independentemente o mesmo funcionário como consumidor de licença. Um relatório central soma essas linhas e parece exceder a contagem de usuários exclusivos da empresa. O que deve ser verificado?
+
+1. Se o funcionário possui vários clones locais
+
+   Os clones locais não criam identidades de usuário corporativo adicionais.
+
+2. Se o relatório desduplica identidades de acordo com o escopo de licenciamento empresarial **[CORRECT]**
+
+   As associações repetidas devem ser conciliadas com o modelo documentado de licenciamento de usuário único.
+
+3. Se cada repositório usa o mesmo nome de branch padrão
+
+   A nomenclatura de ramificações não elimina duplicidades entre os consumidores de licenças.
+
+4. Se todas as organizações usam modelos issue idênticos
+
+   Os modelos de issues não afetam a correspondência de identidades usada na contagem de licenças.
+
+**Concept:** Desduplicando relatórios de consumo de licença
+
+**Authored coaching hints:**
+
+- A mesma identidade pode aparecer em vários relatórios de origem?
+- Qual é a unidade que está sendo licenciada em vez do número de linhas do relatório?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/billing/managing-the-plan-for-your-github-account/about-per-user-pricing>
+
+<!-- certification-coach-question:admin-219:22ecfe007d2590bab866382fa6d1d4f30fdb1026b402e0f5ae5a3b63e89cdee0 -->
+## Question 219: Monitor and optimize GitHub usage
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-219`
+
+**Content revision:** `22ecfe007d2590bab866382fa6d1d4f30fdb1026b402e0f5ae5a3b63e89cdee0`
+
+### English
+
+Support needs evidence from a GHES performance incident, including appliance context and relevant logs. Which collection plan best supports analysis while respecting confidentiality?
+
+1. Post the bundle publicly so anyone can help interpret it
+
+   Public sharing can expose internal operational information despite credential sanitization.
+
+2. Send only a current screenshot of license consumption
+
+   Seat-consumption evidence does not supply the requested appliance logs and context.
+
+3. Collect the documented support bundle covering the incident and provide scoped details through the support channel **[CORRECT]**
+
+   A correctly scoped support bundle and incident details provide actionable evidence with controlled handling.
+
+4. Delete the logs before escalating to minimize the archive
+
+   Deleting evidence impairs incident analysis.
+
+**Concept:** Diagnostic evidence for performance escalation
+
+**Authored coaching hints:**
+
+- What can Support correlate with the reported incident period?
+- Which collection path preserves useful context without broad disclosure?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+El soporte necesita evidencia de un incidente de rendimiento del GHES, incluido el contexto del dispositivo y los registros relevantes. ¿Qué plan de recopilación respalda mejor el análisis respetando la confidencialidad?
+
+1. Publique el paquete públicamente para que cualquiera pueda ayudar a interpretarlo.
+
+   El intercambio público puede exponer información operativa interna a pesar del saneamiento de credenciales.
+
+2. Envíe solo una captura de pantalla actual del consumo de licencia
+
+   La evidencia del consumo de licencias no proporciona los registros ni el contexto del appliance solicitados.
+
+3. Recopile el paquete de soporte documentado que cubre el incidente y proporcione detalles específicos a través del canal de soporte. **[CORRECT]**
+
+   Un paquete de soporte con el alcance correcto y los detalles del incidente proporcionan evidencia procesable con un manejo controlado.
+
+4. Elimine los registros antes de escalar para minimizar el archivo
+
+   La eliminación de pruebas perjudica el análisis del incidente.
+
+**Concept:** Evidencia diagnóstica para la escalada del desempeño
+
+**Authored coaching hints:**
+
+- ¿Qué puede correlacionar el soporte con el período del incidente reportado?
+- ¿Qué ruta de recopilación preserva el contexto útil sin una divulgación amplia?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+O suporte precisa de evidências de um incidente de desempenho GHES, incluindo contexto do dispositivo e logs relevantes. Qual plano de coleta apoia melhor a análise, respeitando a confidencialidade?
+
+1. Publique o pacote publicamente para que qualquer pessoa possa ajudar a interpretá-lo
+
+   O compartilhamento público pode expor informações operacionais internas, apesar da higienização de credenciais.
+
+2. Envie apenas uma captura de tela atual do consumo da licença
+
+   A evidência de consumo de licenças não fornece os logs e o contexto do appliance solicitados.
+
+3. Colete o pacote de suporte documentado que cobre o incidente e forneça detalhes do escopo por meio do canal de suporte **[CORRECT]**
+
+   Um pacote de suporte com escopo correto e detalhes do incidente fornecem evidências acionáveis com tratamento controlado.
+
+4. Exclua os logs antes de escalar para minimizar o arquivo morto
+
+   A exclusão de evidências prejudica a análise do incidente.
+
+**Concept:** Evidência diagnóstica para escalonamento de desempenho
+
+**Authored coaching hints:**
+
+- O que o Suporte pode correlacionar com o período do incidente relatado?
+- Qual caminho de coleta preserva o contexto útil sem divulgação ampla?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-server@latest/support/contacting-github-support/providing-data-to-github-support>
+
+<!-- certification-coach-question:admin-220:ece6ba16858ce984b4f0d943d37d8be32ac9593bb7e62d2549a082190ab7524c -->
+## Question 220: Monitor and optimize GitHub usage
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-220`
+
+**Content revision:** `ece6ba16858ce984b4f0d943d37d8be32ac9593bb7e62d2549a082190ab7524c`
+
+### English
+
+A Cloud API problem persists after the administrator checks permissions and rate-limit responses. What should a useful Support handoff include?
+
+1. Only a claim that every GitHub product is unavailable
+
+   An unsupported broad claim obscures the actual impact.
+
+2. A shared owner password so Support can impersonate any employee
+
+   Passwords should not be shared for a support handoff.
+
+3. An instruction to remove all enterprise policies without investigation
+
+   Removing all policies is not an evidence-based escalation.
+
+4. Representative failing requests, sanitized responses, timestamps, request identifiers, and affected scope **[CORRECT]**
+
+   Specific sanitized request evidence helps Support locate and diagnose the failure.
+
+**Concept:** Evidence-based Cloud support handoff
+
+**Authored coaching hints:**
+
+- What distinguishes the failing request from successful ones?
+- Which information lets the service operator correlate its own logs?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un problema de Cloud API persiste después de que el administrador verifica los permisos y las respuestas de límite de velocidad. ¿Qué debe incluir una transferencia de soporte útil?
+
+1. Sólo una afirmación de que todos los productos GitHub no están disponibles
+
+   Una afirmación amplia y sin fundamento oscurece el impacto real.
+
+2. Una contraseña de propietario compartida para que Soporte pueda hacerse pasar por cualquier empleado
+
+   Las contraseñas no se deben compartir para una transferencia de soporte.
+
+3. Una instrucción para eliminar todas las políticas empresariales sin investigación
+
+   Eliminar todas las políticas no es una escalada basada en evidencia.
+
+4. Solicitudes fallidas representativas, respuestas desinfectadas, marcas de tiempo, identificadores de solicitudes y alcance afectado **[CORRECT]**
+
+   La evidencia de solicitud desinfectada específica ayuda al soporte a localizar y diagnosticar la falla.
+
+**Concept:** Transferencia de soporte en la nube basada en evidencia
+
+**Authored coaching hints:**
+
+- ¿Qué distingue la solicitud fallida de las exitosas?
+- ¿Qué información permite al operador del servicio correlacionar sus propios registros?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um problema do Cloud API persiste depois que o administrador verifica as permissões e as respostas de limite de taxa. O que uma transferência de suporte útil deve incluir?
+
+1. Apenas uma alegação de que todos os produtos GitHub estão indisponíveis
+
+   Uma afirmação ampla e não fundamentada obscurece o impacto real.
+
+2. Uma senha de proprietário compartilhada para que o Support possa se passar por qualquer funcionário
+
+   As senhas não devem ser compartilhadas para transferência de suporte.
+
+3. Uma instrução para remover todas as políticas empresariais sem investigação
+
+   A remoção de todas as políticas não é uma escalada baseada em evidências.
+
+4. Solicitações representativas com falha, respostas higienizadas, carimbos de data/hora, identificadores de solicitação e escopo afetado **[CORRECT]**
+
+   Evidências específicas de solicitação higienizadas ajudam o suporte a localizar e diagnosticar a falha.
+
+**Concept:** Transferência de suporte na nuvem baseada em evidências
+
+**Authored coaching hints:**
+
+- O que distingue a solicitação com falha das solicitações bem-sucedidas?
+- Quais informações permitem ao operador de serviço correlacionar seus próprios logs?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/support/contacting-github-support/creating-a-support-ticket>
+
+<!-- certification-coach-question:admin-221:06558aa8e40c2fd15cc9fe0506fe2f02ec60d68c2a6c7bf06333939f3243f29f -->
+## Question 221: Monitor and optimize GitHub usage
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-221`
+
+**Content revision:** `06558aa8e40c2fd15cc9fe0506fe2f02ec60d68c2a6c7bf06333939f3243f29f`
+
+### English
+
+GHES clone and web-response times worsen during heavy activity. Before purchasing more hardware, which investigation best supports a capacity decision?
+
+1. Correlate workload timing with relevant instance resource and service-health metrics **[CORRECT]**
+
+   Correlated utilization and service evidence help identify the actual bottleneck.
+
+2. Increase CPU allocation without measuring CPU utilization
+
+   More CPU may not help an instance limited by memory or storage.
+
+3. Add memory without inspecting memory pressure or other bottlenecks
+
+   Unmeasured memory expansion may leave the actual limiting resource unchanged.
+
+4. Migrate storage before checking disk latency and throughput
+
+   Storage migration should follow evidence of a storage bottleneck.
+
+**Concept:** Evidence-driven GHES capacity planning
+
+**Authored coaching hints:**
+
+- Which shared resource may be saturated during the slow period?
+- What would demonstrate that more hardware addresses the limiting factor?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Los tiempos de clonación y respuesta web de GHES empeoran durante una actividad intensa. Antes de comprar más hardware, ¿qué investigación respalda mejor una decisión sobre capacidad?
+
+1. Correlacione el tiempo de la carga de trabajo con los recursos de instancia relevantes y las métricas de estado del servicio. **[CORRECT]**
+
+   La evidencia correlacionada de utilización y servicio ayuda a identificar el cuello de botella real.
+
+2. Aumentar la asignación de CPU sin medir la utilización de CPU
+
+   Es posible que más CPU no ayude a una instancia limitada por la memoria o el almacenamiento.
+
+3. Agregue memoria sin inspeccionar la presión de la memoria u otros cuellos de botella
+
+   La expansión de memoria no medida puede dejar sin cambios el recurso limitante real.
+
+4. Migre el almacenamiento antes de comprobar la latencia y el rendimiento del disco
+
+   La migración del almacenamiento debe seguir la evidencia de un cuello de botella en el almacenamiento.
+
+**Concept:** Planificación de capacidad GHES basada en evidencia
+
+**Authored coaching hints:**
+
+- ¿Qué recurso compartido puede estar saturado durante el período lento?
+- ¿Qué demostraría que más hardware aborda el factor limitante?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+O clone GHES e os tempos de resposta da web pioram durante atividades intensas. Antes de comprar mais hardware, qual investigação apoia melhor uma decisão de capacidade?
+
+1. Correlacione o tempo da carga de trabalho com recursos de instância relevantes e métricas de integridade do serviço **[CORRECT]**
+
+   A utilização correlacionada e as evidências de serviço ajudam a identificar o gargalo real.
+
+2. Aumente a alocação de CPU sem medir a utilização de CPU
+
+   Mais CPU pode não ajudar uma instância limitada por memória ou armazenamento.
+
+3. Adicione memória sem inspecionar a pressão da memória ou outros gargalos
+
+   A expansão de memória não medida pode deixar o recurso limitante real inalterado.
+
+4. Migre o armazenamento antes de verificar a latência e a taxa de transferência do disco
+
+   A migração de armazenamento deve seguir a evidência de um gargalo de armazenamento.
+
+**Concept:** Planejamento de capacidade GHES baseado em evidências
+
+**Authored coaching hints:**
+
+- Qual recurso compartilhado pode ficar saturado durante o período lento?
+- O que demonstraria que mais hardware aborda o fator limitante?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/enterprise-server@latest/admin/monitoring-and-managing-your-instance/monitoring-your-instance/about-the-monitor-dashboards>
+
+<!-- certification-coach-question:admin-222:30aaeae3914446bb96df9e6417d57ee699210739a01604caf590f891f55b189c -->
+## Question 222: Monitor and optimize GitHub usage
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-222`
+
+**Content revision:** `30aaeae3914446bb96df9e6417d57ee699210739a01604caf590f891f55b189c`
+
+### English
+
+A platform team pilots a larger runner for one build type. Which result would best justify wider adoption?
+
+1. The runner has a more impressive name
+
+   Names do not measure operational benefit.
+
+2. Representative measurements show acceptable reliability and a worthwhile time-versus-cost improvement **[CORRECT]**
+
+   Representative reliability, duration, and cost evidence support a measured rollout.
+
+3. One unusually fast run is the only evidence
+
+   One outlier is not a reliable capacity decision baseline.
+
+4. Every other build type is assumed to scale identically
+
+   Different workloads can have different bottlenecks and scaling behavior.
+
+**Concept:** Validating performance-optimization pilots
+
+**Authored coaching hints:**
+
+- How can the pilot distinguish a repeatable benefit from a single outlier?
+- Which tradeoff matters besides the shortest observed runtime?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un equipo de plataforma pone a prueba un runner más grande para un tipo de construcción. ¿Qué resultado justificaría mejor una adopción más amplia?
+
+1. El runner tiene un nombre más impresionante
+
+   Los nombres no miden el beneficio operativo.
+
+2. Las mediciones representativas muestran una confiabilidad aceptable y una mejora valiosa en relación con el costo. **[CORRECT]**
+
+   La confiabilidad, duración y evidencia representativa de costos respaldan una implementación mesurada.
+
+3. Una carrera inusualmente rápida es la única evidencia
+
+   Un valor atípico no es una base de referencia confiable para tomar decisiones sobre capacidad.
+
+4. Se supone que todos los demás tipos de construcción escalan de manera idéntica
+
+   Diferentes cargas de trabajo pueden tener diferentes cuellos de botella y comportamientos de escalamiento.
+
+**Concept:** Validación de pilotos de optimización del rendimiento
+
+**Authored coaching hints:**
+
+- ¿Cómo puede el piloto distinguir un beneficio repetible de un único valor atípico?
+- ¿Qué compensación importa además del tiempo de ejecución más corto observado?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma equipe de plataforma testa um runner maior para um tipo de construção. Qual resultado justificaria melhor uma adoção mais ampla?
+
+1. O runner tem um nome mais impressionante
+
+   Os nomes não medem o benefício operacional.
+
+2. Medições representativas mostram confiabilidade aceitável e uma melhoria de tempo versus custo que vale a pena **[CORRECT]**
+
+   A confiabilidade representativa, a duração e as evidências de custos apoiam uma implementação medida.
+
+3. Uma corrida invulgarmente rápida é a única evidência
+
+   Um valor atípico não é uma linha de base confiável para decisão de capacidade.
+
+4. Presume-se que todos os outros tipos de construção sejam dimensionados de forma idêntica
+
+   Cargas de trabalho diferentes podem ter gargalos e comportamentos de escalonamento diferentes.
+
+**Concept:** Validando pilotos de otimização de desempenho
+
+**Authored coaching hints:**
+
+- Como o piloto pode distinguir um benefício repetível de um único valor atípico?
+- Qual compensação é importante além do menor tempo de execução observado?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/actions/using-github-hosted-runners/using-larger-runners/about-larger-runners>
+
+<!-- certification-coach-question:admin-223:215458528f765d2f04788c11dedce3967236a52dd2650286e8b909d07628ec2d -->
+## Question 223: Monitor and optimize GitHub usage
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-223`
+
+**Content revision:** `215458528f765d2f04788c11dedce3967236a52dd2650286e8b909d07628ec2d`
+
+### English
+
+An API integration exceeds limits because it repeatedly polls unchanged data. A developer proposes borrowing several coworkers' PATs. What should administrators recommend instead?
+
+1. Share all available owner credentials
+
+   Shared credentials expand risk and obscure attribution.
+
+2. Remove every audit trail to reduce API records
+
+   Audit removal does not address redundant API traffic.
+
+3. Improve polling, caching, event use, and backoff under a correctly scoped integration identity **[CORRECT]**
+
+   Efficient request design addresses the root cause without credential-sharing workarounds.
+
+4. Disable SAML for the whole enterprise
+
+   SSO removal does not make inefficient API behavior appropriate.
+
+**Concept:** Responsible API capacity optimization
+
+**Authored coaching hints:**
+
+- Does adding borrowed identities reduce unnecessary work?
+- Which changes improve efficiency while preserving accountability?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una integración API excede los límites porque sondea repetidamente datos sin cambios. Un desarrollador propone pedir prestados los PAT de varios compañeros de trabajo. ¿Qué deberían recomendar los administradores en su lugar?
+
+1. Compartir todas las credenciales de propietario disponibles
+
+   Las credenciales compartidas aumentan el riesgo y oscurecen la atribución.
+
+2. Elimine todos los registros de auditoría para reducir los registros API
+
+   La eliminación de la auditoría no aborda el tráfico redundante de API.
+
+3. Mejore el sondeo, el almacenamiento en caché, el uso de eventos y la pausa bajo una identidad de integración con el alcance correcto **[CORRECT]**
+
+   El diseño eficiente de solicitudes aborda la causa raíz sin soluciones alternativas para compartir credenciales.
+
+4. Deshabilite SAML para toda la empresa
+
+   La eliminación de SSO no hace que el comportamiento ineficiente de API sea apropiado.
+
+**Concept:** Optimización responsable de la capacidad API
+
+**Authored coaching hints:**
+
+- ¿Agregar identidades prestadas reduce el trabajo innecesario?
+- ¿Qué cambios mejoran la eficiencia y al mismo tiempo preservan la rendición de cuentas?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma integração API excede os limites porque pesquisa repetidamente dados inalterados. Um desenvolvedor propõe emprestar PATs de vários colegas de trabalho. O que os administradores deveriam recomendar?
+
+1. Compartilhe todas as credenciais de proprietário disponíveis
+
+   As credenciais compartilhadas aumentam o risco e obscurecem a atribuição.
+
+2. Remova todas as trilhas de auditoria para reduzir os registros API
+
+   A remoção de auditoria não aborda o tráfego API redundante.
+
+3. Melhore a pesquisa, o armazenamento em cache, o uso de eventos e a espera sob uma identidade de integração com escopo correto **[CORRECT]**
+
+   O design eficiente da solicitação aborda a causa raiz sem soluções alternativas de compartilhamento de credenciais.
+
+4. Desative SAML para toda a empresa
+
+   A remoção de SSO não torna apropriado o comportamento ineficiente de API.
+
+**Concept:** Otimização responsável da capacidade API
+
+**Authored coaching hints:**
+
+- Adicionar identidades emprestadas reduz o trabalho desnecessário?
+- Quais mudanças melhoram a eficiência e ao mesmo tempo preservam a responsabilidade?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/rest/using-the-rest-api/best-practices-for-using-the-rest-api>
+
+<!-- certification-coach-question:admin-224:2b8bd38950cafd6843eb9e6dbe9f1abdb29ee0e1ac130c8001659b84ea17f72a -->
+## Question 224: Monitor and optimize GitHub usage
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-224`
+
+**Content revision:** `2b8bd38950cafd6843eb9e6dbe9f1abdb29ee0e1ac130c8001659b84ea17f72a`
+
+### English
+
+A finance owner wants to use a GitHub metered-product budget to control an existing prepaid volume-license contract. What limitation should the administrator explain?
+
+1. Budget alerts rewrite every prepaid contract automatically
+
+   Budget configuration does not amend a prepaid agreement.
+
+2. A budget permanently suspends all licensed users at its threshold
+
+   Universal user suspension is not the documented behavior of all budgets.
+
+3. Budget settings determine repository visibility
+
+   Spending controls do not set repository visibility.
+
+4. Metered budgets and alerts are not available for prepaid volume licenses **[CORRECT]**
+
+   GitHub distinguishes metered budgets from prepaid volume-license management.
+
+**Concept:** Budget applicability to licensing models
+
+**Authored coaching hints:**
+
+- Is the expense usage-metered or already committed by contract?
+- Does the budget feature apply to that purchasing model?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Un propietario financiero quiere utilizar un presupuesto de producto medido GitHub para controlar un contrato de licencia por volumen prepago existente. ¿Qué limitación debe explicar el administrador?
+
+1. Las alertas de presupuesto reescriben cada contrato prepago automáticamente
+
+   La configuración del presupuesto no modifica un contrato prepago.
+
+2. Un presupuesto suspende permanentemente a todos los usuarios con licencia en su umbral
+
+   La suspensión universal de usuarios no es un comportamiento documentado de todos los presupuestos.
+
+3. La configuración del presupuesto determina la visibilidad del repositorio
+
+   Los controles de gastos no establecen la visibilidad del repositorio.
+
+4. Los presupuestos medidos y las alertas no están disponibles para las licencias por volumen prepagas **[CORRECT]**
+
+   GitHub distingue los presupuestos medidos de la gestión de licencias por volumen prepagas.
+
+**Concept:** Aplicabilidad del presupuesto a los modelos de licencia
+
+**Authored coaching hints:**
+
+- ¿El gasto está medido o ya está comprometido por contrato?
+- ¿La función de presupuesto se aplica a ese modelo de compra?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Um proprietário financeiro deseja usar um orçamento de produto medido GitHub para controlar um contrato de licença por volume pré-pago existente. Que limitação o administrador deve explicar?
+
+1. Alertas de orçamento reescrevem automaticamente todos os contratos pré-pagos
+
+   A configuração do orçamento não altera um contrato pré-pago.
+
+2. Um orçamento suspende permanentemente todos os usuários licenciados no seu limite
+
+   A suspensão universal do usuário não é o comportamento documentado de todos os orçamentos.
+
+3. As configurações de orçamento determinam a visibilidade do repositório
+
+   Os controles de gastos não definem a visibilidade do repositório.
+
+4. Orçamentos medidos e alertas não estão disponíveis para licenças por volume pré-pagas **[CORRECT]**
+
+   GitHub distingue orçamentos medidos de gerenciamento de licença por volume pré-pago.
+
+**Concept:** Aplicabilidade orçamentária aos modelos de licenciamento
+
+**Authored coaching hints:**
+
+- A despesa é medida pelo uso ou já está comprometida por contrato?
+- O recurso de orçamento se aplica a esse modelo de compra?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/billing/concepts/budgets-and-alerts>
+
+<!-- certification-coach-question:admin-225:91b708e407d7cc4632eef43d88372a317a0145069b3e665461d5e06d69c75dc2 -->
+## Question 225: Monitor and optimize GitHub usage
+
+- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+
+**Question ID:** `admin-225`
+
+**Content revision:** `91b708e407d7cc4632eef43d88372a317a0145069b3e665461d5e06d69c75dc2`
+
+### English
+
+A cost review finds one repository responsible for a large share of metered usage. Which next step balances optimization with business continuity?
+
+1. Review product-level drivers with the owning team, then test targeted changes and measure the outcome **[CORRECT]**
+
+   Joint analysis can distinguish valuable workload from avoidable cost and validate safe improvements.
+
+2. Delete the repository immediately because high spending proves waste
+
+   High spending alone does not justify destructive removal of a business-critical repository.
+
+3. Remove every user in its organization
+
+   Broad access removal does not diagnose the consumption driver.
+
+4. Disable all security controls before examining the report
+
+   Removing security controls without analysis introduces risk and may not address cost.
+
+**Concept:** Accountable consumption optimization
+
+**Authored coaching hints:**
+
+- What business workload is producing the charge?
+- How can the proposed saving be tested without removing necessary capability?
+
+<details>
+<summary>Español — same answer key and option order</summary>
+
+### Español
+
+Una revisión de costos encuentra que un repositorio es responsable de una gran parte del uso medido. ¿Qué siguiente paso equilibra la optimización con la continuidad del negocio?
+
+1. Revise los impulsores a nivel de producto con el equipo propietario, luego pruebe los cambios específicos y mida el resultado. **[CORRECT]**
+
+   El análisis conjunto puede distinguir la carga de trabajo valiosa de los costos evitables y validar mejoras seguras.
+
+2. Elimine el repositorio inmediatamente porque el alto gasto resulta en desperdicio
+
+   Un gasto elevado por sí solo no justifica la eliminación destructiva de un repositorio crítico para el negocio.
+
+3. Eliminar a todos los usuarios de su organización
+
+   La eliminación del acceso amplio no diagnostica el factor de consumo.
+
+4. Deshabilite todos los controles de seguridad antes de examinar el informe.
+
+   Eliminar los controles de seguridad sin análisis introduce riesgos y puede no abordar los costos.
+
+**Concept:** Optimización responsable del consumo
+
+**Authored coaching hints:**
+
+- ¿Qué carga de trabajo empresarial está produciendo el cargo?
+- ¿Cómo se puede probar el ahorro propuesto sin eliminar la capacidad necesaria?
+
+</details>
+
+<details>
+<summary>Português (Brasil) — same answer key and option order</summary>
+
+### Português (Brasil)
+
+Uma revisão de custos encontra um repositório responsável por uma grande parcela do uso medido. Qual próximo passo equilibra a otimização com a continuidade dos negócios?
+
+1. Revise os drivers no nível do produto com a equipe proprietária e, em seguida, teste as alterações direcionadas e avalie o resultado **[CORRECT]**
+
+   A análise conjunta pode distinguir a carga de trabalho valiosa dos custos evitáveis e validar melhorias seguras.
+
+2. Exclua o repositório imediatamente porque gastos elevados provam desperdício
+
+   Gastos elevados por si só não justificam a remoção destrutiva de um repositório crítico para os negócios.
+
+3. Remover todos os usuários da organização
+
+   A remoção de acesso amplo não diagnostica o driver de consumo.
+
+4. Desative todos os controles de segurança antes de examinar o relatório
+
+   A remoção dos controles de segurança sem análise apresenta riscos e pode não resolver os custos.
+
+**Concept:** Otimização do consumo responsável
+
+**Authored coaching hints:**
+
+- Qual carga de trabalho comercial está gerando a cobrança?
+- Como a economia proposta pode ser testada sem remover a capacidade necessária?
+
+</details>
+
+**Official supporting source:** <https://docs.github.com/en/billing/tutorials/automate-usage-reporting>

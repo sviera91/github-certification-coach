@@ -1,0 +1,24 @@
+{
+  "name": "github-certification-coach",
+  "version": "0.3.0-preview",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "install:extension": "node install.mjs",
+    "build": "node build-assets.mjs",
+    "check:banks": "node check-banks.mjs",
+    "check:sources": "node check-sources.mjs",
+    "export:reviews": "node export-reviews.mjs",
+    "review:export": "node review-packets.mjs export",
+    "review:import": "node review-packets.mjs import",
+    "test": "node --test prototype.test.mjs client.test.mjs install.test.mjs review-packets.test.mjs"
+  },
+  "devDependencies": {
+    "@primer/css": "22.3.2",
+    "@primer/octicons": "19.40.0",
+    "@primer/primitives": "11.10.0",
+    "linkedom": "0.18.13"
+  }
+}

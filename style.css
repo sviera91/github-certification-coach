@@ -20,6 +20,7 @@ h3 { font-size: 16px; }
 .cert-badge-small { width: 64px; height: 64px; flex-basis: 64px; }
 .badge-unavailable { font-size: 11px; color: var(--fgColor-muted); text-align: center; }
 .report-fields { display: flex; flex-direction: column; gap: 16px; }
+.required-marker { color: var(--fgColor-danger); font-weight: 600; }
 .report-fields .form-control { display: block; width: 100%; margin-top: 8px; }
 #report-preview { white-space: pre-wrap; overflow-wrap: anywhere; padding: 16px; background: var(--bgColor-muted); border-radius: var(--borderRadius-medium); font-size: 12px; }
 .exam-card > .btn { margin-top: 8px; }

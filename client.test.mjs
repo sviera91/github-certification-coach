@@ -19,7 +19,7 @@ async function mount({ reject = false, score, mode = "coach", count = 1, history
         poolTarget: 225, status: "Preview", fullLengthAvailable: true, attemptSize: 75, minutes: 100,
         domains: [{ name: "Test", weight: 100, resources: [] }], resources: [], blueprintNote: "Fixture" };
     const model = {
-        appVersion: "0.4.1-preview", selectedExamId: "foundations", catalog: [exam], history,
+        appVersion: "0.4.2-preview", selectedExamId: "foundations", catalog: [exam], history,
         attempt: {
             id: "test-attempt", examId: "foundations", mode, finished: Boolean(score), score,
             review: { unanswered: Array.from({ length: count }, (_, index) => `q${index + 1}`), flagged: [] },
@@ -304,7 +304,7 @@ test("mock history, result guidance, and explanation buttons localize in Spanish
     await $("score").querySelector("button").onclick();
     assert.equal(requests.at(-1).action, "guidance");
     assert.equal(requests.at(-1).resultId, "test-attempt");
-    assert.equal($("app-version").textContent, "v0.4.1-preview");
+    assert.equal($("app-version").textContent, "v0.4.2-preview");
     assert.match($("app-version").getAttribute("href"), /CHANGELOG\.md$/);
 });
 test("learning selection remains unchecked across navigation and is never submitted or graded", async () => {
@@ -349,6 +349,59 @@ test("fully answered mocks still show a deliberate review and expiry transitions
     assert.equal($("attempt").hidden, false);
     assert.match($("save-status").textContent, /submitted automatically/);
 });
+test("required report fields have accessible red markers, optional steps stay optional, and locales retain the markers", async () => {
+    const { $, document, model, intervals } = await mount();
+    $("report-canvas").onclick();
+    for (const id of ["report-summary", "report-description"]) {
+        assert.equal($(id).hasAttribute("required"), true);
+        assert.equal($(id).getAttribute("aria-describedby"), "report-required-note");
+        const marker = document.querySelector(`label[for="${id}"] .required-marker`);
+        assert.equal(marker.textContent, "*");
+        assert.equal(marker.getAttribute("aria-hidden"), "true");
+    }
+    assert.equal($("report-steps").hasAttribute("required"), false);
+    assert.equal(document.querySelector('label[for="report-steps"] .required-marker'), null);
+    $("report-summary").value = "Summary only";
+    $("report-summary").oninput();
+    assert.equal($("report-open").hidden, true);
+    $("report-description").value = "   ";
+    $("report-description").oninput();
+    assert.equal($("report-open").hidden, true);
+    $("report-description").value = "The form is unclear.";
+    $("report-description").oninput();
+    assert.equal($("report-open").hidden, false);
+    let body = new URL($("report-open").getAttribute("href")).searchParams.get("body");
+    assert.doesNotMatch(body, /Steps to reproduce|Add steps/);
+    assert.match(body, /Interface language: en/);
+    assert.doesNotMatch(body, /Question language:/);
+    $("report-steps").value = "Open reporting. Expected required fields to be marked.";
+    $("report-steps").oninput();
+    body = new URL($("report-open").getAttribute("href")).searchParams.get("body");
+    assert.match(body, /## Steps to reproduce \/ expected behavior/);
+    assert.match(body, /Expected required fields/);
+    for (const [language, legend] of [["es", "Campo obligatorio"], ["pt-BR", "Campo obrigatório"]]) {
+        model.language = language;
+        await intervals[0]();
+        assert.match($("report-required-note").textContent, new RegExp(legend));
+        assert.match(document.querySelector('label[for="report-steps"]').textContent, /\(opcional\)/);
+        assert.equal(document.querySelector('label[for="report-description"] .required-marker').textContent, "*");
+        assert.equal($("report-description").value, "The form is unclear.");
+    }
+});
+test("question reports capture interface and content language separately without learner data", async () => {
+    const { $, model, intervals } = await mount();
+    model.language = "es";
+    model.attempt.contentLanguage = "en";
+    await intervals[0]();
+    $("report-question").onclick();
+    $("report-summary").value = "Translation issue";
+    $("report-description").value = "The wording differs.";
+    $("report-description").oninput();
+    const body = new URL($("report-open").getAttribute("href")).searchParams.get("body");
+    assert.match(body, /Interface language: es/);
+    assert.match(body, /Question language: en/);
+    assert.match(body, /Question ID: q1/);
+});
 test("question report uses a prefilled public issue without uploading learner state", async () => {
     const { $, model, type, requests } = await mount({ mode: "coach" });
     model.attempt.entries[0].selected = 1;
@@ -367,7 +420,7 @@ test("question report uses a prefilled public issue without uploading learner st
     const body = url.searchParams.get("body");
     assert.match(body, /Question ID: q1/);
     assert.match(body, /Question revision: question-revision-test/);
-    assert.match(body, /App version: 0.4.1-preview/);
+    assert.match(body, /App version: 0.4.2-preview/);
     for (const privateData of ["PRIVATE CONVERSATION", "PRIVATE DRAFT", "test-attempt", "token=test", "selected"]) {
         assert.ok(!body.includes(privateData), privateData);
     }

@@ -120,10 +120,11 @@
       <h2 id="report-title">Report an issue</h2>
       <p class="notice">Reports go to a public GitHub repository. Do not include secrets, personal information, private code, or coaching conversations. Nothing is submitted automatically; review the content below, then submit it on GitHub using your own account.</p>
       <p class="muted">Timed mocks continue while you report an issue. Your draft below is temporary and is lost if this panel reloads.</p>
+      <p id="report-required-note" class="muted"><span class="required-marker" aria-hidden="true">*</span> <span>Required field</span></p>
       <div class="report-fields">
-        <label for="report-summary">Short summary <input id="report-summary" class="form-control" type="text" maxlength="120" required></label>
-        <label for="report-description">What is wrong? <textarea id="report-description" class="form-control" rows="4" maxlength="1200" required></textarea></label>
-        <label for="report-steps">Steps to reproduce and expected behavior <textarea id="report-steps" class="form-control" rows="3" maxlength="700"></textarea></label>
+        <label for="report-summary"><span>Short summary</span> <span class="required-marker" aria-hidden="true">*</span><input id="report-summary" class="form-control" type="text" maxlength="120" required aria-describedby="report-required-note"></label>
+        <label for="report-description"><span>What is wrong?</span> <span class="required-marker" aria-hidden="true">*</span><textarea id="report-description" class="form-control" rows="4" maxlength="1200" required aria-describedby="report-required-note"></textarea></label>
+        <label for="report-steps"><span>Steps to reproduce and expected behavior</span> <span class="muted">(optional)</span><textarea id="report-steps" class="form-control" rows="3" maxlength="700"></textarea></label>
       </div>
       <h3>Public report preview</h3><pre id="report-preview"></pre><p id="report-help" role="status"></p>
       <div class="footer-actions"><button id="report-cancel" class="btn">Back without reporting</button><a id="report-open" class="btn btn-primary" target="_blank" rel="noreferrer noopener" hidden>Review and submit on GitHub</a></div>

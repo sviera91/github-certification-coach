@@ -8,6 +8,20 @@ installed.
 
 No unreleased changes.
 
+## 0.4.2-preview - 2026-10-20
+
+### Changed
+
+- Mark mandatory report summary and problem-description fields with red
+  asterisks, a localized required-field legend, and accessible required semantics.
+- Explicitly label reproduction steps as optional and omit the empty optional
+  section instead of posting unfinished placeholder instructions.
+- Include interface and question languages in prefilled reports to help identify
+  translation problems without attaching learner answers or conversations.
+- Clarify repository templates with actual versus expected behavior,
+  reproducibility, question-content categories, translation fidelity, and
+  privacy-safe screenshot guidance without adding mandatory fields.
+
 ## 0.4.1-preview - 2026-10-20
 
 ### Fixed

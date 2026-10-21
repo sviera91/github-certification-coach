@@ -1,4 +1,6 @@
 const entries = [
+    ["Required field", "Campo obligatorio", "Campo obrigatório"],
+    ["(optional)", "(opcional)", "(opcional)"],
     ["Practice bands: needs focus below 70; building confidence 70–84; strong practice result 85–100.", "Bandas de práctica: necesita refuerzo por debajo de 70; desarrollando confianza de 70 a 84; buen resultado de práctica de 85 a 100.", "Faixas de prática: precisa de atenção abaixo de 70; ganhando confiança de 70 a 84; bom resultado de prática de 85 a 100."],
     ["{correct}/{total} correct ({percentage}/100).", "{correct}/{total} correctas ({percentage}/100).", "{correct}/{total} corretas ({percentage}/100)."],
     ["Changelog", "Registro de cambios", "Registro de alterações"],

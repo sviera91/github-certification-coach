@@ -6,7 +6,7 @@ validated certification-readiness assessment. They remain Preview until
 every current question revision has been reviewed and approved by a human
 and the full pool/coverage targets are met.
 
-Current version: **0.4.1-preview**. See the [changelog](CHANGELOG.md) for release
+Current version: **0.4.2-preview**. See the [changelog](CHANGELOG.md) for release
 history; the canvas version badge links to it.
 
 **Learner progress stays on each person's computer, outside this repository.**
@@ -184,8 +184,14 @@ issue in [this repository](https://github.com/sviera91/github-certification-coac
 you must sign in and submit it yourself. Opening the form alone does not create
 an issue.
 
+Required summary and problem-description fields have red asterisks and a
+required-field legend. Reproduction steps and expected behavior are optional;
+empty optional sections are omitted from the report.
+
 Question reports attach the certification, domain, question ID, exact content
-revision, app version, and practice mode. They never automatically include your
+revision, app version, and practice mode.
+Interface and question languages are also included to help triage translation
+issues. Reports never automatically include your
 answers, scores, coaching conversation, attempt ID, or local capability URL.
 Only your written description/steps and the displayed context are placed in the
 GitHub link. Reports are public: do not enter private code, credentials, personal

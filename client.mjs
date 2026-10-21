@@ -644,6 +644,8 @@ function openReport(kind) {
     reportReturnView = view;
     reportContext = {
         kind, exam: exam.name, examId: exam.id, version: state.appVersion ?? "unknown",
+        language: state.language ?? "en",
+        ...(question ? { contentLanguage: state.attempt.contentLanguage ?? state.language ?? "en" } : {}),
         ...(question ? { questionId: question.id, revision: question.revision ?? "unknown", domain: question.domain } : {}),
         ...(state.attempt ? { mode: state.attempt.mode } : {}),
     };
@@ -663,11 +665,13 @@ function updateReport() {
     const steps = $("report-steps").value.trim();
     const body = [
         "## Problem", description || "(Describe the problem)",
-        "", "## Steps to reproduce / expected behavior", steps || "(Add steps and expected behavior)",
+        ...(steps ? ["", "## Steps to reproduce / expected behavior", steps] : []),
         "", "## Context",
         `- App version: ${reportContext.version}`,
         `- Certification: ${reportContext.exam} (${reportContext.examId})`,
+        `- Interface language: ${reportContext.language}`,
         ...(reportContext.questionId ? [
+            `- Question language: ${reportContext.contentLanguage}`,
             `- Question ID: ${reportContext.questionId}`,
             `- Question revision: ${reportContext.revision}`,
             `- Domain: ${reportContext.domain}`,

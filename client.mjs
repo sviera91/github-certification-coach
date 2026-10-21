@@ -409,6 +409,21 @@ function renderContentReview() {
     $("content-source").href = item.question.source;
     $("content-hints").textContent = t("Concept: {concept}\nHints: {hints}", { concept: item.question.concept, hints: item.question.hints.join(" / ") });
     $("content-status").textContent = t(item.approved ? "Human-approved for this revision." : "Preview - human review pending.");
+    $("content-review-guidance").textContent = t(item.language === "en" ? "English content review checks the question, answer, explanations, hints, and supporting documentation only." :
+        "Translation review checks equivalence to the approved English content, including choices, explanations, hints, and documentation references.");
+    $("review-confirm-label").textContent = t(item.language === "en" ? "I personally verified this English content revision." :
+        "I personally verified this translation against the approved English revision.");
+    $("english-review-required").hidden = item.language === "en" || item.englishApproved;
+    $("approve-question").disabled = busy || (item.language !== "en" && !item.englishApproved);
+    $("english-reference").hidden = item.language === "en";
+    $("english-reference-content").replaceChildren();
+    if (item.language !== "en" && item.englishQuestion) {
+        const original = item.englishQuestion;
+        $("english-reference-content").append(text("p", original.prompt),
+            ...original.choices.map((choice, choiceIndex) => text("p",
+                `${choiceIndex + 1}. ${choice}${choiceIndex === original.correct ? ` ${t("(correct)")}` : ""}\n${original.explanations[choiceIndex]}`, "explanation")),
+            text("p", `${original.concept}\n${original.hints.join("\n")}`, "explanation"));
+    }
     $("approve-question").hidden = item.approved;
     $("revoke-question").hidden = !item.approved;
     $("content-previous").disabled = item.index === 0 || busy;
@@ -424,7 +439,7 @@ async function reviewQuestion(decision) {
         return;
     }
     if (await act("review_question", { examId: state.selectedExamId, questionId: item.question.id,
-        revision: item.revision, decision })) {
+        revision: item.revision, language: item.language, decision })) {
         $("review-confirm").checked = false;
         await inspectQuestion(item.index);
     }

@@ -94,11 +94,13 @@
     </section>
     <section id="content-review" class="card" hidden>
       <h2>Human question review</h2>
-      <p class="notice">Review the question, answer key, every explanation, hints, and linked source. Approve only content you personally verified. AI checks cannot supply human approval.</p>
+      <p id="content-review-guidance" class="notice"></p>
+      <p id="english-review-required" class="notice" hidden data-i18n="Approve the current English content before approving a translation."></p>
       <p id="content-position" class="eyebrow"></p><h3 id="content-question"></h3><div id="content-answers"></div>
       <p id="content-hints"></p><a id="content-source" target="_blank" rel="noreferrer">Verify official documentation</a>
+      <details id="english-reference" hidden><summary data-i18n="English reference for translation review"></summary><div id="english-reference-content"></div></details>
       <p id="content-status" role="status"></p>
-      <label><input id="review-confirm" type="checkbox"> I personally reviewed this question revision and its supporting content.</label>
+      <label><input id="review-confirm" type="checkbox"> <span id="review-confirm-label"></span></label>
       <div class="footer-actions"><button id="approve-question" class="btn btn-primary">Mark revision human-approved</button><button id="revoke-question" class="btn" hidden>Revoke approval</button></div>
       <div class="footer-actions"><button id="content-previous" class="btn">Previous question</button><button id="content-next" class="btn">Next question</button><button id="content-back" class="btn">Back to preparation</button></div>
       <form id="content-jump-form" class="footer-actions"><label for="content-jump">Question number</label><input id="content-jump" class="form-control" type="number" min="1" required><button class="btn" type="submit">Go</button></form>

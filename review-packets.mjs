@@ -2,9 +2,13 @@ import { mkdir, readFile, writeFile, rename, rm, access } from "node:fs/promises
 import { randomUUID } from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { revisionFor, localizedQuestion } from "./bank-utils.mjs";
+import { revisionFor, reviewRevisionFor, approved, localizedQuestion } from "./bank-utils.mjs";
 
-const acknowledgment = "- [ ] Human-reviewed: this question and supporting content, covering all three languages.";
+export const acknowledgments = {
+    en: "- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.",
+    es: "- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.",
+    "pt-BR": "- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.",
+};
 const escape = value => String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
     .replace(/([\\`*_[\]{}!|#])/g, "\\$1");
 function variant(question, language, title) {
@@ -23,9 +27,12 @@ function section(question, index) {
     return [
         `<!-- certification-coach-question:${question.id}:${revisionFor(question)} -->`,
         `## Question ${index + 1}: ${escape(question.domain)}`, "",
-        acknowledgment, "",
+        acknowledgments.en, "",
+        acknowledgments.es, "",
+        acknowledgments["pt-BR"], "",
         `**Question ID:** \`${question.id}\``, "",
         `**Content revision:** \`${revisionFor(question)}\``, "",
+        ...["en", "es", "pt-BR"].map(language => `**${language} review revision:** \`${reviewRevisionFor(question, language)}\``), "",
         variant(question, "en", "English"),
         "<details>", "<summary>Español — same answer key and option order</summary>", "",
         variant(question, "es", "Español"), "</details>", "",
@@ -36,20 +43,22 @@ function section(question, index) {
 }
 export function renderPacket(exam) {
     return [
-        `<!-- certification-coach-review:${exam.id}:1 -->`,
+        `<!-- certification-coach-review:${exam.id}:2 -->`,
         `# ${exam.name}: human review packet`, "",
         `${exam.questions.length} original practice questions. No mock exam or Copilot installation is required to review this file.`, "",
         "## How to review", "",
         "1. Read the English question, all four choices and explanations, the concept, hints, and linked official documentation.",
-        "2. Expand Spanish and Brazilian Portuguese to check that they preserve the same meaning, option order, and correct answer.",
-        "3. Change only the question's `- [ ] Human-reviewed` checkbox to `- [x] Human-reviewed` when you approve its complete multilingual revision.",
+        "2. Check English content approved only after personally verifying the English content. You do not need to review another language.",
+        "3. A separate reviewer can expand Spanish or Brazilian Portuguese and check only that translation, verifying meaning, option order, explanations, hints, and documentation references against the approved English content.",
         "4. Leave uncertain or incorrect questions unchecked. Send the edited Markdown file back to the maintainer, with suggested corrections separately.", "",
-        "One approval covers English, Spanish, and Brazilian Portuguese together; changing any variant invalidates that approval.",
+        "English content and each translation have separate approvals. Translation approval requires current English approval, imported previously or checked in this same packet.",
+        "Changing English content or its supporting source invalidates all three approvals. Changing one translation invalidates only that language's approval.",
         "The importer rejects stale revisions or changed question content. Do not edit prompts, answers, or explanations in this review copy.",
         "Unchecked boxes do not revoke existing approvals. These are honor-system human attestations, not proof of reviewer identity.",
         "AI must never check these boxes or attest to human review. These are original unofficial practice items, not real exam questions.",
         "This packet intentionally includes the full answer key. It contains no learner answers, scores, chats, or progress.", "",
-        "Search for `- [ ] Human-reviewed` to find unreviewed items. Technical names and official documentation links may remain in English.", "",
+        "Search for `- [ ] English content approved`, `- [ ] Spanish translation approved`, or `- [ ] Brazilian Portuguese translation approved` to find unchecked items.",
+        "Technical names and official documentation links may remain in English. Translation review verifies that references support the same meaning; it does not require translating the linked external documentation.", "",
         ...exam.questions.map(section),
     ].join("\n");
 }
@@ -60,7 +69,7 @@ export function collectApprovals(packets, catalog, existing, { confirmed = false
     let count = 0;
     for (const raw of packets) {
         const packet = raw.replace(/\r\n/g, "\n");
-        const examId = packet.match(/^<!-- certification-coach-review:([a-z0-9-]+):1 -->$/m)?.[1];
+        const examId = packet.match(/^<!-- certification-coach-review:([a-z0-9-]+):2 -->$/m)?.[1];
         const exam = catalog.find(item => item.id === examId);
         if (!exam) throw new Error("Unknown certification or review packet format.");
         const parts = [...packet.matchAll(/^<!-- certification-coach-question:([a-z0-9-]+):([a-f0-9]{64}) -->$/gm)];
@@ -72,14 +81,21 @@ export function collectApprovals(packets, catalog, existing, { confirmed = false
             seen.add(id);
             if (marker[2] !== revisionFor(question)) throw new Error(`${id}: revision changed; regenerate and review the current question.`);
             const body = packet.slice(marker.index, parts[index + 1]?.index ?? packet.length).trim();
-            const checkedLine = acknowledgment.replace("[ ]", "[x]");
-            const checked = body.includes(checkedLine);
-            const normalized = body.replace(checkedLine, acknowledgment);
+            let normalized = body;
+            const checked = [];
+            for (const [language, acknowledgment] of Object.entries(acknowledgments)) {
+                const checkedLine = acknowledgment.replace("[ ]", "[x]");
+                if (body.includes(checkedLine)) checked.push(language);
+                normalized = normalized.replace(checkedLine, acknowledgment);
+            }
             if (normalized !== section(question, index).trim()) throw new Error(`${id}: review content was edited; only checkboxes may change.`);
-            if (checked) {
-                const revision = revisionFor(question);
-                records[id] = records[id]?.revision === revision ? records[id] :
-                    { revision, approvedAt: new Date(now()).toISOString() };
+            for (const language of checked) {
+                if (language !== "en" && !approved(question, records)) {
+                    throw new Error(`${id}: approve the current English content before approving the ${language} translation.`);
+                }
+                const revision = reviewRevisionFor(question, language);
+                records[id] = { ...records[id], [language]: records[id]?.[language]?.revision === revision ? records[id][language] :
+                    { revision, approvedAt: new Date(now()).toISOString() } };
                 count++;
             }
         }

@@ -1,4 +1,4 @@
-<!-- certification-coach-review:security:1 -->
+<!-- certification-coach-review:security:2 -->
 # GitHub Advanced Security: human review packet
 
 225 original practice questions. No mock exam or Copilot installation is required to review this file.
@@ -6,26 +6,36 @@
 ## How to review
 
 1. Read the English question, all four choices and explanations, the concept, hints, and linked official documentation.
-2. Expand Spanish and Brazilian Portuguese to check that they preserve the same meaning, option order, and correct answer.
-3. Change only the question's `- [ ] Human-reviewed` checkbox to `- [x] Human-reviewed` when you approve its complete multilingual revision.
+2. Check English content approved only after personally verifying the English content. You do not need to review another language.
+3. A separate reviewer can expand Spanish or Brazilian Portuguese and check only that translation, verifying meaning, option order, explanations, hints, and documentation references against the approved English content.
 4. Leave uncertain or incorrect questions unchecked. Send the edited Markdown file back to the maintainer, with suggested corrections separately.
 
-One approval covers English, Spanish, and Brazilian Portuguese together; changing any variant invalidates that approval.
+English content and each translation have separate approvals. Translation approval requires current English approval, imported previously or checked in this same packet.
+Changing English content or its supporting source invalidates all three approvals. Changing one translation invalidates only that language's approval.
 The importer rejects stale revisions or changed question content. Do not edit prompts, answers, or explanations in this review copy.
 Unchecked boxes do not revoke existing approvals. These are honor-system human attestations, not proof of reviewer identity.
 AI must never check these boxes or attest to human review. These are original unofficial practice items, not real exam questions.
 This packet intentionally includes the full answer key. It contains no learner answers, scores, chats, or progress.
 
-Search for `- [ ] Human-reviewed` to find unreviewed items. Technical names and official documentation links may remain in English.
+Search for `- [ ] English content approved`, `- [ ] Spanish translation approved`, or `- [ ] Brazilian Portuguese translation approved` to find unchecked items.
+Technical names and official documentation links may remain in English. Translation review verifies that references support the same meaning; it does not require translating the linked external documentation.
 
 <!-- certification-coach-question:ghas-ecosystem-001:512b0f45ebb8fe27922ecc3401856671b321a8e6f2388d5cb53b5762a51af0f6 -->
 ## Question 1: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-001`
 
 **Content revision:** `512b0f45ebb8fe27922ecc3401856671b321a8e6f2388d5cb53b5762a51af0f6`
+
+**en review revision:** `2d1375ac7ae1fb39d00abbc75ff18084167b2847ff340c48e300a3f12f51b41c`
+**es review revision:** `26b049de0328c7622f29e2095421ffda098a645d27017c7e4853987451d2de22`
+**pt-BR review revision:** `dfd4f1281f47ac710db7f7191908b03ef84c3e9f3cdf755d4aa3588df23e9bfd`
 
 ### English
 
@@ -123,11 +133,19 @@ Um serviço faz commit de um token de API de um provedor, mas não tem dependên
 <!-- certification-coach-question:ghas-ecosystem-002:e027895e8c89bd0cdb1a1e32254dd2c81d1a2f96463a8a03e4a9329cf4e81c1a -->
 ## Question 2: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-002`
 
 **Content revision:** `e027895e8c89bd0cdb1a1e32254dd2c81d1a2f96463a8a03e4a9329cf4e81c1a`
+
+**en review revision:** `ada56ea27f58b4b23fc5af9518333f389f958c6d8ef0390c9412f04505569eb6`
+**es review revision:** `3a6656a7ea0e48278f5e9839a7150f18affe5d8ad7d00d1755b8407e7bf243e9`
+**pt-BR review revision:** `0308ebdfa50a9e5d914a91437f93fee45dfac6c5c475566150862d671ae64204`
 
 ### English
 
@@ -225,11 +243,19 @@ Uma pessoa revisora quer saber se um pull request adiciona um pacote com uma vul
 <!-- certification-coach-question:ghas-ecosystem-003:5989de112ebdbc7bd21c3a62732078b892edc6d94e3a8385e8c914e815f6b675 -->
 ## Question 3: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-003`
 
 **Content revision:** `5989de112ebdbc7bd21c3a62732078b892edc6d94e3a8385e8c914e815f6b675`
+
+**en review revision:** `82a55ef68250c785966a3b66abdb7bc49e03714f296097b325276b7dbbc3a150`
+**es review revision:** `e9d286f38757264100655f26f5dc7ff7433c794f9e85aa5cf8972f08111a9a2f`
+**pt-BR review revision:** `6a8d7d64661519519195d339ae204bb7947264a9525b84f9785f8203ac167810`
 
 ### English
 
@@ -327,11 +353,19 @@ Uma aplicação passa dados não confiáveis de uma requisição para uma opera�
 <!-- certification-coach-question:ghas-ecosystem-004:1e0dd65c3e91368d924f8983e951ad091dd3a40fec582c23394a754b5e4ad8dc -->
 ## Question 4: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-004`
 
 **Content revision:** `1e0dd65c3e91368d924f8983e951ad091dd3a40fec582c23394a754b5e4ad8dc`
+
+**en review revision:** `e3b0c2569067900e7a46c38b63a2c3868d85e52281ba9898b56e654adaed310c`
+**es review revision:** `8861935b893e2b93ddbb3ccb817ccbe94cdfc22d33d3abb9e296781876942a76`
+**pt-BR review revision:** `2c4c7e0b30403e7d4eedac7f39552d8c53eba6d7ccac7dd0a6fadae19684e470`
 
 ### English
 
@@ -429,11 +463,19 @@ Uma diretora de segurança precisa visualizar proteções habilitadas e riscos e
 <!-- certification-coach-question:ghas-ecosystem-005:7a1845b41138347ec84f90e74a1937ea5a8c2c1a92f33b4b95cb889f8edd27b5 -->
 ## Question 5: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-005`
 
 **Content revision:** `7a1845b41138347ec84f90e74a1937ea5a8c2c1a92f33b4b95cb889f8edd27b5`
+
+**en review revision:** `931e780c0c9118e0f89113f4c1a16431be73860ddb0e80dba854865d6128582b`
+**es review revision:** `95999d6d5293ba3e10ed3888a9c85bf65eb0febd2f3ff2c8e692f3461bd71171`
+**pt-BR review revision:** `2001fb06737132991f1d305fa016ce3a077a457cbb9033326d6cddbfedefc41f`
 
 ### English
 
@@ -531,11 +573,19 @@ Uma equipe propõe substituir alertas de dependências pela verificação de seg
 <!-- certification-coach-question:ghas-ecosystem-006:7b283b12a5035ee0ddd6d5cc5ae91a7743a2d35dc52146e5503c21b198e8ed0c -->
 ## Question 6: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-006`
 
 **Content revision:** `7b283b12a5035ee0ddd6d5cc5ae91a7743a2d35dc52146e5503c21b198e8ed0c`
+
+**en review revision:** `c71f396e5eeb20975460ccf9676772c4ffe505e006c30c6683461eac38ab93ae`
+**es review revision:** `5967183fa3cfacb354da731737545b952db331c01788fbccdbb2a180b73647cb`
+**pt-BR review revision:** `d0611582882a16fb7fa172a1a8ff5d779df8c8f01a1910643daa0b64c0107123`
 
 ### English
 
@@ -633,11 +683,19 @@ Por que combinar proteção de push com verificações do histórico existente d
 <!-- certification-coach-question:ghas-ecosystem-007:c78625cf9a6920810f503353cd094d661912d0f17c03a72892f1a6000e4931a7 -->
 ## Question 7: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-007`
 
 **Content revision:** `c78625cf9a6920810f503353cd094d661912d0f17c03a72892f1a6000e4931a7`
+
+**en review revision:** `f9035b75f56f397e99c0cd14d0ec56725595ce38885232a59e69525c23c763d7`
+**es review revision:** `7c20d155b1565a55790e0edf4ff511385dfcab35070d815190a11f0fd17fa4ea`
+**pt-BR review revision:** `9c5b64803402797a09cfb5c984fcd0a4e91568114e386ca995589135b70664bf`
 
 ### English
 
@@ -735,11 +793,19 @@ Um projeto já usa um analisador estático externo que produz SARIF compatível.
 <!-- certification-coach-question:ghas-ecosystem-008:c81bc6b3e18187e3f4b0f7ab8bc5ed0849e52451a1b12689b66d6c697c54772c -->
 ## Question 8: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-008`
 
 **Content revision:** `c81bc6b3e18187e3f4b0f7ab8bc5ed0849e52451a1b12689b66d6c697c54772c`
+
+**en review revision:** `8d574599b480d1ba1b2c0d78aa3800f3177862ba5313f7e1b5f275a776b71101`
+**es review revision:** `600cdb663ede439cafe8f68c364e4988a7b082af044711974553ea251edf1768`
+**pt-BR review revision:** `2284341539210cc840643afa6280c7b35f447bcbe250279243491f477d6adaeb`
 
 ### English
 
@@ -837,11 +903,19 @@ Um líder de engenharia afirma que habilitar ferramentas de segurança garante u
 <!-- certification-coach-question:ghas-ecosystem-009:4e20dd7a41b4ee40452b9c46ac5855bfb2c951b306ffd4ad38137f8c23590306 -->
 ## Question 9: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-009`
 
 **Content revision:** `4e20dd7a41b4ee40452b9c46ac5855bfb2c951b306ffd4ad38137f8c23590306`
+
+**en review revision:** `c8dd393d7526b7e2015d045a4ed000a8e21d7d3041fe7cb6f3421aafdc539615`
+**es review revision:** `809848a8c4fe10c5676e11b3359ef02eb6133baf86bf26058188a377cfea9fd3`
+**pt-BR review revision:** `9a48900f50db1aa1fb47053c9de7a9fc458a9e0917e244a57b74bd1ab9ed07ab`
 
 ### English
 
@@ -939,11 +1013,19 @@ Uma equipe só executa análises de segurança imediatamente antes de uma versã
 <!-- certification-coach-question:ghas-ecosystem-010:31df84299c1aa34967210a857978749c8a6b609bb97df4eef4a306e67cea5f47 -->
 ## Question 10: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-010`
 
 **Content revision:** `31df84299c1aa34967210a857978749c8a6b609bb97df4eef4a306e67cea5f47`
+
+**en review revision:** `7ed3d943ad647881bf5ff0ff0e8bfc9eded52cac86acf42fc30057244d16b185`
+**es review revision:** `bafe9cde70a6112c9d3c86e99537809899dd076510474d31c0a3d8891127912c`
+**pt-BR review revision:** `f157ee4e0e6f0f8813841cdf1f27a67f59722e8804a2ed078eb1784807ef99f5`
 
 ### English
 
@@ -1041,11 +1123,19 @@ Qual afirmação distingue corretamente o grafo de dependências dos alertas do 
 <!-- certification-coach-question:ghas-ecosystem-011:a5ecaee17aad78783f41fcef023527fc5a0ced801cbdcdf260bca4ec438df5f8 -->
 ## Question 11: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-011`
 
 **Content revision:** `a5ecaee17aad78783f41fcef023527fc5a0ced801cbdcdf260bca4ec438df5f8`
+
+**en review revision:** `16d0ce38ca2294e671ce21d33d928994c911210d2e53196ea4e1be5748c05326`
+**es review revision:** `98e99bf52bb0211559c7dad5151e07cfd2ee00adf5afa3e27074e4d7069c6098`
+**pt-BR review revision:** `cfe42e36db84931d659135f9adf98f39b5cf0242c6df67341d6513a40de00b74`
 
 ### English
 
@@ -1143,11 +1233,19 @@ Uma pessoa mantenedora quer pull requests automáticos que atualizem pacotes vul
 <!-- certification-coach-question:ghas-ecosystem-012:8d2c953fcf8b7c648868d77755f73e1c5a7b3ac49ac47b718ac4017c474aaa39 -->
 ## Question 12: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-012`
 
 **Content revision:** `8d2c953fcf8b7c648868d77755f73e1c5a7b3ac49ac47b718ac4017c474aaa39`
+
+**en review revision:** `506eaaeacab8ac800f8fa2629edd98d97c55568871f37e728012bb4c1e3f0570`
+**es review revision:** `cd865056b04b2fbfb6752b2628693081f2d0ee639bd340077a2715260a04fdb4`
+**pt-BR review revision:** `1589e4134472b6f9d90afbe98f9e978cab15a57ecb931019c50feca5de639d3c`
 
 ### English
 
@@ -1245,11 +1343,19 @@ Uma pesquisadora relata em particular uma vulnerabilidade em uma biblioteca mant
 <!-- certification-coach-question:ghas-ecosystem-013:8288d2241c23aef934f956dd87dc02e0602611403d912055dba2aa7a871fcd77 -->
 ## Question 13: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-013`
 
 **Content revision:** `8288d2241c23aef934f956dd87dc02e0602611403d912055dba2aa7a871fcd77`
+
+**en review revision:** `80201c8c05e72409233f0210332cfd9e82557f9ca09ea0140b3e4a3a967963df`
+**es review revision:** `5f3cb4d02a9ec12eb72530160df38fed6caff16e4915052d881cb384196e0317`
+**pt-BR review revision:** `c6d6afbbe8f08a5f3aacae728e16e1e1689d67d575a9e4243daa564301721207`
 
 ### English
 
@@ -1347,11 +1453,19 @@ Uma empresa quer que desenvolvedores corrijam juntos resultados relacionados da 
 <!-- certification-coach-question:ghas-ecosystem-014:3f41affce3249661ca6963cf5625ccae7afc189530e49d72d85e96ab003eaef9 -->
 ## Question 14: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-014`
 
 **Content revision:** `3f41affce3249661ca6963cf5625ccae7afc189530e49d72d85e96ab003eaef9`
+
+**en review revision:** `39c7cd1473956634c3afe15e2bbdac53ec8c5b641bacbb4b4236689b2e7275ee`
+**es review revision:** `105b98f6d2fae854f93779c9cc6f3e72a86fa15916ad14f2ec413fa8358b22c3`
+**pt-BR review revision:** `a53e0ce72630555d1c5da6140759543cb94e23f1f315164d9411f7734e77ef1c`
 
 ### English
 
@@ -1449,11 +1563,19 @@ Qual é a principal consequência de segurança de descartar um alerta válido d
 <!-- certification-coach-question:ghas-ecosystem-015:dd48b17c6c5e54b66b2d6759b1367ddcf837ee4467471f214f9d638c69483a19 -->
 ## Question 15: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-015`
 
 **Content revision:** `dd48b17c6c5e54b66b2d6759b1367ddcf837ee4467471f214f9d638c69483a19`
+
+**en review revision:** `6892c4f34dc187740bfde6d562bf223279c26317363be10a709fb3f25271a10e`
+**es review revision:** `93d0b0f10eabee316c8539cb0040bd97837ecc4f74a8745d4f55b423a74064d1`
+**pt-BR review revision:** `601b6be023b13f3787b63c4a6587f1f6f6a5c21d0c2f26d97856614617984793`
 
 ### English
 
@@ -1551,11 +1673,19 @@ Uma organização quer que especialistas supervisionem alertas sem tornar todos 
 <!-- certification-coach-question:ghas-ecosystem-016:3679f69ce1f3e14214ea6b33d36a886913137bb91ba9d01739fe05281781da7d -->
 ## Question 16: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-016`
 
 **Content revision:** `3679f69ce1f3e14214ea6b33d36a886913137bb91ba9d01739fe05281781da7d`
+
+**en review revision:** `5f29ce9722bc816d7a022dc5cd753017c164f79bf9d724d50391208a3be427ee`
+**es review revision:** `e154579a9eed4d64401d05ef1eb5663d1a9df2c511ba8be7414e43cbfa5b85f7`
+**pt-BR review revision:** `e64ff0b76cf9eac21df28bf47487362f047c5fcb694159f00969559469199b90`
 
 ### English
 
@@ -1653,11 +1783,19 @@ Um gerente supõe que a disponibilidade de segurança em repositórios públicos
 <!-- certification-coach-question:ghas-ecosystem-017:560fa90f234f8ffba0c1ed40002c0bb7a32a773e39df73856cd489428f19ad2a -->
 ## Question 17: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-017`
 
 **Content revision:** `560fa90f234f8ffba0c1ed40002c0bb7a32a773e39df73856cd489428f19ad2a`
+
+**en review revision:** `afb34f4c656bbf957463f172c4715d42346620d46e26db07c3ee2cfdd0ae5cd5`
+**es review revision:** `c6375f5e35b7270ada775ac0112cc0e2dbb670c0ef916c4ab1a4d891fe3f573a`
+**pt-BR review revision:** `29293705be72f28343d02062e5abd174dabfc255bed22ab5b0fb80f4a25b2443`
 
 ### English
 
@@ -1755,11 +1893,19 @@ Por que um programa de segurança de dependências deve acompanhar pacotes trans
 <!-- certification-coach-question:ghas-ecosystem-018:9d3bab65057661b901027476fc36bef04df2261daa19e08f11564602886e0805 -->
 ## Question 18: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-018`
 
 **Content revision:** `9d3bab65057661b901027476fc36bef04df2261daa19e08f11564602886e0805`
+
+**en review revision:** `c1650025eeed00cf7d5d9c65cc1dcdeb0273a720f857ba4ff73f222b01d29ce3`
+**es review revision:** `9799eca3419da72c45325d03d773d3f44503e51ed2f1b4c8a8e3bb79fdab4de2`
+**pt-BR review revision:** `93c4c93d46ed9875b81228101aaf7852169dd4f9428e6abbfb3c319d4defe629`
 
 ### English
 
@@ -1857,11 +2003,19 @@ Qual é a melhor distinção entre um alerta de varredura de código e um de ver
 <!-- certification-coach-question:ghas-ecosystem-019:39e94bcb000362a3c6b38aae126f2c8ae9ac44eef72e1316beadb520364e46bf -->
 ## Question 19: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-019`
 
 **Content revision:** `39e94bcb000362a3c6b38aae126f2c8ae9ac44eef72e1316beadb520364e46bf`
+
+**en review revision:** `37f3c4ab9e4222ee777a7fcf90054cb7883f601b59558ccb73b0f9f08a407dd1`
+**es review revision:** `3b29ddc5a661135af340c86e1f0deec3dd9c6874f72463662ab9c18124b22ee2`
+**pt-BR review revision:** `cfea4c839f09f01e09b6601b6d2e3a55336d20f34c9a30ccf3fdbd95355aa4c8`
 
 ### English
 
@@ -1959,11 +2113,19 @@ Uma equipe quer importar dependências resolvidas em uma compilação que a aná
 <!-- certification-coach-question:ghas-ecosystem-020:29a9f57bfa0630e8f5c7df303af9856c5a792112ef9ea26cd19158df23b7857b -->
 ## Question 20: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-020`
 
 **Content revision:** `29a9f57bfa0630e8f5c7df303af9856c5a792112ef9ea26cd19158df23b7857b`
+
+**en review revision:** `7bec2c9b0e7620925e7651c8d4c51d8126cb020fce9e8ce575f11ddf457ec604`
+**es review revision:** `32cafe4a91a21fb577c45ab3b3b4d25f02bce5bc95f7c98b2b99bb4646b56d81`
+**pt-BR review revision:** `77bbbbdbf916aef9db73b024f03e6bd6f7e511ff57d047898fe34c8bad5472d5`
 
 ### English
 
@@ -2061,11 +2223,19 @@ Uma revisão de risco solicita um inventário legível por máquina das dependê
 <!-- certification-coach-question:ghas-ecosystem-021:78d3ff56160e67b9bade10df255c48e655cdbc4ba03be144e9df99a9c4e8feaa -->
 ## Question 21: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-021`
 
 **Content revision:** `78d3ff56160e67b9bade10df255c48e655cdbc4ba03be144e9df99a9c4e8feaa`
+
+**en review revision:** `63633f91e7205d911f61d1bedd95fe2d57ece43a14675ea4209c5473e9013e7d`
+**es review revision:** `2a854b1604c3ad56ce0d9101c4e1e5746182745ed8940b287c633385df916f83`
+**pt-BR review revision:** `51dbd0bd355d9c2fdea423fd2963bd602704ae0cde6f31cfe9911667979fda28`
 
 ### English
 
@@ -2163,11 +2333,19 @@ Um analista de segurança identifica um alerta prioritário, e a equipe da aplic
 <!-- certification-coach-question:ghas-ecosystem-022:1ed10386e5629ca3d084be9ca7b3e3393dd93368ff90df98e0b124e6974b218c -->
 ## Question 22: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-022`
 
 **Content revision:** `1ed10386e5629ca3d084be9ca7b3e3393dd93368ff90df98e0b124e6974b218c`
+
+**en review revision:** `03970b4aa9f6ab5a82ea361b86103b7873ec25c949f60c688f757374c1ce6c9f`
+**es review revision:** `07f44f0e44bb5064ddc3943917a1f28252f3fdad712cc2ddb594c3d2333a53f9`
+**pt-BR review revision:** `8dd2a09d3983279577a8615b6ca9f5020116f953d7c65518cb2055ebe8a46f00`
 
 ### English
 
@@ -2265,11 +2443,19 @@ Qual resultado demonstra mais diretamente o sucesso de um controle preventivo de
 <!-- certification-coach-question:ghas-ecosystem-023:ab5fd294d68153c9d10c062825aa7e52c0a4839949d239b46a62ba171851188c -->
 ## Question 23: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-023`
 
 **Content revision:** `ab5fd294d68153c9d10c062825aa7e52c0a4839949d239b46a62ba171851188c`
+
+**en review revision:** `5dedf1533c49ad542872920396e669ee4008d14b2a0486b0b46efdd7aa17f2b3`
+**es review revision:** `6f870152697a7b5a7e4139518c52bcd870ef610794cc4bb5ae737671f65471f4`
+**pt-BR review revision:** `fc7475231d06ceedc27cc4dd7b85efe2472272665046c2af886cef7ad57cf56c`
 
 ### English
 
@@ -2367,11 +2553,19 @@ Uma empresa usa GitHub Actions na maioria dos projetos, mas outro sistema de CI 
 <!-- certification-coach-question:ghas-ecosystem-024:dd83295f973266e7858cdfd974cd27eb37d790ba8d2f37ce755c2285b1d0db47 -->
 ## Question 24: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-024`
 
 **Content revision:** `dd83295f973266e7858cdfd974cd27eb37d790ba8d2f37ce755c2285b1d0db47`
+
+**en review revision:** `fc8003f4999aae35e45be7599ec4ba8df7ed871b1d6e92ebfeee3a268e1e2498`
+**es review revision:** `0ded330954f403af607cc6b0a4c432f990f83d8e7b5b21addbcfc027d630d5f0`
+**pt-BR review revision:** `adbfc669552c6fa61d2a670c17b0388fc906e6477c69d68bc1587b6a2397642d`
 
 ### English
 
@@ -2469,11 +2663,19 @@ Um desenvolvedor pergunta se pode fazer merge de sugestões do Copilot Autofix s
 <!-- certification-coach-question:ghas-ecosystem-025:f26b3ccd130ccc3479b3b3696d3b8fff33ef26e34f5e58a1c732bd84cbce5c12 -->
 ## Question 25: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-025`
 
 **Content revision:** `f26b3ccd130ccc3479b3b3696d3b8fff33ef26e34f5e58a1c732bd84cbce5c12`
+
+**en review revision:** `7082b46930cfa0864281ae228f586565b69424597fb26ff5a4dd799f56836fa0`
+**es review revision:** `3dcd437dc467bf579bee05a155912d646d9f2deb6ff943399b19f0d125e68f5a`
+**pt-BR review revision:** `bdefbc28cf86f59fbb71dc3f9692903ce8ca6c1fbde48ffe331a221f17048367`
 
 ### English
 
@@ -2571,11 +2773,19 @@ Uma organização quer configurações consistentes de habilitação de recursos
 <!-- certification-coach-question:ghas-ecosystem-026:19f29ea077bc264f764ad1a1934bd841ae4a795ac83e8bf4511fbacadb8ad8e6 -->
 ## Question 26: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-026`
 
 **Content revision:** `19f29ea077bc264f764ad1a1934bd841ae4a795ac83e8bf4511fbacadb8ad8e6`
+
+**en review revision:** `4706895c751b5fb1cd422398549814a459e42b1bfe442aee843f2dcaceddd4f0`
+**es review revision:** `b43140f9fb353161310ab193237bbd025056ee617983e5b4ef6063827c6a5c75`
+**pt-BR review revision:** `3ea39ec1c6cbf05190a189560beb448a612e9beb3fc2619c471726135d0b658f`
 
 ### English
 
@@ -2673,11 +2883,19 @@ Uma política exige aprovação da revisão de dependências antes do merge, mas
 <!-- certification-coach-question:ghas-ecosystem-027:a5b4163e6603e3332bd7ada6e0504c59cd6d6de92bacb6b5d01220537df84b0b -->
 ## Question 27: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-027`
 
 **Content revision:** `a5b4163e6603e3332bd7ada6e0504c59cd6d6de92bacb6b5d01220537df84b0b`
+
+**en review revision:** `67d465e5035b0cfdb9c52d18c3d4e01a081c3afe7f052bdb6103f195cf26ec95`
+**es review revision:** `829d9351a88c5b09cb5950e1644999c90070903b42a7316a8898eed25be1bd4a`
+**pt-BR review revision:** `49de1890b7dff563c09583e29f0ed6a9b33b84f05f403b12b901840954928444`
 
 ### English
 
@@ -2775,11 +2993,19 @@ Um token vazado foi excluído do último commit. Por que ainda pode ser uma preo
 <!-- certification-coach-question:ghas-ecosystem-028:340589a34a3ff1f8da5c8d33edb109900e41b0020e8d495506ed45fbe9545661 -->
 ## Question 28: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-028`
 
 **Content revision:** `340589a34a3ff1f8da5c8d33edb109900e41b0020e8d495506ed45fbe9545661`
+
+**en review revision:** `8cb47d2ce5351aaba3e97bacbd6fa127fd5a47ecdf174074f1df8f8ae2a93410`
+**es review revision:** `6e7e5a9741b949db7eeebf3d876c5f766141fff30c1215ceb8ddee69c35158b5`
+**pt-BR review revision:** `a55462edc4efea2097734c81c33b0e0c8c13dad287b0ea4efc7aadf56bfd58bd`
 
 ### English
 
@@ -2877,11 +3103,19 @@ Qual pergunta de segurança é melhor respondida pela revisão de dependências 
 <!-- certification-coach-question:ghas-ecosystem-029:b25307b94992b15d9f5ddb700d9e8333e400ef9cd337a0a4eb3181ddf5c208de -->
 ## Question 29: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-029`
 
 **Content revision:** `b25307b94992b15d9f5ddb700d9e8333e400ef9cd337a0a4eb3181ddf5c208de`
+
+**en review revision:** `143ac1596d1759cf3a87279148bbeb3d144e65978d9190d65a1abaa0571253df`
+**es review revision:** `7e98f7b40b3d8fc23c893e78ce06cbfe9a847f0b1915c8db6839ada72ab96884`
+**pt-BR review revision:** `f2729a97ab4a5a4c88b8b690e6cea9fe43b150c9b0341001996ed8347e64030e`
 
 ### English
 
@@ -2979,11 +3213,19 @@ Uma equipe usa uma verificação local de credenciais e pergunta se a proteção
 <!-- certification-coach-question:ghas-ecosystem-030:1b5357a05e66920e0c8484cfebc5afb50119aaa09678050003028df51cfcfea9 -->
 ## Question 30: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-030`
 
 **Content revision:** `1b5357a05e66920e0c8484cfebc5afb50119aaa09678050003028df51cfcfea9`
+
+**en review revision:** `f4763b3984dd761eea6b02fb6ee7a3285df6bce28b61e9334348681ab838b705`
+**es review revision:** `c86f651b84a69c49f84ced6faeaa2915cacc1af7bf9635799d726e6293d1d92b`
+**pt-BR review revision:** `736bb112c179570db8800588d717946f1fbd6af761bd1d61267c98e14457e646`
 
 ### English
 
@@ -3081,11 +3323,19 @@ Qual abordagem torna o Security overview mais útil durante uma implantação?
 <!-- certification-coach-question:ghas-ecosystem-031:a8708fb9f09652b8e09cb42d3f4a472a7f8830c00b29f9fd7d95d9f995034529 -->
 ## Question 31: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-031`
 
 **Content revision:** `a8708fb9f09652b8e09cb42d3f4a472a7f8830c00b29f9fd7d95d9f995034529`
+
+**en review revision:** `7ff83a662ba1f1161e8b6fd69e060106fcd03c8fbcc6c6e39ab3039bb298c21a`
+**es review revision:** `32792f2c0a50e4b38f01827f1d77712b8a0577954cbd25a9ad13fe0d546e71c4`
+**pt-BR review revision:** `8b1aea7875708e4affa46e1787d5065ac51cb32e92cce1eddb77778fcf6ca6e8`
 
 ### English
 
@@ -3183,11 +3433,19 @@ Uma vulnerabilidade é divulgada hoje em uma dependência que não muda há mese
 <!-- certification-coach-question:ghas-ecosystem-032:d28f3109f97622edb1b000e42774ce301dc3d98048b6f9a214c27da96df5c84b -->
 ## Question 32: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-032`
 
 **Content revision:** `d28f3109f97622edb1b000e42774ce301dc3d98048b6f9a214c27da96df5c84b`
+
+**en review revision:** `00f73df2bb8997d454aa4a33e9b1cf286c720848cc1172f85bff4c35069a4517`
+**es review revision:** `2fa4c6e714c4aed9784a569bfa349a36d912a4dfe358bbf122991c19e56f45d1`
+**pt-BR review revision:** `2fc8a2f407e04c30038df4a8f0c7a482fb445cde97dd1144a41343f5afe45340`
 
 ### English
 
@@ -3285,11 +3543,19 @@ Por que uma verificação obrigatória de código antes do merge não substitui 
 <!-- certification-coach-question:ghas-ecosystem-033:dc031e81bf32a53df9d39ef3afa7fd2cfd0037d2b90b396962c5aa8fbc2173ba -->
 ## Question 33: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-033`
 
 **Content revision:** `dc031e81bf32a53df9d39ef3afa7fd2cfd0037d2b90b396962c5aa8fbc2173ba`
+
+**en review revision:** `a4c408c55900849e9172d445695f7f8de72761ed3b6582bd86c2b2d7610f971f`
+**es review revision:** `bb9c12c753f3405c07d4b7fda4628e9a4113219c4b96f436b22b7cffd8eb6b3c`
+**pt-BR review revision:** `851057dcc24dcfc9f5f8aedf798d7495a4838be0d7360a5e3cd410c5a7b3537e`
 
 ### English
 
@@ -3387,11 +3653,19 @@ Qual solicitação pertence principalmente à segurança da cadeia de suprimento
 <!-- certification-coach-question:ghas-ecosystem-034:583dae9ec96bb1dab3823f71eb64f519bb25d8ad372dab27d8e225694a4dbcfb -->
 ## Question 34: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-034`
 
 **Content revision:** `583dae9ec96bb1dab3823f71eb64f519bb25d8ad372dab27d8e225694a4dbcfb`
+
+**en review revision:** `090dc4d78f70b5f1c5be7a47d1512637400d2cef9b98d4cc512b2c90f930422c`
+**es review revision:** `85c09d9e4bf7790c9a31d5e5fe283604e2d3cc5f04a82fe14babe70d734304c0`
+**pt-BR review revision:** `6fdb1171b86f6d401a148e798737c1158fbcf8540dde3a7decdbb9f9a2962273`
 
 ### English
 
@@ -3489,11 +3763,19 @@ Uma equipe quer que uma integração externa de tickets reaja a mudanças de est
 <!-- certification-coach-question:ghas-ecosystem-035:46f5e49187b03dcd21b0fba704f0743b31d87a3257b9227dc7cd1b4023bd1403 -->
 ## Question 35: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-035`
 
 **Content revision:** `46f5e49187b03dcd21b0fba704f0743b31d87a3257b9227dc7cd1b4023bd1403`
+
+**en review revision:** `b695c069a8a491983214ad87593e3180232a88b6216dcc0b8ca794abf4aa5df6`
+**es review revision:** `836bbf890dede2840113a41ad7e178b6992cc812473d907fc045c7e444010982`
+**pt-BR review revision:** `175b977ac8643c6a23c5507cb821bf05352875f958902846a352d4476d20ec91`
 
 ### English
 
@@ -3591,11 +3873,19 @@ Uma startup pergunta se comprar só Code Security deve ser considerado suficient
 <!-- certification-coach-question:ghas-ecosystem-036:9aca764038471fd2df1e61b5f4ea6a64cb6b8c8f6c9eeb0315cd50c38b74e6b0 -->
 ## Question 36: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-036`
 
 **Content revision:** `9aca764038471fd2df1e61b5f4ea6a64cb6b8c8f6c9eeb0315cd50c38b74e6b0`
+
+**en review revision:** `ff00889c2fc5443a98367735c51f6f620c5b4a63b852c611c1f8077196b7e015`
+**es review revision:** `c4ed452f280eb06a261994947c45ead8bfb1ea6647688b1f736136c0cf1ed539`
+**pt-BR review revision:** `587322f2a4860d29b9928e901445fba5eeb9a94022801bdf8228cb4fe039ac54`
 
 ### English
 
@@ -3693,11 +3983,19 @@ Um repositório usa uma linguagem não compatível com CodeQL. Qual plano preser
 <!-- certification-coach-question:ghas-ecosystem-037:eb243fef9da77787263cad2259bfbf4592c5b58758157f04b09ead56539a28b5 -->
 ## Question 37: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-037`
 
 **Content revision:** `eb243fef9da77787263cad2259bfbf4592c5b58758157f04b09ead56539a28b5`
+
+**en review revision:** `300fa1476493eca877e13d0032fb7a7cf4a95ea9195641dec8dfa858a84c2a09`
+**es review revision:** `c261f68d2e04d1d3c1608c4bb0a0d14174114c6acfa1576bafad99ba7c76d29f`
+**pt-BR review revision:** `249d48d0779f88d2d3a0afd29f4918fb17366a38f1a40e9b025860f7f3cf1baa`
 
 ### English
 
@@ -3795,11 +4093,19 @@ Uma campanha corrige dezenas de alertas de injeção relacionados. Qual uso adic
 <!-- certification-coach-question:ghas-ecosystem-038:877709470329059c1108da627b79ee1a19278a3400d4c990a91c80655fc3a590 -->
 ## Question 38: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-038`
 
 **Content revision:** `877709470329059c1108da627b79ee1a19278a3400d4c990a91c80655fc3a590`
+
+**en review revision:** `70ce53c67e684ad4d20969bd73fd64844feb7e2ea601a2ba5f821047ba7f08e9`
+**es review revision:** `9c1ece24d824594d65549511ef4e6edf410779903f9a905d31723472dac72741`
+**pt-BR review revision:** `0accf3383b94eae5c7c2fd49321d7231432315bbeafc10f5f4d29a2944f04b49`
 
 ### English
 
@@ -3897,11 +4203,19 @@ Um projeto exibe uma verificação verde de revisão de dependências. Qual conc
 <!-- certification-coach-question:ghas-ecosystem-039:5970dddab9ad0e24af710fc57a3003460225800a8852e113232710100f282c4d -->
 ## Question 39: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-039`
 
 **Content revision:** `5970dddab9ad0e24af710fc57a3003460225800a8852e113232710100f282c4d`
+
+**en review revision:** `88f5796ba3b7c4bf3deb24b5ed3bdd632f1fd3d1f1483a82e077a2a553a08f54`
+**es review revision:** `8c84a49f56282818f988d4596439e91059cb13f0c61f62b5ea6040a87b764c39`
+**pt-BR review revision:** `4467bf94c46c3e45e642e1251917c044e39ffa9f715a8c7fb4a38c0d7b103626`
 
 ### English
 
@@ -3999,11 +4313,19 @@ Uma pessoa mantenedora quer propostas agendadas de atualização não relacionad
 <!-- certification-coach-question:ghas-ecosystem-040:b6b6a75178abe497a1f131139209ed842301b756e63cbe6e714f73e2ffdfade2 -->
 ## Question 40: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-040`
 
 **Content revision:** `b6b6a75178abe497a1f131139209ed842301b756e63cbe6e714f73e2ffdfade2`
+
+**en review revision:** `e0831a6a2d6e0aa2791fec5224ba7c9fa9f2f762b3e3d01182bceac50de5ac0a`
+**es review revision:** `4b42c86caf3aff9082eee17ccc72c8e306c40c62af5bcbc921417a139500f525`
+**pt-BR review revision:** `31d9612e809ebba9da4077cffc45b056f802d17d60a328a3c9e2a8081860fe59`
 
 ### English
 
@@ -4101,11 +4423,19 @@ Um programa de alertas encontra problemas, mas nenhuma equipe é responsável pe
 <!-- certification-coach-question:ghas-secrets-001:1c6183196ec7786fb1fe3e343621b086164be7a440519de93781ad5cdbdae4a6 -->
 ## Question 41: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-001`
 
 **Content revision:** `1c6183196ec7786fb1fe3e343621b086164be7a440519de93781ad5cdbdae4a6`
+
+**en review revision:** `7a418eb759da7f7584bb90f9b9550d61182c8a52e917e18ed4eef5a79fadc2fe`
+**es review revision:** `a49601fdad8922d95d70d2639439ed377952818eeee675fcdead5d954fa2ea40`
+**pt-BR review revision:** `4d34648a6baa4884f65b6baaf8fb86c32eb895c22d2fcd494bd66c158d646369`
 
 ### English
 
@@ -4203,11 +4533,19 @@ Uma credencial de produção aparece em um alerta de segredos. Qual é a remedia
 <!-- certification-coach-question:ghas-secrets-002:c346701e94af213a100328f6970814bcf0daf0967913976ff50b7cffd78ae29c -->
 ## Question 42: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-002`
 
 **Content revision:** `c346701e94af213a100328f6970814bcf0daf0967913976ff50b7cffd78ae29c`
+
+**en review revision:** `7b95dc8459233bfa1fada42571faec6a9e306893e4e01c2bdda224dc5198a434`
+**es review revision:** `58d5019b36e08771dda4ef35d575430a02827c306b8fcb623c950e57b3a5c972`
+**pt-BR review revision:** `a2e38bc7ca4ac8a90eea2f200cbf95abc44e923b5736cba6f84bc83c4ca466e9`
 
 ### English
 
@@ -4305,11 +4643,19 @@ Uma branch antiga contém um token removido da branch padrão atual. Qual escopo
 <!-- certification-coach-question:ghas-secrets-003:864cf8752bf9c7a286daf12649fa9bd252601172515e38e98a2dabc8997bdf24 -->
 ## Question 43: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-003`
 
 **Content revision:** `864cf8752bf9c7a286daf12649fa9bd252601172515e38e98a2dabc8997bdf24`
+
+**en review revision:** `7e0630da37f8d510259ed04f489005f2b53601917fce4df85419b8631392269f`
+**es review revision:** `1fcd4ee17102ba64681398ba437b7153224d04ddfaee5090725ae333df384333`
+**pt-BR review revision:** `36e651f0175e525d9496c8ce21a92a48664370fbcf5c0eb4f76ab10b23094da4`
 
 ### English
 
@@ -4407,11 +4753,19 @@ Um push é bloqueado porque um commit anterior de entrada contém um segredo com
 <!-- certification-coach-question:ghas-secrets-004:40233062f5ad04800726d6e6dd1ef0560b5dc2297109aca9432d282d257883fc -->
 ## Question 44: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-004`
 
 **Content revision:** `40233062f5ad04800726d6e6dd1ef0560b5dc2297109aca9432d282d257883fc`
+
+**en review revision:** `a4ac09796658d10886955595dc8c35fec424a562994ef352655a40c7ca0c9cd2`
+**es review revision:** `d21e3a3b58319d7e60b65840d7b499fd7706c52866aabd90d69eb488aec44bf8`
+**pt-BR review revision:** `011c545722328576ad608151c98c7c0f6fa5cdf9cbcdcb4afadc76211a4415a1`
 
 ### English
 
@@ -4509,11 +4863,19 @@ Um token de provedor compatível tem validade desconhecida. Qual conclusão é a
 <!-- certification-coach-question:ghas-secrets-005:37b6c4cf82ad555ff8b3476e476407f63de1122ecff54308ac24dd10a87a41be -->
 ## Question 45: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-005`
 
 **Content revision:** `37b6c4cf82ad555ff8b3476e476407f63de1122ecff54308ac24dd10a87a41be`
+
+**en review revision:** `90d5cdbed3d649f622fcaf6673974530bceaba1127dfa5d512fd34b125d36d25`
+**es review revision:** `f0416883516ba4481aeba84f425f56d224a3ebf472e22107806876e1e0042c70`
+**pt-BR review revision:** `cb893472abd77b36437cb1b85831ff2a905d88c362a7c98422f52825aff577c2`
 
 ### English
 
@@ -4611,11 +4973,19 @@ Duas credenciais reais vazadas são semelhantes, mas uma está confirmada ativa 
 <!-- certification-coach-question:ghas-secrets-006:0a6388d42a31aadeba89278189bc755eca671422a7e5a51be54a86966fd5a130 -->
 ## Question 46: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-006`
 
 **Content revision:** `0a6388d42a31aadeba89278189bc755eca671422a7e5a51be54a86966fd5a130`
+
+**en review revision:** `d851fc838c882733155af47cb0dfc714d07b450e2cc2cb98b981f84ea61f4d8b`
+**es review revision:** `f81e2108fb6a9b5eb1a7113f41a4aed0c7c1b5b08ef4571469666e83abc0184a`
+**pt-BR review revision:** `8e839fa0fee4d7c4fe1cf5fc1b24936cd716bfd418797a1a11408a40f60b0ee5`
 
 ### English
 
@@ -4713,11 +5083,19 @@ Uma administradora habilita verificações automáticas de validade de segredos 
 <!-- certification-coach-question:ghas-secrets-007:055b3833be1f085c76fa6d54107fe3f8d29328cc798946a9a13307d4ffff2246 -->
 ## Question 47: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-007`
 
 **Content revision:** `055b3833be1f085c76fa6d54107fe3f8d29328cc798946a9a13307d4ffff2246`
+
+**en review revision:** `5467733311593d79de2e0f64a58f6e16da889629e23ba59450d0f57880e8dc98`
+**es review revision:** `a5bab665c9e5257d0042e9c68e93045a93fb7c6e4b072be3724a0eba38d8f932`
+**pt-BR review revision:** `c97333e64d11d9272da3557b2558c8e6a731e943151c06b583dfada9d1f8ef77`
 
 ### English
 
@@ -4815,11 +5193,19 @@ Uma organização usa um formato interno de credenciais não coberto por padrõe
 <!-- certification-coach-question:ghas-secrets-008:bd3447937425d0417a14ea6d58a98b4cc712ac6712aa2e00dc726585a781b136 -->
 ## Question 48: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-008`
 
 **Content revision:** `bd3447937425d0417a14ea6d58a98b4cc712ac6712aa2e00dc726585a781b136`
+
+**en review revision:** `1f688c25a777393375c70ce0d703cb3f608f043f2216cc4f434ae85bbac709d3`
+**es review revision:** `c1f33a4f3938076053e497b223c07b08c606a34ff6d87c7d70670aca19836ca7`
+**pt-BR review revision:** `5c8255be0de55abee80e66b5c57f3ff6c86e3a9ad826dca1e67e1049cbce3e93`
 
 ### English
 
@@ -4917,11 +5303,19 @@ Antes de publicar um padrão amplo de tokens, como uma administradora pode inspe
 <!-- certification-coach-question:ghas-secrets-009:bc59bc3cb782431cbd3ca94dde7ad8255a50b007a49bc75a0692f39c75376b35 -->
 ## Question 49: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-009`
 
 **Content revision:** `bc59bc3cb782431cbd3ca94dde7ad8255a50b007a49bc75a0692f39c75376b35`
+
+**en review revision:** `2a6353da17b2d9d778033b8ada91a7b67b4fbb044b5cd62744eb37deb95f0504`
+**es review revision:** `8dd2c47dedc98d67e23f7ba9709f952a04c2b5cbbc8c39818c6602b81b772261`
+**pt-BR review revision:** `d9e73e3819d9d9e74d89e18f661fb316cfc5df127063656fa377bcc111f2a24d`
 
 ### English
 
@@ -5019,11 +5413,19 @@ Um padrão personalizado corresponde a milhares de identificadores comuns de ped
 <!-- certification-coach-question:ghas-secrets-010:8eebf8d6683d292af7c22e963aaabc1f736e0ce81b946ab3b5c531661ed1d35f -->
 ## Question 50: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-010`
 
 **Content revision:** `8eebf8d6683d292af7c22e963aaabc1f736e0ce81b946ab3b5c531661ed1d35f`
+
+**en review revision:** `231659f3da67dfd17b410d03aaeaf7827449ed13e2a4c3e7405239e2d6853315`
+**es review revision:** `7b04ad52d90830ab310341472a91816d201f4a43c427101a38f5ef75e1e6efdc`
+**pt-BR review revision:** `a8b12286ebc0754b9dd73cafe1fd53e1b5810c91c78bf53cd1016b2db9385252`
 
 ### English
 
@@ -5121,11 +5523,19 @@ Um novo padrão personalizado passou no dry run, mas não foi publicado. Por que
 <!-- certification-coach-question:ghas-secrets-011:eaf3527af90e4316dadb13c4f5e403c53ab20bcedc8211950912cc180f6ef7d9 -->
 ## Question 51: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-011`
 
 **Content revision:** `eaf3527af90e4316dadb13c4f5e403c53ab20bcedc8211950912cc180f6ef7d9`
+
+**en review revision:** `0f0cdd31b419dffd0d07a04140f4a5d1fefd2811c1afea385d0779a8ed2816ff`
+**es review revision:** `9985f3ab7582d87753cfd1971a7d24d3ef31344da92fe488247e9ddaef578d4a`
+**pt-BR review revision:** `69cc1420e08de053ca7f4c912201f5e0253be2a8046358be2c2220a105fdc80c`
 
 ### English
 
@@ -5223,11 +5633,19 @@ Um colaborador seleciona I'll fix it later ao ignorar a proteção de push do re
 <!-- certification-coach-question:ghas-secrets-012:d459c01f13ec66a51853c88b80e60377c74e2a6d55cb5ea006014e58bec7b03a -->
 ## Question 52: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-012`
 
 **Content revision:** `d459c01f13ec66a51853c88b80e60377c74e2a6d55cb5ea006014e58bec7b03a`
+
+**en review revision:** `33359d3e3b9acf3184149e3c43ccfce52d1e5935da8a44cc69920f5fb3afd738`
+**es review revision:** `91c2c8ff3c9906b926aca7185914764d5c955c2a1db33e87d47f40afd8ef85b0`
+**pt-BR review revision:** `d8622225304a8e4301bf84eb40f9280d1ffddc0f804ce78ca717eb813a118618`
 
 ### English
 
@@ -5325,11 +5743,19 @@ Um desenvolvedor depende da proteção de push da conta, não da habilitação n
 <!-- certification-coach-question:ghas-secrets-013:208626fe9224bd200450148fb269496fb135b9c545836f01ea9037b5f89cc69b -->
 ## Question 53: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-013`
 
 **Content revision:** `208626fe9224bd200450148fb269496fb135b9c545836f01ea9037b5f89cc69b`
+
+**en review revision:** `d4ece34c523065d21b3c5a896f3dec3abe39647af4a038b9c2328f18722f9e60`
+**es review revision:** `9590dbdcde6736bd761d2a4ab9302a4fc023fcc2896b3f225888e3d77cb84c7c`
+**pt-BR review revision:** `ec537ca317c1fdc8181bad0a76501b5304c91d9fc28732f7512d5c37003dedb3`
 
 ### English
 
@@ -5427,11 +5853,19 @@ Uma empresa quer que colaboradores não designados solicitem aprovação antes d
 <!-- certification-coach-question:ghas-secrets-014:499ffd0513ada6fd50f59bb196945d125ccc11438287a46056e611862394fc6a -->
 ## Question 54: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-014`
 
 **Content revision:** `499ffd0513ada6fd50f59bb196945d125ccc11438287a46056e611862394fc6a`
+
+**en review revision:** `efd34168b3751a8b5e09e0c11d33deccbd0f5ba7c8ec688881d3436ac486a35e`
+**es review revision:** `752eabb710c7800a189008c264a71876cd4189b5dcd3365e26acdceaaa48480b`
+**pt-BR review revision:** `5a163dec90408b2ff09a0ee0136106f8287ddd77c1a9f2855447caafb2969df2`
 
 ### English
 
@@ -5529,11 +5963,19 @@ Qual distinção importa ao configurar privilégios de bypass versus isenções 
 <!-- certification-coach-question:ghas-secrets-015:baf0fd8c3ec8db5e1b1e579aff5143d12bec5cb2d89b9a3f2ccb649fd9f3d7ff -->
 ## Question 55: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-015`
 
 **Content revision:** `baf0fd8c3ec8db5e1b1e579aff5143d12bec5cb2d89b9a3f2ccb649fd9f3d7ff`
+
+**en review revision:** `f7ba3e46dd23d5f9dea517ae28606873ca6eee8e7932de65135bd528ff7d3b14`
+**es review revision:** `67f4f7dbb0d1a8845aff3505c8a956e2c46e6498ff9b1a3c310bd5792e5dcd87`
+**pt-BR review revision:** `c1246534a811d8e2618ece70c18a893496b2a845cb3a18793f460f99d09e5305`
 
 ### English
 
@@ -5631,11 +6073,19 @@ Um usuário ignora a proteção da conta em um repositório público sem proteç
 <!-- certification-coach-question:ghas-secrets-016:5943ff4f07fa6dd37c8107a3e2b1eac6c08c538ca0e1cee2e15f1286add405b4 -->
 ## Question 56: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-016`
 
 **Content revision:** `5943ff4f07fa6dd37c8107a3e2b1eac6c08c538ca0e1cee2e15f1286add405b4`
+
+**en review revision:** `1064df9e1f08512e9fc69612917ea8cac7083687379090247d834ae499f62214`
+**es review revision:** `043f993fa3e21bd7bf4253066da5477b270cda15ec386f61c3aa6fbaaf6a3c22`
+**pt-BR review revision:** `fe399946dfc8615d5789642de20e915fcedd685c3db8e23ed2d4b35bcd434946`
 
 ### English
 
@@ -5733,11 +6183,19 @@ Qual atividade a proteção de push cobre além de um push Git na linha de coman
 <!-- certification-coach-question:ghas-secrets-017:554bc5ce9a5267fa6a2a4fd91c3c40a509e0d8850a1edfbb9827952d4c43ec69 -->
 ## Question 57: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-017`
 
 **Content revision:** `554bc5ce9a5267fa6a2a4fd91c3c40a509e0d8850a1edfbb9827952d4c43ec69`
+
+**en review revision:** `5160877c7507c3ee3ca8ed8cd8fdab0fa89989df48e88ea7aabc80188139577f`
+**es review revision:** `e2ef7ccb7db6ca376fa43231f66288abafbc5e189b81706653f13a252de37bad`
+**pt-BR review revision:** `7f896b8a7711ed253aeff72b3ac4eebcd2fbe01de81b9b7b0ccc79d94b5f29e8`
 
 ### English
 
@@ -5835,11 +6293,19 @@ Uma pessoa mantenedora acredita que a verificação de segredos não encontra um
 <!-- certification-coach-question:ghas-secrets-018:f62d7ab1acb16c7d6cf113faede3900fa25d0967e3ac20129683acd2da40ea8b -->
 ## Question 58: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-018`
 
 **Content revision:** `f62d7ab1acb16c7d6cf113faede3900fa25d0967e3ac20129683acd2da40ea8b`
+
+**en review revision:** `ddba17f359903899f4232ad90156afa8b3f1832df6ca7b2eb52eac10c4158b4e`
+**es review revision:** `cc6f11f13f02b07c9926c69786f4f22e8b940f472943387614ba5ddc8beca6bc`
+**pt-BR review revision:** `9c03b99a0792693c54c3caf20256eb678234a7b75d4c5cbd991d6cd782430de5`
 
 ### English
 
@@ -5937,11 +6403,19 @@ Um repositório está limpo segundo os detectores atuais. Por que um alerta de s
 <!-- certification-coach-question:ghas-secrets-019:fc1abf92aa09482e9240e22e1f5b157f2f423e4aa5509cf82bacf5e4dcba25ab -->
 ## Question 59: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-019`
 
 **Content revision:** `fc1abf92aa09482e9240e22e1f5b157f2f423e4aa5509cf82bacf5e4dcba25ab`
+
+**en review revision:** `7d45e85d83a4580a4ba43caa7433fbe917b5f4e61ef5e7d1b4b64e6886df68e9`
+**es review revision:** `a9cc0a935f68a59b9c9f8658d37db8555dce33f316b475ce038df318434a933e`
+**pt-BR review revision:** `120d5423dc20425d04a65d26bbd95602bb25a7c055de4ea3804a885ed76779a1`
 
 ### English
 
@@ -6039,11 +6513,19 @@ Um verificador detecta uma chave privada cujo uso não está ligado a um provedo
 <!-- certification-coach-question:ghas-secrets-020:1750c7991d1b6b9d8b76992b2bf75b748bf21eb26436da3ccee06fc8654d725e -->
 ## Question 60: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-020`
 
 **Content revision:** `1750c7991d1b6b9d8b76992b2bf75b748bf21eb26436da3ccee06fc8654d725e`
+
+**en review revision:** `332467d282137d8915d1b34d6239acc07712025af99ca7f089cb905716506ef0`
+**es review revision:** `c9a2217774281f896b07844c2d6b1e0e30d06eae775601d2dd177a39085be564`
+**pt-BR review revision:** `ba76a084f9a48166039eec46d3f0de73b9df4ea8e6fb028d65feb87621f74b33`
 
 ### English
 
@@ -6141,11 +6623,19 @@ A pessoa responsável pelo incidente revogou uma chave exposta e verificou a imp
 <!-- certification-coach-question:ghas-secrets-021:f5ba624c552146c6347b525ca2a60c487c3637743db509b177481a60e845de74 -->
 ## Question 61: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-021`
 
 **Content revision:** `f5ba624c552146c6347b525ca2a60c487c3637743db509b177481a60e845de74`
+
+**en review revision:** `a20b3d78fb982f7a549c49dc7a814a00373388160c6841552ae9f2f6a24e3d8d`
+**es review revision:** `d5914082433f7d86122f615670b181fe92a1feba7b300644e8e6dc1cd4a861f0`
+**pt-BR review revision:** `d6a1d547b85da43fb57df4f32ab3644d33edc9b971be7be199d3d7885fea2514`
 
 ### English
 
@@ -6243,11 +6733,19 @@ Uma equipe descobre a mesma credencial em vários locais históricos. Qual açã
 <!-- certification-coach-question:ghas-secrets-022:75e37a8bb0d9077836a7c6ab1326ff3409b7bbd7602f2f1bd88e726d255a5e6e -->
 ## Question 62: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-022`
 
 **Content revision:** `75e37a8bb0d9077836a7c6ab1326ff3409b7bbd7602f2f1bd88e726d255a5e6e`
+
+**en review revision:** `02facfbb13f2accac0c8c47dd2f05d1203abf725023b473d213685a6d1eeb817`
+**es review revision:** `be6235e84710f19319ba228f5296ff96edecd3c8a1b2b03c16c9963ec5ad2333`
+**pt-BR review revision:** `283cbc4333ea02977f8b224db1289fc75ae93810abef210617206de63a779c2b`
 
 ### English
 
@@ -6345,11 +6843,19 @@ Um detector personalizado de tokens deve valer para muitos repositórios de uma 
 <!-- certification-coach-question:ghas-secrets-023:9ea2350c737767cd0fc835388d23f9853f0c9c45b8ecb39c0414a6afc9efea47 -->
 ## Question 63: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-023`
 
 **Content revision:** `9ea2350c737767cd0fc835388d23f9853f0c9c45b8ecb39c0414a6afc9efea47`
+
+**en review revision:** `637bf695454a9842cd9d080889e68faebe9b1d8772928fac6e8e30fa8e786b91`
+**es review revision:** `4ba12d9f3bb046187b7b6de0e5d3b4f1c8f7afac661ac1c0232d5974b1108b46`
+**pt-BR review revision:** `3e3c9ce82c3885674d89d06b93bba87a8bfe42b1eea107e0fd947f525ea98013`
 
 ### English
 
@@ -6447,11 +6953,19 @@ Um detector encontra um valor semelhante a token em dados de teste. Qual fato pr
 <!-- certification-coach-question:ghas-secrets-024:bede05629c0f725ae5088a184906e6c2cc11c291a5da04e3ab5147ad5275b057 -->
 ## Question 64: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-024`
 
 **Content revision:** `bede05629c0f725ae5088a184906e6c2cc11c291a5da04e3ab5147ad5275b057`
+
+**en review revision:** `0bb81cd9d1fbef280110ad9dcd972c6fa886e45161e4fdc5987ffbd808db653d`
+**es review revision:** `533543123cb362e44a34d491e33493a5fb1c5b8ec8597502c1cb093f6188ec0b`
+**pt-BR review revision:** `f13b8df9185bc67de6b5b97103debd8c5e000ae835a22d1432eb8cad200e40ec`
 
 ### English
 
@@ -6549,11 +7063,19 @@ Uma pessoa mantenedora quer verificações de metadados estendidos para credenci
 <!-- certification-coach-question:ghas-secrets-025:c0c8d5b0ecc95c189222fc33fcade45772140dae633c34de3bb57ed24d55f4ed -->
 ## Question 65: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-025`
 
 **Content revision:** `c0c8d5b0ecc95c189222fc33fcade45772140dae633c34de3bb57ed24d55f4ed`
+
+**en review revision:** `0ac36b391b52be1cbeb4fc7263d2c3d38dc50c22dff0c80b7d35bba566084a9c`
+**es review revision:** `c6d706569ce8a470d57cb34fd2219efe63f26848e09181f55a11b5c086881a84`
+**pt-BR review revision:** `15052683852337398285edb741cfb59f5c2be515b72ea8c9c3e2498198d9e5ab`
 
 ### English
 
@@ -6651,11 +7173,19 @@ Um push bloqueado é liberado por bypass sob proteção no repositório. Qual ev
 <!-- certification-coach-question:ghas-secrets-026:ba4b19dc969a053f043b142086831788c8a77e46d3e51fc9e38fe15eed293c6a -->
 ## Question 66: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-026`
 
 **Content revision:** `ba4b19dc969a053f043b142086831788c8a77e46d3e51fc9e38fe15eed293c6a`
+
+**en review revision:** `21bf491e6006b2fff6b0dbc86d27973e3d1cca04e64bb38788d0deec3f6d5ca1`
+**es review revision:** `71168502d556e6e6175ceed6e04d1fe5f2cfcc80074f4ae92629f85970312514`
+**pt-BR review revision:** `3b18f8c7bd0716992efddb51ff0d088adab343c34f953e8260f0d1ca6a173483`
 
 ### English
 
@@ -6753,11 +7283,19 @@ O push de um colaborador contém uma correspondência comprovadamente não crede
 <!-- certification-coach-question:ghas-secrets-027:7f5fcc9bc481a8fdf3df45a722843ee101a685849432748f0c1a6ce4ff2c832c -->
 ## Question 67: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-027`
 
 **Content revision:** `7f5fcc9bc481a8fdf3df45a722843ee101a685849432748f0c1a6ce4ff2c832c`
+
+**en review revision:** `3840b289a40bb79001dd05ebe4e88ee779d9a4607753244adf763103b278b5bf`
+**es review revision:** `51cabc9f5495f073a2e911602527a2f79b3bff6ae54423df67377de5b67dd739`
+**pt-BR review revision:** `666a80bba408745a6b7c13f48aca2a1303fc4fdee16bc72236ff50a0b2212160`
 
 ### English
 
@@ -6855,11 +7393,19 @@ Uma política exclui um diretório da geração de alertas de segredos por conte
 <!-- certification-coach-question:ghas-secrets-028:42505bc02fddf8a9c70eee9d8df98332be290d8787bb6327cf5db35e3686fff9 -->
 ## Question 68: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-028`
 
 **Content revision:** `42505bc02fddf8a9c70eee9d8df98332be290d8787bb6327cf5db35e3686fff9`
+
+**en review revision:** `88c9cec0d33465080d7aef5f640fe4ca00b0d04ea68ca746d7d6719ee2c4c80a`
+**es review revision:** `133f62b918c0f14075ad52c7a9fc8c8da0b31a9ccc6e933228ae4795b401d1db`
+**pt-BR review revision:** `baee2b606697f91e5c7ad042a9b3fa03e64657618f859df812d1936d90c53259`
 
 ### English
 
@@ -6957,11 +7503,19 @@ Por que evitar colar valores completos de tokens detectados em uma discussão am
 <!-- certification-coach-question:ghas-secrets-029:06a6f15c4313788dcf6acfe91f457136d69aa2f512b7dab8d11e2ce783ddcfa6 -->
 ## Question 69: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-029`
 
 **Content revision:** `06a6f15c4313788dcf6acfe91f457136d69aa2f512b7dab8d11e2ce783ddcfa6`
+
+**en review revision:** `87c4875d81e948216ac05cc962541dea5e6bf6898cde1f2a231c61575a5ca66f`
+**es review revision:** `80d96192475236859d11725d05bef7936530427e9479f094495a35494a40e8cb`
+**pt-BR review revision:** `86e26fb5f1f3c6e15dd94d6bdc5db3a036ccf59236b4acfb95342f7012a8868c`
 
 ### English
 
@@ -7059,11 +7613,19 @@ Um alerta de token é marcado inativo após uma verificação. Qual acompanhamen
 <!-- certification-coach-question:ghas-secrets-030:46f21d81638c42b9142f7420d5bba73c3e3f4bc6a6aa9fe7b3671f51c76c1da9 -->
 ## Question 70: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-030`
 
 **Content revision:** `46f21d81638c42b9142f7420d5bba73c3e3f4bc6a6aa9fe7b3671f51c76c1da9`
+
+**en review revision:** `c9cce46f3427c183f6009e47a66ba3b017ee34dd366ec073c8e2fa42e98b9dfa`
+**es review revision:** `aeb820a1feec81bae79ab5a53c4d5e8e08fc92ec84df391036685abc5f55db72`
+**pt-BR review revision:** `501345c7702531f91a54e6f72a41d4976a96d1ab757abe2e2dee6ba13c007a13`
 
 ### English
 
@@ -7161,11 +7723,19 @@ Qual afirmação descreve corretamente o benefício de habilitar proteção de p
 <!-- certification-coach-question:ghas-secrets-031:23bd55ad2fcb48afaeafe1986a668dc6c48869ca8d3d1b8ecd214b420b2d897f -->
 ## Question 71: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-031`
 
 **Content revision:** `23bd55ad2fcb48afaeafe1986a668dc6c48869ca8d3d1b8ecd214b420b2d897f`
+
+**en review revision:** `789db48724d140853a07a355981fa370a1ac26b42f2ff22022384d2f8803c7dc`
+**es review revision:** `54d36ee07e7e7e1ce580d39de0f7a8576f30a1ae42ae79b377c9e7c7b91389ff`
+**pt-BR review revision:** `487705215751d4a0c41fc686a0016d3bb0e9cfdcf2c1296c65d65baa2c078f70`
 
 ### English
 
@@ -7263,11 +7833,19 @@ Um dry run não encontra correspondências para um padrão, embora exemplos sint
 <!-- certification-coach-question:ghas-secrets-032:86d71155fd69e5dd0bc0b7e3d15f79120d1ac71e029a61c28836f400164da278 -->
 ## Question 72: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-032`
 
 **Content revision:** `86d71155fd69e5dd0bc0b7e3d15f79120d1ac71e029a61c28836f400164da278`
+
+**en review revision:** `f599c335c0b7a00908359128ae7df31ff2866f54806b37e0efc4985268241ce0`
+**es review revision:** `8b761aa0c545084cce86ce3d5956d02a18618cec6f4a15d35c5c2df4e20c66de`
+**pt-BR review revision:** `d7274584ceb67e981adf968c3c44bb7c34224526ef4d9adcb252858fdec7fbef`
 
 ### English
 
@@ -7365,11 +7943,19 @@ Uma equipe pretende usar proteção de push para detectar todo formato possível
 <!-- certification-coach-question:ghas-secrets-033:f9755fc60ac8d862d6215aba94ef8560c5577aad3313496dba9aa67924cde16a -->
 ## Question 73: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-033`
 
 **Content revision:** `f9755fc60ac8d862d6215aba94ef8560c5577aad3313496dba9aa67924cde16a`
+
+**en review revision:** `6b14c1effb56d5fa249d22b7650e4ff2109b2158a733466750c3a53a830cd00f`
+**es review revision:** `a964bcccdf57db5828c6d91080d6057331c4acd17f4ab570b0442ff66561aaf8`
+**pt-BR review revision:** `c564a2fbfe086418dc7732337d583893f58d650a764dd02763b30eaeed18aca9`
 
 ### English
 
@@ -7467,11 +8053,19 @@ Uma organização quer um detector compartilhado de tokens internos e também re
 <!-- certification-coach-question:ghas-secrets-034:4a1d3f6958bb364f2372963b005336b843f2337a933fa2537322164a8b4bf109 -->
 ## Question 74: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-034`
 
 **Content revision:** `4a1d3f6958bb364f2372963b005336b843f2337a933fa2537322164a8b4bf109`
+
+**en review revision:** `c4e8e1ab5ada7ee4c4f04143f8b13486c187ccdbe3debfad6992fb3386217f68`
+**es review revision:** `fb6d3f69b469de5bf2cda99f4a63dccaf629f5d3b76f0cff57bbe712f035817e`
+**pt-BR review revision:** `7b5ec415d843125aa293fdd0d1a7eb11f6d00ccf9c4ca21be22596f16170eaec`
 
 ### English
 
@@ -7569,11 +8163,19 @@ Uma escrita por API tenta introduzir um segredo reconhecido no repositório. Usa
 <!-- certification-coach-question:ghas-secrets-035:552f4afef9e92949eb46ad5457531b2ecf57a1f16d099c0171d55fa04358b6d4 -->
 ## Question 75: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-035`
 
 **Content revision:** `552f4afef9e92949eb46ad5457531b2ecf57a1f16d099c0171d55fa04358b6d4`
+
+**en review revision:** `7aeddfdf4d670c9d05ad2c0c598a2f00c6b98030fddd8e9199408c3e20443a19`
+**es review revision:** `a07852a3aeec360eff7279ef04cb3541190a236fd9e49860a7549e74531c92c9`
+**pt-BR review revision:** `0000163dd2008b54ab9d1d935782aa0d417bf428514beb4e8b2cf77756839225`
 
 ### English
 
@@ -7671,11 +8273,19 @@ Uma equipe quer revisores designados avaliando solicitações urgentes de bypass
 <!-- certification-coach-question:ghas-secrets-036:5856478bb13ab13c0fadcbffbe664a79cf684155936495a17feda2b78d76a2b3 -->
 ## Question 76: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-036`
 
 **Content revision:** `5856478bb13ab13c0fadcbffbe664a79cf684155936495a17feda2b78d76a2b3`
+
+**en review revision:** `95e169071a96e38115d5ccd10b39d8e7a675fd799eb099dfc3cd4303f8cf7516`
+**es review revision:** `c219d1918e5b5e793354e2061994990119efa6cfbcc0ac82d56baeca930763b9`
+**pt-BR review revision:** `654686424dd2c3ba77e7f3fa63414b68e2b839197e81e81247bead01c32e72f5`
 
 ### English
 
@@ -7773,11 +8383,19 @@ Qual observação justifica classificar uma correspondência de padrão personal
 <!-- certification-coach-question:ghas-secrets-037:558913850f027eb151c5380dc5a4e3e9034c62d62ec4b1cd62862b30952376ff -->
 ## Question 77: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-037`
 
 **Content revision:** `558913850f027eb151c5380dc5a4e3e9034c62d62ec4b1cd62862b30952376ff`
+
+**en review revision:** `7fc220a58310bd76a2219a677117c7e3708cf232780ef5762e50bf41905585fd`
+**es review revision:** `9182b2a85c537ca1684d62e262074e957387a618601f346d1420f506c58eed6d`
+**pt-BR review revision:** `5dcb78b10e82f975f835c674b474c4fbc073001c93bce2d49044d327d34a3b1e`
 
 ### English
 
@@ -7875,11 +8493,19 @@ Após revogar um token interno, um líder quer reduzir vazamentos recorrentes. Q
 <!-- certification-coach-question:ghas-secrets-038:19e754f8dd2f16c848347728cca93dbb44bedf8200026632771e09dc556ade4e -->
 ## Question 78: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-038`
 
 **Content revision:** `19e754f8dd2f16c848347728cca93dbb44bedf8200026632771e09dc556ade4e`
+
+**en review revision:** `0f015d7aad8e6fd5b5f1bff54b5867341cf4eb640c2ebace161b8cfe4b424a88`
+**es review revision:** `73d64591edee09ee3915d9c107576b78c44245a9a274b0062702380289a2adb9`
+**pt-BR review revision:** `a96a926e97ca79eebac5848ef76659ab4b80885395518ef1184cfaf2284a357d`
 
 ### English
 
@@ -7977,11 +8603,19 @@ Qual é a principal razão para definir um destinatário de alertas de segredos 
 <!-- certification-coach-question:ghas-secrets-039:93868d67a380598da5832e49f91a2c1f6f19642f57a922ac032150c30a3eea36 -->
 ## Question 79: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-039`
 
 **Content revision:** `93868d67a380598da5832e49f91a2c1f6f19642f57a922ac032150c30a3eea36`
+
+**en review revision:** `c7816ad09a837c299a3aceeba3d2faebe96128a4605d5d2efb8e7da141f77e12`
+**es review revision:** `4bcf9f4fc512ad08435e5f3ff7ffc1073488ac16c9196696c8b9118554205473`
+**pt-BR review revision:** `5bd5da73fedfd45206e08d8bd228ff40c566536ddbe36727983417a6b46cebf7`
 
 ### English
 
@@ -8079,11 +8713,19 @@ Um atacante pode ter copiado um token real de um commit público antes da remoç
 <!-- certification-coach-question:ghas-secrets-040:62d3f27fb42ebd82fa68b309bf9257b355d1aaf550c58e6658d36d65b4b85152 -->
 ## Question 80: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-040`
 
 **Content revision:** `62d3f27fb42ebd82fa68b309bf9257b355d1aaf550c58e6658d36d65b4b85152`
+
+**en review revision:** `4c29bcdb76c2cfa91d19eff5126fe2003ba81b656e94bea957b11c9e0e41d911`
+**es review revision:** `aeabd1cd04ffa16e1944d8ad5f82acdf8c1d5b96ff7d407417221ab922268778`
+**pt-BR review revision:** `a2a78edd94bcea304ba343ff38882d97773eb581fe6368d304e9ee1e4d3c78b2`
 
 ### English
 
@@ -8181,11 +8823,19 @@ Uma administradora vê muitos alertas de segredos ao habilitar pela primeira vez
 <!-- certification-coach-question:ghas-supply-001:476ffcf02c7bb73bd851dceab51afd32ac3e3c933e8f334973b784d38bb885fe -->
 ## Question 81: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-001`
 
 **Content revision:** `476ffcf02c7bb73bd851dceab51afd32ac3e3c933e8f334973b784d38bb885fe`
+
+**en review revision:** `776d68eef707d0182fcaf28126405ba6cc9cd5ca9b9140c15dc29b07823652e4`
+**es review revision:** `aa5f81f3d821b6d9f0792cb097f0cfdb3c12888d1f51d22d6f50dfcda6e34eaf`
+**pt-BR review revision:** `53d97b8ca3fe93a5279884180b9c1b61d10f3e2838581b19a14b55b824518174`
 
 ### English
 
@@ -8283,11 +8933,19 @@ Um pacote aparece apenas por uma biblioteca pai. Como identificar por que está 
 <!-- certification-coach-question:ghas-supply-002:b87c3c593747ffed97913f9bd73c7b7f19fa11d2489962d2d2bbd5e1741ffa11 -->
 ## Question 82: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-002`
 
 **Content revision:** `b87c3c593747ffed97913f9bd73c7b7f19fa11d2489962d2d2bbd5e1741ffa11`
+
+**en review revision:** `2fde2f4daed0b18886332d50d7539a39db8e32415a265cb320503c5d1c1ba752`
+**es review revision:** `38568e192e3a0f24a3968642068beeeacdfd224074470141c7c27816ed1844f3`
+**pt-BR review revision:** `24a126c17454b6203d7e80bce308072d32fddf5de3cf94b5f1bf36d13dc58f99`
 
 ### English
 
@@ -8385,11 +9043,19 @@ Uma revisão de conformidade solicita a exportação SBOM integrada do grafo de 
 <!-- certification-coach-question:ghas-supply-003:4b17c7bb0ce84d5bc79d0c2cf6acfd5403402809d1aecef89c1e58dfafe70c35 -->
 ## Question 83: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-003`
 
 **Content revision:** `4b17c7bb0ce84d5bc79d0c2cf6acfd5403402809d1aecef89c1e58dfafe70c35`
+
+**en review revision:** `2cc6bfbf19ef64f8cec6671be9f34ae3b93700594d1a65b48abf055bcc686327`
+**es review revision:** `86551b4e28a56b3b3ba3d4dae150cec9d346eb94e0f4e7bb6babdf4bb68a9891`
+**pt-BR review revision:** `b8891b610392983b4217689d3d43f69656c1f873354a69b6c1d8fb8e132dc168`
 
 ### English
 
@@ -8487,11 +9153,19 @@ Uma compilação resolve dependências que o GitHub não descobre só pelos mani
 <!-- certification-coach-question:ghas-supply-004:c82ebff2012a66b3b9e6e4e87f4ebd831cea3cc1b62389791cf6a326e3ffa8b2 -->
 ## Question 84: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-004`
 
 **Content revision:** `c82ebff2012a66b3b9e6e4e87f4ebd831cea3cc1b62389791cf6a326e3ffa8b2`
+
+**en review revision:** `b57dda002b1ac384f18e9a402bb17bfaf2f73f727bef63ec6f171bd271666d68`
+**es review revision:** `8a6df3bebf8c82792c0b2f72dbfcfe991bfcbe5b60a2d3cbf34e9dbfac56bbf4`
+**pt-BR review revision:** `ee96a088d5b46ec346a1f7685500ff52e2f86ea1618e8a8b449ba06feb77c49c`
 
 ### English
 
@@ -8589,11 +9263,19 @@ Um pull request atualiza um pacote direto, e seu arquivo de lock muda vários pa
 <!-- certification-coach-question:ghas-supply-005:8b0ab2a17bb3cc52b359d20c111fc388837576fa415d527760a5eea9cac07345 -->
 ## Question 85: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-005`
 
 **Content revision:** `8b0ab2a17bb3cc52b359d20c111fc388837576fa415d527760a5eea9cac07345`
+
+**en review revision:** `61a5ac40971a47468d8633bc5c8590c885190413940f0a4c73eeea90bf83f593`
+**es review revision:** `87941d06aa4d0d052d6d7c2f1e728bcfa40070394a545908b2076ad68c5058ea`
+**pt-BR review revision:** `805623af377589a43b1e01cbc32ea03d7080022bd0f3fb3932b6012249502d29`
 
 ### English
 
@@ -8691,11 +9373,19 @@ Um workflow de revisão relata uma dependência vulnerável adicionada, mas mant
 <!-- certification-coach-question:ghas-supply-006:6781f6b7f6cf3fe84966c576a319f79f92431da64adfb1850e2b50d93aa45f13 -->
 ## Question 86: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-006`
 
 **Content revision:** `6781f6b7f6cf3fe84966c576a319f79f92431da64adfb1850e2b50d93aa45f13`
+
+**en review revision:** `fa877c8775edc61c967b7d52a76516ff93148a581b4da0e0df90516a509e8c08`
+**es review revision:** `81c84619890734d51a9aa70735bc908b29cec3c05159d78896f98bac2f25ee84`
+**pt-BR review revision:** `d27706c1f76f01286b4fcfdf662883f8c423dd2e9854bc11a793f363ed500c38`
 
 ### English
 
@@ -8793,11 +9483,19 @@ Uma política jurídica proíbe determinada licença de dependência. Qual capac
 <!-- certification-coach-question:ghas-supply-007:d94188c177b23e7319b8659ef672e5ed81b43b1770a4defdc11cc9dafcfe7e90 -->
 ## Question 87: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-007`
 
 **Content revision:** `d94188c177b23e7319b8659ef672e5ed81b43b1770a4defdc11cc9dafcfe7e90`
+
+**en review revision:** `0b603d3dfc038f8d69739f81cd7d9ef7db30159e5c48bcf0703d9a7eec275889`
+**es review revision:** `7f374b8d6b12e70f406c3844cae11a306ccf39af79bdac64e50ff731cfedc200`
+**pt-BR review revision:** `ab1b58f30097966e1057a5463b52710b332afcefc66cbb0c1e7345dc323c0e50`
 
 ### English
 
@@ -8895,11 +9593,19 @@ Uma equipe quer que a revisão falhe só por vulnerabilidades recém-introduzida
 <!-- certification-coach-question:ghas-supply-008:5679e9f42b7b2274cf86b7ec4a97077bd581490ebf492ea51e1c59ece938218d -->
 ## Question 88: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-008`
 
 **Content revision:** `5679e9f42b7b2274cf86b7ec4a97077bd581490ebf492ea51e1c59ece938218d`
+
+**en review revision:** `4e4eecef43094fc1100601734601d3f193256c6c6113da92cc3e11e2d11fe1ba`
+**es review revision:** `6608d8d2f7b06ad63270e3211435e3b4eb922c1054ce0d5b9e60e47d3122a4aa`
+**pt-BR review revision:** `a424eaca26cd4bf741e05cb3488720c6a652bd95006ebb007c28d089e81e1a8e`
 
 ### English
 
@@ -8997,11 +9703,19 @@ Quando a análise de alertas do Dependabot avalia principalmente as dependência
 <!-- certification-coach-question:ghas-supply-009:f585ea2687310d3e17ec2124401a7fd78e1bf628bc7762ad2f641ee3dabc4227 -->
 ## Question 89: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-009`
 
 **Content revision:** `f585ea2687310d3e17ec2124401a7fd78e1bf628bc7762ad2f641ee3dabc4227`
+
+**en review revision:** `310835aa230458a24ea56ed3ff2e70131d1a88f69ba6201e4cefdeffc7e03191`
+**es review revision:** `269b918361ec53e3e22ac5be6978530695f9b4cad60353ab32031647f3343ba2`
+**pt-BR review revision:** `f74cfdb0501f6297bed45ba3da1bc96a34bcb8d457534821dd716f91d7833128`
 
 ### English
 
@@ -9099,11 +9813,19 @@ Uma atualização de segurança propõe uma versão corrigida com alta pontuaç�
 <!-- certification-coach-question:ghas-supply-010:58af0252437064c2b8fff0a28d830202e38b3153630f5465beef01a2ae9935f7 -->
 ## Question 90: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-010`
 
 **Content revision:** `58af0252437064c2b8fff0a28d830202e38b3153630f5465beef01a2ae9935f7`
+
+**en review revision:** `aaffdb7e519a01da97f74b12b5bbe931fd59d72bf27d97ab3bbb83d339279d53`
+**es review revision:** `36126d49dc56415020f1c40ae34291a67e454675137673a7c0cfc6f603d04450`
+**pt-BR review revision:** `39835e85cd3d6b6d5ad4dabe57e4099995a13450a9952083d1182632d827f4a3`
 
 ### English
 
@@ -9201,11 +9923,19 @@ Quais capacidades mínimas devem estar habilitadas para atualizações de segura
 <!-- certification-coach-question:ghas-supply-011:fd185afd70732f543eab4af17bf04360079df15296b4b19c1d29e83aeca2b402 -->
 ## Question 91: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-011`
 
 **Content revision:** `fd185afd70732f543eab4af17bf04360079df15296b4b19c1d29e83aeca2b402`
+
+**en review revision:** `a59a66ddbb00d51397b2bf398738a1823f17774158e7d633d2ef6ea4c5f7c23a`
+**es review revision:** `aee7befeeb88a0310c1b2a211ad4d683644e5ab83e7dcd16d59efd202cb5885c`
+**pt-BR review revision:** `68a4621f21c35879d34c90ec6c0bb3dc4422c5191e41a00d7f4c436afa7bfe56`
 
 ### English
 
@@ -9303,11 +10033,19 @@ Uma dependência enviada só pela submission API recebe um alerta, mas não um p
 <!-- certification-coach-question:ghas-supply-012:9a8d7f3f760fa42de9bd44f260d44f0df5dc75d1685c0ab19f075dda2b25fa2e -->
 ## Question 92: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-012`
 
 **Content revision:** `9a8d7f3f760fa42de9bd44f260d44f0df5dc75d1685c0ab19f075dda2b25fa2e`
+
+**en review revision:** `7388b73bb7dcf6e2d7591ff0b33af8c218a4878118f7d5c8bcd3506edb5ccb04`
+**es review revision:** `62570615b04a33be4998fc86f92e5ee914052f95aace90d4fc2613fd8a9a4806`
+**pt-BR review revision:** `af3f95d8d51fd22a9003d41c4e6778b0e27fea11f417282fae0dd823fb6312c4`
 
 ### English
 
@@ -9405,11 +10143,19 @@ Onde o repositório deve commitar a configuração de atualizações rotineiras 
 <!-- certification-coach-question:ghas-supply-013:b68b373da6aa844f7cbba4b002618176dd70b79a427ce1552b499673d65a5128 -->
 ## Question 93: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-013`
 
 **Content revision:** `b68b373da6aa844f7cbba4b002618176dd70b79a427ce1552b499673d65a5128`
+
+**en review revision:** `8506445d33ae76850e35df9333e053aa6ff0818cf790c59bd0e350be3bed1afc`
+**es review revision:** `716db6dbd1f8dbbd9a6b74527fb43d06dbf7d744bb543386f992378503f7cb50`
+**pt-BR review revision:** `164d4df6cd840d46835d1e071a93753eab79e9387a476584c456a65f42cd9635`
 
 ### English
 
@@ -9507,11 +10253,19 @@ Um monorepositório tem manifestos em vários diretórios. Que informação a co
 <!-- certification-coach-question:ghas-supply-014:537ae64a1f18e7d7fd5095e485d360e60566d70ef7dee005ce33ebb6f4d2d72f -->
 ## Question 94: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-014`
 
 **Content revision:** `537ae64a1f18e7d7fd5095e485d360e60566d70ef7dee005ce33ebb6f4d2d72f`
+
+**en review revision:** `28f9797d999d986bb9e8cd9fd5698eb0c4ec01e669fa3b78d6eb66f9a4fe1865`
+**es review revision:** `9fa5b587efb362598f282fa7f33480643bc75fcc9814074489d9971602612bc4`
+**pt-BR review revision:** `47d8d34acf48e81af65558e7dc076122214696bed190325ffb8dcd646f82b02c`
 
 ### English
 
@@ -9609,11 +10363,19 @@ A equipe quer menos pull requests de segurança mantendo correções automática
 <!-- certification-coach-question:ghas-supply-015:324dcc76017ca21c7cdf04e9f0f24fd19c9cb97ef83d109fd9e2b54de186724c -->
 ## Question 95: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-015`
 
 **Content revision:** `324dcc76017ca21c7cdf04e9f0f24fd19c9cb97ef83d109fd9e2b54de186724c`
+
+**en review revision:** `9c5ecd7fe68ceef1c98ac410fd67dc2dc827f6317a797f3083a32115b63dfc2f`
+**es review revision:** `bd2ad183a462a737ad71d4cb292abde89fb1ca6297cacba67a5ba8eab98b043d`
+**pt-BR review revision:** `b4d37a36ffd812f4ccbd36ac6be5f6e5894811108b38b598997d02a313e04f54`
 
 ### English
 
@@ -9711,11 +10473,19 @@ Uma pessoa mantenedora espera um pull request agrupado combinando correções de
 <!-- certification-coach-question:ghas-supply-016:da22cca77ab43f05809f64d0859e2cd0c69fec1d47f211eb8b404d6e60b4f32a -->
 ## Question 96: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-016`
 
 **Content revision:** `da22cca77ab43f05809f64d0859e2cd0c69fec1d47f211eb8b404d6e60b4f32a`
+
+**en review revision:** `1b2a8b179aba8bbe3a37346d6797aecc59fe5fe3001c7f7874b4d8e43dbd2020`
+**es review revision:** `bbd11a70dcba38952e88686225adc7b3402c5b80e3af29096afa8af5c8872092`
+**pt-BR review revision:** `55702c6b7d98e2819d89297cc2c4c685e931275344ff89cd7a2002830e33c050`
 
 ### English
 
@@ -9813,11 +10583,19 @@ Uma regra descarta automaticamente um alerta de baixo risco de dependência de d
 <!-- certification-coach-question:ghas-supply-017:16a45595087288671db0548a15747cb523ab9df43311c4613fa852667bc65823 -->
 ## Question 97: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-017`
 
 **Content revision:** `16a45595087288671db0548a15747cb523ab9df43311c4613fa852667bc65823`
+
+**en review revision:** `b06c7c1b09982b7bcdeb515ec4c7c47b377f6cec10575c62470da6740ea8f352`
+**es review revision:** `d81fc057eb4d1aacf9633cbb9dc2676cd42bf41cd667868be341ad3a90c6389d`
+**pt-BR review revision:** `f9c0a33981dfb612063a84b0ad11b7324f872895aea26e3571d54fc6b84342bf`
 
 ### English
 
@@ -9915,11 +10693,19 @@ Por que habilitar descarte automático de baixo risco pode reduzir notificaçõe
 <!-- certification-coach-question:ghas-supply-018:e1e38dd5d53b569d04a0dd8db3f29e8c5e91512bc862453660f297fc3c4b9cf8 -->
 ## Question 98: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-018`
 
 **Content revision:** `e1e38dd5d53b569d04a0dd8db3f29e8c5e91512bc862453660f297fc3c4b9cf8`
+
+**en review revision:** `8c792165e69d2bc575893bf38c9d72829cd47dcc552dbc9db4d2e5e651860e6b`
+**es review revision:** `a87e90eb5f8ba692ce10ec205e1ff87cde6d1537444faa16154ec5e1988f92b6`
+**pt-BR review revision:** `b7b1b96559812fe4c7082092fa8194454aee819b4bd18b93d7017145594a70e7`
 
 ### English
 
@@ -10017,11 +10803,19 @@ Uma pessoa revisora quer auditar alertas descartados automaticamente pelo Depend
 <!-- certification-coach-question:ghas-supply-019:ef80d6f5c0b56363366c330fb438f4b9515eb8fc6564723687c4576e6984e78b -->
 ## Question 99: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-019`
 
 **Content revision:** `ef80d6f5c0b56363366c330fb438f4b9515eb8fc6564723687c4576e6984e78b`
+
+**en review revision:** `160248413ec72ddc306e2be262a0a3ba739bc130b4c6eb320057a6ed39928def`
+**es review revision:** `bda5c48cf09e658d59ebeff0daadc80bfcf685a925ef1c4bf95c4f0a171c1c7f`
+**pt-BR review revision:** `90e1e620864b771a1c7598944af1adbfe1d1eb87bf898a58d6cb00134f88f397`
 
 ### English
 
@@ -10119,11 +10913,19 @@ Uma política personalizada de triagem deve afetar só um pacote de baixo risco 
 <!-- certification-coach-question:ghas-supply-020:7bf139eea561dbfdb3c424d77fd1f89f56556960478640f5393baf8a146e2eb4 -->
 ## Question 100: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-020`
 
 **Content revision:** `7bf139eea561dbfdb3c424d77fd1f89f56556960478640f5393baf8a146e2eb4`
+
+**en review revision:** `d29ae4a0bddecd3bf28529d0d1052329ffcd10352049d90e8a319e9de9cd0876`
+**es review revision:** `558c9a1be7ef2c1b836bb5bfbc661e18ca7f6b1ccdd15a6157174aa9b1ce5ee8`
+**pt-BR review revision:** `b3e036be4933a20dc063a62a9c3de070b09ef97683ddb2b2c0b3f342182bcab9`
 
 ### English
 
@@ -10221,11 +11023,19 @@ Uma ação de revisão executa antes de a compilação enviar seu retrato de dep
 <!-- certification-coach-question:ghas-supply-021:df1dfe81aa20ec93efcb32fa49915cd8209d75f0ff13c02af3eaf656a7b586e2 -->
 ## Question 101: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-021`
 
 **Content revision:** `df1dfe81aa20ec93efcb32fa49915cd8209d75f0ff13c02af3eaf656a7b586e2`
+
+**en review revision:** `f7847fc8a5341949958564a2afc785d9954bd8017502edb63aebe1abd29e6531`
+**es review revision:** `1a78f189c155f06809b92448f0a2979c076070ce735bac426abff4fd1d6872e9`
+**pt-BR review revision:** `96f1ac8028177d88f5f913fe980bd24eca6520c583b0305365f95b3ba55dcb26`
 
 ### English
 
@@ -10323,11 +11133,19 @@ Como evitar mais diretamente uma corrida entre envio de dependências e revisão
 <!-- certification-coach-question:ghas-supply-022:b4c985d4232e9c6289c4f53aa0ce4b66065f12d04d90021e3eef7525ff20fbdf -->
 ## Question 102: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-022`
 
 **Content revision:** `b4c985d4232e9c6289c4f53aa0ce4b66065f12d04d90021e3eef7525ff20fbdf`
+
+**en review revision:** `c833a80af7ac2950d8cd1c499d47d3bd54779081749e1d910b8770ca2f9cb858`
+**es review revision:** `5dbc9c9a82e7135854852c202ad920a3adfa2323ac174b1604adca5f961f1d09`
+**pt-BR review revision:** `2cf2dbd7f2a3d65f842cbb47340b70af553f3d6d2512682a796e7f915e2422a2`
 
 ### English
 
@@ -10425,11 +11243,19 @@ Envio e revisão precisam executar em workflows separados. Qual opção document
 <!-- certification-coach-question:ghas-supply-023:cb175d3b093d13b5285ef7fa477ab1a600f9a06cb319aa291cad6689ca189048 -->
 ## Question 103: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-023`
 
 **Content revision:** `cb175d3b093d13b5285ef7fa477ab1a600f9a06cb319aa291cad6689ca189048`
+
+**en review revision:** `b338275a3b9ec76e02faadbdee48d816ff4382383289719dbb6b4d285d5b25c6`
+**es review revision:** `de3944243884aa8b45f979bc93a24a830cb9b130daf2c9554050e81fa60e61a4`
+**pt-BR review revision:** `f491333ed3e79890e2abfd9d96c42be89285404fea57e93d2129e1d0da6f896c`
 
 ### English
 
@@ -10527,11 +11353,19 @@ Uma exportação SBOM lista pacotes e licenças. O que auditores não devem conc
 <!-- certification-coach-question:ghas-supply-024:4ece6eed0cd580166dcfd4c8d1576a6dbb251a449b64963d43197f98c5b0f2e2 -->
 ## Question 104: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-024`
 
 **Content revision:** `4ece6eed0cd580166dcfd4c8d1576a6dbb251a449b64963d43197f98c5b0f2e2`
+
+**en review revision:** `9134d28f1828ad9ba3d2f57acfa8a5cf828f222a803a30ab42563671eedeb310`
+**es review revision:** `b272751c84899fbe530560eb2b10534e1e655754a4431181039a75354d845f12`
+**pt-BR review revision:** `8a3f045c69cbd95fa6301a929e9f1c4a860e4e86796cd6b9a9755ecad68c6270`
 
 ### English
 
@@ -10629,11 +11463,19 @@ A SBOM exportada do grafo inclui todos os outros projetos que dependem deste rep
 <!-- certification-coach-question:ghas-supply-025:75a08e56000945ce4123de17f989be9c05907a92753815abcc88cb6d38d6c478 -->
 ## Question 105: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-025`
 
 **Content revision:** `75a08e56000945ce4123de17f989be9c05907a92753815abcc88cb6d38d6c478`
+
+**en review revision:** `e4360d0cc3efce288938cea2eb5032c9aba34c098c731aa6f76277d03de351cd`
+**es review revision:** `a7f3c7cdb5a6f9a0876130e507ba8cccc6e4df671a2353ca34d2c67994fa2669`
+**pt-BR review revision:** `0473a1f61eb5023f335f978a14ba6f1fd8ce2d0db16cf6801cba36b4050b7c9b`
 
 ### English
 
@@ -10731,11 +11573,19 @@ Uma atualização não pode ser integrada imediatamente porque quebra uma integr
 <!-- certification-coach-question:ghas-supply-026:d6fab3d4011e07a1eb345665a8cde0e1482b3371fbb0b52c455103a0381ae0fb -->
 ## Question 106: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-026`
 
 **Content revision:** `d6fab3d4011e07a1eb345665a8cde0e1482b3371fbb0b52c455103a0381ae0fb`
+
+**en review revision:** `9b24cb739c0359d78f46542c3393bf75c87691a02b70a23600f8f853a29ee202`
+**es review revision:** `bda8fb194096e7f4ac59f6b6119a800b435edaf30f216a8b0c984dbec4661742`
+**pt-BR review revision:** `83297c15a06c564e214156e8798645c3d8484fe80bb38d630d72926ab800f54d`
 
 ### English
 
@@ -10833,11 +11683,19 @@ Uma dependência só é usada no desenvolvimento. Por que não tratar automatica
 <!-- certification-coach-question:ghas-supply-027:f20d8f68863091252cd17a0585d6e11bfbcef30d988a9815c209b9f53bd5cd80 -->
 ## Question 107: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-027`
 
 **Content revision:** `f20d8f68863091252cd17a0585d6e11bfbcef30d988a9815c209b9f53bd5cd80`
+
+**en review revision:** `305a2fdddcfc29be0b6280cfaf0b24e284d1323310843403fbd0a44fcf9e890c`
+**es review revision:** `88e7633c901e4d960e1b81e1eece31383ede58228e56ac41fe40fefd3383b467`
+**pt-BR review revision:** `f3e73608c905f0eecc91af01be24fa7e32d68416f9b20fe42aea8758a0ab7cf0`
 
 ### English
 
@@ -10935,11 +11793,19 @@ Existe uma versão corrigida, mas o arquivo de lock ainda resolve a vulnerável.
 <!-- certification-coach-question:ghas-supply-028:6009ba57400aadb9227ab233797210b2e57c1d8f4aaa90a7f9f408e051242d85 -->
 ## Question 108: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-028`
 
 **Content revision:** `6009ba57400aadb9227ab233797210b2e57c1d8f4aaa90a7f9f408e051242d85`
+
+**en review revision:** `695d3717b5d89fd30af3a4e4f9c74174998c400e37d35650cab2943bd4ab29a8`
+**es review revision:** `f16dc181631f26488c6a71259c53597fb4c8ab5e6e943486cb397d0c9fffd7a1`
+**pt-BR review revision:** `d4d6a2e1fe6a6fa2908dd7ec8fd73de39a10597711422a57a3c0af7c337fddbb`
 
 ### English
 
@@ -11037,11 +11903,19 @@ Como a revisão de dependências complementa alertas existentes do Dependabot?
 <!-- certification-coach-question:ghas-supply-029:7c367c5eb18e64eb005e527ec4a09cd9f29ffa866a72c99f73a1bbb896ed08f8 -->
 ## Question 109: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-029`
 
 **Content revision:** `7c367c5eb18e64eb005e527ec4a09cd9f29ffa866a72c99f73a1bbb896ed08f8`
+
+**en review revision:** `d18b9ade06cbfc13ebda2847f91cf9026652b0ad53edc32eee835f47d3df8f4c`
+**es review revision:** `90c15ddcbaaf65bba42d9ff9027ff6e518eef338f5434d565f14a6775a3348a1`
+**pt-BR review revision:** `961f16e420c45922c99c1ae7148395487ea98668a760d6c0e08f72b4743c5aed`
 
 ### English
 
@@ -11139,11 +12013,19 @@ Um repositório usa vários gerenciadores de pacotes. Qual pressuposto de config
 <!-- certification-coach-question:ghas-supply-030:c68da8db33c129bf09b50baf1d84fc78b57d82518692146ce7cf21ca6522e04f -->
 ## Question 110: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-030`
 
 **Content revision:** `c68da8db33c129bf09b50baf1d84fc78b57d82518692146ce7cf21ca6522e04f`
+
+**en review revision:** `9c4608a15ca49bc256365ce4e60c5a5c852a09f8ceb26efe6f1f65672f300bc1`
+**es review revision:** `a94da21ef3ecd26e0a611197071c5200253e562cd24e8a3f9a044d4c9ca110c4`
+**pt-BR review revision:** `843c0305ffb8d5213b6f540299db1a41709e0c9500e0153b0d1bed168dba82d7`
 
 ### English
 
@@ -11241,11 +12123,19 @@ Uma equipe quer atualizar referências a ações dos workflows, não apenas paco
 <!-- certification-coach-question:ghas-supply-031:8c7cd896f3e47047793d78ff09024bb9d8edc51ad93bf0cccbac0da1747a205b -->
 ## Question 111: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-031`
 
 **Content revision:** `8c7cd896f3e47047793d78ff09024bb9d8edc51ad93bf0cccbac0da1747a205b`
+
+**en review revision:** `b4b6170cdc4b7a3e8ba597ee0b9a5de67a7b22c8c91ef1cb604486537882b8f0`
+**es review revision:** `b3803d4aa32633c35bea01a213f11e9218233ae20a88c27576daea85a0b0c479`
+**pt-BR review revision:** `dd7c99a8c1849d4a7639f7c7db8d3e829044959492d4951abed7832a53eece88`
 
 ### English
 
@@ -11343,11 +12233,19 @@ Um desenvolvedor configura ignore para atualizações de versão e presume que a
 <!-- certification-coach-question:ghas-supply-032:b443a85e6e51a5640375f4ca90759e1947a40cee9428fbcbac1987ba60c63f42 -->
 ## Question 112: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-032`
 
 **Content revision:** `b443a85e6e51a5640375f4ca90759e1947a40cee9428fbcbac1987ba60c63f42`
+
+**en review revision:** `bfea7ea60d7ce02a44d7e70450f09f3ac82aa58460be1535ae2ead9d8acc7b69`
+**es review revision:** `c26e8abe9dac8e73e48fedf5b04e1e6c04544da20667ed4eec2838dd11c99447`
+**pt-BR review revision:** `2ddec0a0e0cf8c1b2fff9086f1f48cea96e3acfe32212ba650002eb50303a361`
 
 ### English
 
@@ -11445,11 +12343,19 @@ O que mantenedores devem revisar antes do merge de um pull request de segurança
 <!-- certification-coach-question:ghas-supply-033:3ae441566b50927ffc68f13eb604e96fdba0d1047b855f941b4544f00eb97a3d -->
 ## Question 113: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-033`
 
 **Content revision:** `3ae441566b50927ffc68f13eb604e96fdba0d1047b855f941b4544f00eb97a3d`
+
+**en review revision:** `e899f47aea0d30ff1a512be9b758548a493f5d01efcc93646f101dc18d1daad6`
+**es review revision:** `fa0444c6b6d1b3ea239351f76fd94931354cd6f8b1bdd2d2231ad7c24292504a`
+**pt-BR review revision:** `e27138104c6bda6890377c2d97e0c0c4b49be6d0fc5b68ad86fa1a35b94886df`
 
 ### English
 
@@ -11547,11 +12453,19 @@ Uma pessoa mantenedora quer menos pull requests rotineiros de bibliotecas relaci
 <!-- certification-coach-question:ghas-supply-034:7f449962bfc82e2779c19a65c4272e9c8a7b17a6cf4c3e1a2c66a9a79fe610e6 -->
 ## Question 114: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-034`
 
 **Content revision:** `7f449962bfc82e2779c19a65c4272e9c8a7b17a6cf4c3e1a2c66a9a79fe610e6`
+
+**en review revision:** `589a6b69504e0d4506ad241f002205cc6d6373d377b02fb77e70867782d20e32`
+**es review revision:** `269bacef4c125760e36f1f5c2602dc514054f7e9a0c18d524ef4209bf5c5a69a`
+**pt-BR review revision:** `62e1ac3e0577bd0101edc0a713c78ce2a415f10696eb315414a4ebb8531f49a1`
 
 ### English
 
@@ -11649,11 +12563,19 @@ Uma biblioteca com vulnerabilidade conhecida não tem versão corrigida. O que a
 <!-- certification-coach-question:ghas-supply-035:63cece432db0d175bd588f6f1693097f64fd21593f6688cbd2f18988ce0dd2a1 -->
 ## Question 115: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-035`
 
 **Content revision:** `63cece432db0d175bd588f6f1693097f64fd21593f6688cbd2f18988ce0dd2a1`
+
+**en review revision:** `f54fb2de618b5220c4bfe8fcd8acad0f825e06197718a928e77061caf7161627`
+**es review revision:** `23446fd5da8738868ad4c245f8292c103e12cb58cc3ea842eda28893d77a264c`
+**pt-BR review revision:** `ff9470f856e290d30f35b9d918c391770419db9d856d6738929c8fc1fed8c3fe`
 
 ### English
 
@@ -11751,11 +12673,19 @@ Qual informação do grafo distingue uma dependência direta de uma indireta?
 <!-- certification-coach-question:ghas-supply-036:23d6d154a786525114b290946a534a2bcee0f62bd0287ef6f0acd68b1d10688b -->
 ## Question 116: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-036`
 
 **Content revision:** `23d6d154a786525114b290946a534a2bcee0f62bd0287ef6f0acd68b1d10688b`
+
+**en review revision:** `ff33915ff8ab1c1d1e7a623f4fdf2752e608de7484b9e7a3627e616df386e00f`
+**es review revision:** `3674d4e2af72ee28630968525da2f2c4272d2ad602c12236c26cc636efef03d4`
+**pt-BR review revision:** `9c55d22cd799a26a7f2e12c76bb851183109755af5d16f5de4459c986d20c62e`
 
 ### English
 
@@ -11853,11 +12783,19 @@ Propõe-se descartar automaticamente todo alerta de baixa severidade em todos os
 <!-- certification-coach-question:ghas-supply-037:6d74a0ff1c7460bbad084bd9c5baed071a9f78cf2f1df70d3af3dd5fde4cd96d -->
 ## Question 117: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-037`
 
 **Content revision:** `6d74a0ff1c7460bbad084bd9c5baed071a9f78cf2f1df70d3af3dd5fde4cd96d`
+
+**en review revision:** `1523a2ff9ea96c753c92d02d1031da36bd94db2e0eab64cc43848814edc9ec33`
+**es review revision:** `75690890df48467e9b68a6f09a03660817b32ac593c7836d3f913170e89017eb`
+**pt-BR review revision:** `f2fc1be5913ca999d7e9c55fcaff1dd5ae796d58420649ff488774de35f27827`
 
 ### English
 
@@ -11955,11 +12893,19 @@ Uma nova SBOM é solicitada após atualizar dependências. Por que não reutiliz
 <!-- certification-coach-question:ghas-supply-038:9b49662e8b7d9a76cec5cd93976c3b055278c17480b782dbec5925b6a805b825 -->
 ## Question 118: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-038`
 
 **Content revision:** `9b49662e8b7d9a76cec5cd93976c3b055278c17480b782dbec5925b6a805b825`
+
+**en review revision:** `587aa64599d5d64e2ca8c1a6696e30629b3f7dbf4fa28a6b1726957a1a08564e`
+**es review revision:** `7f34dd0ccc293904def2176c1771ec6182467ff03d1ffac691a4742114cf3991`
+**pt-BR review revision:** `39866842dc79c2c9fb0c4b6b20fbd686619778bdfa1f4944956ffa7cef5a973e`
 
 ### English
 
@@ -12057,11 +13003,19 @@ Não há pull request de segurança para um alerta aberto de dependência. Qual 
 <!-- certification-coach-question:ghas-supply-039:de6c9bf161d34b8d5efcf2625d42b3dab16c1d62bf1aa4898e445cd628bb4bbc -->
 ## Question 119: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-039`
 
 **Content revision:** `de6c9bf161d34b8d5efcf2625d42b3dab16c1d62bf1aa4898e445cd628bb4bbc`
+
+**en review revision:** `09bb09d4d9b0910e523fdc38eba7e7ecf824e61045ccdb5c005127637d51dfce`
+**es review revision:** `ab5dc306bd9ead77fd8e165151ecf4c4b600ed00655b04fd86d1886c190fb4e8`
+**pt-BR review revision:** `de2a989f7ee66a4db3cf13e5dac616fe8537eb0f29e167901212991127c8a8dc`
 
 ### English
 
@@ -12159,11 +13113,19 @@ O grafo mostra um pacote transitivo vulnerável sob duas bibliotecas diretas. O 
 <!-- certification-coach-question:ghas-supply-040:87851c70df47db28b5611de406db6c4664b1058a817a085ae91d969aaf19f780 -->
 ## Question 120: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-040`
 
 **Content revision:** `87851c70df47db28b5611de406db6c4664b1058a817a085ae91d969aaf19f780`
+
+**en review revision:** `cdae539a2cb210dfeae4d1af4d520746ba7f2095a41e992890c97f7df850e86a`
+**es review revision:** `937b8f6ed8373731852c3cf8b1b103d01c4a53de02e124f1c4b405f758ed279e`
+**pt-BR review revision:** `78879c56abac02261d8063dc7e9858e9675b2ff0a6e15c1c43ef2e4777448964`
 
 ### English
 
@@ -12261,11 +13223,19 @@ A ação de revisão aceita uma exceção de licença para um pacote. O que revi
 <!-- certification-coach-question:ghas-ecosystem-041:cfff795d6419a392a087476efdecee0d567e8b59148ba48439979571bf94fe04 -->
 ## Question 121: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-041`
 
 **Content revision:** `cfff795d6419a392a087476efdecee0d567e8b59148ba48439979571bf94fe04`
+
+**en review revision:** `019eb00ed0cf1a390d13bdd12a5fe944b6b99c8c53fe97f6d25eb68d2e700517`
+**es review revision:** `fff2204fd9d06e927994946884d02a0ea7ec83543ab92f048de980a41a09fe79`
+**pt-BR review revision:** `549da2ae472ca3ee641aae0709be9ea3f944ce35f7cebafeefbe4be5df061e48`
 
 ### English
 
@@ -12363,11 +13333,19 @@ Qual situação ilustra melhor por que medir separadamente habilitação de recu
 <!-- certification-coach-question:ghas-ecosystem-042:d2ea826a2aeaafd31ec1bacbd760bc5e20cb1dd8424c7a2678cacbe43cdaa4d6 -->
 ## Question 122: Describe GitHub Security suites, features, and ecosystem
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-ecosystem-042`
 
 **Content revision:** `d2ea826a2aeaafd31ec1bacbd760bc5e20cb1dd8424c7a2678cacbe43cdaa4d6`
+
+**en review revision:** `7daca51dd11d97ea658a180dbdc8ee4e0dd6a12451f807ab2ed7dfd31462985d`
+**es review revision:** `a188304c6034df2ef83749e515c2ab48c2759e9c2ce6db096248cece21bac6b4`
+**pt-BR review revision:** `2c2d5e9491261c13d7b1bcdea5b5fd168db691238c2cf82ec8f639c397740f5c`
 
 ### English
 
@@ -12465,11 +13443,19 @@ Uma equipe precisa impedir credenciais no histórico, inspecionar mudanças arri
 <!-- certification-coach-question:ghas-secrets-041:82e389b7d166ec735554c1e2be0e8f871066d8b9faf534f511d18efea79a85de -->
 ## Question 123: Configure and use Secret Protection
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-secrets-041`
 
 **Content revision:** `82e389b7d166ec735554c1e2be0e8f871066d8b9faf534f511d18efea79a85de`
+
+**en review revision:** `c86a5f5287c19746b327d299628e156b86ec246d04eb44e97adb8371f2521742`
+**es review revision:** `5fd5d5fbbacdacaf4911b4ffb37aa30f0ae0184a8b75d7a70884ea48336a7a77`
+**pt-BR review revision:** `36643dcbce3355f7285c250935f6f6bf5b3917208fa7b75016f2eac4422c63d3`
 
 ### English
 
@@ -12567,11 +13553,19 @@ Uma verificação de validade precisa de um token e do host do serviço associad
 <!-- certification-coach-question:ghas-supply-041:394bfb27ece1208029c1ed314e594adc843b6873bbc3bba8436676c9b3bed344 -->
 ## Question 124: Configure and use supply chain security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-supply-041`
 
 **Content revision:** `394bfb27ece1208029c1ed314e594adc843b6873bbc3bba8436676c9b3bed344`
+
+**en review revision:** `c72717c66f5be459e62e513b1d7889347282c892f686491d8245109701e0f23d`
+**es review revision:** `8b8f2061b98db464b490bef89aba04e5af355f4528939e111d38c1f039f8b309`
+**pt-BR review revision:** `6f16ffdf0a485acb39d9ea76b52ecb6eb5c2ad339809dad9dcd1789cb3b29c4a`
 
 ### English
 
@@ -12669,11 +13663,19 @@ O commit head de um pull request tem retrato de dependências, mas o base não. 
 <!-- certification-coach-question:ghas-code-001:503f426f550b9a29ccda88a682e7397539d196d1caae499b36a2193e86d9690d -->
 ## Question 125: Configure and use Code Security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-code-001`
 
 **Content revision:** `503f426f550b9a29ccda88a682e7397539d196d1caae499b36a2193e86d9690d`
+
+**en review revision:** `3a4da224016bb77187f90901e8f213c53d2c2bd889530d83f0f5e82ab35b377f`
+**es review revision:** `a7dbb2ff64b4aa3c3b39b3d735dfb3257940fcb58a25dd1d4177b12974c9f3f6`
+**pt-BR review revision:** `ab35e29f9ed10445eaabd7006c1a4b9e4a967b18f4481c4e4409156b5fd1677f`
 
 ### English
 
@@ -12771,11 +13773,19 @@ Um repositório precisa de cobertura CodeQL rapidamente e não tem requisitos es
 <!-- certification-coach-question:ghas-code-002:9e3539b7d5b85a53a9f57bb6b397f0f224fbd246fb61f9982fb31ef3e9781815 -->
 ## Question 126: Configure and use Code Security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-code-002`
 
 **Content revision:** `9e3539b7d5b85a53a9f57bb6b397f0f224fbd246fb61f9982fb31ef3e9781815`
+
+**en review revision:** `873c922cafb7e714d4be1ae419bedaa81f8e0bcc9c3d2832ea6d85887da33f42`
+**es review revision:** `45715ab11488cae5b2e4cf6be3992bcb96a6d4994bbdfc9a142a27842451fc5c`
+**pt-BR review revision:** `15f1b6fd6156ade2de362f129d8fc12662c5574787084867b8d8e1ed5caf23b2`
 
 ### English
 
@@ -12873,11 +13883,19 @@ Um projeto exige sequência de build personalizada e pacotes de consultas public
 <!-- certification-coach-question:ghas-code-003:185f9365822b38d5ac1c3ece4520739ed5fc8f86f8a65e38c57a5b5567fe7272 -->
 ## Question 127: Configure and use Code Security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-code-003`
 
 **Content revision:** `185f9365822b38d5ac1c3ece4520739ed5fc8f86f8a65e38c57a5b5567fe7272`
+
+**en review revision:** `01572312357fccf1b9025f9a12cbff335c7707e15dc0946aeb7d58dc4b724511`
+**es review revision:** `27ee1537ec3bec58008c783eb64154c8168179a30b98a8977142e6eafb79727f`
+**pt-BR review revision:** `be0b400f1ac13f8ef568ce738ea10be62fde518a0f57708ef4499cb847eac49b`
 
 ### English
 
@@ -12975,11 +13993,19 @@ Qual é a ordem conceitual correta de uma análise CodeQL?
 <!-- certification-coach-question:ghas-code-004:ff458dc26acca920108a9511305732b0f82135edcd39dbbf570c3aabc65aafd7 -->
 ## Question 128: Configure and use Code Security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-code-004`
 
 **Content revision:** `ff458dc26acca920108a9511305732b0f82135edcd39dbbf570c3aabc65aafd7`
+
+**en review revision:** `ccad427f21e9a855bbafb50fd271247afb4e4d161f380acd136fd8b3694d094a`
+**es review revision:** `4eeff106694b62d2614cc7c6ecb1c1edaea211f35931191fe517f9c75d3c806e`
+**pt-BR review revision:** `f1af68fe5c09ecb93f81f44b841b3763f688974e1596d831b9be751c69ab266d`
 
 ### English
 
@@ -13077,11 +14103,19 @@ Um resultado CodeQL inclui caminho da entrada da requisição a uma operação i
 <!-- certification-coach-question:ghas-code-005:cbf69d8531f94fc224f504acf0af1eed0e7eeeebf09d0db962526d3a72509673 -->
 ## Question 129: Configure and use Code Security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-code-005`
 
 **Content revision:** `cbf69d8531f94fc224f504acf0af1eed0e7eeeebf09d0db962526d3a72509673`
+
+**en review revision:** `d9e65e67aa7d9fee0b8a8c632ad228c82c2bbdea39f2f11d258220325de0c7f3`
+**es review revision:** `82195d0e46b1fa309804478dbdf6d3de6dd0366c66ea0421da8a412604b29479`
+**pt-BR review revision:** `a8cb85ad68b90402501c266f6bc96b66b5836ac8a68ba15a3b4b800a2f0955ce`
 
 ### English
 
@@ -13179,11 +14213,19 @@ Uma ferramenta externa exporta SARIF 1.0, mas o GitHub rejeita o upload. Qual re
 <!-- certification-coach-question:ghas-code-006:cf104572e228cef90621594935de8188fe4999665469fb8a613bfa0d2f887e15 -->
 ## Question 130: Configure and use Code Security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-code-006`
 
 **Content revision:** `cf104572e228cef90621594935de8188fe4999665469fb8a613bfa0d2f887e15`
+
+**en review revision:** `bc674f3da2b2775f5010dec725bf41d3a0f9321fbb2b6e9779db41862602b0ce`
+**es review revision:** `8f095a260444165553fd68384314cf138c66ddc6af1cf0d77298c25e1cdf7f78`
+**pt-BR review revision:** `d8b926e27253d3a634e44f3dbb55127029a8f0d27799a97ae2ab5970c28d9161`
 
 ### English
 
@@ -13281,11 +14323,19 @@ Um analisador personalizado gera alertas duplicados a cada execução porque cam
 <!-- certification-coach-question:ghas-code-007:5627a327c57829f5e7ca816c92f7606be63541a16f01e1e3337433d0cf3e38de -->
 ## Question 131: Configure and use Code Security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-code-007`
 
 **Content revision:** `5627a327c57829f5e7ca816c92f7606be63541a16f01e1e3337433d0cf3e38de`
+
+**en review revision:** `2d891d7c7ff8571dc9a30ef6d7965ebdc2f730d1a714bad66b4fc4b93df278f9`
+**es review revision:** `a48ee8618fdb098ceae260305699538bfbd5259b65c18d275155a03a83fbb0b4`
+**pt-BR review revision:** `c1edebea8be338a4f21678e7e95db224ba44589e2b0396cac9857e128eb7d44a`
 
 ### English
 
@@ -13383,11 +14433,19 @@ Um upload SARIF pelo endpoint REST omite partialFingerprints. Qual limitação c
 <!-- certification-coach-question:ghas-code-008:c78392062383daf124958455e101d6398f03b403a73a43608caeb470be8bec24 -->
 ## Question 132: Configure and use Code Security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-code-008`
 
 **Content revision:** `c78392062383daf124958455e101d6398f03b403a73a43608caeb470be8bec24`
+
+**en review revision:** `327c8e71f278250e40731b2fae17f72ea6add62b2e867ff5f713d8d4650d116a`
+**es review revision:** `d0d91a386f60940ae03664c312bf8f66cff801fb335e1bb0abecbeb94edab823`
+**pt-BR review revision:** `1867cffa7f3442d2c5090a5e0cc123f4728a7eb34d461dff2584940b0e8e9377`
 
 ### English
 
@@ -13485,11 +14543,19 @@ Um workflow avançado CodeQL analisa Java e JavaScript. Por que usar uma matriz 
 <!-- certification-coach-question:ghas-code-009:f263defc6c72d630628d36d33aedf792bd4f2d753257b1643d18cc71288b2966 -->
 ## Question 133: Configure and use Code Security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-code-009`
 
 **Content revision:** `f263defc6c72d630628d36d33aedf792bd4f2d753257b1643d18cc71288b2966`
+
+**en review revision:** `8636265d1efcf5a09a1b17369aca52c4e10c0edf09ced0bd9831ed62870cf10b`
+**es review revision:** `2698d78a0ce64a6bbb57f48defd1f9208cd4dcbfb213abb79988edd270150d88`
+**pt-BR review revision:** `4013ac2b74870c8877db55007d01c149699ea5ac08957cd51875d6e064fb0921`
 
 ### English
 
@@ -13587,11 +14653,19 @@ Um build personalizado falha antes de concluir CodeQL. Por que interpretar zero 
 <!-- certification-coach-question:ghas-code-010:7f9b4ab6a6865d08866ddb4379928756ee3a2a55f0d1a0960854420451952ec7 -->
 ## Question 134: Configure and use Code Security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-code-010`
 
 **Content revision:** `7f9b4ab6a6865d08866ddb4379928756ee3a2a55f0d1a0960854420451952ec7`
+
+**en review revision:** `c44bb19c440c10460648f029aaba0a7034de302a54c81ad99a833b91273c04b9`
+**es review revision:** `0a3ad5af6499178748ad285370a1e9573430a7ae4a43732ad0b84902541594ee`
+**pt-BR review revision:** `63648699a6ce1d8ddd146e98551c765354c07786cd62348a1fa8ce1b843f72f8`
 
 ### English
 
@@ -13689,11 +14763,19 @@ Uma equipe escolhe security-extended em vez da suíte padrão CodeQL. Qual contr
 <!-- certification-coach-question:ghas-code-011:d5fc4a3597538ff26d26de871142aaa9f517d69dea01fee5a2a29dfdc324d51f -->
 ## Question 135: Configure and use Code Security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-code-011`
 
 **Content revision:** `d5fc4a3597538ff26d26de871142aaa9f517d69dea01fee5a2a29dfdc324d51f`
+
+**en review revision:** `8d93a54f4e02e7e775f62e31db7d7b8d97581b6101538667432481df137dc8f9`
+**es review revision:** `8b523320c48c92f33685291da2744ce0d5f7875258a1bdbf28dec08591c10031`
+**pt-BR review revision:** `b05d66c96b7d639d65f77ef5b21c158774adbe1d8f9bf478c9e78cb2f158077d`
 
 ### English
 
@@ -13791,11 +14873,19 @@ Para que serve um pacote de consultas CodeQL na análise personalizada?
 <!-- certification-coach-question:ghas-code-012:36cdf205063a3c26c2083088f9c1b35540ed401496ba2d90cb8317cb8f31cabb -->
 ## Question 136: Configure and use Code Security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-code-012`
 
 **Content revision:** `36cdf205063a3c26c2083088f9c1b35540ed401496ba2d90cb8317cb8f31cabb`
+
+**en review revision:** `d7b72d51b71e94bac5ff80a2b79b03753759bd36f2ef66a6ae07bbd81f74620d`
+**es review revision:** `98b257ec406ae6719b1828b059faa110b6cdfcd28811cf8b4489e9143da12f05`
+**pt-BR review revision:** `a581145529273077283bda98d97e807b946efdaed8729c432a3b2a853758bcdb`
 
 ### English
 
@@ -13893,11 +14983,19 @@ Um alerta de código tem severidade geral Warning e de segurança High. Qual o G
 <!-- certification-coach-question:ghas-code-013:4eea7ba6877a01aff2eba8b7a526b0d52002d44ecf435e65354d26a0bc2a2be8 -->
 ## Question 137: Configure and use Code Security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-code-013`
 
 **Content revision:** `4eea7ba6877a01aff2eba8b7a526b0d52002d44ecf435e65354d26a0bc2a2be8`
+
+**en review revision:** `3f867fbdef7b5bd4a8f7d66137010b1115efe5f3efcffc8d880d65fe5f2e4fee`
+**es review revision:** `55ab0c67729641b4aa1d14b37cfebbdd06b2147deb17754ee1f992e6bd764cda`
+**pt-BR review revision:** `05cddc9619aa6a00cec1311ef825c3ea93c5d97900cb0594a3a127acacb94f53`
 
 ### English
 
@@ -13995,11 +15093,19 @@ Uma correção de alerta de código foi integrada. O que deve confirmar a remedi
 <!-- certification-coach-question:ghas-code-014:340331a84a304c33b85577bea163517aecd513a730a62f952a5e9b0eac95580d -->
 ## Question 138: Configure and use Code Security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-code-014`
 
 **Content revision:** `340331a84a304c33b85577bea163517aecd513a730a62f952a5e9b0eac95580d`
+
+**en review revision:** `b5d84ce5ac34440f84cda4d40c5d46923fc4065000bcfd1980a313b13d058011`
+**es review revision:** `b13875c794635faf4d5cce260c3d922678d48e925c9e6697e2b2191d761b804a`
+**pt-BR review revision:** `94c49dccfcfabe999950ae47124a27b792bca0239fc22945dcb61f27bc0f3bca`
 
 ### English
 
@@ -14097,11 +15203,19 @@ Um alerta é comprovadamente falso positivo porque um sanitizador validado funci
 <!-- certification-coach-question:ghas-code-015:bb4537c4bfbee9b67b35673365c83c9e8c5bb88074606bc652792c3a0674b20f -->
 ## Question 139: Configure and use Code Security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-code-015`
 
 **Content revision:** `bb4537c4bfbee9b67b35673365c83c9e8c5bb88074606bc652792c3a0674b20f`
+
+**en review revision:** `8623fe6e0423d9c092478772a80c9fd2d212d18e12c37da196b5865955053711`
+**es review revision:** `0e12749c3ba49170471be64d6c1c8f01f9dc43248704cfefa66f9dd462dcb2a2`
+**pt-BR review revision:** `b1da1952e0fbe1fbdf801fd1b6dc8c070ae67db8216aff1e678583f8bd3924f4`
 
 ### English
 
@@ -14199,11 +15313,19 @@ Um job de CI externa precisa relatar resultados CodeQL no GitHub. Qual sequênci
 <!-- certification-coach-question:ghas-code-016:2087ede750f13838b123c3d7a2b0040b9ebc9e2595bc7ae4e306f35b0581ef4a -->
 ## Question 140: Configure and use Code Security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-code-016`
 
 **Content revision:** `2087ede750f13838b123c3d7a2b0040b9ebc9e2595bc7ae4e306f35b0581ef4a`
+
+**en review revision:** `822b8caa995d790d8b65f4f280457ef4e54f4e51283fc8947a12e928c250b048`
+**es review revision:** `89cfabdd9409b7084e716f780dcc8a645351410894b15473bfd0213c6ec3d5a2`
+**pt-BR review revision:** `0f3d02413b673b66c7e6c6a797395228062b9b8a34432b27d7c52762fa9f4894`
 
 ### English
 
@@ -14301,11 +15423,19 @@ Por que manter análises disparadas por pull request e periódicas quando adequa
 <!-- certification-coach-question:ghas-code-017:fe7da1022c59f484b7ca4a35a1798bc5163e848c1fc6d8511e3fd8bf58054f11 -->
 ## Question 141: Configure and use Code Security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-code-017`
 
 **Content revision:** `fe7da1022c59f484b7ca4a35a1798bc5163e848c1fc6d8511e3fd8bf58054f11`
+
+**en review revision:** `b0d0179a6a039579269ef14fb16a253c620d2b7902c2b031b1f6f9ed42164d0e`
+**es review revision:** `ef5fe3d394c807369def549a2c8ff18103e454a23981f6cdef59200432083d23`
+**pt-BR review revision:** `5ec7429f95016ad449e1cb45642e740be0e6dbdcec9b307f7ab8e6eacd2b5509`
 
 ### English
 
@@ -14403,11 +15533,19 @@ Duas execuções do mesmo analisador cobrem componentes distintos e devem manter
 <!-- certification-coach-question:ghas-code-018:f7cc535e296776acdec5b63ac6775bfffdfc9bc975173ffa8bb0c6ed9cea7e54 -->
 ## Question 142: Configure and use Code Security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-code-018`
 
 **Content revision:** `f7cc535e296776acdec5b63ac6775bfffdfc9bc975173ffa8bb0c6ed9cea7e54`
+
+**en review revision:** `0b107b65110ea02076fe012e4d0da18f571e499e8fdef922117bb66c7a419c0e`
+**es review revision:** `7a0163095be46b7e55236a67c9e66a0418bc1b844357662f54d813ceb068f1e7`
+**pt-BR review revision:** `6cc8e3dc402967de81a01ceabf4640abfa07591caed1567bcab13ddc197ac85c`
 
 ### English
 
@@ -14505,11 +15643,19 @@ Um resultado SARIF externo não tem as orientações de remediação presentes e
 <!-- certification-coach-question:ghas-code-019:8e8faea1785371b2f5863a5d77dd977ade7253731101fbdf629995f374970c41 -->
 ## Question 143: Configure and use Code Security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-code-019`
 
 **Content revision:** `8e8faea1785371b2f5863a5d77dd977ade7253731101fbdf629995f374970c41`
+
+**en review revision:** `ae2d1a8dcdf0be16aa5e076637d6ef405453009c65446191c3a3694a0ee79914`
+**es review revision:** `ae2777a63d9b574b07239dbde1fec23c388b941de54dbaf77247c67435314ea6`
+**pt-BR review revision:** `e0ebe3443055aebf281988bb737bac519b633433ec4e79c658ea813b4f2d6e58`
 
 ### English
 
@@ -14607,11 +15753,19 @@ Vários handlers de requisição passam dados inseguros para a mesma operação 
 <!-- certification-coach-question:ghas-code-020:ecd5e0ed0e6d18c77f76bd19c7d59f4e148c8b83490b0c464a3b8bf7daf4d458 -->
 ## Question 144: Configure and use Code Security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-code-020`
 
 **Content revision:** `ecd5e0ed0e6d18c77f76bd19c7d59f4e148c8b83490b0c464a3b8bf7daf4d458`
+
+**en review revision:** `e1c8f558f8080b63e799f7987339cf959cc5e045a1d67137936aefd3d2c5f87f`
+**es review revision:** `05485a47c417dead7e5cd001f462de250f06cdc39b5b1c3d62846bc7e8f70d2f`
+**pt-BR review revision:** `574c0042db423ea242081b21de61f8de2722c1757d43851ac95dce0f072c02d6`
 
 ### English
 
@@ -14709,11 +15863,19 @@ Um repositório inclui recursos de teste gerados com resultados de varredura de 
 <!-- certification-coach-question:ghas-code-021:2c401bb8afb5b1cb096a05b79718e5b5e2de36b2cf173f69e66e454f269f7685 -->
 ## Question 145: Configure and use Code Security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-code-021`
 
 **Content revision:** `2c401bb8afb5b1cb096a05b79718e5b5e2de36b2cf173f69e66e454f269f7685`
+
+**en review revision:** `e53de12e2fbf78dba6a2d2c5b1725cfcede95750dcd70784164fcb3f41958ab9`
+**es review revision:** `7eb1ebbbdc102936fb3070419a7b6c43b9843cd5fe9c5e42f10982bee7dd15a2`
+**pt-BR review revision:** `1e6aaf43439f7b27f5a098feb192005b4b8d27fb235f3fca4d5910847e1692e4`
 
 ### English
 
@@ -14811,11 +15973,19 @@ Uma organização usa um framework interno não totalmente modelado pelo CodeQL.
 <!-- certification-coach-question:ghas-code-022:801d1f170b2fb05d52e628bbd218b2b6ce3fb35d3aea50d0d8077a5ddcc48c09 -->
 ## Question 146: Configure and use Code Security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-code-022`
 
 **Content revision:** `801d1f170b2fb05d52e628bbd218b2b6ce3fb35d3aea50d0d8077a5ddcc48c09`
+
+**en review revision:** `732bf0009a24e069690bcdc37828529c90f67b456ec01072507dcb6051d1f1f6`
+**es review revision:** `8cefee9a612212e4bfb193cfc8c8e6982478799797b0ef92692e8d61820277c2`
+**pt-BR review revision:** `748095ec9f1ec5f916ca5a1b96f1a21aa0c82999979e6c5e92a52057ead7e356`
 
 ### English
 
@@ -14913,11 +16083,19 @@ Uma varredura demora demais após adicionar consultas personalizadas. Qual prime
 <!-- certification-coach-question:ghas-code-023:a95770eb9d3df4cdb8eb466aae2a46f6d4467ddd5f1d506842ebaca78c0e63e1 -->
 ## Question 147: Configure and use Code Security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-code-023`
 
 **Content revision:** `a95770eb9d3df4cdb8eb466aae2a46f6d4467ddd5f1d506842ebaca78c0e63e1`
+
+**en review revision:** `e005bee974d78c53b3de0ef8424fe20e640d154cefd624c65ea1008c4db7b2a6`
+**es review revision:** `5d6ca642b453873502038e86d622af0cf516c3ee18f719d86f62c8bebb30e6f6`
+**pt-BR review revision:** `8e48fa91a06d1f29782334a67f488698659e74380c3e31e7203de82ed28e6196`
 
 ### English
 
@@ -15015,11 +16193,19 @@ Foram adicionados filtros de caminhos pull\_request ao workflow de análise. O q
 <!-- certification-coach-question:ghas-code-024:dbbec5bb5ef4885e00960a1692f960ebac434f14e3afb145c8bdc2d3b4457bcf -->
 ## Question 148: Configure and use Code Security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-code-024`
 
 **Content revision:** `dbbec5bb5ef4885e00960a1692f960ebac434f14e3afb145c8bdc2d3b4457bcf`
+
+**en review revision:** `905e21490d0066090a932be69dc34e83ecf2d7d22551a6ea781ab35e57613760`
+**es review revision:** `7942c3bddf61ad57f9ce59515a6b1f6aeabc180bd49a6cdab17eb0b670bb6239`
+**pt-BR review revision:** `60e614ae3fb3964c341a49c9839d216b65e6fe8dab5107c62c9a24db6a6930ac`
 
 ### English
 
@@ -15117,11 +16303,19 @@ Uma equipe quer que um resultado SARIF aponte para o arquivo correto no reposit�
 <!-- certification-coach-question:ghas-code-025:7be90d1f02c8d4ea4f44baade59711fdc2a8472939df862a9900dd5387bd23e5 -->
 ## Question 149: Configure and use Code Security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-code-025`
 
 **Content revision:** `7be90d1f02c8d4ea4f44baade59711fdc2a8472939df862a9900dd5387bd23e5`
+
+**en review revision:** `72513b42a72a1fcc7e33c544e165e9e5985fc1ce98126c33f28c93be565c14c5`
+**es review revision:** `67b7785fecaee9d2d128e9e343845606dbe64ba9451d7741db578072e9947e55`
+**pt-BR review revision:** `e40ba1b2e7298fca37663361dba58be96df3c54ea9c9bdb7bcbcff7895a694bf`
 
 ### English
 
@@ -15219,11 +16413,19 @@ CodeQL analisa Java e Kotlin na mesma família compatível. Qual identificador d
 <!-- certification-coach-question:ghas-code-026:68d550019d932ea4e31cd0805b812beb586c64a3b8451e8b4474747e4e500b03 -->
 ## Question 150: Configure and use Code Security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-code-026`
 
 **Content revision:** `68d550019d932ea4e31cd0805b812beb586c64a3b8451e8b4474747e4e500b03`
+
+**en review revision:** `5db27d13aa0e85e7cd9205f9edd551478e1f1a900dce7f2f22ede139d52a2deb`
+**es review revision:** `db4c8217efeac6d49c034e7d06576680220915b198a71d658a37d1bda2a4884d`
+**pt-BR review revision:** `ea09fd5727d30fc2992d1da83ce83423b987fdb8da3a5bdbe3decafc7924d8e8`
 
 ### English
 
@@ -15321,11 +16523,19 @@ Um projeto quer análise CodeQL de JavaScript e TypeScript. Qual identificador d
 <!-- certification-coach-question:ghas-code-027:e3099364e006504e6cc9a69eb1f71dfd44a35ca578126f5efcec0b42f28a7f51 -->
 ## Question 151: Configure and use Code Security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-code-027`
 
 **Content revision:** `e3099364e006504e6cc9a69eb1f71dfd44a35ca578126f5efcec0b42f28a7f51`
+
+**en review revision:** `40cc2134d7ef5f8a2a6d57e81e26eb4c8767d6269df929cce33d7aae3e4292dd`
+**es review revision:** `e21cfefa460d534b21b25548b296af2bf10d8327a2d2033d4a8983a89d30f167`
+**pt-BR review revision:** `e8969d5fdd0e5474cec5ed1068f20a210eaea077817b024d46872398e7e86d13`
 
 ### English
 
@@ -15423,11 +16633,19 @@ O upload de um workflow CodeQL falha após análise bem-sucedida. Como interpret
 <!-- certification-coach-question:ghas-code-028:c82ada4858708ffeb57f9487314e3a646fe852755365d51f3845220c25f26040 -->
 ## Question 152: Configure and use Code Security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-code-028`
 
 **Content revision:** `c82ada4858708ffeb57f9487314e3a646fe852755365d51f3845220c25f26040`
+
+**en review revision:** `ce99bc3da2f894b0bfa02dd1b7898d702b1c9926819df29d463ade4a0338b720`
+**es review revision:** `46f12ad7c5771b725f1e16e276395116313256e304b6a35ed4796c6146ba59c6`
+**pt-BR review revision:** `7466895168a83f654f7a90d2269657fef9d7acb0200de985185c18a3b2842772`
 
 ### English
 
@@ -15525,11 +16743,19 @@ Um desenvolvedor diz que um banco CodeQL é um banco de CVEs conhecidos. Qual de
 <!-- certification-coach-question:ghas-code-029:ce52d8e7d06f47ca5552802b463ea8f3e5281aba92c093e2b39c8eea56533f45 -->
 ## Question 153: Configure and use Code Security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-code-029`
 
 **Content revision:** `ce52d8e7d06f47ca5552802b463ea8f3e5281aba92c093e2b39c8eea56533f45`
+
+**en review revision:** `b67fc2b97e0257f7268dc8ac8283eeba6f23446c7d74fa1f0bb3a59a926edfc5`
+**es review revision:** `f6c33860c5e0732e7080bf05bbb8646be553bd47c6dddfa098b7adc233e32391`
+**pt-BR review revision:** `9e0419a21083d88d033ff87068d8108ff61b26eb9c12a32773585b4bf8097d81`
 
 ### English
 
@@ -15627,11 +16853,19 @@ Uma organização amplia de default para security-extended e recebe mais resulta
 <!-- certification-coach-question:ghas-code-030:69cc1affaad6d182dde8e7b37830dd3ae3bbfeab836a5ab0f0690e4347d628ba -->
 ## Question 154: Configure and use Code Security
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-code-030`
 
 **Content revision:** `69cc1affaad6d182dde8e7b37830dd3ae3bbfeab836a5ab0f0690e4347d628ba`
+
+**en review revision:** `c1fd0452af16bcb2aa2324288c18892706f8af5667f60970b95238288aad9d11`
+**es review revision:** `2455ea9f0bacde2f35285e72c8a241c234f76bc5502e2abc32a3ef9a43af390e`
+**pt-BR review revision:** `5377e438e6bbd5c37bc075f21bb177b2fe26776aa9fade2b372b7a0b33398f63`
 
 ### English
 
@@ -15729,11 +16963,19 @@ Uma equipe quer resultados de qualidade além do conjunto ampliado de segurança
 <!-- certification-coach-question:ghas-operations-001:c7e62134dd9d15626890092d07a44115166b4e5957689d2093609b7ccbe0fbee -->
 ## Question 155: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-001`
 
 **Content revision:** `c7e62134dd9d15626890092d07a44115166b4e5957689d2093609b7ccbe0fbee`
+
+**en review revision:** `3c159cff08ff86cc08e89fdc4f011c38122561e187c285151b212fb24ee38d6e`
+**es review revision:** `ebe0dabca07d537ecb81044216dd56c3c2f0c508da919c786b69602ef806ae25`
+**pt-BR review revision:** `0bc97034791e8ec933f113add54ccc6da08031b52edcdd6387c2c078a2fb499e`
 
 ### English
 
@@ -15831,11 +17073,19 @@ Um relatório de incidente cita CVE-YYYY-NNNN. O que um CVE identifica principal
 <!-- certification-coach-question:ghas-operations-002:f95e58ed9a7ea94d74b26a951e6d75edb7dab29936ea02e8492c5c6789aea8d2 -->
 ## Question 156: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-002`
 
 **Content revision:** `f95e58ed9a7ea94d74b26a951e6d75edb7dab29936ea02e8492c5c6789aea8d2`
+
+**en review revision:** `0890a0c95b74d03afeec338ac8e35dcbaa2108bee288a12aadb3b55b19aac477`
+**es review revision:** `93828b3d10e0518781e9116d7bf39c9eed62c8222789988afef1b3652820ad87`
+**pt-BR review revision:** `b221a725c9bbe93b514733535f7ceebe809969ef83005a27ef60535bc1dc231c`
 
 ### English
 
@@ -15933,11 +17183,19 @@ Uma equipe agrupa resultados de injeção não relacionados sob um CWE. O que is
 <!-- certification-coach-question:ghas-operations-003:1368e4fcbb6273898b9844cc98154d80a474b8949501508efebe6c5e05431bef -->
 ## Question 157: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-003`
 
 **Content revision:** `1368e4fcbb6273898b9844cc98154d80a474b8949501508efebe6c5e05431bef`
+
+**en review revision:** `be673a69c467f47dda9b8014efc7c5ea58e93d44b1caaf106e7dd269e53a67cc`
+**es review revision:** `05a9553715c68ca9ea5baaf7a997d139977970169778b2b07b3f0b380af2523c`
+**pt-BR review revision:** `0cc0d7a30d0f6b33deb8d0b94c81cd459a2d407371efce14d4997b14ad219c27`
 
 ### English
 
@@ -16035,11 +17293,19 @@ O que um GHSA identifica no ecossistema de vulnerabilidades do GitHub?
 <!-- certification-coach-question:ghas-operations-004:9ac0ba95eb7dbbe63937e398df5658d1940683c367d34ca1e60252567ab4178e -->
 ## Question 158: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-004`
 
 **Content revision:** `9ac0ba95eb7dbbe63937e398df5658d1940683c367d34ca1e60252567ab4178e`
+
+**en review revision:** `d0ca4769cfad21b1b204b1038bfce2d9498dd2e76c747ea1592935ec34f461cb`
+**es review revision:** `761c9db0a85cdc2d0b9e02dced937d42d8ccfbc67c6fe296a005608a1d40750e`
+**pt-BR review revision:** `e7f2e2fdecc4f713bc7d65b5640ec8d2888f232d78923a20900b892254606cf1`
 
 ### English
 
@@ -16137,11 +17403,19 @@ Uma vulnerabilidade tem EPSS alto. O que esse sinal significa?
 <!-- certification-coach-question:ghas-operations-005:e651f698fb87f97f21c257ebbc4f701c20f0f1ea8c98d34bcb18b8f2a5d23e5b -->
 ## Question 159: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-005`
 
 **Content revision:** `e651f698fb87f97f21c257ebbc4f701c20f0f1ea8c98d34bcb18b8f2a5d23e5b`
+
+**en review revision:** `c7924210d444857e4e9df4f5cc0737b8c88fafad09b7eee6cd14fbd072d0e188`
+**es review revision:** `43e12e548fe0130b36a2242cd2298f9ddfa82136ad74e01f54f1989d4c9f4ae4`
+**pt-BR review revision:** `a50194352309648892b778330631d4f563ac5ea99c045c0421fd2ee91ae2b648`
 
 ### English
 
@@ -16239,11 +17513,19 @@ Um comunicado tem probabilidade EPSS de 2% e percentil 90. Qual interpretação 
 <!-- certification-coach-question:ghas-operations-006:4a957b34d5f529d6c009f1892e2b8eed88bbedfcb4b365cefa43e2c22e8869cc -->
 ## Question 160: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-006`
 
 **Content revision:** `4a957b34d5f529d6c009f1892e2b8eed88bbedfcb4b365cefa43e2c22e8869cc`
+
+**en review revision:** `6c749896a2d2ee7da20919b2e5d89bd3e7867e99fdde1eead42465f72e916b9b`
+**es review revision:** `499e37f88e2adf7b6eceef88daff17b7f15b40ce67b1ffbdd54c76c3fc2c38fb`
+**pt-BR review revision:** `f430909f3c42456855012dd049de8ef5dc749ba337a9caf6b4982d9d2e8f4c43`
 
 ### English
 
@@ -16341,11 +17623,19 @@ Dois alertas têm mesma severidade, mas só um afeta caminho de produção expos
 <!-- certification-coach-question:ghas-operations-007:03546014a013df6d0d224226ac804993a1ad651beb940d840e0405f14d98ff27 -->
 ## Question 161: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-007`
 
 **Content revision:** `03546014a013df6d0d224226ac804993a1ad651beb940d840e0405f14d98ff27`
+
+**en review revision:** `47e6277e9beb546276da2303c49be199f94c2f90524460b62b12d25b5254b177`
+**es review revision:** `95bdf8c2478a4750f76660a534717493e757327a04721a514f609eada3048651`
+**pt-BR review revision:** `b784eea442c39794e66dc62ed8b5667c971fc78c704c821d45a8908d5047cfb7`
 
 ### English
 
@@ -16443,11 +17733,19 @@ Um alerta crítico é descartado como risco aceito. Qual registro torna a decis�
 <!-- certification-coach-question:ghas-operations-008:748ec31fede92eaccb7ab2ff91c3ba7d81e729617b65c2dc5772034c6c26791b -->
 ## Question 162: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-008`
 
 **Content revision:** `748ec31fede92eaccb7ab2ff91c3ba7d81e729617b65c2dc5772034c6c26791b`
+
+**en review revision:** `5e0030e9180d64a2963c7d154cc740c9317ce34f0823b69abd23de583a1029af`
+**es review revision:** `2dfe6a780eac3883920a63cb45d760c9195dae4d696f74aff57a989a1c6afd4b`
+**pt-BR review revision:** `0e930441b049cc31ba07adb43f82ed93e99ec2998457bf77cebbda94e0467cab`
 
 ### English
 
@@ -16545,11 +17843,19 @@ Uma avaliação de falso positivo cobre um caminho, mas o alerta lista outros at
 <!-- certification-coach-question:ghas-operations-009:81dc78982a96f0892995b38dce7d05efe56aa62aef6d9e76ca50f0f21a79a988 -->
 ## Question 163: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-009`
 
 **Content revision:** `81dc78982a96f0892995b38dce7d05efe56aa62aef6d9e76ca50f0f21a79a988`
+
+**en review revision:** `5097995bb4e7b6046d8d54b4524b1662817560e93612536241ae0adffd0f1d7d`
+**es review revision:** `9a5c4abc3f932c9981b062e326b6554cb87882412f5b2005b1338498a3af5b62`
+**pt-BR review revision:** `c9aec66e8c358ca62fdac83414b66f846e8bc63f2ab1ac66344331ade2168d25`
 
 ### English
 
@@ -16647,11 +17953,19 @@ Uma campanha precisa ser acionável para desenvolvedores. Qual desenho é mais e
 <!-- certification-coach-question:ghas-operations-010:72d9d1c1c9b02106c1a800eb6312c3281d136805541348ab723d235d5f2c1f39 -->
 ## Question 164: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-010`
 
 **Content revision:** `72d9d1c1c9b02106c1a800eb6312c3281d136805541348ab723d235d5f2c1f39`
+
+**en review revision:** `97961c71d4cb80bae1fbb2cddc2c389d096f92c689a056453b044f4346aa78c1`
+**es review revision:** `37ef4d412b0f0d45c86d6607ed1699e64867c15ca11ededbe488a397ccda586d`
+**pt-BR review revision:** `f17910b4d2e8933a232915a6c01ab83fdcc2b1cfc1bf7c6ac0485aea704efc22`
 
 ### English
 
@@ -16749,11 +18063,19 @@ Uma campanha chega à data-alvo com alertas válidos não resolvidos. O que o l�
 <!-- certification-coach-question:ghas-operations-011:a0e1ae640cfe97e25efcae1ee2ec594c1c37b63227d19d716d372d9e0baa473e -->
 ## Question 165: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-011`
 
 **Content revision:** `a0e1ae640cfe97e25efcae1ee2ec594c1c37b63227d19d716d372d9e0baa473e`
+
+**en review revision:** `3fe2740b3a9504ab8e98ffb2fc00b3d360908c9e1a2815514d281d668fbc76b6`
+**es review revision:** `fe7e2382e2dcac70679a06c05cb470de302e4e164b383aaa74e61f6b42419597`
+**pt-BR review revision:** `dcb91c3b2a25354a05ffea70dd1350cb1f5737eb7016914a7f4483f4448733f7`
 
 ### English
 
@@ -16851,11 +18173,19 @@ Uma organização fecha muitos alertas desativando análises em repositórios at
 <!-- certification-coach-question:ghas-operations-012:4c48040bfa20085aaae22187013690cd52690cb506c306482d14e9bc9aa093f1 -->
 ## Question 166: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-012`
 
 **Content revision:** `4c48040bfa20085aaae22187013690cd52690cb506c306482d14e9bc9aa093f1`
+
+**en review revision:** `30269804fc3b1ef4cd4bfdd685b1355b98e557c0b47422f2d9fcfca221146593`
+**es review revision:** `3d48f8b8cbfe4b0a25260fadc184aef85132f50af9b72684448263481ab82106`
+**pt-BR review revision:** `611d48b74474c70163b468cc0529fadf171def3255acc57a5490fe65c9d29d1f`
 
 ### English
 
@@ -16953,11 +18283,19 @@ Um pull request resolve vulnerabilidade, mas quebra a autorização necessária.
 <!-- certification-coach-question:ghas-operations-013:111e76b30990897c6f283482e0f32b6b5bebdc02ec2f123b26eb24172892421a -->
 ## Question 167: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-013`
 
 **Content revision:** `111e76b30990897c6f283482e0f32b6b5bebdc02ec2f123b26eb24172892421a`
+
+**en review revision:** `36d9a28e9fb56327f02b5398a814d021bebe12ffc65085b62a99a2ee011b398d`
+**es review revision:** `e7c0de06eaf97277ab4fafccdc21f9cd55cb76cc244f9a58dfd188668996fe1b`
+**pt-BR review revision:** `65b14c3625fecb68421f1b218ff446e40aca80f1377d0cf0236c62c1c19570cf`
 
 ### English
 
@@ -17055,11 +18393,19 @@ Uma dependência tem alta severidade, mas baixo EPSS. Qual conclusão é mais ad
 <!-- certification-coach-question:ghas-operations-014:f33e5e5d8339fab57a51066dec34dbe0b405f6f6106e106c9246ac67b33160f2 -->
 ## Question 168: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-014`
 
 **Content revision:** `f33e5e5d8339fab57a51066dec34dbe0b405f6f6106e106c9246ac67b33160f2`
+
+**en review revision:** `52cd9991ec467f0d7c234df869d4a87f327be0fd8c03b65d65606430fabef4b7`
+**es review revision:** `2d54000b659b250b9e62cc08661bd19d1b921884a17d9ccad84b91a9e76eb3a3`
+**pt-BR review revision:** `275943848dcf121347f4db3beb06cb6be86d00e6cc0e808e5e90cf55c9ef8020`
 
 ### English
 
@@ -17157,11 +18503,19 @@ Um comunicado não tem valor EPSS. Como interpretar a ausência?
 <!-- certification-coach-question:ghas-operations-015:7e6712316b9b3e0faba4a61e0aa92a6fe30580a261c28079ac8fc60f45ebb641 -->
 ## Question 169: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-015`
 
 **Content revision:** `7e6712316b9b3e0faba4a61e0aa92a6fe30580a261c28079ac8fc60f45ebb641`
+
+**en review revision:** `e472b943fc2ab3670652e6778bb6022f39251b007a633c339be37aca16d9d24c`
+**es review revision:** `3e868cbfdac7fc785ee19afd4e746f04abebed96827dce9488d91e92f9b6cef8`
+**pt-BR review revision:** `90567b5914d101ec3350a468db679b028467df61408a76308611c0dc6e4e1041`
 
 ### English
 
@@ -17259,11 +18613,19 @@ Uma equipe quer triar alertas abertos com correção disponível e alta explorab
 <!-- certification-coach-question:ghas-operations-016:3e6bf86c71e3d6cdbe2d99bcb108b5f221b4f704db91815272e2adb4992d85cd -->
 ## Question 170: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-016`
 
 **Content revision:** `3e6bf86c71e3d6cdbe2d99bcb108b5f221b4f704db91815272e2adb4992d85cd`
+
+**en review revision:** `0a1f3deb0e5447be9ce0e6b0622d596b7122517378c4e80818b9c63219c5c0e9`
+**es review revision:** `32f1f570c5dfa06b613b9b8ec75287ad22304b1d25282a4b5f856dcdb9665a77`
+**pt-BR review revision:** `8e288820f2cc92a8481f3942352442aaeabd14f49ce03538451c0f60212c9eaf`
 
 ### English
 
@@ -17361,11 +18723,19 @@ Uma proposta de descarte em massa inclui alertas válidos, falsos positivos e n�
 <!-- certification-coach-question:ghas-operations-017:b18ac13c6e23793fbba0786003504feb0c31967b37dc2a642d538269a87d3217 -->
 ## Question 171: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-017`
 
 **Content revision:** `b18ac13c6e23793fbba0786003504feb0c31967b37dc2a642d538269a87d3217`
+
+**en review revision:** `9a96b7058bd6dc75a3963772d58c0c6a9973127679026c20d6a17ea586f60145`
+**es review revision:** `b9e87e57ca75c7627814246bc9bfecd4fa42373a1001d57bbbebd214a47137cf`
+**pt-BR review revision:** `4d41bf5fa0b8333a225ea20f4bd21c36da7a2b82da17a3809f7c190e9caac57c`
 
 ### English
 
@@ -17463,11 +18833,19 @@ Uma equipe remove toda uma categoria de consultas para reduzir ruído CodeQL. O 
 <!-- certification-coach-question:ghas-operations-018:1bc91d8f3af9a791c66a9e9a7248f5ca36a71c15bd4029ea7439003a25877598 -->
 ## Question 172: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-018`
 
 **Content revision:** `1bc91d8f3af9a791c66a9e9a7248f5ca36a71c15bd4029ea7439003a25877598`
+
+**en review revision:** `0e97aa47370677ca7d081257c89dc6d77eb2be47719b9f3b2429a46d15460334`
+**es review revision:** `cec380816ee30b09de1b2dcb567746e5329691f6b0913b11977360c86a46a194`
+**pt-BR review revision:** `bf1f1d53ae3e81ae09be5bfa3722fddce7013d607c94abba53018a3af943c1d6`
 
 ### English
 
@@ -17565,11 +18943,19 @@ Uma pessoa mantenedora recebe relato privado e precisa colaborar na correção a
 <!-- certification-coach-question:ghas-operations-019:77adc2a63512c5154481fb14c856c5e192140d61ccdf871e6f053674b71e61e0 -->
 ## Question 173: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-019`
 
 **Content revision:** `77adc2a63512c5154481fb14c856c5e192140d61ccdf871e6f053674b71e61e0`
+
+**en review revision:** `04b0f655aeeb40d0c5296c5df07f354e00477aff827b26c399aad13fa17885ba`
+**es review revision:** `3cf90814676c6a38d1a8a1944d97474759656d69eccbd00826fc7453aaba93c9`
+**pt-BR review revision:** `89d988a80cfb455c7095ce1b3d448cb8571a033879195e7a505bdb73af3c6842`
 
 ### English
 
@@ -17667,11 +19053,19 @@ Solicita-se CVE para um rascunho de comunicado do GitHub. A solicitação public
 <!-- certification-coach-question:ghas-operations-020:18b82addc9c2b5dbc328f98067ad4c4df75ebb30d13611d68d1efe5bb6cf1a1a -->
 ## Question 174: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-020`
 
 **Content revision:** `18b82addc9c2b5dbc328f98067ad4c4df75ebb30d13611d68d1efe5bb6cf1a1a`
+
+**en review revision:** `2d0d03c9458a8e9f0b351cbc2b758f425ca81dc21ede8bd4393411af8babcff3`
+**es review revision:** `1d0a3110d5503dea9b2f84970c97bf14cdf6e9c4bfb1928766b2118ad7fc22dc`
+**pt-BR review revision:** `ba0b7a3a7b64ee700cff3bd41bb206e7a361dea3eac84071b9f167b9adb64930`
 
 ### English
 
@@ -17769,11 +19163,19 @@ Um engenheiro de suporte pede para copiar um token de produção de um alerta pa
 <!-- certification-coach-question:ghas-operations-021:e2e8e538369fa87f49b9795f0eb5eb7e7d4214a39a614434109d727f1547ae24 -->
 ## Question 175: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-021`
 
 **Content revision:** `e2e8e538369fa87f49b9795f0eb5eb7e7d4214a39a614434109d727f1547ae24`
+
+**en review revision:** `84a3932d7f3f18c0f1b73e2c2ac53e1deea3f76d6e989caf1cd69e90674cd806`
+**es review revision:** `bd7abdec1d0280ad5b21a8798b0a0ed8440140a19fb793554fd2f09484c0e15b`
+**pt-BR review revision:** `4910fc344a782fc0fb5ceabfdf11e62a43853f2d9a26914923e94ff96c67d94b`
 
 ### English
 
@@ -17871,11 +19273,19 @@ Uma exceção foi justificada porque um endpoint vulnerável era inalcançável.
 <!-- certification-coach-question:ghas-operations-022:a691b323634f45af9075913d75ec77fa6e04f7be6eca04bbbdeb90caca4b6beb -->
 ## Question 176: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-022`
 
 **Content revision:** `a691b323634f45af9075913d75ec77fa6e04f7be6eca04bbbdeb90caca4b6beb`
+
+**en review revision:** `696d9bb4f633bfa6f14972a9e19d552b4d8ac75e9eb47a50c9d97599f53ca080`
+**es review revision:** `9fba002a994414e8cb14834c6427885ef4b1ec8226b4545fdf3dc1b01134d09b`
+**pt-BR review revision:** `66cb5c051361dbdb4d423b9be22702b312f9d7086c4a6786cffebdf7deb6cc3b`
 
 ### English
 
@@ -17973,11 +19383,19 @@ Os alertas aumentam após analisar linguagens antes ausentes. Como líderes deve
 <!-- certification-coach-question:ghas-operations-023:2b7e110dc4e50a5648ed5d8a9233921fb4ccd521e3d7a7590d98b41cda87c0e7 -->
 ## Question 177: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-023`
 
 **Content revision:** `2b7e110dc4e50a5648ed5d8a9233921fb4ccd521e3d7a7590d98b41cda87c0e7`
+
+**en review revision:** `66184171f5d8028e6c83a488813da6f8c0255495d49a297326f2f49a1d1dde5e`
+**es review revision:** `a5143b458fc7932168714c8e1b15c7c6af4458c7e9867cb8f5e083d481c5a85b`
+**pt-BR review revision:** `ea759baf130569f356db3d7a74a2a2959b0e1294eb5a498f1496662e9ea1bf97`
 
 ### English
 
@@ -18075,11 +19493,19 @@ Uma organização quer medir eficácia da remediação, não só atividade do an
 <!-- certification-coach-question:ghas-operations-024:47f131699f90579933f09ee10b23a3f737b5783ff2787fd48cc94323c3a03b4d -->
 ## Question 178: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-024`
 
 **Content revision:** `47f131699f90579933f09ee10b23a3f737b5783ff2787fd48cc94323c3a03b4d`
+
+**en review revision:** `3e971feb36d24b418defa5f20e2e3c93be8f1d8098e3e6dcba60b6bc8d6677a2`
+**es review revision:** `44364e776b8c7ea9b008b51126f3c737b65c73f67619b6a544bf465c113b938b`
+**pt-BR review revision:** `338fa1e98eaadcaceaa25015e3f8f6da0ca05d10a95f6277dce5ea678b74897b`
 
 ### English
 
@@ -18177,11 +19603,19 @@ Um alerta está atribuído a quem não mantém mais o serviço afetado. Qual é 
 <!-- certification-coach-question:ghas-operations-025:5ca816f00ef997e750d9d9f9ac8b3b2250386bfa2e05e80ae691f1d591deff82 -->
 ## Question 179: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-025`
 
 **Content revision:** `5ca816f00ef997e750d9d9f9ac8b3b2250386bfa2e05e80ae691f1d591deff82`
+
+**en review revision:** `30609bc7594c119e1e6dd9c8893e21bd4bb686eaafa35fabcc9cefd4f9dbfb99`
+**es review revision:** `3a7b31d8fcc5e66e6b6c03525cbcdf3877c0a092534a77a57aadbe18f5424c70`
+**pt-BR review revision:** `2baab8f33e60771eac65461b88f4a21dfd5df90e47d79eca32b6d0338a9422ee`
 
 ### English
 
@@ -18279,11 +19713,19 @@ Uma correção gerada remove operação insegura, mas também suprime todos os e
 <!-- certification-coach-question:ghas-operations-026:05a4959376d41e3875717dcb0f83bb19eef153cdaf216a682d7025edbc4b187b -->
 ## Question 180: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-026`
 
 **Content revision:** `05a4959376d41e3875717dcb0f83bb19eef153cdaf216a682d7025edbc4b187b`
+
+**en review revision:** `83175d3ad3b6f83ee0904a5ec089c6d9748d326fadbcac67e13d9f1caf2745dd`
+**es review revision:** `ba84a229ae5beb7c3f2cb6249fa447d21deeb8bfe505ce28b93e016999d7a032`
+**pt-BR review revision:** `0b0189583d7d6d49c5cbaef48e760b1be7fef307103d88cf8b86044106ee799e`
 
 ### English
 
@@ -18381,11 +19823,19 @@ Uma equipe pretende aceitar risco porque uma função vulnerável parece sem uso
 <!-- certification-coach-question:ghas-operations-027:5180fdfc9f15fb39ae9a4b3116f063895b5c61b02d9f37a0fae09a8e4f2044f7 -->
 ## Question 181: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-027`
 
 **Content revision:** `5180fdfc9f15fb39ae9a4b3116f063895b5c61b02d9f37a0fae09a8e4f2044f7`
+
+**en review revision:** `b90b78d61095954f8eb37f0caa0bc05ea6a7cbe55875ba299d601d1bb9d4f4e3`
+**es review revision:** `d9b03df7c4b4d84b7913687a037aa80f1d49ec17c9405dc21008c18c0f2314ae`
+**pt-BR review revision:** `2d720b013878fa2e84b7dfc655ac1e942f4525a9e94a796edcdc0bfe5f862886`
 
 ### English
 
@@ -18483,11 +19933,19 @@ Uma campanha foca um padrão de fraqueza em vários serviços. Qual estratégia 
 <!-- certification-coach-question:ghas-operations-028:aab015075fae6c3096929b0db7edd34d4c7fc90642d4c6e705a163ef6799b05a -->
 ## Question 182: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-028`
 
 **Content revision:** `aab015075fae6c3096929b0db7edd34d4c7fc90642d4c6e705a163ef6799b05a`
+
+**en review revision:** `6bdf79a13257d7cf19fc515276908085c4c1a33535821550c7f3fa6c5a219c6c`
+**es review revision:** `23649309dffef4b7aa0e00c71bf234850eb10999d41fa18ae5ab02112cf2d8dc`
+**pt-BR review revision:** `35ff91a3bd5af4c8077cd07b9bb23d5de6e94c3060de43348a7269f3a8253dcf`
 
 ### English
 
@@ -18585,11 +20043,19 @@ Uma política descartou automaticamente um alerta, mas novos metadados aumentam 
 <!-- certification-coach-question:ghas-operations-029:a88cec4b628bd6ed0dd2c2f2a3e5e2c2a46466188944a73c1799414c4c347856 -->
 ## Question 183: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-029`
 
 **Content revision:** `a88cec4b628bd6ed0dd2c2f2a3e5e2c2a46466188944a73c1799414c4c347856`
+
+**en review revision:** `b991d160c0e287e4660b5689c8d11698d69f2b7fc1777df1b51a8824dbea8730`
+**es review revision:** `86bd562bcad4df8a0c8c9e81531dde6bad0f2edc300e988efc3c86a1072f2e05`
+**pt-BR review revision:** `b18864d4cff08b7cda00f8f03ecc8914f534789472ae96913d0f13167b52acbc`
 
 ### English
 
@@ -18687,11 +20153,19 @@ Uma correção da branch padrão foi implantada, mas uma branch de release ainda
 <!-- certification-coach-question:ghas-operations-030:3f4763289cc823b74e8e77150bf25302e5bec68ba32ad90fe816b04bdfc50592 -->
 ## Question 184: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-030`
 
 **Content revision:** `3f4763289cc823b74e8e77150bf25302e5bec68ba32ad90fe816b04bdfc50592`
+
+**en review revision:** `e944dbb467b4aee1409001a66c932bd0895593a4787792a4d9cdd28bad9570dd`
+**es review revision:** `c1fb8a94d7382633c0f3ecd3ffb564949a9ce87280e9e7fba700a7941e0b011b`
+**pt-BR review revision:** `4e71517638f1445e1ac088920fc2f220f76c04d2f8929a7b02ff56a370055982`
 
 ### English
 
@@ -18789,11 +20263,19 @@ Um alerta válido não pode ser corrigido no prazo-alvo. Qual resposta preserva 
 <!-- certification-coach-question:ghas-operations-031:70877d8cc613f3a61f5897b81e9fbe74e5826effad2b0a0057618debaae9f3b0 -->
 ## Question 185: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-031`
 
 **Content revision:** `70877d8cc613f3a61f5897b81e9fbe74e5826effad2b0a0057618debaae9f3b0`
+
+**en review revision:** `5b2b23c58b1d728f9e924a38aa39824d0e51b90010d6fbb08267947f1ba1684d`
+**es review revision:** `bc12cbab1cca21494fda200ecf1ae298ef2bce7becff2b03a705b2cc73b3d549`
+**pt-BR review revision:** `77819ca0cdce2620e6c9d7cffaa01292570fd050557ddec74989646bef1ad503`
 
 ### English
 
@@ -18891,11 +20373,19 @@ Um patch resolve um comunicado, mas o mesmo pacote instalado continua afetado po
 <!-- certification-coach-question:ghas-operations-032:45a32f7e2a95cf89b77715877da4bb2a888da71ee6971db15ed7e55eb631f0fe -->
 ## Question 186: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-032`
 
 **Content revision:** `45a32f7e2a95cf89b77715877da4bb2a888da71ee6971db15ed7e55eb631f0fe`
+
+**en review revision:** `b40229f9366c271c05cf791b2029eeb60425c80eaae87a5636c1c5c4df202fd2`
+**es review revision:** `1955af2cdddab94eef6757b0c31284a14c836b9c88822fdd07b367bb9c0b4ea6`
+**pt-BR review revision:** `ae85d6525f2549e7633035269a51426d7cc38c3741912b4477c37c55fa243ca1`
 
 ### English
 
@@ -18993,11 +20483,19 @@ Um painel operacional mostra muitos alertas fechados. Qual distinção é essenc
 <!-- certification-coach-question:ghas-operations-033:965145f9f0edb97fe0e61d5d407d71b642cc116d3ab85e61dec430bfc7cda2e7 -->
 ## Question 187: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-033`
 
 **Content revision:** `965145f9f0edb97fe0e61d5d407d71b642cc116d3ab85e61dec430bfc7cda2e7`
+
+**en review revision:** `e3ba3e4655392ab660871a5a222a50184f0050809b6737d65672f0b539ce15a5`
+**es review revision:** `aee9d6979b2db447ded8bb11200bc2cf8c99e8f25324437d2414fbe77ddfaa80`
+**pt-BR review revision:** `ec97ae256111254b83a52a2c379d94e4ec510dcfa3d2968581804372e23323c9`
 
 ### English
 
@@ -19095,11 +20593,19 @@ Vários alertas de repositórios referenciam o mesmo GHSA. O que pode explicar i
 <!-- certification-coach-question:ghas-operations-034:361365d13c450ae965ed145bb540c1e76dd996c3e8bbabcce4f21787bfd060cf -->
 ## Question 188: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-034`
 
 **Content revision:** `361365d13c450ae965ed145bb540c1e76dd996c3e8bbabcce4f21787bfd060cf`
+
+**en review revision:** `65e8598e4fe1cfba708d2b5ffe63d4ab82aa52331b76e867f71db23ebd80bf9e`
+**es review revision:** `7e80153d035d93adf6224574f2669ca0ba9f09a2c8c1dc318461b60529336387`
+**pt-BR review revision:** `5f794eb12dd26cb39b6f5715968adae4c8171dc125741fbfc311fdd0211fd6fc`
 
 ### English
 
@@ -19197,11 +20703,19 @@ Um segredo foi revogado, mas a investigação indica uso não autorizado anterio
 <!-- certification-coach-question:ghas-operations-035:4a3c0a4319ce6b1af0e4225d89bddada5e00fb9b124fedb524af38776ccfd399 -->
 ## Question 189: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-035`
 
 **Content revision:** `4a3c0a4319ce6b1af0e4225d89bddada5e00fb9b124fedb524af38776ccfd399`
+
+**en review revision:** `5197745a6307a59b6b9b0981b0b583472ec8d9516292bcbee93e8e76b30ffab1`
+**es review revision:** `8d19fe6a8c0d11d87f204b65800806769e2294bd6454ee72c6610196c19a53e1`
+**pt-BR review revision:** `ede575c40524a07aebdeb8446f1f680e14338bcaffe462ea8c26fbf9fffe373e`
 
 ### English
 
@@ -19299,11 +20813,19 @@ Uma equipe escreve testes de regressão após corrigir caminho vulnerável de en
 <!-- certification-coach-question:ghas-operations-036:1592c83a41285784fdc7af112c20092a544972e8dc6ef6d68a8e00cc5909f0ab -->
 ## Question 190: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-036`
 
 **Content revision:** `1592c83a41285784fdc7af112c20092a544972e8dc6ef6d68a8e00cc5909f0ab`
+
+**en review revision:** `a5354b12c26cf2dadecb5004b3d3af5be8b42fe96846ff9bd57654dafd0cc739`
+**es review revision:** `96f47d791d302e3387478b3f4cfa1159a5c57b5172a7eb0e3fbfa066adce73d7`
+**pt-BR review revision:** `e5a5ed35de03c91aea002b50c9f33c3b5d4fb188833dd8bd22fca9f0a848507d`
 
 ### English
 
@@ -19401,11 +20923,19 @@ Segurança e desenvolvimento discordam sobre a eficácia de um sanitizador relat
 <!-- certification-coach-question:ghas-operations-037:01029f427555a293b9ed7152a50ab49f0889fd1e6d05ee3a59c2e8136ffde83a -->
 ## Question 191: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-037`
 
 **Content revision:** `01029f427555a293b9ed7152a50ab49f0889fd1e6d05ee3a59c2e8136ffde83a`
+
+**en review revision:** `6c7af500afa27cb800d0af1041f6887482842a5a77feee632d7df9b2303e6bae`
+**es review revision:** `7ff03845364b2ecb244403d491ee1bad0678948b38e609b6bcbf8352eb3d4dce`
+**pt-BR review revision:** `e6c563378cf0a206efbd81dbf6a8b8d764c4633dcb86c584967b444ab06a02f6`
 
 ### English
 
@@ -19503,11 +21033,19 @@ Uma organização quer tratar vulnerabilidades novas separadamente do backlog hi
 <!-- certification-coach-question:ghas-operations-038:3c9a2fcd45fc96178c65822c6dd462d88648f6d89c3aaed79836c38fa4e36c61 -->
 ## Question 192: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-038`
 
 **Content revision:** `3c9a2fcd45fc96178c65822c6dd462d88648f6d89c3aaed79836c38fa4e36c61`
+
+**en review revision:** `7ebf77ecd918e4ce06a87ebf64a6a87f21b9a2a545932c646fe2c5ca758711a9`
+**es review revision:** `fdff66c6c2a3219c1b119f32a18565f94457859f6f0b51540953cad78a9d5712`
+**pt-BR review revision:** `1766b244200673e0fef6633b2bd6e3bdaff90de8db6256d44735a693078d5c1a`
 
 ### English
 
@@ -19605,11 +21143,19 @@ Uma campanha contém correção proposta que os desenvolvedores não entendem. Q
 <!-- certification-coach-question:ghas-operations-039:8238832081c3c3a76d9a327e9bf68e368634b04a34ebe38e91cea7dd3157cbe0 -->
 ## Question 193: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-039`
 
 **Content revision:** `8238832081c3c3a76d9a327e9bf68e368634b04a34ebe38e91cea7dd3157cbe0`
+
+**en review revision:** `5d12744e917288168622f85d3e2d89bed962edce91eb9d016fecc6cc801379e7`
+**es review revision:** `3b5d5ed8d6e27023c7b35c34aeef52e239e62a05f214bf43f05951299fd71a18`
+**pt-BR review revision:** `7d1e626b57b1cf47fdab489ad826bc852ece8c7e5cd094a66d00b6676159440d`
 
 ### English
 
@@ -19707,11 +21253,19 @@ Uma empresa adiciona pacote CodeQL personalizado para uma regra interna. Como av
 <!-- certification-coach-question:ghas-operations-040:c34a4162fd1278a0115000f8274b3050a7f96f2d125300541dc0e4794a54b400 -->
 ## Question 194: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-040`
 
 **Content revision:** `c34a4162fd1278a0115000f8274b3050a7f96f2d125300541dc0e4794a54b400`
+
+**en review revision:** `3daba4766caeb7863c5eb5685024cb31c2176d4f3efd9155bc2a672dac791c9e`
+**es review revision:** `c6b35481c6681f4ac43a5a39c771ad893b79c82785c6d39993f5330e3e37a0a8`
+**pt-BR review revision:** `fa2baccd4b3051a932fd6987d6ef466d74c0eabfd6bb1b9387cf260564b35559`
 
 ### English
 
@@ -19809,11 +21363,19 @@ Um alerta continua válido, mas tem baixo impacto comercial atual. Qual classifi
 <!-- certification-coach-question:ghas-operations-041:205ddf2debea2b0887979f5a7bdce0e975a80474a48ec891b620493c075bf812 -->
 ## Question 195: Security operations: best practices, prioritization, remediation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-operations-041`
 
 **Content revision:** `205ddf2debea2b0887979f5a7bdce0e975a80474a48ec891b620493c075bf812`
+
+**en review revision:** `4d4da8a995ea4e5fc1592833d10b79a2222cd833350161490c6a8bafb609aa2d`
+**es review revision:** `d110bebabe63caae7ecc3bbca47270a3e9ab877204ddc835210ec318ab2f896e`
+**pt-BR review revision:** `624dac2f621b52d1934efa4e02209c54f483b1a36525a6f79a5c5d704bcff122`
 
 ### English
 
@@ -19911,11 +21473,19 @@ Chega um alerta novo de alto risco durante uma campanha de limpeza de menor risc
 <!-- certification-coach-question:ghas-administration-001:f036b131214eb78bb7e8798906bf155e5a6d8097cf6497e6229232bba95946e1 -->
 ## Question 196: GitHub Security suites administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-administration-001`
 
 **Content revision:** `f036b131214eb78bb7e8798906bf155e5a6d8097cf6497e6229232bba95946e1`
+
+**en review revision:** `e45be153e68b408eff194ab266009ecbaa63059e7bdf902fbf0b7bfb3fe855f2`
+**es review revision:** `e926189f77556a350d3523a4df886b2efa634c49860ab2baddca7f8087f386ff`
+**pt-BR review revision:** `89fd2af95881e4c0d355a4e2e8786fe038f67bc9d1301893cc3149e90ae6e17a`
 
 ### English
 
@@ -20013,11 +21583,19 @@ Uma organização quer que repositórios privados novos recebam automaticamente 
 <!-- certification-coach-question:ghas-administration-002:9ca0f257b4fe1db3fb52d2a8fc5b17326d159d7c84497bc68cf0f1b26844a0ec -->
 ## Question 197: GitHub Security suites administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-administration-002`
 
 **Content revision:** `9ca0f257b4fe1db3fb52d2a8fc5b17326d159d7c84497bc68cf0f1b26844a0ec`
+
+**en review revision:** `8a57cad26dfb05ee308e6cc164513db32c28268f359920a4bd129ed0897e84a8`
+**es review revision:** `7d565806edbc9264102200436e5a6aca5faa4eb2213321f431b9a4fba64d79b1`
+**pt-BR review revision:** `8c2d3c0ceeeb97b282172fcb2ba41717cda5dc28d5c9c56452b0af94c545b25a`
 
 ### English
 
@@ -20115,11 +21693,19 @@ Um repositório é transferido para uma organização com configuração padrão
 <!-- certification-coach-question:ghas-administration-003:45c29a8fd4e7110c789ddaf616fe95cd70dd9b95b365b9236d40a7e19e3dc77e -->
 ## Question 198: GitHub Security suites administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-administration-003`
 
 **Content revision:** `45c29a8fd4e7110c789ddaf616fe95cd70dd9b95b365b9236d40a7e19e3dc77e`
+
+**en review revision:** `72f316ce7ad5e6ef2f58aacd42c16e63204ffb6502436ede96a29a36224b6a3c`
+**es review revision:** `2f2ed2d0b50a840b9e3da3cd7a2c43b83db10a6d7dfc5dce9983c715bbb9b088`
+**pt-BR review revision:** `b311e8f1e971c22ae6ced243b0e1218347229adf49e6b5f4aadfc7e76eeee999`
 
 ### English
 
@@ -20217,11 +21803,19 @@ Uma configuração habilita um recurso, mas quer-se impedir que donos do reposit
 <!-- certification-coach-question:ghas-administration-004:e7df8c5ce4607ce9c326da984e6038e64b249bbcbece5b09c1c9baa48f485e28 -->
 ## Question 199: GitHub Security suites administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-administration-004`
 
 **Content revision:** `e7df8c5ce4607ce9c326da984e6038e64b249bbcbece5b09c1c9baa48f485e28`
+
+**en review revision:** `7e21dd31a705834d2c5cd46694a5b5d8d9409fb620d400704af25921623e1c7a`
+**es review revision:** `49d2f27d3f90e2b7a8ca1b0a1971c292e80cd5f7afee9f83e9924e088660bb5e`
+**pt-BR review revision:** `91987e32f7688c9f0d5622ab105f0bb87930c79970f9896d8b7f5b0f7244723f`
 
 ### English
 
@@ -20319,11 +21913,19 @@ Uma configuração imposta deixa um recurso como not set ou mantém seu valor ex
 <!-- certification-coach-question:ghas-administration-005:31586737d00b2744648841313d932c0f6ea2534f918fc428841ac69ccbab2e17 -->
 ## Question 200: GitHub Security suites administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-administration-005`
 
 **Content revision:** `31586737d00b2744648841313d932c0f6ea2534f918fc428841ac69ccbab2e17`
+
+**en review revision:** `d35ad89d42bb98c7de12d871fab6f1b93b705a7b74a90ae42d37d6c71d7b3e9b`
+**es review revision:** `d15519319a60eb015deb74f2197f001d921ade2f8af8bc8a0831c8b2f1857acf`
+**pt-BR review revision:** `94cbdd4e76feb6589bd488a7d0f307ef0d25cb99a1549a4c67de4726c5957adb`
 
 ### English
 
@@ -20421,11 +22023,19 @@ Uma empresa migra processo de segurança do GitHub Enterprise Cloud para GitHub 
 <!-- certification-coach-question:ghas-administration-006:8e1ae9d3ab7d496708349ef09771f4f5e8fc830e060e0475333594bf39e1bef4 -->
 ## Question 201: GitHub Security suites administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-administration-006`
 
 **Content revision:** `8e1ae9d3ab7d496708349ef09771f4f5e8fc830e060e0475333594bf39e1bef4`
+
+**en review revision:** `0a5eb3c603e0ef963cc91ff8942066a06f610f62c8421e94df97e8c0bc4a8b63`
+**es review revision:** `89610e35c075cdb67a8028838f13d2cd490770868e9d3ed532ac7b2a2889e7f8`
+**pt-BR review revision:** `a65cd07d1a4534d6c5cbf70f50f9d815cff37cb69a02dfecdaf44bb1b3287967`
 
 ### English
 
@@ -20523,11 +22133,19 @@ Uma equipe precisa de acesso organizacional a alertas e gestão de ajustes de se
 <!-- certification-coach-question:ghas-administration-007:60c2410d45a55212433926e6d638de1585ee45969b1b311f759e54e74911fa92 -->
 ## Question 202: GitHub Security suites administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-administration-007`
 
 **Content revision:** `60c2410d45a55212433926e6d638de1585ee45969b1b311f759e54e74911fa92`
+
+**en review revision:** `864352a485aec33983bd6f0d11c64d932b8a8c13fbf4e0fbc3543437e41e9da7`
+**es review revision:** `ad96ce056d37fb628e929cd71ff955adff18f3da449ec69b88df52bc524557fa`
+**pt-BR review revision:** `61ab9a8df300f887c5b79a63ed6991aa4157df38ce55a9ec42ca9375727167ef`
 
 ### English
 
@@ -20625,11 +22243,19 @@ Qual implicação adicional de acesso considerar antes de atribuir gerente de se
 <!-- certification-coach-question:ghas-administration-008:640d8133436164bb24699a8eec0f509e633ac499835a68ded55bdead5fc5a81e -->
 ## Question 203: GitHub Security suites administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-administration-008`
 
 **Content revision:** `640d8133436164bb24699a8eec0f509e633ac499835a68ded55bdead5fc5a81e`
+
+**en review revision:** `e8e3ff25eb187b3dd1d331dc02cc00ac9ec6cbe799b2c0b3fd45c05d00d61663`
+**es review revision:** `7b9d8ad45a17bdc6bd37e2fe07d1803eebbf20d27f0d5a7f6d298303ddb4e68e`
+**pt-BR review revision:** `9f9da827a85d218eed61afa44831224da79c335d44b30fb1e7d24bad29112790`
 
 ### English
 
@@ -20727,11 +22353,19 @@ Um auditor precisa saber quem descartou alertas de dependências e por quê. Qua
 <!-- certification-coach-question:ghas-administration-009:b767ff4da5a07dec9243b3730b1d155d3f2351ae28617bb56e43beca399aa2ff -->
 ## Question 204: GitHub Security suites administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-administration-009`
 
 **Content revision:** `b767ff4da5a07dec9243b3730b1d155d3f2351ae28617bb56e43beca399aa2ff`
+
+**en review revision:** `8abce0b4957eba1a35766349d469997a43976efa3999e36d51bbf048a0634528`
+**es review revision:** `c6f33d178ea467d765c924550522daedaf9e25af3dbbc3908daf50a6a856c886`
+**pt-BR review revision:** `79aa5f5b5faea4dbd6f74ad0f68fee091e48eefcd4fd075ed13f774da2534c53`
 
 ### English
 
@@ -20829,11 +22463,19 @@ Recursos de segurança são implantados em centenas de repositórios. Qual sequ�
 <!-- certification-coach-question:ghas-administration-010:e2ec043c1df6f3ba27bf4dcf259cd9e06398599a7ba1718ec0ba569884da5006 -->
 ## Question 205: GitHub Security suites administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-administration-010`
 
 **Content revision:** `e2ec043c1df6f3ba27bf4dcf259cd9e06398599a7ba1718ec0ba569884da5006`
+
+**en review revision:** `d1fbe77258a92e53b752669eaccd9003956fccc22bd43ab67c1fcd471a1b1f45`
+**es review revision:** `8476e07afab80ad5021491247296634c081b080287b7f3890971ee0cea35c4c2`
+**pt-BR review revision:** `7d44e90ea3776fbf8ecdd52b57f01dd6a8bbd3d2f0aba6587bbe6913be51c0af`
 
 ### English
 
@@ -20931,11 +22573,19 @@ Um script de governança precisa enumerar e atualizar ajustes de segurança em e
 <!-- certification-coach-question:ghas-administration-011:f3e2df7d33cf94f8f83a02264909a6dc7d051d008bd8309ac6e2d1cecf0df370 -->
 ## Question 206: GitHub Security suites administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-administration-011`
 
 **Content revision:** `f3e2df7d33cf94f8f83a02264909a6dc7d051d008bd8309ac6e2d1cecf0df370`
+
+**en review revision:** `928ff99da51e82932cf679a1c40fb73a2831117b97f73766b9fa0aefb6e06a28`
+**es review revision:** `e34a510dbbd585f26d2f0d0a12713668c32ee72a17b4653487414b47a7148048`
+**pt-BR review revision:** `92f89e097a2f8fb27e15d5909abf13d70427d814a595f5378cee0fe0d8738a74`
 
 ### English
 
@@ -21033,11 +22683,19 @@ Um painel não mostra um repositório esperado pelo analista. O que verificar an
 <!-- certification-coach-question:ghas-administration-012:ba536a0b56ae171e5e4a38bfe30c42ee9c51a6fe2fbc8e2f7282d124be88d996 -->
 ## Question 207: GitHub Security suites administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-administration-012`
 
 **Content revision:** `ba536a0b56ae171e5e4a38bfe30c42ee9c51a6fe2fbc8e2f7282d124be88d996`
+
+**en review revision:** `8bad514765e99b1777848747c99030805119ec54bb9b4fac442c3956bf59b3c0`
+**es review revision:** `267a272f453f97431aab8a5a3e1da676cc3763edf4f52f915c399acb1dbabdb4`
+**pt-BR review revision:** `2dbf9aef85e8083b103f19e66d5572d0d7476a3b240201ca8c22a5c9fdc15281`
 
 ### English
 
@@ -21135,11 +22793,19 @@ Um proprietário empresarial precisa de detalhes de repositório na visão de se
 <!-- certification-coach-question:ghas-administration-013:d1799c78ea8935b784f6f3ed465e35a03ea36c05860c4cabf6ed66c730991331 -->
 ## Question 208: GitHub Security suites administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-administration-013`
 
 **Content revision:** `d1799c78ea8935b784f6f3ed465e35a03ea36c05860c4cabf6ed66c730991331`
+
+**en review revision:** `46e3192b941de3f294f767c8287db4e4df6ce187ef02f8b49b3bb2e786be3256`
+**es review revision:** `99fe05d4dcfd6a63ee4b2467790a6d6fc1d8e2496fb613d2ce2841aa5bc3fb57`
+**pt-BR review revision:** `d26a38cb12dcc7638afa3cb249f8e16934ac69e9caedd539321616323c1ad714`
 
 ### English
 
@@ -21237,11 +22903,19 @@ Uma configuração usa CodeQL padrão, mas já existem workflows avançados espe
 <!-- certification-coach-question:ghas-administration-014:1b1a2065f9f1b069370631bd66edba918c1c3afb1e3ee8e51bf0b1f9200c3faa -->
 ## Question 209: GitHub Security suites administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-administration-014`
 
 **Content revision:** `1b1a2065f9f1b069370631bd66edba918c1c3afb1e3ee8e51bf0b1f9200c3faa`
+
+**en review revision:** `e06f3be853945200944eaad8414c4920f7cec9de5d424ab2c0812322954f5ef9`
+**es review revision:** `a3905e3c6ed109e3c6bf236afde003ba883120083ff22f4eaddfa652724bc079`
+**pt-BR review revision:** `5eeb14340732be369fd927ac6774524d1d573517a1dc310b738a3ac354d9e11b`
 
 ### English
 
@@ -21339,11 +23013,19 @@ Seleciona-se Enabled with advanced setup allowed em uma configuração compatív
 <!-- certification-coach-question:ghas-administration-015:275ce7b5cd91dda60ed2a449db9cd0cfc0c5d466b33853e99627196ece8a91f8 -->
 ## Question 210: GitHub Security suites administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-administration-015`
 
 **Content revision:** `275ce7b5cd91dda60ed2a449db9cd0cfc0c5d466b33853e99627196ece8a91f8`
+
+**en review revision:** `1b92f7cf33799ac7b3fa94c9f7950d7887d680a2581d8548f08850fc294ee66f`
+**es review revision:** `b406515d29efeee90e878c3f3818233d8972b74ec655b23db9fcac4bc529bd3d`
+**pt-BR review revision:** `f328e40258e87cb73203dacaf2a5e835f83dc3bb54cd493ac82838fce7d99718`
 
 ### English
 
@@ -21441,11 +23123,19 @@ Uma configuração privada habilita recursos pagos de Code Security e Secret Pro
 <!-- certification-coach-question:ghas-administration-016:4eba82ad0aed1fa59812b6bf9b9bf2d72301f2fe1588db089e46e4f163ee0785 -->
 ## Question 211: GitHub Security suites administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-administration-016`
 
 **Content revision:** `4eba82ad0aed1fa59812b6bf9b9bf2d72301f2fe1588db089e46e4f163ee0785`
+
+**en review revision:** `db5b07a5e68115dbb28e4518fb8b655b7de04da8f4a4feffdfc00926555c2258`
+**es review revision:** `5b785a86c5ef841069c8f1a326d048860eb7fa6469b635eabd5d081dfcd0342e`
+**pt-BR review revision:** `c6900b14caaa7b03be5226b517179c5fce758da612170941d673aa3f2f67cd6a`
 
 ### English
 
@@ -21543,11 +23233,19 @@ Uma configuração habilita CodeQL corretamente, mas nenhum runner pode executar
 <!-- certification-coach-question:ghas-administration-017:5ebc3f349cca5bbe01f929fed544feda51815c6da2d737035f5dae62fc983177 -->
 ## Question 212: GitHub Security suites administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-administration-017`
 
 **Content revision:** `5ebc3f349cca5bbe01f929fed544feda51815c6da2d737035f5dae62fc983177`
+
+**en review revision:** `f11b960b5888a15ba0e129889fe2cea9313eb20d0b2f1d8e803910c3588a6bb8`
+**es review revision:** `97847903814c35f88c6f65018ade983c2fb099194c23e9e99e781e0f879a6829`
+**pt-BR review revision:** `df5077806eb19db5d6cb51459de8878ffdae64499fd54a837fe4a73406eb781a`
 
 ### English
 
@@ -21645,11 +23343,19 @@ Uma política exige revisão de dependências nos repositórios, não uso opcion
 <!-- certification-coach-question:ghas-administration-018:37aa52b289334916d0f46f05a875b76613d3101002a19dd2164124447bedd539 -->
 ## Question 213: GitHub Security suites administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-administration-018`
 
 **Content revision:** `37aa52b289334916d0f46f05a875b76613d3101002a19dd2164124447bedd539`
+
+**en review revision:** `97fae5782dd880b3dec387a783bbf0434fc132c83e5c1e8e68f5a72e64732e52`
+**es review revision:** `143d0b540e38ba4c5152df92ec29228e5dc39fa05ecbe1a15b62c8079d750a38`
+**pt-BR review revision:** `a571ef33db117dd382a0beeed72a1e7ee3c87440ac211373a8128fb0d432f935`
 
 ### English
 
@@ -21747,11 +23453,19 @@ Uma equipe pede isenção permanente de proteção de push para um script de con
 <!-- certification-coach-question:ghas-administration-019:e7a8dc2e245e53a2f44d1e454584e8b8247499041b1439b9a416741ac03a798e -->
 ## Question 214: GitHub Security suites administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-administration-019`
 
 **Content revision:** `e7a8dc2e245e53a2f44d1e454584e8b8247499041b1439b9a416741ac03a798e`
+
+**en review revision:** `a813a5c1174b189107bf4800dfa20ecd7d449a969359838fb9370f9e0b7dc8a7`
+**es review revision:** `cb101489f608b5052d30ddb3f80b0756a061fe4aa4ba9c0436591126ef0def02`
+**pt-BR review revision:** `c035fdd65e13ff23f04912d7215bb1327331bdcf3c9b592279dba3ab9d5501e1`
 
 ### English
 
@@ -21849,11 +23563,19 @@ Uma implantação de configuração relata sucesso misto entre grupos. Como a au
 <!-- certification-coach-question:ghas-administration-020:c7ad27cb5baea9cd4aba237b6d7de67adc50180ae9ceb3fa5bc346ac4ddd6482 -->
 ## Question 215: GitHub Security suites administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-administration-020`
 
 **Content revision:** `c7ad27cb5baea9cd4aba237b6d7de67adc50180ae9ceb3fa5bc346ac4ddd6482`
+
+**en review revision:** `09ea7951f7dd6808500764586644512acb2634089718ccc3ee0da87388cc605d`
+**es review revision:** `2af8aab1f374d6b7fcdfd22a8fc51e2ac46edb96a4ce771802b1930757d4619d`
+**pt-BR review revision:** `3d5492946c1ac885a342ad7004d58c21be9390cbd2c68167755e1208b04cb304`
 
 ### English
 
@@ -21951,11 +23673,19 @@ Uma configuração imposta funcionou, mas relatórios depois mostram desvio ou d
 <!-- certification-coach-question:ghas-administration-021:2600a17eb44b927633ba757be4e52923fc0d115169ae6523be192173f69f6622 -->
 ## Question 216: GitHub Security suites administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-administration-021`
 
 **Content revision:** `2600a17eb44b927633ba757be4e52923fc0d115169ae6523be192173f69f6622`
+
+**en review revision:** `2cd8eec70363c64d2f89a8ad75b9f4e8ef523a2afe11f0ea8dac4b2f6a876077`
+**es review revision:** `b09f857007ee817cebdfdc38d9035ea1943376b74170ff01f26073712aa90cb5`
+**pt-BR review revision:** `b8acf313b795ffa13741182a787977968e1ef9c4195a2d73cb2c5d08a7362cc6`
 
 ### English
 
@@ -22053,11 +23783,19 @@ Quer-se preservar escolhas de recursos de cada repositório ao aplicar outros aj
 <!-- certification-coach-question:ghas-administration-022:65699e63684b8b24e5658faf6905fec555ca3d6afd0a0f5060cd6c8f6b13c504 -->
 ## Question 217: GitHub Security suites administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-administration-022`
 
 **Content revision:** `65699e63684b8b24e5658faf6905fec555ca3d6afd0a0f5060cd6c8f6b13c504`
+
+**en review revision:** `6c23d67dbdfa0ed8368c16391b3fc0167c6180d53756f41c62f98e7f1a2dc388`
+**es review revision:** `d684d3b089889003f91d1021b2109a632ae2a3c4f0b4130918b0aaf074d95951`
+**pt-BR review revision:** `704d95dd497b69d6c2bce22fb27d5dd003315373199e544d43917808fec24e1f`
 
 ### English
 
@@ -22155,11 +23893,19 @@ Segurança recomenda uma suíte para configuração padrão em toda a organizaç
 <!-- certification-coach-question:ghas-administration-023:e80c55ee6d90bf616ce892c953b71880a6c3e7b3407b7b979f3b49e26ee8af8f -->
 ## Question 218: GitHub Security suites administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-administration-023`
 
 **Content revision:** `e80c55ee6d90bf616ce892c953b71880a6c3e7b3407b7b979f3b49e26ee8af8f`
+
+**en review revision:** `646180dd51fe40ec421c3002ba42d49f521b26b416c5ee37505a060abd5e9ddd`
+**es review revision:** `23a8975a48a73aaaa6af08539d7528ea81f63b2d2edfe720beec994215fc1ec8`
+**pt-BR review revision:** `86f8fef3e2f6a92c158ae724a2f48fb44dc3793f121361fa28208fb908b6925c`
 
 ### English
 
@@ -22257,11 +24003,19 @@ Uma pessoa mantenedora deve remediar alertas sem autoridade organizacional desne
 <!-- certification-coach-question:ghas-administration-024:60283a5b0a22beb1b0ad4edb2866fe6acb2667f7dd6c3e8ac4d46b25aba7f987 -->
 ## Question 219: GitHub Security suites administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-administration-024`
 
 **Content revision:** `60283a5b0a22beb1b0ad4edb2866fe6acb2667f7dd6c3e8ac4d46b25aba7f987`
+
+**en review revision:** `001ed11b635379e520add868580f51f17e195725296fbdb91415324cc44463a8`
+**es review revision:** `46f4a0ba0a0a3d8f19d51fac212fd77901f7370287d96cae05e524d87dd2f87e`
+**pt-BR review revision:** `99217ffb0c7fcc7dd96a44caea877cbdffd831c7a2137c71c845202f179a1372`
 
 ### English
 
@@ -22359,11 +24113,19 @@ O token de uma integração lê alertas, mas não os atualiza. Qual é a respost
 <!-- certification-coach-question:ghas-administration-025:f7d591d2b1f6e4721aec840b33b81954fd9631d96bc1985d5b697faa73fa8ab9 -->
 ## Question 220: GitHub Security suites administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-administration-025`
 
 **Content revision:** `f7d591d2b1f6e4721aec840b33b81954fd9631d96bc1985d5b697faa73fa8ab9`
+
+**en review revision:** `c8e8b5f821e8e8e0fb84df85e1b8923b9791c9d9e37b66fba3062620e2bd1623`
+**es review revision:** `6961bc1b8b053eff6460bc9660e5d01d9b7622e4f81ea84d99fc26faa42e5309`
+**pt-BR review revision:** `b09729b5985cb57b73d5c63cb863c83bff3dee1954508ebbc260c06739b9edf2`
 
 ### English
 
@@ -22461,11 +24223,19 @@ Um relatório de Security overview compara organizações. Qual limitação de e
 <!-- certification-coach-question:ghas-administration-026:3c2dd8b9d9a0a56309e22e6d40c7f0619becf35b8f451af6af6735f2b4ccaf89 -->
 ## Question 221: GitHub Security suites administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-administration-026`
 
 **Content revision:** `3c2dd8b9d9a0a56309e22e6d40c7f0619becf35b8f451af6af6735f2b4ccaf89`
+
+**en review revision:** `301e91cda7365af5ee128bd56411571e503e2e1bc279975a332baf253612ea14`
+**es review revision:** `fa52729e10ea0ad94d88891b3a33993e611fcd0a0d4f4784b63f4ec1a5606c86`
+**pt-BR review revision:** `714d37f9559e33f9277d0e6400901a831c53119a92ce3e1cfc2eddf118be66c4`
 
 ### English
 
@@ -22563,11 +24333,19 @@ Após adquirir uma empresa, inventariam-se ajustes de segurança das novas organ
 <!-- certification-coach-question:ghas-administration-027:345a96b89cf5ea839df4086b421e18a8eda55b907bb64e21559cfd92f7d8f30a -->
 ## Question 222: GitHub Security suites administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-administration-027`
 
 **Content revision:** `345a96b89cf5ea839df4086b421e18a8eda55b907bb64e21559cfd92f7d8f30a`
+
+**en review revision:** `f1f11bdccbe31f8a2ddceb3308803a2603f273a36f90f6025b2785762ba46d6d`
+**es review revision:** `0f31b8f775c939a5e33f8a1785eb2d6e80e765d322610f4b3b6a6fc95e1fd01b`
+**pt-BR review revision:** `1d72f2c2f21445e99af062d61c04e3ab00ddcb1413b6ba974b0fab938c8a4a57`
 
 ### English
 
@@ -22665,11 +24443,19 @@ Uma equipe de gerentes de segurança contém pessoas sem essas funções atuais.
 <!-- certification-coach-question:ghas-administration-028:1f1ce1516e141f0aa469fd2f2aa7f2621ffe9ee7e381c4ded2906c176ceb1c45 -->
 ## Question 223: GitHub Security suites administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-administration-028`
 
 **Content revision:** `1f1ce1516e141f0aa469fd2f2aa7f2621ffe9ee7e381c4ded2906c176ceb1c45`
+
+**en review revision:** `a0e603f373b76425bf641e338cf9ec5ac0fd6eb046d66fdf7b3688ab3e9e6bb2`
+**es review revision:** `a0bbc35d42306c387629926ad5f58f87cb71cf9d3ee5a554258d410931a392fd`
+**pt-BR review revision:** `67848beb7afd66655b0e800dfe795aff5d249fbaf7c1964127dc8aea75dd4309`
 
 ### English
 
@@ -22767,11 +24553,19 @@ Uma configuração organizacional foi criada, mas não aplicada aos repositório
 <!-- certification-coach-question:ghas-administration-029:ea4ba6a8e12a96f0ce8c96c9a412d2b50c01b57ca806fbc51976cc95564982d5 -->
 ## Question 224: GitHub Security suites administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-administration-029`
 
 **Content revision:** `ea4ba6a8e12a96f0ce8c96c9a412d2b50c01b57ca806fbc51976cc95564982d5`
+
+**en review revision:** `aa06fd428e8be89a2b331babd977e40e8889e467ed8e429137f377ff1051e3a6`
+**es review revision:** `ba65a4bb2f3519de8850f3cde92b8020d6911c6559c9615c1aa15002f1a33aab`
+**pt-BR review revision:** `c63534e32b80631abbbabe26231e42d75654739c1a4d6c40b9d710763f37916b`
 
 ### English
 
@@ -22869,11 +24663,19 @@ Uma empresa quer atribuir toda exceção a um decisor autorizado. Qual governan�
 <!-- certification-coach-question:ghas-administration-030:2112ec1267194bde6879db2b00c8758dd45d4390f20df05ea1d151e8c24388de -->
 ## Question 225: GitHub Security suites administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghas-administration-030`
 
 **Content revision:** `2112ec1267194bde6879db2b00c8758dd45d4390f20df05ea1d151e8c24388de`
+
+**en review revision:** `098a033fbafacd1ff17ec5db08e03bdb9aff7c1db1469c405d65fa902a38fd6d`
+**es review revision:** `d42aa04b42b7c68f09d16563921a87a4f5b994dee561987993f0c245578b0933`
+**pt-BR review revision:** `e750aa7178a8fe2df7a84d1b87fe43a85e07a7fb2821454d004a739e219d8b82`
 
 ### English
 

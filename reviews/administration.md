@@ -1,4 +1,4 @@
-<!-- certification-coach-review:administration:1 -->
+<!-- certification-coach-review:administration:2 -->
 # GitHub Administration: human review packet
 
 225 original practice questions. No mock exam or Copilot installation is required to review this file.
@@ -6,26 +6,36 @@
 ## How to review
 
 1. Read the English question, all four choices and explanations, the concept, hints, and linked official documentation.
-2. Expand Spanish and Brazilian Portuguese to check that they preserve the same meaning, option order, and correct answer.
-3. Change only the question's `- [ ] Human-reviewed` checkbox to `- [x] Human-reviewed` when you approve its complete multilingual revision.
+2. Check English content approved only after personally verifying the English content. You do not need to review another language.
+3. A separate reviewer can expand Spanish or Brazilian Portuguese and check only that translation, verifying meaning, option order, explanations, hints, and documentation references against the approved English content.
 4. Leave uncertain or incorrect questions unchecked. Send the edited Markdown file back to the maintainer, with suggested corrections separately.
 
-One approval covers English, Spanish, and Brazilian Portuguese together; changing any variant invalidates that approval.
+English content and each translation have separate approvals. Translation approval requires current English approval, imported previously or checked in this same packet.
+Changing English content or its supporting source invalidates all three approvals. Changing one translation invalidates only that language's approval.
 The importer rejects stale revisions or changed question content. Do not edit prompts, answers, or explanations in this review copy.
 Unchecked boxes do not revoke existing approvals. These are honor-system human attestations, not proof of reviewer identity.
 AI must never check these boxes or attest to human review. These are original unofficial practice items, not real exam questions.
 This packet intentionally includes the full answer key. It contains no learner answers, scores, chats, or progress.
 
-Search for `- [ ] Human-reviewed` to find unreviewed items. Technical names and official documentation links may remain in English.
+Search for `- [ ] English content approved`, `- [ ] Spanish translation approved`, or `- [ ] Brazilian Portuguese translation approved` to find unchecked items.
+Technical names and official documentation links may remain in English. Translation review verifies that references support the same meaning; it does not require translating the linked external documentation.
 
 <!-- certification-coach-question:admin-001:55111cadc05acacc1fc6f97a67b0b4028b7f737e58dab039b5d5f099338f1ea6 -->
 ## Question 1: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-001`
 
 **Content revision:** `55111cadc05acacc1fc6f97a67b0b4028b7f737e58dab039b5d5f099338f1ea6`
+
+**en review revision:** `804a5f34ca09e74a446f06c34e6d54e54c5a0d8b3c598a757d9f39aa376c23fa`
+**es review revision:** `2379ed67d4d6f19e8ef060236367ca988eea6b7f7c6ec349f3a3f2ee83c79aa3`
+**pt-BR review revision:** `8a48f10995632dbe238b8c54b215b004c06772cdce8161c85319b4dd006fb4d4`
 
 ### English
 
@@ -123,11 +133,19 @@ Uma empresa deseja que seu provedor de identidade crie contas GitHub e controle 
 <!-- certification-coach-question:admin-002:cc709e390cf0ae32c5bbca14d287726804e5b48e2470d776ce512706f1a47e70 -->
 ## Question 2: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-002`
 
 **Content revision:** `cc709e390cf0ae32c5bbca14d287726804e5b48e2470d776ce512706f1a47e70`
+
+**en review revision:** `dcdcd0e9702e1e8f113c99bf827ed648ecbe6c4da38786c907b12b7cac4e13de`
+**es review revision:** `bc3962fa53c1117231ad13bca520209420eb7b73f5ca718e554b1273c7413df8`
+**pt-BR review revision:** `4a6ce741a6736fc678c7ede96ca0f93ab89f75a29ba687dcdc51f7101e0a9535`
 
 ### English
 
@@ -225,11 +243,19 @@ Os engenheiros precisam contribuir para projetos públicos de código aberto usa
 <!-- certification-coach-question:admin-003:b1f7cee3c9721cd384a698c99183eb5c538302a1563336cc167b6e62ee0cd8c7 -->
 ## Question 3: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-003`
 
 **Content revision:** `b1f7cee3c9721cd384a698c99183eb5c538302a1563336cc167b6e62ee0cd8c7`
+
+**en review revision:** `26144ba1cd8e2ebaa0c0a356fad8b1f8db0855a3f8fd69008d2d1df1109c7ace`
+**es review revision:** `bce5a268bb5dbea680512f4ebc3520da11a606f0b05ec65bad89c4f46d3f58b7`
+**pt-BR review revision:** `21908f84a75c4e059044f9c2afd36153a03bb47a9439ccc5957077779e5f5778`
 
 ### English
 
@@ -327,11 +353,19 @@ Depois que SAML SSO for habilitado para uma organização que usa contas pessoai
 <!-- certification-coach-question:admin-004:65d5b919d3785af4c22e458c4fc427cea5ee98eb98941bbea735e059c50cccec -->
 ## Question 4: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-004`
 
 **Content revision:** `65d5b919d3785af4c22e458c4fc427cea5ee98eb98941bbea735e059c50cccec`
+
+**en review revision:** `1a806c4bac590c4b608db8149ff6fcc88c95c2642e6fa7122b8e991a1daa5c9e`
+**es review revision:** `97d4fe210aec4a77f6b5bfaac7d285482820bbdab6745af0ed86a9ffeaf81724`
+**pt-BR review revision:** `db5c0ab2752ce7072c1d31e1de43e4b65901d6fce05d28500e321d90f7bb3406`
 
 ### English
 
@@ -429,11 +463,19 @@ Uma organização já usa SAML SSO com contas pessoais. Agora ele precisa de pro
 <!-- certification-coach-question:admin-005:7f59dd01ae9a8e3f533ea81976ec4459863cdd3bfbcd0cf101748afd2352099b -->
 ## Question 5: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-005`
 
 **Content revision:** `7f59dd01ae9a8e3f533ea81976ec4459863cdd3bfbcd0cf101748afd2352099b`
+
+**en review revision:** `16243ddade210fc30caedfb51087507b1a4bf5f2480c4dce8664380c0f71746e`
+**es review revision:** `a7192df366183676fabe9aaa1d952f9a93355c7d2d3bd08bc13c4837b277d9e6`
+**pt-BR review revision:** `c1559aba6e7cd2112c9d56d4ef4c88baed1c702d798d7696cfd7723e34879cf1`
 
 ### English
 
@@ -531,11 +573,19 @@ Um administrador diz que a sincronização de equipe e SCIM são intercambiávei
 <!-- certification-coach-question:admin-006:ad1575aa3ab9c8ae5f4b6c858130fb226325fe2296be767cf63985648d51d713 -->
 ## Question 6: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-006`
 
 **Content revision:** `ad1575aa3ab9c8ae5f4b6c858130fb226325fe2296be767cf63985648d51d713`
+
+**en review revision:** `d36564c3ddf2330ea1bd3def0dcadc7f5bbb5d441b8fbafd666a784c1bc78d9b`
+**es review revision:** `bb745e92ba921a06b8c6f1b4965978df753399c21ef52732bbe5a3509f341f52`
+**pt-BR review revision:** `00c9208de4890fada70ab5409c2f1431c1da928a1761ac5b35c94ea5bd726ca6`
 
 ### English
 
@@ -633,11 +683,19 @@ Uma equipe está sincronizada com um grupo IdP. Um mantenedor da equipe GitHub p
 <!-- certification-coach-question:admin-007:f572b27d68e21a73b0140fd751785814b67801f25868962ae07f28c5b784dbfc -->
 ## Question 7: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-007`
 
 **Content revision:** `f572b27d68e21a73b0140fd751785814b67801f25868962ae07f28c5b784dbfc`
+
+**en review revision:** `efdfa88372204ede0d3c6fd7d4886ddd174aa8b84d25bd58efa0721ab6ae9b2b`
+**es review revision:** `d5c55e8ecc83f4456e46d7a97440df60f589a530720993d9662e91cc25553f9e`
+**pt-BR review revision:** `910891f53927f43378e5d969d2082f4f30cd4ab5118f3871d01ca04caa9d0bd2`
 
 ### English
 
@@ -735,11 +793,19 @@ Antes de impor a autenticação de dois fatores em uma organização que usa con
 <!-- certification-coach-question:admin-008:bdf90eed60da66ed29de4a5ba16dd21a5c8cabcd288474318ddd14852b61e785 -->
 ## Question 8: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-008`
 
 **Content revision:** `bdf90eed60da66ed29de4a5ba16dd21a5c8cabcd288474318ddd14852b61e785`
+
+**en review revision:** `339bd9286c11e7ff97f27beea93d8e506cf85a6ce9cdd2841569c2374f56054b`
+**es review revision:** `a8a346d6632876b2317e5d240d28e09cae659e3a396abf7dbe91c8a839081bf1`
+**pt-BR review revision:** `7ebd0a0245d233dcd73d948a5314fd2a703b728ad838e2d8505eb77f10fa09e5`
 
 ### English
 
@@ -837,11 +903,19 @@ Um usuário é autenticado com êxito por meio de SAML, mas ainda não consegue 
 <!-- certification-coach-question:admin-009:5ce5f835a3792cef620493a882c8aced4b97b24201b9b6159b998b34e736bbb2 -->
 ## Question 9: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-009`
 
 **Content revision:** `5ce5f835a3792cef620493a882c8aced4b97b24201b9b6159b998b34e736bbb2`
+
+**en review revision:** `968871500102490b50f1c13a1f3e177c165657077b821eeef27ce8bfecc6947d`
+**es review revision:** `c1562cfafb761152fafc0e1eb82954df42aef8db09aa328613d98e0fabadacd5`
+**pt-BR review revision:** `9a82909a4a534a596cdacb04fa075df5d3286bb9506881c9b4201f18ff242f99`
 
 ### English
 
@@ -939,11 +1013,19 @@ Um especialista de suporte deve rotular e fechar issues em um repositório priva
 <!-- certification-coach-question:admin-010:f0e3ac2f4bdbdc551c6c3d1a03ead02cd13dd28c709f0016ea4557e79041991e -->
 ## Question 10: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-010`
 
 **Content revision:** `f0e3ac2f4bdbdc551c6c3d1a03ead02cd13dd28c709f0016ea4557e79041991e`
+
+**en review revision:** `14be57da95d98eea1b7462405e037d1ab690063e1a9420159c7ee3295d67dac8`
+**es review revision:** `33a2758bcbfc44f69267235c61acf28c3a11cadf72db7417d9aebf7a841b4f17`
+**pt-BR review revision:** `0dd3c93c90c75cb450618284c6fb8992eaa14fbbc653910de6d424a04e50425c`
 
 ### English
 
@@ -1041,11 +1123,19 @@ Um desenvolvedor deve enviar ramificações de recursos e contribuir com altera�
 <!-- certification-coach-question:admin-011:90a63ff413a016dd430f84109bfa719eb27b74d9c416a23a19601386dc4aad3e -->
 ## Question 11: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-011`
 
 **Content revision:** `90a63ff413a016dd430f84109bfa719eb27b74d9c416a23a19601386dc4aad3e`
+
+**en review revision:** `72e19a326d513b357182f21175051fb240b4c65a586d899b0f1cc0a3c5d98265`
+**es review revision:** `2e43cbb2b0ab0179ccad3367268352d065b36747f5ca023ac10d994e6c850edb`
+**pt-BR review revision:** `ba41371fc67e3849599c74dd15459affb43aa6c04fc456172cc98d561dca429e`
 
 ### English
 
@@ -1143,11 +1233,19 @@ Um coordenador de projeto precisa de um amplo gerenciamento diário de repositó
 <!-- certification-coach-question:admin-012:20a7b3afc18706384fed8c38631a8ae7dc41762ca69a7fc6e19d49743a7c8196 -->
 ## Question 12: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-012`
 
 **Content revision:** `20a7b3afc18706384fed8c38631a8ae7dc41762ca69a7fc6e19d49743a7c8196`
+
+**en review revision:** `71b23211eb47811a777fa8d1127472a0f27c6e3395a23a408d6a09ac59d320a1`
+**es review revision:** `43da7ee4c62c694b599e359019eea35824a17b7379b331462db181fcf1f54092`
+**pt-BR review revision:** `c70392d1e9dbfdb6a8900603f828ffaed64a61f305fdb19604cb81862aa8c723`
 
 ### English
 
@@ -1245,11 +1343,19 @@ Um auditor externo precisa inspecionar o código e discutir as descobertas em um
 <!-- certification-coach-question:admin-013:00786aa26c01db602a9bb2909cd9adf7285fab66e857286fa6d4703f37570d4c -->
 ## Question 13: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-013`
 
 **Content revision:** `00786aa26c01db602a9bb2909cd9adf7285fab66e857286fa6d4703f37570d4c`
+
+**en review revision:** `ad9159f3fc422c9f062fea7ec36af6b5228714cc15b1100e8330b5fe2a406db8`
+**es review revision:** `ca42713e8d31c5150ecb9a60c2ad9383737218181eee5162dca56cf534faa4d1`
+**pt-BR review revision:** `1eff4a2766c8790207ad1c5c89170185cd379202032744d3267e46e9c2e2f355`
 
 ### English
 
@@ -1347,11 +1453,19 @@ Cada membro de uma organização pode atualmente ler todos os seus repositórios
 <!-- certification-coach-question:admin-014:e197aaad767979ef17ed81bcd39534063d4487bc5a67e356d4698c16c0438965 -->
 ## Question 14: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-014`
 
 **Content revision:** `e197aaad767979ef17ed81bcd39534063d4487bc5a67e356d4698c16c0438965`
+
+**en review revision:** `2cbb1b0953fa8453dd9b2c6fb374d6cc69276d008338a0aaeee231634e22549e`
+**es review revision:** `3816c1b599cf1e3540001fbc04653bb3a657111b597aacee9473a39839f4431f`
+**pt-BR review revision:** `ea7e15710e1a1338b0744895ceecb9b6d098927364cfaed8a4861d52697f2cc7`
 
 ### English
 
@@ -1449,11 +1563,19 @@ Um membro possui Read por meio de uma equipe e Write por meio de outra no mesmo 
 <!-- certification-coach-question:admin-015:fbbf710c3c68e284eec90a3509b59c4c3f4f0d2af5a9426e151e304c4f7c4bfa -->
 ## Question 15: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-015`
 
 **Content revision:** `fbbf710c3c68e284eec90a3509b59c4c3f4f0d2af5a9426e151e304c4f7c4bfa`
+
+**en review revision:** `08d603d98b0df019f4001ddca321f17625d13ff3e65e0a4cb18a6b19262811d0`
+**es review revision:** `7f657b0c60672530380e1e9827d2824ceaeb2e345899b796073eb8ba44b31a5b`
+**pt-BR review revision:** `075c85468381f3dacb5a42272dbb3323bf2d4e4312fe05b2a81211d62ff066ae`
 
 ### English
 
@@ -1551,11 +1673,19 @@ Uma equipe pai tem acesso Read a um repositório. Uma equipe filha aninhada prec
 <!-- certification-coach-question:admin-016:c6d24598bb617d352622e93d2b5fdb3aae9d13b976f6f1e778bf49a2744fe75e -->
 ## Question 16: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-016`
 
 **Content revision:** `c6d24598bb617d352622e93d2b5fdb3aae9d13b976f6f1e778bf49a2744fe75e`
+
+**en review revision:** `cafeb70284eb8c969bb52a7715882884cbd06669079d2407ff1ef7864087b9ea`
+**es review revision:** `6d8a8d775b3a69645db381f275ca41e5ba5a9ca3969191ff2eb5f1c981b9eef5`
+**pt-BR review revision:** `81edfacbb2901af92cfb16336e71778c187ef4282202766c964cf5937c1603ae`
 
 ### English
 
@@ -1653,11 +1783,19 @@ Um funcionário de uma agência precisa de acesso a um repositório privado, mas
 <!-- certification-coach-question:admin-017:bbc569666b2ab2a5f20e91f62d81738c8180f92e6d3525e08a6063c511f96976 -->
 ## Question 17: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-017`
 
 **Content revision:** `bbc569666b2ab2a5f20e91f62d81738c8180f92e6d3525e08a6063c511f96976`
+
+**en review revision:** `392870d4f8232d92a21b0c356ba0b93278801baf6271735c0f38dce87f06a98f`
+**es review revision:** `0ad1737a080e7535eaf8b897df97b726182444057e3b58fa67b2ae1040030243`
+**pt-BR review revision:** `f975f5c561816dce0463ce0ffa67374fb2a444e0cbc83b34fe5862ef2bdf5b7a`
 
 ### English
 
@@ -1755,11 +1893,19 @@ Um analista financeiro só precisa de acesso ao faturamento da organização. Qu
 <!-- certification-coach-question:admin-018:f0c21642303a4caee7b97f825fdb71accf023264364903f8650f9b461ad151f0 -->
 ## Question 18: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-018`
 
 **Content revision:** `f0c21642303a4caee7b97f825fdb71accf023264364903f8650f9b461ad151f0`
+
+**en review revision:** `e16fb70f79c3321d5217f7355e58ecfd0c4c509bdd0a907f06a94dfcc89ae536`
+**es review revision:** `aeab01f41ad44a35658a727dbdb3245d30350dbab859dd33fad1e88b33de5e01`
+**pt-BR review revision:** `d72b6810c0e556e83b1c50b6fa5512ae6f34e0f5da455aeff02250d6bcd1da35`
 
 ### English
 
@@ -1857,11 +2003,19 @@ Uma pessoa deve gerenciar os membros e as configurações de uma equipe, mas nã
 <!-- certification-coach-question:admin-019:ade6c97ab1f89636ea39c9003085b26709a1b3e9e9ef351519f392328dcfe6af -->
 ## Question 19: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-019`
 
 **Content revision:** `ade6c97ab1f89636ea39c9003085b26709a1b3e9e9ef351519f392328dcfe6af`
+
+**en review revision:** `e1134f18104b7c81cf9585fc3e09437e7ee0ff91f941774e0e1979ffc24f3cd6`
+**es review revision:** `6e83b10c3b56cd8760c4cd80b75bd5e5364fd28be6aaac724f934fba711dfecc`
+**pt-BR review revision:** `c822b3a0f4a5f5da8fa146b58a24d4079804be962add7a3b1231d2dfb355e0f9`
 
 ### English
 
@@ -1959,11 +2113,19 @@ Durante uma revisão de acesso, um desenvolvedor mantém acesso ao repositório 
 <!-- certification-coach-question:admin-020:9b7676fe0d1e9a03ff019c301f5ca86c125e2e6945a997b30d58b42aeefb6757 -->
 ## Question 20: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-020`
 
 **Content revision:** `9b7676fe0d1e9a03ff019c301f5ca86c125e2e6945a997b30d58b42aeefb6757`
+
+**en review revision:** `aaa108f4958a22732ef298abd94f59508bc6e68439208f209cb0c655a91d5034`
+**es review revision:** `a06c9752c12fc620784ba88639859a9670bf6dfa93edb4845a5ad63e4fb9b1bf`
+**pt-BR review revision:** `0aa89945c8680fb0dd8dfb8c88f1ed5ea62ff6c3c187fec3bf11a037c4a21eaa`
 
 ### English
 
@@ -2061,11 +2223,19 @@ O proprietário de uma empresa está investigando um repositório privado em uma
 <!-- certification-coach-question:admin-021:745ef17d3d5eef32b22ec7f9bca823b9a5dd851f284a171f500146b64bd55660 -->
 ## Question 21: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-021`
 
 **Content revision:** `745ef17d3d5eef32b22ec7f9bca823b9a5dd851f284a171f500146b64bd55660`
+
+**en review revision:** `36967a8becd1869fb7d6851b2a1bdb0531927014af4472ee350865873d0bfe0e`
+**es review revision:** `58817f2b1c6c12cf63926fce22f29d962ce91af81ac25032e09aa00abc6f298b`
+**pt-BR review revision:** `2c3571d6b03650d1cf7aee35095b07e16041fe53a816bc303dc46a503f2bd683`
 
 ### English
 
@@ -2163,11 +2333,19 @@ Uma organização com um plano de suporte a funções de repositório personaliz
 <!-- certification-coach-question:admin-022:2b71afcd57f36c1b80cc9c584a88911a01b44738a3aaa3c9db39fc7504962272 -->
 ## Question 22: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-022`
 
 **Content revision:** `2b71afcd57f36c1b80cc9c584a88911a01b44738a3aaa3c9db39fc7504962272`
+
+**en review revision:** `5b7acb2f76ed5d8baef999763ea205635f5d8441c1e9be321f2437bcbdad68e6`
+**es review revision:** `6a2c4db1cea2d9afc64ed80588e5a7af036d7618ab2de47c8d59ebfbc2d6a3cd`
+**pt-BR review revision:** `944ef0119f113482c440c452cd6c64f549280ac423ee41edb39ebf080d851efb`
 
 ### English
 
@@ -2265,11 +2443,19 @@ Um administrador deseja que a mesma equipe de força de trabalho esteja disponí
 <!-- certification-coach-question:admin-023:23d45be6c1fdabe69ce40fadb68340c7ace9ca081c9c1f46df7d2ad9370b8d1e -->
 ## Question 23: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-023`
 
 **Content revision:** `23d45be6c1fdabe69ce40fadb68340c7ace9ca081c9c1f46df7d2ad9370b8d1e`
+
+**en review revision:** `4c9e3b6d04eb853d1851c673618f120415a4bd2e38ca72e2b7530da80f9d29ba`
+**es review revision:** `049bf0e442584b73fc6d350dc557382493eef47a143d141c71483395fd5ab948`
+**pt-BR review revision:** `be09c755b309e2dbf8dd28f73645174a3beb3d29da84661ed54c8fff35b2180e`
 
 ### English
 
@@ -2367,11 +2553,19 @@ Antes de selecionar um IdP para Enterprise Managed Users, um arquiteto deseja o 
 <!-- certification-coach-question:admin-024:28a660b3e6a204a447ddcbaf800c7ab1bcd4d2151772add614bfbb958cd799b9 -->
 ## Question 24: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-024`
 
 **Content revision:** `28a660b3e6a204a447ddcbaf800c7ab1bcd4d2151772add614bfbb958cd799b9`
+
+**en review revision:** `c61469dded68e6267188e89ddf2c546c9dcba620f09f5795361873f13394e002`
+**es review revision:** `741fff047e141dea771f10a4674ea47826c75ff76702d4a492684c66703cfc6c`
+**pt-BR review revision:** `9a80ad32a6b235cf0f5f1d33e92096d4f11b5dc6e717019016ba49920866cbda`
 
 ### English
 
@@ -2469,11 +2663,19 @@ Um funcionário gerenciado deixa uma empresa Enterprise Managed Users. Qual sist
 <!-- certification-coach-question:admin-025:a13cd481c0e6c658eda2aeb718c0cc6d8b4143ddbb1ee9f9d1b0a6e526b6b727 -->
 ## Question 25: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-025`
 
 **Content revision:** `a13cd481c0e6c658eda2aeb718c0cc6d8b4143ddbb1ee9f9d1b0a6e526b6b727`
+
+**en review revision:** `23881a6262ac985413d75d10c24696cdc23d40e7edff2bff14ead7dd02d15794`
+**es review revision:** `786d549cde6a7a1bf54ee7d03a3d652e8e3fe1b47158ad41d18fc9e972bf4dfd`
+**pt-BR review revision:** `73701b3c1c069b9f90cee8e3fdf7b7e3e9f1634870a495a8ff1458ecbc3d2df2`
 
 ### English
 
@@ -2571,11 +2773,19 @@ Uma organização de conta pessoal requer SAML SSO. Um PAT clássico com escopo 
 <!-- certification-coach-question:admin-026:b7320542899d6b44c07bd71351c8638850113b1ab73a7f8d8fd6b163a8980429 -->
 ## Question 26: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-026`
 
 **Content revision:** `b7320542899d6b44c07bd71351c8638850113b1ab73a7f8d8fd6b163a8980429`
+
+**en review revision:** `65f745697487a9d73514c324f49e117adda1b476a0b0a9761339b8a0420a5dfc`
+**es review revision:** `62d1ea7ea1ad558eb46620f4375633372caf44605698a172e29f995e791ba993`
+**pt-BR review revision:** `38b101dc188f82dd446278ef69d5466091fec642613f2fdd890e536663fda0b0`
 
 ### English
 
@@ -2673,11 +2883,19 @@ A chave SSH de um usuário funciona com repositórios pessoais, mas falha em uma
 <!-- certification-coach-question:admin-027:973b632e4c5cbcb58421e5ea4c93d1239bef42c637dba85c661cdc72fea35d0a -->
 ## Question 27: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-027`
 
 **Content revision:** `973b632e4c5cbcb58421e5ea4c93d1239bef42c637dba85c661cdc72fea35d0a`
+
+**en review revision:** `9639473b15231727f00a1b339fd259acb0d241add51f60ddd819c85b52ed61bf`
+**es review revision:** `0c98680cee876f50c3dd59425354e479f87e124b587d904e0850d000b11ebd6f`
+**pt-BR review revision:** `907324eec634ab5070ed1ec59e7f92b7f53faa9f2a54ef0cb0adadd98a8d65c3`
 
 ### English
 
@@ -2775,11 +2993,19 @@ Uma organização planeja impor SAML SSO. Qual preparação protege melhor a con
 <!-- certification-coach-question:admin-028:568dffb3abbdfd1ea7bb611abf7e7b0b9cfd8be76725955b8ad441235c5ba327 -->
 ## Question 28: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-028`
 
 **Content revision:** `568dffb3abbdfd1ea7bb611abf7e7b0b9cfd8be76725955b8ad441235c5ba327`
+
+**en review revision:** `c2e0af4e86e5d9946a4547e87ba44a66a2b32a79b423c5d532e00cc9a9d4a6aa`
+**es review revision:** `e6b290d6a1f3ab5d8554d85c3f51f887d65a36cc90bf96d6771c2ff0957bde38`
+**pt-BR review revision:** `1dbfb31cd607b2b649543f6e85d4c7b64fc5695151f33b45b5da1127d0ca01a6`
 
 ### English
 
@@ -2877,11 +3103,19 @@ O proprietário de uma organização deseja que apenas administradores seleciona
 <!-- certification-coach-question:admin-029:391d54b5c651ef8608fc2f479facc6fe95fe9b04a74bc20e390f694d4ae5201f -->
 ## Question 29: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-029`
 
 **Content revision:** `391d54b5c651ef8608fc2f479facc6fe95fe9b04a74bc20e390f694d4ae5201f`
+
+**en review revision:** `e0a58e03a5b690a38f78ac2f5ea637d88f6d7cfeeba40e505c6bfb34f85bf03e`
+**es review revision:** `1fc30790c2dca362901d3309550987e2fa3d00542084a62a2a5865fd38ead56c`
+**pt-BR review revision:** `ab06ee6e2380d3738fbbd600d9d97002d029117dcd4866f3c8762b9cfea1808a`
 
 ### English
 
@@ -2979,11 +3213,19 @@ Um contrato de fornecedor termina. O fornecedor é um colaborador externo em doi
 <!-- certification-coach-question:admin-030:d15eeb939d28656ec908daf7426027a1f357a88408d73d50aeeda4cf89f9863b -->
 ## Question 30: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-030`
 
 **Content revision:** `d15eeb939d28656ec908daf7426027a1f357a88408d73d50aeeda4cf89f9863b`
+
+**en review revision:** `48439c6b24b02c5680fe2d49ca0297fd28b7744e6944f906b2253405b5423280`
+**es review revision:** `f200c2f712451f15f9503c398f43cf60a0e68c8ce63e7395e3d910226f70c1a3`
+**pt-BR review revision:** `720d98671e96b59d59e1e5023d1f859233ecacfabfa021d5f0bd3104ede678b7`
 
 ### English
 
@@ -3081,11 +3323,19 @@ Um revisor de acesso encontra um contratado em uma equipe secreta e assume que a
 <!-- certification-coach-question:admin-031:a63d3ee46c84d19e92e8d6606ce61732a1972491ca4f266836565cc06c852020 -->
 ## Question 31: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-031`
 
 **Content revision:** `a63d3ee46c84d19e92e8d6606ce61732a1972491ca4f266836565cc06c852020`
+
+**en review revision:** `47ce5dcea313a40ef58b3d84c5e7732acddaf83fb9284f408a246aaff52da0c1`
+**es review revision:** `ddba0343923f272dd03051cb0af01174333f8c874c50c28666195f22684d949d`
+**pt-BR review revision:** `8468babb5698ef6191eccb4198c0f21ae2c951645031031d8ad8ade89b42a644`
 
 ### English
 
@@ -3183,11 +3433,19 @@ Uma entrada CODEOWNERS válida nomeia a equipe do banco de dados, que tem acesso
 <!-- certification-coach-question:admin-032:523d64e6fe88deb267660e6998b58138bf35b111644231d7a62ba449afd68977 -->
 ## Question 32: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-032`
 
 **Content revision:** `523d64e6fe88deb267660e6998b58138bf35b111644231d7a62ba449afd68977`
+
+**en review revision:** `27654928394c62548c557a2df2603d80e2028fa603e082cdea8b89f1dbe3403c`
+**es review revision:** `fba18943a5b0777f997432980d59bc5a6c981d673e37e69cbea843e2f9648f73`
+**pt-BR review revision:** `7403da63e77d58ca908fed2d37373a63dc8dadf03462a6897e3599d3253dec43`
 
 ### English
 
@@ -3285,11 +3543,19 @@ Uma empresa impõe uma política que impede os membros da organização de alter
 <!-- certification-coach-question:admin-033:c85502fb480d431559ab41b72d21b454cc61e344ab20913fdb1df131339b8c34 -->
 ## Question 33: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-033`
 
 **Content revision:** `c85502fb480d431559ab41b72d21b454cc61e344ab20913fdb1df131339b8c34`
+
+**en review revision:** `5a892fcc48f30f55014f6834b32b0801d1be1bd9c92e852404c5eb0a8504b91e`
+**es review revision:** `4b4b3a2229cd97014ecd2095212cb21468b4cce1ac525e51b1a0f502ec81eafc`
+**pt-BR review revision:** `3904fa0099f18a99c0fd26104c44375c7d477e3a24484d22e464dd71b37c58c6`
 
 ### English
 
@@ -3387,11 +3653,19 @@ Em uma empresa que usa contas pessoais, o proprietário do repositório deseja q
 <!-- certification-coach-question:admin-034:1cd9546524a485b7ecee77a9753054c5266114ea295f02da9905c8f29ea3b208 -->
 ## Question 34: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-034`
 
 **Content revision:** `1cd9546524a485b7ecee77a9753054c5266114ea295f02da9905c8f29ea3b208`
+
+**en review revision:** `eead88db030e3bd6e2e5cb7edc9b365a4cf738cc0c476dc91ab22d4a65fee8f7`
+**es review revision:** `3bcfa5cb8be0022bb37c6188cadd7324e17cb6a46dba4bca2f52667355c1f42b`
+**pt-BR review revision:** `f39526279c5678a8c792a5bbfdb4aea8026a2cef91eaad535dd7e4520db01f62`
 
 ### English
 
@@ -3489,11 +3763,19 @@ Um desenvolvedor cria um fine-grained PAT com permissão de gravação de conte�
 <!-- certification-coach-question:admin-035:9392a7a7fb902f111825c201e8bab90b95b51aa8d62e9d0bf298e31333d00dcf -->
 ## Question 35: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-035`
 
 **Content revision:** `9392a7a7fb902f111825c201e8bab90b95b51aa8d62e9d0bf298e31333d00dcf`
+
+**en review revision:** `9039425aae5f8ce68cd0b96929ea4c9ef3199310a67567d8a3a6ae9329afb640`
+**es review revision:** `cb9a55fa7db50dc34270208eda1b6cdd2041b0b227b29b2e9b4064075ee37162`
+**pt-BR review revision:** `694dbcdd2b6eda2874dd3d7a94e15a875ea53fa2a855da1e26ef485164b6d33f`
 
 ### English
 
@@ -3591,11 +3873,19 @@ Um usuário possui o repositório Write, mas não pode alterar as configuraçõe
 <!-- certification-coach-question:admin-036:c8aa050a755b7a15b82c9ca7c9f100ac095c99079daf8334b007ebb0d655eaec -->
 ## Question 36: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-036`
 
 **Content revision:** `c8aa050a755b7a15b82c9ca7c9f100ac095c99079daf8334b007ebb0d655eaec`
+
+**en review revision:** `aa3cc3a79438f5fc32fa456df8ea82441ebab4a544f7213c9cf62e7458f580b7`
+**es review revision:** `2a57c02c5bcc703c981cab9ec25de3e5cf2e7c3301fc06ff651993e14dbd0166`
+**pt-BR review revision:** `44ae2c99be41f5dc1c9f8d39440bd1595a6e52e3682e0794dd79bffe183c3898`
 
 ### English
 
@@ -3693,11 +3983,19 @@ Um grupo de segurança central precisa de visibilidade dos alertas de segurança
 <!-- certification-coach-question:admin-037:758bc780bd980b4e323318de9f1295ab2a4c1e8ee09de780964b295d8f4ab559 -->
 ## Question 37: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-037`
 
 **Content revision:** `758bc780bd980b4e323318de9f1295ab2a4c1e8ee09de780964b295d8f4ab559`
+
+**en review revision:** `e4e835ab12ac8818bcdd7f53e5a05160184b01c5755e887c819ff907e50c9f86`
+**es review revision:** `da173b07d6bf0b3cf0e7656651b596dbb0a47a2ea514f6c805ffd5f60feb5887`
+**pt-BR review revision:** `e0ed1dd96e70d5b128f65fd002b8a87c8a9381720c27447107e1e44907f7a32f`
 
 ### English
 
@@ -3795,11 +4093,19 @@ O grupo IdP de uma empresa muda após uma reorganização, mas a equipe GitHub c
 <!-- certification-coach-question:admin-038:9c731e57a8bf05265c4c46e7266f8bfdf742a7013324ef7cf518cb1b4af4c7d8 -->
 ## Question 38: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-038`
 
 **Content revision:** `9c731e57a8bf05265c4c46e7266f8bfdf742a7013324ef7cf518cb1b4af4c7d8`
+
+**en review revision:** `f9f55544c7400f8cc9b6875c61cc95b6d9fda7088d1e888a83e0da8e3e81a579`
+**es review revision:** `671a662f31d0653d5aa05071726eb83fa96f8c125d61e33e039f8853cd9db14f`
+**pt-BR review revision:** `59ec5afc7b38f3b7a3ede7ee6e7be513a8e324823447cf2a83ced9b352451a1d`
 
 ### English
 
@@ -3897,11 +4203,19 @@ Uma organização que usa contas pessoais remove a associação de um funcionár
 <!-- certification-coach-question:admin-039:ad2d1fa6c78a4b51bde71aa4a5242f31a91e1bce7a92b10c80b04ea795a70c99 -->
 ## Question 39: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-039`
 
 **Content revision:** `ad2d1fa6c78a4b51bde71aa4a5242f31a91e1bce7a92b10c80b04ea795a70c99`
+
+**en review revision:** `81b3c60303e9860101145ec9b67de63a3c9051eb4478b771ad319d4833f5836c`
+**es review revision:** `28fc428d5f7609b05cbf0955d9e28b576f85cb72c665070bbf0a7936052997d4`
+**pt-BR review revision:** `b3a0eccbc0182b2ad791fae4437a6e2885ea1ad4a38f005d9fad3c97d2a1beca`
 
 ### English
 
@@ -3999,11 +4313,19 @@ Uma nova organização deseja evitar que um único administrador se torne um pon
 <!-- certification-coach-question:admin-040:3cab5cb9192691b4048fe544d68773c3f17bbe97285a7b3dacfceba7b70dce4c -->
 ## Question 40: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-040`
 
 **Content revision:** `3cab5cb9192691b4048fe544d68773c3f17bbe97285a7b3dacfceba7b70dce4c`
+
+**en review revision:** `b03a140706b2d52cbc751fbbd837836355e5f5b29900f2fe778d7b7b882fb9b0`
+**es review revision:** `c7f4bd3415fd59c2a001a60609f61bb1f9375bbc4bf34d688775304ca884ab07`
+**pt-BR review revision:** `312b8ba3704ca8ec32bca791bb42c27bea485b506a57682a04e6d218351b7577`
 
 ### English
 
@@ -4101,11 +4423,19 @@ Um administrador deseja verificar quem pode acessar atualmente um repositório c
 <!-- certification-coach-question:admin-041:157f090113c8f4549efbe11aa455758c98a99eef75bbc91247a2393cfc5e0f1f -->
 ## Question 41: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-041`
 
 **Content revision:** `157f090113c8f4549efbe11aa455758c98a99eef75bbc91247a2393cfc5e0f1f`
+
+**en review revision:** `0da8314d941b39390431103d31dafbfd24b5f6543526243efbcd1f36695a0d90`
+**es review revision:** `9ca33dcea28edb4cdab58b2af0988f16f9b133264a7ff2eee82152e00b86120a`
+**pt-BR review revision:** `a31c5ce88a2339646ee2b799b299de9b0f3443d975e424b8001f6627d4717b80`
 
 ### English
 
@@ -4203,11 +4533,19 @@ A instalação do GitHub App está limitada a um repositório de documentação.
 <!-- certification-coach-question:admin-042:d25044a280e5ba55004c006cfdac86693292663abfa70533009ecf7464b13e81 -->
 ## Question 42: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-042`
 
 **Content revision:** `d25044a280e5ba55004c006cfdac86693292663abfa70533009ecf7464b13e81`
+
+**en review revision:** `4bcd6a0579d0683257fb5b3a491a4d8c4a2c60c6c1f91f20d05d9435498c2352`
+**es review revision:** `c14a9497d656eafebf30baf1371d02fd4eb604ee08c818c9ab22a658c0ba1c93`
+**pt-BR review revision:** `0ec3721f39d05166632b544a32afe956a7d7af3841a02e0d95347c5a7bcfeba4`
 
 ### English
 
@@ -4305,11 +4643,19 @@ Um membro precisa de acesso temporário ao repositório elevado para uma migraç
 <!-- certification-coach-question:admin-043:859c0fd919822c52ecbd6d517663fe7e54530e063297b7d0d1408776cd303f2e -->
 ## Question 43: Manage GitHub identities and access
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-043`
 
 **Content revision:** `859c0fd919822c52ecbd6d517663fe7e54530e063297b7d0d1408776cd303f2e`
+
+**en review revision:** `c4982a57558e1ceb5fe7e93d79832e0695299b3858338bba2e89edb9d56952bf`
+**es review revision:** `7a2c49800f906e101c566f73505103c52b86fa3f526fa9c3b34d7ec6288dbde3`
+**pt-BR review revision:** `6418aa3ec918ba17261366ca4ea4804572bd8343a8636ed9e47f09b6cbf75380`
 
 ### English
 
@@ -4407,11 +4753,19 @@ Um usuário propõe a criação de uma segunda conta GitHub pessoal para trabalh
 <!-- certification-coach-question:admin-044:7f4dcf152221f126be58cd1eba7fc8d0d67088d5ef159780d36f8cf1a1bcc783 -->
 ## Question 44: Administer GitHub Enterprise environment
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-044`
 
 **Content revision:** `7f4dcf152221f126be58cd1eba7fc8d0d67088d5ef159780d36f8cf1a1bcc783`
+
+**en review revision:** `41085fb0f76e1c3c449506663bfdc03091f75a16d84eb35ad98f753e9d2e1947`
+**es review revision:** `cbfd3fa4e35490fff34c3b409a57588ef87371522f4de25b596e3c0b5ff3a607`
+**pt-BR review revision:** `b91339a80017f4ed297994cc288b26cbdec6867b14e352c79cd9f32d1126cd61`
 
 ### English
 
@@ -4509,11 +4863,19 @@ Uma empresa regulamentada deve executar sua implantação GitHub na infraestrutu
 <!-- certification-coach-question:admin-045:019de01800bb5d10e898df8861b30887b589047da3cdd37f8eb8eae844cb7c05 -->
 ## Question 45: Administer GitHub Enterprise environment
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-045`
 
 **Content revision:** `019de01800bb5d10e898df8861b30887b589047da3cdd37f8eb8eae844cb7c05`
+
+**en review revision:** `571e25d9bf91cafb6683e12a54371af36dd211600bb0f5d80397c742ac41f306`
+**es review revision:** `3aea9fb4e3f7ac1571c09884836df64ca663b460127e735d2db575f9267edd38`
+**pt-BR review revision:** `948a3cb6f77a901ba109bdd286d5c44ac1e7f94ee87963ad1e665a518787bba1`
 
 ### English
 
@@ -4611,11 +4973,19 @@ Uma empresa deseja que GitHub opere o serviço, com identidades gerenciadas e um
 <!-- certification-coach-question:admin-046:53fa597744a610640f4e1d53165974d6d9d6376fe9a42b98e0e65aacb9cb6e15 -->
 ## Question 46: Administer GitHub Enterprise environment
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-046`
 
 **Content revision:** `53fa597744a610640f4e1d53165974d6d9d6376fe9a42b98e0e65aacb9cb6e15`
+
+**en review revision:** `7028695bb4cbb5ab0d26d76179fd3425b65c7258060ce7fef7af0a7944c7f016`
+**es review revision:** `e525cf77572ee7af415436d31490a452fb958f6df27e5cddafd1573cce1bc2e1`
+**pt-BR review revision:** `abb188bc983d89232c5338b4529e890460f8bb291b0e5cec29ef8fd5ca0dded1`
 
 ### English
 
@@ -4713,11 +5083,19 @@ Um novo funcionário não pode enviar para um repositório privado, enquanto col
 <!-- certification-coach-question:admin-047:04ed6ddee76436805461fdf73c24a0ea8a431cd61560b7eaf29dcf35ed8eb0c0 -->
 ## Question 47: Administer GitHub Enterprise environment
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-047`
 
 **Content revision:** `04ed6ddee76436805461fdf73c24a0ea8a431cd61560b7eaf29dcf35ed8eb0c0`
+
+**en review revision:** `e9ee7910c1c2e2bf2da7c30b071103332b93c57dd14b319d13837bfcceba7338`
+**es review revision:** `b8dd5ddfd3f83a5447d98ecfdfadc967ec23b0b8c83c33c0dde3b6aa4176f2aa`
+**pt-BR review revision:** `067339ed269bf386f9bc5c52730868c3f6e6dcc73a77cb9bd7c6c65fb43d59a5`
 
 ### English
 
@@ -4815,11 +5193,19 @@ Um incidente GitHub Enterprise Server persiste após verificações locais docum
 <!-- certification-coach-question:admin-048:1a6477bbdefdfbb47fbd6fec2e5230e3e306b8bacb71f3a923ec3148697b2a2e -->
 ## Question 48: Administer GitHub Enterprise environment
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-048`
 
 **Content revision:** `1a6477bbdefdfbb47fbd6fec2e5230e3e306b8bacb71f3a923ec3148697b2a2e`
+
+**en review revision:** `c6a13fd8a1746925ff8d1fda5137b594166dc244a4bd28732d120265d9d1ee2d`
+**es review revision:** `e31e69fbbdfb901ae64c95d419b9d956c27a3e3d92cf23f094c36c68cdce5b80`
+**pt-BR review revision:** `e495ac1d9cecbb7c7b0d62a5f7bb43d629ec1cc000de214dc9b24fc3cf2a26d0`
 
 ### English
 
@@ -4917,11 +5303,19 @@ Um administrador GHES coletou um pacote de suporte. Qual é a prática de manuse
 <!-- certification-coach-question:admin-049:d6b393e240ec09c24d6ab150e3a3a4b3abc65e95421139e772fefc17bed35728 -->
 ## Question 49: Administer GitHub Enterprise environment
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-049`
 
 **Content revision:** `d6b393e240ec09c24d6ab150e3a3a4b3abc65e95421139e772fefc17bed35728`
+
+**en review revision:** `d8b614e706be293123ac9156b9e09cc0eb0ceabd0d3f3f7909a71047ad6159c5`
+**es review revision:** `bb0be6fe1c7fdfa1f2470c9f604634f240f1b9733245b1598f9f2d90283ed294`
+**pt-BR review revision:** `59da41ccdba60eb46b593af1cd8280ee354a90167573a54ced670917f10736da`
 
 ### English
 
@@ -5019,11 +5413,19 @@ O suporte solicita uma visão geral das configurações e do ambiente do GHES se
 <!-- certification-coach-question:admin-050:3e28dec01ce47aa178ce206d4f8009f50bbe6afe8e5b10b94f4de99a79430407 -->
 ## Question 50: Administer GitHub Enterprise environment
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-050`
 
 **Content revision:** `3e28dec01ce47aa178ce206d4f8009f50bbe6afe8e5b10b94f4de99a79430407`
+
+**en review revision:** `e8dd9fc418b3ea82dc4bf25c07e373957262e20a3b4ec0f43a76ce8aeece6198`
+**es review revision:** `bd1a74c9b3b6856b9edb7d0a57cbcae646b211bf2140d24de91e69a28010b4ea`
+**pt-BR review revision:** `c91ef21832d74839088be06565ec32971dda008ceccfc9912298d371ace2bceb`
 
 ### English
 
@@ -5121,11 +5523,19 @@ As equipes mesclam alterações repetidamente sem revisões, apesar de um padrã
 <!-- certification-coach-question:admin-051:e2e1590c350ddff949e8b1d5fe094f761dd14b82b2d7f7f0086a57f997caa220 -->
 ## Question 51: Administer GitHub Enterprise environment
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-051`
 
 **Content revision:** `e2e1590c350ddff949e8b1d5fe094f761dd14b82b2d7f7f0086a57f997caa220`
+
+**en review revision:** `ecdfa8ac3dcb5b7a55e7a443c20db7904ed5fc3e3c8ae8081b1bfa7312b8bfc0`
+**es review revision:** `cad9b7201b9d958be07e16c89e828b37e57d7bbe72f2dc0f21fb34d582874bc9`
+**pt-BR review revision:** `ff2e021fdd174cc327fc707d5655802ff0868bf2c4f6922ebada9a9917003151`
 
 ### English
 
@@ -5223,11 +5633,19 @@ Uma organização deseja que novos repositórios comecem com orientações consi
 <!-- certification-coach-question:admin-052:368d4fd562fa97544e272c24e027e817f65b78d2de7f2ba52d47ba9e4a2fdc41 -->
 ## Question 52: Administer GitHub Enterprise environment
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-052`
 
 **Content revision:** `368d4fd562fa97544e272c24e027e817f65b78d2de7f2ba52d47ba9e4a2fdc41`
+
+**en review revision:** `9a73b9cbb59070ee148928b7f250bdce12a2633ef5728fbd2221647dc4b28dfc`
+**es review revision:** `c55483c711a6ab2dd684170297436c2dac9643fdcf7e28311df9d8b5cb17a44b`
+**pt-BR review revision:** `b4249ea94e1d0cbe3130254cb475ce6028a232b2eaf6aca49bc07c28c577e0c4`
 
 ### English
 
@@ -5325,11 +5743,19 @@ Uma empresa publica versões de produção de tags e deseja evitar atualizaçõe
 <!-- certification-coach-question:admin-053:5ecba07a576cd540d7a4a9c74f61425413ede3685da326b63ce7a0a27d2fa0bc -->
 ## Question 53: Administer GitHub Enterprise environment
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-053`
 
 **Content revision:** `5ecba07a576cd540d7a4a9c74f61425413ede3685da326b63ce7a0a27d2fa0bc`
+
+**en review revision:** `4da652491ac219345c1d756f4d83f84eec0e15af30a627fcffa860fb81a099e0`
+**es review revision:** `d0c7f930f1c3a8078320f318770313cf74bda846b6d00023afac75f849b8a51d`
+**pt-BR review revision:** `b9605c6ba5fb279121e00e9a9c3b033675d421a69e9925b06c724a9b0b73c3b3`
 
 ### English
 
@@ -5427,11 +5853,19 @@ Uma implantação GHES possui uma réplica de alta disponibilidade. Uma parte in
 <!-- certification-coach-question:admin-054:0f4236680807357077df78883a3fe8b67c4f21ca5ba323f9db9680f330492dfb -->
 ## Question 54: Administer GitHub Enterprise environment
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-054`
 
 **Content revision:** `0f4236680807357077df78883a3fe8b67c4f21ca5ba323f9db9680f330492dfb`
+
+**en review revision:** `c0b0e0297bbb3b52805ddef46c3eb6f1c6e5df35c60f8482fe4c1de0cb4450b4`
+**es review revision:** `0a854e3ad8c919380b69a03d205a4abb444def28d195a6bc4bb0a0e70ad37cc6`
+**pt-BR review revision:** `a546c93132d9a2b0face3a4e77a301081a04186d765e22de780bf7c1d161ad41`
 
 ### English
 
@@ -5529,11 +5963,19 @@ Antes de uma expansão de armazenamento GHES, um operador sugere redimensionar u
 <!-- certification-coach-question:admin-055:cd3965603716d20e47c343a00209b958d732ba093c677231849be3e28b996a3b -->
 ## Question 55: Administer GitHub Enterprise environment
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-055`
 
 **Content revision:** `cd3965603716d20e47c343a00209b958d732ba093c677231849be3e28b996a3b`
+
+**en review revision:** `694ff547dfccc6d55dd1ece343c6c0e8eae4b9e5646e5566362540eb4d4040df`
+**es review revision:** `9b688f2b0ad785e0c4a8da806a794984108158abb1d16a6ee0370d788dec8fd4`
+**pt-BR review revision:** `5e42b1de020737c1f7f8d5c25c9f28f5eb4cbe708c60ce0645dce85b760fcada`
 
 ### English
 
@@ -5631,11 +6073,19 @@ Uma proposta de atualização do GHES pressupõe que a versão mais recente semp
 <!-- certification-coach-question:admin-056:e2474634a96cc2ede7966392e2023ea7839255dcb266a781687098cd771931fa -->
 ## Question 56: Administer GitHub Enterprise environment
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-056`
 
 **Content revision:** `e2474634a96cc2ede7966392e2023ea7839255dcb266a781687098cd771931fa`
+
+**en review revision:** `03b9b661325c301c1d64bcd3775b979550510f973068629c9075e2bfb98fb147`
+**es review revision:** `5f5bfcb7a9887ca15e169b1f9a996caa86761abfcf986c9b6688de7b0f5c1d25`
+**pt-BR review revision:** `e9ba835eb3dc5c3c79aace89afec8cc72e7ee1e496dd90c481517731f56e8775`
 
 ### English
 
@@ -5733,11 +6183,19 @@ Um administrador GHES tem uma tarefa de backup recente bem-sucedida, mas nunca e
 <!-- certification-coach-question:admin-057:11d580f8a3b8fa63ebaa3c5683a4cb35ce3eb496fde523dace15aeea0e0b2479 -->
 ## Question 57: Administer GitHub Enterprise environment
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-057`
 
 **Content revision:** `11d580f8a3b8fa63ebaa3c5683a4cb35ce3eb496fde523dace15aeea0e0b2479`
+
+**en review revision:** `b7aa3827561c56e6ed584007acf8a042196d4683f93afaa40b700bf3bf3ca29c`
+**es review revision:** `8881db8d0e5f2308695a4b59440acd0d331985e94ddf4509ce482f3911a3696b`
+**pt-BR review revision:** `fbecdacecebe2998da49af6ea432cf7c3505f43c1c30c17774547ddb7bf7b475`
 
 ### English
 
@@ -5835,11 +6293,19 @@ Uma parte interessada pergunta se o GitHub Enterprise Cloud com usuários gerenc
 <!-- certification-coach-question:admin-058:5aa64286cf520ba515064e717682870f746379fe3f3aefe87a566b447bd22df8 -->
 ## Question 58: Administer GitHub Enterprise environment
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-058`
 
 **Content revision:** `5aa64286cf520ba515064e717682870f746379fe3f3aefe87a566b447bd22df8`
+
+**en review revision:** `cd411a30a3a08a25e0ff6586b923d675fe00f8e5842a2c463959f2a671b44574`
+**es review revision:** `de5e1f1f7d448613f6aed491e54389fc6a8a101c0c1d354d984c6b18734b5d59`
+**pt-BR review revision:** `8aec62ac81286d0e7952245bea5c39b099cc851d28172a2d7945e9e1507b06e5`
 
 ### English
 
@@ -5937,11 +6403,19 @@ Uma equipe de compras totaliza a contagem de membros da organização para estim
 <!-- certification-coach-question:admin-059:8fb25cc63b25c5c23bcfccf69ba93de2fbb6debc67b758a917907a82a8f7eaaf -->
 ## Question 59: Administer GitHub Enterprise environment
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-059`
 
 **Content revision:** `8fb25cc63b25c5c23bcfccf69ba93de2fbb6debc67b758a917907a82a8f7eaaf`
+
+**en review revision:** `3b30ddb5043bbe75ab56c34a201453139a6370f8b5ebe8d74f98edca2eae8099`
+**es review revision:** `a53731077e4fdacdeed326ac95594d47e33d937c0be7cd30484fef36e64fd7b9`
+**pt-BR review revision:** `e70656c9f0a086525b8dab73fe8775578b612e7ad76d099e379c64a86196c3c8`
 
 ### English
 
@@ -6039,11 +6513,19 @@ Uma organização com um plano pago por licença adiciona um colaborador externo
 <!-- certification-coach-question:admin-060:2bc941a14fb97969d313fd4d54719bc59e6c690c972974b06d3a76272d931689 -->
 ## Question 60: Administer GitHub Enterprise environment
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-060`
 
 **Content revision:** `2bc941a14fb97969d313fd4d54719bc59e6c690c972974b06d3a76272d931689`
+
+**en review revision:** `741c2a3f72538499e9435e5bbbf8bc1c7a84e7a299238334a675bfb30a37f4ab`
+**es review revision:** `71e19dc329a973deaf2f62686c2c869ec3fb410053b1ad6b3d06fa692368affb`
+**pt-BR review revision:** `19f0a3abd111fa7a0d8f8d3de72d8d8bc18703f8ff2fca9da3c25d02b2427efc`
 
 ### English
 
@@ -6141,11 +6623,19 @@ Uma equipe financeira pergunta por que sua conta GitHub excede a assinatura bás
 <!-- certification-coach-question:admin-061:3f9c9b18098102b94c5d94344fe054d40b0d7390c6bf337d2dedf744090e1959 -->
 ## Question 61: Administer GitHub Enterprise environment
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-061`
 
 **Content revision:** `3f9c9b18098102b94c5d94344fe054d40b0d7390c6bf337d2dedf744090e1959`
+
+**en review revision:** `e1ca1e97a1abbb885bb544ffb8b4a2bb10e64a53270ad57ec20b0ac9fd5cf8f2`
+**es review revision:** `fa93f51b661a032ead520ad9c53f55aeebfd92dc6d093585eac3ac524011ec6b`
+**pt-BR review revision:** `1290b2a6de24233fd2eb6879a1332355c827d33c6a87a424b2c24efc178c71d5`
 
 ### English
 
@@ -6243,11 +6733,19 @@ Um administrador deseja uma linha de base atual de utilização de licença ante
 <!-- certification-coach-question:admin-062:afb6d5dd844fd396103f714bdd52385f627fc6ac5b94a896198f589211a7b3cb -->
 ## Question 62: Administer GitHub Enterprise environment
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-062`
 
 **Content revision:** `afb6d5dd844fd396103f714bdd52385f627fc6ac5b94a896198f589211a7b3cb`
+
+**en review revision:** `ca0da4f3a7727be021d4da0e45ce1fb72cbda071f88994d22112b72d416ca6d5`
+**es review revision:** `c61af4339cd74053e2c05ef918959bc0521f03351e848d7158b9d55fec68529b`
+**pt-BR review revision:** `9c22938afd71c6706271bd68c347798e215ba7d07cecff10d98919e3d358811b`
 
 ### English
 
@@ -6345,11 +6843,19 @@ Um serviço em nuvem issue afeta muitos repositórios após verificações de ac
 <!-- certification-coach-question:admin-063:9b0b12c43ab8b46aad083941a2c4e35a5edb06d7b543432fcee48b5730146dca -->
 ## Question 63: Administer GitHub Enterprise environment
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-063`
 
 **Content revision:** `9b0b12c43ab8b46aad083941a2c4e35a5edb06d7b543432fcee48b5730146dca`
+
+**en review revision:** `3054e0c7bd5b322691089310c8742ceb59acd73cf78dfe0448915b4f91ad8827`
+**es review revision:** `00c9dbc1d7c9b54316b414b3c9e71437f9f5e3f3914cdf795374ec0413842b15`
+**pt-BR review revision:** `a958a6c5dc55eebf43518c510262bf91ea3f58f1cf33fc485f8a29a798acd41d`
 
 ### English
 
@@ -6447,11 +6953,19 @@ Antes de tratar um relatório de interrupção generalizada do GitHub.com como u
 <!-- certification-coach-question:admin-064:7133234eae1980641648db6e021b9f9be535226b0663319fa0c59c19500b9c5b -->
 ## Question 64: Administer GitHub Enterprise environment
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-064`
 
 **Content revision:** `7133234eae1980641648db6e021b9f9be535226b0663319fa0c59c19500b9c5b`
+
+**en review revision:** `d699ea64eac136e218d754a5743914ab80909e60fdaf2d14301966a235c444ab`
+**es review revision:** `37a41db42aeca0b912bb5aae982ca3b0da46f391584e9d7c677552f68c87e14a`
+**pt-BR review revision:** `5fce97d8c07f0a92fc4428cb4b257de404c9b10d94f5a7213bc245ce50a89266`
 
 ### English
 
@@ -6549,11 +7063,19 @@ Uma empresa planeja adotar a residência de dados na nuvem e assume que todos os
 <!-- certification-coach-question:admin-065:b464b6a669a882698acaa074d3ea62e23866302f55d19ff0c65e308e8ba878d6 -->
 ## Question 65: Administer GitHub Enterprise environment
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-065`
 
 **Content revision:** `b464b6a669a882698acaa074d3ea62e23866302f55d19ff0c65e308e8ba878d6`
+
+**en review revision:** `9c6509e5f089b223c0a4d8e00ba0013b3d3c3594febbe64fcbb80a3129b33b14`
+**es review revision:** `015396ef575f30545b840f57fdb3a9430264220f81acead3cb39ff08a8b361df`
+**pt-BR review revision:** `070caac35ca553f1c5da68dbcdb5a79a5e5512af7138676f63507ad3775f600e`
 
 ### English
 
@@ -6651,11 +7173,19 @@ Um administrador GHES deseja que uma réplica de failover atenda ativamente ao t
 <!-- certification-coach-question:admin-066:067bda2e6e9a64d6abdc6757f71ed6ad3b54fa144916411ed9f4124120083fe7 -->
 ## Question 66: Administer GitHub Enterprise environment
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-066`
 
 **Content revision:** `067bda2e6e9a64d6abdc6757f71ed6ad3b54fa144916411ed9f4124120083fe7`
+
+**en review revision:** `e8db52a41dca8960aa1cfab4a18cb980077ec29522fb0a1722f2fd62d25c130a`
+**es review revision:** `d0810551b52d515252e33b4bccb7c725a067e91e962e70eb1998d97abac0c876`
+**pt-BR review revision:** `207545cf5240cfc937e4517d4a41055e0ec469c5a8c2f5fc1d88f8d001f3ee81`
 
 ### English
 
@@ -6753,11 +7283,19 @@ Um incidente GHES aconteceu há seis dias e o suporte precisa de registros que c
 <!-- certification-coach-question:admin-067:822e3e980f8e9577be419eb26bfd9eef45aa9338b7f62a7cbfbb34483d3b6a4b -->
 ## Question 67: Administer GitHub Enterprise environment
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-067`
 
 **Content revision:** `822e3e980f8e9577be419eb26bfd9eef45aa9338b7f62a7cbfbb34483d3b6a4b`
+
+**en review revision:** `0271942b40c1b732845a4152c6ac413fbdb6ff4d5f322a009a1911f15bdeebce`
+**es review revision:** `c612c5709c3a5dd48c5bfc0c52c317fdb269f5e83a0a8fce3936bc66b60356dc`
+**pt-BR review revision:** `4f1d71b87f85512a25e6d49d78fd0ec4742c91ac565c158ad2ed678cbac8136f`
 
 ### English
 
@@ -6855,11 +7393,19 @@ Uma empresa deseja um comportamento CI consistente em muitos repositórios, ao m
 <!-- certification-coach-question:admin-068:028dccb2ed1c62c005be5bcd0cb62163d0902f5401b6de48af02f493b08ae0b6 -->
 ## Question 68: Administer GitHub Enterprise environment
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-068`
 
 **Content revision:** `028dccb2ed1c62c005be5bcd0cb62163d0902f5401b6de48af02f493b08ae0b6`
+
+**en review revision:** `bc2dfb2b51cb73dafde3e0cd42d341762f19b82b5f29a5af3417e227e77ce954`
+**es review revision:** `25b462a416421396e99f1e1f026330a0cfcb90e6bb294f3ac7327b45800ff74f`
+**pt-BR review revision:** `d75023a0ec52583f62a77f1d6fa6ed96bc1c090fe6f578b2442bcfc55f918c67`
 
 ### English
 
@@ -6957,11 +7503,19 @@ Um administrador está explicando as opções de implantação do GitHub a um co
 <!-- certification-coach-question:admin-069:a9694713525bdcbec5537c761308a9d00a8334694c771923f0384a6eda6dad63 -->
 ## Question 69: Administer GitHub Enterprise environment
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-069`
 
 **Content revision:** `a9694713525bdcbec5537c761308a9d00a8334694c771923f0384a6eda6dad63`
+
+**en review revision:** `f6236ac32471b3115580b26fd7f3e24406aa073e5792e665a7c17ee7f620a6fb`
+**es review revision:** `91971b249fbd9811717b0ca4bbb0591fa1303f26b7fe1b08f210cb9c21f6c075`
+**pt-BR review revision:** `2932deb841aa053e47b5025389007e2478b5547564885e425fada3267b9b382e`
 
 ### English
 
@@ -7059,11 +7613,19 @@ Um operador GHES descobre que cada repositório está lento e o volume de dados 
 <!-- certification-coach-question:admin-070:670578527f16e041dacd744470f616655fd67e9adb108278bcafbc1671bb7448 -->
 ## Question 70: Administer GitHub Enterprise environment
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-070`
 
 **Content revision:** `670578527f16e041dacd744470f616655fd67e9adb108278bcafbc1671bb7448`
+
+**en review revision:** `7bcd9ecebc898267e271909e7034daa6458e7871359861e16dd6449ff6de8a74`
+**es review revision:** `61ac4e7a782082b5caae550081ba6d0aff9843bdc530f27a43cf43104d6d3acf`
+**pt-BR review revision:** `3fdb428175d0a8dc83308128a0e3445853700703be02172ca9a38540cd4e913b`
 
 ### English
 
@@ -7161,11 +7723,19 @@ Um departamento deseja que cada repositório identifique a equipe responsável p
 <!-- certification-coach-question:admin-071:abf24b63653429acad2b7f5114d620720b361430e7cc78770a01b5290b496fa4 -->
 ## Question 71: Administer GitHub Enterprise environment
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-071`
 
 **Content revision:** `abf24b63653429acad2b7f5114d620720b361430e7cc78770a01b5290b496fa4`
+
+**en review revision:** `af684539c5db209019807351c50a171a3ec00da103c28bd4632d462070789816`
+**es review revision:** `2b650e326dad253f72ca3ec72c3bd3737e3a86dcd8c6cf874d3871dda66fd4f4`
+**pt-BR review revision:** `6825b13b77165fd3e106b35f792db7de5ed926d8687732a3a55a4e6b3fd46973`
 
 ### English
 
@@ -7263,11 +7833,19 @@ Uma empresa publica uma norma de ramificação, mas não chegou a um acordo sobr
 <!-- certification-coach-question:admin-072:bda4499808d75fd55721d324da034365030e96d6d32cc282d7e9838941809935 -->
 ## Question 72: Administer GitHub Enterprise environment
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-072`
 
 **Content revision:** `bda4499808d75fd55721d324da034365030e96d6d32cc282d7e9838941809935`
+
+**en review revision:** `14f6465b2d628a0ad4e8c184ea0ac7a12106e2f4b39d46a63cf71a43c5a180eb`
+**es review revision:** `a71704806c78c23550b49791f93f6e615df370f25c90b374e29300da5531f134`
+**pt-BR review revision:** `af08c2cf9a919690ed5ce8c3d4b8cc8c072bd889584b19b1bd26c4f3f6fda102`
 
 ### English
 
@@ -7365,11 +7943,19 @@ Uma parte interessada deseja que o Suporte GitHub decida quais funcionários dev
 <!-- certification-coach-question:admin-073:6b41d6a651e10abb9630fa9ea7a98ce994f4b6295ebe7da9c1a9e129eb68ea6b -->
 ## Question 73: Administer GitHub Enterprise environment
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-073`
 
 **Content revision:** `6b41d6a651e10abb9630fa9ea7a98ce994f4b6295ebe7da9c1a9e129eb68ea6b`
+
+**en review revision:** `cd83f24b2fb38838b2cf851f8eb7db2e84ca22366b7a0b647179e85db527d8e4`
+**es review revision:** `0ff0984668455cf2dfcc7ab20a1d73106fedc1777a6f45e1c432531526e64641`
+**pt-BR review revision:** `ee2c9498e6ae3eb5eda3ef649c6b9988b1b951ec83c86a7ae160b40a62579ea1`
 
 ### English
 
@@ -7467,11 +8053,19 @@ Uma empresa possui assinaturas GitHub e deseja determinar se um complemento espe
 <!-- certification-coach-question:admin-074:2dffbdded78e86e853aa033636fe00e5f09383ba60eb10037991c5f2ab8107df -->
 ## Question 74: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-074`
 
 **Content revision:** `2dffbdded78e86e853aa033636fe00e5f09383ba60eb10037991c5f2ab8107df`
+
+**en review revision:** `5e4068f858e1908ad628d5235594f2a44595ccd226a6928749aeceafe4ca24d2`
+**es review revision:** `758e518cd47e229940c00dd79a334ad084bc03c2a588ee5eec360c8320fc7f74`
+**pt-BR review revision:** `b3aa4e5bd30b946614df350cbc5b746f6a56ae1d7148cb88a7526f645f642329`
 
 ### English
 
@@ -7569,11 +8163,19 @@ Uma ramificação do repositório corresponde a dois rulesets ativos: um requer 
 <!-- certification-coach-question:admin-075:fa12fceb30e4d59c2182a47d3f9e20983dd012b0ca26acfb50db9c846d806665 -->
 ## Question 75: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-075`
 
 **Content revision:** `fa12fceb30e4d59c2182a47d3f9e20983dd012b0ca26acfb50db9c846d806665`
+
+**en review revision:** `c4e096dcfc2278f0b03a8484f173e942462fead99d01fc8218c8fe71f8f9ff62`
+**es review revision:** `78bfefe2ba7650e1afb9105dc7f8a9f37e9e3ee5544cc50e023fd0e6987865ab`
+**pt-BR review revision:** `d27d7f9c1da635c9c1fdceffd915a3923087f6932b7239ad21f3ae15e8e510e1`
 
 ### English
 
@@ -7671,11 +8273,19 @@ Em um plano que apoia a avaliação ruleset, uma organização deseja observar o
 <!-- certification-coach-question:admin-076:db17faeeb00115d9672e3e8daf6814041b04d40c365d8189208768b87768f816 -->
 ## Question 76: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-076`
 
 **Content revision:** `db17faeeb00115d9672e3e8daf6814041b04d40c365d8189208768b87768f816`
+
+**en review revision:** `3120f61d88e99ed2bada681e98bd48f83d99ec3f943723665c171077c2e062c3`
+**es review revision:** `3aa6cf8bb3882f73b8fe10c4081ba1f7392940d8fecff42d84a424267405cf15`
+**pt-BR review revision:** `0821e1ab856c1dc4b7d443ece935cead55a020cae82389cfa716ef9a51e5e608`
 
 ### English
 
@@ -7773,11 +8383,19 @@ Um aplicativo de automação de releases precisa de uma exceção aprovada com e
 <!-- certification-coach-question:admin-077:63484e2d80a4494c24aaa17b1822820ce7501ce0d7f7a09f2eb187ade62f7ec7 -->
 ## Question 77: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-077`
 
 **Content revision:** `63484e2d80a4494c24aaa17b1822820ce7501ce0d7f7a09f2eb187ade62f7ec7`
+
+**en review revision:** `81e5247b4ec3b298fdf329cadeab5590c0e43bc50ed4d8b7d1146143c7407fe4`
+**es review revision:** `67595392b7126ad01e6a4d69f80f7849bc4ca3b3de9db0c35a1c3f42d1cb3413`
+**pt-BR review revision:** `641aa9b2169e495fa53a8efbacfa2c73a9c7216ddc771775c1439d783d1f53e7`
 
 ### English
 
@@ -7875,11 +8493,19 @@ Uma organização quer impedir que colaboradores comuns reescrevam o histórico 
 <!-- certification-coach-question:admin-078:f8eb6903eb58e71df7227365c1b0f8a4ab069cd7c3afef8902db46a3d034b21f -->
 ## Question 78: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-078`
 
 **Content revision:** `f8eb6903eb58e71df7227365c1b0f8a4ab069cd7c3afef8902db46a3d034b21f`
+
+**en review revision:** `e9c85e19d902ef2b49029b0f3e64ce73bc22cbb835f9d0acec3035f890345ccf`
+**es review revision:** `0f3c1b05c8b1a1107cce27e7eb0b694dc9f5c5b86703601400e7fb56bde8fc37`
+**pt-BR review revision:** `cccfe470c605893c7372138e25a323dc1ef9747d63df5655457991dc09f5ef95`
 
 ### English
 
@@ -7977,11 +8603,19 @@ Um pull request recebe aprovação e seu autor envia um novo código substancial
 <!-- certification-coach-question:admin-079:574f07d9e14734ed77d42d1a76dd52a50bbb6158689ed08ba11a736df7d8d626 -->
 ## Question 79: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-079`
 
 **Content revision:** `574f07d9e14734ed77d42d1a76dd52a50bbb6158689ed08ba11a736df7d8d626`
+
+**en review revision:** `114890528c91042683af99e5788221f4a480333f1d4fcc03008a5f34ddef0c3a`
+**es review revision:** `dd0c0990c92bf7efcf0ca215d3f219d4c6ce5df1b371117431e0ce74db875dab`
+**pt-BR review revision:** `275fab9c27e0d24a9dba99167730f48e374ba95dd857ede6beab91539bd79712`
 
 ### English
 
@@ -8079,11 +8713,19 @@ Uma verificação de status necessária deve ser relatada pelo CI GitHub App apr
 <!-- certification-coach-question:admin-080:6d6221ffb0afd14e59a68c405543cc250ee53ac33574c49388f1d9ff16070ef0 -->
 ## Question 80: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-080`
 
 **Content revision:** `6d6221ffb0afd14e59a68c405543cc250ee53ac33574c49388f1d9ff16070ef0`
+
+**en review revision:** `113e8dc3585f26b6e1b9f30bae2e7b8aabaa71bc32f3852991900db74e847349`
+**es review revision:** `c9be3fec40cd4c8e703dabab5b26065ca6f2d2b1ba6a83e7571d309768e15fed`
+**pt-BR review revision:** `942e48a0e0301fa8bcb3d564b118ff37b4a46b7b732ca2a8a76dfb9d984321c9`
 
 ### English
 
@@ -8181,11 +8823,19 @@ Uma equipe de conformidade quer que os commits de uma ramificação protegida te
 <!-- certification-coach-question:admin-081:2ccc06da989b45ce589bf53a2f7c53148fe7c3c862a0bd2d84abbf335d529d49 -->
 ## Question 81: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-081`
 
 **Content revision:** `2ccc06da989b45ce589bf53a2f7c53148fe7c3c862a0bd2d84abbf335d529d49`
+
+**en review revision:** `b3d71c0e00e20ecfed51506c045649a8a2018a57e4b53526696f2ac41238877c`
+**es review revision:** `c0a23d1ef70fec2c744cba69ab56ff8d5d6f42c97dc8df7337711764fc62c1ad`
+**pt-BR review revision:** `a6814c774e92341a9df1f6fd7d7b018084ff9ce7ff72483a7a1e84d671872259`
 
 ### English
 
@@ -8283,11 +8933,19 @@ Em um plano que oferece suporte ao push rulesets, uma organização deseja bloqu
 <!-- certification-coach-question:admin-082:a4f82b6b6d59b36090cea3ec133b37936d20eeb103099ff4087346dc1de1b61e -->
 ## Question 82: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-082`
 
 **Content revision:** `a4f82b6b6d59b36090cea3ec133b37936d20eeb103099ff4087346dc1de1b61e`
+
+**en review revision:** `b7afcd9b29ac2f32322a29fcd87ba4fcd153f5bdee5314981c4caa7ef8ab0726`
+**es review revision:** `92ccb57269fa69572dbe9d32dd751d7f117f1647c3d265800d1074c029d242b9`
+**pt-BR review revision:** `1567611b025a65770bad1411fcfdd825e7582f799ffed166472db1d163484ca2`
 
 ### English
 
@@ -8385,11 +9043,19 @@ Uma empresa deseja controlar se seus repositórios privados podem ser bifurcados
 <!-- certification-coach-question:admin-083:5b66529abe826242d48d4d180b6a4ecee4876cf5c9ef11ee38614c771697d25d -->
 ## Question 83: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-083`
 
 **Content revision:** `5b66529abe826242d48d4d180b6a4ecee4876cf5c9ef11ee38614c771697d25d`
+
+**en review revision:** `698a9e3871e7f7b11560df45832f99a1931dc5cc107fb80748b0838437e8785f`
+**es review revision:** `c3a3c017e57df34cebd376e632272eab95b2b14e362adca5784cd62e0e742c59`
+**pt-BR review revision:** `1bea8592c4e4efc488585bac0300cef05c926f3543e8b74a85678e52b7cb6111`
 
 ### English
 
@@ -8487,11 +9153,19 @@ Um usuário se conecta a partir de um endereço IP em uma lista de permissões c
 <!-- certification-coach-question:admin-084:a968a2c36056eb10e5ee3200aec858419972f1531e9f3ae05786a90ce3680f22 -->
 ## Question 84: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-084`
 
 **Content revision:** `a968a2c36056eb10e5ee3200aec858419972f1531e9f3ae05786a90ce3680f22`
+
+**en review revision:** `550c0b658ff67cf7b4686d5c95f6968a76262904a1d73b945c2e4a0b34149553`
+**es review revision:** `f1a9b5aa32bc516661cd98d0f3c9b33e1f566187d5016dd4f14d27dbdbbece6f`
+**pt-BR review revision:** `7978415c84ca1b1818e2bb74eeedacdb4b1440a2ad9a72bdbbdb7200e3223ec4`
 
 ### English
 
@@ -8589,11 +9263,19 @@ Um administrador de segurança precisa de um pacote repetível de configuraçõe
 <!-- certification-coach-question:admin-085:dd6189bcaca5bde52323d7f1a402bd06f9bc92e34099a8dc07685e1034d57a4d -->
 ## Question 85: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-085`
 
 **Content revision:** `dd6189bcaca5bde52323d7f1a402bd06f9bc92e34099a8dc07685e1034d57a4d`
+
+**en review revision:** `998cf32b26c6b061c9cc2af31c16c9fb60eeedd53d42fdc500b57d03b67cf8f2`
+**es review revision:** `9f030947236f30f88587970e4d8fe09e1c65b8decdef7f176111f30d279e8c44`
+**pt-BR review revision:** `4419e0a9874090474b3d28dbceba91cf58426e0f1c0914a571d9785c933d8b37`
 
 ### English
 
@@ -8691,11 +9373,19 @@ Uma organização anexou uma configuração de segurança aos repositórios, mas
 <!-- certification-coach-question:admin-086:a751bfad9d1a84ead6b5bde791c8df630eced6372617de319a6a4def280eec78 -->
 ## Question 86: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-086`
 
 **Content revision:** `a751bfad9d1a84ead6b5bde791c8df630eced6372617de319a6a4def280eec78`
+
+**en review revision:** `42b2cf1efc24ed1f234325c5f1bb3a54d99285e5391925487f1d6fdbe2840a2d`
+**es review revision:** `180a196c2a4fe87d7d885b3aeafc0dfacbad02f0e6d87392ca7de2e9f9fce215`
+**pt-BR review revision:** `2990798c3ad971945df0b1a33b3f2bda86ed265fb396daa3dcbcd5137ce381c2`
 
 ### English
 
@@ -8793,11 +9483,19 @@ Um gerente de segurança deseja encontrar repositórios com proteções ausentes
 <!-- certification-coach-question:admin-087:cd77e45fbaefd31aa791a89a0a8aeb32f9813516346727071d28de9e4234e43e -->
 ## Question 87: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-087`
 
 **Content revision:** `cd77e45fbaefd31aa791a89a0a8aeb32f9813516346727071d28de9e4234e43e`
+
+**en review revision:** `781e52b6ac27f0273de1ece3231b85fa11851ce66fbd4d3fe0a1064f69f859a5`
+**es review revision:** `21e6b2717914558d0e9a2bb08e2eee4ffa549717b457ecfe1b827ef1235e34b3`
+**pt-BR review revision:** `3a667b062acadc36d49d8a0dd225e61f1766a5a76ae9314449390e35b66a23f1`
 
 ### English
 
@@ -8895,11 +9593,19 @@ Um auditor GitHub Enterprise Cloud vê apenas três meses de eventos não-Git na
 <!-- certification-coach-question:admin-088:8bc54e1811436e8ebab3a8b0814af374ebe85ed04ba6d4dd912a2c445d77058f -->
 ## Question 88: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-088`
 
 **Content revision:** `8bc54e1811436e8ebab3a8b0814af374ebe85ed04ba6d4dd912a2c445d77058f`
+
+**en review revision:** `236c424acea64bc132b94a42695d2238c790fe662b5f80e7a0b5e22b6fd08a71`
+**es review revision:** `328f7a74e615fcbad84e1fed26084669fbef4608af57afbd878afac00fe45fa7`
+**pt-BR review revision:** `41a0d91a2c58343b05b52a2a08eabc9c7a4094795f451e10dbcff77cddc4483f`
 
 ### English
 
@@ -8997,11 +9703,19 @@ Uma política de conformidade exige que as evidências de auditoria corporativa 
 <!-- certification-coach-question:admin-089:ecb00d50312ba947b28972302d7ebf4fa20b98055dadaa4391658916f6fa8f3e -->
 ## Question 89: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-089`
 
 **Content revision:** `ecb00d50312ba947b28972302d7ebf4fa20b98055dadaa4391658916f6fa8f3e`
+
+**en review revision:** `49f38e8fa699cca5be4cc62399582f5e70cb0ee1f92019d54a4feb75db770c46`
+**es review revision:** `a52912a9aaaca327b69660d93d6e2790f1fd1187e5d76fb6bbe43cc8b83dde57`
+**pt-BR review revision:** `9bfc5e0e65ebeefbb351ad6a61bc5d3a9a4c93bc048e3ce395f940215a3f4fad`
 
 ### English
 
@@ -9099,11 +9813,19 @@ Uma investigação deve conectar atividades suspeitas do API a um token de acess
 <!-- certification-coach-question:admin-090:108fd57a13a55067d5f7016c9dbaff9b4f2fc417fbf5fb477fcf08c1994a961a -->
 ## Question 90: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-090`
 
 **Content revision:** `108fd57a13a55067d5f7016c9dbaff9b4f2fc417fbf5fb477fcf08c1994a961a`
+
+**en review revision:** `b6dd301ddc11c559f5ab4904bda1357dc4d81afe970c8af81e2aa653b7639003`
+**es review revision:** `d7c7f62ddfc5692a5572b7a1eec6ccfb89d7fad1dbb049cbb6370d126be36273`
+**pt-BR review revision:** `0ecac02d2b4bafd0413e8754dbd0220a5c06430bd470db42f05c3c8943a25605`
 
 ### English
 
@@ -9201,11 +9923,19 @@ A verificação de segredos detecta uma credencial de produção ativa no histó
 <!-- certification-coach-question:admin-091:64250f78536e86a1b6bf15a511bb292e0894491cd1664c9895d3f540a5064b1f -->
 ## Question 91: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-091`
 
 **Content revision:** `64250f78536e86a1b6bf15a511bb292e0894491cd1664c9895d3f540a5064b1f`
+
+**en review revision:** `9ed6e51cff1cb5f21e846af05e02b6e024d27b9399ff1507e5069de79fa6ccca`
+**es review revision:** `6920fe452b59f7adf6748139621d11fa0fc04a268c6519865c57513bf4dd8872`
+**pt-BR review revision:** `b5a18c9d038dd87c84b3274a0c6fba833fcff4d69e330bb127ec0ca8104605ea`
 
 ### English
 
@@ -9303,11 +10033,19 @@ Uma equipe deseja que os segredos codificados com suporte sejam bloqueados antes
 <!-- certification-coach-question:admin-092:9799a0728276830b9c38517a67a37a38441521538af6766144e4c2820200abae -->
 ## Question 92: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-092`
 
 **Content revision:** `9799a0728276830b9c38517a67a37a38441521538af6766144e4c2820200abae`
+
+**en review revision:** `cb8251791ed7fa75ccc2e89352eb7b85a748e0b23a96c037b60707ff6f052b13`
+**es review revision:** `7e439471d90327fc9093a0092db06f955cfda5160f1b1a23c1b5f466d2f177a9`
+**pt-BR review revision:** `8d50d5822c2e37171633ab682ea53739072b16755d5dc5df041954e4453944ff`
 
 ### English
 
@@ -9405,11 +10143,19 @@ Um repositório usa bypass delegado para proteção contra push. Um desenvolvedo
 <!-- certification-coach-question:admin-093:eac41f04d1d845a133f3c1b7378903a9c2322b472303bcdeeb1c76272d37385d -->
 ## Question 93: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-093`
 
 **Content revision:** `eac41f04d1d845a133f3c1b7378903a9c2322b472303bcdeeb1c76272d37385d`
+
+**en review revision:** `3b4dea679f46d045926c478048dbc11362991cc861384c3871708c4fa5765940`
+**es review revision:** `d0f00968497a78d29d740ae3252e4ad2e5556acce9a0aa8d1794f497fa67609f`
+**pt-BR review revision:** `86db91356455777e6c597f63afda8d7287ef7b4bda9a56f1f20d03293a802231`
 
 ### English
 
@@ -9507,11 +10253,19 @@ Uma organização emite credenciais em um formato interno que não é coberto po
 <!-- certification-coach-question:admin-094:18bc15bd9f4b5017d9fff01dd90780d82cfa7255dc87e717e0ec2dcb42d4c379 -->
 ## Question 94: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-094`
 
 **Content revision:** `18bc15bd9f4b5017d9fff01dd90780d82cfa7255dc87e717e0ec2dcb42d4c379`
+
+**en review revision:** `c5ee5b0ac572ebba67f304562957acae1f40ce7d9b20e3b50f84f28308f028bc`
+**es review revision:** `685645b1da513b697ecad637746c385000b79b8d9bdcb71f80dbc751cb931a0f`
+**pt-BR review revision:** `c9dd9d422fda4436c7725c107a7e1656b2acd4c895faea1106718da03a284961`
 
 ### English
 
@@ -9609,11 +10363,19 @@ Um administrador não vê alertas de verificação de segredos e conclui que o r
 <!-- certification-coach-question:admin-095:21ed5c49bb42861940d153280854fce604d4a33f24ffaedde27c42fbbac511de -->
 ## Question 95: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-095`
 
 **Content revision:** `21ed5c49bb42861940d153280854fce604d4a33f24ffaedde27c42fbbac511de`
+
+**en review revision:** `d1f6bb3989ef16c13cc56666674e99223d8ca37ed0c3a92fff2d03e4ca4c6a59`
+**es review revision:** `dbc431982842a9664804d71456bb0c45a811778897d31de79724a4165e6bae37`
+**pt-BR review revision:** `dc00dafb9dba8744320c43f3b5e2b4d3f735e9f039270ef65722c2a019152cbe`
 
 ### English
 
@@ -9711,11 +10473,19 @@ Depois de rotacionar um token vazado, um mantenedor quer encerrar o alerta de ve
 <!-- certification-coach-question:admin-096:48c0a6d52a9d6d7107cde7447457dc66092c81a9329700317d045f914f7981cf -->
 ## Question 96: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-096`
 
 **Content revision:** `48c0a6d52a9d6d7107cde7447457dc66092c81a9329700317d045f914f7981cf`
+
+**en review revision:** `9d3d690cdceff5ae60db603de2c6e0ba5a0c98a35a63da555a2e70c66b2f96f6`
+**es review revision:** `a00afad47cac0f123662d7040f146f5b8fc6b66f53691e4fdab2dac11e53a728`
+**pt-BR review revision:** `168915c9e45a398dbf41c14af393abc1ea1a5dedad612428735a8d366f981bda`
 
 ### English
 
@@ -9813,11 +10583,19 @@ Um repositório elegível precisa de análise com CodeQL com configuração inic
 <!-- certification-coach-question:admin-097:9fe37105a3879b14350312c9fc290ff908c0f09ae936214fdb085477885b1787 -->
 ## Question 97: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-097`
 
 **Content revision:** `9fe37105a3879b14350312c9fc290ff908c0f09ae936214fdb085477885b1787`
+
+**en review revision:** `347cfa0377d46bc6cf6e4db964eb5fbc5aaeaa36afe9c6bb4c9eff3b652f6611`
+**es review revision:** `6963f6ffc4fdae2fedb8a703d0a6454a823b9fd4ee45e4fbf0033a8414441b0f`
+**pt-BR review revision:** `2b6c2d0ee99e0a309c731e08ecff1fdc99703f0e10e3f9ad51252298a6e5c231`
 
 ### English
 
@@ -9915,11 +10693,19 @@ Um repositório precisa de um fluxo de trabalho CodeQL com etapas de construçã
 <!-- certification-coach-question:admin-098:ce3cca38c53556abe3e93c949429cd740d3d45fffe002015b123bbfbce7bd0f1 -->
 ## Question 98: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-098`
 
 **Content revision:** `ce3cca38c53556abe3e93c949429cd740d3d45fffe002015b123bbfbce7bd0f1`
+
+**en review revision:** `16f620c0ff9201a6f360fdcb213288ef7f7c89ac691702575039b9681f9ee4e1`
+**es review revision:** `cb9573b04d8c5ffa3fa062c8edc1988577b557e4e8b7c41b5059aa2db034d32b`
+**pt-BR review revision:** `cbe86f69f2bd66735f1bdec68ffe488f52872a95d8c61e7b608e465b9e5fb7ed`
 
 ### English
 
@@ -10017,11 +10803,19 @@ Uma empresa já usa um analisador estático de terceiros e deseja que seus resul
 <!-- certification-coach-question:admin-099:774396c795e74a61a154c00f2282c6454e105a3844f55be8bd6383b52c969580 -->
 ## Question 99: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-099`
 
 **Content revision:** `774396c795e74a61a154c00f2282c6454e105a3844f55be8bd6383b52c969580`
+
+**en review revision:** `3a83f454f3b9022d100fa8b23e1233a9fe3b901f7745c616d0ac1b531683450f`
+**es review revision:** `fe6ab33b29b74809ba30c63a3b9810524d8fa56f82cbe6669502033d58da2529`
+**pt-BR review revision:** `9609570ea69a1c783840bd4b46700bf5b98f5c3e22e7d5f090a5cf9fe13b8c22`
 
 ### English
 
@@ -10119,11 +10913,19 @@ Uma equipe de segurança precisa detectar fluxos de dados inseguros no código d
 <!-- certification-coach-question:admin-100:d689bac2701bb66f1ba51fd442b73290b82b433ee20a96533167faa6a59cb069 -->
 ## Question 100: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-100`
 
 **Content revision:** `d689bac2701bb66f1ba51fd442b73290b82b433ee20a96533167faa6a59cb069`
+
+**en review revision:** `1c42778b456b6b3846dcf592f5ce9e7076eda7a0488ae1b9a809e56ea2a3cb20`
+**es review revision:** `a71500c28cc32d81e5903e6a1508d48dfc622ac5236a3e4f76c3bac92276b1d5`
+**pt-BR review revision:** `b72b119b8af11807e32e63619dbb5b0b7b96568a1c6353ea9a2bbc908993ae0c`
 
 ### English
 
@@ -10221,11 +11023,19 @@ Um desenvolvedor acredita que uma descoberta de verificação de código é um f
 <!-- certification-coach-question:admin-101:38fc66079c7ed9cf5f5050e68f5d684bc99d142e94f0e9d5b5162ab6b94511ae -->
 ## Question 101: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-101`
 
 **Content revision:** `38fc66079c7ed9cf5f5050e68f5d684bc99d142e94f0e9d5b5162ab6b94511ae`
+
+**en review revision:** `83dcd64657945014926e6edf745b99379b729e09a0786e2f3e0a6075482d939a`
+**es review revision:** `69b39d2d8356a9ed79683f2a182ef7c2dae5766a7bd6aa62ba5caab16da51bcb`
+**pt-BR review revision:** `1402f47449e5617471a9d977aeff5ba414125e49d0be88b220df7b6425e20065`
 
 ### English
 
@@ -10323,11 +11133,19 @@ Em um plano de suporte, uma organização deseja que as mesclagens sejam bloquea
 <!-- certification-coach-question:admin-102:2782b17132a380ed5083337148dc39453a640ba5562daa238663fb32a6899432 -->
 ## Question 102: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-102`
 
 **Content revision:** `2782b17132a380ed5083337148dc39453a640ba5562daa238663fb32a6899432`
+
+**en review revision:** `1d22c5c38553c8585c20b8ed3d8bfbb7143771dbe0fb1490e01312829dc8e2a7`
+**es review revision:** `4cb91383cfccbd798bc48a0384eded13d708872445ef3a06884fc37a0ce40639`
+**pt-BR review revision:** `cd6be1fb88edb8919646f5aaeb5a92c46f8aafa33f07af3bad0c9a20bf0406b2`
 
 ### English
 
@@ -10425,11 +11243,19 @@ Um repositório inclui um idioma não suportado por CodeQL. Qual plano de admini
 <!-- certification-coach-question:admin-103:bc662e5b4753286c600f1c0b45a0f979544bb7363272a1dd5f65df381a830e2c -->
 ## Question 103: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-103`
 
 **Content revision:** `bc662e5b4753286c600f1c0b45a0f979544bb7363272a1dd5f65df381a830e2c`
+
+**en review revision:** `21b1de85921a6b31a6f53a14649d95c5afeb1319ea9b94925b94c5beb7fffe1d`
+**es review revision:** `1709ac124b2dd56fc2a16715314e74b54a303bc9ac38cdff3cef37be0a463f15`
+**pt-BR review revision:** `82748fecdad2841b34a919b0e498efba677a43f8a487cc7621b66b5d0d9c312a`
 
 ### English
 
@@ -10527,11 +11353,19 @@ Um administrador planeja habilitar recursos de segurança pagos em centenas de r
 <!-- certification-coach-question:admin-104:9936596efc82b3a6612f56aab303e644af962dd94eb26a5c0717a485f1c21e4b -->
 ## Question 104: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-104`
 
 **Content revision:** `9936596efc82b3a6612f56aab303e644af962dd94eb26a5c0717a485f1c21e4b`
+
+**en review revision:** `e4e5ea0a88258ece82564f046d28eee09a609e8b95a22db8fe710d1319eb33c4`
+**es review revision:** `c0e7a537dc58c197d875ab5ed938787f143855bf4eb7390035592d4a0d29df6d`
+**pt-BR review revision:** `4a8b7f28715505c009a5a709806c1823ceb6e120622bd3aaac57bf948faf87f3`
 
 ### English
 
@@ -10629,11 +11463,19 @@ Os alertas Dependabot estão faltando para uma dependência suportada que a equi
 <!-- certification-coach-question:admin-105:d84650dcdb401eb3e7b3898ebc3a4f0c460bbdb4b777eff1e0da098f9303bf09 -->
 ## Question 105: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-105`
 
 **Content revision:** `d84650dcdb401eb3e7b3898ebc3a4f0c460bbdb4b777eff1e0da098f9303bf09`
+
+**en review revision:** `15ce5cadc317084879f1096e7670a3f78bb4ff52c55dd9c25a58ff135e00b94c`
+**es review revision:** `a823c06ad18039d364d717f341eca63df88f0b10abdff9c472fdb8ee732cfcbf`
+**pt-BR review revision:** `54d686f554c16d0c8afaf16f6f4ca386d4cc70cd8e7d5c4ca736e425f6618f92`
 
 ### English
 
@@ -10731,11 +11573,19 @@ Uma equipe deseja pull requests automático para atualização de dependência d
 <!-- certification-coach-question:admin-106:95837d82091d56a2a3e123cb7d0f9182118e5f8566b8a108c469f17285d2a7f6 -->
 ## Question 106: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-106`
 
 **Content revision:** `95837d82091d56a2a3e123cb7d0f9182118e5f8566b8a108c469f17285d2a7f6`
+
+**en review revision:** `e6cab62b3944e5f148b429a0079c3055360fafe8ab5b5c6de96ad1e4d0c8eb33`
+**es review revision:** `dc3473c177c72325dec028c28a9ecc30d3d1d503a2c9d07deb4df6f07c477cc9`
+**pt-BR review revision:** `60a04a036b94847170887d1c9e81031db5fdf2fe922593f8438cb6e6e820f680`
 
 ### English
 
@@ -10833,11 +11683,19 @@ Uma organização deseja atualizações de versão Dependabot para pacotes npm e
 <!-- certification-coach-question:admin-107:ce872668a8c58b466e5ee6e3a1dbe6f7ac5ebf640c1569eafbee1aec33a4c144 -->
 ## Question 107: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-107`
 
 **Content revision:** `ce872668a8c58b466e5ee6e3a1dbe6f7ac5ebf640c1569eafbee1aec33a4c144`
+
+**en review revision:** `22577e97d714d62bc3710bf5ab207015b08ea97c1b57ec15cd5aef1792ae203d`
+**es review revision:** `19cf6baa032ab706f5b1f6b2afaa8bc7794fc6c5ba229f0ee60f0e287dafd480`
+**pt-BR review revision:** `ed7a755f8ada30a7ebc166089fe6af181c78dd5119d7a51a4ebbce3e2c7a5948`
 
 ### English
 
@@ -10935,11 +11793,19 @@ Dependabot não pode autenticar em um registro de pacote privado. A credencial e
 <!-- certification-coach-question:admin-108:43c437858904f90f5863a34c003113bfa499a8a1b8863690bac39bf3da16d992 -->
 ## Question 108: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-108`
 
 **Content revision:** `43c437858904f90f5863a34c003113bfa499a8a1b8863690bac39bf3da16d992`
+
+**en review revision:** `474aa0e055f564337fab62a3aac9d17984743d86ecde3020158eb2902cd845e3`
+**es review revision:** `e7cd463a58c0a1cd338581af266aeceb762026e8ade5b881ad3840c5b853ad7d`
+**pt-BR review revision:** `eabf78ee3ab1d00d3db34af65f59d4f364da2935e69ffba5fbed8777efe2b392`
 
 ### English
 
@@ -11037,11 +11903,19 @@ Um pull request atualiza um arquivo de bloqueio e introduz uma dependência tran
 <!-- certification-coach-question:admin-109:e78541beb1f248b5e7bf559252fcf973b550ecb6802ce9402ef8897400938b9f -->
 ## Question 109: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-109`
 
 **Content revision:** `e78541beb1f248b5e7bf559252fcf973b550ecb6802ce9402ef8897400938b9f`
+
+**en review revision:** `99470bffc6cf1d89ee53f78421d853b94e9a9e3f75885ca69cdfe6751da4869f`
+**es review revision:** `86eb1a2ebd361a7b488a88de1b0587ddac8e7c8bb9d7a24e5eefb945a2d8781c`
+**pt-BR review revision:** `5e8eaf990b2ba2fb307a964489a65bb723b116675bc9a0ee9bf08467d168434f`
 
 ### English
 
@@ -11139,11 +12013,19 @@ O mantenedor de um repositório público precisa colaborar de forma privada com 
 <!-- certification-coach-question:admin-110:79248d799aba321d61310e2dcb000fbd4f6766443be21aabb57bd211a5bda5e2 -->
 ## Question 110: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-110`
 
 **Content revision:** `79248d799aba321d61310e2dcb000fbd4f6766443be21aabb57bd211a5bda5e2`
+
+**en review revision:** `2e83fc27901ac4afa8fc8ce809d7ecd0336b59c4c5e155c6b3cf13b02e51d963`
+**es review revision:** `216fefe23528a6c087ff37025c289b3c35da0138df776273b067998d396a706f`
+**pt-BR review revision:** `26afc02b02b0abd06ac3a9d871f7501ba11e7a9458879168bf14475f1a7a99e5`
 
 ### English
 
@@ -11241,11 +12123,19 @@ Uma organização deseja que os pesquisadores saibam quais versões ela suporta 
 <!-- certification-coach-question:admin-111:e8bfb481c615078eefd8a7ff521253df9e3f5b07c7556e7db48f4f56727e5391 -->
 ## Question 111: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-111`
 
 **Content revision:** `e8bfb481c615078eefd8a7ff521253df9e3f5b07c7556e7db48f4f56727e5391`
+
+**en review revision:** `fc8ed00c0bbf8bed806ffe9796e19ed904e5b9aa6db4636894ff97ed850e478b`
+**es review revision:** `1c37c718683d95476d200cb3c9b5eb94ef4c5c66f41a735f5967d79e90948f44`
+**pt-BR review revision:** `1b5e052fae0c7f5af71fd184385f2aa34e3c2c8f141ae457a7fd8d7975acfd1b`
 
 ### English
 
@@ -11343,11 +12233,19 @@ Um mantenedor de projeto público preparou um comunicado de segurança e precisa
 <!-- certification-coach-question:admin-112:8db7100742940d451ee62bfee3fc80a8e9717f43c636a5a6e8c9f8e9f3d48c0e -->
 ## Question 112: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-112`
 
 **Content revision:** `8db7100742940d451ee62bfee3fc80a8e9717f43c636a5a6e8c9f8e9f3d48c0e`
+
+**en review revision:** `3d4a52ba3b3e331616879bf05129404ae24187dde44a47e896752645715a2a4c`
+**es review revision:** `b2d9f34d56ca053bac9fe20ce4cdec4f40fb6eb0f8ce189a741ab483fbd35739`
+**pt-BR review revision:** `4efa901064949d5b1c771a813c5f4c5e859ac0891e16adb895df498736ecd5a6`
 
 ### English
 
@@ -11445,11 +12343,19 @@ Uma fila de segurança contém muitos alertas Dependabot. Qual abordagem de prio
 <!-- certification-coach-question:admin-113:0d3bd79ea0c139e5ad140a3cd14659f6de3c712b3373556014ee7e150001643b -->
 ## Question 113: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-113`
 
 **Content revision:** `0d3bd79ea0c139e5ad140a3cd14659f6de3c712b3373556014ee7e150001643b`
+
+**en review revision:** `d2dfa2563378ca3eb882a7d5cdf6217b2191ad49c964c995b02a77961bd36213`
+**es review revision:** `dda70769f7ef9c8196e9b7eaf7d5825bc3c52a9125448b344374f2382da7b717`
+**pt-BR review revision:** `3de6eb67b0a3a209a714a5779983a2e8713c73af2ba862c233eb0d2ae5191292`
 
 ### English
 
@@ -11547,11 +12453,19 @@ Uma equipe aceita um alerta Dependabot temporariamente porque o caminho do códi
 <!-- certification-coach-question:admin-114:38939cbe5de4467144d7c44d0a56138c241c06a57df35194738d61b2b7f00b39 -->
 ## Question 114: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-114`
 
 **Content revision:** `38939cbe5de4467144d7c44d0a56138c241c06a57df35194738d61b2b7f00b39`
+
+**en review revision:** `df39bc5577f928fa758ffd0062f815cb93e372a2fa736517d84e773089be372c`
+**es review revision:** `f31986388839d4e68a3fdb9338dfeac004cbc885ceea9f3ce835e700c29c72eb`
+**pt-BR review revision:** `b0af333fa4f92cce1e517cc3b471172fe5d67ff46029ac629809f886a4640352`
 
 ### English
 
@@ -11649,11 +12563,19 @@ Uma empresa deseja um plano prático de resposta de segurança para incidentes d
 <!-- certification-coach-question:admin-115:99364a93839780bafc370962be0e3a2b905583e19c702bfcfd6b8113b56b0db3 -->
 ## Question 115: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-115`
 
 **Content revision:** `99364a93839780bafc370962be0e3a2b905583e19c702bfcfd6b8113b56b0db3`
+
+**en review revision:** `17d3dcffd881a2bd236a5ff005da92f1bed455381c29167bee85cfd70acaf8ad`
+**es review revision:** `780fe337723b0bd5f0d904fb1b8a8f0c36ddeaf3d6f1f31ede158c03fea99302`
+**pt-BR review revision:** `c90d74b9761ef9a90ce7667999a7aa2124944dcbb9e207ccc5d3e28c3e1f9682`
 
 ### English
 
@@ -11751,11 +12673,19 @@ Um usuário humano precisa de uma operação API suportada que leia issues em do
 <!-- certification-coach-question:admin-116:f832906edac8c15f704333d783c5fb5d0e26b4e9227a76fc048e7ad4e6318055 -->
 ## Question 116: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-116`
 
 **Content revision:** `f832906edac8c15f704333d783c5fb5d0e26b4e9227a76fc048e7ad4e6318055`
+
+**en review revision:** `1b050a73187b9d05f6628e6dbb39884fb9c0b6bfdf5aa78b7ac69a658764b04b`
+**es review revision:** `d5b2ef5b295e6ce331a784eabebd9c6270ac45441ee7ab252b754cf3f2281ff6`
+**pt-BR review revision:** `71424af9c6ac094554f8f03377eb1a64cf0623e903d05cab2303dc789cc74de8`
 
 ### English
 
@@ -11853,11 +12783,19 @@ Um membro cria um fine-grained PAT para uma organização que requer aprovação
 <!-- certification-coach-question:admin-117:807b2310e9815eb560d91935f5d80c6e6f2f8333a1d6978a9b11ac61cec85111 -->
 ## Question 117: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-117`
 
 **Content revision:** `807b2310e9815eb560d91935f5d80c6e6f2f8333a1d6978a9b11ac61cec85111`
+
+**en review revision:** `e49f32ce9acab35a4a7fb747ae75e3fe2f6c770bfe97e9df9b4e205e8a28f893`
+**es review revision:** `763f118f18a74b7b738ffc18295b4b66e3720c74d2725a67826fd3e139f761db`
+**pt-BR review revision:** `3c6a6db9f403fc3a3cb4da88a4c5c99bff0d920f3a00241fae297571b07e73ff`
 
 ### English
 
@@ -11955,11 +12893,19 @@ Uma organização quer limitar a vida útil dos tokens que acessam seus recursos
 <!-- certification-coach-question:admin-118:9df58c4d066f35ef52015c6a6faa3b6d58a22f066cca3904c59058f56438cbd2 -->
 ## Question 118: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-118`
 
 **Content revision:** `9df58c4d066f35ef52015c6a6faa3b6d58a22f066cca3904c59058f56438cbd2`
+
+**en review revision:** `d59c53a6e679aee119eaeee9370a5dfe88b3a76f37e542c053dc895075ea2840`
+**es review revision:** `67fac08edf14b2c2dc2dc244883b7e9c625b6c717fe552c49185ef4efada515f`
+**pt-BR review revision:** `72954183639f1c812a8bce0cdb141130c7ea8c65a4689cba7aa1e0b8dcdd6c03`
 
 ### English
 
@@ -12057,11 +13003,19 @@ Um fine-grained PAT aprovado para uma organização é posteriormente considerad
 <!-- certification-coach-question:admin-119:117016e92b8c14a6a290939c38337c4524ae196b9884aa0d30513bbd908675da -->
 ## Question 119: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-119`
 
 **Content revision:** `117016e92b8c14a6a290939c38337c4524ae196b9884aa0d30513bbd908675da`
+
+**en review revision:** `29a3080bae680bbbcdddc77a7ea601d28dec2393ac6465a2b9951a9ffee04996`
+**es review revision:** `fc12df089769433b48a63d64646f2d2649aa19bdec4c059dd2925e76a8725aad`
+**pt-BR review revision:** `9a55532b455794243650ae7e146492d87816c64dccb9b63cae85526586b7a9b7`
 
 ### English
 
@@ -12159,11 +13113,19 @@ Uma integração organizacional de longa duração usa o PAT de um funcionário.
 <!-- certification-coach-question:admin-120:351292cc838dd0bb344effc655cad3f93dbd2d8e9f0c400f0099fbd6eac02d97 -->
 ## Question 120: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-120`
 
 **Content revision:** `351292cc838dd0bb344effc655cad3f93dbd2d8e9f0c400f0099fbd6eac02d97`
+
+**en review revision:** `12d2d203f2029b58ac59568ef6537f8d52356bf730516824c37cf960ea23a9e9`
+**es review revision:** `1ddf4d0d5b67eba3a29f0b0ebc536743cbc9cce19b5e248b69d82a9ad5708823`
+**pt-BR review revision:** `4343d733917c5912587d52364aae8cbacf515e13ea6231ea6beea16027026cc8`
 
 ### English
 
@@ -12261,11 +13223,19 @@ Uma empresa de conta pessoal deseja restringir o acesso PAT clássico aos recurs
 <!-- certification-coach-question:admin-121:9736aff15a0647c3fd8966bf94f486d060e43e169d520fd08c7253d1bfe83330 -->
 ## Question 121: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-121`
 
 **Content revision:** `9736aff15a0647c3fd8966bf94f486d060e43e169d520fd08c7253d1bfe83330`
+
+**en review revision:** `695a2997e413c95cc54cf75fe17150431a42940b40cb4854aa41cb15a483e655`
+**es review revision:** `ed3fbef0ac0c3d357cc86da1e875d18a6ae1eea6f46f90a6e1e95ddd5f7b699e`
+**pt-BR review revision:** `379938cb68f97c83b5c32068ad83a56bf36611bc6d640c3bceea6a7ebf084a3a`
 
 ### English
 
@@ -12363,11 +13333,19 @@ Uma integração de fornecedor precisa apenas de acesso somente leitura ao conte
 <!-- certification-coach-question:admin-122:80bc667ef895cfd4d1c1b25749bf64fddef042b54222b6a98b83eea7ba2bcb3d -->
 ## Question 122: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-122`
 
 **Content revision:** `80bc667ef895cfd4d1c1b25749bf64fddef042b54222b6a98b83eea7ba2bcb3d`
+
+**en review revision:** `456dbd03eee6651febe97341e7a44f4760ec059762f0d8d5850764ea55fcc750`
+**es review revision:** `d419e43f3ab1adaded889d79b16c8d62b4176a694fa7dd01fa0cbb338ef0c3f9`
+**pt-BR review revision:** `7a6cbb9351377bf73cf8aadfdbe740a8f7c432b7ac43e1fa3303e48c93c719dd`
 
 ### English
 
@@ -12465,11 +13443,19 @@ Um aplicativo OAuth solicita o escopo do repositório clássico, mesmo que a des
 <!-- certification-coach-question:admin-123:d352a5577be876a1c976adaa5761b3a7778b562a95403d66ed1172acacfa793c -->
 ## Question 123: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-123`
 
 **Content revision:** `d352a5577be876a1c976adaa5761b3a7778b562a95403d66ed1172acacfa793c`
+
+**en review revision:** `614fcfe6d03c134b443a4ca6eec0f77c6c4fb0eb08083bdbd5c0db71f5a94c2e`
+**es review revision:** `d0cada6fae107d4d35751fec994da24f321b40a64aa369ce33c4c39c2a6882d2`
+**pt-BR review revision:** `3c256e88d4a15994354409e30845cbdf0991c912e8a3a0067260aa5f7490acec`
 
 ### English
 
@@ -12567,11 +13553,19 @@ Uma integração GitHub App precisa atuar como sua instalação para automação
 <!-- certification-coach-question:admin-124:518e754792b56ee16f6cc15b5a9d39b7f8cff386be2240d6f203bff898e6b94b -->
 ## Question 124: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-124`
 
 **Content revision:** `518e754792b56ee16f6cc15b5a9d39b7f8cff386be2240d6f203bff898e6b94b`
+
+**en review revision:** `4278fb695ad6b62564cc45c9ab2d0a1a149fa2fd61a44c5ae61f0f25ef0107aa`
+**es review revision:** `732675cc3f4673add861e848b41fca47bdb64b955fe9c8d90efc5dc2c7251210`
+**pt-BR review revision:** `8e3359e12f2ac1b23342ff515b270da6f2c765d2426d8071b7aa05f5ae0c486d`
 
 ### English
 
@@ -12669,11 +13663,19 @@ Um GitHub App instalado solicita permissões adicionais após uma atualização.
 <!-- certification-coach-question:admin-125:0cc75ffc3b10423e03355f535bbbced6f0ca68e2da343a657fd31bce71cb5316 -->
 ## Question 125: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-125`
 
 **Content revision:** `0cc75ffc3b10423e03355f535bbbced6f0ca68e2da343a657fd31bce71cb5316`
+
+**en review revision:** `39477cabf8e42801e3831403fc887822121781307b0376b459cd91831db6c561`
+**es review revision:** `c0da23fa9f427764ad1111979317bde5037e29be30e2336b18bab3d6df36923a`
+**pt-BR review revision:** `54f968c059a15df9c598708762fa9c1df3d407e32c6b3d7a5e7fb37b838d05ed`
 
 ### English
 
@@ -12771,11 +13773,19 @@ Um GitHub App instalado em uma organização não está mais aprovado para qualq
 <!-- certification-coach-question:admin-126:579be7202714df7647ce05a0c0e8c9561d432be63bfa4f615fb74255a575175b -->
 ## Question 126: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-126`
 
 **Content revision:** `579be7202714df7647ce05a0c0e8c9561d432be63bfa4f615fb74255a575175b`
+
+**en review revision:** `7cfa75716abfa789291a82766d46658f1cebb9a5d040a95a4d61994127e1d179`
+**es review revision:** `a610bfeb8c5b7895cf7f6e5fb93387c3f86d4429c71a4fc69c2b8b060b8beb92`
+**pt-BR review revision:** `9564c702417d681a7b57bd852157d8cac9fdcab52d5881a0f646fb5643acf748`
 
 ### English
 
@@ -12873,11 +13883,19 @@ Um cliente REST API recebe uma resposta de limite de taxa com x-ratelimit-remain
 <!-- certification-coach-question:admin-127:67b1fd12ea4dba49d4c860649000cc06e7bb3229f6f2f2f3e198d3121ca34b13 -->
 ## Question 127: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-127`
 
 **Content revision:** `67b1fd12ea4dba49d4c860649000cc06e7bb3229f6f2f2f3e198d3121ca34b13`
+
+**en review revision:** `1ddc20e0c8d30bd520058660527ba0c778d24cecb136b6d78a0051a5537b76a8`
+**es review revision:** `3a244d97eb0f3b6e23544ba3747853e3c20eddbc3679aa9cc0f5706be4db61cb`
+**pt-BR review revision:** `a8e26a5ed1cfae5cd27ae752c8789044d8a93245fc63c55cdcc888376cf929fb`
 
 ### English
 
@@ -12975,11 +13993,19 @@ Uma resposta REST inclui Retry-After enquanto o cliente tem taxa limitada. Qual 
 <!-- certification-coach-question:admin-128:733b106cbf62c767e5b361f2ac9ac90ff2eed7150d92c339510fefd9c2d515b3 -->
 ## Question 128: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-128`
 
 **Content revision:** `733b106cbf62c767e5b361f2ac9ac90ff2eed7150d92c339510fefd9c2d515b3`
+
+**en review revision:** `da06cfd391291f7be9734e0a4b9046e2c17cb71743a830be7a60bd19d5b02d5f`
+**es review revision:** `2efd6e83802b6b9d9f5e19b02533dfcc947d074de589271de829f68e3c2d3806`
+**pt-BR review revision:** `966e4c4dcebb2515488bd6c2c3e171b0cbaba7eb5d3d70c423c9dbf9a83580fe`
 
 ### English
 
@@ -13077,11 +14103,19 @@ Um cliente ainda tem permissão API primária restante, mas recebe limitação a
 <!-- certification-coach-question:admin-129:47f2a487ad5ed64de92a9e3da50e066b2206e7ff70f767086a26d63a08048f61 -->
 ## Question 129: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-129`
 
 **Content revision:** `47f2a487ad5ed64de92a9e3da50e066b2206e7ff70f767086a26d63a08048f61`
+
+**en review revision:** `e69ee2644e9ff2d36a9316b49a61615bfe005e8c577a1917776280d44950b830`
+**es review revision:** `9d2f45058f48fa2ceb05bc0e27fa3cf62f6f505fefdf5b9b65157b4da1ba691f`
+**pt-BR review revision:** `a604cfe2146eba23472f3fa7e4de709c2eb4a08ff56b5fcfac242bf8efd735ce`
 
 ### English
 
@@ -13179,11 +14213,19 @@ Uma integração de conformidade baixa repetidamente metadados de repositório i
 <!-- certification-coach-question:admin-130:4cdfa747dfc7c4274ed7d78b47d24b75ab087835ea8d275487fddebf1c6e7d94 -->
 ## Question 130: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-130`
 
 **Content revision:** `4cdfa747dfc7c4274ed7d78b47d24b75ab087835ea8d275487fddebf1c6e7d94`
+
+**en review revision:** `45a27e61d0406ffcbc6e490f74ca2bbeff4ba81a51dee257a79b3dc33740fb73`
+**es review revision:** `5305808af7ad3f37e2057f30fe8ebfa647f80f144ef9829fcefb68991bc332bb`
+**pt-BR review revision:** `45e2e1cdbf1df3685e7317dbc63d6b5b8dc10b3468580c298b1f11c929351795`
 
 ### English
 
@@ -13281,11 +14323,19 @@ Um arquiteto compara um serviço apoiado por PAT com um GitHub App usando tokens
 <!-- certification-coach-question:admin-131:f24bf9e9342cc61ca7d124e62f04d74946db5fd49ce56ffaddfb7a9e9f84a598 -->
 ## Question 131: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-131`
 
 **Content revision:** `f24bf9e9342cc61ca7d124e62f04d74946db5fd49ce56ffaddfb7a9e9f84a598`
+
+**en review revision:** `d7f435a4b8a255abf4dd5d1b8ddda7a63ccd03dfa8a77146405d5b46f74e6be1`
+**es review revision:** `0bf02e3e0e5ca2f33ce6726e9ea5ea038d6e22025f75aaf75f9352788bb2fa98`
+**pt-BR review revision:** `226359ab722ad123b2cbc948a45a81689a5f7a36369a3d947e254884a073a854`
 
 ### English
 
@@ -13383,11 +14433,19 @@ Uma organização deseja que os membros solicitem aprovação antes que os aplic
 <!-- certification-coach-question:admin-132:81ca6c8b5fa4a4c3bd9e278870f0201d605fd525a4f83b719f63421e248499d1 -->
 ## Question 132: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-132`
 
 **Content revision:** `81ca6c8b5fa4a4c3bd9e278870f0201d605fd525a4f83b719f63421e248499d1`
+
+**en review revision:** `3582577e3c4e099a6b090147a120f4247d1586649dbcab9f9b7369ee88f2bf86`
+**es review revision:** `b4e8fb9d356dc50260acd47f77c013d3fc539aab15468847168da4a807bab917`
+**pt-BR review revision:** `c10259adee5075a523fae55ae80f392d109f630f8f9d65ff74c9e5fb63a17b85`
 
 ### English
 
@@ -13485,11 +14543,19 @@ Um serviço recebe entregas GitHub webhook em HTTPS. Ele precisa verificar se ca
 <!-- certification-coach-question:admin-133:f47865d14244c94ab39aa0068c37f181190a03e857557f3c64dee95c5723e3c3 -->
 ## Question 133: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-133`
 
 **Content revision:** `f47865d14244c94ab39aa0068c37f181190a03e857557f3c64dee95c5723e3c3`
+
+**en review revision:** `22b655c42605d156dc7b181d25cfdea10fae3c818d0a57f82740bca11ad7d370`
+**es review revision:** `9f73c8aa4438a45334657113c404c03ee53d85a8f078d8c16898e9ac14532d47`
+**pt-BR review revision:** `993a8969d0d3e22b52b20f2c026343215fca7cf84d8f0deaa9d151d6d236d11d`
 
 ### English
 
@@ -13587,11 +14653,19 @@ Uma integração precisa de notificação imediata quando os repositórios são 
 <!-- certification-coach-question:admin-134:c1ae070cccbcea7e8106cd957660835614bfde0895cec06bc2f6e9fda0f43923 -->
 ## Question 134: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-134`
 
 **Content revision:** `c1ae070cccbcea7e8106cd957660835614bfde0895cec06bc2f6e9fda0f43923`
+
+**en review revision:** `f2b054eda637c88653a5c7dbc0cb74a82f1f8e593709b5c5fff5c3e6b7d5ddf3`
+**es review revision:** `76efce196e8e9780ad895729be2f922b0d1b85daf24a5bcc2a68ee42ccd9948a`
+**pt-BR review revision:** `5aa55eeb13aedfc0fbccf81e66ac8ae3ee1435bee3a078fa95d4e486c30a6c70`
 
 ### English
 
@@ -13689,11 +14763,19 @@ Uma empresa ruleset requer revisão em um conjunto de repositórios. Um administ
 <!-- certification-coach-question:admin-135:24e8c19bb35b33c0c233516fb050c2913a2babcf2ba549751c70801de06b25ab -->
 ## Question 135: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-135`
 
 **Content revision:** `24e8c19bb35b33c0c233516fb050c2913a2babcf2ba549751c70801de06b25ab`
+
+**en review revision:** `77408928773d372cfe29d19d0a88ed326f0603c29509195444c32dbc9a8345b6`
+**es review revision:** `12af9ec606d500ff692f5bbd31ecd3bf8d12cc32b72def70c8347634872e5af9`
+**pt-BR review revision:** `12d5dda099981a53742feba82ba7259289eeaedb85e1241e07277b18f7f53529`
 
 ### English
 
@@ -13791,11 +14873,19 @@ Um alerta CodeQL inclui um caminho que mostra uma entrada não confiável que at
 <!-- certification-coach-question:admin-136:c3ce217b2d0b1d09de31645532ede085004cc2a6a3d6192a00d2d2f9be19c1ae -->
 ## Question 136: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-136`
 
 **Content revision:** `c3ce217b2d0b1d09de31645532ede085004cc2a6a3d6192a00d2d2f9be19c1ae`
+
+**en review revision:** `1c82af779c925521094935a783c1cc836ea610fcbeebceefc54deddee853147f`
+**es review revision:** `60dce4aa4bfa205163a4b00a557e0961b236e5b2f0970f257ee2596d84caff60`
+**pt-BR review revision:** `3e9199dec0b7b73cabeb808de653a519f7b1a2344f248f744f4f71cca0d0368e`
 
 ### English
 
@@ -13893,11 +14983,19 @@ Um repositório privado tem alertas de dependência habilitados, mas a equipe de
 <!-- certification-coach-question:admin-137:6540a82d4e7cc709fd021ad985ebeef941cc241d4904a440f1b9604823ba3ed3 -->
 ## Question 137: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-137`
 
 **Content revision:** `6540a82d4e7cc709fd021ad985ebeef941cc241d4904a440f1b9604823ba3ed3`
+
+**en review revision:** `988333601b1ee37a2bfe84efbf29439107169fbc37843507c59c0ec5aeeddad6`
+**es review revision:** `fa5bfe838b11977e9b91d26509ca22d793936c365904c7d5976586cc23160b4e`
+**pt-BR review revision:** `2540dab1cbdabc0f1e682ae23e414fcad61befa50fa256bd29a4acd3c7ee0984`
 
 ### English
 
@@ -13995,11 +15093,19 @@ Um administrador escreve um script que precisa de um PAT e propõe confirmar o t
 <!-- certification-coach-question:admin-138:53f888ce37487ecbed2e6db4714a336d7e2fdac8caa681ac12fa3711fdaf1202 -->
 ## Question 138: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-138`
 
 **Content revision:** `53f888ce37487ecbed2e6db4714a336d7e2fdac8caa681ac12fa3711fdaf1202`
+
+**en review revision:** `d07c8bb194c2e7845e489ce58bed9ea91bc042e0316c9dea12221fd2b6ae108d`
+**es review revision:** `4415bf58064817338c2f56ea76457df3b5825fccc37f38418620f2b50f980c77`
+**pt-BR review revision:** `5e13886922e09fcdf7d263d272a92fed0181a8a4f00244dbb274fe18ea5399e3`
 
 ### English
 
@@ -14097,11 +15203,19 @@ Uma equipe de segurança corporativa precisa dos endereços de origem IP em suas
 <!-- certification-coach-question:admin-139:26f34a95e48084102b3484140ac09cc90864bf6a4af42a6d1887a4077a7efe92 -->
 ## Question 139: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-139`
 
 **Content revision:** `26f34a95e48084102b3484140ac09cc90864bf6a4af42a6d1887a4077a7efe92`
+
+**en review revision:** `ad4035e434fb17169c1d524b3ca435cfc66fe8219611e448bde115658eac1aec`
+**es review revision:** `f3d1489b3968720be6851a6172a4ca421f57155a5360154da84e12273506707f`
+**pt-BR review revision:** `fd70f4dcd9ab860b002a665add9cba9cecef1046d38df16a28b9eae6c860801f`
 
 ### English
 
@@ -14199,11 +15313,19 @@ Dependabot abre um pull request atualizando uma biblioteca vulnerável. Qual é 
 <!-- certification-coach-question:admin-140:77a8e15e4eaa497d672827f8342d097dc935d8e7ed93752728a56fe339fcfbe3 -->
 ## Question 140: Implement secure software development and compliance
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-140`
 
 **Content revision:** `77a8e15e4eaa497d672827f8342d097dc935d8e7ed93752728a56fe339fcfbe3`
+
+**en review revision:** `fb69d69aae6f42260f5c492b4898e31a3d6dac33df13a87c8ae716af50d6b951`
+**es review revision:** `347b086621f35d75fd0822335bafd397482655b8a916400c82c39ea743bacf96`
+**pt-BR review revision:** `3804190ff46c696dd8d48e0f4ae32d9f0f6ae5e7572baa51f0667dc58c4e0e94`
 
 ### English
 
@@ -14301,11 +15423,19 @@ Um executivo pergunta se a ativação de CodeQL, Dependabot e varredura secreta 
 <!-- certification-coach-question:admin-141:0a518fd3e13d537acdb61ebc273e799141ab6453a1249f6ea6041078fd8d3257 -->
 ## Question 141: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-141`
 
 **Content revision:** `0a518fd3e13d537acdb61ebc273e799141ab6453a1249f6ea6041078fd8d3257`
+
+**en review revision:** `4d4db9de6c0275ed343f396fb40566967bff8227c2968023037ccbc79058ab4c`
+**es review revision:** `6e0612f4e512bc75e59cee1f87c425e734ae61936b77a1866c561897a1475853`
+**pt-BR review revision:** `2aab3e63cd200fa865e932ca8118ca089f476bf0681482aef2e63c3a17748a6d`
 
 ### English
 
@@ -14403,11 +15533,19 @@ Uma empresa permite apenas ações e fluxos de trabalho reutilizáveis hospedado
 <!-- certification-coach-question:admin-142:400ed50ea5f90ed4855468902f4833c765dd8de8da4c0b3e7fca1298a58af4a1 -->
 ## Question 142: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-142`
 
 **Content revision:** `400ed50ea5f90ed4855468902f4833c765dd8de8da4c0b3e7fca1298a58af4a1`
+
+**en review revision:** `5c2a5247f77a1cc2dee30f5e68ad2e82497f1bf38cdf768d57e0a3b4e3481f5d`
+**es review revision:** `3abb07fad68df7a600eaf12bc0a1077828081b68570d7da32e0c60ea6c3e84b8`
+**pt-BR review revision:** `eccb2b52f476bbd41d3eee7092ffaab5963bd7279d622ca6b30ea4920800bfa3`
 
 ### English
 
@@ -14505,11 +15643,19 @@ Uma organização deseja uma referência de ação para identificar uma revisão
 <!-- certification-coach-question:admin-143:7c19c2194d58726b75c306e3212602d0fc76b662ed569caad845ab8a35bfd50e -->
 ## Question 143: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-143`
 
 **Content revision:** `7c19c2194d58726b75c306e3212602d0fc76b662ed569caad845ab8a35bfd50e`
+
+**en review revision:** `7080c7dbc1bab35fe17c97a6fb0492e2f1549a69cd713937f9006a22d03b91b9`
+**es review revision:** `d58e205187741d7ccd9b80594367566f73462a1f724867d70438c39980e909f2`
+**pt-BR review revision:** `470b8c58e31ef29c0307d10ecc54cf42a83a2ae4d5ebc9fa6b6d24e4aaba1477`
 
 ### English
 
@@ -14607,11 +15753,19 @@ Uma organização mantém um fluxo de trabalho reutilizável em um repositório 
 <!-- certification-coach-question:admin-144:2f6fa910c4aa732dd4a3f56bd3e8ed7f3ab1d8588be8de893827b10e45950d83 -->
 ## Question 144: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-144`
 
 **Content revision:** `2f6fa910c4aa732dd4a3f56bd3e8ed7f3ab1d8588be8de893827b10e45950d83`
+
+**en review revision:** `12c4b6742c40ea1b8a2a82a2f936c039763a87d0cc1870fc0a056c6f357c05fe`
+**es review revision:** `992447035ccbaf06fe7d0e87b9d972def2bd00d5ef3d39f733e6fed592cf3fb5`
+**pt-BR review revision:** `2ba05b78616e9d8017ce05b184c3cad48769074885fa12632a4481c28686f292`
 
 ### English
 
@@ -14709,11 +15863,19 @@ Um fluxo de trabalho central deve poder ser chamado como um fluxo de trabalho re
 <!-- certification-coach-question:admin-145:4ad73d7e9e19a0508bc0af2e035856111890dd935642aca694b6a804d49bb4c4 -->
 ## Question 145: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-145`
 
 **Content revision:** `4ad73d7e9e19a0508bc0af2e035856111890dd935642aca694b6a804d49bb4c4`
+
+**en review revision:** `cb2da7a2f98bcc53480b41337dab1fa16179696e1022534ec8972efe3e7ac1e2`
+**es review revision:** `5a8399905dbea1ad2d827adee2566a28951958854a600650a023b7f7cd539b53`
+**pt-BR review revision:** `64b80f4824e63ffe5281a56eb32836739984a3b8eba07fcb96704728eef89902`
 
 ### English
 
@@ -14811,11 +15973,19 @@ Um desenvolvedor coloca uma referência de fluxo de trabalho reutilizável em st
 <!-- certification-coach-question:admin-146:40137c598eac275400958fcb58dbb1c6a71488123f5407bc0ff4f0e389a5b264 -->
 ## Question 146: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-146`
 
 **Content revision:** `40137c598eac275400958fcb58dbb1c6a71488123f5407bc0ff4f0e389a5b264`
+
+**en review revision:** `0264bb6b43346abc26585415bf56922778d7d99dbc02f866e27ea66f0ab9d94a`
+**es review revision:** `7864557fdf17b48c6898246f3868283f8294b43884115d0f76685f83ffbe4391`
+**pt-BR review revision:** `1bab2cb5581e2d472b048977ee7d7c94538ae029eb05bf4d8f14a10d816a2638`
 
 ### English
 
@@ -14913,11 +16083,19 @@ Um fluxo de trabalho de implantação reutilizável precisa que os chamadores se
 <!-- certification-coach-question:admin-147:2aa830b5327f50fed73cf5d4eca9ce66c787cfca055d1603ad2443edc8c3eaeb -->
 ## Question 147: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-147`
 
 **Content revision:** `2aa830b5327f50fed73cf5d4eca9ce66c787cfca055d1603ad2443edc8c3eaeb`
+
+**en review revision:** `12da497929688b157b08f1519d112a55ba3d0a0f743722c6d3c40926d88f9ad6`
+**es review revision:** `9edb1e93c19c138ce1e2c395ee9c7a2750828d2b10afbe9b56efd3967bcc1e4d`
+**pt-BR review revision:** `4c3aee707bdd86dce54027a6cc1660a182a5b287a5473ac5f7fd1517867f52ac`
 
 ### English
 
@@ -15015,11 +16193,19 @@ Um fluxo de trabalho reutilizável chama outro fluxo de trabalho reutilizável q
 <!-- certification-coach-question:admin-148:38d1a8ada8e626fabeb4ec553cf3fbfe9f9dc0ba3922ad02d229f880032705ea -->
 ## Question 148: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-148`
 
 **Content revision:** `38d1a8ada8e626fabeb4ec553cf3fbfe9f9dc0ba3922ad02d229f880032705ea`
+
+**en review revision:** `26c776dff26f5234eb0e5a56c7312af505f2d1921d68897a38564733199db547`
+**es review revision:** `883f2664294f2bcc09c41a2953ff646d3640ce23743ae836f05b17af41e6ee13`
+**pt-BR review revision:** `61200b65964cc04c5d51c0e61831c5248138abd17f2a13f706c813a06b15e992`
 
 ### English
 
@@ -15117,11 +16303,19 @@ Um chamador concede a um fluxo de trabalho reutilizável um GITHUB\_TOKEN soment
 <!-- certification-coach-question:admin-149:911874ddddeddf3bd1922524a17c03b0d1495f6df19dc8cc7c51400f11ede639 -->
 ## Question 149: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-149`
 
 **Content revision:** `911874ddddeddf3bd1922524a17c03b0d1495f6df19dc8cc7c51400f11ede639`
+
+**en review revision:** `f5f36ce2d10edc62b5ab6bc8a94d5806378bfdaa1b55705b7662ce88e753e203`
+**es review revision:** `a8332e6f381a3c3cd8febf4ca3289405abfad489dd7b35a1e619f56676feb67a`
+**pt-BR review revision:** `58344c8ca834fd68f15123278254c2ff87529978f2073a78ca226c457a1eb36d`
 
 ### English
 
@@ -15219,11 +16413,19 @@ Um fluxo de trabalho de construção reutilizável deve retornar uma versão de 
 <!-- certification-coach-question:admin-150:494e1d72e087b9879fafb7ceb5f83540ac87d23534cf4ce6dada768009d94b45 -->
 ## Question 150: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-150`
 
 **Content revision:** `494e1d72e087b9879fafb7ceb5f83540ac87d23534cf4ce6dada768009d94b45`
+
+**en review revision:** `71b80ec52eb3e373dfbb6fc112dc3ca2c4381b40f76fb487a7dce10504141f6b`
+**es review revision:** `7f47a16327f54df0e4831073b2a74fcd84e9f3a12ae841e7dfd17c87073ad56f`
+**pt-BR review revision:** `775ade34b540d4fc22d84db610506ffe6f6cb200ccdadaa1c24a5c6e12c139c1`
 
 ### English
 
@@ -15321,11 +16523,19 @@ Um administrador deseja que uma implementação central CI seja chamada por vár
 <!-- certification-coach-question:admin-151:a3162b613a560761d01e8d8b659a93e4c4b5dfb13795f2f1e0e582440cdc1e4f -->
 ## Question 151: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-151`
 
 **Content revision:** `a3162b613a560761d01e8d8b659a93e4c4b5dfb13795f2f1e0e582440cdc1e4f`
+
+**en review revision:** `fe3bab5297b95051e7ad77463cc7418055aed6592b055a143b246ed4020719f9`
+**es review revision:** `44a20e6d5d4725428f8375f89b72700624ad895237c9af7c7d1618a0dbc0511a`
+**pt-BR review revision:** `4632becb400716dee5eff8dfb653549cc9f43ec2c120990ddc8bdd092355e9f0`
 
 ### English
 
@@ -15423,11 +16633,19 @@ Uma equipe de plataforma precisa de uma unidade reutilizável que possa ser cham
 <!-- certification-coach-question:admin-152:1d26b3a0b20902e34f54ed2fe75b590a710457961f11fa4905eb150727640611 -->
 ## Question 152: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-152`
 
 **Content revision:** `1d26b3a0b20902e34f54ed2fe75b590a710457961f11fa4905eb150727640611`
+
+**en review revision:** `54649e6537115009f6b16e20877d4a5c3fab5c369f74d3bcc3cceef59b560bcb`
+**es review revision:** `5a1fd0d8b67603befba93efbf072c0dd5bb358887247144450eddc57c73f4071`
+**pt-BR review revision:** `32e3ffe12d3ee5bbdde457e2c8e4cfe79f41be364b7a9bcb8e665728778c46aa`
 
 ### English
 
@@ -15525,11 +16743,19 @@ A maioria dos fluxos de trabalho da organização lê apenas o conteúdo do repo
 <!-- certification-coach-question:admin-153:09b9f2297418bcfb1051f518050abc2580bbdacb221ee539803c535d30a004e1 -->
 ## Question 153: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-153`
 
 **Content revision:** `09b9f2297418bcfb1051f518050abc2580bbdacb221ee539803c535d30a004e1`
+
+**en review revision:** `9f1cb7b7d2ca7a4fb4479190284af7bde0f4357ccdab73d527832afd3a63ad07`
+**es review revision:** `8ab10fb9a8b87f5b0ed796ff623fc9ecb6d234aed628c922536f53e0c1cecef6`
+**pt-BR review revision:** `23a6ed58a43b06520a7d76b64761a90a239afa9b71e4acf91f602d9ffbeaea37`
 
 ### English
 
@@ -15627,11 +16853,19 @@ O GITHUB\_TOKEN de um fluxo de trabalho não pode ler um segundo repositório pr
 <!-- certification-coach-question:admin-154:715661df0a9d376760613207a59370337fdc70d1d829944d836ca0de9844be67 -->
 ## Question 154: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-154`
 
 **Content revision:** `715661df0a9d376760613207a59370337fdc70d1d829944d836ca0de9844be67`
+
+**en review revision:** `2178ce8a41fff7ec542f9660d967a878e50560b5dda7781bdaa030f804a060c2`
+**es review revision:** `c5ef919621c57a9d3a618c82bb8d33034a55202bd50460fc69229edef0e65e07`
+**pt-BR review revision:** `bb0b78d97888fff9800a53d5d246c58609edd4e15dff448b7e8b7d02575760b2`
 
 ### English
 
@@ -15729,11 +16963,19 @@ Nas proteções de solicitação pull fork padrão, um fluxo de trabalho acionad
 <!-- certification-coach-question:admin-155:2050610d149224b75e21deab5741053e0884591078b030eda1c206ca036f807e -->
 ## Question 155: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-155`
 
 **Content revision:** `2050610d149224b75e21deab5741053e0884591078b030eda1c206ca036f807e`
+
+**en review revision:** `470f1cd6b330c92b9ae4de7a9a675d15ded438ec8bbbd5bd7ae1ec1b1a9f3e44`
+**es review revision:** `d2806a5583abc5b20394b2d9715bbadfcedcc7db41980866baaa2437d587141c`
+**pt-BR review revision:** `a0cd2e1a19390ae494c1d7f812a8fc1cf9970c5d3d3998530147ca875ae62d50`
 
 ### English
 
@@ -15831,11 +17073,19 @@ Um fluxo de trabalho usa pull\_request\_target com segredos e, em seguida, faz c
 <!-- certification-coach-question:admin-156:f55eafe45b8db65cbeb614f1a660bd20dc22ee0d3f710286a250e20a781825cb -->
 ## Question 156: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-156`
 
 **Content revision:** `f55eafe45b8db65cbeb614f1a660bd20dc22ee0d3f710286a250e20a781825cb`
+
+**en review revision:** `5762da3b8920c070e04f4fbe19d3f25b0eca2e14ea04ff8d65ee886658a9152c`
+**es review revision:** `6eadc8c4452c26ed6a00831a3c33d955eabb176929b3e6c5011240d6fa662aee`
+**pt-BR review revision:** `3249833b1510e40d5e18b45df67e4b4cb74e14ac884185c9f6a6ea9b0d612de0`
 
 ### English
 
@@ -15933,11 +17183,19 @@ Uma organização quer uma etapa de aprovação humana antes de executar fluxos 
 <!-- certification-coach-question:admin-157:b501cf24ef4dc4256f52e690969ad3b39cc87e170852f7ed8c25bf6afc637ac0 -->
 ## Question 157: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-157`
 
 **Content revision:** `b501cf24ef4dc4256f52e690969ad3b39cc87e170852f7ed8c25bf6afc637ac0`
+
+**en review revision:** `03fcac1196643f83c6e58c1a7c0feae57f9e56817f1efaf3049e1fee0312342d`
+**es review revision:** `df6fe06bcfdfb9c9b08755a16986cb846027e507791a2a2fb4a2faaf7571c014`
+**pt-BR review revision:** `b096cad5525673e64a294bbeb64a6530d0eff97842a36d9bc24dd8de69b34fb5`
 
 ### English
 
@@ -16035,11 +17293,19 @@ Um chamador precisa passar apenas uma credencial de implantação para um fluxo 
 <!-- certification-coach-question:admin-158:a8980117ad74511f33d9964f1e40685107b2f67de53dbb04e5edbee3f3e012cc -->
 ## Question 158: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-158`
 
 **Content revision:** `a8980117ad74511f33d9964f1e40685107b2f67de53dbb04e5edbee3f3e012cc`
+
+**en review revision:** `edf8fd058481552907b5e3db68ed7415ada7f06764708f0ccd338de3b203c39f`
+**es review revision:** `b62493169d852ac2c2bb281f671dc628f4b9f21c5c2c89cb700f5b79cb4bfa33`
+**pt-BR review revision:** `f6bf87f4e0da3a238954d863abcc16f361b68d865646aaafc38a81761c5c069b`
 
 ### English
 
@@ -16137,11 +17403,19 @@ Uma equipe regulamentada chama um fluxo de trabalho central reutilizável e dese
 <!-- certification-coach-question:admin-159:8253332be170f7dc6827c71e5363bd4c5538e0b966085d0c760bed3da2e92d1a -->
 ## Question 159: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-159`
 
 **Content revision:** `8253332be170f7dc6827c71e5363bd4c5538e0b966085d0c760bed3da2e92d1a`
+
+**en review revision:** `7f3169abd6971691267425710178d4767fdddac6ac444da13f62e0d7762547fe`
+**es review revision:** `0987afb16859f9325e76444eb26fccc38a14e097c8e5d4feb5fbcd5a66e668ec`
+**pt-BR review revision:** `0435b7a5eb2b5a9c721663ec263c7f5a1ca0016290ae9baee134ba7b3552b64f`
 
 ### English
 
@@ -16239,11 +17513,19 @@ Uma equipe escolhe o Ubuntu GitHub-hosted padrão runners em vez de máquinas se
 <!-- certification-coach-question:admin-160:1c3a867cff91013868f7884ac7b449aab37b54207db07fa20de91cca0b83fc56 -->
 ## Question 160: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-160`
 
 **Content revision:** `1c3a867cff91013868f7884ac7b449aab37b54207db07fa20de91cca0b83fc56`
+
+**en review revision:** `5c9c92b4095350044f3f16d2de738f7b399f0de657348cf72573e7e30fcee64b`
+**es review revision:** `5149f486625886455d5196ba70ebe323fadd12d1b493fbaa6687b29fabea9fad`
+**pt-BR review revision:** `11b32625d1de3e4be72e60a9e5c8de3050504d4e1c075f05e46ebaa9402229b2`
 
 ### English
 
@@ -16341,11 +17623,19 @@ Uma organização instala self-hosted runners em suas próprias máquinas virtua
 <!-- certification-coach-question:admin-161:3d9d68ba3e6de01244fe07c360bdf2be49a55632a64039fe70ce80af3c1bdb38 -->
 ## Question 161: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-161`
 
 **Content revision:** `3d9d68ba3e6de01244fe07c360bdf2be49a55632a64039fe70ce80af3c1bdb38`
+
+**en review revision:** `275a1f36e98b08955518f87e5ad3db0dda98d8dc280e47fb5a8ec8d5a20f30e4`
+**es review revision:** `b6a3e3280dc5c4aa4d9ab574f8d998df427e0c3e4df027a39cb2f4a40b8cdf9c`
+**pt-BR review revision:** `0cc7a0cc9cb753415288978cb49311f166636bc18ba8c5a647ad546f9fdb944f`
 
 ### English
 
@@ -16443,11 +17733,19 @@ Duas tarefas são executadas sequencialmente no mesmo self-hosted runner persist
 <!-- certification-coach-question:admin-162:09cbe9219c20824e7b9d32ca194e7c2a93deb9063e0ed429c44a820cc1b9922e -->
 ## Question 162: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-162`
 
 **Content revision:** `09cbe9219c20824e7b9d32ca194e7c2a93deb9063e0ed429c44a820cc1b9922e`
+
+**en review revision:** `4aa04eb64c198f329026c1198c6617bff5093521dd1ecd08e052c7d9313e1e08`
+**es review revision:** `5d6445af855ddd94e08213c5aea41dd444e5c31da36a15aca4939a186daaea83`
+**pt-BR review revision:** `ba95f94e1d278b9e40fbca82b297cb9ffa14e4acf612ce4711a79f2aace60262`
 
 ### English
 
@@ -16545,11 +17843,19 @@ Um repositório público aceita pull requests não confiável. Sua proposta self
 <!-- certification-coach-question:admin-163:c36a255be19cdbf578fa2fd7ada9fdc5831bfe504642a129d80ded160e6519c0 -->
 ## Question 163: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-163`
 
 **Content revision:** `c36a255be19cdbf578fa2fd7ada9fdc5831bfe504642a129d80ded160e6519c0`
+
+**en review revision:** `b0edda0fcd6dfac9df473302c629e8da067fb47876749f6ea2db20c7d00b95c8`
+**es review revision:** `7ee4ebb0bb8957786f436ce9c50cc4d1fc04104ea39829638c53b9493e54027f`
+**pt-BR review revision:** `d55ee21406212db0f7dc9a50663e343204921e728d665b3eb87a5055bdb0f561`
 
 ### English
 
@@ -16647,11 +17953,19 @@ Um administrador precisa autorizar apenas repositórios selecionados para usar u
 <!-- certification-coach-question:admin-164:da3ff5c750c9cd2b3bf76121bda7b48de82df9242b96b5b0c8bb4d86e3e96315 -->
 ## Question 164: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-164`
 
 **Content revision:** `da3ff5c750c9cd2b3bf76121bda7b48de82df9242b96b5b0c8bb4d86e3e96315`
+
+**en review revision:** `956c748e0c98997b731e1e4ff015490d18192859990ce5ac1d28a14c3e1e9e30`
+**es review revision:** `6345e24e8ea1eb121dfa0561be71a3c9c3312ecbd4ce08a13b9e8f8a570b7125`
+**pt-BR review revision:** `5a50ca227f8937340a4d1a4525066d9abf23e989337f4ed73c603e69fba93178`
 
 ### English
 
@@ -16749,11 +18063,19 @@ Os trabalhos de um repositório não podem usar self-hosted runner mesmo que seu
 <!-- certification-coach-question:admin-165:fd1b0ff5c33fedc3fea7f98614c9014f41d049d71f52886257d1c0732831bf64 -->
 ## Question 165: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-165`
 
 **Content revision:** `fd1b0ff5c33fedc3fea7f98614c9014f41d049d71f52886257d1c0732831bf64`
+
+**en review revision:** `4b363af702db86bac79bbdef95df6937d96459f34e1fe1b6939174f865602009`
+**es review revision:** `37e2d4329cea3f4968bb0e2d9674d369addb307272c5804befda067cd4577595`
+**pt-BR review revision:** `b440fc8945b2e90dce9532e8b29904502d9aaace945c192c0862f60c167bf19e`
 
 ### English
 
@@ -16851,11 +18173,19 @@ Uma empresa compartilha um grupo runner com uma organização e esse grupo tem u
 <!-- certification-coach-question:admin-166:cd051ba6534c51fdcf23c2247e4c7d2f0513fce26a444a1b26cbd76ee698a622 -->
 ## Question 166: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-166`
 
 **Content revision:** `cd051ba6534c51fdcf23c2247e4c7d2f0513fce26a444a1b26cbd76ee698a622`
+
+**en review revision:** `971aefcead1989ac47386ca29cf56672bbf3f1a8ba0edf8814949faa765f3889`
+**es review revision:** `004eabf571bd34aebfef753c4f4acf728c80562ebc317363dbdd146bfdde3dd0`
+**pt-BR review revision:** `756c1f523d513ef3fab7f297632ce9ddd4328a19d4b55153432529306f0446c7`
 
 ### English
 
@@ -16953,11 +18283,19 @@ Um fluxo de trabalho usa runs-on: \[self-hosted, linux, gpu\]. Como os runners c
 <!-- certification-coach-question:admin-167:89b21f428b3ecb9c255b942a02b2ccc8396bc29de1321868c2bccb98de7e73e1 -->
 ## Question 167: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-167`
 
 **Content revision:** `89b21f428b3ecb9c255b942a02b2ccc8396bc29de1321868c2bccb98de7e73e1`
+
+**en review revision:** `d2bd7d816c5507068409b3ad3626849b920cbc09b998ec73da22bac1710600ca`
+**es review revision:** `75a3a9e330ded6f889de2ffdd9276e51151c498114259000d11ad2b8524874c1`
+**pt-BR review revision:** `d26b6aab287fef3c25e45d0f79908447ffec7dae5f731a24548ad4837596427d`
 
 ### English
 
@@ -17055,11 +18393,19 @@ Uma tarefa GPU permanece na fila enquanto uma runner autorizada on-line está oc
 <!-- certification-coach-question:admin-168:1a542d582e00993de64a4b93dde9c6cd7f81100046f682e397f1483ee7c1aace -->
 ## Question 168: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-168`
 
 **Content revision:** `1a542d582e00993de64a4b93dde9c6cd7f81100046f682e397f1483ee7c1aace`
+
+**en review revision:** `65f4cb0866896da7cd1e809a61955a252ee49e2afb1a969a82584c0cd4e57526`
+**es review revision:** `55ff21acf32e0ac2fd22be519a6a01b9b15e48c166ed47ed1fc92a68583fe6ca`
+**pt-BR review revision:** `a2cc015ff1987090d3c5394078a278ff6ea12efbbe0b7a2a4b63186e8d06f6cc`
 
 ### English
 
@@ -17157,11 +18503,19 @@ Um self-hosted runner funcionando anteriormente aparece off-line após uma alter
 <!-- certification-coach-question:admin-169:2860bbeed43fb41f4fd11a932a5189bd16a695337e8c6c71c7918d39044bbcc6 -->
 ## Question 169: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-169`
 
 **Content revision:** `2860bbeed43fb41f4fd11a932a5189bd16a695337e8c6c71c7918d39044bbcc6`
+
+**en review revision:** `746d698375b008386664403e660279099720b1e0b6680a774638ccff84d1cdef`
+**es review revision:** `3181724ebf37aa33ab97979e7d0c7d0fad22b4ec6b9e188b4cbb354b6b01531a`
+**pt-BR review revision:** `bbb5fd0da1fbb0cbd5ad636fafb778ac39a504be304f044908d8aeaed5914c45`
 
 ### English
 
@@ -17259,11 +18613,19 @@ Uma equipe está projetando uma frota self-hosted runner com escalonamento autom
 <!-- certification-coach-question:admin-170:1447ce84867507666fbacb9dbf204826a7501d6108116093d04c3b18d88af875 -->
 ## Question 170: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-170`
 
 **Content revision:** `1447ce84867507666fbacb9dbf204826a7501d6108116093d04c3b18d88af875`
+
+**en review revision:** `62eb27397a271beaad0f410fe26bbc57cec8854e7fb6837736d31ee5284ba2ca`
+**es review revision:** `d65c1d9019eea36871a9a2f7ea0cd6929d0b1579547d18150d05ebf222e7657a`
+**pt-BR review revision:** `32ba359c939a40cde981bd79c39c3d1dd34e3ad92c83259cfd30a51afd306900`
 
 ### English
 
@@ -17361,11 +18723,19 @@ Uma equipe de plataforma já opera Kubernetes e deseja a solução GitHub basead
 <!-- certification-coach-question:admin-171:656d4a854438d93ebb322e1d537163cf0065a09cbb0c08421a05cba7def6c0e6 -->
 ## Question 171: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-171`
 
 **Content revision:** `656d4a854438d93ebb322e1d537163cf0065a09cbb0c08421a05cba7def6c0e6`
+
+**en review revision:** `f4383371ffc478354c81f1af3f6c43e0709f7086e7d75c5167aa77c410b90892`
+**es review revision:** `b0a3dcf3f9ca07509a61da76df27ee86f6c41fe89720892c26d699a74206a597`
+**pt-BR review revision:** `f0dccf80be75565a623cb459311ca613f7be39fe0c7350e41250b904ae1650b8`
 
 ### English
 
@@ -17463,11 +18833,19 @@ Uma compilação deve alcançar um servidor de pacotes interno privado. A organi
 <!-- certification-coach-question:admin-172:d0bde383d5c23521223dae4ae84c95a169a858b1babc4fffdf0c4eb853d2a21f -->
 ## Question 172: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-172`
 
 **Content revision:** `d0bde383d5c23521223dae4ae84c95a169a858b1babc4fffdf0c4eb853d2a21f`
+
+**en review revision:** `8308eb7d202064052335dd46a6cbac0dffabb0d176ef986b965d7745eb50afec`
+**es review revision:** `cf3624fcfafff9d5a234b1f48f346e50134b8e3dc55ffa33188ccff31c4feac4`
+**pt-BR review revision:** `5eb8aaabd2bfc89a62cb12afcf77bafa1c196542179bcdfe7722ac9f9364c82b`
 
 ### English
 
@@ -17565,11 +18943,19 @@ Uma empresa elegível deseja infraestrutura runner gerenciada por GitHub com ace
 <!-- certification-coach-question:admin-173:6d23d2f644dbc4a259d66a33cbf73b4487ccfec85fa59ea63f11bf787296d5a1 -->
 ## Question 173: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-173`
 
 **Content revision:** `6d23d2f644dbc4a259d66a33cbf73b4487ccfec85fa59ea63f11bf787296d5a1`
+
+**en review revision:** `0a077b2c5c4a41ce0f1bc1478363d92f314d0f432cd885e08ca75038d437a289`
+**es review revision:** `dfa64a7834279c9dc3ba39e87bfd8df27bedf150222da49e35048911ca7da9e6`
+**pt-BR review revision:** `2aba8ed2b944d8a6ba9da602e91c3d29297d48d86e13b4d259a834a6031b7217`
 
 ### English
 
@@ -17667,11 +19053,19 @@ Depois de mover o runners maior com suporte para a rede privada do Azure, uma or
 <!-- certification-coach-question:admin-174:0ec95871c8cf633c0a7fb9387782bf4208169344a4a5c4599b74adab6d3b8bdc -->
 ## Question 174: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-174`
 
 **Content revision:** `0ec95871c8cf633c0a7fb9387782bf4208169344a4a5c4599b74adab6d3b8bdc`
+
+**en review revision:** `da4b7f5da4ef2acdc50006a4c8ab054048a007ffa6e1b78d69eb3634fbe2e7ae`
+**es review revision:** `07ede880c617b9a6e7c44d2236795dcbb29707f7782c5b9b7d52d84467fe4022`
+**pt-BR review revision:** `3178fc91b5a8d3a0b34a35b439f014df4a41899284fb4d2f8034f12a4c904f4d`
 
 ### English
 
@@ -17769,11 +19163,19 @@ Um endpoint de implantação privado requer uma pequena lista de permissões IP 
 <!-- certification-coach-question:admin-175:5f4f75dc641609fd0dce0d6bf358a43fc12ed129ccbd28f5a78aedfed8b22bbe -->
 ## Question 175: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-175`
 
 **Content revision:** `5f4f75dc641609fd0dce0d6bf358a43fc12ed129ccbd28f5a78aedfed8b22bbe`
+
+**en review revision:** `eb00c240adb8eb5efe940c3a55e663b2312c687f2da9b2b465ab5ddd282baf9d`
+**es review revision:** `eaebbd9e3474ea37a21e9ad3f818c8b3eb53c0248af7181a6dce866fa752c150`
+**pt-BR review revision:** `66baa7d92ecf4500f01c110b1f6bacf9aedffb817829fba7127e1454e095e206`
 
 ### English
 
@@ -17871,11 +19273,19 @@ Um self-hosted runner fica atrás de um proxy HTTP corporativo e não pode ser r
 <!-- certification-coach-question:admin-176:58be17561907d460023a89c612d06942cab778eb57dd2e3e5b3d91ba7f6457aa -->
 ## Question 176: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-176`
 
 **Content revision:** `58be17561907d460023a89c612d06942cab778eb57dd2e3e5b3d91ba7f6457aa`
+
+**en review revision:** `2bb87e2a9c70b5af5007991af95aa35ba7d705f20cc8612d85bbaf099c6e4ee1`
+**es review revision:** `f917b0b4bf15c360890cfeb98afd6064aab484b66cd77008f26cfdef39902124`
+**pt-BR review revision:** `28bf8db99a47e676209c4892520a3bb12cc9428d6ea8984e025b631fcdf5c07c`
 
 ### English
 
@@ -17973,11 +19383,19 @@ O retorno do fluxo de trabalho aumentou, mas a duração da execução do trabal
 <!-- certification-coach-question:admin-177:461c0267b2683e40e99acddcff581dd58af5b8fea0514aaffa046908938a7a50 -->
 ## Question 177: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-177`
 
 **Content revision:** `461c0267b2683e40e99acddcff581dd58af5b8fea0514aaffa046908938a7a50`
+
+**en review revision:** `ebff3e71505eadb758ee573ed6afa832c8b7477a60703efbd908a35f4a3af1a3`
+**es review revision:** `d6bfdba749c18ce4e932c0bf37cde8e6effde512043282d8ef2d3230d6b279a9`
+**pt-BR review revision:** `ceed8d69d3990f8799a22464b5572092d76726cbd464c95b38ae7ecd41eeaff2`
 
 ### English
 
@@ -18075,11 +19493,19 @@ Uma organização desativa intencionalmente as atualizações automáticas do ag
 <!-- certification-coach-question:admin-178:5e8ffaa7c68d65baa4bbf91db0520c80236bcccf4e8263b07721d4fb35ceeba4 -->
 ## Question 178: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-178`
 
 **Content revision:** `5e8ffaa7c68d65baa4bbf91db0520c80236bcccf4e8263b07721d4fb35ceeba4`
+
+**en review revision:** `48fcd71086d0de69168e63a9b6124b82c46becc68864eb9f42aa446810fdcf95`
+**es review revision:** `1fd49b28b872e1a05782c0eb8b13c6d834c935f7f61d6309e846bcc8134cc00b`
+**pt-BR review revision:** `74b7f2e593564a1ddb047837f39fc9e0a8374c6881d7bf48946f00df49c251f6`
 
 ### English
 
@@ -18177,11 +19603,19 @@ Um ambiente de produção requer aprovação do revisor e armazena um segredo de
 <!-- certification-coach-question:admin-179:f867882ba9c4e25269b3c69188a5e48c66c011d759428918377e9ee46a132c59 -->
 ## Question 179: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-179`
 
 **Content revision:** `f867882ba9c4e25269b3c69188a5e48c66c011d759428918377e9ee46a132c59`
+
+**en review revision:** `69bbd1b69a952f152bfbe2ab31615e6d385979788a08b79414825f5e3b4a3328`
+**es review revision:** `97c1b5a854ba0eec14671422cdd1f2440b6286b9e0e1073dd6f09fbf707bbe48`
+**pt-BR review revision:** `10cb083c1736320abbf5f5b7bb2f6adac37d5006f70442a7eafa753a6c693c81`
 
 ### English
 
@@ -18279,11 +19713,19 @@ Um segredo de organização deve ser utilizável por apenas três repositórios 
 <!-- certification-coach-question:admin-180:5dddd900d774f2970cfb2ae0233bfdf6fbd362639ac87f488298101584e0465d -->
 ## Question 180: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-180`
 
 **Content revision:** `5dddd900d774f2970cfb2ae0233bfdf6fbd362639ac87f488298101584e0465d`
+
+**en review revision:** `fe5ee3fc9ca7904b58894c5ed018122dcc6d8db736a4f1bd1cb865a1c4d375a7`
+**es review revision:** `04f6bcd6a3b94210cba63ce07ccee5db8aa12f859011bc8431e4fa366bc99cc3`
+**pt-BR review revision:** `90c62156e1484931f322d8b96a28e6bb029652bc0a908d3c3c5bcd29046bee73`
 
 ### English
 
@@ -18381,11 +19823,19 @@ Um trabalho faz referência a um ambiente. O mesmo nome secreto é configurado n
 <!-- certification-coach-question:admin-181:54046b930deee488f9535a19ebbc6c0e615c374acc02d3796d058edba0a7cfb4 -->
 ## Question 181: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-181`
 
 **Content revision:** `54046b930deee488f9535a19ebbc6c0e615c374acc02d3796d058edba0a7cfb4`
+
+**en review revision:** `d0fb4e50687d2d0b7679e001019190b3adf8ca9cabbb29a467dd7e2229d090b9`
+**es review revision:** `a56007c0fd28126b2a743a01d41c2859377ab87d118f6f504b6317ed9e8bce72`
+**pt-BR review revision:** `e43dd091c36f360dc2df10df848da751de57543cef01f5b4657de323341a2e0f`
 
 ### English
 
@@ -18483,11 +19933,19 @@ Existe um segredo de repositório chamado SERVICE\_KEY, mas uma etapa do shell q
 <!-- certification-coach-question:admin-182:d61cc3062b563d497429d636c7fe5e9cb29ab3ee815364d02f1898cecb9e535a -->
 ## Question 182: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-182`
 
 **Content revision:** `d61cc3062b563d497429d636c7fe5e9cb29ab3ee815364d02f1898cecb9e535a`
+
+**en review revision:** `272aa21467171e2271d7302c409fe677d9e374588fb5d65624e72a77609ae70a`
+**es review revision:** `53449b59cfdca83155f64ba1a27344c5da707746c8b4c6b9316571076ede4712`
+**pt-BR review revision:** `e201905ce77e2422d91a67b3aad806ad80739107f78b8b064bde7782982b7dbc`
 
 ### English
 
@@ -18585,11 +20043,19 @@ Um fluxo de trabalho transforma um segredo e imprime o resultado transformado. U
 <!-- certification-coach-question:admin-183:e887163430afdadc35b7b234966989832b255273508b804a82df6e3f1b9c7dd3 -->
 ## Question 183: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-183`
 
 **Content revision:** `e887163430afdadc35b7b234966989832b255273508b804a82df6e3f1b9c7dd3`
+
+**en review revision:** `a8e2564d136f56f9ac70301968abe8a659c3b6e93e9a9b0acf8391939561ca6f`
+**es review revision:** `e1f471c8bc7ae266187963436f89aa288cfd2a0af3130a56b5d4090413eb8223`
+**pt-BR review revision:** `3a34618179cc8e762fa354669e60b1b1f888a9d75850fd6fd99acb0e0186d5a3`
 
 ### English
 
@@ -18687,11 +20153,19 @@ Uma empresa substitui uma chave de implantação em nuvem de longa duração por
 <!-- certification-coach-question:admin-184:be531a38b74e6365d59e7833ab5f266bdfbd7b03de98c408b1292bbe6c93d077 -->
 ## Question 184: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-184`
 
 **Content revision:** `be531a38b74e6365d59e7833ab5f266bdfbd7b03de98c408b1292bbe6c93d077`
+
+**en review revision:** `b818ca745de6cef411a1423082f50c527b0dd98f8c0367f24f555b40db3afb38`
+**es review revision:** `db0dd5187a9d728d9be96359d55e04dbd724569fab8196f364714461a0c37e09`
+**pt-BR review revision:** `e13597ed70fee40db8b0609e32dffbb4a4e433ce21e2edf50cbc3a4227f77027`
 
 ### English
 
@@ -18789,11 +20263,19 @@ Um fluxo de trabalho define id-token: write e um engenheiro afirma que só isso 
 <!-- certification-coach-question:admin-185:7502679266e56323a72694283db4527400e93e1e61944d2837b4fd3e0a2becbc -->
 ## Question 185: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-185`
 
 **Content revision:** `7502679266e56323a72694283db4527400e93e1e61944d2837b4fd3e0a2becbc`
+
+**en review revision:** `7fb913d32d2f170bf584528f6e219c0aee69d58b641d3e5bfa752ac9b5950938`
+**es review revision:** `9c5b484910aec114de3230ef2f49be0848fe598d3d8c492ca39623b62c0faf11`
+**pt-BR review revision:** `9248b1e0c2869ba5805c29519c22c483c9f117e80733c8ca5fc6e6025a12f6fa`
 
 ### English
 
@@ -18891,11 +20373,19 @@ Uma organização mantém segredos de implantação em um cofre de terceiros e o
 <!-- certification-coach-question:admin-186:204b7d80b459a45da205d78c8a9b13b52d9670f91c6b3b3b81531d9ada7a77df -->
 ## Question 186: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-186`
 
 **Content revision:** `204b7d80b459a45da205d78c8a9b13b52d9670f91c6b3b3b81531d9ada7a77df`
+
+**en review revision:** `b3de2f29e77d067c921dd2660155416079ab9eb4c7d71906be6d8f9dac11c705`
+**es review revision:** `da9435b577053149a9607817f7337f335666e301ea9c66c13c0f8a092c7b93da`
+**pt-BR review revision:** `e88fcef8c54c920d8bda7247e333ed08c49be3ad7f7dd3e4c0ccdb5aaf32ffb0`
 
 ### English
 
@@ -18993,11 +20483,19 @@ Uma organização altera o valor armazenado em um segredo de repositório após 
 <!-- certification-coach-question:admin-187:efe7acd96ba232097334178f790800f5b21bb49306efa1896fff0cc6062a6944 -->
 ## Question 187: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-187`
 
 **Content revision:** `efe7acd96ba232097334178f790800f5b21bb49306efa1896fff0cc6062a6944`
+
+**en review revision:** `6fcb8eacaebef8d6774dee61fde668d5ced550bac3811580a3b6c8ee7ce7657a`
+**es review revision:** `cdf70beaac5151a157e8d5cd1bcd2c0a635ec41202065801d78f1c877e316976`
+**pt-BR review revision:** `1a0825655b3bf5299d31eecd81fc6390be6309ae68104655c7d1d0e68bdb61e5`
 
 ### English
 
@@ -19095,11 +20593,19 @@ Um chamador transmite uma credencial de implantação como uma entrada comum de 
 <!-- certification-coach-question:admin-188:0b5ecbd95d645c8c96d4ca1191ae9329ecb6ee0f88876264aa526a614345e0d0 -->
 ## Question 188: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-188`
 
 **Content revision:** `0b5ecbd95d645c8c96d4ca1191ae9329ecb6ee0f88876264aa526a614345e0d0`
+
+**en review revision:** `0897478d61909f994774cecd2499c91df0e28602e8d32503a0a90208f3aad924`
+**es review revision:** `0017de6cbf16a28e50e3005f4f2fe8ae50b42826dcf4dc683c8fbfd119ac158f`
+**pt-BR review revision:** `d9fed657d9d8786db65f862bf7d02052fd4cb3222545ddc5a9ea268790469c72`
 
 ### English
 
@@ -19197,11 +20703,19 @@ Um fluxo de trabalho acionado por um Dependabot pull request precisa de uma cred
 <!-- certification-coach-question:admin-189:c4d3a5b83c68e831e63a1e76ffc24269f65a2f36e07c839486e245eb509802bc -->
 ## Question 189: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-189`
 
 **Content revision:** `c4d3a5b83c68e831e63a1e76ffc24269f65a2f36e07c839486e245eb509802bc`
+
+**en review revision:** `a372a24159c5047a35148ce4edab20404dcffda66d3a0896ca37bbdb304fb3bf`
+**es review revision:** `3eb78fc3fc5720c7438963f9a789a20c7d0a5e3b73d9c9e3ad516e6048da2e88`
+**pt-BR review revision:** `c787d5e4341170910432a9000ce3187066bf0bf5dc244d1ecd03893e789264ba`
 
 ### English
 
@@ -19299,11 +20813,19 @@ Um fluxo de trabalho insere um título issue não confiável diretamente em um s
 <!-- certification-coach-question:admin-190:86b9cdc33dceba46ccbd8f24e2da6427c4fcde04b51a4b621a477ce7740ab15b -->
 ## Question 190: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-190`
 
 **Content revision:** `86b9cdc33dceba46ccbd8f24e2da6427c4fcde04b51a4b621a477ce7740ab15b`
+
+**en review revision:** `0fd849c04bcc14ddf625112cdc66efcbcb1a7ca6cbd4692c3fc35ccb096f1482`
+**es review revision:** `e0801715346f5fe729cc97cba8802ba507619df7d80e56891f7d519f0f59d14c`
+**pt-BR review revision:** `49f0ce8fafe36aaebce68f00aba576841f2b36863b3b9938c3f4dcab30eec8eb`
 
 ### English
 
@@ -19401,11 +20923,19 @@ Um comando de implantação aceita uma credencial como argumento de linha de com
 <!-- certification-coach-question:admin-191:3f453d98c493d3e582b4dad70dd7ee661754e2e239804ac3f68cce8214edd2ae -->
 ## Question 191: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-191`
 
 **Content revision:** `3f453d98c493d3e582b4dad70dd7ee661754e2e239804ac3f68cce8214edd2ae`
+
+**en review revision:** `b84ef68a46e240271d4e37de775363b5182cc28629bedc7cffd834fa9e85739f`
+**es review revision:** `5bce4edd58cab6049bca811a2953b1294b9658433db9b68e0217afce86a79410`
+**pt-BR review revision:** `a9432b2c96b602fbb18774dc723df6fe99c0c51f94eca6a2e1ff485ed8367800`
 
 ### English
 
@@ -19503,11 +21033,19 @@ Um administrador fixa uma ação de terceiros a um commit SHA completo e diz que
 <!-- certification-coach-question:admin-192:05978d8c33aeff83cf1e35a3e488d4f3b171dd682a1555015a40374ded8bce62 -->
 ## Question 192: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-192`
 
 **Content revision:** `05978d8c33aeff83cf1e35a3e488d4f3b171dd682a1555015a40374ded8bce62`
+
+**en review revision:** `3cf722595d58948cc0de05f4ea4a5a51224943298c691a1d4190b8302f832908`
+**es review revision:** `864c08180b050bfe4d50a98ca60540d4791e07172fb1353e8fe6a28e043e5ff7`
+**pt-BR review revision:** `c791457a6f4825c8bccd48590c0164733333e4a68e20551c24259a0f9e1d3f01`
 
 ### English
 
@@ -19605,11 +21143,19 @@ Somente o trabalho de publicação precisa de packages: write; os trabalhos de t
 <!-- certification-coach-question:admin-193:a0bb5505cd9ee66910e5ba0999003e974e7f022672dd42684bad6e4a7128a4e8 -->
 ## Question 193: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-193`
 
 **Content revision:** `a0bb5505cd9ee66910e5ba0999003e974e7f022672dd42684bad6e4a7128a4e8`
+
+**en review revision:** `dd10ad55d706b7264fa219cfe0ae2fb21df7b71ca445dd960a3f6978d8fc598b`
+**es review revision:** `23c365ca7a674b8a4135a3a22d91389bc7db2fd7785ef99d422b1b4e2110f9a0`
+**pt-BR review revision:** `591f169efd9b2c1266eaf8719369de5f30068ee5f062847b639c4b845867df6e`
 
 ### English
 
@@ -19707,11 +21253,19 @@ Uma ramificação recebe pushes frequentes, e execuções obsoletas de CI consom
 <!-- certification-coach-question:admin-194:da8971a79cc86061b9e9160bfc33a3027e813a9a92fe1ea62c690905d8a40302 -->
 ## Question 194: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-194`
 
 **Content revision:** `da8971a79cc86061b9e9160bfc33a3027e813a9a92fe1ea62c690905d8a40302`
+
+**en review revision:** `de307b52b6b29c4de4c1961b8207967bf21668b95260b36bfc9ebe892482d833`
+**es review revision:** `db15265c6f4b5ca02140e925df73292c82f9f476b03f339857a6ad0a00562d19`
+**pt-BR review revision:** `c19b5a21f24c660474cc1fb268803d30589e216b8847cd7704a96c71aff199e8`
 
 ### English
 
@@ -19809,11 +21363,19 @@ Um teste de integração ocasionalmente trava indefinidamente em um self-hosted 
 <!-- certification-coach-question:admin-195:4abd2a4170f8483ea7daa3d26054d99093fc8f6c4fe67fa987a730b7236050b7 -->
 ## Question 195: Manage GitHub Actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-195`
 
 **Content revision:** `4abd2a4170f8483ea7daa3d26054d99093fc8f6c4fe67fa987a730b7236050b7`
+
+**en review revision:** `f6661fda4c32d1fb07a5e2cb2f91d05608b42b059dd0f1000016b59aeed91827`
+**es review revision:** `5234b57ba44185d327592b3a41c75f66459ce25d2ab56be5435ed7bc0ea881eb`
+**pt-BR review revision:** `148c2fd79adb003ddae7d657e108e4ae402e8069c302108e5e376c90f60cedf9`
 
 ### English
 
@@ -19911,11 +21473,19 @@ Uma equipe deseja armazenar em cache um diretório de construção que também c
 <!-- certification-coach-question:admin-196:c2b51fadde2216aff8661587110f7e918909cdaafff7f315cac337ad09f26d9b -->
 ## Question 196: Monitor and optimize GitHub usage
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-196`
 
 **Content revision:** `c2b51fadde2216aff8661587110f7e918909cdaafff7f315cac337ad09f26d9b`
+
+**en review revision:** `42677c7a1c33bc0437102777ba4f8f56761363b123623a64eab3b1cad1f12b73`
+**es review revision:** `eefa3b9b5c1ec63be0a7b4fc40a3c8c59dc2a85be0b18f4522ac8269248a141c`
+**pt-BR review revision:** `348d37d95ccb7d2072bb7bac14638efe3eb4c957f09b83de6bf7f481716fc7bf`
 
 ### English
 
@@ -20013,11 +21583,19 @@ Uma empresa deve determinar quem mudou uma política da organização e quando. 
 <!-- certification-coach-question:admin-197:4caed4cb29227f7000fc7d2b24a0f0c544655f52a2be6d9652d756dd5790ddf1 -->
 ## Question 197: Monitor and optimize GitHub usage
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-197`
 
 **Content revision:** `4caed4cb29227f7000fc7d2b24a0f0c544655f52a2be6d9652d756dd5790ddf1`
+
+**en review revision:** `52efd20df6e35daaf88b3caa6833afc3b3e0faf31607eb84fcadacaa69ffedeb`
+**es review revision:** `30a01d910e3912a00bb6abee9cfed97312eb9fc9482ab80e85865fc545c93e2f`
+**pt-BR review revision:** `ac38fadb98097bfa428bba79b46e4727ca01ce99bb691fd265611af8de866a01`
 
 ### English
 
@@ -20115,11 +21693,19 @@ Um investigador conhece o ator, o repositório e a data aproximada de uma ação
 <!-- certification-coach-question:admin-198:fb2d42c3fd74d2f9688ebf4baf796c51885110758d0066c93774f890086145e5 -->
 ## Question 198: Monitor and optimize GitHub usage
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-198`
 
 **Content revision:** `fb2d42c3fd74d2f9688ebf4baf796c51885110758d0066c93774f890086145e5`
+
+**en review revision:** `1bec229546a7608c13e3a5b399a770601d42ff61780e645e75463e5d19759a47`
+**es review revision:** `c245a2dc91f07a573c65fe57d2bd37896bce70ab8ce0b97f3daa304364e7400f`
+**pt-BR review revision:** `7ea206dab1b97a2d9846207e4b9f6a708992381bfcbf6652430caddbdd2deb06`
 
 ### English
 
@@ -20217,11 +21803,19 @@ Um investigador GitHub Enterprise Cloud precisa de eventos Git de duas semanas a
 <!-- certification-coach-question:admin-199:cfb55384d9b9e73b0c21362d5a51f6899e46d2a1c4197c625797cb7009db2d6f -->
 ## Question 199: Monitor and optimize GitHub usage
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-199`
 
 **Content revision:** `cfb55384d9b9e73b0c21362d5a51f6899e46d2a1c4197c625797cb7009db2d6f`
+
+**en review revision:** `93e8d6ee10d7ff62a37ecb42535ea650a72fa73b0b7c7155a5d5aa12c70cadaa`
+**es review revision:** `6e57cfbf7784c0c976a333357b9038765c8325da1631cfc6813f880641f77632`
+**pt-BR review revision:** `2ea7271057ef10c25f781fd31846536b051724da2c3f4100b6dddd066e05e35a`
 
 ### English
 
@@ -20319,11 +21913,19 @@ Uma empresa transmite logs de auditoria para um sistema de conformidade. Um novo
 <!-- certification-coach-question:admin-200:b588e84806dda2940dd069df7f77139a0706f5ac34e14dadd7b612e54d514acc -->
 ## Question 200: Monitor and optimize GitHub usage
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-200`
 
 **Content revision:** `b588e84806dda2940dd069df7f77139a0706f5ac34e14dadd7b612e54d514acc`
+
+**en review revision:** `200d3a1e8414174949363e0560bfb8c4424bcccfd32acce2eaa0b0967755ff42`
+**es review revision:** `3696b68f1bcbf0b54be462266e0676c8b5b2a97c28fec979fb4cb3e0b55b783f`
+**pt-BR review revision:** `0573b14647d3e40ef889053aa7c1884398507db529af6d8f945d1de86f1ca0cf`
 
 ### English
 
@@ -20421,11 +22023,19 @@ Um relatório de licença identifica usuários com pouca atividade recente. Qual
 <!-- certification-coach-question:admin-201:8169138ded25067e4224031910d328f19ffa9a53d8ae990ff75d6d22da67ff76 -->
 ## Question 201: Monitor and optimize GitHub usage
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-201`
 
 **Content revision:** `8169138ded25067e4224031910d328f19ffa9a53d8ae990ff75d6d22da67ff76`
+
+**en review revision:** `8304825cc5513b4c84bbe34e25ea3e087e06ca798a3f02f578f69b0e67c45c88`
+**es review revision:** `ce907542c050cb643adaa06433322ab00865812ff02059b03fcb1379b421dd21`
+**pt-BR review revision:** `275b8e66a39459b82753627134561df209de00ed25b68fb35ff707eeb6707c0b`
 
 ### English
 
@@ -20523,11 +22133,19 @@ Os gastos totais de uma empresa com GitHub aumentaram, enquanto o número de usu
 <!-- certification-coach-question:admin-202:1d05dc9a0c551eb099c9f006132636ee82470b906ce0fc4515c13b148d879a6e -->
 ## Question 202: Monitor and optimize GitHub usage
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-202`
 
 **Content revision:** `1d05dc9a0c551eb099c9f006132636ee82470b906ce0fc4515c13b148d879a6e`
+
+**en review revision:** `b6f45f8822cb3711a521968086afa9fbfc1e72db8cdf6e5792b545c2741d7a49`
+**es review revision:** `4e7116da7d59ee337775d546511f944b7d1a65586b9b8ce93aa651ba050ed481`
+**pt-BR review revision:** `714d44bff52f8db7aa37c9462a310cb282ccc11a0b12396d7ff3d78367a9b7cf`
 
 ### English
 
@@ -20625,11 +22243,19 @@ Um administrador cria um orçamento e presume que ele sempre interrompe todo o u
 <!-- certification-coach-question:admin-203:b8f6b1033c398558668be036202ee5258abbf87303f1fd6e8963e5e600a990e9 -->
 ## Question 203: Monitor and optimize GitHub usage
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-203`
 
 **Content revision:** `b8f6b1033c398558668be036202ee5258abbf87303f1fd6e8963e5e600a990e9`
+
+**en review revision:** `e857938fa84a60e031f116bbd68822bfad283b55d02e42bf31260203550a3723`
+**es review revision:** `9932d5c33194bd1557df7bfb01575cd8c682c3cc4f98452aa43df232f5c1870f`
+**pt-BR review revision:** `01852488749524aec0b17692755d935c8f43b1c10d8260dd8b5b84eb343ca55f`
 
 ### English
 
@@ -20727,11 +22353,19 @@ Uma empresa precisa de atribuição departamental para gastos medidos com suport
 <!-- certification-coach-question:admin-204:beac7aa641f047f4e73ea74dcdfca6066f595c93f5642a5df8471c6cc1e17d60 -->
 ## Question 204: Monitor and optimize GitHub usage
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-204`
 
 **Content revision:** `beac7aa641f047f4e73ea74dcdfca6066f595c93f5642a5df8471c6cc1e17d60`
+
+**en review revision:** `773fe8cea11fc53f31104000a442bce0c55010a4420ae7ada9c860180af98e9c`
+**es review revision:** `9d745ef15cafff755ac09e6e1b2ae030827f529f1848f312c00c2d794ff43d7b`
+**pt-BR review revision:** `5bf5f86fca0d7f615497e2206e5cd996b97e32afd5717aa9b2c3e174d94c8907`
 
 ### English
 
@@ -20829,11 +22463,19 @@ Um repositório público move compilações do GitHub-hosted runners padrão par
 <!-- certification-coach-question:admin-205:1e5cc524093a27d6c74533e6be35651369a5e2b6f652be579f304a6d8a231eae -->
 ## Question 205: Monitor and optimize GitHub usage
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-205`
 
 **Content revision:** `1e5cc524093a27d6c74533e6be35651369a5e2b6f652be579f304a6d8a231eae`
+
+**en review revision:** `e2df5ef3436444536723e4d2b32f3be3543bb9ff671336cabf0f02ca8723f914`
+**es review revision:** `0333b2ebfbea3230348e27d84fa9b953f1bc3ba47bb3f2635b0a66be9d021691`
+**pt-BR review revision:** `7417d5ce529bca6747a852196378204a3360ad1995ab5822064991685d04d0af`
 
 ### English
 
@@ -20931,11 +22573,19 @@ Uma equipe para de executar fluxos de trabalho, mas continua retendo artefatos g
 <!-- certification-coach-question:admin-206:91310acbb3ef999fee102263433f08257ffdc41aed05398b15fc4713e837d03d -->
 ## Question 206: Monitor and optimize GitHub usage
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-206`
 
 **Content revision:** `91310acbb3ef999fee102263433f08257ffdc41aed05398b15fc4713e837d03d`
+
+**en review revision:** `a5ef46a643ce3487cef62a51a2bf180295a441ba7f402376d207545763960761`
+**es review revision:** `72c1e25e51862da598e44bec55ea3884fb2a00b88475d91d8bce86b7f5dab195`
+**pt-BR review revision:** `3d5d5e07be8598960c583a652ccb15ebb5c05e6bddebbe2a7ce5de05bf8e9a0c`
 
 ### English
 
@@ -21033,11 +22683,19 @@ Uma organização deseja custos mais baixos de armazenamento de artefatos, mas a
 <!-- certification-coach-question:admin-207:9de93af43fe1725bcc913007a8c9506956e21f5771bf5378ca4fcbd748863c2d -->
 ## Question 207: Monitor and optimize GitHub usage
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-207`
 
 **Content revision:** `9de93af43fe1725bcc913007a8c9506956e21f5771bf5378ca4fcbd748863c2d`
+
+**en review revision:** `2b9c3d3e92c176339e307c4c581727f193b638245674dbe22a6d275c2897d0fc`
+**es review revision:** `02345644cca5d65b1b0cc10fde011bfbfae19cb5965cb0a6705a592ec9eb943c`
+**pt-BR review revision:** `e121e2b883624f5dc6e661f0407a4d358cf2d8045d6eeb6a47b9e29db1678e6f`
 
 ### English
 
@@ -21135,11 +22793,19 @@ As compilações baixam repetidamente dependências idênticas e as taxas de ace
 <!-- certification-coach-question:admin-208:e1cdf3ba6f56bf02d8755593994eee857dbb1c58254858e7080a92a7592e07c5 -->
 ## Question 208: Monitor and optimize GitHub usage
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-208`
 
 **Content revision:** `e1cdf3ba6f56bf02d8755593994eee857dbb1c58254858e7080a92a7592e07c5`
+
+**en review revision:** `8e0ead9f40068802c5d7b12658961d00a3c3f85457eb0596624a50bec227bdbe`
+**es review revision:** `75b5268f866750c11c775b7caf0d6d0d757b13b78648d7199d081f20e09a372a`
+**pt-BR review revision:** `8c5dc157d573465e1cfd76c4f7e30d893a24113fc06b60d9d2a840b76a6a9243`
 
 ### English
 
@@ -21237,11 +22903,19 @@ Os relatórios de uso mostram muitas execuções CI concluídas, testando commit
 <!-- certification-coach-question:admin-209:2f75727897429f81f76077dac4e8f0e4d8a05d486b0d3f83830e90df99654dbd -->
 ## Question 209: Monitor and optimize GitHub usage
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-209`
 
 **Content revision:** `2f75727897429f81f76077dac4e8f0e4d8a05d486b0d3f83830e90df99654dbd`
+
+**en review revision:** `c1f93f3e03d606d18516b6533652580478cc1e80baae772fac2ac578385c172b`
+**es review revision:** `09e09dc05305cc027c4590b810a1c36a1d9e66779c7f4e24344e9dd6c26ae593`
+**pt-BR review revision:** `679513e1f9f06aa024d5c59e309454bf6848cb82fcba1428b747a5ea04fada5f`
 
 ### English
 
@@ -21339,11 +23013,19 @@ Um trabalho lint independente de plataforma é executado em um sistema operacion
 <!-- certification-coach-question:admin-210:80e280f1859c31dfc2330cb33e3dc84598432cc755870baf7da4a64243f0b384 -->
 ## Question 210: Monitor and optimize GitHub usage
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-210`
 
 **Content revision:** `80e280f1859c31dfc2330cb33e3dc84598432cc755870baf7da4a64243f0b384`
+
+**en review revision:** `ab31cf322882a333dbf60ae4950468a67058baaa902f8cbd133b0343005cbe0c`
+**es review revision:** `16b690143b1e4f08832022d71f08c278554ae219c40d0240fe0976212745075f`
+**pt-BR review revision:** `7602c0a2e8afc2d5e4e02f164fe214210829aff071ae4cf6fb40c33f9b288597`
 
 ### English
 
@@ -21441,11 +23123,19 @@ Uma equipe propõe mover todos os fluxos de trabalho para o maior runner porque 
 <!-- certification-coach-question:admin-211:4d521cdfab670731b8c2b90bd1d4b9294148ca7d3cf9881268a62ea9e2764bea -->
 ## Question 211: Monitor and optimize GitHub usage
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-211`
 
 **Content revision:** `4d521cdfab670731b8c2b90bd1d4b9294148ca7d3cf9881268a62ea9e2764bea`
+
+**en review revision:** `56f88feb5da52d751f5b60c172c48a1feb11d6c4d7a62b1450b48c2b2c481712`
+**es review revision:** `9bbf015f2d7d60c769278adeac440c0dc306e94ca8a6a67dc4707ec6273925b3`
+**pt-BR review revision:** `94d331bfb24229b6911c6b593987e2038fbaf8d9acc6b4fd315e702a8d180b88`
 
 ### English
 
@@ -21543,11 +23233,19 @@ Uma organização considera self-hosted runners porque GitHub não cobra a execu
 <!-- certification-coach-question:admin-212:29c7f7d45fe37f52c88f4edeffa2b8d4941c89ad45a1d9d16e8b19f833c0b72e -->
 ## Question 212: Monitor and optimize GitHub usage
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-212`
 
 **Content revision:** `29c7f7d45fe37f52c88f4edeffa2b8d4941c89ad45a1d9d16e8b19f833c0b72e`
+
+**en review revision:** `5031fc6e83b63610e2ec9d7cbf560c12f5501d38e55fad8219200f4e78e71373`
+**es review revision:** `9b782507eded2122d469575b483cecb7ea83f3c3437a532ed63b1c90a591e429`
+**pt-BR review revision:** `30cb0cc0eaa0b6262af10dbdb2c47762ed5ff762889540c4ad7e0f626232c106`
 
 ### English
 
@@ -21645,11 +23343,19 @@ Um departamento atribuiu muitas licenças do Copilot, mas o engajamento medido �
 <!-- certification-coach-question:admin-213:0d91e69f88b799cecec911a3e423310e11fed77c37d964db7ba5b2aead7861fe -->
 ## Question 213: Monitor and optimize GitHub usage
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-213`
 
 **Content revision:** `0d91e69f88b799cecec911a3e423310e11fed77c37d964db7ba5b2aead7861fe`
+
+**en review revision:** `09e282b6419799eba99aec3219737c0ff60baf5641bb68c63b2fdf27aa22d0e1`
+**es review revision:** `9f5b1019e3e30929b6bc57e973dbc5f826d983a00b29e7614f6fdb833051bfc3`
+**pt-BR review revision:** `e5a66a7c1a037edb4b04aa0c33b8182b35e2d12620132481438fab276f304832`
 
 ### English
 
@@ -21747,11 +23453,19 @@ Após uma nova política de fluxo de trabalho, o tempo médio de entrega melhora
 <!-- certification-coach-question:admin-214:09a438c0624a7c3bbbd7b1f5a13bad7f261890f3b987f505b0f23d2fab937314 -->
 ## Question 214: Monitor and optimize GitHub usage
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-214`
 
 **Content revision:** `09a438c0624a7c3bbbd7b1f5a13bad7f261890f3b987f505b0f23d2fab937314`
+
+**en review revision:** `443ad2b40d26bf67c5b185493de7a0519dd84a9e6a85ab5dfa96c4e2d2435063`
+**es review revision:** `8d316ba9d5def5ea548f54440ce06556ae85135b7c8e59f40bd84a7ad61a6199`
+**pt-BR review revision:** `476571bf487d03308290dda25e3459f1efd5e6056ce7175d77d969a262a0c9c5`
 
 ### English
 
@@ -21849,11 +23563,19 @@ Uma empresa relata menos usuários ativos neste mês, mas também unificou vári
 <!-- certification-coach-question:admin-215:cf058ff8afdd8b88bff1bfca463545a103ef200d0188c37619abc5e845b348ad -->
 ## Question 215: Monitor and optimize GitHub usage
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-215`
 
 **Content revision:** `cf058ff8afdd8b88bff1bfca463545a103ef200d0188c37619abc5e845b348ad`
+
+**en review revision:** `648c4c91093c0c306c936b7484c5dc73f0cab3e761feaf8b5a41bff30ad32750`
+**es review revision:** `fa3570de0d7a44452fe8b5b7d2271927809ab12a5192b547cc595552a70b6788`
+**pt-BR review revision:** `3863dc282fa121488f4e87e2ba277d2146b0c4c0d62bd87835bf0d4d57be7c54`
 
 ### English
 
@@ -21951,11 +23673,19 @@ Um gerente deseja classificar a produtividade do desenvolvedor usando apenas con
 <!-- certification-coach-question:admin-216:7cbbd7a9c3413891a13dd864fc0f5766da4e44cfeea29a415f75d0db286f92ee -->
 ## Question 216: Monitor and optimize GitHub usage
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-216`
 
 **Content revision:** `7cbbd7a9c3413891a13dd864fc0f5766da4e44cfeea29a415f75d0db286f92ee`
+
+**en review revision:** `a8b8ace394c9ffcdc1971ebb2f59cae285d8c7264857059b645ee8ae66b3ddfa`
+**es review revision:** `dcdfab4815d6c2018a15e9e33974e07272459e5c4d27de3d469428c78256895f`
+**pt-BR review revision:** `a2f0f524901d17f6eb579ce4f4faec6554468e5ad8eb83b3ff34c52c2f0b1626`
 
 ### English
 
@@ -22053,11 +23783,19 @@ A limitação do API aumenta após a implantação de uma nova integração de c
 <!-- certification-coach-question:admin-217:3bb98d6f29e725c8d523f2aad92cbab3ae34f838812f506bf933f9aee192ec9b -->
 ## Question 217: Monitor and optimize GitHub usage
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-217`
 
 **Content revision:** `3bb98d6f29e725c8d523f2aad92cbab3ae34f838812f506bf933f9aee192ec9b`
+
+**en review revision:** `48f3ddee6d46976f061da656dbe158675db073019848c787cfead23011c341a5`
+**es review revision:** `53a0e74588da4f6f96a8f2f55111ea056d213d12a47bb17492d39f792f7c1850`
+**pt-BR review revision:** `279f34f2cfc2898ad4548a07005740e14916b3a3e66b75b3063027a308a7cc90`
 
 ### English
 
@@ -22155,11 +23893,19 @@ Dois relatórios de uso medido discordam porque um cobre um mês e o outro um in
 <!-- certification-coach-question:admin-218:2da5fcc1ba4cb2ebd6b8dd5ee9fd95fb4fd2987674e93f390da633ba4035df4f -->
 ## Question 218: Monitor and optimize GitHub usage
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-218`
 
 **Content revision:** `2da5fcc1ba4cb2ebd6b8dd5ee9fd95fb4fd2987674e93f390da633ba4035df4f`
+
+**en review revision:** `be11237adda76ecfce39a3130339c04a3b69162478ff09979e750b535513e865`
+**es review revision:** `bc6555219997d3494cd0184b2b223f13872a969dc7f444727d456aea7c7ddfa4`
+**pt-BR review revision:** `4a681c4643a4d27f3bdc891464aab3515089ea2ae97ec93c138be6cf6b55536e`
 
 ### English
 
@@ -22257,11 +24003,19 @@ Vários proprietários de organizações relatam independentemente o mesmo funci
 <!-- certification-coach-question:admin-219:22ecfe007d2590bab866382fa6d1d4f30fdb1026b402e0f5ae5a3b63e89cdee0 -->
 ## Question 219: Monitor and optimize GitHub usage
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-219`
 
 **Content revision:** `22ecfe007d2590bab866382fa6d1d4f30fdb1026b402e0f5ae5a3b63e89cdee0`
+
+**en review revision:** `b65dd996630fb03f54764b711a90163be6c24a6382d540f41e9adfa5b819f20c`
+**es review revision:** `32f913e63d00364a65f71741452e54a228a4c0b32ab8039f9d7aa95b2c8b7b60`
+**pt-BR review revision:** `fe9cce6953ac05f6579272e08f56e4655f5037b9e416e44bde5ebd3987ba0c6d`
 
 ### English
 
@@ -22359,11 +24113,19 @@ O suporte precisa de evidências de um incidente de desempenho GHES, incluindo c
 <!-- certification-coach-question:admin-220:ece6ba16858ce984b4f0d943d37d8be32ac9593bb7e62d2549a082190ab7524c -->
 ## Question 220: Monitor and optimize GitHub usage
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-220`
 
 **Content revision:** `ece6ba16858ce984b4f0d943d37d8be32ac9593bb7e62d2549a082190ab7524c`
+
+**en review revision:** `f66a7b9d98c5a6fe13ddf7fb3c9edb4f27cdf2c6ab1e27d0d2db3a08124d4ca9`
+**es review revision:** `2ef5dbaf98943332d92b9f2fa2279cc59e3df91134bd2208180f41f8fa7fe7ab`
+**pt-BR review revision:** `426ff7c29ee0fef74cf15b3c015df59b555a85c54aa15920d2baafa23358ca3a`
 
 ### English
 
@@ -22461,11 +24223,19 @@ Um problema do Cloud API persiste depois que o administrador verifica as permiss
 <!-- certification-coach-question:admin-221:06558aa8e40c2fd15cc9fe0506fe2f02ec60d68c2a6c7bf06333939f3243f29f -->
 ## Question 221: Monitor and optimize GitHub usage
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-221`
 
 **Content revision:** `06558aa8e40c2fd15cc9fe0506fe2f02ec60d68c2a6c7bf06333939f3243f29f`
+
+**en review revision:** `1ccb1cc9f1df1c766035fb1859e43e8fc04b01e5fc36cf0791f168b3ba6fc8bb`
+**es review revision:** `5e20c1855bf4c7f7bccb72d6ba2ca16d0937021cad76b61535610fbb0409f738`
+**pt-BR review revision:** `abab487089e437ceceedd0e09c832eee90b6c546c831beeecd27d42c12f7bfe0`
 
 ### English
 
@@ -22563,11 +24333,19 @@ O clone GHES e os tempos de resposta da web pioram durante atividades intensas. 
 <!-- certification-coach-question:admin-222:30aaeae3914446bb96df9e6417d57ee699210739a01604caf590f891f55b189c -->
 ## Question 222: Monitor and optimize GitHub usage
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-222`
 
 **Content revision:** `30aaeae3914446bb96df9e6417d57ee699210739a01604caf590f891f55b189c`
+
+**en review revision:** `1be24e41d21190473839442edf8d9932302d8b97fea6517e98ecfac9bb0659c3`
+**es review revision:** `b066637d712a35bdd0bb2670dc532e369fede17fac1fc85a72f479be279fb8c0`
+**pt-BR review revision:** `f8e5823bd5053544a3eb9126c3b8dede0af992f431ab5739580c2b5eb0c822d9`
 
 ### English
 
@@ -22665,11 +24443,19 @@ Uma equipe de plataforma testa um runner maior para um tipo de construção. Qua
 <!-- certification-coach-question:admin-223:215458528f765d2f04788c11dedce3967236a52dd2650286e8b909d07628ec2d -->
 ## Question 223: Monitor and optimize GitHub usage
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-223`
 
 **Content revision:** `215458528f765d2f04788c11dedce3967236a52dd2650286e8b909d07628ec2d`
+
+**en review revision:** `663146e7ee1a3b0d14b732636335a615f87289d469fc898b30ac0264e7247e60`
+**es review revision:** `d875c3583442fffb89573adbe30fe79a1c4704597e3577bdd15feeb586237099`
+**pt-BR review revision:** `ed76b4874e7de223d25f7b9a35344cdce5f8be0cc31e6fe4e6c85b48fd1cbedc`
 
 ### English
 
@@ -22767,11 +24553,19 @@ Uma integração API excede os limites porque pesquisa repetidamente dados inalt
 <!-- certification-coach-question:admin-224:2b8bd38950cafd6843eb9e6dbe9f1abdb29ee0e1ac130c8001659b84ea17f72a -->
 ## Question 224: Monitor and optimize GitHub usage
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-224`
 
 **Content revision:** `2b8bd38950cafd6843eb9e6dbe9f1abdb29ee0e1ac130c8001659b84ea17f72a`
+
+**en review revision:** `8ef918f234d10a2e6de89cf8d95d78a0784c26bb96641704b3afe44c1547a181`
+**es review revision:** `99208b1c3f29bae8642ded1f175119a32fb45824fb9b78991b3c5df18959e6f5`
+**pt-BR review revision:** `286e70dd311cc99c6e7d902ceecb4079ceec44d8e28fada0b20be1a73f68ef58`
 
 ### English
 
@@ -22869,11 +24663,19 @@ Um proprietário financeiro deseja usar um orçamento de produto medido GitHub p
 <!-- certification-coach-question:admin-225:91b708e407d7cc4632eef43d88372a317a0145069b3e665461d5e06d69c75dc2 -->
 ## Question 225: Monitor and optimize GitHub usage
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `admin-225`
 
 **Content revision:** `91b708e407d7cc4632eef43d88372a317a0145069b3e665461d5e06d69c75dc2`
+
+**en review revision:** `00b3fc401359d17e59e9d9bb39ece4dddc623bc7db44ea7dfda2ead518257a88`
+**es review revision:** `d4b299dfe6188272a57301f950c6786e01c453cf40080c6f63d22baa60e40fc6`
+**pt-BR review revision:** `374fd53485b94df4af84403d9fe479821f496248e0eab3aa16183a097e980375`
 
 ### English
 

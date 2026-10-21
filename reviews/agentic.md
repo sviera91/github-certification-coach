@@ -1,4 +1,4 @@
-<!-- certification-coach-review:agentic:1 -->
+<!-- certification-coach-review:agentic:2 -->
 # GitHub Agentic AI Developer: human review packet
 
 225 original practice questions. No mock exam or Copilot installation is required to review this file.
@@ -6,26 +6,36 @@
 ## How to review
 
 1. Read the English question, all four choices and explanations, the concept, hints, and linked official documentation.
-2. Expand Spanish and Brazilian Portuguese to check that they preserve the same meaning, option order, and correct answer.
-3. Change only the question's `- [ ] Human-reviewed` checkbox to `- [x] Human-reviewed` when you approve its complete multilingual revision.
+2. Check English content approved only after personally verifying the English content. You do not need to review another language.
+3. A separate reviewer can expand Spanish or Brazilian Portuguese and check only that translation, verifying meaning, option order, explanations, hints, and documentation references against the approved English content.
 4. Leave uncertain or incorrect questions unchecked. Send the edited Markdown file back to the maintainer, with suggested corrections separately.
 
-One approval covers English, Spanish, and Brazilian Portuguese together; changing any variant invalidates that approval.
+English content and each translation have separate approvals. Translation approval requires current English approval, imported previously or checked in this same packet.
+Changing English content or its supporting source invalidates all three approvals. Changing one translation invalidates only that language's approval.
 The importer rejects stale revisions or changed question content. Do not edit prompts, answers, or explanations in this review copy.
 Unchecked boxes do not revoke existing approvals. These are honor-system human attestations, not proof of reviewer identity.
 AI must never check these boxes or attest to human review. These are original unofficial practice items, not real exam questions.
 This packet intentionally includes the full answer key. It contains no learner answers, scores, chats, or progress.
 
-Search for `- [ ] Human-reviewed` to find unreviewed items. Technical names and official documentation links may remain in English.
+Search for `- [ ] English content approved`, `- [ ] Spanish translation approved`, or `- [ ] Brazilian Portuguese translation approved` to find unchecked items.
+Technical names and official documentation links may remain in English. Translation review verifies that references support the same meaning; it does not require translating the linked external documentation.
 
 <!-- certification-coach-question:agentic-001:2150c8640d8a23c144aabc2a932b1ef715b04c4e2e0a93f1ae3586d8ca0e4dc5 -->
 ## Question 1: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-001`
 
 **Content revision:** `2150c8640d8a23c144aabc2a932b1ef715b04c4e2e0a93f1ae3586d8ca0e4dc5`
+
+**en review revision:** `d2324d147fb39fc2089653c8a37e90634b740888c3fcab166ff43dbd0ef5fafc`
+**es review revision:** `861a15e36ef2f935c53e01f83f81809eb06e11a3ce0cd8a7bdde4594e7b8cd7e`
+**pt-BR review revision:** `0a56ded62ccc13643becd4f043223b8a451d303797ef9db41ca28aa3eac6f1d8`
 
 ### English
 
@@ -123,11 +133,19 @@ Uma equipe está introduzindo agentes num serviço de pagamento. Qual é a atrib
 <!-- certification-coach-question:agentic-002:139d0e58ddf1d9547ef000722cd88dc07fa11c57f7928ace4e274f91fb035776 -->
 ## Question 2: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-002`
 
 **Content revision:** `139d0e58ddf1d9547ef000722cd88dc07fa11c57f7928ace4e274f91fb035776`
+
+**en review revision:** `54f8620c1053d88d143d479fd820a820e46bf0812d580be486fd4c9afa9b3d69`
+**es review revision:** `2fe8d9d5be86640cd475ac0236c00aa82691f29cddd09b119fb4a095627e04b3`
+**pt-BR review revision:** `e6ecc77910665beb7624ed7083a763b6f16a86be61be6b3054d27ce4efb60f4c`
 
 ### English
 
@@ -225,11 +243,19 @@ Um agente recebe 'fazer o processo de pagamento mais rápido' e propõe a substi
 <!-- certification-coach-question:agentic-003:7b4ae6a65a1a9c9259ca6cd7b3edb28cde271cd3dc344f2a063973f59272b64a -->
 ## Question 3: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-003`
 
 **Content revision:** `7b4ae6a65a1a9c9259ca6cd7b3edb28cde271cd3dc344f2a063973f59272b64a`
+
+**en review revision:** `c40d9c41280afd064398000bba4b7b639b9ba49ef4138cd75300dd7acd3d705a`
+**es review revision:** `40c6a8edb9fca77e30b504a628e737f4f9fcbb27b24cc6cfea47b57b407f77df`
+**pt-BR review revision:** `d53e7dc476240e83a82dba4956bf3cea17c7d148b50dc396b8d1cd5fb4e1a662`
 
 ### English
 
@@ -327,11 +353,19 @@ Um refator sensível à segurança não deve modificar os arquivos-fonte até qu
 <!-- certification-coach-question:agentic-004:a5e726de89ad9fd8617c81b2c50b01bab932f3814a7465926790f0804a4c905a -->
 ## Question 4: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-004`
 
 **Content revision:** `a5e726de89ad9fd8617c81b2c50b01bab932f3814a7465926790f0804a4c905a`
+
+**en review revision:** `4fd73a91fed8a700fe23b257c6e21032f672be407c2da9a1810195f483ea76a6`
+**es review revision:** `5effd62d1db322d7c1920ee502f35f1a655fff159e0332617d5bffe632fc945a`
+**pt-BR review revision:** `dc4257833d732554166261c8b1e633a982a5bc0450070a90bf50ac303196b536`
 
 ### English
 
@@ -429,11 +463,19 @@ Os revisores recebem um plano que diz apenas 'atualizar arquivos, executar verif
 <!-- certification-coach-question:agentic-005:e79cf395cbbe2246aec54a268e68c57124bb7260039cf9a2444997cf22d37be6 -->
 ## Question 5: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-005`
 
 **Content revision:** `e79cf395cbbe2246aec54a268e68c57124bb7260039cf9a2444997cf22d37be6`
+
+**en review revision:** `5bcf49d61b0bbae04e4549fa602f1412a16ce61f84d037c40b683951e81f18d9`
+**es review revision:** `dd04a878927da53f215415ba349c4111f3dc03965edfd70f414ce2244e4829a4`
+**pt-BR review revision:** `633771420f88cac46b7e724ad56103acec7f33c6612d65152bd5e4d2cf823da8`
 
 ### English
 
@@ -531,11 +573,19 @@ Um agente corrige um erro de análise, mas também reorganiza o código de auten
 <!-- certification-coach-question:agentic-006:b6135605d8772b13fa2f1752694552b37c8197dbaafad39258ddd43c23a739e2 -->
 ## Question 6: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-006`
 
 **Content revision:** `b6135605d8772b13fa2f1752694552b37c8197dbaafad39258ddd43c23a739e2`
+
+**en review revision:** `fb0eafa284ee69ee53842829f3e5bda496a54f8d108a490397d58a2ae2e2270e`
+**es review revision:** `e6a0c9bf538352f8d025fc1b30c397753956636a658d7dc739c02eb5b33fd82e`
+**pt-BR review revision:** `a25b24c91df5dc843e1e8dd8fe9a307faf39de27b48ae22c851d75e77b4bea50`
 
 ### English
 
@@ -633,11 +683,19 @@ Um agente de documentação de baixo risco espera a aprovação humana antes de 
 <!-- certification-coach-question:agentic-007:4f384536f07d75dcc3042ad3e0301b39f811cc9bb17f42518d18cdbd9e70259a -->
 ## Question 7: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-007`
 
 **Content revision:** `4f384536f07d75dcc3042ad3e0301b39f811cc9bb17f42518d18cdbd9e70259a`
+
+**en review revision:** `eab6c8826aca72b106e55e37862291c538f766f0af3d46e1a5d2f8f8cad16a45`
+**es review revision:** `960796d53d130a7b90a40fcba6b276e97d79d25c0626bce3bb668fa872e28f47`
+**pt-BR review revision:** `4df719469768ebaa7b92b98b997032ba8135e9d22dcf12189cc270e43cae3542`
 
 ### English
 
@@ -735,11 +793,19 @@ Uma equipe mantém os planos dos agentes apenas numa conversa efêmera. Os audit
 <!-- certification-coach-question:agentic-008:55b6bcd02058b899bb5f1f1ca0e2a8552780f22c1e28433217d6acc6fdf6cc05 -->
 ## Question 8: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-008`
 
 **Content revision:** `55b6bcd02058b899bb5f1f1ca0e2a8552780f22c1e28433217d6acc6fdf6cc05`
+
+**en review revision:** `4b664f73cdb1814f0658facb8a253640a6a4c8867fa1ba7ce65d4f247b036117`
+**es review revision:** `93ac3980e5adef3373318a215691fc211d3194a08d89e6307c1845775d3f0811`
+**pt-BR review revision:** `23d1e73f704bd17f0a6c814382a7c1b7c51768d80d81cbf11d00135843a8eee9`
 
 ### English
 
@@ -837,11 +903,19 @@ Uma equipe quer que um agente redigir alterações rapidamente para o trabalho d
 <!-- certification-coach-question:agentic-009:4651517f062d8c1706e9f22c69286e9e99038f7ae8871bb463f07bd479ff8b7b -->
 ## Question 9: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-009`
 
 **Content revision:** `4651517f062d8c1706e9f22c69286e9e99038f7ae8871bb463f07bd479ff8b7b`
+
+**en review revision:** `860477eab6cb2d451d137d018b461d67f405a6b9ecafd26081cafddc0aeffdff`
+**es review revision:** `7589619b98c0b03606d7966d5826b4d6cddf565b2774e6958b0a8072953cda86`
+**pt-BR review revision:** `8613f5ed92377198cb6603c208c58f22f8cfa2cf8425914594cf57159e359df9`
 
 ### English
 
@@ -939,11 +1013,19 @@ Uma tarefa pede a um agente para atualizar um cliente API sem alterar a sua inte
 <!-- certification-coach-question:agentic-010:60ed99b963f438e05e32f7f41b5e09e0355910af5b3b80f4df01f6a6055341a4 -->
 ## Question 10: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-010`
 
 **Content revision:** `60ed99b963f438e05e32f7f41b5e09e0355910af5b3b80f4df01f6a6055341a4`
+
+**en review revision:** `fcb6272145c3dbad960ac0b80c2413f1326c6e2ff1776adfa35fe747d29b9fc6`
+**es review revision:** `a951dbb9e52cef80260cbb59387dbcb5a7c6919285861bc1769aebb5dfa76ee9`
+**pt-BR review revision:** `c2bd84aa38763aa2efb706b15ca7c19ecafffb62ac8055cfee5b148acc1ba82b`
 
 ### English
 
@@ -1041,11 +1123,19 @@ Um agente é designado para um incidente de produção e descobre uma etapa de r
 <!-- certification-coach-question:agentic-011:20564f00036aa7e624299018af68e1dc46cae543fedb46c3b6d082f2bfe35223 -->
 ## Question 11: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-011`
 
 **Content revision:** `20564f00036aa7e624299018af68e1dc46cae543fedb46c3b6d082f2bfe35223`
+
+**en review revision:** `4c85b590ca99ba4603f10280360c912db7130b0b51c6a256cbd1b0ebebac8232`
+**es review revision:** `55f76603323c169d0c998c0d52a28fe0ae717f1b27f1ee761a7dc73387dbc4ea`
+**pt-BR review revision:** `2903c2239c8255504dd1b04a707c433353bd08e19600fe7c2397bee6304b3103`
 
 ### English
 
@@ -1143,11 +1233,19 @@ Um gerente descreve um agente como "um assistente que sugere código". Qual comp
 <!-- certification-coach-question:agentic-012:06cdda14bce987d13aa16f85ccf93a857bc6e0dd66fa2c3ec0f95720c5834a3d -->
 ## Question 12: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-012`
 
 **Content revision:** `06cdda14bce987d13aa16f85ccf93a857bc6e0dd66fa2c3ec0f95720c5834a3d`
+
+**en review revision:** `702627face165ab709292604165e7fa162398c9ad31def429276d471b85d7819`
+**es review revision:** `9f7137f8af37717c07f7c8b9500ae22840a0f78066bcbce58eecc398079ae048`
+**pt-BR review revision:** `c2d9a985d09aedde4708e630f647ba8645152003af3a8af86cd055508cb3254a`
 
 ### English
 
@@ -1245,11 +1343,19 @@ Um agente modifica repetidamente os testes até que passem, mas ninguém verific
 <!-- certification-coach-question:agentic-013:a9bd340312f8d5db115dc7382c7698a905e7bb1a294da1b90170471f5d6faf39 -->
 ## Question 13: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-013`
 
 **Content revision:** `a9bd340312f8d5db115dc7382c7698a905e7bb1a294da1b90170471f5d6faf39`
+
+**en review revision:** `17524d48f8edd34ff5d5fed6ab1ee37f123a03ebd1504d38474a5d4c2e61f9df`
+**es review revision:** `1d289acf9d0cf9991d57f63ada4b060acf85c59ceccc0b229202604e22e8aadd`
+**pt-BR review revision:** `7840fb2913bcd5bc77eb2b51caf0b37e2bda81d67f239f6fb916fb7815d32034`
 
 ### English
 
@@ -1347,11 +1453,19 @@ Uma tarefa proposta para um agente reúne uma migração de esquema, um redesenh
 <!-- certification-coach-question:agentic-014:81e0f1f8b547eed652c9b671104b4b51514876206967cff63656a14fa07cf725 -->
 ## Question 14: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-014`
 
 **Content revision:** `81e0f1f8b547eed652c9b671104b4b51514876206967cff63656a14fa07cf725`
+
+**en review revision:** `aa4d2756615d9895abb603835ed3c122d1747cb7fb9191660e0bc1d3a757e7de`
+**es review revision:** `c4a05f6d8e642dadeb7b5c1b333503f5c938f428257d84257242d6542429f126`
+**pt-BR review revision:** `f2b5c107eb99da6fd7d3ab67ad9386be8f2cf12e439bc6332429b5d775119893`
 
 ### English
 
@@ -1449,11 +1563,19 @@ Um agente de planejamento recomenda uma alteração de infraestrutura sem uma es
 <!-- certification-coach-question:agentic-015:021632fb699ed5b28fc44cc388bc0d69d25851aae3a972dd3dad6d1529a2b180 -->
 ## Question 15: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-015`
 
 **Content revision:** `021632fb699ed5b28fc44cc388bc0d69d25851aae3a972dd3dad6d1529a2b180`
+
+**en review revision:** `939da116a749ace4bdc600ba0d983b9efe566a0885f14405ba4d4e84a590287e`
+**es review revision:** `0e47c4904b4b804170ef14507c16c8ac5e9dd3bc8107e1aeda84391bec95d526`
+**pt-BR review revision:** `736afbf3768c58b977868f1b1059873249c594250d90f6afd382245fcf25de2b`
 
 ### English
 
@@ -1551,11 +1673,19 @@ Uma equipe de agentes utiliza os PRs do GitHub como plano de controle. Qual corr
 <!-- certification-coach-question:agentic-016:b041dee9eefbac96327d65c31fbd2c24534d3f796da08920bfde97b34b66d1dd -->
 ## Question 16: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-016`
 
 **Content revision:** `b041dee9eefbac96327d65c31fbd2c24534d3f796da08920bfde97b34b66d1dd`
+
+**en review revision:** `8cbc3dd2a14bb7a9c350e99a5ea6e5f0b85e645b35e686f7dc9fca12ff6e59c1`
+**es review revision:** `259f23a6387a8ecc73a57850923c707968c1287920d69417509dcc72790df346`
+**pt-BR review revision:** `029d0b0cf25e1f0eac4a267ed24ff8725b495b64e76b54d3f5d3a29801c38467`
 
 ### English
 
@@ -1653,11 +1783,19 @@ Uma equipe quer um agente para produzir planos de implementação, mas nunca exe
 <!-- certification-coach-question:agentic-017:4116bcd404adea184152b655f6af2cb0fc9960af91e5e7cc3714372e386b5e17 -->
 ## Question 17: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-017`
 
 **Content revision:** `4116bcd404adea184152b655f6af2cb0fc9960af91e5e7cc3714372e386b5e17`
+
+**en review revision:** `ba86cf9f20de0c6059c7cff22e46b8df62b86a4f1aab2c0d2885b4fee3adad9f`
+**es review revision:** `c85861a4743436d50deb39f5585cfbf7d0506f9236c38b649aed794df98e77d6`
+**pt-BR review revision:** `49ce2fea6603e5600d4fec70ed070f2d9f1433edaf454fbf2a610aed3e3786b3`
 
 ### English
 
@@ -1755,11 +1893,19 @@ Um agente propõe um refator baseado no pressuposto de que um legado API não te
 <!-- certification-coach-question:agentic-018:d539e59326d8543429b1e5efede7361087aa0ff2898675d85faa4b692d20eace -->
 ## Question 18: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-018`
 
 **Content revision:** `d539e59326d8543429b1e5efede7361087aa0ff2898675d85faa4b692d20eace`
+
+**en review revision:** `a23c9d7b5868970ee46bc698d82fc5ae976729d6a69a913c1dcbf817fe6b249e`
+**es review revision:** `a5af455676a86e49f4e2ac27016ae3a75f2d496d011015e6a19db19986326fcb`
+**pt-BR review revision:** `4d0230c330dbbddd992fbc2499384449d7a1308184918ddc1a997c03257eca92`
 
 ### English
 
@@ -1857,11 +2003,19 @@ Um repositório requer a aprovação do proprietário para alterações no fluxo
 <!-- certification-coach-question:agentic-019:96b86a160fb9ffcba80efe1b9a738fb76ad228177edd5c8ecdd865126e9156a3 -->
 ## Question 19: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-019`
 
 **Content revision:** `96b86a160fb9ffcba80efe1b9a738fb76ad228177edd5c8ecdd865126e9156a3`
+
+**en review revision:** `d448acc36d70fa1778b3fe18a7f59f8d284d1378f1ec3ae8e12175ef0d543508`
+**es review revision:** `ecf5f64f9c33baeb735fb6dabff39b04e729ff9163e5f2820eef43eb32346db0`
+**pt-BR review revision:** `7ca38d8938ef90dcd233695c090bcbc193794a757d07b02fb438299eb81f13a7`
 
 ### English
 
@@ -1959,11 +2113,19 @@ A descrição de um PR afirma que todos os testes passaram, mas não inclui refe
 <!-- certification-coach-question:agentic-020:2e8c50d2acdb18b3bd4d710f0cd31f302885e050a57ef4d39018c9ee17a3707e -->
 ## Question 20: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-020`
 
 **Content revision:** `2e8c50d2acdb18b3bd4d710f0cd31f302885e050a57ef4d39018c9ee17a3707e`
+
+**en review revision:** `a3f55aada5060216f5272393f8306cf992c3250d3f62f0d239c2c09af7313279`
+**es review revision:** `1f3401a02bd562ba27d962bd4b348f0ec1482a1bd480d3fee0f587b111d36fa0`
+**pt-BR review revision:** `55fe6e225e1ea6e306cdbf31d613d6f069a07487fcb31e2ca439a5d9fc515e8a`
 
 ### English
 
@@ -2061,11 +2223,19 @@ Um proprietário de tarefa quer automatizar a elaboração de notas de lançamen
 <!-- certification-coach-question:agentic-021:bcd0dcf11ef991c595c2930d99510f85b2f4e10c2edabe8ee7b5a11eb189bf3c -->
 ## Question 21: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-021`
 
 **Content revision:** `bcd0dcf11ef991c595c2930d99510f85b2f4e10c2edabe8ee7b5a11eb189bf3c`
+
+**en review revision:** `29f9f33a9787fb9a2ee7a0fda2f119d234836af9bc7c9caf1441b00433cdd4e0`
+**es review revision:** `e738a23af8f7b7a532c90798c5766a4d8dd2db189332620ea7054ec0781259c4`
+**pt-BR review revision:** `dcab4ef902b88f4f090bb48a0988a8bf0316f176698db55bca0fb5e3703ee161`
 
 ### English
 
@@ -2163,11 +2333,19 @@ Uma equipe define o sucesso do agente como "produzir muitos PRs mesclados". Os a
 <!-- certification-coach-question:agentic-022:28dd412e3450481652f3a85b29cffe80ca7f162bba5d168d7a85798371d1067c -->
 ## Question 22: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-022`
 
 **Content revision:** `28dd412e3450481652f3a85b29cffe80ca7f162bba5d168d7a85798371d1067c`
+
+**en review revision:** `74603ac46eeb88a9691c56b94b1ca30c280695c87c913c0559a0f33f9741dcd3`
+**es review revision:** `5dca61122a722898e083b912269b9a2aefcf0abd39baee48188822e47d9d7f4d`
+**pt-BR review revision:** `1efb167cdc1b389c04ebcb969dab08fa66bd175b50599154f9483d2837515a7c`
 
 ### English
 
@@ -2265,11 +2443,19 @@ Um agente é solicitado a implementar uma questão, mas os critérios de aceita�
 <!-- certification-coach-question:agentic-023:969418e64aa2f0026de49cbd1d03e6639a5455c40d0fe04b015736a77492cf2b -->
 ## Question 23: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-023`
 
 **Content revision:** `969418e64aa2f0026de49cbd1d03e6639a5455c40d0fe04b015736a77492cf2b`
+
+**en review revision:** `1f518ccb69151522870f095dd3b5aad830f2cb3af52338acec45f10fcfc29b67`
+**es review revision:** `bdde594bbe68634d0935064fba37c30b41534e19b8cca1456e1545191b6f7b0c`
+**pt-BR review revision:** `a1fd303658e2d6efe615c0bc0e54e57edba25c0ad2628b97831a2d3ffb151abd`
 
 ### English
 
@@ -2367,11 +2553,19 @@ Um agente termina a implementação, mas descobre que um scanner necessário nã
 <!-- certification-coach-question:agentic-024:d7f307637e5611545afa6a3c27a80ee5e6cd63fb40e8716de58495d4c333724d -->
 ## Question 24: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-024`
 
 **Content revision:** `d7f307637e5611545afa6a3c27a80ee5e6cd63fb40e8716de58495d4c333724d`
+
+**en review revision:** `af4d329ecc38f424873cca52f971ca75c646ff2282f862950bcd081f34be6306`
+**es review revision:** `bc342808edf4e24f015bce20eb091571726c408e2e3466411efc0cb46b9e18cb`
+**pt-BR review revision:** `795eed9963c2267bc465d0a75823e29198875851044aaf72c51dc8e740c30637`
 
 ### English
 
@@ -2469,11 +2663,19 @@ Uma equipe considera substituir os fluxos habituais de issues, PRs e verificaç�
 <!-- certification-coach-question:agentic-025:fc1d1292bec2886a9819ed69aad75242edb59e13330358c7850d6e9a768b6aa1 -->
 ## Question 25: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-025`
 
 **Content revision:** `fc1d1292bec2886a9819ed69aad75242edb59e13330358c7850d6e9a768b6aa1`
+
+**en review revision:** `980a4d79580a4c5676912ad89e7da32a999497e5051f6834270b3e7acfa00b9e`
+**es review revision:** `0144020800f7f14937dd282b063f7893875a00e922c8a86f554068b411cc403d`
+**pt-BR review revision:** `f4f69cdc0dd39e4bc14dc9dd8348bf796efeb67ee2f240594f756b0775ef7df4`
 
 ### English
 
@@ -2571,11 +2773,19 @@ Um agente precisa explorar um repositório desconhecido antes de estimar uma mud
 <!-- certification-coach-question:agentic-026:05249951cc616f93e6c0c09e40c15199ef035ad0dbf5fd6e10760cd31d294bd7 -->
 ## Question 26: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-026`
 
 **Content revision:** `05249951cc616f93e6c0c09e40c15199ef035ad0dbf5fd6e10760cd31d294bd7`
+
+**en review revision:** `20837a3c42e96013be48a892a68c17325538e20aab8c235c631d36a48ee4f30c`
+**es review revision:** `14d88e509f51c7f8954fbc08cda1dc3000bbaae2cee60b4c807f7877f376c7a4`
+**pt-BR review revision:** `481c676755e4bbec0e30bc2792b5f575c05689f05f03089a4179179dc1d32394`
 
 ### English
 
@@ -2673,11 +2883,19 @@ Um agente de correção de erros pode revisar um branch PR, mas falha repetidame
 <!-- certification-coach-question:agentic-027:6d21a3e56db7490ff382b6818f0a8543ff85cb0120e8d2e929f72f95243803bf -->
 ## Question 27: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-027`
 
 **Content revision:** `6d21a3e56db7490ff382b6818f0a8543ff85cb0120e8d2e929f72f95243803bf`
+
+**en review revision:** `23596abefbd849c7380137b868ece8ac33461525df07133373fe6d5d7e980bfd`
+**es review revision:** `0442ef339584160bfbf97566a8ff4c9e2ce56782ee089a10a762dd006bfec698`
+**pt-BR review revision:** `8c9c99da06ad086095b8240390a85545671f9bd3726da5fde1e81d0d2b8fa9ab`
 
 ### English
 
@@ -2775,11 +2993,19 @@ Uma equipe atribui agentes a cada estágio do SDLC apenas porque a automação e
 <!-- certification-coach-question:agentic-028:cbf207d44077c14aa78b39bac8275454a0966614aafa2d4141a28cd0e4caa54f -->
 ## Question 28: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-028`
 
 **Content revision:** `cbf207d44077c14aa78b39bac8275454a0966614aafa2d4141a28cd0e4caa54f`
+
+**en review revision:** `5eaa28bf4d9d8640d0d70bdd6eb847b66b1cd4b57bccc121d91afbb4ca4dea96`
+**es review revision:** `3148bf114ce615af7619d06301eaa41c2d4f7665fd92d75e240d00ad7fe44f14`
+**pt-BR review revision:** `5aecb54c6f3dd4bf453b943304139ca3116f647fc3570424c842dd54dc036528`
 
 ### English
 
@@ -2877,11 +3103,19 @@ Um plano de implantação diz 'utilizar o branch atual quando aprovado na próxi
 <!-- certification-coach-question:agentic-029:3371adee318842b00b13158465264f32a09e5e97ab38adb1d1960a10c0e5a5ed -->
 ## Question 29: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-029`
 
 **Content revision:** `3371adee318842b00b13158465264f32a09e5e97ab38adb1d1960a10c0e5a5ed`
+
+**en review revision:** `18fb00f1cf9d82976df885b55708ab107af216f435b92933b916e79020fd5717`
+**es review revision:** `b7163d156f12bc05d223124f58eb71655903a79e0249071d8b29e2c3fa3c7cc6`
+**pt-BR review revision:** `223048019c76514d0a66a273f129077e6623bcd651360be39842035214478474`
 
 ### English
 
@@ -2979,11 +3213,19 @@ Um PR gerado por agente passa os controles, mas não oferece nenhuma explicaçã
 <!-- certification-coach-question:agentic-030:16b08565d37fb4c1ea800f61dd9fe0031f0c0b7e510d1093b5215a5fdcf64e45 -->
 ## Question 30: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-030`
 
 **Content revision:** `16b08565d37fb4c1ea800f61dd9fe0031f0c0b7e510d1093b5215a5fdcf64e45`
+
+**en review revision:** `a7a256e33125613e4c1648a93415968b8747be12abfc79e315ff49314ef127b3`
+**es review revision:** `70974361b5fe30c0609b70e6bf0b83d76dcc1f81a26f98e27d80a30721775fb0`
+**pt-BR review revision:** `704b6e5347f05604ffe7837a0cb6bfa00d8a62b23606fa366d35c237a2c87594`
 
 ### English
 
@@ -3081,11 +3323,19 @@ Um proprietário de produto muda o comportamento exigido após a aprovação de 
 <!-- certification-coach-question:agentic-031:4d5cb318077cd3a2a0344f30ea9c07a6c5f32b383a04d388a805d67c4c5ce22f -->
 ## Question 31: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-031`
 
 **Content revision:** `4d5cb318077cd3a2a0344f30ea9c07a6c5f32b383a04d388a805d67c4c5ce22f`
+
+**en review revision:** `6752fe1b45215cb9aebf143f3f728bb62bfe639d2ef9ba7574b22615bd545dcd`
+**es review revision:** `50197019895bedaffdec384bbd325732665f4ce4e728a499dc23849b97c7d8c3`
+**pt-BR review revision:** `63d22f17f1af7196b8a093e4507fba3d03e8efde220fad3467c2a95ca844c04f`
 
 ### English
 
@@ -3183,11 +3433,19 @@ Uma equipe quer inspecionar o comportamento dos agentes sem gravar deliberaçõe
 <!-- certification-coach-question:agentic-032:129c1019f451e678b834a3c0fb62e35709bd6cd259a9037a876287449afcba93 -->
 ## Question 32: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-032`
 
 **Content revision:** `129c1019f451e678b834a3c0fb62e35709bd6cd259a9037a876287449afcba93`
+
+**en review revision:** `48f931da8db5e5e76d67a8b07612c20061e49e54af90b9469d430ccb739da895`
+**es review revision:** `f47ef83f993b6d2b42d84f20d38563cf92861fa60f4156df36117acdc38474cd`
+**pt-BR review revision:** `7e3f21f7b29b6da97210021611cb422b92db498baacc68208b9a8b9631a55456`
 
 ### English
 
@@ -3285,11 +3543,19 @@ O contrato de tarefas de um agente inclui o repositório-alvo, a revisão de bas
 <!-- certification-coach-question:agentic-033:098ce92cb1617056db117af4588de15cff7e289e138ae32542e821104577cc20 -->
 ## Question 33: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-033`
 
 **Content revision:** `098ce92cb1617056db117af4588de15cff7e289e138ae32542e821104577cc20`
+
+**en review revision:** `dd0add66ebbbd9ce47cd3a0a493c3dc32e8a038a60ee01331e4fc53de07fa6ea`
+**es review revision:** `1b1a8a0a8d935c10094f9a5351a3636f96e5751279d55ff580529dfbea775645`
+**pt-BR review revision:** `affcb25f10c9cd03aa75db2a4cf5077290d6d566ec176b5ee24c3e29a59bb930`
 
 ### English
 
@@ -3387,11 +3653,19 @@ Uma equipe confia num agente PR mais do que num humano PR porque foi gerado auto
 <!-- certification-coach-question:agentic-034:c8f602d2616f4b7995c87126532d1f68cfd4040d091a36b6f2417d7f50fee63d -->
 ## Question 34: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-034`
 
 **Content revision:** `c8f602d2616f4b7995c87126532d1f68cfd4040d091a36b6f2417d7f50fee63d`
+
+**en review revision:** `c5cb0d4372bec6b0f57f857228a26a63a0b2349ede3d37c5dbec2bc990fac700`
+**es review revision:** `78fef8e82888ce342acb29d97a0100f699cc04edb496fd4a0abf8eaed95d4f92`
+**pt-BR review revision:** `8cc5509bb00dbdc8b47a5e1e8eae5e677826a1878ca0e317f000e2e22f7d1da3`
 
 ### English
 
@@ -3489,11 +3763,19 @@ Uma equipe só precisa de intervenção humana quando um agente propõe cruzar u
 <!-- certification-coach-question:agentic-035:65affe1a22d25af1723d67400b643c1171f3c2629c0a09fcd856a2c6ad18d4b9 -->
 ## Question 35: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-035`
 
 **Content revision:** `65affe1a22d25af1723d67400b643c1171f3c2629c0a09fcd856a2c6ad18d4b9`
+
+**en review revision:** `3afafc02bb9cafdd51f1647addab616a8273cfeed88f2a80e5aa4e8dfd5c6b6e`
+**es review revision:** `cbe01c6f0986bd9afd11ead660cad1882a35d9c616e0d96db39934c0dd6f12aa`
+**pt-BR review revision:** `ebb8847b2dfa69cec075f1402ed400173dca203d5897b75429628999d9603145`
 
 ### English
 
@@ -3591,11 +3873,19 @@ Um agente mantém um painel privado que relata sucesso, enquanto as verificaçõ
 <!-- certification-coach-question:agentic-036:706ec24766f06ab99f9363dc6d322b9ee7d563954310657748af7ac45d506525 -->
 ## Question 36: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-036`
 
 **Content revision:** `706ec24766f06ab99f9363dc6d322b9ee7d563954310657748af7ac45d506525`
+
+**en review revision:** `8a7ab52345ead361fce3ab26f7f4d0cd95d52a576296893d39abc3ded4d100fd`
+**es review revision:** `53e9cd73533e67b7eb1fb58ad4a91f7019f4ea1cb6e59fb99c93bd1dcc4f7096`
+**pt-BR review revision:** `1b7ae9f1c1a568c193b375b7e93afe608a34a3293e0adb1247b57f3905b82231`
 
 ### English
 
@@ -3693,11 +3983,19 @@ Um agente de planejamento propõe alterar a configuração da produção apenas 
 <!-- certification-coach-question:agentic-037:a58f09480aa0cca41727c3fa3b8effd7b2a14484d8dcbbb16ce0b074b9edfbf9 -->
 ## Question 37: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-037`
 
 **Content revision:** `a58f09480aa0cca41727c3fa3b8effd7b2a14484d8dcbbb16ce0b074b9edfbf9`
+
+**en review revision:** `4f2e35b15c3c79839030285190192b96be970cf4d9c2d1dcfe2b62e53044bd53`
+**es review revision:** `a1f3b2cf99bbeeb947f059f615380c726bd27f8c5d76472c4e6225bab130da00`
+**pt-BR review revision:** `752e901bbc2ef6142487168de2edfcec07edc8ba8ee7df43b16d5646e1741734`
 
 ### English
 
@@ -3795,11 +4093,19 @@ O plano de implementação de um agente inclui alterações, mas não os testes 
 <!-- certification-coach-question:agentic-038:4ade165ee9dca53426bfdcbd881d028e533063975e01e22c9d338448b396f6d4 -->
 ## Question 38: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-038`
 
 **Content revision:** `4ade165ee9dca53426bfdcbd881d028e533063975e01e22c9d338448b396f6d4`
+
+**en review revision:** `c4b184754f51210e7b4c69137d2daea7ffcbf59c362610c732c90165cfb0df65`
+**es review revision:** `96bed6367a9bebf2e35a8442baa0d7804db9aee0661d13da79c0ce8edb2bbf8c`
+**pt-BR review revision:** `698f7527fbb033e8d6adbbff3c135d1e60cd9714ded1f12fdcef3e798cc0b6be`
 
 ### English
 
@@ -3897,11 +4203,19 @@ Um agente de manutenção recebe uma ampla propriedade de um repositório, mas n
 <!-- certification-coach-question:agentic-039:d6d546c028cddc3e3d8a9fb338dd2ea93f0b7e5d50df92690e9535708ca9bf88 -->
 ## Question 39: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-039`
 
 **Content revision:** `d6d546c028cddc3e3d8a9fb338dd2ea93f0b7e5d50df92690e9535708ca9bf88`
+
+**en review revision:** `425fe727c3d8e637434e46216c95e3b68de38c06015c9d8c9abab915d9db53df`
+**es review revision:** `9724834fc9adb5e320adda624597fc9fdb7a73ab60d4b7f54c8dd254c62b8d0d`
+**pt-BR review revision:** `92a326ab36069564bceec9b25e45257973068a3b4e10842e68f3173dada8ec93`
 
 ### English
 
@@ -3999,11 +4313,19 @@ Uma equipe apresenta agentes para corrigir os defeitos de acessibilidade. Qual p
 <!-- certification-coach-question:agentic-040:f60e1827b98e4bed497be5c424566d25ae987c25246c25ed9a2a042cd55bc11e -->
 ## Question 40: Prepare agent architecture and SDLC processes
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-040`
 
 **Content revision:** `f60e1827b98e4bed497be5c424566d25ae987c25246c25ed9a2a042cd55bc11e`
+
+**en review revision:** `e411c46238dd0b884af555c43f5118637e5a4722d0e1402a8d71cfbafe746e63`
+**es review revision:** `bd1b92a7a38609476395a590ac53bf3fce882d1ca1ee90fc5d67d204b037a231`
+**pt-BR review revision:** `3779e9db5591f7d3a6efa463ad420b4769404d371c4fd4341eab7abaac5138d3`
 
 ### English
 
@@ -4101,11 +4423,19 @@ Após um piloto bem-sucedido, uma equipe elimina os limites de escopo e as barre
 <!-- certification-coach-question:agentic-041:00e84694f4241aa1d02004590694edb419875bf7b045eb885c63617c97603fdb -->
 ## Question 41: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-041`
 
 **Content revision:** `00e84694f4241aa1d02004590694edb419875bf7b045eb885c63617c97603fdb`
+
+**en review revision:** `376366437b2d4727d99e852c5792cbe7ab2aab7e8cc7faa259ff51d74c58a788`
+**es review revision:** `a453bd5d400d5b6046f43b650e98c522aa4aa6d80580d016039a86e455b1db0a`
+**pt-BR review revision:** `0d528ea9cd3b934536f7a1ab682393825f3cd975b57b71ce4c330a7fc1da4cb1`
 
 ### English
 
@@ -4203,11 +4533,19 @@ Um agente deve resumir as questões abertas, mas não deve alterá-las. Qual é 
 <!-- certification-coach-question:agentic-042:9c8c781ca7dde8cbacdc178f3ecffb1ccdccd1f395e5429146366262c0b9e8ea -->
 ## Question 42: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-042`
 
 **Content revision:** `9c8c781ca7dde8cbacdc178f3ecffb1ccdccd1f395e5429146366262c0b9e8ea`
+
+**en review revision:** `e5278d1b03de13f40c58f6150c53a04d726de6db64f072212c4380110ae579a8`
+**es review revision:** `15bf90ba1d9f652f77d62594ca89175af52a77d0e18be7e08998d2ee11bb00bc`
+**pt-BR review revision:** `eaa740f8ca2cc62354f613b76fba23b08f93bae25e84b345a108f8dd14e70fc3`
 
 ### English
 
@@ -4305,11 +4643,19 @@ Um desenvolvedor adiciona um URL de registro MCP e assume que todos os servidore
 <!-- certification-coach-question:agentic-043:1c5da27a4a97d48668b744a1561914f1fd45c81ca6a6ebef7bb07b298d07e4e8 -->
 ## Question 43: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-043`
 
 **Content revision:** `1c5da27a4a97d48668b744a1561914f1fd45c81ca6a6ebef7bb07b298d07e4e8`
+
+**en review revision:** `cd53e61cb4b90db812981d7c56d4889947c81539f5e98cccea3429a09148b33e`
+**es review revision:** `7268465959ce9eac2553009bd169a9842603b24c0f8b3bd54c948ec8b97ca027`
+**pt-BR review revision:** `17328a588edb48e08033bd836e06210ca8ba01944b9159abde41f4daadd7d120`
 
 ### English
 
@@ -4407,11 +4753,19 @@ Um servidor remoto MCP se conecta com sucesso, mas suas ferramentas de escrita f
 <!-- certification-coach-question:agentic-044:2581e751d2e1539b5b757eb693b1f38aa1513185476f2f75ee23667e8970b728 -->
 ## Question 44: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-044`
 
 **Content revision:** `2581e751d2e1539b5b757eb693b1f38aa1513185476f2f75ee23667e8970b728`
+
+**en review revision:** `b3c8bb37553fa1e15b6e3d0ca8b49d92e5a5611395d583e51ebbb8ff77853421`
+**es review revision:** `e0f70b4129eac3d67ba0e6a3de01d7bb5d50067ef1c6286e3bdc4f31e56237c6`
+**pt-BR review revision:** `4e9f9033d93bb86cc8bb9d6ee8dafd7028a958d30cb59fa0c49aa688c57d7fa2`
 
 ### English
 
@@ -4509,11 +4863,19 @@ Um agente precisa de uma capacidade de pesquisa de problemas de um servidor MCP 
 <!-- certification-coach-question:agentic-045:b9984d48ce89af1145767618b03010eff9b3e4619133100bb4a551e436c9fa2d -->
 ## Question 45: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-045`
 
 **Content revision:** `b9984d48ce89af1145767618b03010eff9b3e4619133100bb4a551e436c9fa2d`
+
+**en review revision:** `c77b604eddec5a6862b6f077ca66fcdcf55c18a69bfc8f5126087010a2cd9a52`
+**es review revision:** `5774ebc127c424dbbc0d2dc70ad5f0888a533fb3514cda793e21a29a57818de3`
+**pt-BR review revision:** `85222766d3f6cfc894c8edadede79ae7ec626f4884a4cfbb8d3a3e793d4aca8e`
 
 ### English
 
@@ -4611,11 +4973,19 @@ Uma equipe quer o servidor GitHub remoto MCP num IDE suportado. Qual princípio 
 <!-- certification-coach-question:agentic-046:4bcf9e8e5ae5a81f19d3bbeb9d6dcaae7afc9fd9a78c86d5c4f7a01f7ac3b131 -->
 ## Question 46: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-046`
 
 **Content revision:** `4bcf9e8e5ae5a81f19d3bbeb9d6dcaae7afc9fd9a78c86d5c4f7a01f7ac3b131`
+
+**en review revision:** `3596ed8164a043342e0b28673fd986e97de2f0ce8d3524bc505547c316bdcab8`
+**es review revision:** `dc5194ed03824672c6930a4f7c6b1453092f4587201463fe26c1b8acb2ba6726`
+**pt-BR review revision:** `1047057a250fb0645220bb05e66d566e6afc94b6f3feab6cc7207e61105476f3`
 
 ### English
 
@@ -4713,11 +5083,19 @@ Uma ferramenta MCP recém-conectada retorna texto instruindo o agente a desativa
 <!-- certification-coach-question:agentic-047:767daa457e3fc9164b5342dba10ff687095500990efb7101aaa60721df26b9b6 -->
 ## Question 47: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-047`
 
 **Content revision:** `767daa457e3fc9164b5342dba10ff687095500990efb7101aaa60721df26b9b6`
+
+**en review revision:** `a2c793b6906f6628acc34bad508a9e3203a3a8e2e1df737e6589df8fc62e87c8`
+**es review revision:** `e60324e2f2db9f2d2e58beb43234182c3e6e0966c5d6db9cdfddf5cc9bf6f8e2`
+**pt-BR review revision:** `9333efd63aa592d3a3f775201cedd6e8b755d350386f2ef4152bc1b99032ce35`
 
 ### English
 
@@ -4815,11 +5193,19 @@ Um agente funciona localmente, mas falha no CI porque assume que o compilador in
 <!-- certification-coach-question:agentic-048:6a7be7f2f234e634757f472e91b0fb52abb765ef8300e713814b5fcfa565b44e -->
 ## Question 48: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-048`
 
 **Content revision:** `6a7be7f2f234e634757f472e91b0fb52abb765ef8300e713814b5fcfa565b44e`
+
+**en review revision:** `084cebb6e037fbd9e019b134865a4f0ccd902420afc767451aa7b07f232b84e0`
+**es review revision:** `aac358f543cd6aa377225e3b9a45a1649681591c1e9af005d8cdad39a5c4b824`
+**pt-BR review revision:** `943eda447759bba43c2dab9784337dad68db0a285435dfb9c25de9110c8d9b41`
 
 ### English
 
@@ -4917,11 +5303,19 @@ Uma automação do repositório pode criar um branch e PR, mas não deve atualiz
 <!-- certification-coach-question:agentic-049:5c8fae811c9a78a07bdbcf81c61efe2d6d8b19e00e695c902796f903a71a509e -->
 ## Question 49: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-049`
 
 **Content revision:** `5c8fae811c9a78a07bdbcf81c61efe2d6d8b19e00e695c902796f903a71a509e`
+
+**en review revision:** `7926df1a916db90444e8ffb80ae332e0b8bee8bb602916561770219291c901f7`
+**es review revision:** `ffb631d0340b6fa36e6897b87d7865e3c953c88135d345d5158f7ec331e0dacf`
+**pt-BR review revision:** `ba28a46b2b123adcc62bf55a9a79707940ab2a6ee61ba0ee59e7f9de27d5171f`
 
 ### English
 
@@ -5019,11 +5413,19 @@ Um API relata uma interrupção transitória de serviço durante uma leitura ide
 <!-- certification-coach-question:agentic-050:10dcd3139faae28180c9fd7fe3a85dcba1ae3c02a2e177e0d1a5376faa781bf8 -->
 ## Question 50: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-050`
 
 **Content revision:** `10dcd3139faae28180c9fd7fe3a85dcba1ae3c02a2e177e0d1a5376faa781bf8`
+
+**en review revision:** `43a0b16aa0915982a0b7afe4942e17643bf2211944e391214c91412dcdf06c72`
+**es review revision:** `7d8f4873535c9efe1c4c6027fba87bd86b7250e274c80b9c0f5fa5bb64eb6ace`
+**pt-BR review revision:** `62fe62d6304714c68e40bd0ef2f019d0f3fc18af62f98a10d85d542b2015cc2e`
 
 ### English
 
@@ -5121,11 +5523,19 @@ Uma solicitação para criar uma issue excede o tempo limite após o envio, deix
 <!-- certification-coach-question:agentic-051:72fde960715ea9b289636fcc2ec68fdcd0296e1aa4d9dc1a89fc0cec1901a19e -->
 ## Question 51: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-051`
 
 **Content revision:** `72fde960715ea9b289636fcc2ec68fdcd0296e1aa4d9dc1a89fc0cec1901a19e`
+
+**en review revision:** `348a053e4f12aa291ce0f06ec3bdb5a277ae64d70e8e7fa86668b5d51e8d2930`
+**es review revision:** `57609dc7d65359b247bc67ac45163ab9107e7ae498d6bb5e330170b5db8584c4`
+**pt-BR review revision:** `45186fe3799a976080a8c18713e179494ab3babacce2b0085dbef53b3bc6cfcb`
 
 ### English
 
@@ -5223,11 +5633,19 @@ Uma API de implantação aceita chaves de idempotência. Um agente tenta novamen
 <!-- certification-coach-question:agentic-052:8b36efaf6d6a1bcda20b5bbb742c35f982f4b8f495924dfda997558b2fad08fe -->
 ## Question 52: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-052`
 
 **Content revision:** `8b36efaf6d6a1bcda20b5bbb742c35f982f4b8f495924dfda997558b2fad08fe`
+
+**en review revision:** `dfba6e6bd36f22ac730cf80fa8ae367c52d0b66a1e127b31dc6e6e560a1361ec`
+**es review revision:** `7e3a28f46e4dcb4f0d72a994576075e2a4ed551606d7609647f356854eae29a7`
+**pt-BR review revision:** `a2b7799c1b07e77888b5182aed4b553e7d81317fa2b141caa24c98db940e0d7e`
 
 ### English
 
@@ -5325,11 +5743,19 @@ Um trabalho de comentários PR também tem um gatilho manual. Execuções manuai
 <!-- certification-coach-question:agentic-053:7777f7aa81b5b78f7cae8fe99eff4b1d43a1f6b327502abaab36183c5181f95b -->
 ## Question 53: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-053`
 
 **Content revision:** `7777f7aa81b5b78f7cae8fe99eff4b1d43a1f6b327502abaab36183c5181f95b`
+
+**en review revision:** `42325b5ee4f097927d5418df13252fecd6a36297f31d868dbb120fca3a5eca4c`
+**es review revision:** `908be8d7ff1f1c948120a4bcb87181589368ab98cff2de0ffe7ca0607ba4583e`
+**pt-BR review revision:** `4dfc8ff15da16bc31543cfc4be43d024721c1f1513d5771e526d86f0130ca486`
 
 ### English
 
@@ -5427,11 +5853,19 @@ Um trabalho de planejamento produz uma pequena bandeira validada que um trabalho
 <!-- certification-coach-question:agentic-054:af70e8b3acf2980debea1b5d8964200214db534e4e8258b2ef3a5d0e03a71c2b -->
 ## Question 54: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-054`
 
 **Content revision:** `af70e8b3acf2980debea1b5d8964200214db534e4e8258b2ef3a5d0e03a71c2b`
+
+**en review revision:** `e9251ca82f6fb6430add932e9d50ce707d4fbe219d55a41d457bb1a932ea342a`
+**es review revision:** `5c96cb21aa857da844a15fd7ca7aeadc8f12ba74e7713dd07b456532a76af53f`
+**pt-BR review revision:** `3fe73a35e1ef7d9e2a4541f9dc2cfe96e92309b8f5f7a9215a466df08d4e5289`
 
 ### English
 
@@ -5529,11 +5963,19 @@ Um agente gera um grande relatório de teste em um trabalho para inspeção em o
 <!-- certification-coach-question:agentic-055:91d92831e2af039285aef53b8aa3e64f55165705690f7ece8f79fc840f737f40 -->
 ## Question 55: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-055`
 
 **Content revision:** `91d92831e2af039285aef53b8aa3e64f55165705690f7ece8f79fc840f737f40`
+
+**en review revision:** `a3f87308e2641495a2e8a654feb82d92ea5a0b9d1e269964a86782f0b17de8d0`
+**es review revision:** `dcbd1492e65cd60dfbfcc0ae64608a91e0e7c897ce48d5bbee6c5bfa60c6c8c2`
+**pt-BR review revision:** `1f8a887acb8537f64049f2ca69bd34fb21be77c0047cfbfaacd71f6a1e66c16e`
 
 ### English
 
@@ -5631,11 +6073,19 @@ Uma chamada de ferramenta falha com uma resposta explícita de permissão insufi
 <!-- certification-coach-question:agentic-056:9d5f716888657b1a834692e83ed41651fe5e3d20b653f7022d39fbb4871bcfa8 -->
 ## Question 56: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-056`
 
 **Content revision:** `9d5f716888657b1a834692e83ed41651fe5e3d20b653f7022d39fbb4871bcfa8`
+
+**en review revision:** `5e1a2167e234f065866f930ae27daf74979d0d524d2b82bbb8d4d22bf054ae6a`
+**es review revision:** `4bc37971e75ee5049212d2413ef17c1f1b1983c64964bf429a7a6127a4fbe00c`
+**pt-BR review revision:** `aa9e8208c8c502c202bbd72e3a7b039f800d8032d0c79ad92faccc47b209c48b`
 
 ### English
 
@@ -5733,11 +6183,19 @@ O download de dependência aprovado de um agente é bloqueado pelo tempo de exec
 <!-- certification-coach-question:agentic-057:d919804973719424cd5abaed799a759840805daf757227e95593736a96a3efe3 -->
 ## Question 57: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-057`
 
 **Content revision:** `d919804973719424cd5abaed799a759840805daf757227e95593736a96a3efe3`
+
+**en review revision:** `1006cd57d515016130562d0ed5581366685bdf9f3b9dbe4efc3ca54ac13aa476`
+**es review revision:** `8728470c73f76e10c95e38ddc7fa493efcba98700c548ddda5cedd312da630f1`
+**pt-BR review revision:** `b463e55bc3a539bffea09b6853f4b08247cd92c1f94cc6a91a06eb04942a9293`
 
 ### English
 
@@ -5835,11 +6293,19 @@ Um servidor local MCP pode inspecionar arquivos sensíveis na máquina do desenv
 <!-- certification-coach-question:agentic-058:de8b1d58b6c0901e76af7b444f8b9a4abad40f82c4dbeb1007469520fa523931 -->
 ## Question 58: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-058`
 
 **Content revision:** `de8b1d58b6c0901e76af7b444f8b9a4abad40f82c4dbeb1007469520fa523931`
+
+**en review revision:** `f10043ca4f78f31019efbf3b205d3d119337e82506f153d951d536da5b2dd5f2`
+**es review revision:** `62e5297ea54aa75d2e08e16b3b860bbfc0a429825f4965bf990c557900cf0b21`
+**pt-BR review revision:** `39c6df7fd33c2ef3e2fc9b3de5d422baf5a29ef49dbb0c611a78ee3b1d3a6806`
 
 ### English
 
@@ -5937,11 +6403,19 @@ Um servidor MCP é aprovado para uso, mas uma nova ferramenta adicionada pode ex
 <!-- certification-coach-question:agentic-059:fbae4f748743a3646ad0ab9e026b24b947fe7d4706cea23a6bd05cce70935932 -->
 ## Question 59: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-059`
 
 **Content revision:** `fbae4f748743a3646ad0ab9e026b24b947fe7d4706cea23a6bd05cce70935932`
+
+**en review revision:** `be516fadc4b49ac37c43634970a9457dbf301e16ce9decf79b452cff2910d826`
+**es review revision:** `4bb177c95a4bc79f043db177a1b2073cc876ab51d4ca26c98b334096b9866903`
+**pt-BR review revision:** `b4b4834508dea0b4f7f18ba8df365b7b99415dd6539bb74f9f38538db3682d50`
 
 ### English
 
@@ -6039,11 +6513,19 @@ O esquema de entrada de uma ferramenta requer um identificador de repositório e
 <!-- certification-coach-question:agentic-060:6053bc67b1136574e05182851672c4dacb3155c24af0d8339b4f521b471322a5 -->
 ## Question 60: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-060`
 
 **Content revision:** `6053bc67b1136574e05182851672c4dacb3155c24af0d8339b4f521b471322a5`
+
+**en review revision:** `2db0c5a2d7b139800b2b672a42b6df1515e7b45ede6770c05e3db059e2b5afec`
+**es review revision:** `732c364e249a7745d95aa1884a542c3660a58ac95a96d39df96c2d3d51967bc3`
+**pt-BR review revision:** `81992d1e38a0b03526c2ff5e480c9e25449920bb9317df026f3ec6cc6bee43c5`
 
 ### English
 
@@ -6141,11 +6623,19 @@ Um fluxo de trabalho precisa saber qual evento desencadeou a execução, não um
 <!-- certification-coach-question:agentic-061:6d2e01add1fa7dd8823d979334bcdaa2a3c272c2c4d388986dab6ff05cf4007a -->
 ## Question 61: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-061`
 
 **Content revision:** `6d2e01add1fa7dd8823d979334bcdaa2a3c272c2c4d388986dab6ff05cf4007a`
+
+**en review revision:** `ce4af4944eed61217ca8fd12787d42096d1129b188a3f95cc16440f198267781`
+**es review revision:** `04b20b6da611a2bc36b3df11b206a3fe172c3f15931bc379544f115e82c52e59`
+**pt-BR review revision:** `86859ad9052a862187cfe0a5d91633c6ba84308cbd3d92f1f3f4eebbf3af200e`
 
 ### English
 
@@ -6243,11 +6733,19 @@ Um agente executa testes em um checkout, mas informa resultados de outra branch 
 <!-- certification-coach-question:agentic-062:642daae2e2f2d336118c11ee2f1e7712a4c87fb992034bb018f1a11f0a594c46 -->
 ## Question 62: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-062`
 
 **Content revision:** `642daae2e2f2d336118c11ee2f1e7712a4c87fb992034bb018f1a11f0a594c46`
+
+**en review revision:** `c7a21080173ae528caa9e43bf883fc8d6fa4c11a6b4874ad24aac93604ce3b75`
+**es review revision:** `1c3f4f99002d0b6c2cea54ade8e2c71e790aad0629dd43e1706f5d54b85c1363`
+**pt-BR review revision:** `8639b88b1930588b4bbc42442f30d4d34289646314d7089241b8e7e4dc1bbdd1`
 
 ### English
 
@@ -6345,11 +6843,19 @@ Um agente recebe uma resposta de limite de solicitações que informa quanto agu
 <!-- certification-coach-question:agentic-063:4f431cabf0efc7eef8e8e971330fc7b555757f35add9cedcc10565ae875a7eee -->
 ## Question 63: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-063`
 
 **Content revision:** `4f431cabf0efc7eef8e8e971330fc7b555757f35add9cedcc10565ae875a7eee`
+
+**en review revision:** `7659e56664b0eda43e5345079bb180720b694eb23a79e22f90f6d886dc183b34`
+**es review revision:** `0c7f65fce47994ba5b615e8cc3d2064fbc5e59f27e4627d5a21dade2f8a7de21`
+**pt-BR review revision:** `ba9fb189747128bddfcfcbc2b2c6700b205dab92b60b145b523eed0796dd22b2`
 
 ### English
 
@@ -6447,11 +6953,19 @@ Uma ferramenta de mutação retorna um erro de validação porque um campo reque
 <!-- certification-coach-question:agentic-064:0bf97a0f71317567e03685bfc3222f9c715eaf5eb66d805d7e63cc364fcf8947 -->
 ## Question 64: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-064`
 
 **Content revision:** `0bf97a0f71317567e03685bfc3222f9c715eaf5eb66d805d7e63cc364fcf8947`
+
+**en review revision:** `cf343fd7bd7edbcb8bd65d566f3e6de636dbeaf9ad99e5d3e9f08a5e9c7387c7`
+**es review revision:** `e5021c5afe14b7058791dead0136ffc3a9b3693a93848b5d800b7989b3ed5979`
+**pt-BR review revision:** `d9724d2c14a39bbd75e723854a196cad129e20e5ab5b139007f59ca21652deb1`
 
 ### English
 
@@ -6549,11 +7063,19 @@ Uma ferramenta de correção relata uma revisão de base obsoleta em vez de apli
 <!-- certification-coach-question:agentic-065:53e3cec33d38be27f3f61c238cbdafd40f2ad8996590d769f613afa9bd50ba92 -->
 ## Question 65: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-065`
 
 **Content revision:** `53e3cec33d38be27f3f61c238cbdafd40f2ad8996590d769f613afa9bd50ba92`
+
+**en review revision:** `b0e891624d2037720e8dd47fe0abe418463877ad8e9c71334f7e1d0a2404fe21`
+**es review revision:** `5edfd989c5a3365f916b0dc3c07c1bae079dba1f513a539ab5fcfe89efa2b069`
+**pt-BR review revision:** `63db3ad4dc58921142bdf0fb482efffe9440392c8554398a60408bc950dc3998`
 
 ### English
 
@@ -6651,11 +7173,19 @@ Um agente deve alterar o repositório A, mas sua credencial também pode escreve
 <!-- certification-coach-question:agentic-066:1ed8262e1700ec21cac1f62848bffe11460d62894205c27e9a6c538736ea2688 -->
 ## Question 66: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-066`
 
 **Content revision:** `1ed8262e1700ec21cac1f62848bffe11460d62894205c27e9a6c538736ea2688`
+
+**en review revision:** `5051aa405da6f6e21d58a43d174283c4ab32a31efb917973be49a245980e3bc5`
+**es review revision:** `70b483484cf30414e05bcf618c3adca6d851840b5db43e75336fa54bfb8d9a82`
+**pt-BR review revision:** `fd2fff6bf60435ea123665437327801768b27a222a424195fc5ed5d94b879561`
 
 ### English
 
@@ -6753,11 +7283,19 @@ Um agente da CI precisa de um segredo para uma ferramenta externa. Qual é a mel
 <!-- certification-coach-question:agentic-067:ab53d826afe5f90c7629ab6a3adfa5858a2bd0567d5ba0c2f7075003fbec3a97 -->
 ## Question 67: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-067`
 
 **Content revision:** `ab53d826afe5f90c7629ab6a3adfa5858a2bd0567d5ba0c2f7075003fbec3a97`
+
+**en review revision:** `c6142b146fe87d119cdeb5a30361ec78bdb0aa0082b977632d6bbf9abd77d40c`
+**es review revision:** `b1730911c65a888e154b03a0c9f5d85e2958c718e43636f95c76001ef7a7aa80`
+**pt-BR review revision:** `533593f7539c7888b23266b104189be31c7041b281af03fc69e5ae28fb44b330`
 
 ### English
 
@@ -6855,11 +7393,19 @@ Uma ferramenta inicia com sucesso uma construção assíncrona e retorna um iden
 <!-- certification-coach-question:agentic-068:74647f8853140b63abdfd361c60feab94d0b91e77a52e67fa210260c938066a5 -->
 ## Question 68: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-068`
 
 **Content revision:** `74647f8853140b63abdfd361c60feab94d0b91e77a52e67fa210260c938066a5`
+
+**en review revision:** `5ebf2de0aaf387c5a4a5410bca1fe6cfc82f08f9cca787a63bf4033dd6991d09`
+**es review revision:** `6938e6122c255cb88591282f6cd312ca5b8060a9bf9d3094032823b784d46b38`
+**pt-BR review revision:** `fe34f81afed2c5a2de8f1095c9baf39a7a171b9ce908aa45627f7e29ce1a64c1`
 
 ### English
 
@@ -6957,11 +7503,19 @@ Uma atualização automática altera três configurações externas antes da qua
 <!-- certification-coach-question:agentic-069:272ce815d5a0659b6191be509f1006312ad72e0f7c639d81755b82d066c3bc73 -->
 ## Question 69: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-069`
 
 **Content revision:** `272ce815d5a0659b6191be509f1006312ad72e0f7c639d81755b82d066c3bc73`
+
+**en review revision:** `dcae5f627b4480be9c5650a9bcce88d850286784a7bf82edb341a15ecfac5584`
+**es review revision:** `8a9472e0c7b74749cc9125a7834bb87b94d777671ee0eeba36d4bd55e9706aa4`
+**pt-BR review revision:** `01679b97cafdb6219898c5d1717ae2fbd65518da05aa99b891160160e074d38c`
 
 ### English
 
@@ -7059,11 +7613,19 @@ Uma equipe usa um agente personalizado no Copilot SDK e omite a restrição tool
 <!-- certification-coach-question:agentic-070:59227471d119abe7b62a8dd2605b3b8cd3c2912f53b0af2138ea8873c57c1ca2 -->
 ## Question 70: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-070`
 
 **Content revision:** `59227471d119abe7b62a8dd2605b3b8cd3c2912f53b0af2138ea8873c57c1ca2`
+
+**en review revision:** `a82eb8998faef1cbe5dd6fc669d091cfcd551607b5ecb882914a66174a2b62e3`
+**es review revision:** `052c8012c3040b018e8383ce2142d8c2697ecf3dcdd5f3ea5706bcc8a0e0ef66`
+**pt-BR review revision:** `72bbbf47a0aa96e6d119fae6890fdc48db443f059fddb77ecb79abfeaa16e640`
 
 ### English
 
@@ -7161,11 +7723,19 @@ Uma organização configurou acesso MCP restrito aos servidores do registro em u
 <!-- certification-coach-question:agentic-071:982234e21f447f4be40103b0c94e890932e8f322db07c54c7b01fa7831ba739b -->
 ## Question 71: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-071`
 
 **Content revision:** `982234e21f447f4be40103b0c94e890932e8f322db07c54c7b01fa7831ba739b`
+
+**en review revision:** `90a3d46977bbe98affb2183588d330bc6c71f3d8481519c6c79537fb5f0ebf6c`
+**es review revision:** `338321e5713f9895f7814c59ddc7274394f511cdc332c13b29658d6a96eaeade`
+**pt-BR review revision:** `1716b6e69960ab506d83f22361499425ba4630cc32064a1d14f6d39c9fd430fc`
 
 ### English
 
@@ -7263,11 +7833,19 @@ Uma equipe assume que a sua política de registro privado do MCP limita automati
 <!-- certification-coach-question:agentic-072:45f1fa54a0d3056e33ef4c19188130463105d58921017455f48101dbf675b971 -->
 ## Question 72: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-072`
 
 **Content revision:** `45f1fa54a0d3056e33ef4c19188130463105d58921017455f48101dbf675b971`
+
+**en review revision:** `e233f95d633f288a38926379a8002d194dbd593cbefc28b888172b8e402f6ad0`
+**es review revision:** `8df28ec5d15c14d92a5f41b7b84015eea5cb9c3b3f1f4698eeb7f1c417b792c9`
+**pt-BR review revision:** `b21832d386246ed186cdc9307b210738edc04d1a1d0c6463cd79d1c05611d231`
 
 ### English
 
@@ -7365,11 +7943,19 @@ Um comando de shell gerado por um agente inserir um título de problema diretame
 <!-- certification-coach-question:agentic-073:cc2a26b6384e98b0b64e5afc1247ae6c1377f50559257fd478bc1d7a6db75379 -->
 ## Question 73: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-073`
 
 **Content revision:** `cc2a26b6384e98b0b64e5afc1247ae6c1377f50559257fd478bc1d7a6db75379`
+
+**en review revision:** `91d176788bea0a6b3b8552becf96eb829ed152d2c27389d15a82f8eb18f96bbc`
+**es review revision:** `23772de694c89b631f5a12e70a863378e61146fadd3892fa6abdb3ba9364b3c3`
+**pt-BR review revision:** `ab578a7a1696184a3f5bd53281c18303a03f3967dbbd6f1373a1b6ea151c76ce`
 
 ### English
 
@@ -7467,11 +8053,19 @@ Um trabalho de construção tem acesso ao repositório apenas para leitura. Só 
 <!-- certification-coach-question:agentic-074:7f0198ac3f3085dee638db80835e7dca038c0e2ea152d78be6ef431749b6b86e -->
 ## Question 74: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-074`
 
 **Content revision:** `7f0198ac3f3085dee638db80835e7dca038c0e2ea152d78be6ef431749b6b86e`
+
+**en review revision:** `9856300dc37e1ad9d787687211ecc6f6c36fbcc5e65ec8d189cb29a1a372500a`
+**es review revision:** `78d47638d9bd943cb5861e39f8c36b65acedcfd14de5cc0460ba9f26a92f2af0`
+**pt-BR review revision:** `e088e3fa2731f0bcba8902e2d6ff25c3c5f43aca2bb5b41b1a2e35e0aa48f8c5`
 
 ### English
 
@@ -7569,11 +8163,19 @@ Uma configuração local usa um endpoint remoto MCP que é inacessível da rede 
 <!-- certification-coach-question:agentic-075:47c099351a7b419921a6b2f664f1b69467fabd68194c35806c4b0fff7d7483d3 -->
 ## Question 75: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-075`
 
 **Content revision:** `47c099351a7b419921a6b2f664f1b69467fabd68194c35806c4b0fff7d7483d3`
+
+**en review revision:** `78b6558034c316a15ae0debfb2c1aacfece19b16c0bf99b539881c35af4752ae`
+**es review revision:** `35642cf006569180cc9dbbcfcb54529f534fe617e7bfb741ef7c8aa856b43d64`
+**pt-BR review revision:** `2f482a5b0cf01c0282916e8a65bcf0c2794164b0ad8c5c7cb8fc0ea93a8181d7`
 
 ### English
 
@@ -7671,11 +8273,19 @@ Uma ferramenta de pesquisa retorna apenas a primeira página de problemas de cor
 <!-- certification-coach-question:agentic-076:a5e519748062d83c79b6daee29fefe00ba62efd56cfc19fcd3980e522bb2878a -->
 ## Question 76: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-076`
 
 **Content revision:** `a5e519748062d83c79b6daee29fefe00ba62efd56cfc19fcd3980e522bb2878a`
+
+**en review revision:** `1b4a9d597cb1d9a06f29be540a11d1de2e19b8227b4657411ef8a9cf567fd704`
+**es review revision:** `99208bd62d158eb4f02b1a418bc077e417ca7837f7377d7f0da961d5b86df69f`
+**pt-BR review revision:** `97741fa24b9412419d803560d8192beae69898279f9481c4362c5d0096cb2b5d`
 
 ### English
 
@@ -7773,11 +8383,19 @@ Uma ferramenta de execução retorna o estado de saída zero, mas sua saída diz
 <!-- certification-coach-question:agentic-077:3c8195234ce1fead78c92722aacae1593501a34b88c9e0fbe2632368a8cae877 -->
 ## Question 77: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-077`
 
 **Content revision:** `3c8195234ce1fead78c92722aacae1593501a34b88c9e0fbe2632368a8cae877`
+
+**en review revision:** `38ee9629df55fddc28cde9de7a6760f5b40e1f16b4379d32fb9b8cf5efc5ee45`
+**es review revision:** `7c06fb9291fb1ef3a1c1d0618222f67d34020f23a3da722b6d9d34fee94b2fda`
+**pt-BR review revision:** `176d63bf9dea8b4247fee697b9513d0a8811968955ec546bfa20457f53ba5f6f`
 
 ### English
 
@@ -7875,11 +8493,19 @@ Uma equipe desenha um rollback para uma configuração gerada por um agente. Qua
 <!-- certification-coach-question:agentic-078:8742b084d8590fe29bec8d26a04b15df38447f7cb40fc5777f63e6cda4de835e -->
 ## Question 78: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-078`
 
 **Content revision:** `8742b084d8590fe29bec8d26a04b15df38447f7cb40fc5777f63e6cda4de835e`
+
+**en review revision:** `eaffec592e7a27fb13bb90db0741bb22712d8bc1b43c2d4a13c1d971890f52dc`
+**es review revision:** `f84b9fe6f2f19d5f9db90208e15ba721bbd29b435f127b9abca08605eeba3a89`
+**pt-BR review revision:** `6c1af9e118f8d9a589091587a0653612623efb543322f29f3dc3dc56f862cd70`
 
 ### English
 
@@ -7977,11 +8603,19 @@ Um agente usa uma ferramenta suportada para criar um PR, mas as regras do reposi
 <!-- certification-coach-question:agentic-079:92fdedfdab1af7fb18063e0ba585d3302b25a0b3555bbf0be0420ec10bdab7e1 -->
 ## Question 79: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-079`
 
 **Content revision:** `92fdedfdab1af7fb18063e0ba585d3302b25a0b3555bbf0be0420ec10bdab7e1`
+
+**en review revision:** `394173811b6795e3aaa5502f356cd5e30afdfa3620a1cbe92f099fa36344129a`
+**es review revision:** `f601e9bb2280955bde9af62337fc16f89ac02053824a0026d12eb1cc316b1233`
+**pt-BR review revision:** `d283c00b5d3dfd5fdddcb14692535e1a2527f8d755a35ca96a489a3a7c492f04`
 
 ### English
 
@@ -8079,11 +8713,19 @@ Um fluxo de trabalho transfere um nome-alvo gerado por um agente para um trabalh
 <!-- certification-coach-question:agentic-080:b7abdebb016276191b8c91004fa954d920e3b73bb7c30fe18bb41ac0bb9ec679 -->
 ## Question 80: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-080`
 
 **Content revision:** `b7abdebb016276191b8c91004fa954d920e3b73bb7c30fe18bb41ac0bb9ec679`
+
+**en review revision:** `f7d5a08a8743fec950f1e52e18be49eed3cc3b8faac78d6e1994f1faf07e56e6`
+**es review revision:** `0b43b7f025842972af5a21f2a50a881078e88355a9e54dcb381aeecb9f53c684`
+**pt-BR review revision:** `0613a49ec161ddfbd4a123580725b85dcae651fd6c644ffe0bd433106dba34cf`
 
 ### English
 
@@ -8181,11 +8823,19 @@ Um agente deve parar um processo de fundo que lançou para testes. Outros usuár
 <!-- certification-coach-question:agentic-081:c88b64508b56fa16aee5aba0ab7edfd5b5e4854a5e9f6f642f50b21aa54b2393 -->
 ## Question 81: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-081`
 
 **Content revision:** `c88b64508b56fa16aee5aba0ab7edfd5b5e4854a5e9f6f642f50b21aa54b2393`
+
+**en review revision:** `5578e8d20182fd12c1d454f335ffac8df20c3bdd7ff94feec388408dfbf07080`
+**es review revision:** `90e212b2934e77153406ef4fadb57f1bcbf6dd0cff42037064e1a6dfe6d7fd91`
+**pt-BR review revision:** `b62d5d8107d0063d8762580e2c57df1e1de9bab3e14fff458801b011432ea30e`
 
 ### English
 
@@ -8283,11 +8933,19 @@ Uma ferramenta externa altera o seu esquema de resposta. O analisador do agente 
 <!-- certification-coach-question:agentic-082:10994b390d48c98da1f94551e367e28010fea859f230701743f7afff9cf56bbb -->
 ## Question 82: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-082`
 
 **Content revision:** `10994b390d48c98da1f94551e367e28010fea859f230701743f7afff9cf56bbb`
+
+**en review revision:** `e01c1d086b41d24527d62d927f945ecc1c008d41db0ed39fae61d36cff7ceb2b`
+**es review revision:** `482651e94c3ac0fc8a8571af3c8ebbbfddf47bfe61815b8435d7e883511a0069`
+**pt-BR review revision:** `a669c5caae33ad62fbefbdc9f0f479a3497f9d5fa2638fff524eab99313eb22e`
 
 ### English
 
@@ -8385,11 +9043,19 @@ Uma ferramenta pode publicar lançamentos, mas a tarefa atual só requer um rasc
 <!-- certification-coach-question:agentic-083:a9e7a4e799f61e65794accc628fef14613903b5ec111e590a840da958841ac2c -->
 ## Question 83: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-083`
 
 **Content revision:** `a9e7a4e799f61e65794accc628fef14613903b5ec111e590a840da958841ac2c`
+
+**en review revision:** `b541d17580de853efda39c3a3e61934ddb7a5727cb7afd57801fdd0b5c3c1b9b`
+**es review revision:** `02bf37649000ea1bb34c8dfbb43a58406abdc2ca33efbb328e94459e96f4c8f8`
+**pt-BR review revision:** `74b3235c18f3338844c61e33772ad1fd4221e360635ab42e36136f856843e771`
 
 ### English
 
@@ -8487,11 +9153,19 @@ A construção CI de um agente não pode chegar a um serviço de pacotes porque 
 <!-- certification-coach-question:agentic-084:ca7ab7db887a866fb165f1a1a9aa6f4dfd2f2a99cbee3e7292b78ee49c64ef97 -->
 ## Question 84: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-084`
 
 **Content revision:** `ca7ab7db887a866fb165f1a1a9aa6f4dfd2f2a99cbee3e7292b78ee49c64ef97`
+
+**en review revision:** `5fbccfe341205040b69f096e339887c6d51d6aca7175efc89f42b09b8ad04650`
+**es review revision:** `c51e1f676c88189acad008ad0d3ac862f167c83dcdbe0a61de29b8779fd028c4`
+**pt-BR review revision:** `87cbbb1ca0f3dc6a0554c76d2c7a7dca1b979598ccb9afea070ba6a06be6c5c8`
 
 ### English
 
@@ -8589,11 +9263,19 @@ Um fluxo de trabalho CI pode ser desencadeado em conteúdo PR não confiável. E
 <!-- certification-coach-question:agentic-085:2c0a4d923d9907e41216e4350ca6b0d41404250ba5668b73772252e41eca5d5a -->
 ## Question 85: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-085`
 
 **Content revision:** `2c0a4d923d9907e41216e4350ca6b0d41404250ba5668b73772252e41eca5d5a`
+
+**en review revision:** `a964786eef39420dbb28d1293dfacbf41fb01960fcad7c917a1de7ab744de994`
+**es review revision:** `ff8e653b31f5a2fc4b1e6c425e2e91f5a924a17059af7fffa20811e47cbce835`
+**pt-BR review revision:** `002ed1af3671b4e0f6f0d79994d5e79128ee020d55c103a208a7db09a4889f9e`
 
 ### English
 
@@ -8691,11 +9373,19 @@ O comando de um agente falha porque falta um executável necessário no ambiente
 <!-- certification-coach-question:agentic-086:1435deb669358b305a681028f28849f21c411d2ef769fab09a655a3dd30fa64e -->
 ## Question 86: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-086`
 
 **Content revision:** `1435deb669358b305a681028f28849f21c411d2ef769fab09a655a3dd30fa64e`
+
+**en review revision:** `1a65c4ff5f677a870473b771c15bfcecd779e7a039283b2e3e7e2b51cfa77eb3`
+**es review revision:** `dccc3d2bf788208ab796f9dbd0acae09582c184a2b5a6f6282a6392e19cd343b`
+**pt-BR review revision:** `28d1d390dc1bafe0f37bb0383a946e5bdad31aae3a14c5ee25a8758b1ee1ab20`
 
 ### English
 
@@ -8793,11 +9483,19 @@ Uma equipe migra um agente de uma máquina de desenvolvimento para um efêmero r
 <!-- certification-coach-question:agentic-087:b2b338f82db7492a7dfdadf9a26dbd634f9eec09e275177c37ab8b7595a936f4 -->
 ## Question 87: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-087`
 
 **Content revision:** `b2b338f82db7492a7dfdadf9a26dbd634f9eec09e275177c37ab8b7595a936f4`
+
+**en review revision:** `c5aa844dff18d72dbc97c275779478cc86a2f7a9b6d5c2ecdf6ae301633a4ae1`
+**es review revision:** `6bab841716e24b76994a076b54fa8edec8a7705deb3c4717ebc65cd46cacfde9`
+**pt-BR review revision:** `7ee85cc4cf3e9df8c6575331e2e3f8600d0f23a32a266c159975111768c790ae`
 
 ### English
 
@@ -8895,11 +9593,19 @@ Uma ferramenta altera corretamente uma configuração externa, mas o checkpoint 
 <!-- certification-coach-question:agentic-088:7d4df6a95c1e7eecfaea27430b85cb3ebe21d3563ec003fabb3990f9853358d8 -->
 ## Question 88: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-088`
 
 **Content revision:** `7d4df6a95c1e7eecfaea27430b85cb3ebe21d3563ec003fabb3990f9853358d8`
+
+**en review revision:** `d9fbdd80b8d027d7ca532e2c7bc26e72f6c4236baf68363225f3da68f8f75884`
+**es review revision:** `5b8b09fe4de8e94f8e9f892dc25f37368a758909b00aff6a48fad56b84bbe708`
+**pt-BR review revision:** `ac004d14354275c3d0faf38117b94683f8caa88242ac66169534dc225dbadd4d`
 
 ### English
 
@@ -8997,11 +9703,19 @@ Um pacote de servidor MCP é atualizado e agora solicita acesso a um sistema de 
 <!-- certification-coach-question:agentic-089:951b2cc317bc952a24d5dc595b912fa98712f3f479b64c5c4b984d56ad6266ec -->
 ## Question 89: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-089`
 
 **Content revision:** `951b2cc317bc952a24d5dc595b912fa98712f3f479b64c5c4b984d56ad6266ec`
+
+**en review revision:** `3ff4fa0d8a53616bc4a51c9a735c9ebf71a5d0fd6cdd43d8482192c26602bc4b`
+**es review revision:** `37245ce833c0065b96565105dc51e42e5006b6426fa26a1ef081db3bd881f9cb`
+**pt-BR review revision:** `28685d0ae8be2d8f32163cd99f1f07ee5799006d16efe425421f1da7f8561d30`
 
 ### English
 
@@ -9099,11 +9813,19 @@ Um agente precisa de comentar um PR mas não o código push. Que princípio de a
 <!-- certification-coach-question:agentic-090:1e2f900526cc234eb2c8f7bb3256f8ba18f5e3dc91d10a79a8032f1ba3297714 -->
 ## Question 90: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-090`
 
 **Content revision:** `1e2f900526cc234eb2c8f7bb3256f8ba18f5e3dc91d10a79a8032f1ba3297714`
+
+**en review revision:** `6911013daee88e6773e61cbaddb710c60d341adf35bbe391cc92fefbf8ef40c3`
+**es review revision:** `b07f0842ace1fd42739c331d54cf0754b97d9c43eab789f86d996c86f8cd7cd5`
+**pt-BR review revision:** `91f5a558b57c0ce67c8b2c3c33c1a074fd896d9596c7884d69dd9b6580529623`
 
 ### English
 
@@ -9201,11 +9923,19 @@ Uma ferramenta permite simular uma operação sem aplicar alterações, mas a ta
 <!-- certification-coach-question:agentic-091:dfc8a511456670a3fa97d81e19ff0f7cd5764df238414d27eb1d7acbd33cd6b4 -->
 ## Question 91: Implement tool use and environment interaction
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-091`
 
 **Content revision:** `dfc8a511456670a3fa97d81e19ff0f7cd5764df238414d27eb1d7acbd33cd6b4`
+
+**en review revision:** `0757d82c40412ca6e6a7902090e792c9e3986abbf100ffc8e5252fa92374c24c`
+**es review revision:** `7971e874d3461aff8a4c9d9aca317faba607f46e3c397a328ecf0885ebaae7a6`
+**pt-BR review revision:** `036a3de309442d027133f677bf3d87f4a34af2348316dcb683755cb8cdd357cb`
 
 ### English
 
@@ -9303,11 +10033,19 @@ Os registros de ferramentas de uma equipe mostram marcas de tempo, mas não pode
 <!-- certification-coach-question:agentic-092:600d326b4e62e9dad4f666701d2e46a68fec07639a97d691e01ee6a2597a6fc0 -->
 ## Question 92: Manage memory, state, and execution
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-092`
 
 **Content revision:** `600d326b4e62e9dad4f666701d2e46a68fec07639a97d691e01ee6a2597a6fc0`
+
+**en review revision:** `c02adf6357d00957ff8c08d3887f5037a84f85ab9e72fcd95ebdddfbbac2e453`
+**es review revision:** `b6ed94f15ef46c67556e6b572b253ae0c36bb1e6ed2e8d38ba2e5b078db0b011`
+**pt-BR review revision:** `067a848ad0e95c45aafaeba1e0149541ac77db1715e252cb17deecba292c5bd8`
 
 ### English
 
@@ -9405,11 +10143,19 @@ Um agente deve conservar os cálculos intermediários de uma tarefa, mas não os
 <!-- certification-coach-question:agentic-093:2da0051408f1cda49bf8b976f9bf63b83b6fcbee1cca4b2993b78e8cd5176ad8 -->
 ## Question 93: Manage memory, state, and execution
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-093`
 
 **Content revision:** `2da0051408f1cda49bf8b976f9bf63b83b6fcbee1cca4b2993b78e8cd5176ad8`
+
+**en review revision:** `381a58f2348bd4e18b45aee9bc4dc2f16769c83770a6ca19b30fc99257d4d97e`
+**es review revision:** `04fa815b261315503a18a2c29e89fb6ed075a1b8b9d38dbd56072c50a0c3d819`
+**pt-BR review revision:** `17008c1425c06e0297967891c447db345cc00e2aed29477452578be2d954891e`
 
 ### English
 
@@ -9507,11 +10253,19 @@ Um agente de longa data precisa de um registro duradouro de decisões arquitetô
 <!-- certification-coach-question:agentic-094:c618b6b7f18dc8b157c607137599911b7563358388bfc49a7fec126893cca485 -->
 ## Question 94: Manage memory, state, and execution
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-094`
 
 **Content revision:** `c618b6b7f18dc8b157c607137599911b7563358388bfc49a7fec126893cca485`
+
+**en review revision:** `e6ed362fee4dd36d5b5836526e994c06436005cf82398160dd934a8c6deab309`
+**es review revision:** `d4cdfef9d15e1c51c492f7a9857bc796fe04a4b5c930cb13e10e50d887694825`
+**pt-BR review revision:** `707d3a1773e638de15f3021f570bda847eda0ee95dd47d9d206f926875b78ace`
 
 ### English
 
@@ -9609,11 +10363,19 @@ Um agente retomado começa a implementar um passo já concluído antes de um aci
 <!-- certification-coach-question:agentic-095:a729dca3ecbc550ec9413f98bd15d84b3511ad2ada582ba459e55cd94ccfed97 -->
 ## Question 95: Manage memory, state, and execution
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-095`
 
 **Content revision:** `a729dca3ecbc550ec9413f98bd15d84b3511ad2ada582ba459e55cd94ccfed97`
+
+**en review revision:** `790a2b0b2add8d600a505f39e4f9c5d4420c0caab047d636075cd882487f5b8a`
+**es review revision:** `4348c9f70a1325609d03d4161516a0fda3b4adbc8b8e13ac1b2854da4dade588`
+**pt-BR review revision:** `6eb15d8091a8f8b1242df5d618fa595da8a2c6afdeb1a105021971deb6ee044c`
 
 ### English
 
@@ -9711,11 +10473,19 @@ Um agente lembra-se de um antigo comando de construção, mas o branch atual mud
 <!-- certification-coach-question:agentic-096:05dbc0c512b107297b4276d8927e0c64011d2df7e91f44dc546366277ba9c521 -->
 ## Question 96: Manage memory, state, and execution
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-096`
 
 **Content revision:** `05dbc0c512b107297b4276d8927e0c64011d2df7e91f44dc546366277ba9c521`
+
+**en review revision:** `b6d81053ad056338b49ae485fc63a2b1580f3d56a98ee895555367fcda016fd7`
+**es review revision:** `baac24d5ed53e538c0aabe05ade9d079a9cf70f15da9ca90da552e53045d2329`
+**pt-BR review revision:** `7d72faeb3c535f34d1b9ad8bb88ce7006871579f17f31f73c27999287cf2a3ad`
 
 ### English
 
@@ -9813,11 +10583,19 @@ Um resumo de memória trata "talvez substituir o cache" como uma decisão aprova
 <!-- certification-coach-question:agentic-097:439663fc7377d381c52d4a48de7cfe542e6e0ccd644031e1c91dc3943e6b2461 -->
 ## Question 97: Manage memory, state, and execution
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-097`
 
 **Content revision:** `439663fc7377d381c52d4a48de7cfe542e6e0ccd644031e1c91dc3943e6b2461`
+
+**en review revision:** `edc6be25cc26a0a2eb32753d5adf03ca3eb1363711139d7fee27654f882cf3b4`
+**es review revision:** `7a3c9de1b451a526923ab63e8b104efd75a643a0bb5ad0246cd30348b68ae99e`
+**pt-BR review revision:** `f5b94a2065f65ee1bd72c9c24bf38eb9eb0fd1459954bbd3f30061d87753fd8c`
 
 ### English
 
@@ -9915,11 +10693,19 @@ Uma longa sessão de agente começa a otimizar o código não relacionado em vez
 <!-- certification-coach-question:agentic-098:fea9d51ce4d7e8e9922e49860a6675feb667cde8794309e8026be0f9ba102b85 -->
 ## Question 98: Manage memory, state, and execution
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-098`
 
 **Content revision:** `fea9d51ce4d7e8e9922e49860a6675feb667cde8794309e8026be0f9ba102b85`
+
+**en review revision:** `14dcecd34faa841042e297547e797a6f4b85c124e4b1cb00fe3487a1a16f335f`
+**es review revision:** `606c42787c29cdfc2105c04e7cd4e9b89142405dcffa0c00f057b0d7581ad996`
+**pt-BR review revision:** `814598782fb25a5e1b05928fdbfbfae35dde7b57dc63f924144cff0700aec232`
 
 ### English
 
@@ -10017,11 +10803,19 @@ Duas ferramentas discordam sobre se uma implantação foi concluída. Um relata 
 <!-- certification-coach-question:agentic-099:c5a9652166698fe6d92ac1f569ea059eef841eeea6cf06d88cbccd3512c18659 -->
 ## Question 99: Manage memory, state, and execution
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-099`
 
 **Content revision:** `c5a9652166698fe6d92ac1f569ea059eef841eeea6cf06d88cbccd3512c18659`
+
+**en review revision:** `832e822f489ea15eb90bd874fcc5e1073f5b081b4240f2029e56061557140668`
+**es review revision:** `a01238dc1756e4b4170a71cf457686c33d7190e85a66cc896ab69d7dc1f8b4f8`
+**pt-BR review revision:** `7f68a3dfc27012541ddb9808bdd81b77b99606b3815d4a7a540bb1658ffb0cfe`
 
 ### English
 
@@ -10119,11 +10913,19 @@ Um agente guarda para sempre todas as respostas brutas das ferramentas. A recupe
 <!-- certification-coach-question:agentic-100:5806a4ead26a6d731a39c57d889a9da2519f4aabfdb8b17856a3bca92ddb5585 -->
 ## Question 100: Manage memory, state, and execution
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-100`
 
 **Content revision:** `5806a4ead26a6d731a39c57d889a9da2519f4aabfdb8b17856a3bca92ddb5585`
+
+**en review revision:** `4a501cf5b1c6db232feb0d36286d8ced141c1d2ecb738bf000864d0b7c5b9238`
+**es review revision:** `4c5fcfc3cff418fafcd1e1492618ace2c6994bed96e63b9776a4f6ccee6e5d58`
+**pt-BR review revision:** `0ffeefc5d108660b8b997314c1624f224bd20dd09a4b9d32cf540c3802292108`
 
 ### English
 
@@ -10221,11 +11023,19 @@ Um agente muda-se do desenvolvimento local para o CI. Quais são os estados que 
 <!-- certification-coach-question:agentic-101:b84814552a2a274902b4e4ab61f6bcad42a16dad69bb71750799884c698b587d -->
 ## Question 101: Manage memory, state, and execution
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-101`
 
 **Content revision:** `b84814552a2a274902b4e4ab61f6bcad42a16dad69bb71750799884c698b587d`
+
+**en review revision:** `c1db9bc8cd11d921b32dd218cbfe2c9532af0b330aa8f77fa67957d5d3bdf1bd`
+**es review revision:** `dade17a2452d726ea088f777455b21cf27fcd3018b4f66fc40a3a688480c3fca`
+**pt-BR review revision:** `5c3abd9353844ed9985e5e75018334f7aca23c18a18f950e7fe455b27ba51109`
 
 ### English
 
@@ -10323,11 +11133,19 @@ Um checkpoint contém uma credencial de produção porque foi devolvida por uma 
 <!-- certification-coach-question:agentic-102:73a3e33e82fb87b7d89832e697f0a9e058ed14626fadae03080ba08b853dd774 -->
 ## Question 102: Manage memory, state, and execution
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-102`
 
 **Content revision:** `73a3e33e82fb87b7d89832e697f0a9e058ed14626fadae03080ba08b853dd774`
+
+**en review revision:** `819bf09182710595748eabf059ee66e4bd9534581e9a9aef938f7a46c5e21e5c`
+**es review revision:** `69c14976f53259f4010f99ca655e4246e6d2e562d94f000c46134f25b90c7129`
+**pt-BR review revision:** `83270993ec06125e9014bff7033c996bda315ad18cfda4eae40eab1561c9fac0`
 
 ### English
 
@@ -10425,11 +11243,19 @@ Dois agentes atualizam um registro de tarefas compartilhadas e um silenciosament
 <!-- certification-coach-question:agentic-103:800d1b158a45c6bf098820f6c772c8f26bcff8b889ab8782f218a2b634652d9b -->
 ## Question 103: Manage memory, state, and execution
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-103`
 
 **Content revision:** `800d1b158a45c6bf098820f6c772c8f26bcff8b889ab8782f218a2b634652d9b`
+
+**en review revision:** `74ec7b691d315729f72489ffe51b0519bbe8d80a369ea0511e646fcccf89059b`
+**es review revision:** `c824e27c762274615d0ff1e7cd6e459086bfd3218f9404821390133953983a7f`
+**pt-BR review revision:** `af159271e3924fe362f90969858b063e097de05bda5e52ce4bae71ecc31ba7f1`
 
 ### English
 
@@ -10527,11 +11353,19 @@ Um agente é transferido para um repositório de clientes diferente. Qual memór
 <!-- certification-coach-question:agentic-104:3ea8d740db783e52fd857eba55fab5a56ae543d216155295ed2a95a5909aed7b -->
 ## Question 104: Manage memory, state, and execution
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-104`
 
 **Content revision:** `3ea8d740db783e52fd857eba55fab5a56ae543d216155295ed2a95a5909aed7b`
+
+**en review revision:** `a2a7962efb022d7d92936810e5c588b26ec0f9dfdde82c30a1f293adba0f838f`
+**es review revision:** `942e4954e3ad2ff562e37583be4a2ed6b6aa85e08ea7f382132e789197851e5e`
+**pt-BR review revision:** `51b9e934d549a02864b772ac22a65860e48ccf14d6b6449f30e95c54793a3faa`
 
 ### English
 
@@ -10629,11 +11463,19 @@ Uma equipe comprime uma longa conversa antes de retomar um agente. Que informaç
 <!-- certification-coach-question:agentic-105:94d87c4279d9e365b29812337164de71b82b3a6b4e3b7605bebd951badb70d9e -->
 ## Question 105: Manage memory, state, and execution
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-105`
 
 **Content revision:** `94d87c4279d9e365b29812337164de71b82b3a6b4e3b7605bebd951badb70d9e`
+
+**en review revision:** `fa70561a0fca3261e4277e1601d6cf4dac82d4be64e1505e9b606b5bd63915fa`
+**es review revision:** `07be706353b291a3d086eb565466865f7821d62179de75573a1f1a32001d9ac6`
+**pt-BR review revision:** `1fb55bc29a21e26e870a2176eb2e462cc370127fb7c8070a06a57a6b42fd5d00`
 
 ### English
 
@@ -10731,11 +11573,19 @@ Um resultado de teste armazenado aprovado no commit A. Desde então, o agente mu
 <!-- certification-coach-question:agentic-106:00a3939a4bf9d1361fbf677e4c487a4e6895dedb707e77e94754c373b651b281 -->
 ## Question 106: Manage memory, state, and execution
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-106`
 
 **Content revision:** `00a3939a4bf9d1361fbf677e4c487a4e6895dedb707e77e94754c373b651b281`
+
+**en review revision:** `bae0bf6595cdba46331a9e5954e90cd358971395cc2a94e141b4e5db67f15fcf`
+**es review revision:** `5d8968e30136f6be2176b5d4571d88b479e9412983fc7acdef1b757e0ea166c6`
+**pt-BR review revision:** `d8f3ab577d209796e0ab51cb5e0160cc5835526ff2c83eef3db199efc167ef30`
 
 ### English
 
@@ -10833,11 +11683,19 @@ Um agente redescobre repetidamente uma convenção de repositório estável. Qua
 <!-- certification-coach-question:agentic-107:a9c093bf7ea060e538a284fd2646c6040ceaa7621651cbd6b7faa094cd555ece -->
 ## Question 107: Manage memory, state, and execution
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-107`
 
 **Content revision:** `a9c093bf7ea060e538a284fd2646c6040ceaa7621651cbd6b7faa094cd555ece`
+
+**en review revision:** `5e71c5672fc16eb1c2a05b8461462547c7c2014a5374c9e42fbfe8be475f62c1`
+**es review revision:** `7120911034a7fc37cf60bc5d219b60f32c4c4f401a29575026ca14cf5d703dbf`
+**pt-BR review revision:** `8127774f2d7a4101b36feae6ae4973a56f0425bb8b988f5127f5372d978f8327`
 
 ### English
 
@@ -10935,11 +11793,19 @@ Uma tarefa é cancelada após a execução parcial. Qual deve ser o seu históri
 <!-- certification-coach-question:agentic-108:be5e277124f159d125098cc1ff5e4e7ec0be06510a68fd238c83350b5f9b3644 -->
 ## Question 108: Manage memory, state, and execution
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-108`
 
 **Content revision:** `be5e277124f159d125098cc1ff5e4e7ec0be06510a68fd238c83350b5f9b3644`
+
+**en review revision:** `3b03b7164ec40bdae5a145a746b9d1c3fbb6f9c4f24410d66a81e85b0405b853`
+**es review revision:** `cf8cf87ddcf84fa885f2690cd3eb538a8bddde985045d9cb37dc42eb8e5eb913`
+**pt-BR review revision:** `2224fed22337fc06249c4a28f9805cbbef80b3d446fb136749dd9789d986d46b`
 
 ### English
 
@@ -11037,11 +11903,19 @@ Um agente recupera uma velha exceção que permite uma operação arriscada. A e
 <!-- certification-coach-question:agentic-109:6e7c5bda400409eb081338f8c7040f9eda484ac017b5cbf9f19a32f34ccf2da7 -->
 ## Question 109: Manage memory, state, and execution
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-109`
 
 **Content revision:** `6e7c5bda400409eb081338f8c7040f9eda484ac017b5cbf9f19a32f34ccf2da7`
+
+**en review revision:** `a7ab3104eb2a6470fe9861fa6fc70a747af3c837876321915a17e716f5578c8a`
+**es review revision:** `77deb1666b148577326b405e98eafeb54095bf8b67d5080d9d1c370e159ef1ab`
+**pt-BR review revision:** `df3f651882e1c7abcca36a3307bf682ab461e20b13d4c27f9330b68655fb2636`
 
 ### English
 
@@ -11139,11 +12013,19 @@ Um agente de suporte mistura fatos de dois incidentes simultâneos e propõe a r
 <!-- certification-coach-question:agentic-110:cdb0979d3c67b5b4e75b18d1381f7785b96177df489410f854b56bb06f8c3520 -->
 ## Question 110: Manage memory, state, and execution
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-110`
 
 **Content revision:** `cdb0979d3c67b5b4e75b18d1381f7785b96177df489410f854b56bb06f8c3520`
+
+**en review revision:** `ff05445ee0e6a36057f68d431203059a8d8bdc8b057239e96c4c47be50ae0c5e`
+**es review revision:** `8f2392708662f1862194c129f65d4a1a41619662f87eb2d489213b67d9c578b9`
+**pt-BR review revision:** `09ae1a0fd7ac59b8b713ae6bdc66b48bd7cf4829ff65713b6d5a1d1b2950f22a`
 
 ### English
 
@@ -11241,11 +12123,19 @@ Um checkpoint diz que uma operação está pendente, mas o serviço confirma que
 <!-- certification-coach-question:agentic-111:7c8b4039aa5288ccd80940b3bbf8f1fc5e2d498fbfadeac479771ed591e2b678 -->
 ## Question 111: Manage memory, state, and execution
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-111`
 
 **Content revision:** `7c8b4039aa5288ccd80940b3bbf8f1fc5e2d498fbfadeac479771ed591e2b678`
+
+**en review revision:** `9dea24bfed2eab77181449bb3901f3d8b57e80054b2e2d995699641796c7478f`
+**es review revision:** `d120dfbde7c64a60c82aed9134ec89a534407ec358806a249b7d9ebb1784f634`
+**pt-BR review revision:** `4bfe5cd588e80a22857334e7bf9ef91c1c14509cbe92a5984f470f410790363d`
 
 ### English
 
@@ -11343,11 +12233,19 @@ Uma entrada de memória veio de um PR que nunca foi mesclado. Quando o fato sobr
 <!-- certification-coach-question:agentic-112:fcb93d6f8e96ced6795af328b374bfc789241722ef8b4557c6661bfe18636964 -->
 ## Question 112: Manage memory, state, and execution
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-112`
 
 **Content revision:** `fcb93d6f8e96ced6795af328b374bfc789241722ef8b4557c6661bfe18636964`
+
+**en review revision:** `68ebb432e5c06435ddd768cad3688004cf5b1a30483d8a6e8bd64e621e1bd243`
+**es review revision:** `d86c2bf751785eec681dba8e011b820c9191618fce89c42cc2bdf1c61144205d`
+**pt-BR review revision:** `7aa89294a2b84b8b7ace2d68b5ef215ddda8b8d3c8080e93f56d3a7ac3acf90d`
 
 ### English
 
@@ -11445,11 +12343,19 @@ Um agente armazena 'implantação aprovada' sem identificar a revisão ou o ambi
 <!-- certification-coach-question:agentic-113:fcdeb313a8bbd56ae9d0b40f780bbbc175e8345f243602476f2fa507718015ed -->
 ## Question 113: Manage memory, state, and execution
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-113`
 
 **Content revision:** `fcdeb313a8bbd56ae9d0b40f780bbbc175e8345f243602476f2fa507718015ed`
+
+**en review revision:** `8b25bdf0ddebd02a08fa038c9f515896df263383332c61cc27fd6d06091fbabd`
+**es review revision:** `90b3e8dd094263d8cc60d8a25ea3d9814248423822ad1718ce7a365cf3f104cc`
+**pt-BR review revision:** `1db3a95d1ea19b9b6f60414f6104c8d61aba5f62328a6815b0694c5019117601`
 
 ### English
 
@@ -11547,11 +12453,19 @@ Uma memória obsoleta sugere um endpoint depreciado. A documentação oficial at
 <!-- certification-coach-question:agentic-114:5e3ddafc37a3448c9b66dba001fbf87e371a4cc822c5e0fca100f56102172a13 -->
 ## Question 114: Manage memory, state, and execution
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-114`
 
 **Content revision:** `5e3ddafc37a3448c9b66dba001fbf87e371a4cc822c5e0fca100f56102172a13`
+
+**en review revision:** `0e315f6a647a32d02cbf7bd37e4cd5d1241bd4f1821fcca19c19ad8252b5ea0a`
+**es review revision:** `9a6b7e72f151fbc928c688239ab53dd1b4a3bf6bb462222723bbe19264e335ba`
+**pt-BR review revision:** `abb133328a1775077f2e5e6f71911dd3dbd3aa9331a8b8287095dafa34e4a3e3`
 
 ### English
 
@@ -11649,11 +12563,19 @@ Um agente precisa de um grande relatório de teste histórico apenas durante o d
 <!-- certification-coach-question:agentic-115:5c16156c3d652f77555c5c3cb8c6bb50e2b1d8283a3f99a2326b6cefa5d82536 -->
 ## Question 115: Manage memory, state, and execution
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-115`
 
 **Content revision:** `5c16156c3d652f77555c5c3cb8c6bb50e2b1d8283a3f99a2326b6cefa5d82536`
+
+**en review revision:** `f4d5fa07055a20f43089369197a360ecb2fc7fe52012ac163f3afbeaa22afbc1`
+**es review revision:** `cda3cf5bba43093e883b97f0a58b564365ac4adcefaf53e5aae7c39679353d38`
+**pt-BR review revision:** `f1314c14fa541bf1f7d7ab75575992976f8695bf23dfbd43d1b63ac295b3e165`
 
 ### English
 
@@ -11751,11 +12673,19 @@ Um agente herda uma transferência escrita antes do branch base mudar substancia
 <!-- certification-coach-question:agentic-116:c8fb210f73ceebf9b32fefd57804a429a188f0adc487eeaf8868512529dc6166 -->
 ## Question 116: Manage memory, state, and execution
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-116`
 
 **Content revision:** `c8fb210f73ceebf9b32fefd57804a429a188f0adc487eeaf8868512529dc6166`
+
+**en review revision:** `c727b080c091048c9157c0d5095493eaa353bedd55df1bd20072396ce43d0e9e`
+**es review revision:** `8e1917efc014768f13ca6f2320c63b839feb59f72643075c41a6e2f03268e264`
+**pt-BR review revision:** `62325978c04f519e423dbd0e6ccd5e766f224e971e48fd45cefe51f2bf0a7d1c`
 
 ### English
 
@@ -11853,11 +12783,19 @@ Uma memória do repositório contém a preferência pessoal de formatação de u
 <!-- certification-coach-question:agentic-117:6bc72bf0967f0791ece7be656e70f95df8079770d34aeb1027de7cfcba4bdc22 -->
 ## Question 117: Manage memory, state, and execution
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-117`
 
 **Content revision:** `6bc72bf0967f0791ece7be656e70f95df8079770d34aeb1027de7cfcba4bdc22`
+
+**en review revision:** `0651051f788fb130757e520eae892a396661b179bb60dc237c74b81a328030b9`
+**es review revision:** `399aaca0c9e5b42a80a424fae5c4873f796bf1bd9cc0a3b08bdc2f255d6a847b`
+**pt-BR review revision:** `b90f73c09633b6446e78104bacf10ba17b544ca433ed49d98176064eb8813475`
 
 ### English
 
@@ -11955,11 +12893,19 @@ O resumo contextual de um agente omite por que um projeto aparentemente mais sim
 <!-- certification-coach-question:agentic-118:1784a71edfc1fc1e23ef70d4d31c9ea08e3eed4c11e8ed9aba90387fad084c79 -->
 ## Question 118: Manage memory, state, and execution
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-118`
 
 **Content revision:** `1784a71edfc1fc1e23ef70d4d31c9ea08e3eed4c11e8ed9aba90387fad084c79`
+
+**en review revision:** `e651e78cd617914c86f7b9ea05d78036490c09ef86f351fbade4c03732c74c95`
+**es review revision:** `5d4fbf4e77d11fa6e4f98e5b74e0763ef81528680910222e7a3cdaa860fa01ae`
+**pt-BR review revision:** `d11aa929cf86d4d5e58b91371aeb95a47b8d43d621eddfca2788b7afbe2e2263`
 
 ### English
 
@@ -12057,11 +13003,19 @@ Uma tarefa suspensa retoma-se após a revogação das credenciais da sua ferrame
 <!-- certification-coach-question:agentic-119:c7d7dbf9b1b717a74779a7e1dd5cb5122e58a5f1eb44ae5b048a0f77bcb0e19d -->
 ## Question 119: Manage memory, state, and execution
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-119`
 
 **Content revision:** `c7d7dbf9b1b717a74779a7e1dd5cb5122e58a5f1eb44ae5b048a0f77bcb0e19d`
+
+**en review revision:** `a2a94b11e652fb9ea2c14d402c378f58ef8e77ac3541315b8776c186352922be`
+**es review revision:** `7297ef5dde7950d83245dc6bdb674e6c3b52826cbe57206b71314d1acf2b0976`
+**pt-BR review revision:** `f83b077ce0aa02535ac4e2dd39da47a40249bec198e86acf6c1c8ad553cd990a`
 
 ### English
 
@@ -12159,11 +13113,19 @@ Um agente completou a tarefa autorizada. Qual é a melhor política de reinicial
 <!-- certification-coach-question:agentic-120:62903a9c4aa95d1aa6c7b2ad78f9a846103189536ed53ec5baf99658f2445242 -->
 ## Question 120: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-120`
 
 **Content revision:** `62903a9c4aa95d1aa6c7b2ad78f9a846103189536ed53ec5baf99658f2445242`
+
+**en review revision:** `034d9271c62b623bd458b33ac2e6977f3791ecc357302afe6c59bc1e2331a481`
+**es review revision:** `c491ba12749a9ef24d3a5527e2a35a9ca7a2ba738f09c6d4faed3180a156701d`
+**pt-BR review revision:** `87ea1bbc2ca89e5c59b3716d658e07e1035c49bccea4b65db443cd386fefcac4`
 
 ### English
 
@@ -12261,11 +13223,19 @@ Um agente corrige um defeito de faturamento. Qual é a melhor avaliação para m
 <!-- certification-coach-question:agentic-121:88137e3d1ac6f8dcbea11a496f5b1468d4c5d746a489f8dc64bf2d6e038eeb02 -->
 ## Question 121: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-121`
 
 **Content revision:** `88137e3d1ac6f8dcbea11a496f5b1468d4c5d746a489f8dc64bf2d6e038eeb02`
+
+**en review revision:** `ee7ac8d22a243913d0343c382ac90b6759a276f8257eb879d97cd5a89ea80eb9`
+**es review revision:** `88552849a9691724d54e0287def0f5f721d9567e81098efbc20c9dba405e501e`
+**pt-BR review revision:** `8331b4eb0402f37ccd15d07be0fdcb8cc7f1e13bcb307cae409e79a4fdf4d228`
 
 ### English
 
@@ -12363,11 +13333,19 @@ Uma implementação correta falha porque o runner não tem compilador. Qual é a
 <!-- certification-coach-question:agentic-122:b56c30c25175b311020434d954451d1bde19010f0c289811ec371387992343dc -->
 ## Question 122: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-122`
 
 **Content revision:** `b56c30c25175b311020434d954451d1bde19010f0c289811ec371387992343dc`
+
+**en review revision:** `a0f686d72085f7ac42d3f73e88b08734a0c326712c4bb7823e1a653083aa0c68`
+**es review revision:** `bb715e1b7a8867c71a1daaa14437c6772b91826f57ac37a3ecc0b411f334b11e`
+**pt-BR review revision:** `735d4668fe6ba17e343515355273208749b9d335b1de4dbb7a2630752a776ab8`
 
 ### English
 
@@ -12465,11 +13443,19 @@ Um agente seleciona uma ferramenta de exclusão em vez de uma ferramenta de leit
 <!-- certification-coach-question:agentic-123:3048c618da30c8e66407e7f467c9e52e121da6b1a4c29f5a145f766e2f04fd25 -->
 ## Question 123: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-123`
 
 **Content revision:** `3048c618da30c8e66407e7f467c9e52e121da6b1a4c29f5a145f766e2f04fd25`
+
+**en review revision:** `b1f552159f05f4d872b0090e87d1d0f88de6c905102d02a9e96f105161e54e0c`
+**es review revision:** `8e84769aee6a9b50a9130bda278eff03d3e5ebfe3bd6a5567aacb54c33cb8feb`
+**pt-BR review revision:** `df1dbba47aa621be64fed0f337149c96ffe9b7f4c322352a6cc536a551a536bd`
 
 ### English
 
@@ -12567,11 +13553,19 @@ Todas as ferramentas executadas como solicitado, mas um agente escolheu a fórmu
 <!-- certification-coach-question:agentic-124:a9b33c4503c64ce89e5687bd03176ab9c8ee4f182cff0a4c31e175dc03697c33 -->
 ## Question 124: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-124`
 
 **Content revision:** `a9b33c4503c64ce89e5687bd03176ab9c8ee4f182cff0a4c31e175dc03697c33`
+
+**en review revision:** `5ef6dcf97af5b673c737ae409915e74ee838e808115e36ed8cb99e2b1eb83c21`
+**es review revision:** `d570f0250c4599fa6756715c3b6242162e30e725b755b26b32e466729dc00d5c`
+**pt-BR review revision:** `cea3613fcce8275071bcd9344fa6ac5468b83b3f10659984c721371f844c65f1`
 
 ### English
 
@@ -12669,11 +13663,19 @@ Um agente modifica um módulo obsoleto porque a recuperação forneceu um mapa d
 <!-- certification-coach-question:agentic-125:f8b126d88b0ca6262b27745aa60f408620b65eddc3622ae995c1463d7bb8d7bc -->
 ## Question 125: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-125`
 
 **Content revision:** `f8b126d88b0ca6262b27745aa60f408620b65eddc3622ae995c1463d7bb8d7bc`
+
+**en review revision:** `b0db96af2b1c9656bc023ad4fe185a39a408c131a78667462bf74b3d38974ef2`
+**es review revision:** `52bdcd917c5a58e962a2b452d2ce26534f6fad9623e3a8cc41276d9b9f680e2f`
+**pt-BR review revision:** `09b1a0a71d9eca6dde68fc749d624a110608fddd98d93e20f23d79e9f37b64a4`
 
 ### English
 
@@ -12771,11 +13773,19 @@ Uma equipe muda as instruções do agente e quer medir a melhoria. Qual compara�
 <!-- certification-coach-question:agentic-126:f85f99f281df837bcea58f4941bbe1b7b39a9b8e9b4d52d0de6e8d7e5db84631 -->
 ## Question 126: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-126`
 
 **Content revision:** `f85f99f281df837bcea58f4941bbe1b7b39a9b8e9b4d52d0de6e8d7e5db84631`
+
+**en review revision:** `73742fc216244211a17036923b7a25da12bba44f61385834769d5481bd86d6e8`
+**es review revision:** `89162a360643015beaaaa2a9b0d4c8a17a845ddfb0987927108ed3683db74c94`
+**pt-BR review revision:** `1dfeb5a3ccd031c5931cbbda0bed8e137659c6589a8347b30d3d0cc56e5f7298`
 
 ### English
 
@@ -12873,11 +13883,19 @@ A taxa de aprovação de um agente aumenta após os administradores removerem ca
 <!-- certification-coach-question:agentic-127:a1d828d67831e293de2311488a69162788c4552dc6ffd9a3982b42f45c62f6fa -->
 ## Question 127: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-127`
 
 **Content revision:** `a1d828d67831e293de2311488a69162788c4552dc6ffd9a3982b42f45c62f6fa`
+
+**en review revision:** `73160620123cb9a503f3257b4c612850640d5e18447bf7ae2b08a02d80913f8a`
+**es review revision:** `dfde9085340d91195254d2632b8abec524c4804e1de9cb0a668d480bc9c34790`
+**pt-BR review revision:** `820c77545e74622532bb97477b20d17ffbf13b2558789e855343772b4615bb92`
 
 ### English
 
@@ -12975,11 +13993,19 @@ Um patch gerado passa os testes de unidade, mas introduz uma dependência vulner
 <!-- certification-coach-question:agentic-128:ce7020584c1a93c3ecf65d1bb9e89a855cd16810e4b83750a639cc2e935b1085 -->
 ## Question 128: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-128`
 
 **Content revision:** `ce7020584c1a93c3ecf65d1bb9e89a855cd16810e4b83750a639cc2e935b1085`
+
+**en review revision:** `5f87ff53efce2818b921ca04af28a770d0971e20917b64ed29351b79d0be4765`
+**es review revision:** `6f3523c1a6650cdfc6047f93101ca315bff04d7c2c1b078d4a76dcad0381c2d6`
+**pt-BR review revision:** `8e4b799f122fc8c2e3b6370f93ef9ade798586aae5dacdedf2bc32233aeeffb3`
 
 ### English
 
@@ -13077,11 +14103,19 @@ Um scanner marca uma mudança gerada. O agente diz que o aviso é provavelmente 
 <!-- certification-coach-question:agentic-129:7414effe5c18c3cef256651ad71e7fa3bd4d217b81e515ec05776feb28b76ef7 -->
 ## Question 129: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-129`
 
 **Content revision:** `7414effe5c18c3cef256651ad71e7fa3bd4d217b81e515ec05776feb28b76ef7`
+
+**en review revision:** `a259c6eaa805b2771fd62a9db8596e7359237be43c0f400be39704842a666004`
+**es review revision:** `7a45ee93936ecaa831b40d76f74af3801073200972465a3f9cbb1b49dbc6fb66`
+**pt-BR review revision:** `4bc67dcfe0baa64da7f7c55585cb6f95f37b3fdce76240cd8d439e85bf3fe014`
 
 ### English
 
@@ -13179,11 +14213,19 @@ As falhas dos agentes agrupam-se em torno das limitações de tarefas faltantes.
 <!-- certification-coach-question:agentic-130:6d4a0c57f4ae25ef670f17cf331ca1e92d33da09927cda62005d915bb4a3131f -->
 ## Question 130: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-130`
 
 **Content revision:** `6d4a0c57f4ae25ef670f17cf331ca1e92d33da09927cda62005d915bb4a3131f`
+
+**en review revision:** `6b4251f525b8134ee09a1203a73d5b15aa56aa83eb9f253d6a11aed78a6541e6`
+**es review revision:** `07d46b0e42ab0ec3489459b465788a070b38f9e7ea33d23f8f0445b18327c314`
+**pt-BR review revision:** `268f248184814acbaf692a96f008eb9323d1b43a324a4e4ed1df6074dcb9e37c`
 
 ### English
 
@@ -13281,11 +14323,19 @@ Um agente chama repetidamente ferramentas irrelevantes. Os vestígios mostram um
 <!-- certification-coach-question:agentic-131:0e3b2e44c39f7778b911abf91b85d5d50d0bba83e139ae242e7709c430b22983 -->
 ## Question 131: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-131`
 
 **Content revision:** `0e3b2e44c39f7778b911abf91b85d5d50d0bba83e139ae242e7709c430b22983`
+
+**en review revision:** `5cd1b8a3bc1b738b3ee615123d36107bde5760daa67ff78c4d7ad05e5df76344`
+**es review revision:** `3435fcedbf7b49df52c146e6ca1897f89692e2dccc69cecabfafff6b11b2a99e`
+**pt-BR review revision:** `1ddde545d657857c84bcd278aacf883df61c513da4a01b24fc77ffc189a78344`
 
 ### English
 
@@ -13383,11 +14433,19 @@ Uma equipe mede a latência do agente apenas nas execuções bem-sucedidas, excl
 <!-- certification-coach-question:agentic-132:31b23f03e9e0a0005341e1a161dd847944018c6aaf6d915e10d18dbecf377647 -->
 ## Question 132: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-132`
 
 **Content revision:** `31b23f03e9e0a0005341e1a161dd847944018c6aaf6d915e10d18dbecf377647`
+
+**en review revision:** `e177aa04069b77afdca7e0f7365c6c42ecbb6fc0bc9411cacf5624841f78e3aa`
+**es review revision:** `bfbcc9da2d253be83befbfdee71dcaecd74884df47b681d6ed585019b6a9d08e`
+**pt-BR review revision:** `a305bc389e1cf31d76f440ff0dd3029a55a5a5d10495f9cdaa2925ab61f1f8b1`
 
 ### English
 
@@ -13485,11 +14543,19 @@ Um conjunto de testes gerado copia a suposição incorreta da implementação e 
 <!-- certification-coach-question:agentic-133:e50fc9990088cd3d1c5ed7e4a7e85b74360734b28ad0afe12e03f453edf8177b -->
 ## Question 133: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-133`
 
 **Content revision:** `e50fc9990088cd3d1c5ed7e4a7e85b74360734b28ad0afe12e03f453edf8177b`
+
+**en review revision:** `5bc9f399584dd8f0f1493aaf398aed25b69455a9a1c2d415ffb61ef20642f608`
+**es review revision:** `d29bc140bbf9371d3a4befc93af38a6cee3c931e70e30b7d9e42d066bc1cadf7`
+**pt-BR review revision:** `8ff02af4681c8506218a366cffc11230c6f8d04900c60a251ebbcea755b015a4`
 
 ### English
 
@@ -13587,11 +14653,19 @@ Uma equipe quer evidências qualitativas de que o plano de um agente facilita a 
 <!-- certification-coach-question:agentic-134:3ce3f29921137bfb8866bc057779300beafa414e54fa115fe31744919d6bf3a5 -->
 ## Question 134: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-134`
 
 **Content revision:** `3ce3f29921137bfb8866bc057779300beafa414e54fa115fe31744919d6bf3a5`
+
+**en review revision:** `2b309bbb074683be7746b0719b946ae821e7520e780a52f193791a98408d48a0`
+**es review revision:** `5fc4fabeb432cb68007e2d4b08bfca7426c5779148c59e079b47f3ab87d95dad`
+**pt-BR review revision:** `c1c80229e866c2ddd073a59d13421374199eff7139a8786490f96cd7e7e7e6fb`
 
 ### English
 
@@ -13689,11 +14763,19 @@ Um fluxo de trabalho revisto melhora a correção, mas duplica o custo e excede 
 <!-- certification-coach-question:agentic-135:13b043fe736e791cc66514315d41c3851e709937a12292607bbbc1ed7fe058f5 -->
 ## Question 135: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-135`
 
 **Content revision:** `13b043fe736e791cc66514315d41c3851e709937a12292607bbbc1ed7fe058f5`
+
+**en review revision:** `c5a377d9b571d2f49755fa6a584af8f12d0cf32a3076d4863bbf4c99350df9ee`
+**es review revision:** `dfc85f691347c89c9f4b2b018da4dd9b59ccf491db9720c363c8af25b4fd1588`
+**pt-BR review revision:** `f0dd6250d97da67894e2f84656e4ec608c17b83302acd4556c8df68e5eb42f06`
 
 ### English
 
@@ -13791,11 +14873,19 @@ Uma investigação de falha tem uma mensagem de erro final, mas nenhum plano, ar
 <!-- certification-coach-question:agentic-136:e15da104d9c6fa1c2a15df97b04001347cac114f640d0d6ad8aade5da3e49035 -->
 ## Question 136: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-136`
 
 **Content revision:** `e15da104d9c6fa1c2a15df97b04001347cac114f640d0d6ad8aade5da3e49035`
+
+**en review revision:** `a29345c8869bc030c1902ae0a0763e01ed592c4fa9d7fd80457cc62df081f90c`
+**es review revision:** `d00587c1a8153d21eff124338421bc9cefe040d8994944d667581cf7ed1b0935`
+**pt-BR review revision:** `5bf17cb11bad176389a07a7bab69c31126a4f1e8da320c1be1b6f5b813f1c8b9`
 
 ### English
 
@@ -13893,11 +14983,19 @@ Um agente faz uma verificação passar enfraquecendo suas asserções, sem corri
 <!-- certification-coach-question:agentic-137:19a83d4e9b8191e3f674f46749a1bdd5d6dca7d2e3746c25988946d4ab56e5d5 -->
 ## Question 137: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-137`
 
 **Content revision:** `19a83d4e9b8191e3f674f46749a1bdd5d6dca7d2e3746c25988946d4ab56e5d5`
+
+**en review revision:** `5c58652cc0773d6c1649f1604596bb4609ba4003f18822477d4aa01c58fa6e07`
+**es review revision:** `ae403853a988dfa52163ad87827cf739603b8eeddc33c9fa30b2d0917f436414`
+**pt-BR review revision:** `c32dc940bab18c9fba875bddb26e18d8dd80725a2b78e0e13150425deb162e83`
 
 ### English
 
@@ -13995,11 +15093,19 @@ Uma alteração de instrução proposta visa uma falha de produção. O que deve
 <!-- certification-coach-question:agentic-138:587716033909d33599db80bd62926be012410497c979ba4a49c7ac90202805eb -->
 ## Question 138: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-138`
 
 **Content revision:** `587716033909d33599db80bd62926be012410497c979ba4a49c7ac90202805eb`
+
+**en review revision:** `b6ca282d7305e13b3a17316fbf2e78cb7a456b140eb922639497b698f1fb9378`
+**es review revision:** `4e8a1d56d42823643b1c2c7008774a874878b192cd890e2634a89be60f15c15a`
+**pt-BR review revision:** `38991e0897cfe3f8e3e0a30aede6d9ab64ece6593b84d8369de41adb7d7810cc`
 
 ### English
 
@@ -14097,11 +15203,19 @@ Um agente só falha quando os documentos recuperados ultrapassam o orçamento co
 <!-- certification-coach-question:agentic-139:052f396e4147a58dfa44659b6e01c7a09940329164ac719a4972dc2c79845c80 -->
 ## Question 139: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-139`
 
 **Content revision:** `052f396e4147a58dfa44659b6e01c7a09940329164ac719a4972dc2c79845c80`
+
+**en review revision:** `3d9d772f947297fad2a21e1dcc7b37f853e7055b5fbe924da951263c9e4dd9bd`
+**es review revision:** `d41a4d2d5fb752c88582ebee0cc9947bbd00b901e006d34caa5318bed95716f9`
+**pt-BR review revision:** `3e92039043073792e69792266ed10eb6d68102ca18044c4feefed01f05d1d4ca`
 
 ### English
 
@@ -14199,11 +15313,19 @@ Uma avaliação passa uma vez, mas falha em repetidas execuções equivalentes. 
 <!-- certification-coach-question:agentic-140:88b5f7c191d4ce3248dc7ff113812bfd37cfe9fae72320be6ada3f314d1a2666 -->
 ## Question 140: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-140`
 
 **Content revision:** `88b5f7c191d4ce3248dc7ff113812bfd37cfe9fae72320be6ada3f314d1a2666`
+
+**en review revision:** `0f13d29c2aee87e2c0a34bfae9d725e5fca0031dc4860fd8a3d3670252a39e86`
+**es review revision:** `ab9ca9fc12e08c77346ab9029374609e5e204f3718885e450e44e919684362c7`
+**pt-BR review revision:** `c363f68593dceea6aea3e4c49f4e805f31556061e602297641616bb1916a43fd`
 
 ### English
 
@@ -14301,11 +15423,19 @@ Um agente é avaliado num repositório contra o qual foi sintonizado extensivame
 <!-- certification-coach-question:agentic-141:de8099669ddd8a0f9aeddc23446ce3af1a863d566d3064df4c86aee2f378ee18 -->
 ## Question 141: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-141`
 
 **Content revision:** `de8099669ddd8a0f9aeddc23446ce3af1a863d566d3064df4c86aee2f378ee18`
+
+**en review revision:** `825f62c09512debbc69e9ea081e03b705092412118adce863b1b20507feede77`
+**es review revision:** `b907dff8c7ffdc77f8c6d1584a222c4ffa589c9b005e1b90c5a5864bba8bbdfe`
+**pt-BR review revision:** `e732517e16c42ab5afcc80ce4c82d5e1a967db0608e0e9a45b4d07cb819539f8`
 
 ### English
 
@@ -14403,11 +15533,19 @@ Uma execução primeiro recupera a configuração errada, depois chama a ferrame
 <!-- certification-coach-question:agentic-142:07f224e42e5250f867990090529487fc6fd0eb67764a1420600a4e9c5214d516 -->
 ## Question 142: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-142`
 
 **Content revision:** `07f224e42e5250f867990090529487fc6fd0eb67764a1420600a4e9c5214d516`
+
+**en review revision:** `fed7495f03527199d29e3747631fca4afe0e638e1d5d0e0d84097955fd1d36ba`
+**es review revision:** `1a51aaef66a2f328553d3f9d90bc502d0ce20d6b12d6b618c744aa4018b7ab92`
+**pt-BR review revision:** `124fb3dcd7f41adb342180c7a86079d7772a3374cbeee7befe042388169ce3d2`
 
 ### English
 
@@ -14505,11 +15643,19 @@ Uma equipe muda instruções, ferramentas, política de memória e modelo simult
 <!-- certification-coach-question:agentic-143:6c9c863b738a17f19de2751d0b163383bdf47059da72b1327ed63e3463e5e32f -->
 ## Question 143: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-143`
 
 **Content revision:** `6c9c863b738a17f19de2751d0b163383bdf47059da72b1327ed63e3463e5e32f`
+
+**en review revision:** `434197732dab8cb6469d9911b2fdf4b1ea28b1c6f39e0ac2148996e155a26bca`
+**es review revision:** `d3e0b826cbe798334244a8c9eff8a81593931733a1e1e98f44b328e63abb3b88`
+**pt-BR review revision:** `c6b408d8d674a96365e6d606d375ac146eb4aea8d9ca774732426add1460e534`
 
 ### English
 
@@ -14607,11 +15753,19 @@ A taxa de sucesso agregada de um agente é alta, mas todas as tarefas sensíveis
 <!-- certification-coach-question:agentic-144:f162396636fb5b18ce4ea7f7cf5356f36c9c0f7e26bc19fd8a68b27a1acaf2e5 -->
 ## Question 144: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-144`
 
 **Content revision:** `f162396636fb5b18ce4ea7f7cf5356f36c9c0f7e26bc19fd8a68b27a1acaf2e5`
+
+**en review revision:** `5bf8e790f588291f82616762f245b232e06c2812f3cc7166adafdbe3ea3a31ea`
+**es review revision:** `41d966980b08edbb2fc0c029cb700bb9b0728a203d7a50f5c918b42349a2f4f0`
+**pt-BR review revision:** `7f4fa2486958f48294f6cd548395197f916280daef17657170d7bf4c79ef1792`
 
 ### English
 
@@ -14709,11 +15863,19 @@ Uma pausa de tempo é causada por um serviço externo lento, não por um racioc�
 <!-- certification-coach-question:agentic-145:4aa8d122d0f61795b32a20fb585b7785e1602a3f042bc831d5ffd0bd83d2e3c5 -->
 ## Question 145: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-145`
 
 **Content revision:** `4aa8d122d0f61795b32a20fb585b7785e1602a3f042bc831d5ffd0bd83d2e3c5`
+
+**en review revision:** `cf28c9888919b53fcd58a327b3695d7f312ffb980b9912113345cf41483aa048`
+**es review revision:** `7bbc12a8f5937377bb5aa08161c55f4b558c0c62069014b074a92530408b09b7`
+**pt-BR review revision:** `44c8c6acf20c78867b37ca9a64f264a04759e4a3e81b77bb4f11ccd04efe7fa1`
 
 ### English
 
@@ -14811,11 +15973,19 @@ A resposta final de um agente afirma ter executado um scanner, mas nenhum evento
 <!-- certification-coach-question:agentic-146:c0fa7e35aa758e8773e830718088661d387c353fa8d090de12f8e21f0296af4d -->
 ## Question 146: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-146`
 
 **Content revision:** `c0fa7e35aa758e8773e830718088661d387c353fa8d090de12f8e21f0296af4d`
+
+**en review revision:** `0c461121caaeb7beca3db86d994f3d506ce5263e6a2f30f60e61fcb33bc992de`
+**es review revision:** `8c861c334792ab76bbd15ad6d09b0056924e9c1623e68fafc1d76f3e19fe98f0`
+**pt-BR review revision:** `25ad4333ae45c82b174ab139bd6006e8ff9239d28d3498de7624c19bf95e9e6b`
 
 ### English
 
@@ -14913,11 +16083,19 @@ Um plano segue a questão, mas viola a restrição explícita de não novas depe
 <!-- certification-coach-question:agentic-147:4673e2d0cf015b4f4a935d1c8918a87365ce025690e331edb4efdb6034dfc18b -->
 ## Question 147: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-147`
 
 **Content revision:** `4673e2d0cf015b4f4a935d1c8918a87365ce025690e331edb4efdb6034dfc18b`
+
+**en review revision:** `b6810048298f61d87150c7ef2725ff4edaefd58ec8545335350d796f388ff877`
+**es review revision:** `afee98270880c6860dbc75e945707447fb0f7fe1fbd6bc97e40da28333d6b4ed`
+**pt-BR review revision:** `c75f40a38dbea97d0538bcbef6de6502546456c4d5f294e1bdb6d97c1b8faab4`
 
 ### English
 
@@ -15015,11 +16193,19 @@ Uma equipe quer detectar se um agente para quando um resultado da ferramenta ten
 <!-- certification-coach-question:agentic-148:095a99d7f10dfd3039a068364e79e95b3d8433c7b19998cfcffa6f0e591979e7 -->
 ## Question 148: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-148`
 
 **Content revision:** `095a99d7f10dfd3039a068364e79e95b3d8433c7b19998cfcffa6f0e591979e7`
+
+**en review revision:** `7e51ed6f85d3548e4075d5427daade1ece9413614a70f682d168d94038734bda`
+**es review revision:** `e6ac095c44c87f6606bbd6b85427389938437db1f4b9f0288201cb0c9b51c260`
+**pt-BR review revision:** `89bdfb981a1c36fcc0e225548f6a2ac9a763de6949ec0f8e9ecbd1189750612b`
 
 ### English
 
@@ -15117,11 +16303,19 @@ Um painel de controle de falhas agrupa todas as execuções fracassadas como "er
 <!-- certification-coach-question:agentic-149:99628f465b2712192f64bdaf9049f793b1f0422f78dbea05ebbb9d2b9052c1c5 -->
 ## Question 149: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-149`
 
 **Content revision:** `99628f465b2712192f64bdaf9049f793b1f0422f78dbea05ebbb9d2b9052c1c5`
+
+**en review revision:** `2d26bdcc54efd0d2e584dfb9101b03385d4736047e427dbe0569a3e8de3e2b63`
+**es review revision:** `bcd60102a412a89cea5c625ddd473f401cdd57d329f6a7b72b9fccb9de8eb744`
+**pt-BR review revision:** `9a288dee9a10a915b92ac2a14109a79619a5d4e42bf1fac50ce650d93fabebfa`
 
 ### English
 
@@ -15219,11 +16413,19 @@ Um agente atualizado é mais rápido porque evita as entregas de revisão necess
 <!-- certification-coach-question:agentic-150:7953ff0d2898db63ae2271983916d843abf04bde4d95615feb5ce9ec1baf7dec -->
 ## Question 150: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-150`
 
 **Content revision:** `7953ff0d2898db63ae2271983916d843abf04bde4d95615feb5ce9ec1baf7dec`
+
+**en review revision:** `ba60205d3dd977d22edcb8fb00d7129a0c0a39f51c15bac8f2fc0d905122eb84`
+**es review revision:** `fae5ee6c4e0654c2003832e7d21eb4b1effe411774ac84e7ddfa881b6728aeb2`
+**pt-BR review revision:** `a93cf3b1d97b4fd7c85b51ba4e593cfdc57df4000a7b812190e0669d3204b772`
 
 ### English
 
@@ -15321,11 +16523,19 @@ Um avaliador classifica a prosa final como correta, embora o agente tenha modifi
 <!-- certification-coach-question:agentic-151:9ed8ba6d3f6edd79050651c8fd34aa4d290293dd7820006b83af210960454b3f -->
 ## Question 151: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-151`
 
 **Content revision:** `9ed8ba6d3f6edd79050651c8fd34aa4d290293dd7820006b83af210960454b3f`
+
+**en review revision:** `2a8dce358f2e63f83f60eaaac8ac30389c6626607f176b4540a389c696a4124e`
+**es review revision:** `3957c20fa0f3000dd3c4721e74cde4c9905915dc28e00915978e7342b858ebc4`
+**pt-BR review revision:** `a9b8097c6119c19ea7742b49b089bf1ca6529dcf00315f06d9b87555fcbaed1e`
 
 ### English
 
@@ -15423,11 +16633,19 @@ Uma alteração de ajuste reduz a recuperação desnecessária de memória, mas 
 <!-- certification-coach-question:agentic-152:a87760cf30fabe719ac102989f9f54815bf3ca17995aa52e0ea540b616b24579 -->
 ## Question 152: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-152`
 
 **Content revision:** `a87760cf30fabe719ac102989f9f54815bf3ca17995aa52e0ea540b616b24579`
+
+**en review revision:** `8b5a00fdf4d8824e7c773770f321265256538d6ed3ca019dcfe74aa17dc84793`
+**es review revision:** `b9bf5394025d4a29fdf5a0cf8a57462e4332c3d549379dc792adc1261af0315f`
+**pt-BR review revision:** `9f966024753062b4223f17789edb1177a52d46f0eb97a31937f8a0e8d4bcb21e`
 
 ### English
 
@@ -15525,11 +16743,19 @@ A falha de um agente é reproduzida apenas com uma versão de imagem runner. O q
 <!-- certification-coach-question:agentic-153:ad9fb993f4825cc1995949c7b9eb1946d092cc1f5346d6b1f743cacf4b591900 -->
 ## Question 153: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-153`
 
 **Content revision:** `ad9fb993f4825cc1995949c7b9eb1946d092cc1f5346d6b1f743cacf4b591900`
+
+**en review revision:** `0f1a23ee32fd6e4da26e6045bd6f6bb569f96db0564638fcbab62c1e52029aa0`
+**es review revision:** `317e882d3e103a7bd49e8003bf2bdea2d393a56786d51651395738d87cfbf2c2`
+**pt-BR review revision:** `034d45d2e191ea1e9c8ccaa818f22aaac6c3f2ad27b32a589a7335c5aea5b459`
 
 ### English
 
@@ -15627,11 +16853,19 @@ Uma equipe avalia um agente de triagem. Marca as questões com precisão, mas en
 <!-- certification-coach-question:agentic-154:5142105204c61ce257b76ff4abad5b2b9970d28e9c184d5e489e34da0c15e295 -->
 ## Question 154: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-154`
 
 **Content revision:** `5142105204c61ce257b76ff4abad5b2b9970d28e9c184d5e489e34da0c15e295`
+
+**en review revision:** `f589d2288568507f053f4949375be9cafc8963bd1776813a3c126726d88e9ec8`
+**es review revision:** `4b0ec54b1e3f366e286e8d0cd998672aab8b95c0bbcde0fef8df06cb294601fb`
+**pt-BR review revision:** `cf6381123c218b70a2388be6149ccd29b7d5692726df565ed0a244b863530a2a`
 
 ### English
 
@@ -15729,11 +16963,19 @@ Uma equipe quer implantar um agente sintonizado depois de os testes offline melh
 <!-- certification-coach-question:agentic-155:cb8bcd8ec58af58310b748f5262cc51e49b0e4a8f30a35a08ed4325e5bc075da -->
 ## Question 155: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-155`
 
 **Content revision:** `cb8bcd8ec58af58310b748f5262cc51e49b0e4a8f30a35a08ed4325e5bc075da`
+
+**en review revision:** `0bfaf72ba14aea52309665a24adc71d3e8c2d60901e682fbca0ff9e29da166d7`
+**es review revision:** `8f877bedea98c2a9096f415906ca2a4c944fe0ce719701bc8e74153d47a07a7d`
+**pt-BR review revision:** `f9b1e13538ea3beb7eb0f5ca9419268af57cc00293ad19b9387fbb51766b3a2a`
 
 ### English
 
@@ -15831,11 +17073,19 @@ Um agente juiz marca os resultados de outro agente. O que deve fazer a equipe an
 <!-- certification-coach-question:agentic-156:6f53b97a3fa9be23e635d95a818e39fe43a43c16131888541819f4589e69c212 -->
 ## Question 156: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-156`
 
 **Content revision:** `6f53b97a3fa9be23e635d95a818e39fe43a43c16131888541819f4589e69c212`
+
+**en review revision:** `0d99d1b759775d2ce9fa1550202d91f595e0ea8ab76b586f8dc82e37301fdae4`
+**es review revision:** `04d88c410ea74b59503c49e6207895ae2dae1861a2178a5c6a49d344912f3d24`
+**pt-BR review revision:** `775360b2801e10e60aa65c9f4b4522c88774ce730786fe93ae90031c7f8f3d6c`
 
 ### English
 
@@ -15933,11 +17183,19 @@ Um agente repete cinco vezes uma solicitação inválida que falha de modo deter
 <!-- certification-coach-question:agentic-157:3d13a6b22a4bb4f9572d4ee34594bdc1173d4c3b2ac76be26872773b02b62556 -->
 ## Question 157: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-157`
 
 **Content revision:** `3d13a6b22a4bb4f9572d4ee34594bdc1173d4c3b2ac76be26872773b02b62556`
+
+**en review revision:** `e2fd6adb9bee665a587b074131c5355d8df4aa8cd82a0cc9567cbbe6c85e5737`
+**es review revision:** `acbb3c86c82f397277852528538e907922e3c6e431af2f479a5777615ff549d6`
+**pt-BR review revision:** `917a55d67cace82dcb0d98d4297d5d2cdda2155e8be7264dbb06cae7e5c127df`
 
 ### English
 
@@ -16035,11 +17293,19 @@ Um agente parece estar em atraso, mas na verdade está aguardando da aprovação
 <!-- certification-coach-question:agentic-158:92f4cbd73a80b02aab34fa24da69ad632faaebd95dd36bfe7f21df31eaafe68a -->
 ## Question 158: Perform evaluation, error analysis, and tuning
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-158`
 
 **Content revision:** `92f4cbd73a80b02aab34fa24da69ad632faaebd95dd36bfe7f21df31eaafe68a`
+
+**en review revision:** `38d1f23714644b0876add9d4ba55d1512e1818a78d81e5bc93e1881c533b3eee`
+**es review revision:** `f3826d57fcb2341267d80e6eb64302c69a9796f3d38da2a07fdda02a71d142c8`
+**pt-BR review revision:** `948ae54b4aeb4fccdbd56d488d726ff8e2628d842ce50270df3fc36943554bf1`
 
 ### English
 
@@ -16137,11 +17403,19 @@ Uma análise pós-incidente identifica uma correção no prompt, uma restrição
 <!-- certification-coach-question:agentic-159:4fe9110db48c810db2ebcaf27930eb248f72b1093d136b73a7926b08d14c12b7 -->
 ## Question 159: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-159`
 
 **Content revision:** `4fe9110db48c810db2ebcaf27930eb248f72b1093d136b73a7926b08d14c12b7`
+
+**en review revision:** `ec3e669cb47d606fb584569e49c9e8c89e359c24f0ccd91d56478e21fac2271e`
+**es review revision:** `81db1195a9b2b3b9e8ba49d1e4261b7cd214fd3ef07213d371c524df64818ae8`
+**pt-BR review revision:** `cec9c29c4666ca1adff3646bf2af4c3de84f47dcbe38c6dada2e32e71cf0890b`
 
 ### English
 
@@ -16239,11 +17513,19 @@ Dois agentes podem atualizar a documentação e adicionar testes de parser de fo
 <!-- certification-coach-question:agentic-160:b4d3c1388e2a5bf0e8c594d89a5171ad63ffbc7b211f1de373698ec394b38794 -->
 ## Question 160: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-160`
 
 **Content revision:** `b4d3c1388e2a5bf0e8c594d89a5171ad63ffbc7b211f1de373698ec394b38794`
+
+**en review revision:** `30e71dbf1bbc7f88190876e57b73ee4eefa96a11e5a71a5dfda50056cf1f7e28`
+**es review revision:** `17331d9beaaf2c0fc0578e9416851865c1e30db7386a2a6723ba3406d4a2209e`
+**pt-BR review revision:** `b8c173f7ae04d2d77ea0b0d3f7cadd526f09725794e5d1ffe10bffa84e646314`
 
 ### English
 
@@ -16341,11 +17623,19 @@ Um agente de execução requer um contrato API de um agente de projeto. Que padr
 <!-- certification-coach-question:agentic-161:9fb17d4f0a4501ba467bd8bab3a3e19f3572e25cd22c4972b94c1340eeea442d -->
 ## Question 161: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-161`
 
 **Content revision:** `9fb17d4f0a4501ba467bd8bab3a3e19f3572e25cd22c4972b94c1340eeea442d`
+
+**en review revision:** `4f0d53f41f1584ec6a4099c0c437c7210f9d3cf7c648eb6eaa407a9afedeee0e`
+**es review revision:** `cb0bc62e26dea37f676acf19e5884f35f017f097a8ff577025acc497f92e9e89`
+**pt-BR review revision:** `88062e0c268ccbba2585538b9d4c5d7449a87ad816098dcb550e8c1a40b8b1eb`
 
 ### English
 
@@ -16443,11 +17733,19 @@ Dois agentes paralelos propõem edições incompatíveis para a mesma função d
 <!-- certification-coach-question:agentic-162:59ac3553a1308e1fa0a18bfc4077caba8006328b644118cbcc3b7e080aba0f69 -->
 ## Question 162: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-162`
 
 **Content revision:** `59ac3553a1308e1fa0a18bfc4077caba8006328b644118cbcc3b7e080aba0f69`
+
+**en review revision:** `287d8c979b65e00a3bd419feeb098c61e4f371a66de3530275f8b0e015c5cb50`
+**es review revision:** `87a4dc80ec7b23110eb876d26530ba124f617b25c40d2c9e94e3998e94b3b4a9`
+**pt-BR review revision:** `929d90cdb798bcb2873fcbe19e35daa9aaaef1dcb6b4ec585df3f3d940715015`
 
 ### English
 
@@ -16545,11 +17843,19 @@ Um coordenador delega um bug a dois trabalhadores acidentalmente. O que impede m
 <!-- certification-coach-question:agentic-163:ca900f833451a538587faa3154bb868665299329150689698dea13a422ac6745 -->
 ## Question 163: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-163`
 
 **Content revision:** `ca900f833451a538587faa3154bb868665299329150689698dea13a422ac6745`
+
+**en review revision:** `c8198c4816caadf5fd446ea93c885ede7a9463f58d67b47036fe2e18a07b103a`
+**es review revision:** `b54f7b963befe8c02bd93aba4810ec4feccd0fd0c3cb607b5b893a8439be80f8`
+**pt-BR review revision:** `e9854a96f1d22df3c8f4b195ea5cfc4c35eadbfadedfe1752e037be99467f617`
 
 ### English
 
@@ -16647,11 +17953,19 @@ Um agente revisor e um executor discordam sobre se uma alteração satisfaz os r
 <!-- certification-coach-question:agentic-164:79ab103649b2b14acccb4e1b75011247e400b84f154278aed8be51b5780d3786 -->
 ## Question 164: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-164`
 
 **Content revision:** `79ab103649b2b14acccb4e1b75011247e400b84f154278aed8be51b5780d3786`
+
+**en review revision:** `845dd457b3085aa454552d4ab3caa7c3979e76e4bed6ef1149218ddce4c07592`
+**es review revision:** `2b6ec064827563215a0f99a25f994addbb15e5b11f79fe277e70cb48eb657085`
+**pt-BR review revision:** `86722f4b5e5203f123acac7265ceb199190aa81ceee066a844450769e832a8ea`
 
 ### English
 
@@ -16749,11 +18063,19 @@ Uma execução multiagente conclui três de quatro componentes obrigatórios. O 
 <!-- certification-coach-question:agentic-165:ce1f6ac1cfe5d6011419507be2169959ee4c2b0538830afdd730729bc10b652e -->
 ## Question 165: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-165`
 
 **Content revision:** `ce1f6ac1cfe5d6011419507be2169959ee4c2b0538830afdd730729bc10b652e`
+
+**en review revision:** `18c567ea1e08e6e88d1cdafe8e5d76cd5ed94116a826449243f93fcc72900021`
+**es review revision:** `ed1742cf64595904e852ff8047077ce011757442ab46e06c46abe610cb2b6073`
+**pt-BR review revision:** `42efda632c10cf301d0b07bc13f8202038eb6938266ed171282534380b68ccaa`
 
 ### English
 
@@ -16851,11 +18173,19 @@ Um trabalhador não produziu progresso por uma hora. O que deve verificar o coor
 <!-- certification-coach-question:agentic-166:26485042ff5623f17419d9f0eb725723db2beeb3411b143bdddd3b00d13e3804 -->
 ## Question 166: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-166`
 
 **Content revision:** `26485042ff5623f17419d9f0eb725723db2beeb3411b143bdddd3b00d13e3804`
+
+**en review revision:** `a76c8cee6e777cfabf23bf0b360bbb3fdae3810e1456bcd19c1530e5df91c54c`
+**es review revision:** `b5ff3856f468df8f77c5a2f629f5099966d46b2db3b09649f677ecee41d91e5c`
+**pt-BR review revision:** `9219da4ac487794afe5990f93c25e19480de81e0e67097c147e2848e220e24c5`
 
 ### English
 
@@ -16953,11 +18283,19 @@ Um trabalhador falhado deve ser substituído enquanto uma escrita externa pode a
 <!-- certification-coach-question:agentic-167:d14e46895cccf4ccf37eec70901141786a360555576f494a099848211215144e -->
 ## Question 167: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-167`
 
 **Content revision:** `d14e46895cccf4ccf37eec70901141786a360555576f494a099848211215144e`
+
+**en review revision:** `ad790f4568bf45f14fde9eaa4b7ae28cf762b75561be7cfd6db57bd136fb9e92`
+**es review revision:** `2a0082af024de572afe86c8a709f91992c65d588f20e6c587981d57f3b74bfa0`
+**pt-BR review revision:** `034ac70fcb93e3d54b96a93229dd211474687e569a8ba66f18d554025e1285a8`
 
 ### English
 
@@ -17055,11 +18393,19 @@ Um novo especialista é adicionado a um fluxo de trabalho ativo. Que entrega dev
 <!-- certification-coach-question:agentic-168:ebafdbd1fe68861ddd3fa3a7a0878a6a8c05e6170604fb8ba2e7698fd618d40e -->
 ## Question 168: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-168`
 
 **Content revision:** `ebafdbd1fe68861ddd3fa3a7a0878a6a8c05e6170604fb8ba2e7698fd618d40e`
+
+**en review revision:** `b4d4aeea48bae6b23db53f34b363a3762f00be7c6500633e6eb6268d85ca258e`
+**es review revision:** `11894fa72beaeb9f1a04769ac9b140a2a226a485739068eab38ecdfb805dab1c`
+**pt-BR review revision:** `138d4f783eb345449160808dadf0bbbae80f35a1a54bc68224b5ff42ad8d018c`
 
 ### English
 
@@ -17157,11 +18503,19 @@ Uma equipe atualiza as instruções de um agente durante uma execução longa. C
 <!-- certification-coach-question:agentic-169:828a5540e26fd277dc4a57daee28c08a189aac3d9e115af31816dde4681d9659 -->
 ## Question 169: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-169`
 
 **Content revision:** `828a5540e26fd277dc4a57daee28c08a189aac3d9e115af31816dde4681d9659`
+
+**en review revision:** `cae56da04bdb5330fbe767622450f9973b20ac8f4f2f979ddd4c9d036c403d42`
+**es review revision:** `ed6c22f9ee2bf6cd281c315d1bf1af034b38a0cc4a3be9c996d38e76d72581aa`
+**pt-BR review revision:** `70274e9bd69fb134505e75218042c4c871c7056e3d08c05ab8e661e4748c3308`
 
 ### English
 
@@ -17259,11 +18613,19 @@ Um agente especialista está a aposentar-se. O que deve preservar o coordenador?
 <!-- certification-coach-question:agentic-170:ba66f78ffea3af5129d21b4f834ed51093be7adf4cbf7aaa3186f55f65c4fe34 -->
 ## Question 170: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-170`
 
 **Content revision:** `ba66f78ffea3af5129d21b4f834ed51093be7adf4cbf7aaa3186f55f65c4fe34`
+
+**en review revision:** `f86a48bec0a45534442d75931950271f2158fe9905ed1c48cc02b91c2c7cc651`
+**es review revision:** `f8d50be392d7390fb9fbf1ea2f88d8b87bbf0ee60d98ddd143bdc4b263fdcede`
+**pt-BR review revision:** `3bb00b5119eec89f0882ff99d30fc4fa1794522f0cf6a15b81fe93a27cbd23c5`
 
 ### English
 
@@ -17361,11 +18723,19 @@ Branches de trabalhadores separados se fundem limposamente, mas o seu comportame
 <!-- certification-coach-question:agentic-171:b2840095bb6cdb7d55f2d2f0c662583d518d835170d75a135feb68cb2b0fbe5b -->
 ## Question 171: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-171`
 
 **Content revision:** `b2840095bb6cdb7d55f2d2f0c662583d518d835170d75a135feb68cb2b0fbe5b`
+
+**en review revision:** `acf7db1597202b519c45fb580354aa1e86b6e36c21050fb9d09b4de267683fc5`
+**es review revision:** `57194edbb5269acce741f73b5b86ae5ef673c7b7d9eb115eac81674333b6e62f`
+**pt-BR review revision:** `e560713e7181f53bc8da92bddac77448826e4e83f81542413a73e29a5ab41781`
 
 ### English
 
@@ -17463,11 +18833,19 @@ Um coordenador lança muitos trabalhadores contra um serviço de taxa limitada. 
 <!-- certification-coach-question:agentic-172:9b1ffb24273daf9f3ce67009bd7769c5ef8dca45d58c4461e8aeda49459568ff -->
 ## Question 172: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-172`
 
 **Content revision:** `9b1ffb24273daf9f3ce67009bd7769c5ef8dca45d58c4461e8aeda49459568ff`
+
+**en review revision:** `87f4f60115341e99963afc7ab87a3c0d645d76af68a2944194a18592c628778a`
+**es review revision:** `ff3111274f552738d987752d3f6f3c37249a88b294a25406fa0684e4f742252b`
+**pt-BR review revision:** `cbeb04a468848370cf5d8637f8b5a263f1f4f0a131c7ecc4230d5f424910a8cf`
 
 ### English
 
@@ -17565,11 +18943,19 @@ Um agente revisor precisa das evidências da implementação, mas não deve modi
 <!-- certification-coach-question:agentic-173:f825ce4936a0c9b95cf5070e492409a481435cc2b87d74b687944157f25031dc -->
 ## Question 173: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-173`
 
 **Content revision:** `f825ce4936a0c9b95cf5070e492409a481435cc2b87d74b687944157f25031dc`
+
+**en review revision:** `454c966cb526f05ab0847741835a86a635cfebe4d69de66ad2902cc66736e57b`
+**es review revision:** `1916872f999ebe878888ffb1ffc961c805c81ad09f65aececda7bee7fb700ec1`
+**pt-BR review revision:** `06b474e2c6d778b278d125883dd72933ca9c317da6e16b070868ef72c1d9f705`
 
 ### English
 
@@ -17667,11 +19053,19 @@ A entrega final de um trabalhador diz apenas "feito". O que deve exigir o coorde
 <!-- certification-coach-question:agentic-174:8f8512a3a47c42c3f2a35e7c41f1b2b9e8606f31b8e07f71f873a6cbb75f9204 -->
 ## Question 174: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-174`
 
 **Content revision:** `8f8512a3a47c42c3f2a35e7c41f1b2b9e8606f31b8e07f71f873a6cbb75f9204`
+
+**en review revision:** `64a8b92d659001c55e26b10c957130cd1b338a1d86863ba851e63dc30363a94a`
+**es review revision:** `fc70ce7c47364427f90e210ac727512ac6cb25ff532e93cbb8eee216d0ab6abb`
+**pt-BR review revision:** `25517ec1eb3133b09165b7d1f4355c528823c5126fdab249162181de7e5f9252`
 
 ### English
 
@@ -17769,11 +19163,19 @@ Um trabalhador solicita uma ampliação de escopo que o próprio coordenador nã
 <!-- certification-coach-question:agentic-175:78b80e9025a7a81ea8d2637e4ac5eaba805f13872e1af3adc0492b914485cd63 -->
 ## Question 175: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-175`
 
 **Content revision:** `78b80e9025a7a81ea8d2637e4ac5eaba805f13872e1af3adc0492b914485cd63`
+
+**en review revision:** `c601efdd2fb489a4c5f929cc4454e0cb3e4276d1c089a279cf35b2fbc9051e69`
+**es review revision:** `bdf5552d8c9117436459fb16fe6fbfc8975f727bc460c5fa82daad4fa147129e`
+**pt-BR review revision:** `dae89d5a343ea3b80d775dda5316d83c55aac85907f2ba14b1811f0551d33341`
 
 ### English
 
@@ -17871,11 +19273,19 @@ Dois agentes usam checkouts separados, mas compartilham um banco de dados de tes
 <!-- certification-coach-question:agentic-176:ac1aa36d6c665cb29829e1ea0e75596edf548986fe8182015ba5cdfce1f26f28 -->
 ## Question 176: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-176`
 
 **Content revision:** `ac1aa36d6c665cb29829e1ea0e75596edf548986fe8182015ba5cdfce1f26f28`
+
+**en review revision:** `2a9276554bb3cfb9b39b904457ff66926585dd56c1bc11e30d3b00269c669aaf`
+**es review revision:** `d0b42571e6facb6d32c14ffaadd1cb0c1a0e2d3c098b397a2dca948adff0acfd`
+**pt-BR review revision:** `5bcdcc3df72d5dd40b11dc14ca972e4d6144046da7cd8e707090479790abd7c1`
 
 ### English
 
@@ -17973,11 +19383,19 @@ Um coordenador quer reconstruir por que os trabalhadores escolheram projetos con
 <!-- certification-coach-question:agentic-177:62fe3dada1ac410362a5f46eb87872a7ab45795f3f52f91d4e99440dffb489b4 -->
 ## Question 177: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-177`
 
 **Content revision:** `62fe3dada1ac410362a5f46eb87872a7ab45795f3f52f91d4e99440dffb489b4`
+
+**en review revision:** `d4fae0f9281eebc6cb817cbfa7c2d67f8982c2c32d24eacd90c0ad8ce0227fe8`
+**es review revision:** `b067f358c8579dd2dbcd2231e36c5e86bf3c820c823f3fcc96437b932b1ba22d`
+**pt-BR review revision:** `044cf2daae8cce3fce106d9ec7d04242b744bacab2f23a5663e2a3b8cedf8120`
 
 ### English
 
@@ -18075,11 +19493,19 @@ Um fluxo de trabalho contém um trabalhador de investigação opcional falhado e
 <!-- certification-coach-question:agentic-178:2ab40da8bfa7fa5189c049420a48b56e2c05b99a8c72758d0a914d30d133539a -->
 ## Question 178: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-178`
 
 **Content revision:** `2ab40da8bfa7fa5189c049420a48b56e2c05b99a8c72758d0a914d30d133539a`
+
+**en review revision:** `cc42df2a50352089c5a2bb55097d79d4b7854908b901b8855b92614c43350fa2`
+**es review revision:** `3d82a077775ce62f9b8c77e2994e0c12eb9bdac25b4c1be58be40cf9078399ff`
+**pt-BR review revision:** `973ed49b99bf7d5184f3006b9ddece0ad278c45ea1e08041d33f9c70330ce6c4`
 
 ### English
 
@@ -18177,11 +19603,19 @@ Dois agentes esperam a saída um do outro indefinidamente. O que deve acrescenta
 <!-- certification-coach-question:agentic-179:844e7eb607a2c88d574f6613199c19cedfd088e6d79d7d4ef0a2cf2acf22b1dc -->
 ## Question 179: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-179`
 
 **Content revision:** `844e7eb607a2c88d574f6613199c19cedfd088e6d79d7d4ef0a2cf2acf22b1dc`
+
+**en review revision:** `2663533e47d6dddca2f9cf3b56926115f619a4f4529678e6581c8c768b39aa77`
+**es review revision:** `d19e5eacdba7386677e12a3246742c7d698ece16e3f56c5401b1d3e1b82ee189`
+**pt-BR review revision:** `706dd46932f1bcb1ba0eb11cae142e2394c6f7b60fb346f10d0a2745042ce98b`
 
 ### English
 
@@ -18279,11 +19713,19 @@ Um agente substituto recebe a tarefa original, mas não o progresso do agente qu
 <!-- certification-coach-question:agentic-180:2370e7c3abc73b27aab9a91ad3fc8aede09bb1fb9ea778d7ee8f21bcbe9d6ffe -->
 ## Question 180: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-180`
 
 **Content revision:** `2370e7c3abc73b27aab9a91ad3fc8aede09bb1fb9ea778d7ee8f21bcbe9d6ffe`
+
+**en review revision:** `bf330cad97acba9c0a66feafd28dbe91ecf0dbeba4f7e458429f939df8ce5e8a`
+**es review revision:** `5c7e057163c78eed8589fc1c838adacc662428d001f0d944de2396bf8af38078`
+**pt-BR review revision:** `3718ffc5298bd241f0933295357bcfbae8c6a419539dbc0321b957023b222a43`
 
 ### English
 
@@ -18381,11 +19823,19 @@ Um coordenador usa um planejador, implementador e avaliador. Que ordem melhor pr
 <!-- certification-coach-question:agentic-181:f67b26f2a565ae04c2e57cd23c8ce8f20b05fc0946e04e38b63c88af2d302dbe -->
 ## Question 181: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-181`
 
 **Content revision:** `f67b26f2a565ae04c2e57cd23c8ce8f20b05fc0946e04e38b63c88af2d302dbe`
+
+**en review revision:** `a96e5cad2809c68a82eab99df44e2d395222b94f972b780e3910469cc006d49a`
+**es review revision:** `b4689baa912cad713c70155f39d705b44dc66a6b620928442b5be22fdd6557d7`
+**pt-BR review revision:** `af6f193b1c69e2d638dbf68ed4f575ddc50ae0c48b1cf2a77b02100cd9fd37f2`
 
 ### English
 
@@ -18483,11 +19933,19 @@ Um fluxo de trabalho multi-agente produz PRs duplicado após uma reinicializaç�
 <!-- certification-coach-question:agentic-182:74da36ed90225d6200d97826ef8c80623928c5bad1cf4a321a68e18cd0460db6 -->
 ## Question 182: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-182`
 
 **Content revision:** `74da36ed90225d6200d97826ef8c80623928c5bad1cf4a321a68e18cd0460db6`
+
+**en review revision:** `a99cee3686fec08be2cc80c0335bb4de327034471bfca93b98bbf54870df0997`
+**es review revision:** `1606a6c1801c4195103c1bee37998cb5ea8ce7ea7dbe69002ef26d8152cf50d7`
+**pt-BR review revision:** `821024abb9c1387a9178f6e6ca7d92ad5a43591d5d105255421662efac989524`
 
 ### English
 
@@ -18585,11 +20043,19 @@ Um trabalhador de código muda uma interface depois que um trabalhador de docume
 <!-- certification-coach-question:agentic-183:b3181222e8e7578207782164fdb2b8b8ea1785174f95fd1c5071327eef74d3ea -->
 ## Question 183: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-183`
 
 **Content revision:** `b3181222e8e7578207782164fdb2b8b8ea1785174f95fd1c5071327eef74d3ea`
+
+**en review revision:** `24e0fe32011d8fb229cf0935e6dbfcb15854b51ae6151f82371cda1b1719c5b3`
+**es review revision:** `366f38af7267c22fd52d72d95e0eaad0c3cdc1bdec6dfd983751397204ebd21c`
+**pt-BR review revision:** `1044d3c57c9e164708a139f2443a680ee388a09b8096a5e98d458ccc6dd6e121`
 
 ### English
 
@@ -18687,11 +20153,19 @@ Vários agentes concordam que existe um API não documentado, mas nenhum verific
 <!-- certification-coach-question:agentic-184:f7bf5e8d5165f5019c84c4c504f30b92000a2b7209d7132317b273155f6cb9ae -->
 ## Question 184: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-184`
 
 **Content revision:** `f7bf5e8d5165f5019c84c4c504f30b92000a2b7209d7132317b273155f6cb9ae`
+
+**en review revision:** `0382ffb72c9aacecaf047767642ad37f05c5311706e4d7f57a94ee093e293fc2`
+**es review revision:** `9c75cc71c693e732a80b4aad33f2f25049b8ae70318e0aa54803c2dcfe0bfedf`
+**pt-BR review revision:** `f5b7c4d03169e4c075f5587df9ffaf68fec1b61e475e9b1983d28ca6f8544947`
 
 ### English
 
@@ -18789,11 +20263,19 @@ Um trabalhador é autorizado a editar testes, mas propõe mudar a política da o
 <!-- certification-coach-question:agentic-185:35faef975e7dc60853fb501478464a3d0c28de0d6c9f48378c78b50620ca6063 -->
 ## Question 185: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-185`
 
 **Content revision:** `35faef975e7dc60853fb501478464a3d0c28de0d6c9f48378c78b50620ca6063`
+
+**en review revision:** `349062da6f6029cbe8e7f02658ffec18cfb76d871d3c805adc9773c50ca51642`
+**es review revision:** `3c2b043ca172b2c24b14a45db3e656949ea8e3a232d439685b42c9f80229ecb3`
+**pt-BR review revision:** `381f9395d3ba0192d13b6d4913991fdd2afd939d56bf99a63b395a48d38746a8`
 
 ### English
 
@@ -18891,11 +20373,19 @@ Um coordenador substitui uma versão de trabalhador após a regressão. Como dev
 <!-- certification-coach-question:agentic-186:d165db1b3c1a2cb4b1049052df4b2ebfcbd3f9d83fa73a8f6f3d6b3c0b731bc9 -->
 ## Question 186: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-186`
 
 **Content revision:** `d165db1b3c1a2cb4b1049052df4b2ebfcbd3f9d83fa73a8f6f3d6b3c0b731bc9`
+
+**en review revision:** `ffb30e7e5a8560266ac3815934eca745ea16720d6cf2d30e0d29389fc4497d26`
+**es review revision:** `9b2651f523ed0867a389ba4a06a88cda2f8a2d34e8eb6cc1639595cef6642ca9`
+**pt-BR review revision:** `6892ddf2809264f5dea30b08db2274f9c5052c87a3687027ea9498c36c945f33`
 
 ### English
 
@@ -18993,11 +20483,19 @@ Os testes locais de um agente passaram na sua branch, mas o coordenador fez reba
 <!-- certification-coach-question:agentic-187:3310f1ca6662b89ddd7f72aacbc6b33724a82ed7f1633fc8520ed9f1307ba1ab -->
 ## Question 187: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-187`
 
 **Content revision:** `3310f1ca6662b89ddd7f72aacbc6b33724a82ed7f1633fc8520ed9f1307ba1ab`
+
+**en review revision:** `62db6a0abe15b86239c2d5d73cd4705b3fdf0497ef01c582445253efaa8fe388`
+**es review revision:** `a292c20b9d45514889c9f260e11bc5d59f8d10af590cc1ee4ba817d254940d47`
+**pt-BR review revision:** `c489d7e21433407d808b7ca5ab6bd0508938e4b4265e278475ba4f0cce8da8dc`
 
 ### English
 
@@ -19095,11 +20593,19 @@ Os agentes de um fluxo de trabalho repetem tentativas indefinidamente, mantendo 
 <!-- certification-coach-question:agentic-188:12b48b3811fc8eb2dba86db2160b54fc46a8c1ea077b6a50b9c4ca866a282c32 -->
 ## Question 188: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-188`
 
 **Content revision:** `12b48b3811fc8eb2dba86db2160b54fc46a8c1ea077b6a50b9c4ca866a282c32`
+
+**en review revision:** `77994fba3bb5dc183b7a972ea98819c8b9c0241b35ba4c7ae24febfc221628a1`
+**es review revision:** `aa8d7056c332bffbb2749ae026c23ccee7045c4845c07f6deb766e084d4108d9`
+**pt-BR review revision:** `2a3a199229c71f960b32dd06d2f8a11ec99f33e0d09e78e6510f854c2fa2be9f`
 
 ### English
 
@@ -19197,11 +20703,19 @@ Uma equipe quer executar em paralelo dois agentes que editam o mesmo manifesto g
 <!-- certification-coach-question:agentic-189:d2b478f2658f9cf6bfd97f66a629e0f91bf9f44b52e6fe695bcf90e8653450ff -->
 ## Question 189: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-189`
 
 **Content revision:** `d2b478f2658f9cf6bfd97f66a629e0f91bf9f44b52e6fe695bcf90e8653450ff`
+
+**en review revision:** `1bb3b3558cf96618176cf4bb786463d888ab3445f8d09a19814e5555562f2ff9`
+**es review revision:** `d318951205c79b8fa13d4109594d9299c103181fc95b07943b17cef118444bc8`
+**pt-BR review revision:** `d92b2d8277de016327a7477a07a74eb60f16c1c343c603fc805c5586c640b69e`
 
 ### English
 
@@ -19299,11 +20813,19 @@ Um coordenador envia uma análise de segurança para um especialista. Qual é o 
 <!-- certification-coach-question:agentic-190:344ceeeeb5b9d9b7549486fa66c8a437a585278d737b8170dd9d9829809cb768 -->
 ## Question 190: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-190`
 
 **Content revision:** `344ceeeeb5b9d9b7549486fa66c8a437a585278d737b8170dd9d9829809cb768`
+
+**en review revision:** `2888858ef936bfcafc3fed8487b198616dc9f496f474ec71544e5d426fdbdfa9`
+**es review revision:** `dcdfa6af7cc1f842f1ab13956a83995c8ad4ee727b658aaad30170d228746bd0`
+**pt-BR review revision:** `7219c91615712714291ef39d71a81f9865774fac60dd4e90e90aaa066e2c05db`
 
 ### English
 
@@ -19401,11 +20923,19 @@ Um trabalhador falhado deixou recursos temporários num ambiente compartilhado. 
 <!-- certification-coach-question:agentic-191:c17b64f6d4d7ad8bd28fec26b3066551eba96640230491d6af618ae1428130cf -->
 ## Question 191: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-191`
 
 **Content revision:** `c17b64f6d4d7ad8bd28fec26b3066551eba96640230491d6af618ae1428130cf`
+
+**en review revision:** `daf8371b13622ef3ad73ee7fd88a7ee3194c6cbed670dfc48a6a8c796bac31a3`
+**es review revision:** `3ca028ec10a0e6f4db95ea6d3ed505a4f15915d43b4e6f18932530a69b7985b4`
+**pt-BR review revision:** `9a8f55a7e33e415bdb7331891f3735f4f91b17b99c37ab44c3941a2930380655`
 
 ### English
 
@@ -19503,11 +21033,19 @@ Um coordenador resume o aviso de um trabalhador como um sucesso. Como deve o des
 <!-- certification-coach-question:agentic-192:7270e69fb22dce5473aea8283d3f9b3813131351261c944b5822def4b50cb5fa -->
 ## Question 192: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-192`
 
 **Content revision:** `7270e69fb22dce5473aea8283d3f9b3813131351261c944b5822def4b50cb5fa`
+
+**en review revision:** `c4369047a652c77e0bd3affb3c0f7a893114dedf0bee1bd143050861bc8eb035`
+**es review revision:** `d978b352169daf5d84a3c945c844b29e92d2d9f35306a770b067be96e59e4ac6`
+**pt-BR review revision:** `407b45cf18c4b495e78a8929fb493105e487da7bad1b5ec57099b264a8833b15`
 
 ### English
 
@@ -19605,11 +21143,19 @@ Um fluxo de trabalho adiciona agentes dinamicamente quando a complexidade da tar
 <!-- certification-coach-question:agentic-193:8d7b69cc258addc3fc0fa04f182b010af31f0f42b3459da235ade8f2cc61ede5 -->
 ## Question 193: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-193`
 
 **Content revision:** `8d7b69cc258addc3fc0fa04f182b010af31f0f42b3459da235ade8f2cc61ede5`
+
+**en review revision:** `da04412d88a4f3ec6c1afcc4490e29fe26054419f6e4def080c9b0b99fd3d764`
+**es review revision:** `a8776e3562adbc8ab58a3c632a0fb1331e830c6494c226752621ffae1d8e7de8`
+**pt-BR review revision:** `fd881d4f5818036f6d96bd2c8e18e91e488a5d2b5eaee5e45fda90475a700f41`
 
 ### English
 
@@ -19707,11 +21253,19 @@ Um trabalhador relata um pré-requisito recém-descoberto que afeta várias tare
 <!-- certification-coach-question:agentic-194:6217287e9af55a7c592e880b061d9385de20e51a9da1274062c62b0ccf18b27f -->
 ## Question 194: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-194`
 
 **Content revision:** `6217287e9af55a7c592e880b061d9385de20e51a9da1274062c62b0ccf18b27f`
+
+**en review revision:** `9cae6189bac084be50f4eb7f750053e21dfeed6c896ff5bf3835d7007da31824`
+**es review revision:** `42ea088e5af5bf6ee5e1b3e231fc37c8cd6319a4f0afa11867cd7c84631c5a6b`
+**pt-BR review revision:** `6fadae3134e18bfdf7fe119818e3f918a97ae492eb49e6ab78378b1e39a187f5`
 
 ### English
 
@@ -19809,11 +21363,19 @@ Um ser humano resolve um conflito entre os projetos de dois agentes. O que deve 
 <!-- certification-coach-question:agentic-195:f2e4cc0514770c74f3f0e9c350bfda160228f1188ece4bf7be831cbdd9fc77a7 -->
 ## Question 195: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-195`
 
 **Content revision:** `f2e4cc0514770c74f3f0e9c350bfda160228f1188ece4bf7be831cbdd9fc77a7`
+
+**en review revision:** `9aa9cf1502b05f1eda43188ad90194277eedb514f350811ad068f3a0d0043399`
+**es review revision:** `867e3902ac5b7ca87c8e165a7d1778ebf39a4ee3dbf6ddb804d5b1d129014e37`
+**pt-BR review revision:** `e00e30b8a5f04d85c3fafd4294e60d31ed4a029da3688ef0acca60aad1ff48df`
 
 ### English
 
@@ -19911,11 +21473,19 @@ Um coordenador tem dez pequenas edições, fortemente acopladas. Agentes paralel
 <!-- certification-coach-question:agentic-196:cdf4fc07234fc0619e35dfcd58eed3cda3eb645c6f245ebf86ede70f731a4daa -->
 ## Question 196: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-196`
 
 **Content revision:** `cdf4fc07234fc0619e35dfcd58eed3cda3eb645c6f245ebf86ede70f731a4daa`
+
+**en review revision:** `4e4cda37b86353ef105c9091399a412daeaf4d091f428391f6cfe4060ba5306b`
+**es review revision:** `801c33719aa5fbd8f76935d4c8dd07374c0c8d68cf6fea6dd8bc7b82fc6aa9dc`
+**pt-BR review revision:** `26d435c64f19a953b6e10d47fdacc47480c895f380c7c42250a9343dfe21d735`
 
 ### English
 
@@ -20013,11 +21583,19 @@ Uma revisão de incidentes de vários agentes não encontra nenhuma maneira de d
 <!-- certification-coach-question:agentic-197:e1f04d29f5abffa70cbbe0b69bdd1e7c3bfbce599bf84c220e75c6ee11b83b63 -->
 ## Question 197: Orchestrate multi-agent coordination
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-197`
 
 **Content revision:** `e1f04d29f5abffa70cbbe0b69bdd1e7c3bfbce599bf84c220e75c6ee11b83b63`
+
+**en review revision:** `43e6a07ca4acadf2a8bcfa3eb3c856886281690bef6652d967ffc656cbe74ba4`
+**es review revision:** `626a29a6589e85f1387725074800f7277e980ab04de94446ac41922a82ef109f`
+**pt-BR review revision:** `c2482ab83a6897884bd6a30b514f0d872bc0598309642e5764f66d5e0cf09154`
 
 ### English
 
@@ -20115,11 +21693,19 @@ Um fluxo de trabalho está a ser desligado após a aceitação de todas as entre
 <!-- certification-coach-question:agentic-198:9ffa5818a5ae96c7c9bbe411a66529be7a8db8bbe72306c1d575d3247d6f9b53 -->
 ## Question 198: Implement guardrails and accountability
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-198`
 
 **Content revision:** `9ffa5818a5ae96c7c9bbe411a66529be7a8db8bbe72306c1d575d3247d6f9b53`
+
+**en review revision:** `78335ecd52eed5ca01079de970b42d4ee1dae059f5894482b707e7718160e0be`
+**es review revision:** `783a8902c2839a10122d330717226521e0c114a8aab7fc1c2eba3ae391676aa9`
+**pt-BR review revision:** `3f2adb2758260190502a64f9945def133d2470f31e8508ee2b29cc69fddd6f27`
 
 ### English
 
@@ -20217,11 +21803,19 @@ Um agente pode ler documentação pública ou excluir registros de produção. C
 <!-- certification-coach-question:agentic-199:53b4fba007b5bd9eb29398e4a9304cc464dc3a8f711be3a691610829c71d7985 -->
 ## Question 199: Implement guardrails and accountability
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-199`
 
 **Content revision:** `53b4fba007b5bd9eb29398e4a9304cc464dc3a8f711be3a691610829c71d7985`
+
+**en review revision:** `ede94b4ac70a41341ed9428aa34c54f2563e1fa573851c18ca666fef6af7af77`
+**es review revision:** `b0519555df37c52990c880c1172376a70e7f87f2b0f5ff922ac83306d36aaa8c`
+**pt-BR review revision:** `26027b29543f1e0011b8cd72f9b78e5c3591d9a5a24c4647040593f72415b83c`
 
 ### English
 
@@ -20319,11 +21913,19 @@ Um agente promete não utilizar a sua credencial de administrador para operaçõ
 <!-- certification-coach-question:agentic-200:0bc6b9b720f0ff6af5f4d378d821ae90766b95c49a5de8510928d4e0d5fe0347 -->
 ## Question 200: Implement guardrails and accountability
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-200`
 
 **Content revision:** `0bc6b9b720f0ff6af5f4d378d821ae90766b95c49a5de8510928d4e0d5fe0347`
+
+**en review revision:** `873e865f2af73f3e24e62084b0cb36edda18e0fb83773592a8ebeea176f509b0`
+**es review revision:** `a7b6dec31e349d426315d0ed3c328072b74c0f095802af57e34a600e85580f43`
+**pt-BR review revision:** `9f1cf27e4211c5c88207a8b7b13b9b61523c2ea393a79a716136d7680bbea81e`
 
 ### English
 
@@ -20421,11 +22023,19 @@ Uma implantação de produção requer aprovação humana. Qual controle de flux
 <!-- certification-coach-question:agentic-201:51716cc45b02f5d91036cc749e1c4e6053815306bf4e9dc8dd69b808a4dfbaa9 -->
 ## Question 201: Implement guardrails and accountability
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-201`
 
 **Content revision:** `51716cc45b02f5d91036cc749e1c4e6053815306bf4e9dc8dd69b808a4dfbaa9`
+
+**en review revision:** `3ed79a184c79a071e2c08a552b599828755032a6164658cad80832b58d9aa93e`
+**es review revision:** `c1832615881ef7b9e0caba48f89c6b36c99bb5d7313d0d4ef90f68e4f908e42e`
+**pt-BR review revision:** `8c23964d36b257ea1e30d8feac369af5a7635b86134c15ef80cf5b145f67dd93`
 
 ### English
 
@@ -20523,11 +22133,19 @@ Um documento de repositório diz a um agente para enviar credenciais para um end
 <!-- certification-coach-question:agentic-202:7034b9e18a2b1a0c4f5a5ab2e66d7b7ebd88da67b83fd6452f33004d529709db -->
 ## Question 202: Implement guardrails and accountability
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-202`
 
 **Content revision:** `7034b9e18a2b1a0c4f5a5ab2e66d7b7ebd88da67b83fd6452f33004d529709db`
+
+**en review revision:** `f94553a26d2a2b81384f1fa256825b019f5bda28fd93b631081a853519126570`
+**es review revision:** `256ea4b41a1459a398c1d22fb84be61cb0308372289398539132aedf293b0699`
+**pt-BR review revision:** `62ffe3763db6999436cd1f9efbd9549a3cfa3db93fa5dd51ef8d479d52f85f1b`
 
 ### English
 
@@ -20625,11 +22243,19 @@ Um agente precisa modificar um arquivo de política que determina o seu próprio
 <!-- certification-coach-question:agentic-203:36b19b48f1242b77b3ef93de069d5e6469f10503b1216c292fd2d41e07f4c2ae -->
 ## Question 203: Implement guardrails and accountability
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-203`
 
 **Content revision:** `36b19b48f1242b77b3ef93de069d5e6469f10503b1216c292fd2d41e07f4c2ae`
+
+**en review revision:** `fe292de5c5ca659a46d999384e0ccb54e34b2cd1a808f1d8c2e3bda55f4419df`
+**es review revision:** `bcde62a73f7eb870e57756e100ede431115fc30f7a9a45e92953eff833ff86ab`
+**pt-BR review revision:** `b1b508b345213329c7fb83fec8d9bb3976663fcf4da8196e8cb1ef9d4209a0ad`
 
 ### English
 
@@ -20727,11 +22353,19 @@ Uma pessoa aprova uma implantação em staging. Depois, o agente propõe implant
 <!-- certification-coach-question:agentic-204:2f047eba34936243a399f93220a870eab25a5bd62bbee56524b0708a774eda31 -->
 ## Question 204: Implement guardrails and accountability
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-204`
 
 **Content revision:** `2f047eba34936243a399f93220a870eab25a5bd62bbee56524b0708a774eda31`
+
+**en review revision:** `2475ef2f5e56bcb2a4e1a4604a01306226ffa5c2160c8fcd7fe675f263e62efc`
+**es review revision:** `d77395c99f99ca073dd0c8613e5845aa5f6fdb8e620eff14c649e286d1672e90`
+**pt-BR review revision:** `dc8753832187631a63bac8bfd0fa5382476c26eb680b6f2a93dbad1877c0998e`
 
 ### English
 
@@ -20829,11 +22463,19 @@ Uma tarefa é urgente, mas uma ação proposta viola uma política explícita de
 <!-- certification-coach-question:agentic-205:825b433a5388d45c0c4e33da9eb62707299c2a4ac6dfd2b78694f9ae71b595e7 -->
 ## Question 205: Implement guardrails and accountability
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-205`
 
 **Content revision:** `825b433a5388d45c0c4e33da9eb62707299c2a4ac6dfd2b78694f9ae71b595e7`
+
+**en review revision:** `2ee055efbe824d9da157717402f8be5fd6f6947280a098ec1575c799fa63482a`
+**es review revision:** `1a3c35eafcee35a0cd083580dacc38ef11397e90428d6583f7c495110db0eea6`
+**pt-BR review revision:** `dd587bd03512b5930a8e6bd8da80d1d1baa9805b1ca692c935604665e3d47a26`
 
 ### English
 
@@ -20931,11 +22573,19 @@ Um agente registra os payloads completos das ferramentas, incluindo identificado
 <!-- certification-coach-question:agentic-206:0421ca7eb6923666fcf2f0dc96f9a9d5868ffe9c0a0e9d781a7d76483c8ad361 -->
 ## Question 206: Implement guardrails and accountability
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-206`
 
 **Content revision:** `0421ca7eb6923666fcf2f0dc96f9a9d5868ffe9c0a0e9d781a7d76483c8ad361`
+
+**en review revision:** `07bb35d466086b0a48f8aa10dc71306a7ab2a085d8d551a5a10d1d519f85bf07`
+**es review revision:** `563341f23bd5076604f34f3845b4292edf0481b7c81fea4c3ec2e65a7c30fba2`
+**pt-BR review revision:** `1649f13fd1d8ead51f27ea9512c73fab0b7a4eb4b7c8780d45f943aae241588a`
 
 ### English
 
@@ -21033,11 +22683,19 @@ Uma limpeza irreversível de banco de dados está incluída no objetivo geral, m
 <!-- certification-coach-question:agentic-207:bff1ce392c86e19ed4c9cd4df49259fb99bfc7f5c4f28d9bd56f0a9f751ee4fa -->
 ## Question 207: Implement guardrails and accountability
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-207`
 
 **Content revision:** `bff1ce392c86e19ed4c9cd4df49259fb99bfc7f5c4f28d9bd56f0a9f751ee4fa`
+
+**en review revision:** `dd3de4f4cdff455f2a2a424f1ca0f87eaf9e89f4879daa043d1a4721c0805ead`
+**es review revision:** `99176ba90c3c9ec2446fe63c46354537174c52886e183502c149b1aea4f24b1c`
+**pt-BR review revision:** `4b690b163b02b2672ce6e726dd10b54a13bfa6b9dc63ea7ab0644f59a03f4d53`
 
 ### English
 
@@ -21135,11 +22793,19 @@ Uma equipe pergunta se cada arquivo lido deve exigir aprovação humana. Qual é
 <!-- certification-coach-question:agentic-208:acccdb8520bc004dceea96818deebaa99d18c7cae50b6be324e6fdb095f9b379 -->
 ## Question 208: Implement guardrails and accountability
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-208`
 
 **Content revision:** `acccdb8520bc004dceea96818deebaa99d18c7cae50b6be324e6fdb095f9b379`
+
+**en review revision:** `fe6a98a589ca879c17f8830fa5905dc4d04bf770ec36e6b20c8b823eea4390bd`
+**es review revision:** `0405c44e20dbacd4a10e0c5ffb8a05a1aef144f06aa2f61d419c1ae6b709043e`
+**pt-BR review revision:** `a1ae298b04a6fdd3373e8aff4e4d1d52943c2cfc3edd120128fef7181edd36d6`
 
 ### English
 
@@ -21237,11 +22903,19 @@ Um agente descobre que um portal de política está mal configurado e sugere rem
 <!-- certification-coach-question:agentic-209:420d7d740a70ea63dae83c89bb4dde7c7a5cd2892468070510b9a1322bbbeb82 -->
 ## Question 209: Implement guardrails and accountability
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-209`
 
 **Content revision:** `420d7d740a70ea63dae83c89bb4dde7c7a5cd2892468070510b9a1322bbbeb82`
+
+**en review revision:** `537bcb94c84d9a3b1d5b6ac2ac1a1304e93316ff69d1d7df31ca99105752a39f`
+**es review revision:** `be1ab34350f0f0c10d1dd4d9586c6970400350912982fe357277a4bbc9ecbb8c`
+**pt-BR review revision:** `38de245d43deb847133b1ab35905cabcd8a76d67befdb590d74dc736eb20aaaf`
 
 ### English
 
@@ -21339,11 +23013,19 @@ Uma equipe usa as instruções do agente como a única barreira contra a transfe
 <!-- certification-coach-question:agentic-210:70b53b7acf4e0063d222714c71bf9d252a47910598c32bd71349ddc99f1813f2 -->
 ## Question 210: Implement guardrails and accountability
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-210`
 
 **Content revision:** `70b53b7acf4e0063d222714c71bf9d252a47910598c32bd71349ddc99f1813f2`
+
+**en review revision:** `b17e867164bd1c4592ab23284d9dc96c069198a7d10c245b54d521ec7fd19f25`
+**es review revision:** `b09d624963bd67416cf003f196fbf909b12c292cd6183e99068a7c6076cf57cc`
+**pt-BR review revision:** `72c964104859a20ace11f4bd06345238b1238878771a31c05bdeb0b8c21ecc2d`
 
 ### English
 
@@ -21441,11 +23123,19 @@ A alteração proposta por um agente afeta as regras regulamentadas de retençã
 <!-- certification-coach-question:agentic-211:b473e4f04a3ff144a52e56acba623e59dc3c09883c216cc0abf50dbfddbc0352 -->
 ## Question 211: Implement guardrails and accountability
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-211`
 
 **Content revision:** `b473e4f04a3ff144a52e56acba623e59dc3c09883c216cc0abf50dbfddbc0352`
+
+**en review revision:** `fbff3b5c26c14cbd1c3063defec38260b9d14b76137c2d4e59dcb90726f79171`
+**es review revision:** `9e91496592875625b9b61189d9884490fc173c20d9e1be5882c649717a9a5d22`
+**pt-BR review revision:** `c3dc3edb1169c0639040c0efcaec4f430f42c80f8a8c8c785b227f71d37b31f9`
 
 ### English
 
@@ -21543,11 +23233,19 @@ Um ser humano nega a ação destrutiva proposta por um agente. O que deve fazer 
 <!-- certification-coach-question:agentic-212:ca8725a2c5b26d28aecc89f6694a8202572ec83d20df5a2fe021b86412c519b6 -->
 ## Question 212: Implement guardrails and accountability
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-212`
 
 **Content revision:** `ca8725a2c5b26d28aecc89f6694a8202572ec83d20df5a2fe021b86412c519b6`
+
+**en review revision:** `838b08922df10823e65c70b3fad1dc84235cbff1727932342d763fc340cfa767`
+**es review revision:** `d68797930eabb7459534073f46fd0001aae4d02bbc9fa57281f63dc96a1bdb14`
+**pt-BR review revision:** `018c57356d145bbceeaaeb2a10e9f7ca308328b9afccbd7fd4d39c1f61dd4384`
 
 ### English
 
@@ -21645,11 +23343,19 @@ Uma tarefa exige aprovação de uma exceção, mas não é possível verificar a
 <!-- certification-coach-question:agentic-213:caecbed07cd23171e6e0362b8c044a74d7323e0934cda82de1fec648a13d9def -->
 ## Question 213: Implement guardrails and accountability
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-213`
 
 **Content revision:** `caecbed07cd23171e6e0362b8c044a74d7323e0934cda82de1fec648a13d9def`
+
+**en review revision:** `0e4047d0c9d60e55a3fdf40d191cfe24a91e55b1a522f74d4fcdbcd0df8847b1`
+**es review revision:** `464848b3129fbf550baaf427a1e3ad64bbbb4e4145be951c92bdc3e2868734cf`
+**pt-BR review revision:** `4559973d52fba4e62471f8dedd7d43f734143c7bb69ca0598da009478d520f4a`
 
 ### English
 
@@ -21747,11 +23453,19 @@ Uma organização quer alterações autônomas rápidas de formatação, sem per
 <!-- certification-coach-question:agentic-214:d1cdeaa459e2a88f91921f191a23f49a92794a90c1e7086101e2eebe18508090 -->
 ## Question 214: Implement guardrails and accountability
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-214`
 
 **Content revision:** `d1cdeaa459e2a88f91921f191a23f49a92794a90c1e7086101e2eebe18508090`
+
+**en review revision:** `2a16ebdfe8ae444499a6e5b0b5c26045cf2af66cdfba18b869d9611008f309b8`
+**es review revision:** `a22684d19bfefc4d66316a650934dac3219ae7911e09bc680681f19112db0ae4`
+**pt-BR review revision:** `9110d215d4b4c61439a060688d8aa28ef856512773623478b1c7f6a4ead5ef80`
 
 ### English
 
@@ -21849,11 +23563,19 @@ A credencial de um agente é suspeita de ter sido comprometida. Que contenção 
 <!-- certification-coach-question:agentic-215:e5f0c5ef15b28ec4c7a65c9b6538e8a50d1209f683ff265bc30bf2c3bd9cc5dd -->
 ## Question 215: Implement guardrails and accountability
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-215`
 
 **Content revision:** `e5f0c5ef15b28ec4c7a65c9b6538e8a50d1209f683ff265bc30bf2c3bd9cc5dd`
+
+**en review revision:** `428f981e68084018f10ae834d27c07dbb0f1f263b7afd4d48c0939fa9e1200e8`
+**es review revision:** `638cba4e197ed4e9f1779d7ee5e7dbd90b16e2fdca14be9026a3634b9368af0a`
+**pt-BR review revision:** `04b7eef97053876be5c4b287ce1b233a693ec46ea3d79cc61c01ace8a5314345`
 
 ### English
 
@@ -21951,11 +23673,19 @@ Uma equipe aprova uma ferramenta por ser somente leitura, mas ela pode consultar
 <!-- certification-coach-question:agentic-216:d2d20c4b150bdee49da2f1cb4cfdb5fb5e4806996b8d838a5c1dccf946a9ca7f -->
 ## Question 216: Implement guardrails and accountability
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-216`
 
 **Content revision:** `d2d20c4b150bdee49da2f1cb4cfdb5fb5e4806996b8d838a5c1dccf946a9ca7f`
+
+**en review revision:** `8a0c612453a03c38c567c381702eb80fc87cc8bbfc1a533ac1cfc88ca1d3add1`
+**es review revision:** `86365b74e0805a47da22c44e0746bebc206f983713f1323eb84a424db740cf65`
+**pt-BR review revision:** `523f8570356c03eb9d0ce6ac9b508ca40263960b94bc3f72b8fa43687162b536`
 
 ### English
 
@@ -22053,11 +23783,19 @@ Um agente propõe desativar o registro de auditoria durante uma mudança sensív
 <!-- certification-coach-question:agentic-217:cbb20b2f76e3008f7d6b04a720e9f0e73f6e4b0e27b88e5fb9f4cc0f220000db -->
 ## Question 217: Implement guardrails and accountability
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-217`
 
 **Content revision:** `cbb20b2f76e3008f7d6b04a720e9f0e73f6e4b0e27b88e5fb9f4cc0f220000db`
+
+**en review revision:** `177b41ff2c6744b2f18262a96e52865afb845e4d836930e89ddac67bd9f894ba`
+**es review revision:** `e7de04c445fa3b2e15fd88370288aef26dac6494501db6af70be6228714558f4`
+**pt-BR review revision:** `fbfac7474c3cd9840c073e79c0ba0f78d0826c4fd5dc7b3a99dda6633196e29b`
 
 ### English
 
@@ -22155,11 +23893,19 @@ Uma salvaguarda bloqueia uma escrita não autorizada, mas o agente relata que a 
 <!-- certification-coach-question:agentic-218:f1a73c75c8da80f63b662d59275895219ee45ae0acba123fb0c9193ac5172570 -->
 ## Question 218: Implement guardrails and accountability
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-218`
 
 **Content revision:** `f1a73c75c8da80f63b662d59275895219ee45ae0acba123fb0c9193ac5172570`
+
+**en review revision:** `3e9a7d2d087a0fbde0c4685d7a5d40132fe55b336dd0518a242636ef1e4c5627`
+**es review revision:** `2854fa498250b0743b321f5568648243b438ee0ded711de7f206b9bd5c16cc56`
+**pt-BR review revision:** `6045073d03656fc4be6a818612fc016cbd7718ceeccf55507276e61146014dc2`
 
 ### English
 
@@ -22257,11 +24003,19 @@ Uma pessoa aprova um plano, e o agente muda os alvos antes da execução. O que 
 <!-- certification-coach-question:agentic-219:2cf901f3e9914c10bdd2072d3ecf760cbc1cd3b5b3b97b790404fb1692dea830 -->
 ## Question 219: Implement guardrails and accountability
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-219`
 
 **Content revision:** `2cf901f3e9914c10bdd2072d3ecf760cbc1cd3b5b3b97b790404fb1692dea830`
+
+**en review revision:** `a8056a8e26c5166bf2a97a8648802b8acb9d3f556196616937078d20b385c2cc`
+**es review revision:** `15421dcbc2fad9ad23682bf2a6f4e4f0da81192b46484140bcfd8d8d1105a00e`
+**pt-BR review revision:** `b9ed68b7cc168b12b5b1e4f17959732800af093a3f40d8c40277db8d65fb6087`
 
 ### English
 
@@ -22359,11 +24113,19 @@ Um agente recebe uma solicitação para gerar afirmações enganosas para client
 <!-- certification-coach-question:agentic-220:6a06a395b353181bfbc39f9205d9d15547b9c705edd1bd0a3759d25a583b7626 -->
 ## Question 220: Implement guardrails and accountability
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-220`
 
 **Content revision:** `6a06a395b353181bfbc39f9205d9d15547b9c705edd1bd0a3759d25a583b7626`
+
+**en review revision:** `622d666b2ec7383b5d1daa385139b96986d5acea9b14910daf83b0ec0e162217`
+**es review revision:** `31c621871deb78d6e5e468fa385264aeb80f17d028b5d3abbbdc15efcd3e50f5`
+**pt-BR review revision:** `cc8446fec415262049fde7d7ce06ac362147266cc1ef8210ee6dc90573c040a9`
 
 ### English
 
@@ -22461,11 +24223,19 @@ Uma equipe apresenta solicitações de aprovação demais, com pouco valor, e os
 <!-- certification-coach-question:agentic-221:3a10d7126c95644969d5e5f255e2e008775ea10981ad155b641ad6b72bb736fa -->
 ## Question 221: Implement guardrails and accountability
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-221`
 
 **Content revision:** `3a10d7126c95644969d5e5f255e2e008775ea10981ad155b641ad6b72bb736fa`
+
+**en review revision:** `2a36e90749c58972a84e952474390492ecde9b5008fc33eff1380103375e96b7`
+**es review revision:** `e731414f4bb098c2c0f49110745bf0f90a87d2d960e9a9a9a95753e43b2d8715`
+**pt-BR review revision:** `5566e54d5117dab466df32224b23c22d8db238b6e815a84d8abc6068627ebc88`
 
 ### English
 
@@ -22563,11 +24333,19 @@ Uma exceção de conformidade é concedida para uma tarefa e expira amanhã. O q
 <!-- certification-coach-question:agentic-222:ed0cd43340e8ab19f697d2e7a5b46bfb605e0a620de2b2ab53fa116d217e288d -->
 ## Question 222: Implement guardrails and accountability
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-222`
 
 **Content revision:** `ed0cd43340e8ab19f697d2e7a5b46bfb605e0a620de2b2ab53fa116d217e288d`
+
+**en review revision:** `c598bbe2e3af8b144b877a56b7392472f33ddc270ed7f63978e414a9079d6837`
+**es review revision:** `b7f3e4c9382ca0744fd0f971be9fb75aa3cc4ce2a489c9a3e5ea86a2552a0ae0`
+**pt-BR review revision:** `5d3cc117c85e29b39f2f9e32452db6a611da031c1dc335b3b2a3397d8b9846da`
 
 ### English
 
@@ -22665,11 +24443,19 @@ O ambiente de um agente pode acessar serviços internos não relacionados à tar
 <!-- certification-coach-question:agentic-223:3e5a6f1cad2c889ebdb51e784647764049eed5f2975a018300af6f40a7c0795f -->
 ## Question 223: Implement guardrails and accountability
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-223`
 
 **Content revision:** `3e5a6f1cad2c889ebdb51e784647764049eed5f2975a018300af6f40a7c0795f`
+
+**en review revision:** `f5c79aacae50ecf4b871cde1f900b0558723de1d3af6a8dca79e936dce3b89a1`
+**es review revision:** `6ec9b0a93d10ecf6ba0d2b8f2d51486988b0072e09b591fdc2c7c1aed2cc3115`
+**pt-BR review revision:** `53bfd8b670628287f4a9033e33dfd7aeb8087bd3be93c91d7ac399136d6b7a03`
 
 ### English
 
@@ -22767,11 +24553,19 @@ Uma organização desativa uma capacidade de agente de alto risco durante um inc
 <!-- certification-coach-question:agentic-224:6ed3a7e42bc2693d1dfb857bf5e3bbf83193506de45e225530ccc7d1d7875b60 -->
 ## Question 224: Implement guardrails and accountability
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-224`
 
 **Content revision:** `6ed3a7e42bc2693d1dfb857bf5e3bbf83193506de45e225530ccc7d1d7875b60`
+
+**en review revision:** `18b1ba02df6a29e2b34ce39b07f3d4312167a2fb2c8da263c7c1a24985397db0`
+**es review revision:** `4d65802d5a64839b1c57a7dda2b7835497f341cbf73c29dba15729f12c3156a6`
+**pt-BR review revision:** `a1eebc5f418ce42866df209c937c0453f56c5bc49beb35aae0f2b5e5291bc277`
 
 ### English
 
@@ -22869,11 +24663,19 @@ Um agente recomenda desistir de uma verificação de segurança porque a sua tax
 <!-- certification-coach-question:agentic-225:19dd14092bc5ab3bea364bca72ebf587066d8f8d2675fb5719ef87d3122c8ccd -->
 ## Question 225: Implement guardrails and accountability
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `agentic-225`
 
 **Content revision:** `19dd14092bc5ab3bea364bca72ebf587066d8f8d2675fb5719ef87d3122c8ccd`
+
+**en review revision:** `208fdecc1c3d31f80c3613ece3fe662c07a0feffb70901c0e08421cdb312dda7`
+**es review revision:** `ab8602c63d59d1fb9fdf5b31ec4e6e60cb944eef6241a2d85581cc06804ded35`
+**pt-BR review revision:** `261837bd093421fbb75449f96bf29b341dea6643ecce2557ee35b2fac53d3fdc`
 
 ### English
 

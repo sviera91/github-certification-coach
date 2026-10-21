@@ -1,4 +1,4 @@
-<!-- certification-coach-review:actions:1 -->
+<!-- certification-coach-review:actions:2 -->
 # GitHub Actions: human review packet
 
 225 original practice questions. No mock exam or Copilot installation is required to review this file.
@@ -6,26 +6,36 @@
 ## How to review
 
 1. Read the English question, all four choices and explanations, the concept, hints, and linked official documentation.
-2. Expand Spanish and Brazilian Portuguese to check that they preserve the same meaning, option order, and correct answer.
-3. Change only the question's `- [ ] Human-reviewed` checkbox to `- [x] Human-reviewed` when you approve its complete multilingual revision.
+2. Check English content approved only after personally verifying the English content. You do not need to review another language.
+3. A separate reviewer can expand Spanish or Brazilian Portuguese and check only that translation, verifying meaning, option order, explanations, hints, and documentation references against the approved English content.
 4. Leave uncertain or incorrect questions unchecked. Send the edited Markdown file back to the maintainer, with suggested corrections separately.
 
-One approval covers English, Spanish, and Brazilian Portuguese together; changing any variant invalidates that approval.
+English content and each translation have separate approvals. Translation approval requires current English approval, imported previously or checked in this same packet.
+Changing English content or its supporting source invalidates all three approvals. Changing one translation invalidates only that language's approval.
 The importer rejects stale revisions or changed question content. Do not edit prompts, answers, or explanations in this review copy.
 Unchecked boxes do not revoke existing approvals. These are honor-system human attestations, not proof of reviewer identity.
 AI must never check these boxes or attest to human review. These are original unofficial practice items, not real exam questions.
 This packet intentionally includes the full answer key. It contains no learner answers, scores, chats, or progress.
 
-Search for `- [ ] Human-reviewed` to find unreviewed items. Technical names and official documentation links may remain in English.
+Search for `- [ ] English content approved`, `- [ ] Spanish translation approved`, or `- [ ] Brazilian Portuguese translation approved` to find unchecked items.
+Technical names and official documentation links may remain in English. Translation review verifies that references support the same meaning; it does not require translating the linked external documentation.
 
 <!-- certification-coach-question:actions-001:5fecfc36f5121bc2eb82ca3ca7457e1a214b2a5f1bdba6a9eb1596594f1a4c54 -->
 ## Question 1: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-001`
 
 **Content revision:** `5fecfc36f5121bc2eb82ca3ca7457e1a214b2a5f1bdba6a9eb1596594f1a4c54`
+
+**en review revision:** `96ec1b1d94c5145e55b048d3a533d70f43db03f9f9e091b72c017ebe8fae5af2`
+**es review revision:** `db8b89dfd58347c4145709bdd9f397073f324da3af1da40de3faca80037101c7`
+**pt-BR review revision:** `2ed58f7046b0b9ccad5889a864deb0e7303f1fa3d3c935f76c17e3c73b529bf0`
 
 ### English
 
@@ -123,11 +133,19 @@ Um monorepositório deve compilar somente se um push apontar para main e alterar
 <!-- certification-coach-question:actions-002:ab06ca3b6bd4ca0656e1c101858a897df0e4cc71677ad5fc670ed05e6d94f666 -->
 ## Question 2: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-002`
 
 **Content revision:** `ab06ca3b6bd4ca0656e1c101858a897df0e4cc71677ad5fc670ed05e6d94f666`
+
+**en review revision:** `d0a5deee156e1d021048ea416fd293ec515119b0a266796e4c2861b719b6d1b3`
+**es review revision:** `632836adb4121657223fa1944ecae5b7ef7b5c0798fae3bfdfa269efced75cf0`
+**pt-BR review revision:** `b8593b78b4c14f6c1e8d2e502e0d6ad81b33837129f0d97da0f8303d7c46d378`
 
 ### English
 
@@ -225,11 +243,19 @@ Um workflow deve validar pull requests destinadas a branches de lançamento, ind
 <!-- certification-coach-question:actions-003:e7d96a718a7525fc1a1e35fbf06da833b8a9232f54dadc9f2cd1c8e16a56c987 -->
 ## Question 3: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-003`
 
 **Content revision:** `e7d96a718a7525fc1a1e35fbf06da833b8a9232f54dadc9f2cd1c8e16a56c987`
+
+**en review revision:** `5ee74f21cdf3c2bfad211b34e50d6c3336ed80e7b6157f2e2b1a7a66bd4f8b96`
+**es review revision:** `5ce0754ea814c588ffb370cae2103be32302d7eb09c768a0bd3b8e7bd2c2c681`
+**pt-BR review revision:** `332b471150fe9dd01fa9fd45f0918fe7c99f372e4aee5cacdb5afa8eeac64a57`
 
 ### English
 
@@ -327,11 +353,19 @@ Um serviço externo de inventário deve iniciar automação com event\_type e cl
 <!-- certification-coach-question:actions-004:86d0bb15a06ac75d3a6c5b28214faff4602e8d46bc59171f210204a3f25aa807 -->
 ## Question 4: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-004`
 
 **Content revision:** `86d0bb15a06ac75d3a6c5b28214faff4602e8d46bc59171f210204a3f25aa807`
+
+**en review revision:** `c495b9adfa64974305c1e0f967ab93179ccc0419271392a005157c4f5c297815`
+**es review revision:** `c7a0c30d30171f81a858e0a7ad3585d705a50d7e76bb11d91aa08c150a296e81`
+**pt-BR review revision:** `9d34c8cf9396a719d052b684dbbe31f20fd4cc5a57670c217b2be036f73c17d2`
 
 ### English
 
@@ -429,11 +463,19 @@ Um workflow manual tem uma entrada booleana dry\_run. Qual referência preserva 
 <!-- certification-coach-question:actions-005:6d5f9f75c6b2aceffe5e5bb846c3b17b8be56ded101fa920872dc051306f7b52 -->
 ## Question 5: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-005`
 
 **Content revision:** `6d5f9f75c6b2aceffe5e5bb846c3b17b8be56ded101fa920872dc051306f7b52`
+
+**en review revision:** `1c1c3ce7658b238ee70cd0a2f2541bc06d247bd3eed751e58a8f64dd338d621d`
+**es review revision:** `36a3b5499a39ffbe7c313593719f2ec5836df4c25c1a37907e205c23cd0ac780`
+**pt-BR review revision:** `1a9e682e0c2ea14a9d28dcf92ea0f2292af2ce9d70847744c1735f5da3d9788f`
 
 ### English
 
@@ -531,11 +573,19 @@ Um relatório noturno deve usar o código mais recente da branch padrão sem um 
 <!-- certification-coach-question:actions-006:a982e0eb19c218e550e1d9a03f1125de31a471219c09c7237569d69dfdc1745d -->
 ## Question 6: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-006`
 
 **Content revision:** `a982e0eb19c218e550e1d9a03f1125de31a471219c09c7237569d69dfdc1745d`
+
+**en review revision:** `6301a69b88e455fbae8512cb23514198d6f6f9ba1afcb42a218c56c5cf2020fb`
+**es review revision:** `3d296ffacef7ddda8ec5bd22cdffa004a7c23387ce1fb295abd19d850788804b`
+**pt-BR review revision:** `f99ba29765a438d1f85945c0ed5d80105fce519d31076d334660f32b3226be1b`
 
 ### English
 
@@ -633,11 +683,19 @@ A CI executa em pull\_request, mas a fila de merge também precisa das verifica�
 <!-- certification-coach-question:actions-007:ba73f9194aa1a14bd57a3088366a8d3941fd3c7964f19325cbaddb0aad6a2f9a -->
 ## Question 7: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-007`
 
 **Content revision:** `ba73f9194aa1a14bd57a3088366a8d3941fd3c7964f19325cbaddb0aad6a2f9a`
+
+**en review revision:** `dbc6ce836499147cc755e06c566b38e225508828ef74c8b0eb6b0b3d43f68617`
+**es review revision:** `7286824de0b9adff7e51c34d41627c9c9fa3fe748ffce52067ad9a92d548e154`
+**pt-BR review revision:** `41d6efe560709556cfb57bde55630787334182a96f7d573c89b8bcefe96da1de`
 
 ### English
 
@@ -735,11 +793,19 @@ Um workflow deve responder à publicação de releases, inclusive pré-releases,
 <!-- certification-coach-question:actions-008:33cf115704e54b8f6ab17c0f5a0981abb2892c3d506357cd2fa430a9beb6236e -->
 ## Question 8: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-008`
 
 **Content revision:** `33cf115704e54b8f6ab17c0f5a0981abb2892c3d506357cd2fa430a9beb6236e`
+
+**en review revision:** `4a5ebb36aeb0d4f15fa0023c0bfcd543fe76e4272d1191651b8641e808db9735`
+**es review revision:** `6516bef53e49e386653eb6b70f3fd8fa7ca58049246ca7626c71e14576ea9d56`
+**pt-BR review revision:** `902d47b2e2ebb066b40745ba62ed096bc727dfb7aab67ad9b9eb3b6fcb246b1a`
 
 ### English
 
@@ -837,11 +903,19 @@ Ao iniciar manualmente um workflow, a interface deve oferecer apenas staging ou 
 <!-- certification-coach-question:actions-009:1b4eaab9cdc2d849662aba3683fb131d5bd29a627048d50c4dbdf5dfc6e88e91 -->
 ## Question 9: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-009`
 
 **Content revision:** `1b4eaab9cdc2d849662aba3683fb131d5bd29a627048d50c4dbdf5dfc6e88e91`
+
+**en review revision:** `8509508c20c3136008222af6c12f3d8f2785b53c807f1c2d1ab6f50a7fe8d769`
+**es review revision:** `3f74eab9664520e9d51a14d41792170a3dd124d633b9728b3c0ff511e4349c3c`
+**pt-BR review revision:** `1d9dc31a5b44dab8e9b9038f06e1049a48cd04400ed743a5db3f58314c646032`
 
 ### English
 
@@ -939,11 +1013,19 @@ O job de implantação deve aguardar unit e integration terminarem com sucesso. 
 <!-- certification-coach-question:actions-010:90c6772406f1b3533e50ac53195b52dc77f612b3c9d95c059472619375e1d676 -->
 ## Question 10: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-010`
 
 **Content revision:** `90c6772406f1b3533e50ac53195b52dc77f612b3c9d95c059472619375e1d676`
+
+**en review revision:** `74f2a41c2b39c18d218657ae21c13634ea3d9678c675ecd235267860a58a8ba1`
+**es review revision:** `e3946a62463dba87c7c0452f46b71e47d6c50687d48769442dad8aaad1bce95b`
+**pt-BR review revision:** `e9c97144c177daa2a5e1ac68cf82ed0e761a74958be753e265edb52a942924bb`
 
 ### English
 
@@ -1041,11 +1123,19 @@ Um job de relatório depende de test e deve executar mesmo que test falhe ou sej
 <!-- certification-coach-question:actions-011:fcd6a2862d76692d7077a5e7062ce8b6715c3d0e8a1b4b7613ae685ba8a4f624 -->
 ## Question 11: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-011`
 
 **Content revision:** `fcd6a2862d76692d7077a5e7062ce8b6715c3d0e8a1b4b7613ae685ba8a4f624`
+
+**en review revision:** `9fdfd8373f3224ad42ae0a329f2e8041eba1b4f37833db7a3f0e906d071d06a3`
+**es review revision:** `2c56fff3d2d5d59567dbd874e060aaebfacba90e07378930be1ab0d90b795c30`
+**pt-BR review revision:** `95096020bbdeb408d26e6828f19cce843c3f070ed55285489b3d2ccd10bf0dc7`
 
 ### English
 
@@ -1143,11 +1233,19 @@ Uma etapa calcula version=2.4.1. Outra precisa de steps.package.outputs.version.
 <!-- certification-coach-question:actions-012:bf9b367b6cedfb2733c95ea500b618f11dcbb4539add2b70bc28d153356b13ff -->
 ## Question 12: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-012`
 
 **Content revision:** `bf9b367b6cedfb2733c95ea500b618f11dcbb4539add2b70bc28d153356b13ff`
+
+**en review revision:** `326744d524c58149f45f1f51aea048bf34e6c0629e037cc0d598e1c83b4438e1`
+**es review revision:** `da075e0b7c33d5842e539b40e8413456998060621b1d948a0acff03b52711e85`
+**pt-BR review revision:** `14cbae4eed2ace6db2a70e6543817eac9cb871470de0f96882a80cc45644ed3a`
 
 ### English
 
@@ -1245,11 +1343,19 @@ build calcula um digest como saída de etapa. deploy, em outro job, precisa dess
 <!-- certification-coach-question:actions-013:0682f1203f8e3ec35f152e98a936d70774f322f2e57d93de7007562cd30e10d8 -->
 ## Question 13: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-013`
 
 **Content revision:** `0682f1203f8e3ec35f152e98a936d70774f322f2e57d93de7007562cd30e10d8`
+
+**en review revision:** `f3ec5dfedcf9d17711164fa74f492c4ba3abcf17f60564903a83c496eabfe4df`
+**es review revision:** `85fafe2effc5d464d6ab0ef36dc9b27dae9654a0fe37dbeaaa996e251e6fd953`
+**pt-BR review revision:** `fa959d4cb5f9f3044a4560299388b878214e3038f63b2c55ff0511c57abbb81b`
 
 ### English
 
@@ -1347,11 +1453,19 @@ Uma etapa Bash acrescenta COLOR=blue a GITHUB\_ENV. Quando a alteração fica di
 <!-- certification-coach-question:actions-014:d74808841746b29c21624584f8fc83393e70bc6aa0d469425fc72d941b2937ca -->
 ## Question 14: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-014`
 
 **Content revision:** `d74808841746b29c21624584f8fc83393e70bc6aa0d469425fc72d941b2937ca`
+
+**en review revision:** `3a611c2a73a9027cb37b9a659451a537938b579f2ae6a5fbd1ba73eaac9c27f4`
+**es review revision:** `f02fbc9f88574bcce9b37721e72653b847f97306fe18a90fce36fe0f22d8b8f3`
+**pt-BR review revision:** `eb6adc346145086d388f785ccd8be028e1a1728611dbdfce92e3a340fa69ca12`
 
 ### English
 
@@ -1449,11 +1563,19 @@ MODE é definido no workflow, substituído no job e novamente em uma etapa. Qual
 <!-- certification-coach-question:actions-015:12baa0c40dbef5c396c0b851d45b53472d1c38f1df7073088883d60853e8ad4f -->
 ## Question 15: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-015`
 
 **Content revision:** `12baa0c40dbef5c396c0b851d45b53472d1c38f1df7073088883d60853e8ad4f`
+
+**en review revision:** `8e61afba0408d0db0f293f7ebb00059617062f6ccefd7d7a71cf1568fe937507`
+**es review revision:** `3d8f61e0fd6b19c7cced345719a90d2578435afd930c707ab61800b2de45e071`
+**pt-BR review revision:** `46c01fd950a94982e649cec7edc94edd47c7f00f384c86b73d66e7da9826d12b`
 
 ### English
 
@@ -1551,11 +1673,19 @@ Uma matriz combina dois sistemas operacionais e três versões de runtime, sem i
 <!-- certification-coach-question:actions-016:a2a0e141d2a05fa8cd15ba929cb8103e8f2e9820f297b20a3c5d1bfb49dbc3e3 -->
 ## Question 16: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-016`
 
 **Content revision:** `a2a0e141d2a05fa8cd15ba929cb8103e8f2e9820f297b20a3c5d1bfb49dbc3e3`
+
+**en review revision:** `c25949ef63f92a39ae045977ae917e253589a35ad7f653ba42c98728854e2456`
+**es review revision:** `54c6051adb0b4085bc152cd8267f0e04cca9543f7a645d715621e9e15219b25b`
+**pt-BR review revision:** `4846ce62f151888fd624cfe0f8a8c87762ba6349fab75c728dda0290071f408e`
 
 ### English
 
@@ -1653,11 +1783,19 @@ Uma matriz combina Linux e Windows com runtimes 20 e 22. Apenas Windows/20 não 
 <!-- certification-coach-question:actions-017:0bbcd235d7171b9f38722c32146363aeb780ca7f4e471d216b92b96c81b72057 -->
 ## Question 17: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-017`
 
 **Content revision:** `0bbcd235d7171b9f38722c32146363aeb780ca7f4e471d216b92b96c81b72057`
+
+**en review revision:** `27041c6ce91e7e2d472cdbc66bee2d90f53fd43c9a86813634b182f502425068`
+**es review revision:** `4c7aa5344d61fd7809d90fa61d3bc0a90f54d933874e2dee903107925103cc49`
+**pt-BR review revision:** `605089def27476be277dc89f95aeced6bf8e1f156ca316be0c77a9a3389c22ac`
 
 ### English
 
@@ -1755,11 +1893,19 @@ Todas as variantes de compatibilidade devem terminar para comparar falhas, mesmo
 <!-- certification-coach-question:actions-018:673a5dbb63c366e807ced6abe161f2a6ab5e009f46ed68f4bcb6d22722e8bc9a -->
 ## Question 18: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-018`
 
 **Content revision:** `673a5dbb63c366e807ced6abe161f2a6ab5e009f46ed68f4bcb6d22722e8bc9a`
+
+**en review revision:** `dc0db0e78859e330b5c10d0b7f20bf81139a32761bb853a46e2d4573bb7eabcd`
+**es review revision:** `c008aea8132fcd14af5afc520f0344b916fbdb0b1e87d81466c125f9418db68a`
+**pt-BR review revision:** `a1ce2acce61c2cf115ef02e58d203666210c935b33c2aa7d3fb9a4348d558164`
 
 ### English
 
@@ -1857,11 +2003,19 @@ Doze variantes usam um serviço externo que permite apenas três sessões simult
 <!-- certification-coach-question:actions-019:af5aecc69395e04b4d873ea15cec593089e099ca8fea91e2f8048b74fd71d63a -->
 ## Question 19: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-019`
 
 **Content revision:** `af5aecc69395e04b4d873ea15cec593089e099ca8fea91e2f8048b74fd71d63a`
+
+**en review revision:** `ed0d179b9b395bf76ffbb25a4c4e8f18d9df132dafb4d3141936fe2fd0641bd9`
+**es review revision:** `e97c86bce0398c47a264d3675fa4063bba214d82b0463745a2a9fd440f32f2f4`
+**pt-BR review revision:** `e6fc993512bf305352dc9f1eb917ac738959e5ad9621947a03c77aef6aed7903`
 
 ### English
 
@@ -1959,11 +2113,19 @@ Os testes executam em um contêiner Linux do job e usam PostgreSQL como serviço
 <!-- certification-coach-question:actions-020:20e6f0a56b40ec437b3184f1f1d6dffc8ba7100b848ce38380ca73884d5abf90 -->
 ## Question 20: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-020`
 
 **Content revision:** `20e6f0a56b40ec437b3184f1f1d6dffc8ba7100b848ce38380ca73884d5abf90`
+
+**en review revision:** `de6f3401331ac2358c1adb45778bdc38d84d401749d2e7e6c9a7220e11dc3ef1`
+**es review revision:** `dba2e53af04bc92bc66e993a6199bbb37afb95da90fc0fa97becf273c4aadf0e`
+**pt-BR review revision:** `80021e65d3b701f5a9ca7628295c354380ae326107653b94b609deac0573144f`
 
 ### English
 
@@ -2061,11 +2223,19 @@ Os testes executam diretamente no Ubuntu. Um serviço de banco escuta em 5432 de
 <!-- certification-coach-question:actions-021:dac12864f27526e822e6208b58cc5d47a4459673c753612f5b82930850f31578 -->
 ## Question 21: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-021`
 
 **Content revision:** `dac12864f27526e822e6208b58cc5d47a4459673c753612f5b82930850f31578`
+
+**en review revision:** `6fedea25bad983f3995081041f87b3e7b02d85e1e3eaff7f2a599d229d354de1`
+**es review revision:** `b5e77d60658a31378185b275e9174bedcda969b23bb8fa61e66c8e4c59f9fbc6`
+**pt-BR review revision:** `957a76890a0ce7abf5aa179dc80f935ad4589f8a1e1449424328c013b4e4e736`
 
 ### English
 
@@ -2163,11 +2333,19 @@ O Redis às vezes demora para ficar pronto. O workflow deve verificar disponibil
 <!-- certification-coach-question:actions-022:56a1a2c1324afcdb6dbec8ce12b9e5321e005d3194af5e79ef0a80bbc0ab09ee -->
 ## Question 22: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-022`
 
 **Content revision:** `56a1a2c1324afcdb6dbec8ce12b9e5321e005d3194af5e79ef0a80bbc0ab09ee`
+
+**en review revision:** `9aea02a31cb9901f9df1841b5f0e263cab6b04f5d450a600ee9fd0740e45066b`
+**es review revision:** `4ff370eee406ddc6e2b5577d2b1c1b1b1c155a0b6c922dbeef0ab4aa21f6b1e3`
+**pt-BR review revision:** `b43feb0a65b9e718f6a414fbdc96e99087672398f393113289fee7cc01b96f3b`
 
 ### English
 
@@ -2265,11 +2443,19 @@ Um job precisa de um runner com todos os rótulos self-hosted, linux e x64. Qual
 <!-- certification-coach-question:actions-023:b3814f20d326ee2d8ed645a0cb5c0fec142e3c4e1779ec5bee38206a84514e90 -->
 ## Question 23: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-023`
 
 **Content revision:** `b3814f20d326ee2d8ed645a0cb5c0fec142e3c4e1779ec5bee38206a84514e90`
+
+**en review revision:** `440a1c40fa9c67c1ce56ef6282d698072f2f0417d6ca3f2192bd475f0f11d551`
+**es review revision:** `30ce238ec9112a8e0ce85fa34a4d7fb4c06d7bac0a2616770e108f82e7b9cf79`
+**pt-BR review revision:** `e52f30314a1b6fb023172865bad749a36ea1547b501e5d31abdb421680357812`
 
 ### English
 
@@ -2367,11 +2553,19 @@ Um job deve ler código sem outras capacidades de GITHUB\_TOKEN. Qual mapa expl�
 <!-- certification-coach-question:actions-024:3d3d093e9655e297d17c03c9009e495f24a47fd3c9378e0f05b9649386045269 -->
 ## Question 24: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-024`
 
 **Content revision:** `3d3d093e9655e297d17c03c9009e495f24a47fd3c9378e0f05b9649386045269`
+
+**en review revision:** `989f90668867fc9415bef17da9273f172d6e4c1a7f12c9f5e1a41fea31a8d6bf`
+**es review revision:** `aee3ce3701f7c9cca130d1b814eb60e7d15b00ca611c32f4bd53ad82126d1c9a`
+**pt-BR review revision:** `b6137dc58f5ac0e8f9e977f358d5d77198617f2e5bfb670c4e18f398cc3ba906`
 
 ### English
 
@@ -2469,11 +2663,19 @@ Um repositório oferece uma compilação compartilhada com vários jobs para out
 <!-- certification-coach-question:actions-025:d02f162480c68a00f992784262f6abbdfd6910ef18def89b91bc135c10ad38c5 -->
 ## Question 25: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-025`
 
 **Content revision:** `d02f162480c68a00f992784262f6abbdfd6910ef18def89b91bc135c10ad38c5`
+
+**en review revision:** `05ba14216e0c65170113acce81794a0fb8dea155d5f8dc60af53d4e0adee7a32`
+**es review revision:** `fc310909676abdd20a9eb118a3e9379be3021aa94658db3b55ba485a697ed6cf`
+**pt-BR review revision:** `d24d5250401937f575c01f1885bf3c5e71b5b83b0ee621ae2c493de992be4dfe`
 
 ### English
 
@@ -2571,11 +2773,19 @@ Um chamador deve passar um número de tentativas a um workflow reutilizável. On
 <!-- certification-coach-question:actions-026:64c70b4895e4bdb54c55e492c6730a41be188cee9d516ede4bde4a3ba0c00ca6 -->
 ## Question 26: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-026`
 
 **Content revision:** `64c70b4895e4bdb54c55e492c6730a41be188cee9d516ede4bde4a3ba0c00ca6`
+
+**en review revision:** `71f8017f4c67051a7bd3251531fc530e2d476592579228d4ce81589a65c828bf`
+**es review revision:** `6050be8623f7b719d2c5059d874e9898066ec6031566558c16a75da166a6dde0`
+**pt-BR review revision:** `a1a62b5cff4f68a865e7dc3f972e5c8c9d9aa2e4fbc23770206859724866fd5d`
 
 ### English
 
@@ -2673,11 +2883,19 @@ A passa um segredo de implantação para B, e B chama C. C também precisa dele.
 <!-- certification-coach-question:actions-027:a5500ebbb8a898ccac379d8f99701c73bcc102f79e07cfd813acac3d309404d4 -->
 ## Question 27: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-027`
 
 **Content revision:** `a5500ebbb8a898ccac379d8f99701c73bcc102f79e07cfd813acac3d309404d4`
+
+**en review revision:** `a89101abafcb0b4d59672146f7589d7cc33873c67680a3c7b67dae477532fee7`
+**es review revision:** `272a6912d98d861361f8ec9fb15da59e2bc3f0fb6a9a48b4ffcd6b11d2d17fd3`
+**pt-BR review revision:** `c0b7aa55085c28a09fab841b42ca4ac993714d001005514a682d8d6ead6ee0a2`
 
 ### English
 
@@ -2775,11 +2993,19 @@ O chamador define env.REGION no workflow e invoca outro workflow reutilizável. 
 <!-- certification-coach-question:actions-028:9f3d6e0d02fe5848739c3d02aa74e4623448b59b635b51b9484df699237780f1 -->
 ## Question 28: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-028`
 
 **Content revision:** `9f3d6e0d02fe5848739c3d02aa74e4623448b59b635b51b9484df699237780f1`
+
+**en review revision:** `0ed33733f64b4d20a75a70d2efe5bfd040367ea487be0c1c78f5297ad5752889`
+**es review revision:** `1e7c1dc2163b9903af0afbe4bd8183355580dcda53b1af725e4636494a9f2df7`
+**pt-BR review revision:** `1ad972e3a41aacd75f8f06f62ad22f326f0933bd9bae25a72d23317f5c6642b0`
 
 ### English
 
@@ -2877,11 +3103,19 @@ Um workflow reutilizável calcula uma URL que o chamador lerá como needs.publis
 <!-- certification-coach-question:actions-029:27dace9bd98b42830109ee69d0507ea07d44e6c53fb6f0362b41d38f5265a6af -->
 ## Question 29: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-029`
 
 **Content revision:** `27dace9bd98b42830109ee69d0507ea07d44e6c53fb6f0362b41d38f5265a6af`
+
+**en review revision:** `29bfcb6b10519aa06c5f8544d0053a160b234f0ee91d066a8c0ce0e924f4a814`
+**es review revision:** `496cacb3b5406a58a58fee4c5c4929a75f8945b22a9c05042f97ff73fbb3d51e`
+**pt-BR review revision:** `91e7a89f7b676658b6bb2d50e7dea9bba6d87e4bf209f24a8bc8a7e855508411`
 
 ### English
 
@@ -2979,11 +3213,19 @@ Dois jobs precisam do mesmo mapa env em um único YAML. Qual mecanismo compatív
 <!-- certification-coach-question:actions-030:e82925ea96b5dbb5b4196554bfe3990fcca68e5cf2583d909c455f93a742aa7b -->
 ## Question 30: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-030`
 
 **Content revision:** `e82925ea96b5dbb5b4196554bfe3990fcca68e5cf2583d909c455f93a742aa7b`
+
+**en review revision:** `5e6f8f5d5988e52cc8cfc5e6f230c3c036ad5cc48e225101c16a4091484b940f`
+**es review revision:** `69c4e0f34863e65143525b5e64c08f5dd7d9017527b1e2fd431ebb60f09c56e9`
+**pt-BR review revision:** `fbc3dfa219919bad11c4f6a7e0275222f85c5a6ace94f681296758f808ecb10a`
 
 ### English
 
@@ -3081,11 +3323,19 @@ Novos pushes de uma branch devem cancelar sua CI anterior, sem afetar outras bra
 <!-- certification-coach-question:actions-031:b79e607f4bf74f0ff8ea04b65a1fa5a8ef9abc3d7ef1560739353d8eaae48ef1 -->
 ## Question 31: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-031`
 
 **Content revision:** `b79e607f4bf74f0ff8ea04b65a1fa5a8ef9abc3d7ef1560739353d8eaae48ef1`
+
+**en review revision:** `0f61fb259c6c4edc249ce9d36dd03b424fbe135113a09345161237329c62af1e`
+**es review revision:** `486636f48a11d027dcc761852e2ce19172dd0d99e45d5bc0c8eb860566c16bf3`
+**pt-BR review revision:** `5d4cdfa0a15588bfdd0882e8b6f899199c8db8b2a5f62a413c753eeaf14a8a46`
 
 ### English
 
@@ -3183,11 +3433,19 @@ Uma condição deve examinar a carga do evento antes de atribuir um runner. O qu
 <!-- certification-coach-question:actions-032:57bb6cdc6f2a67971fdad8d0363691ed8125807f0ac0ac55550df695a0bb3071 -->
 ## Question 32: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-032`
 
 **Content revision:** `57bb6cdc6f2a67971fdad8d0363691ed8125807f0ac0ac55550df695a0bb3071`
+
+**en review revision:** `b48ec04c2a7ee4463d6db6637883d9e9750621acce8ff0712d6c8e98b4f54c39`
+**es review revision:** `648807a9772568357a1a3fe62dc64cdf3532310f39b4c0e7e6864860b125018f`
+**pt-BR review revision:** `abf629c7be62d0b878ba01913ba7ad515879f5ec5f13578af4b88ecad53152de`
 
 ### English
 
@@ -3285,11 +3543,19 @@ Uma saída contém JSON que descreve uma matriz. Qual função converte a string
 <!-- certification-coach-question:actions-033:aa747a13ae1947afe9df1dad38c24ade26af3e19dddb66df0fa747eec0e8ccba -->
 ## Question 33: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-033`
 
 **Content revision:** `aa747a13ae1947afe9df1dad38c24ade26af3e19dddb66df0fa747eec0e8ccba`
+
+**en review revision:** `9d225e6909e3f153ab469ee3487d0bc337e8e394d2ab8003bd02d2919a0953be`
+**es review revision:** `17f014ba2fe783ecfe7fc7253e30e62c0540d2f8c02aeeb743dfa38839292f33`
+**pt-BR review revision:** `6962582bed43948a1a63d72476a8cfb1fd38d4674e8689a02d211d682d6cb8d1`
 
 ### English
 
@@ -3387,11 +3653,19 @@ build produz um pacote de aplicação de 200 MB que deploy, em outro job, deve u
 <!-- certification-coach-question:actions-034:887c225d7331fa7eec5da61faca68d62b8433320eb5bf38f064777f1ff36dff9 -->
 ## Question 34: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-034`
 
 **Content revision:** `887c225d7331fa7eec5da61faca68d62b8433320eb5bf38f064777f1ff36dff9`
+
+**en review revision:** `fb7b54984a00120143a835599ec5fb34f69e2f2bec59942b11c236c25e727347`
+**es review revision:** `28285a06b4a6cb831c3329a0f99bdc70529642833f438d8e2cb7757fc49fc999`
+**pt-BR review revision:** `3f661ca24bd51d214226d5eac757653527f204449e57aa22850453287dd0513d`
 
 ### English
 
@@ -3489,11 +3763,19 @@ Um cache deve mudar com package-lock.json e não misturar sistemas operacionais 
 <!-- certification-coach-question:actions-035:9e8a1792e1c644d04ea34bfcc1f392f1189812560cdae2673b3c19755050b58f -->
 ## Question 35: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-035`
 
 **Content revision:** `9e8a1792e1c644d04ea34bfcc1f392f1189812560cdae2673b3c19755050b58f`
+
+**en review revision:** `cecd6200c2ca328baeb7016097a384be7bfca8b7b9da0b438aad028e8a781c43`
+**es review revision:** `bdbbacc383bdbfbbc60803f6c41eaca7bd5f0f23eb81a374ddc336787ae9f73d`
+**pt-BR review revision:** `64e269bf8b6734225d04c5a4a678921923b04637951923717065f2fdef8f245d`
 
 ### English
 
@@ -3591,11 +3873,19 @@ Um cache é restaurado por prefixo, não por correspondência exata. Como interp
 <!-- certification-coach-question:actions-036:6847cb5872128a65c7036e83f3fc46373b72f02f9475a129e2824bc533ffc8e6 -->
 ## Question 36: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-036`
 
 **Content revision:** `6847cb5872128a65c7036e83f3fc46373b72f02f9475a129e2824bc533ffc8e6`
+
+**en review revision:** `608f65c7f99cf5fa0b39a0cfb40ce1bc16a481caedec27433aa32ed7bb32e1ba`
+**es review revision:** `f70083f2974442072f94b3e83dc45ae3624e4bc727483d0ba70e7e47f8c11556`
+**pt-BR review revision:** `173a880b4bc90e1fa59a4ac927fce5b7818f09c4ce77975f04ed74c6cc7b3498`
 
 ### English
 
@@ -3693,11 +3983,19 @@ A cobertura deve mostrar uma tabela Markdown no resumo da execução sem criar a
 <!-- certification-coach-question:actions-037:de353e782052e3d4617379eb8d988f5d4d20cb9b1f4bc6571e7de7c5cd7fc84d -->
 ## Question 37: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-037`
 
 **Content revision:** `de353e782052e3d4617379eb8d988f5d4d20cb9b1f4bc6571e7de7c5cd7fc84d`
+
+**en review revision:** `a41e07935cb529157d79b2f740048ea2a0a1b9b3409b3271c0f39c2db7d79d0b`
+**es review revision:** `db649146c047dce57de324f26ea309ccc3df4899bc38567e415fd50164089fa3`
+**pt-BR review revision:** `cc373f501e6f85d5a35260811d6599f402b5a6525e14409a02d388ee5f6b621b`
 
 ### English
 
@@ -3795,11 +4093,19 @@ Um artefato deve expirar em sete dias, dentro do limite permitido. Qual configur
 <!-- certification-coach-question:actions-038:67574f482eb3daf87dd6b441d2177fe042880bdfc158a28c5c0efcb5035991fc -->
 ## Question 38: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-038`
 
 **Content revision:** `67574f482eb3daf87dd6b441d2177fe042880bdfc158a28c5c0efcb5035991fc`
+
+**en review revision:** `0fc62a42e426bee3a97aba6be9c5e61fff31eabd5c2809e4f021552d1630de29`
+**es review revision:** `e42ac1c4e91c8bb1f89287e7508a55ca193b8e67a63cb6baec043cfa9d07e244`
+**pt-BR review revision:** `8b6663751144f2f63dde8700423a1d6d10b505ace673b70adb46618196d577a1`
 
 ### English
 
@@ -3897,11 +4203,19 @@ Comandos de build devem executar por padrão em src/, permitindo exceções por 
 <!-- certification-coach-question:actions-039:5dc95e88cb56a6c58302f03ab149b45710ecf619968c6c2d220e06f0367e9493 -->
 ## Question 39: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-039`
 
 **Content revision:** `5dc95e88cb56a6c58302f03ab149b45710ecf619968c6c2d220e06f0367e9493`
+
+**en review revision:** `c048f964aafcefdb60b44081208455d1d72dfcfd344f5ba4127a72cad3fd2975`
+**es review revision:** `4b8bed73b72add2e98b483c8a433af119bc4b558eb1398c4ae4c659eeadf0f90`
+**pt-BR review revision:** `22e760885f8570a88f6afb762e225dbdbd2305287f280beddc0b03272e29c0f0`
 
 ### English
 
@@ -3999,11 +4313,19 @@ Somente um comando de testes trava ocasionalmente. Onde definir timeout-minutes:
 <!-- certification-coach-question:actions-040:2b9121fd0350f3f063d9b5e1d3f5173b44b6b67f57c51d8597b2f5c9249e8deb -->
 ## Question 40: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-040`
 
 **Content revision:** `2b9121fd0350f3f063d9b5e1d3f5173b44b6b67f57c51d8597b2f5c9249e8deb`
+
+**en review revision:** `d4c97b097a376de2a32d665593b0e95f77a8c0ef566112c63613f7ddb9896d72`
+**es review revision:** `fae24a6f05b17094e487a69e8dad3ea6207b45a58a9a94da0c0215853ca00bb5`
+**pt-BR review revision:** `4fda90ea4ef9c50b67f4c8bad431dc95727b9719cecb19bfb08cb296a7c21754`
 
 ### English
 
@@ -4101,11 +4423,19 @@ Um workflow usa ./.github/actions/lint como ação local. O que deve ocorrer ant
 <!-- certification-coach-question:actions-041:15c09398664349759201d5fcf4c8cebdd9751a0b931032e5b562bfd138d943cc -->
 ## Question 41: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-041`
 
 **Content revision:** `15c09398664349759201d5fcf4c8cebdd9751a0b931032e5b562bfd138d943cc`
+
+**en review revision:** `45fd9a5f5e9dd37c6c53596e5eb523cba8ec25704645a0c98a190f2d58a82e27`
+**es review revision:** `dc6d9ef3d1b880bde33c01152f7c5402394eeeecd674811357fc849243876eee`
+**pt-BR review revision:** `52b742d25b135b9bf869246155202d35c1f1046169c15cdb3377103d638e766d`
 
 ### English
 
@@ -4203,11 +4533,19 @@ Um job de produção deve aguardar regras de proteção e acessar segredos de um
 <!-- certification-coach-question:actions-042:5fea9aa28dc604745f577f9cfdb37091364e958dca46c68505610e6063739dc2 -->
 ## Question 42: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-042`
 
 **Content revision:** `5fea9aa28dc604745f577f9cfdb37091364e958dca46c68505610e6063739dc2`
+
+**en review revision:** `efa899293150c2cb03b81869b81eed30d486e7060f4f35617bb0a5b9a9994cf7`
+**es review revision:** `1090a65086c58a4271ffadf5c6300d9ee0597bcd5e9d5419182e8fcb5eab84fe`
+**pt-BR review revision:** `79fd511d1d9af9bfb9723c6fb631854844f0c66f87cbeecc50013b452ac257d5`
 
 ### English
 
@@ -4305,11 +4643,19 @@ Um selo do README deve mostrar ci.yml em main, não outra branch. O que sua URL 
 <!-- certification-coach-question:actions-043:c4275836f8c7e07e55d6a219e507bffeb993936a735a8c6dd138fdc08f960795 -->
 ## Question 43: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-043`
 
 **Content revision:** `c4275836f8c7e07e55d6a219e507bffeb993936a735a8c6dd138fdc08f960795`
+
+**en review revision:** `aa950bd3395332044e065e78cd408da1a50a170bc3ab86cbf7e9606fceed5ce5`
+**es review revision:** `38430a9f166dd1cc705dd3d37ec294e9e71f040b7eb4f1744f6dea7475599224`
+**pt-BR review revision:** `3826cd890eadafd89a9f37891deec221496dfb3114aaffe9b6319a6334891f9c`
 
 ### English
 
@@ -4407,11 +4753,19 @@ push define somente branches: \[main\]. É enviada a tag v3.0 apontando para um 
 <!-- certification-coach-question:actions-044:90ae2a8c6efe9155f8a5cf17dd35fa87a62328e36cdcc9477d9b18cc1a28ca2d -->
 ## Question 44: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-044`
 
 **Content revision:** `90ae2a8c6efe9155f8a5cf17dd35fa87a62328e36cdcc9477d9b18cc1a28ca2d`
+
+**en review revision:** `b7547777908ae0993f3ad53665d13b1fd375abcfd8d3179b77a12d57df0d5c4a`
+**es review revision:** `7cb629ef1bab837fe0d5962d61118fdbcb7f51a8a6b1122c8af71a81c38b5f35`
+**pt-BR review revision:** `a56fe40c28d5f5d16d592b18db0a23a2acb3759c8bd3fa92c8ce387b23167ef6`
 
 ### English
 
@@ -4509,11 +4863,19 @@ Um workflow deve reagir somente à abertura de uma issue, não a alterações de
 <!-- certification-coach-question:actions-045:2629fc639cdcecc1f158c3939e6a56866db2fad7e0bb50cabac9ee971e29e279 -->
 ## Question 45: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-045`
 
 **Content revision:** `2629fc639cdcecc1f158c3939e6a56866db2fad7e0bb50cabac9ee971e29e279`
+
+**en review revision:** `e4ed7af53a3d2c65645e26e11dd3e07970eabb92a3b16e12e1b4cc82441b5595`
+**es review revision:** `2e9004404ee103f9b35d085077204955d43e2d4b8e8fbe67369c1923e0a41eca`
+**pt-BR review revision:** `8e817ca0da0c777f740d42dbb7b751622cb4560308b8509a6bdd0a51e49c8c98`
 
 ### English
 
@@ -4611,11 +4973,19 @@ Dois agendamentos usam o mesmo workflow. Uma auditoria deve executar somente par
 <!-- certification-coach-question:actions-046:ab5a2f7962fe206005ae4a3ddf9012424887bf6edc7d4da786ce3ab78485eed8 -->
 ## Question 46: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-046`
 
 **Content revision:** `ab5a2f7962fe206005ae4a3ddf9012424887bf6edc7d4da786ce3ab78485eed8`
+
+**en review revision:** `6ae184aaa075043f195525460109c4766dc873b7a39d1db2a62777cf53a14a65`
+**es review revision:** `3b5fdadd1d359fc037012e6aed1b94cbad237a5af387d25fe8de49bb0b0f6c59`
+**pt-BR review revision:** `c786bbaa25a6620cfe50823e29dba173ed3d439453c2d786954c4c76fc13bda2`
 
 ### English
 
@@ -4713,11 +5083,19 @@ Uma etapa emite a string 'false' como saída enabled. Qual expressão a converte
 <!-- certification-coach-question:actions-047:67a0495ed955e68391704a163c6849255db8350b6a4689b8a9a43ee5bfc0f8b4 -->
 ## Question 47: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-047`
 
 **Content revision:** `67a0495ed955e68391704a163c6849255db8350b6a4689b8a9a43ee5bfc0f8b4`
+
+**en review revision:** `561ae602acc793bfa7c16df0fc15439cb4eea6da4746776574ce3a0583650490`
+**es review revision:** `7176424c74bde696b30de58aa0db55760a8b22d55aced51003a4d8c57a3289c0`
+**pt-BR review revision:** `9950661f9c88052bc3a8f77f81709545d1ece71e15b47c816d6e9db5140b244d`
 
 ### English
 
@@ -4815,11 +5193,19 @@ O chamador precisa executar a mesma implantação reutilizável para dev, stage 
 <!-- certification-coach-question:actions-048:ae50dff59daeafae15e6bd0cdccbf8f57cfd34c4da9592cd921302f2d7dc746e -->
 ## Question 48: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-048`
 
 **Content revision:** `ae50dff59daeafae15e6bd0cdccbf8f57cfd34c4da9592cd921302f2d7dc746e`
+
+**en review revision:** `4a796bc42bcee80f81c6a235d0a087429821d85981d1a3409d3899eae542aa4e`
+**es review revision:** `6a40c6dd6bfdd26b4c4e93b2e28f12c321684e4bce1355644434e7c643ac4acf`
+**pt-BR review revision:** `ca7090e12b326e96824e4e374785a79cde9234e5c2f419123516eeb100e9ff55`
 
 ### English
 
@@ -4917,11 +5303,19 @@ Um chamador usa ./.github/workflows/build.yml sem @ref. Qual versão do workflow
 <!-- certification-coach-question:actions-049:e5db7562e341eb82c64891f318f37da84214ca7a55cce37f1cbeefa6b4b879f2 -->
 ## Question 49: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-049`
 
 **Content revision:** `e5db7562e341eb82c64891f318f37da84214ca7a55cce37f1cbeefa6b4b879f2`
+
+**en review revision:** `53c5b88476ab644bebeb695272bcdf4fa511f2453fa53caab873b0d956025388`
+**es review revision:** `093e4912659839cc727821a123c8b66c84adf74987ea4cb38e9bd3b27f3d9791`
+**pt-BR review revision:** `624280fcbcfd58de3c080b8815bbb7fd2c1969acaefa4192db2ca6c3b891e91c`
 
 ### English
 
@@ -5019,11 +5413,19 @@ Uma etapa instala um CLI em diretório personalizado. As próximas etapas devem 
 <!-- certification-coach-question:actions-050:b6f347e3e2186692c4751229d090ef644051b5dfae0ed495e8bed5c65a5e53ee -->
 ## Question 50: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-050`
 
 **Content revision:** `b6f347e3e2186692c4751229d090ef644051b5dfae0ed495e8bed5c65a5e53ee`
+
+**en review revision:** `8d6360683c5f791becc52a4b477a57bb1a92ccf166c987854571a9bcf8b8b30d`
+**es review revision:** `fc55860f5b536cc2e8a161d4510089acb78f0a525d193f5dafd450c10648a1c0`
+**pt-BR review revision:** `bc74482d9f046874103a637037ca340591e96a0c58d492f7e255866a3bd29a06`
 
 ### English
 
@@ -5121,11 +5523,19 @@ Uma matriz base testa runtimes 20 e 22 no Linux. include adiciona \{os: windows-
 <!-- certification-coach-question:actions-051:c6da883081bd6ddab02aeb668343bb062e7598d42f7d516ba7768bdf59ca03d1 -->
 ## Question 51: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-051`
 
 **Content revision:** `c6da883081bd6ddab02aeb668343bb062e7598d42f7d516ba7768bdf59ca03d1`
+
+**en review revision:** `cdfb495f6469d1ec9d4d9a569392dc54970962c68b249d3a633aaaa4cce061ea`
+**es review revision:** `395804cb355f10a874e80b1d67c4b6724bed5ad135fa957d86ddfd7ab3e5bb4f`
+**pt-BR review revision:** `a81c433b71b450e759359412379824b0c0bf7dac4ebd467324b795581010647d`
 
 ### English
 
@@ -5223,11 +5633,19 @@ O título de cada execução deve mostrar o destino selecionado e o usuário ini
 <!-- certification-coach-question:actions-052:c8c819e368ec8dfc0750d9214faa6c71aeb0e1efbb8ea2dec1c05a4dacd77491 -->
 ## Question 52: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-052`
 
 **Content revision:** `c8c819e368ec8dfc0750d9214faa6c71aeb0e1efbb8ea2dec1c05a4dacd77491`
+
+**en review revision:** `7301305f115068414a7d80e179f6f2e7514692f45984771ddc109400afde57d1`
+**es review revision:** `cbae5f0644eb7c5e3ab65eaaaf625acd7cae5203bbf2117fbb880bf07b9730df`
+**pt-BR review revision:** `c35d9bd5c16dfb37fcc720c364fc87e5d168764953f412a52c0725b8d9c05c59`
 
 ### English
 
@@ -5325,11 +5743,19 @@ Uma etapa de release deve executar para tags, não branches, num workflow que tr
 <!-- certification-coach-question:actions-053:a144e54bf3936f4b388444feb4af2c61466c57b439fe558d2591c6ff2c773320 -->
 ## Question 53: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-053`
 
 **Content revision:** `a144e54bf3936f4b388444feb4af2c61466c57b439fe558d2591c6ff2c773320`
+
+**en review revision:** `58a360d0d9d26a7f572a1703dcd3c48f371edbc637739be0bed2d1fcd9c6eb1c`
+**es review revision:** `180a3c92177fc9256a9e0c0e988c08e141a9a877dc0b5e504c03aded552989de`
+**pt-BR review revision:** `5fafccd69248ee2783f6d6d7cefcea388e91f1c236dc195152d0ccddafdddbfb`
 
 ### English
 
@@ -5427,11 +5853,19 @@ Um autor quer completar esquema, receber ajuda de entradas e validar YAML antes 
 <!-- certification-coach-question:actions-054:fa2ea43a5581c846e68e2497fffebb1a58a6ac826a9e6f29a468c024a2cb714c -->
 ## Question 54: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-054`
 
 **Content revision:** `fa2ea43a5581c846e68e2497fffebb1a58a6ac826a9e6f29a468c024a2cb714c`
+
+**en review revision:** `cd704246b82e7e39832921bb4a9ed9bc6fc1a66a983382cc3950be4679817c05`
+**es review revision:** `006ddf99090487d85e12e5d9b36e92ee72d99c963d50b15b3d9a4c451f1183a9`
+**pt-BR review revision:** `ea09471595953fd7fb2817bb4890c827866526927861f892a62c892eed1c54b9`
 
 ### English
 
@@ -5529,11 +5963,19 @@ Um workflow reutilizável solicita contents: write, mas o chamador permite apena
 <!-- certification-coach-question:actions-055:8f0d00f2aeed211e0a0a23e46d7681687cbb91b046a85dc700707aaa941ab9d5 -->
 ## Question 55: Author and manage workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-055`
 
 **Content revision:** `8f0d00f2aeed211e0a0a23e46d7681687cbb91b046a85dc700707aaa941ab9d5`
+
+**en review revision:** `02913c6e1ee5bf8fde9addf28d5a048d3ad470c49b1bef70ba906cf789b7ab87`
+**es review revision:** `b8cdbed7f9fec61e1d5c37b8137a6e7e2ba4b75504cb30dc551e314284fcfef5`
+**pt-BR review revision:** `c6ae48ca26f1b050fbaa0655beec2e653b5cb99b7a5cb6168e3d739bbc3e0e2a`
 
 ### English
 
@@ -5631,11 +6073,19 @@ Uma falha experimental da matriz não deve falhar o workflow, mas variantes est�
 <!-- certification-coach-question:actions-056:a55ef343a821ed26a025ea210a6b0c662ac01087640ac202e91556166c17f63d -->
 ## Question 56: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-056`
 
 **Content revision:** `a55ef343a821ed26a025ea210a6b0c662ac01087640ac202e91556166c17f63d`
+
+**en review revision:** `d97421d6d9ba9bf1051d110b227e8665f7bef99be33ae4a52644836352592248`
+**es review revision:** `789ffa03d40e87e3fb288358cc4902043bdbf8ef10638814d152a3068c2a24c9`
+**pt-BR review revision:** `c17f83fd47a34f528ea0326326c7ca027b55ee0c28ec8c38039f5a60d5dd1a7e`
 
 ### English
 
@@ -5733,11 +6183,19 @@ O resumo informa apenas 'Process completed with exit code 1'. Qual é o próximo
 <!-- certification-coach-question:actions-057:bb982527d73770eef8ee2e1247237de345ca0950194ffcedae6511ecb40f1fc3 -->
 ## Question 57: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-057`
 
 **Content revision:** `bb982527d73770eef8ee2e1247237de345ca0950194ffcedae6511ecb40f1fc3`
+
+**en review revision:** `cac74f40f15ebfe3307b6e8010ce55f124e7c9fc5439a54dd9c738ad5ca0a3aa`
+**es review revision:** `a31bcd16b7f1acd97fbe65627e070716e25008d98f65edda424fac5686b38df2`
+**pt-BR review revision:** `49764b292d07ada739d73866a46e0af60138874db0e512965b37c9c641bb3036`
 
 ### English
 
@@ -5835,11 +6293,19 @@ Uma ação JavaScript emite core.debug, mas as mensagens não aparecem. Qual con
 <!-- certification-coach-question:actions-058:5ec7ff148b4d4730d1ff5d91f02f8f02292e88fa6316229fece115d7e6e649d6 -->
 ## Question 58: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-058`
 
 **Content revision:** `5ec7ff148b4d4730d1ff5d91f02f8f02292e88fa6316229fece115d7e6e649d6`
+
+**en review revision:** `f6667826dda712af72bb865996674bdab861c02ee251b4c5159371db5225f399`
+**es review revision:** `69ef669a4a4a1ff11940cd452f458393b1d797a01a94c16ca2af3add9e657406`
+**pt-BR review revision:** `95258341db49299ccff8f43683cb876c004e673c77300f1f864a05dc2637daa9`
 
 ### English
 
@@ -5937,11 +6403,19 @@ O suporte precisa de diagnósticos dos processos runner e worker, não apenas da
 <!-- certification-coach-question:actions-059:733101c50cf8b0e39ce902597254579ab9ca36f7dbb0d8b57f2770ed143473d3 -->
 ## Question 59: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-059`
 
 **Content revision:** `733101c50cf8b0e39ce902597254579ab9ca36f7dbb0d8b57f2770ed143473d3`
+
+**en review revision:** `5970a3c221fa46e72830b57e45f2a83f9aa21941bd418cc54c1a6b329c2dfe91`
+**es review revision:** `5ae791bcd4c81edef0ae4df71ac97e704a188a22de5bae5446ef0b207800c30f`
+**pt-BR review revision:** `1623298ad642aa1e7f536a220ba3bb1cce20fe15a1f37ece5fd2d89e20720be5`
 
 ### English
 
@@ -6039,11 +6513,19 @@ Somente Windows/runtime-22 falhou por download transitório. Como tentar essa va
 <!-- certification-coach-question:actions-060:ebfb5a323c7d4095b98b4bb541fd55b4a93be56c6790568b1515030d4a83f15a -->
 ## Question 60: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-060`
 
 **Content revision:** `ebfb5a323c7d4095b98b4bb541fd55b4a93be56c6790568b1515030d4a83f15a`
+
+**en review revision:** `c0032d0d672dd349f295be112e4a36711d03b57d17e7d603735793ff1ef2e3b6`
+**es review revision:** `df680fabf4d464eeb0c85bd0c69088db972cedd00c2589cdcb3df443be4f6206`
+**pt-BR review revision:** `a506e9b2b1c7ad91953b023dbeff2d2133286aea7f02d32d0fcb634786d99a15`
 
 ### English
 
@@ -6141,11 +6623,19 @@ main avançou desde a falha de ontem. Ao reexecutar aquele workflow, qual revis�
 <!-- certification-coach-question:actions-061:22f84726e0a8470426d0d807b2db3a9380f2a61eff638b6123785e24a1935f0b -->
 ## Question 61: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-061`
 
 **Content revision:** `22f84726e0a8470426d0d807b2db3a9380f2a61eff638b6123785e24a1935f0b`
+
+**en review revision:** `2be921798f5c9327f8cbeb9c63184a795039e67e0f6f728da12b4f28728db2d6`
+**es review revision:** `a60590107d40c25b9a9bf378a079c64564946b6fa1f9e4b670345627d3fc5d45`
+**pt-BR review revision:** `985e58ef4a57c97e01485ed66e09fef8028ca6933844e68753e1f913a73e3ce9`
 
 ### English
 
@@ -6243,11 +6733,19 @@ Um administrador reexecuta um workflow iniciado por um colaborador. Quais privil
 <!-- certification-coach-question:actions-062:1b6c5733a5b03a4c1210e28243e7bb7263935e08bc6181750555735ec133dab6 -->
 ## Question 62: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-062`
 
 **Content revision:** `1b6c5733a5b03a4c1210e28243e7bb7263935e08bc6181750555735ec133dab6`
+
+**en review revision:** `6f23bc91393481667790748072b8623e16ffc161229fb1796d79e1e093718682`
+**es review revision:** `c90f73becf56133be153b66319aa5b01a7e9edfe50b13eee252c9cf9e54aa01a`
+**pt-BR review revision:** `664e5e1c547f7640e68e64c78978100523506555d50a91d13ebd8cf553610e71`
 
 ### English
 
@@ -6345,11 +6843,19 @@ Uma verificação obrigatória fica pendente: paths exclui todos os arquivos da 
 <!-- certification-coach-question:actions-063:cf9fbf93f0556df1596bd6f3e73e79655af27a1c3c50faa78c5fe3ba17363c70 -->
 ## Question 63: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-063`
 
 **Content revision:** `cf9fbf93f0556df1596bd6f3e73e79655af27a1c3c50faa78c5fe3ba17363c70`
+
+**en review revision:** `4250c42cca45f63b44f5bd27fea4c094b72362edf2bfd16f4f34a96be9174828`
+**es review revision:** `b2f6365a4daa6bf56230ae9a23861212910a050c38feb7ef65d60d5f082d1a60`
+**pt-BR review revision:** `6cad35103a3852e43dbee7108098cebc5ea7d2e1ad5ef9a5e010aa6997e7ed18`
 
 ### English
 
@@ -6447,11 +6953,19 @@ Um workflow manual novo existe só numa branch de funcionalidade e não aparece 
 <!-- certification-coach-question:actions-064:4af5ba4d8c4e5156f3ea318cb4bd1dd5cbe27fc72ccf099007025dbb4ff0a33a -->
 ## Question 64: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-064`
 
 **Content revision:** `4af5ba4d8c4e5156f3ea318cb4bd1dd5cbe27fc72ccf099007025dbb4ff0a33a`
+
+**en review revision:** `87fcce7713d3a10740ea4a441067437d585abe2a6eada338094f8259b3a7022c`
+**es review revision:** `5f085eec3948ad4e73708c4c904858c688ecfc89825ef5b25598e43d4c0d7998`
+**pt-BR review revision:** `fa4b0a5b87e0d689fae2acad0ff365a593fdeab4f50942a56bc3e16c43592c01`
 
 ### English
 
@@ -6549,11 +7063,19 @@ Um workflow cron às vezes começa atrasado sob alta carga, perto da hora cheia.
 <!-- certification-coach-question:actions-065:9fbe143b0428a5a984136bb0e214c4e5c1c53b0b1d095bbcbdf31df85dc5297f -->
 ## Question 65: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-065`
 
 **Content revision:** `9fbe143b0428a5a984136bb0e214c4e5c1c53b0b1d095bbcbdf31df85dc5297f`
+
+**en review revision:** `4d0ab9f141ead2a54ec21fd9696f23a1df0aec813d42b01ced3c96bc658794a4`
+**es review revision:** `ec6ae35e1cc1ae876133e88884c09a44723ae64b35066c8a2a79358c9e167bbe`
+**pt-BR review revision:** `7f64170dd162eb2105304c1d3badc4d480789cb6d95b6148f26b20493daad33a`
 
 ### English
 
@@ -6651,11 +7173,19 @@ O workflow agendado de um repositório público parou após longa inatividade. Q
 <!-- certification-coach-question:actions-066:f30aada729f29c1d08d97e61d3efa2cb914f27a057f847d8e2bbaa8ba1914cc4 -->
 ## Question 66: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-066`
 
 **Content revision:** `f30aada729f29c1d08d97e61d3efa2cb914f27a057f847d8e2bbaa8ba1914cc4`
+
+**en review revision:** `c6612fbebcb749303d5d9eb853a441d17d5b82202aa710235b84d3e56114f969`
+**es review revision:** `07f5deff1b2b509a2675fb5ef7b96534a37722ba7f341653809468bb5eacfe8d`
+**pt-BR review revision:** `7bd727ef49873679829ce172a5a593562f0de1e8079c6197f1038ffce76e915c`
 
 ### English
 
@@ -6753,11 +7283,19 @@ Após falha nos testes, o envio do relatório foi ignorado. Qual é a correção
 <!-- certification-coach-question:actions-067:7b2206c8ec35b176d5e2fde0b48eecc24d7256d6827221762f3b8bafc7f97d77 -->
 ## Question 67: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-067`
 
 **Content revision:** `7b2206c8ec35b176d5e2fde0b48eecc24d7256d6827221762f3b8bafc7f97d77`
+
+**en review revision:** `d56ba0c2f18a224c19594b8234ebb93111659504a79fae0b7ff2cc61cc97e8bf`
+**es review revision:** `4e0388246414a53712ee18b963c6899150214beb8d46de4dd5b76838b17ba7eb`
+**pt-BR review revision:** `52f38226d97f49f40f9d349336fc9882d1506fb0a1fa776a58bb307f0420cc3b`
 
 ### English
 
@@ -6855,11 +7393,19 @@ Um desenvolvedor procura o relatório enviado por uma execução concluída, nã
 <!-- certification-coach-question:actions-068:f9108f59a9eeafdb1646095a4e423dc46a9e01cf37b03c04c7de0e2855633d4c -->
 ## Question 68: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-068`
 
 **Content revision:** `f9108f59a9eeafdb1646095a4e423dc46a9e01cf37b03c04c7de0e2855633d4c`
+
+**en review revision:** `bac47d33ab054dccfec5b300c7fdbfa52a275ec7b91fa3578da80d04f40ac9e6`
+**es review revision:** `1366ab9e0f074408d8ee40d8752dc6158d8f325c73dd250de3a77e4bafb24003`
+**pt-BR review revision:** `d80cf929fa3cc852d403a4d7ba87e5c1cb974e4d6994b4b0b7b60de86576eb8a`
 
 ### English
 
@@ -6957,11 +7503,19 @@ Um script conhece repositório e run ID e precisa enumerar artefatos por REST. Q
 <!-- certification-coach-question:actions-069:c26966aeb763b92b98a7e196c21b1fe5afb1dcceaa10c95d02a22c8975a40da7 -->
 ## Question 69: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-069`
 
 **Content revision:** `c26966aeb763b92b98a7e196c21b1fe5afb1dcceaa10c95d02a22c8975a40da7`
+
+**en review revision:** `b8003a3d3b6ca549789b63c0bd68737505c71dc833aa79e688392d09ba154ef6`
+**es review revision:** `fb259601308d2413bedae8a9f3dd634259f7c24ec6b3a4e5fed3a0eb85060175`
+**pt-BR review revision:** `22c3e3dcbd7c977287b53b526e3ca0ea76ff40a7cff72f36c45287c719401e6e`
 
 ### English
 
@@ -7059,11 +7613,19 @@ Um artefato ultrapassou sua retenção. Notas antigas guardam o nome, mas o down
 <!-- certification-coach-question:actions-070:703016713566b5b50ec9d70c47b2ab2473de45470bdd529e6466c126a37ca0a1 -->
 ## Question 70: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-070`
 
 **Content revision:** `703016713566b5b50ec9d70c47b2ab2473de45470bdd529e6466c126a37ca0a1`
+
+**en review revision:** `4659c129f9640813ccb43354e48eee9ddfb1dc85c0b0d39a6b6a2d3212fcf047`
+**es review revision:** `a88412ae7e11038debac86b2d531fe05c0e4f34b7d3b7c7562f218cd29786e73`
+**pt-BR review revision:** `d825bef65decb20516ab33063cafb964ab0e18bdab9be708306c53c30adfb980`
 
 ### English
 
@@ -7161,11 +7723,19 @@ Logs foram baixados depois de reexecutar somente um job. Faltam os jobs original
 <!-- certification-coach-question:actions-071:809d94a3f2c26c6f85471b3578cc961b7fb568f0040c6f1b1324c73ee2dbd118 -->
 ## Question 71: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-071`
 
 **Content revision:** `809d94a3f2c26c6f85471b3578cc961b7fb568f0040c6f1b1324c73ee2dbd118`
+
+**en review revision:** `fb2b1aac7fab62fbd3b26f568ac0bd6af0e50951b89ae85ab88608346c187baf`
+**es review revision:** `9802bc30dacbf5e39b15e6a74004a46166316e3f20391baa8494ad03af186bb9`
+**pt-BR review revision:** `32833e7ee89e57c4a8186697c3ea79f6f6ff6827c1f41acc3f3086c9ca41a572`
 
 ### English
 
@@ -7263,11 +7833,19 @@ A busca não encontra uma mensagem esperada em uma etapa recolhida. Qual comport
 <!-- certification-coach-question:actions-072:be69724da9afc70089f759b1c3f36337be11416d735aafda995271be1e5ceac2 -->
 ## Question 72: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-072`
 
 **Content revision:** `be69724da9afc70089f759b1c3f36337be11416d735aafda995271be1e5ceac2`
+
+**en review revision:** `cf5ceb8378ce3265bd1088355f319209b90989c813c5d0994f7f07fa8a2698fd`
+**es review revision:** `3c07e1dd9b4f324e754261814778961337d20075b1c078112c6742a92b690626`
+**pt-BR review revision:** `92fb4e111a086a4c911ba683f6ca1b9d1053cd6df390e17a7d2ff8b4c575c07f`
 
 ### English
 
@@ -7365,11 +7943,19 @@ Linux passa, mas Windows falha por comando ausente. Qual evidência identifica o
 <!-- certification-coach-question:actions-073:6bcb7ab112aea779c7e4c2c61070500e2c703e729780110c8aada2fc47b2968b -->
 ## Question 73: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-073`
 
 **Content revision:** `6bcb7ab112aea779c7e4c2c61070500e2c703e729780110c8aada2fc47b2968b`
+
+**en review revision:** `68d8548a04a52243caf6ad3d04ce8e10def651ab64b50aa49c9a5a9427d57865`
+**es review revision:** `40ed85b3f2c798fd6c4eb992d547a5ff0f77455383affa9dfd283600e2a90416`
+**pt-BR review revision:** `c3c14e630a8e7164ce6e49488d0c328c1d8449c4ee15a84d128d6879eb0c94e8`
 
 ### English
 
@@ -7467,11 +8053,19 @@ Um template inicial recebeu correção central, mas o workflow copiado meses atr
 <!-- certification-coach-question:actions-074:2030c0faea3615733adc1864fc1d448c4c67776a703d99421a967137f07621be -->
 ## Question 74: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-074`
 
 **Content revision:** `2030c0faea3615733adc1864fc1d448c4c67776a703d99421a967137f07621be`
+
+**en review revision:** `a07a5d9eb6697b7b4f685ac0ff55748a4d879293d7fc99a9aa9c2d46b80ddd80`
+**es review revision:** `c643fadf16c2ae87820c0e41afa4df319a45a96a17d7eae25394e30ea9dc64af`
+**pt-BR review revision:** `cd54802c50ebb37ff8f358a20cc5f72126c832e6b08b28296f3d7d6457288c8d`
 
 ### English
 
@@ -7569,11 +8163,19 @@ São necessários vários jobs mantidos centralmente, com runners distintos para
 <!-- certification-coach-question:actions-075:d5100d83187713df16371aac2a4867235dd509f66e3210a120502dbb9d80f4d7 -->
 ## Question 75: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-075`
 
 **Content revision:** `d5100d83187713df16371aac2a4867235dd509f66e3210a120502dbb9d80f4d7`
+
+**en review revision:** `be6ebb1f73b15c27b59e89a05d2d07aa3408b95c59d7a012127207b52b23e317`
+**es review revision:** `8f44e735e17e886648baee2b055f238ddd2013b45335e9926c7e00e5d78dcf3f`
+**pt-BR review revision:** `5666c1f6303add3953f0ebcae3055e446b7b782d2713817203849eeb12f684fe`
 
 ### English
 
@@ -7671,11 +8273,19 @@ Um desenvolvedor não vê templates de .github privado para um repositório priv
 <!-- certification-coach-question:actions-076:4919697278da14259ac48a59d7b0d1798ef76c5b6c3af47b37cdd3dc6e466693 -->
 ## Question 76: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-076`
 
 **Content revision:** `4919697278da14259ac48a59d7b0d1798ef76c5b6c3af47b37cdd3dc6e466693`
+
+**en review revision:** `7d19e9b0fb270e9d68903f7b1f9c77869d4c83c1806ad997996db9903a8b8463`
+**es review revision:** `5df4f0873aaad614f61d7362d9f54b96d165aafc8b40d3ef1b97bccaafe00471`
+**pt-BR review revision:** `da5d54739e374976b9e048f5a4a708758ddc03a9684a43dbd60428cd84b2f0f4`
 
 ### English
 
@@ -7773,11 +8383,19 @@ Se deben detener ejecuciones automáticas temporalmente conservando el archivo p
 <!-- certification-coach-question:actions-077:df05c79449673d5e0e496cdb96fb792a2de3d5a54374ddbe5f45654e1e1a028e -->
 ## Question 77: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-077`
 
 **Content revision:** `df05c79449673d5e0e496cdb96fb792a2de3d5a54374ddbe5f45654e1e1a028e`
+
+**en review revision:** `5e4b6afc3f16bfb96c46489264ee4f80413c03daedab7a7cae4d99a1e9827b40`
+**es review revision:** `35ccb15152c71af646908fe0f7078eacbcc695b608e9e33a21d4c34d17dc40cb`
+**pt-BR review revision:** `14a495f6e598aa27f6faa4feeb9095ee3a46e3eb55b3361d26092613f3fa9eb7`
 
 ### English
 
@@ -7875,11 +8493,19 @@ Uma execução antiga foi excluída, mas o YAML continua ativo. O que ocorre ap�
 <!-- certification-coach-question:actions-078:8b6b72347484b6fc13b3134cd3192812429655161589a2f05aafa5c606ae0e40 -->
 ## Question 78: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-078`
 
 **Content revision:** `8b6b72347484b6fc13b3134cd3192812429655161589a2f05aafa5c606ae0e40`
+
+**en review revision:** `5b287eb870df91394cbc27ee6572bb3895a1164e9468359f5166921dfe138026`
+**es review revision:** `32de9629a2e0cbe8bec6f0b8f6f5dee240ce1fe4fad193cb9581cf6493f85e6b`
+**pt-BR review revision:** `9fb6959b9b65b3780e424b8bcdf6363e4958c995eb4e7356977fed0529aaea8a`
 
 ### English
 
@@ -7977,11 +8603,19 @@ Uma chamada falha antes do runner porque attempts é texto e workflow\_call decl
 <!-- certification-coach-question:actions-079:42bc29b794207610ede1226f77ccb37448a109119ce4b9a2617d871610764ba5 -->
 ## Question 79: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-079`
 
 **Content revision:** `42bc29b794207610ede1226f77ccb37448a109119ce4b9a2617d871610764ba5`
+
+**en review revision:** `6056ec5892a21be2cea4e5b701e28ac25980ec509c27d9b1bd38e2ae4e83c71f`
+**es review revision:** `4ec9169cc5d42566af4d3c59da85799c6d6afe546c16ebba8f58163ef9dd6db1`
+**pt-BR review revision:** `2a335d360305e488439a60fc58842973118d54ecfb8292f1e14e26a81de13e87`
 
 ### English
 
@@ -8079,11 +8713,19 @@ deploy declara needs: build. build falha e deploy aparece ignorado, sem logs. O 
 <!-- certification-coach-question:actions-080:1cbb79f45ef3173ee075f6e4dadbdd318f17e85cc86c283e7c10c85956b2ac0b -->
 ## Question 80: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-080`
 
 **Content revision:** `1cbb79f45ef3173ee075f6e4dadbdd318f17e85cc86c283e7c10c85956b2ac0b`
+
+**en review revision:** `c52c749b3b899bb8df83f47277308b8b3ef4e3c9349d4e896bbcc0ac0048437a`
+**es review revision:** `e969f5483b816e0a52bc795c50a56c9c131034866e15599c9dfdee033b07106a`
+**pt-BR review revision:** `f610e2cf54ba853c8aeee72b430789ba442013ec23620c32de9f3f810aa965f6`
 
 ### English
 
@@ -8181,11 +8823,19 @@ Variantes da matriz são canceladas após falhar uma variante obrigatória, sem 
 <!-- certification-coach-question:actions-081:32673ea227e35da41083d4fa7faf167b6c428bbe255166ae5b3f0e01a1109eed -->
 ## Question 81: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-081`
 
 **Content revision:** `32673ea227e35da41083d4fa7faf167b6c428bbe255166ae5b3f0e01a1109eed`
+
+**en review revision:** `22ec3cccecfe3b0afda80078e8ae4a4548ff859c66fad8e2b884ca8e5f509cd5`
+**es review revision:** `19b75c8baa28c08f753b49c083cfec1ce614ea4c761893480b2db39157c27bb5`
+**pt-BR review revision:** `0cea0089020b3f8f338aa178a53dccc0c1931048ebefaa3fdc8a40f7d49d2393`
 
 ### English
 
@@ -8283,11 +8933,19 @@ if compara github.ref com refs/heads/main, mas pull\_request informa referência
 <!-- certification-coach-question:actions-082:3fa4bbf05ce06850da1a9c492e3f944d225e0a317a109096a48ae97893cac846 -->
 ## Question 82: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-082`
 
 **Content revision:** `3fa4bbf05ce06850da1a9c492e3f944d225e0a317a109096a48ae97893cac846`
+
+**en review revision:** `3f03e0b2c390f22ff56318dd60841e9384882f37f8995147381507521e659704`
+**es review revision:** `33a9622c2b4f466bb02cd72af9b8d12643dce8fcb1e53a9c559a4ebd22baa27c`
+**pt-BR review revision:** `dca570d6f4aa3dbeab85132e1085c7d2946e7f1a34eff28951f59ddfb733b06a`
 
 ### English
 
@@ -8385,11 +9043,19 @@ Uma etapa lê steps.Compile.outputs.binary, mas a produtora tem somente name: Co
 <!-- certification-coach-question:actions-083:0d3d9fc09cd556e19402887f43afc7c28c908890c8e6b9474bad99ab08c30d96 -->
 ## Question 83: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-083`
 
 **Content revision:** `0d3d9fc09cd556e19402887f43afc7c28c908890c8e6b9474bad99ab08c30d96`
+
+**en review revision:** `51eda4b3e7d908447025dde311fbb254d3ba8662b26ed56b050a46a0ae6e6125`
+**es review revision:** `9b709e989be4648b5383526c51344ff188356b3c54177d04c3c44d47ca072897`
+**pt-BR review revision:** `8cb8e1f788fdec35252b2f1b8bd4d13d1d670d4afdcdc11ebcd45e7f7f8f3361`
 
 ### English
 
@@ -8487,11 +9153,19 @@ Um job escreve um arquivo e outro, em runner hospedado diferente, não o encontr
 <!-- certification-coach-question:actions-084:df2b526c49a4d21812d5f7c7e240c4656cfcc788b6bfb65dc05bf9cd4acbba55 -->
 ## Question 84: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-084`
 
 **Content revision:** `df2b526c49a4d21812d5f7c7e240c4656cfcc788b6bfb65dc05bf9cd4acbba55`
+
+**en review revision:** `854dc1d836f0bb426dc3917d919fc7f4a9e9a0d5574a6b4c2da87e070e3016ce`
+**es review revision:** `72cd664b056540ef66a43452d08d8c36af287758dc27805c67aa6bafd9f31c31`
+**pt-BR review revision:** `dde96e5a0e6678368a76ee241db73fe282087a8111e1a0fd4778a0b5f9075b36`
 
 ### English
 
@@ -8589,11 +9263,19 @@ Se necesita un artefacto de otra ejecución, pero solo se proporcionó su nombre
 <!-- certification-coach-question:actions-085:10a31b4b90d15df1120cc23bc230030940c6c16e13dcbf128898246aef50ae0e -->
 ## Question 85: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-085`
 
 **Content revision:** `10a31b4b90d15df1120cc23bc230030940c6c16e13dcbf128898246aef50ae0e`
+
+**en review revision:** `c0f0797bf953e67b86b6bd19475902cbedcf73cee11257c50d048555c202451c`
+**es review revision:** `ab00446cff65fa82edccf28152e3b3e6db7313728c4100294f566ba8dcca3047`
+**pt-BR review revision:** `f62e2f47c221850a6c2554c11b5c38efce196f5d50baf7f6ce97810d727c6946`
 
 ### English
 
@@ -8691,11 +9373,19 @@ O cache restaurou rapidamente por restore-keys, mas a instalação baixou alguns
 <!-- certification-coach-question:actions-086:b040d9ffc10c09ca3d4044df2e5261f4e4853cbe9750fd3dab9702b14de8a8d4 -->
 ## Question 86: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-086`
 
 **Content revision:** `b040d9ffc10c09ca3d4044df2e5261f4e4853cbe9750fd3dab9702b14de8a8d4`
+
+**en review revision:** `86eb3b7a2b2a528d848936c612a7f1406f201762c05409d8a2cedd2b894b9c56`
+**es review revision:** `a6786d29a8b8164ed3df0b1e58b01d035d8802a25734472954e58d070b8be8ae`
+**pt-BR review revision:** `7c797f2e802d912fd1e3f865c4b1ed5a09b94a94f91ddb20d06538ddcde52ada`
 
 ### English
 
@@ -8793,11 +9483,19 @@ O caminho do repositório de um workflow reutilizável privado mudou. Chamadores
 <!-- certification-coach-question:actions-087:e4e4cda4a609034cb563b6d0dfae290c71affaf73aedb4bb2da4b08029026249 -->
 ## Question 87: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-087`
 
 **Content revision:** `e4e4cda4a609034cb563b6d0dfae290c71affaf73aedb4bb2da4b08029026249`
+
+**en review revision:** `405aa75597e2213ecb00fe9ba164c685b4db8d089d7759de3f6ac179f221b2c4`
+**es review revision:** `33db71faf6725a2dd742e6387f644e3dbe35acc53e01830f27f14978ced368e6`
+**pt-BR review revision:** `33ebd8577a23b5c6b3adc8a442b181c8c1425d139ff33f631b573f784ccd5897`
 
 ### English
 
@@ -8895,11 +9593,19 @@ Um consumidor colocou uses: org/platform/.github/workflows/check.yml@v2 em steps
 <!-- certification-coach-question:actions-088:c2fdce3883de34b38c88517561d05689b9f24cfa76adfc8525cee2b297bb4d8b -->
 ## Question 88: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-088`
 
 **Content revision:** `c2fdce3883de34b38c88517561d05689b9f24cfa76adfc8525cee2b297bb4d8b`
+
+**en review revision:** `63b99d0ba26958688d6f2682a7ff802166c3a476254555a58e55b84d774125dc`
+**es review revision:** `189a1c35164e6bf2a80ab121fdb8dcc41c6290859726e171baa2bab77d4d9589`
+**pt-BR review revision:** `a45070d511158bf18d5386289c3df7300020f473834bc0d0c3f944f7a76915ce`
 
 ### English
 
@@ -8997,11 +9703,19 @@ Um workflow define env com &amp;test\_env e depois env: \*test\_env. Como interp
 <!-- certification-coach-question:actions-089:9f32f76124f361d2c1bb833416a9d8e3cedd7fab7245cb6050d87ca73c9d396d -->
 ## Question 89: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-089`
 
 **Content revision:** `9f32f76124f361d2c1bb833416a9d8e3cedd7fab7245cb6050d87ca73c9d396d`
+
+**en review revision:** `409fd43c69a85751145da73b12675272de7a79200a03ca210ff87e43d0d4e13e`
+**es review revision:** `286e57208513d5acc7431272b669eb1c1c03e0b25b4d8c1aba291e62386b96d6`
+**pt-BR review revision:** `0ee540bcdc7bd77307cca18ddbc2cafbb8644cf415a422636f5f2531a77900d8`
 
 ### English
 
@@ -9099,11 +9813,19 @@ Uma linha distante no log contém evidência útil. Como compartilhá-la para na
 <!-- certification-coach-question:actions-090:5086ba3e92b2aeacfb3a85d75550f182deccf942dc309ad98f8580bd2bcad400 -->
 ## Question 90: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-090`
 
 **Content revision:** `5086ba3e92b2aeacfb3a85d75550f182deccf942dc309ad98f8580bd2bcad400`
+
+**en review revision:** `4c8417056ae14789bf263fa0c3679a7207964580b6154b280f9c50ac72cfe53a`
+**es review revision:** `d5a20ca928891669654929e62c73447b20f017939ce24651f93d2df4ef79c6f8`
+**pt-BR review revision:** `023b5cd721ca958bac549f1b049f8274a0f9edf5b9225831208df04894d2f0d1`
 
 ### English
 
@@ -9201,11 +9923,19 @@ on: \[push, pull\_request\] produz duas execuções ao atualizar a branch de uma
 <!-- certification-coach-question:actions-091:020cd6d13abdb48684e6be6a6fd9c2f06007c76b887a36841448f1a44d21c925 -->
 ## Question 91: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-091`
 
 **Content revision:** `020cd6d13abdb48684e6be6a6fd9c2f06007c76b887a36841448f1a44d21c925`
+
+**en review revision:** `6ebf7c1fa33f450e105fca045e6dda6d3134b0c437b0c9231243e1b6542f70a0`
+**es review revision:** `ad17c7a1c4aa8913dbb1f320054480f9362fc42b06bce49d8c3c6f3ca7a87032`
+**pt-BR review revision:** `094b37c960630a2e8e90eb93620c3f048063f19082545a25498e19ce1fd8ead1`
 
 ### English
 
@@ -9303,11 +10033,19 @@ Uma implantação workflow\_run com types: \[completed\] começa mesmo após bui
 <!-- certification-coach-question:actions-092:50369399109d1ca72e007d629432bef5ad3c2df6d1b90c906e7a276e8e2668e2 -->
 ## Question 92: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-092`
 
 **Content revision:** `50369399109d1ca72e007d629432bef5ad3c2df6d1b90c906e7a276e8e2668e2`
+
+**en review revision:** `1470937b4b0119c4bc69e5e51e6ed522e4d118c4d3a1e337d76e35d615689b3b`
+**es review revision:** `b9bff8bec996de33df7b127611701bf8e8efcb59d5f23fef34d6b46c3fc48581`
+**pt-BR review revision:** `8216fb0e07b070eb3386e85413fdf01a08c538b609fd493ac13789040c3d9677`
 
 ### English
 
@@ -9405,11 +10143,19 @@ Um push feito com GITHUB\_TOKEN não dispara outro workflow push. Excluindo disp
 <!-- certification-coach-question:actions-093:a1220364ab09d90e9c7aa5f9efd3b5d10cbf44b01183b9a308239f885b46a042 -->
 ## Question 93: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-093`
 
 **Content revision:** `a1220364ab09d90e9c7aa5f9efd3b5d10cbf44b01183b9a308239f885b46a042`
+
+**en review revision:** `9df667d4a1e4d90cb8402e95f7ed70e2addab4fa7f780af31fe0252f78f3ffbd`
+**es review revision:** `19ba565dd37abf093a9647ee01dc4ee2456fdd5dec6c28964cb2a5637e8e46ae`
+**pt-BR review revision:** `287c008581f6cadcbb8526a25b3b988e84ea6b03c232a6981e8449babc1dca29`
 
 ### English
 
@@ -9507,11 +10253,19 @@ Um workflow está desabilitado e não permite reexecutar um job histórico. Qual
 <!-- certification-coach-question:actions-094:d766cfeaacafac3bc604b19aefcc194ad071b6116e870e6573094d3498bffef0 -->
 ## Question 94: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-094`
 
 **Content revision:** `d766cfeaacafac3bc604b19aefcc194ad071b6116e870e6573094d3498bffef0`
+
+**en review revision:** `8e99f93f2a39322defad84ae6fad45b9ce1806c365762b7639054663e2cda0b8`
+**es review revision:** `b22bdf1acffcf531e0b12b94a3948818fa56075241cfdfcc7a74259a767a2c77`
+**pt-BR review revision:** `03e67f93385a4e456995a3815beb2b2c1dd24d17497fd8319a09d4fcbaf7b316`
 
 ### English
 
@@ -9609,11 +10363,19 @@ Um workflow reutilizável é referenciado por branch móvel. Ao reexecutar só u
 <!-- certification-coach-question:actions-095:36e589a829d1d50a2b7c29fa13c622dd437562309fb8bf26e6d94ad41146bcab -->
 ## Question 95: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-095`
 
 **Content revision:** `36e589a829d1d50a2b7c29fa13c622dd437562309fb8bf26e6d94ad41146bcab`
+
+**en review revision:** `7cecb66da527dafa071ab101c4f8629659b5217150fb3a3907268635a2018f13`
+**es review revision:** `118bc96f475635354c361bbaad9776c88b37ac0136daea5dc4b8c654fd6c4cbf`
+**pt-BR review revision:** `aca579bc22b9bcdbf23f7c78ef865b65e62441652038dd44172c355e517971f7`
 
 ### English
 
@@ -9711,11 +10473,19 @@ O download de um artefato avisa sobre digest diferente. O que concluir antes de 
 <!-- certification-coach-question:actions-096:76704359e9e75bb4c61af873dc21c9ea024d7af1b33e2ed160f44cc2c6316999 -->
 ## Question 96: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-096`
 
 **Content revision:** `76704359e9e75bb4c61af873dc21c9ea024d7af1b33e2ed160f44cc2c6316999`
+
+**en review revision:** `1bbc4a936974ad0fe8cd7d6337789debb7f0de5d07d1d02385e2b05b0969d9f7`
+**es review revision:** `1609f89212a429111aef89eb7c31cc80b01026ec671d4c5d09c9d8d9699f1368`
+**pt-BR review revision:** `cb1d70e94206fbb7e4349d0dfcc8f6fe7027266ba23168fab78563a68c0f6766`
 
 ### English
 
@@ -9813,11 +10583,19 @@ Uma equipe precisa baixar todos os logs de uma execução por REST. Qual recurso
 <!-- certification-coach-question:actions-097:b557910882457155837d238262f7f94952b3d1a511a221b3df634f19dcb4d135 -->
 ## Question 97: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-097`
 
 **Content revision:** `b557910882457155837d238262f7f94952b3d1a511a221b3df634f19dcb4d135`
+
+**en review revision:** `bbcd6731c2916f97efda80518a3349701d5097cab2c2e5561eb0f1343a142dc1`
+**es review revision:** `c8f46f2c733b82ff53051ee50e0fd76b18e657aa895bc707cf964590cd46cb9f`
+**pt-BR review revision:** `9d57746cc3847838adec2f2bc26574f46ffb8ae44cca30079dacd5c6b11459b7`
 
 ### English
 
@@ -9915,11 +10693,19 @@ Um template usa branches: \[$default-branch\]. O destino tem trunk como branch p
 <!-- certification-coach-question:actions-098:0bcb3b2657e13593ab07b144083c1abfe7dffe050a3430ba5b82159b353c9db7 -->
 ## Question 98: Consume and troubleshoot workflows
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-098`
 
 **Content revision:** `0bcb3b2657e13593ab07b144083c1abfe7dffe050a3430ba5b82159b353c9db7`
+
+**en review revision:** `90e229bc8b17c41e85a3254d9abc845585135f80b1367e9f43581b9f9079fe6a`
+**es review revision:** `cf606e237a8cb308253d0dbf5298febda47585714897294128fa9038b87a220e`
+**pt-BR review revision:** `ba8be5cac388404c5c8d1db5284a9b1237e632ecf31598cbb73bf2130593633b`
 
 ### English
 
@@ -10017,11 +10803,19 @@ Variantes falham somente com runtime=22, independentemente do sistema operaciona
 <!-- certification-coach-question:actions-099:deb75f16f2abb6bbffc53706eefc03cbb0fc40fa4e964b91b698d4dc7fefeadb -->
 ## Question 99: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-099`
 
 **Content revision:** `deb75f16f2abb6bbffc53706eefc03cbb0fc40fa4e964b91b698d4dc7fefeadb`
+
+**en review revision:** `17c2419753e03c26e5322155c9feadb06d892fe9a6dfb8bcb00925e2756a5e67`
+**es review revision:** `646f2931f92b2771477652bd1035d981ab86bec6d6c030576569ac2aa022fbed`
+**pt-BR review revision:** `b03477ff7416c64ed2363068d548f7b4fbb14338cc3c4f820d6efef578cce4a7`
 
 ### English
 
@@ -10119,11 +10913,19 @@ Uma ação JavaScript pura deve chamar a API GitHub em Linux, Windows e macOS, s
 <!-- certification-coach-question:actions-100:b25fe2e3de2f59f73ba8c9a834a9f5ba0714cdd00fbcc8faadae7d8fe964ed18 -->
 ## Question 100: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-100`
 
 **Content revision:** `b25fe2e3de2f59f73ba8c9a834a9f5ba0714cdd00fbcc8faadae7d8fe964ed18`
+
+**en review revision:** `b74a8f2b8d8e3cd816682ffc843bb273b799c58ced17d3dda1a8f7a533a3e6a6`
+**es review revision:** `05156e1a757aa1dd2ca935d7c00e927b5203b5f8c3c7cfdda775ede4e441a845`
+**pt-BR review revision:** `5e1ce6ea5c8763657ff6c457f266845d49a306a4a4da526177ad96e4340ff164`
 
 ### English
 
@@ -10221,11 +11023,19 @@ Se necesita empaquetar un CLI Linux con bibliotecas precisas para evitar instala
 <!-- certification-coach-question:actions-101:103b0c763825805d09fa4078a3e8a3f0cfab8afbd9f0e6011f734d38f56842a1 -->
 ## Question 101: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-101`
 
 **Content revision:** `103b0c763825805d09fa4078a3e8a3f0cfab8afbd9f0e6011f734d38f56842a1`
+
+**en review revision:** `fa0ae5072e8884d11727925e6b81dedbd1908f03e9ee3ff95cf18d0cbd600325`
+**es review revision:** `4913d527f01a93d07c3db5e9c07bc903c9d7961b36da3b409dd80b21ee69a996`
+**pt-BR review revision:** `2b91f86a1f31c8a0aab15cad0e94f3abe7bcc5407bcc62e4d8fd18d3322acace`
 
 ### English
 
@@ -10323,11 +11133,19 @@ Repositórios repetem setup e lint em jobs existentes, sem runners ou jobs adici
 <!-- certification-coach-question:actions-102:85578b7955f87b06dce77112b0b2cdc24e266ac6f7b257b89b588530ac74948a -->
 ## Question 102: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-102`
 
 **Content revision:** `85578b7955f87b06dce77112b0b2cdc24e266ac6f7b257b89b588530ac74948a`
+
+**en review revision:** `78902069d43bc4c5c46e338e1e560a71c9a0b5fba4aac7c10e106bf55814e6b2`
+**es review revision:** `72d47f5c7fe34cb1ab39c4924adbb5ccfe809086122590ad55f32f0d43171b68`
+**pt-BR review revision:** `dde6c51df3c98a2826336a1577308ae7392e98c27c0cf9b05a833ad12eed6510`
 
 ### English
 
@@ -10425,11 +11243,19 @@ Uma ação tem código, mas GitHub não reconhece como executá-la. Qual arquivo
 <!-- certification-coach-question:actions-103:736326555407608f91c326f8fbfc9671a3c51ace2776ecee52e1fa8832c2eb7d -->
 ## Question 103: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-103`
 
 **Content revision:** `736326555407608f91c326f8fbfc9671a3c51ace2776ecee52e1fa8832c2eb7d`
+
+**en review revision:** `51681f3e83103687b425a6588fed645ae5cbccd94064e6a7e87447d3756996e9`
+**es review revision:** `e4e6e7baec3087b821a955c94adbb82ef188d2a9273f70655a2dd44597c48206`
+**pt-BR review revision:** `7150632316a6836633cc4f06696ece4342a04e05d50a64a6acfad1098ec29f53`
 
 ### English
 
@@ -10527,11 +11353,19 @@ O ponto de entrada compilado é dist/index.js. Quais metadados o executam no Nod
 <!-- certification-coach-question:actions-104:1bc53924b825c1709302bb9ca9b80bc71d336099de189528cf15424e56cb2d07 -->
 ## Question 104: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-104`
 
 **Content revision:** `1bc53924b825c1709302bb9ca9b80bc71d336099de189528cf15424e56cb2d07`
+
+**en review revision:** `0fe06898a4ee9c406d8ea57e339b4e96e9cd1f0811cf86aaf666a277a9dd8e10`
+**es review revision:** `95a2cc5a63720eb44c7b4e727796039aff9ed96fd3ff1425d8f368cf5d6fe21f`
+**pt-BR review revision:** `1a20fd991a8d8eee4f282c3c2b0760909acbcffa238e61e12583e1b3df7e5307`
 
 ### English
 
@@ -10629,11 +11463,19 @@ Uma ação funciona localmente, mas o consumidor recebe 'Cannot find module @act
 <!-- certification-coach-question:actions-105:c9a16977198c53805bce5f9dab000b87aa8330859ccb5f077b36b455ed3b0971 -->
 ## Question 105: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-105`
 
 **Content revision:** `c9a16977198c53805bce5f9dab000b87aa8330859ccb5f077b36b455ed3b0971`
+
+**en review revision:** `8bd5fad11741797093824a99c448819fdf167db51372cd993a1922a6f5a4541c`
+**es review revision:** `ecdb0e25f77ee49438505f4bb47c8935bbd2e3670385343293081591f5ce485d`
+**pt-BR review revision:** `fad20e6825acfed76bad867f4ffd85c237dd9e38fcb48ee3672e3e6581bc7a7f`
 
 ### English
 
@@ -10731,11 +11573,19 @@ Se quieren distribuir dependencias JavaScript sin incluir todo node\_modules en 
 <!-- certification-coach-question:actions-106:50c5b2fa1570339440d2f5ea22b7424b6b098cf11a54bf34c8011f9b5b8e49ef -->
 ## Question 106: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-106`
 
 **Content revision:** `50c5b2fa1570339440d2f5ea22b7424b6b098cf11a54bf34c8011f9b5b8e49ef`
+
+**en review revision:** `66ab59721a993bcff736fe4fc4bef2be3ed7d3b2402449ce157b8e52e1bbfd49`
+**es review revision:** `3e4c0fb464afba11dd79e4ba7fd39ca52e8397ed576a152e89eea7389dcede75`
+**pt-BR review revision:** `3bda7d7bfd2b4dd2cbdde843f60b77cda4fba04f1f0e1d217f985321bae7d423`
 
 ### English
 
@@ -10833,11 +11683,19 @@ endpoint tem required: true em action.yml, mas chamadas sem valor chegam ao cód
 <!-- certification-coach-question:actions-107:cb3bfa92d7d825c57bfe89f43f8c4589e702a95adef8a6998a0afa2e6bb460b9 -->
 ## Question 107: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-107`
 
 **Content revision:** `cb3bfa92d7d825c57bfe89f43f8c4589e702a95adef8a6998a0afa2e6bb460b9`
+
+**en review revision:** `ed0efab46f2f810d8c299515b0e4f78cd47d965fd7c4ab259be06f332ac64f90`
+**es review revision:** `6173fd5a27dda9ec6387ed23dfe7ca652a90f60262af43ed939a91505d66a637`
+**pt-BR review revision:** `a9c85c7f33cfa593284333237eb23697bd47f5a60636e79cd391357e2f029614`
 
 ### English
 
@@ -10935,11 +11793,19 @@ Uma ação composta lê INPUT\_TARGET vazio, embora o chamador passe with.target
 <!-- certification-coach-question:actions-108:fd8bbc9256c28ea37b25381816739127d14aebe28cfcfd0026058a4e09e986b0 -->
 ## Question 108: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-108`
 
 **Content revision:** `fd8bbc9256c28ea37b25381816739127d14aebe28cfcfd0026058a4e09e986b0`
+
+**en review revision:** `e72453e38fe167b6c1e7efde31f21562acc6bf44b25aec4aae2ed2783f207c60`
+**es review revision:** `6eb9f56b644bfd1447f341a966403bf7e99d165e38307440c742802e61be1630`
+**pt-BR review revision:** `b9ec8eca12fcc9b8feb1a90bd5fbab51e34ee393667640ee146b1291ac2fac10`
 
 ### English
 
@@ -11037,11 +11903,19 @@ Uma ação composta tem run: ./check.sh sem shell e falha na validação. Qual c
 <!-- certification-coach-question:actions-109:76be085115545dcccdc4d36d7f0b44c05dbd9e1cb49c70e6100791adcfd4c41c -->
 ## Question 109: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-109`
 
 **Content revision:** `76be085115545dcccdc4d36d7f0b44c05dbd9e1cb49c70e6100791adcfd4c41c`
+
+**en review revision:** `20ebd99eea82c4b10ae8b33cd1146988c0990308ce1579ab5ea8f81775faf3ce`
+**es review revision:** `921f90c4d1e0900d8842122fdd4ae290f3580349e5df268aebf6eb55c0d39c58`
+**pt-BR review revision:** `638618d959f97f32ba5b13155e75be458bd8339c5cdca6c08b71e4fe33ae4f33`
 
 ### English
 
@@ -11139,11 +12013,19 @@ Uma etapa interna emite outputs.digest e a ação composta promete digest ao cha
 <!-- certification-coach-question:actions-110:86a4788dd3a19dbc5605ad47c6a090e125f104f2eceebd84a36c15fd73b64072 -->
 ## Question 110: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-110`
 
 **Content revision:** `86a4788dd3a19dbc5605ad47c6a090e125f104f2eceebd84a36c15fd73b64072`
+
+**en review revision:** `658bc5ac5cc240ac484166b4900c0e68fbdb0ca180682ec58539ef32b7062e1c`
+**es review revision:** `a37a1ee1f32d1ecb615f7b6f138c193da108fbef36aef1fa72adb1f2fb5cb1f5`
+**pt-BR review revision:** `5d4ce6385717bd04462961e369f27585f514b1a48a71ba3d56c05cdeba974882`
 
 ### English
 
@@ -11241,11 +12123,19 @@ Uma ação composta inclui scripts próprios, mas o chamador pode usar outro dir
 <!-- certification-coach-question:actions-111:e77eeb9cbf370b57a546c1401e761aba8e8597e99a5ca3891a675c0324a1704f -->
 ## Question 111: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-111`
 
 **Content revision:** `e77eeb9cbf370b57a546c1401e761aba8e8597e99a5ca3891a675c0324a1704f`
+
+**en review revision:** `9db9bfe5851333245baf203d28fcc941654385eadf40f152b163cc653286bb14`
+**es review revision:** `30d4baf78bf0a09a8f216398201ae5a3ab03ef50ae58101151e6049118625eaf`
+**pt-BR review revision:** `f26b5f3ffbd0f1171132313c85f8e2ea0ff4090245b8229d4906f6ea2ab23981`
 
 ### English
 
@@ -11343,11 +12233,19 @@ Uma ação JavaScript detecta validação irrecuperável e deve informar o erro 
 <!-- certification-coach-question:actions-112:f23b746de1d08f9b80759f46bbc38a9213c0e37e74339002a6529765639ad27b -->
 ## Question 112: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-112`
 
 **Content revision:** `f23b746de1d08f9b80759f46bbc38a9213c0e37e74339002a6529765639ad27b`
+
+**en review revision:** `7edbbfa6a9424a902a35795c2ebe2c8c0eb39c328d5d7e2c83536b90ea50abb7`
+**es review revision:** `156740a435094ae536c0d0110074bd2b05e9e5b893a30b0f5e0cf91a13c48a16`
+**pt-BR review revision:** `0d1d5f7b2be4c12f23e7aa9ee5aa49b36d8cec4a93c4b9fbfe697c1edd396316`
 
 ### English
 
@@ -11445,11 +12343,19 @@ Uma ação deve anotar erro em app.js, linha 12, separadamente de decidir o cód
 <!-- certification-coach-question:actions-113:01be6ff310e3e1476049bca9faf4800a224bbaba8763e05439d56fc13d042bc0 -->
 ## Question 113: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-113`
 
 **Content revision:** `01be6ff310e3e1476049bca9faf4800a224bbaba8763e05439d56fc13d042bc0`
+
+**en review revision:** `6a7ea5df611c215334bf961f8a1ba2a6fc269c2ab7ba1e7a33a644153f1467d8`
+**es review revision:** `741d96cd361251d70a419445264ff5a05f1dcbc2ae8e9f49f42ba31fecdefd89`
+**pt-BR review revision:** `9ffa156acd18ce40bb8fafbc71b0a78239d9835096e6bf7f0141ebf7f7e1a931`
 
 ### English
 
@@ -11547,11 +12453,19 @@ A inicialização gera um identificador necessário à limpeza da mesma ação, 
 <!-- certification-coach-question:actions-114:dd9b998057791847e7a8f80a5c263a1b556923a654a62c23c275c661d926e16e -->
 ## Question 114: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-114`
 
 **Content revision:** `dd9b998057791847e7a8f80a5c263a1b556923a654a62c23c275c661d926e16e`
+
+**en review revision:** `d96bf6cb25d0c51ecfe8af06d8617eefe7694d7ec1180807573b97ce8f599743`
+**es review revision:** `0c14d501e65490bf6baf2e0f73e1a55852776cee44252e1d0e3c078e287b805e`
+**pt-BR review revision:** `0f12517a2ddc829f84a998f44876c1d4aefc7a89c63c26db37e6265ce194e826`
 
 ### English
 
@@ -11649,11 +12563,19 @@ Uma ação JavaScript deve encerrar sessão externa no fim do job mesmo se etapa
 <!-- certification-coach-question:actions-115:77a2fbe2e029f3e92546c7ae80f8a4f58aa3430cc9764771957b513f49e219aa -->
 ## Question 115: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-115`
 
 **Content revision:** `77a2fbe2e029f3e92546c7ae80f8a4f58aa3430cc9764771957b513f49e219aa`
+
+**en review revision:** `3e8b5866df466247e8728e2d03cd3bdeb01fb053a48bff5e3b1a270282426498`
+**es review revision:** `a3fb6b811f8c714cf62bdabc02deb7c681d15a65372ea470a19fc3ee5077fb78`
+**pt-BR review revision:** `cfac70c7b61d04a45ff0374f70bc0b8dbeaf60e476dc55c12bdd37468f3f162a`
 
 ### English
 
@@ -11751,11 +12673,19 @@ Uma ação Docker espera target como primeiro argumento do entrypoint. Como cone
 <!-- certification-coach-question:actions-116:b4c1b00a1b5540098c7806896a41e9418d70dd93f7a9f6f3b860a630cd0c0e7a -->
 ## Question 116: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-116`
 
 **Content revision:** `b4c1b00a1b5540098c7806896a41e9418d70dd93f7a9f6f3b860a630cd0c0e7a`
+
+**en review revision:** `b9d43b5587930417ea821f5574c623946e297cd725f1ae9f741f905193766e30`
+**es review revision:** `67f8295f2cc3885709428ac946c861f640ceff0064781d9177e02b61b6fcacc1`
+**pt-BR review revision:** `29149a966aa3b18338f8f8d8e511c30dcb9431296171cce3f45f99bbcbab42e1`
 
 ### English
 
@@ -11853,11 +12783,19 @@ Uma ação Docker declara image: Dockerfile. Em relação a qual localização e
 <!-- certification-coach-question:actions-117:ee425afca6fe21f9ae38b3ed7ffc62686d268ab6b3a839b8f16f84a47a3d019a -->
 ## Question 117: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-117`
 
 **Content revision:** `ee425afca6fe21f9ae38b3ed7ffc62686d268ab6b3a839b8f16f84a47a3d019a`
+
+**en review revision:** `610c6401c24cd0bf7c1682b6ddad4e2ae40104d82922bb156f76200bc2a1b8e0`
+**es review revision:** `94362f6da742f79a8b9996eda20bc84ba469b35b9b255b76757053cca87828a1`
+**pt-BR review revision:** `ad3d29bf19ce43bcf1e66f452440ba5c10662e60a048593d4718b3a54d470249`
 
 ### English
 
@@ -11955,11 +12893,19 @@ Uma ação Docker escreve relatório no GITHUB\_WORKSPACE montado. Por que isso 
 <!-- certification-coach-question:actions-118:981d774726023b44723c88f97b64cf608c6df1c493bafced64010f6f268f927a -->
 ## Question 118: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-118`
 
 **Content revision:** `981d774726023b44723c88f97b64cf608c6df1c493bafced64010f6f268f927a`
+
+**en review revision:** `904dcbce9c33d9006d7359106f545dadd000a2c7d5e36b9b07ecdea4fefda8c8`
+**es review revision:** `7ef0bdc149b2bed28f3792615945edcab75348221d79c61a89c1bed416228658`
+**pt-BR review revision:** `98e82499f67309cb6a039614f1df0391fcf6ec3cc835431c496c12a993c8ede2`
 
 ### English
 
@@ -12057,11 +13003,19 @@ Um Dockerfile define USER e depois não acessa GITHUB\_WORKSPACE. Qual restriç�
 <!-- certification-coach-question:actions-119:55bbb6b09508778fa63e9192875341eed2c843942bda11977e0506c21f4735cd -->
 ## Question 119: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-119`
 
 **Content revision:** `55bbb6b09508778fa63e9192875341eed2c843942bda11977e0506c21f4735cd`
+
+**en review revision:** `570862365f033ee2e89db937e60db0ce7eb2b22a03090777b3b74c7c99d3e903`
+**es review revision:** `447cd7fd44ecf5a3b55822c3efa7c227ddb9decd418702e3887887a5c2fc0769`
+**pt-BR review revision:** `5033f99bafa0729dcc947b1a4ee2085091f0b36744e0ae967d6640ab08648c70`
 
 ### English
 
@@ -12159,11 +13113,19 @@ Uma ação define runs.entrypoint e o Dockerfile também ENTRYPOINT. Qual preval
 <!-- certification-coach-question:actions-120:60d9b3f41827714f89f551d804b41e776d6b38141545d3f14abcacdb738400fd -->
 ## Question 120: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-120`
 
 **Content revision:** `60d9b3f41827714f89f551d804b41e776d6b38141545d3f14abcacdb738400fd`
+
+**en review revision:** `f0f730f7b4d0e95eff74a706c6684db6a63e472dea49a5e22b37dae0c15f97fd`
+**es review revision:** `f26200abd82cf295880dea4f8e33ef0e2eaa24157eed4688f032873ea50b662b`
+**pt-BR review revision:** `fe9b5d2f1b55fe7696ada2c2d339f7136fb2cf7d092e8ee3f0ffcea47c6bac84`
 
 ### English
 
@@ -12261,11 +13223,19 @@ O autor quer avisar quando a entrada obsoleta legacy-mode é fornecida. Qual cam
 <!-- certification-coach-question:actions-121:073c13ad86ae00a182582356e13663c9fc8685eca795e7d8487bc0d6e09756bf -->
 ## Question 121: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-121`
 
 **Content revision:** `073c13ad86ae00a182582356e13663c9fc8685eca795e7d8487bc0d6e09756bf`
+
+**en review revision:** `9cf6ef60e62fdd7b1c625168b3e25a0cf3e4218b972fa32bc3468bf0aea9b772`
+**es review revision:** `5c7af7fee9d1139e8f87c0a5293e95381163dd81f1c2f55c8fa28d5e5a20ca86`
+**pt-BR review revision:** `1704853b285ffd8e42a7e365523cefdbacee43cc92f84d23a4477563f5092114`
 
 ### English
 
@@ -12363,11 +13333,19 @@ O significado de uma entrada obrigatória muda de modo incompatível. Qual estra
 <!-- certification-coach-question:actions-122:3b7c912063dd5c139cf142a97da3dfb0decba2ef7f72ad52757af0a29bded2fe -->
 ## Question 122: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-122`
 
 **Content revision:** `3b7c912063dd5c139cf142a97da3dfb0decba2ef7f72ad52757af0a29bded2fe`
+
+**en review revision:** `a7278906231f7c6e54cc440778592711a3136c36d25e5d6e1a01be3564e3fba2`
+**es review revision:** `8a03188bae2cad4a27eaf4afd0ace6002497db8d6e821cf52eff32a9b678331e`
+**pt-BR review revision:** `c8e9adfc5454201075db3f0e7a69957ee1e31f841507fa25a014a49f24bb0000`
 
 ### English
 
@@ -12465,11 +13443,19 @@ O autor mantém tags principais móveis como v2 e tags completas por versão. O 
 <!-- certification-coach-question:actions-123:ad2e2fb304e71a351f95116775782e881dc7429f880e9b55f38464398bcb764b -->
 ## Question 123: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-123`
 
 **Content revision:** `ad2e2fb304e71a351f95116775782e881dc7429f880e9b55f38464398bcb764b`
+
+**en review revision:** `6778abf41c354ba4d74eb4a9ab96a6adc18532b63e35dd1af4011d0f76c362e1`
+**es review revision:** `a135521fc1e280578962bec6986acc23ec5d73c85fb363896b8bcfdf894d43d7`
+**pt-BR review revision:** `fef87a37589a7d3c27e717a5723e06442b8708dcf3401a101388e647d568797c`
 
 ### English
 
@@ -12567,11 +13553,19 @@ Com releases imutáveis, v2.3.0 foi publicada com um asset incorreto. O que o au
 <!-- certification-coach-question:actions-124:5ffa390628d583d0f9d1aefadbb78a8a1ce025bb68e2acc758083af0c3d4f72d -->
 ## Question 124: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-124`
 
 **Content revision:** `5ffa390628d583d0f9d1aefadbb78a8a1ce025bb68e2acc758083af0c3d4f72d`
+
+**en review revision:** `fa1780e3d833c683ec362e0270362c8675ff0876da02c4a607490b1cf2abb44c`
+**es review revision:** `79c59458667e91a595effad353da216c1d1494225fe3b78eebf7ee2c288a1d95`
+**pt-BR review revision:** `9dd0aeaa4c3e8a8341c958383da6a7d704ae9fe1ec30742545882077bf3d41bf`
 
 ### English
 
@@ -12669,11 +13663,19 @@ Uma release imutável terá assets compilados. Qual sequência evita descobrir a
 <!-- certification-coach-question:actions-125:763623f2bdc92ab35d3378e905a4ce2665e2d220cedc8763749d7213861bd8a3 -->
 ## Question 125: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-125`
 
 **Content revision:** `763623f2bdc92ab35d3378e905a4ce2665e2d220cedc8763749d7213861bd8a3`
+
+**en review revision:** `e41a6f6297ada0b63b188df1ddcd3ceafc461c46676c5725a045d75606673c41`
+**es review revision:** `7f3ddf4849f011a268ae2de2a03667acb8463e11eb0c4152b04e0569cbe880c6`
+**pt-BR review revision:** `b93ecc8fe980aa3ea4a4a84e18651926c21571993ceceb4d44a6e76b3497164c`
 
 ### English
 
@@ -12771,11 +13773,19 @@ Uma ação deve ser descoberta no Marketplace. Qual disposição atende ao requi
 <!-- certification-coach-question:actions-126:9a377e7f5a68cd0f5f570fcd449a4b42a9655bfc3ef991c305faebffc88cfa5e -->
 ## Question 126: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-126`
 
 **Content revision:** `9a377e7f5a68cd0f5f570fcd449a4b42a9655bfc3ef991c305faebffc88cfa5e`
+
+**en review revision:** `5d4bb2712e4c7f0c2831b2927b09b2ff088f745107cf9bb5220deb961e23967c`
+**es review revision:** `0a9251005fa5983389aabf958753409e5732681ba384370f6a22199ac84ed260`
+**pt-BR review revision:** `fa15f871dddc85612c7dddd175f3ca60ec6e9c06f51438aa458e536479a74548`
 
 ### English
 
@@ -12873,11 +13883,19 @@ Ao listar a ação raiz de um repositório no Marketplace, o que ocorre com aç�
 <!-- certification-coach-question:actions-127:60427df6e06eaec0839ed736db67c98007c3d04b4f20fd4fdf3ed85348d8c30a -->
 ## Question 127: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-127`
 
 **Content revision:** `60427df6e06eaec0839ed736db67c98007c3d04b4f20fd4fdf3ed85348d8c30a`
+
+**en review revision:** `c3253d8cdbc944662da09ba8175064a63a3a349325045521900da8f5ada401dc`
+**es review revision:** `4db3038988d66063d0bbf0973b6c003c90ea479781093e2a7552d5987066b227`
+**pt-BR review revision:** `7ae26dde54dd6d1e35fec1c02788603e68e4a4052b7f514a9a0b671895991332`
 
 ### English
 
@@ -12975,11 +13993,19 @@ A opção de publicar no Marketplace está desabilitada ao preparar a release. Q
 <!-- certification-coach-question:actions-128:cbb317a8da635b86a2d2736b202e17704cf255e039d63b03a433531ed1b74de5 -->
 ## Question 128: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-128`
 
 **Content revision:** `cbb317a8da635b86a2d2736b202e17704cf255e039d63b03a433531ed1b74de5`
+
+**en review revision:** `ca964f8075b032081e077a480a1dfa54128d12e52111cefbf671f8b28c9c744a`
+**es review revision:** `a648a2853574fc4fb429484041c5c4768a6d22ee27a206e562f555c15b635c02`
+**pt-BR review revision:** `5893fcbc924e47271f6e74350ed6cf5c15946ea2ad3edb807600331b83e664f2`
 
 ### English
 
@@ -13077,11 +14103,19 @@ Uma ação deve ser compartilhada somente com repositórios privados permitidos 
 <!-- certification-coach-question:actions-129:c7a0080fea54ba751684400f207551e8fd376681d010d556c6fd3a451630ce8f -->
 ## Question 129: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-129`
 
 **Content revision:** `c7a0080fea54ba751684400f207551e8fd376681d010d556c6fd3a451630ce8f`
+
+**en review revision:** `92d712b7b6ffd8b8e99687ac215e1864306d9ba22bdf9c1df6ee51f1a8946b8c`
+**es review revision:** `a7aaaa0923a025bbb0bd362b8db89d3006fdda244fd48be739da1783ba78747d`
+**pt-BR review revision:** `b3e3776117297264668271058f845902d30ded014943e3f0cbeb99fdbec6d597`
 
 ### English
 
@@ -13179,11 +14213,19 @@ Consumidores confundem entradas obrigatórias e saídas. Qual manutenção ajuda
 <!-- certification-coach-question:actions-130:e31b86642e2fe152c1f18eb6d31e3c408202c38642d8aaba1f9e560799943fd8 -->
 ## Question 130: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-130`
 
 **Content revision:** `e31b86642e2fe152c1f18eb6d31e3c408202c38642d8aaba1f9e560799943fd8`
+
+**en review revision:** `9c9473e367db982e943ba4f87f49bee26a76f48a6f27efa1a05fe58f5032b2a8`
+**es review revision:** `766e51eab059d206359ff3355d2fa3e1dd735a51ccda28deeba254050579ac5d`
+**pt-BR review revision:** `69515af5b840b48f9166d33ed4e62805afd7867f24a1e56b01b38315d91cc2a3`
 
 ### English
 
@@ -13281,11 +14323,19 @@ O código passa em testes unitários, mas o bundle JavaScript publicado está de
 <!-- certification-coach-question:actions-131:5c5c9049bbfb47f9cda49c10064447e78f5203bb07efaa15b047031d95e60007 -->
 ## Question 131: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-131`
 
 **Content revision:** `5c5c9049bbfb47f9cda49c10064447e78f5203bb07efaa15b047031d95e60007`
+
+**en review revision:** `fa6213e7923a3b7a43463453d3884f4a6ea0817255acb33ddb8be75b18ab7bc1`
+**es review revision:** `3c83fd9b2bd49b3411a97252298f4ee6263d2741a8f9706aa812479bb136a649`
+**pt-BR review revision:** `0684aa2108db32b77f1c13023d921b28996c3186243865a6b96f03ea6c22f9d3`
 
 ### English
 
@@ -13383,11 +14433,19 @@ A paginação de uma ação falha apenas com repositórios reais. Qual teste com
 <!-- certification-coach-question:actions-132:0fee6c5a421cbe2fb6cf079177c477660bc5e9258a70438560f21b010299c5f0 -->
 ## Question 132: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-132`
 
 **Content revision:** `0fee6c5a421cbe2fb6cf079177c477660bc5e9258a70438560f21b010299c5f0`
+
+**en review revision:** `20dedbe1989833fd7bbc0072bd6476e0b3dda30d0826a555e6f0f8be58ad2c18`
+**es review revision:** `faa85388818f193b87652ae6f0b5861259fd991d0fd82e1b710502b7bda0e923`
+**pt-BR review revision:** `00420022cde3d75619805cd3441c84e1a2834d940452d9852a659da734c56d08`
 
 ### English
 
@@ -13485,11 +14543,19 @@ Uma ação composta precisa de credencial do chamador. Qual interface usar em ve
 <!-- certification-coach-question:actions-133:1064c6b4e916fe14f04cff82cdf4d9ebb0718b3f6d9319cf91dd131135c0f322 -->
 ## Question 133: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-133`
 
 **Content revision:** `1064c6b4e916fe14f04cff82cdf4d9ebb0718b3f6d9319cf91dd131135c0f322`
+
+**en review revision:** `8c5c6d16604e628c1c9a6de093a2a02f2f2702a9ddb207476e102a758cdddb71`
+**es review revision:** `1097afa8b7805c291cba0966571bb7b57054bc32126683353b68a5d99bdfbec3`
+**pt-BR review revision:** `d812dd65ed5f3b8a6c2d2147853eee5733adf3b366ab1abf9e66cd83f3cf6788`
 
 ### English
 
@@ -13587,11 +14653,19 @@ Uma ação Docker sai com código 2 após validação malsucedida, sem continue-
 <!-- certification-coach-question:actions-134:9a2df3587ba721b9468b75dc657ddaa603081b467f723b82664119236efcb922 -->
 ## Question 134: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-134`
 
 **Content revision:** `9a2df3587ba721b9468b75dc657ddaa603081b467f723b82664119236efcb922`
+
+**en review revision:** `d5a85c6d12d641b3cbbc8d58e7289b7f27f9889b5c77420716bbf17227268864`
+**es review revision:** `0e24a9a6bf42f458975b793a4aaccd500965dc50d07b283dda2c777f3d9a8cde`
+**pt-BR review revision:** `10fab801e0bd62d6d2af928339419ca7acdb35ca244d60216bef85abbb37f305`
 
 ### English
 
@@ -13689,11 +14763,19 @@ Milhares de linhas de setup dificultam navegar nos logs. Qual par cria seção r
 <!-- certification-coach-question:actions-135:2af324df916201435d4de139af05498cce6fe25ac42d41c7c3cd1a59fa24313c -->
 ## Question 135: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-135`
 
 **Content revision:** `2af324df916201435d4de139af05498cce6fe25ac42d41c7c3cd1a59fa24313c`
+
+**en review revision:** `ca48a679169b2fb3662278bf2d467d1e03046254842f73c0087839601d70fba2`
+**es review revision:** `5b576212942967b555b1603dc4d65b3bc0f5939da4e4220fe243f0faf573f2c2`
+**pt-BR review revision:** `47ebafbd4c53d570eaff25940dac765c1d80830969cc50d6ca8bb7be0ee7b9aa`
 
 ### English
 
@@ -13791,11 +14873,19 @@ Uma ação JavaScript usa core.setOutput sem declarar aquela saída nos metadado
 <!-- certification-coach-question:actions-136:7ce200a9d015806dc399a662329303d94c1efa9d2caee1d1adea230b548d9d21 -->
 ## Question 136: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-136`
 
 **Content revision:** `7ce200a9d015806dc399a662329303d94c1efa9d2caee1d1adea230b548d9d21`
+
+**en review revision:** `eec493187ad1d7a847f2bfaf94f21b673306ee93cba460c1ad410ccbc7cde254`
+**es review revision:** `b5c035c74bd4e946a936ab9ddbf6bb025fb7c764db8dce3577ad9042b42efcd5`
+**pt-BR review revision:** `b3b713a6bdefdbe656e9f2f8eb3fe39b1b6910364779eda008006ee1b9c5cbdf`
 
 ### English
 
@@ -13893,11 +14983,19 @@ Uma release imutável v1.4.0 precisa esclarecer notas, sem alterar assets nem ta
 <!-- certification-coach-question:actions-137:7c71ba1b1f3da4cd558b407233321a9144ea72ac99c4ebe232a5e116efdf667e -->
 ## Question 137: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-137`
 
 **Content revision:** `7c71ba1b1f3da4cd558b407233321a9144ea72ac99c4ebe232a5e116efdf667e`
+
+**en review revision:** `e25d35d110011536700ba6825d6864dd43eb73b689c3ccb8f795e0f4d39de617`
+**es review revision:** `a7dc19b796f122c359e775851c3ead09691c5e212dd28aa6873fe4ec7ce78e5a`
+**pt-BR review revision:** `c14987699d3dcd045a39b672476253bdd9f06dce3a656775eb4dbacf94896447`
 
 ### English
 
@@ -13995,11 +15093,19 @@ Uma ação JavaScript depende de executável específico de um sistema. O que fa
 <!-- certification-coach-question:actions-138:b51b55574a282cbefb9cf72ed00f59fe097100c0f39235acd728c4437630bb80 -->
 ## Question 138: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-138`
 
 **Content revision:** `b51b55574a282cbefb9cf72ed00f59fe097100c0f39235acd728c4437630bb80`
+
+**en review revision:** `9939394f35af908e90991a69c78f12e7275f3fccdc400d50f8b2a70b347cef5b`
+**es review revision:** `881a33a692526d4216c01e0cfa3d414cac7bbb54764fc13c74508f7c97aedd78`
+**pt-BR review revision:** `25fb939e4da7480be340bae650cce8974720368891d327b55322e934879a0f54`
 
 ### English
 
@@ -14097,11 +15203,19 @@ post-entrypoint precisa do estado de entrypoint numa ação Docker. Por que vari
 <!-- certification-coach-question:actions-139:6642cd4d1b277ab65a4cb77aaa1241b3b52eaa11c4acee5a5696a576a715ed7a -->
 ## Question 139: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-139`
 
 **Content revision:** `6642cd4d1b277ab65a4cb77aaa1241b3b52eaa11c4acee5a5696a576a715ed7a`
+
+**en review revision:** `af231b0c1db7fc3bc1c54c739bfe23fb18bf34e48254fde6218f4a656bea7a73`
+**es review revision:** `a8377ff979cc36dbea404b06c776f05b29ec17e11df4126fd8b8a8fc65d66a2a`
+**pt-BR review revision:** `25fb078ed5d18b976192a25ab9862e929dcf37cc38dd294cc95108d71217b078`
 
 ### English
 
@@ -14199,11 +15313,19 @@ Um consumidor usa owner/tool/subaction@v3. Onde colocar os metadados dessa açã
 <!-- certification-coach-question:actions-140:5787700ca33f70c932bff3f494c3569e27d561aa736a473eee4e8427ad6f20ec -->
 ## Question 140: Author and maintain actions
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-140`
 
 **Content revision:** `5787700ca33f70c932bff3f494c3569e27d561aa736a473eee4e8427ad6f20ec`
+
+**en review revision:** `d607e34f46896e3b38c8ee44f241e0d84b0d2ab5a33dce3a805a77cd5b6e7d35`
+**es review revision:** `83c4bcfae543b7152cb23561673ae49134abfcc4b02071c31cec334e10210aa3`
+**pt-BR review revision:** `a95b79044a24621d158a7570dabda26f685e8a40ef3db64fdd930dc3728f5541`
 
 ### English
 
@@ -14301,11 +15423,19 @@ Uma ação Docker usa imagem pública pré-compilada em vez de Dockerfile local.
 <!-- certification-coach-question:actions-141:9c144fed4d3cb08e2d63ab741e170122ae34006e943a6e3c5683c4d4794c0f47 -->
 ## Question 141: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-141`
 
 **Content revision:** `9c144fed4d3cb08e2d63ab741e170122ae34006e943a6e3c5683c4d4794c0f47`
+
+**en review revision:** `e714e3ec3a895ca2e64a18ba0aa412242e69494fb880629af47c13138407fccb`
+**es review revision:** `8266695f2550feb7ec0d90f45c43be241c271dfbc1993c019e41e61030876a69`
+**pt-BR review revision:** `8286db8c7538bbd822bdac694256c54c93ff9cc62005df778bdc4041757b14dd`
 
 ### English
 
@@ -14403,11 +15533,19 @@ A empresa proíbe ações públicas arbitrárias e a organização não consegue
 <!-- certification-coach-question:actions-142:07734510a895ca1c159b4c1a48e09f4fc3ef478fd69a2b8721ec7687c6c992e9 -->
 ## Question 142: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-142`
 
 **Content revision:** `07734510a895ca1c159b4c1a48e09f4fc3ef478fd69a2b8721ec7687c6c992e9`
+
+**en review revision:** `dead720f6f8dd9be005289587c31938ea912c3edcdffe600736e268f13fce323`
+**es review revision:** `830fb9bf29cc2d63d8b853275bebfd8a3e104819cb39a9153e14ce07484cefbf`
+**pt-BR review revision:** `a36ed9d414da71236896c5869b218ad9a269a76c1de869022fba59448f9e8c25`
 
 ### English
 
@@ -14505,11 +15643,19 @@ Uma organização permite somente ações próprias. Agora actions/checkout est�
 <!-- certification-coach-question:actions-143:67376cc34247173cf326ac30da51f30d3bc3798257baf6cd316d02c1e1362120 -->
 ## Question 143: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-143`
 
 **Content revision:** `67376cc34247173cf326ac30da51f30d3bc3798257baf6cd316d02c1e1362120`
+
+**en review revision:** `1b52eb99b1bd124570f5ef0b3d36a822465522fd2a5fa89bcc77a5c57c26a7e8`
+**es review revision:** `09b9b69cd6f3d1d80438f4b769030f06f53dca64257d764c9dd4867b96adbe6e`
+**pt-BR review revision:** `17cfdde4aa4cee9093e8932d8ec665e8a28d12a832e6f87f77a74407b4411322`
 
 ### English
 
@@ -14607,11 +15753,19 @@ Uma única revisão de ação externa foi aprovada para build regulado. Qual reg
 <!-- certification-coach-question:actions-144:319a9eca84c89f940bf286c95a240d09682668c1788443ab4a4a2d423b1fd744 -->
 ## Question 144: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-144`
 
 **Content revision:** `319a9eca84c89f940bf286c95a240d09682668c1788443ab4a4a2d423b1fd744`
+
+**en review revision:** `35fa428ebb0fe4c0a3e633fdd5d3619d3d3076d3a2b0b3a8bc84e1fce0b19cfe`
+**es review revision:** `b6f4e4c27f015c1b0ec71bdc3671b8c05543f93bf8a15eec5077ac01c2034c5e`
+**pt-BR review revision:** `5c0d71c179c6a19eb1c01e2f0f8be3130eb668ca169ae142927f75c14fe0dd9d`
 
 ### English
 
@@ -14709,11 +15863,19 @@ A organização exige SHA completo nas referências a ações. O que fazer com a
 <!-- certification-coach-question:actions-145:011a3d8d38a89ad2b9b6cefe720a00a3f041da8b36b758b9f5d2de22b75ee8c3 -->
 ## Question 145: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-145`
 
 **Content revision:** `011a3d8d38a89ad2b9b6cefe720a00a3f041da8b36b758b9f5d2de22b75ee8c3`
+
+**en review revision:** `82a5f0484d09ceea6c7966ee024f67c3551ad7f579704cb0d5aeffc797268346`
+**es review revision:** `315eeaf6c69d196dcea124e5c46adcc7e9bb3fd6805feac3b4fd094192ec2226`
+**pt-BR review revision:** `8d591c05f49a199994e3fde850a3406a4c209be7aaf052848367977a2ee39c81`
 
 ### English
 
@@ -14811,11 +15973,19 @@ Uma organização quer Actions somente em repositórios piloto. Qual configuraç
 <!-- certification-coach-question:actions-146:814fad91cc2088cb71e9c8c4431fcc4c08051a18468ddb8fcc30527bc7273d86 -->
 ## Question 146: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-146`
 
 **Content revision:** `814fad91cc2088cb71e9c8c4431fcc4c08051a18468ddb8fcc30527bc7273d86`
+
+**en review revision:** `7895d28c1b7b5bb48e2997d8e5163cbac5ad40e3689ccfda6dc4f07a7f553305`
+**es review revision:** `08b5c706813d51d115e8cebecca925cd7e45ef30a623d2df0d79ed6c04eeb7e7`
+**pt-BR review revision:** `236724e039cf2b56e3d6239ebf15e5c9948b0c46136d4beca104b0aa349eab38`
 
 ### English
 
@@ -14913,11 +16083,19 @@ A lista do chamador permite uma ação privada, mas outro repositório privado a
 <!-- certification-coach-question:actions-147:467cdf905b3b152366d20d4ced29f4e4c0092774c9e2b1a5843b2d12e5bd4da8 -->
 ## Question 147: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-147`
 
 **Content revision:** `467cdf905b3b152366d20d4ced29f4e4c0092774c9e2b1a5843b2d12e5bd4da8`
+
+**en review revision:** `1bce440422a61ebf98c666c97da8069b6e24dce92478d64664de21e47f05cd95`
+**es review revision:** `1cb17deb38c0c7944d7f88ba15ccfd6182a1f1d822973aa0bc2bfc7b28c8cf15`
+**pt-BR review revision:** `cd13614fe8db2a1117c7de10dcdc8b888d6d914e9d4295924e72accc74f88ceb`
 
 ### English
 
@@ -15015,11 +16193,19 @@ Como centralizar um workflow reutilizável e permitir adoção deliberada de atu
 <!-- certification-coach-question:actions-148:e68a40fd26a82b7e8ccac6a993415ca9c46b1fd971b3838e4dc033d8e6a141fa -->
 ## Question 148: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-148`
 
 **Content revision:** `e68a40fd26a82b7e8ccac6a993415ca9c46b1fd971b3838e4dc033d8e6a141fa`
+
+**en review revision:** `240df0a77b38c290f757bf73f441ca285af356e4cac41e782af7865ae3fcb736`
+**es review revision:** `18fd19f4244fdb942dbc9b1dd09ea128ddb6f05a0317201f357d5d9707c74fba`
+**pt-BR review revision:** `0ef7c08d96ba42002a1c14e62db38be926485efbb7391caa3633b8c8ba553a86`
 
 ### English
 
@@ -15117,11 +16303,19 @@ Onde armazenar YAML de templates organizacionais oferecidos na experiência de n
 <!-- certification-coach-question:actions-149:24ab0a20bd3cd9ed703366c3016d8c20682fc448376887cc7ad30b78113cc5b5 -->
 ## Question 149: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-149`
 
 **Content revision:** `24ab0a20bd3cd9ed703366c3016d8c20682fc448376887cc7ad30b78113cc5b5`
+
+**en review revision:** `91f6c8b70989c63c5d4fb67b1fdbbfaed807f54735f419b389876323d443cf69`
+**es review revision:** `f1e7ee88e45e6c19974b8bcc54895e7c11f33e3b70851ce003520117adace9e3`
+**pt-BR review revision:** `117141fe4528762b997e0a13aad6afad47ced7bb7470ac327e0bd466929493c7`
 
 ### English
 
@@ -15219,11 +16413,19 @@ service-ci.yml precisa de nome e descrição no seletor de workflows. Qual arqui
 <!-- certification-coach-question:actions-150:1a49a94ec69a5ef6a621999d37db784da9c1cd1bd16c55e93ed37aa822ffc865 -->
 ## Question 150: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-150`
 
 **Content revision:** `1a49a94ec69a5ef6a621999d37db784da9c1cd1bd16c55e93ed37aa822ffc865`
+
+**en review revision:** `151912e42fd08d9cbb1b5fd0a8edeabb8f319a305dfbb160271d9309fa822f9d`
+**es review revision:** `175d78e8cd834ba7ff3ac2a9dcf728acf7d602f57d6fa2141020b025e8eeb5b9`
+**pt-BR review revision:** `70da25e1fca06ef4a21fa328327fe21d9bb65194934b1de184a8ea8004145b2f`
 
 ### English
 
@@ -15321,11 +16523,19 @@ Uma empresa hospeda templates em .github interno. Quais visibilidades de destino
 <!-- certification-coach-question:actions-151:390e486d902a6e58073c2efeedf3871729858900f586ef3e5f2c0182a52d2230 -->
 ## Question 151: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-151`
 
 **Content revision:** `390e486d902a6e58073c2efeedf3871729858900f586ef3e5f2c0182a52d2230`
+
+**en review revision:** `9a480863d2fd1a7ff49b34ede9de7ce737e809cb2a6940ff9296e5e11f088804`
+**es review revision:** `852a23ff4dafda0276b6f7f9433118c974d2a9a89e683c7b85c3c1b0810627f9`
+**pt-BR review revision:** `3742143f5b5ee537e9d3e4afeec737c37c844fdd3c9324361125559b0fca1dbe`
 
 ### English
 
@@ -15423,11 +16633,19 @@ Um workflow intermediário acessa outro privado, mas o chamador inicial não. O 
 <!-- certification-coach-question:actions-152:da82a677e78f5cfe1a5fd8cabb9d2e7b351cf2db4f7412c388735d1b1ad28136 -->
 ## Question 152: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-152`
 
 **Content revision:** `da82a677e78f5cfe1a5fd8cabb9d2e7b351cf2db4f7412c388735d1b1ad28136`
+
+**en review revision:** `7eb1b9911840dc60ed660ab2c59ae6eabf616d823144cc7f8d36e248802b626c`
+**es review revision:** `269ca0fd6dc5be5438accb02aee63d672429bbce99e6210e733574f688cd8395`
+**pt-BR review revision:** `aa5b3a9b5900e10bc18a8a0757ca5d3e75d8ee3eb619e992550e1ff1bc7980cb`
 
 ### English
 
@@ -15525,11 +16743,19 @@ Um workflow central reutilizável executa para vários repositórios em runners 
 <!-- certification-coach-question:actions-153:618945b7cc4f1c40b161a0deb0f400a97c4e36c60d30a5303e78274ee8a87dc7 -->
 ## Question 153: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-153`
 
 **Content revision:** `618945b7cc4f1c40b161a0deb0f400a97c4e36c60d30a5303e78274ee8a87dc7`
+
+**en review revision:** `ef5dcd4641b0e5ef7a8b798b204093da6c4c8c18a98f20bb2b0e703974d9450a`
+**es review revision:** `efd4e64334f33c8c3fe9f738dda531346906e2268b224bdcc5c979adc4ff8eb9`
+**pt-BR review revision:** `bf29c37a03e2ec5b254ca919c7143038ef9d9b4313aa9f2ec82907d4d3a385aa`
 
 ### English
 
@@ -15627,11 +16853,19 @@ Mudanças de workflows devem exigir revisão da plataforma por PR. O que combina
 <!-- certification-coach-question:actions-154:e43f8db73e2399941d08897e54866e3f131e6fc3b59862a052bfa4b37933cb66 -->
 ## Question 154: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-154`
 
 **Content revision:** `e43f8db73e2399941d08897e54866e3f131e6fc3b59862a052bfa4b37933cb66`
+
+**en review revision:** `12c3367550122ece263cd1a505c087aa2c4c01dfaf590f924c4e95d6d4329c15`
+**es review revision:** `52368519b349e7bce7c503daa3ad1c37149897ee1c59ddd2af28fe30f04c656f`
+**pt-BR review revision:** `568b2eb1f7b0a76d794a9cef01fa1aa4171a414327cfdd6c472992d33583e8f6`
 
 ### English
 
@@ -15729,11 +16963,19 @@ O GITHUB\_TOKEN deve ser restritivo por padrão, com escrita adicional só no jo
 <!-- certification-coach-question:actions-155:411b61ddaa315bb694bb28dbd9273ee5088776dd19b098c1b6b6c50855cc2b7f -->
 ## Question 155: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-155`
 
 **Content revision:** `411b61ddaa315bb694bb28dbd9273ee5088776dd19b098c1b6b6c50855cc2b7f`
+
+**en review revision:** `7355bbd02f4cc56a9504130c41cca2c0dab00a46ef8390e2f5fae10151f17710`
+**es review revision:** `ec39874e81d7fbe4629fedebbea1ff41c475325389f7d123531e12a883b1ee29`
+**pt-BR review revision:** `15b79a723ee133637b8d11707c82709b82faa9a886db8692f4c2d2d7894ffe96`
 
 ### English
 
@@ -15831,11 +17073,19 @@ O token tem escrita, mas política organizacional impede criar ou aprovar PRs. O
 <!-- certification-coach-question:actions-156:51bafa40288a0d12e3ca09bb727e2b0fe925345f69f052d10e9146f6cb0189dd -->
 ## Question 156: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-156`
 
 **Content revision:** `51bafa40288a0d12e3ca09bb727e2b0fe925345f69f052d10e9146f6cb0189dd`
+
+**en review revision:** `992473b74ba6f229d0e841d90c8810400424472cbae55d3db407250e64d7aab7`
+**es review revision:** `abb738400c68f22d53e8a393daa413656123ea604037bbac63609ba1dfe19ada`
+**pt-BR review revision:** `3045cfcf42cb0fd4b947c6581130f459094bedddff9132d18a4888bfea2b3564`
 
 ### English
 
@@ -15933,11 +17183,19 @@ Qual evidência documentada ajuda a inventariar consumidores de um workflow reut
 <!-- certification-coach-question:actions-157:78baca47d1bfbc24acbdfc7933ca549fd485cd1c8ad72cdd48317e52abf47323 -->
 ## Question 157: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-157`
 
 **Content revision:** `78baca47d1bfbc24acbdfc7933ca549fd485cd1c8ad72cdd48317e52abf47323`
+
+**en review revision:** `03e5e909cb5633ce7883dd24ae0bcf30fa7f3ee77c6ff253e1eb889c35a2a4e2`
+**es review revision:** `5e2b5ba213fef52ad4f9f320d53a258b578b232f2362dcb8ef89277548c44459`
+**pt-BR review revision:** `0d628121ba17303c9cf8093c0020be847fa3809c8c548578597ed8d5fe569e7e`
 
 ### English
 
@@ -16035,11 +17293,19 @@ Se quiere restringir quién crea runners autohospedados de repositorio, no solo 
 <!-- certification-coach-question:actions-158:91359f8f53b1d72fffc723749199741406202cf19edd9aebd8a82c75bb6d1808 -->
 ## Question 158: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-158`
 
 **Content revision:** `91359f8f53b1d72fffc723749199741406202cf19edd9aebd8a82c75bb6d1808`
+
+**en review revision:** `4ff63ea48d99eddbb564be0ff0c3e9d466f0722492666dd2a36834ff3a104738`
+**es review revision:** `d61dcbe2e2bc00dd848080101d3c5e8ffbd3b76ed011fa28d4677769e3b43005`
+**pt-BR review revision:** `f5a06fde8bf040f1f1ece2d00c59876e9fb9b2f28414551fe16c4b8cc162b12d`
 
 ### English
 
@@ -16137,11 +17403,19 @@ Como impedir uma ação externa em toda a organização preservando outras aprov
 <!-- certification-coach-question:actions-159:8d0e9f65046c5df813685b1b2a1a0956ca4d4019870bae6091c07df18a33babc -->
 ## Question 159: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-159`
 
 **Content revision:** `8d0e9f65046c5df813685b1b2a1a0956ca4d4019870bae6091c07df18a33babc`
+
+**en review revision:** `89c858d8c18dc47929db0e44d8d496b05688a1ba91d4d658fcf9ca646962a1a6`
+**es review revision:** `afa6989dfab845725c64caa1cc4a384e2007e819e70df0e4abdb4601afb3060a`
+**pt-BR review revision:** `e8912f93645a0f1cb4054700e160791e80da4c4cdc972cfa8dd7e24ce485acdf`
 
 ### English
 
@@ -16239,11 +17513,19 @@ Só três repositórios devem usar runners sensíveis; outros têm rótulos igua
 <!-- certification-coach-question:actions-160:f16ba3fadc68fc8c96e863ba088cb7c1e78385f48675a55076d22da5fbaa3dd8 -->
 ## Question 160: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-160`
 
 **Content revision:** `f16ba3fadc68fc8c96e863ba088cb7c1e78385f48675a55076d22da5fbaa3dd8`
+
+**en review revision:** `25ef6a34705551fddd3ae226fa898d74b9702338d9cff77b9dcc50b6ced11e6c`
+**es review revision:** `feec9d44839a26a32a69bd27ab348c02a5fcc32e46c50a4319530381c32eef13`
+**pt-BR review revision:** `e02ea1d278a5619787f0111b92a22996ace6baef1ff864c3789a803c4feb3241`
 
 ### English
 
@@ -16341,11 +17623,19 @@ Um job precisa de grupo prod-builders e rótulo linux-x64. Como expressar ambos?
 <!-- certification-coach-question:actions-161:bbd08c90c295c3b840e8f52bb292d9624e63fdd5b6aed7e384722782526edb02 -->
 ## Question 161: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-161`
 
 **Content revision:** `bbd08c90c295c3b840e8f52bb292d9624e63fdd5b6aed7e384722782526edb02`
+
+**en review revision:** `4da38dc8767405399410bc3ccb3ee2402e870212a6895eda709718acf04af4b1`
+**es review revision:** `582175dcca5ab3d6360951eb25f706e57a3ed606f16279e5913c6abe53208f26`
+**pt-BR review revision:** `9424143ea9547f06cf0907efb7ec8dcf9dac35da6e0a39a63888d56ebf237dbf`
 
 ### English
 
@@ -16443,11 +17733,19 @@ Um runner novo entra no grupo padrão, mas deveria usar build-fleet. Como seleci
 <!-- certification-coach-question:actions-162:f8604043ced7a65ee6bca95a41633da9ea56aca6be6ea48fe7c6dec8fdda48fe -->
 ## Question 162: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-162`
 
 **Content revision:** `f8604043ced7a65ee6bca95a41633da9ea56aca6be6ea48fe7c6dec8fdda48fe`
+
+**en review revision:** `48699a12c766a5c233ea4719b57437dfc06473020f69e5f52c5cb355e0521797`
+**es review revision:** `2e94ebbc788477967caa3ee637f5a709a86d24f4503939dd3fe10bf742fb0180`
+**pt-BR review revision:** `5a8d8eafe2a990b9dbb2a11bf549152c2b21322ed7b47fa266f7699cf334a47c`
 
 ### English
 
@@ -16545,11 +17843,19 @@ Um runner organizacional foi registrado sem argumento de grupo. Onde procurá-lo
 <!-- certification-coach-question:actions-163:9958ac82cc7036e66cd97a657eed0d4a1dacec46e7917791e5ded292a70d75b5 -->
 ## Question 163: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-163`
 
 **Content revision:** `9958ac82cc7036e66cd97a657eed0d4a1dacec46e7917791e5ded292a70d75b5`
+
+**en review revision:** `a71637ca6b65a13a78c7d5cd43aa8c1fdf45c8e87f2c2d44a28c45c78c5af671`
+**es review revision:** `3f731dcb3e77039dc0cfd2a113ed4283543cb8cc2ec50cc1288cd004202295db`
+**pt-BR review revision:** `192bf5a252215e5ce01f8985386b0a97f1182cf432d481cc17c0fc33917e746d`
 
 ### English
 
@@ -16647,11 +17953,19 @@ Um job pede self-hosted, linux e gpu. Um runner ocioso tem apenas self-hosted e 
 <!-- certification-coach-question:actions-164:be00f4fd2ac0dca5451c7797273b6772d71940b9a85686667ff464a497fdb2ac -->
 ## Question 164: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-164`
 
 **Content revision:** `be00f4fd2ac0dca5451c7797273b6772d71940b9a85686667ff464a497fdb2ac`
+
+**en review revision:** `c245865e796318868eb9089ffc26a5777555766985702f9a2e47e5b4c3cc2807`
+**es review revision:** `9de09f840dda3a24fe12dd59afbdc38745e8b9e0c096f0f2803f978f583556c1`
+**pt-BR review revision:** `a5f1cc9e584de71c066a320ded75f123514667d496feddeb570b560113ab1860`
 
 ### English
 
@@ -16749,11 +18063,19 @@ Todos os runners compatíveis com um job próprio estão offline. O que ocorre a
 <!-- certification-coach-question:actions-165:9f56a2c54368c22d43781a6102a7474d41d75b99178ce1acba5ce8de9744bb26 -->
 ## Question 165: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-165`
 
 **Content revision:** `9f56a2c54368c22d43781a6102a7474d41d75b99178ce1acba5ce8de9744bb26`
+
+**en review revision:** `583d171cf8c75926b6f4fdc78db07863089313850a5f805dd238f22b3c254fdc`
+**es review revision:** `40855331c46364eeb1d717273426133196a5a31dfaeff96bd8f0bfdb357638ec`
+**pt-BR review revision:** `56bb3cdf27350564363f54a3f6a932c13db53beca97339870dc2faff42fd3549`
 
 ### English
 
@@ -16851,11 +18173,19 @@ A máquina está ligada, mas o runner aparece Offline. O que investigar primeiro
 <!-- certification-coach-question:actions-166:106e71d5030100fba76eef6a0059977f28cfe29fea5087c2bdbe1390bddd9da9 -->
 ## Question 166: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-166`
 
 **Content revision:** `106e71d5030100fba76eef6a0059977f28cfe29fea5087c2bdbe1390bddd9da9`
+
+**en review revision:** `e3097fbc283611dba6b48b50b6e54a9ba65807faa164fd5102cc127782e135ef`
+**es review revision:** `0b8f08b628461602bb57ca3b92e6a1911f2ec22500c7186b758fc96226fc5789`
+**pt-BR review revision:** `50f1ae988be06a7eab860c5da605fdb4e4c90111ca3e8fb08adbe7b4647b44bf`
 
 ### English
 
@@ -16953,11 +18283,19 @@ Após mudança no firewall, o runner não aceita trabalho. Qual diagnóstico int
 <!-- certification-coach-question:actions-167:9351e19b0dda8c60e6be5f14719069be5f858bc94e1e57652cb68be429017fb1 -->
 ## Question 167: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-167`
 
 **Content revision:** `9351e19b0dda8c60e6be5f14719069be5f858bc94e1e57652cb68be429017fb1`
+
+**en review revision:** `2a06cefa6bb04c1bb2851a18ebc5be47415b7bc887e18987541c58a5ca84238b`
+**es review revision:** `697eebdca01d58e868502279e239d1cec40623419b3ff4483f911fde371cd181`
+**pt-BR review revision:** `f9c4bc6af026823961e40fa400dc7cb859e911db29c9953d6d60e3b2766c7289`
 
 ### English
 
@@ -17055,11 +18393,19 @@ São necessários diagnósticos do listener de um runner próprio. Quais arquivo
 <!-- certification-coach-question:actions-168:99242e6cf61cbf7560de7aa1736fdee5a76d7ee7775930e69161754f9e747fbf -->
 ## Question 168: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-168`
 
 **Content revision:** `99242e6cf61cbf7560de7aa1736fdee5a76d7ee7775930e69161754f9e747fbf`
+
+**en review revision:** `53daa5cac9af6400829641219c3ffb8e6b55092aef8f0b4bb2402df9edc8d946`
+**es review revision:** `ee69e56d4a3cbf45030cfcb05b3cb1425817bd9b80bda26a4fc93cdbdc487ee3`
+**pt-BR review revision:** `7146c45762ce040eeb2ba9a665e1cfbefb0fc6f9fca3d476e9daa16fe4429ee4`
 
 ### English
 
@@ -17157,11 +18503,19 @@ São necessários diagnósticos detalhados por job, não só histórico de iníc
 <!-- certification-coach-question:actions-169:7337cf8de22cd03e01087bb236f3a537233f4238271d5d8f268aaccd45562887 -->
 ## Question 169: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-169`
 
 **Content revision:** `7337cf8de22cd03e01087bb236f3a537233f4238271d5d8f268aaccd45562887`
+
+**en review revision:** `70592c3b88421e1e3f7ee483653d615a19787dec5af07aecd8c2c832a5dd6234`
+**es review revision:** `6146eebc841a67a8da2947c2e4f3c238b6acd3dab9c9ca66bc6bb5920faef600`
+**pt-BR review revision:** `20efff9ad68ef5dabb8d8aa1ba0dc939df84469197db944cfe79d6bf48dd3db3`
 
 ### English
 
@@ -17259,11 +18613,19 @@ Runners efêmeros são destruídos após um job. O que a observabilidade deve pr
 <!-- certification-coach-question:actions-170:d689a581eaa0f6ae4546f80d9342b2c8702cba64145ce11e3222388edbe3bfd7 -->
 ## Question 170: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-170`
 
 **Content revision:** `d689a581eaa0f6ae4546f80d9342b2c8702cba64145ce11e3222388edbe3bfd7`
+
+**en review revision:** `29b8f19a24fae1012763defbdcf20d5278aefb761b23d8d7c65b93419bae5080`
+**es review revision:** `ff3de9e88c20580a08490f89ad61482133de898a6da71cf565f1f6dd5688df3b`
+**pt-BR review revision:** `e346df4475f7bab5f75a76361494079bcc4be406d725ee69889319a3053ae5ce`
 
 ### English
 
@@ -17361,11 +18723,19 @@ Qual projeto oferece abordagem de referência para autoescalar runners próprios
 <!-- certification-coach-question:actions-171:fda1593fba69ca730cceff8d5545caddcd15eda77af194b514132a8bc1a78a79 -->
 ## Question 171: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-171`
 
 **Content revision:** `fda1593fba69ca730cceff8d5545caddcd15eda77af194b514132a8bc1a78a79`
+
+**en review revision:** `b0dc538773730e3d3d5179db9b210b2a7c3f0a9cd8afeeafd11f2d6c2e93caac`
+**es review revision:** `f0e4468ffaa0268d0a78fc33004330d9efda5a313bbf8d53fa2e70704aa4a515`
+**pt-BR review revision:** `ed85e7b45435ccc216443bee88640da92f69f79c44f31c64ec3910642270a01d`
 
 ### English
 
@@ -17463,11 +18833,19 @@ Para autoescalar com ambiente próprio limpo por job, qual ciclo GitHub recomend
 <!-- certification-coach-question:actions-172:402c88b3f2fbf2a1a97a368bb0326fb3dfe45f5284b33b474eea230573f93cb8 -->
 ## Question 172: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-172`
 
 **Content revision:** `402c88b3f2fbf2a1a97a368bb0326fb3dfe45f5284b33b474eea230573f93cb8`
+
+**en review revision:** `a62a179c9c80ddd8710e09c00c3de255137c6563825536d1b238dd258a5ec173`
+**es review revision:** `433187afacf41058ba2e5704a3f7d0ca26c890369dc59a4d3aaedcb9458d19a8`
+**pt-BR review revision:** `345fd639552910dad6106a4b2e3496f65d17522dcd00723567c98c46752cfdef`
 
 ### English
 
@@ -17565,11 +18943,19 @@ Uma imagem desabilita atualização automática da aplicação runner. Qual obri
 <!-- certification-coach-question:actions-173:32ce82d556766b34722f40c0b8e231596b58fbd14fe03880da959153e8dfe489 -->
 ## Question 173: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-173`
 
 **Content revision:** `32ce82d556766b34722f40c0b8e231596b58fbd14fe03880da959153e8dfe489`
+
+**en review revision:** `838f8f965f9584287ed07150d989889d2ac39b15d70296dab4f85a7da80884bc`
+**es review revision:** `9dab16de487178289a7986c7fb67af8ea06e1d92921b3f5194bbab170281f73f`
+**pt-BR review revision:** `74a94499ce3c7a19974b607ac104f6cef023b7478b4607840c51a911fb92bfa5`
 
 ### English
 
@@ -17667,11 +19053,19 @@ Uma frota própria executará ações Docker e contêineres de banco de dados. Q
 <!-- certification-coach-question:actions-174:45275e2f7abf8dfcd1289c5e3b44174efe5506b15d6ae2b4ab9bc877fb5db405 -->
 ## Question 174: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-174`
 
 **Content revision:** `45275e2f7abf8dfcd1289c5e3b44174efe5506b15d6ae2b4ab9bc877fb5db405`
+
+**en review revision:** `2ef7735788afd2e11643343f12d58f7677e10281f60ce1c1535e826a0412ab4b`
+**es review revision:** `ed1aa78279f2f6b72f3f1d15d37e9a3ad5f91a31e06a9052e6d1913d909b8784`
+**pt-BR review revision:** `c0e1dc556bc6c34865be622b02da213d9528b12ecc001fe492c9735394985979`
 
 ### English
 
@@ -17769,11 +19163,19 @@ Runners próprios foram escolhidos por compilador especial e rede interna. Quem 
 <!-- certification-coach-question:actions-175:898653e38d2bc53356874c6aa030198965bd80e653dacee258eb3253de08dc13 -->
 ## Question 175: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-175`
 
 **Content revision:** `898653e38d2bc53356874c6aa030198965bd80e653dacee258eb3253de08dc13`
+
+**en review revision:** `734bbcc3b70d2d2f50169d6ceb05376b679ce63d9f318051da6bb4eaa0e0b333`
+**es review revision:** `6a7da87d3a0dcbb50c1795baf2012409768691eb2ebc11c302ac9d095684af21`
+**pt-BR review revision:** `32299acf566fedfee2ce12a1b45c7092475b8747a355b1e5e7ffb1ea50784390`
 
 ### English
 
@@ -17871,11 +19273,19 @@ O workflow exige compilador específico, mas imagens hospedadas mudam. Como redu
 <!-- certification-coach-question:actions-176:cd833a5a092722a2a18643e6da93426032de5d3d0b36797a0b5a370ea3ee2271 -->
 ## Question 176: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-176`
 
 **Content revision:** `cd833a5a092722a2a18643e6da93426032de5d3d0b36797a0b5a370ea3ee2271`
+
+**en review revision:** `6fa644ef325b754f514d0a4a57e330a190f9052181776cc12e2340297838a15d`
+**es review revision:** `c4758e17583947c0c991a3000f25062e38ab09b827cbb7a8fb5952d3f2915579`
+**pt-BR review revision:** `36e72210e6f515d3234df8afcfa55b67dd4d6bd50485ed8e4ebab6c28ca67df3`
 
 ### English
 
@@ -17973,11 +19383,19 @@ windows-latest migra e quebra um build legado. Qual resposta equilibra compatibi
 <!-- certification-coach-question:actions-177:002c679a88ca683b62810fbcfcae02bb9612f0e815c5c8b005d12f9b0c03f5f7 -->
 ## Question 177: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-177`
 
 **Content revision:** `002c679a88ca683b62810fbcfcae02bb9612f0e815c5c8b005d12f9b0c03f5f7`
+
+**en review revision:** `ec6cd629125374291dcd738f1d9fabf06beb964c7adae8128f42cc5fd83bd0f8`
+**es review revision:** `c546d833eaad9c8b273150df79367bc937b9877ab1be93a22c3275d9ea2b5b2a`
+**pt-BR review revision:** `9932f24954194870d319cd434864979edf4c0f79d61232e1ae7b311d6a7f1eeb`
 
 ### English
 
@@ -18075,11 +19493,19 @@ Um workflow não consegue mais usar rótulo Ubuntu retirado. Qual correção é 
 <!-- certification-coach-question:actions-178:f4412f514e889158e0d92d784ba2bcd625a54314766bdf0c253f61c864ed26e5 -->
 ## Question 178: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-178`
 
 **Content revision:** `f4412f514e889158e0d92d784ba2bcd625a54314766bdf0c253f61c864ed26e5`
+
+**en review revision:** `56dde02d9aff2438b61a7f890f201d410ed6b3479738d5db4cba4f025ad41cbb`
+**es review revision:** `41b65e470053ccd244a8179e1e583ea7b9f2aa1900670d805430a790ffccbdf8`
+**pt-BR review revision:** `8db49469c81babd94f5d9a16453cf3749820471fa8241ec8b97236760e37af0d`
 
 ### English
 
@@ -18177,11 +19603,19 @@ Um serviço exige poucas IPs de origem estáveis; faixas hospedadas padrão são
 <!-- certification-coach-question:actions-179:1a3da0f3cb352d4037e789ca394004d1dd22bd158020fa5343db38a1a63a8114 -->
 ## Question 179: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-179`
 
 **Content revision:** `1a3da0f3cb352d4037e789ca394004d1dd22bd158020fa5343db38a1a63a8114`
+
+**en review revision:** `8f7e564997af161d1c1f5f095404ed730e6b29cb92050e81a67ac2377c0eb62f`
+**es review revision:** `6e67455cb6cbf5ce50c095c8034a357793ac79710cf9d8498b70c121ab11a7db`
+**pt-BR review revision:** `9bb8d5156ff7bcbe2a1fbf2e93d4230c612a620a876873c2770358b3e2b0fb26`
 
 ### English
 
@@ -18279,11 +19713,19 @@ O build precisa de serviço local privado sem endpoint público. Onde executar s
 <!-- certification-coach-question:actions-180:a277bf56a98395f2f9b2d210cbacea1ed73bb39f39967d486249df4e098be4d2 -->
 ## Question 180: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-180`
 
 **Content revision:** `a277bf56a98395f2f9b2d210cbacea1ed73bb39f39967d486249df4e098be4d2`
+
+**en review revision:** `4a5ed2fd9b067c17ed82749fc5ba873d9da9f353ef8f0498ee85604aa14ed6b6`
+**es review revision:** `743edff6b8972120f134e61221d55bac9aef68f4158fa125031b71264d363f10`
+**pt-BR review revision:** `9b312b478be09dfdf9e5b93fc803125ff56cafc4903b943ba434d44e38057af0`
 
 ### English
 
@@ -18381,11 +19823,19 @@ Um proxy TLS corporativo causa erros de certificado nos runners próprios. Qual 
 <!-- certification-coach-question:actions-181:bbca43835a50fc59798f9c673e0593677038c65885fe50090327ab002b53b2e1 -->
 ## Question 181: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-181`
 
 **Content revision:** `bbca43835a50fc59798f9c673e0593677038c65885fe50090327ab002b53b2e1`
+
+**en review revision:** `5e261b4a2f57e870d8ee0b63e1b95449d2e1ba58981c02897e4b00935320e3e6`
+**es review revision:** `22208e6e4752ef7f906fd0f772c72235622dc8a9203394d75d2862f55ac5e523`
+**pt-BR review revision:** `135d28e0de3911a884bd7d1eb8c88c373ab06191075a92b75acc8aaeb9eb601e`
 
 ### English
 
@@ -18483,11 +19933,19 @@ Só cinco repositórios precisam de credencial API compartilhada. Como centraliz
 <!-- certification-coach-question:actions-182:2db922644c1435d545f99a893841918f2427d712adda5a9267f2cc8f3ea8ca17 -->
 ## Question 182: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-182`
 
 **Content revision:** `2db922644c1435d545f99a893841918f2427d712adda5a9267f2cc8f3ea8ca17`
+
+**en review revision:** `a09f69091f973fd902c97688683574b89a325c45f12494d589daf6195780f17c`
+**es review revision:** `dc47035e3063d38510963651fab45c6b8df7d80905802a72c6452f20ca8c330f`
+**pt-BR review revision:** `58e4a2f1ae635bcfdd890ecbbdf29062307528965d2e56a8c7f53fd18565dd62`
 
 ### English
 
@@ -18585,11 +20043,19 @@ Organização e repositório definem DEPLOY\_KEY. O job não usa ambiente. Qual 
 <!-- certification-coach-question:actions-183:b3f8d3a4d09bdf13649a4ddd7f66b5285a293b4954aa5a24189c0f89e69b82be -->
 ## Question 183: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-183`
 
 **Content revision:** `b3f8d3a4d09bdf13649a4ddd7f66b5285a293b4954aa5a24189c0f89e69b82be`
+
+**en review revision:** `c4d417bee1e1b6f5e24fdd2753859e0f783974c48cf03fd31a392cc657100b02`
+**es review revision:** `4b5728f82eb8f0b22591b96353f79023f684ecb5d39c8e6468733e475f1c82be`
+**pt-BR review revision:** `65e733b8bd74f313b74425c32a37090849f9c1821ab616e7c75056cade55c389`
 
 ### English
 
@@ -18687,11 +20153,19 @@ Um job production tem DEPLOY\_KEY de ambiente e do repositório. Qual recebe?
 <!-- certification-coach-question:actions-184:68fc589f50263ea55c2034491e4985daa9f24d1e8eb14cf9b6b3c49bef0a888e -->
 ## Question 184: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-184`
 
 **Content revision:** `68fc589f50263ea55c2034491e4985daa9f24d1e8eb14cf9b6b3c49bef0a888e`
+
+**en review revision:** `79d38ac7b3ff03aaf752301bb91dedbd8dcd7dacfb33305f21129cf76b4dac8e`
+**es review revision:** `3bb0ab20410d1cc979d81ba4e25732325fc474072ce5914d8964aeb15ae9db98`
+**pt-BR review revision:** `919dee9b1417d50e895021abe3fb8b04fea95c4bddbc0e5c6e1410e493275f6e`
 
 ### English
 
@@ -18789,11 +20263,19 @@ Uma credencial production só deve ser liberada após aprovação autorizada. Qu
 <!-- certification-coach-question:actions-185:9197ca4ddffc0daa8461fa76ffa59d7740e54fc07786ae6b09eb043104d87f31 -->
 ## Question 185: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-185`
 
 **Content revision:** `9197ca4ddffc0daa8461fa76ffa59d7740e54fc07786ae6b09eb043104d87f31`
+
+**en review revision:** `0a5c22ec56f19abb3896080044a224d3bdd8676c687b154cc8489283940ea113`
+**es review revision:** `29ef40e52c9159c781a98333b32fc00d2d230253138545705d999b85c9827cf4`
+**pt-BR review revision:** `a3cad19edb4d50f96bf583d252a244812383751a9a273c2af001ac4b409bcf98`
 
 ### English
 
@@ -18891,11 +20373,19 @@ Um mirror padrão não sensível é compartilhado por vários workflows. O que u
 <!-- certification-coach-question:actions-186:259e63c587168d7a784aa39172fd56d6a214ce422ac61567d744dcb83540aa68 -->
 ## Question 186: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-186`
 
 **Content revision:** `259e63c587168d7a784aa39172fd56d6a214ce422ac61567d744dcb83540aa68`
+
+**en review revision:** `83b215a51821535e25003821fb798a8ebbd1fa8d3dbd5f8173ad95fd07a7caee`
+**es review revision:** `55cefd34b82263dbe00312e74bc907bb6fb8744c9ecd99085af6c8c6ee2c0be7`
+**pt-BR review revision:** `5af31b850f494905df4118839ca398f1ac1c2b7d87ce0503d4fa4f4d3b8e38dc`
 
 ### English
 
@@ -18993,11 +20483,19 @@ Um script atualiza segredos de repositório por REST. Como preparar o valor ante
 <!-- certification-coach-question:actions-187:cc6409bd90091eeee0503d489742d001433aa0fc18995501987b33eb2e9693f3 -->
 ## Question 187: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-187`
 
 **Content revision:** `cc6409bd90091eeee0503d489742d001433aa0fc18995501987b33eb2e9693f3`
+
+**en review revision:** `f517d4714c73e81b475c720bc8d33075f512815f16a902b0654ec6881d01fd40`
+**es review revision:** `9a49d340b74eef8b49fa39ec7404c7a4b44a7b2489146a8205870f004dbcca0d`
+**pt-BR review revision:** `72ff0a4f458a36640a4ddeb09720149877cee7f3e5b42a365ebbcc35ee265208`
 
 ### English
 
@@ -19095,11 +20593,19 @@ Listar segredos por REST retorna nomes e datas, não valores. É falha?
 <!-- certification-coach-question:actions-188:c73c95e32c6e2f4485bd891db54b5a2b2ec64c9f344f7db596fd71eb768163c3 -->
 ## Question 188: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-188`
 
 **Content revision:** `c73c95e32c6e2f4485bd891db54b5a2b2ec64c9f344f7db596fd71eb768163c3`
+
+**en review revision:** `1aff187563b39c9bceeb2fd3f72ded7d047f89cd5e07a06c2ef881525edb24b2`
+**es review revision:** `77b2f917937c102fe903e20053e2c9079f2c7b59ac7d666a9d251b27902afc40`
+**pt-BR review revision:** `b87d4cbeb27f7fa1d587e984a95071daa130d00bd244ab1ca751d0875d3ad368`
 
 ### English
 
@@ -19197,11 +20703,19 @@ Um script atualiza a variável não sensível REGION por REST. Qual família de 
 <!-- certification-coach-question:actions-189:5d0b1c41c64ed4a475474ff99c3a83235cd2010880ad0e386381571a2e5a3e4b -->
 ## Question 189: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-189`
 
 **Content revision:** `5d0b1c41c64ed4a475474ff99c3a83235cd2010880ad0e386381571a2e5a3e4b`
+
+**en review revision:** `9e86ad7065271940a45df954f8b46b49b12dfc1b236cbb796077364d809a2706`
+**es review revision:** `a16099db3bc5560f6553ec0ad1dd783dcba0d5a7aafea7c32784eeb5bb91b92c`
+**pt-BR review revision:** `6f24a007bd583396fb34e44a15c7b802120952245cdb19b5f048a5b977acf1d0`
 
 ### English
 
@@ -19299,11 +20813,19 @@ Não existe segredo aplicável OPTIONAL\_KEY. Qual valor secrets.OPTIONAL\_KEY r
 <!-- certification-coach-question:actions-190:f8c99171400c1d6cdc716fd24a988fbfab9a86974a703d695b827a8a64c8396e -->
 ## Question 190: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-190`
 
 **Content revision:** `f8c99171400c1d6cdc716fd24a988fbfab9a86974a703d695b827a8a64c8396e`
+
+**en review revision:** `8b89cf620a57794ada8f137f1a90aeb56b7c7e99bb493eb161b8192e1ede64af`
+**es review revision:** `9b66895911aad5e51ebf8b20d167736d0ffa54a71fb835e647e4f4dd9eaf8d7c`
+**pt-BR review revision:** `866ee80671f37637cc4ae8f7476efbc13026a507160de262c3e6ccf86672f034`
 
 ### English
 
@@ -19401,11 +20923,19 @@ Uma etapa só deve executar se houver segredo opcional, mas secrets não pode se
 <!-- certification-coach-question:actions-191:ff3c43bd85137bdbfd2c8fd421364f3268c4be11df1cf4f3bc1defb7022aa9c9 -->
 ## Question 191: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-191`
 
 **Content revision:** `ff3c43bd85137bdbfd2c8fd421364f3268c4be11df1cf4f3bc1defb7022aa9c9`
+
+**en review revision:** `7cb2976122f67fe717b55557ce66b7bdb142759eeaf15637d7225a20b6c451a2`
+**es review revision:** `0085b9457e2a0eb837bf6109482c1c0c4b216844600d88310bc30087bd96e96f`
+**pt-BR review revision:** `bc0c47cbf0a9d781b6bf8e46b612114fc454204001ebd1ccbc974719671dc4b0`
 
 ### English
 
@@ -19503,11 +21033,19 @@ Um pull\_request público vem de fork. Por que não recebe o segredo de implanta
 <!-- certification-coach-question:actions-192:faba7bf63a0d351aa21653881581903ec0e14a2a90f0296727e5c6ba4fd5d23f -->
 ## Question 192: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-192`
 
 **Content revision:** `faba7bf63a0d351aa21653881581903ec0e14a2a90f0296727e5c6ba4fd5d23f`
+
+**en review revision:** `975f1dcb73861199fc1cf4ca653eab37862a844d9b8bea3b1926ed73caa3d3b9`
+**es review revision:** `646dcaa79471a776cedd5fd007fbe7e73127dcf9ac084b57ebb97cf2cd16eb51`
+**pt-BR review revision:** `dfe5b29085dd96631127077d8b832628cc3816203ab43664a8cd1dfa3a6952a5`
 
 ### English
 
@@ -19605,11 +21143,19 @@ Um workflow Dependabot não acessa o segredo Actions usado por pushes confiávei
 <!-- certification-coach-question:actions-193:9d82048482e469f3efad399c8cfb3f83f43aa5df4fa444adddb261895c2d633e -->
 ## Question 193: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-193`
 
 **Content revision:** `9d82048482e469f3efad399c8cfb3f83f43aa5df4fa444adddb261895c2d633e`
+
+**en review revision:** `8ef1339aa0601422b4d5d59b3780c2d8abc0970cf4c5922bce66a1bd339904ed`
+**es review revision:** `c232e9dea840e5e02d048dd839ef844965cf0cd6072bd06121f9aad668635d09`
+**pt-BR review revision:** `81de88e09726fdffb86ffd7f0e0736201bfdfcf6d30ff822a858813d507c9bbc`
 
 ### English
 
@@ -19707,11 +21253,19 @@ Um segredo organizacional com repositórios selecionados retorna vazio num repos
 <!-- certification-coach-question:actions-194:59d0d74d3a6a55b6e9c97e6fb70c7432e500844f6c2ae83e58ca77179ec2fb43 -->
 ## Question 194: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-194`
 
 **Content revision:** `59d0d74d3a6a55b6e9c97e6fb70c7432e500844f6c2ae83e58ca77179ec2fb43`
+
+**en review revision:** `36bab27da7b2382291e271cfff5689d8742323e4487de9b2708d0d5f0cb98845`
+**es review revision:** `4d574ba29eb4a80ab0dcff199936dc4e00967aef09734dd138971b8eb4d13315`
+**pt-BR review revision:** `c2c766599e686e74ce2b2e660abdfaf319968c5eef33d7eeb4d65e48cdb1a769`
 
 ### English
 
@@ -19809,11 +21363,19 @@ Um segredo é rotacionado enquanto a execução está na fila, antes do job prod
 <!-- certification-coach-question:actions-195:d6ac118739d584b2356c72857fc6f009268872ce31767859e4697e3bc7aa135d -->
 ## Question 195: Manage GitHub Actions for the enterprise
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-195`
 
 **Content revision:** `d6ac118739d584b2356c72857fc6f009268872ce31767859e4697e3bc7aa135d`
+
+**en review revision:** `0e5603f5d0578394d64aa7b00b49c0a30e8ab84173a814d4a68df01bc7bd61da`
+**es review revision:** `cb07fdb7d74cd84c9fc0159966e602adacddeab5c7031a8565d6580be2f02fc8`
+**pt-BR review revision:** `4566ff4be9d287324adab40e28bf8fcb8c67c7680174f0b8519949b051271956`
 
 ### English
 
@@ -19911,11 +21473,19 @@ Qual comando CLI rotaciona DEPLOY\_KEY do ambiente production sem criar segredo 
 <!-- certification-coach-question:actions-196:918d127b07c4c32103e0690c75cc455c2593d880c58b88af3dcfac48ff9393e5 -->
 ## Question 196: Secure and optimize automation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-196`
 
 **Content revision:** `918d127b07c4c32103e0690c75cc455c2593d880c58b88af3dcfac48ff9393e5`
+
+**en review revision:** `663592333479d7ab581558b3497ea773ce9fa66b599ed73580bdf5b82af41624`
+**es review revision:** `74c17dd48173b69a1571466eab7a2e9ccbb7ecc970c17c518e1988e484546e53`
+**pt-BR review revision:** `88c7299652f98f3c207abe893c6cbb171b187e5d074f5b03a8e19f35f9967968`
 
 ### English
 
@@ -20013,11 +21583,19 @@ Um job de release só precisa autenticar enquanto executa. Por que preferir GITH
 <!-- certification-coach-question:actions-197:898c0b77aee0b531b11472aee127f65e1231d5368e6813ebe28af893ce46426b -->
 ## Question 197: Secure and optimize automation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-197`
 
 **Content revision:** `898c0b77aee0b531b11472aee127f65e1231d5368e6813ebe28af893ce46426b`
+
+**en review revision:** `8d977fa002044e642ef428adfb78a9d80ac7385f611d818f79cc554701d0db23`
+**es review revision:** `674e65a8c9049fb8ec6c45330865c55a0ee8a5644f7d781b974501f434fb6d7e`
+**pt-BR review revision:** `ca1d48f90747f2517b3ead58cd5dbd44a3542c001268a96d4391feb208b168d4`
 
 ### English
 
@@ -20115,11 +21693,19 @@ Uma implantação usa chave cloud permanente como segredo. O provedor suporta fe
 <!-- certification-coach-question:actions-198:9d602a9c299e888a12ac4f6af32ec34e02f4a296be8ba553bde5c83505dd470c -->
 ## Question 198: Secure and optimize automation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-198`
 
 **Content revision:** `9d602a9c299e888a12ac4f6af32ec34e02f4a296be8ba553bde5c83505dd470c`
+
+**en review revision:** `fdf8ae869514901470d963385b5504609be7d2f6a547a4f6a417357205f79830`
+**es review revision:** `d67f4c5662911ac051c49edc0f75e00d4e09232bb72b563ad3491e1460378a37`
+**pt-BR review revision:** `925ab437a31340a547a9ee384552d85561943d3b5a133d3c1a1c3e86aae99a98`
 
 ### English
 
@@ -20217,11 +21803,19 @@ Um login cloud OIDC não consegue solicitar o token de identidade GitHub. Qual p
 <!-- certification-coach-question:actions-199:bbd83549f2c6afb8e62ab1f335cd97e4315ef04a7a7685cf46b6ad5741562f1c -->
 ## Question 199: Secure and optimize automation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-199`
 
 **Content revision:** `bbd83549f2c6afb8e62ab1f335cd97e4315ef04a7a7685cf46b6ad5741562f1c`
+
+**en review revision:** `0b741001c4b7a5b95fccb86edd9a1debf933452e15b84310c0468b6734594694`
+**es review revision:** `b5d8bb8132ba0a8f4f8a29ffb43ed10d33e74889fcaf11565f01da401554501e`
+**pt-BR review revision:** `af22e9686318000b5ea487307624efddc53dc3c8ad780bfb24069474c674397e`
 
 ### English
 
@@ -20319,11 +21913,19 @@ Um job tem id-token: write, mas a cloud rejeita implantação. Por que a permiss
 <!-- certification-coach-question:actions-200:cf6f1dfba6ed9fc7c789c2d99affa8a267f9972c027bcfd4e0514b009117e4fc -->
 ## Question 200: Secure and optimize automation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-200`
 
 **Content revision:** `cf6f1dfba6ed9fc7c789c2d99affa8a267f9972c027bcfd4e0514b009117e4fc`
+
+**en review revision:** `a47285cd5b5f4a1ec89bf92926aba2d6089d76b03a37bbd59674245305f5549b`
+**es review revision:** `cf896b3779520d01996a29b1f84d2cef8fd19de7d6c89bb924e24bab5585d9d6`
+**pt-BR review revision:** `c357769f60e5eac84fa6679d8f722dc3ade530709e47637146c85f7f426f80fd`
 
 ### English
 
@@ -20421,11 +22023,19 @@ A confiança cloud aceita qualquer token GitHub sem conferir repositório ou amb
 <!-- certification-coach-question:actions-201:0ec1fd94bd08feb6d824fee392ad89fe5ba7a13d14cdfbdb9d1ff9d78c34e89e -->
 ## Question 201: Secure and optimize automation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-201`
 
 **Content revision:** `0ec1fd94bd08feb6d824fee392ad89fe5ba7a13d14cdfbdb9d1ff9d78c34e89e`
+
+**en review revision:** `9f4e6e927e818107a66438875f53ccd494e14eb7fa6695b119f67e95206a5e0e`
+**es review revision:** `6f6022ede29a18fc65904c2b8d91195cce39e3be141b3fabe0cc16933edb9632`
+**pt-BR review revision:** `f44a33c09ead52edbdec57c7cc4d37611df00f9f262541bf11b3f39f368ca27a`
 
 ### English
 
@@ -20523,11 +22133,19 @@ Um workflow insere github.event.pull\_request.title diretamente em Bash; o ataca
 <!-- certification-coach-question:actions-202:4a652983e0c09f98a80054919975b2468ae009c9b892388fbd550bb323db579b -->
 ## Question 202: Secure and optimize automation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-202`
 
 **Content revision:** `4a652983e0c09f98a80054919975b2468ae009c9b892388fbd550bb323db579b`
+
+**en review revision:** `0307092fd4e35bdbe1923d00fd32372647d0153bcc939a534b9e27d4d8a722dc`
+**es review revision:** `2b2c272d5d2a204aad9d22e46bcd02958f972eb88477ecab16cc172a444d58dc`
+**pt-BR review revision:** `7d15abc9aa311a0abe36fe6e8d8df21036acc9b806d619cf819f0c1a6423a0f0`
 
 ### English
 
@@ -20625,11 +22243,19 @@ Um pull\_request\_target privilegiado baixa head do fork e executa seu script co
 <!-- certification-coach-question:actions-203:b0f21d72bec42547c09dd23cd925a8ca70c5f43c5da7f23f7c6471eb3d2b3373 -->
 ## Question 203: Secure and optimize automation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-203`
 
 **Content revision:** `b0f21d72bec42547c09dd23cd925a8ca70c5f43c5da7f23f7c6471eb3d2b3373`
+
+**en review revision:** `3c184c5e2efe12596309919fe157cbbece64255bf69292d0bdc70e9cc9aedbd5`
+**es review revision:** `b4c4487719ceec9ac867ca2722b9d6f4cfbee6654ba82cabb8e70aebe1fedab4`
+**pt-BR review revision:** `3339226beb21c19426261ac09787afd9dd1c219bbaa1c552a9b8b04d78f2aeb6`
 
 ### English
 
@@ -20727,11 +22353,19 @@ Uma implantação workflow\_run consome artefato de código PR não confiável. 
 <!-- certification-coach-question:actions-204:898dc7673db3d62b940dda191844e725affabfaba8bcb62b3b541ce5f5bb0fcc -->
 ## Question 204: Secure and optimize automation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-204`
 
 **Content revision:** `898dc7673db3d62b940dda191844e725affabfaba8bcb62b3b541ce5f5bb0fcc`
+
+**en review revision:** `a86c47e267133d257ccc0d891a87ae73ba6e607c1e4a2f89712cdd3ff51fb806`
+**es review revision:** `96665595c8146f8f94c4694160ba348d95565cf9826d2ed9c2634da38460ad15`
+**pt-BR review revision:** `806c12d2622a7cc1fcac7aadea59aa2aebcb5761758cc70fc973b52cc95d26c9`
 
 ### English
 
@@ -20829,11 +22463,19 @@ Sem poder adotar lockfiles de dependências de workflow ainda, qual referência 
 <!-- certification-coach-question:actions-205:a242c2e73619d595b8c4fdb19031c584a585c9fc40a613031b4ffb12095e860e -->
 ## Question 205: Secure and optimize automation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-205`
 
 **Content revision:** `a242c2e73619d595b8c4fdb19031c584a585c9fc40a613031b4ffb12095e860e`
+
+**en review revision:** `37a1352c38f220ec6af7a13df0520a871cc72972be4c12cf5d748ecdb8c68a09`
+**es review revision:** `81d852bf00570a0b8498a3a46ec7e4cf22081b161770d44f9a8e7beda30aec85`
+**pt-BR review revision:** `249ef93aeeb442c21e827e55254886f698486c4a588d0f0a2e357b0c7afec699`
 
 ### English
 
@@ -20931,11 +22573,19 @@ Uma ação tem selo de criador verificado no Marketplace. Como interpretá-lo?
 <!-- certification-coach-question:actions-206:b4cbe813a4e72229626c2adb00f3deeb800e4aea2b9a44071c3256982883e5c8 -->
 ## Question 206: Secure and optimize automation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-206`
 
 **Content revision:** `b4cbe813a4e72229626c2adb00f3deeb800e4aea2b9a44071c3256982883e5c8`
+
+**en review revision:** `d2a23dfe8e15064eeeb227b958ffb70d9a8f1a27db69460bf71325497c23ed4a`
+**es review revision:** `a0c3c3b3a89911da590805ce35c1c3d494d97b3b128e0213f0d6e14fa4e2bc9a`
+**pt-BR review revision:** `4726b58118521e01cf3c55675722334242928c7a46662a5695b885c902911b8e`
 
 ### English
 
@@ -21033,11 +22683,19 @@ O workflow obtém novo bearer token de serviço externo. O que fazer antes de op
 <!-- certification-coach-question:actions-207:385d79b92d38ed2f68c7ff78b64395f8482016aaffed91ceef85477dc2050b24 -->
 ## Question 207: Secure and optimize automation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-207`
 
 **Content revision:** `385d79b92d38ed2f68c7ff78b64395f8482016aaffed91ceef85477dc2050b24`
+
+**en review revision:** `072a2baff5326f75dbd494f191ef1679343bb46ce8e9c5c5b91051e5b30c4ff1`
+**es review revision:** `24359c17f85e9fc86a8da2c8327baf048271d1557035317bb9c85a7076dd5cfa`
+**pt-BR review revision:** `fe1891c8b5edab09bff94406fbf4cc1f6c2c877fada239f4a621ec9f9f448568`
 
 ### English
 
@@ -21135,11 +22793,19 @@ Um segredo é impresso em Base64 supondo mascaramento automático. Qual correç�
 <!-- certification-coach-question:actions-208:e78a55fcb520776866b68085c151b906506641119165e8508088779058c47abf -->
 ## Question 208: Secure and optimize automation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-208`
 
 **Content revision:** `e78a55fcb520776866b68085c151b906506641119165e8508088779058c47abf`
+
+**en review revision:** `7e019d15e55d2ccc876247d96f90a0bf1e84a155ec977a7497df2b010dff3df0`
+**es review revision:** `c15f8cd860ee1bab3dc5c11c5a63bca5ee883938956e3adb1d1b94471d530b55`
+**pt-BR review revision:** `ecd66554fa519aa88d452f1b48eb7264acec1e83eb29f2137a815faf73382b0b`
 
 ### English
 
@@ -21237,11 +22903,19 @@ Uma credencial apareceu sem mascaramento em logs. O que trata valor exposto e ev
 <!-- certification-coach-question:actions-209:cac9daff30543a7fd89d75d34476b4fd45e473fdbcc0a7879606f2cf3e2c02ee -->
 ## Question 209: Secure and optimize automation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-209`
 
 **Content revision:** `cac9daff30543a7fd89d75d34476b4fd45e473fdbcc0a7879606f2cf3e2c02ee`
+
+**en review revision:** `74d15deabaf6fba5aad2042b12b3b63627e8d8c0965ea9464955bbb8f4296bf9`
+**es review revision:** `0d11e99985e8fe7bf62cdcb0d1b3afa68e0a797b765912e044d294a013f40d11`
+**pt-BR review revision:** `0df85a764fceea53c5cfe98c809829f7d7fa0024285f149ab7e010ccb73a0f11`
 
 ### English
 
@@ -21339,11 +23013,19 @@ O cache inclui pacotes e credenciais cloud; PRs de forks restauram caches aplic�
 <!-- certification-coach-question:actions-210:6ccca05e4d5a61a664024137899dcb7fb92bb07d7ae08bebd99d7ae451285767 -->
 ## Question 210: Secure and optimize automation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-210`
 
 **Content revision:** `6ccca05e4d5a61a664024137899dcb7fb92bb07d7ae08bebd99d7ae451285767`
+
+**en review revision:** `18ffd1abfe6aec26dacef9457e3d9b348c2c7771d9120e60af89e67200b20559`
+**es review revision:** `765d013f728a0bd195251d0186531acb0b21bedbed5ba9af894cf27ffd5ae305`
+**pt-BR review revision:** `1c01e73159c1e18e4418e10372f91fa865242cf909a74588eaa633be18b5dda1`
 
 ### English
 
@@ -21441,11 +23123,19 @@ Uma release precisa vincular verificavelmente o binário ao repositório e workf
 <!-- certification-coach-question:actions-211:776b97213a7893b051c9da5e748156683e1184590f88aca04b8cac728382b072 -->
 ## Question 211: Secure and optimize automation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-211`
 
 **Content revision:** `776b97213a7893b051c9da5e748156683e1184590f88aca04b8cac728382b072`
+
+**en review revision:** `dfcc3ae5d167acf7bbf7aaa5b38db61841d026591dfb7cb23e43d0cd49b3a6fc`
+**es review revision:** `756f6d501e864ba3ab8535f8007037902adc7edc3abf743d201b6779230daea2`
+**pt-BR review revision:** `6ec656ba1756b26c8dbe01a4d9711ca95deb686f358e43f33f988a58ea5803ab`
 
 ### English
 
@@ -21543,11 +23233,19 @@ Ao gerar procedência de binário com a ação de atestação, quais permissões
 <!-- certification-coach-question:actions-212:70df5ffeee140b24527516ef8177aba3c6eb5c51ef8ec0b3faea1c234bd3c73f -->
 ## Question 212: Secure and optimize automation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-212`
 
 **Content revision:** `70df5ffeee140b24527516ef8177aba3c6eb5c51ef8ec0b3faea1c234bd3c73f`
+
+**en review revision:** `ebf83b7913cf37a286c9a6ac79717648323a0bda5e82939dea3b6cea61291550`
+**es review revision:** `00ea29adf0c17e9e8e28726571dd69b0973c353f6fc8fee2331e3c553e95f7d1`
+**pt-BR review revision:** `f9571d5a039e74fa6369d356c4e629998d7c7da94ae09e94a083353438929b65`
 
 ### English
 
@@ -21645,11 +23343,19 @@ Um binário foi baixado e sua atestação deve ser verificada contra o repositó
 <!-- certification-coach-question:actions-213:9249e42955ff8a5cae5b58e957ae989d4c91d57d2c76be40f75b4da2d4c37ccc -->
 ## Question 213: Secure and optimize automation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-213`
 
 **Content revision:** `9249e42955ff8a5cae5b58e957ae989d4c91d57d2c76be40f75b4da2d4c37ccc`
+
+**en review revision:** `40bc8a8ab638e29cd673893f8981285ad7e93f42586cc5def96dca5dc6d4aae9`
+**es review revision:** `aef36de550b70633f9c916c07faf58b28fa6d6a92c1b42201c55212456716cbc`
+**pt-BR review revision:** `91c7418b4c62cc43a6f7e7730117e9257662c8f74c291aa91eb534cd6b5fadbb`
 
 ### English
 
@@ -21747,11 +23453,19 @@ Uma atestação válida é tratada como prova de ausência de vulnerabilidades. 
 <!-- certification-coach-question:actions-214:150974b8ea8e8dcead11f12b9d435605bee0f77bd3b444d95399ca778f0b8891 -->
 ## Question 214: Secure and optimize automation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-214`
 
 **Content revision:** `150974b8ea8e8dcead11f12b9d435605bee0f77bd3b444d95399ca778f0b8891`
+
+**en review revision:** `73c6de43d243f252e6780b48868083159c9051444738bc3bc36a46a1ac139579`
+**es review revision:** `6e4b66624de871db3b2ba6569e8f0e4587d35c3f63559ea0ea5d5ffa7c448a6e`
+**pt-BR review revision:** `e1aa7bfe912df9df2f5d92f5ec160f34f8e181bcfb5eae7a64a69bd09ff9ca18`
 
 ### English
 
@@ -21849,11 +23563,19 @@ Production exige aprovação de alguém diferente de quem iniciou a implantaçã
 <!-- certification-coach-question:actions-215:a97c4d13487e11e8874c4d356ad9363689a9a276e20778d9825475c857aa81f0 -->
 ## Question 215: Secure and optimize automation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-215`
 
 **Content revision:** `a97c4d13487e11e8874c4d356ad9363689a9a276e20778d9825475c857aa81f0`
+
+**en review revision:** `837d76771a9db73896adf2c3687ae371c0a05dea67fd9b11fa7baab54151c26c`
+**es review revision:** `06c7be4b2ed4d1ba9933751fab530182edcccbd4fb0d945ef72f86ce2cb597e4`
+**pt-BR review revision:** `4c787fdbb4a478e4647899302b5f9a6350766b367ac4c5ad1e46f1db51b882b5`
 
 ### English
 
@@ -21951,11 +23673,19 @@ Production só aceita branches ou tags de release aprovadas. O que é melhor que
 <!-- certification-coach-question:actions-216:649819b6f2de366e1fea50e31060cfcb53b78122fc7ed4b30bb6b4fbbfe49998 -->
 ## Question 216: Secure and optimize automation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-216`
 
 **Content revision:** `649819b6f2de366e1fea50e31060cfcb53b78122fc7ed4b30bb6b4fbbfe49998`
+
+**en review revision:** `e5790e92f47ee7b43b14a88e522459638780456ce129ccf0e8c895074cc3b32c`
+**es review revision:** `1beb2bb27aa74af804ec302ee22704eb98623707953a558e78501a67b70bf8e0`
+**pt-BR review revision:** `d7a04419d0a4b03d01b65e663c41ffdffa35bfca24e66b8241d2fa26ef4bad58`
 
 ### English
 
@@ -22053,11 +23783,19 @@ Um repositório público executará forks arbitrários em runner próprio persis
 <!-- certification-coach-question:actions-217:f272977f1ab97f0d7952baad440c28b57ddaebcf9a56f1ce15edaa787b5dd593 -->
 ## Question 217: Secure and optimize automation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-217`
 
 **Content revision:** `f272977f1ab97f0d7952baad440c28b57ddaebcf9a56f1ce15edaa787b5dd593`
+
+**en review revision:** `2936eaf52d265841d67d5e0e8eea6435c524a3264c3de93e1cb0a741e4536989`
+**es review revision:** `701d7344e97144fbcb2bfc8cc8ce68ae35d9ccb41a318e6024a670117575d735`
+**pt-BR review revision:** `baa6e468280162efa9fae8fcf60a8c2fdaabb84ef20be7cb796f717735acc905`
 
 ### English
 
@@ -22155,11 +23893,19 @@ Downloads repetidos de dependências dominam CI confiável. Qual otimização re
 <!-- certification-coach-question:actions-218:ab48c5815beaa36462525b5e9eea8469578095d297999ff5c2b839e549ea3010 -->
 ## Question 218: Secure and optimize automation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-218`
 
 **Content revision:** `ab48c5815beaa36462525b5e9eea8469578095d297999ff5c2b839e549ea3010`
+
+**en review revision:** `58fb33919c14786dbfdea8f1ad822f473361e05882132f49e0eb07c2f1b0061f`
+**es review revision:** `03eb02cb0f8a58763d061338c0155d3b76ed397716524378942fd3fc7351a79e`
+**pt-BR review revision:** `be8a8c778eb10164d0dd110a36de36ed929b3d3098df4d83733b988c768d8504`
 
 ### English
 
@@ -22257,11 +24003,19 @@ Muda o layout de diretórios de dependências, mas fica a mesma chave exata exis
 <!-- certification-coach-question:actions-219:e434b77366e9d40ed8bc9f002e8482b2b10b4c147a22ee6a19e4f0fe4e3d9fbd -->
 ## Question 219: Secure and optimize automation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-219`
 
 **Content revision:** `e434b77366e9d40ed8bc9f002e8482b2b10b4c147a22ee6a19e4f0fe4e3d9fbd`
+
+**en review revision:** `26aeaf75f1404aefefd598c76ec3c36e51f906675ce0ad008a593a22b4fe928c`
+**es review revision:** `f09637122d10ce38122379f10091ccf69e81415506e5f22268736d91e06724d7`
+**pt-BR review revision:** `c01798a892d9082e5a2fe4a7f0e455332cd5fea4bd509a5b4510390876f2382a`
 
 ### English
 
@@ -22359,11 +24113,19 @@ Uma matriz de 40 variantes repete combinações de pouco valor e gera filas long
 <!-- certification-coach-question:actions-220:29de51f3e255c4bdab418f8114c0168648222f65ab51109726111182cc1440c2 -->
 ## Question 220: Secure and optimize automation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-220`
 
 **Content revision:** `29de51f3e255c4bdab418f8114c0168648222f65ab51109726111182cc1440c2`
+
+**en review revision:** `db82e8dbc7c3a6edd2af19a388a0caddc02945b943b3ec9d4af5148c2f06b06c`
+**es review revision:** `daef5a34d324e27e45e685632be71505a06c2a516e0560e0be63ecc325e066cc`
+**pt-BR review revision:** `16a35479e09592d4c677bcf1dfcc98bfe0181928254338eecf80a0144b7d0932`
 
 ### English
 
@@ -22461,11 +24223,19 @@ Pushes frequentes deixam runs CI obsoletos competindo com o commit recente. O qu
 <!-- certification-coach-question:actions-221:5c86ae071abc8965728c0358554582cff559793956a6d4e75db929be946ccee5 -->
 ## Question 221: Secure and optimize automation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-221`
 
 **Content revision:** `5c86ae071abc8965728c0358554582cff559793956a6d4e75db929be946ccee5`
+
+**en review revision:** `67c2e3dea790d2e2c1ca81406ce18fcba92fd2d98128fe2258acec39402df005`
+**es review revision:** `d93b773d6684d59bfdf140aeca923178376a96353b42b4a8f98fcc16ee582ee6`
+**pt-BR review revision:** `167262ef6727ce2e2f4b66bb2d20a0fb58f195dc0ddea27f628ea325e7b2f8a2`
 
 ### English
 
@@ -22563,11 +24333,19 @@ Gravações temporárias são retidas por meses, mas só importam por três dias
 <!-- certification-coach-question:actions-222:0f5297365dcb143d557d3d2bd698f2c998e37d5edf860db18478ad3a910f6f32 -->
 ## Question 222: Secure and optimize automation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-222`
 
 **Content revision:** `0f5297365dcb143d557d3d2bd698f2c998e37d5edf860db18478ad3a910f6f32`
+
+**en review revision:** `7c085e90ceddc3fa8e1ee2782327cfb33ae5a2e1ae2634594bb7714b82500819`
+**es review revision:** `39c2453fa6ba08c762ffd6c973ad4ae5e3bd05f73f12293b3b5ecd5f168e3ef3`
+**pt-BR review revision:** `aa958dc2bcea4a398086f32c126c70e42b0c795b015be5a7929e777341345982`
 
 ### English
 
@@ -22665,11 +24443,19 @@ Um serviço precisa excluir artefatos individuais antes do vencimento normal. Qu
 <!-- certification-coach-question:actions-223:136df28bf330f483c95d2769ea5f5c681bc9c41a94f700d0056f8d8219bca652 -->
 ## Question 223: Secure and optimize automation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-223`
 
 **Content revision:** `136df28bf330f483c95d2769ea5f5c681bc9c41a94f700d0056f8d8219bca652`
+
+**en review revision:** `e0adcc3a2a2fd23e8e8067ff16b553222f8ea8e929118bc3904cfa4bebd75dbd`
+**es review revision:** `21fbea09e23756846e029043e5a813a08a426f1dd114c35c7fccf1ec956b5112`
+**pt-BR review revision:** `de3547cbaed8997e19887bb8ae14aee2e96eac79a6017e70766fa19451ecaa74`
 
 ### English
 
@@ -22767,11 +24553,19 @@ Testes travam esperando endpoint externo instável. O que limita desperdício se
 <!-- certification-coach-question:actions-224:7892902d89f2b3886c402a0701930388710e3b4f0ee20ffa21f068bf46d95d40 -->
 ## Question 224: Secure and optimize automation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-224`
 
 **Content revision:** `7892902d89f2b3886c402a0701930388710e3b4f0ee20ffa21f068bf46d95d40`
+
+**en review revision:** `69337144e3a8be336ba9390ea2814d4d07082220c84bca7f355f8b0cf32eb9af`
+**es review revision:** `50b902f84a6a691c95da98a9d77dd3b3e6df9eae6297a8d3bd24c5605f574b0a`
+**pt-BR review revision:** `cffde3e54f31777f7840b2b0c8504ee5e3d348442637d493ee9244bf70f5773e`
 
 ### English
 
@@ -22869,11 +24663,19 @@ Ações externas são fixadas por SHAs revisados. Como propor versões novas de 
 <!-- certification-coach-question:actions-225:6e55476d7d6054da49dda34e4159f77706aba1c5c8110938fe43ea7170489a24 -->
 ## Question 225: Secure and optimize automation
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `actions-225`
 
 **Content revision:** `6e55476d7d6054da49dda34e4159f77706aba1c5c8110938fe43ea7170489a24`
+
+**en review revision:** `d46be4ace28398452b151444d9f34a7278b87ea61d41d20cb32efbf83206dfba`
+**es review revision:** `a7bd697cd0fb77f4169ae6fe354b0d574f8c94f78516f595f64f2115aaf5bab1`
+**pt-BR review revision:** `97f259996b7522050fe73fb2f112aae1fb9982a38a62c980be82907c621cc810`
 
 ### English
 

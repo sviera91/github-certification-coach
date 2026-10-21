@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 import { createEngine } from "./engine.mjs";
 import { questions } from "./questions.mjs";
 import { startServer } from "./server.mjs";
-import { quotasFor, revisionFor, publicExam, validateBank, assemble, approved } from "./bank-utils.mjs";
+import { quotasFor, revisionFor, reviewRevisionFor, publicExam, validateBank, assemble, approved, mergeApprovals } from "./bank-utils.mjs";
 import { domainTranslations, hasTranslation } from "./i18n.mjs";
 import { exams } from "./exams.mjs";
 
@@ -71,21 +71,75 @@ test("switching languages preserves answer key, attempt identity, revision, dead
     assert.equal(state.attempt.score.current, 1);
     assert.equal(state.attempt.entries[0].explanations[question.correct], question.translations["pt-BR"].explanations[question.correct]);
 });
-test("one approval applies to every language and editing either translation invalidates it", async t => {
+test("English and translation approvals are independent and require approved English", async t => {
     const exam = structuredClone(exams[0]);
     const { engine } = await fixture(t, { catalog: [exam] });
     const first = await engine.mutate("inspect_question", { examId: exam.id, questionIndex: 0 });
+    await engine.mutate("set_language", { language: "es" });
+    const unapproved = await engine.mutate("inspect_question", { examId: exam.id, questionIndex: 0 });
+    await assert.rejects(engine.mutate("review_question", { examId: exam.id, questionId: first.question.id,
+        revision: unapproved.revision, language: "es", decision: "approve" }), /English content/);
+    await engine.mutate("set_language", { language: "en" });
     await engine.mutate("review_question", { examId: exam.id, questionId: first.question.id, revision: first.revision, decision: "approve" });
     for (const language of ["es", "pt-BR"]) {
         await engine.mutate("set_language", { language });
         const translated = await engine.mutate("inspect_question", { examId: exam.id, questionIndex: 0 });
-        assert.equal(translated.revision, first.revision);
-        assert.equal(translated.approved, true);
+        assert.notEqual(translated.revision, first.revision);
+        assert.equal(translated.approved, false);
+        assert.equal(translated.englishApproved, true);
+        await engine.mutate("review_question", { examId: exam.id, questionId: first.question.id, revision: translated.revision, language, decision: "approve" });
+        assert.equal((await engine.mutate("inspect_question", { examId: exam.id, questionIndex: 0 })).approved, true);
         assert.equal(translated.question.prompt, exam.questions[0].translations[language].prompt);
         const changed = structuredClone(exam.questions[0]);
         changed.translations[language].prompt += " Changed.";
-        assert.equal(approved(changed, { [changed.id]: { revision: first.revision } }), false);
+        const records = { [changed.id]: { en: { revision: first.revision }, [language]: { revision: translated.revision } } };
+        assert.equal(approved(changed, records), true);
+        assert.equal(approved(changed, records, language), false);
     }
+});
+test("English edits invalidate every language, translation edits affect only that language, and revocations merge per language", () => {
+    const question = structuredClone(exams[0].questions[0]);
+    const records = { [question.id]: Object.fromEntries(["en", "es", "pt-BR"].map(language =>
+        [language, { revision: reviewRevisionFor(question, language) }])) };
+    const spanishEdit = structuredClone(question);
+    spanishEdit.translations.es.hints[0] += " Edit.";
+    assert.equal(approved(spanishEdit, records), true);
+    assert.equal(approved(spanishEdit, records, "es"), false);
+    assert.equal(approved(spanishEdit, records, "pt-BR"), true);
+    const englishEdit = structuredClone(question);
+    englishEdit.source += "?revision=2";
+    for (const language of ["en", "es", "pt-BR"]) assert.equal(approved(englishEdit, records, language), false);
+    const merged = mergeApprovals(records, { [question.id]: { es: null } });
+    assert.equal(approved(question, merged, "en"), true);
+    assert.equal(approved(question, merged, "es"), false);
+    assert.equal(approved(question, merged, "pt-BR"), true);
+    for (const language of ["en", "es", "pt-BR"]) assert.equal(approved(question, mergeApprovals(records, { [question.id]: null }), language), false);
+    assert.equal(approved(question, { [question.id]: { revision: revisionFor(question) } }), false);
+});
+test("per-language approval counts and revocations survive restart without erasing another language", async t => {
+    const exam = structuredClone(exams[0]);
+    const question = exam.questions[0];
+    const defaults = { [question.id]: Object.fromEntries(["en", "es", "pt-BR"].map(language =>
+        [language, { revision: reviewRevisionFor(question, language) }])) };
+    const { engine, directory } = await fixture(t, { catalog: [exam], reviewDefaults: defaults });
+    await engine.mutate("set_language", { language: "es" });
+    await engine.mutate("review_question", { examId: exam.id, questionId: question.id,
+        language: "es", revision: reviewRevisionFor(question, "es"), decision: "revoke" });
+    const restarted = createEngine({ directory, catalog: [exam], reviewDefaults: defaults, send: async () => {}, sessionId: () => "owner" });
+    await restarted.load();
+    let state = await restarted.getState();
+    assert.equal(state.catalog[0].reviewedCount, 0);
+    assert.deepEqual(state.catalog[0].reviewCounts, { en: 1, es: 0, "pt-BR": 1 });
+    await restarted.mutate("set_language", { language: "en" });
+    state = await restarted.mutate("review_question", { examId: exam.id, questionId: question.id,
+        language: "en", revision: reviewRevisionFor(question), decision: "revoke" });
+    assert.deepEqual(state.catalog[0].reviewCounts, { en: 0, es: 0, "pt-BR": 0 });
+    state = await restarted.mutate("review_question", { examId: exam.id, questionId: question.id,
+        language: "en", revision: reviewRevisionFor(question), decision: "approve" });
+    assert.deepEqual(state.catalog[0].reviewCounts, { en: 1, es: 0, "pt-BR": 0 });
+    await restarted.mutate("set_language", { language: "es" });
+    await assert.rejects(restarted.mutate("review_question", { examId: exam.id, questionId: question.id,
+        language: "en", revision: reviewRevisionFor(question), decision: "approve" }), /revision changed/);
 });
 test("legacy snapshots disclose English content and translated coaching preserves earlier conversation text", async t => {
     const { engine, sent } = await fixture(t);
@@ -288,11 +342,11 @@ test("revision-specific human approval persists and invalidates on substantive c
     assert.equal(state.catalog[0].status, "Preview");
 });
 test("bundled approval records travel with banks but local revocation wins", async t => {
-    const defaults = { [first]: { revision: revisionFor(questions[0]), approvedAt: "2026-10-20T00:00:00.000Z" } };
+    const defaults = { [first]: { en: { revision: reviewRevisionFor(questions[0]), approvedAt: "2026-10-20T00:00:00.000Z" } } };
     const { engine, directory } = await fixture(t, { reviewDefaults: defaults });
     assert.equal((await engine.getState()).catalog[0].reviewedCount, 1);
     await engine.mutate("review_question", { examId: "foundations", questionId: first,
-        revision: defaults[first].revision, decision: "revoke" });
+        revision: defaults[first].en.revision, decision: "revoke" });
     const restored = createEngine({ directory, catalog, reviewDefaults: defaults, send: async () => {}, sessionId: () => "owner" });
     await restored.load();
     assert.equal((await restored.getState()).catalog[0].reviewedCount, 0);

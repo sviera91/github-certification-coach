@@ -150,12 +150,26 @@ hints, source links, and expandable Spanish/Portuguese versions:
 | Actions | [Actions review packet](reviews/actions.md) |
 | Agentic AI Developer | [Agentic AI Developer review packet](reviews/agentic.md) |
 
-Open a packet in GitHub or a Markdown editor. After personally verifying a
-question and its supporting content, change its `- [ ] Human-reviewed:`
-checkbox to `- [x] Human-reviewed:`. One check attests to the whole
-English/Spanish/Portuguese revision. Leave uncertain questions unchecked and
-send corrections separately, with the question ID. Return the edited file
-to the maintainer or open a pull request. No learner data is included.
+Open a packet in GitHub or a Markdown editor. Each question has three separate
+checkboxes; change `[ ]` to `[x]` only for the review you personally performed:
+
+- **English content approved:** the English question, choices, fixed answer,
+  explanations, concept, hints, and supporting documentation are correct.
+- **Spanish translation approved:** the Spanish content faithfully represents
+  the already-approved English content, including option order, answer meanings,
+  explanations, hints, and documentation references.
+- **Brazilian Portuguese translation approved:** the equivalent translation
+  check for Brazilian Portuguese.
+
+Different people can complete these checks. No reviewer needs to approve all
+three languages. Translation approval requires current English approval,
+imported previously or checked in the same returned packet. Documentation links
+may remain in English; reviewers verify the references and meaning, not a
+translation of the external documentation website.
+
+Leave uncertain items unchecked and send corrections separately, with the
+question ID. Return the edited file to the maintainer or open a pull request.
+No learner data is included.
 
 The maintainer imports returned files explicitly:
 
@@ -165,7 +179,7 @@ npm run review:import -- reviews/foundations.md --confirm-human-review
 
 Multiple packet paths may be supplied in one import. Only checked items become
 approved in `bank-reviews.json`; unchecked items do not revoke prior approval.
-The importer validates the exact content and current multilingual fingerprint,
+The importer validates the exact packet content and current fingerprints,
 rejects edited or stale question sections, and writes nothing if any supplied
 packet fails validation. The confirmation flag is a human attestation, not
 permission for AI to approve its own work.
@@ -194,16 +208,29 @@ Neither AI review nor structural checks establish factual correctness.
 
 **Review question bank** on a preparation page opens all choices, fixed
 explanations, authored hints, and the documentation link. The reviewer must
-personally verify them and tick the acknowledgment before marking a revision
-human-approved. Approval can be revoked. To avoid inadvertently exposing the
+personally verify them and tick the acknowledgment before marking the selected
+language revision human-approved. Select English to review factual correctness,
+or Spanish/Portuguese to review translation fidelity against the English
+reference shown alongside it. Translation approval is blocked until English
+is approved. The bank's reviewed count and Preview status reflect the selected
+language; English approval alone never marks translations reviewed.
+Approval can be revoked. To avoid inadvertently exposing the
 key, content review is unavailable while that certification has an unfinished
 attempt.
 
-Approval records use a SHA-256 fingerprint over the ID, domain, prompt,
-choices, answer key, explanations, concept, hints, source, and all translated
-variants. **One human approval covers the entire multilingual revision**;
-changing English, Spanish, or Portuguese invalidates that shared approval.
-Translations retain the same IDs, option order, and fixed answer key. Local approval is an
+English approval uses a SHA-256 fingerprint over the ID, domain, prompt,
+choices, answer key, explanations, concept, hints, and source. Each translation
+approval fingerprints that English content plus its own translated fields.
+**Changing English or its source invalidates all three approvals. Changing a
+translation invalidates only that language's approval.** Revoking English
+also clears dependent translation approvals; revoking a translation leaves
+English and the other translation unchanged. Translations retain the same IDs,
+option order, and fixed answer key.
+
+Records are stored per question under `en`, `es`, and `pt-BR`, each with its
+own revision and timestamp. Old single-checkbox packets must be regenerated;
+old shared approval records are not automatically promoted into separate
+attestations. Local approval is an
 honor-system record, not a secure reviewer identity, signature, or centrally
 enforced role. AI must never mark its own questions human-approved.
 

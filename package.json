@@ -1,10 +1,12 @@
 {
   "name": "github-certification-coach",
-  "version": "0.3.0-preview",
+  "version": "0.3.1-preview",
   "private": true,
   "type": "module",
   "license": "MIT",
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "install:extension": "node install.mjs",
     "build": "node build-assets.mjs",

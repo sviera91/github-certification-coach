@@ -3,15 +3,17 @@ import os from "node:os";
 import path from "node:path";
 import { randomUUID } from "node:crypto";
 import { exams, bundledReviews } from "./exams.mjs";
-import { approved } from "./bank-utils.mjs";
+import { approved, mergeApprovals } from "./bank-utils.mjs";
 
 const stateFile = path.join(process.env.COPILOT_HOME || path.join(os.homedir(), ".copilot"),
     "extensions", "certification-coach", "artifacts", "coach-state.json");
 const state = JSON.parse(await readFile(stateFile, "utf8"));
 if (state.version !== 2 || typeof state.approvals !== "object") throw new Error("No valid human-review ledger found.");
-const approvals = { ...bundledReviews, ...state.approvals };
+const approvals = mergeApprovals(bundledReviews, state.approvals);
 const records = Object.fromEntries(exams.flatMap(exam => exam.questions)
-    .filter(question => approved(question, approvals)).map(question => [question.id, approvals[question.id]]));
+    .filter(question => approved(question, approvals)).map(question => [question.id,
+        Object.fromEntries(["en", "es", "pt-BR"].filter(language => approved(question, approvals, language))
+            .map(language => [language, approvals[question.id][language]]))]));
 const target = new URL("./bank-reviews.json", import.meta.url);
 const temporary = new URL(`./bank-reviews.${randomUUID()}.tmp`, import.meta.url);
 try {

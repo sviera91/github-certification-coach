@@ -12,6 +12,7 @@ const AsyncFunction = Object.getPrototypeOf(async function () {}).constructor;
 async function mount({ reject = false, score, mode = "coach", count = 1 } = {}) {
     const { document, window } = parseHTML(html);
     const intervals = [], requests = [];
+    const reviewed = new Set();
     const exam = { id: "foundations", name: "Foundations", badgeUrl: "https://learn.github.com/assets/badge-ghf--AVHlfQC.png", phase: 1, reviewedCount: 0, questionCount: count,
         poolTarget: 225, status: "Preview", fullLengthAvailable: true, attemptSize: 75, minutes: 100,
         domains: [{ name: "Test", weight: 100, resources: [] }], resources: [], blueprintNote: "Fixture" };
@@ -31,8 +32,22 @@ async function mount({ reject = false, score, mode = "coach", count = 1 } = {}) 
             const request = JSON.parse(options.body);
             requests.push(request);
             if (reject && request.action !== "select_exam") return { ok: false, json: async () => ({ error: "Request could not be saved." }) };
+            if (request.action === "inspect_question") {
+                const language = model.language ?? "en";
+                const english = { id: "q1", prompt: "English source question", domain: "Test", correct: 1,
+                    choices: ["One", "Two"], explanations: ["First explanation.", "Second explanation."],
+                    concept: "English concept", hints: ["English hint"], source: "https://docs.github.com/en" };
+                return { ok: true, json: async () => ({
+                    question: { ...english, prompt: language === "en" ? english.prompt : "Translated question" },
+                    englishQuestion: english, language, englishApproved: reviewed.has("en"), approved: reviewed.has(language),
+                    revision: `revision-${language}`, index: 0, total: 1,
+                }) };
+            }
             const entry = model.attempt.entries.find(item => item.id === request.questionId);
-            if (request.action === "set_language") {
+            if (request.action === "review_question") {
+                if (request.decision === "approve") reviewed.add(request.language);
+                else reviewed.delete(request.language);
+            } else if (request.action === "set_language") {
                 model.language = request.language;
             } else if (request.action === "hint") {
                 entry.pending = true;
@@ -252,4 +267,32 @@ test("language changes localize controls and preserve unchecked selection, chat 
     await change("en");
     assert.equal($("review-title").textContent, "Review before submission");
     assert.equal($("send").getAttribute("aria-label"), "Send message");
+});
+test("content review shows separate attestations, blocks unapproved translations, and provides English reference", async () => {
+    const { $, model, intervals, requests } = await mount();
+    model.attempt.finished = true;
+    await intervals[0]();
+    $("new").onclick();
+    await $("bank-review").onclick();
+    assert.match($("review-confirm-label").textContent, /English content/);
+    $("language").querySelector('option[value="es"]').selected = true;
+    await $("language").onchange();
+    assert.equal($("approve-question").disabled, true);
+    assert.equal($("english-review-required").hidden, false);
+    assert.equal($("english-reference").hidden, false);
+    assert.match($("english-reference-content").textContent, /English source question/);
+    $("language").querySelector('option[value="en"]').selected = true;
+    await $("language").onchange();
+    $("review-confirm").checked = true;
+    await $("approve-question").onclick();
+    assert.equal(requests.find(request => request.action === "review_question").language, "en");
+    $("language").querySelector('option[value="es"]').selected = true;
+    await $("language").onchange();
+    assert.equal($("approve-question").disabled, false);
+    assert.equal($("english-review-required").hidden, true);
+    assert.match($("review-confirm-label").textContent, /traducción/);
+    assert.equal($("revoke-question").hidden, true);
+    $("review-confirm").checked = true;
+    await $("approve-question").onclick();
+    assert.equal(requests.filter(request => request.action === "review_question").at(-1).language, "es");
 });

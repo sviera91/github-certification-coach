@@ -3,11 +3,11 @@ import { mkdir, readFile, rename, writeFile, rm } from "node:fs/promises";
 import path from "node:path";
 import { exams, assemble, publicExam, bundledReviews } from "./exams.mjs";
 import { questions as legacyQuestions } from "./questions.mjs";
-import { approved, revisionFor, localizedQuestion } from "./bank-utils.mjs";
+import { approved, revisionFor, reviewRevisionFor, mergeApprovals, localizedQuestion } from "./bank-utils.mjs";
 import { translate } from "./i18n.mjs";
 
 export const COMPLETION_TOOL = "certification_coach_complete_hint";
-export const APP_VERSION = "0.3.0-preview";
+export const APP_VERSION = "0.3.1-preview";
 const modes = new Set(["exam", "learn", "coach"]);
 export class InputError extends Error {}
 
@@ -16,7 +16,7 @@ export function createEngine({ directory, send, sessionId, now = Date.now, timeo
     let store = { version: 2, selectedExamId: catalog[0].id, language: "en", attempts: {}, approvals: {} };
     let serial = Promise.resolve();
     const jobs = new Map();
-    const approvals = () => ({ ...reviewDefaults, ...store.approvals });
+    const approvals = () => mergeApprovals(reviewDefaults, store.approvals);
     const file = path.join(directory, "coach-state.json");
     const selected = () => store.attempts[store.selectedExamId];
     const definition = id => {
@@ -156,7 +156,7 @@ export function createEngine({ directory, send, sessionId, now = Date.now, timeo
             appVersion: APP_VERSION,
             language: store.language,
             selectedExamId: store.selectedExamId,
-            catalog: catalog.map(exam => ({ ...publicExam(exam, approvals()),
+            catalog: catalog.map(exam => ({ ...publicExam(exam, approvals(), store.language),
                 attempt: store.attempts[exam.id] ? {
                     mode: store.attempts[exam.id].mode, finished: finished(store.attempts[exam.id]),
                     answered: store.attempts[exam.id].entries.filter(entry => entry.answers.length).length,
@@ -259,15 +259,32 @@ EXERCISE_DATA_JSON=${JSON.stringify(data)}`;
                     if (!question) throw new InputError("Choose a valid question to review.");
                     if (action === "inspect_question") {
                         await save();
-                        return { question: localizedQuestion(question, store.language), revision: revisionFor(question), approved: approved(question, approvals()),
+                        return { question: localizedQuestion(question, store.language), revision: reviewRevisionFor(question, store.language),
+                            language: store.language, englishApproved: approved(question, approvals()),
+                            englishQuestion: localizedQuestion(question, "en"),
+                            approved: approved(question, approvals(), store.language),
                             index: input.questionIndex, total: exam.questions.length };
                     }
-                    if (!["approve", "revoke"].includes(input.decision) || input.revision !== revisionFor(question)) {
+                    const language = input.language ?? store.language;
+                    if (!["en", "es", "pt-BR"].includes(language) || language !== store.language ||
+                        !["approve", "revoke"].includes(input.decision) || input.revision !== reviewRevisionFor(question, language)) {
                         throw new InputError("The question revision changed. Review it again before recording approval.");
                     }
+                    if (input.decision === "approve" && language !== "en" && !approved(question, approvals())) {
+                        throw new InputError("Approve the current English content before approving a translation.");
+                    }
+                    const local = store.approvals[question.id];
+                    store.approvals[question.id] = local === null ? { en: null, es: null, "pt-BR": null } :
+                        { ...local };
                     if (input.decision === "approve") {
-                        store.approvals[question.id] = { revision: input.revision, approvedAt: new Date(now()).toISOString() };
-                    } else store.approvals[question.id] = null;
+                        store.approvals[question.id][language] = { revision: input.revision, approvedAt: new Date(now()).toISOString() };
+                    } else {
+                        store.approvals[question.id][language] = null;
+                        if (language === "en") {
+                            store.approvals[question.id].es = null;
+                            store.approvals[question.id]["pt-BR"] = null;
+                        }
+                    }
                 } else if (action === "set_language") {
                     if (!["en", "es", "pt-BR"].includes(input.language)) throw new InputError("Choose English, Spanish, or Portuguese.");
                     store.language = input.language;

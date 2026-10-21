@@ -8,8 +8,28 @@ export function revisionFor(question) {
         translations: question.translations,
     })).digest("hex");
 }
-export function approved(question, approvals = {}) {
-    return approvals[question.id]?.revision === revisionFor(question);
+export function reviewRevisionFor(question, language = "en") {
+    const english = {
+        id: question.id, domain: question.domain, prompt: question.prompt, choices: question.choices,
+        correct: question.correct, explanations: question.explanations, concept: question.concept,
+        hints: question.hints, source: question.source,
+    };
+    if (!["en", "es", "pt-BR"].includes(language)) throw new Error("Unknown review language.");
+    if (language !== "en" && !question.translations?.[language]) throw new Error(`Missing ${language} translation for ${question.id}.`);
+    return createHash("sha256").update(JSON.stringify(language === "en" ? english :
+        { english, language, translation: question.translations[language] })).digest("hex");
+}
+export function approved(question, approvals = {}, language = "en") {
+    const record = approvals[question.id];
+    if (record?.en?.revision !== reviewRevisionFor(question)) return false;
+    return language === "en" || record?.[language]?.revision === reviewRevisionFor(question, language);
+}
+export function mergeApprovals(bundled = {}, local = {}) {
+    const result = structuredClone(bundled);
+    for (const [id, record] of Object.entries(local)) {
+        result[id] = record === null ? { en: null, es: null, "pt-BR": null } : { ...result[id], ...record };
+    }
+    return result;
 }
 export function quotasFor(domains, size) {
     const weight = domains.reduce((sum, domain) => sum + domain.weight, 0);
@@ -61,14 +81,17 @@ export function assemble(exam, { mode, domain, random = randomInt }) {
         shuffled(exam.questions.filter(question => question.domain === quota.name), random).slice(0, quota.count));
     return shuffled(selected, random);
 }
-export function publicExam(exam, approvals = {}) {
-    const reviewedCount = exam.questions.filter(question => approved(question, approvals)).length;
+export function publicExam(exam, approvals = {}, language = "en") {
+    const reviewCounts = Object.fromEntries(["en", "es", "pt-BR"].map(locale => [locale,
+        exam.questions.filter(question => locale === "en" || question.translations?.[locale])
+            .filter(question => approved(question, approvals, locale)).length]));
+    const reviewedCount = reviewCounts[language];
     return {
         id: exam.id, name: exam.name, badgeUrl: exam.badgeUrl, domains: exam.domains,
         officialLanguages: exam.officialLanguages,
         resources: exam.resources, blueprintNote: exam.blueprintNote,
         attemptSize: exam.attemptSize, minutes: exam.minutes, relaxedMinutes: exam.relaxedMinutes,
-        questionCount: exam.questions.length, poolTarget: exam.attemptSize * 3, reviewedCount,
+        questionCount: exam.questions.length, poolTarget: exam.attemptSize * 3, reviewedCount, reviewCounts,
         fullLengthAvailable: fullLengthAvailable(exam),
         status: exam.questions.length >= exam.attemptSize * 3 && reviewedCount === exam.questions.length && fullLengthAvailable(exam) ?
                 "Human-reviewed bank" : "Preview",

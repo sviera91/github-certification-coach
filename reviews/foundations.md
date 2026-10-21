@@ -1,4 +1,4 @@
-<!-- certification-coach-review:foundations:1 -->
+<!-- certification-coach-review:foundations:2 -->
 # GitHub Foundations: human review packet
 
 225 original practice questions. No mock exam or Copilot installation is required to review this file.
@@ -6,26 +6,36 @@
 ## How to review
 
 1. Read the English question, all four choices and explanations, the concept, hints, and linked official documentation.
-2. Expand Spanish and Brazilian Portuguese to check that they preserve the same meaning, option order, and correct answer.
-3. Change only the question's `- [ ] Human-reviewed` checkbox to `- [x] Human-reviewed` when you approve its complete multilingual revision.
+2. Check English content approved only after personally verifying the English content. You do not need to review another language.
+3. A separate reviewer can expand Spanish or Brazilian Portuguese and check only that translation, verifying meaning, option order, explanations, hints, and documentation references against the approved English content.
 4. Leave uncertain or incorrect questions unchecked. Send the edited Markdown file back to the maintainer, with suggested corrections separately.
 
-One approval covers English, Spanish, and Brazilian Portuguese together; changing any variant invalidates that approval.
+English content and each translation have separate approvals. Translation approval requires current English approval, imported previously or checked in this same packet.
+Changing English content or its supporting source invalidates all three approvals. Changing one translation invalidates only that language's approval.
 The importer rejects stale revisions or changed question content. Do not edit prompts, answers, or explanations in this review copy.
 Unchecked boxes do not revoke existing approvals. These are honor-system human attestations, not proof of reviewer identity.
 AI must never check these boxes or attest to human review. These are original unofficial practice items, not real exam questions.
 This packet intentionally includes the full answer key. It contains no learner answers, scores, chats, or progress.
 
-Search for `- [ ] Human-reviewed` to find unreviewed items. Technical names and official documentation links may remain in English.
+Search for `- [ ] English content approved`, `- [ ] Spanish translation approved`, or `- [ ] Brazilian Portuguese translation approved` to find unchecked items.
+Technical names and official documentation links may remain in English. Translation review verifies that references support the same meaning; it does not require translating the linked external documentation.
 
 <!-- certification-coach-question:ghf-001:cb2ad8e6b74bc71619ca171e170b3652229504b4762bdb87e97f042eb0cfa2be -->
 ## Question 1: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-001`
 
 **Content revision:** `cb2ad8e6b74bc71619ca171e170b3652229504b4762bdb87e97f042eb0cfa2be`
+
+**en review revision:** `e0414974c4c9e22095a9d91d8fa5ac9f867c19a7a40bd99207e2d470b4258273`
+**es review revision:** `9de31c2033ab87ad5be1f0a12a692f31adf8a2b311a3d734d97e409f22bf87ee`
+**pt-BR review revision:** `c5ff7c3133dd1bbc25dd4ff7e6f4cad185e77aa7d80c9bb898dee7d574bbd70c`
 
 ### English
 
@@ -123,11 +133,19 @@ Uma equipe de políticas precisa explicar como um documento mudou ao longo de v�
 <!-- certification-coach-question:ghf-002:8a19c904f82886e722f689b4819c084ee565d77e71b917a1b712587a03a20179 -->
 ## Question 2: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-002`
 
 **Content revision:** `8a19c904f82886e722f689b4819c084ee565d77e71b917a1b712587a03a20179`
+
+**en review revision:** `b459c292623991fdcb6730a7cd414bd4418941cf18cc2817652eb43338b2ce59`
+**es review revision:** `2177b1fd0452bb8633eb19c7ce499e20552587fce965594db959c928b508f394`
+**pt-BR review revision:** `fa70a60532208bd982760a54a11c11be2487a00566f66370948b0b1112c09d44`
 
 ### English
 
@@ -225,11 +243,19 @@ Qual afirmação distingue corretamente o Git do GitHub?
 <!-- certification-coach-question:ghf-003:1d9d42acf93f804a5231a36e4df1e8f9b88fe2294b6c72be80b48da8c9629185 -->
 ## Question 3: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-003`
 
 **Content revision:** `1d9d42acf93f804a5231a36e4df1e8f9b88fe2294b6c72be80b48da8c9629185`
+
+**en review revision:** `be6ec74c4e05848419cdaea218abe08617e380bf49441410de30362c2b8173fc`
+**es review revision:** `ad6f541ec2b62108537719ed64fabba524283674614b9e50bedab18d845fcf83`
+**pt-BR review revision:** `2b5c3602b2446ac5769945ad98ca3d68af481f32e4c717383e10c79647b73eb2`
 
 ### English
 
@@ -327,11 +353,19 @@ Uma pessoa desenvolvedora quer ter os arquivos do projeto e o histórico do Git 
 <!-- certification-coach-question:ghf-004:8b0d631b5dc80bffada766b8e757cba5ad0370ae07fab76ecb83ebebfc1b26e7 -->
 ## Question 4: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-004`
 
 **Content revision:** `8b0d631b5dc80bffada766b8e757cba5ad0370ae07fab76ecb83ebebfc1b26e7`
+
+**en review revision:** `6e59f914c68d7ab73d926868d88ce70f334d2c49e5623a250ca531adccacfa29`
+**es review revision:** `50d6b55b02f0b76982c4d0edcc8359e0e1f05b691b0869968483f8fb1b81522a`
+**pt-BR review revision:** `6501d0b4449af5d47c00dbcf3349ccacfb34d13d298e94b76c9eab44bbb7d2a9`
 
 ### English
 
@@ -429,11 +463,19 @@ Uma pessoa editou vários arquivos rastreados, mas quer incluir apenas dois no p
 <!-- certification-coach-question:ghf-005:f1d0f2b057c746db02212083476d605a2075fbd17e4a0ebc324288fbaf7baf06 -->
 ## Question 5: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-005`
 
 **Content revision:** `f1d0f2b057c746db02212083476d605a2075fbd17e4a0ebc324288fbaf7baf06`
+
+**en review revision:** `1eb5105d37d17421521e67dcf58c26b0a0f389d2dd7ed7a133ebff73c1d46db3`
+**es review revision:** `694155a41b6022a35b8b0daf3668df1ea6aa962eb29ca5cdcb7e3bdb06da2c60`
+**pt-BR review revision:** `0d003c569b30437c59362d6d97fce9f9a32d47578875086d7900a65a134f9a35`
 
 ### English
 
@@ -531,11 +573,19 @@ Qual é a melhor maneira de entender um commit do Git?
 <!-- certification-coach-question:ghf-006:a401d34ddede6dec0780be2c30f79fed6bfdfba6cfef85621e592e765054926a -->
 ## Question 6: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-006`
 
 **Content revision:** `a401d34ddede6dec0780be2c30f79fed6bfdfba6cfef85621e592e765054926a`
+
+**en review revision:** `5631c6112bbb3dac82e7cc6f2b16d7a4f5f986f1dc17ef91c3253f9e3415343d`
+**es review revision:** `4b909dbfce7d5ae435f9800b05b33f1fecc827c053ec96c7b1190f7f4c4f87ed`
+**pt-BR review revision:** `dbcb54b2bd1031e9a7c4c347662ea303b3135b2b301ddc7a3b9a28bbdf7c385f`
 
 ### English
 
@@ -633,11 +683,19 @@ Uma pessoa de design quer experimentar sem alterar a branch padrão. Qual concei
 <!-- certification-coach-question:ghf-007:9293c3fdd1e3acbdc91a6cc94f3024bf83410c669964de60d267b011cb395730 -->
 ## Question 7: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-007`
 
 **Content revision:** `9293c3fdd1e3acbdc91a6cc94f3024bf83410c669964de60d267b011cb395730`
+
+**en review revision:** `4f4b0f3ed5f1cfa902676d3852bba79fc44630d15739e871ad90a0a564a20988`
+**es review revision:** `57554abff5768ee31372711f95f738d1c31d8450e6e9517de2eba3bc71944e8e`
+**pt-BR review revision:** `1377a6595d979a1a9ddfbd18c337bfd9f543d44d7778fceeed3212dc42444217`
 
 ### English
 
@@ -735,11 +793,19 @@ Há um commit local em uma branch de funcionalidade, mas a equipe não consegue 
 <!-- certification-coach-question:ghf-008:c0f5029e7977109ee490c9c314886d4adef0811a6730916c13192896f4071f4e -->
 ## Question 8: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-008`
 
 **Content revision:** `c0f5029e7977109ee490c9c314886d4adef0811a6730916c13192896f4071f4e`
+
+**en review revision:** `e9511c9591132677aa83e87c6a89356dc56b09355f98534e499a4d7566e21fd7`
+**es review revision:** `b16779357d67dd3764b51c82c1643edaf916c796afb4a566d95bdbc9b1dd9f41`
+**pt-BR review revision:** `9be3a0b62884592f4fe7a5484ad31aa622999565d81113713aa0156333dbc024`
 
 ### English
 
@@ -837,11 +903,19 @@ Você quer recuperar alterações remotas para examiná-las sem integrá-las à 
 <!-- certification-coach-question:ghf-009:b24a4454e1e5829acdb6ab6b9d73f2f6fe5266b0ba1709b03bce11caf95fa90f -->
 ## Question 9: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-009`
 
 **Content revision:** `b24a4454e1e5829acdb6ab6b9d73f2f6fe5266b0ba1709b03bce11caf95fa90f`
+
+**en review revision:** `745d4c8434dea6f360043acb61bafb3a744e8c0f517deb86ef829150842fe9d3`
+**es review revision:** `e53decee105c5859be0632bb69a36f00a98f71e0f88a862d694bfed0b15bf0fd`
+**pt-BR review revision:** `b7666a484090a13ffe05d25160f2d3f1f21f73853029eff14c6a7863014eb46f`
 
 ### English
 
@@ -939,11 +1013,19 @@ Como git pull difere de git fetch em um fluxo de trabalho comum com branches?
 <!-- certification-coach-question:ghf-010:4941b893244ef20d2df250c613266fd795e825e0be456a9593c41ae4be16ef30 -->
 ## Question 10: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-010`
 
 **Content revision:** `4941b893244ef20d2df250c613266fd795e825e0be456a9593c41ae4be16ef30`
+
+**en review revision:** `530cd1720314d18c7a4605ef902a84a3f9e337c10438d6d11dd0753bdcbc81bb`
+**es review revision:** `f5c724bbf0acb5d01e0952a7f2b3a478c5bc9df0e7dd04c40e380828dc5282e4`
+**pt-BR review revision:** `c1140b8d0b780e9bedb48ad271ace5cea8be4ce82ad1ab4f59d63b774a96b437`
 
 ### English
 
@@ -1041,11 +1123,19 @@ Duas branches editam o mesmo trecho de formas diferentes e o Git não consegue c
 <!-- certification-coach-question:ghf-011:a8af3605d900b87407ea70ff10b9624097b7118385f9a0060b00a4b6a4006e05 -->
 ## Question 11: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-011`
 
 **Content revision:** `a8af3605d900b87407ea70ff10b9624097b7118385f9a0060b00a4b6a4006e05`
+
+**en review revision:** `f54c4e9860a78662354e941b52f7396def08dca9e6f10764ba5bed209628dc90`
+**es review revision:** `7e55cc1d155de42f77e26fb46cd7d71bfa248f650493a2492408983964351385`
+**pt-BR review revision:** `6b2c329890c4b8c9c1eb259ff3c57482f40fe264b1bdd19f4d808bcdd9a3b4c3`
 
 ### English
 
@@ -1143,11 +1233,19 @@ Uma equipe quer desfazer uma alteração publicada preservando um histórico com
 <!-- certification-coach-question:ghf-012:f6e1ab106856a51afbf4041b59af8692f77192b496aa55f8b914f76ea0349b44 -->
 ## Question 12: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-012`
 
 **Content revision:** `f6e1ab106856a51afbf4041b59af8692f77192b496aa55f8b914f76ea0349b44`
+
+**en review revision:** `7714d8d96d03db4507f6dda7df88ffc48bb92aed3c2aa63dde9b3febeb0c96d6`
+**es review revision:** `5fbebdabcfe5f23ebfecfe81c8ed4455dfcb0d1dba4706512c012f7f7d9024b7`
+**pt-BR review revision:** `c889b3227d853c7c08fa288b8371d8c23003d8aa8d920e33869e099794b332b9`
 
 ### English
 
@@ -1245,11 +1343,19 @@ Qual mensagem descreve melhor um commit isolado que corrige um link quebrado na 
 <!-- certification-coach-question:ghf-013:f1383e3d768ad4fcf187404ba046d4031c047d527e5d7b9ef802afec93bdadb9 -->
 ## Question 13: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-013`
 
 **Content revision:** `f1383e3d768ad4fcf187404ba046d4031c047d527e5d7b9ef802afec93bdadb9`
+
+**en review revision:** `262d5f45afdf87647aa6516652f93c62e1871183b766fd5c0cc9e96f2c5c7597`
+**es review revision:** `bbc0a6f4d99c3ca00c1d5591e54326255c8609ccdc57b94cf4d91c5f9ac359e8`
+**pt-BR review revision:** `0bd5c68885b491fa14a3dd68290e5ea097e22b2568ffc4dc52495cd9dae98747`
 
 ### English
 
@@ -1347,11 +1453,19 @@ Por que manter uma reformulação de interface e uma correção ortográfica nã
 <!-- certification-coach-question:ghf-014:1683ad2addb51a3f3d7fffd6d5e946766e17dbd066a863098bc6b6c5c203de97 -->
 ## Question 14: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-014`
 
 **Content revision:** `1683ad2addb51a3f3d7fffd6d5e946766e17dbd066a863098bc6b6c5c203de97`
+
+**en review revision:** `f00f0f28c21f1af738814e7e4aef20a9e85e1199ef80cee02eb1f3fc23945fcd`
+**es review revision:** `f01b9c0c502b78ca83de648ef207e862f021c8104c3f6ab32243f70d48817e9d`
+**pt-BR review revision:** `c2acc31dca07dd808c79c2f48037b307ab0f5636513eee2e6ae8165cb23b5605`
 
 ### English
 
@@ -1449,11 +1563,19 @@ No GitHub flow, quando o trabalho de uma branch de funcionalidade deve passar a 
 <!-- certification-coach-question:ghf-015:047f962bd20884732fc40f21342d6f74e228c90775646e27fc57285e515c12c9 -->
 ## Question 15: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-015`
 
 **Content revision:** `047f962bd20884732fc40f21342d6f74e228c90775646e27fc57285e515c12c9`
+
+**en review revision:** `01cb65b7af45fedbcb3f85c2c6331886d59482a9566e876bbc760b1cda9fc4c1`
+**es review revision:** `23e8617b0db2ed5646bf4ca8e81d7ad3bf268675c8a6b07805b7657d776c0e8d`
+**pt-BR review revision:** `2845b4412668dd5762087089cc19781a67b52bcd309f591e5456917d3dfd034b`
 
 ### English
 
@@ -1551,11 +1673,19 @@ Uma pessoa faz push de outro commit para a mesma branch de origem de um pull req
 <!-- certification-coach-question:ghf-016:372912e25eaeb22b601c0c80110a776c3f3c6b3d5fc5550a1b3cb785dda835e3 -->
 ## Question 16: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-016`
 
 **Content revision:** `372912e25eaeb22b601c0c80110a776c3f3c6b3d5fc5550a1b3cb785dda835e3`
+
+**en review revision:** `5ac7d7722e85bce2e365547988c8b1cf3859ec02fe1e651559a9e68359d22d48`
+**es review revision:** `a084e0c69e9548112a93820a9bb64c0014d719b3420bd3e913fe0f48dd27e067`
+**pt-BR review revision:** `6788b92418ba9429dc1d06be2077451d725ba51eace9a8384d83101a05bd75d9`
 
 ### English
 
@@ -1653,11 +1783,19 @@ Após mesclar uma funcionalidade, por que a equipe pode excluir a branch de func
 <!-- certification-coach-question:ghf-017:4a420326bd89e8f7ff992fdc1568263ef903770d6dd41c6b10b0379c4fe3f1fa -->
 ## Question 17: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-017`
 
 **Content revision:** `4a420326bd89e8f7ff992fdc1568263ef903770d6dd41c6b10b0379c4fe3f1fa`
+
+**en review revision:** `e900bb52c5938509a6295b3e3ea7ae4219c40414266cc5c1356c8bd7c5d3c669`
+**es review revision:** `85bfd8b1f9008c07ef299c45858e5f5a2aafe464eaff7b1e927fe53bf74cc817`
+**pt-BR review revision:** `afd37e77f964199742ecc6adfd3c40e0f14748b08b43853ebf3a53ca7108de4b`
 
 ### English
 
@@ -1755,11 +1893,19 @@ Um repositório tem um remoto local chamado origin. O que é origin?
 <!-- certification-coach-question:ghf-018:a2d616da42454c7860fc45019cc7731f686384c97097486e19c9d7fdbc164a39 -->
 ## Question 18: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-018`
 
 **Content revision:** `a2d616da42454c7860fc45019cc7731f686384c97097486e19c9d7fdbc164a39`
+
+**en review revision:** `04c6bd20d537d5a4cb2d7d8cac498ea05cc232521af3cebaef4b9a8649054cc8`
+**es review revision:** `3c1162210335b6c0725f75b5eba81b546171bc853d1a8e283ff2fc5e37c87b10`
+**pt-BR review revision:** `d7176784869dd7b99812a27c04e4b055aad385336cfde56236993491afef4edc`
 
 ### English
 
@@ -1857,11 +2003,19 @@ Qual propriedade torna o Git um sistema distribuído de controle de versão?
 <!-- certification-coach-question:ghf-019:1c8959c68ca9086ef8f0e8b061bf8442082f93d457c68aacd9a491781d7e8739 -->
 ## Question 19: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-019`
 
 **Content revision:** `1c8959c68ca9086ef8f0e8b061bf8442082f93d457c68aacd9a491781d7e8739`
+
+**en review revision:** `9d82e617f456cdd493540caf971b31f59dd8860fd7dd97f68cefcacde9a9427c`
+**es review revision:** `67af371cf7572117747e36e77841c542ece9d5dbf0d6e3c695aa4db9f59af425`
+**pt-BR review revision:** `e894aa63ed930394da1f0b4c08dce0b08241e0ff22f600db2fbbfe1dff8d0c7d`
 
 ### English
 
@@ -1959,11 +2113,19 @@ Qual comando informa quais arquivos foram modificados e se as alterações estã
 <!-- certification-coach-question:ghf-020:96815d3e5b15d8dae397c7dcaec137a3eec26c1e234c63d7c996315d92d2614a -->
 ## Question 20: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-020`
 
 **Content revision:** `96815d3e5b15d8dae397c7dcaec137a3eec26c1e234c63d7c996315d92d2614a`
+
+**en review revision:** `c95ddcf8a7f966242f14696bf54c5ebb5c54ec688ecc3463bc82c3b357e61f0a`
+**es review revision:** `d795d28447228bf722805172e49915748d04f5a5b0d263daa31dd1d45ea2130e`
+**pt-BR review revision:** `65caee0257d1ad6aa72df16f2ec03f07a2fd1498974342fa93d8a0b14cb0f787`
 
 ### English
 
@@ -2061,11 +2223,19 @@ Uma pessoa mantenedora quer examinar alterações linha a linha antes de fazer u
 <!-- certification-coach-question:ghf-021:d2bef34a14a87ef5a4625d18375792672b3d8288608b7e246322bd46c5305b70 -->
 ## Question 21: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-021`
 
 **Content revision:** `d2bef34a14a87ef5a4625d18375792672b3d8288608b7e246322bd46c5305b70`
+
+**en review revision:** `ec79562a704276e52bc5210a60b7c0645e6ebae61d01967791246af3839986ba`
+**es review revision:** `f4387e795788f2dc710be5d18dd6d7d615747872fe50c6d2f7ed0bc0f5fce140`
+**pt-BR review revision:** `4451419cdfd17bd6015e8fd437a6c0c2fbe23d3c880db5e0d92deb3342bd07c0`
 
 ### English
 
@@ -2163,11 +2333,19 @@ Qual ação inicia o rastreamento do Git em uma pasta local existente que ainda 
 <!-- certification-coach-question:ghf-022:f39e687ac638844dc7bc43d766e6b7b952f80dd901acf01a595066306af0699f -->
 ## Question 22: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-022`
 
 **Content revision:** `f39e687ac638844dc7bc43d766e6b7b952f80dd901acf01a595066306af0699f`
+
+**en review revision:** `a439f9f6a245de936cb05da02a7b92dc64deffe0f559b5397681340f99e3ac48`
+**es review revision:** `e4807f436b07415529a413f03209483c3a9a8c6bc9680332dd4e706a13f1a033`
+**pt-BR review revision:** `0cb2b2691e883c22513976232bc5671789e9de474754b352dd01b3729b7f5b7c`
 
 ### English
 
@@ -2265,11 +2443,19 @@ O que é a árvore de trabalho em um repositório Git local?
 <!-- certification-coach-question:ghf-023:bade42976adb5f753cd07998d9987e45bb0947e85aaa22cf9500427d7c4b8824 -->
 ## Question 23: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-023`
 
 **Content revision:** `bade42976adb5f753cd07998d9987e45bb0947e85aaa22cf9500427d7c4b8824`
+
+**en review revision:** `3470fed0a47fa2cb9bd815fb6ad8d9efdc072de8ebf41452d81627021e6e0b5e`
+**es review revision:** `86495793d8e569b1005498acd6d29c423f5d9489a05801446b4e9875e2fa2c60`
+**pt-BR review revision:** `9a0a6427287f6ff89c3ba465113afe53e55cf5f406048b32054bf2a1011443a9`
 
 ### English
 
@@ -2367,11 +2553,19 @@ Uma equipe quer uma referência reconhecível ao commit usado em uma versão pub
 <!-- certification-coach-question:ghf-024:0f1b31f3222b8fcf16822b368921982ec60319afb101f88f07cf96aea509de5a -->
 ## Question 24: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-024`
 
 **Content revision:** `0f1b31f3222b8fcf16822b368921982ec60319afb101f88f07cf96aea509de5a`
+
+**en review revision:** `9a5a679430290b3bfa1e8a79864f4aa2ff2eee76c8838879657baa746ff4bcd4`
+**es review revision:** `3247e6e3567335834d58218147870e3590b5da5e84df3e99be83f4fa2f6716e7`
+**pt-BR review revision:** `199e9fb90c27aadecb1362bd45243a80d44f27076ea474708765c81137627b5a`
 
 ### English
 
@@ -2469,11 +2663,19 @@ Uma pessoa tem um identificador de commit e quer examinar exatamente essa altera
 <!-- certification-coach-question:ghf-025:984f44813fe9c38267b8cb4070a98da5e7e33567d0591c3692be8855ef16e4da -->
 ## Question 25: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-025`
 
 **Content revision:** `984f44813fe9c38267b8cb4070a98da5e7e33567d0591c3692be8855ef16e4da`
+
+**en review revision:** `e023665cb86b3eb8f8fed18042df25610e121150d043e8d7e823ce09de78d4a7`
+**es review revision:** `b260363b765bd7c928e618b90a3c2bbe4d8788df8179cfb8ce42cf3f9746c2ee`
+**pt-BR review revision:** `3c00a6755d673bea1f6bb9981cf8363b25e6f0f21041abfb8c08e05e3c26aae8`
 
 ### English
 
@@ -2571,11 +2773,19 @@ Qual é o principal uso da branch padrão de um repositório?
 <!-- certification-coach-question:ghf-026:2e1c3a02122a3ade6366c85c1072d5488d3b8e8898959b1c05f52d588c4e481a -->
 ## Question 26: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-026`
 
 **Content revision:** `2e1c3a02122a3ade6366c85c1072d5488d3b8e8898959b1c05f52d588c4e481a`
+
+**en review revision:** `ba4312c06bacd9e8f763658dc54282cfde358939b805f9df65daaf7f86f859b0`
+**es review revision:** `090e69543c7bd1c046863e522d7effbeace51ecaf393c18f3565ac4ad3f36a0a`
+**pt-BR review revision:** `80b0489c584fec1a91bab8409f90587ffbeaa7309ba768734ac959fce7ef8221`
 
 ### English
 
@@ -2673,11 +2883,19 @@ Uma pessoa que começa a contribuir confunde clonar com criar um fork. Qual dist
 <!-- certification-coach-question:ghf-027:be89dde45c0afee11d22ae15c06012588572ab290609da8d10d7b1e9703a66ab -->
 ## Question 27: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-027`
 
 **Content revision:** `be89dde45c0afee11d22ae15c06012588572ab290609da8d10d7b1e9703a66ab`
+
+**en review revision:** `59a7c89927a6c880d82b2b40b0b08f6489df126547bef2b15d5c0237889de5e9`
+**es review revision:** `56ec02176de3e772c6344d8a8a12ff2cd707874a7a41a4d815b5ccf625e4bd8e`
+**pt-BR review revision:** `2f07d9c6059762b4bb81dcb1c8044c732b9898192cdad2caeb152493cbf58146`
 
 ### English
 
@@ -2775,11 +2993,19 @@ Um notebook está offline. Qual atividade normalmente ainda pode ser realizada e
 <!-- certification-coach-question:ghf-028:8496b1b00e83cd7d5cb9b2676f759bf847133d5d1cee1e90eac2da523bf4fa0f -->
 ## Question 28: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-028`
 
 **Content revision:** `8496b1b00e83cd7d5cb9b2676f759bf847133d5d1cee1e90eac2da523bf4fa0f`
+
+**en review revision:** `ab5e5c9e0d6e8931517247aa1a9ffb31e39be152ed7c3cb8ae8eae32b2d97e9b`
+**es review revision:** `80f6b3c273e20d7725b3c942ecbd61f2cfaa7412eace2b1a1b3628c524faa45a`
+**pt-BR review revision:** `fb32d264217172b2467dbc27d886d8bb9655560225a33da32e82aed7ad92de73`
 
 ### English
 
@@ -2877,11 +3103,19 @@ Qual é o principal efeito de mesclar uma branch em outra?
 <!-- certification-coach-question:ghf-029:38bf786fa88f8254c6e3f57d85845dd605c50a9869de95be6da00d97f0add70f -->
 ## Question 29: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-029`
 
 **Content revision:** `38bf786fa88f8254c6e3f57d85845dd605c50a9869de95be6da00d97f0add70f`
+
+**en review revision:** `b22735790bf43d03ecb7968ed3e8b44e933113cda8765183a797f6d8414c99f5`
+**es review revision:** `34e41549045b1df0965623cd56a4278d9266435d0364c677cbc7bc7a23f16914`
+**pt-BR review revision:** `9d40afe0640db075af73a9c977255f9eb75d78176c94430821ad476a7e665c78`
 
 ### English
 
@@ -2979,11 +3213,19 @@ Qual tipo de conta do GitHub foi projetado para representar a identidade de uma 
 <!-- certification-coach-question:ghf-030:2b319b89440d04222ad79798fa788cfcbbc6ab2807ee2f28eacf31400daf440d -->
 ## Question 30: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-030`
 
 **Content revision:** `2b319b89440d04222ad79798fa788cfcbbc6ab2807ee2f28eacf31400daf440d`
+
+**en review revision:** `3fa45a88650e01a4d37b2fcb318d933c4eb46aaa16ddf6b9a8e7d08eeee5c403`
+**es review revision:** `bd28b21e60cd56a0edcab8e271bb79544e25cb70958b25afe888902bfad526e8`
+**pt-BR review revision:** `d46ed75126b315fc57f8238300ec17ac6578467cd5d2001d148b8c2b18d11085`
 
 ### English
 
@@ -3081,11 +3323,19 @@ Uma empresa quer propriedade compartilhada de repositórios com equipes e permis
 <!-- certification-coach-question:ghf-031:e4c943ca468f045c0b1319af5233c804a520fb8652564d147e024d611383de3d -->
 ## Question 31: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-031`
 
 **Content revision:** `e4c943ca468f045c0b1319af5233c804a520fb8652564d147e024d611383de3d`
+
+**en review revision:** `c29786fa9d5a0ba1815f85c66274a7f21919cb48fb2b13f3c5dc5b2f7dfe59ae`
+**es review revision:** `6320dbf19c3518ed559e0f791e3233435d90cdc66b7b4a8abcac9e747b5da4b8`
+**pt-BR review revision:** `d8ef0a57ce8c5cea6cf32406e83fd7c2d9b708a94fca06b3180e8a00cee7f2e7`
 
 ### English
 
@@ -3183,11 +3433,19 @@ O que uma conta empresarial ajuda uma empresa a gerenciar em várias organizaç�
 <!-- certification-coach-question:ghf-032:ec409b3ae11d00232e3a30171beef9ae9ce53a5cbec351ebc42debf4fd22f294 -->
 ## Question 32: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-032`
 
 **Content revision:** `ec409b3ae11d00232e3a30171beef9ae9ce53a5cbec351ebc42debf4fd22f294`
+
+**en review revision:** `6a54ae8fe3c91dca93f696d5e007b8f28f50da9ee41fcce01aa714aee244e88d`
+**es review revision:** `198774aac2701f6175f399c152d350b0aced9b16b9b6c46f5086fda372532780`
+**pt-BR review revision:** `eb489fd3227d615ae120a0e17a41fab6081cd5860f5fd3802cf8acf8e02b42e6`
 
 ### English
 
@@ -3285,11 +3543,19 @@ Qual modelo de implantação corresponde ao GitHub Enterprise Server?
 <!-- certification-coach-question:ghf-033:dba3df957d40e0f4a9190dc9dc8f5c1f95f3ad0b9663b7a2a0dceadedb6eaa89 -->
 ## Question 33: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-033`
 
 **Content revision:** `dba3df957d40e0f4a9190dc9dc8f5c1f95f3ad0b9663b7a2a0dceadedb6eaa89`
+
+**en review revision:** `fc23c0b6c41e67ae3dd1cdc8be665b8a1b95af0dc621fc1d53693f0f4be32569`
+**es review revision:** `e3658b149ab9fba6efc71311ca6685f305ea694388d689ae23666284a0e3ad88`
+**pt-BR review revision:** `0294296d77cd8d6ab3ec94b15944a78f593e2b7367bb2250b5a44c9c1e1992ce`
 
 ### English
 
@@ -3387,11 +3653,19 @@ Uma pessoa que contribui prefere operações locais do Git visuais em vez de dig
 <!-- certification-coach-question:ghf-034:022f14b32b6f223fc24a524d0bcd309a961c0d99060511f7b29798030c8c270a -->
 ## Question 34: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-034`
 
 **Content revision:** `022f14b32b6f223fc24a524d0bcd309a961c0d99060511f7b29798030c8c270a`
+
+**en review revision:** `2826705ad1645a2cab5bd4162eef5f3af03979efaa3bc68381869f9735b74f08`
+**es review revision:** `a1e952bd6c1ab9a93294bdf82616894f2cc14c2c50b805deef96df0446c080b7`
+**pt-BR review revision:** `5ebce7468cc08207673d901c128e397d4763b096e54b23faba9a8eb1d234f84e`
 
 ### English
 
@@ -3489,11 +3763,19 @@ Durante um deslocamento, uma pessoa mantenedora quer um aplicativo feito para tr
 <!-- certification-coach-question:ghf-035:f5c95f0f38279220e776dd7774c194d984fe3518d3befafc5f5dbb400b1fe35b -->
 ## Question 35: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-035`
 
 **Content revision:** `f5c95f0f38279220e776dd7774c194d984fe3518d3befafc5f5dbb400b1fe35b`
+
+**en review revision:** `a58f18f045a5d253209f8a62d388987621a41d3c7d211ede4e7367d7ba7ff1d2`
+**es review revision:** `bb20bd3bf24b4915e3584c7421ae596af1429a953eb21f7a005ab54cf6f35ded`
+**pt-BR review revision:** `418a09da9cc744480a7ddd6c76bdf0235af4e70378ce0c749b52e9ad87c94acf`
 
 ### English
 
@@ -3591,11 +3873,19 @@ Um script de shell precisa criar issues do GitHub usando um cliente de linha de 
 <!-- certification-coach-question:ghf-036:1087396026d15802270557444789351ddd8eaa5cc492b18d5b3d57675d0c56ac -->
 ## Question 36: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-036`
 
 **Content revision:** `1087396026d15802270557444789351ddd8eaa5cc492b18d5b3d57675d0c56ac`
+
+**en review revision:** `68dc769b9be9b1eab8ee3d7aa961f91dc7f7ca6a9c30586444f40278a3eece83`
+**es review revision:** `bff819d86fb73505d6d5c526ec5f77af2a0aaa14d341f0176d96ef999d805e0e`
+**pt-BR review revision:** `257b74ec6912f1b690f0d2da5a15089b1ae3bd6947eb4e4559b4c4404fea980c`
 
 ### English
 
@@ -3693,11 +3983,19 @@ Qual tarefa é um recurso de colaboração do GitHub, e não uma responsabilidad
 <!-- certification-coach-question:ghf-037:5f133ce91e079f19960e889495e45fef1888cdc13f04790cc072e8751e971a9a -->
 ## Question 37: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-037`
 
 **Content revision:** `5f133ce91e079f19960e889495e45fef1888cdc13f04790cc072e8751e971a9a`
+
+**en review revision:** `52221ce9bd6925294b1ce35083e22ca39f7ae2bd88c7da0e2c2dc69630dcbf5f`
+**es review revision:** `fc73bacefe96e1d94fd429d5688cfa052c535a764c2d9fc9531ac984bea42994`
+**pt-BR review revision:** `dcfdb2702b7af7df8b93cf940d1131f285ec25f7ae8337845a396984c307ba7b`
 
 ### English
 
@@ -3795,11 +4093,19 @@ Uma issue precisa de um título Markdown de primeiro nível. Qual texto usa a si
 <!-- certification-coach-question:ghf-038:3df5159f56defd2ce658ec31cbded3958040449bb79b4246c3c56709fe4c356b -->
 ## Question 38: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-038`
 
 **Content revision:** `3df5159f56defd2ce658ec31cbded3958040449bb79b4246c3c56709fe4c356b`
+
+**en review revision:** `2ab73edbb24a9ed7a8c965c767cac2e2bab3fd6f49c1eda2dce9a291f988a650`
+**es review revision:** `d062f4059b3dc9b30b3fe2f9e1f2a6bc576a1d2ecb2d7a2767f3f7f186d7dcd1`
+**pt-BR review revision:** `a22b830ab6704da5ea368bc83a7c9b0265678e1f1a02d915c15f07fdf72d8788`
 
 ### English
 
@@ -3897,11 +4203,19 @@ Qual trecho Markdown exibe setup como código inline em uma frase?
 <!-- certification-coach-question:ghf-039:b42cbd4b809293e25198e218ab180dc57166018a8c6a33cd55b41168166e9b76 -->
 ## Question 39: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-039`
 
 **Content revision:** `b42cbd4b809293e25198e218ab180dc57166018a8c6a33cd55b41168166e9b76`
+
+**en review revision:** `b3398ba1ea43d509dcf5b1181847d64fc1ac5d3a11f6bddcc014ff04d72d7385`
+**es review revision:** `fe540664628676b4abf4d782265ea10a87c276e8b072a8f3dd552a316f63a239`
+**pt-BR review revision:** `d81a6c400fea941e90e8ee577adcfe78dbdfc6423f4778191fedcaa6c0f7abbc`
 
 ### English
 
@@ -3999,11 +4313,19 @@ Qual Markdown cria um link com o rótulo visível Guide?
 <!-- certification-coach-question:ghf-040:6770d070a7d3815bae79f447f218185dddfa552dde18fa9d78e73a10051eafc4 -->
 ## Question 40: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-040`
 
 **Content revision:** `6770d070a7d3815bae79f447f218185dddfa552dde18fa9d78e73a10051eafc4`
+
+**en review revision:** `42c8fc0e5871abb5f82350da01f5da234913a7194101587602179ef6f612ab56`
+**es review revision:** `a05ccd5bfbeb59a5fffb299704238283e94c50c1cbac6c268718b5359b91b311`
+**pt-BR review revision:** `24d5331e82f30f9362cdd6635c380ba522bd641df0c6f994c27f5e6f53db82d0`
 
 ### English
 
@@ -4101,11 +4423,19 @@ Um relato de bug inclui um rastreamento de pilha com várias linhas. Qual format
 <!-- certification-coach-question:ghf-041:5297d6974cf07b40f066b38ff7aa34bd7f412382cbeecd771ed54e3e060fd772 -->
 ## Question 41: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-041`
 
 **Content revision:** `5297d6974cf07b40f066b38ff7aa34bd7f412382cbeecd771ed54e3e060fd772`
+
+**en review revision:** `348d7e4d64ee632bf9cd508e7574efdd0f89fc26ef287930fa0e3f9a7ea9ae23`
+**es review revision:** `eaa5c67497caa25b4540c76d5c07f98dc82e647ed20f10e49e713267198b6180`
+**pt-BR review revision:** `d834601390ab4aa48bc273109685077706bc6cf89fdb0bae143cb34f0373c43e`
 
 ### English
 
@@ -4203,11 +4533,19 @@ Uma lista de verificação de versão precisa de uma tarefa desmarcada em Markdo
 <!-- certification-coach-question:ghf-042:f0394247131e7bf07e81fa17a1eed88c6698bb3a024ff245cb80e7f3be5e2b96 -->
 ## Question 42: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-042`
 
 **Content revision:** `f0394247131e7bf07e81fa17a1eed88c6698bb3a024ff245cb80e7f3be5e2b96`
+
+**en review revision:** `17bfd895a52e814ea481e55684bd6c14dc48d0997573873b35b8660fb4e4194e`
+**es review revision:** `120586d3843edee200fceea8cf4a1b98c1c6e533d53e69391e18d5bbe651a829`
+**pt-BR review revision:** `ecdc4ffb5d86cfb5af91d9aeca03e0825c722b4f426272183e2d66ba5786b72f`
 
 ### English
 
@@ -4305,11 +4643,19 @@ Um comentário deve notificar alguém da equipe chamado river sobre uma pergunta
 <!-- certification-coach-question:ghf-043:d94b659513ba9a10ae6b70b76d3b5895c8d58f6243206e7f61ea72984bf8d2f4 -->
 ## Question 43: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-043`
 
 **Content revision:** `d94b659513ba9a10ae6b70b76d3b5895c8d58f6243206e7f61ea72984bf8d2f4`
+
+**en review revision:** `c799728f72500d09fafafda455f3cda296e2bfd65abbe5e5befde824c660f8ba`
+**es review revision:** `a9c4a3ef12705d0159759114b4db8d212eac45b9a138a4a2f87f923cd5b56f65`
+**pt-BR review revision:** `8f9c71b26a0ecb69dc4942830118778625ca8eb98fa7260b2f313393631ffd65`
 
 ### English
 
@@ -4407,11 +4753,19 @@ Em uma issue de um repositório, uma pessoa escreve \#84 para referenciar outra 
 <!-- certification-coach-question:ghf-044:6bc64b859bf8a02619aea7d7c483f5ae69ee479f791486aaf923cf4dcf3e831b -->
 ## Question 44: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-044`
 
 **Content revision:** `6bc64b859bf8a02619aea7d7c483f5ae69ee479f791486aaf923cf4dcf3e831b`
+
+**en review revision:** `deb23e2a2aafd59178d436448bff4e218a9249cfc96c6265ecf4256822da071d`
+**es review revision:** `4890442ec9b8ebd42a357867af3085fdf484d32bfc5f31b41dd5ca1b8c3db7bf`
+**pt-BR review revision:** `2e289a597774f9316a5983b37f8580486f90ea73d165bf4d99bbacd2349aa4e2`
 
 ### English
 
@@ -4509,11 +4863,19 @@ Uma pessoa revisora quer citar uma frase anterior antes de responder. Qual prefi
 <!-- certification-coach-question:ghf-045:a8bef49610764ec9b0edf7d5a051007e7625aa2065291e8988ac581819280bfc -->
 ## Question 45: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-045`
 
 **Content revision:** `a8bef49610764ec9b0edf7d5a051007e7625aa2065291e8988ac581819280bfc`
+
+**en review revision:** `b04d4b225fbf06de3215606a1f7ced3588f06ec671a8ea7a3d43c73f6d6858ce`
+**es review revision:** `3ab466ad5f0f39ad1307bc810bcea2f2811d4512223a453c671ea11aa6eeaeff`
+**pt-BR review revision:** `30a3bc7dd57724e29fb6ba1e1264391a294c2d69547e2d5a1e229c01101f7ca5`
 
 ### English
 
@@ -4611,11 +4973,19 @@ Um README na raiz precisa de um link para docs/setup.md que acompanhe a branch s
 <!-- certification-coach-question:ghf-046:5c0ff4e2fece226dd6d0b30df3b971ef43acea13cb3241dc39d2f99191eabff6 -->
 ## Question 46: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-046`
 
 **Content revision:** `5c0ff4e2fece226dd6d0b30df3b971ef43acea13cb3241dc39d2f99191eabff6`
+
+**en review revision:** `a63f6a42a9da172aceb3517aefdacb230f78824ea3a29f25d7ec978fafa9ceb3`
+**es review revision:** `b5872f492dd58a003b8016886ad3f7553240de6ad80ff6cfc0b29ff16813fca4`
+**pt-BR review revision:** `c4ae4f8d52ff3293b518a1e94bae765e2d106d56876e03103c43654afed0d9a7`
 
 ### English
 
@@ -4713,11 +5083,19 @@ Qual trecho Markdown exibe a palavra urgent em negrito?
 <!-- certification-coach-question:ghf-047:f386a84c86f85be43eaf229f1dd15e9b543babff3e3852e4021667633c3a6ebf -->
 ## Question 47: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-047`
 
 **Content revision:** `f386a84c86f85be43eaf229f1dd15e9b543babff3e3852e4021667633c3a6ebf`
+
+**en review revision:** `6dd33b4c53f9f6cbbc421a80966714fcdedd10f03c8fbfb6f94b09ed6e421a25`
+**es review revision:** `70cd5dc91e4273dbcc8fcc4571607bca54e1c8a500528ff78484a00a2217d98f`
+**pt-BR review revision:** `80e519473da6f353c19f025df83d478e3717407f598975dd44db07c0f15b011d`
 
 ### English
 
@@ -4815,11 +5193,19 @@ Uma pessoa quer uma lista com marcadores de pré-requisitos sem indicar uma orde
 <!-- certification-coach-question:ghf-048:827909f310d85a92a809028ebc27a72b8352a06dac46106ebab7247d3475b8a6 -->
 ## Question 48: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-048`
 
 **Content revision:** `827909f310d85a92a809028ebc27a72b8352a06dac46106ebab7247d3475b8a6`
+
+**en review revision:** `a32ab39f697ec3416b97ecfedd53b8e34f4e7de28b66f7a8ddf46d449f5213ad`
+**es review revision:** `87425185901ff3b2ced3854906af9cf997292db6eeaccc9cb8fdb1fdb6a8e135`
+**pt-BR review revision:** `abf0c5866670f4a11bfac33e97027cba427befaa3f22f472b6bd84e7218bbe18`
 
 ### English
 
@@ -4917,11 +5303,19 @@ Uma pessoa que contribui com a documentação adiciona texto alternativo a uma i
 <!-- certification-coach-question:ghf-049:bf66a3b9d3c682cc294a7aab94c7b6a9e6766e85865d353d5679d562ffd3649b -->
 ## Question 49: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-049`
 
 **Content revision:** `bf66a3b9d3c682cc294a7aab94c7b6a9e6766e85865d353d5679d562ffd3649b`
+
+**en review revision:** `662b0655ae59d6e0cf2f99b5b755807cb262be8c12b63fcf31153d26b41fa336`
+**es review revision:** `ab66b76694316a36e1071101ea9df87436cd5b54f780355ae490248b5f649a2c`
+**pt-BR review revision:** `571e290047739bb1cb89b14b8f76b5ca221869b5eab2728d03ae59d7896f7d07`
 
 ### English
 
@@ -5019,11 +5413,19 @@ Uma equipe escolhe GitHub flow para um manual sem código. Esse uso é adequado?
 <!-- certification-coach-question:ghf-050:cbb667655a319033ecf7c60166caa635ae110325a471eb24468b155790bde7d0 -->
 ## Question 50: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-050`
 
 **Content revision:** `cbb667655a319033ecf7c60166caa635ae110325a471eb24468b155790bde7d0`
+
+**en review revision:** `9e567b0f34331e3f5f10de4ad0a61458b57dfe9629aebb2b77514d3023cc8db1`
+**es review revision:** `1af9502c30aedde49226229d4353af1a0f0c945d86fbd1f411be2a7b634cb12e`
+**pt-BR review revision:** `230ffc7525f049b5b351fbd492ca15eb969320199bb1d88a37b62e11f198558e`
 
 ### English
 
@@ -5121,11 +5523,19 @@ Antes de abrir um pull request de uma branch, o que a pessoa autora deve incluir
 <!-- certification-coach-question:ghf-051:b7d52edaf1524b1a2286664d28f83067f7526f30e46640185694f4f665aa4e8c -->
 ## Question 51: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-051`
 
 **Content revision:** `b7d52edaf1524b1a2286664d28f83067f7526f30e46640185694f4f665aa4e8c`
+
+**en review revision:** `f03593352d51d93ca07dca21744198d1a77207dca9cb9abf4d0d49293ade6d92`
+**es review revision:** `a3d9e0a8563bfc0e4b9d8e80be2a9eedd420f462263c5d298019150207362578`
+**pt-BR review revision:** `ffa337c618167150f2231ba659e7527bab33c6086a86d7016e7b2efca0af48b4`
 
 ### English
 
@@ -5223,11 +5633,19 @@ Por que um commit com uma alteração coerente costuma ser mais fácil de manter
 <!-- certification-coach-question:ghf-052:782989a333d3e432b6f46b9db8c0179cf08e8b01f0af5118d947c2f5241c8d2f -->
 ## Question 52: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-052`
 
 **Content revision:** `782989a333d3e432b6f46b9db8c0179cf08e8b01f0af5118d947c2f5241c8d2f`
+
+**en review revision:** `42069610badfa761985b14a1f4da19fccce4b27453009e0c1490912e143dee35`
+**es review revision:** `6452198bce260854d18ea048eb7507e5ce1d89df3aaacc18380afe2f171ebfcb`
+**pt-BR review revision:** `6ba609f8d6fe5c1ab80878fce85da3dc41839952885281d0bff6c0d6322900f0`
 
 ### English
 
@@ -5325,11 +5743,19 @@ Para uma tarefa ativa, prefere-se uma branch chamada fix-search-timeout a uma ch
 <!-- certification-coach-question:ghf-053:dd2c76f575c742f97b5906ef3bf5a817bf62e57831c19d50dd121f0b011c8140 -->
 ## Question 53: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-053`
 
 **Content revision:** `dd2c76f575c742f97b5906ef3bf5a817bf62e57831c19d50dd121f0b011c8140`
+
+**en review revision:** `33e0c83bbc78657037a076bd88ff166d9af1b432b68e4495e173e1be62cf906a`
+**es review revision:** `5bdd73e0cbbbfa6825b1069d859052ac874c8dcc2ad525e3c0e37b7dc28cf3e6`
+**pt-BR review revision:** `e4c342b81ca04938fceeec98fb4ce0e9734829bdb91f4cea28f29c7e9fe89d75`
 
 ### English
 
@@ -5427,11 +5853,19 @@ Uma pessoa executa git add em um arquivo. O que aconteceu nesse momento?
 <!-- certification-coach-question:ghf-054:0a26daa0030b08390d9acbb0d9da794107d079a8c06d8b9380b359cc0cb3f2f9 -->
 ## Question 54: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-054`
 
 **Content revision:** `0a26daa0030b08390d9acbb0d9da794107d079a8c06d8b9380b359cc0cb3f2f9`
+
+**en review revision:** `965391c7ea4ec17d1c8af46535ffaffea32c68de25a91efaddc85dc15c838157`
+**es review revision:** `197fb9dfe1da85e1b4c9daa74cc1d22130d5e1350586b348be80685497fccb7c`
+**pt-BR review revision:** `ea393316952f4334865b431f2f52508979e983acfe428c2cbd686eae1c3b2689`
 
 ### English
 
@@ -5529,11 +5963,19 @@ Uma equipe entende um pull request como uma solicitação para baixar arquivos. 
 <!-- certification-coach-question:ghf-055:482466385be87eeff4cf4942517f63f350ceeec3e89b66a09832e28219bb55db -->
 ## Question 55: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-055`
 
 **Content revision:** `482466385be87eeff4cf4942517f63f350ceeec3e89b66a09832e28219bb55db`
+
+**en review revision:** `8ff20cde92df0b99694617036878b21008c95922889a618c9e68342c04f453ff`
+**es review revision:** `12167776cd701a1282a6838e198e32e97344d126e2f7c5819e404f5c30c85ce9`
+**pt-BR review revision:** `3bf36ec1182678c1aac19cf25cd753f88247c9572db1701a84dd87141f36a42c`
 
 ### English
 
@@ -5631,11 +6073,19 @@ Uma pessoa altera a URL associada a um remoto local. O que isso muda principalme
 <!-- certification-coach-question:ghf-056:1d51cde40a135367b71defab25d5827f995c7485218d0b27eb0c353406184783 -->
 ## Question 56: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-056`
 
 **Content revision:** `1d51cde40a135367b71defab25d5827f995c7485218d0b27eb0c353406184783`
+
+**en review revision:** `562fe7567f1920f93193cd1ee12aa3a2e2743ed53bd369a511b5ca64cc7ed2ca`
+**es review revision:** `862c85c4a57738b8fe40dcf38cf8e7a385f64ac42d9ebf14216f54bafa2dc111`
+**pt-BR review revision:** `48f1f49dbc6a670c9331c4c34648b12354b855f924521c6ec71a9e6a0c82572a`
 
 ### English
 
@@ -5733,11 +6183,19 @@ Duas pessoas usam interfaces compatíveis diferentes: uma usa GitHub Desktop e o
 <!-- certification-coach-question:ghf-057:93f3f777522a1b570a7b127c71c573a182d8c0ba3a1eb3d5121be70e7e7ed345 -->
 ## Question 57: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-057`
 
 **Content revision:** `93f3f777522a1b570a7b127c71c573a182d8c0ba3a1eb3d5121be70e7e7ed345`
+
+**en review revision:** `15414582ba94b5b0e3ea502fd21e2e38697f02db1a806fe11cd7e2d75aa352f0`
+**es review revision:** `ca4e0f4ad6b29365644802a400989b31199f7f0b3e5b57acb66fb96dafd2cbfa`
+**pt-BR review revision:** `9c660d7daeedd5ed1ca51872bfe37cee06d59cbfc17fbae6d372c0c5aa0eff5b`
 
 ### English
 
@@ -5835,11 +6293,19 @@ Qual afirmação sobre a participação em organizações do GitHub está corret
 <!-- certification-coach-question:ghf-058:f58ec382687fa1451fa25ca7ae3f074a86d67dfef5d5740cb64133b7096c12a3 -->
 ## Question 58: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-058`
 
 **Content revision:** `f58ec382687fa1451fa25ca7ae3f074a86d67dfef5d5740cb64133b7096c12a3`
+
+**en review revision:** `fb664e0d2be0898f60d54ad5042e60f3e4a30cf51e60dc7d614417135337cede`
+**es review revision:** `1b5de38161035039e6f6c7de293fab22baf29e34bcc9d5a457ad177e1db07665`
+**pt-BR review revision:** `d85c483989cf72248939918bf956cf02864628d325a649bc9956c9af115fd956`
 
 ### English
 
@@ -5937,11 +6403,19 @@ Por que uma empresa pode escolher GitHub Enterprise Cloud em vez de GitHub Enter
 <!-- certification-coach-question:ghf-059:fe873fbf69e6880c102c01e87544b3727f8b25111b4e8423ff5faddd7fc54d0e -->
 ## Question 59: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-059`
 
 **Content revision:** `fe873fbf69e6880c102c01e87544b3727f8b25111b4e8423ff5faddd7fc54d0e`
+
+**en review revision:** `66af79bb8d950bc8a375d2518a46b99e21a513df79d97ff393e36e6193b375a7`
+**es review revision:** `5f2c285234d45b1766d2fc12b00f6cce6674fbcc5df4c0370252bc11193549db`
+**pt-BR review revision:** `e56cead62a8028079e3c1eeb9e01083d1fc56d1b7998dd69a5f36ee4eb3c091b`
 
 ### English
 
@@ -6039,11 +6513,19 @@ Uma pessoa quer sair da branch atual para outra branch local existente. Qual com
 <!-- certification-coach-question:ghf-060:97f9363276f20340ac0cd7b08296871ef94723187f19ece055ce46d28ea08962 -->
 ## Question 60: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-060`
 
 **Content revision:** `97f9363276f20340ac0cd7b08296871ef94723187f19ece055ce46d28ea08962`
+
+**en review revision:** `8138201f378aec51550c3f8b4a272e33712364d19459150dc419e87f198080be`
+**es review revision:** `8bc1bd49f54cb57ef38321dfb2a02c4574f7451378a17dde1718b4148af796ec`
+**pt-BR review revision:** `26b234002a809dc0ff248921e6d91fe187c34f83ff4526b721cacd5ae97f3756`
 
 ### English
 
@@ -6141,11 +6623,19 @@ Uma pessoa autora quer que a revisão diferencie as linhas removidas das adicion
 <!-- certification-coach-question:ghf-061:4312d60cebdae6ac6f8b18208e5e0b960cb0f7c8e265a61cf0aa79853a45c546 -->
 ## Question 61: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-061`
 
 **Content revision:** `4312d60cebdae6ac6f8b18208e5e0b960cb0f7c8e265a61cf0aa79853a45c546`
+
+**en review revision:** `0b8a66277fab39d77da6a11d3b6e3bfe2dd2c784af9f58fb17ed11880bb39930`
+**es review revision:** `99b155788e7a68ffd3bf58743313898646f6423b8cbb268fe14e7a228c351a49`
+**pt-BR review revision:** `a4663a0cf1da150c03107006e393174457748e002bdf17d2d9569e8ead544603`
 
 ### English
 
@@ -6243,11 +6733,19 @@ Um documento Markdown inclui o nome de uma linguagem compatível após o delimit
 <!-- certification-coach-question:ghf-062:bcc3b6decbfaab764385d1555de542ffbd8aec32723e641f8e9b94e3e07b16cb -->
 ## Question 62: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-062`
 
 **Content revision:** `bcc3b6decbfaab764385d1555de542ffbd8aec32723e641f8e9b94e3e07b16cb`
+
+**en review revision:** `e6e43be6cf11ec8e05ad0fc96464deb93dbffb2078203ba1eca082d9516ffbee`
+**es review revision:** `655422e927249fe47d24f0900fa06fa4cf507be00f6e54e70539d12598098f0e`
+**pt-BR review revision:** `37dcfaad1aa1896850858c6f6f30d3ee1b679179eeb9bd8b13f1993537ec9a6d`
 
 ### English
 
@@ -6345,11 +6843,19 @@ Uma lista Markdown mostra - \[x\] Run tests. O que o x significa na lista de tar
 <!-- certification-coach-question:ghf-063:1e9afec41f682479a2357fb23c04cd2114c9b5f0bb0d6781a8d62667b6f75faf -->
 ## Question 63: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-063`
 
 **Content revision:** `1e9afec41f682479a2357fb23c04cd2114c9b5f0bb0d6781a8d62667b6f75faf`
+
+**en review revision:** `cd2acd24fcac3265165dcaca2b4fb0274985a79eb0e0b26d635f21fd0879a788`
+**es review revision:** `55dde7783cd1058b81db9180c30b2bf153011e533c77bc09deb4c7906859aaac`
+**pt-BR review revision:** `cac4e4041b81825b7f6ad277936cf43008e3c91fcf66c6a2f38d742c3c0406a0`
 
 ### English
 
@@ -6447,11 +6953,19 @@ Um repositório contém código de programa, notas de design e arquivos de confi
 <!-- certification-coach-question:ghf-064:33605fd42a96ff8a2bcbdccac2bb743d4e9b12220358dd3bd6ac125139e05063 -->
 ## Question 64: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-064`
 
 **Content revision:** `33605fd42a96ff8a2bcbdccac2bb743d4e9b12220358dd3bd6ac125139e05063`
+
+**en review revision:** `faddddde030c344cf0d92490a517f9c2602bb4f0b8cae315aa3452659f3971f7`
+**es review revision:** `263054518ea335e0722a7d219752c57194b3bfdeb2f2399c0b3395d40fe386c6`
+**pt-BR review revision:** `2af32af27968593feee2a5d2191b96b152457bb5e64ec5622c5297040995b846`
 
 ### English
 
@@ -6549,11 +7063,19 @@ Qual afirmação explica melhor por que commit local e push são ações separad
 <!-- certification-coach-question:ghf-065:165a104847b76e041b5f13c60b00b0a9688eb6ce8192df78c48aad95931df0c4 -->
 ## Question 65: Work with GitHub repositories
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-065`
 
 **Content revision:** `165a104847b76e041b5f13c60b00b0a9688eb6ce8192df78c48aad95931df0c4`
+
+**en review revision:** `c5ddc37e4cfaa3b039578dcf6a1caf6ec8ba99cde82ac3465e55fe89e92d75a7`
+**es review revision:** `15883110e9cf25c6d0c80b434ee52582619899dd346d75fc9d2cd327ee6eeb5d`
+**pt-BR review revision:** `e157e003bf6c6b1963acffa9af909324a4ec326b879d5cd07cf132aea358a701`
 
 ### English
 
@@ -6651,11 +7173,19 @@ Uma pessoa que visita o projeto pela primeira vez precisa conhecer sua finalidad
 <!-- certification-coach-question:ghf-066:f9864e494b15c89a8ca15fd07786e73ae658a73522844fa0c5cb2b45d2e91dbb -->
 ## Question 66: Work with GitHub repositories
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-066`
 
 **Content revision:** `f9864e494b15c89a8ca15fd07786e73ae658a73522844fa0c5cb2b45d2e91dbb`
+
+**en review revision:** `f47036ab77ff79eca6ebbce2880352289b58ba2ac13a392956ef4a0500b27737`
+**es review revision:** `4d5cc933ce9c43fb688b54640e586513ed461637c1139eee41eb8fb69c2c5b0b`
+**pt-BR review revision:** `654da744b95190d164c3ba6e0aa7a1c8c9d03a8b3c48be61bcc593feff827e7e`
 
 ### English
 
@@ -6753,11 +7283,19 @@ Uma pessoa mantenedora quer declarar os termos legais para reutilizar o código 
 <!-- certification-coach-question:ghf-067:e3e579edf23905cd2d649ec40a48b8fbb57332b39615265899fbf9fff2549203 -->
 ## Question 67: Work with GitHub repositories
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-067`
 
 **Content revision:** `e3e579edf23905cd2d649ec40a48b8fbb57332b39615265899fbf9fff2549203`
+
+**en review revision:** `147ca4414f3ef11b1da3a40493090e39b28ff76e41bc623dd2ce39c7e416758e`
+**es review revision:** `074eb2354001626dfa821738389e14244ad870bd347a86fe2c6bc78657e6279a`
+**pt-BR review revision:** `c2ffb106f71136e67d9570ad2a113883ea66c00fc4c8df09db132de9eab47473`
 
 ### English
 
@@ -6855,11 +7393,19 @@ Uma pessoa que contribui precisa conhecer os comandos de teste obrigatórios e o
 <!-- certification-coach-question:ghf-068:51f1f5b39a8520e1a9f192dc11178296950ec15378ff2d7673337d3846a199e1 -->
 ## Question 68: Work with GitHub repositories
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-068`
 
 **Content revision:** `51f1f5b39a8520e1a9f192dc11178296950ec15378ff2d7673337d3846a199e1`
+
+**en review revision:** `8b6b6074936d10fff622d8e7af8e772bf86f25342ada6e399941ba86949455d3`
+**es review revision:** `0872c51b4f7b51825ec2f7c30ea2d87879e568ba16eed2521c2822451f9c79f9`
+**pt-BR review revision:** `f77992a2c9bcbcc28bb67b1e0b51cb97b7d8461e1dd69d138b1b01dc3c2f6aff`
 
 ### English
 
@@ -6957,11 +7503,19 @@ Um projeto quer que pesquisadores saibam onde relatar vulnerabilidades de forma 
 <!-- certification-coach-question:ghf-069:e92b137d2437ba82c7e35dfec88fe13ab22b283fef38c9fec2e181279bf0bfa2 -->
 ## Question 69: Work with GitHub repositories
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-069`
 
 **Content revision:** `e92b137d2437ba82c7e35dfec88fe13ab22b283fef38c9fec2e181279bf0bfa2`
+
+**en review revision:** `8e6f5a978a66197f8e09591e76390d0858aff8f020986aa154990d4f599a42d5`
+**es review revision:** `5f4dbb6a41ff2615be3a46b7fe132d5ebe7c00a6e77eaeeaf2fca09f42a485a1`
+**pt-BR review revision:** `ad301aeb16313fd55c26ac9b28282dbb0b119fcb6769365ca93213d07fddecae`
 
 ### English
 
@@ -7059,11 +7613,19 @@ Uma equipe quer que pull requests prontos para revisão que alterem /payments/ s
 <!-- certification-coach-question:ghf-070:f13811a3398f0767ca2194e74f806e227477c679c045c7df7e3d324c5a4453df -->
 ## Question 70: Work with GitHub repositories
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-070`
 
 **Content revision:** `f13811a3398f0767ca2194e74f806e227477c679c045c7df7e3d324c5a4453df`
+
+**en review revision:** `d2aed68f70f7edbcb585d60f5101021fc589523cff03cec4ae39dfced6ba090b`
+**es review revision:** `5936fb401b6e8f1c9934490577ee701c3337adfd9d044724cfd8ce8c705b6c39`
+**pt-BR review revision:** `78ecf7fa4bf6382bd1778b3f137009374a89e14d53f8fb44cd1c2e428538cede`
 
 ### English
 
@@ -7161,11 +7723,19 @@ Adicionar apenas um arquivo CODEOWNERS exige a aprovação de um proprietário a
 <!-- certification-coach-question:ghf-071:cd6e7287397f4bc8a5fcd5e6d25809eb669815bbabdd9f80afc5c8b6c3af0f7f -->
 ## Question 71: Work with GitHub repositories
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-071`
 
 **Content revision:** `cd6e7287397f4bc8a5fcd5e6d25809eb669815bbabdd9f80afc5c8b6c3af0f7f`
+
+**en review revision:** `f88ed7ffae206a292b4a5cadd47b52110f74886e42eb72b71bc1d017335ab079`
+**es review revision:** `96dc53d69829864eca5b884b6a856f447f5e03b026c92cbabe99fc71145024c7`
+**pt-BR review revision:** `a0c04ecb1d4a18b3e4e5145ffff8bfcd06a6240e12d3f28abf409ae0590952b0`
 
 ### English
 
@@ -7263,11 +7833,19 @@ Um pull request tem main como destino, mas altera CODEOWNERS na branch de funcio
 <!-- certification-coach-question:ghf-072:00ef0c7c915b88c0d6655f285d9a0382d5e1c0498c8404c7c1dcf021937ea638 -->
 ## Question 72: Work with GitHub repositories
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-072`
 
 **Content revision:** `00ef0c7c915b88c0d6655f285d9a0382d5e1c0498c8404c7c1dcf021937ea638`
+
+**en review revision:** `09fe3322d107677f94d8e606d6b6c88c06df7f19681f946f31c0dfc1520871ce`
+**es review revision:** `93f189f1f30499347e98d2841a7e9b9c2ceca90c180363f9637651edf937768f`
+**pt-BR review revision:** `4f16f7b85b1449d13a0e3a9b865b4c9cd8e1b5f6e2e41bacf60b03fd7a817fd8`
 
 ### English
 
@@ -7365,11 +7943,19 @@ Um repositório tem arquivos CODEOWNERS em .github/, na raiz e em docs/. Qual lo
 <!-- certification-coach-question:ghf-073:d3120df2fa3d151a0af09163af4a2bb864458b5d8d31ed725a78bb5cff2f3fd6 -->
 ## Question 73: Work with GitHub repositories
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-073`
 
 **Content revision:** `d3120df2fa3d151a0af09163af4a2bb864458b5d8d31ed725a78bb5cff2f3fd6`
+
+**en review revision:** `1db46d149d2392d954d447f26f660f4b30111e52a8a413419234c669ddb7fadb`
+**es review revision:** `e49dd815cfd2d436933749a1d8eeb01f009366216d4e0497634b2614a1026f19`
+**pt-BR review revision:** `d7f63fc2a3386e1a9bb1a8a6e6b587a6c9490c89845e13dedda9ac96c88d341c`
 
 ### English
 
@@ -7467,11 +8053,19 @@ Uma empresa quer que novos serviços independentes comecem com pastas e arquivos
 <!-- certification-coach-question:ghf-074:3cdf7a3e385ce23772cb9807104627b0368ffd643fb2e11a3273e29565ebedf7 -->
 ## Question 74: Work with GitHub repositories
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-074`
 
 **Content revision:** `3cdf7a3e385ce23772cb9807104627b0368ffd643fb2e11a3273e29565ebedf7`
+
+**en review revision:** `4b8fdf2f84d6680a00fa4636b02ff76fa9032155af0dd8a07af4ece701540de9`
+**es review revision:** `a603f99fdefbf9290210eebbcb555d34f05f139e0c298981dc9df92eb87c24c5`
+**pt-BR review revision:** `708150b643cdbba3c22b1e7c18d53516c6790426c571b0bd759fc57bfcfd1232`
 
 ### English
 
@@ -7569,11 +8163,19 @@ Depois de gerar um repositório a partir de um template, o que acontece quando a
 <!-- certification-coach-question:ghf-075:a9429faae9eddddb41fa6ec74e3350f1e7726927f0281e5a5dae4d3806255a81 -->
 ## Question 75: Work with GitHub repositories
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-075`
 
 **Content revision:** `a9429faae9eddddb41fa6ec74e3350f1e7726927f0281e5a5dae4d3806255a81`
+
+**en review revision:** `07c258c0807d81a0fdeeaf5775a347144e5e2c07af69d92e91d4aa278d1094ce`
+**es review revision:** `789fc98c582448e95822c43e06aaaa5c1b3b30efc0c07a05b1627d59df16fdb2`
+**pt-BR review revision:** `2a8cb7cad0e6fb0bd5a5d636905a0bbc406411ec7b026b556ab8b3f082f5cef6`
 
 ### English
 
@@ -7671,11 +8273,19 @@ Um template inclui várias branches, e o repositório gerado inclui todas elas. 
 <!-- certification-coach-question:ghf-076:e52a7808e12edd1d7aa2b44ca08ab57466c1b877eecfda3d79c375719c309281 -->
 ## Question 76: Work with GitHub repositories
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-076`
 
 **Content revision:** `e52a7808e12edd1d7aa2b44ca08ab57466c1b877eecfda3d79c375719c309281`
+
+**en review revision:** `baa8cb3c7e2036f9950b03c8768e6b4ba1787a4b3152337a76c26ef10a5462ab`
+**es review revision:** `d9e5d1d472c72db497831deeb829331fdd2f07b83e1fbd89a07a14868ba59870`
+**pt-BR review revision:** `8b14ea2d1d518ce4e9ad50e1cf13277bedd6b1913d50702735257341a41442c4`
 
 ### English
 
@@ -7773,11 +8383,19 @@ Uma pessoa mantenedora quer alterar um arquivo pela interface web do GitHub mant
 <!-- certification-coach-question:ghf-077:7eee33e60348b99f91865f070172cea447e3f3daa3c7c18b5a6c387589289ed3 -->
 ## Question 77: Work with GitHub repositories
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-077`
 
 **Content revision:** `7eee33e60348b99f91865f070172cea447e3f3daa3c7c18b5a6c387589289ed3`
+
+**en review revision:** `25fb11fa7f17cc46c7b188e78bed567810b4b2a48a376f43f4d5481dae4a8027`
+**es review revision:** `4fae55a0f3d16baf6b0baf77a4e5ab6654e46ffe75387549bb6e04ee93eefbe6`
+**pt-BR review revision:** `ed20612aa90355497018bd4f3a0c98d320a2deca8214b769cda616e6e964b4bb`
 
 ### English
 
@@ -7875,11 +8493,19 @@ O que se deve esperar quando um arquivo rastreado é excluído em um novo commit
 <!-- certification-coach-question:ghf-078:60d2075250cfcb7bc4dbcf3ed88c480073627931c0284835a4d4af4be8a244ce -->
 ## Question 78: Work with GitHub repositories
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-078`
 
 **Content revision:** `60d2075250cfcb7bc4dbcf3ed88c480073627931c0284835a4d4af4be8a244ce`
+
+**en review revision:** `7935775f6753cc3f9e5ec306d842884dcc52fda2e6764fd35bef45605052e7c3`
+**es review revision:** `276b245d9db622f090a5a0babc602b58fcc228f709cbb2f97e6cfcefd1541a86`
+**pt-BR review revision:** `214a083717ecb3128037cad96e993aef8fbb30f9ac243bd3a8c52d053ac3f53a`
 
 ### English
 
@@ -7977,11 +8603,19 @@ Adiciona-se build/ ao .gitignore depois que build/output.log já foi commitado. 
 <!-- certification-coach-question:ghf-079:bc2d30bfc94144b23d1dd61ee29e687e38878c945bc18f16a6f033a4e7f2258f -->
 ## Question 79: Work with GitHub repositories
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-079`
 
 **Content revision:** `bc2d30bfc94144b23d1dd61ee29e687e38878c945bc18f16a6f033a4e7f2258f`
+
+**en review revision:** `ed3077ebf125c61cc92d0c3652116db08a9fe1c70a0a9a895d1ea65476850da1`
+**es review revision:** `a8522290d1f5d5cc3f548ecc4de59ee0fb75053308a409ff0cc415acbb89079d`
+**pt-BR review revision:** `364d02953b68bfaaeaaeb948306282ee09cd110f87b580d24069c71c399d2d10`
 
 ### English
 
@@ -8079,11 +8713,19 @@ Uma pessoa quer salvar vários repositórios como favoritos sem assinar todas as
 <!-- certification-coach-question:ghf-080:c38910384c3c6e1f5e5443032b56e6b84e0e1a362245077cca5bfe5914bc9d2b -->
 ## Question 80: Work with GitHub repositories
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-080`
 
 **Content revision:** `c38910384c3c6e1f5e5443032b56e6b84e0e1a362245077cca5bfe5914bc9d2b`
+
+**en review revision:** `c6ade94511d257e1ba04c881d73ee755f17cbe4f94f54ae1ec46e1be7bc50b9c`
+**es review revision:** `a43bfb0d43475f33a05e7f8bd493f2601e70bcb944495d1c212a3579a771bd90`
+**pt-BR review revision:** `35fc31df9633ebc2aa9f101a157e9d24effe117372c8c4a2842bd65587f8b47d`
 
 ### English
 
@@ -8181,11 +8823,19 @@ Uma pessoa quer organizar repositórios com estrela em categorias pessoais. Qual
 <!-- certification-coach-question:ghf-081:2da87ba7a33c97d897d8a03960f52771811a976ca694b3a3166b53570904df79 -->
 ## Question 81: Work with GitHub repositories
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-081`
 
 **Content revision:** `2da87ba7a33c97d897d8a03960f52771811a976ca694b3a3166b53570904df79`
+
+**en review revision:** `6157b81fedb3662a47f24294a4c6d4ce1eab1ae3ccf47133ac2d610ef788adf5`
+**es review revision:** `a27c43fd64a56b9ed7582b650cf885264e0db17bf2732f0a530c39ae9574d288`
+**pt-BR review revision:** `93859bdc1127609c0d6a32f2213d54ee6b2448d9c12ec90428d089addc4c2d6e`
 
 ### English
 
@@ -8283,11 +8933,19 @@ Um projeto quer ser encontrado mais facilmente por quem busca rust e ferramentas
 <!-- certification-coach-question:ghf-082:1e4cf02c347307305089a53894de7cf8ed6684cf1ba702f47c9acfd739d902b2 -->
 ## Question 82: Work with GitHub repositories
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-082`
 
 **Content revision:** `1e4cf02c347307305089a53894de7cf8ed6684cf1ba702f47c9acfd739d902b2`
+
+**en review revision:** `f95bd82abfb5cc0dd86c46c2a43ad2a2bc0dad32f994814392e22157c7038007`
+**es review revision:** `f4232c7a108e4f1f60f037459428bbee587e652f99044e68bccd9ddbc9bd771a`
+**pt-BR review revision:** `e915e7341645b9b34607cd6a46d27a2bfb8e0f42a921a9d3193035421ea3cd90`
 
 ### English
 
@@ -8385,11 +9043,19 @@ Uma biblioteca chega a uma versão pronta para distribuição com notas de vers�
 <!-- certification-coach-question:ghf-083:4b63caced10d994ea830759db2522c99340aaa6b93f0f958fb4cab08ca1f6042 -->
 ## Question 83: Work with GitHub repositories
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-083`
 
 **Content revision:** `4b63caced10d994ea830759db2522c99340aaa6b93f0f958fb4cab08ca1f6042`
+
+**en review revision:** `15a8e896b9eb0769cbb012375d386c9fc013050929ed5e6763608f3ecaf95c8b`
+**es review revision:** `e7804c1276075f2056a39d399496d5c0e6084a3553a5b471e876bd7d11105d64`
+**pt-BR review revision:** `d02fc7cf19e9c3428cee21dbb9fe0e00960038f95d17a51c75c493cdf0a86f5d`
 
 ### English
 
@@ -8487,11 +9153,19 @@ Um projeto não é mais mantido, mas seu código e suas conversas devem continua
 <!-- certification-coach-question:ghf-084:010d26b9527c8c776506a46bc332e65138bd85e995cce355a2326de3134d6af6 -->
 ## Question 84: Work with GitHub repositories
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-084`
 
 **Content revision:** `010d26b9527c8c776506a46bc332e65138bd85e995cce355a2326de3134d6af6`
+
+**en review revision:** `d2de5ffc5a1ee10f06592abcc491fe5f2e84367805c24d81834fb5c3158e3390`
+**es review revision:** `675cae6182cbfd27bea027f9e1b722983c9c4f417d14c2af9e23728981d36d0b`
+**pt-BR review revision:** `c0337e6749001d60845d0e199e1445f2962bfdc95adc572e51e1b02ab3a6ec33`
 
 ### English
 
@@ -8589,11 +9263,19 @@ Qual ação restaura a atividade normal de escrita em um repositório arquivado?
 <!-- certification-coach-question:ghf-085:cb89dd5f8ec5a64dd38cb13d576b8fa753f4562c3435df9520f7ce282f33d0e8 -->
 ## Question 85: Work with GitHub repositories
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-085`
 
 **Content revision:** `cb89dd5f8ec5a64dd38cb13d576b8fa753f4562c3435df9520f7ce282f33d0e8`
+
+**en review revision:** `1584ebd691a603cbdce9dfa6828c3989ad163588351e7c30e6878c528a066064`
+**es review revision:** `d555007865b1896beff2708b0db4b418c13025818680a151ba8c3ac2f02a3cb8`
+**pt-BR review revision:** `4c0384fd126d86aa54b9854b77b5c118ff8e7566a936736a3335c6196e4a3852`
 
 ### English
 
@@ -8691,11 +9373,19 @@ Quer-se ver quais pacotes o projeto usa e quais dependências compatíveis têm 
 <!-- certification-coach-question:ghf-086:cdfddfe56ced5316e2452fb08731283625615372c447ed394ae6c6bf8df32710 -->
 ## Question 86: Work with GitHub repositories
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-086`
 
 **Content revision:** `cdfddfe56ced5316e2452fb08731283625615372c447ed394ae6c6bf8df32710`
+
+**en review revision:** `85f3aef5e4c483526cc491ad32277cb5d84b00bf66779cf1d3f3541587179f95`
+**es review revision:** `027ecd34cb395a8b93bf42f9bf6b65fa977c49f80785555b67790ad4d7ee32bc`
+**pt-BR review revision:** `bf9fb03973d43a8a2c2f9d04fca31313c00462ee8544aff834ebfe20ae4d0d3c`
 
 ### English
 
@@ -8793,11 +9483,19 @@ Como o grafo de dependências do GitHub obtém informações de dependências?
 <!-- certification-coach-question:ghf-087:ca2c5e5f254e093842710fdfea80506f47a2e90b61d4b230e183bba0c5382a9e -->
 ## Question 87: Work with GitHub repositories
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-087`
 
 **Content revision:** `ca2c5e5f254e093842710fdfea80506f47a2e90b61d4b230e183bba0c5382a9e`
+
+**en review revision:** `ec14f63b88e66b2bb715a8a24580c9d563804df654708583fd595b999eee465c`
+**es review revision:** `4a7bcc6837a154aaf9b088e5a1d35e1cd60b9641ebf7022254b14eed24735678`
+**pt-BR review revision:** `b5dbbd21c420e20fcb2ea30eb0bc33e4b81f83e5ad68036b74ee168d33a6f231`
 
 ### English
 
@@ -8895,11 +9593,19 @@ Uma visualização Insights do repositório resume contribuições e atividade. 
 <!-- certification-coach-question:ghf-088:8ba10280790c8d11d516c47ab6bd7e4658ec62b068f95fe20967cbed7d783fee -->
 ## Question 88: Work with GitHub repositories
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-088`
 
 **Content revision:** `8ba10280790c8d11d516c47ab6bd7e4658ec62b068f95fe20967cbed7d783fee`
+
+**en review revision:** `42b1ab954ec8ec2028b0c4a314a35ff3dd1114fca1357bcf9e143348985735ca`
+**es review revision:** `6cef9a4384b774b88005058029b95b98ce632ddffeab5f29608767d2e7b85cc2`
+**pt-BR review revision:** `03d767314a5e197239a592427368674d8e9431e07c2ff81ae6733ee3bd6b6606`
 
 ### English
 
@@ -8997,11 +9703,19 @@ Quer-se avaliar a atividade recente de pull requests e issues em vez de examinar
 <!-- certification-coach-question:ghf-089:b4ca86c846c3ec03c7b8b31a4ef6f1b0e4cd35bb54132c3cc5ae6b560490d7dc -->
 ## Question 89: Work with GitHub repositories
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-089`
 
 **Content revision:** `b4ca86c846c3ec03c7b8b31a4ef6f1b0e4cd35bb54132c3cc5ae6b560490d7dc`
+
+**en review revision:** `af879f6386016713da5d60f78e9a62f735b119cdf6817a82d7fc3f6d6eca12c3`
+**es review revision:** `096bb376329be706fc144c049effac7c530fd61e163f7d0d143e490f8c061bdb`
+**pt-BR review revision:** `c778f2ee4ed1db9d46a5a8bc257f19dedd8337616b41b4cced8fab7daaa454de`
 
 ### English
 
@@ -9099,11 +9813,19 @@ Uma pessoa quer experimentar um recurso de interface em versão prévia pública
 <!-- certification-coach-question:ghf-090:dc324b22105a45ede12d062c1a7ec6b5713db5191056fac535a6d2a15774a6a5 -->
 ## Question 90: Work with GitHub repositories
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-090`
 
 **Content revision:** `dc324b22105a45ede12d062c1a7ec6b5713db5191056fac535a6d2a15774a6a5`
+
+**en review revision:** `bc20647be29a2234ea4b1dd8a822cda7b5e8d22493460ee9994e9ea26ef6acf5`
+**es review revision:** `c4a9555c1dce5fbc8f3cdcfb44c02c713446f531ab235aee59276b913ec27fcc`
+**pt-BR review revision:** `66c09872b3177d85073f1346418f7681bce0a73fc009f9b46ae9670f9f13b0ff`
 
 ### English
 
@@ -9201,11 +9923,19 @@ Por que uma equipe não deve tratar um recurso do GitHub em versão prévia púb
 <!-- certification-coach-question:ghf-091:f6d2ad9f5785bd1d5d8f1f5276062eaaf6eb46dfce167e7a0add1121f531266c -->
 ## Question 91: Work with GitHub repositories
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-091`
 
 **Content revision:** `f6d2ad9f5785bd1d5d8f1f5276062eaaf6eb46dfce167e7a0add1121f531266c`
+
+**en review revision:** `863549760cc06275defdad225930d541b73197f484bdb1223bdb6844166101d5`
+**es review revision:** `3a8d58e978561f8d72ae290aa83758ecb2a58714977216a8d3474e824bbd295b`
+**pt-BR review revision:** `ae8d3a71b4e81d21b92e5f1b5df39b0909e40040a4a78f500d584dfd0b248d22`
 
 ### English
 
@@ -9303,11 +10033,19 @@ Uma pessoa quer compartilhar um link de um arquivo exatamente como ele existe ho
 <!-- certification-coach-question:ghf-092:6d7137134b04d0a0c1203bec83733de431aa781a90a0e1ff039fe44ba8ff748d -->
 ## Question 92: Work with GitHub repositories
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-092`
 
 **Content revision:** `6d7137134b04d0a0c1203bec83733de431aa781a90a0e1ff039fe44ba8ff748d`
+
+**en review revision:** `28fb5567bc56ed30dc599caf47fc2d04ddef6ae283174cecfaa6faca175c1f0e`
+**es review revision:** `ae23f67da32b51e591290c47ac4803e196cb0074af103e50ecbe719ba15642bc`
+**pt-BR review revision:** `1a1dcbed2ffc4bdca37e27e0571bf4a5e3cd0e9ceebcfe259931f732711a2d46`
 
 ### English
 
@@ -9405,11 +10143,19 @@ Uma pessoa precisa entender por que um arquivo específico mudou no mês passado
 <!-- certification-coach-question:ghf-093:9d3c5e5c1dbafdbfe5e4ea5b376c35a89bba0504712515712c4b3b1691572bb1 -->
 ## Question 93: Work with GitHub repositories
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-093`
 
 **Content revision:** `9d3c5e5c1dbafdbfe5e4ea5b376c35a89bba0504712515712c4b3b1691572bb1`
+
+**en review revision:** `f21f22b2ddbf2cf156d29c41d3aaf4d3eb181476ca9309e85a5d91ff9688bc80`
+**es review revision:** `6c5da85d3f91755201bd5e1705cfd28ea1130d98de6027b3ef37f7d62e07cba9`
+**pt-BR review revision:** `a7fa5cc8dd107f4bb3500f773042adea72b000cb99c32cb12649f7ca7ca28031`
 
 ### English
 
@@ -9507,11 +10253,19 @@ Antes de excluir um repositório, o que seu proprietário deve entender sobre a 
 <!-- certification-coach-question:ghf-094:c8898527b550543afb09107d6014ec87734ad7813417532d8bbf0891f84c9b91 -->
 ## Question 94: Work with GitHub repositories
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-094`
 
 **Content revision:** `c8898527b550543afb09107d6014ec87734ad7813417532d8bbf0891f84c9b91`
+
+**en review revision:** `ac5b7a5b43211b7fb550b9c7fa241802a630ae6990f3755dc6dea47b8797d45c`
+**es review revision:** `360622d7add2d3a46b18417b5b1fc1ae14db7ce0bfa2d3afddaf3d5915a8c568`
+**pt-BR review revision:** `ceb102c0af546f4b5c0ea0de412143474149bb539bb874408930c18638126075`
 
 ### English
 
@@ -9609,11 +10363,19 @@ Um novo repositório independente precisa de arquivos iniciais sem histórico he
 <!-- certification-coach-question:ghf-095:07fa351ec25ce2c2e24d545e6a830625f720c3cbf6bf0b7c952f9ed14369587c -->
 ## Question 95: Collaborate using GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-095`
 
 **Content revision:** `07fa351ec25ce2c2e24d545e6a830625f720c3cbf6bf0b7c952f9ed14369587c`
+
+**en review revision:** `a08d345cfc4cc38358e29b0e917a1f2b527813530281943e046a93561d676126`
+**es review revision:** `7a6f9a167a624862773c4456fa9a481505c5908e257d12704a04482d1ef63a11`
+**pt-BR review revision:** `b0f8956081404da800acb61f4ab2d002471b4ecb695765c13d0afc8cd4d2c6b1`
 
 ### English
 
@@ -9711,11 +10473,19 @@ Uma pessoa relata um encerramento inesperado reproduzível que precisa de respon
 <!-- certification-coach-question:ghf-096:6c6c5032d56edb83a2de86ca2fb71a63c10e147d37c6e8b56b3d2f569c49a775 -->
 ## Question 96: Collaborate using GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-096`
 
 **Content revision:** `6c6c5032d56edb83a2de86ca2fb71a63c10e147d37c6e8b56b3d2f569c49a775`
+
+**en review revision:** `1289bcba0b179360971d6c48d03c795ae76520f5009b279ce68b87bcc07316ee`
+**es review revision:** `b8564c8ebcfdf15cf6bc1cf476bd68341564371280d245e264775edb06779aae`
+**pt-BR review revision:** `0106b02b7a47da3b3d678133c2ecbca459e53cb6c9bc063f2ce328160451ee85`
 
 ### English
 
@@ -9813,11 +10583,19 @@ Uma comunidade quer uma conversa aberta sobre possíveis rumos de longo prazo, s
 <!-- certification-coach-question:ghf-097:9a04ea5d35a63b6028b39958cb7d2171a2079367f23b87b5a0c998b17b39f621 -->
 ## Question 97: Collaborate using GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-097`
 
 **Content revision:** `9a04ea5d35a63b6028b39958cb7d2171a2079367f23b87b5a0c998b17b39f621`
+
+**en review revision:** `1db4619f162613d5b940f2f141afe69c66f21aae45eebbb734404e00a06943f9`
+**es review revision:** `f896ceb1ac6a622284005d2972a1dfc9970d0fb6e0559010d57e8d93c96922b8`
+**pt-BR review revision:** `6327549069090d13cbfd6f3830027fb9017fdd7ab106946f7594b33d69c1f4a7`
 
 ### English
 
@@ -9915,11 +10693,19 @@ Abre-se um pull request em rascunho para uma refatoração incompleta. O que o e
 <!-- certification-coach-question:ghf-098:9d3798b95ee4db2855ecc0a0f752375575d17afedadd4f11101e17c189544438 -->
 ## Question 98: Collaborate using GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-098`
 
 **Content revision:** `9d3798b95ee4db2855ecc0a0f752375575d17afedadd4f11101e17c189544438`
+
+**en review revision:** `0bb97231cbad3171eff6ae6ab445e5c2ee6bf711e2af391c892e8ad7e2136a04`
+**es review revision:** `27a1ea5cc5e3c5c6e14170b0bdd3a41aefc908a8b47c05a057dd37834fa48b0c`
+**pt-BR review revision:** `1c12bb07f21368a6c27935685dc7bdeb3fb3ad26779f35dfca9860c951007130`
 
 ### English
 
@@ -10017,11 +10803,19 @@ Um pull request de fix-export tem main como destino. Qual é a branch base?
 <!-- certification-coach-question:ghf-099:eaf9f559ba120c51326b66df5f48b725564e910a1501dc7ed9894ac0c582fd1f -->
 ## Question 99: Collaborate using GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-099`
 
 **Content revision:** `eaf9f559ba120c51326b66df5f48b725564e910a1501dc7ed9894ac0c582fd1f`
+
+**en review revision:** `fc48ec38c4a98f6555954c5a1747c30fab986827fad358a1f19fb6e17f696792`
+**es review revision:** `621762beb558940d161c7c49a1011500775783a205293ff31d022fdf6fb078e4`
+**pt-BR review revision:** `270ed973f4e4a41b79d6735f2e11cd7d4fb21adf1662f61a46a65d97a40358da`
 
 ### English
 
@@ -10119,11 +10913,19 @@ Uma pessoa revisora quer comentar uma linha alterada em um pull request. Qual vi
 <!-- certification-coach-question:ghf-100:89ebb3394b4399163aaf69dbe5af0a0ed67e6f2497e75a9ba5b848acf37c5b15 -->
 ## Question 100: Collaborate using GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-100`
 
 **Content revision:** `89ebb3394b4399163aaf69dbe5af0a0ed67e6f2497e75a9ba5b848acf37c5b15`
+
+**en review revision:** `4f274a17dee007b6ce913cf9d239d3b250aeb01958eae4bed2fe5c98eb596991`
+**es review revision:** `f2ebec83f11dc4f4b19dcddec680cc193c821963b8ee378aa19752c32e989d10`
+**pt-BR review revision:** `5fe983dbb376ac5b9b7285701f8970e2ce3814f4b36f46f486b7aeb71ed2676d`
 
 ### English
 
@@ -10221,11 +11023,19 @@ Uma pessoa revisora encontra um problema bloqueante e quer que o resultado da re
 <!-- certification-coach-question:ghf-101:226720d9f13ca1a76be9c6d1cc1cf45af120391507babd82c2b360f6913b9b6b -->
 ## Question 101: Collaborate using GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-101`
 
 **Content revision:** `226720d9f13ca1a76be9c6d1cc1cf45af120391507babd82c2b360f6913b9b6b`
+
+**en review revision:** `fc3ac05963480c46b7059d4ccfda40bc8c01a154b4797270f69880eed08d76ec`
+**es review revision:** `833e76e06af7aca94d9384eb913eb73e921eda8548ea71acd425b98f608c51e8`
+**pt-BR review revision:** `93367f9e54822ac19a7840c1a172cd842f7ce6d4e5e1abe25e0fdd90457bf761`
 
 ### English
 
@@ -10323,11 +11133,19 @@ Uma pessoa revisora propõe uma substituição exata para um pequeno trecho de c
 <!-- certification-coach-question:ghf-102:ceedafc451d21dda2e686d32bea8d3cdbb950b4e53715bd1f028f746e6ba5804 -->
 ## Question 102: Collaborate using GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-102`
 
 **Content revision:** `ceedafc451d21dda2e686d32bea8d3cdbb950b4e53715bd1f028f746e6ba5804`
+
+**en review revision:** `816c393eeacba9aedc36d801b1c00879300d17acfa5a71c8c8e258eb1ac15c42`
+**es review revision:** `c51d7a925f806d3adc6032db8c7b8ff564caf50c0a517ff584dce1ecf516756a`
+**pt-BR review revision:** `73b9295e64c9fc170e32fde8045197e3d23ce2be2439ce2d68370a8a3aa2109d`
 
 ### English
 
@@ -10425,11 +11243,19 @@ Um pull request destinado à branch padrão inclui Fixes \#37 na descrição. Qu
 <!-- certification-coach-question:ghf-103:19f04ca00b04da5191bae21b358bf9298b78a6bb368ecf5a6d5014826e133fac -->
 ## Question 103: Collaborate using GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-103`
 
 **Content revision:** `19f04ca00b04da5191bae21b358bf9298b78a6bb368ecf5a6d5014826e133fac`
+
+**en review revision:** `97f105548d48e1a2f0924360b45f951b6e39a9840d08b7f4ce37ac7a4550e0a7`
+**es review revision:** `8b38a705ba479104fe99396961f311ae30f22e25798d1e01ff100f62f605f3d7`
+**pt-BR review revision:** `3ea52d1116e3956a5e0e46b595a13137136c3bf02c54d5048ce9096797e3d21d`
 
 ### English
 
@@ -10527,11 +11353,19 @@ Um pull request tem como destino uma branch de lançamento que não é a padrão
 <!-- certification-coach-question:ghf-104:9b62fcd460c142975edbdac5ab6bac4d5d67a8bdd1fa47ed2827ee17b44adf11 -->
 ## Question 104: Collaborate using GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-104`
 
 **Content revision:** `9b62fcd460c142975edbdac5ab6bac4d5d67a8bdd1fa47ed2827ee17b44adf11`
+
+**en review revision:** `b73b8b55ae61a014071ad46475399499185c729c4e5ccb1843e7a0ca64772930`
+**es review revision:** `5969d5255f99be9a62f7cc98981da63630dacce1f6e97b3ae0c6602219d3b47c`
+**pt-BR review revision:** `21aba657d2ac847cf2555e76a5bc862026fae89beba113dd2324da6c0e07ad85`
 
 ### English
 
@@ -10629,11 +11463,19 @@ A descrição de um pull request deve fechar a issue 19 de outro repositório, t
 <!-- certification-coach-question:ghf-105:e266a9c8a37372c5e7b53554b9f1c30c03f857e2f8ea78efa54b57b6ba569be4 -->
 ## Question 105: Collaborate using GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-105`
 
 **Content revision:** `e266a9c8a37372c5e7b53554b9f1c30c03f857e2f8ea78efa54b57b6ba569be4`
+
+**en review revision:** `58bb375d026799ee80f39fcacf24a674a58f0220a1c6a5ccbfcd233ebabbb951`
+**es review revision:** `09b63f881019723434ebc79f3681bf285d86a6d86d2a37d3d5fad8951de65718`
+**pt-BR review revision:** `2be8e9eb41e6f93adde36dc342e23a95a5d6dd8e874d51a95d4c6ba30d52bcf8`
 
 ### English
 
@@ -10731,11 +11573,19 @@ Um projeto recebe relatos de bugs sem etapas de reprodução. O que pode adicion
 <!-- certification-coach-question:ghf-106:c85e9a33020a38ba0e854caa471d9a0aa9e3898d2b8f9e816ce83d5f6b4f6450 -->
 ## Question 106: Collaborate using GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-106`
 
 **Content revision:** `c85e9a33020a38ba0e854caa471d9a0aa9e3898d2b8f9e816ce83d5f6b4f6450`
+
+**en review revision:** `c7db7da6c72af51cc45ba9992807caaf377f5ffb060ec353e6af9c5863f43568`
+**es review revision:** `1a28e57249329b37fe850e9ef5a839fdddbd18d9e9ec9abb26ed1d9f089aeb00`
+**pt-BR review revision:** `74c6d08eafb279c069c2b44415facaa7bf360cc497c90b2d6a771129edf13a0e`
 
 ### English
 
@@ -10833,11 +11683,19 @@ Uma equipe quer que toda descrição nova de pull request solicite resumo, evid�
 <!-- certification-coach-question:ghf-107:45c56259e24a467a0483739be5f9cf9afcdcb1d38148641ddf348a8dd035e8d1 -->
 ## Question 107: Collaborate using GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-107`
 
 **Content revision:** `45c56259e24a467a0483739be5f9cf9afcdcb1d38148641ddf348a8dd035e8d1`
+
+**en review revision:** `de2368b3cc7d3272f2fdadf70be8b20786bbc6a2c607b6c79f669b768bde8757`
+**es review revision:** `3430bb272f2429f0e5ec12f321f1c8e71711c30c2bef7c56b5d19881c7390b9d`
+**pt-BR review revision:** `bf26227db9cad98973e2e453cc1f4426749dfe920c070d0ba416f2dc7c57e31e`
 
 ### English
 
@@ -10935,11 +11793,19 @@ Qual busca encontra mais diretamente issues abertas atribuídas à pessoa atual?
 <!-- certification-coach-question:ghf-108:acf0d780cfd6e5346b93462d22a67e9b23a61e8296215253e9ad464e530877c1 -->
 ## Question 108: Collaborate using GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-108`
 
 **Content revision:** `acf0d780cfd6e5346b93462d22a67e9b23a61e8296215253e9ad464e530877c1`
+
+**en review revision:** `54bfb5811ab6cb904c02def119d9b26e7b8f6e9898a305235b506a317d0b4d73`
+**es review revision:** `3491123bad3494efa9eff046c4de2031099b3c46f26476d28e96874dbdb53d5d`
+**pt-BR review revision:** `40a3e0043172dac89bf6dddd6596252a79edcf67b68bb414e975777bd703621c`
 
 ### English
 
@@ -11037,11 +11903,19 @@ Uma pessoa mantenedora precisa de pull requests abertos que aguardam sua revisã
 <!-- certification-coach-question:ghf-109:4bf3af4e88aebc432a4cca5cdf532602af5559f3d4fe7afe4616a3e9623df218 -->
 ## Question 109: Collaborate using GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-109`
 
 **Content revision:** `4bf3af4e88aebc432a4cca5cdf532602af5559f3d4fe7afe4616a3e9623df218`
+
+**en review revision:** `d89901638d63df7e43e180451dd231db39f1468cea4f3451541de693ad1299a3`
+**es review revision:** `1c25f4f7801cbf76b5e9d3ddf1cfd2ca90b35c7d79c0d812425d4a67cb5bae43`
+**pt-BR review revision:** `46b1b50116ba1b4a367a2d5b03023af38af6eaf1129c66f9c9e2d1416ec14589`
 
 ### English
 
@@ -11139,11 +12013,19 @@ Uma pessoa quer atualizações somente de releases de um repositório ao qual te
 <!-- certification-coach-question:ghf-110:1cc2cddde341662acae1b21ec16f9d83e4541ba8c7f2cbfbbe1231a2bcc84212 -->
 ## Question 110: Collaborate using GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-110`
 
 **Content revision:** `1cc2cddde341662acae1b21ec16f9d83e4541ba8c7f2cbfbbe1231a2bcc84212`
+
+**en review revision:** `21121c36c74f20af8b9c9c0a1f3588df90946c18dfac06283efe799cd1d9407e`
+**es review revision:** `14b0e0b1ebe4c264f5f73aa64cb960f6df4caf4feae4c93e384abe53f346f290`
+**pt-BR review revision:** `7c049f56e9e43f6a25c496b7d1545b5feced4983288c67ef7f64e94ff5232cfe`
 
 ### English
 
@@ -11241,11 +12123,19 @@ Uma pessoa quer atualizações de uma única issue sem acompanhar todas as issue
 <!-- certification-coach-question:ghf-111:970c5fa7139543ab6045bc7e282f6876b296eb0f411d60ce80793512017cce19 -->
 ## Question 111: Collaborate using GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-111`
 
 **Content revision:** `970c5fa7139543ab6045bc7e282f6876b296eb0f411d60ce80793512017cce19`
+
+**en review revision:** `75c1e49e58bfd9e4d1a41ca15d29f163397eb48bc9521a734dc5d332f2ca29d6`
+**es review revision:** `319713a1f47c517b24b19f247b550746567b958d5233794a7c9e7cc74aa3ec9f`
+**pt-BR review revision:** `e5816e6b7804b160e88c3413a588fd3311104f6afb95637ab1cdd6fa9195a251`
 
 ### English
 
@@ -11343,11 +12233,19 @@ Uma pessoa marca uma notificação como lida sem mudar sua assinatura. O que dev
 <!-- certification-coach-question:ghf-112:dce3ed0fe4082e9abe0daed56a60d55845167e00e5ad8c236069c12e410f79b2 -->
 ## Question 112: Collaborate using GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-112`
 
 **Content revision:** `dce3ed0fe4082e9abe0daed56a60d55845167e00e5ad8c236069c12e410f79b2`
+
+**en review revision:** `1ef5c808a64fc2abe58adfcf1de605e0fa6efb7f4cb353c5f5ac28c73892aceb`
+**es review revision:** `2e8ea62b33aad41316611f0ccae064c827f8bdc9e61a878c9c6e4212b67c7657`
+**pt-BR review revision:** `ab8d59cb901f86c687cc5756645ac29abc4cee51a5b90c209ad4cb3becc20de1`
 
 ### English
 
@@ -11445,11 +12343,19 @@ Uma pessoa não precisa mais de atualizações contínuas de uma discussão espe
 <!-- certification-coach-question:ghf-113:5cccd1b0797ff0d2d508cacd67178edf56341cdd6b02f4552b4041248ad7030c -->
 ## Question 113: Collaborate using GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-113`
 
 **Content revision:** `5cccd1b0797ff0d2d508cacd67178edf56341cdd6b02f4552b4041248ad7030c`
+
+**en review revision:** `5d56267f629b174facf90672d41cac9245cfca1b833e78c2c39e77ba57dc5959`
+**es review revision:** `64b0271c36b4e8e4e69915a99965451551f2505ba7b620d311274045beeeb0b4`
+**pt-BR review revision:** `0588ef09cc6ac928f43d19f3230d3743b848d676ef506a707bc61ec2387d2e5f`
 
 ### English
 
@@ -11547,11 +12453,19 @@ Uma pessoa desenvolvedora quer compartilhar um pequeno script de exemplo version
 <!-- certification-coach-question:ghf-114:e23d64660ee5e367e9617547091bc263698c9306783434ca2d41d7c3bc0cde4c -->
 ## Question 114: Collaborate using GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-114`
 
 **Content revision:** `e23d64660ee5e367e9617547091bc263698c9306783434ca2d41d7c3bc0cde4c`
+
+**en review revision:** `1700a7c68f0675020bae6e8e12b4a3dafba84ec71aaf5faa0dec0211d990e3f1`
+**es review revision:** `ec31890d72a9ef27b8180bea80d79e74688137002599ae72f886dd32fa6c5b4b`
+**pt-BR review revision:** `384e73f740663490c775c92dbcbcb7c113842a0fa2113619ecefb09ad54ee521`
 
 ### English
 
@@ -11649,11 +12563,19 @@ Alguém propõe armazenar uma credencial confidencial em um gist secreto porque 
 <!-- certification-coach-question:ghf-115:db6ebcb0788889a12ea487621404afd5d2302d8dc8eb2ec68cbc82b7140c2daf -->
 ## Question 115: Collaborate using GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-115`
 
 **Content revision:** `db6ebcb0788889a12ea487621404afd5d2302d8dc8eb2ec68cbc82b7140c2daf`
+
+**en review revision:** `1ca4f5937ef130f891e33abc8fec9715f2d99b325e8dc9f7a4d33670d2808cf6`
+**es review revision:** `948053c743ba7859e903d4cad6622672bb4ee9369ca4e68a7c928d7e5620a3eb`
+**pt-BR review revision:** `ae0865dbda0ea1b69e21e92c65ecbb7fc5011e1792210904513ad48e3c8ca2cf`
 
 ### English
 
@@ -11751,11 +12673,19 @@ Qual afirmação sobre o versionamento de gists está correta?
 <!-- certification-coach-question:ghf-116:5d3a490cfe0f9b1526ed7970ba7e39ee17340b015258b032a1e0117a575b98f6 -->
 ## Question 116: Collaborate using GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-116`
 
 **Content revision:** `5d3a490cfe0f9b1526ed7970ba7e39ee17340b015258b032a1e0117a575b98f6`
+
+**en review revision:** `168464a93caf615d3c0d8cc6a6b9f89e982c2623cef88ab9e0f915d2ec8b0a1d`
+**es review revision:** `d0e89d20a24c02a10f02b2d096a10022b827a0b4d4f6c1ea7b9f25fa123c4b62`
+**pt-BR review revision:** `ae67dab3937a12c46d513491fdb3353dd9160de200d8aebd3b05026a48e706f8`
 
 ### English
 
@@ -11853,11 +12783,19 @@ Um repositório precisa de uma coleção navegável de páginas de documentaçã
 <!-- certification-coach-question:ghf-117:bd25528c39dbb5cfb15e0db090309c264824ce0ddaab1675d8edf07af6595204 -->
 ## Question 117: Collaborate using GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-117`
 
 **Content revision:** `bd25528c39dbb5cfb15e0db090309c264824ce0ddaab1675d8edf07af6595204`
+
+**en review revision:** `b803ed5c055f99a64c71ea7b5bb2d1a9d92f9142e68c82788acf27ae6cd96868`
+**es review revision:** `5297901418c9aba99a6a118bf481cd9c8a4e3f119665832e8171346098bd09eb`
+**pt-BR review revision:** `87d047930b8ec453907dd4430946a215d1a0ea294c6ea3afabf789b566f9c1cf`
 
 ### English
 
@@ -11955,11 +12893,19 @@ Uma equipe quer publicar um site estático de documentação a partir de arquivo
 <!-- certification-coach-question:ghf-118:a8dda6777bbe39b7c77c87ce1c60ea69b3e38f5558d6ba71d28f1ca274495021 -->
 ## Question 118: Collaborate using GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-118`
 
 **Content revision:** `a8dda6777bbe39b7c77c87ce1c60ea69b3e38f5558d6ba71d28f1ca274495021`
+
+**en review revision:** `2894cb5762438fcdf478401cebf1765f9c422442a662f5c4689702ddc62611ba`
+**es review revision:** `fcdba092d9cbab4161cd07db847988dbe552c7f030cb402c1e36b5b894d75442`
+**pt-BR review revision:** `87cddbb071587c3c0317a656bdd05a25774bf1ec000fa02e503bfcc3df61c9d6`
 
 ### English
 
@@ -12057,11 +13003,19 @@ Um site exige um processo Python do lado do servidor continuamente em execução
 <!-- certification-coach-question:ghf-119:5efeba67c4a1df1fb842b7fc70c09b5e3b9b78e8350201d65465691a9c387e7d -->
 ## Question 119: Collaborate using GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-119`
 
 **Content revision:** `5efeba67c4a1df1fb842b7fc70c09b5e3b9b78e8350201d65465691a9c387e7d`
+
+**en review revision:** `e03f409defac3de9c727fd0d0d9a30adfc4690d060f6fd83e27e2e436d79f6e8`
+**es review revision:** `62afffc3a97f3bae30e38352e4f719cabf9b8405ace4354e902ba2795871b78a`
+**pt-BR review revision:** `de8fdda10c3a71baaad82ee8080db894176d8dc39af9c21b4c5c0d5b321fff4a`
 
 ### English
 
@@ -12159,11 +13113,19 @@ Uma discussão de suporte tem uma solução útil que leitores futuros devem enc
 <!-- certification-coach-question:ghf-120:fcf1755dd95caaba177b64765a6193ebf06e69291af5ad0716af749c29fe52e0 -->
 ## Question 120: Collaborate using GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-120`
 
 **Content revision:** `fcf1755dd95caaba177b64765a6193ebf06e69291af5ad0716af749c29fe52e0`
+
+**en review revision:** `229b62b03d862ebb13df74f8803f4771339d17c201fb008834139dfb20972f00`
+**es review revision:** `5762a95106b559ec07276ef933ec4bb7739481593083b97884ce8316ee9c832e`
+**pt-BR review revision:** `2e13b74e3626725b8385dfc9209783e873ee1a28f4f356f262a75438643d0d4e`
 
 ### English
 
@@ -12261,11 +13223,19 @@ Uma issue evoluiu para uma conversa ampla de design sem tarefa concreta. Como pr
 <!-- certification-coach-question:ghf-121:b8806f5d5e9ee48065359fb5b34cd8cc85361656d42e53bb32dc6cbb5cf3f0aa -->
 ## Question 121: Collaborate using GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-121`
 
 **Content revision:** `b8806f5d5e9ee48065359fb5b34cd8cc85361656d42e53bb32dc6cbb5cf3f0aa`
+
+**en review revision:** `b5c6bb7ec6f85fecc9c5a17eecd5e21b204ff1d1da6cd1b091b0ee7c39d02ac1`
+**es review revision:** `ce2c70264b0468ddfe701ab9c288f74562181a0427d8344083ba0fc5d43edc64`
+**pt-BR review revision:** `e37e0f2f9aa77aba550bfa9264ead2b46fcc02da76e5595b2126d580e75270ef`
 
 ### English
 
@@ -12363,11 +13333,19 @@ Uma discussão de revisão é marcada como resolvida. O que isso indica por si s
 <!-- certification-coach-question:ghf-122:d18a24547fb466dbe7aa2ca770bff5f54262b70b26bbc23f13ad491bcc472b77 -->
 ## Question 122: Collaborate using GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-122`
 
 **Content revision:** `d18a24547fb466dbe7aa2ca770bff5f54262b70b26bbc23f13ad491bcc472b77`
+
+**en review revision:** `dc349b9d773174d85a83d2fb0ca9db858f97ed69b7504c6db3ea22602dd60c08`
+**es review revision:** `5c65addd5002c6962dd0248aaec205c96c078d940bab0db9121f9b815d421667`
+**pt-BR review revision:** `b1dc7ed3de5cef2d41afd9ae599826aba01cbde8ef40b621c9ebd9b7a53a845d`
 
 ### English
 
@@ -12465,11 +13443,19 @@ Uma pessoa quer abandonar uma alteração proposta sem aplicar seus commits à b
 <!-- certification-coach-question:ghf-123:197c7ed69da86b0ff77aee3ee96bedd289c835487ef6c863d5ac11070a0f91fb -->
 ## Question 123: Collaborate using GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-123`
 
 **Content revision:** `197c7ed69da86b0ff77aee3ee96bedd289c835487ef6c863d5ac11070a0f91fb`
+
+**en review revision:** `f3633228a84529303d1c01633455c52b85d6a1e1dfecf76e0132574c7783377b`
+**es review revision:** `b766de50f85734bd7ab72b193d539571c0b3fa10bb1f9eead9f1179be78e4e5b`
+**pt-BR review revision:** `ab49f5d2fca5b26dd7b7cb1a53787d9edff6c621ee28a78e1a800a2c2a4b951e`
 
 ### English
 
@@ -12567,11 +13553,19 @@ Solicita-se a revisão de alguém da equipe em um pull request. Como isso difere
 <!-- certification-coach-question:ghf-124:085fd5ba55d107326779dcb32940dd365a1cd5a92ea92d42aad6f593c17e2af7 -->
 ## Question 124: Collaborate using GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-124`
 
 **Content revision:** `085fd5ba55d107326779dcb32940dd365a1cd5a92ea92d42aad6f593c17e2af7`
+
+**en review revision:** `ca09eb18708e5186d7db8cba839fbaf4b577bad6f8eafac1328d14b7f948fa29`
+**es review revision:** `0945e91bdb20198002762c1b65dd5da8a29d60c199991e437acc6ade0f745413`
+**pt-BR review revision:** `a0cb3b451884cbe23714a04faa17f5417a45d4cb950302bc29ef5b10b7c8a422`
 
 ### English
 
@@ -12669,11 +13663,19 @@ Uma pessoa aprova um pull request, mas uma verificação automatizada obrigatór
 <!-- certification-coach-question:ghf-125:7d0f67bdd3599f6355a7c7fbebf2e4ef76eae7e149938ae9ebe03e85a8e0edf6 -->
 ## Question 125: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-125`
 
 **Content revision:** `7d0f67bdd3599f6355a7c7fbebf2e4ef76eae7e149938ae9ebe03e85a8e0edf6`
+
+**en review revision:** `a7bee4849c3a603ff66b557add66e6371e401061ecbbb5202ad8ed4e8027fd3d`
+**es review revision:** `1dec45d2240fd5f018db6ec8aad065a6aeea3ceebddebd71f6bf0865a8b5dc83`
+**pt-BR review revision:** `eadac9c683e650694470f1d39cc229fb848c454908645bba5fa345d3e937fa61`
 
 ### English
 
@@ -12771,11 +13773,19 @@ Uma pessoa de engenharia precisa de uma visão cronológica dos commits com suas
 <!-- certification-coach-question:ghf-126:3de3f8457e244a64ba5b2feb26ea24ebfd688a2ec1f00046c86a9f56849756ab -->
 ## Question 126: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-126`
 
 **Content revision:** `3de3f8457e244a64ba5b2feb26ea24ebfd688a2ec1f00046c86a9f56849756ab`
+
+**en review revision:** `7b248e7c1a668acaf47ce3c9187acdcbc1cb301580e691c7d16607e1e25adc53`
+**es review revision:** `32a8d641df64f95ce06396a731bdcc19e12f90e56af00e425e8c68326e835610`
+**pt-BR review revision:** `011789b6d41688746528b73568cd6fd1d4aeaa78d3816e703a62db52aa526419`
 
 ### English
 
@@ -12873,11 +13883,19 @@ Na terminologia do Git, o que HEAD normalmente identifica no trabalho com branch
 <!-- certification-coach-question:ghf-127:689182e9fdd281e13d630dec8c5bd091b776b7fd7d54c00d453381e546a3a1de -->
 ## Question 127: Understand Git and GitHub basics
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-127`
 
 **Content revision:** `689182e9fdd281e13d630dec8c5bd091b776b7fd7d54c00d453381e546a3a1de`
+
+**en review revision:** `4bce6db2957c96cdaf1bab7d67af33303c69f937dd38aab2895101d8f68c90b1`
+**es review revision:** `81790f43e4a129e944747f8113863f821e75f0e50af255279ab989f21723fc16`
+**pt-BR review revision:** `a58e1c336d79996ea17166eb10fdfb7566736ebc8ddd1fdea63c5725b396d4ce`
 
 ### English
 
@@ -12975,11 +13993,19 @@ Uma branch de funcionalidade tem novos commits após a criação de uma tag em u
 <!-- certification-coach-question:ghf-128:9b5c641ab2e166d6af0d3acf520c63073e65083e3059a1c9c85dbc8d8ee16eda -->
 ## Question 128: Work with GitHub repositories
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-128`
 
 **Content revision:** `9b5c641ab2e166d6af0d3acf520c63073e65083e3059a1c9c85dbc8d8ee16eda`
+
+**en review revision:** `84ea1d7171c67108e72fa6ee23dc53468d911aa8744ec261c539336901e65e84`
+**es review revision:** `d41626d25d5ea0645598c5ff8c3c5fdd4b4de8cdf099780b03edeed7263b76d6`
+**pt-BR review revision:** `01d457c860339868ed159a2f7feca49194f4c2e1a02ac0dbd082ee1c99968e8a`
 
 ### English
 
@@ -13077,11 +14103,19 @@ Quer-se encontrar o commit mais recente que alterou cada linha de um arquivo. Qu
 <!-- certification-coach-question:ghf-129:ca7699fb66d88e9c47299daba6718c07d1fdb87f18d9822075421cfd79ca8e90 -->
 ## Question 129: Collaborate using GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-129`
 
 **Content revision:** `ca7699fb66d88e9c47299daba6718c07d1fdb87f18d9822075421cfd79ca8e90`
+
+**en review revision:** `137ffe875f64c757d3cc1b6aae1a0f4076953bc441bc24973f082663f0a0f605`
+**es review revision:** `97f010ea4f9ea1a735bf778d01d9657907e58c785b4f68433dc7543817e1a5e6`
+**pt-BR review revision:** `f5a203acec4da605fb2f2d1a36f665c551d638c633e95a33f639b7ad9c5ad478`
 
 ### English
 
@@ -13179,11 +14213,19 @@ Uma equipe quer representar os muitos commits pequenos de um pull request com um
 <!-- certification-coach-question:ghf-130:f596b95e40cb35efca2bdc23af772a9eac409a31d9dbe88ca4074dee8390d030 -->
 ## Question 130: Apply modern development practices
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-130`
 
 **Content revision:** `f596b95e40cb35efca2bdc23af772a9eac409a31d9dbe88ca4074dee8390d030`
+
+**en review revision:** `8328c2f8c5b753fc5b208ee6dfd93310d5310a7016a574b966699b1f4591cc9b`
+**es review revision:** `fe4437f63a7710ec53f4ecd50ef4fa7715c92a8832be0692d2a2d58f9f0793e8`
+**pt-BR review revision:** `2951e5fe05a046b4263646b68ea48ee25e4b308726811bf54e3ca454da385bc7`
 
 ### English
 
@@ -13281,11 +14323,19 @@ Uma equipe quer executar testes sempre que um pull request for aberto ou atualiz
 <!-- certification-coach-question:ghf-131:6557428e1fa2a579f1e55d5b0504c55ea31b1a460c7fea0538a3639328426092 -->
 ## Question 131: Apply modern development practices
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-131`
 
 **Content revision:** `6557428e1fa2a579f1e55d5b0504c55ea31b1a460c7fea0538a3639328426092`
+
+**en review revision:** `7b46a7a97ef1bb3affc853896f36b5eb4e44e86309d1046796a09961acd676ce`
+**es review revision:** `3549e00212df4bdae6c60c38b71a228d70275e531ee733e5178d54759ef95bee`
+**pt-BR review revision:** `dba7dcfaf47b69bd2d2e7d10d3fe35fdbacdbf8f7babf7350d7e1370b366a24c`
 
 ### English
 
@@ -13383,11 +14433,19 @@ Onde um repositório normalmente armazena definições de workflows do GitHub Ac
 <!-- certification-coach-question:ghf-132:eac02338bde572300bc7159bfe81389604a7ecd34f6727fcb81c0cd9adc576bb -->
 ## Question 132: Apply modern development practices
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-132`
 
 **Content revision:** `eac02338bde572300bc7159bfe81389604a7ecd34f6727fcb81c0cd9adc576bb`
+
+**en review revision:** `3d3700dc114558937a6f92ef1bc48372d46b466ed184313e774338e0ae6e33e9`
+**es review revision:** `6aa7b7b3688494758da96f1fc0dc0835f27e59629ae4152a3043665da7ad570f`
+**pt-BR review revision:** `0b0224975f7d9cc383a51e860b6f67365c4101efa6c399688b7e196d69b842f1`
 
 ### English
 
@@ -13485,11 +14543,19 @@ No GitHub Actions, o que é um runner?
 <!-- certification-coach-question:ghf-133:ad1957df6bf865791702e607b53a62a9f5c20960ff175f45d2deee1664a16c44 -->
 ## Question 133: Apply modern development practices
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-133`
 
 **Content revision:** `ad1957df6bf865791702e607b53a62a9f5c20960ff175f45d2deee1664a16c44`
+
+**en review revision:** `39b0c35a85e1a50822434bff1a290050dcdb94aae124c020eaf4c46d50bb34a6`
+**es review revision:** `999e3551cf2cc201a81492ea5b92e7a3a640b4ded8a914d4fbf333ab9f287bba`
+**pt-BR review revision:** `04b34f34bfb60489c70429323ea16a8ee17b576e59dacfea0b931fbc8e51ebd4`
 
 ### English
 
@@ -13587,11 +14653,19 @@ Um workflow contém etapas de checkout, instalação de dependências e testes e
 <!-- certification-coach-question:ghf-134:5aad1a5501e6f7a07065076b57bea7202f06cdb91ec8ae3f583c21c4b946d1fe -->
 ## Question 134: Apply modern development practices
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-134`
 
 **Content revision:** `5aad1a5501e6f7a07065076b57bea7202f06cdb91ec8ae3f583c21c4b946d1fe`
+
+**en review revision:** `9a5354ab7f4596994bce06bf7a7682821536f5c49178a35cad1725c14f85b8f8`
+**es review revision:** `98819ad79bfb45bda707f9bb021cfdc99a2adad82bc8fcc039330317c72a5535`
+**pt-BR review revision:** `98263b1331f043a69a016d4b46d0e5c4d0859a749f08393cc27da0990cadac9d`
 
 ### English
 
@@ -13689,11 +14763,19 @@ Um job de implantação deve esperar um job de testes ser concluído com sucesso
 <!-- certification-coach-question:ghf-135:79f2eb296c92d063c12adebf5679e2176c67763ba56cb38554502f4b98818ce1 -->
 ## Question 135: Apply modern development practices
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-135`
 
 **Content revision:** `79f2eb296c92d063c12adebf5679e2176c67763ba56cb38554502f4b98818ce1`
+
+**en review revision:** `b3c14afa5bd3e8327c167e451e50e02eded89b27c2a46a129c51e98476ea1cc4`
+**es review revision:** `004054bff48f3389c1d41457ab4722c35757976afa8cd5bfecb72241e4eef473`
+**pt-BR review revision:** `af062db6bea4609f9d63643f9d64791856c1b5ee7903ebc6b3e89125ebaa23c6`
 
 ### English
 
@@ -13791,11 +14873,19 @@ Uma biblioteca precisa executar o mesmo job de testes em várias versões de uma
 <!-- certification-coach-question:ghf-136:e0f900c45ff5ad83c7bbd2a5024173218c93b3806c4b4d9816263a988b2a704a -->
 ## Question 136: Apply modern development practices
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-136`
 
 **Content revision:** `e0f900c45ff5ad83c7bbd2a5024173218c93b3806c4b4d9816263a988b2a704a`
+
+**en review revision:** `519ff25717ddec42619c12b4b4b3b1206af36d897214d987395b08006e5d2c54`
+**es review revision:** `8cf0851636785f5bb7de75f40e310ba726f9923ed671519cea9a5af5906acadb`
+**pt-BR review revision:** `920898684c2be3de09f29946c88aecd52dd5a074b440a21bca4ea6e4ba103296`
 
 ### English
 
@@ -13893,11 +14983,19 @@ Uma etapa do Actions invoca um componente compartilhado com uses para configurar
 <!-- certification-coach-question:ghf-137:cfbc18bde5229a6de2a781f2fe8094a95b797c31bc2c824b2f7f01312a75e75a -->
 ## Question 137: Apply modern development practices
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-137`
 
 **Content revision:** `cfbc18bde5229a6de2a781f2fe8094a95b797c31bc2c824b2f7f01312a75e75a`
+
+**en review revision:** `03f04a16bedfd492b9e44c04fb2fd6b6d0961592f93853531254168a78a3617c`
+**es review revision:** `60ee47381940576b5b042bc094ace28a3b3fde44381019b59aa094350b438753`
+**pt-BR review revision:** `d9b9eacb99d8cc961361bdcbc8adb4fe525c64e1797c77949c9ef8e080aedafb`
 
 ### English
 
@@ -13995,11 +15093,19 @@ Um repositório quer automatizar rótulos de issues em vez de compilar software.
 <!-- certification-coach-question:ghf-138:ad83a376eed19340ac180cf4448c9927ca28532ba270eaf99a696e4830ccd614 -->
 ## Question 138: Apply modern development practices
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-138`
 
 **Content revision:** `ad83a376eed19340ac180cf4448c9927ca28532ba270eaf99a696e4830ccd614`
+
+**en review revision:** `b7f7025fa6955d94c587d6ef4e9086870358030e7454c27f5da1834298c39687`
+**es review revision:** `56b48e3aac0bd86245f09906ece10027fc2955771c905fa685540912e1514d0f`
+**pt-BR review revision:** `41c3b02515a07a6670af72f3af2ac62160fc657155876f39741e23192b215a60`
 
 ### English
 
@@ -14097,11 +15203,19 @@ Um job exige hardware especializado em uma máquina operada pela empresa. Qual o
 <!-- certification-coach-question:ghf-139:7e79a025839f4f86b777a98e5a3a0a109de39d3ffb576ffc860c291650d5c12f -->
 ## Question 139: Apply modern development practices
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-139`
 
 **Content revision:** `7e79a025839f4f86b777a98e5a3a0a109de39d3ffb576ffc860c291650d5c12f`
+
+**en review revision:** `b02788ee9c3d1be88e28c11ccc8c1a2a6e78b094ee7f48b29327f11af65e4872`
+**es review revision:** `eb9d0e22f14ca03c7c487159a78c4aefbeb38cf9516668eba3626dc8d96a47df`
+**pt-BR review revision:** `63d94d701b1ffef24f9cbde6c0371a55372e48af95bf9fad4dea6311de38ce57`
 
 ### English
 
@@ -14199,11 +15313,19 @@ Precisa-se da saída de erro de uma etapa de testes do Actions com falha. Onde e
 <!-- certification-coach-question:ghf-140:b27a7061d38ab6d2447739a78468b06cb6e40a2424310fd5ff6b50e7c9756802 -->
 ## Question 140: Apply modern development practices
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-140`
 
 **Content revision:** `b27a7061d38ab6d2447739a78468b06cb6e40a2424310fd5ff6b50e7c9756802`
+
+**en review revision:** `f9871772462b6dba156b968e6dc4e6bda9dd1b76f960fe3f4a4d163d368c3be9`
+**es review revision:** `7c51d6e1d6f92513cf6dcd42c1c70fbc8eda68edbd422b42f7ae3f3b95b731fb`
+**pt-BR review revision:** `9fe96dc0ed0800804c5da5889c8034cd8fcd0666a73763e8695058e707247466`
 
 ### English
 
@@ -14301,11 +15423,19 @@ Ao escrever uma função em um editor compatível, uma pessoa quer sugestões de
 <!-- certification-coach-question:ghf-141:db1348e663f1524c4d0ff9e6d70d78c146f77a99d12d7804a174f3093266e327 -->
 ## Question 141: Apply modern development practices
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-141`
 
 **Content revision:** `db1348e663f1524c4d0ff9e6d70d78c146f77a99d12d7804a174f3093266e327`
+
+**en review revision:** `b6bc10320a433c9c18cde0d45f119631d93c13921de34cf73b1ae2e1d9c76401`
+**es review revision:** `9d477130d9b50022d4286d8c38dd7d6c36ea04fbdcae7ddcc0d53e35cbd75a71`
+**pt-BR review revision:** `80e0a8e800878f7ab75e3d53606538bc81e4419bbd1f076b3bbd819db12d8811`
 
 ### English
 
@@ -14403,11 +15533,19 @@ Copilot sugere uma implementação plausível de uma função auxiliar de autent
 <!-- certification-coach-question:ghf-142:677186516c94e33933a77d40575038bde0d2753ec2216ee185f647d8bf017d51 -->
 ## Question 142: Apply modern development practices
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-142`
 
 **Content revision:** `677186516c94e33933a77d40575038bde0d2753ec2216ee185f647d8bf017d51`
+
+**en review revision:** `c77af866b26f5a4d70e491361a93e00cfc1a83d0fc49d6f8031b9b09088fbe8f`
+**es review revision:** `46d8814cb1f1e8a5d82a15b62539566f0c4d2e53df23472053cb9b42f340199d`
+**pt-BR review revision:** `8d0e995b398c2934f0aa293c3be274d05cec242ea8f6d74aebf8de0fa8152df8`
 
 ### English
 
@@ -14505,11 +15643,19 @@ Uma pessoa de engenharia pede ao Copilot que explique uma função desconhecida 
 <!-- certification-coach-question:ghf-143:478189e8ac13ce498970a91cccc737bea814a0fd65acad495e85852e5dac33d9 -->
 ## Question 143: Apply modern development practices
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-143`
 
 **Content revision:** `478189e8ac13ce498970a91cccc737bea814a0fd65acad495e85852e5dac33d9`
+
+**en review revision:** `e9c427be248508b62e463448430554d9dafc6b493836afb36dad20411ad1b0db`
+**es review revision:** `7226e5718f72834d740f908df1332e99121165e9b5e579d8a8395ee416dfe34d`
+**pt-BR review revision:** `cdd43262aa7b9ef8335d3247ddd7ae85f64230a3beb6a7d4de17b459bd798d48`
 
 ### English
 
@@ -14607,11 +15753,19 @@ Quer-se um fluxo do Copilot no IDE capaz de localizar arquivos, editar vários d
 <!-- certification-coach-question:ghf-144:dc9ebe74074d4497ef48d2f587a84386ff32ad20559c8471af59bf2fca1a86ec -->
 ## Question 144: Apply modern development practices
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-144`
 
 **Content revision:** `dc9ebe74074d4497ef48d2f587a84386ff32ad20559c8471af59bf2fca1a86ec`
+
+**en review revision:** `c32ca1ffb237e25c2890b6be48e4697d8beef851e6e65dc03102de815d9d3ab9`
+**es review revision:** `420e4aa430f9d1f85e0d4ab5e130c3c86339af655b38525f88ea1846776f58f6`
+**pt-BR review revision:** `92c055fabcbd97db86c17cf992eab58e0d51ddea8a1de75cd40b6602293bb870`
 
 ### English
 
@@ -14709,11 +15863,19 @@ Delega-se uma alteração de repositório ao agente na nuvem do Copilot. Onde el
 <!-- certification-coach-question:ghf-145:842ed4a9b33dc337b74d001ec3935bfa87fe53ab382b1a95f220343ddec9c522 -->
 ## Question 145: Apply modern development practices
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-145`
 
 **Content revision:** `842ed4a9b33dc337b74d001ec3935bfa87fe53ab382b1a95f220343ddec9c522`
+
+**en review revision:** `05746a56358e477acdec004096983cd820a7f68b4d9cd165800f0f400de56774`
+**es review revision:** `08303dddeb0ce858d2e26afa56e1c39a7a199990501215e21b1626650fd8691e`
+**pt-BR review revision:** `742345552672271c85a0fa336ecb29b28f2adac0d194e97386ccbae000f06014`
 
 ### English
 
@@ -14811,11 +15973,19 @@ Uma organização quer atribuir acesso ao Copilot centralmente e controlar polí
 <!-- certification-coach-question:ghf-146:ab06bdefe561e58a12f5e582dd195e631600795a69355a25d1c4a9665706c1a5 -->
 ## Question 146: Apply modern development practices
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-146`
 
 **Content revision:** `ab06bdefe561e58a12f5e582dd195e631600795a69355a25d1c4a9665706c1a5`
+
+**en review revision:** `4399ae5921d54181af837af45bb9dcaa67ea39a55f3e98f6bbc03ac7f92b9355`
+**es review revision:** `0ac5307f0f7bff97de303c4bef99b6d4c19f4e6b43b7c1fd0235a3314334a203`
+**pt-BR review revision:** `31e9be2485c69f8f0a23c483bb31be601214dd860060a1777368ab0de70bd309`
 
 ### English
 
@@ -14913,11 +16083,19 @@ Como distinguir Copilot Enterprise de Copilot Business de forma estável e em al
 <!-- certification-coach-question:ghf-147:37e89e7cab2edb1bf884a5933c345b9cce6c6dcb772d310c758271a9ad6e4585 -->
 ## Question 147: Apply modern development practices
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-147`
 
 **Content revision:** `37e89e7cab2edb1bf884a5933c345b9cce6c6dcb772d310c758271a9ad6e4585`
+
+**en review revision:** `04f5927cbb41b9cc2594d8fc5d3cacb98fe011da1fd3eac575d84bc47e2faac1`
+**es review revision:** `9f3a9535872a9914e3de51af2ae545a1e4a4ad9984ed545669cfbb76be4d6b38`
+**pt-BR review revision:** `f7c594806b27d92144cb726b7310acbb2051373280764735d99bbc8e6c095690`
 
 ### English
 
@@ -15015,11 +16193,19 @@ Uma pessoa pode escolher entre modelos de chat compatíveis do Copilot. Qual afi
 <!-- certification-coach-question:ghf-148:09467c62edd4c40fc4619901c8913b0deae879aa959dfaa690ed8095566cc9c9 -->
 ## Question 148: Apply modern development practices
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-148`
 
 **Content revision:** `09467c62edd4c40fc4619901c8913b0deae879aa959dfaa690ed8095566cc9c9`
+
+**en review revision:** `e214b2759235a0eb2e711fa918324a6e48ff64128e50f476dd5ed1b8bcb9eedc`
+**es review revision:** `1efb8c182bbae251e0bff331e57d022afa8a4bdafc365f7e97f65278168a5364`
+**pt-BR review revision:** `3e36cc8d6a51f776867c95984f4a9eb075e313bb5680cfd9c345008359dacadb`
 
 ### English
 
@@ -15117,11 +16303,19 @@ Uma pessoa muda o modelo selecionado no Copilot Chat. O que deve concluir sobre 
 <!-- certification-coach-question:ghf-149:b28f7c53f476f037958ae3b558f912e3a075f1f74a08128ffbde70b57a0a0dc4 -->
 ## Question 149: Apply modern development practices
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-149`
 
 **Content revision:** `b28f7c53f476f037958ae3b558f912e3a075f1f74a08128ffbde70b57a0a0dc4`
+
+**en review revision:** `14f8b0c7e0d0da9796069a72b415d8502b580df2b3627cd01032417cc822c923`
+**es review revision:** `67e31db7a231fcec96fd892865aa20144796d6dca29ca16ede4e642092e8ec2a`
+**pt-BR review revision:** `7ad7f2538d7498dd0c6db017c4b0aa2acf84793255dfb258f9bf63acb1528b25`
 
 ### English
 
@@ -15219,11 +16413,19 @@ Uma pessoa pede ajuda ao Copilot Chat para escrever testes de um analisador desc
 <!-- certification-coach-question:ghf-150:38507288b2fa31f58fca90629cd1e959e226f7a3bb877c725277de673d4d2d46 -->
 ## Question 150: Apply modern development practices
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-150`
 
 **Content revision:** `38507288b2fa31f58fca90629cd1e959e226f7a3bb877c725277de673d4d2d46`
+
+**en review revision:** `da03d37951fdfc795d602d7c3f30991051cbd846e029ad5e1ba95db03a47fe2e`
+**es review revision:** `e9fcfb1d5fa945e7fa95f15e0a7f14df235309bbf2ebea7be7710a822966ba83`
+**pt-BR review revision:** `4f48e9a1893f4391efca8fbeb60904c0f070c8f3b8f87383b7427d79ba66d94c`
 
 ### English
 
@@ -15321,11 +16523,19 @@ Uma pessoa nova no projeto precisa de um ambiente de desenvolvimento na nuvem qu
 <!-- certification-coach-question:ghf-151:d64c649e5bfe481e423a0e91667d67d350512be2aded6618e9a7d78a6259dc84 -->
 ## Question 151: Apply modern development practices
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-151`
 
 **Content revision:** `d64c649e5bfe481e423a0e91667d67d350512be2aded6618e9a7d78a6259dc84`
+
+**en review revision:** `4eac3b5700c367a443f9952d4d0c75470f6903075581fe8c01654297fa308ed6`
+**es review revision:** `17896eeb4b0994e5db9d4a1f08d9186c069dd3ea7cb2e152299f6e6f7cf2ed90`
+**pt-BR review revision:** `c63c99228ecd955144220863f8e90378ad1568db58b64b14c3438c8db4321a18`
 
 ### English
 
@@ -15423,11 +16633,19 @@ Uma equipe quer que novos codespaces incluam os mesmos ambientes de execução, 
 <!-- certification-coach-question:ghf-152:22b1d2d4224b0d62a7281dfe56f301d90d45a71b9d0b59f8b5309c03b5dbb25c -->
 ## Question 152: Apply modern development practices
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-152`
 
 **Content revision:** `22b1d2d4224b0d62a7281dfe56f301d90d45a71b9d0b59f8b5309c03b5dbb25c`
+
+**en review revision:** `250e88d43cd2dad813751e662df6335e3381d3fa6ae03d2ea33fc92358a8c87f`
+**es review revision:** `1d62c8a072aec34ae92cf54d70ecce36606ab254fb339a604e71367fd9a8a6af`
+**pt-BR review revision:** `c78994d1d4f92a733284268bcf6e9fdfa8599c97357e882631bb7b9d299def89`
 
 ### English
 
@@ -15525,11 +16743,19 @@ Qual arquivo costuma ser a configuração principal do contêiner de desenvolvim
 <!-- certification-coach-question:ghf-153:17ed7a7b586fe59bdccecee442ace5a0ac31ad58cfc8dc2b4347073ac2b50815 -->
 ## Question 153: Apply modern development practices
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-153`
 
 **Content revision:** `17ed7a7b586fe59bdccecee442ace5a0ac31ad58cfc8dc2b4347073ac2b50815`
+
+**en review revision:** `4d25f34c553b29f246201f310b8f290432acd2aa41c2286d01bb4d1e40c8ec00`
+**es review revision:** `c841e226e87f08c6de5dbbd6daa4a478ec9ca4b6dd5989aa76fe63d02fc30447`
+**pt-BR review revision:** `89a787e0898eefd7bb75a7568501ccf44692e0146c980a18dafb62b6da840916`
 
 ### English
 
@@ -15627,11 +16853,19 @@ Um repositório não tem configuração personalizada de contêiner de desenvolv
 <!-- certification-coach-question:ghf-154:e0476eb89ef40d7048eba32210b92d2010695be844e40ad3d96da361ebb87f72 -->
 ## Question 154: Apply modern development practices
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-154`
 
 **Content revision:** `e0476eb89ef40d7048eba32210b92d2010695be844e40ad3d96da361ebb87f72`
+
+**en review revision:** `f74b1729b204ddd92dba9e794ad8026f7d37d993ffb7765a720cd52a90843ab5`
+**es review revision:** `69b43ac9aaaf6653b5221c2467b4f91a5e36f65859f76d5c15e20104423098e6`
+**pt-BR review revision:** `561a3e6ad6c47ba030af625567bbddd4399185c1ccd40a2a3693d7a31d287553`
 
 ### English
 
@@ -15729,11 +16963,19 @@ Altera-se a imagem e a configuração de instalação em devcontainer.json. Qual
 <!-- certification-coach-question:ghf-155:c253bb21fc6235a9fef7a5bc482610bb41290e066530be30d6b35584916c8fd4 -->
 ## Question 155: Apply modern development practices
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-155`
 
 **Content revision:** `c253bb21fc6235a9fef7a5bc482610bb41290e066530be30d6b35584916c8fd4`
+
+**en review revision:** `d35fa40247d66ae2c15082152bda64f0ec79d5836aa979b53006a8b924f30b69`
+**es review revision:** `afca3d49c1152cb65fd44bfee02f295a4dc25f430186b62db034300552f89149`
+**pt-BR review revision:** `3e98a18f4149769e66e0d52dd039b3a380ff1ebd93b6a1b405bbed1d5352de93`
 
 ### English
 
@@ -15831,11 +17073,19 @@ Quer-se um editor de navegador para editar texto rapidamente e fazer um commit s
 <!-- certification-coach-question:ghf-156:b05cbdb3ec5c4a208f12e04cb241c8ed5314fc9204386d1fb81c884beb669dc5 -->
 ## Question 156: Apply modern development practices
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-156`
 
 **Content revision:** `b05cbdb3ec5c4a208f12e04cb241c8ed5314fc9204386d1fb81c884beb669dc5`
+
+**en review revision:** `118be64d05f3f5c2e964a707160099719c4b53e5cdc9ee5bf668fc3b875ec1e2`
+**es review revision:** `576ddc0702999118a95a5fd9520d2b43fd5879be43969fd82ba426180288befc`
+**pt-BR review revision:** `ae221a6dff6a65ddfaa985a7cdfd588c28f9115456765602a7c99b58cbba7b1a`
 
 ### English
 
@@ -15933,11 +17183,19 @@ Uma pessoa abre github.dev e depois precisa de um terminal interativo para compi
 <!-- certification-coach-question:ghf-157:ffbae0cbab661c1a4c62c02fac4be6d8960b7d50bcc0883c45eac6ed33cad6de -->
 ## Question 157: Apply modern development practices
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-157`
 
 **Content revision:** `ffbae0cbab661c1a4c62c02fac4be6d8960b7d50bcc0883c45eac6ed33cad6de`
+
+**en review revision:** `faea7ff958d2cd1d18f5db54c122486b2529bbdb86f8291cd55a9de70e16f092`
+**es review revision:** `f7d4055cd055a17763d43cf9235f8a38c17bf352158cac3f1d9ca92ed6c9f50a`
+**pt-BR review revision:** `151d608f17f9656cde9f9e305803681e56b71d14a48d3833e8c02913fa35187c`
 
 ### English
 
@@ -16035,11 +17293,19 @@ Uma pessoa edita no github.dev e ainda não fez commit. Qual consideração de p
 <!-- certification-coach-question:ghf-158:95bf60e954d57b2cb9986270c55f6f847e0568c9d2e4f042c209687091139fd7 -->
 ## Question 158: Apply modern development practices
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-158`
 
 **Content revision:** `95bf60e954d57b2cb9986270c55f6f847e0568c9d2e4f042c209687091139fd7`
+
+**en review revision:** `1d9f0a105e7eb5dfe9a7b0bd98a971c53268ea1c356d26c09d227c797b71a731`
+**es review revision:** `a02de747dee568da168649e2d318193f3f77a008728fa4ddad45720602bbc77c`
+**pt-BR review revision:** `283203ef1eeb203a84746c1bbab202abe8a7cc6a35e12f06f2b88871c07b92cf`
 
 ### English
 
@@ -16137,11 +17403,19 @@ Um codespace executa uma aplicação web que se quer visualizar no navegador. Qu
 <!-- certification-coach-question:ghf-159:93149b3fd1b4a7d420fd46ea68578468a8e96026d08303146d7a4c1e65c2b1e8 -->
 ## Question 159: Apply modern development practices
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-159`
 
 **Content revision:** `93149b3fd1b4a7d420fd46ea68578468a8e96026d08303146d7a4c1e65c2b1e8`
+
+**en review revision:** `0b4ca43412dfde93ac674da85f0708251961ee614af610c3a039f153d2347be1`
+**es review revision:** `08bda8429bad633afb002af409ab445495b033db2d3b2f46cf03cb04c547bf6b`
+**pt-BR review revision:** `db14c65c592c713343bfda131e906be53bd5948fda51dc297f1fd5ec27f4efe6`
 
 ### English
 
@@ -16239,11 +17513,19 @@ Uma pessoa quer preferências pessoais de shell em seus codespaces sem torná-la
 <!-- certification-coach-question:ghf-160:365f1b260788ef4882cfeca0482b5ddcfe0d3529a7f17b5dc6e4a2b6788d7145 -->
 ## Question 160: Manage projects with GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-160`
 
 **Content revision:** `365f1b260788ef4882cfeca0482b5ddcfe0d3529a7f17b5dc6e4a2b6788d7145`
+
+**en review revision:** `3bbac2a1732432e2f566ab94e76f42cba433bd5a69300e60185f03c91cf2a068`
+**es review revision:** `63e252714b6f5ff56ba991e7681dda07e977aad6689efebaed0eb8994b35409b`
+**pt-BR review revision:** `d68e5a61daa92a4b20b77cee9157a4b678f655715690f42d6a92a84cf0c1f9e5`
 
 ### English
 
@@ -16341,11 +17623,19 @@ Uma organização quer um único espaço de planejamento para issues e pull requ
 <!-- certification-coach-question:ghf-161:ad616fbec99616f5c1ab48caf7867bd949c323348d2efec30b36e54d38232134 -->
 ## Question 161: Manage projects with GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-161`
 
 **Content revision:** `ad616fbec99616f5c1ab48caf7867bd949c323348d2efec30b36e54d38232134`
+
+**en review revision:** `b5f93b2432c39aa5c794ad77ca7e4865a70432cefbfb76282dee53862a2b133b`
+**es review revision:** `ee91a46482f19c1c681433a8c4e6beac76e33c14ca523bff62f5d28f3007efd4`
+**pt-BR review revision:** `6d4eb1e47d616e321b21e0c7c7728328ed16b3197de3bdf5d5c26fccc0dc92b3`
 
 ### English
 
@@ -16443,11 +17733,19 @@ Uma pessoa planejadora quer examinar muitos itens e editar valores de campos em 
 <!-- certification-coach-question:ghf-162:57a3dcaae0b5b377e20548bed19282e66e65d951b137bd307897ccee7e83d70e -->
 ## Question 162: Manage projects with GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-162`
 
 **Content revision:** `57a3dcaae0b5b377e20548bed19282e66e65d951b137bd307897ccee7e83d70e`
+
+**en review revision:** `d8d567b7c91fce9519bdea428f3acb19661e58c32d812ff4515859116a9918b6`
+**es review revision:** `0e171cf775ca33a4d6ce7394d4c163462369322ff81f2e7251d2a6894b4cd2ce`
+**pt-BR review revision:** `ff67252ae8ab0f310f74a8d30d5999c3fb938df6f88a108368abd4febe924066`
 
 ### English
 
@@ -16545,11 +17843,19 @@ Uma equipe quer mover cartões entre as colunas Todo, In progress e Done. Qual l
 <!-- certification-coach-question:ghf-163:4c901ba1965bc06ebb00b65df82044fde40188240f2a799961766d8a2bd5a0fb -->
 ## Question 163: Manage projects with GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-163`
 
 **Content revision:** `4c901ba1965bc06ebb00b65df82044fde40188240f2a799961766d8a2bd5a0fb`
+
+**en review revision:** `d89ae8508cd80dee3a0a925b8a50aff49dcba51a216bcc85289e35c11907884d`
+**es review revision:** `c0a21f6d0d5fb4d634140c4d76379481e22bc771386dac7343299cc66d049969`
+**pt-BR review revision:** `6420c3442b05227bd0edfcb284233b1e9528d28c69e597744b956d775adaac4f`
 
 ### English
 
@@ -16647,11 +17953,19 @@ Uma pessoa líder de produto quer visualizar datas planejadas de início e de en
 <!-- certification-coach-question:ghf-164:97e3fc443806b9c4ea17ee91557f99d254b5c582020c68a2fd105955af4cefd4 -->
 ## Question 164: Manage projects with GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-164`
 
 **Content revision:** `97e3fc443806b9c4ea17ee91557f99d254b5c582020c68a2fd105955af4cefd4`
+
+**en review revision:** `8e54a486eb476711fb3cc0908e93d5cc879347fa1cfcf8cde339162d7da86b1a`
+**es review revision:** `0c85280492a77e18ad130d8427be94100cbbf841d5f62a42bde6299eca0cdd2e`
+**pt-BR review revision:** `a9db788cd823c0fe0a4b3b3a592fd80ede2f5287d80207c505bf023080bd295c`
 
 ### English
 
@@ -16749,11 +18063,19 @@ Um projeto precisa de um campo Priority restrito a Low, Medium ou High. Qual tip
 <!-- certification-coach-question:ghf-165:299557fc6510be0bb4eb34de632ea869b0f022955f7748e7fdebcfa6a3fabb66 -->
 ## Question 165: Manage projects with GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-165`
 
 **Content revision:** `299557fc6510be0bb4eb34de632ea869b0f022955f7748e7fdebcfa6a3fabb66`
+
+**en review revision:** `b294ebc5c61a7d7077e735de88fd2bd105758bc53f0a566b1ac2827fb97817f0`
+**es review revision:** `4b5d979ff801c92fd9294d1472777a50e97daf279603de62988fd70e879a6eee`
+**pt-BR review revision:** `07db7c7faae065acd74f3abfdb0ae15a749b3b8492416d2192120c2f0358cdf9`
 
 ### English
 
@@ -16851,11 +18173,19 @@ Uma equipe planeja trabalho em períodos repetidos e quer um campo de Project qu
 <!-- certification-coach-question:ghf-166:8ddf95fcc1cd4e8ad84a5ca69e029bfff4e147f603cd1660a4152adbcb62115d -->
 ## Question 166: Manage projects with GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-166`
 
 **Content revision:** `8ddf95fcc1cd4e8ad84a5ca69e029bfff4e147f603cd1660a4152adbcb62115d`
+
+**en review revision:** `969f58efb00a33e5cd01ce109e68ce92b215005836d0bc1f129e0796bb3ae708`
+**es review revision:** `f9fdccd46b0e003a2c292b4aa6b8a1e39f6a8c6891599d809c4689dc001bc7d3`
+**pt-BR review revision:** `6c0f65e1387447da1c88a71f3016d732acc031fc5b96e09e61fec2a160732e35`
 
 ### English
 
@@ -16953,11 +18283,19 @@ A visualização de triagem deve mostrar apenas itens urgentes, preservando todo
 <!-- certification-coach-question:ghf-167:454bb84f966dc687c6b752c578900b3a55f79e6e2f572fc22c472f7861a6652b -->
 ## Question 167: Manage projects with GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-167`
 
 **Content revision:** `454bb84f966dc687c6b752c578900b3a55f79e6e2f572fc22c472f7861a6652b`
+
+**en review revision:** `722f122da4c056296bd97e3bd44a0a1ad0879de53dfc09438254a46f0c9abd10`
+**es review revision:** `13653ee2e59ab64b7d45f8c410d24e93af952a4b73e30efe2b988bb382fbe1f0`
+**pt-BR review revision:** `c5906aa054b85bcb5979903454c623ebf286666139a1ac44ba34145925a54da5`
 
 ### English
 
@@ -17055,11 +18393,19 @@ Duas partes interessadas querem disposições salvas diferentes dos mesmos itens
 <!-- certification-coach-question:ghf-168:b8764773776c51b925f931fe3cb2efb50db1d45177f8d9bd977140bdca188feb -->
 ## Question 168: Manage projects with GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-168`
 
 **Content revision:** `b8764773776c51b925f931fe3cb2efb50db1d45177f8d9bd977140bdca188feb`
+
+**en review revision:** `527041be77c70f6f62547de0b25cbb9c0a3e44f67110ff1e7586f258e4f8e409`
+**es review revision:** `e503f2720afb255b4087a150eb742f945321903f2a0c9313e6f3f9287dad1a75`
+**pt-BR review revision:** `de48b89d53b1ae99b8aad1ec0979e003863014b1096640f18f461325d96b515d`
 
 ### English
 
@@ -17157,11 +18503,19 @@ Uma issue já adicionada a um Project é atribuída a outra pessoa pela interfac
 <!-- certification-coach-question:ghf-169:bb7fcd491c043c873a81650c57a40c4c9644ba1ca13d856786335575b141eb8c -->
 ## Question 169: Manage projects with GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-169`
 
 **Content revision:** `bb7fcd491c043c873a81650c57a40c4c9644ba1ca13d856786335575b141eb8c`
+
+**en review revision:** `fe52084274cf61f305df7b81843617c950a06bb7227373a1d0861dc359e10d16`
+**es review revision:** `6a6bc2afc74ad0016f04227d4e1ed3d3d81d31719407704e2d84e41e583d935f`
+**pt-BR review revision:** `19bb76299878a6a36ff81c99c4e643cbc8d19e9b2ad09423e42281e7f5dffd25`
 
 ### English
 
@@ -17259,11 +18613,19 @@ Uma ideia de planejamento pertence a um Project, mas ainda não está pronta par
 <!-- certification-coach-question:ghf-170:1b283b6f84e5f9ebd922a0b358ef01b3b8944af2f50c5277ba9c723990e2d96a -->
 ## Question 170: Manage projects with GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-170`
 
 **Content revision:** `1b283b6f84e5f9ebd922a0b358ef01b3b8944af2f50c5277ba9c723990e2d96a`
+
+**en review revision:** `c3e14b8ad41857be337591cde3192f1e255474d83ec38b4507f383bdae9fb54e`
+**es review revision:** `13f691dc7e4e731f9a9bd2493fb2a9fdc7a5a9f37f322271be9ad5734f7992c4`
+**pt-BR review revision:** `2661dd07398a59f6710b81b816d1b1defd36da915baca3ecda1f0c1ada362b5e`
 
 ### English
 
@@ -17361,11 +18723,19 @@ Uma equipe quer que Status de um item do Project mude para Done quando sua issue
 <!-- certification-coach-question:ghf-171:35b0bd27da25f64b6d6de3201d1cc9fda53a6c552250846ef711963730d4fe4a -->
 ## Question 171: Manage projects with GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-171`
 
 **Content revision:** `35b0bd27da25f64b6d6de3201d1cc9fda53a6c552250846ef711963730d4fe4a`
+
+**en review revision:** `d402d1b90f083e4709628b4a6615d681eabd8891ae49289208cba4280f467f6d`
+**es review revision:** `79f145b598c9780c41de3c47aedae5ccdba1c1d7d44ebf72c3271149d27a47b3`
+**pt-BR review revision:** `719db0d95c6fb4a22cf50548f54e0c6a17d058aa0d840170148402a77a8db5a6`
 
 ### English
 
@@ -17463,11 +18833,19 @@ Quer-se que novas issues correspondentes a um filtro de repositório entrem auto
 <!-- certification-coach-question:ghf-172:77010378f43b6b38f4362fe50749b4300924bbbaea33c78c08f45b260d98b36b -->
 ## Question 172: Manage projects with GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-172`
 
 **Content revision:** `77010378f43b6b38f4362fe50749b4300924bbbaea33c78c08f45b260d98b36b`
+
+**en review revision:** `d6b7d6e52120c38b480fcb9d680561f8ea65377cb60295b09c089fbb7912d334`
+**es review revision:** `c97a26b7375ff2f959aa2deaa0ed91d0d495f8917ec410325fad118582db532d`
+**pt-BR review revision:** `c62d17d1e0119a29b4dc20162a00fccfdf7a4d581f8553c061e2a7ac7602a487`
 
 ### English
 
@@ -17565,11 +18943,19 @@ Uma issue deve ter as categorias bug e accessibility. Qual mecanismo foi projeta
 <!-- certification-coach-question:ghf-173:9f4c0ccff10fd277131f19c9af70087dc2898885767cca19b8d722fb68714bb0 -->
 ## Question 173: Manage projects with GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-173`
 
 **Content revision:** `9f4c0ccff10fd277131f19c9af70087dc2898885767cca19b8d722fb68714bb0`
+
+**en review revision:** `70055703593d454e839fd4151da77c8cb3cf6f4a8c6ab27ea6b72c30114d3f0e`
+**es review revision:** `c7bae52706f32be2c0b1a9c8ca492b975ffc27b3800edc71cb92cc4561b58adc`
+**pt-BR review revision:** `39fd5aeab395d9ab63834b5721d344535e8fb3abd0691e7f30613a315409a83a`
 
 ### English
 
@@ -17667,11 +19053,19 @@ Um repositório quer agrupar issues e pull requests de uma versão planejada e a
 <!-- certification-coach-question:ghf-174:6702af4c17c8e87759c50b4cdf34469fa34bd45c9580cd07afff806ffcbf7f08 -->
 ## Question 174: Manage projects with GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-174`
 
 **Content revision:** `6702af4c17c8e87759c50b4cdf34469fa34bd45c9580cd07afff806ffcbf7f08`
+
+**en review revision:** `c26264ad34c93acec35ed501eed3a7b7d0574c56096050446c8d868c22f9a816`
+**es review revision:** `1260ace3bbc2a514e98f67880f730d6edd1265ef278b7a388c72297b54d14f63`
+**pt-BR review revision:** `a569af3e46acb77960715ac06c59a0586d4f734d0eb7da3d43bfb6663d7cc382`
 
 ### English
 
@@ -17769,11 +19163,19 @@ Uma pessoa de suporte publica repetidamente a mesma solicitação de diagnóstic
 <!-- certification-coach-question:ghf-175:e0dce3bb085a9d59f3c9f7797ade37d16d5082020a9ad3091db0a6879111a919 -->
 ## Question 175: Manage projects with GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-175`
 
 **Content revision:** `e0dce3bb085a9d59f3c9f7797ade37d16d5082020a9ad3091db0a6879111a919`
+
+**en review revision:** `ba4a190684311dcf0dea4ebf54d530e1e797a9c17adf50382ee33814c26de900`
+**es review revision:** `b20f90f1ad657ce1c36826445862dbdca0228bf6104943d55cead05c0aafa97f`
+**pt-BR review revision:** `f37a437baf30d7955203eb3cd87b2b68dde219831d2f8f39f0deae4cad2d4b24`
 
 ### English
 
@@ -17871,11 +19273,19 @@ Uma equipe quer deixar claro quem é responsável pelo acompanhamento de uma iss
 <!-- certification-coach-question:ghf-176:abf8a8d1a3b3631114a1f2f78ff1912a4fa303d91073b26fa99af819e30cb42e -->
 ## Question 176: Manage projects with GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-176`
 
 **Content revision:** `abf8a8d1a3b3631114a1f2f78ff1912a4fa303d91073b26fa99af819e30cb42e`
+
+**en review revision:** `67e1bd669c51821757017abd6b75da58895b3ac7fd1af9d74c93abf3df24a704`
+**es review revision:** `705df7ac5696f9c84a45658f27305a5e42580a56d8b9c62cdb0e5f6387fad943`
+**pt-BR review revision:** `7674b629378693d6817afb3ee1e1362fd413cc8d5bd2f6aa21600459568ac4b8`
 
 ### English
 
@@ -17973,11 +19383,19 @@ Uma pessoa gerente quer gráficos da distribuição do trabalho do Project por s
 <!-- certification-coach-question:ghf-177:5faac2d9cfc1b26998df03f9fd4014c7259a014dfde6aa5d4aabc82f22707571 -->
 ## Question 177: Manage projects with GitHub
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-177`
 
 **Content revision:** `5faac2d9cfc1b26998df03f9fd4014c7259a014dfde6aa5d4aabc82f22707571`
+
+**en review revision:** `1cfdac58263e345a8994a3a3ea72ba36d2b1d407be9d209c861417aa74333815`
+**es review revision:** `40eb5885d69ef977cbb17de4d26ba65a95bdf9fccfb9f3de583b95008d2812ba`
+**pt-BR review revision:** `554956f5a5c737fa849625305c506f35373bd5c7d1f4afd010da2d953e52c4af`
 
 ### English
 
@@ -18075,11 +19493,19 @@ Uma equipe quer manter itens concluídos como registros arquivados do Project, n
 <!-- certification-coach-question:ghf-178:231ee57affe3b66ad21794addb6b606ec1fd414603d7e333c80ad21913c4a10e -->
 ## Question 178: Understand privacy, security, and administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-178`
 
 **Content revision:** `231ee57affe3b66ad21794addb6b606ec1fd414603d7e333c80ad21913c4a10e`
+
+**en review revision:** `bf83dba78bcfbf65e1eb4f38bf79fca755630d03f31c82c1f244851dcf48d74b`
+**es review revision:** `05d3e2d08a6ecde3331030582820fd78c32852631f6294ce7173795b701e85a8`
+**pt-BR review revision:** `dea6857a0a685df5f30c2cbe16ece3eca950d982fa96ccfb7a9ec7923bb73857`
 
 ### English
 
@@ -18177,11 +19603,19 @@ Por que adicionar autenticação de dois fatores fortalece uma conta protegida p
 <!-- certification-coach-question:ghf-179:84b93df8694163b4f93b483d0e885fb6f18628b029fa267d623f3ecfb580ae74 -->
 ## Question 179: Understand privacy, security, and administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-179`
 
 **Content revision:** `84b93df8694163b4f93b483d0e885fb6f18628b029fa267d623f3ecfb580ae74`
+
+**en review revision:** `bf3388ab1baf23c83e291bfeee9bf07f6e3f7c3521ee490e1147d3ce851ba3af`
+**es review revision:** `ae4bfd08e403a388914a856db4db3ebb67f990c6d2dfa56bab03fb38b2d6c598`
+**pt-BR review revision:** `1fa16208912325a9d29c101472fbeb56010d6cc24b2aa2a15508f67bf3b359a6`
 
 ### English
 
@@ -18279,11 +19713,19 @@ Uma pessoa com 2FA entra no GitHub usando uma chave de acesso (passkey) registra
 <!-- certification-coach-question:ghf-180:0ec94a8b83b0abf534c2844ece481d53f182ee7cd4bc0c3d6ad76227eb9dfe4b -->
 ## Question 180: Understand privacy, security, and administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-180`
 
 **Content revision:** `0ec94a8b83b0abf534c2844ece481d53f182ee7cd4bc0c3d6ad76227eb9dfe4b`
+
+**en review revision:** `9673a616107e369af9cc76d25e0edef66f159e9cf4ca0b022ca7631cff754ac5`
+**es review revision:** `2df18e8654bd6e480166d880e0934a424f9221e3ffea2c25cfe94a56430f6d8c`
+**pt-BR review revision:** `50b4d479aae84bbd9007bcc2b6f1d357c75bdd090a9e5364da992b68e369754d`
 
 ### English
 
@@ -18381,11 +19823,19 @@ O que torna passkeys resistentes a páginas comuns de phishing de credenciais?
 <!-- certification-coach-question:ghf-181:ca9eeab2842069614922cc4401f8ff192d33b7236d60ca75e0dea5122960f143 -->
 ## Question 181: Understand privacy, security, and administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-181`
 
 **Content revision:** `ca9eeab2842069614922cc4401f8ff192d33b7236d60ca75e0dea5122960f143`
+
+**en review revision:** `35d0f5f6b594a9b72a0d8e14777b3755e5ae5071f8bacb7674125cbe44e4869b`
+**es review revision:** `0cd980a576f479d863ee269db625391e5f1642a976b1e05ef843592227cbebb2`
+**pt-BR review revision:** `6fc4cdc43fbfaf0e842faa0cc19ff7b7fc5cf4d148a488c6037c0861925ab54f`
 
 ### English
 
@@ -18483,11 +19933,19 @@ Uma pessoa habilita 2FA e quer reduzir o risco de perder acesso se perder o celu
 <!-- certification-coach-question:ghf-182:e2facb1c7964f112523fe5e7309ffb3c93ae13daeed1feea044832a0547f53b2 -->
 ## Question 182: Understand privacy, security, and administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-182`
 
 **Content revision:** `e2facb1c7964f112523fe5e7309ffb3c93ae13daeed1feea044832a0547f53b2`
+
+**en review revision:** `f9f371a31c66a15898ad14cd642d942e475b5f9da7f97008eca7ebd8abfecdd0`
+**es review revision:** `34951a3fe0d8e317757ef75cdc533059b6c12df0478dbb30a3832fb4864cb2cb`
+**pt-BR review revision:** `1faf049f217fa759a11e5bb4a6a4a7d0ddd89ea4cf05be06be3e0be4847a2995`
 
 ### English
 
@@ -18585,11 +20043,19 @@ Uma equipe precisa de um repositório que qualquer pessoa na internet possa ler 
 <!-- certification-coach-question:ghf-183:443c3f878c604417f4c8fbb33e4ff3970bf6294343c325b4a4f22bcae68e665b -->
 ## Question 183: Understand privacy, security, and administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-183`
 
 **Content revision:** `443c3f878c604417f4c8fbb33e4ff3970bf6294343c325b4a4f22bcae68e665b`
+
+**en review revision:** `6fe2cc0344e25b5f3691b3616da00ee98c77ec2c66573c25a1e6e3cb04083c0f`
+**es review revision:** `9457b7cb6f2ab295003d02dd893372447beb67f5384071dfc17893f7d68f161f`
+**pt-BR review revision:** `2401a940c197d38230362dabe2d3c0c42ed97c08914184b7b16719e3a24f9d2e`
 
 ### English
 
@@ -18687,11 +20153,19 @@ Uma equipe quer arquivos confidenciais legíveis somente por pessoas autorizadas
 <!-- certification-coach-question:ghf-184:0eb207d592916dba7e501cbd883f8a7445ce47d792fa8acbce5dc6fdbfcb9f81 -->
 ## Question 184: Understand privacy, security, and administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-184`
 
 **Content revision:** `0eb207d592916dba7e501cbd883f8a7445ce47d792fa8acbce5dc6fdbfcb9f81`
+
+**en review revision:** `d177ff61589785ab4d7465190e4b82bdf0c22e8af6dbbb2c4089a6384e72fd14`
+**es review revision:** `8fe51bb3db0a3450c28215bff99905f16ea0b252780621999e64383d9c021a57`
+**pt-BR review revision:** `ad15f0b9002c8a0027dc4534cb04e4fa65c2249dc29962c8e592e1732191df29`
 
 ### English
 
@@ -18789,11 +20263,19 @@ Uma empresa habilita repositórios internos. Qual é o escopo de visibilidade pr
 <!-- certification-coach-question:ghf-185:1cb121145cd05a7cf577b071eb6574ce1fe9156dfe42c1f61dc56d35904daa2a -->
 ## Question 185: Understand privacy, security, and administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-185`
 
 **Content revision:** `1cb121145cd05a7cf577b071eb6574ce1fe9156dfe42c1f61dc56d35904daa2a`
+
+**en review revision:** `d95036b469241560a6d20f9486d519130936b4e416cd5c26a37a179739abf0c0`
+**es review revision:** `259fadd7ea55c316b43522b733269e3d77bd1d819ab1bc08f487fc65d52663a0`
+**pt-BR review revision:** `6e772043d632bf0c79d9ec7a59944f410af4134840a374b63a6907749cab5762`
 
 ### English
 
@@ -18891,11 +20373,19 @@ A permissão de ler um repositório público permite automaticamente fazer push 
 <!-- certification-coach-question:ghf-186:21f7c9598da8766e090b3a10f56f115762d93cbd6b4b9cb2d2445a0bf29035eb -->
 ## Question 186: Understand privacy, security, and administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-186`
 
 **Content revision:** `21f7c9598da8766e090b3a10f56f115762d93cbd6b4b9cb2d2445a0bf29035eb`
+
+**en review revision:** `5058320b87bf1b9ecbb9183e825f38ffc8f8b7e9b0b0384b320c215d800dcf17`
+**es review revision:** `924d166ad0c04df2e5085dae22ec53d6a78c1816d308f7a6869b1e857acf0b22`
+**pt-BR review revision:** `52507b6bb44c363fe621d097e9287e60403f02fec2de7f91665e1e360522364e`
 
 ### English
 
@@ -18993,11 +20483,19 @@ Uma pessoa que não contribui com código precisa ler e conversar em um reposit�
 <!-- certification-coach-question:ghf-187:d02a90c0cce3015b89279e8ade9907d59cba7a3ae124409481ce3e5f316a43c0 -->
 ## Question 187: Understand privacy, security, and administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-187`
 
 **Content revision:** `d02a90c0cce3015b89279e8ade9907d59cba7a3ae124409481ce3e5f316a43c0`
+
+**en review revision:** `ba572c05b31c26ae0171908999a3cca42154f298d0951657a30d9bc593013b37`
+**es review revision:** `4721e1dce7b2acbe4f0e18478ee0321fa90ef1f8857035de255fab4df1f33b29`
+**pt-BR review revision:** `d29a2a3ffdd6957653aa6c8b465b81502e1b6be22305e41f11b33c60c00f5b70`
 
 ### English
 
@@ -19095,11 +20593,19 @@ Uma pessoa de suporte deve rotular e gerenciar issues proativamente, mas não fa
 <!-- certification-coach-question:ghf-188:9716a05d0787112b1174c96e4ce41cf9d82bf88409834a72ceb3a9100ea2010b -->
 ## Question 188: Understand privacy, security, and administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-188`
 
 **Content revision:** `9716a05d0787112b1174c96e4ce41cf9d82bf88409834a72ceb3a9100ea2010b`
+
+**en review revision:** `9c03faa5e2d04bb6e6b17e3d47d55831150426cf8ca222daaf1e9f76d5f05725`
+**es review revision:** `4999ed8e517f3ae03ca13b589d3e271ee85e7e49b3e4ec7fdb5b8802a79d9dec`
+**pt-BR review revision:** `e9aea3e12ce013c57d9e7773464c46d0ec3c2c20c463651d30e876f22b1f3044`
 
 ### English
 
@@ -19197,11 +20703,19 @@ Uma pessoa de engenharia precisa fazer push ativo de código, mas não precisa a
 <!-- certification-coach-question:ghf-189:4dca71bc4d97bc3b14406b693ab2b5d134a61f05e127b35180c271b3b21b4f9c -->
 ## Question 189: Understand privacy, security, and administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-189`
 
 **Content revision:** `4dca71bc4d97bc3b14406b693ab2b5d134a61f05e127b35180c271b3b21b4f9c`
+
+**en review revision:** `4f0370a5b2948589abc5f060856a5269822ae90a13c3990292d463da2ecb1d84`
+**es review revision:** `f94443b72a1344203d029608dff591be00ac83966ec40fa1cc9efa8551247d2c`
+**pt-BR review revision:** `2fac567af902d3dd44c0abe40decab3a0908d18d94b687c2259e14c418872979`
 
 ### English
 
@@ -19299,11 +20813,19 @@ Uma pessoa gerente de projeto precisa de amplo gerenciamento cotidiano do reposi
 <!-- certification-coach-question:ghf-190:e95cdb3444a73e032d97d000febde615aab5b647cfc1ba6fb86b1dbc9f6aa8ac -->
 ## Question 190: Understand privacy, security, and administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-190`
 
 **Content revision:** `e95cdb3444a73e032d97d000febde615aab5b647cfc1ba6fb86b1dbc9f6aa8ac`
+
+**en review revision:** `3aeae1ddc56e2e716ff0f14ed082feaa932e698888a313c985d376ff1daea612`
+**es review revision:** `a767f2d89d8682bd7646b713caa88986717622cd74739dfb64551e0893642326`
+**pt-BR review revision:** `b5662e153369d509c2bb73a378c7814d217f78c6ec4f9b83da6c000ec1c29795`
 
 ### English
 
@@ -19401,11 +20923,19 @@ Entre as funções padrão de repositórios de organização, qual inclui contro
 <!-- certification-coach-question:ghf-191:1c5f366b5137a7353c7c86d058e9ec4eaae83cb8de5f8bfebf4f85faf1e38bfc -->
 ## Question 191: Understand privacy, security, and administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-191`
 
 **Content revision:** `1c5f366b5137a7353c7c86d058e9ec4eaae83cb8de5f8bfebf4f85faf1e38bfc`
+
+**en review revision:** `bbea4f41e6f7ed5e77b5ad18f12e9ec86f72277d3c9da3a681769b2873b7f77b`
+**es review revision:** `07ec5d13087f5d7e27086a4e7296916f302979b1b14791ddde59ea0a2225c1aa`
+**pt-BR review revision:** `c495ccf2eb7e209ac8b055e0741d154b56c740688344fead3053cea13c54cef3`
 
 ### English
 
@@ -19503,11 +21033,19 @@ Uma empresa quer gerenciar acesso a repositórios para todo um grupo de engenhar
 <!-- certification-coach-question:ghf-192:905eb0a68386463dcc872dc39cc59d79cfb46790a84fba2480eeae5ac4d44336 -->
 ## Question 192: Understand privacy, security, and administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-192`
 
 **Content revision:** `905eb0a68386463dcc872dc39cc59d79cfb46790a84fba2480eeae5ac4d44336`
+
+**en review revision:** `5700ac33565e9fe53ad30be962ab9e2fd17d798637eebf20bc4b840966af3bf8`
+**es review revision:** `08ca887d05007eab4bfe9c29423dbe572fe9c1bed83b0da0ead8c370aa122bef`
+**pt-BR review revision:** `4400ec37cae010383246d048e4e4b2d6d02e675e1109db6f750140af80f77527`
 
 ### English
 
@@ -19605,11 +21143,19 @@ Uma equipe de engenharia pai recebe escrita em um repositório. Qual relação d
 <!-- certification-coach-question:ghf-193:534211b6e80d6b81cc20023c8530498be98494e6f1477a90e0c9997130c0ffc7 -->
 ## Question 193: Understand privacy, security, and administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-193`
 
 **Content revision:** `534211b6e80d6b81cc20023c8530498be98494e6f1477a90e0c9997130c0ffc7`
+
+**en review revision:** `0663ff402e75dd755e269a71e495ba10080e9449181d062ca4a68a7e53435ccf`
+**es review revision:** `8b6b8a74dcc4bbda71be03d4ada37206a0a1fba1d356c56b6239627fda09b048`
+**pt-BR review revision:** `afc0e296e1c5785bb719efba0f017c6bbb308c2faee388c7e0a7dce6bf47bc6a`
 
 ### English
 
@@ -19707,11 +21253,19 @@ Uma pessoa contratada precisa de acesso a um repositório de organização sem e
 <!-- certification-coach-question:ghf-194:8c8b21e3f0265f430e26f63b23bcfda6ef21e948afb8c1cf7b1a3d72138c87ca -->
 ## Question 194: Understand privacy, security, and administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-194`
 
 **Content revision:** `8c8b21e3f0265f430e26f63b23bcfda6ef21e948afb8c1cf7b1a3d72138c87ca`
+
+**en review revision:** `2d6f4f6f205c1a8cc2a6dd2969b7b2d14c42198d4458acf5eca59b749e037285`
+**es review revision:** `bfcfaab615977534e5463460db65cc3a5fbc85c91a79a92e40506e1c8a8c7947`
+**pt-BR review revision:** `13bc3b747cdd8a2a43fff90d4a1413f44b3a4636626b7df58712e6cabfe3f997`
 
 ### English
 
@@ -19809,11 +21363,19 @@ Uma pessoa de finanças precisa gerenciar informações de pagamento sem proprie
 <!-- certification-coach-question:ghf-195:f8c85a8b9c61717ac71c6f6c900db06b831b4c9c9a996b5e5d37a8d04abdd5c9 -->
 ## Question 195: Understand privacy, security, and administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-195`
 
 **Content revision:** `f8c85a8b9c61717ac71c6f6c900db06b831b4c9c9a996b5e5d37a8d04abdd5c9`
+
+**en review revision:** `5a913a41097be55fb1d9a8bc1117fcc723d8ef7449a4d9d8e7f5a8b19d68d268`
+**es review revision:** `a3473668a621210031e6cc86d19b4c5d9566e11e082154bd75130ce3419e843f`
+**pt-BR review revision:** `0fe8c34c152bfaa01b71cc7a1c19e253bce5e4ff88e27bbc5189aca28e2cfdb9`
 
 ### English
 
@@ -19911,11 +21473,19 @@ Qual é uma finalidade central do Enterprise Managed Users?
 <!-- certification-coach-question:ghf-196:9915f33ebc0cb278def2b129e8ba7800c08753f06f488298f6a6d4312a6befcc -->
 ## Question 196: Understand privacy, security, and administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-196`
 
 **Content revision:** `9915f33ebc0cb278def2b129e8ba7800c08753f06f488298f6a6d4312a6befcc`
+
+**en review revision:** `2c589ee87f12e67c2992af040abe0b136c9932acbcf72cf6c2048e0134b85f8e`
+**es review revision:** `b67644ab6ceffa91271cbedcf65de7767790001a6a517a86f3d5ac2a3fcf1f65`
+**pt-BR review revision:** `01ef3583e5ecba709e0c3ae8111977677fb3922b13bf605462fcfb8b5da7b6ee`
 
 ### English
 
@@ -20013,11 +21583,19 @@ Uma pessoa com conta de usuário gerenciada quer usá-la para contribuir com um 
 <!-- certification-coach-question:ghf-197:2c0cbd40a8beebd91bc67ccb33474e6d3b45251d52c36679d1abfdc779948b76 -->
 ## Question 197: Understand privacy, security, and administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-197`
 
 **Content revision:** `2c0cbd40a8beebd91bc67ccb33474e6d3b45251d52c36679d1abfdc779948b76`
+
+**en review revision:** `9dbae1bb1f66ac100a6b98259279d5933565eb838e0173f0ea67933c9a15e818`
+**es review revision:** `a89053e890736cebdae51b0d5692cbe10db4260567f218eab6c627f95709c6bb`
+**pt-BR review revision:** `c9e351a2544ea842ec33abee52c0e23a627d351d37153b62926eb1bb6725fd46`
 
 ### English
 
@@ -20115,11 +21693,19 @@ Uma empresa desativa explicitamente um recurso do Copilot por política. Uma pes
 <!-- certification-coach-question:ghf-198:124fabb407878e861d297a661a5a2d6db28470a94d3ba2ac2f2793abf7fde521 -->
 ## Question 198: Understand privacy, security, and administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-198`
 
 **Content revision:** `124fabb407878e861d297a661a5a2d6db28470a94d3ba2ac2f2793abf7fde521`
+
+**en review revision:** `90a2fd33439610777bd00b7f9ffded5ae0d6439f9b7e9a569fc13a42e06be392`
+**es review revision:** `37070e3f97abe76a8d61b718870b0a60190898c72fa27feec0811fc4d37732ab`
+**pt-BR review revision:** `4942e7018e8d9810c44be70db90212061c46aee90145ca38ea45a567f5c717b2`
 
 ### English
 
@@ -20217,11 +21803,19 @@ Uma organização quer controlar os recursos e modelos do Copilot disponíveis a
 <!-- certification-coach-question:ghf-199:c82b8f51df3aa3f3794f4151c8c57fb152e4266ccef7d9f3bac7a4a290bfa7f0 -->
 ## Question 199: Understand privacy, security, and administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-199`
 
 **Content revision:** `c82b8f51df3aa3f3794f4151c8c57fb152e4266ccef7d9f3bac7a4a290bfa7f0`
+
+**en review revision:** `fb9dd45cb84b52bc54d0c9dff3c96878a408a2c51cb547e915cf47a552d5d54b`
+**es review revision:** `1fdf4a9a73e712c28b3f7848b168bd3777d41eeb64c3c050ae828b02735d0df0`
+**pt-BR review revision:** `9a6da0110585e77da04ed1ed8226a26dc8c6aabbecb65f8475ae24c4dfcfecad`
 
 ### English
 
@@ -20319,11 +21913,19 @@ Uma equipe quer que main aceite alterações somente após revisão exigida e ve
 <!-- certification-coach-question:ghf-200:a9420eef2cebdfc681025da1885de6e09f04ecf429a85c3e4ab6f7180a60b34f -->
 ## Question 200: Understand privacy, security, and administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-200`
 
 **Content revision:** `a9420eef2cebdfc681025da1885de6e09f04ecf429a85c3e4ab6f7180a60b34f`
+
+**en review revision:** `8b66a101710529476d713fcf9889cdccd4ed743d4bbd2c86d6ec154b6b09749a`
+**es review revision:** `d640fb84085427d7fa99dc2ee0169b1636f1b3a7c8830158ea9491dcd71b9a90`
+**pt-BR review revision:** `c620be06e34fb036252a1d9633196b19c3564290b5a676459ae4a57a4a22801c`
 
 ### English
 
@@ -20421,11 +22023,19 @@ Uma pessoa administradora pode ignorar uma regra clássica de proteção de bran
 <!-- certification-coach-question:ghf-201:f9abdd71b384ec43754308e50e0abe11ad9bc0320291922fd984a47dead99c1f -->
 ## Question 201: Understand privacy, security, and administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-201`
 
 **Content revision:** `f9abdd71b384ec43754308e50e0abe11ad9bc0320291922fd984a47dead99c1f`
+
+**en review revision:** `7d721e35b4607a83131b7161b98d0dd4dabbb2518f7b2475d101d06120cd1a98`
+**es review revision:** `fc71666d34d1fd215c4bbe7f18b8f0d6049a5d1a3eaf79960897d712ba368f5d`
+**pt-BR review revision:** `ef21a218d48d0966502f16e289bce2276390258ebb16d234fe40d6b6acd9245e`
 
 ### English
 
@@ -20523,11 +22133,19 @@ Uma organização usa regras clássicas de proteção de branches e vários padr
 <!-- certification-coach-question:ghf-202:7ab6b911bfc782293c17bc470b70ed3c852168e8597f5f1248ba83c6e0495424 -->
 ## Question 202: Understand privacy, security, and administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-202`
 
 **Content revision:** `7ab6b911bfc782293c17bc470b70ed3c852168e8597f5f1248ba83c6e0495424`
+
+**en review revision:** `f7ebb56f370d3217f92f92fd7b2c04153018a1d289f81bf2d6d78948267aa238`
+**es review revision:** `e440108485a5bf2f8e1e9ece9c081ad94dd2d0e725982bd458a31f297d181c0a`
+**pt-BR review revision:** `2e882d43a988371c95e31807cec440db6f5ae3353adad1514c2e0b7d33ae611e`
 
 ### English
 
@@ -20625,11 +22243,19 @@ Um token de acesso válido foi commitado acidentalmente em um repositório públ
 <!-- certification-coach-question:ghf-203:92d39aef36f0bcac0dddbb0f21bdd7591611f0b3b065fdfec5fa67422306db45 -->
 ## Question 203: Understand privacy, security, and administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-203`
 
 **Content revision:** `92d39aef36f0bcac0dddbb0f21bdd7591611f0b3b065fdfec5fa67422306db45`
+
+**en review revision:** `4f91b068a4e271a1206de0018ed7dbb59586a513a94829a12f2635106ffc41d9`
+**es review revision:** `d79f3c29b734cc867da5e0d0844534ad248aaa9fd270b022caa813f9a2c9ac89`
+**pt-BR review revision:** `a520f937b3eb0908f0a7ad44d037b4210cd74c353c1cd4f4648da2c0b5058c54`
 
 ### English
 
@@ -20727,11 +22353,19 @@ Uma pessoa cria um token de acesso pessoal com permissões amplas. Ele pode dar 
 <!-- certification-coach-question:ghf-204:e40db2ab4a122f30ab7354a61b3133afd3f9105e904869f0160370481bb4b26b -->
 ## Question 204: Understand privacy, security, and administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-204`
 
 **Content revision:** `e40db2ab4a122f30ab7354a61b3133afd3f9105e904869f0160370481bb4b26b`
+
+**en review revision:** `f2215d7124402c8921a2d05d529fc2549463a225b5fef3c34398cddb2cc61d1c`
+**es review revision:** `38e6b53b3607a944b77e7cdb574f76f4a86053bafee781b0d184263a4c1a5850`
+**pt-BR review revision:** `eaae112e2df5ecd0eb9fd795330215b225c7d0c75f9d2655320f1fc832f078d5`
 
 ### English
 
@@ -20829,11 +22463,19 @@ Uma tarefa de automação compatível precisa ler um repositório por um token d
 <!-- certification-coach-question:ghf-205:65393ba576258ad9927c5c76fd9a43ea456665c23716a48fdd2c51b0dd6e2ec1 -->
 ## Question 205: Understand privacy, security, and administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-205`
 
 **Content revision:** `65393ba576258ad9927c5c76fd9a43ea456665c23716a48fdd2c51b0dd6e2ec1`
+
+**en review revision:** `1b1a74f8ddef1507a9dd77b4b08559f420d74e1b65ed5116f3184dc413adeb7d`
+**es review revision:** `ea4ef5843a5af8e00e853d462b1d608b84048afeac0811971053c4dc109dce9f`
+**pt-BR review revision:** `36bc468787c213957e427a2d92e462441b1f04e3a5590b81f467c0101bb12fb1`
 
 ### English
 
@@ -20931,11 +22573,19 @@ Uma empresa quer um nível padrão de permissões de repositório para membros d
 <!-- certification-coach-question:ghf-206:68f22b610f7ad85b1b329ed0103af39449410a028d92e2c21cc5a92a27deda15 -->
 ## Question 206: Understand privacy, security, and administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-206`
 
 **Content revision:** `68f22b610f7ad85b1b329ed0103af39449410a028d92e2c21cc5a92a27deda15`
+
+**en review revision:** `ab0d00e76cbab52cb2b20cb4c1fa3d5952868f77ff42fe7234dd544baa096b38`
+**es review revision:** `ddad45481a19050eb5b272f25e9776561027409779a96788db76464ec315c98f`
+**pt-BR review revision:** `3d1f79fa4163c808ad46200b285161ec3a01198832a55e70b31d99d6e16d9f07`
 
 ### English
 
@@ -21033,11 +22683,19 @@ Uma equipe está prestes a tornar público um repositório confidencial. Qual re
 <!-- certification-coach-question:ghf-207:6550d6514294223fea268c51f3481d5186f2816db4bec88d70528648fa4aa700 -->
 ## Question 207: Understand privacy, security, and administration
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-207`
 
 **Content revision:** `6550d6514294223fea268c51f3481d5186f2816db4bec88d70528648fa4aa700`
+
+**en review revision:** `28e76334e78b73bc62b5ae10a1ba8777173c4ddfa4969566b0ba524456d57ab5`
+**es review revision:** `52be508d45725b7b6a3cad14f48867136be17f245cfdfe15bcb03ccd61d394e7`
+**pt-BR review revision:** `cbe9377cde63a5790e469f8605de62004acef1930018a470b164eb769a02d585`
 
 ### English
 
@@ -21135,11 +22793,19 @@ Um repositório tem proprietários de código configurados, mas uma pessoa propo
 <!-- certification-coach-question:ghf-208:d9b119c2f32707302bb294c2beda8412429180fd79e36aa726aef388c777a9c9 -->
 ## Question 208: Explore the GitHub community
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-208`
 
 **Content revision:** `d9b119c2f32707302bb294c2beda8412429180fd79e36aa726aef388c777a9c9`
+
+**en review revision:** `68b8c27872bcc2dc983526651b868148ff5b453d1fb9efc03a0e439522eae77c`
+**es review revision:** `270b8aef70bddd5822332ccde65ca1fb6ccc25a04f4fc8f52ae40abf02725d03`
+**pt-BR review revision:** `894fca0b30b710ff1b5fb4f3e863001291fbec1039bfcdeeed0cd2a64bdc2efa`
 
 ### English
 
@@ -21237,11 +22903,19 @@ Uma organização usa uma biblioteca de código aberto e quer apoiar financeiram
 <!-- certification-coach-question:ghf-209:ad08be1dec1ca2b794b64b7d2813b182ca269511283b4e6a3f9248eb56928eb0 -->
 ## Question 209: Explore the GitHub community
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-209`
 
 **Content revision:** `ad08be1dec1ca2b794b64b7d2813b182ca269511283b4e6a3f9248eb56928eb0`
+
+**en review revision:** `677ffc7b208624c97e1dbf195cb7acb1576f6d0c1d3a24e147fe5c533bc3c6dc`
+**es review revision:** `adbef45a7f077e13fc214c3d594315420f1d13205e9be9317722df948c032a53`
+**pt-BR review revision:** `ebab0868fadc18b98e5f3dafaa5430afdce0b1e3d3a79f76ca4a749f511670e8`
 
 ### English
 
@@ -21339,11 +23013,19 @@ Uma pessoa de design quer contribuir com um projeto de código aberto, mas não 
 <!-- certification-coach-question:ghf-210:84c951a01b9b58effc073564e2d71e666817a8ec3d35ffb4847b8e48aa677228 -->
 ## Question 210: Explore the GitHub community
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-210`
 
 **Content revision:** `84c951a01b9b58effc073564e2d71e666817a8ec3d35ffb4847b8e48aa677228`
+
+**en review revision:** `99bf8404ff0dd157125a8715928d9e43f814cf5b89de4cbc0487b24acf9e0650`
+**es review revision:** `cecd93dff693de2ed4d6076655cb85378a5a3a6955b348000133f1c841bbc9ce`
+**pt-BR review revision:** `5f6a577407da08dc42c005301c8c7e66cacdce6c6c3fce0238f8cf24031ed887`
 
 ### English
 
@@ -21441,11 +23123,19 @@ Uma pessoa iniciante escolhe sua primeira contribuição. Qual sinal é mais út
 <!-- certification-coach-question:ghf-211:bd35865fdaa020a33275a9af71aca5be8bed2095106b7e495930aca988b75261 -->
 ## Question 211: Explore the GitHub community
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-211`
 
 **Content revision:** `bd35865fdaa020a33275a9af71aca5be8bed2095106b7e495930aca988b75261`
+
+**en review revision:** `8d6d88863e25b97e7f1830b6762b6313eb3822cacaa21bca2e72b04519a6b94c`
+**es review revision:** `1cbc1a7300404ba0d8f88c9890cce9b44f6c9614dd7a05e883325ff56fc3733e`
+**pt-BR review revision:** `187289a6de305aee212dbbcaeb0452571bc73e1bcb6a67ccf7a8dd4cabc4a38b`
 
 ### English
 
@@ -21543,11 +23233,19 @@ Antes de iniciar uma contribuição substancial a um projeto desconhecido, o que
 <!-- certification-coach-question:ghf-212:5ef91b114a7f5bc1b977a6e4bbb333f19aa59a5db5baf23279d5f36b5074095e -->
 ## Question 212: Explore the GitHub community
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-212`
 
 **Content revision:** `5ef91b114a7f5bc1b977a6e4bbb333f19aa59a5db5baf23279d5f36b5074095e`
+
+**en review revision:** `0406cf9b12f2530fe2abe30f3adff51897fd6d25539d6136948c3357cbbf2864`
+**es review revision:** `ea449b949369036c0353ff073608e426b72d945c11c72c5567be9c1850a8dfd8`
+**pt-BR review revision:** `5979e01cd8fcd984e1839a2d870ce9e2daf9f553ab3e361b722ee088b6d59651`
 
 ### English
 
@@ -21645,11 +23343,19 @@ Uma pessoa não tem escrita em um projeto público original, mas quer propor uma
 <!-- certification-coach-question:ghf-213:7fe4e04191f7269bf79837bd5023ea52767039f295ad019e35f9aeed42aebce5 -->
 ## Question 213: Explore the GitHub community
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-213`
 
 **Content revision:** `7fe4e04191f7269bf79837bd5023ea52767039f295ad019e35f9aeed42aebce5`
+
+**en review revision:** `308a5517221d280b8c53583235da0aced34ff58c4cbec60b4465f84a06b111d1`
+**es review revision:** `8cbe3f3832b3c9d24468ada97d43faa10dbdbc54335b5da6cf4d9d7f52a0709a`
+**pt-BR review revision:** `e4a00498cbe6b673efc68b5f4d15b504209f37d86efcf130ba7c77cf9394825b`
 
 ### English
 
@@ -21747,11 +23453,19 @@ Um fork ficou atrasado em relação ao projeto original. O que fazer antes de tr
 <!-- certification-coach-question:ghf-214:f3811c5d12343c2680f8a932ead7c4f8981d785cd33e1f870f0f23eef44f6eb9 -->
 ## Question 214: Explore the GitHub community
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-214`
 
 **Content revision:** `f3811c5d12343c2680f8a932ead7c4f8981d785cd33e1f870f0f23eef44f6eb9`
+
+**en review revision:** `13ccd1d51a9c55247128c3a570a8b5bb4f9b948571bd5da1bc4304647f9ca8e9`
+**es review revision:** `1c1d7f4ac86fa4ed6ac756cdbbaaa1773fdc76b87ff4b4a674aec6c4da7e9d95`
+**pt-BR review revision:** `739dca91cf413d6cce84a5fa20dfa4bd800ed63788625e4f918632e8d40239ef`
 
 ### English
 
@@ -21849,11 +23563,19 @@ Uma pessoa nota instruções de configuração desatualizadas em um template com
 <!-- certification-coach-question:ghf-215:c04763bf59bd543341412f443c87ea31f378cc819647b12888d5bc61876a8d5e -->
 ## Question 215: Explore the GitHub community
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-215`
 
 **Content revision:** `c04763bf59bd543341412f443c87ea31f378cc819647b12888d5bc61876a8d5e`
+
+**en review revision:** `981b23174b4ab5e978a3a054e6d9284b7293cf84129871a506ec4659cab6e9f9`
+**es review revision:** `90601943c9e96492e17b0efddba8f40deaedbef7daa5178217894b7fc2c13faf`
+**pt-BR review revision:** `3856fbd464f530090cfb137a119a15ed9e91abe318cce2905f856b8b8b56b03c`
 
 ### English
 
@@ -21951,11 +23673,19 @@ Uma empresa incentiva equipes a descobrir e contribuir com os projetos empresari
 <!-- certification-coach-question:ghf-216:e94261170d7a21a2f7573b5d50ee05e2705cdf4449c7807067a16f798d80b682 -->
 ## Question 216: Explore the GitHub community
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-216`
 
 **Content revision:** `e94261170d7a21a2f7573b5d50ee05e2705cdf4449c7807067a16f798d80b682`
+
+**en review revision:** `5545e0a76d8dfc8e92beb51d0cdfd6141305b3f71b0a4f2476aff189a1348cb4`
+**es review revision:** `0c6f38cdce2f17a252059bf9daa6fe785aa7d908e9bb8203631b77fd73b937fd`
+**pt-BR review revision:** `295b02f9b84f2cd424c335655dfa70a15b66f02db7ca80b6f54b4b51930e251c`
 
 ### English
 
@@ -22053,11 +23783,19 @@ Um serviço interno reutilizável e não sensível é difícil de encontrar por 
 <!-- certification-coach-question:ghf-217:475c2d7d849682f760962f43c3c90597773486f3596acd6c41489657c0c0a2ee -->
 ## Question 217: Explore the GitHub community
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-217`
 
 **Content revision:** `475c2d7d849682f760962f43c3c90597773486f3596acd6c41489657c0c0a2ee`
+
+**en review revision:** `d86665ab3ef1b098bf61f67de728aba237232729846cbe44cff1138f981f67b7`
+**es review revision:** `da0b0afc2322af7f50c44700977bb29547087613039bdb49b65b0d74c6f3ac61`
+**pt-BR review revision:** `e7f6bb3b101b9d3f4b62a52f985b64a2f78e42e450a9e183e68c87776b03ccbb`
 
 ### English
 
@@ -22155,11 +23893,19 @@ Uma pessoa quer ver a atividade pública de alguém que mantém projetos em sua 
 <!-- certification-coach-question:ghf-218:a238b677d4ad22a5198b892d5de03abfbc9e52685984d61440d795d77047f5e9 -->
 ## Question 218: Explore the GitHub community
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-218`
 
 **Content revision:** `a238b677d4ad22a5198b892d5de03abfbc9e52685984d61440d795d77047f5e9`
+
+**en review revision:** `e02b5564e566915f7ab8c184134222644cbc3c36de4b21aeb61d1a987705fcd3`
+**es review revision:** `3edc3d9c4772e5b5dec5226acdeee75cf7e4cf5f0b5fb8bb80c21ca066aae8bd`
+**pt-BR review revision:** `782fb0d76e0bae222e1ebaf2682b55396426a9cd0e831fb076bdcfc4a4c6eac4`
 
 ### English
 
@@ -22257,11 +24003,19 @@ Uma pessoa segue uma organização no GitHub. O que deve esperar dessa ação?
 <!-- certification-coach-question:ghf-219:00bd72ca8eff7f8a07c11bb478c16fcd008da2e74e6676ffc6b031e3b9bd8ae2 -->
 ## Question 219: Explore the GitHub community
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-219`
 
 **Content revision:** `00bd72ca8eff7f8a07c11bb478c16fcd008da2e74e6676ffc6b031e3b9bd8ae2`
+
+**en review revision:** `c49f8f49ceb04288d85e9b1d36d6db162e13a17b6ae903035a274184cd6974fb`
+**es review revision:** `f167569396de07f6c6ebf0acbbe597bc890c71c2625bc400291b8d9aff9675e7`
+**pt-BR review revision:** `5c687ea595ebfef008888d42023350e617c28dd31aa4624d0e3ddbc7ffc5320f`
 
 ### English
 
@@ -22359,11 +24113,19 @@ Uma equipe quer um catálogo de integrações e automações reutilizáveis que 
 <!-- certification-coach-question:ghf-220:4f947633dfb6df997d3c0b5d222cd389d2c5123001c7f8c81506603d76abc36f -->
 ## Question 220: Explore the GitHub community
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-220`
 
 **Content revision:** `4f947633dfb6df997d3c0b5d222cd389d2c5123001c7f8c81506603d76abc36f`
+
+**en review revision:** `2b601eaa8235d83b4f45344f73e7687547bfc3971e8fa2a8f71359c2508be88d`
+**es review revision:** `182994b8389fc30ae95ef17fdb8ad15102b40b506f0db478cdfc5a8f2e391748`
+**pt-BR review revision:** `955b382a7dcf9acd00c0255484d34e0e808329deec8037f92917bb40c25ae991`
 
 ### English
 
@@ -22461,11 +24223,19 @@ Uma equipe encontra um aplicativo atraente de terceiros no GitHub Marketplace. O
 <!-- certification-coach-question:ghf-221:a1e68d5e78e6d10a31259f4a8861c86948885be56930f8d2134e735d9bd1db60 -->
 ## Question 221: Explore the GitHub community
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-221`
 
 **Content revision:** `a1e68d5e78e6d10a31259f4a8861c86948885be56930f8d2134e735d9bd1db60`
+
+**en review revision:** `86d87707c8f76a191de7e1ffd6f5e9a1fb99e820d6e4fc3a124c691e98a0dcbc`
+**es review revision:** `ef88a950fc493c25d72fd6ae7a4c18b1f738dd2d3e372a86412860dd6c018543`
+**pt-BR review revision:** `b0336d1fc0b2100bd59304b822cfa9d8c25f9d9921853bf2a17c1879407c8889`
 
 ### English
 
@@ -22563,11 +24333,19 @@ Um repositório público contém código útil, mas não tem licença. O que uma
 <!-- certification-coach-question:ghf-222:4f129455fc5dd170dcbf584012abf777124c7eaa9c3eee0c2aa265cb15bdf571 -->
 ## Question 222: Explore the GitHub community
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-222`
 
 **Content revision:** `4f129455fc5dd170dcbf584012abf777124c7eaa9c3eee0c2aa265cb15bdf571`
+
+**en review revision:** `736f57440fad400ee58d3df9a41958f9c58239965dbf932fefb14fa7183d9635`
+**es review revision:** `ea7dcec98d5b19d31c2eca73483d7c27e6baba95080cd2bb192e1eac6337520e`
+**pt-BR review revision:** `8ec080297acb8432474da2f797f97421fafb5a67db9334ec3bdd4835e992e996`
 
 ### English
 
@@ -22665,11 +24443,19 @@ Qual é um benefício realista de participar de um projeto de código aberto pel
 <!-- certification-coach-question:ghf-223:9f42e80f6d198a260998e6f42b048b89fa8910df2fc6088387fec5f6a69f5cbe -->
 ## Question 223: Explore the GitHub community
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-223`
 
 **Content revision:** `9f42e80f6d198a260998e6f42b048b89fa8910df2fc6088387fec5f6a69f5cbe`
+
+**en review revision:** `165db2792dc7b62830111c62e7031cef098e511018b46deb0272463ee592c429`
+**es review revision:** `80e919432d71bfe2f520da93dda2f0905724c9750c37847a012dc2e8e8b084b1`
+**pt-BR review revision:** `2c73dc1cb0e40071b292e9c6ada286f9ae5fe88d61762dec691b986f4bfbcc67`
 
 ### English
 
@@ -22767,11 +24553,19 @@ Um projeto de código aberto quer que contribuintes entendam o comportamento esp
 <!-- certification-coach-question:ghf-224:18bb9b5543e09639ee8cbf5a3465f153c76f714ee4f5405ba83eb9a75590d921 -->
 ## Question 224: Explore the GitHub community
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-224`
 
 **Content revision:** `18bb9b5543e09639ee8cbf5a3465f153c76f714ee4f5405ba83eb9a75590d921`
+
+**en review revision:** `3e31e86324a9d6dc44795b46a0d09c2f45c0f1d55f5a8f5e89eb500aede91ca0`
+**es review revision:** `c7548376941cab7bf2f5ad2b2e6e824591a836f1d5ddcad5452f955a3b8d4348`
+**pt-BR review revision:** `e3cd498a0603e74db6e991add69815d3b0acab744532c775b5401c34ef1974ab`
 
 ### English
 
@@ -22869,11 +24663,19 @@ Uma organização elegível de código aberto quer receber apoio financeiro pelo
 <!-- certification-coach-question:ghf-225:3816822f0ba0d694228bbb460a616c3d0a16433ee91b1c03368d480680dddcab -->
 ## Question 225: Explore the GitHub community
 
-- [ ] Human-reviewed: this question and supporting content, covering all three languages.
+- [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
+
+- [ ] Spanish translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
+
+- [ ] Brazilian Portuguese translation approved: I verified faithful translation of the approved English question, choices, answer explanations, concept, hints, and documentation references.
 
 **Question ID:** `ghf-225`
 
 **Content revision:** `3816822f0ba0d694228bbb460a616c3d0a16433ee91b1c03368d480680dddcab`
+
+**en review revision:** `72d7802f06691b344bc2cf496565d070739b8b8dc71370ec12acdd59bdd80461`
+**es review revision:** `dfaf06ea211f50e098dfb9be908bb52c195559a9edca83ac7152fb6cdaa3d6d2`
+**pt-BR review revision:** `3678fb077024706a8ba427fd169622ac8a1189706d388cd27326f015b6d5b563`
 
 ### English
 

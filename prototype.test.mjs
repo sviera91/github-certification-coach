@@ -179,7 +179,7 @@ test("learning mode gives immediate fixed explanations and locks the answer", as
     assert.equal(state.attempt.entries[0].correctAnswer, 1);
     await assert.rejects(engine.mutate("answer", { questionId: first, choice: 1 }));
 });
-test("coaching uses bound completion, hides key, and measures first vs assisted success", async t => {
+test("coaching uses bound completion, hides the key, and records ungraded answered progress", async t => {
     const { engine, sent } = await fixture(t);
     await engine.mutate("start", { mode: "coach" });
     let state = await engine.mutate("answer", { questionId: first, choice: 0 });
@@ -194,12 +194,10 @@ test("coaching uses bound completion, hides key, and measures first vs assisted 
     assert.equal((await engine.getState()).attempt.entries[0].messages.at(-1).role, "coach");
     state = await engine.mutate("answer", { questionId: first, choice: 1 });
     assert.equal(state.attempt.entries[0].correctAnswer, 1);
-    state = await engine.mutate("finish");
-    assert.equal(state.attempt.score.firstAttempt, 0);
-    assert.equal(state.attempt.score.current, 1);
-    assert.equal(state.attempt.score.percentage, 0);
-    assert.equal(state.attempt.score.currentPercentage, 25);
-    assert.equal(state.attempt.score.assisted, 1);
+    await assert.rejects(engine.mutate("finish"), /not submitted or graded/);
+    assert.equal(state.attempt.score, undefined);
+    assert.equal(state.attempt.progress.answered, 1);
+    assert.equal(state.attempt.entries[0].previouslyIncorrect, true);
     assert.equal((await engine.complete({ requestId, text: "Duplicate" }, { sessionId: "owner" })).resultType, "rejected");
 });
 test("practice percentage reaches 100 for all correct and zero for all unanswered", async t => {
@@ -251,8 +249,8 @@ test("selection autosaves exam answers but never checks learning or coaching dra
     assert.equal(state.attempt.entries[0].unchecked, true);
     assert.equal(state.attempt.entries[0].correctAnswer, undefined);
     assert.ok(state.attempt.review.unanswered.includes(first));
-    state = await engine.mutate("finish");
-    assert.equal(state.attempt.score.percentage, 0);
+    await assert.rejects(engine.mutate("finish"), /not submitted or graded/);
+    assert.equal(state.attempt.progress.answered, 0);
 });
 test("separate certification attempts survive switching and restart; wrong attempt identities reject", async t => {
     const { engine, directory } = await fixture(t);
@@ -264,7 +262,8 @@ test("separate certification attempts survive switching and restart; wrong attem
     await assert.rejects(engine.mutate("select", { questionId: `copilot-${first}`, choice: 1, attemptId: firstState.attempt.id }), /out of date/);
     const restored = createEngine({ directory, catalog, random: stableRandom, sessionId: () => "owner", send: async () => {} });
     await restored.load();
-    let state = await restored.mutate("select_exam", { examId: "foundations" });
+    await assert.rejects(restored.mutate("select_exam", { examId: "foundations" }), /Confirm exiting/);
+    let state = await restored.mutate("select_exam", { examId: "foundations", confirmExit: true });
     assert.equal(state.attempt.id, firstState.attempt.id);
     assert.equal(state.attempt.entries[0].selected, 2);
     assert.equal(state.attempt.entries[0].unchecked, true);
@@ -283,16 +282,18 @@ test("coaching callbacks remain bound to their exam when learner switches certif
     const state = await engine.mutate("select_exam", { examId: "foundations" });
     assert.equal(state.attempt.entries[0].messages.at(-1).role, "coach");
 });
-test("expiry is persisted while a different certification is selected", async t => {
+test("explicit certification exit submits once and preserves the early-exit reason", async t => {
     let now = 100;
     const { engine, directory } = await fixture(t, { now: () => now });
     await engine.mutate("start", { mode: "exam" });
-    await engine.mutate("select_exam", { examId: "copilot" });
+    await engine.mutate("select_exam", { examId: "copilot", confirmExit: true });
     now += 360001;
     await engine.getState();
     const saved = JSON.parse(await readFile(path.join(directory, "coach-state.json")));
     assert.equal(saved.attempts.foundations.submitted, true);
-    assert.equal(saved.attempts.foundations.expired, true);
+    assert.equal(saved.attempts.foundations.expired, false);
+    assert.equal(saved.history.foundations[0].reason, "exit");
+    assert.equal(saved.history.foundations.length, 1);
 });
 test("legacy prototype migrates without changing selected answers, key or deadline", async t => {
     const { directory } = await fixture(t);
@@ -312,7 +313,7 @@ test("legacy prototype migrates without changing selected answers, key or deadli
 });
 test("domain scores and original answer snapshots survive bank revision", async t => {
     const { engine, directory } = await fixture(t);
-    await engine.mutate("start", { mode: "learn" });
+    await engine.mutate("start", { mode: "exam" });
     await engine.mutate("answer", { questionId: first, choice: 1 });
     const changedCatalog = structuredClone(catalog);
     changedCatalog[0].questions[0].correct = 0;
@@ -392,7 +393,7 @@ test("all six real full-length attempts persist independently with their origina
     const { engine, directory } = await fixture(t, { catalog: exams });
     const attempts = new Map();
     for (const exam of exams) {
-        let state = await engine.mutate("start", { examId: exam.id, mode: "exam" });
+        let state = await engine.mutate("start", { examId: exam.id, mode: "exam", confirmExit: true });
         assert.equal(state.attempt.entries.length, 75);
         assert.equal(state.attempt.review.unanswered.length, 75);
         const questionId = state.attempt.entries[0].id;
@@ -403,7 +404,7 @@ test("all six real full-length attempts persist independently with their origina
     const restored = createEngine({ directory, send: async () => {}, sessionId: () => "owner" });
     await restored.load();
     for (const [examId, attempt] of attempts) {
-        const state = await restored.mutate("select_exam", { examId });
+        const state = await restored.mutate("select_exam", { examId, confirmExit: true });
         assert.equal(state.attempt.id, attempt.id);
         assert.deepEqual(state.attempt.entries.map(question => question.id), attempt.entries.map(question => question.id));
         assert.equal(state.attempt.entries[0].selected, 0);
@@ -417,7 +418,6 @@ test("timeout is explicit; exam expiry locks answers and preserves results", asy
     await engine.mutate("hint", { questionId: first, message: "What am I missing?" });
     now += 120001;
     assert.match((await engine.getState()).attempt.entries[0].error, /timed out/);
-    await engine.mutate("finish");
     await engine.mutate("start", { mode: "exam" });
     now += 6 * 60000;
     assert.equal((await engine.getState()).attempt.finished, true);

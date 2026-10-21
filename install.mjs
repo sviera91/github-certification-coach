@@ -11,7 +11,7 @@ export const runtimeFiles = [
     "banks/actions.mjs", "banks/agentic.mjs",
     "translations/foundations.mjs", "translations/administration.mjs", "translations/security.mjs",
     "translations/copilot.mjs", "translations/actions.mjs", "translations/agentic.mjs",
-    "vendor/primer.css", "vendor/send.svg", "vendor/LICENSES.txt",
+    "vendor/primer.css", "vendor/send.svg", "vendor/icons.svg", "vendor/LICENSES.txt", "CHANGELOG.md",
 ];
 
 export async function installExtension({ copilotHome = process.env.COPILOT_HOME || path.join(os.homedir(), ".copilot") } = {}) {

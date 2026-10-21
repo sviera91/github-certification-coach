@@ -6,8 +6,8 @@ import { InputError } from "./engine.mjs";
 export async function startServer({ engine, log = () => {} }) {
     const token = randomBytes(32).toString("hex");
     const nonce = randomBytes(24).toString("base64");
-    const [html, css, client, primer, sendIcon, i18n] = await Promise.all([
-        "index.html", "style.css", "client.mjs", "vendor/primer.css", "vendor/send.svg", "i18n.mjs",
+    const [html, css, client, primer, sendIcon, i18n, icons] = await Promise.all([
+        "index.html", "style.css", "client.mjs", "vendor/primer.css", "vendor/send.svg", "i18n.mjs", "vendor/icons.svg",
     ].map(name =>
         readFile(new URL(name, import.meta.url), "utf8")));
     function authorized(value) {
@@ -35,7 +35,7 @@ export async function startServer({ engine, log = () => {} }) {
             if (req.method === "GET" && url.pathname === "/") {
                 res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
                 return res.end(html.replaceAll("__NONCE__", nonce).replace("__PRIMER__", primer)
-                    .replace("__STYLE__", css).replace("__SEND_ICON__", sendIcon).replaceAll("__TOKEN__", token));
+                    .replace("__STYLE__", css).replace("__SEND_ICON__", sendIcon).replace("__ICONS__", icons).replaceAll("__TOKEN__", token));
             }
             if (req.method === "GET" && ["/client.mjs", "/i18n.mjs"].includes(url.pathname)) {
                 res.writeHead(200, { "Content-Type": "text/javascript; charset=utf-8" });

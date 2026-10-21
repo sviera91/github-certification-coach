@@ -20,7 +20,7 @@
   <main>
     <header>
       <div class="brand"><div id="selected-badge" hidden></div><div><p id="exam-title" class="eyebrow">GITHUB CERTIFICATIONS</p><h1>Certification Coach</h1></div></div>
-      <div class="toolbar"><label for="language"><span>Language</span> <select id="language" class="form-select"><option value="en">English</option><option value="es">Español</option><option value="pt-BR">Português (Brasil)</option></select></label><span id="release-status" class="Label">Unofficial Preview</span><button id="report-canvas" class="btn">Report canvas issue</button><button id="back-catalog" class="btn" hidden>Switch certification</button></div>
+      <div class="toolbar"><label for="language"><span>Language</span> <select id="language" class="form-select"><option value="en">English</option><option value="es">Español</option><option value="pt-BR">Português (Brasil)</option></select></label><span id="release-status" class="Label">Unofficial Preview</span><a id="app-version" class="Label" href="https://github.com/sviera91/github-certification-coach/blob/main/CHANGELOG.md" target="_blank" rel="noreferrer" aria-label="Changelog" data-i18n-label="Changelog"></a><button id="report-canvas" class="btn">Report canvas issue</button><button id="back-catalog" class="btn" hidden>Switch certification</button></div>
     </header>
     <p id="notice" class="notice">Unofficial practice. AI-authored questions require human review.</p>
     <p id="content-language-note" class="notice" hidden data-i18n="This saved attempt predates translations and remains in English. New attempts use your selected language."></p>
@@ -39,7 +39,6 @@
       <div id="practice-settings">
         <h3>Choose your experience</h3>
         <div class="study-settings">
-          <label for="study-domain">Learn / AI coach focus <select id="study-domain" class="form-select"></select></label>
           <label id="relaxed-label" hidden><input id="relaxed" type="checkbox"> Use relaxed mock timing (120 minutes, not exam simulation)</label>
         </div>
         <div class="modes">
@@ -49,22 +48,34 @@
         </div>
       </div>
       <p class="muted">AI coaching uses the attached Copilot conversation and its usage limits. No separate model API key is needed.</p>
+      <section id="mock-history"></section>
       <hr><h3>Human content review</h3>
       <p id="bank-review-note" class="muted"></p><button id="bank-review" class="btn">Review question bank</button>
     </section>
     <section id="attempt" hidden>
-      <div class="toolbar"><span id="mode"></span><span id="timer" aria-label="Time remaining" data-i18n-label="Time remaining"></span><button id="finish" class="btn">Finish and review</button></div>
+      <div class="toolbar"><span id="mode"></span><span id="timer" aria-label="Time remaining" data-i18n-label="Time remaining"></span><button id="choose-mode" class="btn">Choose mode</button><button id="finish" class="btn">Finish and review</button></div>
+      <div id="study-controls" class="Box card" hidden>
+        <div class="toolbar">
+          <label for="study-mode"><span>Study mode</span> <select id="study-mode" class="form-select"><option value="learn">Learn</option><option value="coach">AI coach</option></select></label>
+          <label for="study-domain"><span>Domain</span> <select id="study-domain" class="form-select"></select></label>
+          <label for="study-filter"><span>Show questions</span> <select id="study-filter" class="form-select"><option value="all">All questions</option><option value="unanswered">Not yet answered</option><option value="incorrect">Previously incorrect</option><option value="flagged">Flagged</option></select></label>
+          <button id="reset-study" class="btn">Reset study progress</button>
+        </div>
+        <p id="study-progress" role="status"></p><p class="muted">Study is ungraded. Your answers and coaching are saved across sessions and shared between Learn and AI Coach.</p>
+      </div>
+      <p id="study-empty" class="notice" hidden>No questions match this filter.</p>
+      <p id="study-filter-note" class="notice" hidden>This question no longer matches your filter. It stays visible until you navigate or change filters.</p>
       <p class="muted">Navigation: + answered; ? selection not checked; * flagged for review.</p>
       <nav id="navigation" aria-label="Question navigation" data-i18n-label="Question navigation"></nav>
       <section id="score" class="Box score-card" aria-label="Practice results" data-i18n-label="Practice results" hidden></section>
-      <div class="columns">
+      <div id="question-columns" class="columns">
         <section class="Box card">
           <p id="domain" class="eyebrow"></p><h2 id="question"></h2>
           <form id="answer-form"><fieldset id="choices"><legend>Choose one answer</legend></fieldset><button id="answer" class="btn btn-primary" type="submit">Check answer</button></form>
           <p id="save-status" role="status"></p><button id="retry-save" class="btn" hidden>Retry saving selection</button>
           <p id="feedback" role="status"></p>
-          <div class="question-actions"><button id="flag" class="btn">Flag for review</button><button id="reveal" class="btn" hidden>Show answer and explanation</button><button id="report-question" class="btn">Report question issue</button></div>
-          <section id="explanations" hidden><h3>Answer review</h3><div id="explanation-list"></div><a id="source" target="_blank" rel="noreferrer">Read the GitHub documentation</a></section>
+          <div class="question-actions"><button id="flag" class="btn">Flag for review</button><button id="retry-question" class="btn" hidden>Try again</button><button id="reveal" class="btn" hidden>Show answer and explanation</button><button id="report-question" class="btn">Report question issue</button></div>
+          <section id="explanations" hidden><h3>Answer review</h3><div id="explanation-list"></div><a id="source" target="_blank" rel="noreferrer">Read the GitHub documentation</a><p><button id="explain-further" class="btn">Explain further with Copilot</button></p><p class="muted">AI-generated guidance can be wrong. It does not change the fixed answer key.</p><div id="deep-explanation" class="ai-insight" role="status"></div></section>
         </section>
         <aside id="coaching" class="Box card" hidden>
           <p class="eyebrow">THINK IT THROUGH</p><h2>Your Copilot coach</h2>
@@ -80,7 +91,7 @@
           </form>
         </aside>
       </div>
-      <div class="footer-actions"><button id="previous" class="btn">Previous</button><button id="next" class="btn">Next question</button><button id="new" class="btn btn-primary" hidden>Practice another mode</button></div>
+      <div id="question-footer" class="footer-actions"><button id="previous" class="btn">Previous</button><button id="next" class="btn">Next question</button><button id="new" class="btn btn-primary" hidden>Practice another mode</button></div>
     </section>
     <section id="review" class="card" aria-labelledby="review-title" hidden>
       <div class="toolbar"><h2 id="review-title">Review before submission</h2><span id="review-timer" role="timer"></span></div>
@@ -120,7 +131,11 @@
     <footer><span>Unofficial learning aid. Progress is stored locally; coaching text is sent through Copilot. Closing the panel does not pause a timed mock.</span>
       <p><span>Certification artwork identifies the exam; it does not claim an earned credential or GitHub endorsement.</span> <a href="https://learn.github.com/credentials" target="_blank" rel="noreferrer">GitHub Learn artwork source</a></p>
     </footer>
+    <section id="confirmation" class="confirmation" role="dialog" aria-modal="true" aria-labelledby="confirmation-title" hidden>
+      <div class="Box card"><h2 id="confirmation-title"></h2><p id="confirmation-message"></p><div class="footer-actions"><button id="confirmation-cancel" class="btn">Cancel</button><button id="confirmation-accept" class="btn btn-danger">Confirm</button></div></div>
+    </section>
   </main>
+  __ICONS__
   <script type="module" nonce="__NONCE__" src="/client.mjs?token=__TOKEN__"></script>
 </body>
 </html>

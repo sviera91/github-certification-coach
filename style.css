@@ -80,4 +80,32 @@ a { color: var(--fgColor-accent); }
 .footer-actions { margin-top: 24px; }
 footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--borderColor-muted); }
 [hidden] { display: none !important; }
+.icon-definitions { position: absolute; width: 0; height: 0; overflow: hidden; }
+.status-icon { display: inline-block; fill: currentColor; vertical-align: text-bottom; flex-shrink: 0; }
+.feedback-success, .answer-correct, .band-success { color: var(--fgColor-success); }
+.feedback-danger, .answer-incorrect, .band-danger { color: var(--fgColor-danger); }
+.band-attention { color: var(--fgColor-attention); }
+.feedback-success, .feedback-danger { font-weight: 600; }
+nav .answer-correct { border-color: var(--borderColor-success-emphasis); background: var(--bgColor-success-muted); }
+nav .answer-incorrect { border-color: var(--borderColor-danger-emphasis); background: var(--bgColor-danger-muted); }
+.result-band { font-weight: 600; }
+.score-ring { width: 128px; height: 128px; float: right; margin: 0 0 16px 16px; }
+.ring-track { stroke: var(--borderColor-muted); }
+.ring-value { stroke: currentColor; }
+.score-ring text { fill: var(--fgColor-default); font-size: 22px; font-weight: 600; }
+.domain-bar { display: block; width: 100%; height: 14px; accent-color: currentColor; }
+.domain-bar::-webkit-progress-bar { background: var(--bgColor-muted); border-radius: 8px; }
+.domain-bar::-webkit-progress-value { background: currentColor; border-radius: 8px; }
+.domain-bar::-moz-progress-bar { background: currentColor; border-radius: 8px; }
+.history-result { margin: 16px 0; border: 1px solid var(--borderColor-default); padding: 16px; border-radius: var(--borderRadius-medium); }
+.history-result summary { cursor: pointer; font-weight: 600; }
+.history-result p, .ai-insight { color: var(--fgColor-default); }
+.ai-insight-text { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.6; padding: 16px; background: var(--bgColor-muted); border-radius: var(--borderRadius-medium); }
+#study-controls { margin-bottom: 16px; }
+#study-controls .toolbar { margin-top: 0; }
+#study-controls select { max-width: 100%; }
+#study-controls .toolbar > label { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; min-width: 0; max-width: 100%; }
+.confirmation { position: fixed; inset: 0; z-index: 10; display: grid; place-items: center; background: var(--overlay-backdrop-bgColor, #0008); padding: 24px; }
+.confirmation > .card { max-width: 560px; box-shadow: var(--shadow-floating-medium); }
+.btn-danger { color: var(--fgColor-danger); }
 @media (max-width: 800px) { main { padding: 16px; } .columns, .modes, .exam-grid { grid-template-columns: 1fr; } .card { padding: 20px; } }

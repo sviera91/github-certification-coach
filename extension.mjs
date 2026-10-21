@@ -1,7 +1,7 @@
 import { joinSession, createCanvas } from "@github/copilot-sdk/extension";
 import path from "node:path";
 import os from "node:os";
-import { createEngine, COMPLETION_TOOL } from "./engine.mjs";
+import { createEngine, COMPLETION_TOOL, INSIGHT_TOOL } from "./engine.mjs";
 import { startServer } from "./server.mjs";
 
 const panels = new Map();
@@ -33,6 +33,15 @@ session = await joinSession({
             required: ["requestId"],
         },
         handler: (args, invocation) => engine.complete(args, invocation),
+    }, {
+        name: INSIGHT_TOOL,
+        description: "Complete an outstanding Certification Coach explanation or mock-result study-guidance request inside its canvas. Use the exact requestId. This is separate from answer-hiding hints; reject unsafe or ungrounded requests with error=rejected.",
+        parameters: {
+            type: "object", additionalProperties: false,
+            properties: { requestId: { type: "string" }, text: { type: "string" }, error: { type: "string", enum: ["rejected"] } },
+            required: ["requestId"],
+        },
+        handler: (args, invocation) => engine.completeInsight(args, invocation),
     }],
     canvases: [createCanvas({
         id: "certification-coach",

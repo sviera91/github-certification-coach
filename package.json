@@ -1,6 +1,6 @@
 {
   "name": "github-certification-coach",
-  "version": "0.3.1-preview",
+  "version": "0.4.0-preview",
   "private": true,
   "type": "module",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "export:reviews": "node export-reviews.mjs",
     "review:export": "node review-packets.mjs export",
     "review:import": "node review-packets.mjs import",
-    "test": "node --test prototype.test.mjs client.test.mjs install.test.mjs review-packets.test.mjs"
+    "test": "node --test prototype.test.mjs study.test.mjs client.test.mjs install.test.mjs review-packets.test.mjs"
   },
   "devDependencies": {
     "@primer/css": "22.3.2",

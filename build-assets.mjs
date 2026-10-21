@@ -27,7 +27,13 @@ const css = (await Promise.all(sources.map(source => inlineCSS(path.join(modules
 const licenses = await Promise.all(["css", "primitives", "octicons"].map(async name =>
     `@primer/${name}\n${await readFile(path.join(modules, name, "LICENSE"), "utf8")}`));
 await mkdir(vendor, { recursive: true });
+const icons = ["check-circle", "x-circle", "alert", "book", "history", "sync", "light-bulb", "arrow-switch"];
+const sprite = `<svg xmlns="http://www.w3.org/2000/svg" class="icon-definitions" aria-hidden="true"><defs>${icons.map(name => {
+    const svg = octicons[name].toSVG({ width: 16, height: 16 });
+    return `<symbol id="icon-${name}" viewBox="${svg.match(/viewBox="([^"]+)"/)[1]}">${svg.replace(/^<svg[^>]*>|<\/svg>$/g, "")}</symbol>`;
+}).join("")}</defs></svg>`;
 await Promise.all([
+    writeFile(path.join(vendor, "icons.svg"), sprite),
     writeFile(path.join(vendor, "primer.css"), css),
     writeFile(path.join(vendor, "send.svg"), octicons["paper-airplane"].toSVG({ width: 16, height: 16, "aria-hidden": "true" })),
     writeFile(path.join(vendor, "LICENSES.txt"), licenses.join("\n\n")),

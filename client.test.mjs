@@ -9,7 +9,7 @@ const script = (await readFile(new URL("./client.mjs", import.meta.url), "utf8")
     .replace(/^const \{ translate, localizePage, hasTranslation \} = await import.*$/m, "")
     .replace("import.meta.url", JSON.stringify("http://127.0.0.1/client.mjs?token=test"));
 const AsyncFunction = Object.getPrototypeOf(async function () {}).constructor;
-async function mount({ reject = false, score, mode = "coach", count = 1 } = {}) {
+async function mount({ reject = false, score, mode = "coach", count = 1, history = [] } = {}) {
     const { document, window } = parseHTML(html);
     const intervals = [], requests = [];
     const reviewed = new Set();
@@ -17,7 +17,7 @@ async function mount({ reject = false, score, mode = "coach", count = 1 } = {}) 
         poolTarget: 225, status: "Preview", fullLengthAvailable: true, attemptSize: 75, minutes: 100,
         domains: [{ name: "Test", weight: 100, resources: [] }], resources: [], blueprintNote: "Fixture" };
     const model = {
-        appVersion: "0.3.0-preview", selectedExamId: "foundations", catalog: [exam],
+        appVersion: "0.4.0-preview", selectedExamId: "foundations", catalog: [exam], history,
         attempt: {
             id: "test-attempt", examId: "foundations", mode, finished: Boolean(score), score,
             review: { unanswered: Array.from({ length: count }, (_, index) => `q${index + 1}`), flagged: [] },
@@ -47,6 +47,19 @@ async function mount({ reject = false, score, mode = "coach", count = 1 } = {}) 
             if (request.action === "review_question") {
                 if (request.decision === "approve") reviewed.add(request.language);
                 else reviewed.delete(request.language);
+            } else if (request.action === "position") {
+                model.attempt.position = request.questionId;
+            } else if (request.action === "start") {
+                model.attempt.mode = request.mode;
+            } else if (request.action === "study_filter") {
+                model.attempt.domainFilter = request.domain;
+                model.attempt.progressFilter = request.filter;
+            } else if (request.action === "retry_question") {
+                entry.retrying = true;
+                entry.correct = undefined;
+                entry.correctAnswer = undefined;
+                entry.explanations = undefined;
+                entry.selected = undefined;
             } else if (request.action === "set_language") {
                 model.language = request.language;
             } else if (request.action === "hint") {
@@ -54,9 +67,19 @@ async function mount({ reject = false, score, mode = "coach", count = 1 } = {}) 
                 entry.messages.push({ role: "learner", text: request.message });
             } else if (request.action === "select") {
                 entry.selected = request.choice;
-                entry.checked = mode === "exam";
-                entry.unchecked = mode !== "exam";
-                if (mode === "exam") model.attempt.review.unanswered = model.attempt.review.unanswered.filter(id => id !== entry.id);
+                entry.checked = model.attempt.mode === "exam";
+                entry.unchecked = model.attempt.mode !== "exam";
+                if (model.attempt.mode === "exam") model.attempt.review.unanswered = model.attempt.review.unanswered.filter(id => id !== entry.id);
+            } else if (request.action === "answer") {
+                entry.checked = true;
+                entry.unchecked = false;
+                entry.correct = request.choice === 1;
+                entry.previouslyIncorrect ||= !entry.correct;
+                if (model.attempt.mode === "learn" || entry.correct) {
+                    entry.correctAnswer = 1;
+                    entry.explanations = ["Why one is wrong.", "Why two is correct."];
+                    entry.source = "https://docs.github.com/en";
+                }
             } else if (request.action === "finish") {
                 model.attempt.finished = true;
             } else if (request.action === "flag") {
@@ -122,12 +145,13 @@ test("failed sends retain reasoning and display the error", async () => {
     assert.equal($("send").disabled, false);
     assert.equal($("error").hidden, false);
 });
-test("score renders 0-100 primary accuracy and distinct latest accuracy", async () => {
-    const { $ } = await mount({ score: {
+test("mock score renders raw accuracy, accessible ring, and practice band instead of pass/fail", async () => {
+    const { $ } = await mount({ mode: "exam", score: {
         percentage: 25, currentPercentage: 75, firstAttempt: 1, current: 3, assisted: 2, revealed: 1, total: 4, domains: [],
     } });
     assert.equal($("score").querySelector(".score-value").textContent, "25/100");
-    assert.match($("score").textContent, /Latest-answer accuracy: 75\/100/);
+    assert.match($("score").textContent, /Needs focus/);
+    assert.equal($("score").querySelector(".score-ring").getAttribute("aria-label"), "Practice score: 25/100");
     assert.match($("score").textContent, /not the official scaled exam score/);
 });
 test("exam selection saves on change and survives Next without a Save button", async () => {
@@ -137,8 +161,8 @@ test("exam selection saves on change and survives Next without a Save button", a
     assert.equal(requests[0].choice, 1);
     assert.equal($("answer").hidden, true);
     assert.match($("save-status").textContent, /saved automatically/);
-    $("next").onclick();
-    $("previous").onclick();
+    await $("next").onclick();
+    await $("previous").onclick();
     assert.equal($("choices").querySelectorAll("input")[1].checked, true);
 });
 test("failed selection retains local choice and blocks navigation until retry", async () => {
@@ -147,23 +171,113 @@ test("failed selection retains local choice and blocks navigation until retry", 
     assert.equal($("choices").querySelectorAll("input")[1].checked, true);
     assert.equal($("next").disabled, true);
     assert.equal($("finish").disabled, true);
+    assert.equal($("choose-mode").disabled, true);
     assert.equal($("retry-save").hidden, false);
     assert.match($("save-status").textContent, /Not saved/);
 });
-test("learning selection remains unchecked when navigating; review never submits implicitly", async () => {
+test("study mode changes and preparation-mode buttons resume the saved question without submitting", async () => {
+    const { $, document, requests, type } = await mount({ count: 3 });
+    await $("next").onclick();
+    type("Saved reasoning draft");
+    $("study-mode").querySelector('option[value="learn"]').selected = true;
+    await $("study-mode").onchange();
+    assert.match($("domain").textContent, /QUESTION 2 OF 3/);
+    assert.equal($("finish").hidden, true);
+    await $("choose-mode").onclick();
+    await document.querySelector('[data-mode="coach"]').onclick();
+    assert.match($("domain").textContent, /QUESTION 2 OF 3/);
+    assert.equal($("reasoning").value, "Saved reasoning draft");
+    assert.equal(requests.some(request => request.action === "finish"), false);
+});
+test("a checked question stays visible for feedback in the unanswered filter until navigation", async () => {
+    const { $, choose } = await mount({ mode: "learn", count: 2 });
+    $("study-filter").querySelector('option[value="unanswered"]').selected = true;
+    await $("study-filter").onchange();
+    await choose(1);
+    await $("answer-form").onsubmit({ preventDefault() {} });
+    assert.match($("feedback").textContent, /Correct/);
+    assert.equal($("explanations").hidden, false);
+    assert.equal($("study-filter-note").hidden, false);
+    assert.equal($("retry-question").hidden, false);
+    await $("next").onclick();
+    assert.match($("domain").textContent, /QUESTION 2 OF 2/);
+    assert.equal($("navigation").querySelectorAll("button").length, 1);
+    assert.equal($("study-filter-note").hidden, true);
+    $("study-filter").querySelector('option[value="flagged"]').selected = true;
+    await $("study-filter").onchange();
+    assert.equal($("study-empty").hidden, false);
+    assert.equal($("question-columns").hidden, true);
+});
+test("reset and mock exits require an explicit confirmation; cancel never mutates", async () => {
+    const study = await mount({ mode: "learn" });
+    let pending = study.$("reset-study").onclick();
+    assert.equal(study.$("confirmation").hidden, false);
+    study.$("confirmation-cancel").onclick();
+    await pending;
+    assert.equal(study.requests.length, 0);
+    pending = study.$("reset-study").onclick();
+    study.$("confirmation-accept").onclick();
+    await pending;
+    assert.equal(study.requests[0].action, "reset_study");
+    assert.equal(study.requests[0].confirm, true);
+    const mock = await mount({ mode: "exam" });
+    pending = mock.$("choose-mode").onclick();
+    assert.equal(mock.$("confirmation").getAttribute("aria-modal"), "true");
+    await mock.intervals[0]();
+    assert.equal(mock.$("confirmation").hidden, false);
+    mock.$("confirmation-cancel").onclick();
+    await pending;
+    assert.equal(mock.requests.length, 0);
+    pending = mock.$("choose-mode").onclick();
+    mock.$("confirmation-accept").onclick();
+    await pending;
+    assert.equal(mock.requests[0].action, "finish");
+    assert.equal(mock.requests[0].reason, "exit");
+    assert.equal(mock.$("setup").hidden, false);
+});
+test("practice band boundaries use accessible labels and semantic colors without official pass/fail", async () => {
+    for (const [percentage, label, color] of [
+        [0, "Needs focus", "danger"], [69, "Needs focus", "danger"],
+        [70, "Building confidence", "attention"], [84, "Building confidence", "attention"],
+        [85, "Strong practice result", "success"], [100, "Strong practice result", "success"],
+    ]) {
+        const { $ } = await mount({ mode: "exam", score: { percentage, firstAttempt: percentage, total: 100, domains: [] } });
+        assert.equal($("score").querySelector(".result-band").textContent, label);
+        assert.equal($("score").querySelector(".score-ring").classList.contains(`band-${color}`), true);
+        assert.equal($("score").querySelector(".score-ring").getAttribute("role"), "img");
+        assert.match($("score").textContent, /not the official scaled exam score/);
+    }
+});
+test("mock history, result guidance, and explanation buttons localize in Spanish and Portuguese", async () => {
+    const { $, model, intervals, requests } = await mount({ mode: "exam", score: {
+        percentage: 25, firstAttempt: 1, total: 4, domains: [],
+    }, history: [{ id: "test-attempt", submittedAt: 1000, reason: "exit", relaxed: false,
+        score: { percentage: 25, domains: [{ name: "Test", correct: 1, total: 4, percentage: 25 }] } }] });
+    for (const language of ["es", "pt-BR"]) {
+        model.language = language;
+        await intervals[0]();
+        assert.equal($("error").hidden, true, $("error").textContent);
+        assert.equal($("score").querySelector("progress").getAttribute("aria-label"), "Test: 1/4");
+    }
+    await $("score").querySelector("button").onclick();
+    assert.equal(requests.at(-1).action, "guidance");
+    assert.equal(requests.at(-1).resultId, "test-attempt");
+    assert.equal($("app-version").textContent, "v0.4.0-preview");
+    assert.match($("app-version").getAttribute("href"), /CHANGELOG\.md$/);
+});
+test("learning selection remains unchecked across navigation and is never submitted or graded", async () => {
     const { $, choose, requests } = await mount({ mode: "learn", count: 2 });
     await choose(1);
     assert.equal($("answer").hidden, false);
     assert.match($("save-status").textContent, /not checked/);
-    $("next").onclick();
-    $("previous").onclick();
+    await $("next").onclick();
+    await $("previous").onclick();
     assert.equal($("choices").querySelectorAll("input")[1].checked, true);
-    $("finish").onclick();
-    assert.equal($("review").hidden, false);
-    assert.match($("review-summary").textContent, /2 unanswered/);
+    assert.equal($("finish").hidden, true);
+    assert.equal($("score").hidden, true);
+    await $("choose-mode").onclick();
     assert.equal(requests.some(request => request.action === "finish"), false);
-    $("return-attempt").onclick();
-    assert.equal($("attempt").hidden, false);
+    assert.equal($("setup").hidden, false);
 });
 test("review links return to flagged questions and explicit submission is separate", async () => {
     const { $, requests } = await mount({ mode: "exam", count: 2 });
@@ -171,7 +285,7 @@ test("review links return to flagged questions and explicit submission is separa
     $("finish").onclick();
     assert.match($("review-summary").textContent, /1 flagged/);
     assert.equal($("submit-attempt").textContent, "Submit and grade anyway");
-    $("review-list").querySelector("button").onclick();
+    await $("review-list").querySelector("button").onclick();
     assert.equal($("attempt").hidden, false);
     $("finish").onclick();
     await $("submit-attempt").onclick();
@@ -211,7 +325,7 @@ test("question report uses a prefilled public issue without uploading learner st
     const body = url.searchParams.get("body");
     assert.match(body, /Question ID: q1/);
     assert.match(body, /Question revision: question-revision-test/);
-    assert.match(body, /App version: 0.3.0-preview/);
+    assert.match(body, /App version: 0.4.0-preview/);
     for (const privateData of ["PRIVATE CONVERSATION", "PRIVATE DRAFT", "test-attempt", "token=test", "selected"]) {
         assert.ok(!body.includes(privateData), privateData);
     }
@@ -262,8 +376,8 @@ test("language changes localize controls and preserve unchecked selection, chat 
     assert.equal($("report-open").textContent, "Revisar e enviar no GitHub");
     $("report-cancel").onclick();
     assert.equal($("answer").textContent, "Conferir resposta");
-    $("finish").onclick();
-    assert.match($("review-summary").textContent, /não conferidas/);
+    assert.equal($("finish").hidden, true);
+    assert.match($("study-progress").textContent, /respondidas/);
     await change("en");
     assert.equal($("review-title").textContent, "Review before submission");
     assert.equal($("send").getAttribute("aria-label"), "Send message");

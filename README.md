@@ -6,6 +6,13 @@ validated certification-readiness assessment. They remain Preview until
 every current question revision has been reviewed and approved by a human
 and the full pool/coverage targets are met.
 
+Current version: **0.4.0-preview**. See the [changelog](CHANGELOG.md) for release
+history; the canvas version badge links to it.
+
+**Learner progress stays on each person's computer, outside this repository.**
+Answers, mock scores, flags, and coaching history are never uploaded to GitHub.
+See [Storage and upgrades](#storage-and-upgrades) for the exact local path.
+
 ## Install for employees and partners
 
 This is a Copilot desktop **canvas extension**, not a GitHub Pages website,
@@ -78,37 +85,84 @@ explicit notice; new attempts include every supported practice language.
   possible until submission or timeout. Failed saves retain the local selection,
   show an explicit error/retry, and block navigation to prevent losing it.
 - **Learn:** selecting an answer saves an unchecked draft. **Check answer**
-  submits it and reveals the fixed answer and explanations.
+  checks it and reveals the fixed answer and explanations.
 - **AI coach:** selections also stay unchecked until **Check answer**. Wrong
   answers request conceptual hints in the attached Copilot conversation. Learners
   may retry or explicitly reveal the answer.
+
+Learn and AI Coach share **one persistent, ungraded study workspace per
+certification**, covering the full question bank. Study a few questions today,
+return tomorrow, or switch between these modes without submitting or losing
+progress. A question counts as answered once checked, even if the answer was
+wrong; answered does not mean mastered. Flags, answer history, and coaching
+messages are retained. Switching to AI Coach does not conceal an answer already
+seen in Learn.
+
+Use **Try again** to hide the current explanation and make another attempt;
+this retains earlier checks and the answered status. **Reset study progress**
+requires confirmation and clears only the selected certification's shared
+Learn/Coach answers, flags, and coaching. It never erases mock-result history.
+
+Domain and **All / Not yet answered / Previously incorrect / Flagged** filters
+are available inside study modes and never delete progress. Previously incorrect
+means a question has at least one wrong checked answer, even if later corrected.
+Question order is stable and navigation position is saved. When checking or
+unflagging removes the current question from a filter, it stays visible for
+feedback until you navigate or change filters.
 
 Navigation preserves unchecked selections, including after a restart. Those
 selections are labeled **not checked**; merely selecting never triggers grading
 or AI feedback in learning modes.
 
-**Finish and review** always opens a pre-submission review, even when every
+In **Mock exam only**, **Finish and review** always opens a pre-submission review, even when every
 question is answered. It shows unanswered/not-checked and flagged counts, with
 filters and links back to the questions. A question may belong to both counts.
 Learners can return to questions or explicitly **Submit and grade**, including
 submitting anyway when attention items remain.
 
-The countdown continues on the review screen, while switching certifications,
-and while the app is closed. Expiry submits automatically; the next read persists
-the expired result. Foundations additionally offers an explicitly non-simulation
-120-minute relaxed option.
+Leaving a live mock through **Choose mode** or **Switch certification** requires
+confirmation and immediately submits it; unanswered questions count as incorrect.
+Starting Mock again after submitting or exiting creates a fresh exam. Canceling
+the confirmation keeps the current mock.
+
+Accidentally closing the canvas/app or losing the connection does **not** submit
+the mock. Its timer continues, and reopening resumes the same attempt if time
+remains. Expiry submits automatically on the next state read. Foundations
+additionally offers an explicitly non-simulation 120-minute relaxed option.
 
 ## Scores and study guidance
 
-Results show raw **0-100 practice accuracy**, not an official scaled score or a
+Only mocks are scored. Results show raw **0-100 practice accuracy**, not an official scaled score or a
 pass prediction. Unanswered questions count as wrong. Unchecked drafts never
-enter the answer key calculation. For mock exams the graded answer is the last
-saved choice; for learning modes first-check and latest-checked accuracy are
-reported separately, alongside coaching and explicit-reveal counts.
+enter the answer key calculation. The graded answer is the last saved choice.
+Learn and AI Coach show saved study progress, not a percentage grade.
+
+A score ring and domain bars use text and icons alongside semantic colors:
+**Needs focus** below 70, **Building confidence** 70–84, and **Strong practice
+result** 85–100. These are practice bands, never official pass/fail thresholds.
 
 Per-domain results show correct/total, accuracy, and relevant official study
 links. These help choose a study focus; small samples are not a reliable
 readiness assessment.
+
+The latest **10 mock results per certification** are saved locally with date,
+score, domain counts, timing option, and submission/early-exit/timeout reason.
+Earlier results retain summaries and study plans, not full question-by-question
+replay. The most recent mock retains its exact questions for answer review until
+another mock replaces it.
+
+**Explain further with Copilot** is available only after a fixed answer is
+visible in study or after mock submission. It requests a deeper rationale for
+the correct answer and alternatives, useful examples, and guidance on what to
+look for in the linked documentation. This AI-generated explanation cannot
+change the fixed key. It does not fetch documentation or promise precise
+sections, anchors, or quotations; links may still lead to a broad page.
+
+**Ask Copilot for a study plan** on a mock result sends its score, domain counts,
+and associated official study resources—not coaching conversations—to suggest
+priorities. AI insights run only on request, use the learner's Copilot access,
+and remain labeled as potentially incorrect. Saved insights remain in the
+language requested, even if the interface language later changes.
 
 The guided chat uses an accessible paper-airplane send icon. Accepted messages
 clear the composer; failed submissions retain its draft. AI is probabilistic
@@ -216,7 +270,7 @@ is approved. The bank's reviewed count and Preview status reflect the selected
 language; English approval alone never marks translations reviewed.
 Approval can be revoked. To avoid inadvertently exposing the
 key, content review is unavailable while that certification has an unfinished
-attempt.
+mock. Persistent study progress does not block human review.
 
 English approval uses a SHA-256 fingerprint over the ID, domain, prompt,
 choices, answer key, explanations, concept, hints, and source. Each translation
@@ -248,21 +302,42 @@ Runtime state lives at:
 $COPILOT_HOME/extensions/certification-coach/artifacts/coach-state.json
 ```
 
-`COPILOT_HOME` defaults to `~/.copilot`. One current attempt per certification
-is retained independently. Switching does not discard another exam's progress;
-starting again replaces only that certification's finished attempt. Historical
-attempt tracking is not implemented. Attempts snapshot their exact question
-content and keys, so later bank edits do not change existing grading.
+`COPILOT_HOME` defaults to `~/.copilot`, making the usual path
+`~/.copilot/extensions/certification-coach/artifacts/coach-state.json`.
+This is **outside the cloned source repository**. Each learner has their own
+local file; there is no central progress store, GitHub upload, or cross-device
+sync. It contains answers, flags, coaching, AI insights, saved position/filters,
+and the latest 10 mock-result summaries per certification.
+
+One shared study workspace and the most recent mock are retained independently
+per certification. Starting a mock does not replace study progress. Workspaces
+snapshot their exact question content and keys so later bank edits do not
+silently change existing answers or grading. Resetting study deliberately loads
+the current bank.
+
+State version 2 upgrades atomically to version 3. Saved Learn/Coach checks,
+drafts, flags, and conversations are recovered where still present; a completed
+study session is reopened as ungraded study, and a former domain-only study is
+expanded to the full pool without removing its saved question snapshots.
+Progress overwritten by an older release cannot be reconstructed. Existing
+completed mock results are added to history once.
+If an older completed mock has no saved submission timestamp, its history date
+is the migration time rather than an inferred exam date.
 
 The original `prototype-attempt.json` is migrated on first load without deleting
 or overwriting the original. Its four questions, answers, conversation, and
-deadline are preserved; the next new attempt uses the expanded bank.
+deadline are preserved for mocks. Legacy study checks are retained and expanded
+to the full bank.
 
 Writes use an atomic rename. Failed saves are surfaced, not acknowledged as
 successful. Concurrent providers across multiple Copilot conversations are not
 supported: use one owning conversation at a time. Human approvals are user-local;
 sharing runtime code never publishes private progress. Only explicitly exported
-bank approval records travel in `bank-reviews.json`.
+bank approval records travel in `bank-reviews.json`. The installer copies only
+an explicit runtime-file allowlist and never copies, deletes, or replaces learner
+`artifacts/`. `.gitignore` also excludes `artifacts/`, `coach-state.json`, and
+`prototype-attempt.json` as defense in depth. Do not force-add or share these
+files.
 
 ## Privacy and runtime
 
@@ -291,6 +366,13 @@ and policies. It queues a prompt into the attached session and accepts only a
 matching, unexpired completion through `certification_coach_complete_hint`.
 It does not require files, browsing, or shell access. Restarted/interrupted
 requests are explicitly retryable. This is not an offline model.
+
+Explanations and result study plans use a separate
+`certification_coach_complete_insight` callback, bound to the originating
+request/session and saved question or result. It cannot complete a hidden-answer
+hint request. Prompts and AI output may be retained by the learner's attached
+Copilot conversation under its own policies; local-only progress does not mean
+AI coaching is offline or excluded from Copilot retention.
 
 ## Development and distribution
 

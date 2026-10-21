@@ -1,5 +1,6 @@
 const token = new URL(import.meta.url).searchParams.get("token");
 const { translate, localizePage, hasTranslation } = await import(new URL(`./i18n.mjs?token=${token}`, import.meta.url));
+const { renderMarkdown } = await import(new URL(`./markdown.mjs?token=${token}`, import.meta.url));
 const $ = id => document.getElementById(id);
 let state, index = 0, busy = false, signature = "", view = "catalog", reviewFilter = "attention";
 let reviewingQuestion;
@@ -350,7 +351,10 @@ function renderAttempt(exam) {
     $("coaching").hidden = attempt.mode !== "coach";
     $("messages").replaceChildren(...question.messages.map(message => {
         const node = text("div", "", `message ${message.role}`);
-        node.append(text("strong", t(message.role === "coach" ? "Copilot coach" : "You")), document.createTextNode(message.text));
+        const content = text("div", "", message.role === "coach" ? "markdown-content" : "learner-message");
+        if (message.role === "coach") content.append(renderMarkdown(document, message.text));
+        else content.textContent = message.text;
+        node.append(text("strong", t(message.role === "coach" ? "Copilot coach" : "You"), "message-author"), content);
         return node;
     }));
     $("pending").hidden = !question.pending;
@@ -374,7 +378,8 @@ function renderAttempt(exam) {
 function renderInsight(node, insight) {
     node.replaceChildren();
     if (insight?.text) {
-        const output = text("p", insight.text, "ai-insight-text");
+        const output = text("div", "", "ai-insight-text markdown-content");
+        output.append(renderMarkdown(document, insight.text));
         output.lang = insight.language ?? "en";
         node.append(output);
     }

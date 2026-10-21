@@ -8,6 +8,21 @@ installed.
 
 No unreleased changes.
 
+## 0.4.1-preview - 2026-10-20
+
+### Fixed
+
+- Render Copilot hints, deeper explanations, and mock study plans as Markdown
+  rather than displaying literal emphasis markers and list syntax.
+- Format headings, emphasis, paragraphs, nested lists, quotes, tables, links,
+  inline code, and fenced code blocks in light/dark and narrow layouts.
+- Apply formatting to existing saved responses without regenerating AI output
+  or changing learner progress.
+- Keep raw HTML literal, suppress remote images, and restrict model links to
+  absolute HTTP(S) URLs without credentials. Learner messages remain plain text.
+- Vendor the Markdown tokenizer locally under the existing authenticated module
+  routes and CSP, with no external scripts or rendering service.
+
 ## 0.4.0-preview - 2026-10-20
 
 ### Added

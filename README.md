@@ -6,7 +6,7 @@ validated certification-readiness assessment. They remain Preview until
 every current question revision has been reviewed and approved by a human
 and the full pool/coverage targets are met.
 
-Current version: **0.4.0-preview**. See the [changelog](CHANGELOG.md) for release
+Current version: **0.4.1-preview**. See the [changelog](CHANGELOG.md) for release
 history; the canvas version badge links to it.
 
 **Learner progress stays on each person's computer, outside this repository.**
@@ -163,6 +163,12 @@ and associated official study resources—not coaching conversations—to sugges
 priorities. AI insights run only on request, use the learner's Copilot access,
 and remain labeled as potentially incorrect. Saved insights remain in the
 language requested, even if the interface language later changes.
+
+Copilot hints, deeper explanations, and saved study plans render Markdown:
+headings, emphasis, lists, links, tables, quotes, and code blocks. Existing saved
+responses gain formatting without being regenerated or changing learner progress.
+Raw HTML remains literal text, images do not load, and links allow only absolute
+HTTP(S) URLs without credentials. Learner messages remain plain text.
 
 The guided chat uses an accessible paper-airplane send icon. Accepted messages
 clear the composer; failed submissions retain its draft. AI is probabilistic
@@ -395,8 +401,10 @@ only the certification artwork is referenced remotely.
 and deterministic grading; `exams.mjs` holds catalog/blueprints; `bank-utils.mjs`
 handles sampling, fingerprints, and structural checks; `banks/` holds original
 questions; `translations/` holds Spanish and Portuguese variants; `i18n.mjs`
-localizes the interface. `client.mjs` renders text with DOM APIs rather than interpreting model
-or learner output as HTML.
+localizes the interface. `markdown.mjs` tokenizes Copilot Markdown with locally
+bundled Marked and Entities, then creates an allowlisted set of DOM nodes.
+It never inserts model or learner HTML. The tokenizer bundle is built with
+esbuild; learners do not need npm dependencies or an external Markdown service.
 
 Distribute these runtime files, `questions.mjs` (legacy migration), `banks/`, `translations/`,
 `bank-reviews.json`, and

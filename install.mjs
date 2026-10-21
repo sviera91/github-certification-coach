@@ -5,13 +5,14 @@ import { fileURLToPath } from "node:url";
 
 export const runtimeFiles = [
     "extension.mjs", "engine.mjs", "exams.mjs", "bank-utils.mjs", "questions.mjs",
-    "server.mjs", "client.mjs", "i18n.mjs", "index.html", "style.css", "bank-reviews.json",
+    "server.mjs", "client.mjs", "i18n.mjs", "markdown.mjs", "index.html", "style.css", "bank-reviews.json",
     "copilot-extension.json", "README.md", "LICENSE", "THIRD-PARTY-NOTICES.md",
     "banks/foundations.mjs", "banks/administration.mjs", "banks/security.mjs", "banks/copilot.mjs",
     "banks/actions.mjs", "banks/agentic.mjs",
     "translations/foundations.mjs", "translations/administration.mjs", "translations/security.mjs",
     "translations/copilot.mjs", "translations/actions.mjs", "translations/agentic.mjs",
     "vendor/primer.css", "vendor/send.svg", "vendor/icons.svg", "vendor/LICENSES.txt", "CHANGELOG.md",
+    "vendor/markdown-parser.mjs",
 ];
 
 export async function installExtension({ copilotHome = process.env.COPILOT_HOME || path.join(os.homedir(), ".copilot") } = {}) {

@@ -9,6 +9,13 @@ linked training content, or certification artwork.
 The bundled Primer CSS, Primer Primitives, and Octicons retain their upstream
 licenses and copyright notices, reproduced in `vendor/LICENSES.txt`.
 
+## Markdown tokenizer
+
+`vendor/markdown-parser.mjs` bundles Marked (MIT license) and Entities
+(BSD-2-Clause license). Their upstream copyright and license notices are
+reproduced in `vendor/LICENSES.txt`. These libraries tokenize Markdown and decode
+character references; original application code creates the permitted DOM nodes.
+
 ## Certification artwork
 
 The interface references the badge images served by GitHub Learn for

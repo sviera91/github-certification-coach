@@ -10,6 +10,9 @@ export async function startServer({ engine, log = () => {} }) {
         "index.html", "style.css", "client.mjs", "vendor/primer.css", "vendor/send.svg", "i18n.mjs", "vendor/icons.svg",
     ].map(name =>
         readFile(new URL(name, import.meta.url), "utf8")));
+    const moduleFiles = ["client.mjs", "i18n.mjs", "markdown.mjs", "vendor/markdown-parser.mjs"];
+    const scripts = new Map(await Promise.all(moduleFiles.map(async file =>
+        [`/${file}`, file === "client.mjs" ? client : file === "i18n.mjs" ? i18n : await readFile(new URL(file, import.meta.url), "utf8")])));
     function authorized(value) {
         return typeof value === "string" && Buffer.byteLength(value) === Buffer.byteLength(token) &&
             timingSafeEqual(Buffer.from(value), Buffer.from(token));
@@ -37,9 +40,9 @@ export async function startServer({ engine, log = () => {} }) {
                 return res.end(html.replaceAll("__NONCE__", nonce).replace("__PRIMER__", primer)
                     .replace("__STYLE__", css).replace("__SEND_ICON__", sendIcon).replace("__ICONS__", icons).replaceAll("__TOKEN__", token));
             }
-            if (req.method === "GET" && ["/client.mjs", "/i18n.mjs"].includes(url.pathname)) {
+            if (req.method === "GET" && scripts.has(url.pathname)) {
                 res.writeHead(200, { "Content-Type": "text/javascript; charset=utf-8" });
-                return res.end(url.pathname === "/client.mjs" ? client : i18n);
+                return res.end(scripts.get(url.pathname));
             }
             if (req.method === "GET" && url.pathname === "/api/state") return reply(200, await engine.getState());
             if (req.method === "POST" && url.pathname === "/api/action") {

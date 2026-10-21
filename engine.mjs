@@ -8,7 +8,7 @@ import { translate } from "./i18n.mjs";
 
 export const COMPLETION_TOOL = "certification_coach_complete_hint";
 export const INSIGHT_TOOL = "certification_coach_complete_insight";
-export const APP_VERSION = "0.4.0-preview";
+export const APP_VERSION = "0.4.1-preview";
 const modes = new Set(["exam", "learn", "coach"]);
 const progressFilters = new Set(["all", "unanswered", "incorrect", "flagged"]);
 const isRecord = value => value !== null && typeof value === "object" && !Array.isArray(value);

@@ -451,6 +451,14 @@ test("HTTP capability authentication, origin checks, input limits and page CSP",
     const translations = await fetch(`${url.origin}/i18n.mjs?token=${token}`);
     assert.equal(translations.status, 200);
     assert.match(await translations.text(), /export function translate/);
+    for (const file of ["markdown.mjs", "vendor/markdown-parser.mjs"]) {
+        assert.equal((await fetch(`${url.origin}/${file}`)).status, 403);
+        const module = await fetch(`${url.origin}/${file}?token=${token}`);
+        assert.equal(module.status, 200);
+        assert.match(module.headers.get("content-type"), /text\/javascript/);
+        assert.ok((await module.text()).length > 100);
+    }
+    assert.equal((await fetch(`${url.origin}/vendor/unknown.mjs?token=${token}`)).status, 404);
     assert.equal((await fetch(`${url.origin}/api/state`, { headers: { ...headers, Origin: "https://attacker.example" } })).status, 403);
     const post = body => fetch(`${url.origin}/api/action`, { method: "POST", headers, body });
     assert.equal((await post("{")).status, 400);

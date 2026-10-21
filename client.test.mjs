@@ -3,10 +3,12 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { parseHTML } from "linkedom";
 import { translate, localizePage, hasTranslation } from "./i18n.mjs";
+import { renderMarkdown } from "./markdown.mjs";
 
 const html = await readFile(new URL("./index.html", import.meta.url), "utf8");
 const script = (await readFile(new URL("./client.mjs", import.meta.url), "utf8"))
     .replace(/^const \{ translate, localizePage, hasTranslation \} = await import.*$/m, "")
+    .replace(/^const \{ renderMarkdown \} = await import.*$/m, "")
     .replace("import.meta.url", JSON.stringify("http://127.0.0.1/client.mjs?token=test"));
 const AsyncFunction = Object.getPrototypeOf(async function () {}).constructor;
 async function mount({ reject = false, score, mode = "coach", count = 1, history = [] } = {}) {
@@ -17,7 +19,7 @@ async function mount({ reject = false, score, mode = "coach", count = 1, history
         poolTarget: 225, status: "Preview", fullLengthAvailable: true, attemptSize: 75, minutes: 100,
         domains: [{ name: "Test", weight: 100, resources: [] }], resources: [], blueprintNote: "Fixture" };
     const model = {
-        appVersion: "0.4.0-preview", selectedExamId: "foundations", catalog: [exam], history,
+        appVersion: "0.4.1-preview", selectedExamId: "foundations", catalog: [exam], history,
         attempt: {
             id: "test-attempt", examId: "foundations", mode, finished: Boolean(score), score,
             review: { unanswered: Array.from({ length: count }, (_, index) => `q${index + 1}`), flagged: [] },
@@ -89,8 +91,8 @@ async function mount({ reject = false, score, mode = "coach", count = 1, history
         }
         return { ok: true, json: async () => structuredClone(model) };
     };
-    await new AsyncFunction("document", "window", "fetch", "setInterval", "URL", "translate", "localizePage", "hasTranslation", script)(
-        document, window, fetch, callback => intervals.push(callback), URL, translate, localizePage, hasTranslation,
+    await new AsyncFunction("document", "window", "fetch", "setInterval", "URL", "translate", "localizePage", "hasTranslation", "renderMarkdown", script)(
+        document, window, fetch, callback => intervals.push(callback), URL, translate, localizePage, hasTranslation, renderMarkdown,
     );
     const $ = id => document.getElementById(id);
     assert.equal($("error").hidden, true, $("error").textContent);
@@ -123,6 +125,46 @@ test("composer uses accessible icon button, disables blank sends and clears acce
     await intervals[0]();
     assert.equal($("reasoning").value, "");
     assert.equal($("reasoning").disabled, false);
+});
+test("saved Copilot hints and explanations render Markdown while learner messages remain literal", async () => {
+    const { $, model, intervals } = await mount();
+    const entry = model.attempt.entries[0];
+    entry.messages.push(
+        { role: "learner", text: "**My reasoning**\n<script>not executable</script>" },
+        { role: "coach", text: "**Think about:**\n\n- `enforcement`\n- *configuration*\n\nhttps://docs.github.com/" },
+    );
+    entry.correctAnswer = 1;
+    entry.explanations = ["Wrong.", "Correct."];
+    entry.source = "https://docs.github.com/";
+    entry.insight = { text: "**Correct:** Output safeguards.\n\n- **Training:** Not the same operation.\n\n```js\nconst x = '<b>literal</b>';\n```", language: "en" };
+    await intervals[0]();
+    assert.equal($("messages").querySelector(".learner-message").textContent, "**My reasoning**\n<script>not executable</script>");
+    assert.equal($("messages").querySelector(".learner-message strong"), null);
+    assert.equal($("messages").querySelector(".coach .markdown-content strong").textContent, "Think about:");
+    assert.equal($("messages").querySelectorAll(".coach li").length, 2);
+    assert.equal($("messages").querySelector(".coach code").textContent, "enforcement");
+    assert.equal($("messages").querySelector(".coach a").getAttribute("rel"), "noreferrer noopener");
+    assert.equal($("deep-explanation").querySelector("strong").textContent, "Correct:");
+    assert.equal($("deep-explanation").querySelector(".markdown-content").getAttribute("lang"), "en");
+    assert.match($("deep-explanation").querySelector("pre code").textContent, /<b>literal<\/b>/);
+    assert.equal($("deep-explanation").querySelector("b, script"), null);
+    assert.equal(entry.insight.text.includes("**Correct:**"), true);
+    await intervals[0]();
+    assert.equal($("deep-explanation").querySelectorAll("pre").length, 1);
+});
+test("mock study plans render Markdown both on current results and in saved history", async () => {
+    const result = { id: "test-attempt", submittedAt: 1000, reason: "submitted", relaxed: false,
+        score: { percentage: 80, domains: [] },
+        guidance: { text: "## Study priorities\n\n1. **Review** \n2. Practice `git status`.", language: "es" } };
+    const { $, intervals, model } = await mount({ mode: "exam",
+        score: { percentage: 80, firstAttempt: 60, total: 75, domains: [] }, history: [result] });
+    assert.equal($("score").querySelectorAll(".ai-insight .markdown-content h4").length, 2);
+    assert.equal($("score").querySelectorAll(".ai-insight ol").length, 2);
+    model.language = "pt-BR";
+    await intervals[0]();
+    assert.equal($("score").querySelector(".ai-insight .markdown-content").getAttribute("lang"), "es");
+    await $("choose-mode").onclick();
+    assert.equal($("mock-history").querySelector(".markdown-content strong").textContent, "Review");
 });
 test("exam cards and selected header show artwork without implying an earned credential", async () => {
     const { $, document } = await mount();
@@ -262,7 +304,7 @@ test("mock history, result guidance, and explanation buttons localize in Spanish
     await $("score").querySelector("button").onclick();
     assert.equal(requests.at(-1).action, "guidance");
     assert.equal(requests.at(-1).resultId, "test-attempt");
-    assert.equal($("app-version").textContent, "v0.4.0-preview");
+    assert.equal($("app-version").textContent, "v0.4.1-preview");
     assert.match($("app-version").getAttribute("href"), /CHANGELOG\.md$/);
 });
 test("learning selection remains unchecked across navigation and is never submitted or graded", async () => {
@@ -325,7 +367,7 @@ test("question report uses a prefilled public issue without uploading learner st
     const body = url.searchParams.get("body");
     assert.match(body, /Question ID: q1/);
     assert.match(body, /Question revision: question-revision-test/);
-    assert.match(body, /App version: 0.4.0-preview/);
+    assert.match(body, /App version: 0.4.1-preview/);
     for (const privateData of ["PRIVATE CONVERSATION", "PRIVATE DRAFT", "test-attempt", "token=test", "selected"]) {
         assert.ok(!body.includes(privateData), privateData);
     }

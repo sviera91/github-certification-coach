@@ -1,6 +1,8 @@
 const token = new URL(import.meta.url).searchParams.get("token");
 const { translate, localizePage, hasTranslation } = await import(new URL(`./i18n.mjs?token=${token}`, import.meta.url));
 const { renderMarkdown } = await import(new URL(`./markdown.mjs?token=${token}`, import.meta.url));
+const isLite = document.documentElement.dataset.edition === "lite";
+let liteAPI;
 const $ = id => document.getElementById(id);
 let state, index = 0, busy = false, signature = "", view = "catalog", reviewFilter = "attention";
 let reviewingQuestion;
@@ -134,11 +136,16 @@ function resources(items) {
     return list;
 }
 function showError(error, translated = false) {
+    if ($("lite-loading")) $("lite-loading").hidden = true;
     $("error").textContent = translated ? error.message : hasTranslation(error.message) ? t(error.message) :
         t("System message: {message}", { message: error.message });
     $("error").hidden = false;
 }
 async function api(action, extra = {}) {
+    if (isLite) {
+        liteAPI ??= (await import("./lite-api.mjs")).createLiteAPI();
+        return liteAPI(action, extra);
+    }
     const response = await fetch(action ? "/api/action" : "/api/state", {
         method: action ? "POST" : "GET",
         headers: { "x-coach-token": token, ...(action ? { "Content-Type": "application/json" } : {}) },
@@ -197,6 +204,7 @@ async function goQuestion(questionIndex) {
 }
 function render() {
     if (!state) return;
+    if ($("lite-loading")) $("lite-loading").hidden = true;
     const exam = selectedExam();
     localizePage(document, state.language ?? "en");
     $("language").querySelector(`option[value="${state.language ?? "en"}"]`).selected = true;
@@ -271,7 +279,7 @@ function renderPrep(exam) {
     $("bank-review-note").textContent = t(active ? "Finish this certification's active attempt before opening answer-key content review." :
         "Local human review records travel with this installation. Review is not a secure reviewer role.");
     document.querySelector('[data-mode="exam"]').disabled = !exam.fullLengthAvailable;
-    for (const mode of ["learn", "coach"]) document.querySelector(`[data-mode="${mode}"]`).disabled = !exam.questionCount;
+    for (const mode of ["learn", "coach"]) document.querySelector(`[data-mode="${mode}"]`).disabled = !exam.questionCount || isLite && mode === "coach";
     renderHistory($("mock-history"));
 }
 function renderAttempt(exam) {
@@ -437,6 +445,7 @@ function renderScore(score) {
     renderHistory($("score"), true);
 }
 function appendGuidance(container, result) {
+    if (isLite) return;
     const request = button(t("Ask Copilot for a study plan"), () => act("guidance", { resultId: result.id }));
     request.disabled = busy || Boolean(result.guidance?.pending);
     setIcon(request, "light-bulb");
@@ -562,7 +571,9 @@ for (const id of ["study-domain", "study-filter"]) $(id).onchange = () =>
 $("retry-question").onclick = () => act("retry_question", { questionId: state.attempt.entries[index].id });
 $("explain-further").onclick = () => act("explain", { questionId: state.attempt.entries[index].id });
 $("reset-study").onclick = async () => {
-    if (await confirmAction("Reset study progress?", "This clears this certification's Learn and AI Coach answers, flags, and coaching history. Mock results are not changed. This cannot be undone.")) {
+    if (await confirmAction("Reset study progress?", isLite ?
+        "This clears this certification's Learn answers and flags in this browser. Mock results are not changed. This cannot be undone." :
+        "This clears this certification's Learn and AI Coach answers, flags, and coaching history. Mock results are not changed. This cannot be undone.")) {
         await act("reset_study", { confirm: true });
     }
 };
@@ -644,6 +655,7 @@ function openReport(kind) {
     reportReturnView = view;
     reportContext = {
         kind, exam: exam.name, examId: exam.id, version: state.appVersion ?? "unknown",
+        edition: isLite ? "Lite (browser)" : "Copilot desktop canvas",
         language: state.language ?? "en",
         ...(question ? { contentLanguage: state.attempt.contentLanguage ?? state.language ?? "en" } : {}),
         ...(question ? { questionId: question.id, revision: question.revision ?? "unknown", domain: question.domain } : {}),
@@ -668,6 +680,7 @@ function updateReport() {
         ...(steps ? ["", "## Steps to reproduce / expected behavior", steps] : []),
         "", "## Context",
         `- App version: ${reportContext.version}`,
+        `- Experience: ${reportContext.edition}`,
         `- Certification: ${reportContext.exam} (${reportContext.examId})`,
         `- Interface language: ${reportContext.language}`,
         ...(reportContext.questionId ? [
@@ -717,7 +730,8 @@ setInterval(async () => {
         if (connectionErrorText && $("error").textContent === connectionErrorText) $("error").hidden = true;
         connectionErrorText = undefined;
     } catch (error) {
-        showError(new Error(t("Connection lost: {message}", { message: error.message })), true);
+        showError(new Error(t(isLite ? "Could not read browser progress: {message}" :
+            "Connection lost: {message}", { message: error.message })), true);
         connectionErrorText = $("error").textContent;
     }
 }, 1500);

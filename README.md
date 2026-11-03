@@ -1,7 +1,7 @@
 # GitHub Certification Coach
 
 An unofficial, local GitHub certification practice canvas for the Copilot
-desktop app. All AI-authored question banks start as **Preview**, not as a
+desktop app, with a browser-only **Lite** companion. All AI-authored question banks start as **Preview**, not as a
 validated certification-readiness assessment. They remain Preview until
 every current question revision has been reviewed and approved by a human
 and the full pool/coverage targets are met.
@@ -13,10 +13,40 @@ history; the canvas version badge links to it.
 Answers, mock scores, flags, and coaching history are never uploaded to GitHub.
 See [Storage and upgrades](#storage-and-upgrades) for the exact local path.
 
+## Website and browser-only Lite
+
+Visit the [landing page](https://sviera91.github.io/github-certification-coach/)
+or [open Lite](https://sviera91.github.io/github-certification-coach/lite/).
+Lite runs entirely as a static GitHub Pages application using the same banks,
+mock sampling, grading, and Learn engine as the desktop canvas.
+
+Lite includes **Mock exam** and **Learn**, with all six GitHub certifications
+and English, Spanish, and Brazilian Portuguese practice. It does **not** include
+AI Coach, Explain further with Copilot, or AI-generated study plans. No sign-in,
+Copilot subscription, API key, or installation is required.
+
+Progress is saved in **IndexedDB in this browser**, separately from desktop
+progress. It is not uploaded or synchronized. Clearing site data, private
+browsing, browser cleanup, or switching devices/profiles can remove or hide it.
+Use a current browser over HTTPS (or localhost); Web Locks prevent competing
+tabs from overwriting saved answers. Storage failures are shown explicitly.
+Timed mocks continue while the page is closed and submit on the next visit
+after their deadline. Static practice code contains answer keys; Lite is a
+study tool, not a secure proctored exam.
+
+GitHub Pages receives ordinary website requests, and external artwork/study
+links use their respective hosts. This project adds no analytics, tracking
+scripts, or learner-progress uploads. Public issue reports remain an explicit
+user-reviewed GitHub form.
+
+The site explains the AI-authored Preview status and invites human validation
+and QA. See [Contributing](CONTRIBUTING.md) and the [roadmap](ROADMAP.md).
+Azure, Terraform, GCP, and AWS are future ideas only.
+
 ## Install for employees and partners
 
-This is a Copilot desktop **canvas extension**, not a GitHub Pages website,
-VS Code extension, or standalone browser app. You need a Copilot desktop build
+The full experience is a Copilot desktop **canvas extension**, not a
+VS Code extension; Lite is its separate GitHub Pages companion. You need a Copilot desktop build
 that supports custom canvas extensions, access to Copilot under your own plan
 and organization policies, Git, and Node.js 22 or newer for the installer.
 No hosting account, operator model API key, or npm dependencies are needed to
@@ -41,6 +71,29 @@ entire installed extension folder: it may contain their private progress.
 If the canvas is not discovered after restarting, verify that your desktop
 build supports custom canvases. A browser or VS Code Copilot installation alone
 cannot host it.
+
+## Build and deploy the website
+
+With Node.js 22 or newer:
+
+```sh
+npm ci --ignore-scripts
+npm run build
+npm run build:pages
+```
+
+The explicit public build goes to ignored `_site/`: landing page at `/` and
+Lite at `/lite/`. Only runtime assets and bundled question/review content are
+published, never installed extension folders or learner artifacts.
+Serve it with a static HTTP server, such as
+`python3 -m http.server 8080 --directory _site`, and use localhost.
+Do not open it using `file://`.
+
+In the repository's **Settings > Pages**, choose **GitHub Actions** as the
+source. `.github/workflows/pages.yml` builds, checks the banks, runs unit and
+browser checks, and deploys after a push to `main` or a manual dispatch.
+Relative asset URLs support the repository subpath without a custom domain.
+The installed desktop canvas does not require the Pages build or a website.
 
 ## Certifications and preparation
 

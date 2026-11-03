@@ -4,7 +4,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 export const runtimeFiles = [
-    "extension.mjs", "engine.mjs", "exams.mjs", "bank-utils.mjs", "questions.mjs",
+    "extension.mjs", "engine.mjs", "engine-core.mjs", "exams.mjs", "bank-utils.mjs", "questions.mjs",
     "server.mjs", "client.mjs", "i18n.mjs", "markdown.mjs", "index.html", "style.css", "bank-reviews.json",
     "copilot-extension.json", "README.md", "LICENSE", "THIRD-PARTY-NOTICES.md",
     "banks/foundations.mjs", "banks/administration.mjs", "banks/security.mjs", "banks/copilot.mjs",

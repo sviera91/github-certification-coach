@@ -10,14 +10,18 @@
   "scripts": {
     "install:extension": "node install.mjs",
     "build": "node build-assets.mjs",
+    "build:pages": "node build-pages.mjs",
+    "test:pages": "node --test pages.browser.test.mjs",
     "check:banks": "node check-banks.mjs",
     "check:sources": "node check-sources.mjs",
     "export:reviews": "node export-reviews.mjs",
     "review:export": "node review-packets.mjs export",
     "review:import": "node review-packets.mjs import",
-    "test": "node --test prototype.test.mjs study.test.mjs client.test.mjs markdown.test.mjs install.test.mjs review-packets.test.mjs"
+    "test": "node --test prototype.test.mjs study.test.mjs client.test.mjs markdown.test.mjs install.test.mjs review-packets.test.mjs lite.test.mjs"
   },
   "devDependencies": {
+    "@noble/hashes": "2.4.0",
+    "@playwright/test": "1.64.1",
     "@primer/css": "22.3.2",
     "@primer/octicons": "19.40.0",
     "@primer/primitives": "11.10.0",

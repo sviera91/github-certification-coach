@@ -16,6 +16,13 @@ licenses and copyright notices, reproduced in `vendor/LICENSES.txt`.
 reproduced in `vendor/LICENSES.txt`. These libraries tokenize Markdown and decode
 character references; original application code creates the permitted DOM nodes.
 
+## Browser cryptography
+
+The Lite bundle includes `@noble/hashes` (MIT license) to calculate the same
+SHA-256 content revisions as the desktop engine. Its copyright and license
+notice are retained inline in the generated browser bundle and reproduced in
+the Pages output's `LICENSES.txt`.
+
 ## Certification artwork
 
 The interface references the badge images served by GitHub Learn for

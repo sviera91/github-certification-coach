@@ -1,4 +1,10 @@
 const entries = [
+    ["Could not read browser progress: {message}", "No se pudo leer el progreso del navegador: {message}", "Não foi possível ler o progresso do navegador: {message}"],
+    ["This clears this certification's Learn answers and flags in this browser. Mock results are not changed. This cannot be undone.", "Esto borra las respuestas y marcas de Aprender de esta certificación en este navegador. No cambia los resultados de simulacros. No se puede deshacer.", "Isso apaga as respostas e marcações de Aprender desta certificação neste navegador. Não altera resultados de simulados. Não é possível desfazer."],
+    ["Certification Coach Lite", "Preparación para certificaciones Lite", "Preparação para certificações Lite"],
+    ["Study is ungraded. Your Learn answers and flags are saved in this browser.", "El estudio no se califica. Tus respuestas y marcas de Aprender se guardan en este navegador.", "O estudo não recebe nota. Suas respostas e marcações de Aprender são salvas neste navegador."],
+    ["Lite stores progress in this browser only. Clearing site data can remove it. Closing the page does not pause a timed mock. No Copilot calls or progress uploads.", "Lite guarda el progreso solo en este navegador. Borrar los datos del sitio puede eliminarlo. Cerrar la página no pausa un simulacro. No hay llamadas a Copilot ni cargas de progreso.", "Lite salva o progresso somente neste navegador. Limpar os dados do site pode apagá-lo. Fechar a página não pausa um simulado. Não há chamadas ao Copilot nem envio de progresso."],
+    ["Report Lite issue", "Informar un problema de Lite", "Relatar um problema no Lite"],
     ["Required field", "Campo obligatorio", "Campo obrigatório"],
     ["(optional)", "(opcional)", "(opcional)"],
     ["Practice bands: needs focus below 70; building confidence 70–84; strong practice result 85–100.", "Bandas de práctica: necesita refuerzo por debajo de 70; desarrollando confianza de 70 a 84; buen resultado de práctica de 85 a 100.", "Faixas de prática: precisa de atenção abaixo de 70; ganhando confiança de 70 a 84; bom resultado de prática de 85 a 100."],

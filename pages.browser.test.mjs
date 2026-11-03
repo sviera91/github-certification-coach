@@ -1,39 +1,20 @@
 import { test, before, after } from "node:test";
 import assert from "node:assert/strict";
-import { createServer } from "node:http";
-import { readFile } from "node:fs/promises";
 import { chromium, expect } from "@playwright/test";
 import { exams } from "./exams.mjs";
+import { startPreview } from "./preview-pages.mjs";
 
 await import("./build-pages.mjs");
-let browser, server, base;
+let browser, server, base, landingURL;
 before(async () => {
-    server = createServer(async (req, res) => {
-        const url = new URL(req.url, "http://localhost");
-        const prefix = "/github-certification-coach/";
-        if (!url.pathname.startsWith(prefix) || url.pathname.includes("..")) {
-            res.writeHead(404).end();
-            return;
-        }
-        let name = url.pathname.slice(prefix.length);
-        if (!name || name.endsWith("/")) name += "index.html";
-        try {
-            const data = await readFile(new URL(`./_site/${name}`, import.meta.url));
-            const type = name.endsWith(".html") ? "text/html" : /\.(m?js)$/.test(name) ? "text/javascript" :
-                name.endsWith(".css") ? "text/css" : "text/plain";
-            res.writeHead(200, { "Content-Type": type }).end(data);
-        } catch (error) {
-            if (error.code !== "ENOENT") throw error;
-            res.writeHead(404).end();
-        }
-    });
-    await new Promise(resolve => server.listen(0, "127.0.0.1", resolve));
-    base = `http://127.0.0.1:${server.address().port}/github-certification-coach/`;
+    server = await startPreview();
+    base = `${server.origin}/github-certification-coach/`;
+    landingURL = `${server.origin}/certification-coach/`;
     browser = await chromium.launch({ channel: process.env.PLAYWRIGHT_CHANNEL || undefined });
 });
 after(async () => {
     await browser?.close();
-    if (server) await new Promise(resolve => server.close(resolve));
+    await server?.close();
 });
 
 async function open(t, options = {}) {
@@ -55,15 +36,15 @@ async function chooseFoundations(page) {
     await expect(page.locator("#setup")).toBeVisible();
 }
 
-test("landing and Lite load under a repository subpath in both themes and on narrow screens", async t => {
+test("Lite uses the canvas Primer themes under its repository path", async t => {
     for (const colorScheme of ["light", "dark"]) {
         const { page } = await open(t, { colorScheme, viewport: { width: 390, height: 844 } });
         await page.goto(base);
-        await expect(page.locator("h1")).toHaveText(/Build knowledge/);
-        assert.equal(await page.locator("html").getAttribute("data-theme"), colorScheme);
-        assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
-        await page.getByRole("link", { name: /Try Lite in your browser/ }).click();
+        assert.equal(page.url(), base);
         await expect(page.locator("#exam-cards .exam-card")).toHaveCount(6);
+        assert.equal(await page.locator("html").getAttribute("data-color-mode"), colorScheme);
+        assert.equal(await page.evaluate(() => getComputedStyle(document.body).backgroundColor),
+            colorScheme === "light" ? "rgb(255, 255, 255)" : "rgb(13, 17, 23)");
         assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
         await chooseFoundations(page);
         await expect(page.locator('[data-mode="coach"]')).toBeHidden();
@@ -72,12 +53,14 @@ test("landing and Lite load under a repository subpath in both themes and on nar
         await expect(page.locator("#question")).toContainText(/\S/);
         await expect(page.locator("#coaching")).toBeHidden();
         await expect(page.locator("#explain-further")).toBeHidden();
+        assert.equal(await page.getByRole("link", { name: "About Certification Coach" }).getAttribute("href"),
+            "../certification-coach/");
     }
 });
 
 test("Learn persists unchecked drafts and fixed explanations across reload, including translation", async t => {
     const { page } = await open(t);
-    await page.goto(`${base}lite/`);
+    await page.goto(base);
     await chooseFoundations(page);
     await page.locator('[data-mode="learn"]').click();
     await expect(page.locator("#attempt")).toBeVisible();
@@ -105,7 +88,7 @@ test("Learn persists unchecked drafts and fixed explanations across reload, incl
 
 test("Mock autosaves final choices, resumes, reviews before grading, and never shows Copilot actions", async t => {
     const { page } = await open(t);
-    await page.goto(`${base}lite/`);
+    await page.goto(base);
     await chooseFoundations(page);
     await page.locator('[data-mode="exam"]').click();
     await expect(page.locator("#attempt")).toBeVisible();
@@ -133,11 +116,11 @@ test("Mock autosaves final choices, resumes, reviews before grading, and never s
 
 test("IndexedDB persists coordinated writes from two tabs and reports storage failures explicitly", async t => {
     const { page, context } = await open(t);
-    await page.goto(`${base}lite/`);
+    await page.goto(base);
     await chooseFoundations(page);
     await page.locator('[data-mode="learn"]').click();
     const second = await context.newPage();
-    await second.goto(`${base}lite/`);
+    await second.goto(base);
     const change = async (target, index, choice) => target.evaluate(async ({ index, choice }) => {
         const api = (await import("./lite-api.mjs")).createLiteAPI();
         const state = await api();
@@ -153,7 +136,7 @@ test("IndexedDB persists coordinated writes from two tabs and reports storage fa
     await failure.addInitScript(() => {
         Object.defineProperty(window, "indexedDB", { value: undefined });
     });
-    await failure.goto(`${base}lite/`);
+    await failure.goto(base);
     await expect(failure.locator("#error")).toBeVisible();
     await expect(failure.locator("#error")).toContainText("Browser storage is unavailable");
 });
@@ -163,7 +146,23 @@ test("a failed Lite bundle download shows an error instead of leaving a blank or
     t.after(() => context.close());
     await context.route("**/lite-api.mjs", route => route.abort());
     const page = await context.newPage();
-    await page.goto(`${base}lite/`);
+    await page.goto(base);
     await expect(page.locator("#error")).toBeVisible();
     await expect(page.locator("#lite-loading")).toBeHidden();
+});
+
+test("old /lite/ bookmarks load the same practice modules and retain browser progress", async t => {
+    const { page } = await open(t);
+    await page.goto(base);
+    await chooseFoundations(page);
+    await page.locator('[data-mode="learn"]').click();
+    await expect(page.locator("#attempt")).toBeVisible();
+    await page.locator('#choices input[type="radio"]').nth(1).check();
+    await expect(page.locator("#save-status")).toContainText("not checked");
+    await page.goto(`${base}lite/`);
+    await chooseFoundations(page);
+    await page.locator("#resume").click();
+    await expect(page.locator('#choices input[type="radio"]').nth(1)).toBeChecked();
+    assert.equal(await page.getByRole("link", { name: "About Certification Coach" }).getAttribute("href"),
+        "../../certification-coach/");
 });

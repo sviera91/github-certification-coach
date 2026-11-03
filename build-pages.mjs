@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile, copyFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile, copyFile, rm } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 import { build } from "esbuild";
@@ -6,11 +6,19 @@ import { parseHTML } from "linkedom";
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 const output = path.join(root, "_site");
-await mkdir(path.join(output, "lite", "vendor"), { recursive: true });
+await Promise.all([
+    mkdir(path.join(output, "vendor"), { recursive: true }),
+    mkdir(path.join(output, "lite"), { recursive: true }),
+]);
+// Remove only named assets from the previous combined-site build.
+await Promise.all(["landing.css", "theme.css", "theme.js",
+    "lite/client.mjs", "lite/i18n.mjs", "lite/markdown.mjs", "lite/lite-api.mjs",
+    "lite/vendor/markdown-parser.mjs",
+].map(file => rm(path.join(output, file), { force: true })));
 
-const [template, primer, style, send, icons, themeScript, themeCSS, liteCSS] = await Promise.all([
+const [template, primer, style, send, icons, liteCSS] = await Promise.all([
     "index.html", "vendor/primer.css", "style.css", "vendor/send.svg", "vendor/icons.svg",
-    "web/theme.js", "web/theme.css", "web/lite.css",
+    "web/lite.css",
 ].map(file => readFile(path.join(root, file), "utf8")));
 
 const { document } = parseHTML(template.replace("__PRIMER__", primer).replace("__STYLE__", style)
@@ -18,9 +26,8 @@ const { document } = parseHTML(template.replace("__PRIMER__", primer).replace("_
 document.documentElement.dataset.edition = "lite";
 document.title = "Certification Coach Lite | GitHub practice";
 document.querySelector("h1").textContent = "Certification Coach Lite";
-document.querySelector("head script").textContent = `${themeScript}\ndocument.documentElement.setAttribute("data-color-mode", document.documentElement.getAttribute("data-theme"));`;
 const css = document.createElement("style");
-css.textContent = `${themeCSS}\n${liteCSS}`;
+css.textContent = liteCSS;
 document.head.append(css);
 const unavailable = [
     '[data-mode="coach"]', '#study-mode', "#coaching", "#explain-further",
@@ -40,7 +47,7 @@ document.querySelector("footer > span").textContent = "Lite stores progress in t
 document.querySelector("#report-canvas").textContent = "Report Lite issue";
 const links = document.createElement("div");
 links.className = "lite-links";
-links.innerHTML = '<a href="../">About Certification Coach</a><a href="https://github.com/sviera91/github-certification-coach#install-for-employees-and-partners" target="_blank" rel="noreferrer">Install full canvas</a><a href="https://github.com/sviera91/github-certification-coach/blob/main/CONTRIBUTING.md" target="_blank" rel="noreferrer">Help validate AI-authored questions</a>';
+links.innerHTML = '<a href="../certification-coach/">About Certification Coach</a><a href="https://github.com/sviera91/github-certification-coach#install-for-employees-and-partners" target="_blank" rel="noreferrer">Install full canvas</a><a href="https://github.com/sviera91/github-certification-coach/blob/main/CONTRIBUTING.md" target="_blank" rel="noreferrer">Help validate AI-authored questions</a>';
 document.querySelector("#notice").before(links);
 const loading = document.createElement("p");
 loading.id = "lite-loading";
@@ -55,23 +62,25 @@ contribution.innerHTML = 'Human approval is not recorded in Lite. <a href="https
 document.querySelector("#bank-review").after(contribution);
 document.querySelector('script[type="module"]').src = "./client.mjs";
 for (const node of document.querySelectorAll("[nonce]")) node.removeAttribute("nonce");
+await writeFile(path.join(output, "index.html"), document.toString());
+// Keep existing /lite/ bookmarks working without copying the practice bundle.
+document.querySelector('script[type="module"]').src = "../client.mjs";
+links.firstElementChild.href = "../../certification-coach/";
 await writeFile(path.join(output, "lite", "index.html"), document.toString());
 
 // Only explicit public runtime assets are published; no learner artifacts or installed folders.
 await Promise.all([
-    ...["index.html", "theme.js", "theme.css", "landing.css"].map(file =>
-        copyFile(path.join(root, "web", file), path.join(output, file))),
     ...["client.mjs", "i18n.mjs", "markdown.mjs", "vendor/markdown-parser.mjs"].map(file =>
-        copyFile(path.join(root, file), path.join(output, "lite", file))),
+        copyFile(path.join(root, file), path.join(output, file))),
     ...["LICENSE", "THIRD-PARTY-NOTICES.md"].map(file => copyFile(path.join(root, file), path.join(output, file))),
     writeFile(path.join(output, "LICENSES.txt"), `${await readFile(path.join(root, "vendor", "LICENSES.txt"), "utf8")}\n\n@noble/hashes\n${await readFile(path.join(root, "node_modules", "@noble", "hashes", "LICENSE"), "utf8")}`),
     writeFile(path.join(output, ".nojekyll"), ""),
 ]);
 await build({
     entryPoints: [path.join(root, "lite-api.mjs")],
-    outfile: path.join(output, "lite", "lite-api.mjs"),
+    outfile: path.join(output, "lite-api.mjs"),
     bundle: true, format: "esm", platform: "browser", target: "es2022",
     alias: { "node:crypto": path.join(root, "web", "crypto.mjs") },
     legalComments: "inline", minify: true,
 });
-console.log("Built public landing page and browser-only Lite in _site/.");
+console.log("Built canvas-styled GitHub Lite in _site/. The landing page is maintained in sviera91/certification-coach.");

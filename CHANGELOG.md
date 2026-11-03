@@ -6,6 +6,18 @@ installed.
 
 ## Unreleased
 
+### Website redesign and platform separation
+
+- Replace the landing page's rose theme with a white Primer design, native
+  buttons, Octicons, certification artwork, and a real bank-question preview.
+- Restore the desktop canvas's unmodified Primer styling and theme detection
+  in Lite.
+- Move the white Primer landing and umbrella roadmap to
+  `sviera91/certification-coach`. Keep GitHub code, question reviews, and issues
+  here, with Lite at `/github-certification-coach/`.
+- Preserve `/lite/` bookmarks and browser progress, and add local split-site
+  preview support.
+
 ### Added
 
 - Public landing page explaining the desktop canvas, installation, browser-only

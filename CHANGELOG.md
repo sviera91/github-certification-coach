@@ -6,7 +6,23 @@ installed.
 
 ## Unreleased
 
-No unreleased changes.
+### Added
+
+- Public landing page explaining the desktop canvas, installation, browser-only
+  Lite, AI-authored Preview content, and the need for human validation and QA.
+- Static GitHub Pages Lite with the shared Mock exam and Learn engine, browser
+  IndexedDB persistence, cross-tab coordination, and explicit storage errors.
+  Lite has no AI Coach, Copilot explanations, or AI-generated study plans.
+- Explicit-allowlist Pages build, automated deployment, browser checks, and a
+  human contribution guide.
+- Roadmap identifying Azure exam practice and Terraform/GCP/AWS as future ideas
+  only, with no committed exam list, scope, or release dates.
+
+### Changed
+
+- Separate engine persistence from practice behavior so desktop and Lite share
+  sampling, grading, timer, study, translation, and review logic. Desktop still
+  uses its existing local learner-state path and atomic file writes.
 
 ## 0.4.2-preview - 2026-10-20
 

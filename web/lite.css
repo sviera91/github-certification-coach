@@ -1,0 +1,38 @@
+html[data-edition="lite"][data-color-mode] {
+  --bgColor-default: var(--cp-surface);
+  --bgColor-muted: var(--cp-bg-elevated);
+  --bgColor-accent-muted: var(--cp-accent-soft);
+  --bgColor-success-muted: var(--cp-surface-soft);
+  --bgColor-danger-muted: var(--cp-surface-soft);
+  --bgColor-attention-muted: var(--cp-surface-soft);
+  --bgColor-neutral-muted: var(--cp-surface-soft);
+  --fgColor-default: var(--cp-text);
+  --fgColor-muted: var(--cp-text-muted);
+  --fgColor-accent: var(--cp-accent);
+  --fgColor-success: var(--cp-success);
+  --fgColor-danger: var(--cp-danger);
+  --fgColor-attention: var(--cp-warning);
+  --borderColor-default: var(--cp-border);
+  --borderColor-muted: var(--cp-border);
+  --borderColor-emphasis: var(--cp-border-strong);
+  --borderColor-accent-emphasis: var(--cp-accent);
+  --borderColor-success-emphasis: var(--cp-success);
+  --borderColor-danger-emphasis: var(--cp-danger);
+  --focus-outlineColor: var(--cp-accent);
+}
+html[data-edition="lite"] .desktop-only { display: none !important; }
+body { background: var(--cp-bg); font-family: "Segoe UI", Aptos, Calibri, -apple-system, BlinkMacSystemFont, sans-serif; }
+.card, .score-card, .notice, .choice, .btn, .form-control, .form-select { border-radius: .625rem; }
+.exam-card { border-radius: 16px; }
+.modes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.lite-links { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; }
+.btn { background: var(--cp-surface); color: var(--cp-text); border-color: var(--cp-border-strong); }
+.btn:hover { background: var(--cp-surface-soft); border-color: var(--cp-accent); }
+.btn-primary { background: var(--cp-accent); color: var(--cp-accent-fg); border-color: var(--cp-accent); }
+.btn-primary:hover { background: var(--cp-accent-hover); color: var(--cp-accent-fg); }
+.btn:disabled, .btn[aria-disabled="true"] { background: var(--cp-surface-soft); color: var(--cp-text-muted); border-color: var(--cp-border); box-shadow: none; }
+.btn:focus-visible { box-shadow: none; outline: 2px solid var(--cp-accent); outline-offset: 2px; }
+.btn-danger { color: var(--cp-danger); }
+.form-select, .form-control { background-color: var(--cp-surface); color: var(--cp-text); border-color: var(--cp-border); }
+.form-select { background-image: none; appearance: auto; padding-right: 12px; }
+@media (max-width: 600px) { .modes { grid-template-columns: 1fr; } }

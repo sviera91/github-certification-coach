@@ -10,9 +10,9 @@ import { translations as securityLanguages } from "./translations/security.mjs";
 import { translations as copilotLanguages } from "./translations/copilot.mjs";
 import { translations as actionsLanguages } from "./translations/actions.mjs";
 import { translations as agenticLanguages } from "./translations/agentic.mjs";
-import { readFileSync } from "node:fs";
+import bundledReviews from "./bank-reviews.json" with { type: "json" };
 export { assemble, publicExam } from "./bank-utils.mjs";
-export const bundledReviews = JSON.parse(readFileSync(new URL("./bank-reviews.json", import.meta.url), "utf8"));
+export { bundledReviews };
 
 const learn = "https://learn.microsoft.com/en-us";
 const badgeAssets = {

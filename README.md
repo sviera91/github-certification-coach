@@ -15,8 +15,11 @@ See [Storage and upgrades](#storage-and-upgrades) for the exact local path.
 
 ## Website and browser-only Lite
 
-Visit the [landing page](https://sviera91.github.io/github-certification-coach/)
-or [open Lite](https://sviera91.github.io/github-certification-coach/lite/).
+Visit the [Certification Coach landing page](https://sviera91.github.io/certification-coach/)
+or [GitHub Lite](https://sviera91.github.io/github-certification-coach/).
+The landing page and cross-platform roadmap live in
+[`sviera91/certification-coach`](https://github.com/sviera91/certification-coach);
+this repository owns the GitHub implementation, banks, reviews, and issues.
 Lite runs entirely as a static GitHub Pages application using the same banks,
 mock sampling, grading, and Learn engine as the desktop canvas.
 
@@ -82,16 +85,21 @@ npm run build
 npm run build:pages
 ```
 
-The explicit public build goes to ignored `_site/`: landing page at `/` and
-Lite at `/lite/`. Only runtime assets and bundled question/review content are
+The explicit public build goes to ignored `_site/`: Lite at `/`, with `/lite/`
+retained for existing bookmarks and browser progress. Only runtime assets and bundled question/review content are
 published, never installed extension folders or learner artifacts.
-Serve it with a static HTTP server, such as
-`python3 -m http.server 8080 --directory _site`, and use localhost.
-Do not open it using `file://`.
+Run `npm run preview:pages` to preview Lite on localhost at
+`/github-certification-coach/`. It can also serve the separately checked-out
+landing repository at `/certification-coach/`; set `LANDING_DIRECTORY` to
+that checkout's path (defaults to sibling `Certification Coach Website`).
+Do not open the HTML using `file://`. Lite inherits the desktop canvas's
+Primer styles and theme detection.
 
 In the repository's **Settings > Pages**, choose **GitHub Actions** as the
 source. `.github/workflows/pages.yml` builds, checks the banks, runs unit and
 browser checks, and deploys after a push to `main` or a manual dispatch.
+That workflow uploads only `_site/` (Lite). The landing has its own repository
+and deployment workflow.
 Relative asset URLs support the repository subpath without a custom domain.
 The installed desktop canvas does not require the Pages build or a website.
 

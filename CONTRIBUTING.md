@@ -59,9 +59,14 @@ then `npm run test:pages`. To use an already installed Google Chrome instead,
 set `PLAYWRIGHT_CHANNEL=chrome`. CI installs Chromium and runs these checks
 before deploying Pages.
 
-Serve `_site/` with any static HTTP server, for example
-`python3 -m http.server 8080 --directory _site`, and open
-`http://localhost:8080/` or `/lite/`. Web Locks and browser cryptography require
+Run `npm run preview:pages` and open
+`http://127.0.0.1:8766/github-certification-coach/` for Lite.
+The build produces only Lite in `_site/`. The landing page, cross-platform
+roadmap, and platform proposals live in
+[`sviera91/certification-coach`](https://github.com/sviera91/certification-coach).
+To preview that separate checkout alongside Lite, set `LANDING_DIRECTORY`
+to its path; it is served at `/certification-coach/`.
+Web Locks and browser cryptography require
 HTTPS or localhost; do not open the HTML directly using `file://`.
 
 The Pages build publishes an explicit public runtime allowlist, not the
@@ -71,4 +76,6 @@ installed extension directory. Never add progress, tokens, credentials,
 ## Future certification ideas
 
 See [the roadmap](ROADMAP.md). Azure, Terraform, GCP, and AWS are future ideas,
-not implemented features. Keep proposals separate from current GitHub content.
+not implemented features. Submit cross-platform proposals in the landing
+repository, not alongside GitHub question reports. Each future platform will
+own its content, reviews, issues, and implementation in a separate repository.

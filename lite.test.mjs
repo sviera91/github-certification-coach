@@ -8,7 +8,7 @@ import { createHash, randomInt } from "./web/crypto.mjs";
 import { exams } from "./exams.mjs";
 
 await import("./build-pages.mjs");
-const { createLiteAPI: bundledAPI } = await import("./_site/lite/lite-api.mjs");
+const { createLiteAPI: bundledAPI } = await import("./_site/lite-api.mjs");
 
 function fixture(factory = createLiteAPI, options = {}) {
     let tail = Promise.resolve();
@@ -129,7 +129,7 @@ test("the browser bundle runs the same engine and produces identical content rev
 });
 
 test("Pages output uses relative assets, disables desktop-only controls, and publishes only public files", async () => {
-    const { document } = parseHTML(await readFile(new URL("./_site/lite/index.html", import.meta.url), "utf8"));
+    const { document } = parseHTML(await readFile(new URL("./_site/index.html", import.meta.url), "utf8"));
     assert.equal(document.documentElement.dataset.edition, "lite");
     assert.equal(document.querySelector('script[type="module"]').getAttribute("src"), "./client.mjs");
     assert.ok(document.querySelector('[data-mode="coach"]').classList.contains("desktop-only"));
@@ -140,10 +140,9 @@ test("Pages output uses relative assets, disables desktop-only controls, and pub
     assert.ok(!document.toString().includes("__NONCE__"));
     const files = await readdir(new URL("./_site/", import.meta.url));
     assert.deepEqual(files.sort(), [".nojekyll", "LICENSE", "LICENSES.txt", "THIRD-PARTY-NOTICES.md",
-        "index.html", "landing.css", "lite", "theme.css", "theme.js"].sort());
-    const landing = await readFile(new URL("./_site/index.html", import.meta.url), "utf8");
-    assert.match(landing, /AI-created questions. Human validation needed/);
-    assert.match(landing, /future ideas, not shipped features/);
-    assert.match(landing, /href="lite\/"/);
-    assert.doesNotMatch(landing, /127\.0\.0\.1|token=/);
+        "index.html", "client.mjs", "i18n.mjs", "markdown.mjs", "lite-api.mjs", "vendor", "lite"].sort());
+    assert.doesNotMatch(document.toString(), /--cp-|var\(--cp-/);
+    const legacy = parseHTML(await readFile(new URL("./_site/lite/index.html", import.meta.url), "utf8")).document;
+    assert.equal(legacy.querySelector('script[type="module"]').getAttribute("src"), "../client.mjs");
+    assert.equal(legacy.querySelector(".lite-links a").getAttribute("href"), "../../certification-coach/");
 });

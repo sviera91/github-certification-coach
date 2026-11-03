@@ -11,6 +11,7 @@
     "install:extension": "node install.mjs",
     "build": "node build-assets.mjs",
     "build:pages": "node build-pages.mjs",
+    "preview:pages": "node preview-pages.mjs",
     "test:pages": "node --test pages.browser.test.mjs",
     "check:banks": "node check-banks.mjs",
     "check:sources": "node check-sources.mjs",

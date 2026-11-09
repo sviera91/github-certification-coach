@@ -14,6 +14,9 @@ installed.
 - Cover the complete July 2026 blueprint rather than overfit the smaller
   practice assessment: identities, enterprise administration, security,
   Actions, and usage monitoring. Name relevant platform, role, and scope.
+- Replace fourteen overlapping questions with distinct transfer, ruleset import,
+  typed input, audit API, rate-limit, webhook, appliance-command, support, and
+  budget-boundary decisions across all three practice languages.
 - Keep technical syntax and English interface paths aligned across languages.
   Preserve domain quotas, four-choice single-answer questions,
   75-question/100-minute mocks, and private saved learner state.

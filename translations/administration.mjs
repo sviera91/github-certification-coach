@@ -981,23 +981,23 @@ export const translations = {
             ]
         },
         "admin-050": {
-            "prompt": "Un colaborador de un repositorio de organización necesita cambiar su rol de Read a Write. ¿Quién puede realizar directamente este cambio habitual de acceso?",
+            "prompt": "Un repositorio se transfiere entre organizaciones de GitHub.com y nadie reutiliza su ubicación anterior. ¿Qué ocurre si un clon usa la URL remota anterior para fetch?",
             "choices": [
-                "Un administrador de facturación empresarial sin acceso al repositorio",
-                "Un miembro con solo acceso Read",
-                "Un colaborador externo con solo acceso Triage",
-                "Un administrador del repositorio"
+                "Fetch falla hasta descargar de nuevo todo el historial del clon.",
+                "La URL anterior se convierte en una copia independiente permanente.",
+                "La URL anterior concede acceso sin importar los nuevos permisos.",
+                "Git redirige a la nueva ubicación; aun así se recomienda actualizar origin."
             ],
             "explanations": [
-                "La autoridad de facturación por sí sola no concede gestión de permisos.",
-                "Read no incluye gestionar permisos.",
-                "Triage no incluye gestionar permisos.",
-                "Los administradores pueden gestionar roles individuales y de equipos en el repositorio."
+                "La transferencia conserva el historial Git y redirige la URL anterior.",
+                "La ubicación anterior redirige; no es una segunda copia del repositorio.",
+                "La redirección no evita la autenticación ni la autorización del repositorio.",
+                "Las solicitudes clone, fetch y push se redirigen, pero la URL nueva evita depender de ello."
             ],
-            "concept": "Solicitudes de acceso que resuelve el administrador",
+            "concept": "Las transferencias redirigen las URL Git sin evitar comprobaciones de acceso.",
             "hints": [
-                "Distingue los ajustes del cliente de los fallos del producto o servicio.",
-                "Relaciona las pruebas y el derecho a soporte con el entorno afectado."
+                "Distingue la ubicación del repositorio de su historial Git.",
+                "Considera si una redirección también cambia la autorización."
             ]
         },
         "admin-051": {
@@ -1461,23 +1461,23 @@ export const translations = {
             ]
         },
         "admin-074": {
-            "prompt": "¿Cómo se combinan dos conjuntos de reglas activos que afectan a la misma rama si el actor no puede omitirlos?",
+            "prompt": "Una persona administra un repositorio y quiere importar una definición de ruleset existente desde la interfaz de otro repositorio. ¿Qué formato de archivo usa esta importación?",
             "choices": [
-                "Se aplican todas las reglas pertinentes",
-                "Solo se aplica el conjunto más reciente",
-                "Solo se aplica el conjunto del repositorio",
-                "El actor elige un conjunto"
+                "JSON",
+                "CSV",
+                "TOML",
+                "SARIF"
             ],
             "explanations": [
-                "Los conjuntos coincidentes se acumulan con los requisitos más restrictivos.",
-                "El orden de creación no selecciona el conjunto activo.",
-                "Las reglas del repositorio no sustituyen las de niveles superiores.",
-                "Los actores no pueden elegir qué reglas pertinentes cumplir."
+                "La interfaz de importación acepta una definición de ruleset en JSON.",
+                "Las tablas CSV no son el formato de importación de rulesets.",
+                "TOML no es el formato documentado de este importador.",
+                "SARIF representa resultados de análisis estático, no definiciones de rulesets."
             ],
-            "concept": "Superposición de conjuntos de reglas",
+            "concept": "Las definiciones de rulesets pueden importarse desde archivos JSON.",
             "hints": [
-                "Considera si los conjuntos sustituyen o acumulan controles.",
-                "Distingue la selección de ramas de los permisos de omisión."
+                "Identifica el objeto que se transfiere, no su resultado de aplicación.",
+                "Distingue una definición de política de un informe de análisis."
             ]
         },
         "admin-075": {
@@ -3001,23 +3001,23 @@ export const translations = {
             ]
         },
         "admin-151": {
-            "prompt": "¿Qué componente reutilizable puede definir trabajos separados de compilación y despliegue en lugar de ejecutarse dentro de un paso?",
+            "prompt": "Un workflow reutilizable declara enabled con type: boolean. ¿Qué entrada de with del llamador pasa el booleano false en lugar de una cadena, número o lista?",
             "choices": [
-                "Una acción JavaScript",
-                "Un flujo de trabajo reutilizable",
-                "Una acción compuesta",
-                "Una acción de contenedor Docker"
+                "enabled: [false]",
+                "enabled: false",
+                "enabled: \"false\"",
+                "enabled: 0"
             ],
             "explanations": [
-                "Una acción JavaScript se ejecuta dentro de un paso.",
-                "Los flujos reutilizables pueden contener varios trabajos.",
-                "Las acciones compuestas combinan pasos, no trabajos separados.",
-                "Una acción de contenedor se ejecuta dentro de un paso."
+                "Una lista no es un valor de entrada booleano.",
+                "El valor false sin comillas tiene el tipo booleano requerido.",
+                "Las comillas convierten false en una cadena, no en el booleano declarado.",
+                "El cero numérico no es el tipo booleano declarado."
             ],
-            "concept": "Elección de la unidad reutilizable",
+            "concept": "Los valores de entrada de workflows reutilizables deben respetar sus tipos declarados.",
             "hints": [
-                "Considera si la reutilización incluye orquestación.",
-                "Relaciona el componente con el límite de ejecución."
+                "Lee el tipo declarado antes de evaluar el valor.",
+                "Considera cómo las comillas y las colecciones YAML afectan al tipo."
             ]
         },
         "admin-152": {
@@ -3981,83 +3981,83 @@ export const translations = {
             ]
         },
         "admin-200": {
-            "prompt": "Una empresa necesita analizar eventos más allá de la retención nativa de GitHub Enterprise Cloud. ¿Qué estrategia corresponde?",
+            "prompt": "Una solicitud a la API de auditoría empresarial devuelve 100 registros y un encabezado Link con rel=\"next\". ¿Cómo debe recopilar la integración los demás registros coincidentes?",
             "choices": [
-                "Ampliar la búsqueda de auditoría a todo el periodo requerido",
-                "Transmitir eventos a un archivo externo",
-                "Aumentar la retención de registros de flujos y artefactos",
-                "Descargar una exportación tras caducar la retención nativa"
+                "Quitar el filtro de fecha para obtener una única página mayor.",
+                "Seguir la URL de la siguiente página hasta que no haya otro enlace next.",
+                "Considerar los 100 registros como todos los eventos coincidentes.",
+                "Repetir la primera solicitud idéntica hasta que cambie el número."
             ],
             "explanations": [
-                "Los intervalos de búsqueda no amplían retención del servidor.",
-                "La transmisión permite aplicar retención externa.",
-                "La configuración de flujos no amplía retención de auditoría.",
-                "Exportar después no recupera eventos ya caducados."
+                "Quitar filtros amplía la consulta y no elimina la paginación.",
+                "La API proporciona enlaces de paginación para recuperar las páginas siguientes.",
+                "El enlace de página siguiente indica explícitamente que hay más resultados.",
+                "Repetir la misma primera página no avanza por los resultados."
             ],
-            "concept": "Conservación externa de auditoría",
+            "concept": "Los recopiladores de auditoría deben consumir todas las páginas.",
             "hints": [
-                "Recopila eventos antes de que caduquen en origen.",
-                "La configuración de visualización no crea un archivo histórico."
+                "Revisa los metadatos de respuesta antes de dar por completa la recopilación.",
+                "Distingue repetir una página de avanzar por los resultados."
             ]
         },
         "admin-201": {
-            "prompt": "Un propietario no ve eventos de hace cuatro meses en la vista de auditoría predeterminada de GitHub Enterprise Cloud. ¿Qué debe probar antes de concluir que caducaron?",
+            "prompt": "Una integración autorizada consulta eventos clone, fetch y push en la API de auditoría empresarial. ¿Qué parámetro URL selecciona específicamente eventos Git?",
             "choices": [
-                "Cambiar la retención de artefactos",
-                "Crear una organización nueva",
-                "Suscribirse como observador del repositorio",
-                "Buscar con un intervalo explícito de fechas created"
+                "include=web",
+                "per_page=100",
+                "order=asc",
+                "include=git"
             ],
             "explanations": [
-                "Los artefactos no afectan la vista de auditoría.",
-                "Una organización nueva no recupera esta vista.",
-                "Observar repositorios no cambia filtros de auditoría.",
-                "La vista predeterminada cubre tres meses; la retención es mayor."
+                "Esto selecciona eventos web, no los eventos Git solicitados.",
+                "El tamaño de página controla la paginación, no la clase de evento.",
+                "El orden no selecciona eventos Git en lugar de eventos web.",
+                "Este parámetro selecciona eventos Git; include=all también incluye eventos web."
             ],
-            "concept": "Ventana visible frente a retención de auditoría",
+            "concept": "La selección de eventos y la paginación son controles distintos de la API.",
             "hints": [
-                "¿Podría la vista excluir datos conservados?",
-                "Distingue visibilidad del resultado de disponibilidad de datos."
+                "Identifica si se pregunta por el tipo de evento, el orden o el tamaño de página.",
+                "Distingue operaciones Git de actividad de la interfaz web."
             ]
         },
         "admin-202": {
-            "prompt": "Una respuesta REST tiene x-ratelimit-remaining: 0. ¿Qué cabecera indica cuándo se restablece el límite principal?",
+            "prompt": "Un GET REST usa un encabezado Authorization válido e If-None-Match. GitHub devuelve 304 Not Modified. ¿Cómo afecta esta respuesta condicional al límite primario?",
             "choices": [
-                "x-ratelimit-reset",
-                "x-github-request-id",
-                "content-length",
-                "last-modified"
+                "No cuenta para el límite de solicitudes primario.",
+                "Consume todo el cupo primario restante.",
+                "Siempre cuenta como dos solicitudes GET normales.",
+                "Restituye todas las solicitudes usadas antes en esa hora."
             ],
             "explanations": [
-                "Indica el momento de restablecimiento en segundos Unix UTC.",
-                "El identificador correlaciona solicitudes, no programa reintentos.",
-                "El tamaño del cuerpo no describe límites.",
-                "La fecha de modificación no restablece el límite."
+                "Las solicitudes condicionales correctamente autorizadas con respuesta 304 no consumen el cupo primario.",
+                "Un 304 no agota el cupo del cliente autenticado.",
+                "El comportamiento documentado no duplica el coste de la solicitud.",
+                "Evitar un cargo por esta respuesta no devuelve solicitudes anteriores."
             ],
-            "concept": "Diagnóstico del límite principal de API",
+            "concept": "Las respuestas 304 condicionales autorizadas evitan cargos al límite primario.",
             "hints": [
-                "Usa los metadatos de límites de la respuesta.",
-                "Distingue hora de restablecimiento de identificador de solicitud."
+                "Distingue una representación sin cambios de un cuerpo nuevo.",
+                "Considera tanto el estado de respuesta como la autenticación."
             ]
         },
         "admin-203": {
-            "prompt": "Una respuesta de límite de la API REST incluye retry-after: 120. ¿Qué debe hacer la integración?",
+            "prompt": "Una integración alcanza repetidamente límites REST secundarios al enviar muchas solicitudes simultáneas. ¿Qué cambio de planificación sigue las recomendaciones preventivas de GitHub?",
             "choices": [
-                "Reintentar inmediatamente con solicitudes paralelas",
-                "Reintentar tras cambiar User-Agent",
-                "Esperar al menos 120 segundos antes de reintentar",
-                "Tratar la respuesta como eliminación del repositorio"
+                "Eliminar la autenticación de todas las solicitudes.",
+                "Reintentar inmediatamente cada solicitud fallida desde todos los procesos.",
+                "Poner las solicitudes en una cola y enviarlas en serie.",
+                "Iniciar más procesos paralelos con la misma credencial."
             ],
             "explanations": [
-                "Más solicitudes pueden agravar la limitación.",
-                "Cambiar User-Agent no cumple la espera.",
-                "La cabecera indica el retraso mínimo en segundos.",
-                "Un límite no implica eliminación."
+                "Quitar la autenticación no resuelve la presión de solicitudes concurrentes.",
+                "Los reintentos paralelos inmediatos mantienen la ráfaga en lugar de controlarla.",
+                "Las solicitudes en serie reducen la concurrencia que puede activar límites secundarios.",
+                "Más procesos concurrentes empeoran el patrón de planificación."
             ],
-            "concept": "Respeto de la espera indicada por API",
+            "concept": "La planificación de solicitudes puede prevenir límites secundarios antes de reintentar.",
             "hints": [
-                "Interpreta la instrucción de espera del servidor.",
-                "Los reintentos deben reducir carga, no multiplicarla."
+                "Busca el patrón de carga que provoca la limitación.",
+                "Distingue controlar la concurrencia de cambiar credenciales."
             ]
         },
         "admin-204": {
@@ -4081,23 +4081,23 @@ export const translations = {
             ]
         },
         "admin-205": {
-            "prompt": "Una integración empresarial consulta repetidamente eventos de repositorios. ¿Qué alternativa reduce solicitudes API innecesarias?",
+            "prompt": "Tras validar la firma de un webhook, una integración debe reconocer una reentrega solicitada de un evento ya procesado. ¿Qué encabezado de GitHub conserva el identificador original?",
             "choices": [
-                "Consultar cada repositorio con más frecuencia",
-                "Rotar tokens tras cada solicitud correcta",
-                "Descargar todas las exportaciones tras cada evento",
-                "Suscribirse a webhooks pertinentes"
+                "X-GitHub-Event",
+                "User-Agent",
+                "Content-Type",
+                "X-GitHub-Delivery"
             ],
             "explanations": [
-                "Consultar más aumenta el volumen de solicitudes.",
-                "Rotar tokens no elimina consultas redundantes.",
-                "Repetir exportaciones completas aumenta recopilación innecesaria.",
-                "Los webhooks notifican cuando ocurren eventos suscritos."
+                "Esto identifica un tipo de evento compartido por muchas entregas distintas.",
+                "El agente de usuario no es el identificador único de entrega.",
+                "El tipo de contenido describe la representación, no la entrega individual.",
+                "Una reentrega solicitada conserva el valor X-GitHub-Delivery original."
             ],
-            "concept": "Supervisión de actividad basada en eventos",
+            "concept": "Los identificadores de entrega ayudan a evitar duplicados, pero no sustituyen la validación de firma.",
             "hints": [
-                "Considera notificaciones en lugar de lecturas repetidas.",
-                "Recopila los eventos que la integración necesita."
+                "Distingue el tipo de evento de la identidad de una entrega.",
+                "Considera qué valor debe mantenerse cuando se solicita la misma entrega otra vez."
             ]
         },
         "admin-206": {
@@ -4121,103 +4121,103 @@ export const translations = {
             ]
         },
         "admin-207": {
-            "prompt": "En GitHub Enterprise Server 3.19, ¿qué paquete es principalmente un resumen de texto de la configuración y el entorno de la instancia?",
+            "prompt": "Una persona administra GHES 3.19 e investiga una partición raíz casi llena antes de decidir qué borrar. ¿Qué utilidad busca archivos grandes y archivos eliminados con manejadores abiertos?",
             "choices": [
-                "Un paquete de soporte ampliado",
-                "Un archivo del código del repositorio",
-                "Un archivo de diagnóstico",
-                "Un archivo de artefactos del flujo"
+                "ghe-config-apply",
+                "ghe-announce",
+                "ghe-check-disk-usage",
+                "ghe-cleanup-caches"
             ],
             "explanations": [
-                "Un paquete ampliado también incluye registros saneados.",
-                "El código no describe la configuración de la instancia.",
-                "El diagnóstico resume configuración, versiones y entorno.",
-                "Los artefactos son resultados, no diagnósticos de instancia."
+                "Esto aplica cambios de configuración, no localiza esos archivos.",
+                "Esto cambia el anuncio para usuarios, no diagnostica el disco.",
+                "Esta utilidad investiga archivos grandes y eliminados que conservan manejadores abiertos.",
+                "Esto elimina cachés, en lugar de realizar la investigación de uso de disco indicada."
             ],
-            "concept": "Clasificación de datos de diagnóstico GHES",
+            "concept": "Inspecciona el uso de disco antes de elegir una operación de limpieza.",
             "hints": [
-                "Distingue resumen de configuración de archivo de registros.",
-                "Elige datos a nivel de instancia."
+                "Distingue investigar de ejecutar un comando que cambia datos almacenados.",
+                "Relaciona el propósito documentado de la utilidad con el problema de recursos."
             ]
         },
         "admin-208": {
-            "prompt": "¿Qué añade un paquete de soporte de GitHub Enterprise Server 3.19 respecto a un archivo de diagnóstico?",
+            "prompt": "En una sesión SSH administrativa de GHES 3.19, ¿qué comando lee core.github-hostname sin definir otro nombre ni aplicar cambios de configuración?",
             "choices": [
-                "Un clon completo de cada repositorio privado",
-                "Registros saneados de la instancia",
-                "Una licencia Enterprise de sustitución",
-                "Una copia de la clave SSH privada de cada usuario"
+                "ghe-config-check",
+                "ghe-config core.github-hostname",
+                "ghe-config core.github-hostname new.example.com",
+                "ghe-config-apply"
             ],
             "explanations": [
-                "Los paquetes no son copias completas de repositorios.",
-                "Un paquete combina diagnóstico y registros saneados.",
-                "Los paquetes no emiten licencias.",
-                "Las claves privadas SSH no son contenido del paquete."
+                "Esto valida la configuración en vez de recuperar el valor solicitado.",
+                "Con solo la clave, ghe-config recupera su valor actual.",
+                "Añadir un valor modifica el ajuste en lugar de solo leerlo.",
+                "Esto aplica cambios en vez de recuperar únicamente esta clave."
             ],
-            "concept": "Contenido de paquetes de soporte GHES",
+            "concept": "Los argumentos de ghe-config distinguen consulta de modificación.",
             "hints": [
-                "El diagnóstico necesita contexto y eventos.",
-                "Un paquete de soporte no es copia de seguridad ni exportación de credenciales."
+                "Compara una clave sola con una clave seguida de un valor nuevo.",
+                "Distingue consultar la configuración de validarla o aplicarla."
             ]
         },
         "admin-209": {
-            "prompt": "Un administrador de GHES 3.19 no tiene SSH, pero puede acceder a Management Console. ¿Dónde genera el diagnóstico en la interfaz inglesa?",
+            "prompt": "Durante un incidente de GHES 3.19, una persona con SSH administrativo quiere observar los registros de la instalación a medida que llegan entradas, no descargar un paquete estático. ¿Qué utilidad corresponde?",
             "choices": [
-                "Repository > Actions > Artifacts",
-                "Organization > People > Members",
-                "Enterprise > Billing > Usage",
-                "Management Console > Support > Download diagnostics info"
+                "ghe-support-bundle",
+                "ghe-config-check",
+                "ghe-nwo",
+                "ghe-logs-tail"
             ],
             "explanations": [
-                "Los artefactos no son diagnósticos de instancia.",
-                "La pantalla de miembros no genera diagnósticos.",
-                "El consumo facturado no es un archivo de diagnóstico.",
-                "Management Console ofrece esta descarga de diagnóstico."
+                "Un paquete agrupa evidencia diagnóstica en lugar de seguir registros en directo.",
+                "Esto valida la configuración, no observa nuevas entradas de registro.",
+                "Esto relaciona un ID de repositorio con su propietario y nombre, no muestra registros en directo.",
+                "Esta utilidad sigue los registros relevantes para observarlos continuamente."
             ],
-            "concept": "Generación de diagnósticos GHES sin SSH",
+            "concept": "Seguir registros en directo y empaquetar diagnósticos cumplen tareas distintas.",
             "hints": [
-                "Usa la interfaz de administración de instancia.",
-                "Recopilar diagnósticos no es una operación de repositorio."
+                "Identifica si se necesita una instantánea o una salida continua.",
+                "Relaciona la observación solicitada con el propósito de la utilidad."
             ]
         },
         "admin-210": {
-            "prompt": "¿Qué evidencia resulta más útil en un ticket de GitHub Support por un fallo reproducible de un flujo empresarial?",
+            "prompt": "Una empresa usa residencia de datos en octocorp.ghe.com. ¿Qué cuenta debe usar su administrador para crear un ticket sobre esa empresa?",
             "choices": [
-                "Pasos, URL afectadas, errores y registros saneados",
-                "Un inventario de integraciones sin la solicitud o ejecución fallida",
-                "Un resumen de facturación e inventario de ejecutores sin las horas del fallo",
-                "Un diagrama general de arquitectura sin el comportamiento observado ni esperado"
+                "La cuenta GHE.com de la empresa.",
+                "Una cuenta personal de GitHub.com con el mismo correo de trabajo.",
+                "Una cuenta GitHub.com que administra otra empresa.",
+                "Una cuenta GHE.com que pertenece a otra empresa."
             ],
             "explanations": [
-                "Estos detalles permiten localizar y reproducir el fallo.",
-                "Un inventario por sí solo no reproduce el fallo.",
-                "Facturación e inventario omiten la evidencia del fallo.",
-                "La arquitectura por sí sola no define el síntoma."
+                "Los tickets de una empresa con residencia de datos deben usar su cuenta GHE.com correspondiente.",
+                "Coincidir en el correo no sustituye el contexto de cuenta GHE.com requerido.",
+                "Administrar otra empresa no establece este contexto de cuenta con residencia de datos.",
+                "La cuenta debe corresponder a la empresa que necesita soporte."
             ],
-            "concept": "Escalación útil a soporte",
+            "concept": "Las empresas con residencia de datos requieren su contexto de cuenta GHE.com en soporte.",
             "hints": [
-                "Aporta contexto suficiente para reproducir el síntoma.",
-                "La evidencia útil no debe divulgar credenciales."
+                "Comprueba qué host posee la identidad empresarial.",
+                "Distingue el contexto de cuenta de la información incluida en el ticket."
             ]
         },
         "admin-211": {
-            "prompt": "GitHub Support necesita un paquete de soporte de GHES 3.19, pero no puede acceder al entorno del cliente. ¿Quién debe recopilarlo?",
+            "prompt": "Una persona administra GHES 3.19 y sospecha acumulación de trabajos en segundo plano. ¿Qué utilidad muestra la distribución de trabajos en cola y los que se procesan actualmente?",
             "choices": [
-                "GitHub Support mediante acceso automático a la VM del cliente",
-                "Un colaborador desde la pestaña Actions del repositorio",
-                "Un administrador de instancia mediante herramientas admitidas",
-                "Un miembro desde el registro de seguridad de su cuenta personal"
+                "ghe-es-index-status",
+                "ghe-announce",
+                "ghe-aqueduct-info",
+                "ghe-check-disk-usage"
             ],
             "explanations": [
-                "Support no accede automáticamente al entorno del cliente.",
-                "Colaborar en repositorios no concede acceso a diagnósticos de instancia.",
-                "Los administradores pueden generar y compartir los paquetes solicitados.",
-                "Un registro personal no es un paquete de soporte de instancia."
+                "Esto informa del estado de índices Elasticsearch, no de la distribución de colas.",
+                "Esto gestiona un anuncio en lugar de inspeccionar trabajos en segundo plano.",
+                "Esta utilidad informa de los trabajos en cola y los que se están procesando.",
+                "Esto investiga archivos grandes o eliminados aún abiertos, no colas de trabajos."
             ],
-            "concept": "Responsabilidades del administrador y de Support",
+            "concept": "Selecciona evidencia del subsistema que presenta la acumulación.",
             "hints": [
-                "Recopilar exige acceso a la instancia administrada por el cliente.",
-                "Support investiga evidencia recibida sin asumir acceso al entorno."
+                "Identifica si el cuello de botella está en una cola, el disco o un índice.",
+                "Distingue observar la cola de informar a usuarios de un incidente."
             ]
         },
         "admin-212": {
@@ -4301,23 +4301,23 @@ export const translations = {
             ]
         },
         "admin-216": {
-            "prompt": "¿Qué función de facturación atribuye gasto medido de Actions a unidades de negocio sin mover sus repositorios?",
+            "prompt": "Dos equipos comparten un centro de costos, pero necesitan presupuestos controlados por separado. ¿Qué diseño documentado cumple ese requisito?",
             "choices": [
-                "Etiquetas de ejecutor",
-                "Centros de costos",
-                "Temas de repositorio",
-                "Revisores de entorno"
+                "Usar un presupuesto compartido con dos umbrales de alerta.",
+                "Crear un centro de costos separado para cada equipo.",
+                "Crear dos presupuestos dirigidos al mismo centro compartido.",
+                "Añadir los dos equipos empresariales como recursos del centro compartido."
             ],
             "explanations": [
-                "Las etiquetas asignan trabajos, no facturación.",
-                "Los centros vinculan recursos con atribución de gasto.",
-                "Los temas clasifican repositorios, no facturación.",
-                "Los revisores controlan despliegues, no atribución de costos."
+                "Varios umbrales de alerta no crean presupuestos independientes por equipo.",
+                "El presupuesto abarca todo el centro; los presupuestos independientes requieren centros separados.",
+                "Ambos siguen abarcando el centro compartido, no gastos de equipos separados.",
+                "Añadir recursos separados no divide el ámbito presupuestario del centro."
             ],
-            "concept": "Atribución de costos medidos",
+            "concept": "Los límites presupuestarios independientes requieren un ámbito adecuado de centros de costos.",
             "hints": [
-                "Distingue informes organizativos de propiedad del código.",
-                "Elige una agrupación de facturación, no un control del flujo."
+                "Distingue nombrar un equipo de crear un límite presupuestario.",
+                "Comprueba si un presupuesto abarca una parte o todo el centro."
             ]
         },
         "admin-217": {
@@ -5483,23 +5483,23 @@ export const translations = {
             ]
         },
         "admin-050": {
-            "prompt": "Um colaborador de um repositório da organização precisa mudar sua função de Read para Write. Quem pode fazer diretamente essa alteração rotineira de acesso?",
+            "prompt": "Um repositório é transferido entre organizações do GitHub.com, e ninguém reutiliza o endereço antigo. O que acontece se um clone fizer fetch pela URL remota antiga?",
             "choices": [
-                "Um gerente de cobrança empresarial sem acesso ao repositório",
-                "Um membro com apenas acesso Read",
-                "Um colaborador externo com apenas acesso Triage",
-                "Um administrador do repositório"
+                "O fetch falha até baixar novamente todo o histórico do clone.",
+                "A URL antiga vira uma cópia independente e permanente do repositório.",
+                "A URL antiga concede acesso independentemente das novas permissões.",
+                "O Git redireciona ao novo endereço; ainda é recomendado atualizar origin."
             ],
             "explanations": [
-                "A autoridade de cobrança por si só não concede gerenciamento de permissões.",
-                "Read não inclui gerenciar permissões.",
-                "Triage não inclui gerenciar permissões.",
-                "Administradores podem gerenciar funções individuais e de equipes no repositório."
+                "A transferência preserva o histórico Git e redireciona a URL antiga.",
+                "O endereço antigo redireciona; ele não é uma segunda cópia do repositório.",
+                "O redirecionamento não ignora a autenticação nem a autorização do repositório.",
+                "Solicitações clone, fetch e push são redirecionadas, mas a URL nova evita depender disso."
             ],
-            "concept": "Solicitações de acesso resolvidas pelo administrador",
+            "concept": "Transferências redirecionam URLs Git sem ignorar verificações de acesso.",
             "hints": [
-                "Diferencie configurações do cliente de falhas do produto ou serviço.",
-                "Associe as evidências e o direito a suporte ao ambiente afetado."
+                "Diferencie a localização do repositório de seu histórico Git.",
+                "Considere se um redirecionamento também altera a autorização."
             ]
         },
         "admin-051": {
@@ -5963,23 +5963,23 @@ export const translations = {
             ]
         },
         "admin-074": {
-            "prompt": "Como dois conjuntos de regras ativos se combinam quando abrangem a mesma branch e o ator não tem permissão de bypass?",
+            "prompt": "Uma pessoa administra um repositório e quer importar uma definição existente de ruleset pela interface de outro repositório. Qual formato de arquivo essa importação usa?",
             "choices": [
-                "Todas as regras aplicáveis são impostas",
-                "Somente o conjunto mais recente é imposto",
-                "Somente o conjunto do repositório é imposto",
-                "O ator escolhe um conjunto"
+                "JSON",
+                "CSV",
+                "TOML",
+                "SARIF"
             ],
             "explanations": [
-                "Os conjuntos correspondentes se acumulam com os requisitos mais restritivos.",
-                "A ordem de criação não seleciona o conjunto ativo.",
-                "Regras do repositório não substituem regras de níveis superiores.",
-                "Os atores não escolhem quais regras aplicáveis cumprir."
+                "A interface de importação aceita uma definição de ruleset em JSON.",
+                "Tabelas CSV não são o formato de importação de rulesets.",
+                "TOML não é o formato documentado para esse importador.",
+                "SARIF representa resultados de análise estática, não definições de rulesets."
             ],
-            "concept": "Sobreposição de conjuntos de regras",
+            "concept": "Definições de rulesets podem ser importadas de arquivos JSON.",
             "hints": [
-                "Considere se os conjuntos substituem ou acumulam controles.",
-                "Diferencie seleção de branches de permissões de bypass."
+                "Identifique o objeto transferido, não seu resultado de aplicação.",
+                "Diferencie uma definição de política de um relatório de análise."
             ]
         },
         "admin-075": {
@@ -7503,23 +7503,23 @@ export const translations = {
             ]
         },
         "admin-151": {
-            "prompt": "Qual componente reutilizável pode definir trabalhos separados de build e implantação em vez de executar dentro de uma etapa?",
+            "prompt": "Um workflow reutilizável declara enabled com type: boolean. Qual entrada with do chamador passa o booleano false, e não uma string, número ou lista?",
             "choices": [
-                "Uma ação JavaScript",
-                "Um fluxo de trabalho reutilizável",
-                "Uma ação composta",
-                "Uma ação de contêiner Docker"
+                "enabled: [false]",
+                "enabled: false",
+                "enabled: \"false\"",
+                "enabled: 0"
             ],
             "explanations": [
-                "Uma ação JavaScript executa dentro de uma etapa.",
-                "Fluxos reutilizáveis podem conter vários trabalhos.",
-                "Ações compostas combinam etapas, não trabalhos separados.",
-                "Uma ação de contêiner executa dentro de uma etapa."
+                "Uma lista não é um valor de entrada booleano.",
+                "O valor false sem aspas tem o tipo booleano exigido.",
+                "As aspas transformam false em uma string, não no booleano declarado.",
+                "O zero numérico não corresponde ao tipo booleano declarado."
             ],
-            "concept": "Escolha da unidade reutilizável",
+            "concept": "Valores de entrada de workflows reutilizáveis devem corresponder aos tipos declarados.",
             "hints": [
-                "Considere se a reutilização inclui orquestração.",
-                "Relacione o componente ao limite de execução."
+                "Leia o tipo declarado antes de avaliar o valor.",
+                "Considere como aspas e coleções YAML afetam o tipo do valor."
             ]
         },
         "admin-152": {
@@ -8483,83 +8483,83 @@ export const translations = {
             ]
         },
         "admin-200": {
-            "prompt": "Uma empresa precisa analisar eventos além da retenção nativa do GitHub Enterprise Cloud. Qual estratégia atende?",
+            "prompt": "Uma solicitação à API de auditoria empresarial retorna 100 registros e um cabeçalho Link com rel=\"next\". Como a integração deve coletar os demais registros correspondentes?",
             "choices": [
-                "Ampliar a pesquisa de auditoria para todo o período necessário",
-                "Transmitir eventos para um arquivo externo",
-                "Aumentar a retenção de logs de fluxos e artefatos",
-                "Baixar uma exportação depois que a retenção nativa expirar"
+                "Remover o filtro de data para obter uma única página maior.",
+                "Seguir a URL da próxima página até não haver outro link next.",
+                "Considerar os 100 registros como todos os eventos correspondentes.",
+                "Repetir a primeira solicitação idêntica até a contagem mudar."
             ],
             "explanations": [
-                "Intervalos de pesquisa não ampliam a retenção do servidor.",
-                "A transmissão permite aplicar retenção externa.",
-                "Configurações de fluxos não ampliam a retenção de auditoria.",
-                "Exportar depois não recupera eventos já expirados."
+                "Remover filtros amplia a consulta e não elimina a paginação.",
+                "A API fornece links de paginação para recuperar as páginas seguintes.",
+                "O link da próxima página indica explicitamente que existem mais resultados.",
+                "Repetir a mesma primeira página não avança pelos resultados."
             ],
-            "concept": "Preservação externa de auditoria",
+            "concept": "Coletores de auditoria devem consumir todas as páginas de resultados.",
             "hints": [
-                "Colete eventos antes que expirem na origem.",
-                "Configurações de exibição não criam um arquivo histórico."
+                "Confira os metadados da resposta antes de considerar a coleta completa.",
+                "Diferencie repetir uma página de avançar pelos resultados."
             ]
         },
         "admin-201": {
-            "prompt": "Um proprietário não vê eventos de quatro meses atrás na visão padrão de auditoria do GitHub Enterprise Cloud. O que deve tentar antes de concluir que expiraram?",
+            "prompt": "Uma integração autorizada consulta eventos clone, fetch e push na API de auditoria empresarial. Qual parâmetro de URL seleciona especificamente eventos Git?",
             "choices": [
-                "Mudar a retenção de artefatos",
-                "Criar uma organização nova",
-                "Inscrever a conta como observadora do repositório",
-                "Pesquisar com um intervalo explícito de datas created"
+                "include=web",
+                "per_page=100",
+                "order=asc",
+                "include=git"
             ],
             "explanations": [
-                "Artefatos não afetam a visão de auditoria.",
-                "Uma organização nova não recupera essa visão.",
-                "Observar repositórios não muda filtros de auditoria.",
-                "A visão padrão cobre três meses; a retenção é maior."
+                "Isso seleciona eventos web, não os eventos Git solicitados.",
+                "O tamanho da página controla a paginação, não a classe de evento.",
+                "A ordenação não seleciona eventos Git em vez de eventos web.",
+                "Esse parâmetro seleciona eventos Git; include=all também inclui eventos web."
             ],
-            "concept": "Janela visível versus retenção de auditoria",
+            "concept": "Seleção de eventos e paginação são controles distintos da API.",
             "hints": [
-                "A visão poderia excluir dados mantidos?",
-                "Diferencie visibilidade do resultado de disponibilidade dos dados."
+                "Identifique se a questão trata de tipo de evento, ordenação ou tamanho de página.",
+                "Diferencie operações Git de atividades da interface web."
             ]
         },
         "admin-202": {
-            "prompt": "Uma resposta REST tem x-ratelimit-remaining: 0. Qual cabeçalho indica quando o limite principal é restabelecido?",
+            "prompt": "Um GET REST usa um cabeçalho Authorization válido e If-None-Match. O GitHub retorna 304 Not Modified. Como essa resposta condicional afeta o limite primário?",
             "choices": [
-                "x-ratelimit-reset",
-                "x-github-request-id",
-                "content-length",
-                "last-modified"
+                "Não conta para o limite de requisições primário.",
+                "Consome toda a cota primária restante.",
+                "Sempre conta como duas solicitações GET comuns.",
+                "Devolve todas as solicitações gastas antes naquela hora."
             ],
             "explanations": [
-                "Indica o momento de restabelecimento em segundos Unix UTC.",
-                "O identificador correlaciona solicitações, não agenda tentativas.",
-                "O tamanho do corpo não descreve limites.",
-                "A data de modificação não restabelece o limite."
+                "Solicitações condicionais corretamente autorizadas com resposta 304 não consomem a cota primária.",
+                "Uma resposta 304 não esgota a cota do cliente autenticado.",
+                "O comportamento documentado não duplica o custo da solicitação.",
+                "Evitar a cobrança desta resposta não devolve solicitações anteriores."
             ],
-            "concept": "Diagnóstico do limite principal da API",
+            "concept": "Respostas condicionais 304 autorizadas evitam consumo do limite primário.",
             "hints": [
-                "Use os metadados de limites da resposta.",
-                "Diferencie horário de restabelecimento de identificador de solicitação."
+                "Diferencie uma representação sem mudanças de um corpo novo.",
+                "Considere o status da resposta e a autenticação da solicitação."
             ]
         },
         "admin-203": {
-            "prompt": "Uma resposta de limite da API REST inclui retry-after: 120. O que a integração deve fazer?",
+            "prompt": "Uma integração atinge repetidamente limites REST secundários ao enviar muitas solicitações simultâneas. Qual mudança de agendamento segue a recomendação preventiva do GitHub?",
             "choices": [
-                "Tentar imediatamente com solicitações paralelas",
-                "Tentar após mudar User-Agent",
-                "Esperar pelo menos 120 segundos antes de tentar novamente",
-                "Tratar a resposta como exclusão do repositório"
+                "Remover a autenticação de todas as solicitações.",
+                "Repetir imediatamente cada solicitação com falha em todos os processos.",
+                "Colocar as solicitações em uma fila e enviá-las em série.",
+                "Iniciar mais processos paralelos com a mesma credencial."
             ],
             "explanations": [
-                "Mais solicitações podem agravar a limitação.",
-                "Mudar User-Agent não cumpre a espera.",
-                "O cabeçalho indica o atraso mínimo em segundos.",
-                "Um limite não implica exclusão."
+                "Remover a autenticação não resolve a pressão de solicitações concorrentes.",
+                "Repetições paralelas imediatas mantêm o pico em vez de controlá-lo.",
+                "Solicitações em série reduzem a concorrência que pode acionar limites secundários.",
+                "Mais processos concorrentes pioram o padrão de agendamento."
             ],
-            "concept": "Respeito à espera indicada pela API",
+            "concept": "O agendamento pode prevenir limites secundários antes de precisar repetir solicitações.",
             "hints": [
-                "Interprete a instrução de espera do servidor.",
-                "Novas tentativas devem reduzir carga, não multiplicá-la."
+                "Procure o padrão de carga que causa a limitação.",
+                "Diferencie controlar concorrência de mudar credenciais."
             ]
         },
         "admin-204": {
@@ -8583,23 +8583,23 @@ export const translations = {
             ]
         },
         "admin-205": {
-            "prompt": "Uma integração empresarial consulta repetidamente eventos de repositórios. Qual alternativa reduz solicitações desnecessárias à API?",
+            "prompt": "Após validar a assinatura de um webhook, uma integração precisa reconhecer uma reentrega solicitada de um evento já processado. Qual cabeçalho do GitHub preserva o identificador original?",
             "choices": [
-                "Consultar cada repositório com mais frequência",
-                "Rotacionar tokens após cada solicitação bem-sucedida",
-                "Baixar todas as exportações após cada evento",
-                "Assinar webhooks pertinentes"
+                "X-GitHub-Event",
+                "User-Agent",
+                "Content-Type",
+                "X-GitHub-Delivery"
             ],
             "explanations": [
-                "Consultar mais aumenta o volume de solicitações.",
-                "Rotacionar tokens não elimina consultas redundantes.",
-                "Repetir exportações completas aumenta coleta desnecessária.",
-                "Webhooks notificam quando eventos assinados ocorrem."
+                "Isso identifica um tipo de evento compartilhado por várias entregas diferentes.",
+                "O agente do usuário não é o identificador único da entrega.",
+                "O tipo de conteúdo descreve a representação, não a entrega individual.",
+                "Uma reentrega solicitada preserva o valor X-GitHub-Delivery original."
             ],
-            "concept": "Monitoramento de atividade orientado a eventos",
+            "concept": "Identificadores de entrega ajudam a evitar duplicações, mas não substituem a validação de assinatura.",
             "hints": [
-                "Considere notificações em vez de leituras repetidas.",
-                "Colete os eventos de que a integração precisa."
+                "Diferencie o tipo de evento da identidade de uma entrega.",
+                "Considere qual valor permanece estável quando a mesma entrega é solicitada novamente."
             ]
         },
         "admin-206": {
@@ -8623,103 +8623,103 @@ export const translations = {
             ]
         },
         "admin-207": {
-            "prompt": "No GitHub Enterprise Server 3.19, qual pacote é principalmente um resumo em texto das configurações e do ambiente da instância?",
+            "prompt": "Uma pessoa administra GHES 3.19 e investiga uma partição raiz quase cheia antes de decidir o que remover. Qual utilitário procura arquivos grandes e arquivos excluídos com identificadores abertos?",
             "choices": [
-                "Um pacote de suporte estendido",
-                "Um arquivo do código do repositório",
-                "Um arquivo de diagnóstico",
-                "Um arquivo de artefatos do fluxo"
+                "ghe-config-apply",
+                "ghe-announce",
+                "ghe-check-disk-usage",
+                "ghe-cleanup-caches"
             ],
             "explanations": [
-                "Um pacote estendido também inclui logs sanitizados.",
-                "O código não descreve as configurações da instância.",
-                "O diagnóstico resume configurações, versões e ambiente.",
-                "Artefatos são resultados, não diagnósticos da instância."
+                "Isso aplica configurações, não localiza esses arquivos.",
+                "Isso altera o anúncio para usuários, não diagnostica o disco.",
+                "Esse utilitário investiga arquivos grandes e excluídos cujos identificadores continuam abertos.",
+                "Isso remove caches em vez de executar a investigação de uso de disco solicitada."
             ],
-            "concept": "Classificação de dados de diagnóstico do GHES",
+            "concept": "Inspecione o uso de disco antes de escolher uma operação de limpeza.",
             "hints": [
-                "Diferencie resumo de configuração de arquivo de logs.",
-                "Escolha dados no nível da instância."
+                "Diferencie investigação de um comando que altera dados armazenados.",
+                "Relacione o propósito documentado do utilitário ao problema de recursos."
             ]
         },
         "admin-208": {
-            "prompt": "O que um pacote de suporte do GitHub Enterprise Server 3.19 acrescenta a um arquivo de diagnóstico?",
+            "prompt": "Em uma sessão SSH administrativa do GHES 3.19, qual comando lê core.github-hostname sem definir outro nome nem aplicar mudanças de configuração?",
             "choices": [
-                "Um clone completo de cada repositório privado",
-                "Logs sanitizados da instância",
-                "Uma licença Enterprise de substituição",
-                "Uma cópia da chave SSH privada de cada usuário"
+                "ghe-config-check",
+                "ghe-config core.github-hostname",
+                "ghe-config core.github-hostname new.example.com",
+                "ghe-config-apply"
             ],
             "explanations": [
-                "Pacotes não são backups completos de repositórios.",
-                "Um pacote combina diagnóstico e logs sanitizados.",
-                "Pacotes não emitem licenças.",
-                "Chaves SSH privadas não são conteúdo do pacote."
+                "Isso valida a configuração em vez de recuperar o valor solicitado.",
+                "Com apenas a chave, ghe-config recupera seu valor atual.",
+                "Adicionar um valor altera a configuração em vez de apenas consultá-la.",
+                "Isso aplica alterações em vez de recuperar somente essa chave."
             ],
-            "concept": "Conteúdo de pacotes de suporte do GHES",
+            "concept": "Os argumentos de ghe-config distinguem consulta de modificação.",
             "hints": [
-                "O diagnóstico precisa de contexto e eventos.",
-                "Um pacote de suporte não é backup nem exportação de credenciais."
+                "Compare uma chave isolada com uma chave seguida de um valor novo.",
+                "Diferencie consultar a configuração de validá-la ou aplicá-la."
             ]
         },
         "admin-209": {
-            "prompt": "Um administrador do GHES 3.19 não tem SSH, mas acessa a Management Console. Onde gera o diagnóstico na interface em inglês?",
+            "prompt": "Durante um incidente no GHES 3.19, uma pessoa com SSH administrativo quer observar os logs da instalação conforme novas entradas chegam, e não baixar um pacote estático. Qual utilitário atende a isso?",
             "choices": [
-                "Repository > Actions > Artifacts",
-                "Organization > People > Members",
-                "Enterprise > Billing > Usage",
-                "Management Console > Support > Download diagnostics info"
+                "ghe-support-bundle",
+                "ghe-config-check",
+                "ghe-nwo",
+                "ghe-logs-tail"
             ],
             "explanations": [
-                "Artefatos não são diagnósticos de instância.",
-                "A tela de membros não gera diagnósticos.",
-                "O consumo faturado não é um arquivo de diagnóstico.",
-                "A Management Console oferece esse download de diagnóstico."
+                "Um pacote reúne evidências de diagnóstico em vez de acompanhar logs ao vivo.",
+                "Isso valida a configuração, não observa novas entradas de log.",
+                "Isso relaciona um ID de repositório ao proprietário e nome, não exibe logs ao vivo.",
+                "Esse utilitário acompanha logs relevantes para observação contínua."
             ],
-            "concept": "Geração de diagnósticos do GHES sem SSH",
+            "concept": "Acompanhar logs ao vivo e empacotar diagnósticos atendem a tarefas distintas.",
             "hints": [
-                "Use a interface de administração da instância.",
-                "Coletar diagnósticos não é uma operação de repositório."
+                "Identifique se é necessário um retrato ou uma saída contínua.",
+                "Relacione a observação solicitada ao propósito do utilitário."
             ]
         },
         "admin-210": {
-            "prompt": "Qual evidência é mais útil em um ticket do GitHub Support para uma falha reproduzível de fluxo empresarial?",
+            "prompt": "Uma empresa usa residência de dados em octocorp.ghe.com. Qual conta seu administrador deve usar para criar um chamado sobre essa empresa?",
             "choices": [
-                "Passos, URLs afetadas, erros e logs sanitizados",
-                "Um inventário de integrações sem a solicitação ou execução com falha",
-                "Um resumo de cobrança e inventário de executores sem os horários da falha",
-                "Um diagrama geral de arquitetura sem o comportamento observado ou esperado"
+                "A conta GHE.com da empresa.",
+                "Uma conta pessoal do GitHub.com com o mesmo email de trabalho.",
+                "Uma conta GitHub.com que administra outra empresa.",
+                "Uma conta GHE.com pertencente a outra empresa."
             ],
             "explanations": [
-                "Esses detalhes ajudam a localizar e reproduzir a falha.",
-                "Um inventário sozinho não reproduz a falha.",
-                "Cobrança e inventário omitem a evidência da falha.",
-                "A arquitetura sozinha não define o sintoma."
+                "Chamados de empresas com residência de dados devem usar a conta GHE.com correspondente.",
+                "O mesmo email não substitui o contexto da conta GHE.com exigido.",
+                "Administrar outra empresa não estabelece esse contexto de conta com residência de dados.",
+                "A conta deve corresponder à empresa que precisa de suporte."
             ],
-            "concept": "Escalonamento útil para suporte",
+            "concept": "Empresas com residência de dados exigem seu contexto de conta GHE.com no suporte.",
             "hints": [
-                "Forneça contexto suficiente para reproduzir o sintoma.",
-                "Evidências úteis não devem divulgar credenciais."
+                "Confira qual host possui a identidade empresarial.",
+                "Diferencie o contexto da conta das informações incluídas no chamado."
             ]
         },
         "admin-211": {
-            "prompt": "O GitHub Support precisa de um pacote de suporte do GHES 3.19, mas não acessa o ambiente do cliente. Quem deve coletá-lo?",
+            "prompt": "Uma pessoa administra GHES 3.19 e suspeita de acúmulo nas filas de tarefas em segundo plano. Qual utilitário mostra a distribuição das tarefas em fila e das que estão sendo processadas?",
             "choices": [
-                "O GitHub Support por acesso automático à VM do cliente",
-                "Um colaborador pela aba Actions do repositório",
-                "Um administrador da instância por ferramentas compatíveis",
-                "Um membro pelo log de segurança de sua conta pessoal"
+                "ghe-es-index-status",
+                "ghe-announce",
+                "ghe-aqueduct-info",
+                "ghe-check-disk-usage"
             ],
             "explanations": [
-                "O Support não acessa automaticamente o ambiente do cliente.",
-                "Colaborar em repositórios não concede acesso a diagnósticos da instância.",
-                "Administradores podem gerar e compartilhar os pacotes solicitados.",
-                "Um log pessoal não é um pacote de suporte da instância."
+                "Isso informa o status dos índices Elasticsearch, não a distribuição das filas.",
+                "Isso gerencia um anúncio em vez de inspecionar tarefas em segundo plano.",
+                "Esse utilitário informa tarefas em fila e as que estão sendo processadas.",
+                "Isso investiga arquivos grandes ou excluídos ainda abertos, não filas de tarefas."
             ],
-            "concept": "Responsabilidades do administrador e do Support",
+            "concept": "Escolha evidências do subsistema que apresenta o acúmulo.",
             "hints": [
-                "Coletar exige acesso à instância administrada pelo cliente.",
-                "O Support investiga evidências recebidas sem presumir acesso ao ambiente."
+                "Identifique se o gargalo está em uma fila, no disco ou em um índice.",
+                "Diferencie observar uma fila de informar usuários sobre um incidente."
             ]
         },
         "admin-212": {
@@ -8803,23 +8803,23 @@ export const translations = {
             ]
         },
         "admin-216": {
-            "prompt": "Qual recurso de cobrança atribui gastos medidos de Actions a unidades de negócio sem mover seus repositórios?",
+            "prompt": "Duas equipes compartilham um centro de custos, mas precisam de orçamentos controlados separadamente. Qual desenho documentado atende a esse requisito?",
             "choices": [
-                "Rótulos de executor",
-                "Centros de custo",
-                "Tópicos de repositório",
-                "Revisores de ambiente"
+                "Usar um orçamento compartilhado com dois limites de alerta.",
+                "Criar um centro de custos separado para cada equipe.",
+                "Criar dois orçamentos direcionados ao mesmo centro compartilhado.",
+                "Adicionar as duas equipes empresariais como recursos do centro compartilhado."
             ],
             "explanations": [
-                "Rótulos roteiam trabalhos, não cobrança.",
-                "Centros vinculam recursos à atribuição de gastos.",
-                "Tópicos classificam repositórios, não cobrança.",
-                "Revisores controlam implantações, não atribuição de custos."
+                "Vários limites de alerta não criam orçamentos independentes por equipe.",
+                "O orçamento abrange todo o centro; orçamentos independentes exigem centros separados.",
+                "Ambos continuam cobrindo o centro compartilhado, não gastos de equipes separadas.",
+                "Adicionar recursos separados não divide o escopo orçamentário do centro."
             ],
-            "concept": "Atribuição de custos medidos",
+            "concept": "Limites orçamentários independentes exigem o escopo adequado de centros de custos.",
             "hints": [
-                "Diferencie relatórios organizacionais de propriedade do código.",
-                "Escolha um agrupamento de cobrança, não um controle do fluxo."
+                "Diferencie nomear uma equipe de criar um limite orçamentário.",
+                "Confira se um orçamento abrange parte ou todo o centro."
             ]
         },
         "admin-217": {

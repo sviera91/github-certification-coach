@@ -1179,26 +1179,26 @@ export const questions = [
     {
         "id": "admin-050",
         "domain": "Administer GitHub Enterprise environment",
-        "prompt": "An organization repository contributor needs a repository role changed from Read to Write. Who can make this routine access change directly?",
+        "prompt": "A repository moves from one GitHub.com organization to another, and nobody reuses its old location. What happens when an existing clone fetches using the old remote URL?",
         "choices": [
-            "An enterprise billing manager without repository access",
-            "A member with only Read access",
-            "An outside collaborator with only Triage access",
-            "A repository administrator"
+            "Fetch fails until the clone's entire commit history is downloaded again.",
+            "The old URL becomes a permanent independent copy of the repository.",
+            "The old URL grants the clone access regardless of its new permissions.",
+            "Git redirects to the new location; updating origin is still recommended."
         ],
         "correct": 3,
         "explanations": [
-            "Billing authority alone does not grant repository access administration.",
-            "Read does not include permission management.",
-            "Triage does not include permission management.",
-            "Repository administrators can manage individual and team repository roles."
+            "A transfer preserves Git history and redirects the old Git URL.",
+            "The old location redirects; it is not a second repository copy.",
+            "Redirection does not bypass authentication or repository authorization.",
+            "Git clone, fetch, and push requests redirect after transfer, but the new URL avoids reliance on that redirect."
         ],
-        "concept": "Administrator-resolvable access requests",
+        "concept": "Repository transfers redirect Git URLs without bypassing access checks.",
         "hints": [
-            "Separate customer-controlled settings from product or service faults.",
-            "Match the evidence and entitlement to the affected deployment."
+            "Separate the repository's location from its Git history.",
+            "Consider whether a redirect also changes authorization."
         ],
-        "source": "https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization"
+        "source": "https://docs.github.com/en/repositories/creating-and-managing-repositories/transferring-a-repository"
     },
     {
         "id": "admin-051",
@@ -1755,26 +1755,26 @@ export const questions = [
     {
         "id": "admin-074",
         "domain": "Implement secure software development and compliance",
-        "prompt": "How do two active rulesets combine when both target the same branch and the actor has no bypass?",
+        "prompt": "An administrator has an existing ruleset definition and wants to import it through another repository's ruleset interface. Which file format does this import use?",
         "choices": [
-            "All applicable rules are enforced",
-            "Only the newest ruleset is enforced",
-            "Only the repository ruleset is enforced",
-            "The actor chooses one ruleset"
+            "JSON",
+            "CSV",
+            "TOML",
+            "SARIF"
         ],
         "correct": 0,
         "explanations": [
-            "Matching rulesets apply together, using the most restrictive requirements.",
-            "Creation order does not select the active ruleset.",
-            "Repository rules do not replace higher-level rules.",
-            "Actors cannot choose which applicable rules to follow."
+            "The ruleset import interface accepts a JSON ruleset definition.",
+            "CSV tables are not the ruleset import format.",
+            "TOML is not the documented format for this ruleset importer.",
+            "SARIF represents static-analysis results, not ruleset definitions."
         ],
-        "concept": "Ruleset layering",
+        "concept": "Ruleset definitions can be imported from JSON files.",
         "hints": [
-            "Consider whether rulesets replace or accumulate controls.",
-            "Distinguish targeting from bypass privileges."
+            "Identify the kind of object being transferred, not its enforcement result.",
+            "Distinguish a policy definition from an analysis report."
         ],
-        "source": "https://docs.github.com/en/enterprise-cloud@latest/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets"
+        "source": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/managing-rulesets-for-a-repository"
     },
     {
         "id": "admin-075",
@@ -3603,26 +3603,26 @@ export const questions = [
     {
         "id": "admin-151",
         "domain": "Manage GitHub Actions",
-        "prompt": "Which reusable component can define separate build and deploy jobs rather than run inside a single step?",
+        "prompt": "A reusable workflow declares an input named enabled with type: boolean. Which caller with entry passes the boolean false rather than a string, number, or list?",
         "choices": [
-            "A JavaScript action",
-            "A reusable workflow",
-            "A composite action",
-            "A Docker container action"
+            "enabled: [false]",
+            "enabled: false",
+            "enabled: \"false\"",
+            "enabled: 0"
         ],
         "correct": 1,
         "explanations": [
-            "A JavaScript action runs within a step.",
-            "Reusable workflows can contain multiple jobs.",
-            "Composite actions combine steps, not separate jobs.",
-            "A container action runs within a step."
+            "A list is not a boolean input value.",
+            "The unquoted false value has the required boolean type.",
+            "Quoting false makes the value a string rather than the declared boolean.",
+            "A numeric zero is not the declared boolean input type."
         ],
-        "concept": "Choosing a reuse unit",
+        "concept": "Values supplied to reusable workflow inputs must match their declared types.",
         "hints": [
-            "Consider whether reuse includes orchestration.",
-            "Match the component to the execution boundary."
+            "Read the input's declared type before evaluating its value.",
+            "Consider how YAML quoting and collection syntax affect a value's type."
         ],
-        "source": "https://docs.github.com/en/actions/concepts/workflows-and-actions/reusing-workflow-configurations"
+        "source": "https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows"
     },
     {
         "id": "admin-152",
@@ -4779,98 +4779,98 @@ export const questions = [
     {
         "id": "admin-200",
         "domain": "Monitor and optimize GitHub usage",
-        "prompt": "An enterprise needs to analyze audit events beyond GitHub Enterprise Cloud's native retention window. Which collection strategy fits?",
+        "prompt": "An enterprise audit-log API request returns 100 records and a Link header containing rel=\"next\". How should the integration collect the rest of the matching records?",
         "choices": [
-            "Expand the audit-log search to cover the required retention period",
-            "Stream events to an external archive",
-            "Increase repository workflow-log and artifact retention periods",
-            "Download one audit export after the native retention window expires"
+            "Drop the date filter to force the API to return one larger page.",
+            "Follow the next-page URL until no next link remains.",
+            "Treat 100 records as the complete matching event set.",
+            "Repeat the identical first-page request until the count changes."
         ],
         "correct": 1,
         "explanations": [
-            "Search ranges cannot extend server-side retention.",
-            "Streaming allows an external retention policy.",
-            "Workflow settings do not extend audit retention.",
-            "Exporting after expiration cannot recover expired source events."
+            "Removing filters broadens the query and does not remove pagination.",
+            "The API provides pagination links for retrieving subsequent result pages.",
+            "A next-page link explicitly indicates more results are available.",
+            "Repeating the same first page does not advance through the results."
         ],
-        "concept": "External audit preservation",
+        "concept": "Audit evidence collectors must consume every result page.",
         "hints": [
-            "Capture events before the source expires.",
-            "Display settings do not create an archive."
+            "Check response metadata before declaring collection complete.",
+            "Distinguish repeating a page from advancing through a result set."
         ],
-        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/security-and-compliance/audit-log-for-an-enterprise"
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/using-the-audit-log-api-for-your-enterprise"
     },
     {
         "id": "admin-201",
         "domain": "Monitor and optimize GitHub usage",
-        "prompt": "An enterprise owner sees no events from four months ago in the default audit-log view on GitHub Enterprise Cloud. What should they try before concluding the data expired?",
+        "prompt": "An authorized integration queries the enterprise audit-log API for clone, fetch, and push events. Which URL parameter specifically selects Git events?",
         "choices": [
-            "Change workflow artifact retention",
-            "Create a new organization",
-            "Add the account as a repository watcher",
-            "Search with an explicit created date range"
+            "include=web",
+            "per_page=100",
+            "order=asc",
+            "include=git"
         ],
         "correct": 3,
         "explanations": [
-            "Artifact retention does not affect audit display.",
-            "A new organization cannot restore this view.",
-            "Watching repositories does not change audit filtering.",
-            "The default display covers three months, while retention is longer."
+            "This selects web events rather than the requested Git events.",
+            "Page size controls pagination, not the event class.",
+            "Sort order does not select Git rather than web events.",
+            "This parameter selects Git events; include=all also includes web events."
         ],
-        "concept": "Audit display window versus retention",
+        "concept": "Event-class selection and pagination are separate audit API controls.",
         "hints": [
-            "Could the current view exclude retained data?",
-            "Distinguish result visibility from source-data availability."
+            "Identify whether the request is about event type, order, or page size.",
+            "Separate Git operations from web-interface activity."
         ],
-        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/searching-the-audit-log-for-your-enterprise"
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/using-the-audit-log-api-for-your-enterprise"
     },
     {
         "id": "admin-202",
         "domain": "Monitor and optimize GitHub usage",
-        "prompt": "A REST API response has x-ratelimit-remaining: 0. Which header tells the integration when the primary rate limit resets?",
+        "prompt": "A REST GET uses a valid Authorization header and If-None-Match. GitHub returns 304 Not Modified. How does this conditional response affect the primary rate limit?",
         "choices": [
-            "x-ratelimit-reset",
-            "x-github-request-id",
-            "content-length",
-            "last-modified"
+            "It does not count against the primary rate limit.",
+            "It consumes the entire remaining primary allowance.",
+            "It always counts as two ordinary GET requests.",
+            "It restores all requests spent earlier in the hour."
         ],
         "correct": 0,
         "explanations": [
-            "It gives the reset time in UTC epoch seconds.",
-            "The request ID helps correlate a request, not schedule retries.",
-            "Body size does not describe rate limits.",
-            "Resource modification time does not reset a rate limit."
+            "Correctly authorized conditional requests returning 304 do not consume primary allowance.",
+            "A 304 does not exhaust the authenticated client's allowance.",
+            "The documented conditional-request behavior does not double its rate-limit cost.",
+            "Avoiding a charge for this response does not refund previous requests."
         ],
-        "concept": "Primary API limit diagnostics",
+        "concept": "Authorized conditional 304 responses avoid primary-rate-limit charges.",
         "hints": [
-            "Use rate-limit response metadata.",
-            "Distinguish a reset time from a request identifier."
+            "Distinguish an unchanged representation from a newly returned body.",
+            "Consider both the response status and the request's authentication."
         ],
-        "source": "https://docs.github.com/en/rest/using-the-rest-api/troubleshooting-the-rest-api"
+        "source": "https://docs.github.com/en/rest/using-the-rest-api/best-practices-for-using-the-rest-api"
     },
     {
         "id": "admin-203",
         "domain": "Monitor and optimize GitHub usage",
-        "prompt": "A GitHub REST API rate-limit response includes retry-after: 120. What should the integration do?",
+        "prompt": "An integration repeatedly reaches secondary REST limits while issuing many simultaneous requests. Which scheduling change follows GitHub's prevention guidance?",
         "choices": [
-            "Immediately retry with parallel requests",
-            "Retry after changing the User-Agent",
-            "Wait at least 120 seconds before retrying",
-            "Treat the response as a repository deletion"
+            "Remove authentication from all requests.",
+            "Retry each failed request immediately in every worker.",
+            "Queue requests and issue them serially.",
+            "Start more parallel workers with the same credential."
         ],
         "correct": 2,
         "explanations": [
-            "More requests can worsen throttling.",
-            "Changing User-Agent does not satisfy the delay.",
-            "The header specifies the minimum retry delay in seconds.",
-            "A rate-limit response does not imply deletion."
+            "Removing authentication does not solve concurrent-request pressure.",
+            "Immediate parallel retries sustain the burst instead of controlling it.",
+            "Serial requests reduce concurrency that can trigger secondary limits.",
+            "Additional concurrent workers worsen the scheduling behavior."
         ],
-        "concept": "Respecting API retry guidance",
+        "concept": "Request scheduling can prevent secondary throttling before retries are needed.",
         "hints": [
-            "Interpret the server's backoff instruction.",
-            "Retries should reduce load, not multiply it."
+            "Look for the load pattern causing the throttling.",
+            "Distinguish controlling concurrency from changing credentials."
         ],
-        "source": "https://docs.github.com/en/rest/using-the-rest-api/troubleshooting-the-rest-api"
+        "source": "https://docs.github.com/en/rest/using-the-rest-api/best-practices-for-using-the-rest-api"
     },
     {
         "id": "admin-204",
@@ -4899,26 +4899,26 @@ export const questions = [
     {
         "id": "admin-205",
         "domain": "Monitor and optimize GitHub usage",
-        "prompt": "An enterprise integration repeatedly polls for individual repository events. Which alternative can reduce unnecessary API requests?",
+        "prompt": "After validating a webhook signature, an integration must recognize a requested redelivery of an event it already processed. Which GitHub header retains the original delivery identifier?",
         "choices": [
-            "Polling every repository more frequently",
-            "Rotating tokens after each successful request",
-            "Downloading every audit export after each event",
-            "Subscribing to applicable webhooks"
+            "X-GitHub-Event",
+            "User-Agent",
+            "Content-Type",
+            "X-GitHub-Delivery"
         ],
         "correct": 3,
         "explanations": [
-            "More frequent polling increases request volume.",
-            "Token rotation does not remove redundant polling.",
-            "Repeated full exports increase unnecessary collection.",
-            "Webhooks notify the receiver when subscribed events occur."
+            "This identifies an event type, which many different deliveries can share.",
+            "The user agent is not the unique delivery identifier.",
+            "The content type describes the representation rather than the individual delivery.",
+            "A requested redelivery preserves the original X-GitHub-Delivery value."
         ],
-        "concept": "Event-driven activity monitoring",
+        "concept": "Delivery IDs support deduplication but do not replace signature validation.",
         "hints": [
-            "Consider push notifications rather than repeated reads.",
-            "Collect the events the integration actually needs."
+            "Separate an event's type from an individual delivery's identity.",
+            "Consider which value should stay stable when that delivery is requested again."
         ],
-        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/security-and-compliance/audit-log-for-an-enterprise"
+        "source": "https://docs.github.com/en/webhooks/using-webhooks/best-practices-for-using-webhooks"
     },
     {
         "id": "admin-206",
@@ -4947,122 +4947,122 @@ export const questions = [
     {
         "id": "admin-207",
         "domain": "Monitor and optimize GitHub usage",
-        "prompt": "On GitHub Enterprise Server 3.19, which data package is primarily a plaintext overview of instance settings and environment?",
+        "prompt": "A GHES 3.19 administrator is investigating a nearly full root partition before choosing what to remove. Which utility checks for large files and deleted files with open handles?",
         "choices": [
-            "An extended support bundle",
-            "A repository source archive",
-            "A diagnostic file",
-            "A workflow artifact archive"
+            "ghe-config-apply",
+            "ghe-announce",
+            "ghe-check-disk-usage",
+            "ghe-cleanup-caches"
         ],
         "correct": 2,
         "explanations": [
-            "An extended bundle also includes sanitized logs.",
-            "A source archive does not describe instance settings.",
-            "Diagnostics summarize settings, versions, and environment.",
-            "Workflow artifacts are run outputs, not instance diagnostics."
+            "This applies configuration changes rather than locating large or still-open deleted files.",
+            "This changes the user announcement banner, not disk diagnostics.",
+            "This utility investigates large files and deleted files whose handles remain open.",
+            "This removes caches rather than performing the specified disk-usage investigation."
         ],
-        "concept": "Classifying GHES diagnostic data",
+        "concept": "Inspect disk usage before choosing a cleanup operation.",
         "hints": [
-            "Distinguish configuration overview from log archive.",
-            "Choose data at the instance scope."
+            "Distinguish investigation from a command that changes stored data.",
+            "Match the utility's documented purpose to the observed resource problem."
         ],
-        "source": "https://docs.github.com/en/enterprise-server@3.19/support/contacting-github-support/providing-data-to-github-support"
+        "source": "https://docs.github.com/en/enterprise-server@3.19/admin/administering-your-instance/administering-your-instance-from-the-command-line/command-line-utilities"
     },
     {
         "id": "admin-208",
         "domain": "Monitor and optimize GitHub usage",
-        "prompt": "What does a GitHub Enterprise Server 3.19 support bundle add beyond a diagnostic file?",
+        "prompt": "In a GHES 3.19 administrative SSH session, which command reads core.github-hostname without setting a new hostname or applying configuration changes?",
         "choices": [
-            "A complete clone of every private repository",
-            "Sanitized instance log files",
-            "A replacement Enterprise license",
-            "A backup of every user's private SSH key"
+            "ghe-config-check",
+            "ghe-config core.github-hostname",
+            "ghe-config core.github-hostname new.example.com",
+            "ghe-config-apply"
         ],
         "correct": 1,
         "explanations": [
-            "Support bundles are not full repository backups.",
-            "A support bundle combines diagnostics with sanitized logs.",
-            "Bundles do not issue licenses.",
-            "Private SSH keys are not a support-bundle deliverable."
+            "This validates configuration rather than retrieving the requested value.",
+            "With only the key, ghe-config retrieves its current value.",
+            "Adding a value changes the setting rather than merely reading it.",
+            "This applies configuration changes instead of retrieving just this key."
         ],
-        "concept": "GHES support bundle contents",
+        "concept": "ghe-config distinguishes retrieval from modification by its arguments.",
         "hints": [
-            "Troubleshooting needs both context and events.",
-            "A support bundle is not a backup or credential export."
+            "Compare a key-only command with a key followed by a new value.",
+            "Separate reading configuration from validating or applying it."
         ],
-        "source": "https://docs.github.com/en/enterprise-server@3.19/support/contacting-github-support/providing-data-to-github-support"
+        "source": "https://docs.github.com/en/enterprise-server@3.19/admin/administering-your-instance/administering-your-instance-from-the-command-line/command-line-utilities"
     },
     {
         "id": "admin-209",
         "domain": "Monitor and optimize GitHub usage",
-        "prompt": "A GHES 3.19 administrator lacks SSH access but can sign in to the Management Console. Where can they generate instance diagnostics in the English UI?",
+        "prompt": "During a GHES 3.19 incident, an SSH administrator wants to watch relevant installation log files as new entries arrive, not download a static bundle. Which utility fits?",
         "choices": [
-            "Repository > Actions > Artifacts",
-            "Organization > People > Members",
-            "Enterprise > Billing > Usage",
-            "Management Console > Support > Download diagnostics info"
+            "ghe-support-bundle",
+            "ghe-config-check",
+            "ghe-nwo",
+            "ghe-logs-tail"
         ],
         "correct": 3,
         "explanations": [
-            "Repository artifacts are not instance diagnostics.",
-            "Membership screens do not generate diagnostics.",
-            "Billing usage is not an instance diagnostic file.",
-            "The Management Console provides this diagnostic download."
+            "A support bundle packages diagnostic evidence instead of following live logs.",
+            "This validates configuration rather than watching log entries arrive.",
+            "This maps a repository ID to its owner and name, not to live log output.",
+            "This utility tails relevant installation logs for ongoing observation."
         ],
-        "concept": "Generating GHES diagnostics without SSH",
+        "concept": "Live log following and packaged diagnostic evidence serve different tasks.",
         "hints": [
-            "Use the instance administration interface.",
-            "Diagnostic collection is not a repository operation."
+            "Identify whether the responder needs a snapshot or ongoing output.",
+            "Match the requested observation to the utility's purpose."
         ],
-        "source": "https://docs.github.com/en/enterprise-server@3.19/support/contacting-github-support/providing-data-to-github-support"
+        "source": "https://docs.github.com/en/enterprise-server@3.19/admin/administering-your-instance/administering-your-instance-from-the-command-line/command-line-utilities"
     },
     {
         "id": "admin-210",
         "domain": "Monitor and optimize GitHub usage",
-        "prompt": "Which evidence is most useful in a GitHub Support ticket for a reproducible enterprise workflow failure?",
+        "prompt": "An enterprise uses data residency at octocorp.ghe.com. Which account should its administrator use to create a support ticket about that enterprise?",
         "choices": [
-            "Reproduction steps, affected URLs, errors, and sanitized logs",
-            "A list of installed integrations without the failing request or run",
-            "A billing summary and runner inventory without the failure timestamps",
-            "A general architecture diagram without the observed or expected behavior"
+            "The enterprise's GHE.com account.",
+            "A personal GitHub.com account using the same work email.",
+            "A GitHub.com account that administers a different enterprise.",
+            "A GHE.com account belonging to a different enterprise."
         ],
         "correct": 0,
         "explanations": [
-            "These details help Support locate and reproduce the failure.",
-            "An inventory alone does not reproduce the failure.",
-            "Billing and inventory omit the failure evidence.",
-            "Architecture alone does not define the symptom."
+            "Data-resident enterprise support tickets must use the corresponding GHE.com account.",
+            "Matching email addresses do not replace the required GHE.com account context.",
+            "Administration of another enterprise does not establish this data-resident account context.",
+            "The account must correspond to the enterprise that needs support."
         ],
-        "concept": "Actionable support escalation",
+        "concept": "Data-resident enterprises require their GHE.com account context in Support.",
         "hints": [
-            "Provide enough context to reproduce the symptom.",
-            "Useful evidence should not disclose credentials."
+            "Check which host owns the enterprise identity.",
+            "Distinguish the support account context from the information included in a ticket."
         ],
         "source": "https://docs.github.com/en/support/contacting-github-support/creating-a-support-ticket"
     },
     {
         "id": "admin-211",
         "domain": "Monitor and optimize GitHub usage",
-        "prompt": "GitHub Support needs a GHES 3.19 support bundle but cannot access the customer's environment. Who should collect it?",
+        "prompt": "A GHES 3.19 administrator suspects background-job queues are backing up. Which utility displays the distribution of queued jobs and jobs currently processing?",
         "choices": [
-            "GitHub Support through automatic access to the customer's VM",
-            "A repository collaborator through the repository's Actions tab",
-            "An instance administrator through supported instance tools",
-            "An enterprise member through their personal account's security log"
+            "ghe-es-index-status",
+            "ghe-announce",
+            "ghe-aqueduct-info",
+            "ghe-check-disk-usage"
         ],
         "correct": 2,
         "explanations": [
-            "Support does not automatically access the customer environment.",
-            "Repository collaboration does not grant instance diagnostic access.",
-            "Instance administrators can generate and share requested bundles.",
-            "A personal security log is not an instance support bundle."
+            "This reports Elasticsearch index status instead of background-job queue distribution.",
+            "This manages an announcement banner rather than inspecting background jobs.",
+            "This utility reports queued background jobs and those being processed.",
+            "This investigates large or still-open deleted files rather than job queues."
         ],
-        "concept": "Administrator and Support responsibilities",
+        "concept": "Choose monitoring evidence for the subsystem exhibiting the backlog.",
         "hints": [
-            "Collection requires access to the customer-managed instance.",
-            "Support investigates supplied evidence rather than assuming environment access."
+            "Identify whether the bottleneck is a work queue, disk, or search index.",
+            "Distinguish observing a queue from notifying users about an incident."
         ],
-        "source": "https://docs.github.com/en/enterprise-server@3.19/support/contacting-github-support/providing-data-to-github-support"
+        "source": "https://docs.github.com/en/enterprise-server@3.19/admin/administering-your-instance/administering-your-instance-from-the-command-line/command-line-utilities"
     },
     {
         "id": "admin-212",
@@ -5163,24 +5163,24 @@ export const questions = [
     {
         "id": "admin-216",
         "domain": "Monitor and optimize GitHub usage",
-        "prompt": "Which billing feature attributes metered Actions spending to business units without moving their repositories?",
+        "prompt": "Two teams share one cost center but need independently controlled budgets. Which documented cost-center design meets that requirement?",
         "choices": [
-            "Runner labels",
-            "Cost centers",
-            "Repository topics",
-            "Environment reviewers"
+            "Use one shared budget with two alert thresholds.",
+            "Create a separate cost center for each team.",
+            "Create two budgets targeting the same shared cost center.",
+            "Add both enterprise teams as resources in the shared center."
         ],
         "correct": 1,
         "explanations": [
-            "Labels route jobs rather than allocate billing.",
-            "Cost centers associate resources with spending allocation.",
-            "Topics classify repositories, not billing allocation.",
-            "Reviewers gate deployments, not cost attribution."
+            "Multiple alert thresholds do not create independent team budgets.",
+            "A cost-center budget applies to the whole cost center, so independent team budgets need separate centers.",
+            "Both budgets still cover the shared center rather than separate team spending.",
+            "Adding separate team resources does not split the center's budget scope."
         ],
-        "concept": "Metered cost attribution",
+        "concept": "Independent budget boundaries require appropriate cost-center scope.",
         "hints": [
-            "Separate organizational reporting from code ownership.",
-            "Choose a billing grouping, not a workflow control."
+            "Distinguish naming a team from creating a budget boundary.",
+            "Check whether a cost-center budget applies to part or all of that center."
         ],
         "source": "https://docs.github.com/en/billing/concepts/cost-centers"
     },

@@ -31,12 +31,17 @@ const first = questions[0].id;
 test("Administration localization preserves workflow syntax, CLI commands, and English interface choices", () => {
     const exam = exams.find(exam => exam.id === "administration");
     const cases = [
+        ["admin-058", "Management Console → Support → Download diagnostics info"],
         ["admin-148", ".github/workflows/build.yml"],
         ["admin-149", "workflow_call"],
         ["admin-150", "jobs.build.uses"],
+        ["admin-151", "enabled: false"],
         ["admin-158", "contents: read"],
         ["admin-169", "gh secret set API_KEY --env production"],
-        ["admin-209", "Management Console > Support > Download diagnostics info"],
+        ["admin-201", "include=git"],
+        ["admin-205", "X-GitHub-Delivery"],
+        ["admin-208", "ghe-config core.github-hostname"],
+        ["admin-209", "ghe-logs-tail"],
     ];
     for (const [id, correctLiteral] of cases) {
         const question = exam.questions.find(question => question.id === id);

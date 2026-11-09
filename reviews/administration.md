@@ -5410,7 +5410,7 @@ Em uma implantação combinada de GitHub Enterprise Cloud e Server, como a maior
 
 **Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/billing/concepts/enterprise-billing/combined-enterprise-use>
 
-<!-- certification-coach-question:admin-050:1a8ec72fe2f2677313e542b20cd36529b3e1ae9c87b639c654b2c7054a912313 -->
+<!-- certification-coach-question:admin-050:7e5324402fe5b24b7a7c6d0a15f5444ff27a446bde1865a7a21ecba36eaf134d -->
 ## Question 50: Administer GitHub Enterprise environment
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -5421,68 +5421,68 @@ Em uma implantação combinada de GitHub Enterprise Cloud e Server, como a maior
 
 **Question ID:** `admin-050`
 
-**Content revision:** `1a8ec72fe2f2677313e542b20cd36529b3e1ae9c87b639c654b2c7054a912313`
+**Content revision:** `7e5324402fe5b24b7a7c6d0a15f5444ff27a446bde1865a7a21ecba36eaf134d`
 
-**en review revision:** `4d674884cd8a1625bbd645651e065b9559002949865765d53eae8972412569f5`
-**es review revision:** `1aadd748622d5465cf25e847047f1956b9a7f17169e946a7eef7213c61718f32`
-**pt-BR review revision:** `44ff7362b046c38cb26398776c5e0b81adef3d7ba4643f5567cc51b2eb017c12`
+**en review revision:** `ef9f196fe527290063d704b3d80748fff29a69bef69fe09b7915c9e4b7a450e0`
+**es review revision:** `ae02974d92f4c19f13ff8ebb6dea231f8214d95de507984b19f1cafad6306a41`
+**pt-BR review revision:** `7c63b5413b33cee335fbc252a82e8440e54646b4131966ba7a412d80872c6e8f`
 
 ### English
 
-An organization repository contributor needs a repository role changed from Read to Write. Who can make this routine access change directly?
+A repository moves from one GitHub.com organization to another, and nobody reuses its old location. What happens when an existing clone fetches using the old remote URL?
 
-1. An enterprise billing manager without repository access
+1. Fetch fails until the clone's entire commit history is downloaded again.
 
-   Billing authority alone does not grant repository access administration.
+   A transfer preserves Git history and redirects the old Git URL.
 
-2. A member with only Read access
+2. The old URL becomes a permanent independent copy of the repository.
 
-   Read does not include permission management.
+   The old location redirects; it is not a second repository copy.
 
-3. An outside collaborator with only Triage access
+3. The old URL grants the clone access regardless of its new permissions.
 
-   Triage does not include permission management.
+   Redirection does not bypass authentication or repository authorization.
 
-4. A repository administrator **[CORRECT]**
+4. Git redirects to the new location; updating origin is still recommended. **[CORRECT]**
 
-   Repository administrators can manage individual and team repository roles.
+   Git clone, fetch, and push requests redirect after transfer, but the new URL avoids reliance on that redirect.
 
-**Concept:** Administrator-resolvable access requests
+**Concept:** Repository transfers redirect Git URLs without bypassing access checks.
 
 **Authored coaching hints:**
 
-- Separate customer-controlled settings from product or service faults.
-- Match the evidence and entitlement to the affected deployment.
+- Separate the repository's location from its Git history.
+- Consider whether a redirect also changes authorization.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Un colaborador de un repositorio de organización necesita cambiar su rol de Read a Write. ¿Quién puede realizar directamente este cambio habitual de acceso?
+Un repositorio se transfiere entre organizaciones de GitHub.com y nadie reutiliza su ubicación anterior. ¿Qué ocurre si un clon usa la URL remota anterior para fetch?
 
-1. Un administrador de facturación empresarial sin acceso al repositorio
+1. Fetch falla hasta descargar de nuevo todo el historial del clon.
 
-   La autoridad de facturación por sí sola no concede gestión de permisos.
+   La transferencia conserva el historial Git y redirige la URL anterior.
 
-2. Un miembro con solo acceso Read
+2. La URL anterior se convierte en una copia independiente permanente.
 
-   Read no incluye gestionar permisos.
+   La ubicación anterior redirige; no es una segunda copia del repositorio.
 
-3. Un colaborador externo con solo acceso Triage
+3. La URL anterior concede acceso sin importar los nuevos permisos.
 
-   Triage no incluye gestionar permisos.
+   La redirección no evita la autenticación ni la autorización del repositorio.
 
-4. Un administrador del repositorio **[CORRECT]**
+4. Git redirige a la nueva ubicación; aun así se recomienda actualizar origin. **[CORRECT]**
 
-   Los administradores pueden gestionar roles individuales y de equipos en el repositorio.
+   Las solicitudes clone, fetch y push se redirigen, pero la URL nueva evita depender de ello.
 
-**Concept:** Solicitudes de acceso que resuelve el administrador
+**Concept:** Las transferencias redirigen las URL Git sin evitar comprobaciones de acceso.
 
 **Authored coaching hints:**
 
-- Distingue los ajustes del cliente de los fallos del producto o servicio.
-- Relaciona las pruebas y el derecho a soporte con el entorno afectado.
+- Distingue la ubicación del repositorio de su historial Git.
+- Considera si una redirección también cambia la autorización.
 
 </details>
 
@@ -5491,34 +5491,34 @@ Un colaborador de un repositorio de organización necesita cambiar su rol de Rea
 
 ### Português (Brasil)
 
-Um colaborador de um repositório da organização precisa mudar sua função de Read para Write. Quem pode fazer diretamente essa alteração rotineira de acesso?
+Um repositório é transferido entre organizações do GitHub.com, e ninguém reutiliza o endereço antigo. O que acontece se um clone fizer fetch pela URL remota antiga?
 
-1. Um gerente de cobrança empresarial sem acesso ao repositório
+1. O fetch falha até baixar novamente todo o histórico do clone.
 
-   A autoridade de cobrança por si só não concede gerenciamento de permissões.
+   A transferência preserva o histórico Git e redireciona a URL antiga.
 
-2. Um membro com apenas acesso Read
+2. A URL antiga vira uma cópia independente e permanente do repositório.
 
-   Read não inclui gerenciar permissões.
+   O endereço antigo redireciona; ele não é uma segunda cópia do repositório.
 
-3. Um colaborador externo com apenas acesso Triage
+3. A URL antiga concede acesso independentemente das novas permissões.
 
-   Triage não inclui gerenciar permissões.
+   O redirecionamento não ignora a autenticação nem a autorização do repositório.
 
-4. Um administrador do repositório **[CORRECT]**
+4. O Git redireciona ao novo endereço; ainda é recomendado atualizar origin. **[CORRECT]**
 
-   Administradores podem gerenciar funções individuais e de equipes no repositório.
+   Solicitações clone, fetch e push são redirecionadas, mas a URL nova evita depender disso.
 
-**Concept:** Solicitações de acesso resolvidas pelo administrador
+**Concept:** Transferências redirecionam URLs Git sem ignorar verificações de acesso.
 
 **Authored coaching hints:**
 
-- Diferencie configurações do cliente de falhas do produto ou serviço.
-- Associe as evidências e o direito a suporte ao ambiente afetado.
+- Diferencie a localização do repositório de seu histórico Git.
+- Considere se um redirecionamento também altera a autorização.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization>
+**Official supporting source:** <https://docs.github.com/en/repositories/creating-and-managing-repositories/transferring-a-repository>
 
 <!-- certification-coach-question:admin-051:629217906e1ca36e6f2fb02ea2373f12d75b9e5fba9ec1c631ac09c587f9af69 -->
 ## Question 51: Administer GitHub Enterprise environment
@@ -8050,7 +8050,7 @@ O que é necessário para deduplicar o uso de licença de uma pessoa entre GitHu
 
 **Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/billing/concepts/enterprise-billing/combined-enterprise-use>
 
-<!-- certification-coach-question:admin-074:3a829af721187295f73fe4697773c14d5df01f14bea229d2866763a9c1f58113 -->
+<!-- certification-coach-question:admin-074:624711c7dab9095b762b6257d4f9525d777db3a877a6c852c024b4e695d974f4 -->
 ## Question 74: Implement secure software development and compliance
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -8061,68 +8061,68 @@ O que é necessário para deduplicar o uso de licença de uma pessoa entre GitHu
 
 **Question ID:** `admin-074`
 
-**Content revision:** `3a829af721187295f73fe4697773c14d5df01f14bea229d2866763a9c1f58113`
+**Content revision:** `624711c7dab9095b762b6257d4f9525d777db3a877a6c852c024b4e695d974f4`
 
-**en review revision:** `f03ef1f67c014cacb3c0202399b9d87e0f445a5838aa88811167685182ea10fd`
-**es review revision:** `95d34b2555b7b9068b39222b671fe270ea3ef94c698b76acd90d76a81f7b3062`
-**pt-BR review revision:** `b0e2767def59865da9dcca57ee4b2b44f51a687af5c31342da669f0ad0986269`
+**en review revision:** `a7c0c04b50751d437e4b28532309028f62532d15f8808e373b42c5b4762dc226`
+**es review revision:** `cdc3b3bba762a33992626b2deca8556260a31fb758472c489e2900c42fed46f2`
+**pt-BR review revision:** `bc79e68456aedeebf2b338eb582c7f63aa8279fa6debfd775c538ac85797e9dc`
 
 ### English
 
-How do two active rulesets combine when both target the same branch and the actor has no bypass?
+An administrator has an existing ruleset definition and wants to import it through another repository's ruleset interface. Which file format does this import use?
 
-1. All applicable rules are enforced **[CORRECT]**
+1. JSON **[CORRECT]**
 
-   Matching rulesets apply together, using the most restrictive requirements.
+   The ruleset import interface accepts a JSON ruleset definition.
 
-2. Only the newest ruleset is enforced
+2. CSV
 
-   Creation order does not select the active ruleset.
+   CSV tables are not the ruleset import format.
 
-3. Only the repository ruleset is enforced
+3. TOML
 
-   Repository rules do not replace higher-level rules.
+   TOML is not the documented format for this ruleset importer.
 
-4. The actor chooses one ruleset
+4. SARIF
 
-   Actors cannot choose which applicable rules to follow.
+   SARIF represents static-analysis results, not ruleset definitions.
 
-**Concept:** Ruleset layering
+**Concept:** Ruleset definitions can be imported from JSON files.
 
 **Authored coaching hints:**
 
-- Consider whether rulesets replace or accumulate controls.
-- Distinguish targeting from bypass privileges.
+- Identify the kind of object being transferred, not its enforcement result.
+- Distinguish a policy definition from an analysis report.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-¿Cómo se combinan dos conjuntos de reglas activos que afectan a la misma rama si el actor no puede omitirlos?
+Una persona administra un repositorio y quiere importar una definición de ruleset existente desde la interfaz de otro repositorio. ¿Qué formato de archivo usa esta importación?
 
-1. Se aplican todas las reglas pertinentes **[CORRECT]**
+1. JSON **[CORRECT]**
 
-   Los conjuntos coincidentes se acumulan con los requisitos más restrictivos.
+   La interfaz de importación acepta una definición de ruleset en JSON.
 
-2. Solo se aplica el conjunto más reciente
+2. CSV
 
-   El orden de creación no selecciona el conjunto activo.
+   Las tablas CSV no son el formato de importación de rulesets.
 
-3. Solo se aplica el conjunto del repositorio
+3. TOML
 
-   Las reglas del repositorio no sustituyen las de niveles superiores.
+   TOML no es el formato documentado de este importador.
 
-4. El actor elige un conjunto
+4. SARIF
 
-   Los actores no pueden elegir qué reglas pertinentes cumplir.
+   SARIF representa resultados de análisis estático, no definiciones de rulesets.
 
-**Concept:** Superposición de conjuntos de reglas
+**Concept:** Las definiciones de rulesets pueden importarse desde archivos JSON.
 
 **Authored coaching hints:**
 
-- Considera si los conjuntos sustituyen o acumulan controles.
-- Distingue la selección de ramas de los permisos de omisión.
+- Identifica el objeto que se transfiere, no su resultado de aplicación.
+- Distingue una definición de política de un informe de análisis.
 
 </details>
 
@@ -8131,34 +8131,34 @@ How do two active rulesets combine when both target the same branch and the acto
 
 ### Português (Brasil)
 
-Como dois conjuntos de regras ativos se combinam quando abrangem a mesma branch e o ator não tem permissão de bypass?
+Uma pessoa administra um repositório e quer importar uma definição existente de ruleset pela interface de outro repositório. Qual formato de arquivo essa importação usa?
 
-1. Todas as regras aplicáveis são impostas **[CORRECT]**
+1. JSON **[CORRECT]**
 
-   Os conjuntos correspondentes se acumulam com os requisitos mais restritivos.
+   A interface de importação aceita uma definição de ruleset em JSON.
 
-2. Somente o conjunto mais recente é imposto
+2. CSV
 
-   A ordem de criação não seleciona o conjunto ativo.
+   Tabelas CSV não são o formato de importação de rulesets.
 
-3. Somente o conjunto do repositório é imposto
+3. TOML
 
-   Regras do repositório não substituem regras de níveis superiores.
+   TOML não é o formato documentado para esse importador.
 
-4. O ator escolhe um conjunto
+4. SARIF
 
-   Os atores não escolhem quais regras aplicáveis cumprir.
+   SARIF representa resultados de análise estática, não definições de rulesets.
 
-**Concept:** Sobreposição de conjuntos de regras
+**Concept:** Definições de rulesets podem ser importadas de arquivos JSON.
 
 **Authored coaching hints:**
 
-- Considere se os conjuntos substituem ou acumulam controles.
-- Diferencie seleção de branches de permissões de bypass.
+- Identifique o objeto transferido, não seu resultado de aplicação.
+- Diferencie uma definição de política de um relatório de análise.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets>
+**Official supporting source:** <https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/managing-rulesets-for-a-repository>
 
 <!-- certification-coach-question:admin-075:cecd57543b4c06a94e40092038f344fc1a9d68caf9f1173e81e8856506325b51 -->
 ## Question 75: Implement secure software development and compliance
@@ -16520,7 +16520,7 @@ Em qual local do YAML o chamador referencia um fluxo reutilizável?
 
 **Official supporting source:** <https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows>
 
-<!-- certification-coach-question:admin-151:bdee2c23c87a5231b1405c5ee44457caccf4bce7ae429fc023b65ef60b901fc9 -->
+<!-- certification-coach-question:admin-151:3d9dd5b0cb883063f30d5aa59b1b936f7caf1fc250ae2127bbe9d9c6dfcc2777 -->
 ## Question 151: Manage GitHub Actions
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -16531,68 +16531,68 @@ Em qual local do YAML o chamador referencia um fluxo reutilizável?
 
 **Question ID:** `admin-151`
 
-**Content revision:** `bdee2c23c87a5231b1405c5ee44457caccf4bce7ae429fc023b65ef60b901fc9`
+**Content revision:** `3d9dd5b0cb883063f30d5aa59b1b936f7caf1fc250ae2127bbe9d9c6dfcc2777`
 
-**en review revision:** `66456a8bc829f3e6f83df69f8343bc119907d525cb578d81c4a0de0205cc2516`
-**es review revision:** `ea55067af183ca657500b0855f10a60cceec6c749f191f3e5499043895b05fdb`
-**pt-BR review revision:** `777789e350e2aa29e6c2cedcd4d86c54d5f01b6525760460947c82a52b6f70f2`
+**en review revision:** `59a8f48a20b42b542c5a6ae6d853865d5604d89cb3f376c298cb64ecf08b12eb`
+**es review revision:** `fcb7a85a0cee0957377867c59de3b8cada1202de4a016e645ddd49bd332b1f6d`
+**pt-BR review revision:** `e5a50e78fb1d49b3c2ea30b6f91a56cbc2ee826e2b1e27346c3ec6d4d56d0876`
 
 ### English
 
-Which reusable component can define separate build and deploy jobs rather than run inside a single step?
+A reusable workflow declares an input named enabled with type: boolean. Which caller with entry passes the boolean false rather than a string, number, or list?
 
-1. A JavaScript action
+1. enabled: \[false\]
 
-   A JavaScript action runs within a step.
+   A list is not a boolean input value.
 
-2. A reusable workflow **[CORRECT]**
+2. enabled: false **[CORRECT]**
 
-   Reusable workflows can contain multiple jobs.
+   The unquoted false value has the required boolean type.
 
-3. A composite action
+3. enabled: "false"
 
-   Composite actions combine steps, not separate jobs.
+   Quoting false makes the value a string rather than the declared boolean.
 
-4. A Docker container action
+4. enabled: 0
 
-   A container action runs within a step.
+   A numeric zero is not the declared boolean input type.
 
-**Concept:** Choosing a reuse unit
+**Concept:** Values supplied to reusable workflow inputs must match their declared types.
 
 **Authored coaching hints:**
 
-- Consider whether reuse includes orchestration.
-- Match the component to the execution boundary.
+- Read the input's declared type before evaluating its value.
+- Consider how YAML quoting and collection syntax affect a value's type.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-¿Qué componente reutilizable puede definir trabajos separados de compilación y despliegue en lugar de ejecutarse dentro de un paso?
+Un workflow reutilizable declara enabled con type: boolean. ¿Qué entrada de with del llamador pasa el booleano false en lugar de una cadena, número o lista?
 
-1. Una acción JavaScript
+1. enabled: \[false\]
 
-   Una acción JavaScript se ejecuta dentro de un paso.
+   Una lista no es un valor de entrada booleano.
 
-2. Un flujo de trabajo reutilizable **[CORRECT]**
+2. enabled: false **[CORRECT]**
 
-   Los flujos reutilizables pueden contener varios trabajos.
+   El valor false sin comillas tiene el tipo booleano requerido.
 
-3. Una acción compuesta
+3. enabled: "false"
 
-   Las acciones compuestas combinan pasos, no trabajos separados.
+   Las comillas convierten false en una cadena, no en el booleano declarado.
 
-4. Una acción de contenedor Docker
+4. enabled: 0
 
-   Una acción de contenedor se ejecuta dentro de un paso.
+   El cero numérico no es el tipo booleano declarado.
 
-**Concept:** Elección de la unidad reutilizable
+**Concept:** Los valores de entrada de workflows reutilizables deben respetar sus tipos declarados.
 
 **Authored coaching hints:**
 
-- Considera si la reutilización incluye orquestación.
-- Relaciona el componente con el límite de ejecución.
+- Lee el tipo declarado antes de evaluar el valor.
+- Considera cómo las comillas y las colecciones YAML afectan al tipo.
 
 </details>
 
@@ -16601,34 +16601,34 @@ Which reusable component can define separate build and deploy jobs rather than r
 
 ### Português (Brasil)
 
-Qual componente reutilizável pode definir trabalhos separados de build e implantação em vez de executar dentro de uma etapa?
+Um workflow reutilizável declara enabled com type: boolean. Qual entrada with do chamador passa o booleano false, e não uma string, número ou lista?
 
-1. Uma ação JavaScript
+1. enabled: \[false\]
 
-   Uma ação JavaScript executa dentro de uma etapa.
+   Uma lista não é um valor de entrada booleano.
 
-2. Um fluxo de trabalho reutilizável **[CORRECT]**
+2. enabled: false **[CORRECT]**
 
-   Fluxos reutilizáveis podem conter vários trabalhos.
+   O valor false sem aspas tem o tipo booleano exigido.
 
-3. Uma ação composta
+3. enabled: "false"
 
-   Ações compostas combinam etapas, não trabalhos separados.
+   As aspas transformam false em uma string, não no booleano declarado.
 
-4. Uma ação de contêiner Docker
+4. enabled: 0
 
-   Uma ação de contêiner executa dentro de uma etapa.
+   O zero numérico não corresponde ao tipo booleano declarado.
 
-**Concept:** Escolha da unidade reutilizável
+**Concept:** Valores de entrada de workflows reutilizáveis devem corresponder aos tipos declarados.
 
 **Authored coaching hints:**
 
-- Considere se a reutilização inclui orquestração.
-- Relacione o componente ao limite de execução.
+- Leia o tipo declarado antes de avaliar o valor.
+- Considere como aspas e coleções YAML afetam o tipo do valor.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/actions/concepts/workflows-and-actions/reusing-workflow-configurations>
+**Official supporting source:** <https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows>
 
 <!-- certification-coach-question:admin-152:2ef9e79253613a24931e4fa7eb58b39bf50b3afe226b7fef27d64424be2f5d3e -->
 ## Question 152: Manage GitHub Actions
@@ -21910,7 +21910,7 @@ Qual retenção se aplica especificamente a eventos Git no log empresarial do Gi
 
 **Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/security-and-compliance/audit-log-for-an-enterprise>
 
-<!-- certification-coach-question:admin-200:921619a03c8e0220a7020c0b300782631d704dfaae15e77b0a432910ff09765c -->
+<!-- certification-coach-question:admin-200:9f927efca11b8686ca5f0ef80395ebbf93cc942d45f12887d3c0a832c5998e6d -->
 ## Question 200: Monitor and optimize GitHub usage
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -21921,68 +21921,68 @@ Qual retenção se aplica especificamente a eventos Git no log empresarial do Gi
 
 **Question ID:** `admin-200`
 
-**Content revision:** `921619a03c8e0220a7020c0b300782631d704dfaae15e77b0a432910ff09765c`
+**Content revision:** `9f927efca11b8686ca5f0ef80395ebbf93cc942d45f12887d3c0a832c5998e6d`
 
-**en review revision:** `1987b679b9b7d375c063476b24438c5d6c7f3f7dfbc8300f763b42c244401ed6`
-**es review revision:** `08d7969bf7aca3aa21a130e92c6a1c9f7342a37cfc358bb974a37b50345e841a`
-**pt-BR review revision:** `185a15d0263009ceb79b088a17e79e396af8ad39a85ec48fc5929806bb3731d2`
+**en review revision:** `b14348c90596c3252eebac1a4de0fd7c91218911c265fa1a7a7aeaac9b114317`
+**es review revision:** `ed324d19f3afe380cda6f09ca5c87eeb40f4a6458a8162a515756d716304192b`
+**pt-BR review revision:** `a271bb894f2987a224f9bda3cd7a2d8cc8e03e54843f8f6e883dc7e24ffc39cf`
 
 ### English
 
-An enterprise needs to analyze audit events beyond GitHub Enterprise Cloud's native retention window. Which collection strategy fits?
+An enterprise audit-log API request returns 100 records and a Link header containing rel="next". How should the integration collect the rest of the matching records?
 
-1. Expand the audit-log search to cover the required retention period
+1. Drop the date filter to force the API to return one larger page.
 
-   Search ranges cannot extend server-side retention.
+   Removing filters broadens the query and does not remove pagination.
 
-2. Stream events to an external archive **[CORRECT]**
+2. Follow the next-page URL until no next link remains. **[CORRECT]**
 
-   Streaming allows an external retention policy.
+   The API provides pagination links for retrieving subsequent result pages.
 
-3. Increase repository workflow-log and artifact retention periods
+3. Treat 100 records as the complete matching event set.
 
-   Workflow settings do not extend audit retention.
+   A next-page link explicitly indicates more results are available.
 
-4. Download one audit export after the native retention window expires
+4. Repeat the identical first-page request until the count changes.
 
-   Exporting after expiration cannot recover expired source events.
+   Repeating the same first page does not advance through the results.
 
-**Concept:** External audit preservation
+**Concept:** Audit evidence collectors must consume every result page.
 
 **Authored coaching hints:**
 
-- Capture events before the source expires.
-- Display settings do not create an archive.
+- Check response metadata before declaring collection complete.
+- Distinguish repeating a page from advancing through a result set.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Una empresa necesita analizar eventos más allá de la retención nativa de GitHub Enterprise Cloud. ¿Qué estrategia corresponde?
+Una solicitud a la API de auditoría empresarial devuelve 100 registros y un encabezado Link con rel="next". ¿Cómo debe recopilar la integración los demás registros coincidentes?
 
-1. Ampliar la búsqueda de auditoría a todo el periodo requerido
+1. Quitar el filtro de fecha para obtener una única página mayor.
 
-   Los intervalos de búsqueda no amplían retención del servidor.
+   Quitar filtros amplía la consulta y no elimina la paginación.
 
-2. Transmitir eventos a un archivo externo **[CORRECT]**
+2. Seguir la URL de la siguiente página hasta que no haya otro enlace next. **[CORRECT]**
 
-   La transmisión permite aplicar retención externa.
+   La API proporciona enlaces de paginación para recuperar las páginas siguientes.
 
-3. Aumentar la retención de registros de flujos y artefactos
+3. Considerar los 100 registros como todos los eventos coincidentes.
 
-   La configuración de flujos no amplía retención de auditoría.
+   El enlace de página siguiente indica explícitamente que hay más resultados.
 
-4. Descargar una exportación tras caducar la retención nativa
+4. Repetir la primera solicitud idéntica hasta que cambie el número.
 
-   Exportar después no recupera eventos ya caducados.
+   Repetir la misma primera página no avanza por los resultados.
 
-**Concept:** Conservación externa de auditoría
+**Concept:** Los recopiladores de auditoría deben consumir todas las páginas.
 
 **Authored coaching hints:**
 
-- Recopila eventos antes de que caduquen en origen.
-- La configuración de visualización no crea un archivo histórico.
+- Revisa los metadatos de respuesta antes de dar por completa la recopilación.
+- Distingue repetir una página de avanzar por los resultados.
 
 </details>
 
@@ -21991,36 +21991,36 @@ Una empresa necesita analizar eventos más allá de la retención nativa de GitH
 
 ### Português (Brasil)
 
-Uma empresa precisa analisar eventos além da retenção nativa do GitHub Enterprise Cloud. Qual estratégia atende?
+Uma solicitação à API de auditoria empresarial retorna 100 registros e um cabeçalho Link com rel="next". Como a integração deve coletar os demais registros correspondentes?
 
-1. Ampliar a pesquisa de auditoria para todo o período necessário
+1. Remover o filtro de data para obter uma única página maior.
 
-   Intervalos de pesquisa não ampliam a retenção do servidor.
+   Remover filtros amplia a consulta e não elimina a paginação.
 
-2. Transmitir eventos para um arquivo externo **[CORRECT]**
+2. Seguir a URL da próxima página até não haver outro link next. **[CORRECT]**
 
-   A transmissão permite aplicar retenção externa.
+   A API fornece links de paginação para recuperar as páginas seguintes.
 
-3. Aumentar a retenção de logs de fluxos e artefatos
+3. Considerar os 100 registros como todos os eventos correspondentes.
 
-   Configurações de fluxos não ampliam a retenção de auditoria.
+   O link da próxima página indica explicitamente que existem mais resultados.
 
-4. Baixar uma exportação depois que a retenção nativa expirar
+4. Repetir a primeira solicitação idêntica até a contagem mudar.
 
-   Exportar depois não recupera eventos já expirados.
+   Repetir a mesma primeira página não avança pelos resultados.
 
-**Concept:** Preservação externa de auditoria
+**Concept:** Coletores de auditoria devem consumir todas as páginas de resultados.
 
 **Authored coaching hints:**
 
-- Colete eventos antes que expirem na origem.
-- Configurações de exibição não criam um arquivo histórico.
+- Confira os metadados da resposta antes de considerar a coleta completa.
+- Diferencie repetir uma página de avançar pelos resultados.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/security-and-compliance/audit-log-for-an-enterprise>
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/using-the-audit-log-api-for-your-enterprise>
 
-<!-- certification-coach-question:admin-201:d4d39d798d757af223b1bf71d57c211ac7b3a40a2f29de182c3066f99e257438 -->
+<!-- certification-coach-question:admin-201:26627bffc0d2cbc153040cd38594ed6b84d1d73c71985d1c88e01a436336f6a3 -->
 ## Question 201: Monitor and optimize GitHub usage
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -22031,68 +22031,68 @@ Uma empresa precisa analisar eventos além da retenção nativa do GitHub Enterp
 
 **Question ID:** `admin-201`
 
-**Content revision:** `d4d39d798d757af223b1bf71d57c211ac7b3a40a2f29de182c3066f99e257438`
+**Content revision:** `26627bffc0d2cbc153040cd38594ed6b84d1d73c71985d1c88e01a436336f6a3`
 
-**en review revision:** `7cb56443b20e81e0bddca9aa74ee38330be298c3cd572c6a983c70a92c792f17`
-**es review revision:** `8c4bce1ed21ed6caaf1b693cd46337c38a228c32f319c4eee1ebb75df2eb34db`
-**pt-BR review revision:** `dadc056f2b36ea52b23e2079f1e1e94bed0e4f2d34c9bc4e8f894a5c610ef653`
+**en review revision:** `4d36bf42e46bc1b8fef79eb27a9d1e4c7f7a14243fdc157206e5778d18484294`
+**es review revision:** `664bfc1e2b5a7c790f4ed8bfa4ec9461c6105bf5fabf8487435fce02d8933c62`
+**pt-BR review revision:** `f38ff2d123ed98b3246e85e5c3f302d9abe0774434a84578d965cc5b009cba77`
 
 ### English
 
-An enterprise owner sees no events from four months ago in the default audit-log view on GitHub Enterprise Cloud. What should they try before concluding the data expired?
+An authorized integration queries the enterprise audit-log API for clone, fetch, and push events. Which URL parameter specifically selects Git events?
 
-1. Change workflow artifact retention
+1. include=web
 
-   Artifact retention does not affect audit display.
+   This selects web events rather than the requested Git events.
 
-2. Create a new organization
+2. per\_page=100
 
-   A new organization cannot restore this view.
+   Page size controls pagination, not the event class.
 
-3. Add the account as a repository watcher
+3. order=asc
 
-   Watching repositories does not change audit filtering.
+   Sort order does not select Git rather than web events.
 
-4. Search with an explicit created date range **[CORRECT]**
+4. include=git **[CORRECT]**
 
-   The default display covers three months, while retention is longer.
+   This parameter selects Git events; include=all also includes web events.
 
-**Concept:** Audit display window versus retention
+**Concept:** Event-class selection and pagination are separate audit API controls.
 
 **Authored coaching hints:**
 
-- Could the current view exclude retained data?
-- Distinguish result visibility from source-data availability.
+- Identify whether the request is about event type, order, or page size.
+- Separate Git operations from web-interface activity.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Un propietario no ve eventos de hace cuatro meses en la vista de auditoría predeterminada de GitHub Enterprise Cloud. ¿Qué debe probar antes de concluir que caducaron?
+Una integración autorizada consulta eventos clone, fetch y push en la API de auditoría empresarial. ¿Qué parámetro URL selecciona específicamente eventos Git?
 
-1. Cambiar la retención de artefactos
+1. include=web
 
-   Los artefactos no afectan la vista de auditoría.
+   Esto selecciona eventos web, no los eventos Git solicitados.
 
-2. Crear una organización nueva
+2. per\_page=100
 
-   Una organización nueva no recupera esta vista.
+   El tamaño de página controla la paginación, no la clase de evento.
 
-3. Suscribirse como observador del repositorio
+3. order=asc
 
-   Observar repositorios no cambia filtros de auditoría.
+   El orden no selecciona eventos Git en lugar de eventos web.
 
-4. Buscar con un intervalo explícito de fechas created **[CORRECT]**
+4. include=git **[CORRECT]**
 
-   La vista predeterminada cubre tres meses; la retención es mayor.
+   Este parámetro selecciona eventos Git; include=all también incluye eventos web.
 
-**Concept:** Ventana visible frente a retención de auditoría
+**Concept:** La selección de eventos y la paginación son controles distintos de la API.
 
 **Authored coaching hints:**
 
-- ¿Podría la vista excluir datos conservados?
-- Distingue visibilidad del resultado de disponibilidad de datos.
+- Identifica si se pregunta por el tipo de evento, el orden o el tamaño de página.
+- Distingue operaciones Git de actividad de la interfaz web.
 
 </details>
 
@@ -22101,36 +22101,36 @@ Un propietario no ve eventos de hace cuatro meses en la vista de auditoría pred
 
 ### Português (Brasil)
 
-Um proprietário não vê eventos de quatro meses atrás na visão padrão de auditoria do GitHub Enterprise Cloud. O que deve tentar antes de concluir que expiraram?
+Uma integração autorizada consulta eventos clone, fetch e push na API de auditoria empresarial. Qual parâmetro de URL seleciona especificamente eventos Git?
 
-1. Mudar a retenção de artefatos
+1. include=web
 
-   Artefatos não afetam a visão de auditoria.
+   Isso seleciona eventos web, não os eventos Git solicitados.
 
-2. Criar uma organização nova
+2. per\_page=100
 
-   Uma organização nova não recupera essa visão.
+   O tamanho da página controla a paginação, não a classe de evento.
 
-3. Inscrever a conta como observadora do repositório
+3. order=asc
 
-   Observar repositórios não muda filtros de auditoria.
+   A ordenação não seleciona eventos Git em vez de eventos web.
 
-4. Pesquisar com um intervalo explícito de datas created **[CORRECT]**
+4. include=git **[CORRECT]**
 
-   A visão padrão cobre três meses; a retenção é maior.
+   Esse parâmetro seleciona eventos Git; include=all também inclui eventos web.
 
-**Concept:** Janela visível versus retenção de auditoria
+**Concept:** Seleção de eventos e paginação são controles distintos da API.
 
 **Authored coaching hints:**
 
-- A visão poderia excluir dados mantidos?
-- Diferencie visibilidade do resultado de disponibilidade dos dados.
+- Identifique se a questão trata de tipo de evento, ordenação ou tamanho de página.
+- Diferencie operações Git de atividades da interface web.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/searching-the-audit-log-for-your-enterprise>
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/using-the-audit-log-api-for-your-enterprise>
 
-<!-- certification-coach-question:admin-202:ad475da3e6ab3cd686d9619b98bcb712d9f70a666ccc131cdb3753495938f032 -->
+<!-- certification-coach-question:admin-202:96702f5804394b4fd52deda9c6f694a5e68f8b2b9ac97ff19f5d3b1a6333e6f9 -->
 ## Question 202: Monitor and optimize GitHub usage
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -22141,68 +22141,68 @@ Um proprietário não vê eventos de quatro meses atrás na visão padrão de au
 
 **Question ID:** `admin-202`
 
-**Content revision:** `ad475da3e6ab3cd686d9619b98bcb712d9f70a666ccc131cdb3753495938f032`
+**Content revision:** `96702f5804394b4fd52deda9c6f694a5e68f8b2b9ac97ff19f5d3b1a6333e6f9`
 
-**en review revision:** `a3026388144cb1eda0e79ffac5c7ef67db8481673489c181a813c7cacd40992b`
-**es review revision:** `7f516c1080bb9a79b6e9dc52c0d8593c368968322b17516cdf1a0d96fff7b009`
-**pt-BR review revision:** `b0e3c0a43b662f2ae462cc81d69c8d9fa53c6163db6474c2924c90954e54dc92`
+**en review revision:** `db19f9302e7360f52b725de350d59a39d36c4507a1a8988a3c15fbfea34c63d1`
+**es review revision:** `436d4a1b6fe79f999da4036fecb43f09df92057855e9d5e05a03fdd96be4944b`
+**pt-BR review revision:** `f2b761488fdd7ac9a176ff4d3d2c9db74b757b44d9e25d7886d3b099dbacbfdb`
 
 ### English
 
-A REST API response has x-ratelimit-remaining: 0. Which header tells the integration when the primary rate limit resets?
+A REST GET uses a valid Authorization header and If-None-Match. GitHub returns 304 Not Modified. How does this conditional response affect the primary rate limit?
 
-1. x-ratelimit-reset **[CORRECT]**
+1. It does not count against the primary rate limit. **[CORRECT]**
 
-   It gives the reset time in UTC epoch seconds.
+   Correctly authorized conditional requests returning 304 do not consume primary allowance.
 
-2. x-github-request-id
+2. It consumes the entire remaining primary allowance.
 
-   The request ID helps correlate a request, not schedule retries.
+   A 304 does not exhaust the authenticated client's allowance.
 
-3. content-length
+3. It always counts as two ordinary GET requests.
 
-   Body size does not describe rate limits.
+   The documented conditional-request behavior does not double its rate-limit cost.
 
-4. last-modified
+4. It restores all requests spent earlier in the hour.
 
-   Resource modification time does not reset a rate limit.
+   Avoiding a charge for this response does not refund previous requests.
 
-**Concept:** Primary API limit diagnostics
+**Concept:** Authorized conditional 304 responses avoid primary-rate-limit charges.
 
 **Authored coaching hints:**
 
-- Use rate-limit response metadata.
-- Distinguish a reset time from a request identifier.
+- Distinguish an unchanged representation from a newly returned body.
+- Consider both the response status and the request's authentication.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Una respuesta REST tiene x-ratelimit-remaining: 0. ¿Qué cabecera indica cuándo se restablece el límite principal?
+Un GET REST usa un encabezado Authorization válido e If-None-Match. GitHub devuelve 304 Not Modified. ¿Cómo afecta esta respuesta condicional al límite primario?
 
-1. x-ratelimit-reset **[CORRECT]**
+1. No cuenta para el límite de solicitudes primario. **[CORRECT]**
 
-   Indica el momento de restablecimiento en segundos Unix UTC.
+   Las solicitudes condicionales correctamente autorizadas con respuesta 304 no consumen el cupo primario.
 
-2. x-github-request-id
+2. Consume todo el cupo primario restante.
 
-   El identificador correlaciona solicitudes, no programa reintentos.
+   Un 304 no agota el cupo del cliente autenticado.
 
-3. content-length
+3. Siempre cuenta como dos solicitudes GET normales.
 
-   El tamaño del cuerpo no describe límites.
+   El comportamiento documentado no duplica el coste de la solicitud.
 
-4. last-modified
+4. Restituye todas las solicitudes usadas antes en esa hora.
 
-   La fecha de modificación no restablece el límite.
+   Evitar un cargo por esta respuesta no devuelve solicitudes anteriores.
 
-**Concept:** Diagnóstico del límite principal de API
+**Concept:** Las respuestas 304 condicionales autorizadas evitan cargos al límite primario.
 
 **Authored coaching hints:**
 
-- Usa los metadatos de límites de la respuesta.
-- Distingue hora de restablecimiento de identificador de solicitud.
+- Distingue una representación sin cambios de un cuerpo nuevo.
+- Considera tanto el estado de respuesta como la autenticación.
 
 </details>
 
@@ -22211,36 +22211,36 @@ Una respuesta REST tiene x-ratelimit-remaining: 0. ¿Qué cabecera indica cuánd
 
 ### Português (Brasil)
 
-Uma resposta REST tem x-ratelimit-remaining: 0. Qual cabeçalho indica quando o limite principal é restabelecido?
+Um GET REST usa um cabeçalho Authorization válido e If-None-Match. O GitHub retorna 304 Not Modified. Como essa resposta condicional afeta o limite primário?
 
-1. x-ratelimit-reset **[CORRECT]**
+1. Não conta para o limite de requisições primário. **[CORRECT]**
 
-   Indica o momento de restabelecimento em segundos Unix UTC.
+   Solicitações condicionais corretamente autorizadas com resposta 304 não consomem a cota primária.
 
-2. x-github-request-id
+2. Consome toda a cota primária restante.
 
-   O identificador correlaciona solicitações, não agenda tentativas.
+   Uma resposta 304 não esgota a cota do cliente autenticado.
 
-3. content-length
+3. Sempre conta como duas solicitações GET comuns.
 
-   O tamanho do corpo não descreve limites.
+   O comportamento documentado não duplica o custo da solicitação.
 
-4. last-modified
+4. Devolve todas as solicitações gastas antes naquela hora.
 
-   A data de modificação não restabelece o limite.
+   Evitar a cobrança desta resposta não devolve solicitações anteriores.
 
-**Concept:** Diagnóstico do limite principal da API
+**Concept:** Respostas condicionais 304 autorizadas evitam consumo do limite primário.
 
 **Authored coaching hints:**
 
-- Use os metadados de limites da resposta.
-- Diferencie horário de restabelecimento de identificador de solicitação.
+- Diferencie uma representação sem mudanças de um corpo novo.
+- Considere o status da resposta e a autenticação da solicitação.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/rest/using-the-rest-api/troubleshooting-the-rest-api>
+**Official supporting source:** <https://docs.github.com/en/rest/using-the-rest-api/best-practices-for-using-the-rest-api>
 
-<!-- certification-coach-question:admin-203:6b1f3b7ce8dcc6fa12997f5f7306bfd46f7126cf8c66bef64f131245215b0e51 -->
+<!-- certification-coach-question:admin-203:adfd109bf44618c4b5454185f62e00b6a2993d8330a790ce98cebc5441a8888b -->
 ## Question 203: Monitor and optimize GitHub usage
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -22251,68 +22251,68 @@ Uma resposta REST tem x-ratelimit-remaining: 0. Qual cabeçalho indica quando o 
 
 **Question ID:** `admin-203`
 
-**Content revision:** `6b1f3b7ce8dcc6fa12997f5f7306bfd46f7126cf8c66bef64f131245215b0e51`
+**Content revision:** `adfd109bf44618c4b5454185f62e00b6a2993d8330a790ce98cebc5441a8888b`
 
-**en review revision:** `4f42ca91fed7e558108f44aad88273f18a3d15a865d2e917b5ef774f532897c2`
-**es review revision:** `206279c9008ed33834c3584e3d60c5b53544f1da96b1b674f35b908b4c978c96`
-**pt-BR review revision:** `951ecb5d0c889ec23ac8a8b291d50656a8a93019bf0f243acf688f63a65b09f3`
+**en review revision:** `02b584edd83d826e529bc986789a4eed4fd5fa407d57c4d1c10aca242798f6b5`
+**es review revision:** `89e13fb5b04bbfd1dde04c355dffef8922f0132562721f39872ccfca5eaef33a`
+**pt-BR review revision:** `09476c89e0d88251e642df9b2c88a974611de9ad60b9eb26f430d3550d8448d9`
 
 ### English
 
-A GitHub REST API rate-limit response includes retry-after: 120. What should the integration do?
+An integration repeatedly reaches secondary REST limits while issuing many simultaneous requests. Which scheduling change follows GitHub's prevention guidance?
 
-1. Immediately retry with parallel requests
+1. Remove authentication from all requests.
 
-   More requests can worsen throttling.
+   Removing authentication does not solve concurrent-request pressure.
 
-2. Retry after changing the User-Agent
+2. Retry each failed request immediately in every worker.
 
-   Changing User-Agent does not satisfy the delay.
+   Immediate parallel retries sustain the burst instead of controlling it.
 
-3. Wait at least 120 seconds before retrying **[CORRECT]**
+3. Queue requests and issue them serially. **[CORRECT]**
 
-   The header specifies the minimum retry delay in seconds.
+   Serial requests reduce concurrency that can trigger secondary limits.
 
-4. Treat the response as a repository deletion
+4. Start more parallel workers with the same credential.
 
-   A rate-limit response does not imply deletion.
+   Additional concurrent workers worsen the scheduling behavior.
 
-**Concept:** Respecting API retry guidance
+**Concept:** Request scheduling can prevent secondary throttling before retries are needed.
 
 **Authored coaching hints:**
 
-- Interpret the server's backoff instruction.
-- Retries should reduce load, not multiply it.
+- Look for the load pattern causing the throttling.
+- Distinguish controlling concurrency from changing credentials.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Una respuesta de límite de la API REST incluye retry-after: 120. ¿Qué debe hacer la integración?
+Una integración alcanza repetidamente límites REST secundarios al enviar muchas solicitudes simultáneas. ¿Qué cambio de planificación sigue las recomendaciones preventivas de GitHub?
 
-1. Reintentar inmediatamente con solicitudes paralelas
+1. Eliminar la autenticación de todas las solicitudes.
 
-   Más solicitudes pueden agravar la limitación.
+   Quitar la autenticación no resuelve la presión de solicitudes concurrentes.
 
-2. Reintentar tras cambiar User-Agent
+2. Reintentar inmediatamente cada solicitud fallida desde todos los procesos.
 
-   Cambiar User-Agent no cumple la espera.
+   Los reintentos paralelos inmediatos mantienen la ráfaga en lugar de controlarla.
 
-3. Esperar al menos 120 segundos antes de reintentar **[CORRECT]**
+3. Poner las solicitudes en una cola y enviarlas en serie. **[CORRECT]**
 
-   La cabecera indica el retraso mínimo en segundos.
+   Las solicitudes en serie reducen la concurrencia que puede activar límites secundarios.
 
-4. Tratar la respuesta como eliminación del repositorio
+4. Iniciar más procesos paralelos con la misma credencial.
 
-   Un límite no implica eliminación.
+   Más procesos concurrentes empeoran el patrón de planificación.
 
-**Concept:** Respeto de la espera indicada por API
+**Concept:** La planificación de solicitudes puede prevenir límites secundarios antes de reintentar.
 
 **Authored coaching hints:**
 
-- Interpreta la instrucción de espera del servidor.
-- Los reintentos deben reducir carga, no multiplicarla.
+- Busca el patrón de carga que provoca la limitación.
+- Distingue controlar la concurrencia de cambiar credenciales.
 
 </details>
 
@@ -22321,34 +22321,34 @@ Una respuesta de límite de la API REST incluye retry-after: 120. ¿Qué debe ha
 
 ### Português (Brasil)
 
-Uma resposta de limite da API REST inclui retry-after: 120. O que a integração deve fazer?
+Uma integração atinge repetidamente limites REST secundários ao enviar muitas solicitações simultâneas. Qual mudança de agendamento segue a recomendação preventiva do GitHub?
 
-1. Tentar imediatamente com solicitações paralelas
+1. Remover a autenticação de todas as solicitações.
 
-   Mais solicitações podem agravar a limitação.
+   Remover a autenticação não resolve a pressão de solicitações concorrentes.
 
-2. Tentar após mudar User-Agent
+2. Repetir imediatamente cada solicitação com falha em todos os processos.
 
-   Mudar User-Agent não cumpre a espera.
+   Repetições paralelas imediatas mantêm o pico em vez de controlá-lo.
 
-3. Esperar pelo menos 120 segundos antes de tentar novamente **[CORRECT]**
+3. Colocar as solicitações em uma fila e enviá-las em série. **[CORRECT]**
 
-   O cabeçalho indica o atraso mínimo em segundos.
+   Solicitações em série reduzem a concorrência que pode acionar limites secundários.
 
-4. Tratar a resposta como exclusão do repositório
+4. Iniciar mais processos paralelos com a mesma credencial.
 
-   Um limite não implica exclusão.
+   Mais processos concorrentes pioram o padrão de agendamento.
 
-**Concept:** Respeito à espera indicada pela API
+**Concept:** O agendamento pode prevenir limites secundários antes de precisar repetir solicitações.
 
 **Authored coaching hints:**
 
-- Interprete a instrução de espera do servidor.
-- Novas tentativas devem reduzir carga, não multiplicá-la.
+- Procure o padrão de carga que causa a limitação.
+- Diferencie controlar concorrência de mudar credenciais.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/rest/using-the-rest-api/troubleshooting-the-rest-api>
+**Official supporting source:** <https://docs.github.com/en/rest/using-the-rest-api/best-practices-for-using-the-rest-api>
 
 <!-- certification-coach-question:admin-204:5282e1737f15c42ffc3ea1fad2780e6371abf49c275df2b746804dd38ff1584d -->
 ## Question 204: Monitor and optimize GitHub usage
@@ -22460,7 +22460,7 @@ Uma integração recebe 404 para um repositório privado cuja existência o admi
 
 **Official supporting source:** <https://docs.github.com/en/rest/using-the-rest-api/troubleshooting-the-rest-api>
 
-<!-- certification-coach-question:admin-205:e0af440bf46a852788e1d1ae52a4cf3c8bfeecf434954cdf7224d10a2bdd65af -->
+<!-- certification-coach-question:admin-205:6226c389eff612e7f323db7d1d262895fdb07f2e16eaa3715df60625f03cd6fb -->
 ## Question 205: Monitor and optimize GitHub usage
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -22471,68 +22471,68 @@ Uma integração recebe 404 para um repositório privado cuja existência o admi
 
 **Question ID:** `admin-205`
 
-**Content revision:** `e0af440bf46a852788e1d1ae52a4cf3c8bfeecf434954cdf7224d10a2bdd65af`
+**Content revision:** `6226c389eff612e7f323db7d1d262895fdb07f2e16eaa3715df60625f03cd6fb`
 
-**en review revision:** `13b9a9013a198471753f68dd503b4d5dea46bfda5322becb5a69c8040499bf39`
-**es review revision:** `7013eb2515ab567957618f044a73c67531c8daea164499c69a8ded5aad7668c3`
-**pt-BR review revision:** `3a76f874b1b38e32c0eced4420f5fb413a8f956b719ea562ea5279e0a96cdfe6`
+**en review revision:** `716dd42e0fc92be108c7cf4cf61e159ec8b6f2d65863f0ac034935a86cecefae`
+**es review revision:** `75a34513fa9a78a673f8a915d1b29499ccdfd0e28ded740c17551e196890ed39`
+**pt-BR review revision:** `4a34fe9615fcd2b497e16bea4c9562ce6d616c391c1d8963f3bb811c5e68e24d`
 
 ### English
 
-An enterprise integration repeatedly polls for individual repository events. Which alternative can reduce unnecessary API requests?
+After validating a webhook signature, an integration must recognize a requested redelivery of an event it already processed. Which GitHub header retains the original delivery identifier?
 
-1. Polling every repository more frequently
+1. X-GitHub-Event
 
-   More frequent polling increases request volume.
+   This identifies an event type, which many different deliveries can share.
 
-2. Rotating tokens after each successful request
+2. User-Agent
 
-   Token rotation does not remove redundant polling.
+   The user agent is not the unique delivery identifier.
 
-3. Downloading every audit export after each event
+3. Content-Type
 
-   Repeated full exports increase unnecessary collection.
+   The content type describes the representation rather than the individual delivery.
 
-4. Subscribing to applicable webhooks **[CORRECT]**
+4. X-GitHub-Delivery **[CORRECT]**
 
-   Webhooks notify the receiver when subscribed events occur.
+   A requested redelivery preserves the original X-GitHub-Delivery value.
 
-**Concept:** Event-driven activity monitoring
+**Concept:** Delivery IDs support deduplication but do not replace signature validation.
 
 **Authored coaching hints:**
 
-- Consider push notifications rather than repeated reads.
-- Collect the events the integration actually needs.
+- Separate an event's type from an individual delivery's identity.
+- Consider which value should stay stable when that delivery is requested again.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Una integración empresarial consulta repetidamente eventos de repositorios. ¿Qué alternativa reduce solicitudes API innecesarias?
+Tras validar la firma de un webhook, una integración debe reconocer una reentrega solicitada de un evento ya procesado. ¿Qué encabezado de GitHub conserva el identificador original?
 
-1. Consultar cada repositorio con más frecuencia
+1. X-GitHub-Event
 
-   Consultar más aumenta el volumen de solicitudes.
+   Esto identifica un tipo de evento compartido por muchas entregas distintas.
 
-2. Rotar tokens tras cada solicitud correcta
+2. User-Agent
 
-   Rotar tokens no elimina consultas redundantes.
+   El agente de usuario no es el identificador único de entrega.
 
-3. Descargar todas las exportaciones tras cada evento
+3. Content-Type
 
-   Repetir exportaciones completas aumenta recopilación innecesaria.
+   El tipo de contenido describe la representación, no la entrega individual.
 
-4. Suscribirse a webhooks pertinentes **[CORRECT]**
+4. X-GitHub-Delivery **[CORRECT]**
 
-   Los webhooks notifican cuando ocurren eventos suscritos.
+   Una reentrega solicitada conserva el valor X-GitHub-Delivery original.
 
-**Concept:** Supervisión de actividad basada en eventos
+**Concept:** Los identificadores de entrega ayudan a evitar duplicados, pero no sustituyen la validación de firma.
 
 **Authored coaching hints:**
 
-- Considera notificaciones en lugar de lecturas repetidas.
-- Recopila los eventos que la integración necesita.
+- Distingue el tipo de evento de la identidad de una entrega.
+- Considera qué valor debe mantenerse cuando se solicita la misma entrega otra vez.
 
 </details>
 
@@ -22541,34 +22541,34 @@ Una integración empresarial consulta repetidamente eventos de repositorios. ¿Q
 
 ### Português (Brasil)
 
-Uma integração empresarial consulta repetidamente eventos de repositórios. Qual alternativa reduz solicitações desnecessárias à API?
+Após validar a assinatura de um webhook, uma integração precisa reconhecer uma reentrega solicitada de um evento já processado. Qual cabeçalho do GitHub preserva o identificador original?
 
-1. Consultar cada repositório com mais frequência
+1. X-GitHub-Event
 
-   Consultar mais aumenta o volume de solicitações.
+   Isso identifica um tipo de evento compartilhado por várias entregas diferentes.
 
-2. Rotacionar tokens após cada solicitação bem-sucedida
+2. User-Agent
 
-   Rotacionar tokens não elimina consultas redundantes.
+   O agente do usuário não é o identificador único da entrega.
 
-3. Baixar todas as exportações após cada evento
+3. Content-Type
 
-   Repetir exportações completas aumenta coleta desnecessária.
+   O tipo de conteúdo descreve a representação, não a entrega individual.
 
-4. Assinar webhooks pertinentes **[CORRECT]**
+4. X-GitHub-Delivery **[CORRECT]**
 
-   Webhooks notificam quando eventos assinados ocorrem.
+   Uma reentrega solicitada preserva o valor X-GitHub-Delivery original.
 
-**Concept:** Monitoramento de atividade orientado a eventos
+**Concept:** Identificadores de entrega ajudam a evitar duplicações, mas não substituem a validação de assinatura.
 
 **Authored coaching hints:**
 
-- Considere notificações em vez de leituras repetidas.
-- Colete os eventos de que a integração precisa.
+- Diferencie o tipo de evento da identidade de uma entrega.
+- Considere qual valor permanece estável quando a mesma entrega é solicitada novamente.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/security-and-compliance/audit-log-for-an-enterprise>
+**Official supporting source:** <https://docs.github.com/en/webhooks/using-webhooks/best-practices-for-using-webhooks>
 
 <!-- certification-coach-question:admin-206:3cf2e6ff1e914e9694e5a3201d36d8a73cb00d5d184da6688de5da5e2ec4bec9 -->
 ## Question 206: Monitor and optimize GitHub usage
@@ -22680,7 +22680,7 @@ Como um administrador distingue a limitação REST principal da secundária se a
 
 **Official supporting source:** <https://docs.github.com/en/rest/using-the-rest-api/troubleshooting-the-rest-api>
 
-<!-- certification-coach-question:admin-207:c8d15c7bc82677da95df20d3d7977be36948159b85232003a2bbfd731c80f8b2 -->
+<!-- certification-coach-question:admin-207:b9b23252244ccfd27f00bf4e7ad9e8bbb04e4c6ab10956384d03d9180be4af7b -->
 ## Question 207: Monitor and optimize GitHub usage
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -22691,68 +22691,68 @@ Como um administrador distingue a limitação REST principal da secundária se a
 
 **Question ID:** `admin-207`
 
-**Content revision:** `c8d15c7bc82677da95df20d3d7977be36948159b85232003a2bbfd731c80f8b2`
+**Content revision:** `b9b23252244ccfd27f00bf4e7ad9e8bbb04e4c6ab10956384d03d9180be4af7b`
 
-**en review revision:** `f55d7b632216d4a5337e6802c1f05f8d6a0ac00ccf8fe4d8fd93d87004f204dd`
-**es review revision:** `1bb0d2409e95e6babce516d3be1d349a7fdcd6cc357f24d4c14eb2766d349a13`
-**pt-BR review revision:** `3d585cdff1f1fdf30f3c83526f83c116f481072204ba9e26b5bf15877c5f838a`
+**en review revision:** `193e787e914b92fb316a24cd18d48286deafee0dda5f1e4b415dfb17014c3b57`
+**es review revision:** `d3300cd192d90575cab1da25e969e2751865d3c483216c5a3371919100e766f9`
+**pt-BR review revision:** `022a6b229eaee83936b8c7b70cc4f804b3f47dbfe26ab48c3ae46eb5bd8e4200`
 
 ### English
 
-On GitHub Enterprise Server 3.19, which data package is primarily a plaintext overview of instance settings and environment?
+A GHES 3.19 administrator is investigating a nearly full root partition before choosing what to remove. Which utility checks for large files and deleted files with open handles?
 
-1. An extended support bundle
+1. ghe-config-apply
 
-   An extended bundle also includes sanitized logs.
+   This applies configuration changes rather than locating large or still-open deleted files.
 
-2. A repository source archive
+2. ghe-announce
 
-   A source archive does not describe instance settings.
+   This changes the user announcement banner, not disk diagnostics.
 
-3. A diagnostic file **[CORRECT]**
+3. ghe-check-disk-usage **[CORRECT]**
 
-   Diagnostics summarize settings, versions, and environment.
+   This utility investigates large files and deleted files whose handles remain open.
 
-4. A workflow artifact archive
+4. ghe-cleanup-caches
 
-   Workflow artifacts are run outputs, not instance diagnostics.
+   This removes caches rather than performing the specified disk-usage investigation.
 
-**Concept:** Classifying GHES diagnostic data
+**Concept:** Inspect disk usage before choosing a cleanup operation.
 
 **Authored coaching hints:**
 
-- Distinguish configuration overview from log archive.
-- Choose data at the instance scope.
+- Distinguish investigation from a command that changes stored data.
+- Match the utility's documented purpose to the observed resource problem.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-En GitHub Enterprise Server 3.19, ¿qué paquete es principalmente un resumen de texto de la configuración y el entorno de la instancia?
+Una persona administra GHES 3.19 e investiga una partición raíz casi llena antes de decidir qué borrar. ¿Qué utilidad busca archivos grandes y archivos eliminados con manejadores abiertos?
 
-1. Un paquete de soporte ampliado
+1. ghe-config-apply
 
-   Un paquete ampliado también incluye registros saneados.
+   Esto aplica cambios de configuración, no localiza esos archivos.
 
-2. Un archivo del código del repositorio
+2. ghe-announce
 
-   El código no describe la configuración de la instancia.
+   Esto cambia el anuncio para usuarios, no diagnostica el disco.
 
-3. Un archivo de diagnóstico **[CORRECT]**
+3. ghe-check-disk-usage **[CORRECT]**
 
-   El diagnóstico resume configuración, versiones y entorno.
+   Esta utilidad investiga archivos grandes y eliminados que conservan manejadores abiertos.
 
-4. Un archivo de artefactos del flujo
+4. ghe-cleanup-caches
 
-   Los artefactos son resultados, no diagnósticos de instancia.
+   Esto elimina cachés, en lugar de realizar la investigación de uso de disco indicada.
 
-**Concept:** Clasificación de datos de diagnóstico GHES
+**Concept:** Inspecciona el uso de disco antes de elegir una operación de limpieza.
 
 **Authored coaching hints:**
 
-- Distingue resumen de configuración de archivo de registros.
-- Elige datos a nivel de instancia.
+- Distingue investigar de ejecutar un comando que cambia datos almacenados.
+- Relaciona el propósito documentado de la utilidad con el problema de recursos.
 
 </details>
 
@@ -22761,36 +22761,36 @@ En GitHub Enterprise Server 3.19, ¿qué paquete es principalmente un resumen de
 
 ### Português (Brasil)
 
-No GitHub Enterprise Server 3.19, qual pacote é principalmente um resumo em texto das configurações e do ambiente da instância?
+Uma pessoa administra GHES 3.19 e investiga uma partição raiz quase cheia antes de decidir o que remover. Qual utilitário procura arquivos grandes e arquivos excluídos com identificadores abertos?
 
-1. Um pacote de suporte estendido
+1. ghe-config-apply
 
-   Um pacote estendido também inclui logs sanitizados.
+   Isso aplica configurações, não localiza esses arquivos.
 
-2. Um arquivo do código do repositório
+2. ghe-announce
 
-   O código não descreve as configurações da instância.
+   Isso altera o anúncio para usuários, não diagnostica o disco.
 
-3. Um arquivo de diagnóstico **[CORRECT]**
+3. ghe-check-disk-usage **[CORRECT]**
 
-   O diagnóstico resume configurações, versões e ambiente.
+   Esse utilitário investiga arquivos grandes e excluídos cujos identificadores continuam abertos.
 
-4. Um arquivo de artefatos do fluxo
+4. ghe-cleanup-caches
 
-   Artefatos são resultados, não diagnósticos da instância.
+   Isso remove caches em vez de executar a investigação de uso de disco solicitada.
 
-**Concept:** Classificação de dados de diagnóstico do GHES
+**Concept:** Inspecione o uso de disco antes de escolher uma operação de limpeza.
 
 **Authored coaching hints:**
 
-- Diferencie resumo de configuração de arquivo de logs.
-- Escolha dados no nível da instância.
+- Diferencie investigação de um comando que altera dados armazenados.
+- Relacione o propósito documentado do utilitário ao problema de recursos.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/enterprise-server@3.19/support/contacting-github-support/providing-data-to-github-support>
+**Official supporting source:** <https://docs.github.com/en/enterprise-server@3.19/admin/administering-your-instance/administering-your-instance-from-the-command-line/command-line-utilities>
 
-<!-- certification-coach-question:admin-208:321ad0c91a04f617a4514d079decea2bdc9f1165a1f6921cafe18fddbe187067 -->
+<!-- certification-coach-question:admin-208:c94079a3e64d1823fd9c3cb650b59f572dde8c145ce93c128b2345fe03cadcd1 -->
 ## Question 208: Monitor and optimize GitHub usage
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -22801,68 +22801,68 @@ No GitHub Enterprise Server 3.19, qual pacote é principalmente um resumo em tex
 
 **Question ID:** `admin-208`
 
-**Content revision:** `321ad0c91a04f617a4514d079decea2bdc9f1165a1f6921cafe18fddbe187067`
+**Content revision:** `c94079a3e64d1823fd9c3cb650b59f572dde8c145ce93c128b2345fe03cadcd1`
 
-**en review revision:** `40942232e55d753391e2ce98db7d51886918ef4fc84f759fa6f9e2d38672d3e5`
-**es review revision:** `88d2a2dbfd7889ad3c1fe97f873ab199b13c8f393662a4874ad90cee7875bd20`
-**pt-BR review revision:** `3db15d55c4bd87541acc6303efe35de33b4590d014b140ec11113762fb66ef4b`
+**en review revision:** `772f33d7f8572b62d107dda5b3306c9043e1ee7ee4207743e3b6312adb9453b6`
+**es review revision:** `a8e6dbdae7510a8276b9edf0abbd1d2d12e5b71688b50830c0932c1f53f342d9`
+**pt-BR review revision:** `7fc67b54f3ff00a132acf9ce93b9f06cdd18474fa6f9aafd04bd5ba8254a9468`
 
 ### English
 
-What does a GitHub Enterprise Server 3.19 support bundle add beyond a diagnostic file?
+In a GHES 3.19 administrative SSH session, which command reads core.github-hostname without setting a new hostname or applying configuration changes?
 
-1. A complete clone of every private repository
+1. ghe-config-check
 
-   Support bundles are not full repository backups.
+   This validates configuration rather than retrieving the requested value.
 
-2. Sanitized instance log files **[CORRECT]**
+2. ghe-config core.github-hostname **[CORRECT]**
 
-   A support bundle combines diagnostics with sanitized logs.
+   With only the key, ghe-config retrieves its current value.
 
-3. A replacement Enterprise license
+3. ghe-config core.github-hostname new.example.com
 
-   Bundles do not issue licenses.
+   Adding a value changes the setting rather than merely reading it.
 
-4. A backup of every user's private SSH key
+4. ghe-config-apply
 
-   Private SSH keys are not a support-bundle deliverable.
+   This applies configuration changes instead of retrieving just this key.
 
-**Concept:** GHES support bundle contents
+**Concept:** ghe-config distinguishes retrieval from modification by its arguments.
 
 **Authored coaching hints:**
 
-- Troubleshooting needs both context and events.
-- A support bundle is not a backup or credential export.
+- Compare a key-only command with a key followed by a new value.
+- Separate reading configuration from validating or applying it.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-¿Qué añade un paquete de soporte de GitHub Enterprise Server 3.19 respecto a un archivo de diagnóstico?
+En una sesión SSH administrativa de GHES 3.19, ¿qué comando lee core.github-hostname sin definir otro nombre ni aplicar cambios de configuración?
 
-1. Un clon completo de cada repositorio privado
+1. ghe-config-check
 
-   Los paquetes no son copias completas de repositorios.
+   Esto valida la configuración en vez de recuperar el valor solicitado.
 
-2. Registros saneados de la instancia **[CORRECT]**
+2. ghe-config core.github-hostname **[CORRECT]**
 
-   Un paquete combina diagnóstico y registros saneados.
+   Con solo la clave, ghe-config recupera su valor actual.
 
-3. Una licencia Enterprise de sustitución
+3. ghe-config core.github-hostname new.example.com
 
-   Los paquetes no emiten licencias.
+   Añadir un valor modifica el ajuste en lugar de solo leerlo.
 
-4. Una copia de la clave SSH privada de cada usuario
+4. ghe-config-apply
 
-   Las claves privadas SSH no son contenido del paquete.
+   Esto aplica cambios en vez de recuperar únicamente esta clave.
 
-**Concept:** Contenido de paquetes de soporte GHES
+**Concept:** Los argumentos de ghe-config distinguen consulta de modificación.
 
 **Authored coaching hints:**
 
-- El diagnóstico necesita contexto y eventos.
-- Un paquete de soporte no es copia de seguridad ni exportación de credenciales.
+- Compara una clave sola con una clave seguida de un valor nuevo.
+- Distingue consultar la configuración de validarla o aplicarla.
 
 </details>
 
@@ -22871,36 +22871,36 @@ What does a GitHub Enterprise Server 3.19 support bundle add beyond a diagnostic
 
 ### Português (Brasil)
 
-O que um pacote de suporte do GitHub Enterprise Server 3.19 acrescenta a um arquivo de diagnóstico?
+Em uma sessão SSH administrativa do GHES 3.19, qual comando lê core.github-hostname sem definir outro nome nem aplicar mudanças de configuração?
 
-1. Um clone completo de cada repositório privado
+1. ghe-config-check
 
-   Pacotes não são backups completos de repositórios.
+   Isso valida a configuração em vez de recuperar o valor solicitado.
 
-2. Logs sanitizados da instância **[CORRECT]**
+2. ghe-config core.github-hostname **[CORRECT]**
 
-   Um pacote combina diagnóstico e logs sanitizados.
+   Com apenas a chave, ghe-config recupera seu valor atual.
 
-3. Uma licença Enterprise de substituição
+3. ghe-config core.github-hostname new.example.com
 
-   Pacotes não emitem licenças.
+   Adicionar um valor altera a configuração em vez de apenas consultá-la.
 
-4. Uma cópia da chave SSH privada de cada usuário
+4. ghe-config-apply
 
-   Chaves SSH privadas não são conteúdo do pacote.
+   Isso aplica alterações em vez de recuperar somente essa chave.
 
-**Concept:** Conteúdo de pacotes de suporte do GHES
+**Concept:** Os argumentos de ghe-config distinguem consulta de modificação.
 
 **Authored coaching hints:**
 
-- O diagnóstico precisa de contexto e eventos.
-- Um pacote de suporte não é backup nem exportação de credenciais.
+- Compare uma chave isolada com uma chave seguida de um valor novo.
+- Diferencie consultar a configuração de validá-la ou aplicá-la.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/enterprise-server@3.19/support/contacting-github-support/providing-data-to-github-support>
+**Official supporting source:** <https://docs.github.com/en/enterprise-server@3.19/admin/administering-your-instance/administering-your-instance-from-the-command-line/command-line-utilities>
 
-<!-- certification-coach-question:admin-209:959975ea0f40922dfc053b9aa35f8810bac194f785a953e5c12b17fd4a97d4cb -->
+<!-- certification-coach-question:admin-209:ef9682665bb09212a17fcee6e1ead6d86399eb8eb1354d9feb33422662a16e85 -->
 ## Question 209: Monitor and optimize GitHub usage
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -22911,68 +22911,68 @@ O que um pacote de suporte do GitHub Enterprise Server 3.19 acrescenta a um arqu
 
 **Question ID:** `admin-209`
 
-**Content revision:** `959975ea0f40922dfc053b9aa35f8810bac194f785a953e5c12b17fd4a97d4cb`
+**Content revision:** `ef9682665bb09212a17fcee6e1ead6d86399eb8eb1354d9feb33422662a16e85`
 
-**en review revision:** `74316786ada3bc4c87264ca2f67c57b31c28802d95b7737b9ac62b898249e999`
-**es review revision:** `99e030cd684b1c0596ce296ab3c2022f2cd7b95a8a4f9bc7cf4924b312903e75`
-**pt-BR review revision:** `12f04d4cc40f8089558c8d0f2c90f2e6a254e50f4b72be0d6be3b00f0b9135b3`
+**en review revision:** `91b3788582abdb8d05f80887849264b2ea4d97aaa4c24d014927f024c5a3fe6e`
+**es review revision:** `48e88244183700c69580d9d0b9033d2fa62d9f142594a16ffbc147448a4f35e7`
+**pt-BR review revision:** `1e820f24efbb7e4b250bb1c5b5f44cdb80798b7bdca307edc995602893146aea`
 
 ### English
 
-A GHES 3.19 administrator lacks SSH access but can sign in to the Management Console. Where can they generate instance diagnostics in the English UI?
+During a GHES 3.19 incident, an SSH administrator wants to watch relevant installation log files as new entries arrive, not download a static bundle. Which utility fits?
 
-1. Repository &gt; Actions &gt; Artifacts
+1. ghe-support-bundle
 
-   Repository artifacts are not instance diagnostics.
+   A support bundle packages diagnostic evidence instead of following live logs.
 
-2. Organization &gt; People &gt; Members
+2. ghe-config-check
 
-   Membership screens do not generate diagnostics.
+   This validates configuration rather than watching log entries arrive.
 
-3. Enterprise &gt; Billing &gt; Usage
+3. ghe-nwo
 
-   Billing usage is not an instance diagnostic file.
+   This maps a repository ID to its owner and name, not to live log output.
 
-4. Management Console &gt; Support &gt; Download diagnostics info **[CORRECT]**
+4. ghe-logs-tail **[CORRECT]**
 
-   The Management Console provides this diagnostic download.
+   This utility tails relevant installation logs for ongoing observation.
 
-**Concept:** Generating GHES diagnostics without SSH
+**Concept:** Live log following and packaged diagnostic evidence serve different tasks.
 
 **Authored coaching hints:**
 
-- Use the instance administration interface.
-- Diagnostic collection is not a repository operation.
+- Identify whether the responder needs a snapshot or ongoing output.
+- Match the requested observation to the utility's purpose.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Un administrador de GHES 3.19 no tiene SSH, pero puede acceder a Management Console. ¿Dónde genera el diagnóstico en la interfaz inglesa?
+Durante un incidente de GHES 3.19, una persona con SSH administrativo quiere observar los registros de la instalación a medida que llegan entradas, no descargar un paquete estático. ¿Qué utilidad corresponde?
 
-1. Repository &gt; Actions &gt; Artifacts
+1. ghe-support-bundle
 
-   Los artefactos no son diagnósticos de instancia.
+   Un paquete agrupa evidencia diagnóstica en lugar de seguir registros en directo.
 
-2. Organization &gt; People &gt; Members
+2. ghe-config-check
 
-   La pantalla de miembros no genera diagnósticos.
+   Esto valida la configuración, no observa nuevas entradas de registro.
 
-3. Enterprise &gt; Billing &gt; Usage
+3. ghe-nwo
 
-   El consumo facturado no es un archivo de diagnóstico.
+   Esto relaciona un ID de repositorio con su propietario y nombre, no muestra registros en directo.
 
-4. Management Console &gt; Support &gt; Download diagnostics info **[CORRECT]**
+4. ghe-logs-tail **[CORRECT]**
 
-   Management Console ofrece esta descarga de diagnóstico.
+   Esta utilidad sigue los registros relevantes para observarlos continuamente.
 
-**Concept:** Generación de diagnósticos GHES sin SSH
+**Concept:** Seguir registros en directo y empaquetar diagnósticos cumplen tareas distintas.
 
 **Authored coaching hints:**
 
-- Usa la interfaz de administración de instancia.
-- Recopilar diagnósticos no es una operación de repositorio.
+- Identifica si se necesita una instantánea o una salida continua.
+- Relaciona la observación solicitada con el propósito de la utilidad.
 
 </details>
 
@@ -22981,36 +22981,36 @@ Un administrador de GHES 3.19 no tiene SSH, pero puede acceder a Management Cons
 
 ### Português (Brasil)
 
-Um administrador do GHES 3.19 não tem SSH, mas acessa a Management Console. Onde gera o diagnóstico na interface em inglês?
+Durante um incidente no GHES 3.19, uma pessoa com SSH administrativo quer observar os logs da instalação conforme novas entradas chegam, e não baixar um pacote estático. Qual utilitário atende a isso?
 
-1. Repository &gt; Actions &gt; Artifacts
+1. ghe-support-bundle
 
-   Artefatos não são diagnósticos de instância.
+   Um pacote reúne evidências de diagnóstico em vez de acompanhar logs ao vivo.
 
-2. Organization &gt; People &gt; Members
+2. ghe-config-check
 
-   A tela de membros não gera diagnósticos.
+   Isso valida a configuração, não observa novas entradas de log.
 
-3. Enterprise &gt; Billing &gt; Usage
+3. ghe-nwo
 
-   O consumo faturado não é um arquivo de diagnóstico.
+   Isso relaciona um ID de repositório ao proprietário e nome, não exibe logs ao vivo.
 
-4. Management Console &gt; Support &gt; Download diagnostics info **[CORRECT]**
+4. ghe-logs-tail **[CORRECT]**
 
-   A Management Console oferece esse download de diagnóstico.
+   Esse utilitário acompanha logs relevantes para observação contínua.
 
-**Concept:** Geração de diagnósticos do GHES sem SSH
+**Concept:** Acompanhar logs ao vivo e empacotar diagnósticos atendem a tarefas distintas.
 
 **Authored coaching hints:**
 
-- Use a interface de administração da instância.
-- Coletar diagnósticos não é uma operação de repositório.
+- Identifique se é necessário um retrato ou uma saída contínua.
+- Relacione a observação solicitada ao propósito do utilitário.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/enterprise-server@3.19/support/contacting-github-support/providing-data-to-github-support>
+**Official supporting source:** <https://docs.github.com/en/enterprise-server@3.19/admin/administering-your-instance/administering-your-instance-from-the-command-line/command-line-utilities>
 
-<!-- certification-coach-question:admin-210:e6cdc346170545109d34e3f9083897a1001fce2475a3128c5da13a2ce1f1f599 -->
+<!-- certification-coach-question:admin-210:5c7f0254f560c0759206e0f79d746f0256656b83730e2cafd759de39afbe9e80 -->
 ## Question 210: Monitor and optimize GitHub usage
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -23021,68 +23021,68 @@ Um administrador do GHES 3.19 não tem SSH, mas acessa a Management Console. Ond
 
 **Question ID:** `admin-210`
 
-**Content revision:** `e6cdc346170545109d34e3f9083897a1001fce2475a3128c5da13a2ce1f1f599`
+**Content revision:** `5c7f0254f560c0759206e0f79d746f0256656b83730e2cafd759de39afbe9e80`
 
-**en review revision:** `4d3752eea9b7504c1b430826f5cbd28dbbaadd8c4d0f1c1c2e101808df079811`
-**es review revision:** `ae7b436736083367a72e8470754ae8b3851f38a6a96246f956026ed4b5b1a7f4`
-**pt-BR review revision:** `6422507c05de09c05871eee6fe58acdb9c5c4c350ada7e95a0a85a7498725ce2`
+**en review revision:** `0d61670d44d19518226e8d7f442a41c646e3af8eb3fb11536f221c80381d499b`
+**es review revision:** `34341590e51246491dfddbd26191b142a7bfa1c0cc1cfbaeedb9f5630df8c30e`
+**pt-BR review revision:** `adbf8037d516643b7d3a026281182cfdd5edbb66ed06c1de2f07d1c8c24166a8`
 
 ### English
 
-Which evidence is most useful in a GitHub Support ticket for a reproducible enterprise workflow failure?
+An enterprise uses data residency at octocorp.ghe.com. Which account should its administrator use to create a support ticket about that enterprise?
 
-1. Reproduction steps, affected URLs, errors, and sanitized logs **[CORRECT]**
+1. The enterprise's GHE.com account. **[CORRECT]**
 
-   These details help Support locate and reproduce the failure.
+   Data-resident enterprise support tickets must use the corresponding GHE.com account.
 
-2. A list of installed integrations without the failing request or run
+2. A personal GitHub.com account using the same work email.
 
-   An inventory alone does not reproduce the failure.
+   Matching email addresses do not replace the required GHE.com account context.
 
-3. A billing summary and runner inventory without the failure timestamps
+3. A GitHub.com account that administers a different enterprise.
 
-   Billing and inventory omit the failure evidence.
+   Administration of another enterprise does not establish this data-resident account context.
 
-4. A general architecture diagram without the observed or expected behavior
+4. A GHE.com account belonging to a different enterprise.
 
-   Architecture alone does not define the symptom.
+   The account must correspond to the enterprise that needs support.
 
-**Concept:** Actionable support escalation
+**Concept:** Data-resident enterprises require their GHE.com account context in Support.
 
 **Authored coaching hints:**
 
-- Provide enough context to reproduce the symptom.
-- Useful evidence should not disclose credentials.
+- Check which host owns the enterprise identity.
+- Distinguish the support account context from the information included in a ticket.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-¿Qué evidencia resulta más útil en un ticket de GitHub Support por un fallo reproducible de un flujo empresarial?
+Una empresa usa residencia de datos en octocorp.ghe.com. ¿Qué cuenta debe usar su administrador para crear un ticket sobre esa empresa?
 
-1. Pasos, URL afectadas, errores y registros saneados **[CORRECT]**
+1. La cuenta GHE.com de la empresa. **[CORRECT]**
 
-   Estos detalles permiten localizar y reproducir el fallo.
+   Los tickets de una empresa con residencia de datos deben usar su cuenta GHE.com correspondiente.
 
-2. Un inventario de integraciones sin la solicitud o ejecución fallida
+2. Una cuenta personal de GitHub.com con el mismo correo de trabajo.
 
-   Un inventario por sí solo no reproduce el fallo.
+   Coincidir en el correo no sustituye el contexto de cuenta GHE.com requerido.
 
-3. Un resumen de facturación e inventario de ejecutores sin las horas del fallo
+3. Una cuenta GitHub.com que administra otra empresa.
 
-   Facturación e inventario omiten la evidencia del fallo.
+   Administrar otra empresa no establece este contexto de cuenta con residencia de datos.
 
-4. Un diagrama general de arquitectura sin el comportamiento observado ni esperado
+4. Una cuenta GHE.com que pertenece a otra empresa.
 
-   La arquitectura por sí sola no define el síntoma.
+   La cuenta debe corresponder a la empresa que necesita soporte.
 
-**Concept:** Escalación útil a soporte
+**Concept:** Las empresas con residencia de datos requieren su contexto de cuenta GHE.com en soporte.
 
 **Authored coaching hints:**
 
-- Aporta contexto suficiente para reproducir el síntoma.
-- La evidencia útil no debe divulgar credenciales.
+- Comprueba qué host posee la identidad empresarial.
+- Distingue el contexto de cuenta de la información incluida en el ticket.
 
 </details>
 
@@ -23091,36 +23091,36 @@ Which evidence is most useful in a GitHub Support ticket for a reproducible ente
 
 ### Português (Brasil)
 
-Qual evidência é mais útil em um ticket do GitHub Support para uma falha reproduzível de fluxo empresarial?
+Uma empresa usa residência de dados em octocorp.ghe.com. Qual conta seu administrador deve usar para criar um chamado sobre essa empresa?
 
-1. Passos, URLs afetadas, erros e logs sanitizados **[CORRECT]**
+1. A conta GHE.com da empresa. **[CORRECT]**
 
-   Esses detalhes ajudam a localizar e reproduzir a falha.
+   Chamados de empresas com residência de dados devem usar a conta GHE.com correspondente.
 
-2. Um inventário de integrações sem a solicitação ou execução com falha
+2. Uma conta pessoal do GitHub.com com o mesmo email de trabalho.
 
-   Um inventário sozinho não reproduz a falha.
+   O mesmo email não substitui o contexto da conta GHE.com exigido.
 
-3. Um resumo de cobrança e inventário de executores sem os horários da falha
+3. Uma conta GitHub.com que administra outra empresa.
 
-   Cobrança e inventário omitem a evidência da falha.
+   Administrar outra empresa não estabelece esse contexto de conta com residência de dados.
 
-4. Um diagrama geral de arquitetura sem o comportamento observado ou esperado
+4. Uma conta GHE.com pertencente a outra empresa.
 
-   A arquitetura sozinha não define o sintoma.
+   A conta deve corresponder à empresa que precisa de suporte.
 
-**Concept:** Escalonamento útil para suporte
+**Concept:** Empresas com residência de dados exigem seu contexto de conta GHE.com no suporte.
 
 **Authored coaching hints:**
 
-- Forneça contexto suficiente para reproduzir o sintoma.
-- Evidências úteis não devem divulgar credenciais.
+- Confira qual host possui a identidade empresarial.
+- Diferencie o contexto da conta das informações incluídas no chamado.
 
 </details>
 
 **Official supporting source:** <https://docs.github.com/en/support/contacting-github-support/creating-a-support-ticket>
 
-<!-- certification-coach-question:admin-211:1337e00d024c33287cd6f9737185c23aa69aeb68741dbb7d70e42b8008ce33b1 -->
+<!-- certification-coach-question:admin-211:abcec80190533e44f75e15d40633612f7391a5aac09e1f4fddf5f84dd4a40897 -->
 ## Question 211: Monitor and optimize GitHub usage
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -23131,68 +23131,68 @@ Qual evidência é mais útil em um ticket do GitHub Support para uma falha repr
 
 **Question ID:** `admin-211`
 
-**Content revision:** `1337e00d024c33287cd6f9737185c23aa69aeb68741dbb7d70e42b8008ce33b1`
+**Content revision:** `abcec80190533e44f75e15d40633612f7391a5aac09e1f4fddf5f84dd4a40897`
 
-**en review revision:** `d9b726d46727595d71b37efe7b573566400524ab1199b4abe4883a29bf5bf9da`
-**es review revision:** `73c33d8c6148410e6f9bddc6ebbc8770665a2a57f4dd0c84d6f77cc2a39c91c1`
-**pt-BR review revision:** `6108f0201eec74158f4efd5704b85d4a8a59b9910021e3b6eb0ba58ee6d36d56`
+**en review revision:** `b841c50557207fed9d313502c0b40f77afccfc99d4d31e884a0d12612559a0a0`
+**es review revision:** `62b4d8b59d7b449a7bfc54dabcbf449b305928417aa4f1fbff423e70c613db24`
+**pt-BR review revision:** `f8a5964775b7b0eea050cc7c173590c04d1620b3b0b39f0ae144e3b1e1ba540c`
 
 ### English
 
-GitHub Support needs a GHES 3.19 support bundle but cannot access the customer's environment. Who should collect it?
+A GHES 3.19 administrator suspects background-job queues are backing up. Which utility displays the distribution of queued jobs and jobs currently processing?
 
-1. GitHub Support through automatic access to the customer's VM
+1. ghe-es-index-status
 
-   Support does not automatically access the customer environment.
+   This reports Elasticsearch index status instead of background-job queue distribution.
 
-2. A repository collaborator through the repository's Actions tab
+2. ghe-announce
 
-   Repository collaboration does not grant instance diagnostic access.
+   This manages an announcement banner rather than inspecting background jobs.
 
-3. An instance administrator through supported instance tools **[CORRECT]**
+3. ghe-aqueduct-info **[CORRECT]**
 
-   Instance administrators can generate and share requested bundles.
+   This utility reports queued background jobs and those being processed.
 
-4. An enterprise member through their personal account's security log
+4. ghe-check-disk-usage
 
-   A personal security log is not an instance support bundle.
+   This investigates large or still-open deleted files rather than job queues.
 
-**Concept:** Administrator and Support responsibilities
+**Concept:** Choose monitoring evidence for the subsystem exhibiting the backlog.
 
 **Authored coaching hints:**
 
-- Collection requires access to the customer-managed instance.
-- Support investigates supplied evidence rather than assuming environment access.
+- Identify whether the bottleneck is a work queue, disk, or search index.
+- Distinguish observing a queue from notifying users about an incident.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-GitHub Support necesita un paquete de soporte de GHES 3.19, pero no puede acceder al entorno del cliente. ¿Quién debe recopilarlo?
+Una persona administra GHES 3.19 y sospecha acumulación de trabajos en segundo plano. ¿Qué utilidad muestra la distribución de trabajos en cola y los que se procesan actualmente?
 
-1. GitHub Support mediante acceso automático a la VM del cliente
+1. ghe-es-index-status
 
-   Support no accede automáticamente al entorno del cliente.
+   Esto informa del estado de índices Elasticsearch, no de la distribución de colas.
 
-2. Un colaborador desde la pestaña Actions del repositorio
+2. ghe-announce
 
-   Colaborar en repositorios no concede acceso a diagnósticos de instancia.
+   Esto gestiona un anuncio en lugar de inspeccionar trabajos en segundo plano.
 
-3. Un administrador de instancia mediante herramientas admitidas **[CORRECT]**
+3. ghe-aqueduct-info **[CORRECT]**
 
-   Los administradores pueden generar y compartir los paquetes solicitados.
+   Esta utilidad informa de los trabajos en cola y los que se están procesando.
 
-4. Un miembro desde el registro de seguridad de su cuenta personal
+4. ghe-check-disk-usage
 
-   Un registro personal no es un paquete de soporte de instancia.
+   Esto investiga archivos grandes o eliminados aún abiertos, no colas de trabajos.
 
-**Concept:** Responsabilidades del administrador y de Support
+**Concept:** Selecciona evidencia del subsistema que presenta la acumulación.
 
 **Authored coaching hints:**
 
-- Recopilar exige acceso a la instancia administrada por el cliente.
-- Support investiga evidencia recibida sin asumir acceso al entorno.
+- Identifica si el cuello de botella está en una cola, el disco o un índice.
+- Distingue observar la cola de informar a usuarios de un incidente.
 
 </details>
 
@@ -23201,34 +23201,34 @@ GitHub Support necesita un paquete de soporte de GHES 3.19, pero no puede accede
 
 ### Português (Brasil)
 
-O GitHub Support precisa de um pacote de suporte do GHES 3.19, mas não acessa o ambiente do cliente. Quem deve coletá-lo?
+Uma pessoa administra GHES 3.19 e suspeita de acúmulo nas filas de tarefas em segundo plano. Qual utilitário mostra a distribuição das tarefas em fila e das que estão sendo processadas?
 
-1. O GitHub Support por acesso automático à VM do cliente
+1. ghe-es-index-status
 
-   O Support não acessa automaticamente o ambiente do cliente.
+   Isso informa o status dos índices Elasticsearch, não a distribuição das filas.
 
-2. Um colaborador pela aba Actions do repositório
+2. ghe-announce
 
-   Colaborar em repositórios não concede acesso a diagnósticos da instância.
+   Isso gerencia um anúncio em vez de inspecionar tarefas em segundo plano.
 
-3. Um administrador da instância por ferramentas compatíveis **[CORRECT]**
+3. ghe-aqueduct-info **[CORRECT]**
 
-   Administradores podem gerar e compartilhar os pacotes solicitados.
+   Esse utilitário informa tarefas em fila e as que estão sendo processadas.
 
-4. Um membro pelo log de segurança de sua conta pessoal
+4. ghe-check-disk-usage
 
-   Um log pessoal não é um pacote de suporte da instância.
+   Isso investiga arquivos grandes ou excluídos ainda abertos, não filas de tarefas.
 
-**Concept:** Responsabilidades do administrador e do Support
+**Concept:** Escolha evidências do subsistema que apresenta o acúmulo.
 
 **Authored coaching hints:**
 
-- Coletar exige acesso à instância administrada pelo cliente.
-- O Support investiga evidências recebidas sem presumir acesso ao ambiente.
+- Identifique se o gargalo está em uma fila, no disco ou em um índice.
+- Diferencie observar uma fila de informar usuários sobre um incidente.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/enterprise-server@3.19/support/contacting-github-support/providing-data-to-github-support>
+**Official supporting source:** <https://docs.github.com/en/enterprise-server@3.19/admin/administering-your-instance/administering-your-instance-from-the-command-line/command-line-utilities>
 
 <!-- certification-coach-question:admin-212:9a875e6894ef95c8303f292da8dd137733340f9f8f0a4d124a6d382df946e976 -->
 ## Question 212: Monitor and optimize GitHub usage
@@ -23670,7 +23670,7 @@ Onde um proprietário empresarial gera o relatório de usuários inativos na int
 
 **Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/managing-accounts-and-repositories/managing-users-in-your-enterprise/managing-dormant-users>
 
-<!-- certification-coach-question:admin-216:f2928046281f98a4a9751d371fa4d9287c09ae9a53cfa069d93b4c89fca40767 -->
+<!-- certification-coach-question:admin-216:b28de3ddc49596373f1c504751a000dda22ca8eac3006e11fd2d413bf02d2969 -->
 ## Question 216: Monitor and optimize GitHub usage
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -23681,68 +23681,68 @@ Onde um proprietário empresarial gera o relatório de usuários inativos na int
 
 **Question ID:** `admin-216`
 
-**Content revision:** `f2928046281f98a4a9751d371fa4d9287c09ae9a53cfa069d93b4c89fca40767`
+**Content revision:** `b28de3ddc49596373f1c504751a000dda22ca8eac3006e11fd2d413bf02d2969`
 
-**en review revision:** `dc0a031872bfbcf1e8c3818278732561d4c5b8ae1811c08b9f4a76f2bc68f186`
-**es review revision:** `1c63c8cef0bfd7d4ba5e85180c617dd6fe4f613c2fd489f3b8d84f2b5063209c`
-**pt-BR review revision:** `58117d22b1e05fe9a287572fbd458f8215440fe6370402535a42b823893629be`
+**en review revision:** `5984f9fad9548e067d726b127070dff447765c8e79e504bc309d5fd97ef26c61`
+**es review revision:** `802c407da0ef2b11f32d49b6dc449ee7987d33f372196711ea4bfec4339e08ba`
+**pt-BR review revision:** `0af2b50dc9fe138afaf34d1a88f1365216f2825e65aca60955f5bfcdba56158f`
 
 ### English
 
-Which billing feature attributes metered Actions spending to business units without moving their repositories?
+Two teams share one cost center but need independently controlled budgets. Which documented cost-center design meets that requirement?
 
-1. Runner labels
+1. Use one shared budget with two alert thresholds.
 
-   Labels route jobs rather than allocate billing.
+   Multiple alert thresholds do not create independent team budgets.
 
-2. Cost centers **[CORRECT]**
+2. Create a separate cost center for each team. **[CORRECT]**
 
-   Cost centers associate resources with spending allocation.
+   A cost-center budget applies to the whole cost center, so independent team budgets need separate centers.
 
-3. Repository topics
+3. Create two budgets targeting the same shared cost center.
 
-   Topics classify repositories, not billing allocation.
+   Both budgets still cover the shared center rather than separate team spending.
 
-4. Environment reviewers
+4. Add both enterprise teams as resources in the shared center.
 
-   Reviewers gate deployments, not cost attribution.
+   Adding separate team resources does not split the center's budget scope.
 
-**Concept:** Metered cost attribution
+**Concept:** Independent budget boundaries require appropriate cost-center scope.
 
 **Authored coaching hints:**
 
-- Separate organizational reporting from code ownership.
-- Choose a billing grouping, not a workflow control.
+- Distinguish naming a team from creating a budget boundary.
+- Check whether a cost-center budget applies to part or all of that center.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-¿Qué función de facturación atribuye gasto medido de Actions a unidades de negocio sin mover sus repositorios?
+Dos equipos comparten un centro de costos, pero necesitan presupuestos controlados por separado. ¿Qué diseño documentado cumple ese requisito?
 
-1. Etiquetas de ejecutor
+1. Usar un presupuesto compartido con dos umbrales de alerta.
 
-   Las etiquetas asignan trabajos, no facturación.
+   Varios umbrales de alerta no crean presupuestos independientes por equipo.
 
-2. Centros de costos **[CORRECT]**
+2. Crear un centro de costos separado para cada equipo. **[CORRECT]**
 
-   Los centros vinculan recursos con atribución de gasto.
+   El presupuesto abarca todo el centro; los presupuestos independientes requieren centros separados.
 
-3. Temas de repositorio
+3. Crear dos presupuestos dirigidos al mismo centro compartido.
 
-   Los temas clasifican repositorios, no facturación.
+   Ambos siguen abarcando el centro compartido, no gastos de equipos separados.
 
-4. Revisores de entorno
+4. Añadir los dos equipos empresariales como recursos del centro compartido.
 
-   Los revisores controlan despliegues, no atribución de costos.
+   Añadir recursos separados no divide el ámbito presupuestario del centro.
 
-**Concept:** Atribución de costos medidos
+**Concept:** Los límites presupuestarios independientes requieren un ámbito adecuado de centros de costos.
 
 **Authored coaching hints:**
 
-- Distingue informes organizativos de propiedad del código.
-- Elige una agrupación de facturación, no un control del flujo.
+- Distingue nombrar un equipo de crear un límite presupuestario.
+- Comprueba si un presupuesto abarca una parte o todo el centro.
 
 </details>
 
@@ -23751,30 +23751,30 @@ Which billing feature attributes metered Actions spending to business units with
 
 ### Português (Brasil)
 
-Qual recurso de cobrança atribui gastos medidos de Actions a unidades de negócio sem mover seus repositórios?
+Duas equipes compartilham um centro de custos, mas precisam de orçamentos controlados separadamente. Qual desenho documentado atende a esse requisito?
 
-1. Rótulos de executor
+1. Usar um orçamento compartilhado com dois limites de alerta.
 
-   Rótulos roteiam trabalhos, não cobrança.
+   Vários limites de alerta não criam orçamentos independentes por equipe.
 
-2. Centros de custo **[CORRECT]**
+2. Criar um centro de custos separado para cada equipe. **[CORRECT]**
 
-   Centros vinculam recursos à atribuição de gastos.
+   O orçamento abrange todo o centro; orçamentos independentes exigem centros separados.
 
-3. Tópicos de repositório
+3. Criar dois orçamentos direcionados ao mesmo centro compartilhado.
 
-   Tópicos classificam repositórios, não cobrança.
+   Ambos continuam cobrindo o centro compartilhado, não gastos de equipes separadas.
 
-4. Revisores de ambiente
+4. Adicionar as duas equipes empresariais como recursos do centro compartilhado.
 
-   Revisores controlam implantações, não atribuição de custos.
+   Adicionar recursos separados não divide o escopo orçamentário do centro.
 
-**Concept:** Atribuição de custos medidos
+**Concept:** Limites orçamentários independentes exigem o escopo adequado de centros de custos.
 
 **Authored coaching hints:**
 
-- Diferencie relatórios organizacionais de propriedade do código.
-- Escolha um agrupamento de cobrança, não um controle do fluxo.
+- Diferencie nomear uma equipe de criar um limite orçamentário.
+- Confira se um orçamento abrange parte ou todo o centro.
 
 </details>
 

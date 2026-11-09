@@ -8,6 +8,12 @@ installed.
 
 ### Agentic AI Developer question-bank refresh
 
+- Correct 108 questions across all three languages, replacing repeated answer
+  and objective chunks with distinct applied decisions. Retain small purposeful
+  overlaps rather than requiring every related concept to be globally unique.
+- Add optional all-language template-diversity checks and regressions covering
+  repeated prose, reordered choice sets, question clauses, and technical
+  punctuation. These heuristics supplement, not replace, semantic human review.
 - Refresh all 225 GH-600 questions in English, Spanish, and Brazilian Portuguese
   across the full official blueprint, emphasizing applied agent workflows,
   configuration/log/artifact interpretation, and close but distinguishable choices.

@@ -1,10 +1,31 @@
 import { exams } from "./exams.mjs";
 import { quotasFor, validateBank } from "./bank-utils.mjs";
+import { checkDiversity } from "./bank-diversity.mjs";
+
+const args = process.argv.slice(2);
+const diversityIds = new Set();
+if (args.length) {
+    const option = args[0];
+    if (args.length > 1 || (option !== "--diversity" && !option.startsWith("--diversity="))) {
+        throw new Error("Usage: node check-banks.mjs [--diversity[=exam-id]]");
+    }
+    const id = option.slice("--diversity=".length);
+    if (option === "--diversity") exams.forEach(exam => diversityIds.add(exam.id));
+    else if (exams.some(exam => exam.id === id)) diversityIds.add(id);
+    else throw new Error(`Unknown diversity exam ID: ${id || "(empty)"}`);
+}
 
 const errors = [];
 const allIds = new Set(), allPrompts = new Set();
 for (const exam of exams) {
     errors.push(...validateBank(exam).map(error => `${exam.id}: ${error}`));
+    if (diversityIds.has(exam.id)) {
+        for (const language of ["en", "es", "pt-BR"]) {
+            const questions = exam.questions.map(question => language === "en"
+                ? question : { ...question, ...question.translations?.[language] });
+            errors.push(...checkDiversity(questions).map(error => `${exam.id} ${language}: ${error}`));
+        }
+    }
     if (exam.questions.length < exam.attemptSize * 3) errors.push(`${exam.id}: pool is below the ${exam.attemptSize * 3}-question target`);
     const distribution = Object.fromEntries(exam.domains.map(domain =>
         [domain.name, exam.questions.filter(question => question.domain === domain.name).length]));
@@ -30,4 +51,7 @@ for (const exam of exams) {
 if (errors.length) {
     console.error(errors.join("\n"));
     process.exitCode = 1;
-} else console.log("Structural/coverage checks passed. Semantic correctness and human approval are separate requirements.");
+} else {
+    console.log("Structural/coverage checks passed. Semantic correctness and human approval are separate requirements.");
+    if (diversityIds.size) console.log(`Template-diversity checks passed in all three languages: ${[...diversityIds].join(", ")}. Semantic review is still required.`);
+}

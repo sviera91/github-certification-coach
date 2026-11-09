@@ -134,6 +134,17 @@ is not a claim of real-exam fidelity. The bank remains AI-authored Preview
 pending revision-specific human review. Domain quotas, four-choice single-answer
 behavior, 75-question/120-minute practice, and saved-attempt snapshots are unchanged.
 
+The diversity correction replaces repeated learning objectives, rather than
+rephrasing identical answers. For a template-regression check, run
+`npm run check:banks -- --diversity=agentic` (or `--diversity` for all six banks).
+This checks all three languages for repeated answer prose, full choice sets,
+and long question clauses, while keeping technical punctuation distinct.
+Repeated short feature names can be legitimate. These heuristics do not prove
+semantic diversity or replace one-best-answer and human content review.
+Small, purposeful overlaps can reinforce a concept; repeated chunks of the same
+decision with changed scenario nouns are not acceptable.
+The default bank check remains structural so bank-review PRs stay independent.
+
 ## Practice modes and navigation
 
 ### Languages

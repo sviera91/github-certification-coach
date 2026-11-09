@@ -9,6 +9,8 @@ import { startServer } from "./server.mjs";
 import { quotasFor, revisionFor, reviewRevisionFor, publicExam, validateBank, assemble, approved, mergeApprovals } from "./bank-utils.mjs";
 import { domainTranslations, hasTranslation } from "./i18n.mjs";
 import { exams } from "./exams.mjs";
+import { checkDiversity } from "./bank-diversity.mjs";
+import { spawnSync } from "node:child_process";
 
 const catalog = ["foundations", "copilot"].map(id => ({
     id, name: id, phase: 1, attemptSize: 4, minutes: 6, relaxedMinutes: id === "foundations" ? 120 : undefined,
@@ -28,6 +30,54 @@ async function fixture(t, options = {}) {
     return { engine, directory, sent };
 }
 const first = questions[0].id;
+test("diversity checks reject repeated prose hidden behind different scenarios", () => {
+    const repeated = ["Use the approved plan with scoped evidence.", " USE the approved plan with scoped evidence. ", "Use the approved plan\nwith scoped evidence."];
+    const bank = repeated.map((answer, i) => ({
+        id: `q-${i}`, prompt: `Scenario ${i}?`, correct: 0,
+        choices: [answer, `Other ${i}`, `Alternative ${i}`, `Different ${i}`],
+    }));
+    assert.deepEqual(checkDiversity(bank.slice(0, 2)), []);
+    assert.ok(checkDiversity(bank).some(issue => issue.startsWith("Repeated correct-answer prose")));
+});
+test("diversity checks recognize repeated unordered choices and their answer", () => {
+    const bank = [
+        ["Read", "Write", "Admin", "Maintain"],
+        ["Admin", "Maintain", "Write", "Read"],
+        ["Maintain", "Read", "Admin", "Write"],
+    ].map((choices, i) => ({ id: `q-${i}`, prompt: `Scenario ${i}?`, choices, correct: choices.indexOf("Write") }));
+    assert.deepEqual(checkDiversity(bank), ["Repeated choice set and answer (q-0, q-1, q-2)"]);
+});
+test("diversity checks reject repeated long question clauses after varied scenarios", () => {
+    const bank = Array.from({ length: 4 }, (_, i) => ({
+        id: `q-${i}`, prompt: `Scenario ${i}. Which response best satisfies every requirement in this specific agent task?`,
+        correct: 0, choices: [`A${i}`, `B${i}`, `C${i}`, `D${i}`],
+    }));
+    assert.ok(checkDiversity(bank).some(issue => issue.startsWith("Repeated question template")));
+});
+test("diversity checks preserve distinct technical punctuation and legitimate short labels", () => {
+    const bank = [">", "/", "."].map((token, i) => ({
+        id: `q-${i}`, prompt: `Scenario ${i}?`, correct: 0,
+        choices: [`Select the literal token \`${token}\` here`, `B${i}`, `C${i}`, `D${i}`],
+    }));
+    assert.deepEqual(checkDiversity(bank), []);
+    assert.deepEqual(checkDiversity(bank.map(q => ({ ...q, choices: ["CODEOWNERS", ...q.choices.slice(1)] }))), []);
+});
+test("the corrected Agentic bank clears template checks in all three languages", () => {
+    const exam = exams.find(exam => exam.id === "agentic");
+    for (const language of ["en", "es", "pt-BR"]) {
+        const bank = exam.questions.map(q => language === "en" ? q : { ...q, ...q.translations[language] });
+        assert.deepEqual(checkDiversity(bank), [], language);
+    }
+});
+test("bank checker rejects unknown diversity targets and unsupported options", () => {
+    for (const option of ["--diversity=missing", "--diversity=", "--unrecognized"]) {
+        const result = spawnSync(process.execPath, ["check-banks.mjs", option], {
+            cwd: fileURLToPath(new URL(".", import.meta.url)), encoding: "utf8",
+        });
+        assert.equal(result.status, 1, option);
+        assert.match(result.stderr, /Unknown diversity exam ID|Usage:/, option);
+    }
+});
 test("all six banks have both complete translations and localized domains without changing fixed keys", () => {
     assert.equal(exams.length, 6);
     assert.equal(exams.reduce((total, exam) => total + exam.questions.length, 0), 1350);
@@ -49,9 +99,13 @@ test("all six banks have both complete translations and localized domains withou
 test("Agentic translations preserve configuration, command, and evidence literals at their answer indices", () => {
     const exam = exams.find(exam => exam.id === "agentic");
     const cases = [
+        ["agentic-085", "copilot-setup-steps"],
+        ["agentic-088", '{"type":"local","command":"node","args":["server.mjs"]}'],
         ["agentic-130", "github.run_id + github.sha"],
         ["agentic-133", "gh run view 731 --log-failed"],
         ["agentic-149", "Files changed"],
+        ["agentic-186", "name: report-${{ matrix.worker }}"],
+        ["agentic-192", "fail-fast: false"],
     ];
     for (const [id, expected] of cases) {
         const question = exam.questions.find(question => question.id === id);

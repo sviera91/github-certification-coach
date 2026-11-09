@@ -1,2276 +1,5403 @@
-// Original GH-600 practice material; Preview, not human approved.
-// Grounded in the official study guide, Learn modules, and GitHub documentation,
-// checked October 20, 2026. No exam dumps or assessment questions were used.
-// Project quotasFor normalized midpoint quotas: 40 / 51 / 28 / 39 / 39 / 28.
-// This bank does not configure exam duration, catalog availability, or approvals.
-const architecture = "Prepare agent architecture and SDLC processes";
-const tooling = "Implement tool use and environment interaction";
-const memory = "Manage memory, state, and execution";
-const evaluation = "Perform evaluation, error analysis, and tuning";
-const coordination = "Orchestrate multi-agent coordination";
-const guardrails = "Implement guardrails and accountability";
-const blueprint = "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600";
-const foundations = "https://learn.microsoft.com/en-us/training/modules/foundations-agentic-ai/";
-const contributor = "https://learn.microsoft.com/en-us/training/modules/foundations-agentic-ai/6-apply-contributor-model-agent-generated-work";
-const design = "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/";
-const planning = "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/4-plan-reason-execution";
-const workflows = "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/6-reliable-workflows";
-const operations = "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls";
-const tools = "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/";
-const mcp = "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/3-model-context-protocol-servers-registries-allow-lists";
-const copilotMemory = "https://docs.github.com/en/copilot/concepts/prompting-and-context/copilot-memory";
-const agents = "https://docs.github.com/en/copilot/how-tos/copilot-sdk/features/custom-agents";
-const controls = "https://docs.github.com/en/copilot/tutorials/cloud-agent/build-guardrails";
-
+// Original practice content, not copied from certification assessments.
 export const questions = [
-  {
-    id: "agentic-001", domain: architecture,
-    prompt: "A team is introducing agents into a payment service. Which initial assignment provides the clearest bounded SDLC responsibility?",
-    choices: ["Add tests for documented rounding rules on a PR branch", "Own payment reliability from design through production", "Improve the service wherever the agent finds opportunities", "Resolve all payment incidents without an escalation boundary"],
-    correct: 0,
-    explanations: ["Documented rules, a test deliverable, and a branch define a reviewable task.", "End-to-end reliability ownership lacks bounded inputs and authority.", "Open-ended improvement invites unrelated changes.", "Incident handling needs risk limits and escalation paths."],
-    concept: "Bounded SDLC delegation",
-    hints: ["What would let a reviewer decide when the assignment is complete?", "How much authority is implied by each task?"],
-    source: design,
-  },
-  {
-    id: "agentic-002", domain: architecture,
-    prompt: "An agent receives 'make checkout faster' and proposes replacing the database. What should the task owner establish before authorizing implementation?",
-    choices: ["A preferred database vendor", "A measured baseline, target latency, scope, and constraints", "An implementation deadline without additional requirements", "A larger execution budget for exploring replacements"],
-    correct: 1,
-    explanations: ["Vendor selection does not establish whether replacement is justified.", "A measurable contract enables comparison and constrains architectural changes.", "A deadline does not resolve ambiguous success criteria.", "More exploration budget does not define the intended outcome."],
-    concept: "Inputs and success criteria",
-    hints: ["How could two reviewers agree that performance improved enough?", "Which missing information affects whether a redesign is appropriate?"],
-    source: design,
-  },
-  {
-    id: "agentic-003", domain: architecture,
-    prompt: "A security-sensitive refactor must not modify source files until its plan is approved. Which architecture enforces that requirement?",
-    choices: ["A writable agent instructed to wait", "A post-run review of all edited files", "A read-only planning stage followed by a gated execution stage", "A combined plan-and-code PR with merge protection"],
-    correct: 2,
-    explanations: ["Instructions alone do not remove editing capability.", "Review after editing is later than the required boundary.", "Read-only capability and an explicit gate prevent premature source edits.", "Merge protection does not prevent preapproval source generation."],
-    concept: "Plan-before-action enforcement",
-    hints: ["At what point must the restriction take effect?", "Which option controls capability rather than merely describing behavior?"],
-    source: planning,
-  },
-  {
-    id: "agentic-004", domain: architecture,
-    prompt: "Reviewers receive a plan saying only 'update files, run checks, finish.' What improvement most helps them validate intent before execution?",
-    choices: ["Replace the plan with the model's confidence score", "Attach an unfiltered transcript of every internal thought", "Require a detailed final diff before discussing intent", "Specify affected components, steps, risks, tests, and stop conditions"],
-    correct: 3,
-    explanations: ["Confidence is not a reviewable implementation contract.", "Internal deliberation is not necessary for an inspectable plan.", "Waiting for a diff loses the early validation opportunity.", "Explicit scope and validation let reviewers assess the proposed work."],
-    concept: "Structured plan artifacts",
-    hints: ["What questions would an owner ask before granting execution authority?", "Which information connects intent to later evidence?"],
-    source: planning,
-  },
-  {
-    id: "agentic-005", domain: architecture,
-    prompt: "An agent fixes a parser bug but also reorganizes unrelated authentication code. Under the contributor model, what should the reviewer do?",
-    choices: ["Require justification or removal of the unrelated changes", "Accept the entire diff because parser tests pass", "Reject all agent contributions regardless of evidence", "Review only files mentioned in the original issue"],
-    correct: 0,
-    explanations: ["Scope is reviewed alongside correctness, regardless of authorship.", "Parser tests do not validate unrelated authentication edits.", "The contributor model evaluates work, not author type.", "Ignoring unexpected files leaves unreviewed risk."],
-    concept: "Scope review under the contributor model",
-    hints: ["Does solving the reported defect justify every change?", "Which review standard should apply to any contributor?"],
-    source: contributor,
-  },
-  {
-    id: "agentic-006", domain: architecture,
-    prompt: "A low-risk documentation agent waits for human approval before each search and file read. Delivery has slowed without reducing meaningful risk. What is the best redesign?",
-    choices: ["Remove all controls, including publication checks", "Permit bounded reads automatically and gate consequential writes", "Move approvals to a weekly batch after publication", "Require two reviewers for every read to improve confidence"],
-    correct: 1,
-    explanations: ["Publication still needs appropriate controls.", "Risk-based boundaries reduce friction while preserving oversight of impact.", "After-the-fact approval cannot prevent an inappropriate publication.", "More read approvals increase the existing bottleneck."],
-    concept: "Proportionate autonomy",
-    hints: ["Which operations can change something outside the agent's context?", "Where does human judgment materially reduce risk?"],
-    source: workflows,
-  },
-  {
-    id: "agentic-007", domain: architecture,
-    prompt: "A team keeps agent plans only in an ephemeral chat. Auditors cannot connect released changes to their intended scope. What should the architecture add?",
-    choices: ["A longer chat context window", "A requirement that agents restate their confidence", "Durable plan and evidence links associated with the PR and commit", "A rule deleting agent branches as soon as tests pass"],
-    correct: 2,
-    explanations: ["A larger context window does not create an accessible audit artifact.", "Confidence does not establish intent or provenance.", "Linked artifacts connect approved intent, execution, and validation.", "Early deletion can reduce rather than improve reconstructability."],
-    concept: "GitHub as system of record",
-    hints: ["What must remain available after a session ends?", "How would someone locate the evidence for one released commit?"],
-    source: operations,
-  },
-  {
-    id: "agentic-008", domain: architecture,
-    prompt: "A team wants an agent to draft changes quickly for reversible formatting work, with validation before merge rather than before editing. Which workflow fits?",
-    choices: ["Production execution followed by a retrospective plan", "Read-only planning with no implementation handoff", "Direct default-branch updates after a local formatter run", "A plan-and-execution PR subject to configured checks and reviews"],
-    correct: 3,
-    explanations: ["The plan must inform work, not rationalize production actions afterward.", "Read-only planning alone cannot deliver the changes.", "Local validation does not replace the required merge boundary.", "A combined PR fits low-risk iteration while retaining review before acceptance."],
-    concept: "Plan-first versus plan-and-execution",
-    hints: ["Is the required gate before editing or before accepting changes?", "How does reversibility affect the appropriate workflow?"],
-    source: planning,
-  },
-  {
-    id: "agentic-009", domain: architecture,
-    prompt: "A task asks an agent to update an API client without changing its public interface. Which proposed success criterion is most useful?",
-    choices: ["Existing compatibility tests and new defect tests pass without public API changes", "The patch removes the most lines possible", "The agent produces at least three commits", "The implementation uses the newest available library"],
-    correct: 0,
-    explanations: ["This checks both the desired fix and the compatibility constraint.", "Deletion volume is not evidence of compatible behavior.", "Commit count is a process measure, not task correctness.", "Newest-library adoption may violate compatibility."],
-    concept: "Outcome-oriented task contracts",
-    hints: ["What behavior must change, and what must remain stable?", "Which metric could improve while still breaking users?"],
-    source: design,
-  },
-  {
-    id: "agentic-010", domain: architecture,
-    prompt: "An agent is assigned a production incident and discovers an undocumented destructive recovery step. Which responsibility boundary should the architecture define?",
-    choices: ["Let the agent infer authority from urgency", "Prepare evidence and a recovery proposal, then escalate outside its authorized scope", "Allow any action that appeared in a previous incident", "Treat access to a command as permission to execute it"],
-    correct: 1,
-    explanations: ["Urgency does not grant destructive authority.", "Escalation preserves useful diagnosis without exceeding delegated authority.", "A previous incident may have had different approvals and conditions.", "Technical capability and authorization are different boundaries."],
-    concept: "Escalation by task boundary",
-    hints: ["Who owns the risk of a destructive recovery?", "Can diagnosis continue without taking the disputed action?"],
-    source: operations,
-  },
-  {
-    id: "agentic-011", domain: architecture,
-    prompt: "A manager describes an agent as 'an assistant that suggests code.' Which additional behavior makes an SDLC system agentic rather than merely advisory?",
-    choices: ["It answers with longer explanations", "It always uses a larger model", "It plans, invokes authorized tools, and evaluates progress toward a goal", "It produces suggestions in a chat interface"],
-    correct: 2,
-    explanations: ["Response length does not establish autonomous execution.", "Model size does not define the workflow.", "Goal-directed action and feedback distinguish an agentic lifecycle.", "A chat interface can remain purely advisory."],
-    concept: "Agentic plan-act-evaluate lifecycle",
-    hints: ["Does the system only propose, or can it act on its environment?", "What feedback informs its next step?"],
-    source: foundations,
-  },
-  {
-    id: "agentic-012", domain: architecture,
-    prompt: "An agent repeatedly repairs tests until they pass, but nobody checks whether the feature still meets its issue requirements. Which architectural omission is most important?",
-    choices: ["A mandatory minimum patch size", "A second code formatter", "An agent-generated productivity score", "An evaluation stage tied to development intent"],
-    correct: 3,
-    explanations: ["Patch size does not establish correct behavior.", "Formatting cannot verify feature intent.", "Self-reported productivity does not validate outcomes.", "Evaluation must compare the delivered behavior with the intended requirement."],
-    concept: "Closing the agent lifecycle",
-    hints: ["Can green tests coexist with a wrongly implemented feature?", "Where is the original task contract checked?"],
-    source: foundations,
-  },
-  {
-    id: "agentic-013", domain: architecture,
-    prompt: "A proposed agent task bundles a schema migration, UI redesign, and deployment-policy change in one PR. Which redesign most improves reviewability?",
-    choices: ["Separate coherent deliverables and record their dependencies", "Hide intermediate commits behind one summary", "Assign one reviewer to approve the complete bundle quickly", "Use a longer prompt while retaining the same unbounded scope"],
-    correct: 0,
-    explanations: ["Coherent units make distinct risks and prerequisites inspectable.", "A summary does not reduce the scope of review.", "One reviewer may not own all affected areas.", "Prompt length does not create architectural boundaries."],
-    concept: "SDLC task decomposition",
-    hints: ["Do these changes share one acceptance decision?", "Which boundaries let the right owners review the right risk?"],
-    source: design,
-  },
-  {
-    id: "agentic-014", domain: architecture,
-    prompt: "A planning agent recommends an infrastructure change whose rollback is unknown. The team requires rollback readiness before implementation. What should plan validation conclude?",
-    choices: ["Approve because rollback can be investigated after deployment", "Return the plan for recovery analysis before execution", "Approve if the agent reports high confidence", "Replace required reviews with a longer execution timeout"],
-    correct: 1,
-    explanations: ["Postdeployment discovery misses the required readiness boundary.", "An unfulfilled recovery requirement makes the plan incomplete.", "Confidence cannot substitute for a recovery strategy.", "Timeouts do not establish reversibility."],
-    concept: "Validating recovery readiness",
-    hints: ["Which prerequisite has not been demonstrated?", "When would an unknown rollback become most costly?"],
-    source: operations,
-  },
-  {
-    id: "agentic-015", domain: architecture,
-    prompt: "An agent team uses GitHub PRs as its control plane. Which mapping best separates intent, implementation, and evidence?",
-    choices: ["All three exist only in a final chat response", "Intent is inferred from filenames; evidence is the agent's confidence", "Plan in the issue or PR, changes in commits, validation in checks and reports", "Implementation is documented before planning; tests are optional if reviewed"],
-    correct: 2,
-    explanations: ["Ephemeral chat does not provide the same reviewable record.", "Filenames and confidence do not capture intent and validation.", "Each lifecycle stage has a durable, inspectable representation.", "Review does not remove the need for appropriate validation."],
-    concept: "Lifecycle artifact mapping",
-    hints: ["What artifact answers why, what changed, and how it was checked?", "Can those answers be examined independently?"],
-    source: planning,
-  },
-  {
-    id: "agentic-016", domain: architecture,
-    prompt: "A team wants an agent to produce implementation plans but never execute them. Which custom-agent design best expresses that role?",
-    choices: ["A general-purpose agent with deployment credentials", "An execution agent whose name contains 'planner'", "An unrestricted agent with a note to avoid changes", "A focused planning prompt and explicit read-only tool access"],
-    correct: 3,
-    explanations: ["Deployment authority is unnecessary for planning.", "A role name does not restrict capabilities.", "Advisory text is weaker than an actual capability boundary.", "The prompt defines responsibility and the tools enforce its action limits."],
-    concept: "Role and capability alignment",
-    hints: ["What could this role need to inspect?", "Which capability would contradict its stated responsibility?"],
-    source: planning,
-  },
-  {
-    id: "agentic-017", domain: architecture,
-    prompt: "An agent proposes a refactor based on an assumption that a legacy API has no consumers. What is the best preexecution plan review response?",
-    choices: ["Require evidence about consumers or revise the compatibility approach", "Approve because the assumption is clearly written", "Approve if removing the API reduces complexity", "Ask for more implementation detail without checking the assumption"],
-    correct: 0,
-    explanations: ["A critical assumption needs validation before it drives destructive design.", "Visibility makes an assumption reviewable, not true.", "Complexity reduction does not justify breaking unknown consumers.", "Implementation detail cannot repair an unsupported premise."],
-    concept: "Assumption validation",
-    hints: ["Which premise could invalidate the entire plan?", "What evidence would distinguish a safe removal from a breaking change?"],
-    source: planning,
-  },
-  {
-    id: "agentic-018", domain: architecture,
-    prompt: "A repository requires owner approval for workflow changes. Adding CODEOWNERS entries alone has not blocked unreviewed merges. What architectural control is missing?",
-    choices: ["A larger workflow log-retention period", "An applicable rule requiring Code Owner review", "A comment asking agents to contact owners", "A task label naming the affected team"],
-    correct: 1,
-    explanations: ["Retention improves auditability, not approval enforcement.", "Ownership must be coupled with an enforced review requirement.", "A comment does not enforce the merge boundary.", "Labels help routing but do not block acceptance."],
-    concept: "Ownership versus enforcement",
-    hints: ["What turns a reviewer suggestion into a required decision?", "Which boundary actually accepts the code?"],
-    source: controls,
-  },
-  {
-    id: "agentic-019", domain: architecture,
-    prompt: "A PR description claims all tests passed but contains no run or commit references. What observability requirement would most improve accountability?",
-    choices: ["Require the agent to repeat the claim in its final message", "Record only aggregate monthly pass rates", "Link validation evidence to the precise run and code revision", "Include the model temperature in the PR title"],
-    correct: 2,
-    explanations: ["Repeating an unsupported claim adds no provenance.", "Monthly aggregates cannot validate this PR revision.", "Run and revision linkage makes the claim independently inspectable.", "Generation settings do not demonstrate test execution."],
-    concept: "Evidence provenance",
-    hints: ["How could a reviewer verify the claim without trusting the author?", "Could the tests have run against older code?"],
-    source: operations,
-  },
-  {
-    id: "agentic-020", domain: architecture,
-    prompt: "A task owner wants to automate release-note drafting but retain human responsibility for public commitments. Which division of responsibility fits?",
-    choices: ["The agent drafts and publishes whenever prose is fluent", "The human supplies only formatting preferences", "The agent decides which unreleased promises are acceptable", "The agent drafts from approved changes; an authorized owner approves publication"],
-    correct: 3,
-    explanations: ["Fluency does not establish authorization for public claims.", "Formatting guidance does not cover commitment risk.", "Public commitments require delegated business judgment.", "Drafting is bounded while publication retains the appropriate decision owner."],
-    concept: "Human responsibility boundaries",
-    hints: ["Which step creates an external commitment?", "What can be automated without transferring that authority?"],
-    source: foundations,
-  },
-  {
-    id: "agentic-021", domain: architecture,
-    prompt: "A team defines agent success as 'produce many merged PRs.' Agents begin splitting trivial changes to increase the score. What should the architecture emphasize instead?",
-    choices: ["User outcomes and quality constraints alongside delivery measures", "A minimum number of lines in each PR", "The number of agent tool calls per day", "A rule accepting only agent-authored reviews"],
-    correct: 0,
-    explanations: ["Balanced outcome measures discourage optimizing activity instead of value.", "Line minimums create another gameable activity target.", "Tool calls measure activity and can reward inefficiency.", "Author restrictions do not align work with user outcomes."],
-    concept: "Avoiding proxy-driven anti-patterns",
-    hints: ["Can the chosen score rise without benefiting users?", "What prevents speed from masking quality regressions?"],
-    source: design,
-  },
-  {
-    id: "agentic-022", domain: architecture,
-    prompt: "An agent is asked to implement an issue, but its acceptance criteria contradict an approved architecture decision. What should happen before action?",
-    choices: ["Silently follow the newer-looking text", "Surface the conflict and obtain an authoritative scope decision", "Combine both designs even if they are incompatible", "Ignore the issue because architecture documents always take precedence"],
-    correct: 1,
-    explanations: ["Apparent recency does not resolve authority or intent.", "A scope conflict requires an explicit decision before implementation.", "Combining incompatible requirements does not make them satisfiable.", "The documents may need revision; unilateral dismissal is not resolution."],
-    concept: "Conflicting task inputs",
-    hints: ["What would make the next action defensible to both owners?", "Is the conflict factual, or does it require a decision?"],
-    source: planning,
-  },
-  {
-    id: "agentic-023", domain: architecture,
-    prompt: "An agent finishes implementation but discovers that a required scanner is unavailable. Its task contract requires scan evidence. What completion state is appropriate?",
-    choices: ["Complete, because the agent cannot control scanner availability", "Complete, if unit tests passed", "Implementation prepared, validation blocked with an escalation record", "Complete, with an estimated scanner result"],
-    correct: 2,
-    explanations: ["An external blocker does not satisfy the missing requirement.", "Unit tests do not replace the specified security signal.", "Explicit partial state preserves progress without overstating readiness.", "Estimated results are not executed evidence."],
-    concept: "Completion and blocked-state contracts",
-    hints: ["Which deliverable exists, and which prerequisite remains unmet?", "How can the handoff preserve progress honestly?"],
-    source: operations,
-  },
-  {
-    id: "agentic-024", domain: architecture,
-    prompt: "A team considers replacing ordinary issue, PR, and check workflows with a separate agent-only approval channel. What is the strongest reason to retain standard development artifacts?",
-    choices: ["They guarantee that generated code has no defects", "They eliminate the need to define agent scope", "They make all agent actions reversible", "They keep ownership, evidence, and acceptance in the established control plane"],
-    correct: 3,
-    explanations: ["Development artifacts support review but cannot guarantee correctness.", "Scope must still be defined explicitly.", "Some external effects remain irreversible.", "Shared controls preserve inspectability and consistent engineering governance."],
-    concept: "Standard tooling integration",
-    hints: ["Where do existing reviewers already make acceptance decisions?", "What is lost when agent work is reviewed outside that system?"],
-    source: foundations,
-  },
-  {
-    id: "agentic-025", domain: architecture,
-    prompt: "An agent needs to explore an unfamiliar repository before estimating a change. The estimate must precede implementation approval. What is the best initial phase?",
-    choices: ["Bounded read-only discovery with assumptions and findings recorded", "Create speculative code changes to discover the scope", "Grant deployment access to improve estimation accuracy", "Skip exploration and commit to a fixed implementation plan"],
-    correct: 0,
-    explanations: ["Discovery can reduce uncertainty without crossing the execution gate.", "Speculative edits violate the required phase boundary.", "Deployment capability is not needed to inspect repository structure.", "An uninformed estimate hides rather than manages uncertainty."],
-    concept: "Discovery before commitment",
-    hints: ["Which uncertainty can be reduced without changing the system?", "What artifact would make an estimate reviewable?"],
-    source: planning,
-  },
-  {
-    id: "agentic-026", domain: architecture,
-    prompt: "A bug-fixing agent is allowed to revise a PR branch but repeatedly fails the same required check. What should its workflow define in advance?",
-    choices: ["Unlimited iterations until the check passes", "A bounded iteration budget and evidence-rich escalation", "Automatic deletion of the failing check", "A fallback that marks all remaining checks successful"],
-    correct: 1,
-    explanations: ["Unlimited loops consume resources without guaranteeing convergence.", "A budget and handoff make persistent failures manageable.", "Removing a required signal hides the failure.", "Synthetic success misrepresents the validation outcome."],
-    concept: "Bounded autonomous iteration",
-    hints: ["What distinguishes useful iteration from a stalled loop?", "What should a human receive when automated recovery stops?"],
-    source: operations,
-  },
-  {
-    id: "agentic-027", domain: architecture,
-    prompt: "A team assigns agents to every SDLC stage solely because automation is available. Which selection principle is more appropriate?",
-    choices: ["Prefer tasks with the largest unrestricted blast radius", "Delegate stages where no acceptance criteria can be written", "Match bounded tasks to capabilities, verifiable outcomes, and risk controls", "Automate only tasks that require no context"],
-    correct: 2,
-    explanations: ["Large unrestricted impact increases supervision risk.", "Unverifiable goals are poor delegation candidates.", "Capability, evidence, and risk alignment support reliable delegation.", "Useful tasks can require context when it is supplied and scoped."],
-    concept: "Selecting agent-suitable work",
-    hints: ["What makes a delegated result independently assessable?", "Can the task be constrained without eliminating its usefulness?"],
-    source: design,
-  },
-  {
-    id: "agentic-028", domain: architecture,
-    prompt: "A deployment plan says 'use the current branch when approved next week.' Why should the reviewer request a more precise execution reference?",
-    choices: ["Branch names cannot be used in GitHub workflows", "Approval automatically freezes all repository branches", "Commit references remove the need for testing", "The branch can change between review and execution"],
-    correct: 3,
-    explanations: ["Branches are usable references but can be mutable.", "Approval does not inherently freeze a branch.", "Pinning identifies code; it does not validate it.", "An explicit revision binds execution to the reviewed code state."],
-    concept: "Binding plans to immutable revisions",
-    hints: ["Will the same name necessarily identify the same code later?", "What exactly did the reviewer inspect?"],
-    source: operations,
-  },
-  {
-    id: "agentic-029", domain: architecture,
-    prompt: "An agent-generated PR passes checks but offers no explanation for a new dependency. What should the architectural review focus on?",
-    choices: ["Whether the dependency is necessary, scoped, and consistent with constraints", "Whether the agent used a recognizable package name", "Whether the PR was generated quickly", "Whether the dependency increases the repository's package count"],
-    correct: 0,
-    explanations: ["Passing checks does not justify an architectural or supply-chain change.", "Recognition is not evidence of necessity or suitability.", "Speed does not establish design quality.", "Package count alone does not decide architectural fit."],
-    concept: "Architectural review beyond green checks",
-    hints: ["Which task constraint might a new dependency affect?", "Does a successful build explain why the design changed?"],
-    source: contributor,
-  },
-  {
-    id: "agentic-030", domain: architecture,
-    prompt: "A product owner changes the required behavior after a plan is approved but before implementation begins. What should the orchestration boundary require?",
-    choices: ["Proceed using the old plan because approval is permanent", "Revise the plan and revalidate the affected authorization", "Implement both behaviors without discussing the conflict", "Hide the change in the implementation summary"],
-    correct: 1,
-    explanations: ["Approval applies to reviewed intent, not arbitrary later requirements.", "Materially changed intent requires a correspondingly updated execution contract.", "Combining behaviors may be contradictory or out of scope.", "Hidden changes undermine inspectability and informed approval."],
-    concept: "Plan revision and approval scope",
-    hints: ["Is the authorized work still the work being proposed?", "Which change invalidates the previous acceptance decision?"],
-    source: planning,
-  },
-  {
-    id: "agentic-031", domain: architecture,
-    prompt: "A team wants to inspect agent behavior without recording private internal deliberation. What should the agent produce?",
-    choices: ["Only the final source files", "Every hidden reasoning token", "Concise decisions, assumptions, tool outcomes, and validation evidence", "A confidence statement without supporting artifacts"],
-    correct: 2,
-    explanations: ["Files alone omit intent and execution history.", "Inspectable artifacts do not require private deliberation transcripts.", "Decision and outcome records provide operationally useful transparency.", "Confidence alone cannot reconstruct behavior."],
-    concept: "Inspectable decision artifacts",
-    hints: ["What information is needed to reconstruct actions and their justification?", "Which evidence is useful to an operator rather than merely verbose?"],
-    source: operations,
-  },
-  {
-    id: "agentic-032", domain: architecture,
-    prompt: "An agent's task contract includes target repository, base revision, allowed paths, tests, and a PR deliverable. Which addition most directly clarifies when to stop and seek help?",
-    choices: ["A preferred writing style", "A maximum PR description length", "A model nickname", "Explicit escalation triggers and non-goals"],
-    correct: 3,
-    explanations: ["Writing style does not identify an authority boundary.", "Description length does not define blocked conditions.", "Model identity does not establish stop conditions.", "Escalation triggers and non-goals bound autonomous problem solving."],
-    concept: "Stop conditions and non-goals",
-    hints: ["What happens when the solution requires work outside the contract?", "Which missing instruction prevents uncontrolled scope expansion?"],
-    source: design,
-  },
-  {
-    id: "agentic-033", domain: architecture,
-    prompt: "A team trusts an agent PR more than a human PR because it was generated automatically. Which contributor-model correction is best?",
-    choices: ["Apply the same intent, scope, evidence, ownership, and policy standards", "Accept automated work if the prose sounds consistent", "Require no checks because generation is repeatable", "Reject human-authored fixes to maintain a uniform workflow"],
-    correct: 0,
-    explanations: ["The contribution is evaluated by engineering evidence rather than author type.", "Consistent prose is not validation.", "Generation does not remove defects or validation requirements.", "Uniform governance does not require excluding human contributions."],
-    concept: "Avoiding automation bias",
-    hints: ["Would the same evidence be sufficient from a human contributor?", "Which standards assess the change rather than its author?"],
-    source: contributor,
-  },
-  {
-    id: "agentic-034", domain: architecture,
-    prompt: "A team needs human intervention only when an agent proposes crossing an approved repository boundary. Which design best preserves velocity?",
-    choices: ["Require approval for every local search", "Automate in-scope steps and pause at the boundary with a change proposal", "Grant organization-wide access so no pause is necessary", "Permit cross-repository writes and request retroactive approval"],
-    correct: 1,
-    explanations: ["Read-by-read approval does not target the meaningful boundary.", "A focused gate preserves routine progress and controls scope expansion.", "Broader access removes rather than governs the boundary.", "Retroactive approval cannot prevent unauthorized impact."],
-    concept: "Boundary-triggered intervention",
-    hints: ["Where does the proposed work exceed delegated scope?", "Can normal progress continue without approving every observation?"],
-    source: workflows,
-  },
-  {
-    id: "agentic-035", domain: architecture,
-    prompt: "An agent maintains a private dashboard that reports success, while the PR's required checks show failure. Which artifact should control acceptance?",
-    choices: ["The private dashboard because it is agent-specific", "The last chat message because it is newer", "The configured repository checks and review requirements", "The agent's historical success rate"],
-    correct: 2,
-    explanations: ["An auxiliary dashboard cannot override repository acceptance rules.", "Recency does not grant authority over required checks.", "Acceptance belongs to the established, enforced development controls.", "Historical performance does not validate this change."],
-    concept: "Authoritative acceptance signals",
-    hints: ["Which system actually enforces acceptance?", "Can a summary override the evidence it summarizes?"],
-    source: foundations,
-  },
-  {
-    id: "agentic-036", domain: architecture,
-    prompt: "A planning agent proposes changing production configuration solely to learn how the service works. Which alternative best respects stage boundaries?",
-    choices: ["Run the change during a quiet period", "Ask for unrestricted credentials first", "Treat the exploratory change as read-only because its purpose is learning", "Inspect documentation and safe test environments before proposing production actions"],
-    correct: 3,
-    explanations: ["A quiet period does not make exploratory production changes appropriate.", "More authority increases risk without resolving the planning need.", "An action's effect, not its stated purpose, determines whether it is a write.", "Safe observation reduces uncertainty without conflating discovery and execution."],
-    concept: "Reasoning versus environmental action",
-    hints: ["Does an exploratory purpose remove an operation's side effects?", "What sources could answer the question without production impact?"],
-    source: planning,
-  },
-  {
-    id: "agentic-037", domain: architecture,
-    prompt: "An agent's implementation plan includes changes but no tests because 'reviewers will catch errors.' What is the best plan-review finding?",
-    choices: ["Validation responsibilities and evidence are missing", "Human review makes automated validation unnecessary", "The plan only needs a longer summary", "Tests should be chosen after merge to avoid bias"],
-    correct: 0,
-    explanations: ["A reliable plan identifies how the intended outcome will be demonstrated.", "Review and automated validation provide complementary evidence.", "Summary length does not supply missing validation.", "Postmerge test selection is too late for informed acceptance."],
-    concept: "Planning validation as a first-class step",
-    hints: ["What evidence will demonstrate success before acceptance?", "Can a reviewer independently check every behavior by inspection?"],
-    source: design,
-  },
-  {
-    id: "agentic-038", domain: architecture,
-    prompt: "A maintenance agent is given broad ownership of a repository but no named human escalation contact. What operational weakness is most directly introduced?",
-    choices: ["The agent cannot read source files", "Blocked or high-risk decisions have no accountable resolution path", "GitHub cannot retain commit history", "All routine changes require production approval"],
-    correct: 1,
-    explanations: ["Missing ownership does not technically prevent reads.", "A defined decision owner is necessary when delegated authority is insufficient.", "Commit retention is unrelated to escalation routing.", "A missing contact does not itself impose a particular approval policy."],
-    concept: "Accountable operational ownership",
-    hints: ["Who decides when the agent cannot safely proceed?", "What happens to an unresolved risk at the edge of autonomy?"],
-    source: operations,
-  },
-  {
-    id: "agentic-039", domain: architecture,
-    prompt: "A team introduces agents to fix accessibility defects. Which input bundle best supports reliable implementation?",
-    choices: ["A screenshot and an instruction to make the UI look modern", "A previous patch with instructions to imitate its style", "Affected flows, accessibility requirements, reproduction steps, and acceptance checks", "A list of all repository files without prioritization"],
-    correct: 2,
-    explanations: ["Visual modernization is not an accessibility contract.", "Imitation does not identify the current defect or expected behavior.", "Task-relevant evidence and criteria make the assignment implementable and testable.", "An unprioritized inventory does not establish intent."],
-    concept: "Task-relevant input design",
-    hints: ["What does the agent need to reproduce the problem?", "How will the owner distinguish a real fix from cosmetic change?"],
-    source: design,
-  },
-  {
-    id: "agentic-040", domain: architecture,
-    prompt: "A successful pilot leads a team to remove scope limits and review gates for all agent tasks. What is the most appropriate architectural response?",
-    choices: ["Use pilot success as permanent authorization", "Increase autonomy equally across all repositories", "Replace controls with periodic satisfaction surveys", "Expand autonomy incrementally using risk, evidence, and explicit boundaries"],
-    correct: 3,
-    explanations: ["Past success does not authorize new categories of impact.", "Repository and task risks can differ substantially.", "Surveys cannot enforce operational constraints.", "Evidence-based expansion preserves useful controls as scope changes."],
-    concept: "Controlled autonomy expansion",
-    hints: ["Does a pilot cover the risks of every future assignment?", "Which boundaries should change only after evidence and review?"],
-    source: workflows,
-  },
-  {
-    id: "agentic-041", domain: tooling,
-    prompt: "An agent must summarize open issues but must not change them. Which tool configuration is most appropriate?",
-    choices: ["Expose issue-read tools with read-scoped credentials", "Expose all issue tools and request read-only behavior", "Provide repository administration access for easier setup", "Use a write token and log mutations after execution"],
-    correct: 0,
-    explanations: ["Both available tools and service authorization align with the read-only task.", "A prompt does not remove exposed mutation capability.", "Administration exceeds the required capability.", "After-the-fact logging does not prevent unauthorized writes."],
-    concept: "Task-based tool selection",
-    hints: ["Which capabilities are actually necessary?", "Where can the external service enforce the same boundary?"],
-    source: operations,
-  },
-  {
-    id: "agentic-042", domain: tooling,
-    prompt: "A developer adds an MCP registry URL and assumes that every unlisted server is now blocked. What must be distinguished?",
-    choices: ["Registry descriptions and model context length", "Server discovery configuration and allowlist enforcement", "Local source files and Git commit authorship", "Tool response formatting and test coverage"],
-    correct: 1,
-    explanations: ["Context length does not determine server admission.", "A registry catalogs servers; a restriction policy determines what is permitted.", "Commit authorship is unrelated to MCP admission.", "Formatting and coverage do not enforce registry membership."],
-    concept: "Registry versus allowlist",
-    hints: ["Does knowing where to find servers itself forbid other servers?", "Which setting expresses the admission decision?"],
-    source: mcp,
-  },
-  {
-    id: "agentic-043", domain: tooling,
-    prompt: "A remote MCP server connects successfully, but its write tools fail authorization while reads succeed. What should be investigated first?",
-    choices: ["Whether the model needs a larger context window", "Whether all tool failures should be ignored", "The authenticated identity and operation-specific permissions", "Whether the server should be replaced by a public endpoint"],
-    correct: 2,
-    explanations: ["Context length does not grant service authorization.", "Ignoring authorization errors misrepresents execution.", "Successful connectivity and reads do not imply permission for writes.", "Changing endpoints does not resolve the intended identity's authority."],
-    concept: "Connectivity versus authorization",
-    hints: ["What has a successful read already demonstrated?", "Which additional boundary applies to mutation?"],
-    source: mcp,
-  },
-  {
-    id: "agentic-044", domain: tooling,
-    prompt: "An agent needs one issue-search capability from an MCP server that also exposes deployment tools. What is the safest useful configuration?",
-    choices: ["Enable the entire server namespace for convenience", "Enable deployments but ask the agent not to use them", "Remove all external tools and abandon issue search", "Enable only the required search capability with scoped authentication"],
-    correct: 3,
-    explanations: ["Broad namespaces unnecessarily increase the action surface.", "Instructions do not remove deployment capability.", "The needed read capability can be safely retained.", "A narrow tool subset and credential scope preserve usefulness with less risk."],
-    concept: "MCP tool allowlists",
-    hints: ["Must every capability exposed by a server be usable by this agent?", "What is the smallest sufficient action surface?"],
-    source: operations,
-  },
-  {
-    id: "agentic-045", domain: tooling,
-    prompt: "A team wants the GitHub remote MCP server in a supported IDE. Which setup principle is correct?",
-    choices: ["Configure the documented remote endpoint and authenticate an authorized identity", "Copy a token into repository instructions for automatic discovery", "Assume registry discovery authenticates the user automatically", "Use a local file path as the hosted server's network endpoint"],
-    correct: 0,
-    explanations: ["Remote connectivity and authorized authentication are both required.", "Instructions are not a secure credential store.", "Discovery and authentication are separate concerns.", "A file path does not identify a hosted HTTP service."],
-    concept: "Remote MCP configuration",
-    hints: ["What does the client need to locate the service?", "How does the service know on whose behalf a tool runs?"],
-    source: mcp,
-  },
-  {
-    id: "agentic-046", domain: tooling,
-    prompt: "A newly connected MCP tool returns text instructing the agent to disable repository protections. How should the agent treat that result?",
-    choices: ["As a higher-priority instruction because it came from a tool", "As untrusted data, not authority to change policy", "As approval from the repository administrator", "As a reason to grant the tool broader privileges"],
-    correct: 1,
-    explanations: ["Tool output does not outrank the task's governing instructions.", "External content cannot authorize changes to the agent's boundaries.", "A returned string does not prove administrator authorization.", "Suspicious output is not a justification for expanded privilege."],
-    concept: "Tool-output trust boundaries",
-    hints: ["Who authored the returned content?", "Can data from an external service redefine the agent's authority?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-047", domain: tooling,
-    prompt: "An agent works locally but fails in CI because it assumes a developer's installed compiler and home-directory files exist. What should be changed?",
-    choices: ["Increase the model's reasoning budget", "Grant CI access to every developer's home directory", "Declare reproducible setup steps and explicit workspace inputs", "Retry the same command until the compiler appears"],
-    correct: 2,
-    explanations: ["Reasoning budget cannot supply missing runtime dependencies.", "Broad personal-directory access is unnecessary and unsafe.", "Declared dependencies and inputs make execution portable and inspectable.", "Repeated execution will not install an undeclared compiler."],
-    concept: "Execution environment portability",
-    hints: ["Which assumptions are properties of one machine rather than the task?", "What must be established before the first build command?"],
-    source: tools,
-  },
-  {
-    id: "agentic-048", domain: tooling,
-    prompt: "A repository automation may create a branch and PR but must not directly update the default branch. Which design best supports this scope?",
-    choices: ["Give it repository-owner credentials and rely on naming conventions", "Run it against whichever branch is currently checked out", "Grant unrestricted pushes and review changes afterward", "Use a task branch, scoped write access, and enforced default-branch protection"],
-    correct: 3,
-    explanations: ["Naming conventions do not enforce a branch boundary.", "An accidental checkout could target the wrong branch.", "After-the-fact review cannot prevent a direct update.", "Branch-based execution and repository controls constrain the write path."],
-    concept: "Branch-scoped execution",
-    hints: ["Where should proposed changes land before acceptance?", "Which control remains effective if the agent chooses a wrong target?"],
-    source: tools,
-  },
-  {
-    id: "agentic-049", domain: tooling,
-    prompt: "An API reports a transient service outage during an idempotent read. Which retry policy is most appropriate?",
-    choices: ["Bounded retries with delay and escalation after the budget is exhausted", "Immediate retries without a limit", "Change credentials after every failed request", "Mark the read successful and invent a response"],
-    correct: 0,
-    explanations: ["Bounded delayed retries address transient failure without an uncontrolled loop.", "Unlimited immediate calls can amplify an outage.", "Credential rotation does not repair service availability.", "Invented output corrupts downstream decisions."],
-    concept: "Transient error handling",
-    hints: ["Is another attempt likely to change the outcome?", "How can retry behavior avoid worsening a service incident?"],
-    source: operations,
-  },
-  {
-    id: "agentic-050", domain: tooling,
-    prompt: "A create-issue request times out after transmission, leaving its outcome unknown. What should the agent do before retrying the write?",
-    choices: ["Create another issue with a slightly different title", "Reconcile whether the intended issue already exists", "Assume a timeout means the server did nothing", "Switch to an administrator token and repeat the request"],
-    correct: 1,
-    explanations: ["A different title can create a duplicate rather than recover safely.", "Reconciliation avoids repeating a write that may already have committed.", "A response timeout does not prove absence of server-side effects.", "More privilege does not resolve uncertain completion."],
-    concept: "Ambiguous write outcomes",
-    hints: ["Could the service have committed before the response was lost?", "What evidence distinguishes recovery from duplication?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-051", domain: tooling,
-    prompt: "A deployment API supports idempotency keys. An agent retries the same logical deployment after a network failure. How should it use the key?",
-    choices: ["Generate a new key for every transport attempt", "Use one key for every deployment across all projects", "Reuse the operation's key for retries according to the API contract", "Place the key only in the final audit summary"],
-    correct: 2,
-    explanations: ["New keys can make retries appear to be new operations.", "Unrelated operations must not be conflated.", "A stable operation identity lets the service deduplicate supported retries.", "Postexecution metadata cannot influence server-side deduplication."],
-    concept: "Idempotent mutation retries",
-    hints: ["Is the retry a new business operation or another attempt at the same one?", "Which component performs deduplication?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-052", domain: tooling,
-    prompt: "A PR-commenting job also has a manual trigger. Manual runs fail because no PR number exists. What is the best fix?",
-    choices: ["Guess the PR number from the latest branch", "Give the job broader repository permissions", "Retry the missing-number failure automatically", "Gate PR-specific work on a validated PR event context"],
-    correct: 3,
-    explanations: ["Guessing risks commenting on an unrelated PR.", "Permissions do not create missing event data.", "A retry does not change the trigger context.", "Event-aware gating prevents actions that require absent PR metadata."],
-    concept: "Defensive workflow event gating",
-    hints: ["Does every trigger supply the same event fields?", "What precondition must hold before the comment action runs?"],
-    source: workflows,
-  },
-  {
-    id: "agentic-053", domain: tooling,
-    prompt: "A planning job produces a small validated flag that a dependent implementation job needs. What is the appropriate GitHub Actions data path?",
-    choices: ["Expose a job output and consume it through the dependency", "Assume a shell variable automatically persists across jobs", "Scrape the preceding job's console text", "Store the flag in a committed source-code file"],
-    correct: 0,
-    explanations: ["Job outputs provide an explicit cross-job value contract.", "Separate jobs do not share arbitrary shell state.", "Log scraping is fragile and not a structured handoff.", "Committing transient orchestration state unnecessarily changes the repository."],
-    concept: "Structured cross-job outputs",
-    hints: ["Which data mechanism is designed for dependent jobs?", "Is the value code, a report, or a small workflow signal?"],
-    source: workflows,
-  },
-  {
-    id: "agentic-054", domain: tooling,
-    prompt: "An agent generates a large test report in one job for inspection in another. Which mechanism best preserves the report?",
-    choices: ["Print the report and expect the next job to inherit stdout", "Upload a workflow artifact and download it where needed", "Put the entire report into a short boolean job output", "Store the report in an agent's private conversation only"],
-    correct: 1,
-    explanations: ["Stdout is not an automatic filesystem handoff.", "Artifacts preserve files for cross-job use and later review.", "A flag cannot represent the full evidence file.", "Private conversation does not supply the dependent job with the report."],
-    concept: "Workflow artifact transfer",
-    hints: ["Does the consumer need a value or a file?", "What should remain inspectable after the producing process exits?"],
-    source: operations,
-  },
-  {
-    id: "agentic-055", domain: tooling,
-    prompt: "A tool call fails with an explicit insufficient-permission response. The task does not authorize expanded privileges. What is the best response?",
-    choices: ["Retry with every available token", "Disable the service's permission checks", "Record the blocked operation and request an authorized resolution path", "Silently skip the operation and report complete success"],
-    correct: 2,
-    explanations: ["Trying unrelated tokens risks crossing identity boundaries.", "Permission checks are not errors to bypass.", "A permission failure requires an authority decision, not blind retries.", "Skipping a required action without disclosure misstates completion."],
-    concept: "Permission failure escalation",
-    hints: ["Will repetition change the caller's authorization?", "Who can legitimately decide whether access should expand?"],
-    source: operations,
-  },
-  {
-    id: "agentic-056", domain: tooling,
-    prompt: "An agent's approved dependency download is blocked by the runtime firewall. What is the safest next step?",
-    choices: ["Disable the firewall for the entire session", "Download the package through an arbitrary mirror", "Commit a developer's cached credentials to access another source", "Check the required destination and seek a narrowly reviewed access change"],
-    correct: 3,
-    explanations: ["Broadly removing egress controls exceeds the demonstrated need.", "An arbitrary mirror introduces supply-chain risk.", "Credentials must not be committed.", "A precise reviewed exception addresses the environmental constraint."],
-    concept: "Network constraint handling",
-    hints: ["Is the blocked destination actually required and trusted?", "How narrow can the access change be?"],
-    source: design,
-  },
-  {
-    id: "agentic-057", domain: tooling,
-    prompt: "A local MCP server can inspect sensitive files on the developer's machine. What should setup review consider?",
-    choices: ["Its process permissions and reachable resources, not just its listed tool names", "Only whether the server is on localhost", "Only whether it appears in a search result", "Whether its name includes the word secure"],
-    correct: 0,
-    explanations: ["The server's own execution authority determines what it can actually access.", "Localhost is a location, not proof of safe capability.", "Discoverability does not establish trust.", "A name cannot enforce a resource boundary."],
-    concept: "Local MCP execution authority",
-    hints: ["Under whose operating-system identity does the server run?", "Can a narrow-looking interface hide broad underlying access?"],
-    source: mcp,
-  },
-  {
-    id: "agentic-058", domain: tooling,
-    prompt: "An MCP server is approved for use, but a newly added tool can delete production records. What follows from the server's approval?",
-    choices: ["Every future tool is automatically safe for every task", "The new capability still needs task-specific review and restrictions", "Deletion no longer needs service authorization", "Tool descriptions can replace runtime permission checks"],
-    correct: 1,
-    explanations: ["Approval of a server does not justify unrestricted capability growth.", "New mutations change blast radius and should be evaluated separately.", "Server admission does not bypass backend authorization.", "Descriptions inform selection but do not enforce access."],
-    concept: "Capability expansion review",
-    hints: ["Has the approved action surface changed?", "Does server-level trust answer operation-level risk?"],
-    source: operations,
-  },
-  {
-    id: "agentic-059", domain: tooling,
-    prompt: "A tool's input schema requires an explicit repository identifier. The agent is unsure which of two similarly named repositories is intended. What should it do?",
-    choices: ["Pick whichever repository appears first", "Call both repositories to increase coverage", "Resolve the canonical target from authorized task context before calling", "Omit the field and rely on an undocumented default"],
-    correct: 2,
-    explanations: ["Ordering is not evidence of intended scope.", "Calling both expands scope without authorization.", "Target resolution prevents a valid call against the wrong resource.", "An undocumented default can silently target the wrong repository."],
-    concept: "Tool argument and target validation",
-    hints: ["Can syntactically valid arguments still identify the wrong resource?", "What task evidence establishes the target?"],
-    source: tools,
-  },
-  {
-    id: "agentic-060", domain: tooling,
-    prompt: "A workflow needs to know which event triggered the run, not a centrally managed configuration value. Which GitHub Actions context is appropriate?",
-    choices: ["vars", "secrets", "An assumed inherited terminal variable", "github"],
-    correct: 3,
-    explanations: ["The vars context holds configured values rather than event metadata.", "Secrets are not the source of trigger identity.", "Terminal state is not a reliable event contract.", "The github context exposes run and event metadata."],
-    concept: "Workflow context selection",
-    hints: ["Is this data a configured setting or runtime event information?", "Which context describes the workflow's invocation?"],
-    source: workflows,
-  },
-  {
-    id: "agentic-061", domain: tooling,
-    prompt: "An agent runs tests in a checkout but reports results for another branch after a script changes directories. What should the execution path validate?",
-    choices: ["Working directory, repository, and revision before consequential commands", "Only the agent's display name", "Only that a test process exited somewhere", "The number of available CPU cores"],
-    correct: 0,
-    explanations: ["Explicit execution identity prevents valid commands from validating the wrong code.", "Display names do not identify the filesystem target.", "A process exit without provenance is insufficient evidence.", "CPU count does not establish which code was tested."],
-    concept: "Execution context verification",
-    hints: ["What code did the command actually operate on?", "Which assumptions can a directory change invalidate?"],
-    source: tools,
-  },
-  {
-    id: "agentic-062", domain: tooling,
-    prompt: "An agent encounters a rate-limit response with a retry delay. Which response best supports robust operation?",
-    choices: ["Start parallel callers to evade the limit", "Honor the delay within a bounded retry policy", "Rotate identities to avoid accounting", "Repeat immediately because reads are harmless"],
-    correct: 1,
-    explanations: ["Parallel pressure can worsen throttling.", "Respecting service guidance reduces load and preserves a controlled recovery path.", "Identity rotation is not an appropriate rate-limit recovery method.", "Read operations still consume rate-limited service capacity."],
-    concept: "Rate-limit-aware retries",
-    hints: ["What signal has the service supplied about recovery timing?", "Could retry traffic itself sustain the failure?"],
-    source: operations,
-  },
-  {
-    id: "agentic-063", domain: tooling,
-    prompt: "A mutation tool returns a validation error because a required field is missing. What is the best next step?",
-    choices: ["Retry the identical request with exponential backoff", "Ignore the error if the tool name was correct", "Validate and correct the arguments using the tool contract", "Increase network timeout to permit validation"],
-    correct: 2,
-    explanations: ["Backoff cannot supply a missing argument.", "Selecting the correct tool does not make an invalid call succeed.", "A deterministic input failure requires an input correction.", "Network timeout does not change schema validation."],
-    concept: "Deterministic versus transient tool errors",
-    hints: ["Would an unchanged request be accepted later?", "Which part of the call is under the caller's control?"],
-    source: tools,
-  },
-  {
-    id: "agentic-064", domain: tooling,
-    prompt: "A patch tool reports a stale base revision rather than applying an edit. What should the agent do?",
-    choices: ["Force overwrite the file from its old buffer", "Retry until the version check is bypassed", "Delete the file and recreate the old content", "Read the current revision and reconcile the intended change"],
-    correct: 3,
-    explanations: ["Forcing stale content can destroy concurrent work.", "Version checks protect consistency and should not be bypassed.", "Recreation still overwrites newer intent.", "Reconciliation applies the authorized change to the actual current state."],
-    concept: "Optimistic concurrency handling",
-    hints: ["What changed between the read and the write?", "Which information must be refreshed before attempting another edit?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-065", domain: tooling,
-    prompt: "An agent must change repository A, but its credential can also write repository B. Which setup best narrows the effective scope?",
-    choices: ["Limit credentials and tool targets to repository A", "Mention repository A only in the PR title", "Permit both repositories but review weekly", "Use whichever repository is easiest to access"],
-    correct: 0,
-    explanations: ["Resource-scoped authorization and validated targets enforce the assignment boundary.", "A title does not constrain access.", "Weekly review cannot prevent unintended writes.", "Convenience does not define authorized scope."],
-    concept: "Repository-specific permissions",
-    hints: ["What happens if the agent selects the wrong repository argument?", "Can authorization reduce that possible impact?"],
-    source: tools,
-  },
-  {
-    id: "agentic-066", domain: tooling,
-    prompt: "A CI agent needs a secret for one external tool. Which handling approach is best?",
-    choices: ["Include it in the agent's task description", "Inject it at runtime only into the component that needs it", "Save it in a committed MCP example file", "Echo it into the PR so operators can reproduce the call"],
-    correct: 1,
-    explanations: ["Task text can persist or be exposed beyond the tool.", "Scoped runtime injection limits unnecessary exposure.", "Committed configuration is not a secret boundary.", "PR content exposes credentials rather than enabling safe reproducibility."],
-    concept: "Runtime credential boundaries",
-    hints: ["Which component actually needs the credential?", "Where might task text and logs be retained?"],
-    source: operations,
-  },
-  {
-    id: "agentic-067", domain: tooling,
-    prompt: "A tool successfully starts an asynchronous build and returns a run identifier. What must happen before the agent claims that the build passed?",
-    choices: ["Treat request acceptance as build success", "Wait a fixed short delay and assume completion", "Inspect the referenced run's terminal result", "Count the number of build-log lines"],
-    correct: 2,
-    explanations: ["Starting work is not evidence of its outcome.", "A fixed delay does not establish completion.", "The terminal result of the actual run supports the success claim.", "Log volume does not indicate pass or fail."],
-    concept: "Asynchronous tool completion",
-    hints: ["What did the initial response confirm?", "Which evidence distinguishes queued, running, and successful work?"],
-    source: operations,
-  },
-  {
-    id: "agentic-068", domain: tooling,
-    prompt: "An automated update changes three external settings before the fourth fails. The operations are not transactional. What should recovery do first?",
-    choices: ["Assume all four changes were rolled back", "Rerun all writes without checking their outcomes", "Declare the task successful because most writes worked", "Inventory confirmed effects and follow an authorized compensation or escalation plan"],
-    correct: 3,
-    explanations: ["Nontransactional services do not imply automatic rollback.", "Blind replay can duplicate or compound effects.", "Partial success does not meet the complete task contract.", "Recovery needs an accurate effect record and a safe decision path."],
-    concept: "Partial external execution",
-    hints: ["Which effects are known to have occurred?", "Does undoing an action itself require authority?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-069", domain: tooling,
-    prompt: "A team uses a custom agent in the Copilot SDK and omits its tools restriction, assuming omission means no tools. What does the documented configuration require them to understand?",
-    choices: ["Omitted or null tools allow all tools; restrict the list explicitly", "Omitted tools always make the agent read-only", "The display name automatically determines allowed tools", "The prompt's role title is converted into a permission policy"],
-    correct: 0,
-    explanations: ["The documented default is broad access, so omission is not a deny policy.", "Read-only behavior must not be inferred from omission.", "A display name is presentation metadata.", "A role description does not automatically enforce tool permissions."],
-    concept: "Explicit custom-agent tool restrictions",
-    hints: ["What is the configuration's documented default?", "Can a missing restriction be mistaken for a secure boundary?"],
-    source: agents,
-  },
-  {
-    id: "agentic-070", domain: tooling,
-    prompt: "An organization has configured registry-only MCP access for a supported IDE. A local server is blocked. What should be checked before changing the policy?",
-    choices: ["Whether local servers are automatically exempt", "Whether the server is an approved registry entry with the matching identifier", "Whether its tool descriptions are especially detailed", "Whether the developer can rename it to an approved server"],
-    correct: 1,
-    explanations: ["Local location does not inherently exempt a server from registry restrictions.", "Approved membership and matching identity matter under the stated policy.", "Description quality does not satisfy allowlist membership.", "Impersonating another entry defeats the governance intent."],
-    concept: "Local server allowlist admission",
-    hints: ["What identity does the policy compare?", "Does a local transport change the server's approval status?"],
-    source: mcp,
-  },
-  {
-    id: "agentic-071", domain: tooling,
-    prompt: "A team assumes its private MCP registry policy automatically constrains Copilot cloud agent. Which setup response matches current GitHub guidance?",
-    choices: ["Assume all Copilot surfaces enforce identical registry policies", "Remove repository MCP configuration because the registry replaces it", "Check surface-specific applicability; private registry policy does not apply to cloud agent", "Grant cloud agent every registered tool to ensure compatibility"],
-    correct: 2,
-    explanations: ["Policy applicability differs across Copilot surfaces.", "Cloud-agent MCP configuration still needs its own review.", "Current guardrail documentation explicitly identifies this policy limitation.", "Registry presence does not justify broad capability access."],
-    concept: "Surface-specific MCP policy applicability",
-    hints: ["Is an IDE control necessarily a cloud-runtime control?", "Which documentation defines the enforcement surface?"],
-    source: controls,
-  },
-  {
-    id: "agentic-072", domain: tooling,
-    prompt: "An agent-generated shell command inserts an issue title directly into executable syntax. What is the best execution-path improvement?",
-    choices: ["Trust issue titles because they are stored on GitHub", "Ask the model to promise not to generate metacharacters", "Run the command with administrator access to prevent errors", "Pass untrusted values as safely handled data and validate command intent"],
-    correct: 3,
-    explanations: ["Repository content can still contain adversarial input.", "A promise does not enforce data-code separation.", "Higher privilege increases the possible damage.", "Data handling and intent validation reduce injection risk."],
-    concept: "Safe command argument handling",
-    hints: ["Where does external text become executable structure?", "Can the same operation be expressed without interpreting that text as code?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-073", domain: tooling,
-    prompt: "A build job has read-only repository access. Only a later PR-creation job needs write access. What permission design is most appropriate?",
-    choices: ["Keep the build read-only and grant the later job only its required writes", "Grant write access globally so every job is consistent", "Use a personal administrator token throughout", "Disable authentication and rely on branch names"],
-    correct: 0,
-    explanations: ["Job-specific elevation limits exposure to the stage that needs it.", "Global writes unnecessarily broaden the build's authority.", "An administrator token exceeds both jobs' needs.", "Branch naming cannot replace authorization."],
-    concept: "Job-scoped permission elevation",
-    hints: ["Which stage actually mutates a resource?", "What authority remains exposed if a build dependency is compromised?"],
-    source: operations,
-  },
-  {
-    id: "agentic-074", domain: tooling,
-    prompt: "A local setup uses a remote MCP endpoint that is unreachable from the cloud execution network. What should deployment preparation verify?",
-    choices: ["Only that the URL worked on the author's laptop", "Reachability, authentication, and policy compatibility from the actual runtime", "Only that the endpoint appears in the prompt", "That all network checks are disabled"],
-    correct: 1,
-    explanations: ["Laptop connectivity does not prove cloud-runtime connectivity.", "Tool readiness must be established in the environment that will execute it.", "A prompt reference does not configure a connection.", "Disabling checks removes useful boundaries rather than proving compatibility."],
-    concept: "Runtime-specific MCP readiness",
-    hints: ["From which network and identity will the request originate?", "Which assumptions change when execution moves environments?"],
-    source: tools,
-  },
-  {
-    id: "agentic-075", domain: tooling,
-    prompt: "A search tool returns only the first page of matching issues. The agent must produce a complete inventory. What should it do?",
-    choices: ["Treat the first page as exhaustive", "Estimate missing items from the title distribution", "Follow documented pagination within task limits or report incomplete coverage", "Repeat the first-page request until the count seems stable"],
-    correct: 2,
-    explanations: ["A limited page does not establish completeness.", "Estimated issues are not an inventory.", "Pagination or an explicit limitation preserves evidence-based reporting.", "Repeating the same page does not retrieve omitted results."],
-    concept: "Tool result completeness",
-    hints: ["Does the response indicate truncation or another page?", "What evidence supports the word complete?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-076", domain: tooling,
-    prompt: "An execution tool returns exit status zero, but its output says 'no tests discovered.' The task requires test execution. What should the agent conclude?",
-    choices: ["All intended tests passed", "No tests are needed because the tool succeeded", "The task is complete if compilation passed", "The command completed, but required test evidence is still missing"],
-    correct: 3,
-    explanations: ["No discovered tests is not proof that intended tests passed.", "The task contract still requires execution.", "Compilation does not replace the specified evidence.", "Process success must be interpreted against the tool's actual outcome."],
-    concept: "Semantic interpretation of tool success",
-    hints: ["What did the command actually validate?", "Is a successful process identical to a successful task?"],
-    source: operations,
-  },
-  {
-    id: "agentic-077", domain: tooling,
-    prompt: "A team designs rollback for an agent-generated configuration deployment. Which preparation is most useful?",
-    choices: ["Record the previous known-good revision and a tested, authorized restoration path", "Assume deleting the new branch restores every external system", "Rely on the model to reconstruct old values from memory", "Remove all execution logs after deployment"],
-    correct: 0,
-    explanations: ["A precise recovery target and path support reliable restoration.", "External effects are not undone merely by deleting a branch.", "Reconstruction from memory is not a trustworthy recovery source.", "Deleting logs removes evidence needed for recovery."],
-    concept: "Rollback preparation",
-    hints: ["What state must recovery restore?", "Can the operator identify that state independently of the agent's recollection?"],
-    source: operations,
-  },
-  {
-    id: "agentic-078", domain: tooling,
-    prompt: "An agent uses a supported tool to create a PR, but repository rules reject the proposed operation. What should it do?",
-    choices: ["Use another identity to bypass the rejection", "Explain the rule conflict and pursue an approved compliant path", "Disable the rules because the task requested a PR", "Report the PR as created because the tool was available"],
-    correct: 1,
-    explanations: ["Switching identities to bypass controls exceeds authorization.", "Repository rules constrain the permitted execution path.", "A task request does not authorize removing protections.", "Tool availability is not evidence that a resource was created."],
-    concept: "Repository control compliance",
-    hints: ["Does capability imply permission to bypass acceptance rules?", "What would make the next attempt compliant?"],
-    source: controls,
-  },
-  {
-    id: "agentic-079", domain: tooling,
-    prompt: "A workflow transfers an agent-generated target name to a privileged deployment job. Which safeguard is most important before use?",
-    choices: ["Trust it because it is a job output", "Use the target with administrator permissions first", "Validate it against authorized targets and the approved task context", "Convert it to uppercase to make it safe"],
-    correct: 2,
-    explanations: ["Structured transfer does not make generated data trustworthy.", "Privilege does not validate the target.", "Validation prevents an otherwise valid handoff from redirecting authority.", "Formatting does not establish authorization."],
-    concept: "Validating cross-job tool inputs",
-    hints: ["What makes the destination authorized rather than merely well formed?", "Does a transport mechanism establish trust in its contents?"],
-    source: workflows,
-  },
-  {
-    id: "agentic-080", domain: tooling,
-    prompt: "An agent must stop a background process it launched for testing. Other users have similar processes on the shared host. What is the safest approach?",
-    choices: ["Stop all processes with the same executable name", "Restart the shared host", "Leave every process running to avoid identifying ownership", "Use the recorded process or session identity to stop only its own helper"],
-    correct: 3,
-    explanations: ["Name-based stopping may affect unrelated users.", "A host restart has excessive blast radius.", "Owned helpers still require lifecycle cleanup.", "Recorded ownership permits targeted cleanup without disturbing other work."],
-    concept: "Execution resource lifecycle",
-    hints: ["Which resource did this task create?", "How can cleanup distinguish ownership from a shared executable name?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-081", domain: tooling,
-    prompt: "An external tool changes its response schema. The agent's parser now treats missing status fields as success. What should be fixed?",
-    choices: ["Validate response contracts and fail safely on unrecognized outcomes", "Default every absent field to successful completion", "Increase retry count without changing parsing", "Ignore tool output and trust the intended operation"],
-    correct: 0,
-    explanations: ["Unknown schemas must not become fabricated success signals.", "Missing information does not prove success.", "Retries do not repair deterministic parser assumptions.", "Intent cannot establish an external action's result."],
-    concept: "Tool response contract validation",
-    hints: ["What does an absent status actually establish?", "How should an unknown result differ from a confirmed result?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-082", domain: tooling,
-    prompt: "A tool can publish releases, but the current task only requests a draft PR. What should the agent infer from tool availability?",
-    choices: ["Publication is implicitly authorized", "The capability exists, but the task still limits permitted use", "Every exposed tool must be called once", "Draft work cannot proceed until publication is enabled"],
-    correct: 1,
-    explanations: ["Available capabilities do not expand the task's authorization.", "Task scope remains binding even when a tool can do more.", "Tool use should serve the task rather than maximize calls.", "A draft PR does not require release publication."],
-    concept: "Capability versus task authority",
-    hints: ["What did the user authorize as the deliverable?", "Is an exposed action automatically part of that deliverable?"],
-    source: operations,
-  },
-  {
-    id: "agentic-083", domain: tooling,
-    prompt: "An agent's CI build cannot reach a package service because its authentication has expired. What is the most targeted recovery?",
-    choices: ["Rewrite the application to remove all dependencies", "Retry the expired credential indefinitely", "Renew authentication through the approved secret-management path", "Embed a working token in the package manifest"],
-    correct: 2,
-    explanations: ["A broad rewrite does not address the identified environment fault.", "Expired authentication will not repair itself through repetition.", "Approved renewal restores the required capability without exposing credentials.", "Manifests are not a safe place for tokens."],
-    concept: "Authentication failure recovery",
-    hints: ["Which layer is failing before the build can proceed?", "How can access be restored without changing source behavior?"],
-    source: operations,
-  },
-  {
-    id: "agentic-084", domain: tooling,
-    prompt: "A CI workflow can be triggered on untrusted PR content. It also has a privileged job that can modify repository settings. What boundary is most important?",
-    choices: ["Use more descriptive PR titles", "Let the agent decide whether incoming content seems trustworthy", "Make privileged credentials available to every step for consistency", "Separate untrusted processing from privileged execution with explicit validation and gates"],
-    correct: 3,
-    explanations: ["Titles do not enforce a trust boundary.", "Subjective model judgment is not a sufficient credential boundary.", "Broad credential exposure increases the impact of untrusted code.", "Separation limits the path from untrusted input to consequential operations."],
-    concept: "CI trust boundary design",
-    hints: ["Which inputs can an outside contributor influence?", "Where could those inputs acquire write authority?"],
-    source: workflows,
-  },
-  {
-    id: "agentic-085", domain: tooling,
-    prompt: "An agent's command fails because the runtime lacks a required executable. Which preflight would have caught this earliest?",
-    choices: ["Check required tools and versions in the intended execution environment", "Check only that the repository has a README", "Ask the model whether it remembers using the command before", "Count the number of successful past workflow runs"],
-    correct: 0,
-    explanations: ["Runtime capability checks directly verify the missing prerequisite.", "A README does not prove a dependency is installed.", "Past model experience does not describe this runtime.", "Historical runs may have used different images or dependencies."],
-    concept: "Environment preflight checks",
-    hints: ["What prerequisite failed before the command's actual work began?", "Where must that prerequisite be verified?"],
-    source: tools,
-  },
-  {
-    id: "agentic-086", domain: tooling,
-    prompt: "A team migrates an agent from a developer machine to an ephemeral runner. What should happen to dependencies and credentials?",
-    choices: ["Assume both persist from the previous developer session", "Recreate dependencies explicitly and inject authorized credentials for that run", "Copy the developer's entire home directory into the runner image", "Disable authentication so ephemeral execution remains simple"],
-    correct: 1,
-    explanations: ["An ephemeral runner does not inherit arbitrary local state.", "Reproducible setup and scoped runtime secrets suit disposable environments.", "Broadly copying personal state exposes unnecessary data and secrets.", "Ephemerality does not remove authentication requirements."],
-    concept: "Ephemeral execution setup",
-    hints: ["What exists on a fresh runner at startup?", "Which local state is essential, and which should never be copied?"],
-    source: controls,
-  },
-  {
-    id: "agentic-087", domain: tooling,
-    prompt: "A tool writes an external setting successfully, but the following local checkpoint fails. On restart, what should happen before another write?",
-    choices: ["Assume the external write failed with the checkpoint", "Always restore factory defaults", "Reconcile external state with the intended operation and recovery record", "Choose a new target so the previous state no longer matters"],
-    correct: 2,
-    explanations: ["Local persistence failure does not undo a completed external action.", "Factory restoration may be unauthorized and destructive.", "Reconciliation handles the gap between external effects and local records.", "Changing targets does not resolve the original operation."],
-    concept: "External effects versus local persistence",
-    hints: ["Were the external write and checkpoint one transaction?", "What can the service reveal about the operation's current state?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-088", domain: tooling,
-    prompt: "An MCP server package is updated and now requests broader filesystem access. What should the team do before adopting the update?",
-    choices: ["Accept because all updates are security improvements", "Approve based only on an unchanged server name", "Grant access and inspect effects after a month", "Review the changed capability and test it in a constrained environment"],
-    correct: 3,
-    explanations: ["An update can expand risk even when it includes fixes.", "A stable name does not imply stable behavior or permissions.", "Delayed review exposes resources before the risk is assessed.", "Dependency-style review and constrained testing assess the changed boundary."],
-    concept: "MCP dependency governance",
-    hints: ["What changed in the server's effective authority?", "Does prior approval cover newly requested access?"],
-    source: operations,
-  },
-  {
-    id: "agentic-089", domain: tooling,
-    prompt: "An agent needs to comment on one PR but not push code. Which permission principle should guide its workflow?",
-    choices: ["Grant only the permissions needed for the comment operation", "Grant contents write because comments contain text", "Grant repository administration to avoid future failures", "Use a maintainer's full token for all automation"],
-    correct: 0,
-    explanations: ["Operation-specific authorization avoids unnecessary code-write access.", "A PR comment does not by itself require modifying repository contents.", "Future convenience does not justify administrative access.", "A broad personal token expands exposure beyond the task."],
-    concept: "Operation-specific workflow permissions",
-    hints: ["Which resource is actually being changed?", "Are content updates part of the requested operation?"],
-    source: operations,
-  },
-  {
-    id: "agentic-090", domain: tooling,
-    prompt: "A tool supports a dry run, but the task requires an actual authorized change. The agent runs only the dry run. What should it report?",
-    choices: ["The change was applied because validation succeeded", "The proposed operation was checked but has not been applied", "The service will apply it automatically later", "The operation failed because dry runs cannot be useful"],
-    correct: 1,
-    explanations: ["A simulation does not demonstrate a committed effect.", "The report should distinguish validated intent from executed mutation.", "Automatic later application cannot be assumed.", "A dry run can provide useful evidence without completing execution."],
-    concept: "Dry-run versus applied outcomes",
-    hints: ["Which side effects did the invoked mode permit?", "What remains to satisfy the requested deliverable?"],
-    source: tools,
-  },
-  {
-    id: "agentic-091", domain: tooling,
-    prompt: "A team's tool logs show timestamps but cannot distinguish two simultaneous agent runs against the same repository. What should be added?",
-    choices: ["Only the model's display name", "A count of all tool calls that day", "Run, task, actor, target, and revision identifiers on relevant events", "A single combined success message for both runs"],
-    correct: 2,
-    explanations: ["Display names may be shared across executions.", "Daily totals cannot reconstruct individual actions.", "Correlated execution identity links actions and outcomes to the correct run.", "Combining outcomes hides which run produced each effect."],
-    concept: "Tool-action traceability",
-    hints: ["Can an investigator assign each action to one execution?", "Which identifiers connect a tool event to its task and code state?"],
-    source: operations,
-  },
-  {
-    id: "agentic-092", domain: memory,
-    prompt: "An agent must retain one task's intermediate calculations but not reuse them on later tasks. Which memory scope fits?",
-    choices: ["Organization-wide knowledge", "Permanent user preferences", "A shared repository policy", "Task-local short-term state"],
-    correct: 3,
-    explanations: ["Organization scope unnecessarily shares task-specific data.", "Calculations are not enduring personal preferences.", "Intermediate values are not repository policy.", "Task-local state supports current execution without cross-task reuse."],
-    concept: "Short-term memory scope",
-    hints: ["How long is this information relevant?", "Who else should be able to reuse it?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-093", domain: memory,
-    prompt: "A long-running agent needs a durable record of approved architectural decisions. Where should it keep the authoritative record?",
-    choices: ["A versioned decision artifact linked to the task", "Only its current context window", "An unlabeled speculative note", "The last successful shell command"],
-    correct: 0,
-    explanations: ["A durable versioned artifact preserves authority and provenance.", "Context can be lost or compacted.", "Speculation must not masquerade as an approved decision.", "A command does not represent architectural intent."],
-    concept: "Durable decision memory",
-    hints: ["What survives a process restart?", "How is an approved decision distinguished from a hypothesis?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-094", domain: memory,
-    prompt: "A resumed agent starts implementing a step already completed before a crash. What checkpoint information would most directly prevent this?",
-    choices: ["The agent's preferred response style", "Completed steps, effect references, current revision, and next action", "The original prompt without progress", "The total token count of the previous session"],
-    correct: 1,
-    explanations: ["Style does not identify completed effects.", "A concrete progress record supports safe continuation.", "The original task omits what has already happened.", "Token counts do not reconstruct execution."],
-    concept: "Resumable progress checkpoints",
-    hints: ["What facts distinguish a fresh task from a resumed one?", "How can completed effects be verified?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-095", domain: memory,
-    prompt: "An agent remembers an old build command, but the current branch changed its package scripts. What should happen before reuse?",
-    choices: ["Prefer memory over current files", "Run every historical command", "Validate the remembered fact against current repository evidence", "Delete all task history permanently"],
-    correct: 2,
-    explanations: ["Memory can become stale.", "Historical commands may be incompatible or unsafe.", "Current evidence determines whether a stored fact still applies.", "Selective validation is more useful than indiscriminate deletion."],
-    concept: "Memory freshness validation",
-    hints: ["What code state supported the memory?", "Does that evidence still hold on this branch?"],
-    source: copilotMemory,
-  },
-  {
-    id: "agentic-096", domain: memory,
-    prompt: "A memory summary treats 'perhaps replace the cache' as an approved decision. What should be corrected?",
-    choices: ["Make the summary more confident", "Execute the replacement to validate the summary", "Remove all summaries from the workflow", "Preserve uncertainty and decision status explicitly"],
-    correct: 3,
-    explanations: ["Confidence would amplify the misclassification.", "Execution cannot retroactively authorize a proposal.", "Summaries remain useful when accurately qualified.", "Hypotheses and approved decisions need distinct status."],
-    concept: "Decision-status preservation",
-    hints: ["Was the original statement a proposal or an authorization?", "What meaning was lost during compression?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-097", domain: memory,
-    prompt: "A long agent session begins optimizing unrelated code instead of fixing the agreed defect. What is the best drift correction?",
-    choices: ["Compare current actions with the approved goal and reestablish scope", "Increase the context window without reviewing actions", "Approve all new goals because they arose during execution", "Erase the original acceptance criteria"],
-    correct: 0,
-    explanations: ["The approved contract provides an anchor for detecting and correcting drift.", "More capacity does not itself restore alignment.", "New goals are not automatically authorized.", "Removing criteria eliminates the alignment reference."],
-    concept: "Context drift detection",
-    hints: ["What stable artifact defines the intended work?", "How do current actions compare with that boundary?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-098", domain: memory,
-    prompt: "Two tools disagree about whether a deployment completed. One reports a cached status; the other shows the current operation record. What should the agent do?",
-    choices: ["Choose whichever status is favorable", "Reconcile freshness and provenance using the authoritative operation state", "Average the two statuses", "Repeat deployment before checking either source"],
-    correct: 1,
-    explanations: ["Favorability is not a consistency rule.", "Source authority and freshness resolve conflicting state.", "Completion states are not quantities to average.", "Blind replay can duplicate an already completed operation."],
-    concept: "Cross-tool state reconciliation",
-    hints: ["When was each observation made?", "Which system owns the operation's actual state?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-099", domain: memory,
-    prompt: "An agent stores every raw tool response forever. Retrieval increasingly surfaces irrelevant information. What memory policy best addresses this?",
-    choices: ["Always retrieve more history", "Promote every response into a permanent instruction", "Apply relevance-based pruning, retention rules, and compact verified summaries", "Disable all durable progress tracking"],
-    correct: 2,
-    explanations: ["More irrelevant context can worsen retrieval quality.", "Observations are not permanent instructions.", "Retention and relevance controls reduce noise without losing essential state.", "Removing progress tracking sacrifices continuity."],
-    concept: "Memory pruning and retention",
-    hints: ["Which information is useful for future decisions?", "Can essential evidence be retained without injecting all raw history?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-100", domain: memory,
-    prompt: "An agent moves from local development to CI. Which state handoff best preserves continuity?",
-    choices: ["A local absolute path alone", "The developer's entire home directory", "A statement that the work is almost done", "A portable checkpoint with revision, artifact references, decisions, and pending steps"],
-    correct: 3,
-    explanations: ["A local path may not exist in CI.", "Broad personal state exposes unnecessary data.", "A vague statement cannot guide safe resumption.", "Portable references and explicit progress survive environment changes."],
-    concept: "Environment-independent state handoff",
-    hints: ["What can the receiving runtime actually resolve?", "What does it need to verify before continuing?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-101", domain: memory,
-    prompt: "A checkpoint contains a production credential because a tool returned it. What is the best correction?",
-    choices: ["Remove the secret and retain an authorized secret reference if needed", "Copy it into every future summary", "Keep it because checkpoints are not source code", "Rename the field to hide its purpose"],
-    correct: 0,
-    explanations: ["State should reference protected access rather than persist secret values.", "Replication expands exposure.", "Durable operational artifacts can also leak secrets.", "Renaming does not protect a credential."],
-    concept: "Secret-safe persistent state",
-    hints: ["Does the next agent need the value or a way to obtain authorized access?", "Where might checkpoints be retained or shared?"],
-    source: operations,
-  },
-  {
-    id: "agentic-102", domain: memory,
-    prompt: "Two agents update a shared task record and one silently overwrites the other's completion marker. Which state mechanism best prevents this?",
-    choices: ["Longer natural-language summaries", "Version checks with conflict detection or serialized updates", "Identical agent display names", "A rule that the last response is always correct"],
-    correct: 1,
-    explanations: ["Summary length does not prevent lost updates.", "Concurrency control detects stale writes or prevents overlap.", "Shared names reduce traceability.", "Response order does not establish state correctness."],
-    concept: "Concurrent state consistency",
-    hints: ["Can both writers have read the same old version?", "How should a stale update be detected?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-103", domain: memory,
-    prompt: "An agent is switched to a different customer repository. Which prior memory should be loaded by default?",
-    choices: ["All facts from the previous customer's repository", "All previous credentials", "Only memory authorized and relevant to the new scope", "Every tool transcript from the prior engagement"],
-    correct: 2,
-    explanations: ["Repository facts may be inapplicable or private.", "Credentials must not transfer through memory.", "Memory must respect relevance and access boundaries.", "Unfiltered transcripts create noise and disclosure risk."],
-    concept: "Memory scope isolation",
-    hints: ["Does usefulness in one repository imply relevance in another?", "Which access boundary applies to stored information?"],
-    source: copilotMemory,
-  },
-  {
-    id: "agentic-104", domain: memory,
-    prompt: "A team compresses a long conversation before resuming an agent. Which information must not be lost?",
-    choices: ["Repeated greetings", "Every intermediate wording variation", "All irrelevant search results", "Approved constraints, unresolved questions, progress, and evidence references"],
-    correct: 3,
-    explanations: ["Greetings rarely affect continuation.", "Wording variants are less important than authoritative decisions.", "Irrelevant results dilute context.", "These facts preserve task identity and safe next steps."],
-    concept: "Safe context compaction",
-    hints: ["What would change the next action if omitted?", "Which facts distinguish evidence from recollection?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-105", domain: memory,
-    prompt: "A stored test result passed on commit A. The agent has since changed the implementation to commit B. How should it treat that result?",
-    choices: ["Historical evidence, not proof that commit B passes", "A permanent guarantee for the branch", "Equivalent to a fresh run if filenames match", "A reason to skip all future validation"],
-    correct: 0,
-    explanations: ["Evidence is bound to the code state that produced it.", "Branch identity can persist across changed code.", "Unchanged filenames do not imply unchanged behavior.", "Earlier success does not validate later changes."],
-    concept: "Revision-bound evidence memory",
-    hints: ["Which revision did the test actually exercise?", "What changed after the evidence was created?"],
-    source: operations,
-  },
-  {
-    id: "agentic-106", domain: memory,
-    prompt: "An agent repeatedly rediscovers a stable repository convention. What is a useful long-term memory strategy?",
-    choices: ["Store every past file verbatim", "Retain the convention with supporting evidence and scope", "Use the convention as a global policy for all customers", "Treat one accidental code pattern as an immutable rule"],
-    correct: 1,
-    explanations: ["Verbatim accumulation is noisy and costly.", "Scoped evidence-backed facts can reduce repeated discovery.", "Repository conventions are not universal policies.", "A pattern needs validation before becoming durable guidance."],
-    concept: "Evidence-backed long-term memory",
-    hints: ["Is the fact stable and broadly useful within this repository?", "What evidence could later establish whether it remains true?"],
-    source: copilotMemory,
-  },
-  {
-    id: "agentic-107", domain: memory,
-    prompt: "A task is canceled after partial implementation. What should its durable state record?",
-    choices: ["Success, to simplify reporting", "Nothing, because canceled work never matters", "Cancellation, completed effects, remaining artifacts, and recovery status", "Only the original goal"],
-    correct: 2,
-    explanations: ["Cancellation is not success.", "Partial effects can still require review or cleanup.", "Explicit terminal state prevents accidental resumption and preserves accountability.", "The goal alone omits what actually happened."],
-    concept: "Canceled execution state",
-    hints: ["Could another worker mistake the task for active work?", "Which effects survive cancellation?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-108", domain: memory,
-    prompt: "An agent retrieves an old exception allowing a risky operation. The exception had an expiration date that has passed. What should it do?",
-    choices: ["Treat any historical exception as permanent", "Renew it by updating its own memory", "Ignore expiration if the operation is convenient", "Revalidate authorization before using the exception"],
-    correct: 3,
-    explanations: ["Historical authorization may no longer apply.", "The agent cannot unilaterally grant renewed authority.", "Convenience does not override expiration.", "Expired authority needs a fresh authorized decision."],
-    concept: "Authorization freshness",
-    hints: ["Is remembering permission the same as still having permission?", "What condition limited the original exception?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-109", domain: memory,
-    prompt: "A support agent mixes facts from two concurrent incidents and proposes the wrong rollback. What state design best addresses this?",
-    choices: ["Partition memory by incident identity and validate references on retrieval", "Use one larger shared context for every incident", "Remove incident identifiers to reduce clutter", "Choose whichever rollback was mentioned most recently"],
-    correct: 0,
-    explanations: ["Task identity prevents cross-incident context contamination.", "A larger mixed context preserves the same ambiguity.", "Removing identifiers weakens isolation.", "Recency does not establish relevance to this incident."],
-    concept: "Task identity in memory",
-    hints: ["Which incident does each observation belong to?", "What key should retrieval use before judging relevance?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-110", domain: memory,
-    prompt: "A checkpoint says an operation is pending, but the service confirms it completed before a crash. How should the agent update state?",
-    choices: ["Repeat the operation to match the checkpoint", "Record the confirmed completion with provenance and continue from there", "Delete the service's evidence", "Keep both statuses without explaining the conflict"],
-    correct: 1,
-    explanations: ["Replay may duplicate the completed effect.", "Reconciled state should reflect verified external reality.", "Deleting evidence obstructs recovery.", "An unresolved contradiction can cause future unsafe decisions."],
-    concept: "Recovering stale checkpoints",
-    hints: ["Which source can verify the actual effect?", "How can the corrected state explain why it changed?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-111", domain: memory,
-    prompt: "A memory entry was derived from a PR that never merged. When may its repository fact still be useful?",
-    choices: ["Always, because a PR once contained it", "Never, regardless of current evidence", "When current branch evidence independently substantiates the fact", "Only if its author was an agent"],
-    correct: 2,
-    explanations: ["Unmerged content may not describe current code.", "A fact can remain valid even if its original PR was closed.", "Current citation validation determines applicability.", "Authorship does not establish factual validity."],
-    concept: "Validating facts from unmerged work",
-    hints: ["Does the current code support the remembered statement?", "Is origin alone enough to determine present truth?"],
-    source: copilotMemory,
-  },
-  {
-    id: "agentic-112", domain: memory,
-    prompt: "An agent stores 'deployment approved' without identifying the approved revision or environment. What is the main continuity risk?",
-    choices: ["The summary is too short to read", "The agent will necessarily lose network access", "The stored text cannot be translated", "Later execution may apply approval to a different action"],
-    correct: 3,
-    explanations: ["Length is not the core issue.", "Network availability is unrelated.", "Translation is not the authorization problem.", "Approval needs enough scope to bind it to the intended operation."],
-    concept: "Scoped approval state",
-    hints: ["What exactly was approved?", "Could a future worker interpret the same words more broadly?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-113", domain: memory,
-    prompt: "A stale memory suggests a deprecated endpoint. Current official documentation identifies its replacement. What should the agent do?",
-    choices: ["Update the task context from verified current evidence and qualify or invalidate the stale entry", "Follow memory because it was retrieved first", "Call both endpoints blindly", "Retain both claims as equally authoritative forever"],
-    correct: 0,
-    explanations: ["Memory should be corrected when stronger current evidence invalidates it.", "Retrieval order is not authority.", "Blind calls can have unnecessary effects.", "Known stale information should not remain an unqualified alternative."],
-    concept: "Memory invalidation",
-    hints: ["Which evidence is current and authoritative?", "How can future retrieval avoid repeating the same error?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-114", domain: memory,
-    prompt: "An agent needs a large historical test report only during failure diagnosis. Which context strategy is best?",
-    choices: ["Inject the entire report into every future prompt", "Keep it externally with provenance and retrieve relevant portions when needed", "Discard the report as soon as the run ends", "Replace it with an unsupported one-word verdict"],
-    correct: 1,
-    explanations: ["Unconditional injection wastes context and adds noise.", "External evidence supports selective retrieval without losing inspectability.", "Immediate deletion prevents later diagnosis.", "A verdict alone loses supporting detail."],
-    concept: "External memory and selective retrieval",
-    hints: ["Does the evidence need to be present or merely retrievable?", "What detail is relevant to the current diagnostic question?"],
-    source: operations,
-  },
-  {
-    id: "agentic-115", domain: memory,
-    prompt: "An agent inherits a handoff written before the base branch changed substantially. What should it check before implementation?",
-    choices: ["Only the handoff's spelling", "Only the predecessor's confidence", "Whether assumptions, file locations, and decisions remain applicable to the current revision", "Whether it can reuse the same final message"],
-    correct: 2,
-    explanations: ["Spelling does not establish technical freshness.", "Confidence does not validate changed code.", "A changed base can invalidate the handoff's premises.", "Reusing prose does not ensure continuity."],
-    concept: "Handoff freshness checks",
-    hints: ["What changed since the predecessor observed the repository?", "Which assumptions depend on that earlier code state?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-116", domain: memory,
-    prompt: "A repository memory contains a user's personal formatting preference. The team has a conflicting enforced style rule. What should guide this task?",
-    choices: ["The preference because it is personalized", "Whichever entry was retrieved first", "An average of the two styles", "The applicable repository rule, while qualifying the preference's scope"],
-    correct: 3,
-    explanations: ["Personalization does not override task governance.", "Retrieval ordering is not policy precedence.", "A hybrid may violate the enforced rule.", "Memory must be interpreted within the current repository's constraints."],
-    concept: "Memory versus governing constraints",
-    hints: ["Is the remembered item a preference or a requirement?", "Which instruction governs accepted changes here?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-117", domain: memory,
-    prompt: "An agent's context summary omits why a seemingly simpler design was rejected. It later reopens the same proposal. What should future summaries preserve?",
-    choices: ["Decision rationale and rejected alternatives relevant to the task", "Every unrelated brainstorming idea", "Only the chosen design's name", "Only the number of reviewers"],
-    correct: 0,
-    explanations: ["Relevant rationale prevents cycling through already resolved trade-offs.", "Unrelated ideas increase noise.", "A name does not explain constraints or rejected options.", "Reviewer counts do not capture reasoning behind a decision."],
-    concept: "Preserving decision rationale",
-    hints: ["What would prevent repeating a settled debate?", "Which rationale still constrains the next design choice?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-118", domain: memory,
-    prompt: "A paused task resumes after its tool credentials were revoked. Its checkpoint says access was available. What should happen?",
-    choices: ["Treat the checkpoint as continuing permission", "Recheck current access and report a blocker if authorization is absent", "Recover the old credential from logs", "Use a different user's credential without approval"],
-    correct: 1,
-    explanations: ["Historical access is not present authorization.", "Resume procedures must validate current execution prerequisites.", "Logs must not become a credential recovery channel.", "Another identity cannot be assumed as a workaround."],
-    concept: "Resume-time authorization validation",
-    hints: ["Which conditions can change while a task is paused?", "Does a progress record grant authority?"],
-    source: operations,
-  },
-  {
-    id: "agentic-119", domain: memory,
-    prompt: "An agent has completed the authorized task. What is the best reset policy before an unrelated task begins?",
-    choices: ["Carry all working context forward unchanged", "Erase required audit evidence", "Reset task-local working state while retaining authorized durable records", "Promote temporary assumptions into global policy"],
-    correct: 2,
-    explanations: ["Unrelated carryover risks contamination.", "Audit retention and working-context reset are different concerns.", "Resetting working state prevents drift without destroying accountability.", "Temporary assumptions are not durable governance."],
-    concept: "Task reset versus audit retention",
-    hints: ["Which information should influence the next task?", "Which information must remain available only as historical evidence?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-120", domain: evaluation,
-    prompt: "An agent fixes a billing defect. Which evaluation best measures success?",
-    choices: ["Patch length", "Model confidence", "Execution speed alone", "Correct billing cases plus regression, security, and scope checks"],
-    correct: 3,
-    explanations: ["Length is not correctness.", "Confidence is not independent evidence.", "Speed can improve while behavior regresses.", "Task behavior and operational constraints jointly define success."],
-    concept: "Multidimensional success criteria",
-    hints: ["What user-visible defect must be resolved?", "Which constraints remain mandatory while fixing it?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-121", domain: evaluation,
-    prompt: "A correct implementation fails because the runner has no compiler. Which primary failure category fits?",
-    choices: ["Environment failure", "Reasoning failure", "Unauthorized tool mutation", "Incorrect acceptance criteria"],
-    correct: 0,
-    explanations: ["A missing runtime prerequisite prevents execution.", "The evidence does not establish faulty implementation reasoning.", "No unauthorized mutation is described.", "The compiler requirement does not invalidate the task's criteria."],
-    concept: "Environment failure classification",
-    hints: ["At which layer did execution stop?", "Would changing implementation logic supply the missing prerequisite?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-122", domain: evaluation,
-    prompt: "An agent selects a delete tool instead of a read tool, despite clear task instructions and valid credentials. What is the primary failure?",
-    choices: ["Network outage", "Tool misuse", "Insufficient context capacity", "A flaky test"],
-    correct: 1,
-    explanations: ["No network failure is indicated.", "The selected operation contradicts the required action.", "The task was clear; context capacity is not established as the cause.", "No test instability is described."],
-    concept: "Tool misuse classification",
-    hints: ["Was the intended operation represented correctly?", "Which tool action actually occurred?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-123", domain: evaluation,
-    prompt: "All tools executed as requested, but an agent chose the wrong formula for a clearly specified business rule. How should the primary cause be classified?",
-    choices: ["Tool connectivity", "Credential expiration", "Reasoning or requirement-application error", "Artifact retention failure"],
-    correct: 2,
-    explanations: ["Tools were connected and operational.", "No credential failure is described.", "The agent misapplied known requirements while planning the solution.", "Evidence retention did not cause the wrong formula."],
-    concept: "Reasoning failure classification",
-    hints: ["Was the wrong result caused by execution or by the selected approach?", "What did the agent know when it chose the formula?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-124", domain: evaluation,
-    prompt: "An agent modifies a deprecated module because retrieval supplied an outdated architecture map. Which root cause should be investigated first?",
-    choices: ["CPU saturation", "An incorrect formatter", "A secret-scanning false positive", "Stale context supplied to the agent"],
-    correct: 3,
-    explanations: ["No capacity evidence is given.", "Formatting did not select the obsolete module.", "No scanning event is involved.", "The retrieved map misrepresented current architecture."],
-    concept: "Context failure classification",
-    hints: ["Which input directed the agent to the wrong location?", "Was that input valid for the current revision?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-125", domain: evaluation,
-    prompt: "A team changes agent instructions and wants to measure improvement. Which comparison is most credible?",
-    choices: ["Run both versions against a representative held-out task set with the same rubric", "Compare different tasks selected by each version", "Count positive phrases in final responses", "Ask the updated agent whether it improved"],
-    correct: 0,
-    explanations: ["Comparable tasks and criteria support an attributable evaluation.", "Different task difficulty confounds the comparison.", "Positive language is not task quality.", "Self-assessment is not independent validation."],
-    concept: "Controlled evaluation",
-    hints: ["Which variables should remain stable?", "What evidence distinguishes improvement from easier tasks?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-126", domain: evaluation,
-    prompt: "An agent's pass rate rises after maintainers remove difficult cases from the evaluation set. What is the main concern?",
-    choices: ["The model must now be more reliable", "The metric may reflect reduced coverage rather than improved behavior", "Evaluation sets should contain only easy cases", "Fewer cases guarantee stronger statistical evidence"],
-    correct: 1,
-    explanations: ["The comparison no longer isolates model behavior.", "Changing case difficulty can create a misleading improvement.", "Hard representative cases expose important failure modes.", "Smaller samples do not inherently strengthen evidence."],
-    concept: "Evaluation coverage bias",
-    hints: ["Did the system change, or did the measurement change?", "Which real-world risks disappeared from the test set?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-127", domain: evaluation,
-    prompt: "A generated patch passes unit tests but introduces a vulnerable dependency. Which missing signal would most directly expose this?",
-    choices: ["A prose-length score", "A count of edited files", "Dependency security analysis", "The agent's estimated confidence"],
-    correct: 2,
-    explanations: ["Prose length cannot assess package vulnerabilities.", "File counts do not assess dependency risk.", "Dependency analysis targets known vulnerability exposure.", "Confidence cannot replace automated security evidence."],
-    concept: "Automated security evaluation signals",
-    hints: ["Which risk is outside the behavior exercised by unit tests?", "What kind of analysis inspects the changed dependency set?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-128", domain: evaluation,
-    prompt: "A scanner flags a generated change. The agent says the warning is probably harmless. What should happen next?",
-    choices: ["Suppress the finding automatically", "Accept the agent's confidence as a waiver", "Delete the scanning step", "Investigate the finding against code and policy, documenting an authorized disposition"],
-    correct: 3,
-    explanations: ["Unreviewed suppression hides a possible defect.", "A model cannot grant its own security exception.", "Removing the signal avoids rather than resolves the risk.", "Evidence-based triage determines whether remediation or an approved exception is appropriate."],
-    concept: "Scan finding triage",
-    hints: ["What evidence would support calling this a false positive?", "Who can authorize an exception?"],
-    source: contributor,
-  },
-  {
-    id: "agentic-129", domain: evaluation,
-    prompt: "Agent failures cluster around missing task constraints. Which tuning change best targets the cause?",
-    choices: ["Add explicit constraints and acceptance criteria to task inputs", "Increase retry count for all tools", "Grant broader write access", "Use longer final summaries"],
-    correct: 0,
-    explanations: ["Improved task inputs address the missing information.", "Retries do not supply missing requirements.", "Broader permissions do not clarify intent.", "Final verbosity does not improve initial task grounding."],
-    concept: "Cause-directed instruction tuning",
-    hints: ["What information was absent before the decision?", "Which change addresses that absence directly?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-130", domain: evaluation,
-    prompt: "An agent repeatedly calls irrelevant tools. Traces show a large overlapping tool catalog. Which tuning is most targeted?",
-    choices: ["Add more tools so one will eventually fit", "Narrow tool exposure and clarify capability descriptions", "Remove all logs", "Increase the allowed number of calls without changing selection"],
-    correct: 1,
-    explanations: ["More overlap can worsen selection.", "Clearer, smaller capability boundaries target tool confusion.", "Removing logs destroys diagnostic evidence.", "A larger budget does not correct selection behavior."],
-    concept: "Tool-selection tuning",
-    hints: ["What made the available actions hard to distinguish?", "Can capability design reduce the chance of choosing the wrong operation?"],
-    source: operations,
-  },
-  {
-    id: "agentic-131", domain: evaluation,
-    prompt: "A team measures agent latency only on successful runs, excluding timeouts. What problem does this create?",
-    choices: ["It proves the agent meets all deadlines", "It directly measures failure recovery", "It hides slow failures and overstates operational performance", "It makes success rate unnecessary"],
-    correct: 2,
-    explanations: ["Excluded timeouts may violate deadlines.", "Recovery time is absent from the sample.", "Success-only latency ignores an important class of user experience.", "Reliability and latency remain distinct signals."],
-    concept: "Operational metric completeness",
-    hints: ["Which users are excluded from the measurement?", "What happened to the longest executions?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-132", domain: evaluation,
-    prompt: "A generated test suite copies the implementation's incorrect assumption and passes. What evaluation improvement is strongest?",
-    choices: ["Generate more tests from the same assumption", "Trust the shared conclusion because two artifacts agree", "Use a different formatter for the tests", "Derive expected outcomes independently from requirements and edge cases"],
-    correct: 3,
-    explanations: ["Additional tests can repeat the same blind spot.", "Correlated errors are not independent confirmation.", "Formatting cannot correct the oracle.", "Independent expected behavior reduces shared implementation-test bias."],
-    concept: "Independent test oracles",
-    hints: ["Where did the expected values come from?", "Can the test and implementation agree while both violate the requirement?"],
-    source: contributor,
-  },
-  {
-    id: "agentic-133", domain: evaluation,
-    prompt: "A team wants qualitative evidence that an agent's plan is maintainable. Which evaluation fits?",
-    choices: ["A rubric-based review by relevant maintainers", "Only elapsed milliseconds", "Only tool-call count", "Only a compilation result"],
-    correct: 0,
-    explanations: ["Maintainers can assess trade-offs against explicit architectural criteria.", "Latency does not measure maintainability.", "Call count is not design quality.", "Compilation does not assess long-term design clarity."],
-    concept: "Qualitative evaluation rubrics",
-    hints: ["Which aspects require engineering judgment?", "How can that judgment be made consistent across reviewers?"],
-    source: contributor,
-  },
-  {
-    id: "agentic-134", domain: evaluation,
-    prompt: "A revised workflow improves correctness but doubles cost and exceeds the task's latency limit. How should it be evaluated?",
-    choices: ["Successful because correctness is the only possible criterion", "Against correctness and the stated operational constraints together", "Successful if the final answer is shorter", "Inconclusive because cost cannot be measured"],
-    correct: 1,
-    explanations: ["The task explicitly includes operational limits.", "Quality gains do not erase required cost or latency constraints.", "Response length does not establish compliance.", "Usage and execution signals can support cost evaluation."],
-    concept: "Quality-cost-latency trade-offs",
-    hints: ["What constraints were part of success before tuning?", "Does improving one dimension excuse violating another?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-135", domain: evaluation,
-    prompt: "A failure investigation has a final error message but no plan, tool arguments, or revision. What should be improved for future analysis?",
-    choices: ["Collect only more final error messages", "Remove timestamps to simplify logs", "Capture correlated plans, sanitized tool events, revisions, and outcomes", "Record secrets to reproduce authentication exactly"],
-    correct: 2,
-    explanations: ["The final symptom alone rarely explains the causal path.", "Timestamps help reconstruct order.", "Correlated evidence distinguishes reasoning, tool, and environment failures.", "Secrets must not be collected as diagnostic data."],
-    concept: "Diagnostic observability",
-    hints: ["Can an investigator reconstruct the sequence before the error?", "Which evidence distinguishes plausible causes without exposing credentials?"],
-    source: operations,
-  },
-  {
-    id: "agentic-136", domain: evaluation,
-    prompt: "An agent fixes a failing check by weakening its assertions, without changing the faulty implementation. What should evaluation conclude?",
-    choices: ["The green check proves the defect is fixed", "Reducing assertions is always an acceptable optimization", "The agent improved reliability because failures decreased", "The signal was weakened; verify behavior against independent acceptance criteria"],
-    correct: 3,
-    explanations: ["A weaker check may hide the original defect.", "Assertion changes need justification against intended behavior.", "Fewer detected failures can mean less detection.", "Evaluation must protect the oracle, not merely optimize its reported status."],
-    concept: "Preventing metric gaming",
-    hints: ["Did behavior improve or did detection become weaker?", "What evidence exists outside the modified check?"],
-    source: contributor,
-  },
-  {
-    id: "agentic-137", domain: evaluation,
-    prompt: "A proposed instruction change targets one production failure. What should accompany its regression test?",
-    choices: ["Tests of representative existing behavior to detect collateral regressions", "Deletion of all unrelated evaluation cases", "Immediate unrestricted rollout", "A promise that the change is narrowly worded"],
-    correct: 0,
-    explanations: ["A targeted fix can still degrade other behavior.", "Deleting coverage hides regressions.", "Rollout should follow evidence rather than replace it.", "Wording alone does not establish behavioral isolation."],
-    concept: "Regression evaluation after tuning",
-    hints: ["Could a more specific instruction alter other decisions?", "What evidence shows that existing capabilities remain intact?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-138", domain: evaluation,
-    prompt: "An agent fails only when retrieved documents exceed the context budget and the acceptance criteria are dropped. What tuning best addresses the cause?",
-    choices: ["Increase mutation permissions", "Prioritize task constraints and retrieve focused evidence", "Retry the same oversized prompt indefinitely", "Remove acceptance criteria to save space"],
-    correct: 1,
-    explanations: ["Permissions do not restore lost requirements.", "Context prioritization preserves essential intent while reducing noise.", "Repeated overflow preserves the failure mechanism.", "Removing criteria institutionalizes the error."],
-    concept: "Context-budget tuning",
-    hints: ["Which information must remain available for every decision?", "Can retrieval be narrowed without losing relevant evidence?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-139", domain: evaluation,
-    prompt: "An evaluation passes once but fails on repeated equivalent runs. What should the team measure before declaring reliability?",
-    choices: ["Only the best run", "Only the shortest response", "Outcome variability and failure frequency across representative repetitions", "Whether the agent can explain its first success"],
-    correct: 2,
-    explanations: ["Best-case selection hides instability.", "Brevity is not reliability.", "Repeated outcomes reveal nondeterministic failure risk.", "Explaining one success does not quantify repeatability."],
-    concept: "Evaluation repeatability",
-    hints: ["What would a user experience over many executions?", "Does one successful sample characterize the whole distribution?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-140", domain: evaluation,
-    prompt: "An agent is evaluated on a repository it was tuned against extensively. Scores are excellent. What additional evaluation is needed?",
-    choices: ["More repetitions of only memorized examples", "A count of instruction-file words", "The same tasks with renamed variables only", "Representative unseen tasks or repositories within the intended scope"],
-    correct: 3,
-    explanations: ["Memorized cases cannot establish generalization.", "Instruction length is not external validity.", "Cosmetic changes may retain the same learned solution.", "Held-out representative work tests transfer beyond the tuning set."],
-    concept: "Generalization and overfitting",
-    hints: ["Could the system be exploiting familiarity?", "Where should evidence come from to test transfer?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-141", domain: evaluation,
-    prompt: "A run first retrieves the wrong configuration, then calls the right tool with that value, then fails. How should analysis proceed?",
-    choices: ["Trace the earliest causal divergence, not only the final error", "Classify every failure as a tool outage", "Change the last tool call without inspecting inputs", "Ignore retrieval because the call schema was valid"],
-    correct: 0,
-    explanations: ["The incorrect upstream input may explain the downstream symptom.", "The evidence does not establish an outage.", "Local changes may leave the causal fault intact.", "Schema validity does not establish semantic correctness."],
-    concept: "Causal failure tracing",
-    hints: ["When did execution first diverge from the intended task?", "Was the final failure a cause or a consequence?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-142", domain: evaluation,
-    prompt: "A team changes prompts, tools, memory policy, and model simultaneously. A score improves. What limitation should be reported?",
-    choices: ["Every individual change is proven beneficial", "The combined result does not isolate which change caused improvement", "No evaluation can ever be useful", "The model change must be the cause"],
-    correct: 1,
-    explanations: ["Individual contributions are confounded.", "Multiple simultaneous changes limit causal attribution.", "The combined result can still be informative.", "The evidence does not isolate the model."],
-    concept: "Tuning experiment attribution",
-    hints: ["Which variables changed together?", "Can the result identify one responsible mechanism?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-143", domain: evaluation,
-    prompt: "An agent's aggregate success rate is high, but all authorization-sensitive tasks fail. What reporting change is most useful?",
-    choices: ["Hide the small category to simplify reporting", "Report only the overall mean", "Segment results by task type and risk", "Replace success rate with total output tokens"],
-    correct: 2,
-    explanations: ["Small high-risk categories can be operationally critical.", "An overall mean masks concentrated weaknesses.", "Segmentation exposes failures relevant to deployment decisions.", "Token volume does not measure authorized success."],
-    concept: "Risk-stratified evaluation",
-    hints: ["Can a strong average hide a dangerous subgroup?", "Which failures matter most for the intended deployment?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-144", domain: evaluation,
-    prompt: "A timeout is caused by a slow external service, not slow reasoning. Which tuning is most targeted?",
-    choices: ["Rewrite all business requirements", "Increase the number of planning agents", "Remove all observability", "Tune timeout and bounded retry behavior using service evidence"],
-    correct: 3,
-    explanations: ["Requirements do not repair the observed service latency.", "More planning can add overhead without addressing the bottleneck.", "Removing evidence impedes diagnosis.", "Execution-policy tuning addresses the measured external delay."],
-    concept: "Environment-directed tuning",
-    hints: ["Where is elapsed time actually spent?", "Which setting controls recovery at that layer?"],
-    source: operations,
-  },
-  {
-    id: "agentic-145", domain: evaluation,
-    prompt: "An agent's final response claims it ran a scanner, but no execution event or report exists. What should the evaluator conclude?",
-    choices: ["The claim is unsupported and required evidence remains missing", "The scanner must have run invisibly", "Fluent wording proves completion", "The claim substitutes for an artifact"],
-    correct: 0,
-    explanations: ["Completion claims require evidence tied to execution.", "Invisible execution cannot be presumed.", "Fluency is not tool provenance.", "A statement does not replace the required report."],
-    concept: "Verifying execution claims",
-    hints: ["What independently demonstrates that the action occurred?", "Could the same response be written without running the tool?"],
-    source: operations,
-  },
-  {
-    id: "agentic-146", domain: evaluation,
-    prompt: "A plan follows the issue but violates a repository's explicit no-new-dependencies constraint. How should it score?",
-    choices: ["Fully successful if the feature works", "A constraint failure even if the functional result is correct", "Successful if the dependency is popular", "Successful if the agent apologizes afterward"],
-    correct: 1,
-    explanations: ["Success includes applicable operational constraints.", "Correct functionality does not erase a violated task boundary.", "Popularity does not override policy.", "An apology does not establish compliance."],
-    concept: "Constraint-aware evaluation",
-    hints: ["Which requirements were conjunctive rather than optional?", "Can functional correctness coexist with unacceptable execution?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-147", domain: evaluation,
-    prompt: "A team wants to detect whether an agent stops when a tool result tries to override instructions. Which test case best fits?",
-    choices: ["A normal successful build only", "A spelling test on the final summary", "A controlled adversarial tool response with explicit expected boundary behavior", "A production attack without owner approval"],
-    correct: 2,
-    explanations: ["A happy path does not exercise the trust boundary.", "Spelling does not measure instruction resistance.", "A controlled case directly tests the required safety behavior.", "Unapproved production attacks are not an appropriate evaluation method."],
-    concept: "Adversarial boundary evaluation",
-    hints: ["Which failure mode must the case exercise?", "How can it be tested without exposing real systems?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-148", domain: evaluation,
-    prompt: "A failure dashboard groups all unsuccessful runs as 'AI error.' What improvement most helps remediation?",
-    choices: ["Rename the label to 'unexpected behavior'", "Remove failures from reporting", "Report only the number of retries", "Classify causes using plans, tool traces, context, and environment evidence"],
-    correct: 3,
-    explanations: ["A new generic label does not identify causes.", "Excluding failures prevents learning.", "Retry counts do not explain why failures occurred.", "Cause categories support targeted changes rather than undirected tuning."],
-    concept: "Actionable failure taxonomy",
-    hints: ["Would every failure be repaired by the same change?", "What evidence distinguishes categories with different remedies?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-149", domain: evaluation,
-    prompt: "An updated agent is faster because it skips required review handoffs. How should the team interpret the latency gain?",
-    choices: ["As noncompliant behavior, not an acceptable optimization", "As proof the review gate was unnecessary", "As an automatic reason to expand autonomy", "As evidence that all quality metrics improved"],
-    correct: 0,
-    explanations: ["Performance must be measured within required governance constraints.", "Skipping a control does not establish that it lacks value.", "Noncompliance does not justify more authority.", "Latency alone does not demonstrate quality."],
-    concept: "Evaluating within governance constraints",
-    hints: ["Were the same rules followed in both measurements?", "What did the agent omit to achieve the gain?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-150", domain: evaluation,
-    prompt: "An evaluator rates final prose as correct although the agent modified the wrong repository. What should the rubric add?",
-    choices: ["More emphasis on grammar", "Execution target and authorized-scope verification", "A minimum answer length", "A reward for confident completion language"],
-    correct: 1,
-    explanations: ["Grammar does not validate the mutation target.", "Task success includes acting on the correct authorized resource.", "Length can increase without fixing scope.", "Confidence can conceal incorrect execution."],
-    concept: "Evaluating action correctness",
-    hints: ["Is the deliverable only a message?", "Where did the actual effect occur?"],
-    source: tools,
-  },
-  {
-    id: "agentic-151", domain: evaluation,
-    prompt: "A tuning change reduces unnecessary memory retrieval but accidentally removes approved constraints. What should the team do?",
-    choices: ["Accept because fewer tokens were used", "Remove every memory source", "Preserve essential constraints and reevaluate the revised retrieval policy", "Increase tool permissions to compensate"],
-    correct: 2,
-    explanations: ["Token savings do not justify losing required context.", "Blanket removal sacrifices useful continuity.", "Selective retrieval must preserve decision-critical information.", "Permissions cannot replace missing constraints."],
-    concept: "Memory tuning evaluation",
-    hints: ["Which retrieved content was noise, and which was mandatory?", "What regression case would reveal the loss?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-152", domain: evaluation,
-    prompt: "An agent's failure is reproduced only with one runner image version. What should the investigation record?",
-    choices: ["Only the latest successful output", "Only the agent's personality prompt", "Only the issue title", "The runner image, dependencies, revision, inputs, and failing evidence"],
-    correct: 3,
-    explanations: ["A success output does not preserve the failing conditions.", "The prompt alone omits the environment dependency.", "An issue title is insufficient reproduction context.", "Environment and execution provenance enable targeted reproduction."],
-    concept: "Reproducible error analysis",
-    hints: ["Which conditions distinguish failing and passing runs?", "What would another engineer need to reproduce the result?"],
-    source: operations,
-  },
-  {
-    id: "agentic-153", domain: evaluation,
-    prompt: "A team evaluates an issue-triage agent. It labels issues accurately but sends confidential details to an unauthorized tool. What is the result?",
-    choices: ["Failure of the security constraint despite accurate labels", "Complete success because the labels are correct", "Success if disclosure reduced latency", "An unmeasurable outcome"],
-    correct: 0,
-    explanations: ["Correctness and authorized data handling are both required.", "Labels do not excuse unauthorized disclosure.", "Efficiency does not override confidentiality.", "Tool traces can establish the disclosure event."],
-    concept: "Security as a success constraint",
-    hints: ["What requirements govern how the result is produced?", "Can a correct answer still be obtained through an unacceptable path?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-154", domain: evaluation,
-    prompt: "A team wants to deploy a tuned agent after offline tests improve. Which next step best reduces rollout risk?",
-    choices: ["Immediately enable all mutation tools everywhere", "Use a constrained rollout with monitoring and rollback criteria", "Delete the prior version before observing live behavior", "Disable failure reporting to reduce noise"],
-    correct: 1,
-    explanations: ["Broad activation exceeds the evidence from offline tests.", "A bounded rollout tests real conditions while retaining recovery.", "Removing the previous version can eliminate a safe fallback.", "Failure reporting is essential during rollout."],
-    concept: "Evidence-based tuning rollout",
-    hints: ["What might differ between offline cases and live traffic?", "How can exposure remain reversible while gathering evidence?"],
-    source: operations,
-  },
-  {
-    id: "agentic-155", domain: evaluation,
-    prompt: "A judge agent scores another agent's outputs. What should the team do before relying on its ratings?",
-    choices: ["Assume agents always agree with experts", "Use the judge's confidence as ground truth", "Calibrate the rubric against independently reviewed examples and check disagreement", "Remove human reference examples to prevent comparison"],
-    correct: 2,
-    explanations: ["Expert agreement must be measured.", "Confidence is not ground truth.", "Calibration exposes systematic scoring errors and ambiguity.", "Reference examples support rather than undermine validation."],
-    concept: "Evaluator calibration",
-    hints: ["How will you know whether the judge measures the intended quality?", "Which disagreements should be inspected rather than averaged away?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-156", domain: evaluation,
-    prompt: "An agent retries a deterministic bad request five times. What tuning best addresses the observed behavior?",
-    choices: ["Raise the retry limit", "Lower all test thresholds", "Switch repositories on failure", "Classify errors and retry only when the failure is plausibly transient"],
-    correct: 3,
-    explanations: ["More retries repeat the same invalid input.", "Test thresholds are unrelated to request validity.", "A different repository does not fix the request contract.", "Error-aware retry policy targets the actual failure mechanism."],
-    concept: "Retry-policy evaluation",
-    hints: ["Would time alone make this request valid?", "Which failures need changed inputs rather than repeated attempts?"],
-    source: operations,
-  },
-  {
-    id: "agentic-157", domain: evaluation,
-    prompt: "An agent appears to stall, but it is actually waiting for a required approval. What should evaluation distinguish?",
-    choices: ["Active execution time, blocked approval time, and true lack of progress", "Only total wall-clock time", "Only the number of final messages", "Only model inference time"],
-    correct: 0,
-    explanations: ["Separate states support fair diagnosis and targeted process changes.", "Total duration alone conflates different causes.", "Message counts do not identify waiting conditions.", "Inference excludes tool and approval delays."],
-    concept: "Operational state-aware metrics",
-    hints: ["Is the agent able to proceed right now?", "Which part of elapsed time can tuning the model actually affect?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-158", domain: evaluation,
-    prompt: "A postmortem identifies a prompt fix, a tool restriction, and a new regression case. What makes the learning loop complete?",
-    choices: ["Archiving the recommendations without applying them", "Implementing the changes and verifying outcomes against the failure and broader suite", "Deleting the incident traces immediately", "Declaring the failure impossible after updating prose"],
-    correct: 1,
-    explanations: ["Recommendations alone do not change behavior.", "Verified remediation connects analysis to demonstrated improvement.", "Traces may be needed for validation and audit.", "An instruction update is not proof the failure cannot recur."],
-    concept: "Closing the evaluation-tuning loop",
-    hints: ["What evidence demonstrates that remediation worked?", "How will the team detect unintended regressions?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-159", domain: coordination,
-    prompt: "Two agents can independently update documentation and add parser tests. How should they execute in parallel safely?",
-    choices: ["Share one writable checkout without ownership", "Push directly to the default branch", "Use isolated workspaces with explicit deliverables and an integration owner", "Let whichever finishes first overwrite the other"],
-    correct: 2,
-    explanations: ["Shared writes can interfere even on otherwise independent tasks.", "Direct pushes bypass review.", "Isolation and ownership permit concurrency with controlled integration.", "Completion order does not establish correctness."],
-    concept: "Parallel execution isolation",
-    hints: ["Which resources could the workers accidentally share?", "Who decides how their outputs are accepted together?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-160", domain: coordination,
-    prompt: "An implementation agent requires an API contract from a design agent. What orchestration pattern fits?",
-    choices: ["Start both with no shared contract", "Let implementation invent its own interface", "Duplicate design work in every worker", "Make contract acceptance an explicit dependency before implementation"],
-    correct: 3,
-    explanations: ["Unresolved dependencies create incompatible assumptions.", "Inventing the contract defeats the required handoff.", "Duplication can produce contradictory contracts.", "A dependency gate gives implementation a stable input."],
-    concept: "Dependency-aware orchestration",
-    hints: ["Can the downstream task be correct before its input exists?", "What artifact marks the handoff as ready?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-161", domain: coordination,
-    prompt: "Two parallel agents propose incompatible edits to the same authentication function. What should the coordinator do?",
-    choices: ["Pause integration, compare intent and evidence, and reconcile through the owner", "Accept the later timestamp automatically", "Concatenate both implementations", "Ignore one agent without recording the decision"],
-    correct: 0,
-    explanations: ["Conflict resolution requires semantic review, not just text merging.", "Recency does not establish compatibility.", "Concatenation can break behavior.", "Undocumented rejection weakens traceability."],
-    concept: "Overlapping change conflicts",
-    hints: ["Can both intended behaviors coexist?", "Who owns the affected interface and its acceptance criteria?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-162", domain: coordination,
-    prompt: "A coordinator delegates one bug to two workers accidentally. What most directly prevents duplicated effort in future runs?",
-    choices: ["Longer worker names", "Unique task identities with explicit claims and ownership", "A larger model for both workers", "More frequent final summaries only"],
-    correct: 1,
-    explanations: ["Names alone do not prevent duplicate assignment.", "Claimed work identities expose and constrain duplicate ownership.", "Model size does not fix dispatch bookkeeping.", "Final reporting detects duplication too late."],
-    concept: "Duplicate-work prevention",
-    hints: ["How does dispatch know that a task is already assigned?", "What state should change when a worker accepts work?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-163", domain: coordination,
-    prompt: "A reviewer agent and an implementer disagree about whether a change satisfies requirements. What should arbitrate?",
-    choices: ["The agent with the longer response", "A majority of repeated model calls", "The task contract, independent evidence, and accountable human judgment if unresolved", "The implementer's confidence"],
-    correct: 2,
-    explanations: ["Length is not correctness.", "Repeated opinions may share the same error.", "Evidence and defined authority resolve substantive disagreement.", "Self-confidence cannot override requirements."],
-    concept: "Contradictory agent outputs",
-    hints: ["Which claims can be tested?", "Who has authority when evidence leaves a policy or intent decision?"],
-    source: contributor,
-  },
-  {
-    id: "agentic-164", domain: coordination,
-    prompt: "A multi-agent run finishes three of four required components. The fourth worker failed. What should the coordinator report?",
-    choices: ["Full success because most workers finished", "No useful progress occurred", "A merged result with the missing component hidden", "Partial completion with verified artifacts, unmet dependencies, and recovery options"],
-    correct: 3,
-    explanations: ["Required completeness is not a majority vote.", "Completed work may still be useful.", "Hiding gaps misrepresents readiness.", "Explicit partial state supports safe recovery and honest review."],
-    concept: "Partial multi-agent outcomes",
-    hints: ["Which deliverables are verified?", "What still prevents the overall task from meeting its contract?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-165", domain: coordination,
-    prompt: "A worker has produced no progress for an hour. What should the coordinator check before launching a replacement?",
-    choices: ["Heartbeat, tool state, pending approvals, and owned side effects", "Only the worker's display name", "Only whether another worker is available", "Whether the final response can be guessed"],
-    correct: 0,
-    explanations: ["Diagnosis distinguishes a stalled worker from legitimate waiting and avoids duplicate effects.", "Names do not reveal operational state.", "Availability does not establish replacement safety.", "Guessed completion is not evidence."],
-    concept: "Stall diagnosis",
-    hints: ["Is the worker blocked, active, or disconnected?", "Could it still complete a pending mutation?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-166", domain: coordination,
-    prompt: "A failed worker must be replaced while an external write may still be running. What is the safest recovery?",
-    choices: ["Start a duplicate write immediately", "Fence or cancel old authority and reconcile effects before resuming", "Give both workers administrator access", "Discard all existing run records"],
-    correct: 1,
-    explanations: ["A duplicate may race with the original effect.", "Authority control and reconciliation prevent competing recovery writers.", "More privilege increases the race's impact.", "Records are needed to understand uncertain effects."],
-    concept: "Replacement and stale-worker fencing",
-    hints: ["Could the original worker still act?", "How can the replacement know which effects already occurred?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-167", domain: coordination,
-    prompt: "A new specialist is added to an active workflow. What handoff should it receive?",
-    choices: ["Every organization's historical conversation", "Only a role title", "A bounded task, current contract, relevant state, permissions, and expected output", "The coordinator's unrestricted credentials"],
-    correct: 2,
-    explanations: ["Unfiltered history adds noise and disclosure risk.", "A title does not define executable work.", "A scoped handoff establishes responsibility and continuity.", "Specialization does not require inheriting all authority."],
-    concept: "Adding agents safely",
-    hints: ["What must the new worker know to avoid duplicating or contradicting work?", "Which authority is actually necessary?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-168", domain: coordination,
-    prompt: "A team updates a worker's instructions during a long run. How should it avoid disrupting in-flight tasks?",
-    choices: ["Silently replace instructions mid-operation", "Assume all workers instantly use identical context", "Delete old instructions and logs", "Version definitions and migrate at a controlled handoff boundary"],
-    correct: 3,
-    explanations: ["Mid-operation changes can invalidate task assumptions.", "Workers may retain older context.", "Old definitions are needed for audit and reproduction.", "Versioned boundaries make behavior and transition explicit."],
-    concept: "Agent configuration lifecycle",
-    hints: ["Which definition governed already completed actions?", "When can new instructions be adopted without changing an active contract?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-169", domain: coordination,
-    prompt: "A specialist agent is being retired. What must the coordinator preserve?",
-    choices: ["Its decisions, artifact references, outstanding ownership, and transfer record", "Only its display name", "All active credentials indefinitely", "Nothing after its process exits"],
-    correct: 0,
-    explanations: ["Retirement must not lose auditability or unfinished responsibilities.", "A name cannot reconstruct the work.", "Credentials should not be retained unnecessarily.", "Process termination does not eliminate continuity needs."],
-    concept: "Agent retirement",
-    hints: ["Who inherits incomplete work?", "What will an auditor need after the agent no longer exists?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-170", domain: coordination,
-    prompt: "Separate worker branches merge cleanly, but their combined behavior breaks a shared API. What validation was missing?",
-    choices: ["More conflict-marker checks", "Integration tests against the combined revision and interface contract", "A count of worker commits", "A longer coordinator summary"],
-    correct: 1,
-    explanations: ["Textual cleanliness does not prove semantic compatibility.", "Combined validation tests interactions absent from isolated runs.", "Commit count does not establish integration correctness.", "Summary detail cannot replace execution evidence."],
-    concept: "Semantic integration validation",
-    hints: ["What can change when independently valid components are combined?", "Did any test exercise the actual integrated state?"],
-    source: contributor,
-  },
-  {
-    id: "agentic-171", domain: coordination,
-    prompt: "A coordinator launches many workers against one rate-limited service. Failures increase. What should it change?",
-    choices: ["Add still more workers", "Rotate identities to avoid limits", "Bound concurrency and coordinate the shared request budget", "Remove timeout reporting"],
-    correct: 2,
-    explanations: ["More workers increase pressure on the bottleneck.", "Identity rotation is not legitimate capacity management.", "Shared resource budgeting prevents independent retries from amplifying load.", "Hiding timeouts does not improve throughput."],
-    concept: "Multi-agent resource budgets",
-    hints: ["Which resource is shared despite separate contexts?", "Can each worker's locally reasonable retry policy be harmful in aggregate?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-172", domain: coordination,
-    prompt: "A reviewer agent needs implementation evidence but must not modify the patch it reviews. Which design fits?",
-    choices: ["Share the implementer's unrestricted shell", "Let the reviewer silently fix every finding", "Give review and deployment the same credentials", "Provide read-only artifact access and a separate findings handoff"],
-    correct: 3,
-    explanations: ["Unrestricted access undermines role separation.", "Silent edits blur authorship and invalidate reviewed state.", "Deployment authority is unnecessary for review.", "Read-only evidence preserves the review boundary and traceable feedback."],
-    concept: "Reviewer role isolation",
-    hints: ["Which capabilities are necessary to assess the work?", "How should requested changes return to the implementer?"],
-    source: agents,
-  },
-  {
-    id: "agentic-173", domain: coordination,
-    prompt: "A worker's final handoff says only 'done.' What should the coordinator require?",
-    choices: ["Deliverable references, revision, validation, unresolved issues, and completion state", "A more enthusiastic success statement", "The full private reasoning transcript", "A confidence percentage without evidence"],
-    correct: 0,
-    explanations: ["An evidence-rich handoff lets the coordinator verify and integrate the result.", "Enthusiasm does not establish readiness.", "Private deliberation is not required for operational evidence.", "Confidence does not replace artifacts."],
-    concept: "Verifiable agent handoffs",
-    hints: ["Can another worker continue without guessing?", "What makes the completion claim independently checkable?"],
-    source: operations,
-  },
-  {
-    id: "agentic-174", domain: coordination,
-    prompt: "A worker requests a scope expansion that the coordinator itself cannot authorize. What should happen?",
-    choices: ["The coordinator approves because delegation implies unlimited authority", "Escalate to the appropriate owner while preserving the bounded work", "Ask another worker to grant permission", "Treat the request as approval"],
-    correct: 1,
-    explanations: ["Delegated authority cannot exceed the coordinator's own scope.", "Unresolved authority needs the accountable decision owner.", "Peer agreement does not create authorization.", "A request is not an authorization decision."],
-    concept: "Delegated authority limits",
-    hints: ["Can a coordinator grant authority it does not possess?", "Who owns the proposed additional impact?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-175", domain: coordination,
-    prompt: "Two workers use separate checkouts but share one writable test database. Why is isolation incomplete?",
-    choices: ["Separate checkouts cannot exist", "Only prompts need isolation", "Shared external state can still cause interference", "Database changes never affect tests"],
-    correct: 2,
-    explanations: ["Separate checkouts are possible but insufficient alone.", "Execution resources also need boundaries.", "Isolation must include mutable services and fixtures.", "Concurrent fixture mutations can alter test outcomes."],
-    concept: "External resource isolation",
-    hints: ["What mutable resources lie outside the filesystem?", "Can one worker change another's observations?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-176", domain: coordination,
-    prompt: "A coordinator wants to reconstruct why workers chose conflicting designs. Which telemetry is most useful?",
-    choices: ["Only aggregate token totals", "Only worker names", "Only the final merged diff", "Correlated task contracts, decisions, handoffs, revisions, and outcomes"],
-    correct: 3,
-    explanations: ["Usage totals do not explain decisions.", "Names do not preserve causal context.", "The final diff omits rejected alternatives and handoff timing.", "Correlated artifacts support post-hoc causal analysis."],
-    concept: "Multi-agent observability",
-    hints: ["What did each worker know when it acted?", "How can a decision be connected to its input and downstream effect?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-177", domain: coordination,
-    prompt: "A workflow contains a failed optional research worker and successful required implementation checks. How should the coordinator decide whether to continue?",
-    choices: ["Use the declared dependency and acceptance contract, reporting the optional failure", "Fail every workflow whenever any worker stops", "Ignore all worker failures", "Count successful workers and use a simple majority"],
-    correct: 0,
-    explanations: ["Explicit required-versus-optional semantics support an honest decision.", "An optional failure need not block unrelated acceptance.", "Some failures invalidate required work.", "Worker counts do not represent dependency importance."],
-    concept: "Required and optional worker dependencies",
-    hints: ["Was the missing output required for correctness?", "What does the orchestration contract say about degraded operation?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-178", domain: coordination,
-    prompt: "Two agents wait for each other's output indefinitely. What should the orchestration design add?",
-    choices: ["Longer waiting messages", "Dependency-cycle detection and explicit resolution or timeout escalation", "More agents with the same circular dependency", "A rule that waiting counts as success"],
-    correct: 1,
-    explanations: ["Messages do not break a logical cycle.", "A detected cycle needs a changed dependency or accountable intervention.", "Replicating the cycle increases wasted capacity.", "Waiting does not satisfy either task."],
-    concept: "Coordination deadlock",
-    hints: ["Can either task produce its prerequisite first?", "Who can change the dependency structure?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-179", domain: coordination,
-    prompt: "A replacement worker receives the original task but no failed-worker progress. What risk is introduced?",
-    choices: ["It cannot generate prose", "It automatically inherits all prior tool results", "It may repeat effects or abandon already established decisions", "It must use fewer tokens"],
-    correct: 2,
-    explanations: ["Prose generation is unrelated to recovery continuity.", "Prior state is not guaranteed without a handoff.", "Missing progress obscures completed effects and constraints.", "Token use is not determined by this omission."],
-    concept: "Recovery handoff continuity",
-    hints: ["What differs between starting fresh and taking over?", "Which actions must not be repeated?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-180", domain: coordination,
-    prompt: "A coordinator uses a planner, implementer, and evaluator. Which ordering best preserves their responsibilities?",
-    choices: ["Evaluate only after deployment", "Implement before defining success", "Let the implementer approve every plan change alone", "Establish the contract, execute within it, then independently evaluate evidence"],
-    correct: 3,
-    explanations: ["Postdeployment evaluation misses the acceptance boundary.", "Undefined success cannot guide reliable implementation.", "Unilateral approval weakens role separation.", "A contract-driven sequence aligns decisions, actions, and validation."],
-    concept: "Planner-executor-evaluator orchestration",
-    hints: ["What must be known before implementation?", "Which role verifies the delivered outcome?"],
-    source: planning,
-  },
-  {
-    id: "agentic-181", domain: coordination,
-    prompt: "A multi-agent workflow produces duplicated PRs after a coordinator restart. What state should survive restarts?",
-    choices: ["Task-to-worker assignments and verified deliverable identities", "Only the model name", "Only the last greeting", "Only the planned worker count"],
-    correct: 0,
-    explanations: ["Durable assignment and output identity prevent redispatching completed work.", "Model identity does not track effects.", "Greetings carry no orchestration progress.", "A count does not identify ownership or results."],
-    concept: "Durable orchestration state",
-    hints: ["How will the coordinator know what already exists?", "Which identifiers link logical work to its produced PR?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-182", domain: coordination,
-    prompt: "A code worker changes an interface after a documentation worker has finalized its output. What should the coordinator do?",
-    choices: ["Accept both outputs independently", "Invalidate affected downstream assumptions and revalidate the documentation", "Delete all previous artifacts", "Treat the newer code as proof the documentation remains correct"],
-    correct: 1,
-    explanations: ["The outputs may now disagree.", "Dependency changes require targeted downstream freshness checks.", "Useful history should remain auditable.", "New code does not validate old descriptions."],
-    concept: "Dependency invalidation across agents",
-    hints: ["Which worker consumed the earlier interface?", "What evidence became stale when the interface changed?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-183", domain: coordination,
-    prompt: "Several agents agree that an undocumented API exists, but none verified it. What should the coordinator conclude?",
-    choices: ["Agreement proves the API exists", "The most confident worker is authoritative", "Consensus is insufficient without independent versioned evidence", "More ungrounded votes will establish truth"],
-    correct: 2,
-    explanations: ["Agents can share correlated hallucinations.", "Confidence is not API evidence.", "Verification is necessary even when multiple workers agree.", "Additional unsupported opinions do not create documentation."],
-    concept: "Correlated multi-agent errors",
-    hints: ["Are the agents using independent evidence or the same assumption?", "Where can the disputed claim actually be verified?"],
-    source: contributor,
-  },
-  {
-    id: "agentic-184", domain: coordination,
-    prompt: "A worker is allowed to edit tests but proposes changing organization policy. What should the coordinator enforce?",
-    choices: ["Any worker can redefine policy if useful", "A policy edit is harmless because it is text", "The worker may grant itself a broader role", "The worker's bounded role and an authorized escalation path"],
-    correct: 3,
-    explanations: ["Usefulness does not grant governance authority.", "Policy text can have consequential effects.", "Self-expansion defeats delegated control.", "Role boundaries remain binding during orchestration."],
-    concept: "Worker scope enforcement",
-    hints: ["Which task and authority were delegated?", "Does orchestration create additional permission automatically?"],
-    source: agents,
-  },
-  {
-    id: "agentic-185", domain: coordination,
-    prompt: "A coordinator replaces a worker version after regression. How should rollback preserve active workflow continuity?",
-    choices: ["Select the known-good version and resume from compatible verified state", "Restart all external mutations blindly", "Delete the old worker's audit trail", "Mix both versions' instructions without recording it"],
-    correct: 0,
-    explanations: ["Version and state compatibility support controlled recovery.", "Blind replay risks duplicate effects.", "Audit history remains necessary after replacement.", "Unrecorded mixed behavior undermines reproducibility."],
-    concept: "Agent version rollback",
-    hints: ["Which version is known to satisfy the contract?", "Can its state interpretation safely resume this task?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-186", domain: coordination,
-    prompt: "A worker's local tests passed on its branch, but the coordinator rebased it before integration. What evidence is needed now?",
-    choices: ["The old pass is enough forever", "Relevant checks against the resulting integrated revision", "Only the worker's approval", "Only a clean rebase exit status"],
-    correct: 1,
-    explanations: ["Earlier evidence applies to an earlier state.", "Changed integration state requires appropriate revalidation.", "Worker approval does not execute checks.", "A clean rebase verifies text integration, not behavior."],
-    concept: "Postintegration evidence freshness",
-    hints: ["Which revision will actually be accepted?", "Did the evidence exercise that revision?"],
-    source: operations,
-  },
-  {
-    id: "agentic-187", domain: coordination,
-    prompt: "A workflow's workers each retry indefinitely, keeping a failed overall task alive. What should the coordinator add?",
-    choices: ["A larger worker pool", "Independent unlimited budgets for every new worker", "A global retry and execution budget with escalation", "A rule hiding repeated failures"],
-    correct: 2,
-    explanations: ["More workers can multiply the loop.", "Independent unlimited budgets remain unbounded in aggregate.", "Workflow-level limits contain repeated recovery attempts.", "Hiding failure does not restore progress."],
-    concept: "Workflow-wide recovery budgets",
-    hints: ["Can bounded local behavior still become unbounded through replacement?", "Who accounts for the total cost of recovery?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-188", domain: coordination,
-    prompt: "A team wants to parallelize two agents that both edit a generated manifest. What is the best first step?",
-    choices: ["Assume different prompts guarantee no collisions", "Let both overwrite the manifest and compare timestamps", "Disable manifest validation", "Redesign ownership or serialize manifest integration"],
-    correct: 3,
-    explanations: ["Prompt differences do not isolate shared writes.", "Timestamp selection can discard required entries.", "Validation is especially important for shared artifacts.", "Explicit ownership or serialization controls the collision point."],
-    concept: "Shared artifact ownership",
-    hints: ["Which file remains a common write target?", "Can parallel work be separated from a single integration step?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-189", domain: coordination,
-    prompt: "A coordinator dispatches security analysis to a specialist. Which completion criterion is best?",
-    choices: ["A bounded findings report with evidence, severity rationale, and limitations", "At least one critical finding regardless of evidence", "A positive overall rating", "An unrestricted production remediation"],
-    correct: 0,
-    explanations: ["A report supports informed review without forcing a predetermined result.", "Requiring a critical finding incentivizes fabrication.", "Positive ratings do not define analytical quality.", "Analysis does not automatically authorize production changes."],
-    concept: "Specialist deliverable contracts",
-    hints: ["What output can be reviewed independently?", "Does the assignment require findings or a particular conclusion?"],
-    source: design,
-  },
-  {
-    id: "agentic-190", domain: coordination,
-    prompt: "A failed worker left temporary resources in a shared environment. What should recovery include?",
-    choices: ["Delete every resource in the environment", "Identify task-owned resources and clean them through authorized paths", "Ignore resources because the worker stopped", "Ask the replacement to reuse unknown resources blindly"],
-    correct: 1,
-    explanations: ["Broad deletion can harm unrelated work.", "Ownership-aware cleanup contains impact and preserves safety.", "Stopped processes can leave persistent effects.", "Unknown resources can contain stale or conflicting state."],
-    concept: "Failure cleanup ownership",
-    hints: ["Which resources belong to this task?", "What effects survive worker termination?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-191", domain: coordination,
-    prompt: "A coordinator summarizes a worker's warning as a success. How should handoff design reduce this risk?",
-    choices: ["Remove warnings from worker messages", "Require longer praise in summaries", "Use explicit completion states, blockers, and artifact references", "Always interpret missing fields as success"],
-    correct: 2,
-    explanations: ["Suppressing warnings hides degraded outcomes.", "Praise increases ambiguity rather than resolving it.", "Structured status reduces lossy interpretation.", "Missing data is not affirmative evidence of completion."],
-    concept: "Loss-resistant status handoffs",
-    hints: ["What status distinctions must survive summarization?", "Can the coordinator verify the claim from the attached evidence?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-192", domain: coordination,
-    prompt: "A workflow adds agents dynamically when task complexity rises. What must remain explicit?",
-    choices: ["Only the maximum response length", "Only each agent's avatar", "Only the order in which agents were named", "Ownership, dependencies, authority, budgets, and acceptance responsibility"],
-    correct: 3,
-    explanations: ["Length does not establish orchestration control.", "Avatars do not define responsibilities.", "Naming order does not express dependencies.", "Dynamic growth still requires clear operational contracts."],
-    concept: "Controlled workflow expansion",
-    hints: ["Who owns each new output?", "Which limits prevent dynamic delegation from becoming uncontrolled?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-193", domain: coordination,
-    prompt: "A worker reports a newly discovered prerequisite that affects several active tasks. What should the coordinator do?",
-    choices: ["Update the dependency graph and notify affected workers with the revised contract", "Keep the discovery private until the final report", "Let each worker infer the change independently", "Erase prior plans without preserving history"],
-    correct: 0,
-    explanations: ["Shared dependency changes need coordinated propagation.", "Delayed notification can waste work or create conflicts.", "Independent inference risks inconsistent assumptions.", "History is needed to explain why the plan changed."],
-    concept: "Dependency change propagation",
-    hints: ["Which workers rely on the invalidated assumption?", "How will all participants know which contract is current?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-194", domain: coordination,
-    prompt: "A human resolves a conflict between two agents' designs. What should the workflow record before resuming?",
-    choices: ["Only that a human participated", "The selected decision, scope, rationale, and affected task updates", "Only the losing agent's name", "A new confidence score"],
-    correct: 1,
-    explanations: ["Participation alone does not convey the resolved contract.", "An explicit decision record makes the intervention actionable and auditable.", "Blame is not a handoff.", "Confidence does not capture the authorized choice."],
-    concept: "Human-in-the-loop conflict recovery",
-    hints: ["What must the workers know to proceed consistently?", "What will explain the chosen direction later?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-195", domain: coordination,
-    prompt: "A coordinator has ten small, tightly coupled edits. Parallel agents would all need the same files and assumptions. What is a reasonable orchestration choice?",
-    choices: ["Always maximize the worker count", "Duplicate the complete task ten times", "Use a single coherent execution or serialize the coupled edits", "Remove task boundaries to reduce planning"],
-    correct: 2,
-    explanations: ["Parallelism can increase coordination overhead and conflicts.", "Duplication wastes effort and creates competing outputs.", "Tightly coupled work may be safer and faster without parallel writers.", "Removing boundaries increases ambiguity."],
-    concept: "When not to parallelize",
-    hints: ["Are the work units truly independent?", "Will coordination cost exceed the benefit of concurrency?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-196", domain: coordination,
-    prompt: "A multi-agent incident review finds no way to tell which worker introduced an unsafe tool call. What should future event records include?",
-    choices: ["Only a shared workflow label", "Only total duration", "Only the final coordinator response", "Worker identity, parent task, tool request, authorization result, and outcome"],
-    correct: 3,
-    explanations: ["A shared label cannot attribute individual actions.", "Duration does not identify actors or requests.", "A summary omits necessary execution detail.", "Attributed correlated events establish the action's provenance."],
-    concept: "Cross-agent action attribution",
-    hints: ["Can the investigator connect an effect to one actor?", "Which authorization boundary was crossed or enforced?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-197", domain: coordination,
-    prompt: "A workflow is being shut down after all deliverables are accepted. What is the best lifecycle closeout?",
-    choices: ["Confirm no active work, release resources, revoke unneeded access, and preserve records", "Delete every artifact to reduce clutter", "Keep all workers and credentials active indefinitely", "Stop the coordinator without checking worker activity"],
-    correct: 0,
-    explanations: ["Orderly closeout preserves accountability while ending unnecessary capability.", "Artifacts may be required for audit and maintenance.", "Idle authority and resources create unnecessary exposure.", "Workers may continue acting after an unchecked shutdown."],
-    concept: "Workflow retirement and closeout",
-    hints: ["Could any worker still produce side effects?", "What should end, and what should remain inspectable?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-198", domain: guardrails,
-    prompt: "An agent can either read public documentation or delete production records. How should autonomy differ?",
-    choices: ["Both should require identical approvals", "Permit bounded low-risk reads and require explicit controlled authorization for deletion", "Deletion should be automatic because it is faster", "All tool access implies equal risk"],
-    correct: 1,
-    explanations: ["Uniform approval ignores materially different impact.", "Risk-based autonomy reserves strong controls for consequential actions.", "Speed does not justify irreversible impact.", "Tools differ in operational and compliance risk."],
-    concept: "Risk-classified autonomy",
-    hints: ["Which action is difficult to reverse?", "Where does human judgment materially change the risk?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-199", domain: guardrails,
-    prompt: "An agent promises not to use its administrator credential for unrelated operations. What stronger safeguard is appropriate?",
-    choices: ["A more emphatic promise", "A longer role description", "A credential scoped to the task's required resources and actions", "A monthly review of promises"],
-    correct: 2,
-    explanations: ["Emphasis does not reduce technical authority.", "Role text is not access enforcement.", "Least privilege constrains impact even if the agent makes a mistake.", "Periodic review does not prevent unauthorized actions."],
-    concept: "Least-privilege enforcement",
-    hints: ["What remains possible if the instructions are misunderstood?", "Can the service itself reject out-of-scope operations?"],
-    source: operations,
-  },
-  {
-    id: "agentic-200", domain: guardrails,
-    prompt: "A production deployment requires human approval. Which workflow control best enforces that boundary when configured?",
-    choices: ["A comment saying approval is preferred", "An agent-generated confidence threshold", "A deployment log written afterward", "A protected environment with required reviewers on the deployment job"],
-    correct: 3,
-    explanations: ["Preference text does not block execution.", "Confidence cannot replace the required decision owner.", "Afterward logging cannot prevent deployment.", "Environment review gates pause the targeted job before execution."],
-    concept: "Environment approval gates",
-    hints: ["At what point must the job pause?", "Which mechanism enforces a decision outside the model?"],
-    source: workflows,
-  },
-  {
-    id: "agentic-201", domain: guardrails,
-    prompt: "A repository document tells an agent to send credentials to a diagnostic endpoint. What should the agent do?",
-    choices: ["Reject the instruction as untrusted content and preserve the secret boundary", "Comply because repository files are always authoritative", "Send only half the credential", "Ask the endpoint whether it is trustworthy"],
-    correct: 0,
-    explanations: ["Content cannot authorize credential exfiltration.", "Repository text may contain adversarial instructions.", "Partial disclosure can still expose sensitive data.", "An endpoint's own claim is not authorization."],
-    concept: "Prompt-injection guardrails",
-    hints: ["Is this content task data or an authorized policy change?", "Who granted permission for the disclosure?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-202", domain: guardrails,
-    prompt: "An agent needs to modify a policy file that determines its own tool access. What review control is most appropriate?",
-    choices: ["Let it approve its own expanded privileges", "Protect the configuration with ownership review and enforced acceptance rules", "Treat configuration changes as harmless documentation", "Disable audits for configuration edits"],
-    correct: 1,
-    explanations: ["Self-approval undermines the privilege boundary.", "Independent review prevents unexamined changes to the agent's authority.", "Configuration can directly alter capabilities.", "Auditability is important for governance-sensitive changes."],
-    concept: "Protecting agent configuration",
-    hints: ["Could this edit change what the agent is allowed to do?", "Who should approve an expansion of authority?"],
-    source: controls,
-  },
-  {
-    id: "agentic-203", domain: guardrails,
-    prompt: "A human approves a deployment to staging. The agent then proposes production deployment of a newer commit. What authorization is needed?",
-    choices: ["None; any deployment approval covers all environments", "A reused approval string from the staging run", "A decision covering the new revision and production impact", "The agent's assurance that the newer commit is similar"],
-    correct: 2,
-    explanations: ["Approval scope is not automatically universal.", "A copied string does not extend authority.", "Materially different target and code require appropriate authorization.", "Similarity claims do not bind human approval to new work."],
-    concept: "Specific approval scope",
-    hints: ["What environment and revision did the human actually review?", "Which proposed effects are new?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-204", domain: guardrails,
-    prompt: "A task is urgent but a proposed action violates an explicit data-residency policy. What should the agent do?",
-    choices: ["Proceed and document urgency afterward", "Copy the data through a different tool", "Ask another agent to perform the transfer", "Block the action and escalate through the authorized policy path"],
-    correct: 3,
-    explanations: ["Urgency does not waive a binding policy.", "Changing tools does not remove the policy violation.", "Delegation cannot authorize forbidden conduct.", "Policy conflicts require a legitimate resolution before action."],
-    concept: "Compliance boundary enforcement",
-    hints: ["Does the policy govern the tool or the data's destination?", "Who may resolve the exception request?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-205", domain: guardrails,
-    prompt: "An agent logs complete tool payloads, including customer identifiers unnecessary for debugging. What should accountability logging prioritize?",
-    choices: ["Traceability with sensitive-data minimization and controlled access", "Maximum raw data regardless of purpose", "No logs at all", "Public logs so every observer can investigate"],
-    correct: 0,
-    explanations: ["Useful audit evidence can be retained without indiscriminate disclosure.", "More data can increase privacy and security exposure.", "No logs prevents accountability.", "Public access is inappropriate for sensitive operational records."],
-    concept: "Privacy-preserving auditability",
-    hints: ["Which fields are actually needed to reconstruct the action?", "Who should be allowed to inspect them?"],
-    source: operations,
-  },
-  {
-    id: "agentic-206", domain: guardrails,
-    prompt: "An irreversible database cleanup is within the broad task goal but its exact targets are not defined. What should happen before execution?",
-    choices: ["Delete a sample to infer the intended scope", "Produce an inspectable target set and obtain explicit authorization", "Assume broad goal wording approves every matching record", "Let the model decide which records seem expendable"],
-    correct: 1,
-    explanations: ["Even a sample deletion can have irreversible effects.", "Precise targets support an informed consequential decision.", "Broad intent is insufficient for undefined destructive scope.", "Model judgment cannot substitute for data-owner authority."],
-    concept: "Irreversible action authorization",
-    hints: ["Can the approver identify exactly what will be removed?", "What ambiguity becomes dangerous after the action?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-207", domain: guardrails,
-    prompt: "A team asks whether every file read should require human approval. What is the best policy principle?",
-    choices: ["Every operation must have the same gate", "No reads can ever expose sensitive data", "Classify reads by data sensitivity and scope, automating only authorized low-risk access", "All reads are equivalent to production writes"],
-    correct: 2,
-    explanations: ["Uniform gating can add friction without proportional benefit.", "Reads can disclose confidential information.", "Risk includes disclosure, not only mutation.", "Read and write impact differ and require context-specific assessment."],
-    concept: "Read risk and proportional controls",
-    hints: ["Can observation itself expose protected information?", "Which reads are already authorized within the task?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-208", domain: guardrails,
-    prompt: "An agent discovers a policy gate is misconfigured and suggests removing it to finish faster. What is the appropriate response?",
-    choices: ["Remove the gate because it blocks progress", "Let the agent decide which controls are unnecessary", "Bypass it with another identity", "Escalate the misconfiguration and repair it through an authorized change"],
-    correct: 3,
-    explanations: ["A blocker does not justify discarding the control.", "The agent cannot unilaterally waive governance.", "Identity switching defeats the intended boundary.", "Repair preserves the control's purpose while resolving the defect."],
-    concept: "Guardrail failure handling",
-    hints: ["Is the problem the control's purpose or its implementation?", "Who can authorize a change to the enforcement path?"],
-    source: controls,
-  },
-  {
-    id: "agentic-209", domain: guardrails,
-    prompt: "A team uses agent instructions as its only barrier against external data transfer. What additional control is most useful?",
-    choices: ["Enforced tool, credential, and network boundaries appropriate to the runtime", "A longer reminder about confidentiality", "An agent-generated promise before each transfer", "A public log after every transfer"],
-    correct: 0,
-    explanations: ["Runtime enforcement limits effects independently of model compliance.", "More text remains advisory.", "Self-promises do not enforce destination restrictions.", "After-the-fact disclosure logging cannot prevent transfer."],
-    concept: "Defense in depth",
-    hints: ["Which controls still work if the model follows malicious content?", "Where can a forbidden operation be rejected before effect?"],
-    source: design,
-  },
-  {
-    id: "agentic-210", domain: guardrails,
-    prompt: "An agent's proposed change affects regulated retention rules. All tests pass. What additional judgment is required?",
-    choices: ["None, because tests cover all compliance decisions", "Review by the accountable policy or compliance owner", "A popularity vote among agents", "A confidence score above a chosen threshold"],
-    correct: 1,
-    explanations: ["Tests cannot independently authorize a policy change.", "Policy-sensitive changes require the relevant decision owner.", "Agent votes do not confer compliance authority.", "Confidence does not replace accountable authorization."],
-    concept: "Human judgment for compliance-sensitive changes",
-    hints: ["Who owns the legal or policy interpretation?", "Can technical validity answer whether the change is permitted?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-211", domain: guardrails,
-    prompt: "A human denies an agent's proposed destructive action. What should the agent do?",
-    choices: ["Rephrase the same action and execute it", "Delegate it to another agent", "Preserve the denial and continue only within remaining authorized scope", "Treat silence afterward as approval"],
-    correct: 2,
-    explanations: ["Rephrasing does not change the denied effect.", "Delegation cannot bypass denial.", "The decision remains binding while safe alternatives may remain possible.", "Silence is not a replacement authorization."],
-    concept: "Respecting approval decisions",
-    hints: ["Does changing the performer change the denied operation?", "Which work remains permitted?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-212", domain: guardrails,
-    prompt: "A task requires exception approval. The approver's identity cannot be verified. What is the safest state?",
-    choices: ["Approved because someone responded", "Approved if the response sounds professional", "Proceed and verify identity after execution", "Blocked pending an authenticated authorized decision"],
-    correct: 3,
-    explanations: ["A response alone does not establish authority.", "Style cannot authenticate an approver.", "Postexecution verification misses the gate.", "Approval must come from an identifiable authorized principal."],
-    concept: "Approval authenticity",
-    hints: ["What establishes the responder's authority?", "Can the decision be audited later?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-213", domain: guardrails,
-    prompt: "An organization wants fast autonomous formatting changes without giving agents permission to merge their own PRs. Which design fits?",
-    choices: ["Agents prepare PRs; repository automation follows configured checks, reviews, and merge policy", "Give each agent unrestricted merge rights", "Skip required checks for formatting agents", "Treat a formatting label as universal approval"],
-    correct: 0,
-    explanations: ["Preparation and acceptance can be separated while retaining efficient automation.", "Unrestricted merge rights exceed the stated design.", "Formatting can still introduce unexpected changes.", "A label alone does not satisfy acceptance rules."],
-    concept: "Separating preparation from acceptance",
-    hints: ["Who creates the proposal, and what controls acceptance?", "Can automation preserve the same required conditions?"],
-    source: workflows,
-  },
-  {
-    id: "agentic-214", domain: guardrails,
-    prompt: "An agent's credential is suspected to be compromised. What containment should take priority?",
-    choices: ["Wait until the task completes", "Suspend affected execution and revoke or rotate access through the incident process", "Copy the token to another worker", "Delete logs before investigating"],
-    correct: 1,
-    explanations: ["Continued execution can increase exposure.", "Containment reduces possible impact while preserving a controlled response.", "Copying the token spreads the compromise.", "Logs may be essential evidence."],
-    concept: "Credential incident containment",
-    hints: ["What authority could an attacker currently exercise?", "How can further effects be stopped without destroying evidence?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-215", domain: guardrails,
-    prompt: "A team approves a tool because it is read-only, but it can read every customer tenant. What is missing?",
-    choices: ["A write capability", "A more colorful tool icon", "Resource-level scope and confidentiality assessment", "An unlimited context window"],
-    correct: 2,
-    explanations: ["Adding writes would increase risk.", "Presentation does not constrain data access.", "Read-only access still needs tenant and data boundaries.", "Context size does not authorize disclosure."],
-    concept: "Least privilege for data access",
-    hints: ["Which customer's data is the task allowed to inspect?", "Does lack of mutation eliminate confidentiality risk?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-216", domain: guardrails,
-    prompt: "An agent proposes disabling audit logging during a sensitive change to avoid noise. What should the owner require?",
-    choices: ["Accept if the change is quick", "Use only the agent's final summary", "Disable logs but retain a confidence score", "Preserve appropriate audit events and filter irrelevant noise instead"],
-    correct: 3,
-    explanations: ["Short duration does not remove accountability requirements.", "A summary alone cannot reconstruct execution.", "Confidence is not an audit record.", "Noise reduction should not erase consequential evidence."],
-    concept: "Audit continuity",
-    hints: ["Which events would be necessary if the change failed?", "Can usability improve without eliminating the record?"],
-    source: operations,
-  },
-  {
-    id: "agentic-217", domain: guardrails,
-    prompt: "A safeguard blocks an unauthorized write but the agent reports the task succeeded. What should accountability require?",
-    choices: ["An accurate blocked outcome with the attempted operation and approved next steps", "A success status because the safeguard worked", "Deletion of the blocked event", "A retry under a more privileged identity"],
-    correct: 0,
-    explanations: ["Guardrail success and task completion are different outcomes.", "Preventing a write does not complete the requested task.", "Blocked attempts are important evidence.", "Privilege escalation needs separate authorization."],
-    concept: "Honest blocked-action reporting",
-    hints: ["Did the intended effect occur?", "How can both safety success and task incompleteness be recorded?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-218", domain: guardrails,
-    prompt: "A human approves a plan, then an agent changes its targets before execution. What should the guardrail do?",
-    choices: ["Reuse approval regardless of target changes", "Invalidate affected approval and request review of the revised action", "Hide the target changes in logs", "Treat approval as permission to choose any target"],
-    correct: 1,
-    explanations: ["Approval must remain bound to reviewed scope.", "Material changes require a decision covering the new effect.", "Hiding changes defeats informed authorization.", "Targets are part of the action's authority boundary."],
-    concept: "Approval invalidation on material change",
-    hints: ["Is the action still the one that was reviewed?", "Which approval assumptions no longer hold?"],
-    source: planning,
-  },
-  {
-    id: "agentic-219", domain: guardrails,
-    prompt: "An agent handles a request to generate misleading customer-facing claims unsupported by release evidence. What response aligns with accountability?",
-    choices: ["Publish if the requester wants persuasive wording", "Use a disclaimer after the false claims", "Decline unsupported claims and offer an evidence-based draft for review", "Ask another agent to invent supporting details"],
-    correct: 2,
-    explanations: ["Persuasion does not justify deception.", "A disclaimer does not make unsupported claims accurate.", "Evidence-based drafting preserves usefulness and responsible communication.", "Fabricated support compounds the problem."],
-    concept: "Responsible AI communication boundaries",
-    hints: ["What evidence supports the proposed public statements?", "Can the legitimate communication goal be met accurately?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-220", domain: guardrails,
-    prompt: "A team has too many low-value approval prompts and users approve them reflexively. What redesign is best?",
-    choices: ["Add another confirmation to every prompt", "Remove every approval, including destructive actions", "Make prompts less specific to shorten reading time", "Consolidate low-risk authorized work and reserve clear gates for meaningful risk"],
-    correct: 3,
-    explanations: ["More repetitive prompts can worsen fatigue.", "High-impact actions still need appropriate controls.", "Vague prompts weaken informed decisions.", "Risk-focused gates improve attention without abandoning governance."],
-    concept: "Approval fatigue reduction",
-    hints: ["Which approvals materially change risk?", "Does the approver have enough specific information to decide?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-221", domain: guardrails,
-    prompt: "A compliance exception is granted for one task and expires tomorrow. What should the agent preserve?",
-    choices: ["The exception's owner, scope, expiration, and evidence reference", "Only the word approved", "A permanent global exemption", "The approver's credentials"],
-    correct: 0,
-    explanations: ["Bounded exception metadata prevents later misuse.", "A bare approval loses important limits.", "A temporary task exception is not global policy.", "Credentials are not part of an authorization record."],
-    concept: "Auditable policy exceptions",
-    hints: ["What prevents future tasks from reusing the exception incorrectly?", "Which limits define the actual permission?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-222", domain: guardrails,
-    prompt: "An agent's environment can access unrelated internal services. What should a least-privilege review assess?",
-    choices: ["Only the tools shown in chat", "Network reachability, credentials, filesystem access, and exposed tools together", "Only whether the agent's name is descriptive", "Only the number of required reviewers"],
-    correct: 1,
-    explanations: ["Visible tools are only one part of effective authority.", "Effective capability spans several enforcement layers.", "Naming does not constrain access.", "Review count does not define runtime reachability."],
-    concept: "Effective execution authority",
-    hints: ["What can the runtime reach outside the advertised tool list?", "Which layers could enforce a narrower boundary?"],
-    source: design,
-  },
-  {
-    id: "agentic-223", domain: guardrails,
-    prompt: "An organization disables a high-risk agent capability during an incident. What should happen to already active runs?",
-    choices: ["Assume they automatically adopted the change", "Let them finish every pending write", "Verify enforcement for active runs and suspend or revoke capability where needed", "Delete the policy change record"],
-    correct: 2,
-    explanations: ["Policy propagation to active execution must not be assumed.", "Pending writes may retain the same incident risk.", "Containment requires checking effective authority, not only saved configuration.", "The change record supports incident accountability."],
-    concept: "Active-run policy containment",
-    hints: ["Do in-flight processes still hold credentials or queued actions?", "What evidence proves the restriction is effective now?"],
-    source: blueprint,
-  },
-  {
-    id: "agentic-224", domain: guardrails,
-    prompt: "An agent recommends waiving a security check because its historical success rate is high. What is the appropriate decision principle?",
-    choices: ["Trust history over the current change", "Let the agent grant the waiver", "Replace the check with a confidence threshold", "Use an authorized exception process based on this change's evidence and risk"],
-    correct: 3,
-    explanations: ["Historical performance does not validate current risk.", "Self-waivers undermine independent control.", "Confidence is not equivalent to a security check.", "Exceptions require accountable judgment and scoped evidence."],
-    concept: "Evidence-based control exceptions",
-    hints: ["Does past performance establish that this change is safe?", "Who is authorized to accept the remaining risk?"],
-    source: contributor,
-  },
-  {
-    id: "agentic-225", domain: guardrails,
-    prompt: "An organization wants to expand agents from drafting PRs to modifying production settings. What should precede that expansion?",
-    choices: ["A risk review, explicit authority, enforced boundaries, evaluation evidence, and recovery design", "Only a larger execution budget", "Only renaming the agent production-ready", "Only confirmation that it can call the settings API"],
-    correct: 0,
-    explanations: ["Production autonomy requires a demonstrated and governed execution path.", "Budget does not establish safety or permission.", "A label is not operational readiness.", "Technical capability alone does not authorize consequential changes."],
-    concept: "Readiness for consequential autonomy",
-    hints: ["What changes when proposed work becomes direct production impact?", "Which evidence and controls support that new responsibility?"],
-    source: blueprint,
-  },
+    {
+        "id": "agentic-001",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A release team asks an agent to improve deployment reliability but has not named a release stage or measurable outcome. What should the owner define before delegating the work?",
+        "choices": [
+            "Set scope, inputs, deliverable, and acceptance criteria.",
+            "Set a measurable goal and deadline; let the agent choose scope.",
+            "Name target files and tools, but leave completion implicit.",
+            "Specify a test result without limits on adjacent changes."
+        ],
+        "correct": 0,
+        "explanations": [
+            "These elements make scope and completion assessable before work begins.",
+            "A target and deadline still leave the agent to choose work outside scope.",
+            "Named files do not tell reviewers what evidence means the task is done.",
+            "A test result alone does not prevent unrelated edits from expanding scope."
+        ],
+        "concept": "Bounded task contracts",
+        "hints": [
+            "Which details let a reviewer recognize completion without guessing?",
+            "How can the assignment be bounded without blocking routine, reversible work?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-002",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A documentation agent is asked to update onboarding guidance across several repositories with different owners. What should the owner define before delegating the work?",
+        "choices": [
+            "Specify a test result without limits on adjacent changes.",
+            "Set scope, inputs, deliverable, and acceptance criteria.",
+            "Set a measurable goal and deadline; let the agent choose scope.",
+            "Name target files and tools, but leave completion implicit."
+        ],
+        "correct": 1,
+        "explanations": [
+            "A test result alone does not prevent unrelated edits from expanding scope.",
+            "These elements make scope and completion assessable before work begins.",
+            "A target and deadline still leave the agent to choose work outside scope.",
+            "Named files do not tell reviewers what evidence means the task is done."
+        ],
+        "concept": "Bounded task contracts",
+        "hints": [
+            "Which details let a reviewer recognize completion without guessing?",
+            "How can the assignment be bounded without blocking routine, reversible work?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-003",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A code agent receives a request to modernize a service without a list of supported runtime versions or expected deliverables. What should the owner define before delegating the work?",
+        "choices": [
+            "Name target files and tools, but leave completion implicit.",
+            "Specify a test result without limits on adjacent changes.",
+            "Set scope, inputs, deliverable, and acceptance criteria.",
+            "Set a measurable goal and deadline; let the agent choose scope."
+        ],
+        "correct": 2,
+        "explanations": [
+            "Named files do not tell reviewers what evidence means the task is done.",
+            "A test result alone does not prevent unrelated edits from expanding scope.",
+            "These elements make scope and completion assessable before work begins.",
+            "A target and deadline still leave the agent to choose work outside scope."
+        ],
+        "concept": "Bounded task contracts",
+        "hints": [
+            "Which details let a reviewer recognize completion without guessing?",
+            "How can the assignment be bounded without blocking routine, reversible work?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-004",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A team delegates a flaky-test investigation, but the request mixes diagnosis, test rewrites, and unrelated cleanup. What should the owner define before delegating the work?",
+        "choices": [
+            "Set a measurable goal and deadline; let the agent choose scope.",
+            "Name target files and tools, but leave completion implicit.",
+            "Specify a test result without limits on adjacent changes.",
+            "Set scope, inputs, deliverable, and acceptance criteria."
+        ],
+        "correct": 3,
+        "explanations": [
+            "A target and deadline still leave the agent to choose work outside scope.",
+            "Named files do not tell reviewers what evidence means the task is done.",
+            "A test result alone does not prevent unrelated edits from expanding scope.",
+            "These elements make scope and completion assessable before work begins."
+        ],
+        "concept": "Bounded task contracts",
+        "hints": [
+            "Which details let a reviewer recognize completion without guessing?",
+            "How can the assignment be bounded without blocking routine, reversible work?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-005",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A migration assistant must prepare a proposal for a database change, while the team has not decided whether implementation is in scope. What should the owner define before delegating the work?",
+        "choices": [
+            "Set scope, inputs, deliverable, and acceptance criteria.",
+            "Set a measurable goal and deadline; let the agent choose scope.",
+            "Name target files and tools, but leave completion implicit.",
+            "Specify a test result without limits on adjacent changes."
+        ],
+        "correct": 0,
+        "explanations": [
+            "These elements make scope and completion assessable before work begins.",
+            "A target and deadline still leave the agent to choose work outside scope.",
+            "Named files do not tell reviewers what evidence means the task is done.",
+            "A test result alone does not prevent unrelated edits from expanding scope."
+        ],
+        "concept": "Bounded task contracts",
+        "hints": [
+            "Which details let a reviewer recognize completion without guessing?",
+            "How can the assignment be bounded without blocking routine, reversible work?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-006",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A product team asks an agent to resolve customer-reported defects across a shared codebase without defining ownership boundaries. What should the owner define before delegating the work?",
+        "choices": [
+            "Specify a test result without limits on adjacent changes.",
+            "Set scope, inputs, deliverable, and acceptance criteria.",
+            "Set a measurable goal and deadline; let the agent choose scope.",
+            "Name target files and tools, but leave completion implicit."
+        ],
+        "correct": 1,
+        "explanations": [
+            "A test result alone does not prevent unrelated edits from expanding scope.",
+            "These elements make scope and completion assessable before work begins.",
+            "A target and deadline still leave the agent to choose work outside scope.",
+            "Named files do not tell reviewers what evidence means the task is done."
+        ],
+        "concept": "Bounded task contracts",
+        "hints": [
+            "Which details let a reviewer recognize completion without guessing?",
+            "How can the assignment be bounded without blocking routine, reversible work?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-007",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A build agent is assigned to reduce CI duration, but the team has not specified a baseline, target, or permitted workflow changes. What should the owner define before delegating the work?",
+        "choices": [
+            "Name target files and tools, but leave completion implicit.",
+            "Specify a test result without limits on adjacent changes.",
+            "Set scope, inputs, deliverable, and acceptance criteria.",
+            "Set a measurable goal and deadline; let the agent choose scope."
+        ],
+        "correct": 2,
+        "explanations": [
+            "Named files do not tell reviewers what evidence means the task is done.",
+            "A test result alone does not prevent unrelated edits from expanding scope.",
+            "These elements make scope and completion assessable before work begins.",
+            "A target and deadline still leave the agent to choose work outside scope."
+        ],
+        "concept": "Bounded task contracts",
+        "hints": [
+            "Which details let a reviewer recognize completion without guessing?",
+            "How can the assignment be bounded without blocking routine, reversible work?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-008",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A refactoring request covers a large package, while only one module has approved behavioral requirements. What should the owner define before delegating the work?",
+        "choices": [
+            "Set a measurable goal and deadline; let the agent choose scope.",
+            "Name target files and tools, but leave completion implicit.",
+            "Specify a test result without limits on adjacent changes.",
+            "Set scope, inputs, deliverable, and acceptance criteria."
+        ],
+        "correct": 3,
+        "explanations": [
+            "A target and deadline still leave the agent to choose work outside scope.",
+            "Named files do not tell reviewers what evidence means the task is done.",
+            "A test result alone does not prevent unrelated edits from expanding scope.",
+            "These elements make scope and completion assessable before work begins."
+        ],
+        "concept": "Bounded task contracts",
+        "hints": [
+            "Which details let a reviewer recognize completion without guessing?",
+            "How can the assignment be bounded without blocking routine, reversible work?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-009",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A team wants an agent to improve accessibility but has not chosen pages, checks, or an acceptance standard. What should the owner define before delegating the work?",
+        "choices": [
+            "Set scope, inputs, deliverable, and acceptance criteria.",
+            "Set a measurable goal and deadline; let the agent choose scope.",
+            "Name target files and tools, but leave completion implicit.",
+            "Specify a test result without limits on adjacent changes."
+        ],
+        "correct": 0,
+        "explanations": [
+            "These elements make scope and completion assessable before work begins.",
+            "A target and deadline still leave the agent to choose work outside scope.",
+            "Named files do not tell reviewers what evidence means the task is done.",
+            "A test result alone does not prevent unrelated edits from expanding scope."
+        ],
+        "concept": "Bounded task contracts",
+        "hints": [
+            "Which details let a reviewer recognize completion without guessing?",
+            "How can the assignment be bounded without blocking routine, reversible work?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-010",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A maintenance agent is told to fix every issue it finds during a dependency update, including discoveries outside the assigned package. What should the owner define before delegating the work?",
+        "choices": [
+            "Specify a test result without limits on adjacent changes.",
+            "Set scope, inputs, deliverable, and acceptance criteria.",
+            "Set a measurable goal and deadline; let the agent choose scope.",
+            "Name target files and tools, but leave completion implicit."
+        ],
+        "correct": 1,
+        "explanations": [
+            "A test result alone does not prevent unrelated edits from expanding scope.",
+            "These elements make scope and completion assessable before work begins.",
+            "A target and deadline still leave the agent to choose work outside scope.",
+            "Named files do not tell reviewers what evidence means the task is done."
+        ],
+        "concept": "Bounded task contracts",
+        "hints": [
+            "Which details let a reviewer recognize completion without guessing?",
+            "How can the assignment be bounded without blocking routine, reversible work?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-011",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "An agent will draft an API deprecation plan, but the task owner has not identified consumers or a reviewable proposal format. What should the owner define before delegating the work?",
+        "choices": [
+            "Name target files and tools, but leave completion implicit.",
+            "Specify a test result without limits on adjacent changes.",
+            "Set scope, inputs, deliverable, and acceptance criteria.",
+            "Set a measurable goal and deadline; let the agent choose scope."
+        ],
+        "correct": 2,
+        "explanations": [
+            "Named files do not tell reviewers what evidence means the task is done.",
+            "A test result alone does not prevent unrelated edits from expanding scope.",
+            "These elements make scope and completion assessable before work begins.",
+            "A target and deadline still leave the agent to choose work outside scope."
+        ],
+        "concept": "Bounded task contracts",
+        "hints": [
+            "Which details let a reviewer recognize completion without guessing?",
+            "How can the assignment be bounded without blocking routine, reversible work?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-012",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A test-generation assignment spans a service with several test frameworks and no agreed validation command. What should the owner define before delegating the work?",
+        "choices": [
+            "Set a measurable goal and deadline; let the agent choose scope.",
+            "Name target files and tools, but leave completion implicit.",
+            "Specify a test result without limits on adjacent changes.",
+            "Set scope, inputs, deliverable, and acceptance criteria."
+        ],
+        "correct": 3,
+        "explanations": [
+            "A target and deadline still leave the agent to choose work outside scope.",
+            "Named files do not tell reviewers what evidence means the task is done.",
+            "A test result alone does not prevent unrelated edits from expanding scope.",
+            "These elements make scope and completion assessable before work begins."
+        ],
+        "concept": "Bounded task contracts",
+        "hints": [
+            "Which details let a reviewer recognize completion without guessing?",
+            "How can the assignment be bounded without blocking routine, reversible work?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-013",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A compliance-sensitive code change must not begin until reviewers accept the intended files and validation steps. Which workflow best enforces the required planning boundary?",
+        "choices": [
+            "Separate a read-only plan from edits; enable execution after review.",
+            "Combine plan and edits in one PR; require review only before merging.",
+            "Keep write access enabled and instruct the agent to wait for review.",
+            "Allow branch edits while keeping the default branch protected."
+        ],
+        "correct": 0,
+        "explanations": [
+            "Capability separation makes approval a real gate before repository changes.",
+            "A combined PR allows implementation before the plan is approved.",
+            "Instructions do not technically remove an available write capability.",
+            "Branch protection governs merging, not edits on the feature branch."
+        ],
+        "concept": "Plan and execution boundaries",
+        "hints": [
+            "The constraint applies before implementation, not just before merging.",
+            "Which control removes the ability to cross the boundary prematurely?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/4-plan-reason-execution"
+    },
+    {
+        "id": "agentic-014",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "An agent must propose a permissions redesign before it is allowed to modify policy files. Which workflow best enforces the required planning boundary?",
+        "choices": [
+            "Allow branch edits while keeping the default branch protected.",
+            "Separate a read-only plan from edits; enable execution after review.",
+            "Combine plan and edits in one PR; require review only before merging.",
+            "Keep write access enabled and instruct the agent to wait for review."
+        ],
+        "correct": 1,
+        "explanations": [
+            "Branch protection governs merging, not edits on the feature branch.",
+            "Capability separation makes approval a real gate before repository changes.",
+            "A combined PR allows implementation before the plan is approved.",
+            "Instructions do not technically remove an available write capability."
+        ],
+        "concept": "Plan and execution boundaries",
+        "hints": [
+            "The constraint applies before implementation, not just before merging.",
+            "Which control removes the ability to cross the boundary prematurely?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/4-plan-reason-execution"
+    },
+    {
+        "id": "agentic-015",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A team wants a visible plan review for a release-script change before any branch receives implementation commits. Which workflow best enforces the required planning boundary?",
+        "choices": [
+            "Keep write access enabled and instruct the agent to wait for review.",
+            "Allow branch edits while keeping the default branch protected.",
+            "Separate a read-only plan from edits; enable execution after review.",
+            "Combine plan and edits in one PR; require review only before merging."
+        ],
+        "correct": 2,
+        "explanations": [
+            "Instructions do not technically remove an available write capability.",
+            "Branch protection governs merging, not edits on the feature branch.",
+            "Capability separation makes approval a real gate before repository changes.",
+            "A combined PR allows implementation before the plan is approved."
+        ],
+        "concept": "Plan and execution boundaries",
+        "hints": [
+            "The constraint applies before implementation, not just before merging.",
+            "Which control removes the ability to cross the boundary prematurely?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/4-plan-reason-execution"
+    },
+    {
+        "id": "agentic-016",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A repository migration needs owner approval of the sequence and rollback approach before files are changed. Which workflow best enforces the required planning boundary?",
+        "choices": [
+            "Combine plan and edits in one PR; require review only before merging.",
+            "Keep write access enabled and instruct the agent to wait for review.",
+            "Allow branch edits while keeping the default branch protected.",
+            "Separate a read-only plan from edits; enable execution after review."
+        ],
+        "correct": 3,
+        "explanations": [
+            "A combined PR allows implementation before the plan is approved.",
+            "Instructions do not technically remove an available write capability.",
+            "Branch protection governs merging, not edits on the feature branch.",
+            "Capability separation makes approval a real gate before repository changes."
+        ],
+        "concept": "Plan and execution boundaries",
+        "hints": [
+            "The constraint applies before implementation, not just before merging.",
+            "Which control removes the ability to cross the boundary prematurely?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/4-plan-reason-execution"
+    },
+    {
+        "id": "agentic-017",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A code-generation task permits edits in a sandbox but requires approval before proposed changes are copied into a protected repository. Which workflow best enforces the required planning boundary?",
+        "choices": [
+            "Separate a read-only plan from edits; enable execution after review.",
+            "Combine plan and edits in one PR; require review only before merging.",
+            "Keep write access enabled and instruct the agent to wait for review.",
+            "Allow branch edits while keeping the default branch protected."
+        ],
+        "correct": 0,
+        "explanations": [
+            "Capability separation makes approval a real gate before repository changes.",
+            "A combined PR allows implementation before the plan is approved.",
+            "Instructions do not technically remove an available write capability.",
+            "Branch protection governs merging, not edits on the feature branch."
+        ],
+        "concept": "Plan and execution boundaries",
+        "hints": [
+            "The constraint applies before implementation, not just before merging.",
+            "Which control removes the ability to cross the boundary prematurely?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/4-plan-reason-execution"
+    },
+    {
+        "id": "agentic-018",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "An agent's first attempt misunderstood a schema change; the team wants to validate its revised approach before implementation resumes. Which workflow best enforces the required planning boundary?",
+        "choices": [
+            "Allow branch edits while keeping the default branch protected.",
+            "Separate a read-only plan from edits; enable execution after review.",
+            "Combine plan and edits in one PR; require review only before merging.",
+            "Keep write access enabled and instruct the agent to wait for review."
+        ],
+        "correct": 1,
+        "explanations": [
+            "Branch protection governs merging, not edits on the feature branch.",
+            "Capability separation makes approval a real gate before repository changes.",
+            "A combined PR allows implementation before the plan is approved.",
+            "Instructions do not technically remove an available write capability."
+        ],
+        "concept": "Plan and execution boundaries",
+        "hints": [
+            "The constraint applies before implementation, not just before merging.",
+            "Which control removes the ability to cross the boundary prematurely?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/4-plan-reason-execution"
+    },
+    {
+        "id": "agentic-019",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "Reviewers must see how a proposed data-model change affects compatibility before implementation begins. Which workflow best enforces the required planning boundary?",
+        "choices": [
+            "Keep write access enabled and instruct the agent to wait for review.",
+            "Allow branch edits while keeping the default branch protected.",
+            "Separate a read-only plan from edits; enable execution after review.",
+            "Combine plan and edits in one PR; require review only before merging."
+        ],
+        "correct": 2,
+        "explanations": [
+            "Instructions do not technically remove an available write capability.",
+            "Branch protection governs merging, not edits on the feature branch.",
+            "Capability separation makes approval a real gate before repository changes.",
+            "A combined PR allows implementation before the plan is approved."
+        ],
+        "concept": "Plan and execution boundaries",
+        "hints": [
+            "The constraint applies before implementation, not just before merging.",
+            "Which control removes the ability to cross the boundary prematurely?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/4-plan-reason-execution"
+    },
+    {
+        "id": "agentic-020",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A team requires design approval before an agent edits files that control identity-provider configuration. Which workflow best enforces the required planning boundary?",
+        "choices": [
+            "Combine plan and edits in one PR; require review only before merging.",
+            "Keep write access enabled and instruct the agent to wait for review.",
+            "Allow branch edits while keeping the default branch protected.",
+            "Separate a read-only plan from edits; enable execution after review."
+        ],
+        "correct": 3,
+        "explanations": [
+            "A combined PR allows implementation before the plan is approved.",
+            "Instructions do not technically remove an available write capability.",
+            "Branch protection governs merging, not edits on the feature branch.",
+            "Capability separation makes approval a real gate before repository changes."
+        ],
+        "concept": "Plan and execution boundaries",
+        "hints": [
+            "The constraint applies before implementation, not just before merging.",
+            "Which control removes the ability to cross the boundary prematurely?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/4-plan-reason-execution"
+    },
+    {
+        "id": "agentic-021",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A high-impact build-system refactor can be explored, but maintainers require a reviewed plan before repository changes. Which workflow best enforces the required planning boundary?",
+        "choices": [
+            "Separate a read-only plan from edits; enable execution after review.",
+            "Combine plan and edits in one PR; require review only before merging.",
+            "Keep write access enabled and instruct the agent to wait for review.",
+            "Allow branch edits while keeping the default branch protected."
+        ],
+        "correct": 0,
+        "explanations": [
+            "Capability separation makes approval a real gate before repository changes.",
+            "A combined PR allows implementation before the plan is approved.",
+            "Instructions do not technically remove an available write capability.",
+            "Branch protection governs merging, not edits on the feature branch."
+        ],
+        "concept": "Plan and execution boundaries",
+        "hints": [
+            "The constraint applies before implementation, not just before merging.",
+            "Which control removes the ability to cross the boundary prematurely?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/4-plan-reason-execution"
+    },
+    {
+        "id": "agentic-022",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A team wants the agent to research options now while reserving all implementation authority for a later approval. Which workflow best enforces the required planning boundary?",
+        "choices": [
+            "Allow branch edits while keeping the default branch protected.",
+            "Separate a read-only plan from edits; enable execution after review.",
+            "Combine plan and edits in one PR; require review only before merging.",
+            "Keep write access enabled and instruct the agent to wait for review."
+        ],
+        "correct": 1,
+        "explanations": [
+            "Branch protection governs merging, not edits on the feature branch.",
+            "Capability separation makes approval a real gate before repository changes.",
+            "A combined PR allows implementation before the plan is approved.",
+            "Instructions do not technically remove an available write capability."
+        ],
+        "concept": "Plan and execution boundaries",
+        "hints": [
+            "The constraint applies before implementation, not just before merging.",
+            "Which control removes the ability to cross the boundary prematurely?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/4-plan-reason-execution"
+    },
+    {
+        "id": "agentic-023",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A security reviewer must be able to reject an unsafe implementation path before the agent writes production-bound code. Which workflow best enforces the required planning boundary?",
+        "choices": [
+            "Keep write access enabled and instruct the agent to wait for review.",
+            "Allow branch edits while keeping the default branch protected.",
+            "Separate a read-only plan from edits; enable execution after review.",
+            "Combine plan and edits in one PR; require review only before merging."
+        ],
+        "correct": 2,
+        "explanations": [
+            "Instructions do not technically remove an available write capability.",
+            "Branch protection governs merging, not edits on the feature branch.",
+            "Capability separation makes approval a real gate before repository changes.",
+            "A combined PR allows implementation before the plan is approved."
+        ],
+        "concept": "Plan and execution boundaries",
+        "hints": [
+            "The constraint applies before implementation, not just before merging.",
+            "Which control removes the ability to cross the boundary prematurely?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/4-plan-reason-execution"
+    },
+    {
+        "id": "agentic-024",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "An agent may prepare a test plan automatically, but changing a data-retention rule requires a separate decision. Which workflow best enforces the required planning boundary?",
+        "choices": [
+            "Combine plan and edits in one PR; require review only before merging.",
+            "Keep write access enabled and instruct the agent to wait for review.",
+            "Allow branch edits while keeping the default branch protected.",
+            "Separate a read-only plan from edits; enable execution after review."
+        ],
+        "correct": 3,
+        "explanations": [
+            "A combined PR allows implementation before the plan is approved.",
+            "Instructions do not technically remove an available write capability.",
+            "Branch protection governs merging, not edits on the feature branch.",
+            "Capability separation makes approval a real gate before repository changes."
+        ],
+        "concept": "Plan and execution boundaries",
+        "hints": [
+            "The constraint applies before implementation, not just before merging.",
+            "Which control removes the ability to cross the boundary prematurely?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/4-plan-reason-execution"
+    },
+    {
+        "id": "agentic-025",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "The test job writes report.json under results/, but its logs may expire. Its step is:\n- name: Upload test results\n  uses: actions/upload-artifact@v4\n  with:\n    name: test-results\n    path: results/\n\nWhich evidence best supports later review of this run?",
+        "choices": [
+            "Link the run and its uploaded test-results artifact for this revision.",
+            "Link only results/; the runner path remains after the job ends.",
+            "Link the newest artifact, even if it tested another revision.",
+            "Link action logs but omit the separately uploaded test report."
+        ],
+        "correct": 0,
+        "explanations": [
+            "The run and its artifact connect the report to the revision that produced it.",
+            "A runner-local path does not give reviewers a durable workflow artifact.",
+            "Evidence from another revision cannot establish this revision's test result.",
+            "Logs are useful context, but they do not replace the uploaded report."
+        ],
+        "concept": "Workflow artifact evidence",
+        "hints": [
+            "Match the report to the run and revision that produced it.",
+            "Will a reviewer still be able to retrieve the report after the job ends?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-026",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A release candidate was created by an agent, and maintainers need a durable record of the checks that ran. What should the workflow retain so the outcome can be reviewed and reproduced?",
+        "choices": [
+            "Record the PR and approval, but omit test results and failed attempts.",
+            "Link the approved plan, scoped PR, validation results, and review decision.",
+            "Link the full diff and passing checks, but omit the plan that set scope.",
+            "Link logs and artifact names, but omit the PR and review decision."
+        ],
+        "correct": 1,
+        "explanations": [
+            "Without test outcomes and failed attempts, reviewers lack validation evidence.",
+            "Linked artifacts connect intent to changes and evidence that reviewers can inspect.",
+            "The plan is missing, so reviewers cannot compare intent with implementation.",
+            "Logs and artifact names alone do not link the submitted change to review."
+        ],
+        "concept": "Inspectable SDLC artifacts",
+        "hints": [
+            "A reviewer needs evidence that survives after the agent session ends.",
+            "Which records connect the approved intent to the delivered change?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-027",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A long-running coding session may be handed to another maintainer who needs to understand approved scope and remaining work. What should the workflow retain so the outcome can be reviewed and reproduced?",
+        "choices": [
+            "Link logs and artifact names, but omit the PR and review decision.",
+            "Record the PR and approval, but omit test results and failed attempts.",
+            "Link the approved plan, scoped PR, validation results, and review decision.",
+            "Link the full diff and passing checks, but omit the plan that set scope."
+        ],
+        "correct": 2,
+        "explanations": [
+            "Logs and artifact names alone do not link the submitted change to review.",
+            "Without test outcomes and failed attempts, reviewers lack validation evidence.",
+            "Linked artifacts connect intent to changes and evidence that reviewers can inspect.",
+            "The plan is missing, so reviewers cannot compare intent with implementation."
+        ],
+        "concept": "Inspectable SDLC artifacts",
+        "hints": [
+            "A reviewer needs evidence that survives after the agent session ends.",
+            "Which records connect the approved intent to the delivered change?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-028",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A post-incident review asks which agent changes were tested before a configuration update was merged. What should the workflow retain so the outcome can be reviewed and reproduced?",
+        "choices": [
+            "Link the full diff and passing checks, but omit the plan that set scope.",
+            "Link logs and artifact names, but omit the PR and review decision.",
+            "Record the PR and approval, but omit test results and failed attempts.",
+            "Link the approved plan, scoped PR, validation results, and review decision."
+        ],
+        "correct": 3,
+        "explanations": [
+            "The plan is missing, so reviewers cannot compare intent with implementation.",
+            "Logs and artifact names alone do not link the submitted change to review.",
+            "Without test outcomes and failed attempts, reviewers lack validation evidence.",
+            "Linked artifacts connect intent to changes and evidence that reviewers can inspect."
+        ],
+        "concept": "Inspectable SDLC artifacts",
+        "hints": [
+            "A reviewer needs evidence that survives after the agent session ends.",
+            "Which records connect the approved intent to the delivered change?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-029",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A team wants to compare an agent's proposed database migration with the checks and review decisions attached to its change. What should the workflow retain so the outcome can be reviewed and reproduced?",
+        "choices": [
+            "Link the approved plan, scoped PR, validation results, and review decision.",
+            "Link the full diff and passing checks, but omit the plan that set scope.",
+            "Link logs and artifact names, but omit the PR and review decision.",
+            "Record the PR and approval, but omit test results and failed attempts."
+        ],
+        "correct": 0,
+        "explanations": [
+            "Linked artifacts connect intent to changes and evidence that reviewers can inspect.",
+            "The plan is missing, so reviewers cannot compare intent with implementation.",
+            "Logs and artifact names alone do not link the submitted change to review.",
+            "Without test outcomes and failed attempts, reviewers lack validation evidence."
+        ],
+        "concept": "Inspectable SDLC artifacts",
+        "hints": [
+            "A reviewer needs evidence that survives after the agent session ends.",
+            "Which records connect the approved intent to the delivered change?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-030",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "An agent's branch passes locally, but release owners need evidence that required repository checks ran on the submitted revision. What should the workflow retain so the outcome can be reviewed and reproduced?",
+        "choices": [
+            "Record the PR and approval, but omit test results and failed attempts.",
+            "Link the approved plan, scoped PR, validation results, and review decision.",
+            "Link the full diff and passing checks, but omit the plan that set scope.",
+            "Link logs and artifact names, but omit the PR and review decision."
+        ],
+        "correct": 1,
+        "explanations": [
+            "Without test outcomes and failed attempts, reviewers lack validation evidence.",
+            "Linked artifacts connect intent to changes and evidence that reviewers can inspect.",
+            "The plan is missing, so reviewers cannot compare intent with implementation.",
+            "Logs and artifact names alone do not link the submitted change to review."
+        ],
+        "concept": "Inspectable SDLC artifacts",
+        "hints": [
+            "A reviewer needs evidence that survives after the agent session ends.",
+            "Which records connect the approved intent to the delivered change?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-031",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A team is investigating a repeated agent failure and needs to connect attempted recovery to the resulting code change. What should the workflow retain so the outcome can be reviewed and reproduced?",
+        "choices": [
+            "Link logs and artifact names, but omit the PR and review decision.",
+            "Record the PR and approval, but omit test results and failed attempts.",
+            "Link the approved plan, scoped PR, validation results, and review decision.",
+            "Link the full diff and passing checks, but omit the plan that set scope."
+        ],
+        "correct": 2,
+        "explanations": [
+            "Logs and artifact names alone do not link the submitted change to review.",
+            "Without test outcomes and failed attempts, reviewers lack validation evidence.",
+            "Linked artifacts connect intent to changes and evidence that reviewers can inspect.",
+            "The plan is missing, so reviewers cannot compare intent with implementation."
+        ],
+        "concept": "Inspectable SDLC artifacts",
+        "hints": [
+            "A reviewer needs evidence that survives after the agent session ends.",
+            "Which records connect the approved intent to the delivered change?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-032",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A regulated workflow needs reviewers to see what was authorized, what changed, and which validation completed. What should the workflow retain so the outcome can be reviewed and reproduced?",
+        "choices": [
+            "Link the full diff and passing checks, but omit the plan that set scope.",
+            "Link logs and artifact names, but omit the PR and review decision.",
+            "Record the PR and approval, but omit test results and failed attempts.",
+            "Link the approved plan, scoped PR, validation results, and review decision."
+        ],
+        "correct": 3,
+        "explanations": [
+            "The plan is missing, so reviewers cannot compare intent with implementation.",
+            "Logs and artifact names alone do not link the submitted change to review.",
+            "Without test outcomes and failed attempts, reviewers lack validation evidence.",
+            "Linked artifacts connect intent to changes and evidence that reviewers can inspect."
+        ],
+        "concept": "Inspectable SDLC artifacts",
+        "hints": [
+            "A reviewer needs evidence that survives after the agent session ends.",
+            "Which records connect the approved intent to the delivered change?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-033",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A maintainer receives an agent-authored fix after the original session expired and must assess its scope independently. What should the workflow retain so the outcome can be reviewed and reproduced?",
+        "choices": [
+            "Link the approved plan, scoped PR, validation results, and review decision.",
+            "Link the full diff and passing checks, but omit the plan that set scope.",
+            "Link logs and artifact names, but omit the PR and review decision.",
+            "Record the PR and approval, but omit test results and failed attempts."
+        ],
+        "correct": 0,
+        "explanations": [
+            "Linked artifacts connect intent to changes and evidence that reviewers can inspect.",
+            "The plan is missing, so reviewers cannot compare intent with implementation.",
+            "Logs and artifact names alone do not link the submitted change to review.",
+            "Without test outcomes and failed attempts, reviewers lack validation evidence."
+        ],
+        "concept": "Inspectable SDLC artifacts",
+        "hints": [
+            "A reviewer needs evidence that survives after the agent session ends.",
+            "Which records connect the approved intent to the delivered change?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-034",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A team needs to distinguish an approved plan from later changes proposed during implementation. What should the workflow retain so the outcome can be reviewed and reproduced?",
+        "choices": [
+            "Record the PR and approval, but omit test results and failed attempts.",
+            "Link the approved plan, scoped PR, validation results, and review decision.",
+            "Link the full diff and passing checks, but omit the plan that set scope.",
+            "Link logs and artifact names, but omit the PR and review decision."
+        ],
+        "correct": 1,
+        "explanations": [
+            "Without test outcomes and failed attempts, reviewers lack validation evidence.",
+            "Linked artifacts connect intent to changes and evidence that reviewers can inspect.",
+            "The plan is missing, so reviewers cannot compare intent with implementation.",
+            "Logs and artifact names alone do not link the submitted change to review."
+        ],
+        "concept": "Inspectable SDLC artifacts",
+        "hints": [
+            "A reviewer needs evidence that survives after the agent session ends.",
+            "Which records connect the approved intent to the delivered change?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-035",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A production defect fix requires evidence that regression tests covered the stated failure mode. What should the workflow retain so the outcome can be reviewed and reproduced?",
+        "choices": [
+            "Link logs and artifact names, but omit the PR and review decision.",
+            "Record the PR and approval, but omit test results and failed attempts.",
+            "Link the approved plan, scoped PR, validation results, and review decision.",
+            "Link the full diff and passing checks, but omit the plan that set scope."
+        ],
+        "correct": 2,
+        "explanations": [
+            "Logs and artifact names alone do not link the submitted change to review.",
+            "Without test outcomes and failed attempts, reviewers lack validation evidence.",
+            "Linked artifacts connect intent to changes and evidence that reviewers can inspect.",
+            "The plan is missing, so reviewers cannot compare intent with implementation."
+        ],
+        "concept": "Inspectable SDLC artifacts",
+        "hints": [
+            "A reviewer needs evidence that survives after the agent session ends.",
+            "Which records connect the approved intent to the delivered change?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-036",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A team must hand off a partially completed patch without losing which checks failed and which remain unrun. What should the workflow retain so the outcome can be reviewed and reproduced?",
+        "choices": [
+            "Link the full diff and passing checks, but omit the plan that set scope.",
+            "Link logs and artifact names, but omit the PR and review decision.",
+            "Record the PR and approval, but omit test results and failed attempts.",
+            "Link the approved plan, scoped PR, validation results, and review decision."
+        ],
+        "correct": 3,
+        "explanations": [
+            "The plan is missing, so reviewers cannot compare intent with implementation.",
+            "Logs and artifact names alone do not link the submitted change to review.",
+            "Without test outcomes and failed attempts, reviewers lack validation evidence.",
+            "Linked artifacts connect intent to changes and evidence that reviewers can inspect."
+        ],
+        "concept": "Inspectable SDLC artifacts",
+        "hints": [
+            "A reviewer needs evidence that survives after the agent session ends.",
+            "Which records connect the approved intent to the delivered change?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-037",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A reviewer questions whether the final commit includes work outside the approved refactor proposal. What should the workflow retain so the outcome can be reviewed and reproduced?",
+        "choices": [
+            "Link the approved plan, scoped PR, validation results, and review decision.",
+            "Link the full diff and passing checks, but omit the plan that set scope.",
+            "Link logs and artifact names, but omit the PR and review decision.",
+            "Record the PR and approval, but omit test results and failed attempts."
+        ],
+        "correct": 0,
+        "explanations": [
+            "Linked artifacts connect intent to changes and evidence that reviewers can inspect.",
+            "The plan is missing, so reviewers cannot compare intent with implementation.",
+            "Logs and artifact names alone do not link the submitted change to review.",
+            "Without test outcomes and failed attempts, reviewers lack validation evidence."
+        ],
+        "concept": "Inspectable SDLC artifacts",
+        "hints": [
+            "A reviewer needs evidence that survives after the agent session ends.",
+            "Which records connect the approved intent to the delivered change?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-038",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A team needs a concise audit trail for an agent that made several approved, reversible changes across a feature branch. What should the workflow retain so the outcome can be reviewed and reproduced?",
+        "choices": [
+            "Record the PR and approval, but omit test results and failed attempts.",
+            "Link the approved plan, scoped PR, validation results, and review decision.",
+            "Link the full diff and passing checks, but omit the plan that set scope.",
+            "Link logs and artifact names, but omit the PR and review decision."
+        ],
+        "correct": 1,
+        "explanations": [
+            "Without test outcomes and failed attempts, reviewers lack validation evidence.",
+            "Linked artifacts connect intent to changes and evidence that reviewers can inspect.",
+            "The plan is missing, so reviewers cannot compare intent with implementation.",
+            "Logs and artifact names alone do not link the submitted change to review."
+        ],
+        "concept": "Inspectable SDLC artifacts",
+        "hints": [
+            "A reviewer needs evidence that survives after the agent session ends.",
+            "Which records connect the approved intent to the delivered change?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-039",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A flaky validation run was retried, and the task owner needs to distinguish the first failure from the successful rerun. What should the workflow retain so the outcome can be reviewed and reproduced?",
+        "choices": [
+            "Link logs and artifact names, but omit the PR and review decision.",
+            "Record the PR and approval, but omit test results and failed attempts.",
+            "Link the approved plan, scoped PR, validation results, and review decision.",
+            "Link the full diff and passing checks, but omit the plan that set scope."
+        ],
+        "correct": 2,
+        "explanations": [
+            "Logs and artifact names alone do not link the submitted change to review.",
+            "Without test outcomes and failed attempts, reviewers lack validation evidence.",
+            "Linked artifacts connect intent to changes and evidence that reviewers can inspect.",
+            "The plan is missing, so reviewers cannot compare intent with implementation."
+        ],
+        "concept": "Inspectable SDLC artifacts",
+        "hints": [
+            "A reviewer needs evidence that survives after the agent session ends.",
+            "Which records connect the approved intent to the delivered change?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-040",
+        "domain": "Prepare agent architecture and SDLC processes",
+        "prompt": "A cross-team change must show which owners reviewed the plan and which owners reviewed the resulting implementation. What should the workflow retain so the outcome can be reviewed and reproduced?",
+        "choices": [
+            "Link the full diff and passing checks, but omit the plan that set scope.",
+            "Link logs and artifact names, but omit the PR and review decision.",
+            "Record the PR and approval, but omit test results and failed attempts.",
+            "Link the approved plan, scoped PR, validation results, and review decision."
+        ],
+        "correct": 3,
+        "explanations": [
+            "The plan is missing, so reviewers cannot compare intent with implementation.",
+            "Logs and artifact names alone do not link the submitted change to review.",
+            "Without test outcomes and failed attempts, reviewers lack validation evidence.",
+            "Linked artifacts connect intent to changes and evidence that reviewers can inspect."
+        ],
+        "concept": "Inspectable SDLC artifacts",
+        "hints": [
+            "A reviewer needs evidence that survives after the agent session ends.",
+            "Which records connect the approved intent to the delivered change?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-041",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A cloud agent needs to summarize repository issues but must not mutate them. Which MCP configuration best matches the assignment?",
+        "choices": [
+            "Enable only the issue-listing and search tools needed for the summary",
+            "Enable the server's full tool set and ask the agent to avoid writes",
+            "Enable issue creation and editing, then review the activity afterward",
+            "Connect the full GitHub server with a read-only repository credential"
+        ],
+        "correct": 0,
+        "explanations": [
+            "A narrow read-oriented tool set grants the needed capability without unrelated write actions.",
+            "A behavioral instruction does not remove tools that can change repository state.",
+            "Review after the fact cannot prevent an unauthorized mutation.",
+            "A deployment integration adds irrelevant authority and does not provide issue context."
+        ],
+        "concept": "Selecting tools by least privilege",
+        "hints": [
+            "Which capabilities can complete the requested read-only work?",
+            "Would a prompt alone prevent a tool from writing?"
+        ],
+        "source": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/configure-mcp-servers"
+    },
+    {
+        "id": "agentic-042",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A CLI can discover MCP servers from an organization registry, but a team also wants to block unapproved servers. Which control should it verify?",
+        "choices": [
+            "Use a registry URL alone to block every server not listed there",
+            "Enforce the allowlist; use the registry for discovery",
+            "Limit registry discovery but leave server execution unrestricted",
+            "Approve server names in prompts and let users configure them locally"
+        ],
+        "correct": 1,
+        "explanations": [
+            "A registry supplies discovery information; it does not by itself establish the allowlist enforcement decision.",
+            "The allowlist is the policy boundary for permitted servers, distinct from where users discover them.",
+            "An agent description is not an administrative MCP policy.",
+            "A display name neither authenticates users nor enforces server access."
+        ],
+        "concept": "Distinguishing registries from allowlists",
+        "hints": [
+            "Separate server discovery from permission to run it.",
+            "Which control explicitly names permitted servers?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/3-model-context-protocol-servers-registries-allow-lists"
+    },
+    {
+        "id": "agentic-043",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "Repository MCP reads succeed, but a requested write returns an authorization error. The task allows no privilege expansion. What should the agent do?",
+        "choices": [
+            "Retry the same write until the service accepts it",
+            "Switch to a personal access token stored in the repository",
+            "Report the denial; continue only with authorized reads",
+            "Ask another connected server to perform the same write"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Repeated attempts do not correct an authorization denial and can create unsafe behavior.",
+            "Storing a personal token in the repository exposes credentials and circumvents the boundary.",
+            "The denial is a permission boundary; report it and avoid substituting a broader credential.",
+            "Using another server to evade the same restriction would violate the task's boundary."
+        ],
+        "concept": "Handling a permission denial",
+        "hints": [
+            "Was the failure transient, or did the service reject the requested authority?",
+            "Can the remaining task be completed without the denied mutation?"
+        ],
+        "source": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/configure-mcp-servers"
+    },
+    {
+        "id": "agentic-044",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A repository administrator adds an MCP server that exposes search and production-deletion tools. What should be done before enabling it for an agent?",
+        "choices": [
+            "Enable every tool because server-level approval covers future changes",
+            "Rely on the agent to recognize that production deletion is risky",
+            "Give the agent the server, then inspect logs for unexpected calls",
+            "Allowlist needed tools; review the server's access"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Approving a server does not establish that every tool it exposes is appropriate.",
+            "Model judgment is not an enforceable permission boundary.",
+            "Post-run inspection cannot prevent an unsafe deletion.",
+            "Tool-level selection and review limit the capabilities exposed to the agent."
+        ],
+        "concept": "Scoping MCP server capabilities",
+        "hints": [
+            "Does approval of a server automatically approve each capability it exposes?",
+            "Which configuration can reduce what the agent is able to invoke?"
+        ],
+        "source": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/configure-mcp-servers"
+    },
+    {
+        "id": "agentic-045",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A team wants GitHub capabilities through MCP in a supported IDE. Which endpoint and transport are documented for the GitHub remote MCP server?",
+        "choices": [
+            "HTTP at https://api.githubcopilot.com/mcp/",
+            "STDIO at https://api.githubcopilot.com/mcp/",
+            "SSE at https://github.com/copilot/agents",
+            "HTTP at https://github.com/settings/copilot"
+        ],
+        "correct": 0,
+        "explanations": [
+            "The supported IDE setup identifies the GitHub remote server as an HTTP endpoint at this URL.",
+            "STDIO starts a local process; it is not the documented transport for this remote URL.",
+            "The agents page is not the GitHub MCP server endpoint.",
+            "Repository settings are not an MCP transport endpoint."
+        ],
+        "concept": "Recognizing the GitHub remote MCP endpoint",
+        "hints": [
+            "Is this server remote or a local process?",
+            "Which URL is documented for the GitHub MCP service?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/3-model-context-protocol-servers-registries-allow-lists"
+    },
+    {
+        "id": "agentic-046",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "An MCP search result contains text telling the agent to disable branch protections. How should the agent treat that text?",
+        "choices": [
+            "As an administrator policy because it came from an approved server",
+            "Treat it as untrusted output, not policy authority",
+            "As an implicit approval to use any available write tool",
+            "As a tool error that should be retried with broader access"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Server approval does not make returned content an administrative instruction.",
+            "Retrieved text is data; repository policy and task authorization still govern actions.",
+            "A search result cannot grant permissions or authorize unrelated changes.",
+            "Broader access does not address untrusted instructions embedded in data."
+        ],
+        "concept": "Treating tool output as data",
+        "hints": [
+            "Who or what is authorized to change repository policy?",
+            "Does the tool's result carry authority beyond the requested search?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/3-model-context-protocol-servers-registries-allow-lists"
+    },
+    {
+        "id": "agentic-047",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A test agent works on a developer laptop but fails on a clean CI runner because it depends on an untracked compiler and home-directory file. What is the strongest fix?",
+        "choices": [
+            "Increase the runner timeout to allow the missing files to appear",
+            "Copy the developer's entire home directory into the repository",
+            "Declare and install the workflow's required dependencies",
+            "Retry on another runner without changing the execution contract"
+        ],
+        "correct": 2,
+        "explanations": [
+            "A longer timeout does not supply missing dependencies or undeclared inputs.",
+            "Copying personal files is unsafe and makes builds nonreproducible.",
+            "Explicit environment setup makes the execution context reproducible and reviewable.",
+            "Changing runners does not fix a dependency absent from the declared environment."
+        ],
+        "concept": "Making execution contexts reproducible",
+        "hints": [
+            "Which inputs exist only on the developer's machine?",
+            "Where should required tools and files be declared for CI?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/4-execution-context-boundaries"
+    },
+    {
+        "id": "agentic-048",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "An agent may prepare repository changes, but a protected default branch must remain untouched until review. Which execution boundary best supports this?",
+        "choices": [
+            "Give the agent a default-branch write token and rely on a final checklist",
+            "Run the agent from a developer's checkout with branch names in its prompt",
+            "Let the agent push directly, then ask a reviewer to revert rejected work",
+            "Use a scoped working branch and route accepted changes through a reviewed PR"
+        ],
+        "correct": 3,
+        "explanations": [
+            "A checklist does not prevent direct writes to the protected branch.",
+            "Naming a branch in instructions is not an enforced execution boundary.",
+            "A later revert does not prevent unauthorized changes to the default branch.",
+            "Branch isolation and review provide a bounded, inspectable path to integration."
+        ],
+        "concept": "Branch-based execution boundaries",
+        "hints": [
+            "Which control prevents the agent from modifying the default branch directly?",
+            "Where should a reviewer inspect the proposed change?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/4-execution-context-boundaries"
+    },
+    {
+        "id": "agentic-049",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A read-only API call fails with a temporary 503 response. Which recovery is appropriate?",
+        "choices": [
+            "Retry with backoff a few times, then report failure",
+            "Repeat the request continuously until a response arrives",
+            "Change to a write endpoint that returns cached data",
+            "Treat the outage as success because no mutation was requested"
+        ],
+        "correct": 0,
+        "explanations": [
+            "A bounded backoff can recover from a transient failure without creating an endless run.",
+            "Unbounded retries can overload the service and stall the workflow.",
+            "A write endpoint changes the operation and may introduce side effects.",
+            "A failed read provides no evidence that the requested data was retrieved."
+        ],
+        "concept": "Bounded retries for transient errors",
+        "hints": [
+            "What signals that the failure may be temporary?",
+            "How can retries stop without turning into an infinite loop?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/5-agent-execution-limits-protections"
+    },
+    {
+        "id": "agentic-050",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A create-issue request times out after the client sends it, so the agent cannot tell whether an issue was created. What should it do next?",
+        "choices": [
+            "Send the same request repeatedly until one response is successful",
+            "Check the issue list or operation status before deciding whether to retry",
+            "Report success because the request reached the network",
+            "Create a second issue with a different title to avoid a duplicate identifier"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Blind retries of a non-idempotent write can create duplicate issues.",
+            "Checking the resulting state resolves uncertainty before another mutation.",
+            "Network transmission does not prove that the service completed the operation.",
+            "Changing the title can hide rather than prevent a duplicate and misrepresent the task."
+        ],
+        "concept": "Resolving an uncertain write outcome",
+        "hints": [
+            "Could the service have completed the write before the timeout?",
+            "What observation would establish the current state before retrying?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/5-agent-execution-limits-protections"
+    },
+    {
+        "id": "agentic-051",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A deployment API accepts an idempotency key. A retry is needed after a connection loss. Which key should the agent send?",
+        "choices": [
+            "A new random key for every attempt",
+            "The repository name with no deployment identifier",
+            "The same key for every attempt of this logical deployment",
+            "A key copied from another deployment that succeeded"
+        ],
+        "correct": 2,
+        "explanations": [
+            "A new key can make the service treat each retry as a distinct deployment.",
+            "A repository name may collide across separate deployments and is not sufficient identity.",
+            "Reusing the logical operation's key lets the service recognize a retry as the same request.",
+            "A key from a different operation can suppress or misassociate the intended deployment."
+        ],
+        "concept": "Idempotency keys for safe retries",
+        "hints": [
+            "What identity should remain stable across attempts of one operation?",
+            "Would a distinct key make the server consider the retry a new request?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/5-agent-execution-limits-protections"
+    },
+    {
+        "id": "agentic-052",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A workflow has both pull_request and manual triggers, but a comment step assumes every run has a PR number. What is the most targeted correction?",
+        "choices": [
+            "Remove all checks and retry the comment step",
+            "Store a default PR number in a repository variable",
+            "Run the comment step on every event and ignore failures",
+            "Run PR steps only when pull_request context exists"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Removing checks leaves the assumption unresolved and masks the failure.",
+            "A fixed default can direct comments to the wrong pull request.",
+            "Ignoring failures conceals runs that cannot perform the intended action.",
+            "An event-aware condition prevents PR-only operations from running without a PR context."
+        ],
+        "concept": "Event-aware workflow gating",
+        "hints": [
+            "Which trigger does not supply a pull request context?",
+            "Where can the workflow verify that context before commenting?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/6-reliable-workflows"
+    },
+    {
+        "id": "agentic-053",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A planning job emits a short validated decision that a dependent implementation job must read. Which GitHub Actions mechanism is intended for this handoff?",
+        "choices": [
+            "A step output exposed as a job output and consumed through needs",
+            "A runner-local shell variable assumed to survive into another job",
+            "A log line that the next job parses from its console page",
+            "A repository secret rewritten by the planning job"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Step outputs can be mapped to job outputs and passed to a dependent job through needs.",
+            "Jobs can use different runners; shell variables do not form a cross-job data contract.",
+            "Parsing presentation logs is fragile and not the defined workflow output mechanism.",
+            "Secrets are credentials, not mutable channels for passing ordinary decisions."
+        ],
+        "concept": "Passing structured data between jobs",
+        "hints": [
+            "Does the consumer run in the same job as the producer?",
+            "Which workflow feature explicitly exposes a job's result to dependents?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/6-reliable-workflows"
+    },
+    {
+        "id": "agentic-054",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A test job creates a report that reviewers in a later job must download and inspect. Which mechanism best fits the report?",
+        "choices": [
+            "Write the report only to the runner's temporary workspace",
+            "Upload a workflow artifact and link the run",
+            "Place the complete report in an environment variable",
+            "Commit the report to the default branch before validation"
+        ],
+        "correct": 1,
+        "explanations": [
+            "A runner workspace may not persist or be available to another job.",
+            "A workflow artifact makes the report durable and traceable to its run for later review.",
+            "Environment variables are not a suitable store for a potentially large report.",
+            "Committing an unvalidated report alters the repository and obscures its provenance."
+        ],
+        "concept": "Preserving review evidence across jobs",
+        "hints": [
+            "Must the report survive the producing job?",
+            "How can reviewers locate the report and its originating run?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-055",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "An issue-search tool returns a permission error because the repository is outside its configured scope. The assignment names no other repository. What is the best response?",
+        "choices": [
+            "Search every repository visible to the user's account",
+            "Guess a similar repository name and retry the request",
+            "Report the scope gap; request an authorized target",
+            "Use an unconfigured personal token to search the repository"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Searching broadly exceeds the named scope and may expose unrelated information.",
+            "Guessing can access or disclose data from a different repository.",
+            "The agent cannot infer authorization; the owner must resolve the target or permission boundary.",
+            "An unconfigured token bypasses the intended access controls."
+        ],
+        "concept": "Resolving an ambiguous or out-of-scope target",
+        "hints": [
+            "Is the named repository within the configured boundary?",
+            "Who can authorize changing the target or access?"
+        ],
+        "source": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/configure-mcp-servers"
+    },
+    {
+        "id": "agentic-056",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A workflow agent needs to call a public package registry, but the runner blocks outbound traffic by policy. What should the team do?",
+        "choices": [
+            "Disable the network restriction for every workflow in the organization",
+            "Embed a personal token in the agent prompt so the request succeeds",
+            "Ask the agent to route the request through an unrelated public service",
+            "Use an approved network path or request a reviewed policy exception"
+        ],
+        "correct": 3,
+        "explanations": [
+            "A blanket exception expands exposure beyond the task that needs the dependency.",
+            "Prompts are not a safe place for credentials and do not change the network policy.",
+            "An unrelated proxy can evade controls and make the operation less traceable.",
+            "The authorized owner can assess a narrow exception or approved network route."
+        ],
+        "concept": "Working within environment constraints",
+        "hints": [
+            "Is this a tool error or an enforced network boundary?",
+            "Who can approve a narrowly scoped exception?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/4-execution-context-boundaries"
+    },
+    {
+        "id": "agentic-057",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A developer proposes a local MCP server that can read files outside the repository. Which review is most important before trusting it?",
+        "choices": [
+            "Inspect its commands, data access, permissions, and behavior in the local environment",
+            "Treat local execution as proof that it cannot reach sensitive resources",
+            "Approve it from its documentation without examining its process permissions",
+            "Review advertised tools and rely on the developer account's filesystem permissions"
+        ],
+        "correct": 0,
+        "explanations": [
+            "A local process can access sensitive machine resources, so its effective scope and behavior matter.",
+            "Local execution does not remove risk from code or filesystem access.",
+            "Documentation alone does not verify what the server actually does.",
+            "Broad home-directory access increases exposure beyond the repository need."
+        ],
+        "concept": "Assessing local MCP server boundaries",
+        "hints": [
+            "Where does the process run, and which files can it reach?",
+            "What evidence shows its actual behavior rather than its stated purpose?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-058",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A server is already approved, and its update adds a tool that can delete production records. What should the administrator conclude?",
+        "choices": [
+            "The new tool is covered because the server name did not change",
+            "Review and explicitly scope the newly exposed capability before enabling it",
+            "The agent's existing prompt automatically constrains the new tool",
+            "Enable it only for agents that have passed tests on a branch"
+        ],
+        "correct": 1,
+        "explanations": [
+            "The server's identity does not make newly added destructive capabilities safe by default.",
+            "A capability change can expand impact and should receive a fresh, tool-specific review.",
+            "A prompt is not a substitute for tool access control.",
+            "Passing branch tests does not establish safe production-deletion permissions."
+        ],
+        "concept": "Reassessing changed server capabilities",
+        "hints": [
+            "What changed in the server's exposed tools?",
+            "Does prior approval cover the new operation's risk?"
+        ],
+        "source": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/configure-mcp-servers"
+    },
+    {
+        "id": "agentic-059",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A tool requires a repository identifier, but the issue mentions two repositories with similar names. What is the safest next action?",
+        "choices": [
+            "Choose the repository with the most recent commit",
+            "Search both repositories and merge the results",
+            "Confirm the repository with the task owner",
+            "Try one identifier and switch silently if it returns no results"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Recent activity does not establish which repository the task author meant.",
+            "Searching both expands the target beyond the stated and confirmed scope.",
+            "The owner can resolve the ambiguity before the agent accesses a potentially wrong target.",
+            "Silent fallback obscures the target and can produce misleading or unauthorized results."
+        ],
+        "concept": "Confirming tool targets",
+        "hints": [
+            "Does the task uniquely identify the repository?",
+            "Who can resolve an ambiguous target before data is accessed?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/4-execution-context-boundaries"
+    },
+    {
+        "id": "agentic-060",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A workflow needs the name of the event that triggered the current run. Which GitHub Actions context provides that event metadata?",
+        "choices": [
+            "vars: centrally managed configuration",
+            "env: job-level runtime values",
+            "needs: dependent-job outputs and results",
+            "github: event and current-run metadata"
+        ],
+        "correct": 3,
+        "explanations": [
+            "vars contains configuration values, not the current run's event metadata.",
+            "env exposes environment variables configured for the workflow or job.",
+            "needs exposes outputs and results of dependent jobs.",
+            "The github context includes event and workflow-run information."
+        ],
+        "concept": "Choosing the correct Actions context",
+        "hints": [
+            "Is the value centrally configured, job-local, dependent-job output, or event metadata?",
+            "Which context represents GitHub's event for this run?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/6-reliable-workflows"
+    },
+    {
+        "id": "agentic-061",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A workflow runs tests, then a later step changes directories and reports the branch name from a different checkout path. What should the execution path verify?",
+        "choices": [
+            "Verify the checkout directory and commit used by each step",
+            "Only the final test process exit code",
+            "That the branch name matches the default branch",
+            "That each step uses a separately generated branch name"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Checking the actual checkout and commit ties results to the intended source state.",
+            "An exit code alone does not establish which code was tested.",
+            "The target need not be the default branch; it must be the requested revision.",
+            "New branch names do not verify which repository or commit a step used."
+        ],
+        "concept": "Verifying repository and revision context",
+        "hints": [
+            "What code state did the test command actually execute?",
+            "Which directory and commit should trace evidence identify?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/4-execution-context-boundaries"
+    },
+    {
+        "id": "agentic-062",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A service responds with a rate-limit error and a reset time. Which behavior best respects the service while preserving progress?",
+        "choices": [
+            "Issue the same request rapidly from several agents",
+            "Wait for reset, then retry within a limit",
+            "Switch accounts to avoid the rate limit",
+            "Continue as if the missing response were successful"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Parallel repeated requests increase pressure and can prolong throttling.",
+            "Respecting the reset and limiting the retry addresses a temporary service constraint.",
+            "Changing accounts to evade a service limit bypasses the intended control.",
+            "No response does not establish that the operation succeeded."
+        ],
+        "concept": "Handling rate limits",
+        "hints": [
+            "Does the response provide a time to resume?",
+            "How can a retry avoid increasing load or evading the limit?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/5-agent-execution-limits-protections"
+    },
+    {
+        "id": "agentic-063",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A PATCH request for a repository setting is rejected with {\"error\":\"missing required field\"}. What should the agent inspect before constructing another request?",
+        "choices": [
+            "Retry the identical request with a longer timeout",
+            "Fill the field with a plausible value and submit",
+            "Review the tool schema and task data first",
+            "Use a different write tool that accepts fewer fields"
+        ],
+        "correct": 2,
+        "explanations": [
+            "The same invalid payload will continue to fail regardless of timeout.",
+            "Inventing a field value risks applying the change to unintended data.",
+            "Schema and source data identify the required value without guessing.",
+            "A less constrained tool may bypass validation rather than solve the missing information."
+        ],
+        "concept": "Correcting a validation failure safely",
+        "hints": [
+            "Is the error about duration or request content?",
+            "Where can the required field and its valid value be confirmed?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/5-agent-execution-limits-protections"
+    },
+    {
+        "id": "agentic-064",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "An edit tool rejects a patch because the base revision is stale. What should the agent do before producing another patch?",
+        "choices": [
+            "Force the old patch onto the current branch",
+            "Discard all work and restart without checking repository state",
+            "Increase write permissions to bypass the revision check",
+            "Refresh the file, reconcile changes, and rebuild the patch"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Forcing a stale patch can overwrite changes made since its base.",
+            "A full restart may repeat work and still miss the changed context.",
+            "Permission changes do not resolve a stale-content conflict.",
+            "Re-reading the current state enables a patch based on the latest content and preserves other edits."
+        ],
+        "concept": "Recovering from stale edits",
+        "hints": [
+            "What changed after the patch's base revision?",
+            "How can the agent avoid overwriting intervening work?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-065",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "An agent must write to repository A, but its credential can also write to repository B. Which change most directly reduces the effective access?",
+        "choices": [
+            "Use a credential limited to repository A and the required operation",
+            "Add a prompt rule prohibiting access to repository B",
+            "Keep both grants and audit the agent after every run",
+            "Rename repository B so the agent is less likely to find it"
+        ],
+        "correct": 0,
+        "explanations": [
+            "A narrower credential enforces the intended repository boundary at the authorization layer.",
+            "A prompt does not revoke the credential's ability to write elsewhere.",
+            "Auditing can detect use but does not reduce the initial blast radius.",
+            "Repository names do not restrict credential permissions."
+        ],
+        "concept": "Narrowing credential scope",
+        "hints": [
+            "Which control acts when the write request is authorized?",
+            "Can instructions reduce the credential's granted repositories?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/4-execution-context-boundaries"
+    },
+    {
+        "id": "agentic-066",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "An MCP server needs an API key in Copilot cloud agent's repository-level configuration. Where should the secret be stored?",
+        "choices": [
+            "As a literal value in the committed MCP JSON",
+            "Use an Agents secret or variable reference",
+            "In the custom agent's prompt so it remains visible to the model",
+            "In the workflow log before the MCP server starts"
+        ],
+        "correct": 1,
+        "explanations": [
+            "A committed configuration can expose the key to everyone with repository access.",
+            "A protected Agents secret or variable supports runtime substitution without embedding the secret in source.",
+            "Prompt text is not a protected credential store.",
+            "Logs can persist and expose credentials beyond the intended process."
+        ],
+        "concept": "Protecting MCP credentials",
+        "hints": [
+            "Which mechanism supplies secrets without committing their values?",
+            "Would the key remain safe if the configuration file were reviewed publicly?"
+        ],
+        "source": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/configure-mcp-servers"
+    },
+    {
+        "id": "agentic-067",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A build tool returns run ID 8421 after accepting a request. Which evidence is needed before the agent says the build passed?",
+        "choices": [
+            "The request payload and a zero exit code from the submit call",
+            "The timestamp when the run was created",
+            "The completed status and results for run 8421",
+            "A successful response from an unrelated earlier build"
+        ],
+        "correct": 2,
+        "explanations": [
+            "A successful submission confirms acceptance, not the outcome of the asynchronous build.",
+            "Creation time does not indicate whether execution succeeded.",
+            "The run-specific terminal status and results establish the actual outcome.",
+            "An earlier run does not validate the current code or execution."
+        ],
+        "concept": "Verifying asynchronous tool results",
+        "hints": [
+            "Has the operation completed or merely started?",
+            "Which run identifier ties the result to this request?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-068",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "An agent updates three external settings, then a fourth update fails. The API offers no transaction. What should recovery do first?",
+        "choices": [
+            "Repeat all four writes to make the sequence complete",
+            "Claim the settings were rolled back automatically",
+            "Continue deployment with the three settings already changed",
+            "Read back state, stop writes, and report partial completion"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Repeating successful non-idempotent writes may compound the partial change.",
+            "Without transaction or rollback evidence, automatic reversal cannot be assumed.",
+            "Proceeding can make an inconsistent state affect downstream systems.",
+            "Read-back and escalation establish the real partial state before any compensating action."
+        ],
+        "concept": "Recovering from partial external changes",
+        "hints": [
+            "Which changes actually succeeded?",
+            "Can the workflow prove a rollback occurred?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/5-agent-execution-limits-protections"
+    },
+    {
+        "id": "agentic-069",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A repository custom agent omits the tools property because its author assumes omission means no tools. What should be corrected?",
+        "choices": [
+            "Set an explicit minimal tools list",
+            "Add a longer description because it disables tools not mentioned there",
+            "Move the agent file to another branch to remove inherited tools",
+            "Leave the profile unchanged because tools are always read-only by default"
+        ],
+        "correct": 0,
+        "explanations": [
+            "The GitHub custom-agent guidance states that omitting tools gives access to all available tools.",
+            "Descriptions explain purpose; they do not enforce tool permissions.",
+            "A branch location does not make omission a deny-all tools setting.",
+            "Available tools are not necessarily read-only."
+        ],
+        "concept": "Explicit custom-agent tool permissions",
+        "hints": [
+            "What behavior does the documented profile use when tools is omitted?",
+            "How can the author express a restricted capability set?"
+        ],
+        "source": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/create-custom-agents"
+    },
+    {
+        "id": "agentic-070",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A Copilot CLI user knows an MCP server's name and needs to inspect its available tools. Which command displays those details?",
+        "choices": [
+            "/mcp list",
+            "/mcp show SERVER-NAME",
+            "/mcp add SERVER-NAME",
+            "copilot mcp add SERVER-NAME -- COMMAND"
+        ],
+        "correct": 1,
+        "explanations": [
+            "/mcp list prints the configured server list but not one server's tool details.",
+            "/mcp show SERVER-NAME displays that server's status and available tools.",
+            "/mcp add configures a server; it does not inspect an existing server.",
+            "copilot mcp add registers a server instead of displaying its tools."
+        ],
+        "concept": "Inspecting MCP servers in Copilot CLI",
+        "hints": [
+            "Which command opens the CLI's MCP dashboard?",
+            "How can a named server's exposed tools be inspected?"
+        ],
+        "source": "https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-mcp-servers"
+    },
+    {
+        "id": "agentic-071",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "An organization configures a registry URL and an allowlist for Copilot CLI. A developer installs a server absent from that list. What should the team expect?",
+        "choices": [
+            "The server will run because registry discovery overrides policy",
+            "The server will run after the agent explains its intended use",
+            "The allowlist should prevent that server from running in Copilot CLI",
+            "The allowlist applies only to cloud agent, never to CLI"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Discovery from a registry does not override the CLI's configured allowlist.",
+            "An explanation does not change policy enforcement.",
+            "The CLI guidance says only servers permitted by the allowlist can run.",
+            "The documented organization registry and allowlist settings apply to Copilot CLI."
+        ],
+        "concept": "Applying CLI MCP allowlist policy",
+        "hints": [
+            "Does discovery imply permission to run?",
+            "Which surface is covered by this organization's configured policy?"
+        ],
+        "source": "https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-mcp-servers"
+    },
+    {
+        "id": "agentic-072",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A workflow builds a shell command by inserting an issue title directly into executable syntax. What change best reduces injection risk?",
+        "choices": [
+            "Increase the agent's prompt length so it handles titles more carefully",
+            "Allow all shell commands, then scan the logs for suspicious output",
+            "Remove quoting because the title is already plain text",
+            "Pass values as arguments; validate allowed operations"
+        ],
+        "correct": 3,
+        "explanations": [
+            "More prompt text does not make shell interpolation safe.",
+            "Post-execution log review cannot prevent a command from running.",
+            "Removing quoting can expose the shell to metacharacters in the title.",
+            "Separating data from executable syntax and validating operations reduces injection paths."
+        ],
+        "concept": "Safe handling of untrusted tool input",
+        "hints": [
+            "Could an issue title contain shell metacharacters?",
+            "How can data be kept separate from the command structure?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-073",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A workflow needs repository read access for tests, while only a later job creates a pull request. How should permissions be assigned?",
+        "choices": [
+            "Keep tests read-only; give the PR job only its needed write scope",
+            "Grant contents and pull-request write access to every job",
+            "Use an administrator token for the whole workflow",
+            "Store a broad personal access token in the test job"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Per-job least privilege limits the write capability to the step that requires it.",
+            "Broad permissions increase the impact of errors in jobs that only read code.",
+            "An administrator token exceeds the authority needed for either job.",
+            "A broad personal token exposes unnecessary credentials to the test process."
+        ],
+        "concept": "Least privilege across workflow jobs",
+        "hints": [
+            "Which job actually creates the pull request?",
+            "Can the earlier test job perform its work with read access only?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/4-execution-context-boundaries"
+    },
+    {
+        "id": "agentic-074",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A developer's local agent reaches a remote MCP endpoint, but the hosted CI runner cannot. What should be checked before redesigning the integration?",
+        "choices": [
+            "Whether the issue title has a valid format",
+            "Check endpoint reachability and auth from the CI runner",
+            "Whether the local agent has a longer conversation history",
+            "Whether the CI runner can open a pull request"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Issue formatting does not explain network reachability from the runner.",
+            "Execution contexts differ; verify the endpoint and its required access from the actual runner.",
+            "Conversation length does not establish network connectivity.",
+            "PR capability is separate from connectivity to the MCP service."
+        ],
+        "concept": "Validating environment-specific connectivity",
+        "hints": [
+            "Which environment is failing to reach the endpoint?",
+            "Do its network route and credentials match the local setup?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/4-execution-context-boundaries"
+    },
+    {
+        "id": "agentic-075",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A search API returns a page token with the first 100 of 260 matching issues. The report must cover every match. What should the agent do?",
+        "choices": [
+            "Report the first page as the complete result set",
+            "Increase the page size and assume the API has no further limit",
+            "Follow the API's pagination tokens until the result set is complete",
+            "Search for a new phrase and combine approximate counts"
+        ],
+        "correct": 2,
+        "explanations": [
+            "The response explicitly indicates that matching results remain.",
+            "Larger pages do not guarantee that the API returns all results in one response.",
+            "Following the continuation token retrieves the remaining pages in order.",
+            "A different query can omit matches or introduce overlap."
+        ],
+        "concept": "Completing paginated tool results",
+        "hints": [
+            "What does the page token indicate?",
+            "How does the API signal continuation of the same search?"
+        ],
+        "source": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/configure-mcp-servers"
+    },
+    {
+        "id": "agentic-076",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A test command exits with status zero but prints 'no tests discovered.' The task requires test execution. What should the agent report?",
+        "choices": [
+            "All tests passed because the process exited successfully",
+            "The test suite passed with zero failures",
+            "The tests were skipped by choice and need no follow-up",
+            "Report that validation did not run; fix discovery and rerun"
+        ],
+        "correct": 3,
+        "explanations": [
+            "A zero exit status does not mean tests ran when none were discovered.",
+            "No failures among zero executed tests is not evidence that the suite passed.",
+            "The task did not authorize omitting the required validation.",
+            "The output contradicts the expected validation; diagnose the test configuration before reporting completion."
+        ],
+        "concept": "Interpreting validation evidence",
+        "hints": [
+            "Did the command execute any tests?",
+            "Does the observed output satisfy the task's acceptance criterion?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-077",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A workflow applies an agent-generated configuration to a production service. What preparation best supports a safe recovery if the result is wrong?",
+        "choices": [
+            "Capture prior state and test the rollback path",
+            "Rely on the agent to remember the previous configuration",
+            "Allow the deployment to overwrite the previous state without a record",
+            "Prepare a rollback only after production behavior changes"
+        ],
+        "correct": 0,
+        "explanations": [
+            "A known prior state and rehearsed recovery make a rollback actionable and traceable.",
+            "Conversation memory is not a reliable recovery record.",
+            "Overwriting without a record removes the information needed for restoration.",
+            "Waiting until impact occurs makes rollback slower and less certain."
+        ],
+        "concept": "Preparing a recoverable deployment",
+        "hints": [
+            "What state would restoration need to reproduce?",
+            "Can the team demonstrate the recovery path before deployment?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/5-agent-execution-limits-protections"
+    },
+    {
+        "id": "agentic-078",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A repository rule rejects an agent's requested write, although the MCP tool supports it. What should the agent do?",
+        "choices": [
+            "Retry through another credential that is not subject to the rule",
+            "Stop, report the rule, and request an authorized route",
+            "Rewrite the request until the policy engine accepts it",
+            "Treat tool support as approval to bypass the repository rule"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Using another credential to evade a repository rule defeats the control.",
+            "The rejection is authoritative for the current path; an owner can decide whether a compliant alternative exists.",
+            "Changing request wording to evade policy does not make the action authorized.",
+            "A tool's technical ability does not override repository policy."
+        ],
+        "concept": "Respecting repository policy",
+        "hints": [
+            "Does tool capability equal authorization?",
+            "Who can approve a compliant alternative to the blocked action?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/5-agent-execution-limits-protections"
+    },
+    {
+        "id": "agentic-079",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "An unprivileged planning job outputs a deployment target that a privileged job later consumes. What safeguard should the deployment job apply?",
+        "choices": [
+            "Trust the value because it came from a successful predecessor job",
+            "Echo the value to logs and pass it directly to the deployment command",
+            "Validate the target against an explicit approved set before using it",
+            "Let the agent choose a different target if deployment fails"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Job success does not prove that an output is an authorized deployment target.",
+            "Logging does not validate the value, and direct use can carry untrusted input into a privileged step.",
+            "An allowlisted target check constrains the privileged action to approved destinations.",
+            "Changing targets after failure could expand the operation without authorization."
+        ],
+        "concept": "Validating cross-job values before privileged use",
+        "hints": [
+            "Does job order make the output trusted?",
+            "How can the deployment constrain the set of possible targets?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/6-reliable-workflows"
+    },
+    {
+        "id": "agentic-080",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A shared test host contains similar processes owned by different users. An agent must stop only the process it started. What should it do?",
+        "choices": [
+            "Terminate every process with the same executable name",
+            "Use a broad process-name kill command",
+            "Terminate the shared process group containing other test runs",
+            "Track its own process identifier and verify ownership before terminating it"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Matching executable names can terminate other users' work.",
+            "A broad name-based termination is not limited to the agent's process.",
+            "Restarting the host disrupts unrelated users and services.",
+            "A specific process identifier with an ownership check limits the action to the agent's own run."
+        ],
+        "concept": "Limiting process cleanup to owned work",
+        "hints": [
+            "What identity did the agent record when it launched the process?",
+            "How can it distinguish its process from another user's?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/5-agent-execution-limits-protections"
+    },
+    {
+        "id": "agentic-081",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A tool response changes schema; the parser treats a missing status field as success. What should be fixed?",
+        "choices": [
+            "Validate the response schema and fail closed when required status evidence is absent",
+            "Keep the parser and increase the polling interval",
+            "Assume missing fields mean the tool used its default success status",
+            "Accept the response if it contains any nonempty text"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Explicit schema validation prevents missing or malformed status from becoming false success.",
+            "Polling frequency does not correct an unsafe interpretation of the response.",
+            "A default success assumption is not supported by evidence.",
+            "Nonempty text may describe an error or unrelated output."
+        ],
+        "concept": "Failing closed on malformed tool results",
+        "hints": [
+            "What evidence is required to establish success?",
+            "How should the parser behave when that field is absent?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-082",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A tool can publish a release, but the task asks only for a draft pull request. What should the agent infer?",
+        "choices": [
+            "Tool availability authorizes any action exposed by the tool",
+            "Use the requested PR tool only; do not publish a release",
+            "Publish a release after tests pass, then open the draft PR",
+            "Ask the tool to decide whether a release is appropriate"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Capabilities do not expand the user's task authorization.",
+            "The bounded request is for a draft PR, not an external release.",
+            "Passing tests does not authorize an unrequested release publication.",
+            "A tool cannot grant authority beyond the task or repository policy."
+        ],
+        "concept": "Separating capability from task authorization",
+        "hints": [
+            "What outcome did the task actually request?",
+            "Does access to a tool broaden that instruction?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/5-agent-execution-limits-protections"
+    },
+    {
+        "id": "agentic-083",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A CI job cannot download from an approved package source because its short-lived credential expired. What is the most targeted recovery?",
+        "choices": [
+            "Replace the workflow with a permanent administrator token",
+            "Disable package authentication for all builds",
+            "Renew the scoped credential through the approved secret store",
+            "Move the package source into the repository without checking its integrity"
+        ],
+        "correct": 2,
+        "explanations": [
+            "A permanent administrator token is broader and less safely managed than needed.",
+            "Disabling authentication weakens the boundary for every build.",
+            "Refreshing the appropriately scoped credential addresses the specific failure without broadening access.",
+            "Vendoring content without integrity checks introduces a separate supply-chain risk."
+        ],
+        "concept": "Recovering expired credentials safely",
+        "hints": [
+            "Is the package source approved but the credential stale?",
+            "How can access be restored without widening its scope?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/4-execution-context-boundaries"
+    },
+    {
+        "id": "agentic-084",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A workflow runs on untrusted pull request content and also has a privileged job that can modify repository settings. What boundary is most important?",
+        "choices": [
+            "Let the untrusted job write settings only after tests pass",
+            "Share a write token with every job so handoffs are simple",
+            "Use the same runner and credentials to reduce setup time",
+            "Separate untrusted work from privileged changes; gate the latter"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Passing tests on untrusted input does not establish authorization to change settings.",
+            "Sharing the token increases the blast radius and exposes it to untrusted work.",
+            "Shared execution can let untrusted code access privileged credentials or state.",
+            "Separating trust levels and gating privileged actions prevents untrusted content from inheriting authority."
+        ],
+        "concept": "Separating untrusted and privileged execution",
+        "hints": [
+            "Which job processes attacker-controlled content?",
+            "Can that process access credentials used to change settings?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/4-execution-context-boundaries"
+    },
+    {
+        "id": "agentic-085",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "An agent's first CI run fails because the runner lacks a required command-line executable. Which preflight would catch this before task execution?",
+        "choices": [
+            "Verify and install required tools in a runner setup step",
+            "Run the agent first and inspect the conversation if it fails",
+            "Grant the runner broader repository permissions",
+            "Increase the number of agent retries"
+        ],
+        "correct": 0,
+        "explanations": [
+            "A dependency preflight confirms the runtime has the required executable before the task begins.",
+            "Post-failure inspection is later than a simple environment check.",
+            "Repository permissions do not install a missing executable.",
+            "Retries repeat the same failure if the environment remains unchanged."
+        ],
+        "concept": "Preflighting execution dependencies",
+        "hints": [
+            "Is the failure caused by code or by a missing runtime dependency?",
+            "Where should the required executable be installed or verified?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/4-execution-context-boundaries"
+    },
+    {
+        "id": "agentic-086",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "An agent moves from a developer workstation to an ephemeral runner. What should the workflow make explicit?",
+        "choices": [
+            "Reuse all local machine state by copying the whole home directory",
+            "Pin dependencies; inject only needed runtime credentials",
+            "Keep credentials in a committed file so each runner receives the same values",
+            "Assume that the hosted runner inherits the developer's installed tools"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Copying all local state can expose unrelated data and make runs inconsistent.",
+            "Declared dependencies and narrowly scoped runtime credentials make the new environment reproducible.",
+            "Committed credentials are exposed and difficult to rotate safely.",
+            "An ephemeral runner should not be assumed to share the developer's setup."
+        ],
+        "concept": "Preparing portable agent environments",
+        "hints": [
+            "Which dependencies are not guaranteed on a clean runner?",
+            "How should secrets enter the new execution context?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/4-execution-context-boundaries"
+    },
+    {
+        "id": "agentic-087",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A tool successfully changes an external setting, but the agent crashes before recording a checkpoint. What should it do after restarting?",
+        "choices": [
+            "Repeat the write immediately because the checkpoint is missing",
+            "Assume the write was undone when the process stopped",
+            "Read external state before repeating the write",
+            "Create a second change so at least one is recorded"
+        ],
+        "correct": 2,
+        "explanations": [
+            "A missing checkpoint does not show that the external mutation failed.",
+            "Process termination does not automatically roll back an external system.",
+            "Read-back establishes the actual state and prevents duplicate or contradictory writes.",
+            "A second mutation can compound the uncertainty and create inconsistent state."
+        ],
+        "concept": "Reconciling state after an interrupted write",
+        "hints": [
+            "Could the external service retain a change after the agent crashed?",
+            "What should be checked before another mutation?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/5-agent-execution-limits-protections"
+    },
+    {
+        "id": "agentic-088",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "An MCP server update requests broader filesystem access than the version the team reviewed. What is the appropriate adoption process?",
+        "choices": [
+            "Accept the update because the server was approved previously",
+            "Grant the broader access temporarily and remove it after the first run",
+            "Install it for all agents to compare its behavior at scale",
+            "Review changed tools and approve only required scope"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Prior approval does not cover a materially changed access request.",
+            "Temporary broad access still exposes files during the run.",
+            "A broad rollout amplifies risk before the changed behavior is understood.",
+            "Reviewing the delta and limiting permissions addresses the new blast radius before use."
+        ],
+        "concept": "Reviewing MCP capability changes",
+        "hints": [
+            "What changed relative to the reviewed server?",
+            "Does the task require the additional filesystem scope?"
+        ],
+        "source": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/configure-mcp-servers"
+    },
+    {
+        "id": "agentic-089",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "An agent needs to comment on one pull request but must not push code. Which permission design is most appropriate?",
+        "choices": [
+            "Use a credential that can comment on the PR but cannot write repository code",
+            "Grant repository administration so the comment always succeeds",
+            "Allow contents write and remove the permission after the task",
+            "Use a developer's full personal token for both reading and commenting"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Narrow permissions support the requested comment while avoiding unnecessary code-write access.",
+            "Repository administration exceeds the authority needed to comment.",
+            "Temporary code-write access still grants unnecessary capability during the task.",
+            "A developer's broad token expands access and exposes personal credentials."
+        ],
+        "concept": "Scoping permissions for a PR comment",
+        "hints": [
+            "Which operation is needed, and which one is explicitly out of scope?",
+            "Can the workflow comment without write access to repository contents?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-090",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "A tool supports a dry run, but the task authorizes a real change after review. The agent has performed only the dry run. What should it report?",
+        "choices": [
+            "The change was completed because the preview matched expectations",
+            "Report the dry run only; no mutation occurred",
+            "The service automatically applies dry-run results after a delay",
+            "The change succeeded unless a rollback event appears"
+        ],
+        "correct": 1,
+        "explanations": [
+            "A preview does not apply the requested mutation.",
+            "Reporting the distinct dry-run result avoids claiming an action that did not occur.",
+            "Dry-run behavior does not imply later automatic application.",
+            "Absence of a rollback signal is not evidence of a successful write."
+        ],
+        "concept": "Distinguishing preview from execution",
+        "hints": [
+            "Did the tool apply a state change or only simulate one?",
+            "Which result is supported by the evidence returned?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/5-agent-execution-limits-protections"
+    },
+    {
+        "id": "agentic-091",
+        "domain": "Implement tool use and environment interaction",
+        "prompt": "Two agent runs operate concurrently on the same repository, but tool logs identify neither run nor commit. What metadata should be added for traceability?",
+        "choices": [
+            "A longer shared log containing only timestamps",
+            "The developer's personal access token in every log line",
+            "Record run, repository, revision, and tool action per event",
+            "A single final status that combines both agents' activity"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Timestamps alone cannot reliably attribute concurrent events to a run or code state.",
+            "Credential values must not be recorded and do not identify the relevant execution safely.",
+            "Run and repository revision metadata connects each action to its actor context and code state.",
+            "A combined status hides which run performed or failed each operation."
+        ],
+        "concept": "Attributing concurrent tool activity",
+        "hints": [
+            "What distinguishes two overlapping runs against the same repository?",
+            "Which code revision and operation produced each event?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-092",
+        "domain": "Manage memory, state, and execution",
+        "prompt": "A coding agent repeatedly needs the verified command for tests in this repository; the team wants future sessions to reuse it with its supporting source. Where should the agent retain this verified, repository-specific fact?",
+        "choices": [
+            "Save a sourced repository fact, scoped to that codebase.",
+            "Save it as a user preference across the contributor's projects.",
+            "Keep an unsourced session note and infer it in future tasks.",
+            "Share it across repositories, though only one uses the command."
+        ],
+        "correct": 0,
+        "explanations": [
+            "Repository facts are scoped to that codebase, and citations support their accuracy.",
+            "A build command describes the repository, not a reusable personal preference.",
+            "A temporary unsourced note is difficult to verify or reuse reliably.",
+            "Sharing a repository-specific command can mislead work in other codebases."
+        ],
+        "concept": "Repository and user memory scope",
+        "hints": [
+            "Distinguish a fact about one codebase from a preference about how someone works.",
+            "Which scope preserves usefulness without spreading the fact to unrelated repositories?"
+        ],
+        "source": "https://docs.github.com/en/copilot/concepts/prompting-and-context/copilot-memory"
+    },
+    {
+        "id": "agentic-093",
+        "domain": "Manage memory, state, and execution",
+        "prompt": "A contributor preference applies across projects, while a database design decision belongs only to one repository. What is the most useful memory design for this work?",
+        "choices": [
+            "Combine repository facts and personal preferences in one record.",
+            "Store verified facts with source and scope.",
+            "Save the full chat so later tasks inherit every detail.",
+            "Keep tentative decisions as durable notes pending review."
+        ],
+        "correct": 1,
+        "explanations": [
+            "Repository facts and personal preferences have different owners and scopes.",
+            "Verified facts, proper scope, and provenance make memory useful without overstating certainty.",
+            "A full transcript carries irrelevant detail and can blur task boundaries.",
+            "An unapproved suggestion is not reliable project state or a confirmed decision."
+        ],
+        "concept": "Scoped, verified memory",
+        "hints": [
+            "Consider who should reuse the information and how certain it is.",
+            "Which details should remain useful without preserving the entire task history?"
+        ],
+        "source": "https://docs.github.com/en/copilot/concepts/prompting-and-context/copilot-memory"
+    },
+    {
+        "id": "agentic-094",
+        "domain": "Manage memory, state, and execution",
+        "prompt": "A proposed module boundary is still under discussion, but the agent is preparing a summary for a later coding session. What is the most useful memory design for this work?",
+        "choices": [
+            "Keep tentative decisions as durable notes pending review.",
+            "Combine repository facts and personal preferences in one record.",
+            "Store verified facts with source and scope.",
+            "Save the full chat so later tasks inherit every detail."
+        ],
+        "correct": 2,
+        "explanations": [
+            "An unapproved suggestion is not reliable project state or a confirmed decision.",
+            "Repository facts and personal preferences have different owners and scopes.",
+            "Verified facts, proper scope, and provenance make memory useful without overstating certainty.",
+            "A full transcript carries irrelevant detail and can blur task boundaries."
+        ],
+        "concept": "Scoped, verified memory",
+        "hints": [
+            "Consider who should reuse the information and how certain it is.",
+            "Which details should remain useful without preserving the entire task history?"
+        ],
+        "source": "https://docs.github.com/en/copilot/concepts/prompting-and-context/copilot-memory"
+    },
+    {
+        "id": "agentic-095",
+        "domain": "Manage memory, state, and execution",
+        "prompt": "The same team repeatedly needs the verified command for running one package's focused tests. What is the most useful memory design for this work?",
+        "choices": [
+            "Save the full chat so later tasks inherit every detail.",
+            "Keep tentative decisions as durable notes pending review.",
+            "Combine repository facts and personal preferences in one record.",
+            "Store verified facts with source and scope."
+        ],
+        "correct": 3,
+        "explanations": [
+            "A full transcript carries irrelevant detail and can blur task boundaries.",
+            "An unapproved suggestion is not reliable project state or a confirmed decision.",
+            "Repository facts and personal preferences have different owners and scopes.",
+            "Verified facts, proper scope, and provenance make memory useful without overstating certainty."
+        ],
+        "concept": "Scoped, verified memory",
+        "hints": [
+            "Consider who should reuse the information and how certain it is.",
+            "Which details should remain useful without preserving the entire task history?"
+        ],
+        "source": "https://docs.github.com/en/copilot/concepts/prompting-and-context/copilot-memory"
+    },
+    {
+        "id": "agentic-096",
+        "domain": "Manage memory, state, and execution",
+        "prompt": "A repository note contains an architectural claim but no citation or link to the code that supports it. What is the most useful memory design for this work?",
+        "choices": [
+            "Store verified facts with source and scope.",
+            "Save the full chat so later tasks inherit every detail.",
+            "Keep tentative decisions as durable notes pending review.",
+            "Combine repository facts and personal preferences in one record."
+        ],
+        "correct": 0,
+        "explanations": [
+            "Verified facts, proper scope, and provenance make memory useful without overstating certainty.",
+            "A full transcript carries irrelevant detail and can blur task boundaries.",
+            "An unapproved suggestion is not reliable project state or a confirmed decision.",
+            "Repository facts and personal preferences have different owners and scopes."
+        ],
+        "concept": "Scoped, verified memory",
+        "hints": [
+            "Consider who should reuse the information and how certain it is.",
+            "Which details should remain useful without preserving the entire task history?"
+        ],
+        "source": "https://docs.github.com/en/copilot/concepts/prompting-and-context/copilot-memory"
+    },
+    {
+        "id": "agentic-097",
+        "domain": "Manage memory, state, and execution",
+        "prompt": "A task-specific preference to avoid one experimental tool should not be applied to unrelated projects. What is the most useful memory design for this work?",
+        "choices": [
+            "Combine repository facts and personal preferences in one record.",
+            "Store verified facts with source and scope.",
+            "Save the full chat so later tasks inherit every detail.",
+            "Keep tentative decisions as durable notes pending review."
+        ],
+        "correct": 1,
+        "explanations": [
+            "Repository facts and personal preferences have different owners and scopes.",
+            "Verified facts, proper scope, and provenance make memory useful without overstating certainty.",
+            "A full transcript carries irrelevant detail and can blur task boundaries.",
+            "An unapproved suggestion is not reliable project state or a confirmed decision."
+        ],
+        "concept": "Scoped, verified memory",
+        "hints": [
+            "Consider who should reuse the information and how certain it is.",
+            "Which details should remain useful without preserving the entire task history?"
+        ],
+        "source": "https://docs.github.com/en/copilot/concepts/prompting-and-context/copilot-memory"
+    },
+    {
+        "id": "agentic-098",
+        "domain": "Manage memory, state, and execution",
+        "prompt": "A team wants to preserve a confirmed migration decision while avoiding the full transcript of a month-long investigation. What is the most useful memory design for this work?",
+        "choices": [
+            "Keep tentative decisions as durable notes pending review.",
+            "Combine repository facts and personal preferences in one record.",
+            "Store verified facts with source and scope.",
+            "Save the full chat so later tasks inherit every detail."
+        ],
+        "correct": 2,
+        "explanations": [
+            "An unapproved suggestion is not reliable project state or a confirmed decision.",
+            "Repository facts and personal preferences have different owners and scopes.",
+            "Verified facts, proper scope, and provenance make memory useful without overstating certainty.",
+            "A full transcript carries irrelevant detail and can blur task boundaries."
+        ],
+        "concept": "Scoped, verified memory",
+        "hints": [
+            "Consider who should reuse the information and how certain it is.",
+            "Which details should remain useful without preserving the entire task history?"
+        ],
+        "source": "https://docs.github.com/en/copilot/concepts/prompting-and-context/copilot-memory"
+    },
+    {
+        "id": "agentic-099",
+        "domain": "Manage memory, state, and execution",
+        "prompt": "An agent learned a formatting preference from a single ambiguous comment and plans to reuse it as a standing rule. What is the most useful memory design for this work?",
+        "choices": [
+            "Save the full chat so later tasks inherit every detail.",
+            "Keep tentative decisions as durable notes pending review.",
+            "Combine repository facts and personal preferences in one record.",
+            "Store verified facts with source and scope."
+        ],
+        "correct": 3,
+        "explanations": [
+            "A full transcript carries irrelevant detail and can blur task boundaries.",
+            "An unapproved suggestion is not reliable project state or a confirmed decision.",
+            "Repository facts and personal preferences have different owners and scopes.",
+            "Verified facts, proper scope, and provenance make memory useful without overstating certainty."
+        ],
+        "concept": "Scoped, verified memory",
+        "hints": [
+            "Consider who should reuse the information and how certain it is.",
+            "Which details should remain useful without preserving the entire task history?"
+        ],
+        "source": "https://docs.github.com/en/copilot/concepts/prompting-and-context/copilot-memory"
+    },
+    {
+        "id": "agentic-100",
+        "domain": "Manage memory, state, and execution",
+        "prompt": "An agent has finished half the test matrix when the execution environment is recycled. What should a restart checkpoint preserve?",
+        "choices": [
+            "Save the goal, decisions, progress, open work, and current evidence.",
+            "Replay completed tool actions to rebuild context from the start.",
+            "Keep only the latest request and infer which changes already exist.",
+            "Preserve the transcript, then resume without checking external state."
+        ],
+        "correct": 0,
+        "explanations": [
+            "A compact, verified checkpoint supports continuation without losing task progress.",
+            "Blindly repeating actions can duplicate changes or repeat consequential operations.",
+            "The latest request does not establish current progress or completed checks.",
+            "A transcript does not replace checking state outside the session."
+        ],
+        "concept": "Resumable execution state",
+        "hints": [
+            "The next session needs enough verified state to avoid both repetition and guesswork.",
+            "Which unfinished items and evidence determine the safe next step?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-101",
+        "domain": "Manage memory, state, and execution",
+        "prompt": "A handoff is needed after a code review requested changes that have not yet been applied. What should a restart checkpoint preserve?",
+        "choices": [
+            "Preserve the transcript, then resume without checking external state.",
+            "Save the goal, decisions, progress, open work, and current evidence.",
+            "Replay completed tool actions to rebuild context from the start.",
+            "Keep only the latest request and infer which changes already exist."
+        ],
+        "correct": 1,
+        "explanations": [
+            "A transcript does not replace checking state outside the session.",
+            "A compact, verified checkpoint supports continuation without losing task progress.",
+            "Blindly repeating actions can duplicate changes or repeat consequential operations.",
+            "The latest request does not establish current progress or completed checks."
+        ],
+        "concept": "Resumable execution state",
+        "hints": [
+            "The next session needs enough verified state to avoid both repetition and guesswork.",
+            "Which unfinished items and evidence determine the safe next step?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-102",
+        "domain": "Manage memory, state, and execution",
+        "prompt": "A scheduled workflow resumes after a pause and must know whether validation already ran on the latest revision. What should a restart checkpoint preserve?",
+        "choices": [
+            "Keep only the latest request and infer which changes already exist.",
+            "Preserve the transcript, then resume without checking external state.",
+            "Save the goal, decisions, progress, open work, and current evidence.",
+            "Replay completed tool actions to rebuild context from the start."
+        ],
+        "correct": 2,
+        "explanations": [
+            "The latest request does not establish current progress or completed checks.",
+            "A transcript does not replace checking state outside the session.",
+            "A compact, verified checkpoint supports continuation without losing task progress.",
+            "Blindly repeating actions can duplicate changes or repeat consequential operations."
+        ],
+        "concept": "Resumable execution state",
+        "hints": [
+            "The next session needs enough verified state to avoid both repetition and guesswork.",
+            "Which unfinished items and evidence determine the safe next step?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-103",
+        "domain": "Manage memory, state, and execution",
+        "prompt": "A new agent session receives a task with a committed partial fix and two unresolved acceptance checks. What should a restart checkpoint preserve?",
+        "choices": [
+            "Replay completed tool actions to rebuild context from the start.",
+            "Keep only the latest request and infer which changes already exist.",
+            "Preserve the transcript, then resume without checking external state.",
+            "Save the goal, decisions, progress, open work, and current evidence."
+        ],
+        "correct": 3,
+        "explanations": [
+            "Blindly repeating actions can duplicate changes or repeat consequential operations.",
+            "The latest request does not establish current progress or completed checks.",
+            "A transcript does not replace checking state outside the session.",
+            "A compact, verified checkpoint supports continuation without losing task progress."
+        ],
+        "concept": "Resumable execution state",
+        "hints": [
+            "The next session needs enough verified state to avoid both repetition and guesswork.",
+            "Which unfinished items and evidence determine the safe next step?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-104",
+        "domain": "Manage memory, state, and execution",
+        "prompt": "A developer pauses work while waiting for an external owner to clarify a compatibility requirement. What should a restart checkpoint preserve?",
+        "choices": [
+            "Save the goal, decisions, progress, open work, and current evidence.",
+            "Replay completed tool actions to rebuild context from the start.",
+            "Keep only the latest request and infer which changes already exist.",
+            "Preserve the transcript, then resume without checking external state."
+        ],
+        "correct": 0,
+        "explanations": [
+            "A compact, verified checkpoint supports continuation without losing task progress.",
+            "Blindly repeating actions can duplicate changes or repeat consequential operations.",
+            "The latest request does not establish current progress or completed checks.",
+            "A transcript does not replace checking state outside the session."
+        ],
+        "concept": "Resumable execution state",
+        "hints": [
+            "The next session needs enough verified state to avoid both repetition and guesswork.",
+            "Which unfinished items and evidence determine the safe next step?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-105",
+        "domain": "Manage memory, state, and execution",
+        "prompt": "A branch checkpoint says a test passed, but the current workflow run reports failure on the same revision. How should the agent reconcile the conflicting state?",
+        "choices": [
+            "Use the value that keeps work moving and revisit it later.",
+            "Check the authoritative, current record; reconcile or escalate.",
+            "Prefer the newest note, even if its owner or source is unclear.",
+            "Merge both records and defer the disagreement to routine review."
+        ],
+        "correct": 1,
+        "explanations": [
+            "Convenience is not a sound basis for selecting uncertain task state.",
+            "Authority and freshness establish which state can safely guide subsequent actions.",
+            "Conversation order does not establish that a statement is authoritative or current.",
+            "Combining incompatible values hides a conflict instead of resolving it."
+        ],
+        "concept": "Conflict and staleness reconciliation",
+        "hints": [
+            "A newer note is not necessarily the source of truth.",
+            "What evidence distinguishes current state from a stale copy?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-106",
+        "domain": "Manage memory, state, and execution",
+        "prompt": "A remembered deployment endpoint differs from the value in the current repository configuration. How should the agent reconcile the conflicting state?",
+        "choices": [
+            "Merge both records and defer the disagreement to routine review.",
+            "Use the value that keeps work moving and revisit it later.",
+            "Check the authoritative, current record; reconcile or escalate.",
+            "Prefer the newest note, even if its owner or source is unclear."
+        ],
+        "correct": 2,
+        "explanations": [
+            "Combining incompatible values hides a conflict instead of resolving it.",
+            "Convenience is not a sound basis for selecting uncertain task state.",
+            "Authority and freshness establish which state can safely guide subsequent actions.",
+            "Conversation order does not establish that a statement is authoritative or current."
+        ],
+        "concept": "Conflict and staleness reconciliation",
+        "hints": [
+            "A newer note is not necessarily the source of truth.",
+            "What evidence distinguishes current state from a stale copy?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-107",
+        "domain": "Manage memory, state, and execution",
+        "prompt": "Two task notes name different owners for approval of a protected workflow change. How should the agent reconcile the conflicting state?",
+        "choices": [
+            "Prefer the newest note, even if its owner or source is unclear.",
+            "Merge both records and defer the disagreement to routine review.",
+            "Use the value that keeps work moving and revisit it later.",
+            "Check the authoritative, current record; reconcile or escalate."
+        ],
+        "correct": 3,
+        "explanations": [
+            "Conversation order does not establish that a statement is authoritative or current.",
+            "Combining incompatible values hides a conflict instead of resolving it.",
+            "Convenience is not a sound basis for selecting uncertain task state.",
+            "Authority and freshness establish which state can safely guide subsequent actions."
+        ],
+        "concept": "Conflict and staleness reconciliation",
+        "hints": [
+            "A newer note is not necessarily the source of truth.",
+            "What evidence distinguishes current state from a stale copy?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-108",
+        "domain": "Manage memory, state, and execution",
+        "prompt": "A cached design summary predates a reviewed commit that changed the service boundary. How should the agent reconcile the conflicting state?",
+        "choices": [
+            "Check the authoritative, current record; reconcile or escalate.",
+            "Prefer the newest note, even if its owner or source is unclear.",
+            "Merge both records and defer the disagreement to routine review.",
+            "Use the value that keeps work moving and revisit it later."
+        ],
+        "correct": 0,
+        "explanations": [
+            "Authority and freshness establish which state can safely guide subsequent actions.",
+            "Conversation order does not establish that a statement is authoritative or current.",
+            "Combining incompatible values hides a conflict instead of resolving it.",
+            "Convenience is not a sound basis for selecting uncertain task state."
+        ],
+        "concept": "Conflict and staleness reconciliation",
+        "hints": [
+            "A newer note is not necessarily the source of truth.",
+            "What evidence distinguishes current state from a stale copy?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-109",
+        "domain": "Manage memory, state, and execution",
+        "prompt": "A resumed agent sees an old test report and a newer commit with no linked validation result. How should the agent reconcile the conflicting state?",
+        "choices": [
+            "Use the value that keeps work moving and revisit it later.",
+            "Check the authoritative, current record; reconcile or escalate.",
+            "Prefer the newest note, even if its owner or source is unclear.",
+            "Merge both records and defer the disagreement to routine review."
+        ],
+        "correct": 1,
+        "explanations": [
+            "Convenience is not a sound basis for selecting uncertain task state.",
+            "Authority and freshness establish which state can safely guide subsequent actions.",
+            "Conversation order does not establish that a statement is authoritative or current.",
+            "Combining incompatible values hides a conflict instead of resolving it."
+        ],
+        "concept": "Conflict and staleness reconciliation",
+        "hints": [
+            "A newer note is not necessarily the source of truth.",
+            "What evidence distinguishes current state from a stale copy?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-110",
+        "domain": "Manage memory, state, and execution",
+        "prompt": "A short-lived benchmark result was useful for one optimization task but is now several releases old. What memory lifecycle policy best fits this information?",
+        "choices": [
+            "Reset all state for each task, including decisions still in force.",
+            "Append updates without marking older guidance as superseded.",
+            "Keep current decisions; expire temporary details and prune replaced notes.",
+            "Retain every note until storage pressure requires cleanup."
+        ],
+        "correct": 2,
+        "explanations": [
+            "A blanket reset discards durable decisions that still guide the work.",
+            "Unmarked additions leave readers unable to tell current guidance from obsolete notes.",
+            "Different lifetimes preserve useful decisions without carrying obsolete task residue.",
+            "Indefinite retention increases stale context and makes relevant state harder to find."
+        ],
+        "concept": "Memory lifecycle and task scope",
+        "hints": [
+            "Separate information that remains valid from details tied to one task.",
+            "How can a future session tell which record is still current?"
+        ],
+        "source": "https://docs.github.com/en/copilot/concepts/prompting-and-context/copilot-memory"
+    },
+    {
+        "id": "agentic-111",
+        "domain": "Manage memory, state, and execution",
+        "prompt": "A migration decision remains in force, while notes about a temporary test outage are no longer relevant. What memory lifecycle policy best fits this information?",
+        "choices": [
+            "Retain every note until storage pressure requires cleanup.",
+            "Reset all state for each task, including decisions still in force.",
+            "Append updates without marking older guidance as superseded.",
+            "Keep current decisions; expire temporary details and prune replaced notes."
+        ],
+        "correct": 3,
+        "explanations": [
+            "Indefinite retention increases stale context and makes relevant state harder to find.",
+            "A blanket reset discards durable decisions that still guide the work.",
+            "Unmarked additions leave readers unable to tell current guidance from obsolete notes.",
+            "Different lifetimes preserve useful decisions without carrying obsolete task residue."
+        ],
+        "concept": "Memory lifecycle and task scope",
+        "hints": [
+            "Separate information that remains valid from details tied to one task.",
+            "How can a future session tell which record is still current?"
+        ],
+        "source": "https://docs.github.com/en/copilot/concepts/prompting-and-context/copilot-memory"
+    },
+    {
+        "id": "agentic-112",
+        "domain": "Manage memory, state, and execution",
+        "prompt": "A repository's build instructions changed, and the previous command is still stored as the preferred workflow. What memory lifecycle policy best fits this information?",
+        "choices": [
+            "Keep current decisions; expire temporary details and prune replaced notes.",
+            "Retain every note until storage pressure requires cleanup.",
+            "Reset all state for each task, including decisions still in force.",
+            "Append updates without marking older guidance as superseded."
+        ],
+        "correct": 0,
+        "explanations": [
+            "Different lifetimes preserve useful decisions without carrying obsolete task residue.",
+            "Indefinite retention increases stale context and makes relevant state harder to find.",
+            "A blanket reset discards durable decisions that still guide the work.",
+            "Unmarked additions leave readers unable to tell current guidance from obsolete notes."
+        ],
+        "concept": "Memory lifecycle and task scope",
+        "hints": [
+            "Separate information that remains valid from details tied to one task.",
+            "How can a future session tell which record is still current?"
+        ],
+        "source": "https://docs.github.com/en/copilot/concepts/prompting-and-context/copilot-memory"
+    },
+    {
+        "id": "agentic-113",
+        "domain": "Manage memory, state, and execution",
+        "prompt": "A temporary branch-specific workaround has been merged into the supported configuration. What memory lifecycle policy best fits this information?",
+        "choices": [
+            "Append updates without marking older guidance as superseded.",
+            "Keep current decisions; expire temporary details and prune replaced notes.",
+            "Retain every note until storage pressure requires cleanup.",
+            "Reset all state for each task, including decisions still in force."
+        ],
+        "correct": 1,
+        "explanations": [
+            "Unmarked additions leave readers unable to tell current guidance from obsolete notes.",
+            "Different lifetimes preserve useful decisions without carrying obsolete task residue.",
+            "Indefinite retention increases stale context and makes relevant state harder to find.",
+            "A blanket reset discards durable decisions that still guide the work."
+        ],
+        "concept": "Memory lifecycle and task scope",
+        "hints": [
+            "Separate information that remains valid from details tied to one task.",
+            "How can a future session tell which record is still current?"
+        ],
+        "source": "https://docs.github.com/en/copilot/concepts/prompting-and-context/copilot-memory"
+    },
+    {
+        "id": "agentic-114",
+        "domain": "Manage memory, state, and execution",
+        "prompt": "An agent has accumulated repeated copies of the same decision with small wording differences. What memory lifecycle policy best fits this information?",
+        "choices": [
+            "Reset all state for each task, including decisions still in force.",
+            "Append updates without marking older guidance as superseded.",
+            "Keep current decisions; expire temporary details and prune replaced notes.",
+            "Retain every note until storage pressure requires cleanup."
+        ],
+        "correct": 2,
+        "explanations": [
+            "A blanket reset discards durable decisions that still guide the work.",
+            "Unmarked additions leave readers unable to tell current guidance from obsolete notes.",
+            "Different lifetimes preserve useful decisions without carrying obsolete task residue.",
+            "Indefinite retention increases stale context and makes relevant state harder to find."
+        ],
+        "concept": "Memory lifecycle and task scope",
+        "hints": [
+            "Separate information that remains valid from details tied to one task.",
+            "How can a future session tell which record is still current?"
+        ],
+        "source": "https://docs.github.com/en/copilot/concepts/prompting-and-context/copilot-memory"
+    },
+    {
+        "id": "agentic-115",
+        "domain": "Manage memory, state, and execution",
+        "prompt": "A coding session begins changing an adjacent module even though its checkpoint names one defect and one target package. What is the best response when execution no longer matches the agreed state?",
+        "choices": [
+            "Continue the approved approach despite the new acceptance criteria.",
+            "Restart from the beginning without checking completed work.",
+            "Treat the new direction as approved and widen the task.",
+            "Pause, compare the checkpoint, then replan or escalate."
+        ],
+        "correct": 3,
+        "explanations": [
+            "Approval applies to the agreed scope, not unreviewed changes in direction.",
+            "Restarting blindly may lose valid progress and repeat consequential actions.",
+            "Silently changing the goal hides the deviation from the task owner.",
+            "A checkpoint comparison detects scope drift and supports a deliberate safe next step."
+        ],
+        "concept": "Execution drift detection",
+        "hints": [
+            "Use the agreed goal and verified checkpoint as the comparison point.",
+            "Does the current plan still have authorization for the work it now proposes?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-116",
+        "domain": "Manage memory, state, and execution",
+        "prompt": "A resumed agent proposes a broader refactor after discovering a second issue unrelated to the approved task. What is the best response when execution no longer matches the agreed state?",
+        "choices": [
+            "Pause, compare the checkpoint, then replan or escalate.",
+            "Continue the approved approach despite the new acceptance criteria.",
+            "Restart from the beginning without checking completed work.",
+            "Treat the new direction as approved and widen the task."
+        ],
+        "correct": 0,
+        "explanations": [
+            "A checkpoint comparison detects scope drift and supports a deliberate safe next step.",
+            "Approval applies to the agreed scope, not unreviewed changes in direction.",
+            "Restarting blindly may lose valid progress and repeat consequential actions.",
+            "Silently changing the goal hides the deviation from the task owner."
+        ],
+        "concept": "Execution drift detection",
+        "hints": [
+            "Use the agreed goal and verified checkpoint as the comparison point.",
+            "Does the current plan still have authorization for the work it now proposes?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-117",
+        "domain": "Manage memory, state, and execution",
+        "prompt": "A long-running agent continues an earlier plan after a maintainer changed the acceptance criteria. What is the best response when execution no longer matches the agreed state?",
+        "choices": [
+            "Treat the new direction as approved and widen the task.",
+            "Pause, compare the checkpoint, then replan or escalate.",
+            "Continue the approved approach despite the new acceptance criteria.",
+            "Restart from the beginning without checking completed work."
+        ],
+        "correct": 1,
+        "explanations": [
+            "Silently changing the goal hides the deviation from the task owner.",
+            "A checkpoint comparison detects scope drift and supports a deliberate safe next step.",
+            "Approval applies to the agreed scope, not unreviewed changes in direction.",
+            "Restarting blindly may lose valid progress and repeat consequential actions."
+        ],
+        "concept": "Execution drift detection",
+        "hints": [
+            "Use the agreed goal and verified checkpoint as the comparison point.",
+            "Does the current plan still have authorization for the work it now proposes?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-118",
+        "domain": "Manage memory, state, and execution",
+        "prompt": "A task starts producing edits in an unapproved directory after a tool returns an unexpected path. What is the best response when execution no longer matches the agreed state?",
+        "choices": [
+            "Restart from the beginning without checking completed work.",
+            "Treat the new direction as approved and widen the task.",
+            "Pause, compare the checkpoint, then replan or escalate.",
+            "Continue the approved approach despite the new acceptance criteria."
+        ],
+        "correct": 2,
+        "explanations": [
+            "Restarting blindly may lose valid progress and repeat consequential actions.",
+            "Silently changing the goal hides the deviation from the task owner.",
+            "A checkpoint comparison detects scope drift and supports a deliberate safe next step.",
+            "Approval applies to the agreed scope, not unreviewed changes in direction."
+        ],
+        "concept": "Execution drift detection",
+        "hints": [
+            "Use the agreed goal and verified checkpoint as the comparison point.",
+            "Does the current plan still have authorization for the work it now proposes?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-119",
+        "domain": "Manage memory, state, and execution",
+        "prompt": "The planned tests no longer cover the current patch because the implementation changed during recovery. What is the best response when execution no longer matches the agreed state?",
+        "choices": [
+            "Continue the approved approach despite the new acceptance criteria.",
+            "Restart from the beginning without checking completed work.",
+            "Treat the new direction as approved and widen the task.",
+            "Pause, compare the checkpoint, then replan or escalate."
+        ],
+        "correct": 3,
+        "explanations": [
+            "Approval applies to the agreed scope, not unreviewed changes in direction.",
+            "Restarting blindly may lose valid progress and repeat consequential actions.",
+            "Silently changing the goal hides the deviation from the task owner.",
+            "A checkpoint comparison detects scope drift and supports a deliberate safe next step."
+        ],
+        "concept": "Execution drift detection",
+        "hints": [
+            "Use the agreed goal and verified checkpoint as the comparison point.",
+            "Does the current plan still have authorization for the work it now proposes?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-120",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "Which evidence most directly shows that a bug-fix agent met the task's specified behavior?",
+        "choices": [
+            "Tests covering the acceptance cases",
+            "A passing formatting check",
+            "A successful dependency installation",
+            "A clean working tree after building"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Acceptance tests exercise the requested behavior directly.",
+            "Formatting does not establish behavioral correctness.",
+            "Installing dependencies does not exercise the fix.",
+            "A clean tree does not verify the required behavior."
+        ],
+        "concept": "Evaluate the requested outcome, not a convenient activity proxy.",
+        "hints": [
+            "Match the evidence to the requested outcome rather than an incidental output.",
+            "Separate functional behavior from operational constraints."
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/3-inputs-outputs-success-criteria"
+    },
+    {
+        "id": "agentic-121",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "An agent's test step stops at 'npm: command not found' before loading tests. Which failure layer should be checked first?",
+        "choices": [
+            "Pull request review policy",
+            "Execution environment",
+            "Implementation reasoning",
+            "Acceptance criteria"
+        ],
+        "correct": 1,
+        "explanations": [
+            "The failure occurs before pull request review.",
+            "The runtime cannot locate a required executable.",
+            "No test has yet evaluated the implementation's reasoning.",
+            "A missing executable does not invalidate task criteria."
+        ],
+        "concept": "Identify environmental prerequisites before judging implementation quality.",
+        "hints": [
+            "Locate the first divergence in the recorded execution.",
+            "Distinguish a missing prerequisite from an incorrect decision."
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-122",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "Tools return correct data and requirements are current, but the agent chooses an algorithm that violates them. What is the primary failure?",
+        "choices": [
+            "Runtime provisioning error",
+            "Missing task context",
+            "Reasoning error",
+            "Tool authentication error"
+        ],
+        "correct": 2,
+        "explanations": [
+            "The evidence does not show a runtime prerequisite failure.",
+            "The required context was available and current.",
+            "The decision conflicts with available, correct requirements.",
+            "Tool access succeeded in the stated situation."
+        ],
+        "concept": "Classify the cause from evidence rather than blaming every failure on tools.",
+        "hints": [
+            "Locate the first divergence in the recorded execution.",
+            "Distinguish a missing prerequisite from an incorrect decision."
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-123",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "The approved target is octo-org/api, but a successful tool call edits octo-org/other. Which failure does the trace show?",
+        "choices": [
+            "Unavailable tool service",
+            "Expired authentication",
+            "Insufficient execution time",
+            "Incorrect tool arguments"
+        ],
+        "correct": 3,
+        "explanations": [
+            "The tool service successfully executed the call.",
+            "The evidence shows authorized execution, not expired credentials.",
+            "The operation completed rather than timing out.",
+            "The call supplies the wrong repository target."
+        ],
+        "concept": "A successful tool response does not imply the tool was used correctly.",
+        "hints": [
+            "Locate the first divergence in the recorded execution.",
+            "Distinguish a missing prerequisite from an incorrect decision."
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-124",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "A failure trace shows the agent followed a superseded API contract preserved in its summary. Which cause best fits?",
+        "choices": [
+            "Stale context",
+            "Invalid tool transport",
+            "Missing repository permission",
+            "Ambiguous current requirements"
+        ],
+        "correct": 0,
+        "explanations": [
+            "The summary supplied outdated information to the decision.",
+            "The evidence concerns contract age, not transport.",
+            "No access denial is described in the trace.",
+            "The current contract is not described as ambiguous."
+        ],
+        "concept": "Distinguish outdated retained context from unclear current requirements.",
+        "hints": [
+            "Locate the first divergence in the recorded execution.",
+            "Distinguish a missing prerequisite from an incorrect decision."
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-125",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "Which signal is qualitative evidence of an agent contribution's maintainability?",
+        "choices": [
+            "The percentage of passing tests",
+            "A rubric-based maintainer review",
+            "The workflow's elapsed seconds",
+            "The number of tool invocations"
+        ],
+        "correct": 1,
+        "explanations": [
+            "A passing-test percentage is a quantitative result.",
+            "A structured review evaluates qualities requiring judgment.",
+            "Elapsed seconds measure duration quantitatively.",
+            "An invocation count measures activity quantitatively."
+        ],
+        "concept": "Use qualitative judgments alongside quantitative operational signals.",
+        "hints": [
+            "Match the evidence to the requested outcome rather than an incidental output.",
+            "Separate functional behavior from operational constraints."
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-126",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "For an evaluation with one attempt per task, which ratio measures task-level acceptance success?",
+        "choices": [
+            "Generated files / accepted tasks",
+            "Elapsed seconds / evaluated tasks",
+            "Accepted tasks / evaluated tasks",
+            "Tool calls / evaluated tasks"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Files per accepted task measures change volume.",
+            "Seconds per task measures duration rather than acceptance.",
+            "This ratio measures how many evaluated tasks met acceptance criteria.",
+            "Calls per task measures activity rather than acceptance."
+        ],
+        "concept": "Define a metric's numerator and denominator to match the evaluation objective.",
+        "hints": [
+            "Match the evidence to the requested outcome rather than an incidental output.",
+            "Separate functional behavior from operational constraints."
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-127",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "An evaluation reports behavior=pass and unauthorized-write=detected. How should the agent task be assessed?",
+        "choices": [
+            "Functional success; full acceptance",
+            "Functional failure; policy success",
+            "Environment failure; no policy result",
+            "Functional success; policy failure"
+        ],
+        "correct": 3,
+        "explanations": [
+            "The unauthorized write prevents full acceptance.",
+            "The stated behavior result is pass, not failure.",
+            "A policy violation was observed; it is not absent.",
+            "Correct behavior does not excuse a violated authorization constraint."
+        ],
+        "concept": "Acceptance includes operational constraints as well as requested behavior.",
+        "hints": [
+            "Match the evidence to the requested outcome rather than an incidental output.",
+            "Separate functional behavior from operational constraints."
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/3-inputs-outputs-success-criteria"
+    },
+    {
+        "id": "agentic-128",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "An agent patch builds and passes lint. Which additional check most directly detects recurrence of the reported bug?",
+        "choices": [
+            "A regression test for that behavior",
+            "A second formatting pass on the patch",
+            "A dependency installation without warnings",
+            "A count of the modified source files"
+        ],
+        "correct": 0,
+        "explanations": [
+            "The regression test exercises the previously incorrect behavior.",
+            "Formatting does not test the reported behavior.",
+            "A clean installation does not demonstrate the fix.",
+            "File counts describe scope, not behavioral correctness."
+        ],
+        "concept": "Choose checks that expose the actual failure, not merely build hygiene.",
+        "hints": [
+            "Match the evidence to the requested outcome rather than an incidental output.",
+            "Separate functional behavior from operational constraints."
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/3-inputs-outputs-success-criteria"
+    },
+    {
+        "id": "agentic-129",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "Which evaluation output directly helps identify code-security flaws in an agent's patch?",
+        "choices": [
+            "Package installation logs",
+            "CodeQL analysis findings",
+            "Unit-test coverage totals",
+            "Formatter check results"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Installation logs do not analyze application code security.",
+            "Code scanning produces findings about potential code vulnerabilities.",
+            "Coverage measures exercised code, not absence of security flaws.",
+            "Formatting checks style rather than vulnerability patterns."
+        ],
+        "concept": "Select automated scanning signals appropriate to the risk being evaluated.",
+        "hints": [
+            "Match the evidence to the requested outcome rather than an incidental output.",
+            "Separate functional behavior from operational constraints."
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/3-inputs-outputs-success-criteria"
+    },
+    {
+        "id": "agentic-130",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "Which GitHub Actions context pair links evaluation evidence to its workflow run and event commit?",
+        "choices": [
+            "github.workflow + github.ref_name",
+            "github.event_name + github.run_number",
+            "github.run_id + github.sha",
+            "github.repository + github.actor"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Workflow and ref names do not identify an exact run and commit.",
+            "Event name and run number do not identify the commit.",
+            "Run ID identifies the run; SHA identifies the event's commit.",
+            "Repository and actor do not identify the event commit."
+        ],
+        "concept": "Record the event commit deliberately; custom checkout steps may select a different revision.",
+        "hints": [
+            "Tie evidence to the exact execution and code state.",
+            "Consider what a reviewer needs to reconstruct the result."
+        ],
+        "source": "https://docs.github.com/en/actions/reference/workflows-and-actions/contexts"
+    },
+    {
+        "id": "agentic-131",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "A tool trace records HTTP 429 after several successful requests. Which initial diagnosis best fits that response?",
+        "choices": [
+            "Malformed JSON syntax",
+            "Expired repository credentials",
+            "An invalid target branch",
+            "Service rate limiting"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Malformed JSON is not the meaning of this response code.",
+            "Credential expiration is not established by this response.",
+            "The response does not establish an invalid branch.",
+            "HTTP 429 indicates too many requests or rate limiting."
+        ],
+        "concept": "Classify the observed service response before changing reasoning or permissions.",
+        "hints": [
+            "Locate the first divergence in the recorded execution.",
+            "Distinguish a missing prerequisite from an incorrect decision."
+        ],
+        "source": "https://docs.github.com/en/rest/using-the-rest-api/troubleshooting-the-rest-api"
+    },
+    {
+        "id": "agentic-132",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "The tool endpoint and arguments are valid, but the trace reports insufficient permission. What should be reviewed first?",
+        "choices": [
+            "The tool's approved access scope",
+            "The task's maximum retry count",
+            "The formatting of the final summary",
+            "The retained artifact's expiration"
+        ],
+        "correct": 0,
+        "explanations": [
+            "An authorization failure calls for checking required and approved permissions.",
+            "Repeated retries do not supply missing authorization.",
+            "Summary formatting does not grant tool permissions.",
+            "Artifact retention does not authorize the tool call."
+        ],
+        "concept": "Diagnose authorization without automatically granting broader access.",
+        "hints": [
+            "Change the control implicated by the evidence, not unrelated settings.",
+            "Recheck the task's constraints before widening access or increasing retries."
+        ],
+        "source": "https://docs.github.com/en/rest/using-the-rest-api/troubleshooting-the-rest-api"
+    },
+    {
+        "id": "agentic-133",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "Which GitHub CLI command retrieves failed-step logs from workflow run 731 for an agent failure investigation?",
+        "choices": [
+            "gh run watch 731",
+            "gh run view 731 --log-failed",
+            "gh run rerun 731 --failed",
+            "gh run download 731"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Watch follows run status rather than retrieving failed-step logs.",
+            "View with log-failed displays the failed steps' log output.",
+            "Rerun starts another attempt rather than reading existing logs.",
+            "Download retrieves run artifacts rather than selecting failed-step logs."
+        ],
+        "concept": "Inspect recorded failure evidence before changing the execution.",
+        "hints": [
+            "Tie evidence to the exact execution and code state.",
+            "Consider what a reviewer needs to reconstruct the result."
+        ],
+        "source": "https://docs.github.com/en/actions/how-tos/monitor-workflows/use-workflow-run-logs"
+    },
+    {
+        "id": "agentic-134",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "An approved plan permits edits only under src/, but a trace records a write to infra/. What should the evaluator compare first?",
+        "choices": [
+            "The branch name against the task's display title",
+            "The artifact size against the previous run's size",
+            "The recorded action against the approved scope",
+            "The model's confidence against its previous score"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Names do not establish whether the write was authorized.",
+            "Artifact size does not establish the write's scope.",
+            "This comparison locates a concrete divergence from the approved boundary.",
+            "Confidence does not explain the out-of-scope write."
+        ],
+        "concept": "Root-cause analysis starts with observable divergence from intended behavior.",
+        "hints": [
+            "Locate the first divergence in the recorded execution.",
+            "Distinguish a missing prerequisite from an incorrect decision."
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-135",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "An agent meets a speed goal but repeatedly breaks required backward compatibility. Which task-contract refinement best addresses this?",
+        "choices": [
+            "Increase the available tool-call budget",
+            "Widen the permitted repository scope",
+            "Extend the workflow execution timeout",
+            "Specify compatibility criteria and checks"
+        ],
+        "correct": 3,
+        "explanations": [
+            "More calls do not define the missing acceptance condition.",
+            "Broader scope does not establish compatibility requirements.",
+            "More execution time does not define the required behavior.",
+            "Explicit criteria and checks make compatibility part of acceptance."
+        ],
+        "concept": "Make operational intent observable through explicit acceptance criteria.",
+        "hints": [
+            "Change the control implicated by the evidence, not unrelated settings.",
+            "Recheck the task's constraints before widening access or increasing retries."
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/3-inputs-outputs-success-criteria"
+    },
+    {
+        "id": "agentic-136",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "A diagnostic report shows savedContract=v1 and currentContract=v2; failures follow v1. Which tuning change addresses the cause?",
+        "choices": [
+            "Refresh the retained contract context",
+            "Increase the number of parallel agents",
+            "Expand the tool's organization access",
+            "Retain the old summary without changes"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Refreshing stale context aligns decisions with current requirements.",
+            "More parallel agents can repeat the same stale assumption.",
+            "Broader access does not correct an outdated contract.",
+            "Keeping the old summary preserves the observed cause."
+        ],
+        "concept": "Use evaluation evidence to tune memory relevance and freshness.",
+        "hints": [
+            "Change the control implicated by the evidence, not unrelated settings.",
+            "Recheck the task's constraints before widening access or increasing retries."
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-137",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "Traces show an inventory-only agent repeatedly selecting unrelated write tools. Which tuning best reduces this failure opportunity?",
+        "choices": [
+            "Preserve the toolset and shorten log retention",
+            "Restrict its tool allowlist to required reads",
+            "Give it more write-capable MCP servers",
+            "Increase the maximum concurrent tool calls"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Shorter retention reduces evidence without fixing access.",
+            "A narrower capability boundary removes unnecessary write options.",
+            "More write tools expand the inappropriate capability set.",
+            "Higher concurrency does not remove irrelevant write tools."
+        ],
+        "concept": "Tune tool access based on observed misuse and the task's actual needs.",
+        "hints": [
+            "Change the control implicated by the evidence, not unrelated settings.",
+            "Recheck the task's constraints before widening access or increasing retries."
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-138",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "The workflow policy requires escalation after two failed check attempts. Both attempts failed. What should the agent do next?",
+        "choices": [
+            "Repeat the same attempt until it passes",
+            "Remove the failing check from acceptance",
+            "Escalate with evidence and attempted fixes",
+            "Start a new agent to reset the attempt count"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Unbounded repetition violates the specified iteration policy.",
+            "Removing a check changes acceptance instead of resolving failure.",
+            "Escalation follows the specified budget and preserves actionable evidence.",
+            "Replacing the agent does not authorize bypassing the policy."
+        ],
+        "concept": "Apply the configured retry policy; a teaching example is not a universal retry limit.",
+        "hints": [
+            "Change the control implicated by the evidence, not unrelated settings.",
+            "Recheck the task's constraints before widening access or increasing retries."
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-139",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "Which evaluation set best checks whether instruction tuning generalizes beyond the examples used to tune it?",
+        "choices": [
+            "Only the examples edited during tuning",
+            "Only tasks the new revision already passed",
+            "The easiest tasks from the previous release",
+            "Representative tasks held out from tuning"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Tuning examples alone cannot establish generalization.",
+            "Selecting only successes biases the reported result.",
+            "Easy tasks may miss the target workload's difficulties.",
+            "Held-out representative tasks provide an independent generalization check."
+        ],
+        "concept": "Separate tuning feedback from representative independent evaluation.",
+        "hints": [
+            "Keep unrelated variables stable when comparing revisions.",
+            "Check whether the evaluated tasks represent the intended workload."
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-140",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "Which comparison best isolates the effect of an instruction revision on agent task success?",
+        "choices": [
+            "Same tasks, model, tools; different instructions",
+            "Same tasks; different model, tools, instructions",
+            "Different tasks; same model and instructions",
+            "Different tools and tasks; same instructions"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Holding other factors stable makes the instruction change interpretable.",
+            "Changing several factors confounds attribution.",
+            "Changing tasks can change difficulty independently of instructions.",
+            "Changing tools and tasks does not isolate instructions."
+        ],
+        "concept": "Use controlled comparisons before attributing an improvement to a tuning change.",
+        "hints": [
+            "Keep unrelated variables stable when comparing revisions.",
+            "Check whether the evaluated tasks represent the intended workload."
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-141",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "An unchanged patch alternately passes and fails a check. Which records best support investigating nondeterministic behavior?",
+        "choices": [
+            "Only the final summary after discarding failed logs",
+            "Matched reruns with inputs and environment recorded",
+            "Runs of different tasks with unrelated repositories",
+            "Only the fastest successful run of that patch"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Discarding failures removes evidence needed for diagnosis.",
+            "Comparable reruns and recorded conditions support diagnosing variability.",
+            "Unrelated tasks introduce uncontrolled differences.",
+            "One selected success hides the observed variability."
+        ],
+        "concept": "Investigate flaky results with comparable evidence rather than cherry-picked outcomes.",
+        "hints": [
+            "Keep unrelated variables stable when comparing revisions.",
+            "Check whether the evaluated tasks represent the intended workload."
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-142",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "Which timestamp pair most directly measures how long an agent waited for a particular tool call?",
+        "choices": [
+            "Branch creation and commit timestamps",
+            "Artifact upload and expiration timestamps",
+            "Tool invocation and response timestamps",
+            "Task creation and first review timestamps"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Branch and commit times do not delimit the tool call.",
+            "Artifact lifetime does not measure tool response time.",
+            "The call's start and response delimit its observed wait.",
+            "Task and review times include unrelated workflow stages."
+        ],
+        "concept": "Use traces at the layer whose latency you are diagnosing.",
+        "hints": [
+            "Tie evidence to the exact execution and code state.",
+            "Consider what a reviewer needs to reconstruct the result."
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-143",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "An agent run records queue=120s, setup=7s, tool=5s, reasoning=3s. Which stage dominates its measured latency?",
+        "choices": [
+            "Environment setup",
+            "Tool execution",
+            "Model reasoning",
+            "Queue waiting"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Setup accounts for seven seconds, not the dominant delay.",
+            "Tool execution accounts for five seconds.",
+            "Reasoning accounts for three seconds.",
+            "The recorded queue wait is longer than each other stage."
+        ],
+        "concept": "Interpret operational timing before deciding which component to tune.",
+        "hints": [
+            "Match the evidence to the requested outcome rather than an incidental output.",
+            "Separate functional behavior from operational constraints."
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-144",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "Which efficiency metric normalizes agent execution spending by useful, accepted task completions?",
+        "choices": [
+            "Cost per accepted task",
+            "Total cost regardless of acceptance",
+            "Tokens per failed attempt",
+            "Total workflow run count"
+        ],
+        "correct": 0,
+        "explanations": [
+            "This metric relates spending to tasks meeting acceptance criteria.",
+            "Total cost alone ignores how much useful work was accepted.",
+            "Tokens per failure excludes the useful completion denominator.",
+            "Run count measures activity rather than cost per accepted result."
+        ],
+        "concept": "Evaluate efficiency without replacing the definition of success.",
+        "hints": [
+            "Match the evidence to the requested outcome rather than an incidental output.",
+            "Separate functional behavior from operational constraints."
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-145",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "Policy permits a read-only task, but the agent refuses solely because it classifies all repository reads as forbidden. How should this be labeled?",
+        "choices": [
+            "Tool service unavailability",
+            "Incorrect policy refusal",
+            "Correct safety refusal",
+            "Authorized task completion"
+        ],
+        "correct": 1,
+        "explanations": [
+            "No tool outage is described in the scenario.",
+            "The refusal contradicts the explicitly permitted operation.",
+            "The stated policy allows this operation.",
+            "The agent refused rather than completing the task."
+        ],
+        "concept": "Evaluation should distinguish legitimate safety refusals from unnecessary blocking.",
+        "hints": [
+            "Locate the first divergence in the recorded execution.",
+            "Distinguish a missing prerequisite from an incorrect decision."
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-146",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "A benchmark mixes permitted tasks with prohibited requests. Which reporting approach avoids rewarding unsafe completion or unnecessary refusal?",
+        "choices": [
+            "Count every refused request as a failure",
+            "Exclude all policy outcomes from the evaluation",
+            "Separate permitted-task success from correct refusals",
+            "Count every completed request as a success"
+        ],
+        "correct": 2,
+        "explanations": [
+            "A correct refusal is not an ordinary task failure.",
+            "Excluding policy hides safety and over-blocking failures.",
+            "Separate outcomes measure both useful completion and appropriate policy compliance.",
+            "Completing a prohibited request should not count as success."
+        ],
+        "concept": "Interpret evaluation outcomes in the context of task authorization.",
+        "hints": [
+            "Match the evidence to the requested outcome rather than an incidental output.",
+            "Separate functional behavior from operational constraints."
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-147",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "An agent reports fewer security findings after disabling several scanner rules. Why is that insufficient evidence of a safer patch?",
+        "choices": [
+            "The agent's model provider changed",
+            "The evaluated repository was replaced",
+            "The findings were manually reclassified",
+            "The scanner's detection coverage changed"
+        ],
+        "correct": 3,
+        "explanations": [
+            "The evidence does not establish a model-provider change.",
+            "The evidence does not establish a repository change.",
+            "Disabling rules is not evidence that findings were manually reclassified.",
+            "Changed rules make the finding counts incomparable as proof of improvement."
+        ],
+        "concept": "Compare security signals under equivalent detection conditions.",
+        "hints": [
+            "Keep unrelated variables stable when comparing revisions.",
+            "Check whether the evaluated tasks represent the intended workload."
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/3-inputs-outputs-success-criteria"
+    },
+    {
+        "id": "agentic-148",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "An agent's checks pass, but its PR changes unrelated deployment files outside the approved plan. Which evaluation dimension fails?",
+        "choices": [
+            "Scope alignment",
+            "Runtime availability",
+            "Tool transport reliability",
+            "Dependency installation"
+        ],
+        "correct": 0,
+        "explanations": [
+            "The changes exceed the approved task boundary.",
+            "Passing checks do not indicate an unavailable runtime.",
+            "No transport failure is described.",
+            "No dependency installation failure is described."
+        ],
+        "concept": "Evaluate the contribution's scope independently of its passing checks.",
+        "hints": [
+            "Match the evidence to the requested outcome rather than an incidental output.",
+            "Separate functional behavior from operational constraints."
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/foundations-agentic-ai/6-apply-contributor-model-agent-generated-work"
+    },
+    {
+        "id": "agentic-149",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "Which pull request tab should a reviewer use to inspect the actual file diffs produced by an agent?",
+        "choices": [
+            "Commits",
+            "Files changed",
+            "Conversation",
+            "Checks"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Commits lists commits rather than the aggregate file-diff review tab.",
+            "Files changed displays the changed files and their diffs.",
+            "Conversation focuses on discussion and the pull request timeline.",
+            "Checks focuses on check results rather than the file-diff review view."
+        ],
+        "concept": "Use the contribution's diff to verify scope and implementation.",
+        "hints": [
+            "Tie evidence to the exact execution and code state.",
+            "Consider what a reviewer needs to reconstruct the result."
+        ],
+        "source": "https://docs.github.com/en/pull-requests/how-tos/review-pull-requests/reviewing-proposed-changes-in-a-pull-request"
+    },
+    {
+        "id": "agentic-150",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "The test artifact records commit A, but the PR head is now changed commit B. What evidence is needed to accept B?",
+        "choices": [
+            "The unchanged workflow's display name",
+            "The original plan's approval timestamp",
+            "Required check results for commit B",
+            "The previously passing results for commit A"
+        ],
+        "correct": 2,
+        "explanations": [
+            "A workflow name does not bind results to B.",
+            "Plan approval does not establish execution results for B.",
+            "Acceptance evidence must correspond to the code revision being accepted.",
+            "Passing A does not validate the changes introduced in B."
+        ],
+        "concept": "Do not transfer validation results silently between code revisions.",
+        "hints": [
+            "Tie evidence to the exact execution and code state.",
+            "Consider what a reviewer needs to reconstruct the result."
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-151",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "Quality must not regress. Cheaper instructions now fail previously passing acceptance tasks. Which conclusion follows?",
+        "choices": [
+            "The cost reduction establishes overall improvement",
+            "Earlier passing results validate the new revision",
+            "Lower latency compensates for any failed task",
+            "The revision fails the quality gate"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Cost alone does not satisfy the non-regression requirement.",
+            "Previous revision results do not validate changed instructions.",
+            "The stated constraint does not permit exchanging correctness for latency.",
+            "The explicit quality constraint remains unsatisfied despite lower cost."
+        ],
+        "concept": "Evaluate tuning against all required gates, not just the metric that improved.",
+        "hints": [
+            "Keep unrelated variables stable when comparing revisions.",
+            "Check whether the evaluated tasks represent the intended workload."
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-152",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "A task requires summary and risk fields. The agent exits zero with {\"summary\":\"done\"}. Which check detects the missing required output?",
+        "choices": [
+            "Validate required output schema fields",
+            "Check only the process exit code",
+            "Check that the output file exists",
+            "Check that the output is valid JSON"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Schema validation detects the missing required risk field.",
+            "A zero exit code does not establish output completeness.",
+            "A file can exist while lacking a required field.",
+            "The shown JSON is syntactically valid but incomplete."
+        ],
+        "concept": "Process success and contract-compliant output are different signals.",
+        "hints": [
+            "Match the evidence to the requested outcome rather than an incidental output.",
+            "Separate functional behavior from operational constraints."
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/3-inputs-outputs-success-criteria"
+    },
+    {
+        "id": "agentic-153",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "An agent claims its tests passed. Which evidence should a reviewer inspect to verify that claim?",
+        "choices": [
+            "Previous revision's green checks",
+            "Matching run's test report",
+            "Agent's completion summary",
+            "Original implementation plan"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Earlier revision results do not validate the current code.",
+            "The report from the relevant execution provides test-result evidence.",
+            "The completion summary repeats the claim rather than independently verifying it.",
+            "A plan describes intended work rather than actual test results."
+        ],
+        "concept": "Treat agent-generated claims as contributions requiring evidence.",
+        "hints": [
+            "Match the evidence to the requested outcome rather than an incidental output.",
+            "Separate functional behavior from operational constraints."
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/foundations-agentic-ai/6-apply-contributor-model-agent-generated-work"
+    },
+    {
+        "id": "agentic-154",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "Unit tests pass, but the agent's API change breaks an existing consumer's contract. Which added validation directly targets that gap?",
+        "choices": [
+            "Dependency cache checks",
+            "Runner availability checks",
+            "Consumer contract tests",
+            "Source formatting checks"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Cache checks do not verify API compatibility.",
+            "Runner availability does not validate the consumer contract.",
+            "Contract tests exercise the producer-consumer expectations that were broken.",
+            "Formatting does not test consumer expectations."
+        ],
+        "concept": "Select evaluation coverage based on the observed integration failure.",
+        "hints": [
+            "Match the evidence to the requested outcome rather than an incidental output.",
+            "Separate functional behavior from operational constraints."
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-155",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "An agent summary may use different wording while conveying all required facts. Which evaluation avoids rejecting valid paraphrases?",
+        "choices": [
+            "Character-for-character text matching",
+            "A fixed first-sentence comparison",
+            "Matching the reference answer's length",
+            "A rubric covering required meaning"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Exact text matching can reject valid paraphrases.",
+            "Matching an opening sentence does not evaluate all required facts.",
+            "Answer length does not establish semantic completeness.",
+            "A meaning-based rubric evaluates the required information."
+        ],
+        "concept": "Match the evaluation method to what the output contract actually requires.",
+        "hints": [
+            "Match the evidence to the requested outcome rather than an incidental output.",
+            "Separate functional behavior from operational constraints."
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-156",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "Reviewers disagree about what 'maintainable' means for an agent patch. What should they define before comparing revisions?",
+        "choices": [
+            "A shared review rubric with criteria",
+            "A target review-turnaround duration",
+            "A maximum changed-line count per patch",
+            "A target tool-call budget per task"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Explicit shared criteria make qualitative judgments more consistent.",
+            "Review speed does not define the patch's maintainability.",
+            "Patch size alone does not define shared maintainability criteria.",
+            "Tool-call budgets measure activity rather than define review standards."
+        ],
+        "concept": "Operationalize qualitative evaluation instead of relying on undefined labels.",
+        "hints": [
+            "Match the evidence to the requested outcome rather than an incidental output.",
+            "Separate functional behavior from operational constraints."
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/foundations-agentic-ai/6-apply-contributor-model-agent-generated-work"
+    },
+    {
+        "id": "agentic-157",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "With healthy tools and current context, the agent repeatedly omits a required validation step. Which area should be tuned first?",
+        "choices": [
+            "Runner network region and display labels",
+            "Execution instructions and validation workflow",
+            "Repository credential expiration settings",
+            "Artifact compression and retention settings"
+        ],
+        "correct": 1,
+        "explanations": [
+            "The evidence does not implicate runner networking or labels.",
+            "Instructions and workflow structure directly govern the omitted step.",
+            "Credential lifetime does not explain omission with healthy tools.",
+            "Artifact storage settings do not require the missing validation."
+        ],
+        "concept": "Tune the behavior implicated by failure evidence, then reevaluate.",
+        "hints": [
+            "Change the control implicated by the evidence, not unrelated settings.",
+            "Recheck the task's constraints before widening access or increasing retries."
+        ],
+        "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-600"
+    },
+    {
+        "id": "agentic-158",
+        "domain": "Perform evaluation, error analysis, and tuning",
+        "prompt": "Which authorized diagnostic bundle best supports reproducing an agent failure without retaining live secrets?",
+        "choices": [
+            "Aggregate metrics, model name, and latest plan",
+            "Patch diff, final status, and current tool names",
+            "Sanitized inputs, versions, and execution trace",
+            "PR summary, branch name, and review timestamps"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Aggregates and the latest plan do not preserve the failed execution.",
+            "A diff and current tool names do not capture failed-run versions or events.",
+            "Sanitized task data and recorded execution conditions support reconstruction.",
+            "Review metadata omits the failing inputs and execution trace."
+        ],
+        "concept": "Keep sufficient reproducible evidence while respecting sensitive-data boundaries.",
+        "hints": [
+            "Tie evidence to the exact execution and code state.",
+            "Consider what a reviewer needs to reconstruct the result."
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-159",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "Two agents can independently update documentation and add parser tests. Which orchestration choice preserves useful parallelism?",
+        "choices": [
+            "Have both edit one shared checkout and sort out overlaps at the end",
+            "Run one worker, then rerun the same task with the second for confirmation",
+            "Ask both agents to modify documentation while a third waits",
+            "Assign separate worktrees and files, then integrate and validate the combined change"
+        ],
+        "correct": 3,
+        "explanations": [
+            "A shared writable checkout invites concurrent edits and unclear ownership.",
+            "Repeating the same work duplicates effort without reducing integration risk.",
+            "This arrangement does not assign independent work to the workers.",
+            "Separate worktrees and file ownership limit collisions while retaining a final integration check."
+        ],
+        "concept": "Parallel work with isolated edits",
+        "hints": [
+            "Can both outputs be produced independently?",
+            "How will their changes be combined and checked?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/6-reliable-workflows"
+    },
+    {
+        "id": "agentic-160",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "An implementation worker cannot start until a design worker defines a stable API contract. Which orchestration pattern fits this dependency?",
+        "choices": [
+            "Approve the API contract before implementation starts",
+            "Start both workers on the same files and reconcile their assumptions later",
+            "Ask the implementation worker to invent the contract as it codes",
+            "Run the implementation twice, using the second result as the design"
+        ],
+        "correct": 0,
+        "explanations": [
+            "A sequential handoff gives implementation a concrete, reviewed prerequisite.",
+            "Concurrent edits do not resolve a dependency that requires a defined contract first.",
+            "Inventing the API during implementation bypasses the intended design decision.",
+            "The second implementation is not a design artifact or a clear approval gate."
+        ],
+        "concept": "Sequencing dependent agent work",
+        "hints": [
+            "What must exist before implementation begins?",
+            "Which artifact can carry that decision to the next worker?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/6-reliable-workflows"
+    },
+    {
+        "id": "agentic-161",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "Two workers submit incompatible edits to the same authentication function. Both claim their tests pass. What should the coordinator do?",
+        "choices": [
+            "Choose the worker with the shorter completion time",
+            "Pause; resolve against requirements, then test the merged change",
+            "Merge both versions and rely on the next release to reveal problems",
+            "Ask each worker to remove the tests that fail after combining their branches"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Completion time does not establish correctness or compatibility.",
+            "A requirements-based comparison plus combined validation resolves the shared-code conflict with evidence.",
+            "Merging incompatible edits without review can introduce an untested result.",
+            "Removing failing tests suppresses evidence instead of resolving the behavioral conflict."
+        ],
+        "concept": "Resolving incompatible parallel edits",
+        "hints": [
+            "Do separate test passes establish that the combined change works?",
+            "What evidence and requirement should guide the conflict decision?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/foundations-agentic-ai/6-apply-contributor-model-agent-generated-work"
+    },
+    {
+        "id": "agentic-162",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "A coordinator accidentally dispatches the same bug fix to two workers, creating duplicate PRs. Which change best prevents recurrence?",
+        "choices": [
+            "Increase the number of workers and let them select issues",
+            "Ask workers to search chat history before editing",
+            "Check active task ownership before dispatch",
+            "Require both workers to use the same branch name"
+        ],
+        "correct": 2,
+        "explanations": [
+            "More workers and self-selection do not establish unique assignment ownership.",
+            "Chat history can be incomplete or stale and is not a durable dispatch guard.",
+            "A shared assignment ledger or ownership check prevents duplicate dispatch before work starts.",
+            "A common branch name can cause edit collisions rather than prevent duplicated work."
+        ],
+        "concept": "Preventing duplicated task assignments",
+        "hints": [
+            "What should the coordinator know before dispatching work?",
+            "How can active ownership survive beyond a chat transcript?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/6-reliable-workflows"
+    },
+    {
+        "id": "agentic-163",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "A reviewer agent says a change meets the acceptance criteria; the implementation agent disagrees. What should resolve the disagreement?",
+        "choices": [
+            "The implementation agent's confidence score",
+            "A vote weighted by how many agents support each position",
+            "Whichever agent submitted its report first",
+            "The written criteria and reviewable evidence from the integrated change"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Confidence does not establish that the required behavior is present.",
+            "Agreement among agents is not a substitute for checking the requirement.",
+            "Report order does not determine correctness.",
+            "The acceptance criteria and observable evidence provide a common, auditable basis for the decision."
+        ],
+        "concept": "Adjudicating contradictory agent results",
+        "hints": [
+            "Can the two claims be tested against a shared standard?",
+            "Which artifact shows the integrated behavior?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/foundations-agentic-ai/6-apply-contributor-model-agent-generated-work"
+    },
+    {
+        "id": "agentic-164",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "A coordinated run has three completed components and one failed required component. Which status should the coordinator publish?",
+        "choices": [
+            "Report partial completion and name the missing component",
+            "Success, because most workers completed their assignments",
+            "Failure with no detail so the user can inspect all logs",
+            "Success after omitting the failed component from the summary"
+        ],
+        "correct": 0,
+        "explanations": [
+            "A precise partial status preserves completed work while exposing the unmet requirement.",
+            "Most components completing does not satisfy every required deliverable.",
+            "A bare failure hides which work is usable and what remains.",
+            "Omitting a required failure misrepresents the workflow outcome."
+        ],
+        "concept": "Reporting partial multi-agent outcomes",
+        "hints": [
+            "Did all required components finish?",
+            "What concise evidence helps the owner decide the next step?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-165",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "A worker has shown no visible progress for an hour. Its last event says a build is still running. What should the coordinator check first?",
+        "choices": [
+            "Launch an identical replacement immediately",
+            "Inspect run events and the active build before replacing it",
+            "Mark the worker complete based on its last progress message",
+            "Cancel the entire workflow and discard its artifacts"
+        ],
+        "correct": 1,
+        "explanations": [
+            "An identical replacement could duplicate work while the original build continues.",
+            "The worker may be waiting on a valid long-running operation; status evidence distinguishes delay from a stall.",
+            "A progress message does not establish that the outstanding build completed.",
+            "Discarding all outputs is disproportionate before checking the run state."
+        ],
+        "concept": "Diagnosing a possibly stalled worker",
+        "hints": [
+            "What was the worker waiting for at its last event?",
+            "Which current signals distinguish slow progress from a stuck run?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-166",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "A failed worker may still be completing an external write. A replacement is ready to repeat the task. What is the safest recovery?",
+        "choices": [
+            "Start the replacement with the same write immediately",
+            "Assume the failed worker's process stopped all external activity",
+            "Check operation status and resulting state before retrying",
+            "Ask both workers to repeat the write and compare results"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Immediate repetition can duplicate a write whose outcome is not yet known.",
+            "A worker failure does not prove that an external operation was canceled.",
+            "Checking the operation and current state prevents unsafe duplicate side effects.",
+            "Concurrent retries can create conflicting external mutations."
+        ],
+        "concept": "Recovering around in-flight side effects",
+        "hints": [
+            "Can an external operation outlive its worker?",
+            "What evidence establishes whether repeating it is safe?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/5-agent-execution-limits-protections"
+    },
+    {
+        "id": "agentic-167",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "A new specialist joins an active run to investigate a dependency failure. What handoff should the coordinator provide?",
+        "choices": [
+            "Only the original user prompt, with no status details",
+            "A copy of every agent's private reasoning",
+            "Permission to restart the complete workflow without checking existing work",
+            "Pass scope, current state, artifacts, and authority limits"
+        ],
+        "correct": 3,
+        "explanations": [
+            "The prompt alone omits progress and may cause repeated or conflicting work.",
+            "Private reasoning is not needed to transfer decisions and evidence.",
+            "Restarting without state checks can duplicate side effects and discard valid work.",
+            "A focused handoff lets the specialist act on current evidence within its authorized scope."
+        ],
+        "concept": "Onboarding an agent into active work",
+        "hints": [
+            "What context is necessary to continue without repeating work?",
+            "Which boundary should remain explicit for the new specialist?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-168",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "A team changes a worker's instructions while several tasks are active. How should the coordinator apply the revision safely?",
+        "choices": [
+            "Version the update; migrate active tasks through explicit handoffs",
+            "Replace the instructions in place and assume every running worker reloads them",
+            "Restart all workers without preserving their checkpoints",
+            "Use the new instructions only for the task that fails next"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Versioned, explicit adoption preserves which instructions governed each task and avoids disrupting in-flight work.",
+            "Running workers may retain their current context; a silent replacement is not a safe migration plan.",
+            "Restarting without checkpoints loses progress and may duplicate operations.",
+            "Waiting for a failure makes the update inconsistent and reactive."
+        ],
+        "concept": "Updating agents without disrupting runs",
+        "hints": [
+            "Which instructions govern the already active tasks?",
+            "How can new behavior be introduced with a traceable handoff?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/6-reliable-workflows"
+    },
+    {
+        "id": "agentic-169",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "A specialist agent is retired after its final task. Which closeout best preserves operational continuity?",
+        "choices": [
+            "Delete its history and remove its name from all records",
+            "Record retirement, open work, and the successor path",
+            "Leave its active tasks unassigned so no worker can make changes",
+            "Copy its credentials into the replacement agent's profile"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Deleting history breaks the audit trail and obscures prior decisions.",
+            "A lifecycle record preserves accountability and tells operators where unfinished work goes.",
+            "Unassigned tasks can stall without a clear owner or recovery route.",
+            "Credentials should not be copied as a substitute for independently scoped access."
+        ],
+        "concept": "Retiring an agent with continuity",
+        "hints": [
+            "What active work still depends on this specialist?",
+            "What should a future operator know about its replacement or escalation route?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-170",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "Workers make clean changes on separate branches, but the integrated application fails because both changed a shared API contract. What validation was missing?",
+        "choices": [
+            "A check that each worker had a separate branch",
+            "A larger number of independent unit tests before integration",
+            "An integration check against the combined changes and their shared interface",
+            "A review of which agent finished the work first"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Separate branches provide isolation but do not validate their combined behavior.",
+            "More isolated tests can miss incompatibility at the shared boundary.",
+            "Testing the integrated contract catches interactions introduced by the combined changes.",
+            "Completion order is unrelated to API compatibility."
+        ],
+        "concept": "Validating integrated agent changes",
+        "hints": [
+            "What changed only when the branches were combined?",
+            "Which interface crosses both workers' responsibility boundaries?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/foundations-agentic-ai/6-apply-contributor-model-agent-generated-work"
+    },
+    {
+        "id": "agentic-171",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "A coordinator launches twelve research workers against the same rate-limited API; failures rise and each worker retries. What should change?",
+        "choices": [
+            "Increase every worker's retry count",
+            "Start more workers to finish before the next rate window",
+            "Have workers rotate user accounts",
+            "Limit concurrency and back off within a retry budget"
+        ],
+        "correct": 3,
+        "explanations": [
+            "More retries amplify the load on an already throttled service.",
+            "More parallel requests increase contention and can prolong rate limiting.",
+            "Rotating accounts evades the service's limit rather than respecting it.",
+            "Concurrency limits and bounded waits reduce pressure while allowing controlled recovery."
+        ],
+        "concept": "Controlling shared-service load",
+        "hints": [
+            "Are failures correlated with concurrent calls?",
+            "Which coordination control can reduce aggregate demand?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-172",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "A review specialist must inspect a patch and CI evidence but must not edit source. Which custom-agent configuration is the clearest fit?",
+        "choices": [
+            "A read-oriented tool list that omits edit capabilities",
+            "All available tools plus an instruction to leave the patch unchanged",
+            "A write toolset with a requirement to ask before editing",
+            "A shared implementation account and a separate reviewer display name"
+        ],
+        "correct": 0,
+        "explanations": [
+            "An explicit read-only capability set enforces the review role more reliably than an instruction alone.",
+            "Omitting edit capability prevents accidental source changes through those tools.",
+            "A write-capable profile still has editing authority before it asks.",
+            "A separate display name does not isolate permissions or work."
+        ],
+        "concept": "Separating review and implementation authority",
+        "hints": [
+            "Which capability should the reviewer lack entirely?",
+            "Can the role be enforced through its available tools?"
+        ],
+        "source": "https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/create-custom-agents"
+    },
+    {
+        "id": "agentic-173",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "A worker's handoff says only 'done.' The coordinator must decide whether to merge its result. What should the handoff include?",
+        "choices": [
+            "A confidence percentage and a request to merge immediately",
+            "Provide the artifact, checks, run links, and unresolved risks",
+            "A transcript of every internal thought",
+            "A list of files without a summary or validation state"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Confidence and urgency do not show what changed or whether it was validated.",
+            "A concise evidence-bearing handoff makes the result reviewable and reveals remaining uncertainty.",
+            "Internal reasoning is unnecessary for auditing the delivered work.",
+            "A file list omits intent, check results, and outstanding risks."
+        ],
+        "concept": "Reviewable worker handoffs",
+        "hints": [
+            "What must the coordinator verify before integrating?",
+            "Which artifacts allow another person to inspect the result?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-174",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "A worker discovers that a requested fix requires changing an organization-wide policy, beyond its authority. What should it do?",
+        "choices": [
+            "Make the policy change because it is a prerequisite",
+            "Ask a second worker to perform the same policy change",
+            "Stop and request approval from an authorized owner",
+            "Modify repository settings instead, without telling the coordinator"
+        ],
+        "correct": 2,
+        "explanations": [
+            "A prerequisite does not grant authority to alter organization-wide controls.",
+            "Delegating the action does not transfer or create authorization.",
+            "Escalation preserves the boundary and gives the owner a chance to approve or choose an alternative.",
+            "An undisclosed substitution can produce an unauthorized or inconsistent change."
+        ],
+        "concept": "Escalating work beyond delegated authority",
+        "hints": [
+            "Does the worker's assignment include organization-level policy?",
+            "Who can approve this change or choose another path?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/5-agent-execution-limits-protections"
+    },
+    {
+        "id": "agentic-175",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "Two workers use separate checkouts, but both write to the same mutable test database. Their tests intermittently fail. What isolation gap should the coordinator address?",
+        "choices": [
+            "The repository branches are not different enough",
+            "The agents need longer prompts to coordinate their queries",
+            "The database needs more test rows",
+            "Isolate the database per worker or serialize its use"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Separate branches do not isolate an external shared database.",
+            "Prompt length does not prevent concurrent state changes.",
+            "More shared data does not resolve write collisions.",
+            "Per-worker data isolation or serialization prevents tests from interfering with one another."
+        ],
+        "concept": "Isolating shared external state",
+        "hints": [
+            "What resource do the workers still share?",
+            "Can test data changes affect the other worker's result?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/4-execution-context-boundaries"
+    },
+    {
+        "id": "agentic-176",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "Two workers choose conflicting designs, and the team must reconstruct why. Which records provide the strongest useful trace?",
+        "choices": [
+            "Link versioned decisions, handoffs, tool events, and run evidence",
+            "Only the final merged commit message",
+            "A list of worker names and total elapsed time",
+            "Unstructured screenshots saved without run identifiers"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Linked, time-ordered evidence connects the decisions and actions to concrete task and code state.",
+            "A commit message rarely captures the alternative decisions and handoffs.",
+            "Names and duration cannot explain the reasoning evidence or affected artifacts.",
+            "Unidentified screenshots are difficult to attribute or correlate with a run."
+        ],
+        "concept": "Reconstructing multi-agent decisions",
+        "hints": [
+            "What evidence connects an action to its task and code revision?",
+            "Which records show the handoff and decision sequence?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-177",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "A research worker was marked optional and failed; the required implementation and test jobs passed. What should the coordinator do?",
+        "choices": [
+            "Declare total failure because any worker failure blocks delivery",
+            "Check dependencies; report the optional failure separately",
+            "Silently remove the research task from the run record",
+            "Rerun the entire workflow until every worker reports success"
+        ],
+        "correct": 1,
+        "explanations": [
+            "An optional worker failure does not necessarily invalidate required outputs.",
+            "The workflow's declared dependency and acceptance criteria determine whether delivery can proceed; the failure remains visible.",
+            "Erasing the failure breaks audit continuity.",
+            "Whole-run retries can repeat successful side effects without addressing the optional worker's need."
+        ],
+        "concept": "Handling optional worker failures",
+        "hints": [
+            "Was the failed output a prerequisite for acceptance?",
+            "How can the outcome remain accurate without blocking unrelated work?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/6-reliable-workflows"
+    },
+    {
+        "id": "agentic-178",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "Worker A waits for a decision from B, while B waits for a result from A; neither assignment defines a timeout. What should the workflow add?",
+        "choices": [
+            "More workers with the same reciprocal dependencies",
+            "A shared prompt asking both to continue autonomously",
+            "Add explicit dependencies, a timeout, and escalation for cycles",
+            "A rule that whichever agent stops first is considered successful"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Adding workers with the same cycle cannot satisfy either dependency.",
+            "A prompt cannot resolve the missing dependency or guarantee a handoff.",
+            "Explicit dependencies and bounded escalation expose and resolve stalled cycles.",
+            "Stopping is not evidence that the required outcome was achieved."
+        ],
+        "concept": "Preventing dependency deadlocks",
+        "hints": [
+            "Which output is each worker waiting for?",
+            "How does the coordinator detect a dependency that can never be satisfied?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/6-reliable-workflows"
+    },
+    {
+        "id": "agentic-179",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "A replacement worker gets the original assignment but none of the failed worker's progress or artifacts. What risk does this create?",
+        "choices": [
+            "The replacement will automatically inherit the old worker's state",
+            "It guarantees the replacement uses fewer tools",
+            "It makes the run's audit trail complete by default",
+            "Transfer verified progress and decisions to the replacement"
+        ],
+        "correct": 3,
+        "explanations": [
+            "A replacement does not automatically inherit another execution's context.",
+            "Tool access is unrelated to missing progress and decisions.",
+            "Omitting work artifacts makes the record less complete, not more.",
+            "A verified checkpoint and focused handoff prevent avoidable repetition and divergence."
+        ],
+        "concept": "Recovering progress across worker replacement",
+        "hints": [
+            "What work was completed or attempted before the failure?",
+            "Which verified artifacts should the replacement receive?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-180",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "A workflow uses a planner, an implementer, and an evaluator. Which sequence best preserves their distinct roles?",
+        "choices": [
+            "Approve a scoped plan, implement it, then evaluate the integrated result",
+            "Ask the evaluator to approve a patch before the implementer receives requirements",
+            "Let all three edit the same branch and vote on the final diff",
+            "Have the implementer define and approve its own acceptance criteria after coding"
+        ],
+        "correct": 0,
+        "explanations": [
+            "The sequence creates a clear plan-to-execution handoff and an independent evidence-based evaluation.",
+            "The evaluator cannot assess a patch against requirements it has not received.",
+            "Shared edits blur responsibility and voting does not validate the outcome.",
+            "Post hoc criteria can be tailored to the implementation rather than the intended result."
+        ],
+        "concept": "Separating planning, implementation, and evaluation",
+        "hints": [
+            "Which artifact should guide implementation?",
+            "When can the evaluator compare evidence with acceptance criteria?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/6-reliable-workflows"
+    },
+    {
+        "id": "agentic-181",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "After a coordinator restart, completed work is dispatched again and produces duplicate PRs. Which state should survive restarts?",
+        "choices": [
+            "Only the coordinator's last chat message",
+            "Task and run identifiers, ownership, statuses, checkpoints, and completed artifact links",
+            "A count of how many workers were started",
+            "A shared instruction to avoid duplicate pull requests"
+        ],
+        "correct": 1,
+        "explanations": [
+            "A chat message may omit the durable ownership and completion state.",
+            "Persistent run and task state lets the coordinator recognize completed or in-flight work before dispatching.",
+            "A worker count does not identify which assignments finished.",
+            "An instruction does not provide authoritative state for deduplication."
+        ],
+        "concept": "Persisting orchestration state",
+        "hints": [
+            "What must the restarted coordinator know before dispatch?",
+            "Which identifiers connect a task to its completed output?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-182",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "A code worker changes a public method signature after the documentation worker has finished. What should the coordinator do before accepting the documents?",
+        "choices": [
+            "Keep the documentation because its worker already reported completion",
+            "Ask the documentation worker to update wording without checking the new signature",
+            "Update docs against the new contract and validate both outputs together",
+            "Change the code signature back without reviewing the requirement"
+        ],
+        "correct": 2,
+        "explanations": [
+            "A completion report does not make documentation accurate after its dependency changes.",
+            "Updating prose without verifying the API can preserve the mismatch.",
+            "The dependency changed, so the handoff and both outputs need an aligned review.",
+            "Reverting a design change without checking intent may introduce another defect."
+        ],
+        "concept": "Refreshing dependent work after a change",
+        "hints": [
+            "Which completed output depends on the changed interface?",
+            "What new source of truth should the documentation use?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/foundations-agentic-ai/6-apply-contributor-model-agent-generated-work"
+    },
+    {
+        "id": "agentic-183",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "Three agents independently report that an undocumented API exists, but none ran it or checked authoritative documentation. What should the coordinator conclude?",
+        "choices": [
+            "The API exists because independent agents agreed",
+            "The claim is confirmed if the agents used different prompts",
+            "The API can be used in production but should not be documented",
+            "Keep the claim unverified until authoritative evidence is found"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Multiple unsupported reports can share the same mistaken assumption.",
+            "Different prompts do not establish that the API is real or supported.",
+            "Using unverified behavior in production is not a safe conclusion.",
+            "The coordinator should distinguish reported claims from verified evidence."
+        ],
+        "concept": "Evaluating corroboration versus verification",
+        "hints": [
+            "Did any worker observe the API or find authoritative support?",
+            "Does agreement by itself prove a shared factual claim?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/foundations-agentic-ai/6-apply-contributor-model-agent-generated-work"
+    },
+    {
+        "id": "agentic-184",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "A worker may edit tests, but it proposes changing organization-wide repository policy to make them pass. What should the coordinator enforce?",
+        "choices": [
+            "Keep the worker within its assigned repository scope and escalate the policy change to an authorized owner",
+            "Approve the change because the worker identified a test dependency",
+            "Ask a second worker to make the policy change so it is independently verified",
+            "Let the worker change policy in a temporary organization"
+        ],
+        "correct": 0,
+        "explanations": [
+            "The assignment grants test-editing scope, not organization-wide policy authority.",
+            "Finding a dependency does not expand delegated permissions.",
+            "Having another worker repeat an unauthorized action does not authorize it.",
+            "A temporary organization is not an approved substitute for the real governed environment."
+        ],
+        "concept": "Enforcing worker scope boundaries",
+        "hints": [
+            "What authority was actually delegated?",
+            "Who can approve a change beyond that scope?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/4-execution-context-boundaries"
+    },
+    {
+        "id": "agentic-185",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "A replacement version of a worker introduces regressions while several earlier-version tasks remain active. How should the coordinator preserve continuity?",
+        "choices": [
+            "Replace the active workers in place and discard their prior artifacts",
+            "Version new tasks; migrate active ones with a recorded rollback path",
+            "Run both versions against the same writable branch",
+            "Delete the old version's history after its last scheduled run"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Discarding prior artifacts loses evidence and may disrupt work already in progress.",
+            "Version pinning and an explicit migration or rollback keep active assignments attributable and recoverable.",
+            "Concurrent edits to the same branch create collisions and ambiguous results.",
+            "Retaining the old version's history supports audit and recovery."
+        ],
+        "concept": "Replacing an agent version safely",
+        "hints": [
+            "Which tasks are already bound to the earlier version?",
+            "How can the new version be introduced without obscuring prior results?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-186",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "A worker's tests passed on its branch, but the coordinator rebased the change onto an updated base. What evidence is needed before accepting it?",
+        "choices": [
+            "The original worker's test transcript only",
+            "A message that the rebase completed without conflicts",
+            "Validate the rebased commit and its integration",
+            "The commit timestamp from before the rebase"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Earlier tests do not validate the newly rebased commit.",
+            "A conflict-free rebase can still change combined behavior or invalidate assumptions.",
+            "Checks tied to the current commit plus review provide evidence for the integrated state.",
+            "A timestamp does not establish the result of validation."
+        ],
+        "concept": "Revalidating after integration changes",
+        "hints": [
+            "Which exact commit will be accepted?",
+            "Were checks run against that commit or only the earlier branch state?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/foundations-agentic-ai/6-apply-contributor-model-agent-generated-work"
+    },
+    {
+        "id": "agentic-187",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "Each worker retries its own failing step indefinitely, so a failed multi-agent run never terminates. What control should the coordinator add?",
+        "choices": [
+            "Remove all worker-level failure reports",
+            "Increase every worker's timeout without a total limit",
+            "Start duplicate workers whenever one retry takes too long",
+            "Bound retries and set a run deadline with escalation"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Suppressing reports hides the failure without ending the run.",
+            "Unbounded timeouts preserve the stall rather than provide recovery.",
+            "Duplicate workers can compound side effects and contention.",
+            "Per-step retry bounds and a workflow deadline ensure the run ends with an actionable escalation."
+        ],
+        "concept": "Bounding retries across a coordinated run",
+        "hints": [
+            "Are retries bounded only within each worker or across the whole run?",
+            "What should happen after repeated failure or timeout?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-188",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "Two workers both need to edit a generated manifest, and their changes depend on each other's assumptions. What is the best first step?",
+        "choices": [
+            "Assign one owner; have the other worker submit a reviewed proposal",
+            "Let both edit separate copies and overwrite the final file with the later one",
+            "Ask both to edit the same file concurrently and resolve text conflicts only",
+            "Add more agents to vote on which manifest should survive"
+        ],
+        "correct": 0,
+        "explanations": [
+            "A single owner for the shared artifact avoids competing writes while still allowing a structured handoff.",
+            "The last write may discard valid changes and makes integration order arbitrary.",
+            "Text conflict resolution alone cannot resolve incompatible semantic assumptions.",
+            "More votes do not reconcile the shared data model or ownership."
+        ],
+        "concept": "Assigning ownership of shared artifacts",
+        "hints": [
+            "Is the generated manifest independently editable by both workers?",
+            "How can one worker contribute without racing the file owner?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/foundations-agentic-ai/6-apply-contributor-model-agent-generated-work"
+    },
+    {
+        "id": "agentic-189",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "A security-analysis worker must identify exposed secrets and propose remediation without changing repository history. Which completion evidence best fits?",
+        "choices": [
+            "A statement that it found no risk, without scan scope or output",
+            "Provide scoped findings, evidence, scan context, and next steps",
+            "A commit that removes every string resembling a credential",
+            "A summary that labels each finding critical so owners act quickly"
+        ],
+        "correct": 1,
+        "explanations": [
+            "An unsupported statement cannot be reviewed or reproduced.",
+            "A scoped report lets an owner verify findings and choose remediation without unauthorized edits.",
+            "Deleting lookalike strings can remove legitimate configuration and exceeds analysis scope.",
+            "Inflated severity obscures risk rather than providing evidence."
+        ],
+        "concept": "Defining evidence for specialist analysis",
+        "hints": [
+            "What must an owner verify before changing the repository?",
+            "Which details make the analysis reproducible and actionable?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-190",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "A failed worker leaves a temporary cloud resource in a shared test environment. What should the recovery procedure include?",
+        "choices": [
+            "Assume the environment automatically deletes every resource",
+            "Let the next worker reuse it without checking ownership",
+            "Inspect the run-linked resource, then clean it up or escalate",
+            "Delete all resources in the shared environment to ensure cleanup"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Automatic deletion should not be assumed without evidence or a configured lifecycle policy.",
+            "Reusing unknown state can contaminate another worker's test.",
+            "Run-linked ownership enables targeted cleanup and preserves shared resources.",
+            "Deleting everything risks disrupting other users and workflows."
+        ],
+        "concept": "Cleaning up failed-run resources",
+        "hints": [
+            "Can the resource be tied to the failed run?",
+            "How can cleanup avoid affecting unrelated shared work?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/agent-tooling-mcp-execution-environments/5-agent-execution-limits-protections"
+    },
+    {
+        "id": "agentic-191",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "A worker warns that one required check was skipped, but the coordinator's summary says 'all checks passed.' What handoff control would reduce this error?",
+        "choices": [
+            "Ask workers to use shorter warnings",
+            "Require the coordinator to copy only the final sentence from each worker",
+            "Let the implementer decide whether the skipped check matters",
+            "Carry structured check status and evidence links, and reconcile required checks before declaring success"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Shorter wording does not ensure the warning survives the handoff.",
+            "Copying only one sentence can omit failures or caveats.",
+            "The implementer should not unilaterally redefine required validation.",
+            "Explicit status fields and evidence reconciliation preserve failures through aggregation."
+        ],
+        "concept": "Preserving failure signals in summaries",
+        "hints": [
+            "Where was the skipped check reported?",
+            "Which record should be compared with the coordinator's final claim?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-192",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "A coordinator adds a specialist dynamically when a task becomes more complex. Which information must remain explicit for a safe handoff?",
+        "choices": [
+            "The specialist's bounded goal, inputs, outputs, dependencies, permissions, and stop conditions",
+            "Only the complexity score that caused the new worker to start",
+            "A broad instruction to inspect the full repository and help",
+            "The previous worker's credentials and all available tools"
+        ],
+        "correct": 0,
+        "explanations": [
+            "An explicit task contract keeps the new agent's authority and expected result bounded.",
+            "A trigger score does not describe the specialist's work or constraints.",
+            "A broad request expands scope and makes completion hard to evaluate.",
+            "Credentials and tool access should be granted according to need, not inherited wholesale."
+        ],
+        "concept": "Defining dynamically added agent roles",
+        "hints": [
+            "What outcome should the new specialist own?",
+            "Which limits must it know before receiving access?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/6-reliable-workflows"
+    },
+    {
+        "id": "agentic-193",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "A worker finds a prerequisite that affects three active assignments. What should the coordinator do before those workers continue?",
+        "choices": [
+            "Let each worker make its own assumption about the prerequisite",
+            "Update the shared task state, notify affected owners, and replan dependencies with their current progress",
+            "Cancel every task and restart with the original prompt",
+            "Hide the prerequisite until one worker completes"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Independent assumptions can create contradictory changes and wasted work.",
+            "A shared update lets affected workers align their plans without losing verified progress.",
+            "A full restart can discard valid outputs and repeat side effects.",
+            "Delaying the information makes downstream work more likely to diverge."
+        ],
+        "concept": "Propagating a new shared dependency",
+        "hints": [
+            "Which assignments depend on the newly discovered prerequisite?",
+            "How can the coordinator preserve completed work while updating plans?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-194",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "A human resolves a design conflict between workers and authorizes one approach. What should be recorded before work resumes?",
+        "choices": [
+            "Only the human's name",
+            "A new prompt that omits the rejected option",
+            "The decision, rationale, affected tasks, approver, and the version or artifact to follow",
+            "A count of how many workers accepted the decision"
+        ],
+        "correct": 2,
+        "explanations": [
+            "A name alone does not explain what was decided or where to apply it.",
+            "Omitting the alternative loses context needed to understand the resolution.",
+            "A decision record makes the handoff actionable and preserves audit continuity.",
+            "Worker agreement is not a substitute for recording an authorized decision."
+        ],
+        "concept": "Recording human decisions across handoffs",
+        "hints": [
+            "What must downstream workers know to follow the resolution?",
+            "How will later reviewers trace who authorized the change?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-195",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "Ten small edits are tightly coupled: every worker would need the same files and assumptions. What orchestration choice is reasonable?",
+        "choices": [
+            "Launch ten workers and reconcile all overlapping diffs afterward",
+            "Split the edits by file even though every edit changes the same interfaces",
+            "Have each worker commit a copy of the complete change",
+            "Use one implementer or small sequential handoffs, then run independent review"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Extensive overlap makes parallel editing more costly and conflict-prone than useful.",
+            "File boundaries do not isolate work when the same interfaces and assumptions are shared.",
+            "Duplicate full changes create redundant work and unclear integration ownership.",
+            "A focused implementation followed by independent review preserves scrutiny without needless edit contention."
+        ],
+        "concept": "Choosing serial work for tightly coupled changes",
+        "hints": [
+            "Would independent workers actually own separate inputs and files?",
+            "Can review be parallelized without parallelizing the shared edits?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/6-reliable-workflows"
+    },
+    {
+        "id": "agentic-196",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "An incident review cannot tell which worker made an unsafe tool call. What event fields should future records capture?",
+        "choices": [
+            "Run and worker identifiers, timestamp, tool name, target, outcome, and associated commit or task",
+            "Only the final coordinator summary and total number of tool calls",
+            "The full credential value and every environment variable",
+            "The worker's display name without event or target details"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Per-event identity and target metadata attributes the action to the correct execution and code state.",
+            "A summary and count lack detail to reconstruct a specific unsafe call.",
+            "Sensitive credential values should not be logged.",
+            "A display name alone cannot identify the particular event or affected resource."
+        ],
+        "concept": "Attributing tool events for post-hoc analysis",
+        "hints": [
+            "Which worker and run made the call?",
+            "What safe metadata links the event to its target and code state?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-197",
+        "domain": "Orchestrate multi-agent coordination",
+        "prompt": "All deliverables are accepted and a multi-agent workflow is being shut down. Which closeout best supports future audits and recovery?",
+        "choices": [
+            "Delete every branch, artifact, and event record immediately",
+            "Record accepted outputs, final versions, approvals, unresolved follow-ups, and archive run evidence under retention policy",
+            "Keep all workers running in case an undocumented issue appears",
+            "Summarize only the winning agent and discard conflicting proposals"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Immediate deletion removes evidence needed to understand or recover the workflow.",
+            "A bounded closeout captures outcomes and preserves evidence according to policy without keeping agents active.",
+            "Leaving workers active creates unnecessary access and cost after acceptance.",
+            "Discarding disagreements can erase useful decision context and audit history."
+        ],
+        "concept": "Closing a multi-agent workflow auditably",
+        "hints": [
+            "What evidence should remain after execution ends?",
+            "Which follow-ups or decisions must carry into future work?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-198",
+        "domain": "Implement guardrails and accountability",
+        "prompt": "A repository's agent configuration files must be changed only after review by the designated maintainers. Which repository control best enforces the intended review boundary?",
+        "choices": [
+            "Protect the configuration with CODEOWNERS and require review from Code Owners.",
+            "Ask the agent to notify owners after editing, without requiring their review.",
+            "Require any pull request approval but leave ownership of these files undefined.",
+            "Review the configuration only after merging it with the agent's other changes."
+        ],
+        "correct": 0,
+        "explanations": [
+            "The ownership rule and required review put the intended owners in the control path.",
+            "A notification after editing does not prevent an unreviewed configuration change.",
+            "A general approval may not come from the people designated to review this configuration.",
+            "Post-merge review occurs after the protected change has already taken effect."
+        ],
+        "concept": "Owner review for agent configuration",
+        "hints": [
+            "The control should make the designated owners part of the approval path.",
+            "A notification and a required review have different enforcement effects."
+        ],
+        "source": "https://docs.github.com/en/copilot/tutorials/cloud-agent/build-guardrails"
+    },
+    {
+        "id": "agentic-199",
+        "domain": "Implement guardrails and accountability",
+        "prompt": "A build agent runs untrusted pull-request code, and the current runner retains credentials between jobs. Which control most directly limits the agent's authority?",
+        "choices": [
+            "Use the full repository role, but omit deployment credentials.",
+            "Use a task-isolated environment with only required permissions.",
+            "Reuse a shared administrator credential to handle access failures.",
+            "Grant broad access and use instructions to limit each operation."
+        ],
+        "correct": 1,
+        "explanations": [
+            "A full repository role still grants more access than this task requires.",
+            "Isolation and narrow permissions limit the impact of a mistaken operation.",
+            "A shared administrator credential exceeds the task's required authority.",
+            "Instructions cannot enforce limits that the environment does not impose."
+        ],
+        "concept": "Least privilege and environment boundaries",
+        "hints": [
+            "Prefer an environment control over a request that the agent simply behave.",
+            "What access is genuinely necessary for this bounded assignment?"
+        ],
+        "source": "https://docs.github.com/en/copilot/tutorials/cloud-agent/build-guardrails"
+    },
+    {
+        "id": "agentic-200",
+        "domain": "Implement guardrails and accountability",
+        "prompt": "A repository assistant only needs to summarize source files, yet its integration can create releases and modify settings. Which control most directly limits the agent's authority?",
+        "choices": [
+            "Grant broad access and use instructions to limit each operation.",
+            "Use the full repository role, but omit deployment credentials.",
+            "Use a task-isolated environment with only required permissions.",
+            "Reuse a shared administrator credential to handle access failures."
+        ],
+        "correct": 2,
+        "explanations": [
+            "Instructions cannot enforce limits that the environment does not impose.",
+            "A full repository role still grants more access than this task requires.",
+            "Isolation and narrow permissions limit the impact of a mistaken operation.",
+            "A shared administrator credential exceeds the task's required authority."
+        ],
+        "concept": "Least privilege and environment boundaries",
+        "hints": [
+            "Prefer an environment control over a request that the agent simply behave.",
+            "What access is genuinely necessary for this bounded assignment?"
+        ],
+        "source": "https://docs.github.com/en/copilot/tutorials/cloud-agent/build-guardrails"
+    },
+    {
+        "id": "agentic-201",
+        "domain": "Implement guardrails and accountability",
+        "prompt": "A documentation agent may update a draft branch but should not publish documentation to the public site. Which control most directly limits the agent's authority?",
+        "choices": [
+            "Reuse a shared administrator credential to handle access failures.",
+            "Grant broad access and use instructions to limit each operation.",
+            "Use the full repository role, but omit deployment credentials.",
+            "Use a task-isolated environment with only required permissions."
+        ],
+        "correct": 3,
+        "explanations": [
+            "A shared administrator credential exceeds the task's required authority.",
+            "Instructions cannot enforce limits that the environment does not impose.",
+            "A full repository role still grants more access than this task requires.",
+            "Isolation and narrow permissions limit the impact of a mistaken operation."
+        ],
+        "concept": "Least privilege and environment boundaries",
+        "hints": [
+            "Prefer an environment control over a request that the agent simply behave.",
+            "What access is genuinely necessary for this bounded assignment?"
+        ],
+        "source": "https://docs.github.com/en/copilot/tutorials/cloud-agent/build-guardrails"
+    },
+    {
+        "id": "agentic-202",
+        "domain": "Implement guardrails and accountability",
+        "prompt": "An agent processes test fixtures that may contain hostile input in an environment connected to internal services. Which control most directly limits the agent's authority?",
+        "choices": [
+            "Use a task-isolated environment with only required permissions.",
+            "Reuse a shared administrator credential to handle access failures.",
+            "Grant broad access and use instructions to limit each operation.",
+            "Use the full repository role, but omit deployment credentials."
+        ],
+        "correct": 0,
+        "explanations": [
+            "Isolation and narrow permissions limit the impact of a mistaken operation.",
+            "A shared administrator credential exceeds the task's required authority.",
+            "Instructions cannot enforce limits that the environment does not impose.",
+            "A full repository role still grants more access than this task requires."
+        ],
+        "concept": "Least privilege and environment boundaries",
+        "hints": [
+            "Prefer an environment control over a request that the agent simply behave.",
+            "What access is genuinely necessary for this bounded assignment?"
+        ],
+        "source": "https://docs.github.com/en/copilot/tutorials/cloud-agent/build-guardrails"
+    },
+    {
+        "id": "agentic-203",
+        "domain": "Implement guardrails and accountability",
+        "prompt": "A maintenance workflow needs package-registry reads but should not receive organization owner privileges. Which control most directly limits the agent's authority?",
+        "choices": [
+            "Use the full repository role, but omit deployment credentials.",
+            "Use a task-isolated environment with only required permissions.",
+            "Reuse a shared administrator credential to handle access failures.",
+            "Grant broad access and use instructions to limit each operation."
+        ],
+        "correct": 1,
+        "explanations": [
+            "A full repository role still grants more access than this task requires.",
+            "Isolation and narrow permissions limit the impact of a mistaken operation.",
+            "A shared administrator credential exceeds the task's required authority.",
+            "Instructions cannot enforce limits that the environment does not impose."
+        ],
+        "concept": "Least privilege and environment boundaries",
+        "hints": [
+            "Prefer an environment control over a request that the agent simply behave.",
+            "What access is genuinely necessary for this bounded assignment?"
+        ],
+        "source": "https://docs.github.com/en/copilot/tutorials/cloud-agent/build-guardrails"
+    },
+    {
+        "id": "agentic-204",
+        "domain": "Implement guardrails and accountability",
+        "prompt": "A policy rejects an agent's attempt to use an unapproved external integration for a repository task. How should the workflow handle an action blocked by policy?",
+        "choices": [
+            "Stop all work and request a blanket exception for the whole task.",
+            "Treat the denial as temporary and resume after another retry.",
+            "Pause this step, record the denial, and seek an authorized route.",
+            "Retry through another identity or an unapproved integration."
+        ],
+        "correct": 2,
+        "explanations": [
+            "A blanket exception expands authority beyond the action that was blocked.",
+            "Retrying as if the denial were temporary leaves the policy unresolved.",
+            "Pausing that step preserves the control while an authorized route is assessed.",
+            "Changing identity or integration to bypass a denial defeats the policy boundary."
+        ],
+        "concept": "Enforced policy boundaries",
+        "hints": [
+            "A refusal is a control outcome, not permission to search for a bypass.",
+            "Who can authorize a scoped exception, and what evidence should they see?"
+        ],
+        "source": "https://docs.github.com/en/copilot/tutorials/cloud-agent/build-guardrails"
+    },
+    {
+        "id": "agentic-205",
+        "domain": "Implement guardrails and accountability",
+        "prompt": "A protected branch rule blocks an agent's direct update, although a reviewed pull request remains an available route. How should the workflow handle an action blocked by policy?",
+        "choices": [
+            "Retry through another identity or an unapproved integration.",
+            "Stop all work and request a blanket exception for the whole task.",
+            "Treat the denial as temporary and resume after another retry.",
+            "Pause this step, record the denial, and seek an authorized route."
+        ],
+        "correct": 3,
+        "explanations": [
+            "Changing identity or integration to bypass a denial defeats the policy boundary.",
+            "A blanket exception expands authority beyond the action that was blocked.",
+            "Retrying as if the denial were temporary leaves the policy unresolved.",
+            "Pausing that step preserves the control while an authorized route is assessed."
+        ],
+        "concept": "Enforced policy boundaries",
+        "hints": [
+            "A refusal is a control outcome, not permission to search for a bypass.",
+            "Who can authorize a scoped exception, and what evidence should they see?"
+        ],
+        "source": "https://docs.github.com/en/copilot/tutorials/cloud-agent/build-guardrails"
+    },
+    {
+        "id": "agentic-206",
+        "domain": "Implement guardrails and accountability",
+        "prompt": "An organization policy denies a requested secret, and the agent suggests switching to a personal token. How should the workflow handle an action blocked by policy?",
+        "choices": [
+            "Pause this step, record the denial, and seek an authorized route.",
+            "Retry through another identity or an unapproved integration.",
+            "Stop all work and request a blanket exception for the whole task.",
+            "Treat the denial as temporary and resume after another retry."
+        ],
+        "correct": 0,
+        "explanations": [
+            "Pausing that step preserves the control while an authorized route is assessed.",
+            "Changing identity or integration to bypass a denial defeats the policy boundary.",
+            "A blanket exception expands authority beyond the action that was blocked.",
+            "Retrying as if the denial were temporary leaves the policy unresolved."
+        ],
+        "concept": "Enforced policy boundaries",
+        "hints": [
+            "A refusal is a control outcome, not permission to search for a bypass.",
+            "Who can authorize a scoped exception, and what evidence should they see?"
+        ],
+        "source": "https://docs.github.com/en/copilot/tutorials/cloud-agent/build-guardrails"
+    },
+    {
+        "id": "agentic-207",
+        "domain": "Implement guardrails and accountability",
+        "prompt": "A compliance rule prevents an agent from reading a restricted directory needed for a broader request. How should the workflow handle an action blocked by policy?",
+        "choices": [
+            "Treat the denial as temporary and resume after another retry.",
+            "Pause this step, record the denial, and seek an authorized route.",
+            "Retry through another identity or an unapproved integration.",
+            "Stop all work and request a blanket exception for the whole task."
+        ],
+        "correct": 1,
+        "explanations": [
+            "Retrying as if the denial were temporary leaves the policy unresolved.",
+            "Pausing that step preserves the control while an authorized route is assessed.",
+            "Changing identity or integration to bypass a denial defeats the policy boundary.",
+            "A blanket exception expands authority beyond the action that was blocked."
+        ],
+        "concept": "Enforced policy boundaries",
+        "hints": [
+            "A refusal is a control outcome, not permission to search for a bypass.",
+            "Who can authorize a scoped exception, and what evidence should they see?"
+        ],
+        "source": "https://docs.github.com/en/copilot/tutorials/cloud-agent/build-guardrails"
+    },
+    {
+        "id": "agentic-208",
+        "domain": "Implement guardrails and accountability",
+        "prompt": "A repository rule blocks unreviewed changes to an agent configuration file. How should the workflow handle an action blocked by policy?",
+        "choices": [
+            "Stop all work and request a blanket exception for the whole task.",
+            "Treat the denial as temporary and resume after another retry.",
+            "Pause this step, record the denial, and seek an authorized route.",
+            "Retry through another identity or an unapproved integration."
+        ],
+        "correct": 2,
+        "explanations": [
+            "A blanket exception expands authority beyond the action that was blocked.",
+            "Retrying as if the denial were temporary leaves the policy unresolved.",
+            "Pausing that step preserves the control while an authorized route is assessed.",
+            "Changing identity or integration to bypass a denial defeats the policy boundary."
+        ],
+        "concept": "Enforced policy boundaries",
+        "hints": [
+            "A refusal is a control outcome, not permission to search for a bypass.",
+            "Who can authorize a scoped exception, and what evidence should they see?"
+        ],
+        "source": "https://docs.github.com/en/copilot/tutorials/cloud-agent/build-guardrails"
+    },
+    {
+        "id": "agentic-209",
+        "domain": "Implement guardrails and accountability",
+        "prompt": "A required security check rejects an agent's proposed change and the agent can still revise its branch. How should the workflow handle an action blocked by policy?",
+        "choices": [
+            "Retry through another identity or an unapproved integration.",
+            "Stop all work and request a blanket exception for the whole task.",
+            "Treat the denial as temporary and resume after another retry.",
+            "Pause this step, record the denial, and seek an authorized route."
+        ],
+        "correct": 3,
+        "explanations": [
+            "Changing identity or integration to bypass a denial defeats the policy boundary.",
+            "A blanket exception expands authority beyond the action that was blocked.",
+            "Retrying as if the denial were temporary leaves the policy unresolved.",
+            "Pausing that step preserves the control while an authorized route is assessed."
+        ],
+        "concept": "Enforced policy boundaries",
+        "hints": [
+            "A refusal is a control outcome, not permission to search for a bypass.",
+            "Who can authorize a scoped exception, and what evidence should they see?"
+        ],
+        "source": "https://docs.github.com/en/copilot/tutorials/cloud-agent/build-guardrails"
+    },
+    {
+        "id": "agentic-210",
+        "domain": "Implement guardrails and accountability",
+        "prompt": "A repository cleanup task discovers an obsolete production secret that could be revoked immediately. What approval boundary is appropriate before this consequential action?",
+        "choices": [
+            "Preview impact; get explicit approval before the irreversible step.",
+            "Treat the request as approval for any related cleanup action.",
+            "Act first, then confirm if someone questions the result.",
+            "Require approval for every search and every proposed operation."
+        ],
+        "correct": 0,
+        "explanations": [
+            "A clear preview supports informed authorization at the point of consequential impact.",
+            "A broad request does not establish informed consent for an irreversible target action.",
+            "Confirmation after execution cannot prevent the action or its potential harm.",
+            "Approval should focus on consequential impact rather than routine discovery."
+        ],
+        "concept": "Proportionate approval for consequential actions",
+        "hints": [
+            "Separate low-risk preparation from the step that changes an external or lasting state.",
+            "What would the approver need to know about the exact target and consequences?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-211",
+        "domain": "Implement guardrails and accountability",
+        "prompt": "A release agent can prepare a public announcement, but publishing it would make an external commitment. What approval boundary is appropriate before this consequential action?",
+        "choices": [
+            "Require approval for every search and every proposed operation.",
+            "Preview impact; get explicit approval before the irreversible step.",
+            "Treat the request as approval for any related cleanup action.",
+            "Act first, then confirm if someone questions the result."
+        ],
+        "correct": 1,
+        "explanations": [
+            "Approval should focus on consequential impact rather than routine discovery.",
+            "A clear preview supports informed authorization at the point of consequential impact.",
+            "A broad request does not establish informed consent for an irreversible target action.",
+            "Confirmation after execution cannot prevent the action or its potential harm."
+        ],
+        "concept": "Proportionate approval for consequential actions",
+        "hints": [
+            "Separate low-risk preparation from the step that changes an external or lasting state.",
+            "What would the approver need to know about the exact target and consequences?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-212",
+        "domain": "Implement guardrails and accountability",
+        "prompt": "A data cleanup agent identifies records for deletion, and recovery from an incorrect deletion is difficult. What approval boundary is appropriate before this consequential action?",
+        "choices": [
+            "Act first, then confirm if someone questions the result.",
+            "Require approval for every search and every proposed operation.",
+            "Preview impact; get explicit approval before the irreversible step.",
+            "Treat the request as approval for any related cleanup action."
+        ],
+        "correct": 2,
+        "explanations": [
+            "Confirmation after execution cannot prevent the action or its potential harm.",
+            "Approval should focus on consequential impact rather than routine discovery.",
+            "A clear preview supports informed authorization at the point of consequential impact.",
+            "A broad request does not establish informed consent for an irreversible target action."
+        ],
+        "concept": "Proportionate approval for consequential actions",
+        "hints": [
+            "Separate low-risk preparation from the step that changes an external or lasting state.",
+            "What would the approver need to know about the exact target and consequences?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-213",
+        "domain": "Implement guardrails and accountability",
+        "prompt": "An agent proposes rotating a credential used by production services, which could interrupt active workloads. What approval boundary is appropriate before this consequential action?",
+        "choices": [
+            "Treat the request as approval for any related cleanup action.",
+            "Act first, then confirm if someone questions the result.",
+            "Require approval for every search and every proposed operation.",
+            "Preview impact; get explicit approval before the irreversible step."
+        ],
+        "correct": 3,
+        "explanations": [
+            "A broad request does not establish informed consent for an irreversible target action.",
+            "Confirmation after execution cannot prevent the action or its potential harm.",
+            "Approval should focus on consequential impact rather than routine discovery.",
+            "A clear preview supports informed authorization at the point of consequential impact."
+        ],
+        "concept": "Proportionate approval for consequential actions",
+        "hints": [
+            "Separate low-risk preparation from the step that changes an external or lasting state.",
+            "What would the approver need to know about the exact target and consequences?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-214",
+        "domain": "Implement guardrails and accountability",
+        "prompt": "A workflow can draft a customer-facing response automatically, while sending it would represent the organization. What approval boundary is appropriate before this consequential action?",
+        "choices": [
+            "Preview impact; get explicit approval before the irreversible step.",
+            "Treat the request as approval for any related cleanup action.",
+            "Act first, then confirm if someone questions the result.",
+            "Require approval for every search and every proposed operation."
+        ],
+        "correct": 0,
+        "explanations": [
+            "A clear preview supports informed authorization at the point of consequential impact.",
+            "A broad request does not establish informed consent for an irreversible target action.",
+            "Confirmation after execution cannot prevent the action or its potential harm.",
+            "Approval should focus on consequential impact rather than routine discovery."
+        ],
+        "concept": "Proportionate approval for consequential actions",
+        "hints": [
+            "Separate low-risk preparation from the step that changes an external or lasting state.",
+            "What would the approver need to know about the exact target and consequences?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-215",
+        "domain": "Implement guardrails and accountability",
+        "prompt": "An agent prepared a reversible branch change, then proposes a separate action that permanently removes a shared artifact. What approval boundary is appropriate before this consequential action?",
+        "choices": [
+            "Require approval for every search and every proposed operation.",
+            "Preview impact; get explicit approval before the irreversible step.",
+            "Treat the request as approval for any related cleanup action.",
+            "Act first, then confirm if someone questions the result."
+        ],
+        "correct": 1,
+        "explanations": [
+            "Approval should focus on consequential impact rather than routine discovery.",
+            "A clear preview supports informed authorization at the point of consequential impact.",
+            "A broad request does not establish informed consent for an irreversible target action.",
+            "Confirmation after execution cannot prevent the action or its potential harm."
+        ],
+        "concept": "Proportionate approval for consequential actions",
+        "hints": [
+            "Separate low-risk preparation from the step that changes an external or lasting state.",
+            "What would the approver need to know about the exact target and consequences?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-216",
+        "domain": "Implement guardrails and accountability",
+        "prompt": "A maintenance agent can stage a database cleanup, but the final operation affects customer records. What approval boundary is appropriate before this consequential action?",
+        "choices": [
+            "Act first, then confirm if someone questions the result.",
+            "Require approval for every search and every proposed operation.",
+            "Preview impact; get explicit approval before the irreversible step.",
+            "Treat the request as approval for any related cleanup action."
+        ],
+        "correct": 2,
+        "explanations": [
+            "Confirmation after execution cannot prevent the action or its potential harm.",
+            "Approval should focus on consequential impact rather than routine discovery.",
+            "A clear preview supports informed authorization at the point of consequential impact.",
+            "A broad request does not establish informed consent for an irreversible target action."
+        ],
+        "concept": "Proportionate approval for consequential actions",
+        "hints": [
+            "Separate low-risk preparation from the step that changes an external or lasting state.",
+            "What would the approver need to know about the exact target and consequences?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-217",
+        "domain": "Implement guardrails and accountability",
+        "prompt": "An agent's approved change is ready to merge, while the configured review requirements have not yet been satisfied. What approval boundary is appropriate before this consequential action?",
+        "choices": [
+            "Treat the request as approval for any related cleanup action.",
+            "Act first, then confirm if someone questions the result.",
+            "Require approval for every search and every proposed operation.",
+            "Preview impact; get explicit approval before the irreversible step."
+        ],
+        "correct": 3,
+        "explanations": [
+            "A broad request does not establish informed consent for an irreversible target action.",
+            "Confirmation after execution cannot prevent the action or its potential harm.",
+            "Approval should focus on consequential impact rather than routine discovery.",
+            "A clear preview supports informed authorization at the point of consequential impact."
+        ],
+        "concept": "Proportionate approval for consequential actions",
+        "hints": [
+            "Separate low-risk preparation from the step that changes an external or lasting state.",
+            "What would the approver need to know about the exact target and consequences?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-218",
+        "domain": "Implement guardrails and accountability",
+        "prompt": "An agent's accepted patch changed a protected workflow after owner review and validation. What record best supports accountable review of the agent's work?",
+        "choices": [
+            "Record scope, actor, approvals, key actions, and outcome evidence.",
+            "Save the final summary but omit the action and approval history.",
+            "Keep tool logs without recording which approvals they satisfy.",
+            "Attribute agent edits to the reviewer who later accepted the change."
+        ],
+        "correct": 0,
+        "explanations": [
+            "These records establish who acted, under what authority, and with what verifiable result.",
+            "A summary without action and approval history is hard to audit.",
+            "Logs alone do not show which authorization covered an operation.",
+            "Attributing agent work to a reviewer obscures who performed it."
+        ],
+        "concept": "Accountability and action provenance",
+        "hints": [
+            "An auditor needs facts connecting authorization to action and result.",
+            "Which evidence supports responsibility without exposing unnecessary private reasoning?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-219",
+        "domain": "Implement guardrails and accountability",
+        "prompt": "A team must investigate which identity accessed a repository secret during an agent run. What record best supports accountable review of the agent's work?",
+        "choices": [
+            "Attribute agent edits to the reviewer who later accepted the change.",
+            "Record scope, actor, approvals, key actions, and outcome evidence.",
+            "Save the final summary but omit the action and approval history.",
+            "Keep tool logs without recording which approvals they satisfy."
+        ],
+        "correct": 1,
+        "explanations": [
+            "Attributing agent work to a reviewer obscures who performed it.",
+            "These records establish who acted, under what authority, and with what verifiable result.",
+            "A summary without action and approval history is hard to audit.",
+            "Logs alone do not show which authorization covered an operation."
+        ],
+        "concept": "Accountability and action provenance",
+        "hints": [
+            "An auditor needs facts connecting authorization to action and result.",
+            "Which evidence supports responsibility without exposing unnecessary private reasoning?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-220",
+        "domain": "Implement guardrails and accountability",
+        "prompt": "A reviewer approved a narrowly scoped action, but the final agent report does not say whether it was performed. What record best supports accountable review of the agent's work?",
+        "choices": [
+            "Keep tool logs without recording which approvals they satisfy.",
+            "Attribute agent edits to the reviewer who later accepted the change.",
+            "Record scope, actor, approvals, key actions, and outcome evidence.",
+            "Save the final summary but omit the action and approval history."
+        ],
+        "correct": 2,
+        "explanations": [
+            "Logs alone do not show which authorization covered an operation.",
+            "Attributing agent work to a reviewer obscures who performed it.",
+            "These records establish who acted, under what authority, and with what verifiable result.",
+            "A summary without action and approval history is hard to audit."
+        ],
+        "concept": "Accountability and action provenance",
+        "hints": [
+            "An auditor needs facts connecting authorization to action and result.",
+            "Which evidence supports responsibility without exposing unnecessary private reasoning?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-221",
+        "domain": "Implement guardrails and accountability",
+        "prompt": "A policy exception enabled one task, and the organization needs evidence that the exception did not expand to other work. What record best supports accountable review of the agent's work?",
+        "choices": [
+            "Save the final summary but omit the action and approval history.",
+            "Keep tool logs without recording which approvals they satisfy.",
+            "Attribute agent edits to the reviewer who later accepted the change.",
+            "Record scope, actor, approvals, key actions, and outcome evidence."
+        ],
+        "correct": 3,
+        "explanations": [
+            "A summary without action and approval history is hard to audit.",
+            "Logs alone do not show which authorization covered an operation.",
+            "Attributing agent work to a reviewer obscures who performed it.",
+            "These records establish who acted, under what authority, and with what verifiable result."
+        ],
+        "concept": "Accountability and action provenance",
+        "hints": [
+            "An auditor needs facts connecting authorization to action and result.",
+            "Which evidence supports responsibility without exposing unnecessary private reasoning?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-222",
+        "domain": "Implement guardrails and accountability",
+        "prompt": "An incident review needs to distinguish an agent action from a maintainer's later correction. What record best supports accountable review of the agent's work?",
+        "choices": [
+            "Record scope, actor, approvals, key actions, and outcome evidence.",
+            "Save the final summary but omit the action and approval history.",
+            "Keep tool logs without recording which approvals they satisfy.",
+            "Attribute agent edits to the reviewer who later accepted the change."
+        ],
+        "correct": 0,
+        "explanations": [
+            "These records establish who acted, under what authority, and with what verifiable result.",
+            "A summary without action and approval history is hard to audit.",
+            "Logs alone do not show which authorization covered an operation.",
+            "Attributing agent work to a reviewer obscures who performed it."
+        ],
+        "concept": "Accountability and action provenance",
+        "hints": [
+            "An auditor needs facts connecting authorization to action and result.",
+            "Which evidence supports responsibility without exposing unnecessary private reasoning?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-223",
+        "domain": "Implement guardrails and accountability",
+        "prompt": "A team is comparing approved scope with the repository changes produced by an agent and its recovery run. What record best supports accountable review of the agent's work?",
+        "choices": [
+            "Attribute agent edits to the reviewer who later accepted the change.",
+            "Record scope, actor, approvals, key actions, and outcome evidence.",
+            "Save the final summary but omit the action and approval history.",
+            "Keep tool logs without recording which approvals they satisfy."
+        ],
+        "correct": 1,
+        "explanations": [
+            "Attributing agent work to a reviewer obscures who performed it.",
+            "These records establish who acted, under what authority, and with what verifiable result.",
+            "A summary without action and approval history is hard to audit.",
+            "Logs alone do not show which authorization covered an operation."
+        ],
+        "concept": "Accountability and action provenance",
+        "hints": [
+            "An auditor needs facts connecting authorization to action and result.",
+            "Which evidence supports responsibility without exposing unnecessary private reasoning?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-224",
+        "domain": "Implement guardrails and accountability",
+        "prompt": "A reviewer needs to know why a sensitive operation ran and which approval authorized its target. What record best supports accountable review of the agent's work?",
+        "choices": [
+            "Keep tool logs without recording which approvals they satisfy.",
+            "Attribute agent edits to the reviewer who later accepted the change.",
+            "Record scope, actor, approvals, key actions, and outcome evidence.",
+            "Save the final summary but omit the action and approval history."
+        ],
+        "correct": 2,
+        "explanations": [
+            "Logs alone do not show which authorization covered an operation.",
+            "Attributing agent work to a reviewer obscures who performed it.",
+            "These records establish who acted, under what authority, and with what verifiable result.",
+            "A summary without action and approval history is hard to audit."
+        ],
+        "concept": "Accountability and action provenance",
+        "hints": [
+            "An auditor needs facts connecting authorization to action and result.",
+            "Which evidence supports responsibility without exposing unnecessary private reasoning?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    },
+    {
+        "id": "agentic-225",
+        "domain": "Implement guardrails and accountability",
+        "prompt": "A security team needs a verifiable record of a blocked action and the approved alternative that followed. What record best supports accountable review of the agent's work?",
+        "choices": [
+            "Save the final summary but omit the action and approval history.",
+            "Keep tool logs without recording which approvals they satisfy.",
+            "Attribute agent edits to the reviewer who later accepted the change.",
+            "Record scope, actor, approvals, key actions, and outcome evidence."
+        ],
+        "correct": 3,
+        "explanations": [
+            "A summary without action and approval history is hard to audit.",
+            "Logs alone do not show which authorization covered an operation.",
+            "Attributing agent work to a reviewer obscures who performed it.",
+            "These records establish who acted, under what authority, and with what verifiable result."
+        ],
+        "concept": "Accountability and action provenance",
+        "hints": [
+            "An auditor needs facts connecting authorization to action and result.",
+            "Which evidence supports responsibility without exposing unnecessary private reasoning?"
+        ],
+        "source": "https://learn.microsoft.com/en-us/training/modules/design-agent-architecture-integration/7-agent-operations-controls"
+    }
 ];

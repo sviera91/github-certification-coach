@@ -46,6 +46,41 @@ test("all six banks have both complete translations and localized domains withou
     assert.equal(domainTranslations.length, 35);
     assert.deepEqual(exams.find(exam => exam.id === "agentic").officialLanguages, ["en"]);
 });
+test("Agentic translations preserve configuration, command, and evidence literals at their answer indices", () => {
+    const exam = exams.find(exam => exam.id === "agentic");
+    const cases = [
+        ["agentic-130", "github.run_id + github.sha"],
+        ["agentic-133", "gh run view 731 --log-failed"],
+        ["agentic-149", "Files changed"],
+    ];
+    for (const [id, expected] of cases) {
+        const question = exam.questions.find(question => question.id === id);
+        assert.ok(question, id);
+        assert.equal(question.choices[question.correct], expected, id);
+        for (const language of ["es", "pt-BR"]) {
+            assert.deepEqual(question.translations[language].choices, question.choices, `${id} ${language}`);
+        }
+    }
+    for (const [id, literal] of [
+        ["agentic-025", "test-results"],
+        ["agentic-045", "https://api.githubcopilot.com/mcp/"],
+        ["agentic-070", "/mcp show SERVER-NAME"],
+        ["agentic-198", "CODEOWNERS"],
+    ]) {
+        const question = exam.questions.find(question => question.id === id);
+        assert.ok(question, id);
+        for (const language of ["en", "es", "pt-BR"]) {
+            const choices = language === "en" ? question.choices : question.translations[language].choices;
+            assert.ok(choices[question.correct].includes(literal), `${id} ${language}`);
+        }
+    }
+    const artifactQuestion = exam.questions.find(question => question.id === "agentic-025");
+    const yaml = "- name: Upload test results\n  uses: actions/upload-artifact@v4\n  with:\n    name: test-results\n    path: results/";
+    for (const language of ["en", "es", "pt-BR"]) {
+        const prompt = language === "en" ? artifactQuestion.prompt : artifactQuestion.translations[language].prompt;
+        assert.ok(prompt.includes(yaml), `agentic-025 ${language}`);
+    }
+});
 test("switching languages preserves answer key, attempt identity, revision, deadline, and persisted progress", async t => {
     const exam = exams[0];
     const { engine, directory } = await fixture(t, { catalog: [exam] });

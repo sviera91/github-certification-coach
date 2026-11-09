@@ -124,6 +124,16 @@ with largest remainders constrained to the published percentage ranges. No quest
 can repeat previously seen questions. A full mock is disabled if its bank
 cannot cover the required domain quotas. Learning modes can focus on one domain.
 
+The refreshed Agentic AI Developer bank covers all 225 questions in English,
+Spanish, and Brazilian Portuguese with applied agent-workflow scenarios,
+configuration and evidence interpretation, and plausible parallel choices.
+The GH-600 blueprint and official learning/documentation define its content;
+general writing lessons from the other certification assessments inform style.
+No GH-600 practice assessment was used to verify its question format, so this
+is not a claim of real-exam fidelity. The bank remains AI-authored Preview
+pending revision-specific human review. Domain quotas, four-choice single-answer
+behavior, 75-question/120-minute practice, and saved-attempt snapshots are unchanged.
+
 ## Practice modes and navigation
 
 ### Languages

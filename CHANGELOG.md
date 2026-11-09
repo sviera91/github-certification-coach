@@ -6,6 +6,20 @@ installed.
 
 ## Unreleased
 
+### Agentic AI Developer question-bank refresh
+
+- Refresh all 225 GH-600 questions in English, Spanish, and Brazilian Portuguese
+  across the full official blueprint, emphasizing applied agent workflows,
+  configuration/log/artifact interpretation, and close but distinguishable choices.
+- Use official learning material and documentation as content authority. Transfer
+  writing principles from the other certification assessments without claiming
+  verified GH-600 exam-format fidelity; no GH-600 practice assessment was used.
+- Refresh explanations, non-revealing hints, sources, and only the Agentic human
+  review packet. Content remains AI-authored Preview with no human approval granted.
+- Preserve IDs, exact domain quotas, four-choice single-answer behavior,
+  75-question/120-minute practice, private progress, and saved-attempt snapshots.
+  Keep this entry Unreleased for the coordinated six-bank version change.
+
 ### Website redesign and platform separation
 
 - Replace the landing page's rose theme with a white Primer design, native

@@ -14,6 +14,8 @@ installed.
 - Add practical GitHub website knowledge, including contextual keyboard
   shortcuts, command palette settings, repository navigation, and Markdown.
   Keep technical literals and English interface paths aligned across languages.
+- Replace seven overlapping objectives with distinct archive, merge, fork,
+  team-permission, community-default, license-search, and profile-curation tasks.
 - Preserve the seven domain quotas, four-choice single-answer format,
   75-question/100-minute mock policy, and private saved learner state.
 - Regenerate the revision-based trilingual review packet. Content remains

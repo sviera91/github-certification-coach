@@ -8490,7 +8490,7 @@ Um novo commit exclui um arquivo rastreado. Qual afirmação descreve o históri
 
 **Official supporting source:** <https://docs.github.com/en/repositories/working-with-files/managing-files/deleting-files-in-a-repository>
 
-<!-- certification-coach-question:ghf-078:c2ded0553c5ef29b6f934a4183a69f90ff8dd2eb5e9ef4873901d5f5913a830d -->
+<!-- certification-coach-question:ghf-078:5e4b7373184655d41904b6c578a6a03b3c03576a6dbdd968fc11e77b27985ab2 -->
 ## Question 78: Work with GitHub repositories
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -8501,68 +8501,68 @@ Um novo commit exclui um arquivo rastreado. Qual afirmação descreve o históri
 
 **Question ID:** `ghf-078`
 
-**Content revision:** `c2ded0553c5ef29b6f934a4183a69f90ff8dd2eb5e9ef4873901d5f5913a830d`
+**Content revision:** `5e4b7373184655d41904b6c578a6a03b3c03576a6dbdd968fc11e77b27985ab2`
 
-**en review revision:** `3a153f8c71a05ce835665857af538ff5e6bf8461d7fa807b1226934d5eada681`
-**es review revision:** `17e4e7878502ecf98029a4d8bb4db3de8baafb7620eedc885579cac0a8b8f55d`
-**pt-BR review revision:** `7a8a1d932510979a25d327d03c4414c55a66da47d45b093d7e83fdb24286d5bd`
+**en review revision:** `947d8a2fad85f9899d0a51452361db57a8377a4919f793a15525af97e1d19af2`
+**es review revision:** `01a6d28ab00fdb8bb4911c0ded354c382aa5fd7524613cdda3ff4aa165ab25e2`
+**pt-BR review revision:** `550a1fc741b10db092f8c005d9f8302d9316fb7675a9cc8f0f6e413ecd9685e9`
 
 ### English
 
-A maintainer adds build/ to .gitignore after build/output.log was committed. What effect does the new ignore rule have on that tracked file?
+A contributor downloads a repository using Code &gt; Download ZIP. Why can they not inspect its past commits with git log from that extracted download?
 
-1. It automatically removes the file from the index
+1. The commits are hidden until the downloaded branch is renamed.
 
-   The rule alone does not untrack a file in the index.
+   Renaming a branch cannot add history missing from an archive.
 
-2. It deletes the file from every working copy
+2. History appears after staging the extracted files with git add.
 
-   The rule does not delete copies from working directories.
+   Staging snapshot files does not retrieve the original repository's commits.
 
-3. It does not stop tracking the already committed file **[CORRECT]**
+3. It is a source snapshot without the repository history. **[CORRECT]**
 
-   Git ignore rules do not apply retroactively to a file already tracked.
+   Source archives contain the selected version's files, not a clone's Git history.
 
-4. It erases the file from repository history
+4. The ZIP contains history, but git log requires internet access.
 
-   An ignore rule does not remove earlier commits.
+   Git history can be read offline when it is actually present in a clone.
 
-**Concept:** Ignore rules prevent tracking untracked files; they do not automatically untrack committed files.
+**Concept:** A downloadable source archive is not a full Git clone.
 
 **Authored coaching hints:**
 
-- Was the file already tracked before the rule was added?
-- Consider the distinction between ignoring a new file and untracking one.
+- Compare files at one revision with a repository containing past revisions.
+- Consider what metadata a downloaded source snapshot includes.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Una persona mantenedora agrega build/ a .gitignore después de confirmar build/output.log. ¿Qué efecto tiene la nueva regla sobre ese archivo ya rastreado?
+Una persona descarga un repositorio con Code &gt; Download ZIP. ¿Por qué git log no permite consultar sus commits anteriores desde el contenido extraído?
 
-1. Elimina automáticamente el archivo del índice
+1. Los commits permanecen ocultos hasta cambiar el nombre de la rama.
 
-   La regla por sí sola no deja de rastrear un archivo del índice.
+   Cambiar el nombre de una rama no incorpora el historial ausente del archivo.
 
-2. Borra el archivo de todas las copias de trabajo
+2. El historial aparece al preparar los archivos con git add.
 
-   La regla no elimina copias de los directorios de trabajo.
+   Preparar los archivos de una instantánea no recupera los commits originales.
 
-3. No deja de rastrear el archivo ya confirmado **[CORRECT]**
+3. Es una instantánea del código sin el historial del repositorio. **[CORRECT]**
 
-   Las reglas de Git ignore no se aplican retroactivamente a un archivo ya rastreado.
+   Los archivos de código contienen los archivos de una versión, no el historial Git de un clon.
 
-4. Borra el archivo del historial del repositorio
+4. El ZIP incluye el historial, pero git log necesita internet.
 
-   Una regla de ignorar no elimina confirmaciones anteriores.
+   El historial Git puede consultarse sin conexión cuando está presente en un clon.
 
-**Concept:** Las reglas de ignorar evitan rastrear archivos nuevos, pero no dejan de rastrear automáticamente archivos confirmados.
+**Concept:** Un archivo de código descargable no es un clon Git completo.
 
 **Authored coaching hints:**
 
-- ¿El archivo ya estaba bajo seguimiento antes de agregar la regla?
-- Distingue entre ignorar un archivo nuevo y dejar de rastrearlo.
+- Distingue los archivos de una revisión del historial de revisiones.
+- Considera qué metadatos incluye una instantánea descargada.
 
 </details>
 
@@ -8571,34 +8571,34 @@ Una persona mantenedora agrega build/ a .gitignore después de confirmar build/o
 
 ### Português (Brasil)
 
-Uma pessoa mantenedora adiciona build/ a .gitignore depois que build/output.log foi confirmado. Qual é o efeito da nova regra nesse arquivo já rastreado?
+Uma pessoa baixa um repositório com Code &gt; Download ZIP. Por que git log não permite consultar os commits anteriores no conteúdo extraído?
 
-1. Remove automaticamente o arquivo do índice
+1. Os commits ficam ocultos até renomear a branch baixada.
 
-   A regra, sozinha, não deixa de rastrear um arquivo no índice.
+   Renomear uma branch não adiciona o histórico ausente do arquivo.
 
-2. Exclui o arquivo de todas as cópias de trabalho
+2. O histórico aparece ao preparar os arquivos com git add.
 
-   A regra não exclui cópias dos diretórios de trabalho.
+   Preparar os arquivos de um retrato não recupera os commits originais.
 
-3. Não deixa de rastrear o arquivo já confirmado **[CORRECT]**
+3. É um retrato do código sem o histórico do repositório. **[CORRECT]**
 
-   Regras do Git ignore não se aplicam retroativamente a um arquivo já rastreado.
+   Arquivos de código contêm os arquivos de uma versão, não o histórico Git de um clone.
 
-4. Apaga o arquivo do histórico do repositório
+4. O ZIP inclui o histórico, mas git log exige acesso à internet.
 
-   Uma regra de ignorar não remove commits anteriores.
+   O histórico Git pode ser consultado offline quando está presente em um clone.
 
-**Concept:** Regras de ignorar evitam rastrear arquivos novos, mas não deixam de rastrear automaticamente arquivos já confirmados.
+**Concept:** Um arquivo de código baixado não é um clone Git completo.
 
 **Authored coaching hints:**
 
-- O arquivo já era rastreado antes da regra?
-- Diferencie ignorar um arquivo novo de deixar de rastreá-lo.
+- Diferencie arquivos de uma revisão de um histórico de revisões.
+- Considere quais metadados um retrato baixado inclui.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/get-started/git-basics/ignoring-files>
+**Official supporting source:** <https://docs.github.com/en/repositories/working-with-files/using-files/downloading-source-code-archives>
 
 <!-- certification-coach-question:ghf-079:bcb428d545d9e4dae2c3814385ba2feaf17eecec27e1e6020fabfe8c1adf9d5a -->
 ## Question 79: Work with GitHub repositories
@@ -13990,7 +13990,7 @@ Depois de adicionar commits a uma branch, o que sua tag de versão existente e i
 
 **Official supporting source:** <https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases>
 
-<!-- certification-coach-question:ghf-128:c6a7bd97a760db3d6dd67518c06b60177bfb4b385e87dfd45ac5997f98d4bed3 -->
+<!-- certification-coach-question:ghf-128:a31e20d40f671058debe4dee1ff040d8e8cebe8ee59cc2f0bac15f64fe148302 -->
 ## Question 128: Work with GitHub repositories
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -14001,68 +14001,68 @@ Depois de adicionar commits a uma branch, o que sua tag de versão existente e i
 
 **Question ID:** `ghf-128`
 
-**Content revision:** `c6a7bd97a760db3d6dd67518c06b60177bfb4b385e87dfd45ac5997f98d4bed3`
+**Content revision:** `a31e20d40f671058debe4dee1ff040d8e8cebe8ee59cc2f0bac15f64fe148302`
 
-**en review revision:** `75c0deb928ef3981e24fd1e58ed763a11a7c09b544db6bc2370e68ffb1caeb6c`
-**es review revision:** `0a1bca2f683427e096615dc4628ae0d7da0c01e8812fd31f0b529f625b2d5ef9`
-**pt-BR review revision:** `d61a9e30f69af7af43f294de79b6f090b0f9cd7f036dbc44756b79c65dacbc64`
+**en review revision:** `8f4430f4b9b312d1765e9c3bcba0fc0a5c6b077e2d8d973e753c60ce333e335b`
+**es review revision:** `a5c1877b247efd94bc7d8ba99ed07e27ee35f4e5a14e75072bcae37a41f9c81e`
+**pt-BR review revision:** `abb190ce40fe2a3a18ac6b84bbc0f997b1dfc35c4f3f27707009eec152bc7773`
 
 ### English
 
-Which file-view control helps identify the latest commit that changed each displayed line?
+A pull request contains three carefully organized commits. Which enabled merge method adds them individually to the base branch without a merge commit?
 
-1. The branch list
+1. Squash and merge
 
-   A branch list selects a repository line of development.
+   Squashing combines the proposed commits into one new commit.
 
-2. Raw
+2. Create a merge commit
 
-   Raw shows file contents without line attribution.
+   This method explicitly adds a merge commit to connect the histories.
 
-3. Preview
+3. Close without merging
 
-   Preview renders supported formats.
+   Closing alone does not integrate the proposed commits.
 
-4. Blame **[CORRECT]**
+4. Rebase and merge **[CORRECT]**
 
-   Blame associates lines with their most recent relevant commit.
+   This method adds the commits individually while keeping linear history.
 
-**Concept:** Blame provides line-by-line change attribution.
+**Concept:** Merge strategies preserve different shapes of history.
 
 **Authored coaching hints:**
 
-- Which view annotates lines with change history?
-- Look for attribution next to each line.
+- Compare preserving separate commits with combining them.
+- Distinguish linear history from an explicit merge point.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-¿Qué control de la vista de un archivo ayuda a identificar la confirmación más reciente que modificó cada línea mostrada?
+Un pull request contiene tres commits bien organizados. ¿Qué método habilitado los añade individualmente a la rama base sin crear un commit de fusión?
 
-1. La lista de ramas
+1. Squash and merge
 
-   La lista de ramas permite elegir una línea de desarrollo del repositorio.
+   Squash combina los commits propuestos en un único commit nuevo.
 
-2. Raw
+2. Create a merge commit
 
-   Raw muestra el contenido del archivo sin atribuir líneas.
+   Este método añade explícitamente un commit que une los historiales.
 
-3. Preview
+3. Cerrar sin fusionar
 
-   Preview representa los formatos compatibles.
+   Cerrar por sí solo no integra los commits propuestos.
 
-4. Blame **[CORRECT]**
+4. Rebase and merge **[CORRECT]**
 
-   Blame asocia líneas con su confirmación pertinente más reciente.
+   Este método añade los commits individualmente y mantiene un historial lineal.
 
-**Concept:** Blame atribuye cambios línea por línea.
+**Concept:** Las estrategias de fusión producen distintas formas de historial.
 
 **Authored coaching hints:**
 
-- ¿Qué vista anota las líneas con su historial de cambios?
-- Busca atribución junto a cada línea.
+- Compara conservar commits separados con combinarlos.
+- Distingue un historial lineal de un punto de fusión explícito.
 
 </details>
 
@@ -14071,34 +14071,34 @@ Which file-view control helps identify the latest commit that changed each displ
 
 ### Português (Brasil)
 
-Qual controle da visualização de um arquivo ajuda a identificar o commit mais recente que alterou cada linha exibida?
+Um pull request contém três commits bem organizados. Qual método habilitado os adiciona individualmente à branch base sem criar um commit de merge?
 
-1. A lista de branches
+1. Squash and merge
 
-   A lista de branches permite escolher uma linha de desenvolvimento do repositório.
+   O squash combina os commits propostos em um único commit novo.
 
-2. Raw
+2. Create a merge commit
 
-   Raw mostra o conteúdo do arquivo sem atribuição de linhas.
+   Esse método adiciona explicitamente um commit que conecta os históricos.
 
-3. Preview
+3. Fechar sem fazer merge
 
-   Preview renderiza formatos compatíveis.
+   Apenas fechar não integra os commits propostos.
 
-4. Blame **[CORRECT]**
+4. Rebase and merge **[CORRECT]**
 
-   Blame associa linhas ao commit relevante mais recente.
+   Esse método adiciona os commits individualmente e mantém um histórico linear.
 
-**Concept:** Blame atribui alterações linha a linha.
+**Concept:** Estratégias de merge produzem diferentes formatos de histórico.
 
 **Authored coaching hints:**
 
-- Qual visualização anota as linhas com o histórico de alterações?
-- Procure a atribuição ao lado de cada linha.
+- Compare preservar commits separados com combiná-los.
+- Diferencie histórico linear de um ponto explícito de merge.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/repositories/working-with-files/using-files/viewing-and-understanding-files>
+**Official supporting source:** <https://docs.github.com/en/pull-requests/reference/pull-request-merges>
 
 <!-- certification-coach-question:ghf-129:2c9de6980a8778499603799a2fe64c62dbf48dd0848ac6a3273ce2b47116e2e5 -->
 ## Question 129: Collaborate using GitHub
@@ -20260,7 +20260,7 @@ Em uma empresa do GitHub Enterprise Cloud com repositórios internos, quem tem a
 
 **Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/repositories/creating-and-managing-repositories/about-repositories>
 
-<!-- certification-coach-question:ghf-185:28c601255aefa475a85466ed0a3c81f5c499d1933edc01b4561589004791a873 -->
+<!-- certification-coach-question:ghf-185:ca8fa0c3501e96d07af8e0a06e30ea523b5600e3c8c613b690c331b5991af2a1 -->
 ## Question 185: Understand privacy, security, and administration
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -20271,68 +20271,68 @@ Em uma empresa do GitHub Enterprise Cloud com repositórios internos, quem tem a
 
 **Question ID:** `ghf-185`
 
-**Content revision:** `28c601255aefa475a85466ed0a3c81f5c499d1933edc01b4561589004791a873`
+**Content revision:** `ca8fa0c3501e96d07af8e0a06e30ea523b5600e3c8c613b690c331b5991af2a1`
 
-**en review revision:** `9c4f7e4df9b1c5c711ca10a5348925bb06ddd3a18e4e057a19057ff842785f87`
-**es review revision:** `54becb2724d89c9a9ff83b3b8c5f4f6811e54624622e251713faf029c88e73a0`
-**pt-BR review revision:** `0295443e963f50531d215d6afa14d46198f57106ad0c1fe88a98a0e4f96a5fd5`
+**en review revision:** `36a300c643a52fcdee06535c75d95c183dbeb0dbce97517f1bd1b04ac0c37f92`
+**es review revision:** `9f87e6b90f3511edd0886a7c1a5e43bf71ce3f6f8ee61436ca03e7cd1f835095`
+**pt-BR review revision:** `42a962dac04e3c417d50b00af8c6802b35e98c4bb6705fbaf7835ff8e7eef520`
 
 ### English
 
-What does public visibility alone allow a signed-in visitor to do with a repository?
+An owner changes a public repository to private. What happens to its existing public forks?
 
-1. Push commits to its default branch
+1. They are deleted after the upstream visibility changes.
 
-   Direct pushes need write access and must satisfy applicable rules.
+   GitHub detaches these forks rather than deleting them.
 
-2. Change its collaborator permissions
+2. Their owners must accept an invitation before viewing them.
 
-   Managing access requires administrative permission.
+   Their existing public contents do not become invitation-only.
 
-3. Read its contents without a collaborator grant **[CORRECT]**
+3. They remain public and are detached into a separate network. **[CORRECT]**
 
-   Public visibility permits reading without an explicit collaborator grant.
+   Making the upstream private does not retroactively privatize existing public forks.
 
-4. Edit its branch protection settings
+4. They all become private along with the upstream repository.
 
-   Public readership does not grant settings access.
+   The visibility change does not convert the existing public forks.
 
-**Concept:** Visibility versus permission
+**Concept:** Changing upstream visibility does not retract existing public copies.
 
 **Authored coaching hints:**
 
-- Separate being able to inspect work from being able to administer it.
-- A public audience does not become the maintainer team.
+- Consider whether changing one repository controls other owners' copies.
+- Distinguish the upstream repository from its existing fork network.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-¿Qué permite por sí sola la visibilidad pública a una persona que visita un repositorio con sesión iniciada?
+Una persona cambia un repositorio público a privado. ¿Qué ocurre con sus forks públicos existentes?
 
-1. Enviar commits a su rama predeterminada
+1. Se eliminan después del cambio de visibilidad del original.
 
-   Los envíos directos exigen escritura y cumplir las reglas aplicables.
+   GitHub separa estos forks en vez de eliminarlos.
 
-2. Cambiar los permisos de colaboradores
+2. Sus propietarios deben aceptar una invitación para verlos.
 
-   Administrar acceso exige permisos administrativos.
+   Su contenido público existente no pasa a requerir invitación.
 
-3. Leer su contenido sin ser colaboradora **[CORRECT]**
+3. Siguen siendo públicos y pasan a una red separada. **[CORRECT]**
 
-   La visibilidad pública permite leer sin una concesión explícita como colaborador.
+   Hacer privado el original no convierte retroactivamente en privados los forks públicos.
 
-4. Editar sus ajustes de protección de ramas
+4. Todos pasan a ser privados junto con el repositorio original.
 
-   Poder leer públicamente no permite modificar ajustes.
+   El cambio no modifica la visibilidad de los forks públicos existentes.
 
-**Concept:** Visibilidad frente a permisos
+**Concept:** Cambiar la visibilidad del original no retira las copias públicas existentes.
 
 **Authored coaching hints:**
 
-- Separa inspeccionar el trabajo de administrarlo.
-- El público no se convierte en el equipo de mantenimiento.
+- Considera si cambiar un repositorio controla las copias de otras personas.
+- Distingue el original de su red de forks existente.
 
 </details>
 
@@ -20341,34 +20341,34 @@ What does public visibility alone allow a signed-in visitor to do with a reposit
 
 ### Português (Brasil)
 
-O que a visibilidade pública, por si só, permite a uma pessoa que visita um repositório com login feito?
+Uma pessoa torna privado um repositório público. O que acontece com os forks públicos existentes?
 
-1. Enviar commits para a branch padrão
+1. São excluídos após a mudança de visibilidade do original.
 
-   Envios diretos exigem escrita e cumprimento das regras aplicáveis.
+   O GitHub separa esses forks em vez de excluí-los.
 
-2. Alterar permissões de colaboradores
+2. Seus proprietários precisam aceitar um convite para acessá-los.
 
-   Gerenciar acesso exige permissão administrativa.
+   O conteúdo público existente não passa a exigir convite.
 
-3. Ler o conteúdo sem ser colaboradora **[CORRECT]**
+3. Continuam públicos e são separados em outra rede. **[CORRECT]**
 
-   A visibilidade pública permite ler sem uma concessão explícita como colaborador.
+   Tornar o original privado não transforma retroativamente os forks públicos em privados.
 
-4. Editar as configurações de proteção de branches
+4. Todos se tornam privados junto com o repositório original.
 
-   Poder ler publicamente não permite alterar configurações.
+   A mudança não converte a visibilidade dos forks públicos existentes.
 
-**Concept:** Visibilidade versus permissão
+**Concept:** Mudar a visibilidade do original não recolhe cópias públicas existentes.
 
 **Authored coaching hints:**
 
-- Separe inspecionar o trabalho de administrá-lo.
-- O público não se torna a equipe de manutenção.
+- Considere se mudar um repositório controla cópias de outras pessoas.
+- Diferencie o original de sua rede de forks existente.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization>
+**Official supporting source:** <https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility>
 
 <!-- certification-coach-question:ghf-186:b05718229a08b3cd6bddb26234bb75a1caf347f274fd5810aad06bfe02b7a7f7 -->
 ## Question 186: Understand privacy, security, and administration
@@ -21910,7 +21910,7 @@ Em um repositório público no GitHub Free, qual configuração pode exigir pull
 
 **Official supporting source:** <https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches>
 
-<!-- certification-coach-question:ghf-200:bdadd6406289159cce1f4a0cd205bf7e77bc5360363bc9fc58a9ad2cec365320 -->
+<!-- certification-coach-question:ghf-200:22e36310b036783a76e1952b735d2b4de6dabee6cad88b7d8ad6196aaa0c167e -->
 ## Question 200: Understand privacy, security, and administration
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -21921,68 +21921,68 @@ Em um repositório público no GitHub Free, qual configuração pode exigir pull
 
 **Question ID:** `ghf-200`
 
-**Content revision:** `bdadd6406289159cce1f4a0cd205bf7e77bc5360363bc9fc58a9ad2cec365320`
+**Content revision:** `22e36310b036783a76e1952b735d2b4de6dabee6cad88b7d8ad6196aaa0c167e`
 
-**en review revision:** `03a8a4928f96d16d2dbd5452f3be26ad54d9be5f477e85bb0b456e0700980274`
-**es review revision:** `fc3e11cc6d60e18649a5c7441eae6201303445bbf23d5feccc58b90bf9f12162`
-**pt-BR review revision:** `14ca6fd3720af69d8552afe7e52cffabace1e33aad2d330fa2864c4adea377cb`
+**en review revision:** `4cb21451c4fb148853c7bcfc633cf2ba04fc5ca1c189337f59cb57b2d5cd7c07`
+**es review revision:** `1bfd9899fb29f1a521db2f3094f5dde4671fcddf0f86024451a4ac7f65c5bf79`
+**pt-BR review revision:** `84ffa0425cf4fba722e80f7cfa7111b813d206c86eae1da77bae6dbb0759ed69`
 
 ### English
 
-A public repository has a valid CODEOWNERS file. What additional control makes code-owner approval a merge requirement for contributors without bypass permission?
+A visible team is named in CODEOWNERS. Its members have individual Write access, but the team has no explicit repository access. What must change for the team to be a valid code owner?
 
-1. Mentioning the owners in the README
+1. Add a second CODEOWNERS file in the docs folder.
 
-   Documentation does not enforce merge approval.
+   Another file does not fix a team's missing repository permission.
 
-2. Assigning the pull request to an owner
+2. Enable required status checks on the default branch.
 
-   Assignment does not make approval mandatory.
+   Status checks do not grant code-owner team permissions.
 
-3. Requiring code-owner review in branch protection **[CORRECT]**
+3. Grant the team explicit Write access to the repository. **[CORRECT]**
 
-   Branch protection can require approval from code owners.
+   A code-owner team itself must have Write permission; individual member grants are insufficient.
 
-4. Adding an owner-named repository label
+4. Give every member Triage access instead of Write.
 
-   Labels do not impose review requirements.
+   Changing individual grants does not supply the required team-level Write access.
 
-**Concept:** Code ownership versus enforcement
+**Concept:** Code-owner teams need their own visible, explicit repository Write grant.
 
 **Authored coaching hints:**
 
-- Separate identifying reviewers from enforcing approval.
-- Look for a rule applied to the branch receiving the changes.
+- Distinguish a team's permissions from its members' separate permissions.
+- Check whether naming an owner also grants that owner access.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Un repositorio público tiene un CODEOWNERS válido. ¿Qué control adicional exige la aprobación de sus responsables para fusionar si no se pueden omitir las reglas?
+Un equipo visible figura en CODEOWNERS. Sus miembros tienen acceso Write individual, pero el equipo no tiene acceso explícito al repositorio. ¿Qué debe cambiar para que sea un propietario válido?
 
-1. Mencionar a los responsables en el README
+1. Añadir otro archivo CODEOWNERS en docs.
 
-   La documentación no exige aprobación para fusionar.
+   Otro archivo no corrige la falta de permisos del equipo.
 
-2. Asignar la pull request a un responsable
+2. Exigir comprobaciones de estado en la rama predeterminada.
 
-   La asignación no hace obligatoria la aprobación.
+   Las comprobaciones de estado no conceden permisos al equipo propietario.
 
-3. Exigir revisión de responsables en la protección de rama **[CORRECT]**
+3. Conceder al equipo acceso Write explícito al repositorio. **[CORRECT]**
 
-   La protección de rama puede exigir aprobación de responsables del código.
+   El propio equipo debe tener permiso Write; los permisos individuales no bastan.
 
-4. Añadir una etiqueta con el nombre del responsable
+4. Dar Triage a cada miembro en lugar de Write.
 
-   Las etiquetas no imponen revisiones.
+   Cambiar permisos individuales no otorga al equipo el acceso Write necesario.
 
-**Concept:** Propiedad del código frente a exigencia
+**Concept:** El equipo propietario necesita un permiso Write explícito y debe ser visible.
 
 **Authored coaching hints:**
 
-- Separa identificar revisores de exigir aprobación.
-- Busca una regla aplicada a la rama que recibe los cambios.
+- Distingue los permisos del equipo de los permisos individuales de sus miembros.
+- Comprueba si nombrar un propietario también le concede acceso.
 
 </details>
 
@@ -21991,30 +21991,30 @@ Un repositorio público tiene un CODEOWNERS válido. ¿Qué control adicional ex
 
 ### Português (Brasil)
 
-Um repositório público tem um CODEOWNERS válido. Qual controle adicional exige aprovação dos responsáveis para fazer merge quando não há permissão de ignorar regras?
+Uma equipe visível aparece em CODEOWNERS. Seus membros têm acesso Write individual, mas a equipe não tem acesso explícito ao repositório. O que deve mudar para ela ser uma proprietária válida?
 
-1. Mencionar os responsáveis no README
+1. Adicionar outro arquivo CODEOWNERS na pasta docs.
 
-   Documentação não exige aprovação para merge.
+   Outro arquivo não corrige a falta de permissão da equipe.
 
-2. Atribuir a pull request a um responsável
+2. Exigir verificações de status na branch padrão.
 
-   A atribuição não torna a aprovação obrigatória.
+   Verificações de status não concedem permissões à equipe proprietária.
 
-3. Exigir revisão dos responsáveis na proteção de branch **[CORRECT]**
+3. Conceder acesso Write explícito à equipe no repositório. **[CORRECT]**
 
-   A proteção de branch pode exigir aprovação dos responsáveis pelo código.
+   A própria equipe precisa de Write; as concessões individuais não bastam.
 
-4. Adicionar uma etiqueta com o nome do responsável
+4. Dar Triage a cada membro em vez de Write.
 
-   Etiquetas não impõem revisões.
+   Alterar permissões individuais não concede o Write necessário à equipe.
 
-**Concept:** Propriedade do código versus exigência
+**Concept:** A equipe proprietária precisa ser visível e ter sua própria concessão Write.
 
 **Authored coaching hints:**
 
-- Separe identificar revisores de exigir aprovação.
-- Procure uma regra aplicada à branch que recebe as alterações.
+- Diferencie as permissões da equipe das permissões individuais de seus membros.
+- Verifique se nomear um proprietário também concede acesso.
 
 </details>
 
@@ -23120,7 +23120,7 @@ Qual etiqueta de issue costuma indicar que os mantenedores consideram a tarefa a
 
 **Official supporting source:** <https://docs.github.com/en/get-started/exploring-projects-on-github/finding-ways-to-contribute-to-open-source-on-github>
 
-<!-- certification-coach-question:ghf-211:04d50d9d2ce1f2817580ff3157fe58bea0a17b0e49345c50c8eada975d0c8a33 -->
+<!-- certification-coach-question:ghf-211:7d8503aa772a05a154788684c343af7006a8bcee993cdc75645dd13e5f45ba38 -->
 ## Question 211: Explore the GitHub community
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -23131,68 +23131,68 @@ Qual etiqueta de issue costuma indicar que os mantenedores consideram a tarefa a
 
 **Question ID:** `ghf-211`
 
-**Content revision:** `04d50d9d2ce1f2817580ff3157fe58bea0a17b0e49345c50c8eada975d0c8a33`
+**Content revision:** `7d8503aa772a05a154788684c343af7006a8bcee993cdc75645dd13e5f45ba38`
 
-**en review revision:** `dd244322b4f43e34581458045fabcff40d5983f98ec261a040b78183e8a35514`
-**es review revision:** `523ed76c5a8b20cfc3f6f37b849387a440b928dcdc11b4e4a809b92e83149d44`
-**pt-BR review revision:** `bda74b36bc8902df7954a263e931b88dc6c3ff974359aeb83e64cc4a5f798b72`
+**en review revision:** `caf865743a4fc12ce83516538aa6fc6d108b99db06e5c26215b08f108152436d`
+**es review revision:** `3822c3d976ba7167aef8f5d240343537c16ed73c421e04d3b5866398edceb218`
+**pt-BR review revision:** `ed25bb0d0bfb8bdb7f6aa5cc0893ddbc82778e06636dbd9f84082d2b958e2e20`
 
 ### English
 
-Where should a newcomer first look for a project's instructions on proposing changes and running contribution checks?
+An organization wants one default CONTRIBUTING.md used by repositories that lack their own copy. Where should it place the default community health file?
 
-1. LICENSE
+1. In each project's .github folder, with no central repository.
 
-   A license defines legal permissions and conditions.
+   Per-project files can override defaults but do not supply a single account-wide fallback.
 
-2. CONTRIBUTING.md **[CORRECT]**
+2. In a public repository named .github owned by the organization. **[CORRECT]**
 
-   Contribution guidelines describe the project's expected contribution process.
+   GitHub uses supported community files from this special public repository as fallbacks.
 
-3. CODEOWNERS
+3. In a private repository named .github owned by the organization.
 
-   CODEOWNERS maps paths to code reviewers.
+   The special default-file repository must be public, not private.
 
-4. FUNDING.yml
+4. In a public repository named community-defaults.
 
-   Funding configuration lists sponsorship options.
+   The fallback mechanism requires the special repository name .github.
 
-**Concept:** Contribution process discovery
+**Concept:** Default community health files supply account-wide fallbacks.
 
 **Authored coaching hints:**
 
-- Separate project process from legal terms and reviewer ownership.
-- Look for instructions addressed to potential contributors.
+- Distinguish a repository's own file from an account-wide default.
+- Consider the naming and visibility requirements of the default-file repository.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-¿Dónde debería buscar primero una persona nueva las instrucciones del proyecto para proponer cambios y ejecutar comprobaciones de contribución?
+Una organización quiere un CONTRIBUTING.md predeterminado para repositorios que no tengan el suyo. ¿Dónde debe colocar este archivo comunitario?
 
-1. LICENSE
+1. En la carpeta .github de cada proyecto, sin repositorio central.
 
-   La licencia define permisos y condiciones legales.
+   Los archivos de cada proyecto pueden anular valores predeterminados, pero no crean una alternativa central.
 
-2. CONTRIBUTING.md **[CORRECT]**
+2. En un repositorio público de la organización llamado .github. **[CORRECT]**
 
-   Las pautas de contribución describen el proceso esperado por el proyecto.
+   GitHub usa los archivos comunitarios compatibles de este repositorio especial como alternativas.
 
-3. CODEOWNERS
+3. En un repositorio privado de la organización llamado .github.
 
-   CODEOWNERS relaciona rutas con revisores de código.
+   El repositorio especial de archivos predeterminados debe ser público, no privado.
 
-4. FUNDING.yml
+4. En un repositorio público llamado community-defaults.
 
-   La configuración de financiación enumera opciones de patrocinio.
+   El mecanismo requiere el nombre especial de repositorio .github.
 
-**Concept:** Descubrimiento del proceso de contribución
+**Concept:** Los archivos comunitarios predeterminados proporcionan alternativas para toda la cuenta.
 
 **Authored coaching hints:**
 
-- Separa el proceso del proyecto de las condiciones legales y la propiedad de revisión.
-- Busca instrucciones dirigidas a posibles contribuidores.
+- Distingue el archivo propio de un repositorio del predeterminado de la cuenta.
+- Considera los requisitos de nombre y visibilidad del repositorio de archivos predeterminados.
 
 </details>
 
@@ -23201,34 +23201,34 @@ Where should a newcomer first look for a project's instructions on proposing cha
 
 ### Português (Brasil)
 
-Onde uma pessoa nova deve procurar primeiro as instruções do projeto para propor alterações e executar verificações de contribuição?
+Uma organização quer um CONTRIBUTING.md padrão para repositórios sem cópia própria. Onde deve colocar esse arquivo de saúde da comunidade?
 
-1. LICENSE
+1. Na pasta .github de cada projeto, sem um repositório central.
 
-   A licença define permissões e condições legais.
+   Arquivos de cada projeto podem substituir padrões, mas não fornecem uma alternativa central.
 
-2. CONTRIBUTING.md **[CORRECT]**
+2. Em um repositório público da organização chamado .github. **[CORRECT]**
 
-   As diretrizes de contribuição descrevem o processo esperado pelo projeto.
+   O GitHub usa arquivos comunitários compatíveis desse repositório especial como alternativa.
 
-3. CODEOWNERS
+3. Em um repositório privado da organização chamado .github.
 
-   CODEOWNERS relaciona caminhos a revisores de código.
+   O repositório especial de arquivos padrão precisa ser público, não privado.
 
-4. FUNDING.yml
+4. Em um repositório público chamado community-defaults.
 
-   A configuração de financiamento lista opções de patrocínio.
+   O mecanismo exige o nome especial de repositório .github.
 
-**Concept:** Descoberta do processo de contribuição
+**Concept:** Arquivos de saúde da comunidade padrão fornecem alternativas para toda a conta.
 
 **Authored coaching hints:**
 
-- Separe o processo do projeto dos termos legais e da propriedade de revisão.
-- Procure instruções voltadas a possíveis contribuidores.
+- Diferencie o arquivo próprio do repositório do padrão da conta.
+- Considere os requisitos de nome e visibilidade do repositório de arquivos padrão.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-open-source>
+**Official supporting source:** <https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file>
 
 <!-- certification-coach-question:ghf-212:b32f8bb13c8fd6f4d2295bfb063c8766c9d3d06f024dfead4002ec209d43db5c -->
 ## Question 212: Explore the GitHub community
@@ -24330,7 +24330,7 @@ O que um desenvolvedor deve estabelecer antes de redistribuir código de um repo
 
 **Official supporting source:** <https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository>
 
-<!-- certification-coach-question:ghf-222:d5be1175d750ba2856bfcee60e12e498e49f7305b228d58758ad9387938e7c5c -->
+<!-- certification-coach-question:ghf-222:01d16af581135226be0b30e72d0f5d6964bbc98158474663127236f4d90628bc -->
 ## Question 222: Explore the GitHub community
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -24341,68 +24341,68 @@ O que um desenvolvedor deve estabelecer antes de redistribuir código de um repo
 
 **Question ID:** `ghf-222`
 
-**Content revision:** `d5be1175d750ba2856bfcee60e12e498e49f7305b228d58758ad9387938e7c5c`
+**Content revision:** `01d16af581135226be0b30e72d0f5d6964bbc98158474663127236f4d90628bc`
 
-**en review revision:** `44f3d02f6ddc001d9f35a9654d0a3b5570625afd3b62ab36013d5e0edb33bcaa`
-**es review revision:** `1b1f533c0a81fc9cbbf627aff2b1c7c658f9f9c40e9e5e3f636d048bdc663f94`
-**pt-BR review revision:** `292df7b50425f9407e8379fe1187885522df29935427055d2b124ea387ad4a59`
+**en review revision:** `42a2ee1d3087cebcc865b802da7d319e0ebcaffb90b86e286eb2e761f9da3bb5`
+**es review revision:** `1201bbe532e6c29f1d7a585626f725e04d8bfaa7d0c2079570dee509c2f97b5c`
+**pt-BR review revision:** `a861b28c26c594779e4b09140a30177e8163b86ae787cd456297f2d60b349d8a`
 
 ### English
 
-Which source should a user consult to determine the conditions for modifying and redistributing an open-source project's code?
+A developer wants repository search results restricted to projects using the MIT license. Which qualifier should they add?
 
-1. Its repository star count
+1. language:mit
 
-   Popularity does not define legal conditions.
+   The language qualifier filters programming languages, not licenses.
 
-2. Its latest milestone description
+2. topic:mit
 
-   A milestone describes project goals, not licensing terms.
+   A topic describes repository metadata and does not establish its detected license.
 
-3. Its list of project sponsors
+3. filename:LICENSE
 
-   Sponsorship does not establish redistribution terms.
+   This is not the repository-search license qualifier.
 
-4. Its applicable software license **[CORRECT]**
+4. license:mit **[CORRECT]**
 
-   The applicable license defines reuse rights and conditions.
+   The license qualifier filters repositories by their detected license.
 
-**Concept:** License obligations
+**Concept:** Repository search can filter a detected license independently of language and topics.
 
 **Authored coaching hints:**
 
-- Distinguish community signals from legal permissions.
-- Open source still has terms that users must follow.
+- Identify the kind of repository metadata being filtered.
+- Distinguish a license filter from a programming-language or topic filter.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-¿Qué fuente debe consultar una persona para conocer las condiciones de modificación y redistribución del código de un proyecto abierto?
+Una persona quiere limitar los resultados de búsqueda de repositorios a proyectos con licencia MIT. ¿Qué calificador debe añadir?
 
-1. Su número de estrellas
+1. language:mit
 
-   La popularidad no define condiciones legales.
+   El calificador language filtra lenguajes de programación, no licencias.
 
-2. La descripción de su último hito
+2. topic:mit
 
-   Un hito describe objetivos, no condiciones de licencia.
+   Un tema es metadato del repositorio y no establece su licencia detectada.
 
-3. Su lista de patrocinadores
+3. filename:LICENSE
 
-   El patrocinio no establece condiciones de redistribución.
+   No es el calificador de licencia para búsquedas de repositorios.
 
-4. Su licencia de software aplicable **[CORRECT]**
+4. license:mit **[CORRECT]**
 
-   La licencia aplicable define derechos y condiciones de reutilización.
+   El calificador license filtra los repositorios por su licencia detectada.
 
-**Concept:** Obligaciones de licencia
+**Concept:** La búsqueda de repositorios filtra licencias por separado de lenguajes y temas.
 
 **Authored coaching hints:**
 
-- Distingue las señales comunitarias de los permisos legales.
-- El código abierto sigue teniendo condiciones que cumplir.
+- Identifica el tipo de metadato que se quiere filtrar.
+- Distingue un filtro de licencia de uno de lenguaje o tema.
 
 </details>
 
@@ -24411,34 +24411,34 @@ Which source should a user consult to determine the conditions for modifying and
 
 ### Português (Brasil)
 
-Qual fonte uma pessoa deve consultar para conhecer as condições de modificação e redistribuição do código de um projeto aberto?
+Uma pessoa quer limitar a busca de repositórios a projetos com licença MIT. Qual qualificador deve adicionar?
 
-1. Seu número de estrelas
+1. language:mit
 
-   Popularidade não define condições legais.
+   O qualificador language filtra linguagens de programação, não licenças.
 
-2. A descrição do último marco
+2. topic:mit
 
-   Um marco descreve metas, não termos de licença.
+   Um tópico é metadado do repositório e não estabelece sua licença detectada.
 
-3. Sua lista de patrocinadores
+3. filename:LICENSE
 
-   Patrocínio não estabelece condições de redistribuição.
+   Esse não é o qualificador de licença da busca de repositórios.
 
-4. Sua licença de software aplicável **[CORRECT]**
+4. license:mit **[CORRECT]**
 
-   A licença aplicável define direitos e condições de reutilização.
+   O qualificador license filtra repositórios pela licença detectada.
 
-**Concept:** Obrigações de licença
+**Concept:** A busca de repositórios filtra licenças separadamente de linguagens e tópicos.
 
 **Authored coaching hints:**
 
-- Diferencie sinais da comunidade de permissões legais.
-- Código aberto continua tendo condições a cumprir.
+- Identifique o tipo de metadado que deve ser filtrado.
+- Diferencie filtro de licença de filtro de linguagem ou tópico.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository>
+**Official supporting source:** <https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories>
 
 <!-- certification-coach-question:ghf-223:a8b7bb0aba8c5b097659a532c5d3c8726f41abc9c63cfd96bc3d9e12d78c7bf2 -->
 ## Question 223: Explore the GitHub community
@@ -24660,7 +24660,7 @@ Quais tipos de conta podem receber recursos do GitHub Sponsors quando atendem ao
 
 **Official supporting source:** <https://docs.github.com/en/sponsors/getting-started-with-github-sponsors/about-github-sponsors>
 
-<!-- certification-coach-question:ghf-225:0b9396b2578bafdd0f9cdf91aca722e8324f858d9ebd71e0c1d6034173d8ea2d -->
+<!-- certification-coach-question:ghf-225:31c403a93968471e92e7c5194435e05f0bd8718f6a3ba30418d781248d69f680 -->
 ## Question 225: Explore the GitHub community
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -24671,68 +24671,68 @@ Quais tipos de conta podem receber recursos do GitHub Sponsors quando atendem ao
 
 **Question ID:** `ghf-225`
 
-**Content revision:** `0b9396b2578bafdd0f9cdf91aca722e8324f858d9ebd71e0c1d6034173d8ea2d`
+**Content revision:** `31c403a93968471e92e7c5194435e05f0bd8718f6a3ba30418d781248d69f680`
 
-**en review revision:** `5610103d7736a98a55be6886f7823f03ed97f09157becbdc0943a1863f1e6675`
-**es review revision:** `c0df40b9249d92c15bc4e9d71082f3f282dd8d2e00a2abcaf1abb4065bac1c57`
-**pt-BR review revision:** `b5d54ac96432f5423f23c25bda7f8cfe3e689411b78f95332eb387cfedd93607`
+**en review revision:** `64568c449f30dfe4f7d3d2132b8cb06c6d773eae2cc5057d9ae98fa169f51e07`
+**es review revision:** `9ffb2d5f867d45109a7d28bacc746859705d31bda0398a410b18a30df687ef19`
+**pt-BR review revision:** `e76ad14726cdbc62767b8270603df962e92f72d2922cdf1dcd9df93ca0e777ac`
 
 ### English
 
-Which repository metadata helps people discover related projects by subject across different owners?
+A contributor wants selected repositories and gists featured on their own profile, rather than simply appearing in an activity feed. Which feature fits?
 
-1. Issue assignees
+1. Watching repository releases
 
-   Assignees identify responsibility for specific work.
+   Watching configures notifications rather than profile highlights.
 
-2. Milestone due dates
+2. Issue milestones
 
-   Due dates describe scheduling rather than repository subjects.
+   Milestones group work toward a repository goal, not profile showcases.
 
-3. Repository topics **[CORRECT]**
+3. Pinned items on the profile **[CORRECT]**
 
-   Topics classify repositories and support subject-based discovery.
+   Pinned repositories and gists let the contributor curate highlighted work.
 
-4. Pull request reviewers
+4. Repository topic labels
 
-   Reviewers identify people asked to review a particular change.
+   Topics help classify projects, not curate the person's profile highlights.
 
-**Concept:** Topic-based discovery
+**Concept:** Pinned profile items curate work a person wants to highlight.
 
 **Authored coaching hints:**
 
-- Distinguish descriptions of a repository from metadata on one work item.
-- People may not know the project's owner or name.
+- Separate showcasing selected work from following new activity.
+- Consider which control acts on the person's profile.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-¿Qué metadato de repositorio ayuda a descubrir proyectos relacionados por tema entre distintos propietarios?
+Una persona quiere destacar repositorios y gists seleccionados en su propio perfil, no solo verlos en una actividad reciente. ¿Qué función corresponde?
 
-1. Personas asignadas a issues
+1. Seguir las publicaciones del repositorio
 
-   Las personas asignadas identifican responsables de trabajo concreto.
+   Seguir publicaciones configura notificaciones, no los destacados del perfil.
 
-2. Fechas límite de hitos
+2. Hitos de issues
 
-   Las fechas describen planificación, no temas del repositorio.
+   Los hitos agrupan trabajo de un repositorio, no proyectos del perfil.
 
-3. Temas del repositorio **[CORRECT]**
+3. Elementos fijados en el perfil **[CORRECT]**
 
-   Los temas clasifican repositorios y facilitan descubrirlos por materia.
+   Fijar repositorios y gists permite seleccionar el trabajo que se destaca.
 
-4. Revisores de pull requests
+4. Temas del repositorio
 
-   Los revisores identifican a quienes se pide revisar un cambio.
+   Los temas clasifican proyectos, pero no seleccionan los destacados del perfil.
 
-**Concept:** Descubrimiento por temas
+**Concept:** Los elementos fijados del perfil muestran trabajo seleccionado por la persona.
 
 **Authored coaching hints:**
 
-- Distingue las descripciones del repositorio de los metadatos de un elemento.
-- Quien busca puede no conocer el nombre ni el propietario del proyecto.
+- Distingue destacar trabajo de seguir actividad nueva.
+- Considera qué control actúa sobre el perfil personal.
 
 </details>
 
@@ -24741,31 +24741,31 @@ Which repository metadata helps people discover related projects by subject acro
 
 ### Português (Brasil)
 
-Qual metadado de repositório ajuda a descobrir projetos relacionados por assunto entre diferentes proprietários?
+Uma pessoa quer destacar repositórios e gists selecionados no próprio perfil, em vez de apenas vê-los em um feed de atividades. Qual recurso atende a isso?
 
-1. Responsáveis por issues
+1. Acompanhar releases do repositório
 
-   Responsáveis identificam pessoas encarregadas de trabalho específico.
+   Acompanhar releases configura notificações, não destaques do perfil.
 
-2. Prazos de marcos
+2. Marcos de issues
 
-   Prazos descrevem planejamento, não assuntos do repositório.
+   Marcos agrupam trabalho do repositório, não projetos destacados no perfil.
 
-3. Tópicos do repositório **[CORRECT]**
+3. Itens fixados no perfil **[CORRECT]**
 
-   Tópicos classificam repositórios e facilitam a descoberta por assunto.
+   Fixar repositórios e gists permite selecionar o trabalho destacado.
 
-4. Revisores de pull requests
+4. Tópicos do repositório
 
-   Revisores identificam quem foi solicitado a revisar uma alteração.
+   Tópicos classificam projetos, mas não selecionam os destaques do perfil.
 
-**Concept:** Descoberta por tópicos
+**Concept:** Itens fixados no perfil exibem trabalho selecionado pela pessoa.
 
 **Authored coaching hints:**
 
-- Diferencie descrições do repositório dos metadados de um item.
-- Quem pesquisa pode não conhecer o nome nem o proprietário do projeto.
+- Diferencie destacar trabalho de acompanhar novas atividades.
+- Considere qual controle atua sobre o perfil pessoal.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/enterprise-best-practices/use-innersource>
+**Official supporting source:** <https://docs.github.com/en/account-and-profile/concepts/personal-profile>

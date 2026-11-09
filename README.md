@@ -124,6 +124,11 @@ with largest remainders constrained to the published percentage ranges. No quest
 can repeat previously seen questions. A full mock is disabled if its bank
 cannot cover the required domain quotas. Learning modes can focus on one domain.
 
+The Copilot bank combines concise knowledge checks, client-specific command and
+setting selections, and short applied scenarios. Its 225 original questions and
+translations are AI-authored Preview material requiring human review, not copied
+assessment questions or a guarantee of matching a real exam.
+
 ## Practice modes and navigation
 
 ### Languages

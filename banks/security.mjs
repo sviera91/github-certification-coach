@@ -1083,26 +1083,26 @@ export const questions = [
     {
         "id": "ghas-secrets-006",
         "domain": "Configure and use Secret Protection",
-        "prompt": "A validity check cannot verify a detected credential because its provider does not support checks. What is the sound interpretation?",
+        "prompt": "A supported partner token's displayed validity result predates a provider-side change. Partner validity checks are enabled. Which alert control requests a current result?",
         "choices": [
-            "The secret is safe to publish",
-            "The credential's status remains unverified",
-            "The scanner should delete the alert automatically",
-            "The repository's push protection is disabled"
+            "Close as revoked",
+            "Verify secret",
+            "Report leak",
+            "Reopen alert"
         ],
         "correct": 1,
         "explanations": [
-            "Unsupported checking cannot establish safety.",
-            "No provider result means validity remains unknown.",
-            "A lack of validation does not justify removing the finding.",
-            "A validity check does not report push-protection configuration."
+            "Closing records a resolution; it does not request another provider check.",
+            "Verify secret performs an on-demand validity check for a supported secret.",
+            "Report leak is a separate workflow for eligible leaked GitHub personal access tokens.",
+            "Reopening changes alert disposition, not the age of its validation result."
         ],
-        "concept": "Validity-check data flow",
+        "concept": "On-demand validity refresh",
         "hints": [
-            "Was the credential checked successfully by its provider?",
-            "What conclusion follows when validation is unavailable?"
+            "Consider which operation contacts the issuing provider.",
+            "A stored result and a new check are different operations."
         ],
-        "source": "https://docs.github.com/en/code-security/concepts/secret-security/validity-checks"
+        "source": "https://docs.github.com/en/code-security/tutorials/remediate-leaked-secrets/evaluating-alerts"
     },
     {
         "id": "ghas-secrets-007",
@@ -1443,26 +1443,26 @@ export const questions = [
     {
         "id": "ghas-secrets-021",
         "domain": "Configure and use Secret Protection",
-        "prompt": "A token appears in an issue comment and a commit. Which response addresses the credential risk across both locations?",
+        "prompt": "A response integration already has a secret-scanning alert number. Which REST request lists that alert's recorded secret locations, rather than listing other alerts?",
         "choices": [
-            "Revoke or rotate the token, then clean exposed copies",
-            "Close the commit alert and leave the comment unchanged",
-            "Rename the issue and keep using the token",
-            "Run CodeQL without changing the credential"
+            "GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}/locations",
+            "GET /repos/{owner}/{repo}/secret-scanning/alerts",
+            "GET /orgs/{org}/secret-scanning/alerts",
+            "GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}"
         ],
         "correct": 0,
         "explanations": [
-            "Credential invalidation contains misuse while cleanup addresses remaining copies.",
-            "Closing one alert does not remove another exposure.",
-            "Renaming content does not invalidate a token.",
-            "CodeQL analysis cannot revoke an exposed credential."
+            "The locations subresource enumerates occurrences belonging to the specified secret alert.",
+            "The repository alert collection lists alerts, not one alert's location records.",
+            "The organization collection spans alerts across eligible repositories, not one alert's occurrences.",
+            "Code-scanning alerts are a different resource and do not enumerate secret locations."
         ],
-        "concept": "Multi-location credential containment",
+        "concept": "Secret occurrence enumeration",
         "hints": [
-            "Where else might the same value remain exposed?",
-            "Which step neutralizes reuse independently of cleanup?"
+            "Determine whether the requested resource is a collection of alerts or of occurrences.",
+            "The alert identity is already known."
         ],
-        "source": "https://docs.github.com/en/code-security/concepts/secret-security/secret-scanning"
+        "source": "https://docs.github.com/en/rest/secret-scanning/secret-scanning#list-locations-for-a-secret-scanning-alert"
     },
     {
         "id": "ghas-secrets-022",
@@ -1491,26 +1491,26 @@ export const questions = [
     {
         "id": "ghas-secrets-023",
         "domain": "Configure and use Secret Protection",
-        "prompt": "A repository contains a realistic credential in a test fixture. What should the maintainer verify before deciding not to remediate it?",
+        "prompt": "The provider has confirmed revocation, and maintainers have removed the exposed token from current files. Its secret-scanning alert remains open. What completes the alert workflow?",
         "choices": [
-            "That the repository has no production deployment",
-            "That the alert is older than the branch",
-            "That the value is deliberately nonfunctional and cannot authenticate",
-            "That the filename contains the word test"
+            "Wait for cleanup to close the alert",
+            "Rerun the CodeQL analysis workflow",
+            "Close the alert with the appropriate reason",
+            "Republish the repository's custom pattern"
         ],
         "correct": 2,
         "explanations": [
-            "Nonproduction code can still contain usable credentials.",
-            "Branch age does not determine whether a secret works.",
-            "A test value is harmless only when it cannot grant access.",
-            "A filename is not evidence that a credential is inert."
+            "Removing a token from files does not automatically close its secret-scanning alert.",
+            "CodeQL analyzes code weaknesses; rerunning it does not resolve a credential alert.",
+            "After remediation, manually close the alert and record its resolution reason.",
+            "Publishing a detector is unrelated to closing this remediated credential alert."
         ],
-        "concept": "Test-data risk assessment",
+        "concept": "Secret alert closure after remediation",
         "hints": [
-            "What property of the value determines whether it is dangerous?",
-            "Does its location prove that it cannot authenticate?"
+            "Separate provider remediation from GitHub alert disposition.",
+            "Which step updates the alert record itself?"
         ],
-        "source": "https://docs.github.com/en/code-security/concepts/secret-security/secret-scanning"
+        "source": "https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-secret-scanning-alerts/resolving-alerts"
     },
     {
         "id": "ghas-secrets-024",
@@ -1659,50 +1659,50 @@ export const questions = [
     {
         "id": "ghas-secrets-030",
         "domain": "Configure and use Secret Protection",
-        "prompt": "A private organization repository needs secret scanning and push protection. Which product is the relevant Advanced Security entitlement?",
+        "prompt": "Secret scanning already detects provider-issued tokens. A team also needs built-in detection of private keys and connection strings that are not tied to one provider. Which extension fits?",
         "choices": [
-            "GitHub Packages",
-            "GitHub Secret Protection",
-            "GitHub Code Security",
-            "GitHub Actions"
+            "Partner validity checks",
+            "Generic patterns",
+            "Organization custom patterns",
+            "Push-protection exemptions"
         ],
         "correct": 1,
         "explanations": [
-            "Packages hosts artifacts and is not the security product.",
-            "Secret Protection covers secret scanning and push-protection features.",
-            "Code Security focuses on code scanning and premium supply-chain features.",
-            "Actions runs automation workflows rather than supplying this product entitlement."
+            "Validity checks evaluate supported detected credentials, not add generic formats.",
+            "Generic patterns cover secrets such as private keys and connection strings without a specific provider.",
+            "Custom patterns require organization-defined expressions; the request is for built-in formats.",
+            "Exemptions skip prevention for selected actors; they do not extend detection."
         ],
-        "concept": "Secret Protection product scope",
+        "concept": "Generic secret detection",
         "hints": [
-            "Is the requirement credential detection or code/dependency analysis?",
-            "Which product groups features that prevent and detect secret leaks?"
+            "Distinguish a known provider from a general credential structure.",
+            "The requirement is not a proprietary token format."
         ],
-        "source": "https://docs.github.com/en/get-started/learning-about-github/about-github-advanced-security"
+        "source": "https://docs.github.com/en/code-security/concepts/secret-security/secret-scanning"
     },
     {
         "id": "ghas-secrets-031",
         "domain": "Configure and use Secret Protection",
-        "prompt": "A proposed custom regex should detect an organization's new credential format without matching ordinary IDs. How should the author evaluate that goal?",
+        "prompt": "A custom secret expression works in a different regex tester but uses constructs GitHub's custom-pattern engine does not support. Which compatibility target should the author use?",
         "choices": [
-            "Replace the regex with a repository name",
-            "Compare Dependabot alert counts before and after",
-            "Use a dry run with examples that should match and similar values that should not",
-            "Test only one known credential and publish immediately"
+            "JavaScript RegExp syntax",
+            "All PCRE constructs and modifiers",
+            "Hyperscan's supported PCRE subset",
+            "Git pathspec wildcard syntax"
         ],
         "correct": 2,
         "explanations": [
-            "Repository names do not describe credential syntax.",
-            "Dependency alert counts do not measure secret-pattern accuracy.",
-            "Positive and negative examples reveal both missed matches and false matches.",
-            "One example cannot show precision across similar strings."
+            "A JavaScript tester can accept syntax unavailable to the custom-pattern engine.",
+            "GitHub does not support all PCRE constructs or Hyperscan option modifiers.",
+            "Custom patterns use Hyperscan and its documented subset of PCRE syntax.",
+            "Pathspec syntax selects paths; it is not the custom secret regex language."
         ],
-        "concept": "Pattern recall validation",
+        "concept": "Custom-pattern regex compatibility",
         "hints": [
-            "Which examples test whether the expression is both useful and selective?",
-            "What could a single positive test fail to reveal?"
+            "A successful test in one regex engine is not portable proof.",
+            "Check the detector's documented syntax rather than only the examples."
         ],
-        "source": "https://docs.github.com/en/code-security/how-tos/secure-your-secrets/customize-leak-detection/define-custom-patterns"
+        "source": "https://docs.github.com/en/code-security/reference/secret-security/custom-patterns"
     },
     {
         "id": "ghas-secrets-032",
@@ -1731,26 +1731,26 @@ export const questions = [
     {
         "id": "ghas-secrets-033",
         "domain": "Configure and use Secret Protection",
-        "prompt": "An organization sees recurring alerts for a proprietary credential format that built-in detectors miss. What configuration addresses that gap?",
+        "prompt": "A custom pattern already captures the token's length and alphabet. It must also require a digit inside the token, without constraining surrounding text. Which field fits?",
         "choices": [
-            "Define and test a custom secret-scanning pattern",
-            "Add the credential format to `dependabot.yml`",
-            "Create a CodeQL database for the token",
-            "Add an SPDX identifier to the repository"
+            "Additional match requirements",
+            "Before secret",
+            "After secret",
+            "Pattern name"
         ],
         "correct": 0,
         "explanations": [
-            "A custom pattern adds organization-specific secret-format detection.",
-            "Dependabot configuration controls dependency update behavior.",
-            "A CodeQL database models source code for query analysis.",
-            "SPDX identifiers describe software licenses."
+            "Additional match requirements can require the secret itself to match a digit expression.",
+            "Before secret constrains preceding content, not characters inside the secret.",
+            "After secret constrains following content, not the secret's internal composition.",
+            "Pattern name labels the detector but does not impose matching conditions."
         ],
-        "concept": "Extending secret-detection coverage",
+        "concept": "Internal constraints in custom patterns",
         "hints": [
-            "What kind of detector is missing for this credential format?",
-            "Which feature lets an organization define its own matching pattern?"
+            "Identify whether the condition concerns the captured value or its neighbors.",
+            "The token's basic format is already configured."
         ],
-        "source": "https://docs.github.com/en/code-security/concepts/secret-security/secret-scanning"
+        "source": "https://docs.github.com/en/code-security/reference/secret-security/custom-patterns"
     },
     {
         "id": "ghas-secrets-034",
@@ -1779,26 +1779,26 @@ export const questions = [
     {
         "id": "ghas-secrets-035",
         "domain": "Configure and use Secret Protection",
-        "prompt": "Only a small response group should approve push-protection bypass requests. Which setup best supports that requirement?",
+        "prompt": "A push-protection bypass request is marked Approved, but its commits have not reached the repository. Which interpretation follows the documented request statuses?",
         "choices": [
-            "Disable push protection for the enterprise",
-            "Use a repository topic as an approval signal",
-            "Configure delegated bypass with an appropriately scoped reviewer team",
-            "Give every repository contributor organization-owner permissions"
+            "Approval confirms the commits were pushed",
+            "Approval permanently exempts the contributor",
+            "Approval permits the push but does not perform it",
+            "Approval closes the related credential incident"
         ],
         "correct": 2,
         "explanations": [
-            "Disabling protection removes the approval workflow entirely.",
-            "A topic does not authorize or record a bypass decision.",
-            "Delegated bypass allows approval authority to be assigned deliberately.",
-            "Organization-owner access is broader than needed for a review role."
+            "Approved explicitly allows for commits that have not yet been pushed.",
+            "A request approval is not an actor-level exemption from future protection.",
+            "The contributor still has to push; approval alone does not publish commits.",
+            "Bypass approval does not revoke a credential or finish incident remediation."
         ],
-        "concept": "Least-privilege bypass review",
+        "concept": "Bypass approval versus delivery",
         "hints": [
-            "Who needs authority to approve an exception?",
-            "Which configuration narrows approval power without removing the block?"
+            "Distinguish permission to perform an operation from its execution.",
+            "Read the status in the context of the commits' delivery."
         ],
-        "source": "https://docs.github.com/en/code-security/concepts/secret-security/push-protection"
+        "source": "https://docs.github.com/en/code-security/how-tos/secure-your-secrets/manage-bypass-requests/review-bypass-requests"
     },
     {
         "id": "ghas-secrets-036",
@@ -1827,24 +1827,24 @@ export const questions = [
     {
         "id": "ghas-secrets-037",
         "domain": "Configure and use Secret Protection",
-        "prompt": "A custom secret pattern detects an organization's credential in committed history. What additional setting addresses blocking its future introduction through supported pushes?",
+        "prompt": "An organization published a custom pattern and enabled push protection for that pattern. One repository has secret scanning but repository-level push protection is off. What is required for this pattern to block supported pushes there?",
         "choices": [
-            "Enable push protection for the published custom pattern",
-            "Add the pattern to `dependabot.yml`",
-            "Create a code-scanning query suite",
-            "Disable historical scanning"
+            "Enable push protection on that repository",
+            "Republish the pattern at enterprise scope",
+            "Increase the organization's dry-run sample",
+            "Rename the pattern in organization settings"
         ],
         "correct": 0,
         "explanations": [
-            "A published custom pattern can be enabled for push protection.",
-            "Dependabot configuration does not control secret push prevention.",
-            "Query suites analyze code rather than block this credential format.",
-            "Stopping historical scans does not prevent new pushes."
+            "Organization custom-pattern push protection applies only where repository push protection is enabled.",
+            "An enterprise-scoped copy does not replace the repository enablement requirement.",
+            "Dry-run sampling evaluates matches; it does not enable repository prevention.",
+            "Renaming a detector does not change repository-level protection settings."
         ],
-        "concept": "Preventing secret recurrence",
+        "concept": "Custom-pattern prevention applicability",
         "hints": [
-            "Which feature acts before a supported push reaches the repository?",
-            "Is detection alone the same as blocking future exposure?"
+            "Check the repository prerequisites independently of the shared detector.",
+            "Publication and local prevention are separate configuration layers."
         ],
         "source": "https://docs.github.com/en/code-security/how-tos/secure-your-secrets/customize-leak-detection/define-custom-patterns"
     },
@@ -2163,24 +2163,24 @@ export const questions = [
     {
         "id": "ghas-supply-011",
         "domain": "Configure and use supply chain security",
-        "prompt": "An organization enables Dependabot alerts but wants automated pull requests for vulnerable packages. Which distinction matters?",
+        "prompt": "A dependency is at 1.2.0. Version 1.2.4 is the first patched release and resolves without breaking the graph; 2.0.0 is newer. Which target follows Dependabot security updates' documented objective?",
         "choices": [
-            "Alerts automatically merge every package update",
-            "Version updates are required to create vulnerability alerts",
-            "Security updates disable the dependency graph",
-            "Alerts report risk; updates propose fixes when available"
+            "2.0.0 because security updates always choose latest",
+            "1.2.0 with the advisory added to an ignore list",
+            "The highest 1.x release regardless of the patch boundary",
+            "1.2.4 as the minimum resolving patched version"
         ],
         "correct": 3,
         "explanations": [
-            "Dependabot does not automatically merge every proposed change.",
-            "Vulnerability alerts rely on dependency and advisory data, not version-update scheduling.",
-            "Security updates do not replace dependency inventory.",
-            "Alerting and automated security-update pull requests are distinct capabilities."
+            "Always choosing the latest release describes neither the minimal security fix nor its compatibility goal.",
+            "Keeping the vulnerable version and ignoring an advisory is not an upgrade to a fix.",
+            "Security updates are not an unconditional highest-minor release selection.",
+            "Dependabot seeks the minimum patched version that can resolve the dependency graph."
         ],
-        "concept": "Alert coverage versus update coverage",
+        "concept": "Minimal patched-version selection",
         "hints": [
-            "Which feature informs maintainers, and which creates a remediation proposal?",
-            "Does notification by itself change the dependency version?"
+            "Distinguish correcting a vulnerability from routine version freshness.",
+            "The scenario already establishes that the first patched release resolves."
         ],
         "source": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-security-updates"
     },
@@ -2307,24 +2307,24 @@ export const questions = [
     {
         "id": "ghas-supply-017",
         "domain": "Configure and use supply chain security",
-        "prompt": "A team snoozes a Dependabot alert until a review date. What should it expect when that period ends?",
+        "prompt": "A Dependabot alert was auto-dismissed under a rule for development-only dependencies. Its dependency is later classified as production. What can happen when the alert metadata changes?",
         "choices": [
-            "The dependency graph is permanently disabled",
-            "Snoozing does not resolve the vulnerability",
-            "The package is upgraded automatically at the snooze deadline",
-            "The advisory is removed from the GitHub Advisory Database"
+            "The original dismissal remains permanent despite metadata changes",
+            "The alert can be automatically reopened",
+            "A new alert must be manually created for the production scope",
+            "The alert can reopen only after a patched version is published"
         ],
         "correct": 1,
         "explanations": [
-            "Changing an alert's state does not disable dependency inventory.",
-            "Snoozing defers attention rather than proving remediation.",
-            "A snooze duration is not an update schedule.",
-            "Repository triage does not withdraw a published advisory."
+            "Automatic dismissal is not permanent when the metadata underlying it changes.",
+            "Auto-dismissed alerts can reopen when metadata such as dependency scope changes.",
+            "The existing auto-dismissed alert can reopen; a manually created replacement is unnecessary.",
+            "Metadata changes can trigger reopening without waiting for a patched release."
         ],
-        "concept": "Auto-triage notification timing",
+        "concept": "Metadata-driven alert reopening",
         "hints": [
-            "What does the snooze period defer?",
-            "Which event should prompt the team to revisit the risk?"
+            "The rule's original eligibility depended on dependency scope.",
+            "Consider whether automatic dismissal is permanent."
         ],
         "source": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-auto-triage-rules"
     },
@@ -2475,24 +2475,24 @@ export const questions = [
     {
         "id": "ghas-supply-024",
         "domain": "Configure and use supply chain security",
-        "prompt": "A partner requests a list of libraries used by a repository, not projects that consume it. What does the exported repository SBOM represent?",
+        "prompt": "After requesting a repository SBOM through the REST API, automation polls the returned sbom_url and receives HTTP 202. Which behavior follows the documented export flow?",
         "choices": [
-            "Repository dependencies and metadata",
-            "All repositories that depend on the repository",
-            "Every package published by GitHub",
-            "Only vulnerabilities from the advisory database"
+            "Continue polling; follow the 302 redirect when ready",
+            "Parse the 202 response as the completed SPDX document",
+            "Treat 202 as a permanent authorization failure",
+            "Submit a new generation request after every poll"
         ],
         "correct": 0,
         "explanations": [
-            "The SBOM exports the dependency graph's component inventory.",
-            "Dependent projects are not included in the repository SBOM.",
-            "An SBOM is not a catalog of every GitHub package.",
-            "The SBOM records components, not only vulnerability records."
+            "The export flow uses 202 while preparing and a 302 redirect to the completed download.",
+            "A pending response is not the finished SBOM artifact.",
+            "202 indicates accepted processing here, not a permanent denial of access.",
+            "Poll the returned URL instead of repeatedly starting separate generation requests."
         ],
-        "concept": "SBOM dependencies versus dependents",
+        "concept": "Asynchronous SBOM export",
         "hints": [
-            "Is the request about packages this project uses or projects that use it?",
-            "Which side of the dependency relationship appears in an exported SBOM?"
+            "Distinguish pending generation from the downloadable artifact.",
+            "Use the continuation URL returned by the service."
         ],
         "source": "https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/establish-provenance-and-integrity/export-dependencies-as-sbom"
     },
@@ -2547,26 +2547,26 @@ export const questions = [
     {
         "id": "ghas-supply-027",
         "domain": "Configure and use supply chain security",
-        "prompt": "A Dependabot alert identifies a vulnerable transitive package. What information helps the maintainer find a practical fix?",
+        "prompt": "An npm dependency A allows only B 1.x, but B's fix starts at 2.0. Dependabot proposes upgrading A as well as B. Why can changing the non-vulnerable parent be necessary?",
         "choices": [
-            "The repository's push-protection bypass reasons",
-            "The current CodeQL query count",
-            "The SBOM's dependent repositories",
-            "Dependency path and available fix"
+            "A's version must always match B's major version",
+            "A's lockfile entry alone overrides its declared range for B",
+            "A must be upgraded before B's vulnerability can be dismissed as false positive",
+            "A newer parent can permit B's patched version"
         ],
         "correct": 3,
         "explanations": [
-            "Secret bypass reasons do not explain package ancestry.",
-            "Query counts do not identify a dependency remediation route.",
-            "The exported SBOM does not list dependents.",
-            "The path identifies which parent brings in the package, and alert details may show a fixed version."
+            "Parent and child major-version numbers do not have to match.",
+            "A lockfile edit alone does not remove the parent's incompatible version constraint.",
+            "This is a real child vulnerability, not a false positive caused by the parent's version.",
+            "Updating A can relax the constraint that otherwise excludes B 2.0."
         ],
-        "concept": "Effective dependency remediation",
+        "concept": "Parent constraints in transitive remediation",
         "hints": [
-            "Which parent dependency may need an update to remove the transitive version?",
-            "What alert detail points toward an available fixed release?"
+            "The package manager must satisfy the parent's declared version range.",
+            "A valid fix must also yield a resolvable dependency graph."
         ],
-        "source": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependency-graph"
+        "source": "https://docs.github.com/en/code-security/reference/supply-chain-security/troubleshoot-dependabot/dependabot-errors"
     },
     {
         "id": "ghas-supply-028",
@@ -2643,26 +2643,26 @@ export const questions = [
     {
         "id": "ghas-supply-031",
         "domain": "Configure and use supply chain security",
-        "prompt": "Dependabot alerts are enabled, but the team wants automated pull requests for vulnerable packages. Which assumption should it avoid?",
+        "prompt": "A dependabot.yml entry sets target-branch: release for routine version updates. What should the maintainer expect for Dependabot security updates?",
         "choices": [
-            "That security updates need a fixable vulnerable dependency",
-            "That alert data comes from dependency and advisory matching",
-            "That proposed updates should be reviewed",
-            "That turning on alerts alone guarantees security-update pull requests"
+            "They move to release with the version updates",
+            "They run on every branch containing a manifest",
+            "They alternate between release and the default branch",
+            "They still target the repository's default branch"
         ],
         "correct": 3,
         "explanations": [
-            "A fixed version may be unavailable for an alert.",
-            "Dependabot matches advisories to dependency data.",
-            "Automated proposals still need review and testing.",
-            "Alerts and security-update pull requests have separate enablement and fix conditions."
+            "target-branch changes version-update targeting; it does not redirect security updates.",
+            "Security updates do not automatically fan out to every branch with a manifest.",
+            "The branch setting does not establish an alternating security-update schedule.",
+            "Dependabot security updates target the default branch, independently of this version-update entry."
         ],
-        "concept": "Update settings versus alert generation",
+        "concept": "Dependabot security-update branch scope",
         "hints": [
-            "What feature creates a proposed fix rather than notifying about a risk?",
-            "Which setting should be verified in addition to alert generation?"
+            "Check which update type the branch customization applies to.",
+            "A shared configuration file does not make all options universal."
         ],
-        "source": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-security-updates"
+        "source": "https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference"
     },
     {
         "id": "ghas-supply-032",
@@ -2715,26 +2715,26 @@ export const questions = [
     {
         "id": "ghas-supply-034",
         "domain": "Configure and use supply chain security",
-        "prompt": "A Dependabot alert has no patched version listed. What should the maintainer do?",
+        "prompt": "A Dependabot security-update pull request has a high compatibility score. Which evidence does that score summarize?",
         "choices": [
-            "Assume the package has no vulnerability",
-            "Disable alerts for the ecosystem",
-            "Assess exposure and mitigations, track the alert, and revisit when remediation options change",
-            "Close the alert because no update exists"
+            "The percentage of vulnerable call paths removed",
+            "The percentage of this repository's tests covering the package",
+            "The percentage of passing CI runs in other public repositories",
+            "The percentage of package versions verified free of vulnerabilities"
         ],
         "correct": 2,
         "explanations": [
-            "The alert is evidence of a known vulnerability, even without a patch.",
-            "Disabling future alerts would reduce visibility rather than mitigate this issue.",
-            "Lack of a fix does not remove risk; mitigation and reassessment remain important.",
-            "Closing does not repair the vulnerable dependency."
+            "The score is not a reachability or vulnerability-elimination measurement.",
+            "It does not measure local test coverage or prove this project's compatibility.",
+            "It summarizes CI success in other public repositories for that dependency version transition.",
+            "The score does not certify the security of a package's release history."
         ],
-        "concept": "Unpatched dependency response",
+        "concept": "Compatibility-score provenance",
         "hints": [
-            "Is absence of a patch the same as absence of risk?",
-            "What keeps the known vulnerability under review while a fix is unavailable?"
+            "Ask whose CI produced the underlying evidence.",
+            "Compatibility evidence is different from vulnerability severity."
         ],
-        "source": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-alerts"
+        "source": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-security-updates"
     },
     {
         "id": "ghas-supply-035",
@@ -2811,26 +2811,26 @@ export const questions = [
     {
         "id": "ghas-supply-038",
         "domain": "Configure and use supply chain security",
-        "prompt": "An alert is open, but no security-update pull request appears. Which two conditions are most relevant to investigate?",
+        "prompt": "Dependabot reports that the security-update pull-request limit is reached. Version updates have a separate configurable limit. Which action addresses the exhausted security-update capacity?",
         "choices": [
-            "Whether CodeQL has a scheduled run and a SARIF category",
-            "Whether the alert was assigned to a team and the repository has stars",
-            "Whether security updates are enabled and whether a compatible fix is available",
-            "Whether the repository has a custom pattern and an SPDX header"
+            "Raise open-pull-requests-limit for version updates",
+            "Change the version-update schedule to daily",
+            "Merge or close existing security-update pull requests",
+            "Move the version-update target to another branch"
         ],
         "correct": 2,
         "explanations": [
-            "CodeQL scheduling and SARIF categories are separate from Dependabot updates.",
-            "Alert assignment and popularity do not establish an available package fix.",
-            "The feature must be available and the vulnerability must have a workable update path.",
-            "Secret patterns and SPDX headers do not create security-update pull requests."
+            "The configurable version-update limit does not raise the separate security-update limit.",
+            "A more frequent schedule does not free security-update pull-request capacity.",
+            "Finishing or closing existing security-update pull requests frees that pool's capacity.",
+            "Changing a version-update branch does not release security-update slots."
         ],
-        "concept": "Security update troubleshooting",
+        "concept": "Separate Dependabot pull-request limits",
         "hints": [
-            "What must be enabled to propose an update, and what must exist to update to?",
-            "Could a valid alert lack an available compatible release?"
+            "Identify which pull-request pool the error names.",
+            "Configuration for routine updates may not govern security updates."
         ],
-        "source": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-security-updates"
+        "source": "https://docs.github.com/en/code-security/reference/supply-chain-security/troubleshoot-dependabot/dependabot-errors"
     },
     {
         "id": "ghas-supply-039",
@@ -2859,26 +2859,26 @@ export const questions = [
     {
         "id": "ghas-supply-040",
         "domain": "Configure and use supply chain security",
-        "prompt": "A workflow should fail when a pull request introduces a package under a prohibited license, while still reporting vulnerabilities. Which configuration is appropriate?",
+        "prompt": "A dependency-review workflow should block vulnerabilities in runtime dependencies, not development-only dependencies. Which action input selects that blocking scope?",
         "choices": [
-            "Configure the action's license policy",
-            "Add the license to `dependabot.yml` `registries`",
-            "Exclude the package path in `secret_scanning.yml`",
-            "Dismiss the package's advisory"
+            "fail-on-scopes: runtime",
+            "fail-on-severity: high",
+            "deny-licenses: MIT",
+            "allow-ghsas: GHSA-abcd-1234-5679"
         ],
         "correct": 0,
         "explanations": [
-            "The dependency-review action supports license policy and vulnerability severity settings.",
-            "Registry entries configure package sources rather than license rules.",
-            "Secret-scanning exclusions do not affect package license checks.",
-            "Dismissing an advisory does not enforce license policy."
+            "fail-on-scopes selects dependency scopes whose vulnerabilities cause the check to fail.",
+            "Severity selects impact levels, not runtime versus development dependency use.",
+            "License identifiers express license policy, not vulnerable dependency scope.",
+            "An advisory exception skips a specific advisory rather than selects runtime dependencies."
         ],
-        "concept": "Scoped dependency policy",
+        "concept": "Dependency-review scope gating",
         "hints": [
-            "Which pull-request action evaluates both package risk and license policy?",
-            "Where should a rule about permitted license identifiers be configured?"
+            "Separate deployment scope from severity and license metadata.",
+            "The policy concerns where a dependency is used."
         ],
-        "source": "https://docs.github.com/en/code-security/tutorials/secure-your-dependencies/customize-dependency-review-action"
+        "source": "https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/manage-your-dependency-security/configure-dependency-review-action"
     },
     {
         "id": "ghas-ecosystem-041",
@@ -2931,50 +2931,50 @@ export const questions = [
     {
         "id": "ghas-secrets-041",
         "domain": "Configure and use Secret Protection",
-        "prompt": "Two alerts show the same secret type, but only one has a provider validity result. What should the incident team conclude?",
+        "prompt": "A provider-backed check now reports an exposed token as inactive. The team has not investigated the period before revocation. Which follow-up addresses the remaining incident question?",
         "choices": [
-            "Evaluate each result in context; missing validation does not establish safety",
-            "The alert without a result must be a false positive",
-            "Both credentials must be active because one was active",
-            "The scanner validates every secret type identically"
+            "Review provider logs for unauthorized use",
+            "Repeat repository cleanup to prove non-use",
+            "Treat inactive status as an access audit",
+            "Dismiss the detection as a format mismatch"
         ],
         "correct": 0,
         "explanations": [
-            "Validation outcomes can differ by type or availability and need case-specific interpretation.",
-            "A missing check does not prove a false detection.",
-            "One credential's status cannot determine another's status.",
-            "Provider validity support is not identical for every type."
+            "Inactive status does not establish whether the token was abused while it worked.",
+            "Removing copies does not show who used the token before revocation.",
+            "Validity describes present usability, not a history of access attempts.",
+            "An inactive real credential is not thereby a pattern false positive."
         ],
-        "concept": "Context-dependent validity checking",
+        "concept": "Historical misuse after token deactivation",
         "hints": [
-            "What does the result say for each individual credential?",
-            "Can one alert's validation status be generalized to another?"
+            "Separate current credential usability from past activity.",
+            "Which evidence could reveal use before containment?"
         ],
-        "source": "https://docs.github.com/en/code-security/concepts/secret-security/validity-checks"
+        "source": "https://docs.github.com/en/code-security/tutorials/remediate-leaked-secrets/evaluating-alerts"
     },
     {
         "id": "ghas-supply-041",
         "domain": "Configure and use supply chain security",
-        "prompt": "A dependency-review action reports no changes even though a pull request updates a lockfile. What should the team check before treating that as a clean review?",
+        "prompt": "A dependency-review action configuration contains both allow-licenses and deny-licenses. The team wants an allowlist-only policy. Which correction matches the documented input constraint?",
         "choices": [
-            "That the CodeQL workflow uses a nightly schedule",
-            "That the dependency graph can resolve supported manifests for both the base and proposed dependency state",
-            "That the repository has no secret-scanning alerts",
-            "That the SBOM lists dependent repositories"
+            "Keep both; the denylist always takes precedence",
+            "Remove deny-licenses and retain allow-licenses",
+            "Move deny-licenses into the same local config file",
+            "Replace both lists with fail-on-scopes"
         ],
         "correct": 1,
         "explanations": [
-            "CodeQL scan schedules do not establish dependency-review data.",
-            "A meaningful diff requires usable dependency information for the compared states.",
-            "Secret-scanning alerts do not determine package-change coverage.",
-            "The repository SBOM does not list dependent repositories."
+            "The documented constraint permits only one of these two license inputs.",
+            "Removing the denylist preserves the requested allowlist and avoids the prohibited combination.",
+            "Moving the conflicting input does not make the two policies compatible.",
+            "Dependency scope filtering does not enforce a license allowlist."
         ],
-        "concept": "Base and head inventory completeness",
+        "concept": "Mutually exclusive review license inputs",
         "hints": [
-            "What two dependency states are being compared by the review?",
-            "Could missing inventory make an empty result inconclusive?"
+            "A policy preference does not override an action's input contract.",
+            "First distinguish configuration validity from the choice of allowed licenses."
         ],
-        "source": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependency-review"
+        "source": "https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/manage-your-dependency-security/configure-dependency-review-action"
     },
     {
         "id": "ghas-code-001",
@@ -3123,24 +3123,24 @@ export const questions = [
     {
         "id": "ghas-code-007",
         "domain": "Configure and use Code Security",
-        "prompt": "An integration uploads SARIF directly through the code-scanning API without `partialFingerprints`. What risk should its owner address?",
+        "prompt": "A SARIF producer stores each finding's location and message alongside reusable detector descriptions. Where should per-occurrence evidence go?",
         "choices": [
-            "Missing fingerprints can create duplicates",
-            "The API converts every result into a Dependabot alert",
-            "The repository automatically gets a CodeQL database",
-            "The upload disables all future scans"
+            "In run.results, referencing the relevant rule",
+            "In tool.driver.rules, replacing the rule description",
+            "In run.automationDetails, replacing the analysis category",
+            "In the SARIF version field, alongside the schema version"
         ],
         "correct": 0,
         "explanations": [
-            "The API can process results without fingerprints, but duplicates may appear.",
-            "SARIF uploads create code-scanning findings, not dependency alerts.",
-            "Uploading results does not generate a CodeQL database.",
-            "An analysis upload does not disable future scans."
+            "Each result holds occurrence details and can reference its detector's rule.",
+            "Rules describe detectors and should not be replaced with each occurrence's evidence.",
+            "Automation details identify the analysis rather than individual finding locations.",
+            "The version field identifies the SARIF format, not analyzer findings."
         ],
-        "concept": "API upload fingerprint handling",
+        "concept": "SARIF rules versus results",
         "hints": [
-            "What could happen when result identity data is missing?",
-            "Which SARIF property helps avoid repeated findings across uploads?"
+            "Separate a detector definition from one instance of its output.",
+            "Which structure changes when the same rules analyze a different codebase?"
         ],
         "source": "https://docs.github.com/en/code-security/reference/code-scanning/sarif-files/sarif-support"
     },
@@ -3435,24 +3435,24 @@ export const questions = [
     {
         "id": "ghas-code-020",
         "domain": "Configure and use Code Security",
-        "prompt": "A repository uploads results from two configurations of the same analyzer. What is the category's main purpose?",
+        "prompt": "An accepted SARIF result appears in code scanning, but its only location is on an unchanged line outside a pull request's diff. Why might it lack a pull-request check annotation?",
         "choices": [
-            "Name the dependency ecosystem",
-            "Identify and distinguish the analysis result set",
-            "Set the alert severity",
-            "Choose a secret-scanning pattern"
+            "Accepted SARIF results never produce pull-request annotations",
+            "The identified lines must be added or edited in the diff",
+            "Each pull request needs a newly invented analysis category",
+            "The rule must use a CVE identifier as its ruleId"
         ],
         "correct": 1,
         "explanations": [
-            "Dependency ecosystems are configured separately.",
-            "A category labels a particular analysis, such as a tool or configuration run.",
-            "Severity describes an individual finding, not the result-set label.",
-            "Secret patterns have their own configuration."
+            "Code scanning can annotate pull requests using eligible SARIF results.",
+            "For check display, the identified lines must be present in added or edited diff lines.",
+            "Categories distinguish result sets; changing them does not move locations into a diff.",
+            "An arbitrary rule need not be named with a CVE to qualify for display."
         ],
-        "concept": "Code-location category labels",
+        "concept": "SARIF pull-request annotation eligibility",
         "hints": [
-            "What should a stable label distinguish across separate analyses?",
-            "Does category describe a result set or an individual finding's risk?"
+            "Upload acceptance and contextual check display have different requirements.",
+            "Compare the finding's source location with the pull request's changed lines."
         ],
         "source": "https://docs.github.com/en/code-security/reference/code-scanning/sarif-files/sarif-support"
     },
@@ -3603,26 +3603,26 @@ export const questions = [
     {
         "id": "ghas-code-027",
         "domain": "Configure and use Code Security",
-        "prompt": "A third-party scan finishes successfully, but no new GitHub alerts appear. Which stage should the owner verify?",
+        "prompt": "A third-party tool produces a SARIF file that is 12 MB after gzip compression. Which change addresses GitHub's documented per-file upload constraint?",
         "choices": [
-            "That the SARIF upload completed and was accepted for the intended repository and category",
-            "That the secret-scanning validity check ran",
-            "That Dependabot has an open update pull request",
-            "That the repository has a recent release"
+            "Reduce the compressed file below the 10 MB limit",
+            "Change its declared SARIF version to 2.0.0",
+            "Retry the same payload with a new category",
+            "Change every result's severity to warning"
         ],
         "correct": 0,
         "explanations": [
-            "Successful analysis and successful result ingestion are separate steps.",
-            "Secret validity checks do not import code-scanning results.",
-            "Dependabot updates do not ingest SARIF.",
-            "A release does not establish whether an analysis was uploaded."
+            "GitHub rejects gzip-compressed SARIF files larger than 10 MB; reduce the payload.",
+            "GitHub code scanning supports SARIF 2.1.0, and changing the version does not reduce size.",
+            "A category distinguishes analysis sets but does not increase the upload size limit.",
+            "Relabeling severity does not reliably shrink the file or change its size ceiling."
         ],
-        "concept": "Analysis versus ingestion success",
+        "concept": "Compressed SARIF upload size",
         "hints": [
-            "Did the tool finish scanning, and did GitHub accept its output?",
-            "Which handoff can fail after analysis has completed?"
+            "Evaluate the limit against the compressed payload, not the tool's success exit code.",
+            "Metadata changes do not enlarge an upload allowance."
         ],
-        "source": "https://docs.github.com/en/code-security/how-tos/find-and-fix-code-vulnerabilities/integrate-with-existing-tools/upload-sarif-file"
+        "source": "https://docs.github.com/en/code-security/reference/code-scanning/sarif-files/sarif-support"
     },
     {
         "id": "ghas-code-028",
@@ -3963,24 +3963,24 @@ export const questions = [
     {
         "id": "ghas-operations-012",
         "domain": "Security operations: best practices, prioritization, remediation",
-        "prompt": "A production credential was exposed. Which action removes the leaked credential’s authority, rather than only changing repository content?",
+        "prompt": "Responders revoked an exposed token. A scheduled production integration still references it and now fails authentication. Which follow-up restores the integration without reversing containment?",
         "choices": [
-            "Resolve the alert with an accurate reason.",
-            "Revoke or rotate the exposed credential.",
-            "Remove the secret from current source code.",
-            "Review exposure and provider activity."
+            "Create a replacement token but retain the service's current configuration",
+            "Configure the service to use a replacement credential",
+            "Redeploy the service using the same revoked credential value",
+            "Retry the scheduled job without changing its runtime credentials"
         ],
         "correct": 1,
         "explanations": [
-            "Alert resolution records the response; changing alert status alone does not revoke a credential.",
-            "Revocation or rotation removes the exposed credential’s authority at its provider; deleting a file does not.",
-            "Source cleanup avoids continuing to distribute the secret but does not invalidate copies already leaked.",
-            "Incident review helps determine misuse and impact; it is distinct from changing credential validity."
+            "Creating a token alone does not update the service that still references the revoked value.",
+            "The remediation workflow includes updating services that used the compromised token.",
+            "Redeploying the old revoked value does not restore its authority at the provider.",
+            "Retrying with the same revoked credential does not repair authentication."
         ],
-        "concept": "Credential containment",
+        "concept": "Dependent-service credential replacement",
         "hints": [
-            "Distinguish removal of a credential from removal of its authority.",
-            "The alert record and the underlying exposure are different objects."
+            "Containment is complete; the remaining failure is in a credential consumer.",
+            "Which system actually supplies the integration's authentication material?"
         ],
         "source": "https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-secret-scanning-alerts/resolving-alerts"
     },
@@ -4107,26 +4107,26 @@ export const questions = [
     {
         "id": "ghas-operations-018",
         "domain": "Security operations: best practices, prioritization, remediation",
-        "prompt": "Auto-triage hides a class of low-risk alerts. Which evidence should accompany the rule so the team can explain its suppressed findings?",
+        "prompt": "An auditor needs Dependabot alerts dismissed automatically by auto-triage, separate from manual dismissals. Which documented close-reason filter selects that population?",
         "choices": [
-            "Periodic exception review",
-            "Permission-scoped reporting",
-            "Audit log",
-            "Alert dismissal rationale"
+            "resolution:revoked",
+            "resolution:false-positive",
+            "resolution:fix-started",
+            "resolution:auto-dismiss"
         ],
         "correct": 3,
         "explanations": [
-            "Revisiting exceptions tests whether earlier risk assumptions and ownership still hold.",
-            "Security reporting must respect alert access rather than distributing sensitive details to unauthorized readers.",
-            "Audit logs record supported secret scanning and Dependabot events; code scanning alert timeline events are not included.",
-            "A meaningful rationale explains why a finding was dismissed rather than implying it was fixed."
+            "Revocation is a credential-response concept, not the auto-triage close reason.",
+            "A false-positive label does not specifically identify automatic triage activity.",
+            "Starting a fix is not the documented close reason for automatic dismissal.",
+            "Auto-dismissed Dependabot alerts use the resolution:auto-dismiss close reason."
         ],
-        "concept": "Auditable automated alert disposition",
+        "concept": "Auditing automatically dismissed dependency alerts",
         "hints": [
-            "Distinguish operational convenience from durable governance evidence.",
-            "Ask what a future reviewer would need to understand the decision."
+            "The report needs the mechanism of closure, not only the current open or closed state.",
+            "Use the documented reason rather than infer it from alert severity."
         ],
-        "source": "https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-dependabot-alerts/view-dependabot-alerts"
+        "source": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-auto-triage-rules"
     },
     {
         "id": "ghas-operations-019",
@@ -4155,50 +4155,50 @@ export const questions = [
     {
         "id": "ghas-operations-020",
         "domain": "Security operations: best practices, prioritization, remediation",
-        "prompt": "Which suite expands the default CodeQL security coverage while accepting some additional lower-precision findings?",
+        "prompt": "A CodeQL init step loads a config-file containing additional queries. The workflow must add security-extended without replacing that configured additional-query list. Which input does that?",
         "choices": [
-            "Custom .qls suite",
-            "default",
-            "security-extended",
-            "security-and-quality"
+            "queries: security-extended",
+            "disable-default-queries: true",
+            "queries: +security-extended",
+            "category: security-extended"
         ],
         "correct": 2,
         "explanations": [
-            "A custom query suite selects queries by metadata, location, or other criteria and requires advanced setup.",
-            "The default suite emphasizes high-precision security findings and fewer false positives.",
-            "This includes default queries plus additional, lower-precision security queries; triage may increase.",
-            "This advanced-setup suite adds maintainability and reliability queries to security-extended."
+            "Without the plus prefix, workflow additional queries replace those from the configuration file.",
+            "Disabling defaults is not how to combine workflow and configuration-file additions.",
+            "The plus prefix combines workflow-specified additional queries with the configured list.",
+            "Category labels an analysis; it does not select or merge query lists."
         ],
-        "concept": "Broader security coverage tradeoff",
+        "concept": "Additive CodeQL query configuration",
         "hints": [
-            "Compare precision, breadth, and the kinds of findings sought.",
-            "A broader query set changes triage workload as well as detection."
+            "Consider precedence between workflow inputs and the referenced configuration.",
+            "A suite name alone does not express how to combine two lists."
         ],
-        "source": "https://docs.github.com/en/code-security/concepts/code-scanning/codeql/codeql-query-suites"
+        "source": "https://docs.github.com/en/code-security/reference/code-scanning/workflow-configuration-options"
     },
     {
         "id": "ghas-operations-021",
         "domain": "Security operations: best practices, prioritization, remediation",
-        "prompt": "With CodeQL advanced setup, which built-in suite also targets maintainability and reliability issues?",
+        "prompt": "Existing CodeQL Java queries miss flows through an internal library because its behavior is not modeled. Which package type supplies library models to those queries, rather than a new set of executable queries?",
         "choices": [
-            "Custom .qls suite",
-            "default",
-            "security-extended",
-            "security-and-quality"
+            "A SARIF result archive",
+            "A dependency snapshot",
+            "A custom .qls query list",
+            "A CodeQL model pack"
         ],
         "correct": 3,
         "explanations": [
-            "A custom query suite selects queries by metadata, location, or other criteria and requires advanced setup.",
-            "The default suite emphasizes high-precision security findings and fewer false positives.",
-            "This includes default queries plus additional, lower-precision security queries; triage may increase.",
-            "This advanced-setup suite adds maintainability and reliability queries to security-extended."
+            "SARIF contains analysis results, not library semantics for evaluating future data flow.",
+            "A dependency snapshot records package relationships, not sources and sinks for CodeQL.",
+            "A query list selects queries but does not supply missing library behavior models.",
+            "A model pack extends the library or framework semantics available to existing queries."
         ],
-        "concept": "Security and quality scope",
+        "concept": "Library modeling for CodeQL",
         "hints": [
-            "Compare precision, breadth, and the kinds of findings sought.",
-            "A broader query set changes triage workload as well as detection."
+            "Distinguish selecting more checks from teaching existing checks about a library.",
+            "The unsupported behavior is in a Java dependency, not in the query schedule."
         ],
-        "source": "https://docs.github.com/en/code-security/concepts/code-scanning/codeql/codeql-query-suites"
+        "source": "https://docs.github.com/en/code-security/reference/code-scanning/workflow-configuration-options"
     },
     {
         "id": "ghas-operations-022",
@@ -4323,26 +4323,26 @@ export const questions = [
     {
         "id": "ghas-operations-027",
         "domain": "Security operations: best practices, prioritization, remediation",
-        "prompt": "A team wants its security check results to constrain merging. Which mechanism supplies enforcement rather than another detector?",
+        "prompt": "A required security status check should be satisfied only by the installed scanning GitHub App, not another integration posting the same status name. Which rule configuration addresses that?",
         "choices": [
-            "Code scanning",
-            "Repository rulesets",
-            "Push protection",
-            "Dependency review"
+            "Select any source for the required check",
+            "Select the scanning App as the expected source",
+            "Give all integrations the same check name",
+            "Require a linear history instead of the check"
         ],
         "correct": 1,
         "explanations": [
-            "Code scanning can identify source-code vulnerabilities during pull request analysis.",
-            "Rulesets can require checks and other conditions before changes are accepted.",
-            "Push protection blocks supported secrets during a push, before they enter the repository.",
-            "Dependency review supplies pre-merge feedback about changed dependencies."
+            "Any source does not enforce the requested identity boundary for status updates.",
+            "A required status check can specify the GitHub App expected to supply its result.",
+            "Sharing a status name does not establish the trusted issuer of a result.",
+            "Linear history constrains commit structure, not the issuer of a security status."
         ],
-        "concept": "Enforcing remediation checks",
+        "concept": "Required-check source binding",
         "hints": [
-            "Place the control at the point where it supplies feedback.",
-            "Distinguish a detector from the policy that requires its result."
+            "A familiar check label is not proof of who submitted it.",
+            "The policy concerns the issuer of the result, not only whether it passed."
         ],
-        "source": "https://docs.github.com/en/code-security/getting-started/github-security-features"
+        "source": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets"
     },
     {
         "id": "ghas-operations-028",
@@ -4491,74 +4491,74 @@ export const questions = [
     {
         "id": "ghas-operations-034",
         "domain": "Security operations: best practices, prioritization, remediation",
-        "prompt": "A team’s alert count drops after several security features stop running. Which check prevents falsely reporting that as risk reduction?",
+        "prompt": "A repository was archived today. An analyst views last week's security overview, when its alerts were open. Which interpretation matches the dashboard's documented data model?",
         "choices": [
-            "Compare the viewers’ alert permissions.",
-            "Use default-branch scope when interpreting the metrics.",
-            "Export the available view data as CSV.",
-            "Check feature coverage before concluding risk is low."
+            "Both repository status and alert state revert to last week",
+            "Archived repositories vanish from every historical view",
+            "Current closure rewrites every historical alert state",
+            "Repository filters use current status; alert state is historical"
         ],
         "correct": 3,
         "explanations": [
-            "Security overview data is filtered by the current viewer’s permissions.",
-            "Security overview views report on the default branches of accessible repositories.",
-            "Several security overview pages support CSV exports for further analysis.",
-            "An empty alert view can reflect disabled detection or undetected issues, not absence of vulnerabilities."
+            "Repository attributes used for filtering reflect current state, not the selected historical date.",
+            "An archived repository can appear when the archived-repository filter includes it.",
+            "Historical alert state can remain open even though archiving closed alerts today.",
+            "The dashboard combines historical alert states with current repository attributes."
         ],
-        "concept": "Coverage-aware remediation reporting",
+        "concept": "Historical dashboard state versus current filters",
         "hints": [
-            "Treat dashboard results as observations with scope, not as universal proof.",
-            "Check both what was measured and what the viewer is permitted to see."
+            "The selected date range need not time-travel every repository attribute.",
+            "Consider alert history and repository filtering separately."
         ],
         "source": "https://docs.github.com/en/code-security/concepts/security-at-scale/security-overview"
     },
     {
         "id": "ghas-operations-035",
         "domain": "Security operations: best practices, prioritization, remediation",
-        "prompt": "Maintainers need to coordinate a fix with a researcher before publishing vulnerability details. Which feature supports this workflow?",
+        "prompt": "A public project's maintainers and an invited researcher need to collaborate on an embargoed patch while the security advisory remains a draft. Which workspace supports private code collaboration?",
         "choices": [
-            "Repository security advisories",
-            "GitHub Advisory Database",
-            "SECURITY.md",
-            "Private vulnerability reporting"
+            "A temporary private fork associated with the advisory",
+            "A normal public fork with a neutral branch name",
+            "A draft pull request in the public repository",
+            "A public issue with details hidden in collapsed text"
         ],
         "correct": 0,
         "explanations": [
-            "Repository advisories support private discussion, coordinated fixes, and subsequent publication.",
-            "The database is a searchable collection of published security advisories.",
-            "A security policy explains supported versions and how to report vulnerabilities.",
-            "This feature gives researchers a private reporting channel to repository maintainers."
+            "Repository security advisories support private patch collaboration in a temporary private fork.",
+            "A neutral name does not make code in a public fork confidential.",
+            "Draft pull-request status does not make a public repository's changes private.",
+            "Collapsed public issue content remains publicly accessible and is not an embargo boundary."
         ],
-        "concept": "Private-to-public remediation workflow",
+        "concept": "Embargoed patch workspace",
         "hints": [
-            "Distinguish instructions, confidential intake, coordinated repair, and public reference data.",
-            "Consider the audience and the disclosure stage."
+            "Distinguish workflow labels from actual repository visibility.",
+            "The need is to share code privately before disclosure."
         ],
-        "source": "https://docs.github.com/en/code-security/getting-started/github-security-features"
+        "source": "https://docs.github.com/en/code-security/concepts/vulnerability-reporting-and-management/repository-security-advisories"
     },
     {
         "id": "ghas-operations-036",
         "domain": "Security operations: best practices, prioritization, remediation",
-        "prompt": "Which strategy avoids treating a final release gate as the only security control in development?",
+        "prompt": "A CodeQL workflow runs on pull_request, but no scan is triggered when a change enters the repository's merge queue. Which additional event is documented for scanning the queued merge group?",
         "choices": [
-            "Give developers security feedback before merge.",
-            "Combine early detection with enforced merge checks.",
-            "Coordinate a focused backlog-remediation campaign.",
-            "Keep monitoring after fixes reach the default branch."
+            "workflow_dispatch",
+            "merge_group",
+            "release",
+            "issues"
         ],
         "correct": 1,
         "explanations": [
-            "Early feedback helps avoid introducing vulnerabilities instead of discovering everything at release time.",
-            "Detection supplies findings; enforced checks decide whether changes can proceed. They complement one another.",
-            "A campaign organizes existing remediation work; it does not prevent every new vulnerability.",
-            "New advisories and code changes can introduce fresh risk after an earlier fix."
+            "Manual dispatch can start a run but is not the merge-queue event.",
+            "The merge_group event triggers analysis for changes added to a merge queue.",
+            "A release event occurs in a different workflow stage, not on merge-queue grouping.",
+            "Issue activity is not a trigger for validating the queued merge commit."
         ],
-        "concept": "Layered preventive operations",
+        "concept": "Code scanning in merge queues",
         "hints": [
-            "Consider when feedback arrives and whether remediation remains necessary.",
-            "A preventive control and a release condition can address different failure modes."
+            "A queued merge group is not the same event as opening a pull request.",
+            "Choose the event representing the commit set that the queue will merge."
         ],
-        "source": "https://docs.github.com/en/code-security/getting-started/github-security-features"
+        "source": "https://docs.github.com/en/code-security/reference/code-scanning/workflow-configuration-options"
     },
     {
         "id": "ghas-operations-037",
@@ -4635,26 +4635,26 @@ export const questions = [
     {
         "id": "ghas-operations-040",
         "domain": "Security operations: best practices, prioritization, remediation",
-        "prompt": "Copilot Autofix suggests a patch for a code scanning alert. What remains necessary before reporting successful remediation?",
+        "prompt": "An enterprise administrator disallows Copilot Autofix for code scanning. A repository administrator wants to enable it locally. What must happen first?",
         "choices": [
-            "Document a justified false-positive dismissal.",
-            "Record accepted risk and its rationale.",
-            "Verify the fix with fresh, relevant analysis.",
-            "Reopen the alert when the dismissal is no longer justified."
+            "Switch the repository from default to advanced setup",
+            "Generate a new SARIF category for the same findings",
+            "Reverse the enterprise setting at an authorized level",
+            "Assign a Copilot seat to each repository collaborator"
         ],
         "correct": 2,
         "explanations": [
-            "A false-positive dismissal needs evidence that the reported vulnerability does not apply to the analyzed code.",
-            "Accepted risk acknowledges an unresolved issue; it must not be reported as a verified code fix.",
-            "A fix is established by relevant analysis of the changed code, not by merely editing or dismissing an alert.",
-            "A changed assumption or newly applicable code path can invalidate an earlier dismissal."
+            "Copilot Autofix policy applies across default and advanced CodeQL setup.",
+            "An analysis category does not override enterprise policy.",
+            "Disabling at enterprise level prevents lower levels from enabling it until that policy is reversed.",
+            "A collaborator license assignment does not override the enterprise feature restriction."
         ],
-        "concept": "Generated fix verification",
+        "concept": "Autofix policy inheritance",
         "hints": [
-            "Separate evidence about a finding from a decision to tolerate risk.",
-            "Choose a disposition that remains truthful when another reviewer reads it."
+            "Higher-level feature restrictions constrain lower-level choices.",
+            "Changing analysis mechanics does not change policy authority."
         ],
-        "source": "https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-code-scanning-alerts/resolve-alerts"
+        "source": "https://docs.github.com/en/code-security/concepts/code-scanning/autofix-for-code-scanning"
     },
     {
         "id": "ghas-operations-041",
@@ -4923,26 +4923,26 @@ export const questions = [
     {
         "id": "ghas-administration-011",
         "domain": "GitHub Security suites administration",
-        "prompt": "A team needs the predefined security manager organization role assigned. Which role must perform that delegation?",
+        "prompt": "In an organization on GitHub Enterprise Cloud with Secret Protection enabled, a response team must manage secret-scanning results and bypass requests without controlling every security feature. Which role design best fits least privilege?",
         "choices": [
-            "External security researcher",
-            "Repository developer",
-            "Security manager",
-            "Organization owner"
+            "Assign organization owner to every responder",
+            "Assign the predefined security manager role",
+            "Assign repository admin across the organization",
+            "Create a custom organization role for these duties"
         ],
         "correct": 3,
         "explanations": [
-            "A researcher reports a suspected issue; reporting alone grants no repository administration permissions.",
-            "Developers implement and test fixes in the code they maintain; access still depends on assigned permissions.",
-            "Security managers can manage security settings and alerts organization-wide without general repository write access.",
-            "Organization owners can assign organization roles, including security manager."
+            "Organization owner grants broad authority beyond the requested response duties.",
+            "The predefined role includes organization-wide security-feature settings beyond this narrow scope.",
+            "Repository admin across repositories also grants unnecessary general administration privileges.",
+            "Use a Read base with View secret scanning alerts; Dismiss, reopen, or assign secret scanning alerts; and Review and manage secret scanning bypass requests. Adding repository permissions to custom organization roles is currently in public preview."
         ],
-        "concept": "Authority to assign security managers",
+        "concept": "Narrow custom security roles",
         "hints": [
-            "Separate implementation work from organization-wide authority.",
-            "Choose the role whose normal responsibility matches the task."
+            "Compare the requested duties with the full predefined role's scope.",
+            "Least privilege may require a role smaller than the standard security role."
         ],
-        "source": "https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization"
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-peoples-access-to-your-organization-with-roles/permissions-of-custom-organization-roles"
     },
     {
         "id": "ghas-administration-012",
@@ -4971,24 +4971,24 @@ export const questions = [
     {
         "id": "ghas-administration-013",
         "domain": "GitHub Security suites administration",
-        "prompt": "Which capability is NOT granted solely by the predefined security manager role?",
+        "prompt": "A member has an explicit Write grant on one repository and also the organization's security manager role. The owner removes only security manager. What should the access review expect on that repository?",
         "choices": [
-            "Assign the security manager organization role.",
-            "Configure organization-level security features.",
-            "Read repositories and manage security alerts organization-wide.",
-            "Write application code across all repositories."
+            "The independent Write grant becomes Read automatically",
+            "All repository access is removed with security manager",
+            "The independent Write grant becomes Admin automatically",
+            "The independently granted Write access remains"
         ],
         "correct": 3,
         "explanations": [
-            "Assignment of this organization role is an organization-owner responsibility.",
-            "The role grants security administration authority; feature licensing remains a separate requirement.",
-            "Security manager grants repository read access and write access to security alerts across the organization.",
-            "Security manager alone does not grant general write permission to application source code."
+            "Security manager permissions are additional to existing access; removing the role does not downgrade that grant.",
+            "Removing one role is not revocation of every independent repository permission.",
+            "Security-role removal does not promote a separate repository grant.",
+            "Review independent grants separately; the Write access was not supplied by security manager."
         ],
-        "concept": "Security administration is not code authorship",
+        "concept": "Independent grants during security-role removal",
         "hints": [
-            "Distinguish code access from authority over security alerts and settings.",
-            "A specialized organization role need not be a general repository administrator."
+            "Identify which grant originally supplied code-write access.",
+            "Removing an additive role is not the same as revoking all access paths."
         ],
         "source": "https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization"
     },
@@ -5115,24 +5115,24 @@ export const questions = [
     {
         "id": "ghas-administration-019",
         "domain": "GitHub Security suites administration",
-        "prompt": "Contributors without push-protection bypass rights must obtain approval for exceptions. Which delegated-bypass setting supplies that review path?",
+        "prompt": "An approved migration bot must skip push protection entirely for its commits. The organization has accepted this narrowly scoped exception. Which delegated-bypass capability implements that requirement?",
         "choices": [
-            "Configure designated bypass reviewers.",
-            "Grant an explicit bypass privilege.",
-            "Grant a push-protection exemption.",
-            "Retain ordinary repository permissions."
+            "Grant the bot a push-protection exemption",
+            "Grant the bot permission to bypass detected blocks",
+            "Add the bot as a bypass-request reviewer",
+            "Approve one pending request from the bot"
         ],
         "correct": 0,
         "explanations": [
-            "Delegated bypass routes requests from contributors without bypass rights to designated reviewers.",
-            "A bypass privilege allows selected actors to bypass; it is not the same as requesting approval.",
-            "An exemption skips push protection for selected actors, which differs from reviewing individual requests.",
-            "Bypass delegation does not itself grant general repository administration or code access."
+            "An exemption skips push protection for that selected actor's commits and should be tightly scoped.",
+            "Bypass permission lets an actor bypass blocks; it does not skip protection entirely.",
+            "Reviewing others' requests does not implement actor-level scanning exemption.",
+            "One request approval is limited to that request, not the bot's future commits."
         ],
-        "concept": "Delegated bypass approval boundary",
+        "concept": "Push-protection exemptions versus bypass rights",
         "hints": [
-            "A delegated exception should not expand unrelated permissions.",
-            "Separate requesting an exception from being authorized to approve one."
+            "The requirement distinguishes skipping a check from overriding its result.",
+            "Keep an actor-wide exception separate from approval of one push."
         ],
         "source": "https://docs.github.com/en/code-security/concepts/secret-security/delegated-bypass"
     },

@@ -4970,7 +4970,7 @@ Uma equipe de resposta tem muitos alertas de segredos e quer investigar primeiro
 
 **Official supporting source:** <https://docs.github.com/en/code-security/concepts/secret-security/validity-checks>
 
-<!-- certification-coach-question:ghas-secrets-006:8ee63fee06b68e8cef35c1834714bb6f5d140def624af6cc30f8aaee34b937d2 -->
+<!-- certification-coach-question:ghas-secrets-006:d9a962a72fd929605a95eb221ec4907db9eeb9ef76b49af830b9a617ae361d77 -->
 ## Question 46: Configure and use Secret Protection
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -4981,68 +4981,68 @@ Uma equipe de resposta tem muitos alertas de segredos e quer investigar primeiro
 
 **Question ID:** `ghas-secrets-006`
 
-**Content revision:** `8ee63fee06b68e8cef35c1834714bb6f5d140def624af6cc30f8aaee34b937d2`
+**Content revision:** `d9a962a72fd929605a95eb221ec4907db9eeb9ef76b49af830b9a617ae361d77`
 
-**en review revision:** `0d552a75196414285feb3c244fd9e59c52bb80b46a028b82a700505bf2bcc9bc`
-**es review revision:** `4acbd8b420c9ba0c0fcad144920409068200fffa3b4826c842c8c1dc35a7de33`
-**pt-BR review revision:** `6b97b529947cbc0583c61d0f5894906e65a5ddac018dcc4e8209437a5baf25e2`
+**en review revision:** `53ee09192770292f70848b371a7065b941e74bbd1f751243772f07911194e790`
+**es review revision:** `ceb1afa24458fdf026fffa7194f7aa41af9191463be4559fe8991aacdbd5d81a`
+**pt-BR review revision:** `54f85610aca45bd4e05591029188da23408b22d9945278450e565ffba9d9b516`
 
 ### English
 
-A validity check cannot verify a detected credential because its provider does not support checks. What is the sound interpretation?
+A supported partner token's displayed validity result predates a provider-side change. Partner validity checks are enabled. Which alert control requests a current result?
 
-1. The secret is safe to publish
+1. Close as revoked
 
-   Unsupported checking cannot establish safety.
+   Closing records a resolution; it does not request another provider check.
 
-2. The credential's status remains unverified **[CORRECT]**
+2. Verify secret **[CORRECT]**
 
-   No provider result means validity remains unknown.
+   Verify secret performs an on-demand validity check for a supported secret.
 
-3. The scanner should delete the alert automatically
+3. Report leak
 
-   A lack of validation does not justify removing the finding.
+   Report leak is a separate workflow for eligible leaked GitHub personal access tokens.
 
-4. The repository's push protection is disabled
+4. Reopen alert
 
-   A validity check does not report push-protection configuration.
+   Reopening changes alert disposition, not the age of its validation result.
 
-**Concept:** Validity-check data flow
+**Concept:** On-demand validity refresh
 
 **Authored coaching hints:**
 
-- Was the credential checked successfully by its provider?
-- What conclusion follows when validation is unavailable?
+- Consider which operation contacts the issuing provider.
+- A stored result and a new check are different operations.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Una comprobación de validez no puede verificar una credencial detectada porque su proveedor no admite esas comprobaciones. ¿Cuál es la interpretación correcta?
+El resultado de validez mostrado para un token de un socio compatible es anterior a un cambio en el proveedor. Las comprobaciones están habilitadas. ¿Qué control solicita un resultado actual?
 
-1. El secreto se puede publicar sin riesgo
+1. Close as revoked
 
-   Una comprobación no admitida no demuestra que sea segura.
+   Cerrar registra una resolución; no solicita otra comprobación al proveedor.
 
-2. El estado de la credencial sigue sin verificarse **[CORRECT]**
+2. Verify secret **[CORRECT]**
 
-   Sin resultado del proveedor, la validez sigue siendo desconocida.
+   Verify secret realiza una comprobación de validez bajo demanda para un secreto compatible.
 
-3. El analizador debería eliminar la alerta automáticamente
+3. Report leak
 
-   La falta de validación no justifica eliminar el hallazgo.
+   Report leak es un flujo separado para tokens de acceso personal de GitHub elegibles.
 
-4. La protección de inserciones del repositorio está deshabilitada
+4. Reopen alert
 
-   Una comprobación de validez no informa la configuración de protección de inserciones.
+   Reabrir cambia el estado de la alerta, no la fecha de su validación.
 
-**Concept:** Límites de la comprobación de validez
+**Concept:** Actualización de validez bajo demanda
 
 **Authored coaching hints:**
 
-- ¿El proveedor verificó la credencial correctamente?
-- ¿Qué conclusión corresponde cuando la validación no está disponible?
+- Piensa qué operación contacta al proveedor emisor.
+- Un resultado almacenado y una comprobación nueva son operaciones distintas.
 
 </details>
 
@@ -5051,34 +5051,34 @@ Una comprobación de validez no puede verificar una credencial detectada porque 
 
 ### Português (Brasil)
 
-Uma verificação de validade não consegue validar uma credencial detectada porque o provedor não oferece suporte a essas verificações. Qual é a interpretação correta?
+O resultado de validade exibido para um token de parceiro compatível é anterior a uma mudança no provedor. As verificações estão habilitadas. Qual controle solicita um resultado atual?
 
-1. O segredo pode ser publicado com segurança
+1. Close as revoked
 
-   Uma verificação sem suporte não comprova segurança.
+   Fechar registra uma resolução; não solicita outra verificação ao provedor.
 
-2. O status da credencial continua sem verificação **[CORRECT]**
+2. Verify secret **[CORRECT]**
 
-   Sem resultado do provedor, a validade continua desconhecida.
+   Verify secret realiza uma verificação de validade sob demanda para um segredo compatível.
 
-3. O scanner deve remover o alerta automaticamente
+3. Report leak
 
-   A falta de validação não justifica remover a descoberta.
+   Report leak é um fluxo separado para tokens de acesso pessoal do GitHub elegíveis.
 
-4. A proteção de push do repositório está desabilitada
+4. Reopen alert
 
-   Uma verificação de validade não informa a configuração da proteção de push.
+   Reabrir altera o estado do alerta, não a data de sua validação.
 
-**Concept:** Limites da verificação de validade
+**Concept:** Atualização de validade sob demanda
 
 **Authored coaching hints:**
 
-- O provedor validou a credencial com sucesso?
-- Qual conclusão cabe quando a validação não está disponível?
+- Considere qual operação contata o provedor emissor.
+- Um resultado armazenado e uma nova verificação são operações diferentes.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/code-security/concepts/secret-security/validity-checks>
+**Official supporting source:** <https://docs.github.com/en/code-security/tutorials/remediate-leaked-secrets/evaluating-alerts>
 
 <!-- certification-coach-question:ghas-secrets-007:766d63e8b51a634e8197920d549492efa33e825e7f535683b855dc30a2cf8f6b -->
 ## Question 47: Configure and use Secret Protection
@@ -6620,7 +6620,7 @@ Uma descoberta da análise de segredos parece corresponder a um dado de teste, m
 
 **Official supporting source:** <https://docs.github.com/en/code-security/concepts/secret-security/secret-scanning>
 
-<!-- certification-coach-question:ghas-secrets-021:746832460c885713cb54a9d5545fe04407a492d5e02b22f2b627e27d34d89cda -->
+<!-- certification-coach-question:ghas-secrets-021:213030651822ae66f852e775919401764ce5e021afc973b10fcf64a6d8f3c2e5 -->
 ## Question 61: Configure and use Secret Protection
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -6631,68 +6631,68 @@ Uma descoberta da análise de segredos parece corresponder a um dado de teste, m
 
 **Question ID:** `ghas-secrets-021`
 
-**Content revision:** `746832460c885713cb54a9d5545fe04407a492d5e02b22f2b627e27d34d89cda`
+**Content revision:** `213030651822ae66f852e775919401764ce5e021afc973b10fcf64a6d8f3c2e5`
 
-**en review revision:** `e266af8444caa04e3744d7e4396ca19d3fc92c9c1f35ff78bdd52bed8edbb42f`
-**es review revision:** `21db4d22d52884f7b9571805db08ca5bfc328f75224f9e6c313491e2760921dd`
-**pt-BR review revision:** `6c31f5a7f24f45286bc6d38868dfc1f8220b4f677751c13e43e35daa5d428787`
+**en review revision:** `fdd62584c41e9e73384f36f93ca70cd5f11e8d9d0227c2f36897ba81f188a6df`
+**es review revision:** `9d56b935647f118693142bdc35c7942e5e0cd6072c2243fe19d2f92b33c81c50`
+**pt-BR review revision:** `2c9df1b38af4f3a98ddf587361347f48824795bb6fcedc6f403371d05fb70271`
 
 ### English
 
-A token appears in an issue comment and a commit. Which response addresses the credential risk across both locations?
+A response integration already has a secret-scanning alert number. Which REST request lists that alert's recorded secret locations, rather than listing other alerts?
 
-1. Revoke or rotate the token, then clean exposed copies **[CORRECT]**
+1. GET /repos/\{owner\}/\{repo\}/secret-scanning/alerts/\{alert\_number\}/locations **[CORRECT]**
 
-   Credential invalidation contains misuse while cleanup addresses remaining copies.
+   The locations subresource enumerates occurrences belonging to the specified secret alert.
 
-2. Close the commit alert and leave the comment unchanged
+2. GET /repos/\{owner\}/\{repo\}/secret-scanning/alerts
 
-   Closing one alert does not remove another exposure.
+   The repository alert collection lists alerts, not one alert's location records.
 
-3. Rename the issue and keep using the token
+3. GET /orgs/\{org\}/secret-scanning/alerts
 
-   Renaming content does not invalidate a token.
+   The organization collection spans alerts across eligible repositories, not one alert's occurrences.
 
-4. Run CodeQL without changing the credential
+4. GET /repos/\{owner\}/\{repo\}/code-scanning/alerts/\{alert\_number\}
 
-   CodeQL analysis cannot revoke an exposed credential.
+   Code-scanning alerts are a different resource and do not enumerate secret locations.
 
-**Concept:** Multi-location credential containment
+**Concept:** Secret occurrence enumeration
 
 **Authored coaching hints:**
 
-- Where else might the same value remain exposed?
-- Which step neutralizes reuse independently of cleanup?
+- Determine whether the requested resource is a collection of alerts or of occurrences.
+- The alert identity is already known.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Un token aparece en un comentario de incidencia y en un commit. ¿Qué respuesta aborda el riesgo de credenciales en ambas ubicaciones?
+Una integración de respuesta ya conoce el número de una alerta de secretos. ¿Qué solicitud REST enumera sus ubicaciones registradas, en lugar de otras alertas?
 
-1. Revoca o rota el token y luego limpia las copias expuestas **[CORRECT]**
+1. GET /repos/\{owner\}/\{repo\}/secret-scanning/alerts/\{alert\_number\}/locations **[CORRECT]**
 
-   Invalidar la credencial contiene el uso indebido y la limpieza trata las copias restantes.
+   El subrecurso locations enumera las apariciones de la alerta de secretos indicada.
 
-2. Cerrar la alerta del commit y dejar intacto el comentario
+2. GET /repos/\{owner\}/\{repo\}/secret-scanning/alerts
 
-   Cerrar una alerta no quita otra exposición.
+   La colección del repositorio enumera alertas, no ubicaciones de una alerta.
 
-3. Cambiar el título de la incidencia y seguir usando el token
+3. GET /orgs/\{org\}/secret-scanning/alerts
 
-   Cambiar el nombre del contenido no invalida un token.
+   La colección de organización abarca alertas de repositorios elegibles, no apariciones de una alerta.
 
-4. Ejecutar CodeQL sin cambiar la credencial
+4. GET /repos/\{owner\}/\{repo\}/code-scanning/alerts/\{alert\_number\}
 
-   El análisis de CodeQL no puede revocar una credencial expuesta.
+   Las alertas de código son otro recurso y no enumeran ubicaciones de secretos.
 
-**Concept:** Contención de credenciales en varias ubicaciones
+**Concept:** Enumeración de apariciones de secretos
 
 **Authored coaching hints:**
 
-- ¿Dónde más podría seguir expuesto el mismo valor?
-- ¿Qué paso neutraliza su reutilización independientemente de la limpieza?
+- Determina si se solicita una colección de alertas o de apariciones.
+- La identidad de la alerta ya se conoce.
 
 </details>
 
@@ -6701,34 +6701,34 @@ Un token aparece en un comentario de incidencia y en un commit. ¿Qué respuesta
 
 ### Português (Brasil)
 
-Um token aparece em um comentário de issue e em um commit. Qual resposta trata o risco da credencial nos dois locais?
+Uma integração de resposta já conhece o número de um alerta de segredos. Qual solicitação REST lista suas localizações registradas, em vez de outros alertas?
 
-1. Revogue ou troque o token e limpe as cópias expostas **[CORRECT]**
+1. GET /repos/\{owner\}/\{repo\}/secret-scanning/alerts/\{alert\_number\}/locations **[CORRECT]**
 
-   Invalidar a credencial contém o uso indevido e a limpeza trata as cópias restantes.
+   O sub-recurso locations enumera as ocorrências do alerta de segredos indicado.
 
-2. Encerrar o alerta do commit e deixar o comentário intacto
+2. GET /repos/\{owner\}/\{repo\}/secret-scanning/alerts
 
-   Encerrar um alerta não remove outra exposição.
+   A coleção do repositório lista alertas, não localizações de um alerta.
 
-3. Renomear a issue e continuar usando o token
+3. GET /orgs/\{org\}/secret-scanning/alerts
 
-   Renomear o conteúdo não invalida um token.
+   A coleção da organização abrange alertas de repositórios elegíveis, não ocorrências de um alerta.
 
-4. Executar CodeQL sem alterar a credencial
+4. GET /repos/\{owner\}/\{repo\}/code-scanning/alerts/\{alert\_number\}
 
-   A análise CodeQL não pode revogar uma credencial exposta.
+   Alertas de código são outro recurso e não enumeram localizações de segredos.
 
-**Concept:** Contenção de credenciais em vários locais
+**Concept:** Enumeração de ocorrências de segredos
 
 **Authored coaching hints:**
 
-- Onde mais o mesmo valor pode continuar exposto?
-- Qual etapa neutraliza a reutilização independentemente da limpeza?
+- Determine se o recurso solicitado é uma coleção de alertas ou de ocorrências.
+- A identidade do alerta já é conhecida.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/code-security/concepts/secret-security/secret-scanning>
+**Official supporting source:** <https://docs.github.com/en/rest/secret-scanning/secret-scanning#list-locations-for-a-secret-scanning-alert>
 
 <!-- certification-coach-question:ghas-secrets-022:8c80f688e87ec85054ee2bed848f126d3730fb01a448f4c7aabab0c07f6e055d -->
 ## Question 62: Configure and use Secret Protection
@@ -6840,7 +6840,7 @@ Vários repositórios precisam detectar de forma consistente um formato de token
 
 **Official supporting source:** <https://docs.github.com/en/code-security/how-tos/secure-your-secrets/customize-leak-detection/define-custom-patterns>
 
-<!-- certification-coach-question:ghas-secrets-023:94e8d45b1f57c720f953defe3e4b2a6002e25d21254e085234ea28fe78e4310e -->
+<!-- certification-coach-question:ghas-secrets-023:bff5a70331c57c098991b539e1cc94de981c1ddb4db7d1bd0dc829ccedd4b1d0 -->
 ## Question 63: Configure and use Secret Protection
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -6851,68 +6851,68 @@ Vários repositórios precisam detectar de forma consistente um formato de token
 
 **Question ID:** `ghas-secrets-023`
 
-**Content revision:** `94e8d45b1f57c720f953defe3e4b2a6002e25d21254e085234ea28fe78e4310e`
+**Content revision:** `bff5a70331c57c098991b539e1cc94de981c1ddb4db7d1bd0dc829ccedd4b1d0`
 
-**en review revision:** `d4948da39ea3ff30cf1894e1455f6885e8fa570d4462b4612770164ea8fa726f`
-**es review revision:** `d4ffddea62fb7b595c42e2a48d5498e64d43a6826e9214f624bb5615105d5bda`
-**pt-BR review revision:** `68172aa24419eaecd58057ef2c64c588521e4f06576954deb1a520de7025c92b`
+**en review revision:** `8d96615947449948587d554c35c01fa5efca0405221b61f3d5547b2c72bf5de8`
+**es review revision:** `0e4818723d0cf293dd797c463bb15305752f853d14110ef993082a1f28e8cefb`
+**pt-BR review revision:** `720ac6631e38ac83ffd68163ca31cdb4dc3204722fa138fda242dcf6a5870d8c`
 
 ### English
 
-A repository contains a realistic credential in a test fixture. What should the maintainer verify before deciding not to remediate it?
+The provider has confirmed revocation, and maintainers have removed the exposed token from current files. Its secret-scanning alert remains open. What completes the alert workflow?
 
-1. That the repository has no production deployment
+1. Wait for cleanup to close the alert
 
-   Nonproduction code can still contain usable credentials.
+   Removing a token from files does not automatically close its secret-scanning alert.
 
-2. That the alert is older than the branch
+2. Rerun the CodeQL analysis workflow
 
-   Branch age does not determine whether a secret works.
+   CodeQL analyzes code weaknesses; rerunning it does not resolve a credential alert.
 
-3. That the value is deliberately nonfunctional and cannot authenticate **[CORRECT]**
+3. Close the alert with the appropriate reason **[CORRECT]**
 
-   A test value is harmless only when it cannot grant access.
+   After remediation, manually close the alert and record its resolution reason.
 
-4. That the filename contains the word test
+4. Republish the repository's custom pattern
 
-   A filename is not evidence that a credential is inert.
+   Publishing a detector is unrelated to closing this remediated credential alert.
 
-**Concept:** Test-data risk assessment
+**Concept:** Secret alert closure after remediation
 
 **Authored coaching hints:**
 
-- What property of the value determines whether it is dangerous?
-- Does its location prove that it cannot authenticate?
+- Separate provider remediation from GitHub alert disposition.
+- Which step updates the alert record itself?
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Un repositorio contiene una credencial realista en un archivo de pruebas. ¿Qué debería verificar la persona mantenedora antes de decidir no corregirla?
+El proveedor confirmó la revocación y los mantenedores retiraron el token expuesto de los archivos actuales. La alerta de secretos sigue abierta. ¿Qué completa el flujo de la alerta?
 
-1. Que el repositorio no tenga despliegues de producción
+1. Esperar a que la limpieza cierre la alerta
 
-   El código no productivo también puede contener credenciales utilizables.
+   Retirar un token de los archivos no cierra automáticamente su alerta.
 
-2. Que la alerta sea anterior a la rama
+2. Ejecutar otra vez el análisis de CodeQL
 
-   La antigüedad de una rama no determina si un secreto funciona.
+   CodeQL analiza debilidades de código; ejecutarlo no resuelve una alerta de credenciales.
 
-3. Que el valor sea intencionalmente inoperante y no pueda autenticar **[CORRECT]**
+3. Cerrar la alerta con el motivo adecuado **[CORRECT]**
 
-   Un valor de prueba es inocuo solo si no puede conceder acceso.
+   Tras remediar, hay que cerrar manualmente la alerta y registrar su motivo.
 
-4. Que el nombre del archivo contenga la palabra test
+4. Volver a publicar el patrón personalizado
 
-   El nombre del archivo no demuestra que la credencial sea inerte.
+   Publicar un detector no sirve para cerrar esta alerta ya remediada.
 
-**Concept:** Evaluación del riesgo de datos de prueba
+**Concept:** Cierre de alertas tras la remediación
 
 **Authored coaching hints:**
 
-- ¿Qué propiedad del valor determina si es peligroso?
-- ¿Su ubicación demuestra que no puede autenticar?
+- Distingue la remediación en el proveedor del estado en GitHub.
+- ¿Qué paso actualiza el registro de la propia alerta?
 
 </details>
 
@@ -6921,34 +6921,34 @@ Un repositorio contiene una credencial realista en un archivo de pruebas. ¿Qué
 
 ### Português (Brasil)
 
-Um repositório contém uma credencial realista em um arquivo de teste. O que a pessoa mantenedora deve verificar antes de decidir não corrigi-la?
+O provedor confirmou a revogação e os mantenedores removeram o token exposto dos arquivos atuais. O alerta de segredos continua aberto. O que conclui o fluxo do alerta?
 
-1. Que o repositório não tenha implantação de produção
+1. Esperar a limpeza fechar o alerta
 
-   Código não produtivo também pode conter credenciais utilizáveis.
+   Remover um token dos arquivos não fecha automaticamente seu alerta.
 
-2. Que o alerta seja mais antigo que a branch
+2. Executar novamente a análise CodeQL
 
-   A idade de uma branch não determina se um segredo funciona.
+   CodeQL analisa falhas no código; executá-lo não resolve um alerta de credenciais.
 
-3. Que o valor seja intencionalmente inoperante e não possa autenticar **[CORRECT]**
+3. Fechar o alerta com o motivo adequado **[CORRECT]**
 
-   Um valor de teste é inofensivo somente se não puder conceder acesso.
+   Após a remediação, feche manualmente o alerta e registre o motivo.
 
-4. Que o nome do arquivo contenha a palavra test
+4. Publicar novamente o padrão personalizado
 
-   O nome do arquivo não comprova que a credencial seja inerte.
+   Publicar um detector não serve para fechar este alerta já remediado.
 
-**Concept:** Avaliação de risco de dados de teste
+**Concept:** Fechamento de alertas após remediação
 
 **Authored coaching hints:**
 
-- Qual propriedade do valor determina se ele é perigoso?
-- O local prova que ele não pode autenticar?
+- Separe a remediação no provedor do estado no GitHub.
+- Qual etapa atualiza o registro do próprio alerta?
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/code-security/concepts/secret-security/secret-scanning>
+**Official supporting source:** <https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-secret-scanning-alerts/resolving-alerts>
 
 <!-- certification-coach-question:ghas-secrets-024:2e59559ef73cc4f42963f774e9ae75e852747396a4ea89e188e3d4ea5741e8bc -->
 ## Question 64: Configure and use Secret Protection
@@ -7610,7 +7610,7 @@ Um segredo é encontrado em um commit antigo, mas está ausente do arquivo atual
 
 **Official supporting source:** <https://docs.github.com/en/code-security/concepts/secret-security/secret-scanning>
 
-<!-- certification-coach-question:ghas-secrets-030:8b345061be35ddf1c32410b8cad3ca91902f25bf85cdfed25d48590185cb6074 -->
+<!-- certification-coach-question:ghas-secrets-030:6b43dac759ac8a0789caecf9b6250d96aa8150e33d9350603c8aca31a1cc6a52 -->
 ## Question 70: Configure and use Secret Protection
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -7621,68 +7621,68 @@ Um segredo é encontrado em um commit antigo, mas está ausente do arquivo atual
 
 **Question ID:** `ghas-secrets-030`
 
-**Content revision:** `8b345061be35ddf1c32410b8cad3ca91902f25bf85cdfed25d48590185cb6074`
+**Content revision:** `6b43dac759ac8a0789caecf9b6250d96aa8150e33d9350603c8aca31a1cc6a52`
 
-**en review revision:** `3e29d9d5796a847c19692435ad40224eb737c55c536349d0249c52fdb21ddba5`
-**es review revision:** `1fd13bb3baf198ece8a3ea9db8fd0e227a2b913087567a21dcdd5e4214ee8d5a`
-**pt-BR review revision:** `66f56350ad6bd173be6f040b0871b695fed97e64a652b061394439b2ce01ca4c`
+**en review revision:** `d8d5b972cb0e974faeaeedd16d5e0d584bd1f15a18892d1f9d373a47d27b7aab`
+**es review revision:** `ad3cedaa27f79c6b9893f2362d6aae233f23f8a5352144fb542bf0e515b2da5a`
+**pt-BR review revision:** `7ef47392f0e5bf4c746f3cb0018fa4ef619adeef9fb3b50fffdec46922111005`
 
 ### English
 
-A private organization repository needs secret scanning and push protection. Which product is the relevant Advanced Security entitlement?
+Secret scanning already detects provider-issued tokens. A team also needs built-in detection of private keys and connection strings that are not tied to one provider. Which extension fits?
 
-1. GitHub Packages
+1. Partner validity checks
 
-   Packages hosts artifacts and is not the security product.
+   Validity checks evaluate supported detected credentials, not add generic formats.
 
-2. GitHub Secret Protection **[CORRECT]**
+2. Generic patterns **[CORRECT]**
 
-   Secret Protection covers secret scanning and push-protection features.
+   Generic patterns cover secrets such as private keys and connection strings without a specific provider.
 
-3. GitHub Code Security
+3. Organization custom patterns
 
-   Code Security focuses on code scanning and premium supply-chain features.
+   Custom patterns require organization-defined expressions; the request is for built-in formats.
 
-4. GitHub Actions
+4. Push-protection exemptions
 
-   Actions runs automation workflows rather than supplying this product entitlement.
+   Exemptions skip prevention for selected actors; they do not extend detection.
 
-**Concept:** Secret Protection product scope
+**Concept:** Generic secret detection
 
 **Authored coaching hints:**
 
-- Is the requirement credential detection or code/dependency analysis?
-- Which product groups features that prevent and detect secret leaks?
+- Distinguish a known provider from a general credential structure.
+- The requirement is not a proprietary token format.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Un repositorio privado de una organización necesita análisis de secretos y protección de inserciones. ¿Qué derecho de uso de Advanced Security corresponde?
+El análisis de secretos ya detecta tokens de proveedores. Un equipo también necesita detección integrada de claves privadas y cadenas de conexión no vinculadas a un proveedor concreto. ¿Qué extensión corresponde?
 
-1. GitHub Packages
+1. Comprobaciones de validez de socios
 
-   Packages aloja artefactos y no es el producto de seguridad.
+   Las comprobaciones de validez evalúan credenciales detectadas compatibles; no añaden formatos genéricos.
 
-2. GitHub Secret Protection **[CORRECT]**
+2. Patrones genéricos **[CORRECT]**
 
-   Secret Protection incluye funciones de análisis de secretos y protección de inserciones.
+   Los patrones genéricos cubren claves privadas y cadenas de conexión sin un proveedor concreto.
 
-3. GitHub Code Security
+3. Patrones personalizados de organización
 
-   Code Security se centra en análisis de código y funciones avanzadas de cadena de suministro.
+   Los patrones personalizados requieren expresiones propias; se piden formatos integrados.
 
-4. GitHub Actions
+4. Exenciones de protección de inserciones
 
-   Actions ejecuta flujos de automatización, no concede este derecho de producto.
+   Las exenciones omiten la prevención para ciertos actores; no amplían la detección.
 
-**Concept:** Alcance del producto Secret Protection
+**Concept:** Detección de secretos genéricos
 
 **Authored coaching hints:**
 
-- ¿El requisito es detectar credenciales o analizar código y dependencias?
-- ¿Qué producto agrupa funciones que previenen y detectan filtraciones de secretos?
+- Distingue un proveedor conocido de una estructura general de credencial.
+- No se solicita un formato de token propietario.
 
 </details>
 
@@ -7691,36 +7691,36 @@ Un repositorio privado de una organización necesita análisis de secretos y pro
 
 ### Português (Brasil)
 
-Um repositório privado de uma organização precisa de análise de segredos e proteção de push. Qual direito de Advanced Security é pertinente?
+A verificação de segredos já detecta tokens de provedores. Uma equipe também precisa de detecção integrada de chaves privadas e strings de conexão sem vínculo com um provedor específico. Qual extensão atende?
 
-1. GitHub Packages
+1. Verificações de validade de parceiros
 
-   Packages hospeda artefatos e não é o produto de segurança.
+   Verificações de validade avaliam credenciais detectadas compatíveis; não acrescentam formatos genéricos.
 
-2. GitHub Secret Protection **[CORRECT]**
+2. Padrões genéricos **[CORRECT]**
 
-   Secret Protection inclui recursos de análise de segredos e proteção de push.
+   Padrões genéricos cobrem chaves privadas e strings de conexão sem um provedor específico.
 
-3. GitHub Code Security
+3. Padrões personalizados da organização
 
-   Code Security se concentra em análise de código e recursos avançados da cadeia de suprimentos.
+   Padrões personalizados exigem expressões próprias; a solicitação pede formatos integrados.
 
-4. GitHub Actions
+4. Isenções de proteção de push
 
-   Actions executa fluxos de automação, não concede esse direito do produto.
+   Isenções ignoram a prevenção para certos atores; não ampliam a detecção.
 
-**Concept:** Escopo do produto Secret Protection
+**Concept:** Detecção de segredos genéricos
 
 **Authored coaching hints:**
 
-- O requisito é detectar credenciais ou analisar código e dependências?
-- Qual produto reúne recursos que previnem e detectam vazamentos de segredos?
+- Diferencie um provedor conhecido de uma estrutura geral de credencial.
+- Não se trata de um formato de token proprietário.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/get-started/learning-about-github/about-github-advanced-security>
+**Official supporting source:** <https://docs.github.com/en/code-security/concepts/secret-security/secret-scanning>
 
-<!-- certification-coach-question:ghas-secrets-031:2e4b2df9b73bc69b885cda255f0da24768ac0f20c5c58ffe317fbc6a1207f68c -->
+<!-- certification-coach-question:ghas-secrets-031:252964ba28ea1bac087b0bda43008ae475279a5f39c03593776e1e3bf6612697 -->
 ## Question 71: Configure and use Secret Protection
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -7731,68 +7731,68 @@ Um repositório privado de uma organização precisa de análise de segredos e p
 
 **Question ID:** `ghas-secrets-031`
 
-**Content revision:** `2e4b2df9b73bc69b885cda255f0da24768ac0f20c5c58ffe317fbc6a1207f68c`
+**Content revision:** `252964ba28ea1bac087b0bda43008ae475279a5f39c03593776e1e3bf6612697`
 
-**en review revision:** `c74052e2af1a3f5228fea911bd1b86dd97f94ba7726bbc4dd8f232bed8482b00`
-**es review revision:** `73ec1aaf42e6551d30a7ec41503aa1d4a6cbc9211feba98d0afeff159bae6f2c`
-**pt-BR review revision:** `4e9255c56edeac0bd91649de9aadfcf91016d49e767e0e090841252f1eb85fc2`
+**en review revision:** `5c8812f9e0deffe1f5f5924d0fc9ebc141ec8b00aed465f42b82bdec97b95640`
+**es review revision:** `602d0ac83d761cf26efafe0f48241cf760443371b3c40f8d92744c4989a9ea47`
+**pt-BR review revision:** `e3db14e7368e8ad9a00ece23d619b61a77e68a9255cae7e091b77168994e262e`
 
 ### English
 
-A proposed custom regex should detect an organization's new credential format without matching ordinary IDs. How should the author evaluate that goal?
+A custom secret expression works in a different regex tester but uses constructs GitHub's custom-pattern engine does not support. Which compatibility target should the author use?
 
-1. Replace the regex with a repository name
+1. JavaScript RegExp syntax
 
-   Repository names do not describe credential syntax.
+   A JavaScript tester can accept syntax unavailable to the custom-pattern engine.
 
-2. Compare Dependabot alert counts before and after
+2. All PCRE constructs and modifiers
 
-   Dependency alert counts do not measure secret-pattern accuracy.
+   GitHub does not support all PCRE constructs or Hyperscan option modifiers.
 
-3. Use a dry run with examples that should match and similar values that should not **[CORRECT]**
+3. Hyperscan's supported PCRE subset **[CORRECT]**
 
-   Positive and negative examples reveal both missed matches and false matches.
+   Custom patterns use Hyperscan and its documented subset of PCRE syntax.
 
-4. Test only one known credential and publish immediately
+4. Git pathspec wildcard syntax
 
-   One example cannot show precision across similar strings.
+   Pathspec syntax selects paths; it is not the custom secret regex language.
 
-**Concept:** Pattern recall validation
+**Concept:** Custom-pattern regex compatibility
 
 **Authored coaching hints:**
 
-- Which examples test whether the expression is both useful and selective?
-- What could a single positive test fail to reveal?
+- A successful test in one regex engine is not portable proof.
+- Check the detector's documented syntax rather than only the examples.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Una expresión regular personalizada debe detectar un formato nuevo de credencial sin coincidir con identificadores comunes. ¿Cómo debería evaluar esa meta quien la crea?
+Una expresión de secretos funciona en otro comprobador, pero usa construcciones no compatibles con el motor de patrones de GitHub. ¿Qué objetivo de compatibilidad debe usar su autor?
 
-1. Reemplazar la expresión regular por el nombre del repositorio
+1. La sintaxis RegExp de JavaScript
 
-   El nombre del repositorio no describe la sintaxis de credenciales.
+   Un comprobador de JavaScript puede aceptar sintaxis no disponible en este motor.
 
-2. Comparar el número de alertas de Dependabot antes y después
+2. Todas las construcciones y modificadores PCRE
 
-   El recuento de alertas de dependencias no mide la precisión del patrón de secretos.
+   GitHub no admite todas las construcciones PCRE ni los modificadores de opciones de Hyperscan.
 
-3. Ejecutar una prueba con ejemplos que deben coincidir y valores similares que no **[CORRECT]**
+3. El subconjunto PCRE admitido por Hyperscan **[CORRECT]**
 
-   Los ejemplos positivos y negativos revelan tanto omisiones como falsos positivos.
+   Los patrones personalizados usan Hyperscan y su subconjunto documentado de PCRE.
 
-4. Probar solo una credencial conocida y publicar de inmediato
+4. Los comodines pathspec de Git
 
-   Un ejemplo no demuestra precisión ante cadenas similares.
+   Pathspec selecciona rutas; no es el lenguaje regex para secretos personalizados.
 
-**Concept:** Validación de cobertura de patrones
+**Concept:** Compatibilidad regex de patrones personalizados
 
 **Authored coaching hints:**
 
-- ¿Qué ejemplos prueban si la expresión es útil y selectiva?
-- ¿Qué podría no revelar una única prueba positiva?
+- Una prueba correcta en un motor no demuestra portabilidad.
+- Consulta la sintaxis documentada del detector, no solo los ejemplos.
 
 </details>
 
@@ -7801,34 +7801,34 @@ Una expresión regular personalizada debe detectar un formato nuevo de credencia
 
 ### Português (Brasil)
 
-Uma expressão regular personalizada deve detectar um novo formato de credencial sem corresponder a IDs comuns. Como a pessoa autora deve avaliar esse objetivo?
+Uma expressão de segredos funciona em outro testador, mas usa construções incompatíveis com o mecanismo de padrões do GitHub. Qual alvo de compatibilidade o autor deve usar?
 
-1. Substituir a expressão regular pelo nome do repositório
+1. A sintaxe RegExp do JavaScript
 
-   O nome do repositório não descreve a sintaxe de credenciais.
+   Um testador JavaScript pode aceitar sintaxe indisponível neste mecanismo.
 
-2. Comparar a quantidade de alertas do Dependabot antes e depois
+2. Todas as construções e modificadores PCRE
 
-   A contagem de alertas de dependências não mede a precisão do padrão de segredos.
+   O GitHub não aceita todas as construções PCRE nem modificadores de opções do Hyperscan.
 
-3. Executar uma simulação com exemplos que devem corresponder e valores semelhantes que não devem **[CORRECT]**
+3. O subconjunto PCRE aceito pelo Hyperscan **[CORRECT]**
 
-   Exemplos positivos e negativos revelam omissões e falsos positivos.
+   Padrões personalizados usam Hyperscan e seu subconjunto documentado de PCRE.
 
-4. Testar somente uma credencial conhecida e publicar imediatamente
+4. Os curingas pathspec do Git
 
-   Um exemplo não demonstra precisão diante de strings semelhantes.
+   Pathspec seleciona caminhos; não é a linguagem regex dos segredos personalizados.
 
-**Concept:** Validação de cobertura de padrões
+**Concept:** Compatibilidade regex de padrões personalizados
 
 **Authored coaching hints:**
 
-- Quais exemplos testam se a expressão é útil e seletiva?
-- O que um único teste positivo pode deixar de revelar?
+- Um teste bem-sucedido em um mecanismo não comprova portabilidade.
+- Consulte a sintaxe documentada do detector, não apenas os exemplos.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/code-security/how-tos/secure-your-secrets/customize-leak-detection/define-custom-patterns>
+**Official supporting source:** <https://docs.github.com/en/code-security/reference/secret-security/custom-patterns>
 
 <!-- certification-coach-question:ghas-secrets-032:ef97ae2c95f698f99128a7113d7e9c94b7bd9ec868622dbb017fe682e5263be6 -->
 ## Question 72: Configure and use Secret Protection
@@ -7940,7 +7940,7 @@ Uma equipe habilita a proteção de push e presume que nenhuma credencial poder�
 
 **Official supporting source:** <https://docs.github.com/en/code-security/concepts/secret-security/push-protection>
 
-<!-- certification-coach-question:ghas-secrets-033:d806f457e5edd03c8a6cc3d45a38050fe6d0d74c2eeb4ef1746e5356bb09bb6c -->
+<!-- certification-coach-question:ghas-secrets-033:6c00bd21d70c879f1c97f77db32f469c0bbf1d84641b45c957d724a6973fa7c2 -->
 ## Question 73: Configure and use Secret Protection
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -7951,68 +7951,68 @@ Uma equipe habilita a proteção de push e presume que nenhuma credencial poder�
 
 **Question ID:** `ghas-secrets-033`
 
-**Content revision:** `d806f457e5edd03c8a6cc3d45a38050fe6d0d74c2eeb4ef1746e5356bb09bb6c`
+**Content revision:** `6c00bd21d70c879f1c97f77db32f469c0bbf1d84641b45c957d724a6973fa7c2`
 
-**en review revision:** `f6ded7055a4d5790e97bcb929763ff8e916efecbb19adffe32e71334eda9af87`
-**es review revision:** `d22707ce7b4601f483e0174bc8c7ba183c42651c225de86a1ace17698296a5e4`
-**pt-BR review revision:** `271e4a6694755ac4bd6c3de4eb2d671f8c90983cd18454beb26fe31eae5d1ea3`
+**en review revision:** `4d9ce782a58ec4f04c12da800dc36d04686eba34114797a88c7123d5ecabd61b`
+**es review revision:** `04d347c18ed7515d05d68394855b505f71cf229b2265e0173e16b8df7b92b810`
+**pt-BR review revision:** `b03862064552a8d1bb087a4416f2f644279a468debd393b4261a4be4d66ef1c1`
 
 ### English
 
-An organization sees recurring alerts for a proprietary credential format that built-in detectors miss. What configuration addresses that gap?
+A custom pattern already captures the token's length and alphabet. It must also require a digit inside the token, without constraining surrounding text. Which field fits?
 
-1. Define and test a custom secret-scanning pattern **[CORRECT]**
+1. Additional match requirements **[CORRECT]**
 
-   A custom pattern adds organization-specific secret-format detection.
+   Additional match requirements can require the secret itself to match a digit expression.
 
-2. Add the credential format to \`dependabot.yml\`
+2. Before secret
 
-   Dependabot configuration controls dependency update behavior.
+   Before secret constrains preceding content, not characters inside the secret.
 
-3. Create a CodeQL database for the token
+3. After secret
 
-   A CodeQL database models source code for query analysis.
+   After secret constrains following content, not the secret's internal composition.
 
-4. Add an SPDX identifier to the repository
+4. Pattern name
 
-   SPDX identifiers describe software licenses.
+   Pattern name labels the detector but does not impose matching conditions.
 
-**Concept:** Extending secret-detection coverage
+**Concept:** Internal constraints in custom patterns
 
 **Authored coaching hints:**
 
-- What kind of detector is missing for this credential format?
-- Which feature lets an organization define its own matching pattern?
+- Identify whether the condition concerns the captured value or its neighbors.
+- The token's basic format is already configured.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Una organización ve alertas recurrentes por un formato de credencial propio que los detectores integrados no reconocen. ¿Qué configuración resuelve esa brecha?
+Un patrón personalizado ya captura la longitud y el alfabeto del token. También debe exigir un dígito dentro del token, sin restringir el texto circundante. ¿Qué campo corresponde?
 
-1. Definir y probar un patrón personalizado de análisis de secretos **[CORRECT]**
+1. Additional match requirements **[CORRECT]**
 
-   Un patrón personalizado agrega detección para formatos de secretos propios de la organización.
+   Additional match requirements permite exigir que el propio secreto coincida con una expresión de dígitos.
 
-2. Agregar el formato de credencial a \`dependabot.yml\`
+2. Before secret
 
-   La configuración de Dependabot controla las actualizaciones de dependencias.
+   Before secret restringe el contenido anterior, no el interior del secreto.
 
-3. Crear una base de datos de CodeQL para el token
+3. After secret
 
-   Una base de CodeQL modela código fuente para analizarlo con consultas.
+   After secret restringe el contenido posterior, no la composición interna del secreto.
 
-4. Agregar un identificador SPDX al repositorio
+4. Pattern name
 
-   Los identificadores SPDX describen licencias de software.
+   Pattern name etiqueta el detector, pero no impone condiciones de coincidencia.
 
-**Concept:** Ampliación de la cobertura de detección de secretos
+**Concept:** Restricciones internas de patrones personalizados
 
 **Authored coaching hints:**
 
-- ¿Qué tipo de detector falta para este formato de credencial?
-- ¿Qué función permite definir un patrón propio de coincidencia?
+- Determina si la condición afecta al valor capturado o a sus vecinos.
+- El formato básico del token ya está configurado.
 
 </details>
 
@@ -8021,34 +8021,34 @@ Una organización ve alertas recurrentes por un formato de credencial propio que
 
 ### Português (Brasil)
 
-Uma organização vê alertas recorrentes para um formato de credencial proprietário que os detectores internos não reconhecem. Qual configuração resolve essa lacuna?
+Um padrão personalizado já captura o comprimento e o alfabeto do token. Ele também deve exigir um dígito dentro do token, sem restringir o texto ao redor. Qual campo atende?
 
-1. Definir e testar um padrão personalizado de análise de segredos **[CORRECT]**
+1. Additional match requirements **[CORRECT]**
 
-   Um padrão personalizado adiciona detecção para formatos de segredos próprios da organização.
+   Additional match requirements permite exigir que o próprio segredo corresponda a uma expressão de dígitos.
 
-2. Adicionar o formato da credencial a \`dependabot.yml\`
+2. Before secret
 
-   A configuração do Dependabot controla atualizações de dependências.
+   Before secret restringe o conteúdo anterior, não o interior do segredo.
 
-3. Criar um banco de dados CodeQL para o token
+3. After secret
 
-   Um banco CodeQL modela o código-fonte para análise por consultas.
+   After secret restringe o conteúdo posterior, não a composição interna do segredo.
 
-4. Adicionar um identificador SPDX ao repositório
+4. Pattern name
 
-   Identificadores SPDX descrevem licenças de software.
+   Pattern name identifica o detector, mas não impõe condições de correspondência.
 
-**Concept:** Ampliação da cobertura de detecção de segredos
+**Concept:** Restrições internas em padrões personalizados
 
 **Authored coaching hints:**
 
-- Que tipo de detector falta para esse formato de credencial?
-- Qual recurso permite definir um padrão próprio de correspondência?
+- Determine se a condição afeta o valor capturado ou seus vizinhos.
+- O formato básico do token já está configurado.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/code-security/concepts/secret-security/secret-scanning>
+**Official supporting source:** <https://docs.github.com/en/code-security/reference/secret-security/custom-patterns>
 
 <!-- certification-coach-question:ghas-secrets-034:6b8ca08a969e0b8299fcf30e07c54bf3efc02f9981b8085ed839f04787e21944 -->
 ## Question 74: Configure and use Secret Protection
@@ -8160,7 +8160,7 @@ Uma integração do repositório grava conteúdo pela API REST do GitHub. Qual a
 
 **Official supporting source:** <https://docs.github.com/en/code-security/concepts/secret-security/push-protection>
 
-<!-- certification-coach-question:ghas-secrets-035:43b73a22bd2bdbd6a3f9481647a94ec929007a2cae2ba1419505cf8cab7ba9fc -->
+<!-- certification-coach-question:ghas-secrets-035:d055551f1637a97ea53796382613afbbdf29eabbc226d9d1bb7ba60b4b254d93 -->
 ## Question 75: Configure and use Secret Protection
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -8171,68 +8171,68 @@ Uma integração do repositório grava conteúdo pela API REST do GitHub. Qual a
 
 **Question ID:** `ghas-secrets-035`
 
-**Content revision:** `43b73a22bd2bdbd6a3f9481647a94ec929007a2cae2ba1419505cf8cab7ba9fc`
+**Content revision:** `d055551f1637a97ea53796382613afbbdf29eabbc226d9d1bb7ba60b4b254d93`
 
-**en review revision:** `f819b426d8db1150505dc30744c92b76b655057b9034fceafce180d0f52fc5e7`
-**es review revision:** `b04a5059a98af15daeea098133df0e89fbeca0bf758b851008375e735990c22f`
-**pt-BR review revision:** `587992504aa15402f708ab6725461e681fea28e91df3f2e8979205cc8447feca`
+**en review revision:** `7a5754b30805b666054d783955b9de73484fbe61606d623d324f02be3128e905`
+**es review revision:** `6bfc262ed090a07bd42b4171be4ab3be011972d98817e9a526dac789a06906fa`
+**pt-BR review revision:** `674e8545634b7e01bcaf7c61944eec3d74f4504f21cf73a77341bad1b9674a94`
 
 ### English
 
-Only a small response group should approve push-protection bypass requests. Which setup best supports that requirement?
+A push-protection bypass request is marked Approved, but its commits have not reached the repository. Which interpretation follows the documented request statuses?
 
-1. Disable push protection for the enterprise
+1. Approval confirms the commits were pushed
 
-   Disabling protection removes the approval workflow entirely.
+   Approved explicitly allows for commits that have not yet been pushed.
 
-2. Use a repository topic as an approval signal
+2. Approval permanently exempts the contributor
 
-   A topic does not authorize or record a bypass decision.
+   A request approval is not an actor-level exemption from future protection.
 
-3. Configure delegated bypass with an appropriately scoped reviewer team **[CORRECT]**
+3. Approval permits the push but does not perform it **[CORRECT]**
 
-   Delegated bypass allows approval authority to be assigned deliberately.
+   The contributor still has to push; approval alone does not publish commits.
 
-4. Give every repository contributor organization-owner permissions
+4. Approval closes the related credential incident
 
-   Organization-owner access is broader than needed for a review role.
+   Bypass approval does not revoke a credential or finish incident remediation.
 
-**Concept:** Least-privilege bypass review
+**Concept:** Bypass approval versus delivery
 
 **Authored coaching hints:**
 
-- Who needs authority to approve an exception?
-- Which configuration narrows approval power without removing the block?
+- Distinguish permission to perform an operation from its execution.
+- Read the status in the context of the commits' delivery.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Solo un grupo pequeño de respuesta debería aprobar solicitudes de omisión de la protección de inserciones. ¿Qué configuración satisface mejor ese requisito?
+Una solicitud para omitir la protección figura como Approved, pero sus commits no llegaron al repositorio. ¿Qué interpretación corresponde a los estados documentados?
 
-1. Deshabilitar la protección de inserciones en la empresa
+1. La aprobación confirma que se enviaron los commits
 
-   Deshabilitar la protección elimina por completo el flujo de aprobación.
+   Approved contempla expresamente commits que todavía no se han enviado.
 
-2. Usar un tema del repositorio como señal de aprobación
+2. La aprobación exime permanentemente al colaborador
 
-   Un tema no autoriza ni registra una decisión de omisión.
+   Aprobar una solicitud no exime al actor de la protección futura.
 
-3. Configurar la omisión delegada con un equipo revisor de alcance adecuado **[CORRECT]**
+3. La aprobación permite el envío, pero no lo ejecuta **[CORRECT]**
 
-   La omisión delegada permite asignar deliberadamente la autoridad de aprobación.
+   El colaborador aún debe enviar los commits; aprobar no los publica.
 
-4. Dar permisos de propietario de la organización a cada persona colaboradora
+4. La aprobación cierra el incidente de credenciales
 
-   El acceso de propietario de la organización es más amplio de lo necesario.
+   Aprobar una omisión no revoca credenciales ni completa la remediación.
 
-**Concept:** Revisión de omisiones con privilegios mínimos
+**Concept:** Aprobación frente a entrega de una omisión
 
 **Authored coaching hints:**
 
-- ¿Quién necesita autoridad para aprobar una excepción?
-- ¿Qué configuración limita el poder de aprobación sin quitar el bloqueo?
+- Distingue el permiso para una operación de su ejecución.
+- Interpreta el estado según la entrega de los commits.
 
 </details>
 
@@ -8241,34 +8241,34 @@ Solo un grupo pequeño de respuesta debería aprobar solicitudes de omisión de 
 
 ### Português (Brasil)
 
-Somente um pequeno grupo de resposta deve aprovar solicitações de bypass da proteção de push. Qual configuração atende melhor a esse requisito?
+Uma solicitação de bypass aparece como Approved, mas seus commits não chegaram ao repositório. Qual interpretação corresponde aos estados documentados?
 
-1. Desabilitar a proteção de push na empresa
+1. A aprovação confirma que os commits foram enviados
 
-   Desabilitar a proteção remove completamente o fluxo de aprovação.
+   Approved contempla explicitamente commits que ainda não foram enviados.
 
-2. Usar um tópico do repositório como sinal de aprovação
+2. A aprovação isenta permanentemente o colaborador
 
-   Um tópico não autoriza nem registra uma decisão de bypass.
+   Aprovar uma solicitação não isenta o ator da proteção futura.
 
-3. Configurar bypass delegado com uma equipe revisora de escopo apropriado **[CORRECT]**
+3. A aprovação permite o envio, mas não o executa **[CORRECT]**
 
-   O bypass delegado permite atribuir deliberadamente a autoridade de aprovação.
+   O colaborador ainda deve enviar os commits; aprovar não os publica.
 
-4. Dar permissões de proprietária da organização a cada colaborador
+4. A aprovação encerra o incidente de credenciais
 
-   O acesso de proprietária da organização é mais amplo que o necessário.
+   Aprovar um bypass não revoga credenciais nem conclui a remediação.
 
-**Concept:** Revisão de bypass com privilégio mínimo
+**Concept:** Aprovação versus entrega de bypass
 
 **Authored coaching hints:**
 
-- Quem precisa de autoridade para aprovar uma exceção?
-- Qual configuração restringe o poder de aprovação sem remover o bloqueio?
+- Diferencie a permissão para uma operação de sua execução.
+- Interprete o estado no contexto da entrega dos commits.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/code-security/concepts/secret-security/push-protection>
+**Official supporting source:** <https://docs.github.com/en/code-security/how-tos/secure-your-secrets/manage-bypass-requests/review-bypass-requests>
 
 <!-- certification-coach-question:ghas-secrets-036:e1f913c47b8682df55f1b50c4a244dd703f6d6e04a42d1371ef911530593ad55 -->
 ## Question 76: Configure and use Secret Protection
@@ -8380,7 +8380,7 @@ Uma chave de API real é válida, mas atualmente concede acesso somente a um ser
 
 **Official supporting source:** <https://docs.github.com/en/code-security/concepts/secret-security/push-protection>
 
-<!-- certification-coach-question:ghas-secrets-037:45874c3b8ca2403cb19fcca7becc3a1d73163ed5ec378cdc7bee74fea8b9728f -->
+<!-- certification-coach-question:ghas-secrets-037:65e74d0656477eeea7f9dde3ee40b4d8978cad4e01ee46b3ca4de3ac164673bb -->
 ## Question 77: Configure and use Secret Protection
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -8391,68 +8391,68 @@ Uma chave de API real é válida, mas atualmente concede acesso somente a um ser
 
 **Question ID:** `ghas-secrets-037`
 
-**Content revision:** `45874c3b8ca2403cb19fcca7becc3a1d73163ed5ec378cdc7bee74fea8b9728f`
+**Content revision:** `65e74d0656477eeea7f9dde3ee40b4d8978cad4e01ee46b3ca4de3ac164673bb`
 
-**en review revision:** `f4323e2f6f78eb31bb146ed385d5ef2f0ebd1174b20c84c5423a343b4ba910e7`
-**es review revision:** `f106a77c87ce2098b24a4ed5c87a0aec8d26bca6799e4768f43c4a8275598608`
-**pt-BR review revision:** `3e01bcb31b3485d451e49ddbac8d15d58278ef40ab8332613e3c2af535445112`
+**en review revision:** `885f7dc29703b5e0047421d876673ade780dbb66b2cc732b39118f4dd002547f`
+**es review revision:** `16b1d170647d3bfda30358fe2428471121491ebe9564399bed9e7c6841354c7c`
+**pt-BR review revision:** `9a2e2c10bb0b4f53b79afe4e1cffea6aa41b76a3246c888a5782ac48d1af0401`
 
 ### English
 
-A custom secret pattern detects an organization's credential in committed history. What additional setting addresses blocking its future introduction through supported pushes?
+An organization published a custom pattern and enabled push protection for that pattern. One repository has secret scanning but repository-level push protection is off. What is required for this pattern to block supported pushes there?
 
-1. Enable push protection for the published custom pattern **[CORRECT]**
+1. Enable push protection on that repository **[CORRECT]**
 
-   A published custom pattern can be enabled for push protection.
+   Organization custom-pattern push protection applies only where repository push protection is enabled.
 
-2. Add the pattern to \`dependabot.yml\`
+2. Republish the pattern at enterprise scope
 
-   Dependabot configuration does not control secret push prevention.
+   An enterprise-scoped copy does not replace the repository enablement requirement.
 
-3. Create a code-scanning query suite
+3. Increase the organization's dry-run sample
 
-   Query suites analyze code rather than block this credential format.
+   Dry-run sampling evaluates matches; it does not enable repository prevention.
 
-4. Disable historical scanning
+4. Rename the pattern in organization settings
 
-   Stopping historical scans does not prevent new pushes.
+   Renaming a detector does not change repository-level protection settings.
 
-**Concept:** Preventing secret recurrence
+**Concept:** Custom-pattern prevention applicability
 
 **Authored coaching hints:**
 
-- Which feature acts before a supported push reaches the repository?
-- Is detection alone the same as blocking future exposure?
+- Check the repository prerequisites independently of the shared detector.
+- Publication and local prevention are separate configuration layers.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Un patrón personalizado detecta una credencial propia en el historial confirmado. ¿Qué configuración adicional permite bloquear futuras inserciones mediante pushes compatibles?
+Una organización publicó un patrón y habilitó su protección de inserciones. Un repositorio tiene análisis de secretos, pero la protección de inserciones local está desactivada. ¿Qué permite bloquear allí los envíos compatibles?
 
-1. Habilitar la protección de inserciones para el patrón personalizado publicado **[CORRECT]**
+1. Habilitar la protección de inserciones del repositorio **[CORRECT]**
 
-   Un patrón personalizado publicado puede habilitarse para la protección de inserciones.
+   La protección del patrón de organización solo se aplica donde está habilitada la protección del repositorio.
 
-2. Agregar el patrón a \`dependabot.yml\`
+2. Volver a publicar el patrón en la empresa
 
-   La configuración de Dependabot no controla la prevención de secretos al insertar.
+   Una copia empresarial no sustituye el requisito de habilitación del repositorio.
 
-3. Crear una suite de consultas de análisis de código
+3. Aumentar la muestra de simulación de la organización
 
-   Las suites de consultas analizan código, no bloquean este formato de credencial.
+   La muestra de simulación evalúa coincidencias; no activa la prevención local.
 
-4. Deshabilitar el análisis histórico
+4. Renombrar el patrón en la organización
 
-   Detener el análisis histórico no impide inserciones nuevas.
+   Renombrar el detector no cambia la protección configurada en el repositorio.
 
-**Concept:** Detección frente a prevención de secretos
+**Concept:** Aplicabilidad de la prevención de patrones
 
 **Authored coaching hints:**
 
-- ¿Qué función actúa antes de que un push compatible llegue al repositorio?
-- ¿Detectar equivale a bloquear futuras exposiciones?
+- Revisa los requisitos del repositorio por separado del detector compartido.
+- La publicación y la prevención local son capas de configuración distintas.
 
 </details>
 
@@ -8461,30 +8461,30 @@ Un patrón personalizado detecta una credencial propia en el historial confirmad
 
 ### Português (Brasil)
 
-Um padrão personalizado detecta uma credencial própria no histórico confirmado. Qual configuração adicional permite bloquear futuras introduções por pushes compatíveis?
+Uma organização publicou um padrão e habilitou sua proteção de push. Um repositório tem verificação de segredos, mas a proteção de push local está desativada. O que permite bloquear os pushes compatíveis ali?
 
-1. Habilitar a proteção de push para o padrão personalizado publicado **[CORRECT]**
+1. Habilitar a proteção de push no repositório **[CORRECT]**
 
-   Um padrão personalizado publicado pode ser habilitado para proteção de push.
+   A proteção do padrão da organização só se aplica onde a proteção de push do repositório está habilitada.
 
-2. Adicionar o padrão a \`dependabot.yml\`
+2. Publicar novamente o padrão na empresa
 
-   A configuração do Dependabot não controla a prevenção de segredos no push.
+   Uma cópia empresarial não substitui o requisito de habilitação do repositório.
 
-3. Criar uma suíte de consultas de análise de código
+3. Aumentar a amostra de simulação da organização
 
-   Suítes de consultas analisam código, não bloqueiam esse formato de credencial.
+   A amostra da simulação avalia correspondências; não ativa a prevenção local.
 
-4. Desabilitar a análise histórica
+4. Renomear o padrão na organização
 
-   Parar a análise histórica não impede novos pushes.
+   Renomear o detector não altera a proteção configurada no repositório.
 
-**Concept:** Detecção versus prevenção de segredos
+**Concept:** Aplicabilidade da prevenção de padrões
 
 **Authored coaching hints:**
 
-- Qual recurso atua antes que um push compatível chegue ao repositório?
-- Detectar equivale a bloquear exposições futuras?
+- Confira os requisitos do repositório separadamente do detector compartilhado.
+- Publicação e prevenção local são camadas distintas de configuração.
 
 </details>
 
@@ -9920,7 +9920,7 @@ Um repositório tem um alerta do Dependabot para um pacote vulnerável, mas não
 
 **Official supporting source:** <https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-security-updates>
 
-<!-- certification-coach-question:ghas-supply-011:55c4ef73989d82fcf7c233f197f2e35b3662823e8314264a87e23b1a081de446 -->
+<!-- certification-coach-question:ghas-supply-011:5f19023c40864a84768135bf704ea971324ac4ab2a6c97493d0507f07ee48473 -->
 ## Question 91: Configure and use supply chain security
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -9931,68 +9931,68 @@ Um repositório tem um alerta do Dependabot para um pacote vulnerável, mas não
 
 **Question ID:** `ghas-supply-011`
 
-**Content revision:** `55c4ef73989d82fcf7c233f197f2e35b3662823e8314264a87e23b1a081de446`
+**Content revision:** `5f19023c40864a84768135bf704ea971324ac4ab2a6c97493d0507f07ee48473`
 
-**en review revision:** `b03aa024a116999dcf17c554955f646c16527313ebbd7809d2cbe0dca93933c7`
-**es review revision:** `e91c8ca3c03e34cd47f8c9df6a322b21839a9e148e66825bc3bd211fe2dfdb24`
-**pt-BR review revision:** `2f0ddbc2709c9cf81082ed75168383213ea5242a1f7ca85168b438ecc2fb1a08`
+**en review revision:** `285b7213e079e0889a19feea840b94a584ea8d1bf5173e5d4b8d690b57c4107b`
+**es review revision:** `f3de6f328fb97e3f0efbb2592436bb323c1c0ea6be4706ee747bcd590ec2bc4c`
+**pt-BR review revision:** `b8728cbc03dd90012601514c9bb1bb441009c84345b751d57e6a0d9fa7da2a20`
 
 ### English
 
-An organization enables Dependabot alerts but wants automated pull requests for vulnerable packages. Which distinction matters?
+A dependency is at 1.2.0. Version 1.2.4 is the first patched release and resolves without breaking the graph; 2.0.0 is newer. Which target follows Dependabot security updates' documented objective?
 
-1. Alerts automatically merge every package update
+1. 2.0.0 because security updates always choose latest
 
-   Dependabot does not automatically merge every proposed change.
+   Always choosing the latest release describes neither the minimal security fix nor its compatibility goal.
 
-2. Version updates are required to create vulnerability alerts
+2. 1.2.0 with the advisory added to an ignore list
 
-   Vulnerability alerts rely on dependency and advisory data, not version-update scheduling.
+   Keeping the vulnerable version and ignoring an advisory is not an upgrade to a fix.
 
-3. Security updates disable the dependency graph
+3. The highest 1.x release regardless of the patch boundary
 
-   Security updates do not replace dependency inventory.
+   Security updates are not an unconditional highest-minor release selection.
 
-4. Alerts report risk; updates propose fixes when available **[CORRECT]**
+4. 1.2.4 as the minimum resolving patched version **[CORRECT]**
 
-   Alerting and automated security-update pull requests are distinct capabilities.
+   Dependabot seeks the minimum patched version that can resolve the dependency graph.
 
-**Concept:** Alert coverage versus update coverage
+**Concept:** Minimal patched-version selection
 
 **Authored coaching hints:**
 
-- Which feature informs maintainers, and which creates a remediation proposal?
-- Does notification by itself change the dependency version?
+- Distinguish correcting a vulnerability from routine version freshness.
+- The scenario already establishes that the first patched release resolves.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Una organización habilita alertas de Dependabot, pero quiere pull requests automáticos para paquetes vulnerables. ¿Qué distinción importa?
+Una dependencia está en 1.2.0. La primera versión corregida es 1.2.4 y resuelve el grafo sin romperlo; 2.0.0 es más reciente. ¿Qué destino corresponde al objetivo de las actualizaciones de seguridad?
 
-1. Las alertas fusionan automáticamente todas las actualizaciones
+1. 2.0.0 porque siempre eligen la más reciente
 
-   Dependabot no fusiona automáticamente todos los cambios propuestos.
+   Elegir siempre la más reciente no describe la corrección mínima ni su objetivo de compatibilidad.
 
-2. Las actualizaciones de versiones son necesarias para generar alertas de vulnerabilidad
+2. 1.2.0 con el aviso en una lista de exclusión
 
-   Las alertas dependen de datos de dependencias y avisos, no de la programación de versiones.
+   Conservar la versión vulnerable e ignorar el aviso no actualiza a una corrección.
 
-3. Las actualizaciones de seguridad deshabilitan el gráfico de dependencias
+3. La versión 1.x más alta sin considerar la primera corregida
 
-   Las actualizaciones de seguridad no reemplazan el inventario de dependencias.
+   No se selecciona incondicionalmente la versión menor más alta.
 
-4. Las alertas señalan riesgos; las actualizaciones proponen correcciones **[CORRECT]**
+4. 1.2.4 como mínima versión corregida resoluble **[CORRECT]**
 
-   Las alertas y los pull requests automatizados de seguridad son capacidades distintas.
+   Dependabot busca la mínima versión corregida que permita resolver el grafo.
 
-**Concept:** Cobertura de alertas frente a actualizaciones
+**Concept:** Selección de la mínima versión corregida
 
 **Authored coaching hints:**
 
-- ¿Qué función informa al equipo y cuál crea una propuesta de corrección?
-- ¿Una notificación cambia por sí sola la versión de la dependencia?
+- Distingue corregir una vulnerabilidad de mantener versiones recientes.
+- El caso ya establece que la primera versión corregida permite resolver el grafo.
 
 </details>
 
@@ -10001,30 +10001,30 @@ Una organización habilita alertas de Dependabot, pero quiere pull requests auto
 
 ### Português (Brasil)
 
-Uma organização habilita alertas do Dependabot, mas quer pull requests automáticos para pacotes vulneráveis. Qual distinção importa?
+Uma dependência está em 1.2.0. A primeira versão corrigida é 1.2.4 e resolve o grafo sem quebrá-lo; 2.0.0 é mais recente. Qual destino corresponde ao objetivo das atualizações de segurança?
 
-1. Alertas mesclam automaticamente todas as atualizações de pacotes
+1. 2.0.0 porque sempre escolhem a mais recente
 
-   O Dependabot não mescla automaticamente todas as alterações propostas.
+   Escolher sempre a mais recente não descreve a correção mínima nem seu objetivo de compatibilidade.
 
-2. Atualizações de versão são necessárias para criar alertas de vulnerabilidade
+2. 1.2.0 com o aviso em uma lista de exclusão
 
-   Alertas dependem de dados de dependências e avisos, não do cronograma de versões.
+   Manter a versão vulnerável e ignorar o aviso não atualiza para uma correção.
 
-3. Atualizações de segurança desabilitam o gráfico de dependências
+3. A versão 1.x mais alta sem considerar a primeira corrigida
 
-   Atualizações de segurança não substituem o inventário de dependências.
+   Não há seleção incondicional da versão menor mais alta.
 
-4. Alertas sinalizam riscos; atualizações podem propor correções **[CORRECT]**
+4. 1.2.4 como mínima versão corrigida resolvível **[CORRECT]**
 
-   Alertas e pull requests automáticos de atualização de segurança são recursos distintos.
+   O Dependabot busca a mínima versão corrigida que permita resolver o grafo.
 
-**Concept:** Cobertura de alertas versus atualizações
+**Concept:** Seleção da mínima versão corrigida
 
 **Authored coaching hints:**
 
-- Qual recurso informa a equipe e qual cria uma proposta de correção?
-- Uma notificação altera por si só a versão da dependência?
+- Diferencie corrigir uma vulnerabilidade de manter versões recentes.
+- O caso já estabelece que a primeira versão corrigida permite resolver o grafo.
 
 </details>
 
@@ -10580,7 +10580,7 @@ Uma regra de triagem automática do Dependabot adia um alerta. O que essa ação
 
 **Official supporting source:** <https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-auto-triage-rules>
 
-<!-- certification-coach-question:ghas-supply-017:4bd1d720f83dbf47f71f5fa6d1f8e292db72591d7cd7e4ddf5c7860e7e7b8156 -->
+<!-- certification-coach-question:ghas-supply-017:b973160af6e5fa2c430a14099b425d0ee1f76a0766c658f0e8e9997b7654a876 -->
 ## Question 97: Configure and use supply chain security
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -10591,68 +10591,68 @@ Uma regra de triagem automática do Dependabot adia um alerta. O que essa ação
 
 **Question ID:** `ghas-supply-017`
 
-**Content revision:** `4bd1d720f83dbf47f71f5fa6d1f8e292db72591d7cd7e4ddf5c7860e7e7b8156`
+**Content revision:** `b973160af6e5fa2c430a14099b425d0ee1f76a0766c658f0e8e9997b7654a876`
 
-**en review revision:** `06cf06bd85b303972fa97257edb288b5751c6ec9eda78c65e59c1a09c0d54271`
-**es review revision:** `22727bc65859301f4816633a2d95eabd9a53bc40f5b1e2cc279dbaa01ef18a10`
-**pt-BR review revision:** `b841a2a051b990992ddb003d8fe1dc23ac662c7e6d04045264284ff882c8b301`
+**en review revision:** `875591d60dfb378f6792f9616a7be1c156fc6484f439982096fd275d7e314139`
+**es review revision:** `1f91871483b059402e02e94cb2d88684ca217d4510d78afb178a009722207cbf`
+**pt-BR review revision:** `7c1a97f1d708a6ff7aa4ae6d6e2efc83c7e48900435dfde6ee45cb17f18af628`
 
 ### English
 
-A team snoozes a Dependabot alert until a review date. What should it expect when that period ends?
+A Dependabot alert was auto-dismissed under a rule for development-only dependencies. Its dependency is later classified as production. What can happen when the alert metadata changes?
 
-1. The dependency graph is permanently disabled
+1. The original dismissal remains permanent despite metadata changes
 
-   Changing an alert's state does not disable dependency inventory.
+   Automatic dismissal is not permanent when the metadata underlying it changes.
 
-2. Snoozing does not resolve the vulnerability **[CORRECT]**
+2. The alert can be automatically reopened **[CORRECT]**
 
-   Snoozing defers attention rather than proving remediation.
+   Auto-dismissed alerts can reopen when metadata such as dependency scope changes.
 
-3. The package is upgraded automatically at the snooze deadline
+3. A new alert must be manually created for the production scope
 
-   A snooze duration is not an update schedule.
+   The existing auto-dismissed alert can reopen; a manually created replacement is unnecessary.
 
-4. The advisory is removed from the GitHub Advisory Database
+4. The alert can reopen only after a patched version is published
 
-   Repository triage does not withdraw a published advisory.
+   Metadata changes can trigger reopening without waiting for a patched release.
 
-**Concept:** Auto-triage notification timing
+**Concept:** Metadata-driven alert reopening
 
 **Authored coaching hints:**
 
-- What does the snooze period defer?
-- Which event should prompt the team to revisit the risk?
+- The rule's original eligibility depended on dependency scope.
+- Consider whether automatic dismissal is permanent.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Un equipo pospone una alerta de Dependabot hasta una fecha de revisión. ¿Qué debería esperar cuando termine ese período?
+Una regla para dependencias de desarrollo descartó automáticamente una alerta de Dependabot. Después, la dependencia pasa a clasificarse como producción. ¿Qué puede ocurrir al cambiar sus metadatos?
 
-1. El gráfico de dependencias se deshabilita permanentemente
+1. El descarte original es permanente aunque cambien los metadatos
 
-   Cambiar el estado de una alerta no deshabilita el inventario de dependencias.
+   El descarte automático no es permanente cuando cambian los metadatos que lo justificaban.
 
-2. Posponer no corrige la vulnerabilidad **[CORRECT]**
+2. La alerta puede reabrirse automáticamente **[CORRECT]**
 
-   Posponer aplaza la atención, pero no demuestra que se haya corregido.
+   Las alertas descartadas automáticamente pueden reabrirse cuando cambia su ámbito u otros metadatos.
 
-3. El paquete se actualiza automáticamente en la fecha límite
+3. Hay que crear manualmente otra alerta para el ámbito de producción
 
-   El período de aplazamiento no es una programación de actualizaciones.
+   La alerta existente puede reabrirse; no hace falta crear manualmente otra.
 
-4. El aviso se quita de GitHub Advisory Database
+4. La alerta solo se reabre cuando se publica una versión corregida
 
-   La clasificación del repositorio no retira un aviso publicado.
+   Cambiar los metadatos puede reabrir la alerta sin esperar una versión corregida.
 
-**Concept:** Momento de notificación de clasificación automática
+**Concept:** Reapertura de alertas por metadatos
 
 **Authored coaching hints:**
 
-- ¿Qué aplaza el período de espera?
-- ¿Qué evento debería impulsar al equipo a revisar el riesgo?
+- La elegibilidad de la regla dependía del ámbito de la dependencia.
+- Piensa si el descarte automático es permanente.
 
 </details>
 
@@ -10661,30 +10661,30 @@ Un equipo pospone una alerta de Dependabot hasta una fecha de revisión. ¿Qué 
 
 ### Português (Brasil)
 
-Uma equipe adia um alerta do Dependabot até uma data de revisão. O que deve esperar quando esse período terminar?
+Uma regra para dependências de desenvolvimento descartou automaticamente um alerta do Dependabot. Depois, a dependência passa a ser classificada como produção. O que pode ocorrer com a mudança dos metadados?
 
-1. O gráfico de dependências é desabilitado permanentemente
+1. O descarte original é permanente apesar das mudanças de metadados
 
-   Alterar o estado de um alerta não desabilita o inventário de dependências.
+   O descarte automático não é permanente quando os metadados que o justificavam mudam.
 
-2. Adiar não corrige a vulnerabilidade **[CORRECT]**
+2. O alerta pode ser reaberto automaticamente **[CORRECT]**
 
-   Adiar posterga a atenção, mas não comprova que houve correção.
+   Alertas descartados automaticamente podem reabrir quando o escopo ou outros metadados mudam.
 
-3. O pacote é atualizado automaticamente no prazo final
+3. É preciso criar manualmente outro alerta para o escopo de produção
 
-   O período de adiamento não é um cronograma de atualização.
+   O alerta existente pode reabrir; não é necessário criar manualmente outro.
 
-4. O aviso é removido do GitHub Advisory Database
+4. O alerta só reabre quando uma versão corrigida é publicada
 
-   A triagem do repositório não retira um aviso publicado.
+   Mudar os metadados pode reabrir o alerta sem esperar uma versão corrigida.
 
-**Concept:** Momento da notificação de triagem automática
+**Concept:** Reabertura de alertas por metadados
 
 **Authored coaching hints:**
 
-- O que o período de adiamento posterga?
-- Qual evento deve levar a equipe a revisar o risco?
+- A elegibilidade da regra dependia do escopo da dependência.
+- Considere se o descarte automático é permanente.
 
 </details>
 
@@ -11350,7 +11350,7 @@ Uma SBOM SPDX gerada é usada como prova de que todos os componentes implantados
 
 **Official supporting source:** <https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/establish-provenance-and-integrity/export-dependencies-as-sbom>
 
-<!-- certification-coach-question:ghas-supply-024:2394c0a06750e18e22391650becc0ff20ffba4457b8c45bef33e57dfdb826e36 -->
+<!-- certification-coach-question:ghas-supply-024:574e3039bee40a376aa9f572afda5246bbc9f01ac0d1b3582c47d2464efbd47c -->
 ## Question 104: Configure and use supply chain security
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -11361,68 +11361,68 @@ Uma SBOM SPDX gerada é usada como prova de que todos os componentes implantados
 
 **Question ID:** `ghas-supply-024`
 
-**Content revision:** `2394c0a06750e18e22391650becc0ff20ffba4457b8c45bef33e57dfdb826e36`
+**Content revision:** `574e3039bee40a376aa9f572afda5246bbc9f01ac0d1b3582c47d2464efbd47c`
 
-**en review revision:** `e4615264197ee103b7bc05f411d43f7d1c355ce3ce4e823d493c9ea5b25149e2`
-**es review revision:** `9d99e6315fa676120bafb4e99ee045b4a398350016864d5c43ae6b34e71af360`
-**pt-BR review revision:** `ad7e08bc60959d0efc50cd7830ebd6691a56b2b58c29aba823a355514f11a739`
+**en review revision:** `71581513d88717edd0706968a47c2dd85e5b2c9cae8d6ade829c4ae48b846a92`
+**es review revision:** `4ae9612ae39c9cb7a7057cf3d0d9b910420c6ed2d66fc38590a927769fce708e`
+**pt-BR review revision:** `f3ea7d5b05d55e9d8b74dacf793ca11ffcd1e5094315ac937c93138fd101c389`
 
 ### English
 
-A partner requests a list of libraries used by a repository, not projects that consume it. What does the exported repository SBOM represent?
+After requesting a repository SBOM through the REST API, automation polls the returned sbom\_url and receives HTTP 202. Which behavior follows the documented export flow?
 
-1. Repository dependencies and metadata **[CORRECT]**
+1. Continue polling; follow the 302 redirect when ready **[CORRECT]**
 
-   The SBOM exports the dependency graph's component inventory.
+   The export flow uses 202 while preparing and a 302 redirect to the completed download.
 
-2. All repositories that depend on the repository
+2. Parse the 202 response as the completed SPDX document
 
-   Dependent projects are not included in the repository SBOM.
+   A pending response is not the finished SBOM artifact.
 
-3. Every package published by GitHub
+3. Treat 202 as a permanent authorization failure
 
-   An SBOM is not a catalog of every GitHub package.
+   202 indicates accepted processing here, not a permanent denial of access.
 
-4. Only vulnerabilities from the advisory database
+4. Submit a new generation request after every poll
 
-   The SBOM records components, not only vulnerability records.
+   Poll the returned URL instead of repeatedly starting separate generation requests.
 
-**Concept:** SBOM dependencies versus dependents
+**Concept:** Asynchronous SBOM export
 
 **Authored coaching hints:**
 
-- Is the request about packages this project uses or projects that use it?
-- Which side of the dependency relationship appears in an exported SBOM?
+- Distinguish pending generation from the downloadable artifact.
+- Use the continuation URL returned by the service.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Un socio solicita una lista de bibliotecas que usa un repositorio, no de proyectos que lo consumen. ¿Qué representa la SBOM exportada del repositorio?
+Tras solicitar un SBOM por REST, una automatización consulta el sbom\_url devuelto y recibe HTTP 202. ¿Qué comportamiento sigue el flujo documentado?
 
-1. Dependencias y metadatos del repositorio **[CORRECT]**
+1. Seguir consultando; seguir la redirección 302 cuando esté listo **[CORRECT]**
 
-   La SBOM exporta el inventario de componentes del gráfico de dependencias.
+   El flujo devuelve 202 mientras prepara y redirige con 302 a la descarga terminada.
 
-2. Todos los repositorios que dependen de este repositorio
+2. Interpretar la respuesta 202 como documento SPDX completo
 
-   Los proyectos dependientes no aparecen en la SBOM del repositorio.
+   Una respuesta pendiente no es el artefacto SBOM completo.
 
-3. Cada paquete publicado en GitHub
+3. Tratar 202 como error permanente de autorización
 
-   Una SBOM no es un catálogo de todos los paquetes de GitHub.
+   202 indica procesamiento aceptado aquí, no una denegación permanente.
 
-4. Solo vulnerabilidades de la base de avisos
+4. Solicitar una generación nueva después de cada consulta
 
-   La SBOM registra componentes, no solo vulnerabilidades.
+   Hay que consultar la URL devuelta, no iniciar generaciones repetidas.
 
-**Concept:** Dependencias frente a dependientes en SBOM
+**Concept:** Exportación asíncrona de SBOM
 
 **Authored coaching hints:**
 
-- ¿Se solicitan paquetes que usa el proyecto o proyectos que lo usan?
-- ¿Qué lado de la relación aparece en una SBOM exportada?
+- Distingue la generación pendiente del artefacto descargable.
+- Usa la URL de continuación que devuelve el servicio.
 
 </details>
 
@@ -11431,30 +11431,30 @@ Un socio solicita una lista de bibliotecas que usa un repositorio, no de proyect
 
 ### Português (Brasil)
 
-Um parceiro solicita uma lista de bibliotecas usadas por um repositório, e não de projetos que o consomem. O que a SBOM exportada do repositório representa?
+Após solicitar um SBOM por REST, uma automação consulta o sbom\_url retornado e recebe HTTP 202. Qual comportamento segue o fluxo documentado?
 
-1. Dependências e metadados do repositório **[CORRECT]**
+1. Continuar consultando; seguir o redirecionamento 302 quando pronto **[CORRECT]**
 
-   A SBOM exporta o inventário de componentes do gráfico de dependências.
+   O fluxo retorna 202 enquanto prepara e redireciona com 302 para o download concluído.
 
-2. Todos os repositórios que dependem deste repositório
+2. Interpretar a resposta 202 como documento SPDX completo
 
-   Projetos dependentes não aparecem na SBOM do repositório.
+   Uma resposta pendente não é o artefato SBOM completo.
 
-3. Cada pacote publicado no GitHub
+3. Tratar 202 como falha permanente de autorização
 
-   Uma SBOM não é um catálogo de todos os pacotes do GitHub.
+   202 indica processamento aceito aqui, não uma negação permanente.
 
-4. Somente vulnerabilidades do banco de avisos
+4. Solicitar nova geração após cada consulta
 
-   A SBOM registra componentes, não somente vulnerabilidades.
+   Consulte a URL retornada, em vez de iniciar gerações repetidas.
 
-**Concept:** Dependências versus dependentes na SBOM
+**Concept:** Exportação assíncrona de SBOM
 
 **Authored coaching hints:**
 
-- O pedido trata dos pacotes usados pelo projeto ou dos projetos que o usam?
-- Qual lado da relação de dependência aparece em uma SBOM exportada?
+- Diferencie a geração pendente do artefato para download.
+- Use a URL de continuação retornada pelo serviço.
 
 </details>
 
@@ -11680,7 +11680,7 @@ Uma equipe prioriza uma dependência vulnerável usando CVSS e EPSS. Qual distin
 
 **Official supporting source:** <https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-alert-metrics>
 
-<!-- certification-coach-question:ghas-supply-027:67199a246aa86f5c1b119a4e59454d336c115a666a37793b4f60522166e81bd5 -->
+<!-- certification-coach-question:ghas-supply-027:c7abe60da941913c6fc41f492ea4b108839e0b645f042158be40bc0bd0396919 -->
 ## Question 107: Configure and use supply chain security
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -11691,68 +11691,68 @@ Uma equipe prioriza uma dependência vulnerável usando CVSS e EPSS. Qual distin
 
 **Question ID:** `ghas-supply-027`
 
-**Content revision:** `67199a246aa86f5c1b119a4e59454d336c115a666a37793b4f60522166e81bd5`
+**Content revision:** `c7abe60da941913c6fc41f492ea4b108839e0b645f042158be40bc0bd0396919`
 
-**en review revision:** `e734641a71a96696a2c1babd577d8b208ab96b1a3c5d28194d4719258ed37686`
-**es review revision:** `6f5b6455004b76d0ba23b0c1d56f1cb64c8cc5f6222ba47e5396cea5c9e53694`
-**pt-BR review revision:** `cf8efd4239c9408086f3564d28eb5f2d6fc87e9f8c267827efa4aa2ccc92d860`
+**en review revision:** `7f65a16aed3ebd867ff2c40ff9c30d5251a548efd76b9f7f0fc5f156f706ad76`
+**es review revision:** `6cc2a983a03595eb7925093bce6d00bba98d593b36c3111240ca42ce0817f636`
+**pt-BR review revision:** `a35c1b7e9ba5a3f7aad2bf9e87ce3a22668f952f25c44390f4c2abf6ed5d1acc`
 
 ### English
 
-A Dependabot alert identifies a vulnerable transitive package. What information helps the maintainer find a practical fix?
+An npm dependency A allows only B 1.x, but B's fix starts at 2.0. Dependabot proposes upgrading A as well as B. Why can changing the non-vulnerable parent be necessary?
 
-1. The repository's push-protection bypass reasons
+1. A's version must always match B's major version
 
-   Secret bypass reasons do not explain package ancestry.
+   Parent and child major-version numbers do not have to match.
 
-2. The current CodeQL query count
+2. A's lockfile entry alone overrides its declared range for B
 
-   Query counts do not identify a dependency remediation route.
+   A lockfile edit alone does not remove the parent's incompatible version constraint.
 
-3. The SBOM's dependent repositories
+3. A must be upgraded before B's vulnerability can be dismissed as false positive
 
-   The exported SBOM does not list dependents.
+   This is a real child vulnerability, not a false positive caused by the parent's version.
 
-4. Dependency path and available fix **[CORRECT]**
+4. A newer parent can permit B's patched version **[CORRECT]**
 
-   The path identifies which parent brings in the package, and alert details may show a fixed version.
+   Updating A can relax the constraint that otherwise excludes B 2.0.
 
-**Concept:** Effective dependency remediation
+**Concept:** Parent constraints in transitive remediation
 
 **Authored coaching hints:**
 
-- Which parent dependency may need an update to remove the transitive version?
-- What alert detail points toward an available fixed release?
+- The package manager must satisfy the parent's declared version range.
+- A valid fix must also yield a resolvable dependency graph.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Una alerta de Dependabot identifica un paquete transitivo vulnerable. ¿Qué información ayuda a encontrar una corrección práctica?
+Una dependencia npm A solo permite B 1.x, pero la corrección de B empieza en 2.0. Dependabot propone actualizar A y B. ¿Por qué puede necesitar cambiar el padre no vulnerable?
 
-1. Los motivos de omisión de la protección de inserciones
+1. La versión mayor de A siempre debe coincidir con la de B
 
-   Los motivos de omisión de secretos no explican el origen del paquete.
+   Los números de versión mayor del padre y del hijo no tienen que coincidir.
 
-2. La cantidad actual de consultas de CodeQL
+2. La entrada de A en el lockfile anula por sí sola su rango para B
 
-   La cantidad de consultas no identifica una ruta de corrección de dependencias.
+   Editar solo el lockfile no elimina la restricción incompatible declarada por el padre.
 
-3. Los repositorios dependientes de la SBOM
+3. Hay que actualizar A para descartar la vulnerabilidad de B como falso positivo
 
-   La SBOM exportada no enumera dependientes.
+   Es una vulnerabilidad real del hijo, no un falso positivo por la versión del padre.
 
-4. Ruta de dependencia y corrección disponible **[CORRECT]**
+4. Un padre más nuevo puede permitir la versión corregida de B **[CORRECT]**
 
-   La ruta identifica qué paquete padre incorpora el componente y la alerta puede indicar una versión corregida.
+   Actualizar A puede eliminar la restricción que excluía B 2.0.
 
-**Concept:** Corrección eficaz de dependencias
+**Concept:** Restricciones del padre en correcciones transitivas
 
 **Authored coaching hints:**
 
-- ¿Qué dependencia padre podría actualizarse para quitar la versión transitiva?
-- ¿Qué detalle de la alerta señala una versión corregida disponible?
+- El gestor debe satisfacer el rango de versiones declarado por el padre.
+- La corrección también debe producir un grafo de dependencias resoluble.
 
 </details>
 
@@ -11761,34 +11761,34 @@ Una alerta de Dependabot identifica un paquete transitivo vulnerable. ¿Qué inf
 
 ### Português (Brasil)
 
-Um alerta do Dependabot identifica um pacote transitivo vulnerável. Que informação ajuda a encontrar uma correção prática?
+Uma dependência npm A só permite B 1.x, mas a correção de B começa em 2.0. O Dependabot propõe atualizar A e B. Por que pode ser necessário alterar o pai não vulnerável?
 
-1. Os motivos de bypass da proteção de push
+1. A versão principal de A sempre deve coincidir com a de B
 
-   Motivos de bypass de segredos não explicam a origem do pacote.
+   Os números de versão principal do pai e do filho não precisam coincidir.
 
-2. A quantidade atual de consultas CodeQL
+2. A entrada de A no lockfile sozinha substitui seu intervalo para B
 
-   A quantidade de consultas não identifica um caminho de correção de dependência.
+   Editar apenas o lockfile não remove a restrição incompatível declarada pelo pai.
 
-3. Os repositórios dependentes da SBOM
+3. É preciso atualizar A para descartar a vulnerabilidade de B como falso positivo
 
-   A SBOM exportada não lista dependentes.
+   É uma vulnerabilidade real do filho, não um falso positivo pela versão do pai.
 
-4. Caminho da dependência e correção disponível **[CORRECT]**
+4. Um pai mais novo pode permitir a versão corrigida de B **[CORRECT]**
 
-   O caminho identifica qual pacote pai traz o componente, e o alerta pode indicar uma versão corrigida.
+   Atualizar A pode remover a restrição que excluía B 2.0.
 
-**Concept:** Correção eficaz de dependências
+**Concept:** Restrições do pai em correções transitivas
 
 **Authored coaching hints:**
 
-- Qual dependência pai poderia ser atualizada para remover a versão transitiva?
-- Qual detalhe do alerta aponta para uma versão corrigida disponível?
+- O gerenciador precisa satisfazer o intervalo de versões declarado pelo pai.
+- A correção também deve produzir um grafo de dependências resolvível.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/code-security/concepts/supply-chain-security/dependency-graph>
+**Official supporting source:** <https://docs.github.com/en/code-security/reference/supply-chain-security/troubleshoot-dependabot/dependabot-errors>
 
 <!-- certification-coach-question:ghas-supply-028:823074056d989817fa7db13fac18a145e6617ee2d444cebd40634f6cd84f02d5 -->
 ## Question 108: Configure and use supply chain security
@@ -12120,7 +12120,7 @@ Um fluxo fixa ações como \`actions/checkout\` em tags de versão. Qual ecossis
 
 **Official supporting source:** <https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-version-updates>
 
-<!-- certification-coach-question:ghas-supply-031:91c7b6e92a3f989cf7b5780e2ec19b47bd345cd59b1674e82f5888549a0031be -->
+<!-- certification-coach-question:ghas-supply-031:1343d4a32242afea8b3ff86fc645cd8a94db899ba29ae39387e278d24a7b77cb -->
 ## Question 111: Configure and use supply chain security
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -12131,68 +12131,68 @@ Um fluxo fixa ações como \`actions/checkout\` em tags de versão. Qual ecossis
 
 **Question ID:** `ghas-supply-031`
 
-**Content revision:** `91c7b6e92a3f989cf7b5780e2ec19b47bd345cd59b1674e82f5888549a0031be`
+**Content revision:** `1343d4a32242afea8b3ff86fc645cd8a94db899ba29ae39387e278d24a7b77cb`
 
-**en review revision:** `d5c429c3eab31e0dc37c67bf5d713da7b077ea7e4acaeb9136e5f23d5712f416`
-**es review revision:** `601d8360d71c5bd2605e3fed7492a732248b3bcbb91c21080cba43359d2f42f7`
-**pt-BR review revision:** `2d7d7ccf5957c4826d019818cbb143dd102ad0adf906bc4203ef865ec04e0519`
+**en review revision:** `1055610084623b94393a1dd6739c29b893fdcc6b10b11b4e96366990fc716413`
+**es review revision:** `54640b382b914b6fb76e7fb736de6dac498ac3037a673368e128463bf00f514c`
+**pt-BR review revision:** `82ea1a62350236777b92183e2b193103ac7ead49fa5cba47194dc80242c6f160`
 
 ### English
 
-Dependabot alerts are enabled, but the team wants automated pull requests for vulnerable packages. Which assumption should it avoid?
+A dependabot.yml entry sets target-branch: release for routine version updates. What should the maintainer expect for Dependabot security updates?
 
-1. That security updates need a fixable vulnerable dependency
+1. They move to release with the version updates
 
-   A fixed version may be unavailable for an alert.
+   target-branch changes version-update targeting; it does not redirect security updates.
 
-2. That alert data comes from dependency and advisory matching
+2. They run on every branch containing a manifest
 
-   Dependabot matches advisories to dependency data.
+   Security updates do not automatically fan out to every branch with a manifest.
 
-3. That proposed updates should be reviewed
+3. They alternate between release and the default branch
 
-   Automated proposals still need review and testing.
+   The branch setting does not establish an alternating security-update schedule.
 
-4. That turning on alerts alone guarantees security-update pull requests **[CORRECT]**
+4. They still target the repository's default branch **[CORRECT]**
 
-   Alerts and security-update pull requests have separate enablement and fix conditions.
+   Dependabot security updates target the default branch, independently of this version-update entry.
 
-**Concept:** Update settings versus alert generation
+**Concept:** Dependabot security-update branch scope
 
 **Authored coaching hints:**
 
-- What feature creates a proposed fix rather than notifying about a risk?
-- Which setting should be verified in addition to alert generation?
+- Check which update type the branch customization applies to.
+- A shared configuration file does not make all options universal.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Las alertas de Dependabot están habilitadas, pero el equipo quiere pull requests automáticos para paquetes vulnerables. ¿Qué suposición debería evitar?
+Una entrada de dependabot.yml usa target-branch: release para actualizaciones rutinarias de versión. ¿Qué debe esperar el mantenedor de las actualizaciones de seguridad?
 
-1. Que las actualizaciones de seguridad requieran una dependencia vulnerable corregible
+1. Pasan a release junto con las de versión
 
-   Puede que una alerta no tenga una versión corregida disponible.
+   target-branch cambia el destino de las actualizaciones de versión, no de seguridad.
 
-2. Que los datos de alertas provengan de dependencias y avisos
+2. Se ejecutan en todas las ramas con manifiesto
 
-   Dependabot relaciona avisos con datos de dependencias.
+   Las actualizaciones de seguridad no se distribuyen a toda rama con manifiesto.
 
-3. Que las actualizaciones propuestas deban revisarse
+3. Alternan entre release y la rama predeterminada
 
-   Las propuestas automáticas aún requieren revisión y pruebas.
+   Esta opción no establece una alternancia de ramas para actualizaciones de seguridad.
 
-4. Que habilitar solo alertas garantice pull requests de actualización de seguridad **[CORRECT]**
+4. Siguen dirigidas a la rama predeterminada **[CORRECT]**
 
-   Las alertas y los pull requests de seguridad tienen condiciones de habilitación distintas.
+   Las actualizaciones de seguridad apuntan a la rama predeterminada, independientemente de esta entrada.
 
-**Concept:** Configuración de actualizaciones frente a generación de alertas
+**Concept:** Ámbito de ramas de actualizaciones de seguridad
 
 **Authored coaching hints:**
 
-- ¿Qué función propone una corrección en vez de notificar un riesgo?
-- ¿Qué configuración conviene verificar además de generar alertas?
+- Comprueba a qué tipo de actualización se aplica la personalización.
+- Compartir un archivo de configuración no hace universales todas sus opciones.
 
 </details>
 
@@ -12201,34 +12201,34 @@ Las alertas de Dependabot están habilitadas, pero el equipo quiere pull request
 
 ### Português (Brasil)
 
-Os alertas do Dependabot estão habilitados, mas a equipe quer pull requests automáticos para pacotes vulneráveis. Qual suposição deve evitar?
+Uma entrada de dependabot.yml define target-branch: release para atualizações rotineiras de versão. O que o mantenedor deve esperar das atualizações de segurança?
 
-1. Que atualizações de segurança exigem uma dependência vulnerável corrigível
+1. Elas passam para release junto com as de versão
 
-   Pode não haver uma versão corrigida para um alerta.
+   target-branch altera o destino de atualizações de versão, não de segurança.
 
-2. Que os dados de alerta vêm da correspondência entre dependências e avisos
+2. Elas rodam em todas as branches com manifesto
 
-   O Dependabot relaciona avisos a dados de dependências.
+   Atualizações de segurança não se distribuem a toda branch com manifesto.
 
-3. Que atualizações propostas devem ser revisadas
+3. Elas alternam entre release e a branch padrão
 
-   Propostas automáticas ainda exigem revisão e testes.
+   Essa opção não cria alternância de branches para atualizações de segurança.
 
-4. Que habilitar somente alertas garante pull requests de atualização de segurança **[CORRECT]**
+4. Elas continuam direcionadas à branch padrão **[CORRECT]**
 
-   Alertas e pull requests de segurança têm condições de habilitação distintas.
+   Atualizações de segurança apontam para a branch padrão, independentemente dessa entrada.
 
-**Concept:** Configuração de atualizações versus geração de alertas
+**Concept:** Escopo de branches de atualizações de segurança
 
 **Authored coaching hints:**
 
-- Qual recurso propõe uma correção em vez de notificar um risco?
-- Qual configuração deve ser verificada além da geração de alertas?
+- Confira a qual tipo de atualização a personalização se aplica.
+- Compartilhar um arquivo de configuração não torna todas as opções universais.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-security-updates>
+**Official supporting source:** <https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference>
 
 <!-- certification-coach-question:ghas-supply-032:3cca5fe57c568df60cc748dbde9d1d35a317788adca2e2e23954afc4c8b7b1ed -->
 ## Question 112: Configure and use supply chain security
@@ -12450,7 +12450,7 @@ Atualizações rotineiras de versão do Dependabot criam mais pull requests do q
 
 **Official supporting source:** <https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference>
 
-<!-- certification-coach-question:ghas-supply-034:b1113f9247377e4f28bb26643ef919e0b20dedf61e7405323278a9d214f41ce3 -->
+<!-- certification-coach-question:ghas-supply-034:8e018d4d4d86bd82faf1d20daa5b595125e8adce209af79abef102debc44476d -->
 ## Question 114: Configure and use supply chain security
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -12461,68 +12461,68 @@ Atualizações rotineiras de versão do Dependabot criam mais pull requests do q
 
 **Question ID:** `ghas-supply-034`
 
-**Content revision:** `b1113f9247377e4f28bb26643ef919e0b20dedf61e7405323278a9d214f41ce3`
+**Content revision:** `8e018d4d4d86bd82faf1d20daa5b595125e8adce209af79abef102debc44476d`
 
-**en review revision:** `7919e7034db715e61c963df07a17fb140e15766ed84bbfc3f89e44c995207f15`
-**es review revision:** `ec1b97873d02dc9e6d7f00d4a91513c0db692b02fcb0e006b40d36acfad49a75`
-**pt-BR review revision:** `a2cdf78a111d02a9e70d81d63c6c35b0c9fddc4cf2953409956aba77204831f0`
+**en review revision:** `de13b270f14de58cb39390f175c165f6eb1c51ddd12b6bdfb796300a286346ff`
+**es review revision:** `b7040d0e7655a18fadce7d5f18402168a3d62cb7d08cd4782807ba67756b4bad`
+**pt-BR review revision:** `9142ca9804fa9bd8ba66ffa334456fc0c34b0427498e86ec7c297b0cf69a65c5`
 
 ### English
 
-A Dependabot alert has no patched version listed. What should the maintainer do?
+A Dependabot security-update pull request has a high compatibility score. Which evidence does that score summarize?
 
-1. Assume the package has no vulnerability
+1. The percentage of vulnerable call paths removed
 
-   The alert is evidence of a known vulnerability, even without a patch.
+   The score is not a reachability or vulnerability-elimination measurement.
 
-2. Disable alerts for the ecosystem
+2. The percentage of this repository's tests covering the package
 
-   Disabling future alerts would reduce visibility rather than mitigate this issue.
+   It does not measure local test coverage or prove this project's compatibility.
 
-3. Assess exposure and mitigations, track the alert, and revisit when remediation options change **[CORRECT]**
+3. The percentage of passing CI runs in other public repositories **[CORRECT]**
 
-   Lack of a fix does not remove risk; mitigation and reassessment remain important.
+   It summarizes CI success in other public repositories for that dependency version transition.
 
-4. Close the alert because no update exists
+4. The percentage of package versions verified free of vulnerabilities
 
-   Closing does not repair the vulnerable dependency.
+   The score does not certify the security of a package's release history.
 
-**Concept:** Unpatched dependency response
+**Concept:** Compatibility-score provenance
 
 **Authored coaching hints:**
 
-- Is absence of a patch the same as absence of risk?
-- What keeps the known vulnerability under review while a fix is unavailable?
+- Ask whose CI produced the underlying evidence.
+- Compatibility evidence is different from vulnerability severity.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Una alerta de Dependabot no muestra una versión corregida. ¿Qué debería hacer la persona mantenedora?
+Una solicitud de actualización de seguridad de Dependabot tiene una puntuación de compatibilidad alta. ¿Qué evidencia resume esa puntuación?
 
-1. Suponer que el paquete no es vulnerable
+1. El porcentaje de rutas vulnerables eliminadas
 
-   La alerta demuestra una vulnerabilidad conocida aunque no haya parche.
+   La puntuación no mide alcanzabilidad ni eliminación de vulnerabilidades.
 
-2. Deshabilitar alertas para el ecosistema
+2. El porcentaje de pruebas locales que cubren el paquete
 
-   Deshabilitar alertas futuras reduce visibilidad, no mitiga este problema.
+   No mide cobertura local ni demuestra compatibilidad con este proyecto.
 
-3. Evaluar exposición y mitigaciones, seguir la alerta y revisarla cuando cambien las opciones **[CORRECT]**
+3. El porcentaje de ejecuciones CI correctas en otros repositorios públicos **[CORRECT]**
 
-   La falta de corrección no elimina el riesgo; importan la mitigación y la reevaluación.
+   Resume el éxito de CI en otros repositorios públicos para esa transición de versiones.
 
-4. Cerrar la alerta porque no hay actualización
+4. El porcentaje de versiones verificadas sin vulnerabilidades
 
-   Cerrar no corrige la dependencia vulnerable.
+   No certifica la seguridad del historial de versiones de un paquete.
 
-**Concept:** Respuesta ante dependencias sin parche
+**Concept:** Procedencia de la puntuación de compatibilidad
 
 **Authored coaching hints:**
 
-- ¿La falta de una corrección equivale a ausencia de riesgo?
-- ¿Qué mantiene bajo revisión una vulnerabilidad conocida mientras no haya solución?
+- Pregunta de quién es la CI que produjo la evidencia.
+- La evidencia de compatibilidad no es gravedad de vulnerabilidades.
 
 </details>
 
@@ -12531,34 +12531,34 @@ Una alerta de Dependabot no muestra una versión corregida. ¿Qué debería hace
 
 ### Português (Brasil)
 
-Um alerta do Dependabot não mostra uma versão corrigida. O que a pessoa mantenedora deve fazer?
+Um pull request de atualização de segurança do Dependabot tem pontuação alta de compatibilidade. Qual evidência essa pontuação resume?
 
-1. Presumir que o pacote não é vulnerável
+1. A porcentagem de caminhos vulneráveis removidos
 
-   O alerta comprova uma vulnerabilidade conhecida mesmo sem patch.
+   A pontuação não mede alcançabilidade nem eliminação de vulnerabilidades.
 
-2. Desabilitar alertas para o ecossistema
+2. A porcentagem de testes locais que cobrem o pacote
 
-   Desabilitar alertas futuros reduz visibilidade, em vez de mitigar o problema.
+   Ela não mede cobertura local nem comprova compatibilidade com este projeto.
 
-3. Avaliar exposição e mitigações, acompanhar o alerta e revisá-lo quando as opções mudarem **[CORRECT]**
+3. A porcentagem de execuções de CI aprovadas em outros repositórios públicos **[CORRECT]**
 
-   A falta de correção não elimina o risco; mitigação e reavaliação continuam importantes.
+   Ela resume o sucesso de CI em outros repositórios públicos para essa transição de versões.
 
-4. Encerrar o alerta porque não há atualização
+4. A porcentagem de versões verificadas sem vulnerabilidades
 
-   Encerrar não corrige a dependência vulnerável.
+   Ela não certifica a segurança do histórico de versões de um pacote.
 
-**Concept:** Resposta a dependência sem patch
+**Concept:** Origem da pontuação de compatibilidade
 
 **Authored coaching hints:**
 
-- A ausência de correção equivale à ausência de risco?
-- O que mantém uma vulnerabilidade conhecida em revisão enquanto não há solução?
+- Pergunte de quem é a CI que produziu a evidência.
+- Evidência de compatibilidade não é gravidade de vulnerabilidades.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-alerts>
+**Official supporting source:** <https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-security-updates>
 
 <!-- certification-coach-question:ghas-supply-035:39c269a125076a144a4e4ae196a1206e8aaffc6bdef94d3dac32e649d379b427 -->
 ## Question 115: Configure and use supply chain security
@@ -12890,7 +12890,7 @@ Uma pessoa analista exporta uma SBOM na segunda-feira e a compara com uma versã
 
 **Official supporting source:** <https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/establish-provenance-and-integrity/export-dependencies-as-sbom>
 
-<!-- certification-coach-question:ghas-supply-038:c49a85beaed18517f0b1894ac6b1f8b97c782632baa476bde936a0a39e491d49 -->
+<!-- certification-coach-question:ghas-supply-038:245cee90b7c4a698132cb235ae62ef66f71f0fa0718dcec017c6af3fb5ca9e1a -->
 ## Question 118: Configure and use supply chain security
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -12901,68 +12901,68 @@ Uma pessoa analista exporta uma SBOM na segunda-feira e a compara com uma versã
 
 **Question ID:** `ghas-supply-038`
 
-**Content revision:** `c49a85beaed18517f0b1894ac6b1f8b97c782632baa476bde936a0a39e491d49`
+**Content revision:** `245cee90b7c4a698132cb235ae62ef66f71f0fa0718dcec017c6af3fb5ca9e1a`
 
-**en review revision:** `9c36db23a780dfc49355ed90be83e8f50d1cc8231aa71e1831ccf4e407965689`
-**es review revision:** `764ed0205a3d7e9b9458923a0784c43f068416176bda154b196c0c713e57f458`
-**pt-BR review revision:** `0c5aa82781db9b5d394ae311cecbbb77c1ec0336c9af22b32fa0e0b3bcc2671e`
+**en review revision:** `4dd492013d80d48581cb6a43fd18e7ec07f209064d32c89b5e4d8f57bcdd6066`
+**es review revision:** `4a9426d50cdec1c0e2a552ce984e92b390a73647794ffbdc423ac37246fe3e70`
+**pt-BR review revision:** `9e82d5b4a4815e0d073d47097d1a62dafd3ab03817af7c2c1b98652abc4a1094`
 
 ### English
 
-An alert is open, but no security-update pull request appears. Which two conditions are most relevant to investigate?
+Dependabot reports that the security-update pull-request limit is reached. Version updates have a separate configurable limit. Which action addresses the exhausted security-update capacity?
 
-1. Whether CodeQL has a scheduled run and a SARIF category
+1. Raise open-pull-requests-limit for version updates
 
-   CodeQL scheduling and SARIF categories are separate from Dependabot updates.
+   The configurable version-update limit does not raise the separate security-update limit.
 
-2. Whether the alert was assigned to a team and the repository has stars
+2. Change the version-update schedule to daily
 
-   Alert assignment and popularity do not establish an available package fix.
+   A more frequent schedule does not free security-update pull-request capacity.
 
-3. Whether security updates are enabled and whether a compatible fix is available **[CORRECT]**
+3. Merge or close existing security-update pull requests **[CORRECT]**
 
-   The feature must be available and the vulnerability must have a workable update path.
+   Finishing or closing existing security-update pull requests frees that pool's capacity.
 
-4. Whether the repository has a custom pattern and an SPDX header
+4. Move the version-update target to another branch
 
-   Secret patterns and SPDX headers do not create security-update pull requests.
+   Changing a version-update branch does not release security-update slots.
 
-**Concept:** Security update troubleshooting
+**Concept:** Separate Dependabot pull-request limits
 
 **Authored coaching hints:**
 
-- What must be enabled to propose an update, and what must exist to update to?
-- Could a valid alert lack an available compatible release?
+- Identify which pull-request pool the error names.
+- Configuration for routine updates may not govern security updates.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Hay una alerta abierta, pero no aparece ningún pull request de actualización de seguridad. ¿Qué dos condiciones conviene investigar?
+Dependabot informa que se alcanzó el límite de solicitudes de actualización de seguridad. Las de versión tienen otro límite configurable. ¿Qué libera la capacidad de seguridad agotada?
 
-1. Si CodeQL tiene una ejecución programada y una categoría SARIF
+1. Aumentar open-pull-requests-limit para versiones
 
-   La programación de CodeQL y las categorías SARIF son independientes de Dependabot.
+   El límite configurable de versiones no aumenta el límite separado de seguridad.
 
-2. Si la alerta se asignó a un equipo y el repositorio tiene estrellas
+2. Cambiar el calendario de versiones a diario
 
-   La asignación y la popularidad no demuestran que exista una corrección compatible.
+   Un calendario más frecuente no libera capacidad para solicitudes de seguridad.
 
-3. Si las actualizaciones de seguridad están habilitadas y si hay una corrección compatible **[CORRECT]**
+3. Fusionar o cerrar solicitudes de actualización de seguridad **[CORRECT]**
 
-   La función debe estar disponible y la vulnerabilidad debe tener una ruta de actualización viable.
+   Completar o cerrar solicitudes de seguridad libera capacidad en ese grupo.
 
-4. Si el repositorio tiene un patrón personalizado y un encabezado SPDX
+4. Mover el destino de versiones a otra rama
 
-   Los patrones de secretos y encabezados SPDX no crean pull requests de seguridad.
+   Cambiar la rama de versiones no libera plazas de actualización de seguridad.
 
-**Concept:** Solución de problemas de actualizaciones de seguridad
+**Concept:** Límites separados de solicitudes de Dependabot
 
 **Authored coaching hints:**
 
-- ¿Qué debe estar habilitado y qué debe existir para proponer una actualización?
-- ¿Una alerta válida podría no tener una versión compatible disponible?
+- Identifica qué grupo de solicitudes menciona el error.
+- La configuración rutinaria puede no controlar las actualizaciones de seguridad.
 
 </details>
 
@@ -12971,34 +12971,34 @@ Hay una alerta abierta, pero no aparece ningún pull request de actualización d
 
 ### Português (Brasil)
 
-Há um alerta aberto, mas nenhum pull request de atualização de segurança aparece. Quais duas condições são mais relevantes para investigar?
+O Dependabot informa que atingiu o limite de pull requests de atualização de segurança. Atualizações de versão têm outro limite configurável. Qual ação libera a capacidade de segurança esgotada?
 
-1. Se o CodeQL tem uma execução agendada e uma categoria SARIF
+1. Aumentar open-pull-requests-limit para versões
 
-   Cronogramas do CodeQL e categorias SARIF são independentes das atualizações do Dependabot.
+   O limite configurável de versões não aumenta o limite separado de segurança.
 
-2. Se o alerta foi atribuído a uma equipe e o repositório tem estrelas
+2. Mudar o agendamento de versões para diário
 
-   Atribuição e popularidade não comprovam que exista uma correção compatível.
+   Um agendamento mais frequente não libera capacidade para pull requests de segurança.
 
-3. Se as atualizações de segurança estão habilitadas e se existe uma correção compatível **[CORRECT]**
+3. Mesclar ou fechar pull requests de atualização de segurança **[CORRECT]**
 
-   O recurso precisa estar disponível e a vulnerabilidade precisa ter um caminho de atualização viável.
+   Concluir ou fechar pull requests de segurança libera capacidade nesse grupo.
 
-4. Se o repositório tem um padrão personalizado e um cabeçalho SPDX
+4. Mover o destino de versões para outra branch
 
-   Padrões de segredos e cabeçalhos SPDX não criam pull requests de segurança.
+   Mudar a branch de versões não libera vagas de atualização de segurança.
 
-**Concept:** Solução de problemas de atualizações de segurança
+**Concept:** Limites separados de pull requests do Dependabot
 
 **Authored coaching hints:**
 
-- O que precisa estar habilitado e o que precisa existir para propor uma atualização?
-- Um alerta válido pode não ter uma versão compatível disponível?
+- Identifique qual grupo de pull requests o erro menciona.
+- A configuração rotineira pode não controlar atualizações de segurança.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-security-updates>
+**Official supporting source:** <https://docs.github.com/en/code-security/reference/supply-chain-security/troubleshoot-dependabot/dependabot-errors>
 
 <!-- certification-coach-question:ghas-supply-039:848cf48ee76b16996408521a3cf0888521ecd6bfe16b84694e6cc662087e582a -->
 ## Question 119: Configure and use supply chain security
@@ -13110,7 +13110,7 @@ Uma biblioteca vulnerável aparece por meio de duas dependências diretas difere
 
 **Official supporting source:** <https://docs.github.com/en/code-security/concepts/supply-chain-security/dependency-graph>
 
-<!-- certification-coach-question:ghas-supply-040:e8a57fbe22f4449a6a7b5b864f2dcbca3c53700e03f29ccf25f054eab1a685fc -->
+<!-- certification-coach-question:ghas-supply-040:63b7b8dd08520707b17707e9dc13fda19a5a0e6dfd3d282160fd267b5450f1af -->
 ## Question 120: Configure and use supply chain security
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -13121,68 +13121,68 @@ Uma biblioteca vulnerável aparece por meio de duas dependências diretas difere
 
 **Question ID:** `ghas-supply-040`
 
-**Content revision:** `e8a57fbe22f4449a6a7b5b864f2dcbca3c53700e03f29ccf25f054eab1a685fc`
+**Content revision:** `63b7b8dd08520707b17707e9dc13fda19a5a0e6dfd3d282160fd267b5450f1af`
 
-**en review revision:** `41f40878a61412e3efcf122fadee4b95b1640125ee288c4b604e39470f080da6`
-**es review revision:** `97aaa7f1d913f134aa7c87d8562b9162bb2c0efec189b1c721278e7dc3a1484b`
-**pt-BR review revision:** `5c231d6e170b8f7b3dea082796cc18454d9a5253c3f1a69df8968acc8efb763c`
+**en review revision:** `ec6f83d8a0f2d4de243aff745e793441b157f61579b3e66080151f70b5cbf469`
+**es review revision:** `213fffc423eb6ba78c670bbda8bef5a58906504eed10f06b81a7e9f874cb6197`
+**pt-BR review revision:** `b18a2ba3978830325fd754b7ce39fc44c5a379e9aac1b9d3c6b784e6b8c4152d`
 
 ### English
 
-A workflow should fail when a pull request introduces a package under a prohibited license, while still reporting vulnerabilities. Which configuration is appropriate?
+A dependency-review workflow should block vulnerabilities in runtime dependencies, not development-only dependencies. Which action input selects that blocking scope?
 
-1. Configure the action's license policy **[CORRECT]**
+1. fail-on-scopes: runtime **[CORRECT]**
 
-   The dependency-review action supports license policy and vulnerability severity settings.
+   fail-on-scopes selects dependency scopes whose vulnerabilities cause the check to fail.
 
-2. Add the license to \`dependabot.yml\` \`registries\`
+2. fail-on-severity: high
 
-   Registry entries configure package sources rather than license rules.
+   Severity selects impact levels, not runtime versus development dependency use.
 
-3. Exclude the package path in \`secret\_scanning.yml\`
+3. deny-licenses: MIT
 
-   Secret-scanning exclusions do not affect package license checks.
+   License identifiers express license policy, not vulnerable dependency scope.
 
-4. Dismiss the package's advisory
+4. allow-ghsas: GHSA-abcd-1234-5679
 
-   Dismissing an advisory does not enforce license policy.
+   An advisory exception skips a specific advisory rather than selects runtime dependencies.
 
-**Concept:** Scoped dependency policy
+**Concept:** Dependency-review scope gating
 
 **Authored coaching hints:**
 
-- Which pull-request action evaluates both package risk and license policy?
-- Where should a rule about permitted license identifiers be configured?
+- Separate deployment scope from severity and license metadata.
+- The policy concerns where a dependency is used.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Un flujo debe fallar si un pull request incorpora un paquete con licencia prohibida y seguir informando vulnerabilidades. ¿Qué configuración corresponde?
+Un flujo de revisión de dependencias debe bloquear vulnerabilidades de dependencias de ejecución, no las usadas solo en desarrollo. ¿Qué entrada selecciona ese ámbito de bloqueo?
 
-1. Configura la política de licencias de la acción **[CORRECT]**
+1. fail-on-scopes: runtime **[CORRECT]**
 
-   La acción de revisión admite políticas de licencias y ajustes de gravedad de vulnerabilidades.
+   fail-on-scopes selecciona los ámbitos cuyas vulnerabilidades hacen fallar la comprobación.
 
-2. Agregar la licencia a \`registries\` de \`dependabot.yml\`
+2. fail-on-severity: high
 
-   Las entradas de registro configuran orígenes, no reglas de licencias.
+   La gravedad selecciona impacto, no uso en ejecución frente a desarrollo.
 
-3. Excluir la ruta del paquete en \`secret\_scanning.yml\`
+3. deny-licenses: MIT
 
-   Las exclusiones de secretos no afectan las comprobaciones de licencias.
+   Los identificadores de licencia expresan una política de licencias, no ámbito vulnerable.
 
-4. Descartar el aviso del paquete
+4. allow-ghsas: GHSA-abcd-1234-5679
 
-   Descartar un aviso no aplica una política de licencias.
+   Una excepción de aviso omite ese aviso, en vez de seleccionar dependencias de ejecución.
 
-**Concept:** Política de dependencias con alcance limitado
+**Concept:** Bloqueo por ámbito en revisión de dependencias
 
 **Authored coaching hints:**
 
-- ¿Qué acción de pull request evalúa riesgo de paquetes y política de licencias?
-- ¿Dónde debería configurarse una regla sobre identificadores de licencia permitidos?
+- Distingue el ámbito de uso de la gravedad y la licencia.
+- La política se refiere a dónde se usa la dependencia.
 
 </details>
 
@@ -13191,34 +13191,34 @@ Un flujo debe fallar si un pull request incorpora un paquete con licencia prohib
 
 ### Português (Brasil)
 
-Um fluxo deve falhar quando um pull request introduzir um pacote com licença proibida e continuar relatando vulnerabilidades. Qual configuração é apropriada?
+Um fluxo de revisão de dependências deve bloquear vulnerabilidades de dependências de execução, não as usadas apenas em desenvolvimento. Qual entrada seleciona esse escopo de bloqueio?
 
-1. Configure a política de licença da ação **[CORRECT]**
+1. fail-on-scopes: runtime **[CORRECT]**
 
-   A ação de revisão oferece política de licença e configurações de gravidade de vulnerabilidade.
+   fail-on-scopes seleciona os escopos cujas vulnerabilidades fazem a verificação falhar.
 
-2. Adicionar a licença a \`registries\` em \`dependabot.yml\`
+2. fail-on-severity: high
 
-   Entradas de registro configuram origens, não regras de licença.
+   A gravidade seleciona impacto, não uso em execução versus desenvolvimento.
 
-3. Excluir o caminho do pacote em \`secret\_scanning.yml\`
+3. deny-licenses: MIT
 
-   Exclusões da análise de segredos não afetam verificações de licença.
+   Identificadores de licença expressam uma política de licenças, não escopo vulnerável.
 
-4. Descartar o aviso do pacote
+4. allow-ghsas: GHSA-abcd-1234-5679
 
-   Descartar um aviso não aplica a política de licença.
+   Uma exceção de aviso ignora aquele aviso, em vez de selecionar dependências de execução.
 
-**Concept:** Política de dependências com escopo
+**Concept:** Bloqueio por escopo na revisão de dependências
 
 **Authored coaching hints:**
 
-- Qual ação de pull request avalia risco de pacotes e política de licença?
-- Onde uma regra sobre identificadores de licença permitidos deve ser configurada?
+- Separe o escopo de uso da gravidade e da licença.
+- A política se refere a onde a dependência é usada.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/code-security/tutorials/secure-your-dependencies/customize-dependency-review-action>
+**Official supporting source:** <https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/manage-your-dependency-security/configure-dependency-review-action>
 
 <!-- certification-coach-question:ghas-ecosystem-041:b810099f6cccb55a4ae8b7792e72d4efc200273ffc1437d1507061149cade3f0 -->
 ## Question 121: Describe GitHub Security suites, features, and ecosystem
@@ -13440,7 +13440,7 @@ Qual recurso de segurança as integrações podem consultar pela API REST ou Gra
 
 **Official supporting source:** <https://docs.github.com/en/code-security/how-tos/report-and-fix-vulnerabilities/fix-reported-vulnerabilities/browse-advisory-database>
 
-<!-- certification-coach-question:ghas-secrets-041:1a1459ad489a845824591f6620b4afea610366a64446997445f6c7199db0e55f -->
+<!-- certification-coach-question:ghas-secrets-041:ca88a940d7b19d77a136b757526f51348d01ca4523491927f90501c58c1fbb39 -->
 ## Question 123: Configure and use Secret Protection
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -13451,68 +13451,68 @@ Qual recurso de segurança as integrações podem consultar pela API REST ou Gra
 
 **Question ID:** `ghas-secrets-041`
 
-**Content revision:** `1a1459ad489a845824591f6620b4afea610366a64446997445f6c7199db0e55f`
+**Content revision:** `ca88a940d7b19d77a136b757526f51348d01ca4523491927f90501c58c1fbb39`
 
-**en review revision:** `91bf94cdc4fcc245024dd1198763660b364f3df2b720d0cf81bdc89143f607d1`
-**es review revision:** `62755652240d8aaf32122d2d2c0f8b89c00e8f185f59f9dc45116378029ce051`
-**pt-BR review revision:** `4395b85ae91c6c96e516b9eb426e6d79558876afb0db6c82401b8f38ca862cd6`
+**en review revision:** `c86de0a3a44909274d6b506ca7140bc3d6ea1c4071d27dcb37eff778747e429b`
+**es review revision:** `0de754e9d60455aea0c72cdbd6f22324ea6f3ee1f8d6226e63cf0a7d590920cd`
+**pt-BR review revision:** `8b1b61dfa5ca33db6735af73ce23ad4c786018de3084ca7781811d4470c6f9c9`
 
 ### English
 
-Two alerts show the same secret type, but only one has a provider validity result. What should the incident team conclude?
+A provider-backed check now reports an exposed token as inactive. The team has not investigated the period before revocation. Which follow-up addresses the remaining incident question?
 
-1. Evaluate each result in context; missing validation does not establish safety **[CORRECT]**
+1. Review provider logs for unauthorized use **[CORRECT]**
 
-   Validation outcomes can differ by type or availability and need case-specific interpretation.
+   Inactive status does not establish whether the token was abused while it worked.
 
-2. The alert without a result must be a false positive
+2. Repeat repository cleanup to prove non-use
 
-   A missing check does not prove a false detection.
+   Removing copies does not show who used the token before revocation.
 
-3. Both credentials must be active because one was active
+3. Treat inactive status as an access audit
 
-   One credential's status cannot determine another's status.
+   Validity describes present usability, not a history of access attempts.
 
-4. The scanner validates every secret type identically
+4. Dismiss the detection as a format mismatch
 
-   Provider validity support is not identical for every type.
+   An inactive real credential is not thereby a pattern false positive.
 
-**Concept:** Context-dependent validity checking
+**Concept:** Historical misuse after token deactivation
 
 **Authored coaching hints:**
 
-- What does the result say for each individual credential?
-- Can one alert's validation status be generalized to another?
+- Separate current credential usability from past activity.
+- Which evidence could reveal use before containment?
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Dos alertas muestran el mismo tipo de secreto, pero solo uno tiene un resultado de validez del proveedor. ¿Qué debería concluir el equipo de respuesta?
+Una comprobación del proveedor indica que un token expuesto está inactivo. El equipo no investigó el período anterior a la revocación. ¿Qué seguimiento responde a la pregunta pendiente del incidente?
 
-1. Evaluar cada resultado en su contexto; la falta de validación no demuestra seguridad **[CORRECT]**
+1. Revisar los registros del proveedor por uso no autorizado **[CORRECT]**
 
-   Los resultados pueden variar según el tipo o la disponibilidad y requieren interpretación individual.
+   El estado inactivo no determina si se abusó del token cuando funcionaba.
 
-2. La alerta sin resultado debe ser un falso positivo
+2. Repetir la limpieza para demostrar que no se usó
 
-   La falta de comprobación no demuestra que la detección sea falsa.
+   Retirar copias no muestra quién usó el token antes de la revocación.
 
-3. Ambas credenciales están activas porque una lo estaba
+3. Tratar el estado inactivo como auditoría de acceso
 
-   El estado de una credencial no determina el de otra.
+   La validez describe el uso posible actual, no el historial de accesos.
 
-4. El analizador valida todos los tipos de secretos de la misma manera
+4. Descartar la detección como error de formato
 
-   La compatibilidad con validez del proveedor no es igual para todos los tipos.
+   Una credencial real inactiva no se convierte por ello en falso positivo.
 
-**Concept:** Comprobación de validez según el contexto
+**Concept:** Uso indebido histórico tras desactivar tokens
 
 **Authored coaching hints:**
 
-- ¿Qué indica el resultado para cada credencial individual?
-- ¿Se puede generalizar a otra alerta el estado de validación de una?
+- Distingue la utilidad actual de la credencial de la actividad pasada.
+- ¿Qué evidencia revelaría usos anteriores a la contención?
 
 </details>
 
@@ -13521,36 +13521,36 @@ Dos alertas muestran el mismo tipo de secreto, pero solo uno tiene un resultado 
 
 ### Português (Brasil)
 
-Dois alertas mostram o mesmo tipo de segredo, mas somente um tem resultado de validade do provedor. O que a equipe de resposta deve concluir?
+Uma verificação do provedor indica que um token exposto está inativo. A equipe não investigou o período anterior à revogação. Qual acompanhamento responde à questão restante do incidente?
 
-1. Avaliar cada resultado em seu contexto; a falta de validação não comprova segurança **[CORRECT]**
+1. Revisar logs do provedor por uso não autorizado **[CORRECT]**
 
-   Os resultados podem variar por tipo ou disponibilidade e exigem interpretação individual.
+   O estado inativo não determina se houve abuso do token enquanto funcionava.
 
-2. O alerta sem resultado deve ser um falso positivo
+2. Repetir a limpeza para comprovar que não houve uso
 
-   A falta de verificação não prova que a detecção seja falsa.
+   Remover cópias não mostra quem usou o token antes da revogação.
 
-3. As duas credenciais estão ativas porque uma estava ativa
+3. Tratar o estado inativo como auditoria de acesso
 
-   O status de uma credencial não determina o de outra.
+   A validade descreve a usabilidade atual, não o histórico de acessos.
 
-4. O scanner valida todos os tipos de segredos da mesma forma
+4. Descartar a detecção como erro de formato
 
-   O suporte à validade do provedor não é igual para todos os tipos.
+   Uma credencial real inativa não se torna, por isso, um falso positivo.
 
-**Concept:** Verificação de validade dependente do contexto
+**Concept:** Uso indevido histórico após desativar tokens
 
 **Authored coaching hints:**
 
-- O que o resultado informa para cada credencial individual?
-- É possível generalizar o status de validação de um alerta para outro?
+- Separe a usabilidade atual da credencial da atividade passada.
+- Qual evidência revelaria usos anteriores à contenção?
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/code-security/concepts/secret-security/validity-checks>
+**Official supporting source:** <https://docs.github.com/en/code-security/tutorials/remediate-leaked-secrets/evaluating-alerts>
 
-<!-- certification-coach-question:ghas-supply-041:1bf01f562a157f1aa08f64cd30e97f4a9546004e13cade017785bf6196cf05fa -->
+<!-- certification-coach-question:ghas-supply-041:e4b1837ed89cf58267f609520cc61eb005c01482f5c2227b86da63b713f47186 -->
 ## Question 124: Configure and use supply chain security
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -13561,68 +13561,68 @@ Dois alertas mostram o mesmo tipo de segredo, mas somente um tem resultado de va
 
 **Question ID:** `ghas-supply-041`
 
-**Content revision:** `1bf01f562a157f1aa08f64cd30e97f4a9546004e13cade017785bf6196cf05fa`
+**Content revision:** `e4b1837ed89cf58267f609520cc61eb005c01482f5c2227b86da63b713f47186`
 
-**en review revision:** `29720205c5acc47bfed1af534fc24a3ea8162438066c98eb9824f5c02b7039b5`
-**es review revision:** `123ea01a5a80905932d95f8c1e8d4d79f2786bafd0fa396635961d137e7e69bb`
-**pt-BR review revision:** `045b632d53f6d0e7d9f8beeb60fb885c0502690eb0351a208f56106d20045311`
+**en review revision:** `df08f3e26972cef9db814d10cc455c28ce5ab4aeb64de1116afe2941c4c32f25`
+**es review revision:** `74cce39a8528e4874f40a156b09cbe98fd5bc01b7adc8cbb24649c75ea2afebb`
+**pt-BR review revision:** `bfcf6204ecdf71ff318c85a11d78a973dfa4a50eebe57b07fc18985d93a27bd1`
 
 ### English
 
-A dependency-review action reports no changes even though a pull request updates a lockfile. What should the team check before treating that as a clean review?
+A dependency-review action configuration contains both allow-licenses and deny-licenses. The team wants an allowlist-only policy. Which correction matches the documented input constraint?
 
-1. That the CodeQL workflow uses a nightly schedule
+1. Keep both; the denylist always takes precedence
 
-   CodeQL scan schedules do not establish dependency-review data.
+   The documented constraint permits only one of these two license inputs.
 
-2. That the dependency graph can resolve supported manifests for both the base and proposed dependency state **[CORRECT]**
+2. Remove deny-licenses and retain allow-licenses **[CORRECT]**
 
-   A meaningful diff requires usable dependency information for the compared states.
+   Removing the denylist preserves the requested allowlist and avoids the prohibited combination.
 
-3. That the repository has no secret-scanning alerts
+3. Move deny-licenses into the same local config file
 
-   Secret-scanning alerts do not determine package-change coverage.
+   Moving the conflicting input does not make the two policies compatible.
 
-4. That the SBOM lists dependent repositories
+4. Replace both lists with fail-on-scopes
 
-   The repository SBOM does not list dependent repositories.
+   Dependency scope filtering does not enforce a license allowlist.
 
-**Concept:** Base and head inventory completeness
+**Concept:** Mutually exclusive review license inputs
 
 **Authored coaching hints:**
 
-- What two dependency states are being compared by the review?
-- Could missing inventory make an empty result inconclusive?
+- A policy preference does not override an action's input contract.
+- First distinguish configuration validity from the choice of allowed licenses.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-La acción de revisión de dependencias no informa cambios aunque un pull request actualiza un archivo de bloqueo. ¿Qué debería comprobar el equipo antes de considerarlo una revisión limpia?
+Una configuración de revisión de dependencias contiene allow-licenses y deny-licenses. El equipo quiere solo una lista de licencias permitidas. ¿Qué corrección respeta la restricción documentada?
 
-1. Que el flujo de CodeQL se ejecute cada noche
+1. Conservar ambas; la lista de denegación tiene prioridad
 
-   La programación de CodeQL no garantiza datos para la revisión de dependencias.
+   La restricción documentada permite solo una de esas dos entradas de licencias.
 
-2. Que el gráfico resuelva manifiestos compatibles para el estado base y el estado de dependencias propuesto **[CORRECT]**
+2. Eliminar deny-licenses y conservar allow-licenses **[CORRECT]**
 
-   Una diferencia útil requiere información de dependencias para ambos estados comparados.
+   Eliminar la lista de denegación conserva la política solicitada y evita la combinación prohibida.
 
-3. Que el repositorio no tenga alertas de análisis de secretos
+3. Mover deny-licenses al mismo archivo local
 
-   Las alertas de secretos no determinan la cobertura de cambios de paquetes.
+   Mover la entrada en conflicto no hace compatibles ambas políticas.
 
-4. Que la SBOM enumere repositorios dependientes
+4. Sustituir ambas listas por fail-on-scopes
 
-   La SBOM del repositorio no enumera repositorios dependientes.
+   El filtrado por ámbito no aplica una lista de licencias permitidas.
 
-**Concept:** Integridad del inventario base y propuesto
+**Concept:** Entradas de licencias mutuamente excluyentes
 
 **Authored coaching hints:**
 
-- ¿Qué dos estados de dependencias compara la revisión?
-- ¿La falta de inventario podría hacer que un resultado vacío no sea concluyente?
+- Una preferencia de política no anula el contrato de entradas.
+- Distingue primero la validez de configuración de la selección de licencias.
 
 </details>
 
@@ -13631,34 +13631,34 @@ La acción de revisión de dependencias no informa cambios aunque un pull reques
 
 ### Português (Brasil)
 
-A ação de revisão de dependências não relata alterações, embora um pull request atualize um arquivo de bloqueio. O que a equipe deve verificar antes de considerar a revisão limpa?
+Uma configuração de revisão de dependências contém allow-licenses e deny-licenses. A equipe quer apenas uma lista de licenças permitidas. Qual correção respeita a restrição documentada?
 
-1. Se o fluxo CodeQL executa toda noite
+1. Manter ambas; a lista de bloqueio tem prioridade
 
-   O cronograma do CodeQL não garante dados para a revisão de dependências.
+   A restrição documentada permite apenas uma dessas duas entradas de licenças.
 
-2. Se o gráfico resolve manifestos compatíveis para o estado base e o estado de dependências proposto **[CORRECT]**
+2. Remover deny-licenses e manter allow-licenses **[CORRECT]**
 
-   Uma diferença útil exige informações de dependências para os dois estados comparados.
+   Remover a lista de bloqueio preserva a política solicitada e evita a combinação proibida.
 
-3. Se o repositório não tem alertas da análise de segredos
+3. Mover deny-licenses para o mesmo arquivo local
 
-   Alertas de segredos não determinam a cobertura das alterações de pacotes.
+   Mover a entrada conflitante não torna as duas políticas compatíveis.
 
-4. Se a SBOM lista repositórios dependentes
+4. Substituir ambas as listas por fail-on-scopes
 
-   A SBOM do repositório não lista repositórios dependentes.
+   A filtragem por escopo não aplica uma lista de licenças permitidas.
 
-**Concept:** Integridade do inventário base e proposto
+**Concept:** Entradas de licenças mutuamente exclusivas
 
 **Authored coaching hints:**
 
-- Quais dois estados de dependências a revisão compara?
-- A falta de inventário pode tornar inconclusivo um resultado vazio?
+- Uma preferência de política não anula o contrato de entradas.
+- Diferencie primeiro a validade da configuração da seleção de licenças.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/code-security/concepts/supply-chain-security/dependency-review>
+**Official supporting source:** <https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/manage-your-dependency-security/configure-dependency-review-action>
 
 <!-- certification-coach-question:ghas-code-001:f220948121b4306990e68dc9f6d969bad97a154e145b428668e8af5c63719029 -->
 ## Question 125: Configure and use Code Security
@@ -14320,7 +14320,7 @@ Uma ferramenta de terceiros envia a mesma descoberta em cada análise, mas o Git
 
 **Official supporting source:** <https://docs.github.com/en/code-security/reference/code-scanning/sarif-files/sarif-support>
 
-<!-- certification-coach-question:ghas-code-007:7539f9956db999e1ec7f754e032fb7df68cf6cdcb7e68b5038cf4e66c50ac44d -->
+<!-- certification-coach-question:ghas-code-007:9411c2dfe03d3ff24fd0b9294b4c3277d26f9ffc968ca335bc2c7b97efc93b21 -->
 ## Question 131: Configure and use Code Security
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -14331,68 +14331,68 @@ Uma ferramenta de terceiros envia a mesma descoberta em cada análise, mas o Git
 
 **Question ID:** `ghas-code-007`
 
-**Content revision:** `7539f9956db999e1ec7f754e032fb7df68cf6cdcb7e68b5038cf4e66c50ac44d`
+**Content revision:** `9411c2dfe03d3ff24fd0b9294b4c3277d26f9ffc968ca335bc2c7b97efc93b21`
 
-**en review revision:** `9000414fcb8c33bb90b97c72975b49fddb87e104ed32054998a596712cad7ae4`
-**es review revision:** `d37a74c735d2266ff37ee03128e8553b75a75b057eea18a6b6b19b6b393909e7`
-**pt-BR review revision:** `675925df66ae86d9c69d04a1d9fa8aed469bfb03dae428e0711dc629d9622ee8`
+**en review revision:** `e25d3263d22a81d8c8ad016461772f9695c0ad05c72508082194b5963bc611ca`
+**es review revision:** `7c6d3b15fd816e1ec415b071adaad19c39c64a9e223d995732a9d76176b12cc4`
+**pt-BR review revision:** `f80715dd29a496db287c4951409d166f700e3d26ef2bd8838d692ea5dd8a2bce`
 
 ### English
 
-An integration uploads SARIF directly through the code-scanning API without \`partialFingerprints\`. What risk should its owner address?
+A SARIF producer stores each finding's location and message alongside reusable detector descriptions. Where should per-occurrence evidence go?
 
-1. Missing fingerprints can create duplicates **[CORRECT]**
+1. In run.results, referencing the relevant rule **[CORRECT]**
 
-   The API can process results without fingerprints, but duplicates may appear.
+   Each result holds occurrence details and can reference its detector's rule.
 
-2. The API converts every result into a Dependabot alert
+2. In tool.driver.rules, replacing the rule description
 
-   SARIF uploads create code-scanning findings, not dependency alerts.
+   Rules describe detectors and should not be replaced with each occurrence's evidence.
 
-3. The repository automatically gets a CodeQL database
+3. In run.automationDetails, replacing the analysis category
 
-   Uploading results does not generate a CodeQL database.
+   Automation details identify the analysis rather than individual finding locations.
 
-4. The upload disables all future scans
+4. In the SARIF version field, alongside the schema version
 
-   An analysis upload does not disable future scans.
+   The version field identifies the SARIF format, not analyzer findings.
 
-**Concept:** API upload fingerprint handling
+**Concept:** SARIF rules versus results
 
 **Authored coaching hints:**
 
-- What could happen when result identity data is missing?
-- Which SARIF property helps avoid repeated findings across uploads?
+- Separate a detector definition from one instance of its output.
+- Which structure changes when the same rules analyze a different codebase?
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Una integración carga SARIF directamente mediante la API de análisis de código sin \`partialFingerprints\`. ¿Qué riesgo debería atender su responsable?
+Un productor SARIF almacena la ubicación y el mensaje de cada hallazgo junto con descripciones reutilizables de detectores. ¿Dónde corresponde la evidencia de cada aparición?
 
-1. Sin huellas, pueden aparecer alertas duplicadas **[CORRECT]**
+1. En run.results, con referencia a la regla **[CORRECT]**
 
-   La API puede procesar resultados sin huellas, pero podrían aparecer duplicados.
+   Cada resultado contiene detalles de una aparición y puede referenciar su regla.
 
-2. La API convierte cada resultado en una alerta de Dependabot
+2. En tool.driver.rules, sustituyendo su descripción
 
-   Las cargas SARIF crean hallazgos de análisis de código, no alertas de dependencias.
+   Las reglas describen detectores y no deben sustituirse por evidencia de cada aparición.
 
-3. El repositorio obtiene automáticamente una base de CodeQL
+3. En run.automationDetails, sustituyendo la categoría
 
-   Cargar resultados no genera una base de CodeQL.
+   Los detalles de automatización identifican análisis, no ubicaciones de hallazgos individuales.
 
-4. La carga deshabilita todos los análisis futuros
+4. En el campo version de SARIF, junto a la versión
 
-   Una carga de análisis no deshabilita análisis futuros.
+   El campo version identifica el formato SARIF, no los hallazgos del analizador.
 
-**Concept:** Manejo de huellas en cargas de API
+**Concept:** Reglas frente a resultados SARIF
 
 **Authored coaching hints:**
 
-- ¿Qué podría ocurrir si faltan datos de identidad del resultado?
-- ¿Qué propiedad SARIF ayuda a evitar hallazgos repetidos entre cargas?
+- Distingue una definición de detector de una instancia de su salida.
+- ¿Qué estructura cambia al analizar otro código con las mismas reglas?
 
 </details>
 
@@ -14401,30 +14401,30 @@ Una integración carga SARIF directamente mediante la API de análisis de códig
 
 ### Português (Brasil)
 
-Uma integração envia SARIF diretamente pela API de análise de código sem \`partialFingerprints\`. Qual risco a pessoa responsável deve tratar?
+Um produtor SARIF armazena a localização e a mensagem de cada achado junto de descrições reutilizáveis de detectores. Onde deve ficar a evidência de cada ocorrência?
 
-1. Sem impressões digitais, podem surgir duplicatas **[CORRECT]**
+1. Em run.results, referenciando a regra **[CORRECT]**
 
-   A API pode processar resultados sem impressões digitais, mas duplicatas podem aparecer.
+   Cada resultado contém detalhes de uma ocorrência e pode referenciar sua regra.
 
-2. A API converte cada resultado em um alerta do Dependabot
+2. Em tool.driver.rules, substituindo sua descrição
 
-   Envios SARIF criam descobertas de análise de código, não alertas de dependências.
+   Regras descrevem detectores e não devem ser substituídas pela evidência de cada ocorrência.
 
-3. O repositório recebe automaticamente um banco CodeQL
+3. Em run.automationDetails, substituindo a categoria
 
-   Enviar resultados não gera um banco CodeQL.
+   Detalhes de automação identificam análises, não localizações de achados individuais.
 
-4. O envio desabilita todas as análises futuras
+4. No campo version do SARIF, junto da versão
 
-   Um envio de análise não desabilita verificações futuras.
+   O campo version identifica o formato SARIF, não os achados do analisador.
 
-**Concept:** Tratamento de impressões digitais no envio pela API
+**Concept:** Regras versus resultados SARIF
 
 **Authored coaching hints:**
 
-- O que pode acontecer quando faltam dados de identidade do resultado?
-- Qual propriedade SARIF ajuda a evitar descobertas repetidas entre envios?
+- Separe uma definição de detector de uma instância de sua saída.
+- Qual estrutura muda ao analisar outro código com as mesmas regras?
 
 </details>
 
@@ -15750,7 +15750,7 @@ Vários caminhos de origem chegam à mesma operação insegura. Como a análise 
 
 **Official supporting source:** <https://docs.github.com/en/code-security/concepts/code-scanning/code-scanning-alerts>
 
-<!-- certification-coach-question:ghas-code-020:1e51422b989f88d230e49b276ebd3b4853a334e4bb3ac9c32d29c8d989969742 -->
+<!-- certification-coach-question:ghas-code-020:7973fb14e4f8468ff40f25e9af473873afbacba628cfee280c5145a1a832b1a7 -->
 ## Question 144: Configure and use Code Security
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -15761,68 +15761,68 @@ Vários caminhos de origem chegam à mesma operação insegura. Como a análise 
 
 **Question ID:** `ghas-code-020`
 
-**Content revision:** `1e51422b989f88d230e49b276ebd3b4853a334e4bb3ac9c32d29c8d989969742`
+**Content revision:** `7973fb14e4f8468ff40f25e9af473873afbacba628cfee280c5145a1a832b1a7`
 
-**en review revision:** `5e0116c2c623b8f09ae0107cecc414ce498593de237fc50880ad5bc1bdd3b0c0`
-**es review revision:** `4dfc9bf2b898440275d1ec3b939c4f7300f42181e215fa968bb4676d9b0dffd3`
-**pt-BR review revision:** `ad1da78724f2bc0b4fb34459b2ec45486164e656a622fe50b1a60173a7a1165c`
+**en review revision:** `0bb251920431185d833ed8dcc4fd4df9b50e08955a4b1dc2b749e89fdd3ae604`
+**es review revision:** `2d089fe051930fe0c6bf1ba4674a70ebdb0e306719bc2621309de2c61acfd0be`
+**pt-BR review revision:** `a88a478872f3a6618469de9aa9372f34ea32d3248b13638203fa16f7f8806e83`
 
 ### English
 
-A repository uploads results from two configurations of the same analyzer. What is the category's main purpose?
+An accepted SARIF result appears in code scanning, but its only location is on an unchanged line outside a pull request's diff. Why might it lack a pull-request check annotation?
 
-1. Name the dependency ecosystem
+1. Accepted SARIF results never produce pull-request annotations
 
-   Dependency ecosystems are configured separately.
+   Code scanning can annotate pull requests using eligible SARIF results.
 
-2. Identify and distinguish the analysis result set **[CORRECT]**
+2. The identified lines must be added or edited in the diff **[CORRECT]**
 
-   A category labels a particular analysis, such as a tool or configuration run.
+   For check display, the identified lines must be present in added or edited diff lines.
 
-3. Set the alert severity
+3. Each pull request needs a newly invented analysis category
 
-   Severity describes an individual finding, not the result-set label.
+   Categories distinguish result sets; changing them does not move locations into a diff.
 
-4. Choose a secret-scanning pattern
+4. The rule must use a CVE identifier as its ruleId
 
-   Secret patterns have their own configuration.
+   An arbitrary rule need not be named with a CVE to qualify for display.
 
-**Concept:** Code-location category labels
+**Concept:** SARIF pull-request annotation eligibility
 
 **Authored coaching hints:**
 
-- What should a stable label distinguish across separate analyses?
-- Does category describe a result set or an individual finding's risk?
+- Upload acceptance and contextual check display have different requirements.
+- Compare the finding's source location with the pull request's changed lines.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Un repositorio carga resultados de dos configuraciones del mismo analizador. ¿Cuál es el propósito principal de la categoría?
+Un resultado SARIF aceptado aparece en el análisis de código, pero su única ubicación es una línea sin cambios fuera del diff de una solicitud. ¿Por qué puede carecer de anotación en la comprobación?
 
-1. Nombrar el ecosistema de dependencias
+1. Los resultados SARIF aceptados nunca generan anotaciones
 
-   Los ecosistemas de dependencias se configuran aparte.
+   El análisis de código puede anotar solicitudes con resultados SARIF elegibles.
 
-2. Identificar y distinguir el conjunto de resultados del análisis **[CORRECT]**
+2. Las líneas señaladas deben añadirse o editarse en el diff **[CORRECT]**
 
-   Una categoría etiqueta un análisis concreto, como una ejecución de herramienta o configuración.
+   Para mostrarse en la comprobación, las líneas deben estar entre las añadidas o editadas.
 
-3. Definir la gravedad de la alerta
+3. Cada solicitud necesita una categoría de análisis nueva
 
-   La gravedad describe un hallazgo individual, no la etiqueta del conjunto.
+   Las categorías separan conjuntos; cambiarlas no mueve ubicaciones al diff.
 
-4. Elegir un patrón de análisis de secretos
+4. La regla debe usar un identificador CVE como ruleId
 
-   Los patrones de secretos tienen su propia configuración.
+   Una regla no necesita llamarse con un CVE para poder mostrarse.
 
-**Concept:** Etiquetas de categoría de análisis
+**Concept:** Elegibilidad de anotaciones SARIF en solicitudes
 
 **Authored coaching hints:**
 
-- ¿Qué debería distinguir una etiqueta estable entre análisis separados?
-- ¿La categoría describe un conjunto de resultados o el riesgo de un hallazgo individual?
+- La aceptación de carga y la visualización contextual tienen requisitos distintos.
+- Compara la ubicación del hallazgo con las líneas modificadas.
 
 </details>
 
@@ -15831,30 +15831,30 @@ Un repositorio carga resultados de dos configuraciones del mismo analizador. ¿C
 
 ### Português (Brasil)
 
-Um repositório envia resultados de duas configurações do mesmo analisador. Qual é a principal finalidade da categoria?
+Um resultado SARIF aceito aparece na análise de código, mas sua única localização é uma linha inalterada fora do diff de um pull request. Por que ele pode não ter anotação na verificação?
 
-1. Nomear o ecossistema de dependências
+1. Resultados SARIF aceitos nunca geram anotações
 
-   Ecossistemas de dependências são configurados separadamente.
+   A análise de código pode anotar pull requests com resultados SARIF elegíveis.
 
-2. Identificar e distinguir o conjunto de resultados da análise **[CORRECT]**
+2. As linhas indicadas devem ser adicionadas ou editadas no diff **[CORRECT]**
 
-   Uma categoria identifica uma análise, como uma execução de ferramenta ou configuração.
+   Para aparecer na verificação, as linhas precisam estar entre as adicionadas ou editadas.
 
-3. Definir a gravidade do alerta
+3. Cada pull request precisa de uma nova categoria de análise
 
-   A gravidade descreve uma descoberta individual, não o rótulo do conjunto.
+   Categorias separam conjuntos; alterá-las não move localizações para o diff.
 
-4. Escolher um padrão de análise de segredos
+4. A regra deve usar um identificador CVE como ruleId
 
-   Padrões de segredos têm sua própria configuração.
+   Uma regra não precisa ter um CVE como nome para poder aparecer.
 
-**Concept:** Rótulos de categoria de análise
+**Concept:** Elegibilidade de anotações SARIF em pull requests
 
 **Authored coaching hints:**
 
-- O que um rótulo estável deve distinguir entre análises separadas?
-- A categoria descreve um conjunto de resultados ou o risco de uma descoberta individual?
+- Aceitação do upload e exibição contextual têm requisitos diferentes.
+- Compare a localização do achado com as linhas alteradas.
 
 </details>
 
@@ -16520,7 +16520,7 @@ Uma base de código contém JavaScript e TypeScript. Como o fluxo CodeQL deve no
 
 **Official supporting source:** <https://docs.github.com/en/code-security/concepts/code-scanning/codeql/codeql-code-scanning>
 
-<!-- certification-coach-question:ghas-code-027:1dff0d5d2a0c90aa7820c717208d3772a156763ad7ddcd1f11558e8f27ba81eb -->
+<!-- certification-coach-question:ghas-code-027:9c4b7d1903e3f5213f9a5bc69f68cdb7b01cc694827a974b3f1f8457505ab664 -->
 ## Question 151: Configure and use Code Security
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -16531,68 +16531,68 @@ Uma base de código contém JavaScript e TypeScript. Como o fluxo CodeQL deve no
 
 **Question ID:** `ghas-code-027`
 
-**Content revision:** `1dff0d5d2a0c90aa7820c717208d3772a156763ad7ddcd1f11558e8f27ba81eb`
+**Content revision:** `9c4b7d1903e3f5213f9a5bc69f68cdb7b01cc694827a974b3f1f8457505ab664`
 
-**en review revision:** `bf97d1d411a66dbd9cf64fd2ec05830ab9a901687d73d324fe58eb4067045325`
-**es review revision:** `856567ad6947106cafa6cecafe869ae77c2f8f825fce3790bce655ade658aa70`
-**pt-BR review revision:** `ce7a0e2514baf5721839ec95f8ecdee68800306e1646f8e7378f1e380f460de0`
+**en review revision:** `2822d9a1c1300913de3cf2b71c3fa5fa78384ff101314d52012e1904cfb62b58`
+**es review revision:** `9842b4fe114f86bc5edb59a48f47d8569456bda825aca686bbd0d730b87e38fe`
+**pt-BR review revision:** `44abe055c52331070fb893b107c9f44e2406127a3437ebfb93510445971b13f5`
 
 ### English
 
-A third-party scan finishes successfully, but no new GitHub alerts appear. Which stage should the owner verify?
+A third-party tool produces a SARIF file that is 12 MB after gzip compression. Which change addresses GitHub's documented per-file upload constraint?
 
-1. That the SARIF upload completed and was accepted for the intended repository and category **[CORRECT]**
+1. Reduce the compressed file below the 10 MB limit **[CORRECT]**
 
-   Successful analysis and successful result ingestion are separate steps.
+   GitHub rejects gzip-compressed SARIF files larger than 10 MB; reduce the payload.
 
-2. That the secret-scanning validity check ran
+2. Change its declared SARIF version to 2.0.0
 
-   Secret validity checks do not import code-scanning results.
+   GitHub code scanning supports SARIF 2.1.0, and changing the version does not reduce size.
 
-3. That Dependabot has an open update pull request
+3. Retry the same payload with a new category
 
-   Dependabot updates do not ingest SARIF.
+   A category distinguishes analysis sets but does not increase the upload size limit.
 
-4. That the repository has a recent release
+4. Change every result's severity to warning
 
-   A release does not establish whether an analysis was uploaded.
+   Relabeling severity does not reliably shrink the file or change its size ceiling.
 
-**Concept:** Analysis versus ingestion success
+**Concept:** Compressed SARIF upload size
 
 **Authored coaching hints:**
 
-- Did the tool finish scanning, and did GitHub accept its output?
-- Which handoff can fail after analysis has completed?
+- Evaluate the limit against the compressed payload, not the tool's success exit code.
+- Metadata changes do not enlarge an upload allowance.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Un análisis de terceros termina correctamente, pero no aparecen alertas nuevas en GitHub. ¿Qué etapa debería verificar su responsable?
+Una herramienta genera un archivo SARIF de 12 MB después de comprimirlo con gzip. ¿Qué cambio atiende la restricción documentada por archivo?
 
-1. Que la carga SARIF terminara y se aceptara para el repositorio y la categoría previstos **[CORRECT]**
+1. Reducir el archivo comprimido por debajo de 10 MB **[CORRECT]**
 
-   El análisis correcto y la incorporación correcta de resultados son etapas distintas.
+   GitHub rechaza archivos SARIF comprimidos con gzip mayores de 10 MB; hay que reducir el contenido.
 
-2. Que se ejecutara la comprobación de validez de secretos
+2. Declarar SARIF 2.0.0 como versión del archivo
 
-   Las comprobaciones de validez no importan resultados de análisis de código.
+   GitHub admite SARIF 2.1.0; cambiar la versión no reduce el tamaño.
 
-3. Que Dependabot tenga un pull request de actualización abierto
+3. Reintentar el mismo contenido con otra categoría
 
-   Las actualizaciones de Dependabot no incorporan SARIF.
+   La categoría separa conjuntos de análisis, pero no aumenta el límite de carga.
 
-4. Que el repositorio tenga una versión reciente
+4. Cambiar la gravedad de todos los resultados a warning
 
-   Una versión publicada no demuestra que se haya cargado un análisis.
+   Cambiar la gravedad no reduce el archivo de forma fiable ni cambia el límite.
 
-**Concept:** Éxito del análisis frente a incorporación
+**Concept:** Tamaño de carga SARIF comprimida
 
 **Authored coaching hints:**
 
-- ¿La herramienta terminó el análisis y GitHub aceptó sus resultados?
-- ¿Qué transferencia puede fallar después de completar el análisis?
+- Evalúa el límite sobre el contenido comprimido, no sobre la salida correcta de la herramienta.
+- Cambiar metadatos no amplía la capacidad de carga.
 
 </details>
 
@@ -16601,34 +16601,34 @@ Un análisis de terceros termina correctamente, pero no aparecen alertas nuevas 
 
 ### Português (Brasil)
 
-Uma análise de terceiros termina com sucesso, mas nenhum alerta novo aparece no GitHub. Qual etapa a pessoa responsável deve verificar?
+Uma ferramenta gera um arquivo SARIF de 12 MB após compressão gzip. Qual mudança atende à restrição documentada por arquivo?
 
-1. Se o envio SARIF terminou e foi aceito para o repositório e a categoria pretendidos **[CORRECT]**
+1. Reduzir o arquivo comprimido para menos de 10 MB **[CORRECT]**
 
-   Análise bem-sucedida e ingestão de resultados bem-sucedida são etapas distintas.
+   O GitHub rejeita arquivos SARIF comprimidos com gzip maiores que 10 MB; reduza o conteúdo.
 
-2. Se a verificação de validade de segredos executou
+2. Declarar SARIF 2.0.0 como versão do arquivo
 
-   Verificações de validade não importam resultados de análise de código.
+   O GitHub aceita SARIF 2.1.0; alterar a versão não reduz o tamanho.
 
-3. Se o Dependabot tem um pull request de atualização aberto
+3. Reenviar o mesmo conteúdo com outra categoria
 
-   Atualizações do Dependabot não incorporam SARIF.
+   A categoria separa conjuntos de análise, mas não aumenta o limite de upload.
 
-4. Se o repositório tem uma versão recente
+4. Mudar a gravidade de todos os resultados para warning
 
-   Uma versão publicada não comprova que uma análise foi enviada.
+   Alterar a gravidade não reduz o arquivo de forma confiável nem muda o limite.
 
-**Concept:** Sucesso da análise versus ingestão
+**Concept:** Tamanho de upload SARIF comprimido
 
 **Authored coaching hints:**
 
-- A ferramenta concluiu a análise e o GitHub aceitou os resultados?
-- Qual transferência pode falhar após a análise terminar?
+- Avalie o limite sobre o conteúdo comprimido, não sobre a saída bem-sucedida da ferramenta.
+- Alterar metadados não amplia a capacidade de upload.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/code-security/how-tos/find-and-fix-code-vulnerabilities/integrate-with-existing-tools/upload-sarif-file>
+**Official supporting source:** <https://docs.github.com/en/code-security/reference/code-scanning/sarif-files/sarif-support>
 
 <!-- certification-coach-question:ghas-code-028:e2d4f8d01643b0d98424dcd6b3e03b2386d1dd280d6a60e2193053156004cce9 -->
 ## Question 152: Configure and use Code Security
@@ -18170,7 +18170,7 @@ Como um analista deve tratar um resultado de dependência “Unreachable” se n
 
 **Official supporting source:** <https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-dependabot-alerts/view-dependabot-alerts>
 
-<!-- certification-coach-question:ghas-operations-012:c542c83912d48a58876c7a1ebca684098528c34a195c1768926f6da1461652d6 -->
+<!-- certification-coach-question:ghas-operations-012:3365fc7b5da8007f85673669268f5fd39ed13a02fa4c47be3b75783fde96b1fc -->
 ## Question 166: Security operations: best practices, prioritization, remediation
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -18181,68 +18181,68 @@ Como um analista deve tratar um resultado de dependência “Unreachable” se n
 
 **Question ID:** `ghas-operations-012`
 
-**Content revision:** `c542c83912d48a58876c7a1ebca684098528c34a195c1768926f6da1461652d6`
+**Content revision:** `3365fc7b5da8007f85673669268f5fd39ed13a02fa4c47be3b75783fde96b1fc`
 
-**en review revision:** `11523993d8a59428e3b93eb530e9de317c3e3fa7cf67abbc9b5142e924f5f5fa`
-**es review revision:** `5b17d169a191c9552d9e3d8adf9110d911408c1e2cfbec9a5b2513bb3236f793`
-**pt-BR review revision:** `97e624d2b87bfe968ac6bbd858c7f2f13f500d33d838e8f01bc7af1137051fe4`
+**en review revision:** `8594e5d7a5475f4f9cc3f2d9e89f0d05dbabc1449310d930d623a5a6f23308e0`
+**es review revision:** `52b5a5645f03f8628d966b623783d8fe4a000b7fbe8d892a7aa7e7ad42e06954`
+**pt-BR review revision:** `532de728c9a5ebc2b710c876dcdd6e94a036737ad28f66c69346f6a94697c558`
 
 ### English
 
-A production credential was exposed. Which action removes the leaked credential’s authority, rather than only changing repository content?
+Responders revoked an exposed token. A scheduled production integration still references it and now fails authentication. Which follow-up restores the integration without reversing containment?
 
-1. Resolve the alert with an accurate reason.
+1. Create a replacement token but retain the service's current configuration
 
-   Alert resolution records the response; changing alert status alone does not revoke a credential.
+   Creating a token alone does not update the service that still references the revoked value.
 
-2. Revoke or rotate the exposed credential. **[CORRECT]**
+2. Configure the service to use a replacement credential **[CORRECT]**
 
-   Revocation or rotation removes the exposed credential’s authority at its provider; deleting a file does not.
+   The remediation workflow includes updating services that used the compromised token.
 
-3. Remove the secret from current source code.
+3. Redeploy the service using the same revoked credential value
 
-   Source cleanup avoids continuing to distribute the secret but does not invalidate copies already leaked.
+   Redeploying the old revoked value does not restore its authority at the provider.
 
-4. Review exposure and provider activity.
+4. Retry the scheduled job without changing its runtime credentials
 
-   Incident review helps determine misuse and impact; it is distinct from changing credential validity.
+   Retrying with the same revoked credential does not repair authentication.
 
-**Concept:** Credential containment
+**Concept:** Dependent-service credential replacement
 
 **Authored coaching hints:**
 
-- Distinguish removal of a credential from removal of its authority.
-- The alert record and the underlying exposure are different objects.
+- Containment is complete; the remaining failure is in a credential consumer.
+- Which system actually supplies the integration's authentication material?
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Se expuso una credencial de producción. ¿Qué acción elimina su autoridad, en vez de limitarse a cambiar el contenido del repositorio?
+Los responsables revocaron un token expuesto. Una integración de producción programada aún lo referencia y falla al autenticarse. ¿Qué seguimiento la restaura sin deshacer la contención?
 
-1. Resolver la alerta con un motivo preciso.
+1. Crear otro token y conservar la configuración actual del servicio
 
-   Resolver la alerta registra la respuesta; cambiar el estado no revoca por sí mismo la credencial.
+   Crear un token no actualiza el servicio que aún referencia el valor revocado.
 
-2. Revocar o rotar la credencial expuesta. **[CORRECT]**
+2. Configurar el servicio con una credencial de reemplazo **[CORRECT]**
 
-   Revocar o rotar elimina la autoridad de la credencial en su proveedor; borrar un archivo no lo hace.
+   La remediación incluye actualizar los servicios que usaban el token comprometido.
 
-3. Eliminar el secreto del código fuente actual.
+3. Volver a desplegar usando el mismo valor de credencial revocada
 
-   Limpiar el código evita seguir distribuyendo el secreto, pero no invalida copias ya filtradas.
+   Volver a desplegar el valor revocado no restaura su autoridad en el proveedor.
 
-4. Revisar la exposición y la actividad del proveedor.
+4. Reintentar el trabajo sin cambiar las credenciales de ejecución
 
-   La revisión del incidente ayuda a determinar uso indebido e impacto; no equivale a cambiar la validez de la credencial.
+   Reintentar con la misma credencial revocada no repara la autenticación.
 
-**Concept:** Contención de credenciales
+**Concept:** Reemplazo de credenciales en servicios dependientes
 
 **Authored coaching hints:**
 
-- Distingue eliminar una credencial de eliminar su autoridad.
-- El registro de alerta y la exposición subyacente son cosas distintas.
+- La contención terminó; el fallo pendiente está en un consumidor.
+- ¿Qué sistema proporciona realmente el material de autenticación?
 
 </details>
 
@@ -18251,30 +18251,30 @@ Se expuso una credencial de producción. ¿Qué acción elimina su autoridad, en
 
 ### Português (Brasil)
 
-Uma credencial de produção foi exposta. Qual ação elimina sua autoridade, em vez de apenas alterar o conteúdo do repositório?
+Os responsáveis revogaram um token exposto. Uma integração de produção agendada ainda o referencia e falha ao autenticar. Qual acompanhamento a restaura sem desfazer a contenção?
 
-1. Resolver o alerta com um motivo preciso.
+1. Criar outro token e manter a configuração atual do serviço
 
-   Resolver o alerta registra a resposta; alterar o status não revoga por si só a credencial.
+   Criar um token não atualiza o serviço que ainda referencia o valor revogado.
 
-2. Revogar ou rotacionar a credencial exposta. **[CORRECT]**
+2. Configurar o serviço com uma credencial substituta **[CORRECT]**
 
-   Revogar ou rotacionar elimina a autoridade da credencial no provedor; excluir um arquivo não faz isso.
+   A remediação inclui atualizar os serviços que usavam o token comprometido.
 
-3. Remover o segredo do código-fonte atual.
+3. Implantar novamente usando o mesmo valor de credencial revogada
 
-   Limpar o código evita continuar distribuindo o segredo, mas não invalida cópias já vazadas.
+   Implantar novamente o valor revogado não restaura sua autoridade no provedor.
 
-4. Revisar a exposição e a atividade do provedor.
+4. Repetir o trabalho sem mudar as credenciais de execução
 
-   A revisão do incidente ajuda a determinar uso indevido e impacto; não equivale a alterar a validade da credencial.
+   Repetir com a mesma credencial revogada não repara a autenticação.
 
-**Concept:** Contenção de credenciais
+**Concept:** Substituição de credenciais em serviços dependentes
 
 **Authored coaching hints:**
 
-- Diferencie remover uma credencial de remover sua autoridade.
-- O registro do alerta e a exposição subjacente são coisas diferentes.
+- A contenção terminou; a falha restante está em um consumidor.
+- Qual sistema fornece de fato o material de autenticação?
 
 </details>
 
@@ -18830,7 +18830,7 @@ Uma exceção de risco se baseou em uma premissa antiga da implantação. Qual p
 
 **Official supporting source:** <https://docs.github.com/en/code-security/concepts/security-at-scale/audit-security-alerts>
 
-<!-- certification-coach-question:ghas-operations-018:ac97a05c9b29917e69a7bb99e6e376a780c697d3ef4276eeff18faf45f83acac -->
+<!-- certification-coach-question:ghas-operations-018:c0e3832a1f1ecbc456da02b506e7f28e8915ba6c7ce4d0ad40df188f23dd567a -->
 ## Question 172: Security operations: best practices, prioritization, remediation
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -18841,68 +18841,68 @@ Uma exceção de risco se baseou em uma premissa antiga da implantação. Qual p
 
 **Question ID:** `ghas-operations-018`
 
-**Content revision:** `ac97a05c9b29917e69a7bb99e6e376a780c697d3ef4276eeff18faf45f83acac`
+**Content revision:** `c0e3832a1f1ecbc456da02b506e7f28e8915ba6c7ce4d0ad40df188f23dd567a`
 
-**en review revision:** `53b3a7edb950d09ae1b060915ec37b29457e75037c7fc552c3461201a9e4e10b`
-**es review revision:** `dc55fa05dd2ede6f016e93363efc3885de21972f3c26f574701c3adb12aa1b4e`
-**pt-BR review revision:** `ee70a198e41dd09223fb245b7acc817b4d29136cd08519526c62109a31462ba4`
+**en review revision:** `ea03d25fc475147a08306245abb658e714d74f9f24a3b5fc0cc7164b96c0101d`
+**es review revision:** `00627e25e4db946b6e73372eac03833a7c11581f6d6cf2ac7fead67b75c4f99a`
+**pt-BR review revision:** `faa561650c64a303a9cc852ca5b324e737aad1e9becc7a65506dfa82fd8384a9`
 
 ### English
 
-Auto-triage hides a class of low-risk alerts. Which evidence should accompany the rule so the team can explain its suppressed findings?
+An auditor needs Dependabot alerts dismissed automatically by auto-triage, separate from manual dismissals. Which documented close-reason filter selects that population?
 
-1. Periodic exception review
+1. resolution:revoked
 
-   Revisiting exceptions tests whether earlier risk assumptions and ownership still hold.
+   Revocation is a credential-response concept, not the auto-triage close reason.
 
-2. Permission-scoped reporting
+2. resolution:false-positive
 
-   Security reporting must respect alert access rather than distributing sensitive details to unauthorized readers.
+   A false-positive label does not specifically identify automatic triage activity.
 
-3. Audit log
+3. resolution:fix-started
 
-   Audit logs record supported secret scanning and Dependabot events; code scanning alert timeline events are not included.
+   Starting a fix is not the documented close reason for automatic dismissal.
 
-4. Alert dismissal rationale **[CORRECT]**
+4. resolution:auto-dismiss **[CORRECT]**
 
-   A meaningful rationale explains why a finding was dismissed rather than implying it was fixed.
+   Auto-dismissed Dependabot alerts use the resolution:auto-dismiss close reason.
 
-**Concept:** Auditable automated alert disposition
+**Concept:** Auditing automatically dismissed dependency alerts
 
 **Authored coaching hints:**
 
-- Distinguish operational convenience from durable governance evidence.
-- Ask what a future reviewer would need to understand the decision.
+- The report needs the mechanism of closure, not only the current open or closed state.
+- Use the documented reason rather than infer it from alert severity.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-La clasificación automática oculta una clase de alertas de bajo riesgo. ¿Qué evidencia debe acompañar la regla para explicar los hallazgos suprimidos?
+Una auditoría necesita las alertas de Dependabot descartadas por clasificación automática, separadas de las manuales. ¿Qué filtro documentado de motivo de cierre selecciona ese conjunto?
 
-1. Revisión periódica de excepciones
+1. resolution:revoked
 
-   Revisar excepciones comprueba si siguen siendo válidos los supuestos de riesgo y la responsabilidad anteriores.
+   La revocación corresponde a credenciales, no al motivo de clasificación automática.
 
-2. Informes limitados por permisos
+2. resolution:false-positive
 
-   Los informes deben respetar el acceso a alertas, no distribuir detalles sensibles a lectores no autorizados.
+   La etiqueta de falso positivo no identifica específicamente la clasificación automática.
 
-3. Audit log
+3. resolution:fix-started
 
-   Los registros de auditoría conservan eventos admitidos de secretos y Dependabot; no incluyen eventos de la cronología de alertas de código.
+   Iniciar una corrección no es el motivo documentado de descarte automático.
 
-4. Justificación del descarte de alertas **[CORRECT]**
+4. resolution:auto-dismiss **[CORRECT]**
 
-   Una justificación útil explica por qué se descartó un hallazgo sin insinuar que se corrigió.
+   Las alertas descartadas automáticamente usan el motivo resolution:auto-dismiss.
 
-**Concept:** Resolución automática de alertas auditable
+**Concept:** Auditoría de alertas de dependencias autodescartadas
 
 **Authored coaching hints:**
 
-- Distingue la comodidad operativa de la evidencia duradera de gobernanza.
-- Piensa qué necesitaría una revisión futura para entender la decisión.
+- El informe necesita el mecanismo de cierre, no solo el estado abierto o cerrado.
+- Usa el motivo documentado, en vez de deducirlo de la gravedad.
 
 </details>
 
@@ -18911,34 +18911,34 @@ La clasificación automática oculta una clase de alertas de bajo riesgo. ¿Qué
 
 ### Português (Brasil)
 
-A triagem automática oculta uma classe de alertas de baixo risco. Quais evidências devem acompanhar a regra para explicar os resultados suprimidos?
+Uma auditoria precisa dos alertas do Dependabot descartados por triagem automática, separados dos manuais. Qual filtro documentado de motivo de fechamento seleciona esse conjunto?
 
-1. Revisão periódica de exceções
+1. resolution:revoked
 
-   Revisar exceções verifica se as premissas de risco e a responsabilidade anteriores continuam válidas.
+   Revogação se refere a credenciais, não ao motivo da triagem automática.
 
-2. Relatórios limitados por permissões
+2. resolution:false-positive
 
-   Os relatórios devem respeitar o acesso aos alertas, sem distribuir detalhes sensíveis a leitores não autorizados.
+   Um rótulo de falso positivo não identifica especificamente a triagem automática.
 
-3. Audit log
+3. resolution:fix-started
 
-   Os logs de auditoria registram eventos suportados de segredos e Dependabot; não incluem eventos da linha do tempo dos alertas de código.
+   Iniciar uma correção não é o motivo documentado de descarte automático.
 
-4. Justificativa da dispensa de alertas **[CORRECT]**
+4. resolution:auto-dismiss **[CORRECT]**
 
-   Uma justificativa útil explica por que um resultado foi dispensado sem sugerir que ele foi corrigido.
+   Alertas descartados automaticamente usam o motivo resolution:auto-dismiss.
 
-**Concept:** Decisão automática de alertas auditável
+**Concept:** Auditoria de alertas de dependências autodescartados
 
 **Authored coaching hints:**
 
-- Diferencie conveniência operacional de evidências duradouras de governança.
-- Pense no que uma revisão futura precisaria para entender a decisão.
+- O relatório precisa do mecanismo de fechamento, não apenas do estado aberto ou fechado.
+- Use o motivo documentado, em vez de deduzi-lo da gravidade.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-dependabot-alerts/view-dependabot-alerts>
+**Official supporting source:** <https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-auto-triage-rules>
 
 <!-- certification-coach-question:ghas-operations-019:e675204a39ec01b8d2444a88a69763e55e6132ed46fe114f080c3a6dd1d05a08 -->
 ## Question 173: Security operations: best practices, prioritization, remediation
@@ -19050,7 +19050,7 @@ Qual suíte integrada do CodeQL é a opção base quando a prioridade é alta pr
 
 **Official supporting source:** <https://docs.github.com/en/code-security/concepts/code-scanning/codeql/codeql-query-suites>
 
-<!-- certification-coach-question:ghas-operations-020:e9fbfebd0a27bc3f827b3e5e4495fa06ee0dde772a02f5ceb9515ea9a0f27bac -->
+<!-- certification-coach-question:ghas-operations-020:647c9fbaf6de4d19ab90a479b841c5f5a961fc7f8e752790192ccef662954d24 -->
 ## Question 174: Security operations: best practices, prioritization, remediation
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -19061,68 +19061,68 @@ Qual suíte integrada do CodeQL é a opção base quando a prioridade é alta pr
 
 **Question ID:** `ghas-operations-020`
 
-**Content revision:** `e9fbfebd0a27bc3f827b3e5e4495fa06ee0dde772a02f5ceb9515ea9a0f27bac`
+**Content revision:** `647c9fbaf6de4d19ab90a479b841c5f5a961fc7f8e752790192ccef662954d24`
 
-**en review revision:** `f0e0d7560e5ad74882aa692d553abd1a8a75f1ca1f0b4f170df43e52bcf07dce`
-**es review revision:** `9a3c3b8bf93948ba5dc46f26cd8c9b240ed61fea179a33a9106f5e3ed8ee6a11`
-**pt-BR review revision:** `7c7fddcf23b8b07f0155e3478d05a5cb4a117a3987c8eeffe5fcd4f92f3a03f8`
+**en review revision:** `184e6fe1c76486de317e99f4208800516e7c836f7c24b7b888621803582ba36c`
+**es review revision:** `0c8c05fe7efd0ff2f2c52c0fe4ba7318c39bd090a1210f946cf8978ec8a9f7b7`
+**pt-BR review revision:** `0a43af5a88a78fbcd905cb8e8a5879010a74763a5ef932385a4d8ca9ab299658`
 
 ### English
 
-Which suite expands the default CodeQL security coverage while accepting some additional lower-precision findings?
+A CodeQL init step loads a config-file containing additional queries. The workflow must add security-extended without replacing that configured additional-query list. Which input does that?
 
-1. Custom .qls suite
+1. queries: security-extended
 
-   A custom query suite selects queries by metadata, location, or other criteria and requires advanced setup.
+   Without the plus prefix, workflow additional queries replace those from the configuration file.
 
-2. default
+2. disable-default-queries: true
 
-   The default suite emphasizes high-precision security findings and fewer false positives.
+   Disabling defaults is not how to combine workflow and configuration-file additions.
 
-3. security-extended **[CORRECT]**
+3. queries: +security-extended **[CORRECT]**
 
-   This includes default queries plus additional, lower-precision security queries; triage may increase.
+   The plus prefix combines workflow-specified additional queries with the configured list.
 
-4. security-and-quality
+4. category: security-extended
 
-   This advanced-setup suite adds maintainability and reliability queries to security-extended.
+   Category labels an analysis; it does not select or merge query lists.
 
-**Concept:** Broader security coverage tradeoff
+**Concept:** Additive CodeQL query configuration
 
 **Authored coaching hints:**
 
-- Compare precision, breadth, and the kinds of findings sought.
-- A broader query set changes triage workload as well as detection.
+- Consider precedence between workflow inputs and the referenced configuration.
+- A suite name alone does not express how to combine two lists.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-¿Qué suite amplía la cobertura de seguridad predeterminada de CodeQL aceptando algunos hallazgos adicionales de menor precisión?
+Un paso init de CodeQL carga un config-file con consultas adicionales. El flujo debe añadir security-extended sin sustituir esa lista configurada. ¿Qué entrada lo consigue?
 
-1. Suite .qls personalizada
+1. queries: security-extended
 
-   Una suite personalizada selecciona consultas por metadatos, ubicación u otros criterios y requiere configuración avanzada.
+   Sin el prefijo más, las consultas adicionales del flujo sustituyen a las del archivo.
 
-2. default
+2. disable-default-queries: true
 
-   La suite default prioriza hallazgos de seguridad de alta precisión y menos falsos positivos.
+   Desactivar consultas predeterminadas no combina ambas listas adicionales.
 
-3. security-extended **[CORRECT]**
+3. queries: +security-extended **[CORRECT]**
 
-   Incluye las consultas de default más otras de seguridad de menor precisión; puede aumentar la clasificación necesaria.
+   El prefijo más combina las consultas adicionales del flujo con la lista configurada.
 
-4. security-and-quality
+4. category: security-extended
 
-   Esta suite de configuración avanzada añade consultas de mantenibilidad y fiabilidad a security-extended.
+   Category etiqueta un análisis; no selecciona ni combina consultas.
 
-**Concept:** Equilibrio de cobertura de seguridad ampliada
+**Concept:** Configuración aditiva de consultas CodeQL
 
 **Authored coaching hints:**
 
-- Compara precisión, amplitud y los tipos de hallazgos buscados.
-- Un conjunto de consultas más amplio cambia tanto la detección como la carga de clasificación.
+- Considera la precedencia entre el flujo y la configuración referenciada.
+- El nombre de una suite no expresa cómo combinar dos listas.
 
 </details>
 
@@ -19131,36 +19131,36 @@ Which suite expands the default CodeQL security coverage while accepting some ad
 
 ### Português (Brasil)
 
-Qual suíte amplia a cobertura de segurança padrão do CodeQL aceitando alguns resultados adicionais de menor precisão?
+Uma etapa init do CodeQL carrega um config-file com consultas adicionais. O fluxo deve acrescentar security-extended sem substituir essa lista configurada. Qual entrada faz isso?
 
-1. Suíte .qls personalizada
+1. queries: security-extended
 
-   Uma suíte personalizada seleciona consultas por metadados, localização ou outros critérios e exige configuração avançada.
+   Sem o prefixo mais, as consultas adicionais do fluxo substituem as do arquivo.
 
-2. default
+2. disable-default-queries: true
 
-   A suíte default prioriza resultados de segurança de alta precisão e menos falsos positivos.
+   Desativar consultas padrão não combina as duas listas adicionais.
 
-3. security-extended **[CORRECT]**
+3. queries: +security-extended **[CORRECT]**
 
-   Inclui as consultas de default e outras de segurança com menor precisão; a carga de triagem pode aumentar.
+   O prefixo mais combina as consultas adicionais do fluxo com a lista configurada.
 
-4. security-and-quality
+4. category: security-extended
 
-   Essa suíte de configuração avançada adiciona consultas de manutenibilidade e confiabilidade a security-extended.
+   Category identifica uma análise; não seleciona nem combina consultas.
 
-**Concept:** Compromisso da cobertura de segurança ampliada
+**Concept:** Configuração aditiva de consultas CodeQL
 
 **Authored coaching hints:**
 
-- Compare precisão, abrangência e os tipos de resultados desejados.
-- Um conjunto mais amplo de consultas altera tanto a detecção quanto a carga de triagem.
+- Considere a precedência entre o fluxo e a configuração referenciada.
+- O nome de uma suíte não expressa como combinar duas listas.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/code-security/concepts/code-scanning/codeql/codeql-query-suites>
+**Official supporting source:** <https://docs.github.com/en/code-security/reference/code-scanning/workflow-configuration-options>
 
-<!-- certification-coach-question:ghas-operations-021:f934a1e2250c58502feb5d00035b3da7a6ab1b6733672195c22989e3b7215c8e -->
+<!-- certification-coach-question:ghas-operations-021:7291d54292bfb2c4ed2e626e08132d57d0c8cba0c0d37b0328b9047299a8975e -->
 ## Question 175: Security operations: best practices, prioritization, remediation
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -19171,68 +19171,68 @@ Qual suíte amplia a cobertura de segurança padrão do CodeQL aceitando alguns 
 
 **Question ID:** `ghas-operations-021`
 
-**Content revision:** `f934a1e2250c58502feb5d00035b3da7a6ab1b6733672195c22989e3b7215c8e`
+**Content revision:** `7291d54292bfb2c4ed2e626e08132d57d0c8cba0c0d37b0328b9047299a8975e`
 
-**en review revision:** `38e2f4433de8acbe38e5b199f0041c4ac0311f2ce64f854362ab716b5932d105`
-**es review revision:** `4b75c969649cdb309b41b44efca81f7807ab4740999d7ac076234eda204b7b9d`
-**pt-BR review revision:** `2c3ceb957350b26c5640e1bd52092f19865843cbac3fa05c321162190a8036e5`
+**en review revision:** `7531120d3f533e3815fe9e1aeca97264ebc056bce62b264a92fe7ef2fd2dbbf7`
+**es review revision:** `ec2bf7fb5fbd8ca7e472d4706b22b133dbe3ff2072238b1ca3456309c7e5375f`
+**pt-BR review revision:** `c084c1de277a74505b38e016027d4cf2e4d6a77106e51e57e80f637735ec8003`
 
 ### English
 
-With CodeQL advanced setup, which built-in suite also targets maintainability and reliability issues?
+Existing CodeQL Java queries miss flows through an internal library because its behavior is not modeled. Which package type supplies library models to those queries, rather than a new set of executable queries?
 
-1. Custom .qls suite
+1. A SARIF result archive
 
-   A custom query suite selects queries by metadata, location, or other criteria and requires advanced setup.
+   SARIF contains analysis results, not library semantics for evaluating future data flow.
 
-2. default
+2. A dependency snapshot
 
-   The default suite emphasizes high-precision security findings and fewer false positives.
+   A dependency snapshot records package relationships, not sources and sinks for CodeQL.
 
-3. security-extended
+3. A custom .qls query list
 
-   This includes default queries plus additional, lower-precision security queries; triage may increase.
+   A query list selects queries but does not supply missing library behavior models.
 
-4. security-and-quality **[CORRECT]**
+4. A CodeQL model pack **[CORRECT]**
 
-   This advanced-setup suite adds maintainability and reliability queries to security-extended.
+   A model pack extends the library or framework semantics available to existing queries.
 
-**Concept:** Security and quality scope
+**Concept:** Library modeling for CodeQL
 
 **Authored coaching hints:**
 
-- Compare precision, breadth, and the kinds of findings sought.
-- A broader query set changes triage workload as well as detection.
+- Distinguish selecting more checks from teaching existing checks about a library.
+- The unsupported behavior is in a Java dependency, not in the query schedule.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Con la configuración avanzada de CodeQL, ¿qué suite integrada también detecta problemas de mantenibilidad y fiabilidad?
+Consultas Java existentes de CodeQL no detectan flujos por una biblioteca interna porque su comportamiento no está modelado. ¿Qué paquete aporta modelos a esas consultas, no consultas ejecutables nuevas?
 
-1. Suite .qls personalizada
+1. Un archivo de resultados SARIF
 
-   Una suite personalizada selecciona consultas por metadatos, ubicación u otros criterios y requiere configuración avanzada.
+   SARIF contiene resultados, no semántica de bibliotecas para futuros análisis de flujo.
 
-2. default
+2. Una instantánea de dependencias
 
-   La suite default prioriza hallazgos de seguridad de alta precisión y menos falsos positivos.
+   Una instantánea registra relaciones de paquetes, no orígenes y sumideros de CodeQL.
 
-3. security-extended
+3. Una lista de consultas .qls personalizada
 
-   Incluye las consultas de default más otras de seguridad de menor precisión; puede aumentar la clasificación necesaria.
+   Una lista selecciona consultas, pero no aporta los modelos de comportamiento faltantes.
 
-4. security-and-quality **[CORRECT]**
+4. Un paquete de modelos CodeQL **[CORRECT]**
 
-   Esta suite de configuración avanzada añade consultas de mantenibilidad y fiabilidad a security-extended.
+   Un paquete de modelos amplía la semántica de bibliotecas disponible para consultas existentes.
 
-**Concept:** Alcance de seguridad y calidad
+**Concept:** Modelado de bibliotecas para CodeQL
 
 **Authored coaching hints:**
 
-- Compara precisión, amplitud y los tipos de hallazgos buscados.
-- Un conjunto de consultas más amplio cambia tanto la detección como la carga de clasificación.
+- Distingue añadir comprobaciones de enseñar una biblioteca a las existentes.
+- El comportamiento no reconocido está en una dependencia Java, no en el calendario.
 
 </details>
 
@@ -19241,34 +19241,34 @@ Con la configuración avanzada de CodeQL, ¿qué suite integrada también detect
 
 ### Português (Brasil)
 
-Com a configuração avançada do CodeQL, qual suíte integrada também detecta problemas de manutenibilidade e confiabilidade?
+Consultas Java existentes do CodeQL não detectam fluxos por uma biblioteca interna porque seu comportamento não está modelado. Qual pacote fornece modelos a essas consultas, não novas consultas executáveis?
 
-1. Suíte .qls personalizada
+1. Um arquivo de resultados SARIF
 
-   Uma suíte personalizada seleciona consultas por metadados, localização ou outros critérios e exige configuração avançada.
+   SARIF contém resultados, não semântica de bibliotecas para futuras análises de fluxo.
 
-2. default
+2. Um snapshot de dependências
 
-   A suíte default prioriza resultados de segurança de alta precisão e menos falsos positivos.
+   Um snapshot registra relações de pacotes, não fontes e destinos do CodeQL.
 
-3. security-extended
+3. Uma lista personalizada de consultas .qls
 
-   Inclui as consultas de default e outras de segurança com menor precisão; a carga de triagem pode aumentar.
+   Uma lista seleciona consultas, mas não fornece os modelos de comportamento ausentes.
 
-4. security-and-quality **[CORRECT]**
+4. Um pacote de modelos CodeQL **[CORRECT]**
 
-   Essa suíte de configuração avançada adiciona consultas de manutenibilidade e confiabilidade a security-extended.
+   Um pacote de modelos amplia a semântica de bibliotecas disponível às consultas existentes.
 
-**Concept:** Escopo de segurança e qualidade
+**Concept:** Modelagem de bibliotecas para CodeQL
 
 **Authored coaching hints:**
 
-- Compare precisão, abrangência e os tipos de resultados desejados.
-- Um conjunto mais amplo de consultas altera tanto a detecção quanto a carga de triagem.
+- Diferencie adicionar verificações de ensinar uma biblioteca às existentes.
+- O comportamento não reconhecido está em uma dependência Java, não no agendamento.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/code-security/concepts/code-scanning/codeql/codeql-query-suites>
+**Official supporting source:** <https://docs.github.com/en/code-security/reference/code-scanning/workflow-configuration-options>
 
 <!-- certification-coach-question:ghas-operations-022:142a9e925a7ab7d2a76d85843b43581c14489f79622026289e4b042eac30c3ea -->
 ## Question 176: Security operations: best practices, prioritization, remediation
@@ -19820,7 +19820,7 @@ Para um alerta de fluxo de dados do CodeQL, qual controle da interface em inglê
 
 **Official supporting source:** <https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-code-scanning-alerts/assess-alerts>
 
-<!-- certification-coach-question:ghas-operations-027:a715741847bdd43e870dc3c4f247e9c704aff049c67073283eb28fa90182de0c -->
+<!-- certification-coach-question:ghas-operations-027:e4f899bfe32bf5cfcb0ad14f2c8803ac50df775e6eea65764f57ad6e5b726b76 -->
 ## Question 181: Security operations: best practices, prioritization, remediation
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -19831,68 +19831,68 @@ Para um alerta de fluxo de dados do CodeQL, qual controle da interface em inglê
 
 **Question ID:** `ghas-operations-027`
 
-**Content revision:** `a715741847bdd43e870dc3c4f247e9c704aff049c67073283eb28fa90182de0c`
+**Content revision:** `e4f899bfe32bf5cfcb0ad14f2c8803ac50df775e6eea65764f57ad6e5b726b76`
 
-**en review revision:** `d13ca9e04735b7fa1dce01aedc8b72550b96ca87059c4775062810954e7b5c81`
-**es review revision:** `10d285f212f4f06efaae4d478939a7b8f92dcd8b4d920116b7891e46481fd522`
-**pt-BR review revision:** `d0cdedb46a8e1b300adba5de4536deac4449488c8d499cebec8dd86633215d0f`
+**en review revision:** `74d43bd9a68443e3adcbc2a19bbc76774611bbce4d891e00abda502dde5f277d`
+**es review revision:** `929f5fafb874c8e0fcb4443b339158d5289a28ba37063c7717d7c61607bd3041`
+**pt-BR review revision:** `7fc12869b29c6118dc7b8d887a6b8dacbb19b3e458ad655f7c2d43a3ff34d387`
 
 ### English
 
-A team wants its security check results to constrain merging. Which mechanism supplies enforcement rather than another detector?
+A required security status check should be satisfied only by the installed scanning GitHub App, not another integration posting the same status name. Which rule configuration addresses that?
 
-1. Code scanning
+1. Select any source for the required check
 
-   Code scanning can identify source-code vulnerabilities during pull request analysis.
+   Any source does not enforce the requested identity boundary for status updates.
 
-2. Repository rulesets **[CORRECT]**
+2. Select the scanning App as the expected source **[CORRECT]**
 
-   Rulesets can require checks and other conditions before changes are accepted.
+   A required status check can specify the GitHub App expected to supply its result.
 
-3. Push protection
+3. Give all integrations the same check name
 
-   Push protection blocks supported secrets during a push, before they enter the repository.
+   Sharing a status name does not establish the trusted issuer of a result.
 
-4. Dependency review
+4. Require a linear history instead of the check
 
-   Dependency review supplies pre-merge feedback about changed dependencies.
+   Linear history constrains commit structure, not the issuer of a security status.
 
-**Concept:** Enforcing remediation checks
+**Concept:** Required-check source binding
 
 **Authored coaching hints:**
 
-- Place the control at the point where it supplies feedback.
-- Distinguish a detector from the policy that requires its result.
+- A familiar check label is not proof of who submitted it.
+- The policy concerns the issuer of the result, not only whether it passed.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Un equipo quiere que los resultados de seguridad limiten las fusiones. ¿Qué mecanismo aporta aplicación obligatoria, en vez de otro detector?
+Una comprobación de seguridad obligatoria solo debe aceptarse de la GitHub App de análisis instalada, no de otra integración que publique el mismo nombre. ¿Qué configuración lo permite?
 
-1. Code scanning
+1. Seleccionar cualquier origen para la comprobación
 
-   Code scanning puede detectar vulnerabilidades del código fuente al analizar un pull request.
+   Cualquier origen no aplica el límite de identidad solicitado.
 
-2. Repository rulesets **[CORRECT]**
+2. Seleccionar la App de análisis como origen esperado **[CORRECT]**
 
-   Los rulesets pueden exigir comprobaciones y otras condiciones antes de aceptar cambios.
+   Una comprobación obligatoria puede indicar la GitHub App que debe aportar el resultado.
 
-3. Push protection
+3. Asignar el mismo nombre a todas las integraciones
 
-   Push protection bloquea secretos compatibles durante un push, antes de que entren en el repositorio.
+   Compartir el nombre no establece quién emitió de forma fiable el resultado.
 
-4. Dependency review
+4. Exigir historial lineal en vez de la comprobación
 
-   Dependency review aporta información sobre dependencias modificadas antes de la fusión.
+   El historial lineal restringe commits, no el emisor del estado de seguridad.
 
-**Concept:** Aplicación obligatoria de comprobaciones de corrección
+**Concept:** Vinculación del origen de comprobaciones obligatorias
 
 **Authored coaching hints:**
 
-- Sitúa el control en el momento en que proporciona información.
-- Distingue un detector de la política que exige su resultado.
+- Una etiqueta conocida no demuestra quién envió el resultado.
+- La política trata del emisor del resultado, no solo de su aprobación.
 
 </details>
 
@@ -19901,34 +19901,34 @@ Un equipo quiere que los resultados de seguridad limiten las fusiones. ¿Qué me
 
 ### Português (Brasil)
 
-Uma equipe quer que os resultados das verificações de segurança restrinjam o merge. Qual mecanismo fornece imposição, em vez de outro detector?
+Uma verificação de segurança obrigatória só deve ser aceita da GitHub App de análise instalada, não de outra integração que publique o mesmo nome. Qual configuração atende?
 
-1. Code scanning
+1. Selecionar qualquer origem para a verificação
 
-   Code scanning pode detectar vulnerabilidades do código-fonte ao analisar um pull request.
+   Qualquer origem não aplica o limite de identidade solicitado.
 
-2. Repository rulesets **[CORRECT]**
+2. Selecionar a App de análise como origem esperada **[CORRECT]**
 
-   Os rulesets podem exigir verificações e outras condições antes de aceitar alterações.
+   Uma verificação obrigatória pode indicar a GitHub App que deve fornecer o resultado.
 
-3. Push protection
+3. Dar o mesmo nome a todas as integrações
 
-   Push protection bloqueia segredos compatíveis durante um push, antes que entrem no repositório.
+   Compartilhar o nome não estabelece quem emitiu o resultado de forma confiável.
 
-4. Dependency review
+4. Exigir histórico linear em vez da verificação
 
-   Dependency review fornece informações sobre dependências alteradas antes do merge.
+   O histórico linear restringe commits, não o emissor do status de segurança.
 
-**Concept:** Imposição de verificações de correção
+**Concept:** Vinculação da origem de verificações obrigatórias
 
 **Authored coaching hints:**
 
-- Posicione o controle no momento em que fornece informações.
-- Diferencie um detector da política que exige seu resultado.
+- Um rótulo conhecido não comprova quem enviou o resultado.
+- A política trata do emissor do resultado, não apenas de sua aprovação.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/code-security/getting-started/github-security-features>
+**Official supporting source:** <https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets>
 
 <!-- certification-coach-question:ghas-operations-028:3affae36cc3cd6e6d58eecd419550b6e30f6796423db4ea5aabb99ee1950b83b -->
 ## Question 182: Security operations: best practices, prioritization, remediation
@@ -20590,7 +20590,7 @@ Um relatório entre equipes contém detalhes sensíveis de alertas. Qual abordag
 
 **Official supporting source:** <https://docs.github.com/en/code-security/concepts/security-at-scale/audit-security-alerts>
 
-<!-- certification-coach-question:ghas-operations-034:bfac0e8ca82c074f66c1360feea3cae1dc4f0d2b4ae1f79cfb17c780de512f24 -->
+<!-- certification-coach-question:ghas-operations-034:f0d3dea1f568d55a4aa478d6c64ae763aacf025f8001858d0487c8d87e4d8ba2 -->
 ## Question 188: Security operations: best practices, prioritization, remediation
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -20601,68 +20601,68 @@ Um relatório entre equipes contém detalhes sensíveis de alertas. Qual abordag
 
 **Question ID:** `ghas-operations-034`
 
-**Content revision:** `bfac0e8ca82c074f66c1360feea3cae1dc4f0d2b4ae1f79cfb17c780de512f24`
+**Content revision:** `f0d3dea1f568d55a4aa478d6c64ae763aacf025f8001858d0487c8d87e4d8ba2`
 
-**en review revision:** `5b3564ff9e01c1e21e1b1344bbdddc4c5015cee59473dc06a40945645b858ec7`
-**es review revision:** `c746fae192cd13284135ac1974fcc5271b3dd5dbbe2479a60f958d890c25ad90`
-**pt-BR review revision:** `b9b79ca1aa28867ea2fb034bbaa1293c54282b947c7018a48c05c52e43d5e277`
+**en review revision:** `3aad227926e1e07e258d391873c7e40a23f83dcc0b27bf67521930df946d9279`
+**es review revision:** `e5dc0d1cfbc17b3ba35c0f7b68cd9016a299d85e2a413d5db1d23b7f0559c0d9`
+**pt-BR review revision:** `4835301205d491f487a3b98a459b06ed2edd2ec4c8cf282ff45ffd35cf8127c1`
 
 ### English
 
-A team’s alert count drops after several security features stop running. Which check prevents falsely reporting that as risk reduction?
+A repository was archived today. An analyst views last week's security overview, when its alerts were open. Which interpretation matches the dashboard's documented data model?
 
-1. Compare the viewers’ alert permissions.
+1. Both repository status and alert state revert to last week
 
-   Security overview data is filtered by the current viewer’s permissions.
+   Repository attributes used for filtering reflect current state, not the selected historical date.
 
-2. Use default-branch scope when interpreting the metrics.
+2. Archived repositories vanish from every historical view
 
-   Security overview views report on the default branches of accessible repositories.
+   An archived repository can appear when the archived-repository filter includes it.
 
-3. Export the available view data as CSV.
+3. Current closure rewrites every historical alert state
 
-   Several security overview pages support CSV exports for further analysis.
+   Historical alert state can remain open even though archiving closed alerts today.
 
-4. Check feature coverage before concluding risk is low. **[CORRECT]**
+4. Repository filters use current status; alert state is historical **[CORRECT]**
 
-   An empty alert view can reflect disabled detection or undetected issues, not absence of vulnerabilities.
+   The dashboard combines historical alert states with current repository attributes.
 
-**Concept:** Coverage-aware remediation reporting
+**Concept:** Historical dashboard state versus current filters
 
 **Authored coaching hints:**
 
-- Treat dashboard results as observations with scope, not as universal proof.
-- Check both what was measured and what the viewer is permitted to see.
+- The selected date range need not time-travel every repository attribute.
+- Consider alert history and repository filtering separately.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-La cifra de alertas de un equipo baja tras dejar de ejecutarse varias funciones de seguridad. ¿Qué comprobación evita informar falsamente que se redujo el riesgo?
+Un repositorio se archivó hoy. Un analista consulta la vista de seguridad de la semana pasada, cuando sus alertas estaban abiertas. ¿Qué interpretación coincide con el modelo documentado?
 
-1. Comparar los permisos de alertas de ambas personas.
+1. El estado del repositorio y las alertas vuelven a la semana pasada
 
-   Los datos de Security overview se filtran según los permisos de quien los consulta.
+   Los atributos usados como filtros reflejan el estado actual, no la fecha histórica.
 
-2. Usar el ámbito de la rama predeterminada al interpretar las métricas.
+2. Los repositorios archivados desaparecen de toda vista histórica
 
-   Las vistas de Security overview informan sobre las ramas predeterminadas de repositorios accesibles.
+   El repositorio puede aparecer si el filtro incluye los archivados.
 
-3. Exportar los datos disponibles de la vista como CSV.
+3. El cierre actual reescribe todos los estados históricos
 
-   Varias páginas de Security overview permiten exportar CSV para análisis posteriores.
+   El estado histórico puede seguir abierto aunque archivar cerrara las alertas hoy.
 
-4. Comprobar la cobertura antes de concluir que el riesgo es bajo. **[CORRECT]**
+4. Los filtros usan estado actual; las alertas usan estado histórico **[CORRECT]**
 
-   Una vista sin alertas puede reflejar detección deshabilitada o problemas no detectados, no ausencia de vulnerabilidades.
+   El panel combina estados históricos de alertas con atributos actuales de repositorios.
 
-**Concept:** Informes de corrección conscientes de la cobertura
+**Concept:** Estado histórico frente a filtros actuales
 
 **Authored coaching hints:**
 
-- Trata los resultados del panel como observaciones con un ámbito, no como una prueba universal.
-- Comprueba tanto lo medido como lo que la persona tiene permiso para ver.
+- El intervalo elegido no retrocede necesariamente todos los atributos del repositorio.
+- Considera por separado el historial de alertas y el filtrado de repositorios.
 
 </details>
 
@@ -20671,36 +20671,36 @@ La cifra de alertas de un equipo baja tras dejar de ejecutarse varias funciones 
 
 ### Português (Brasil)
 
-A contagem de alertas de uma equipe cai após vários recursos de segurança pararem de executar. Qual verificação evita relatar falsamente isso como redução de risco?
+Um repositório foi arquivado hoje. Um analista consulta a visão de segurança da semana passada, quando seus alertas estavam abertos. Qual interpretação corresponde ao modelo documentado?
 
-1. Comparar as permissões de alertas das duas pessoas.
+1. O estado do repositório e dos alertas volta à semana passada
 
-   Os dados de Security overview são filtrados pelas permissões de quem os consulta.
+   Os atributos usados como filtros refletem o estado atual, não a data histórica.
 
-2. Usar o escopo da branch padrão ao interpretar as métricas.
+2. Repositórios arquivados somem de toda visão histórica
 
-   As visualizações de Security overview informam sobre as branches padrão dos repositórios acessíveis.
+   O repositório pode aparecer se o filtro incluir os arquivados.
 
-3. Exportar os dados disponíveis da visualização como CSV.
+3. O fechamento atual reescreve todos os estados históricos
 
-   Várias páginas de Security overview permitem exportar CSV para análises posteriores.
+   O estado histórico pode continuar aberto embora arquivar tenha fechado os alertas hoje.
 
-4. Verificar a cobertura antes de concluir que o risco é baixo. **[CORRECT]**
+4. Filtros usam estado atual; alertas usam estado histórico **[CORRECT]**
 
-   Uma visualização sem alertas pode refletir detecção desabilitada ou falhas não detectadas, não ausência de vulnerabilidades.
+   O painel combina estados históricos de alertas com atributos atuais dos repositórios.
 
-**Concept:** Relatórios de correção atentos à cobertura
+**Concept:** Estado histórico versus filtros atuais
 
 **Authored coaching hints:**
 
-- Trate os resultados do painel como observações com escopo, não como prova universal.
-- Verifique tanto o que foi medido quanto o que a pessoa tem permissão para ver.
+- O intervalo escolhido não faz necessariamente todos os atributos voltarem no tempo.
+- Considere separadamente o histórico de alertas e a filtragem de repositórios.
 
 </details>
 
 **Official supporting source:** <https://docs.github.com/en/code-security/concepts/security-at-scale/security-overview>
 
-<!-- certification-coach-question:ghas-operations-035:8e045686dfce512e7e6414d15423e5bb15183a7261ef857f66eee349fb1b7a83 -->
+<!-- certification-coach-question:ghas-operations-035:de2e4c945e236516f92466b2371fcbec43a9517a3202c87f572c44cb33ff2ce1 -->
 ## Question 189: Security operations: best practices, prioritization, remediation
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -20711,68 +20711,68 @@ A contagem de alertas de uma equipe cai após vários recursos de segurança par
 
 **Question ID:** `ghas-operations-035`
 
-**Content revision:** `8e045686dfce512e7e6414d15423e5bb15183a7261ef857f66eee349fb1b7a83`
+**Content revision:** `de2e4c945e236516f92466b2371fcbec43a9517a3202c87f572c44cb33ff2ce1`
 
-**en review revision:** `f7deab480dd1717fe63d9a7a67b29800c44778b1005495b57abb75203a44cb16`
-**es review revision:** `6db4b305d7668b393579e7ef2974a461f2fd71743be14d5f978f944326150581`
-**pt-BR review revision:** `0fd399e0a6cf9470bb45ca4e6db06cc90b73b4593fc997285ea3d47322f24d06`
+**en review revision:** `4265bc83e1a973835c675b502d4d4f2d9b4d0d0abb5afbef0068c8b47603f404`
+**es review revision:** `42a8358a8f6d466203399385a143542448cb80af8f6fc4e2a90025e948f896f0`
+**pt-BR review revision:** `1238df8180411b20f42efc5c416add255f76870cee3c202f9d3a65f1d3948f0c`
 
 ### English
 
-Maintainers need to coordinate a fix with a researcher before publishing vulnerability details. Which feature supports this workflow?
+A public project's maintainers and an invited researcher need to collaborate on an embargoed patch while the security advisory remains a draft. Which workspace supports private code collaboration?
 
-1. Repository security advisories **[CORRECT]**
+1. A temporary private fork associated with the advisory **[CORRECT]**
 
-   Repository advisories support private discussion, coordinated fixes, and subsequent publication.
+   Repository security advisories support private patch collaboration in a temporary private fork.
 
-2. GitHub Advisory Database
+2. A normal public fork with a neutral branch name
 
-   The database is a searchable collection of published security advisories.
+   A neutral name does not make code in a public fork confidential.
 
-3. SECURITY.md
+3. A draft pull request in the public repository
 
-   A security policy explains supported versions and how to report vulnerabilities.
+   Draft pull-request status does not make a public repository's changes private.
 
-4. Private vulnerability reporting
+4. A public issue with details hidden in collapsed text
 
-   This feature gives researchers a private reporting channel to repository maintainers.
+   Collapsed public issue content remains publicly accessible and is not an embargo boundary.
 
-**Concept:** Private-to-public remediation workflow
+**Concept:** Embargoed patch workspace
 
 **Authored coaching hints:**
 
-- Distinguish instructions, confidential intake, coordinated repair, and public reference data.
-- Consider the audience and the disclosure stage.
+- Distinguish workflow labels from actual repository visibility.
+- The need is to share code privately before disclosure.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Los mantenedores necesitan coordinar una corrección con un investigador antes de publicar detalles. ¿Qué función permite este flujo?
+Los mantenedores de un proyecto público y un investigador invitado deben colaborar en un parche bajo embargo mientras el aviso sigue en borrador. ¿Qué espacio permite colaborar en código de forma privada?
 
-1. Repository security advisories **[CORRECT]**
+1. Una bifurcación privada temporal vinculada al aviso **[CORRECT]**
 
-   Los avisos del repositorio permiten discutir en privado, coordinar correcciones y publicar después.
+   Los avisos de seguridad permiten colaborar en parches mediante una bifurcación privada temporal.
 
-2. GitHub Advisory Database
+2. Una bifurcación pública con una rama de nombre neutro
 
-   La base es una colección de avisos de seguridad publicados que se puede consultar.
+   Un nombre neutro no vuelve confidencial el código de una bifurcación pública.
 
-3. SECURITY.md
+3. Una solicitud en borrador en el repositorio público
 
-   Una política de seguridad explica las versiones compatibles y cómo informar de vulnerabilidades.
+   El estado borrador no hace privados los cambios de un repositorio público.
 
-4. Private vulnerability reporting
+4. Una incidencia pública con detalles contraídos
 
-   Esta función ofrece a investigadores un canal privado para informar a quienes mantienen el repositorio.
+   El contenido contraído sigue siendo público y no impone un embargo.
 
-**Concept:** Flujo de corrección de privado a público
+**Concept:** Espacio para parches bajo embargo
 
 **Authored coaching hints:**
 
-- Distingue instrucciones, recepción confidencial, corrección coordinada y datos de referencia públicos.
-- Considera el público y la fase de divulgación.
+- Distingue las etiquetas de flujo de la visibilidad real.
+- Se necesita compartir código en privado antes de divulgarlo.
 
 </details>
 
@@ -20781,36 +20781,36 @@ Los mantenedores necesitan coordinar una corrección con un investigador antes d
 
 ### Português (Brasil)
 
-Mantenedores precisam coordenar uma correção com um pesquisador antes de publicar detalhes. Qual recurso permite esse fluxo?
+Os mantenedores de um projeto público e um pesquisador convidado precisam colaborar em um patch sob embargo enquanto o aviso está em rascunho. Qual espaço permite colaboração privada no código?
 
-1. Repository security advisories **[CORRECT]**
+1. Um fork privado temporário vinculado ao aviso **[CORRECT]**
 
-   Os avisos do repositório permitem discussão privada, correções coordenadas e publicação posterior.
+   Avisos de segurança permitem colaborar em patches usando um fork privado temporário.
 
-2. GitHub Advisory Database
+2. Um fork público com branch de nome neutro
 
-   A base é uma coleção pesquisável de avisos de segurança publicados.
+   Um nome neutro não torna confidencial o código de um fork público.
 
-3. SECURITY.md
+3. Um pull request em rascunho no repositório público
 
-   Uma política de segurança explica as versões com suporte e como relatar vulnerabilidades.
+   O estado de rascunho não torna privadas as mudanças de um repositório público.
 
-4. Private vulnerability reporting
+4. Uma issue pública com detalhes recolhidos
 
-   Esse recurso oferece a pesquisadores um canal privado para relatar problemas aos mantenedores.
+   O conteúdo recolhido continua público e não impõe um embargo.
 
-**Concept:** Fluxo de correção do privado ao público
+**Concept:** Espaço para patches sob embargo
 
 **Authored coaching hints:**
 
-- Diferencie instruções, recebimento confidencial, correção coordenada e dados públicos de referência.
-- Considere o público e a etapa de divulgação.
+- Diferencie rótulos de fluxo da visibilidade real.
+- É necessário compartilhar código em privado antes da divulgação.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/code-security/getting-started/github-security-features>
+**Official supporting source:** <https://docs.github.com/en/code-security/concepts/vulnerability-reporting-and-management/repository-security-advisories>
 
-<!-- certification-coach-question:ghas-operations-036:00ed0b84bf9bfea1b2d1e9fd9a175b56c810d81ca52267af199b0d77a9ca4396 -->
+<!-- certification-coach-question:ghas-operations-036:b9a6d8d7bd3a75e781981a0f1bc76ae1e75d0f8453bb9d1f1b35d40a40906a94 -->
 ## Question 190: Security operations: best practices, prioritization, remediation
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -20821,68 +20821,68 @@ Mantenedores precisam coordenar uma correção com um pesquisador antes de publi
 
 **Question ID:** `ghas-operations-036`
 
-**Content revision:** `00ed0b84bf9bfea1b2d1e9fd9a175b56c810d81ca52267af199b0d77a9ca4396`
+**Content revision:** `b9a6d8d7bd3a75e781981a0f1bc76ae1e75d0f8453bb9d1f1b35d40a40906a94`
 
-**en review revision:** `bf6a86f5b5eec84c77564bd911b763c28fe030337a9bfb75a797f4b83d9a15a8`
-**es review revision:** `429df5b93b3daa33942f09f2bca330808623e37f89681ada7320d3553dc5a885`
-**pt-BR review revision:** `94a146a273c4db8ef706469c1c52fc2907b1c1451365e4df7275534f6f6150b1`
+**en review revision:** `340260eb0f455a5789d056d78eba3f1a894a1b1a93ffa539add7321cd4e3dd67`
+**es review revision:** `885be20b294a5a1af7a66a1c9dfac037d67291403c91de7f492839fd09e7b281`
+**pt-BR review revision:** `cb67edc4999806e3c88e85b8ccbafe7c802eba1cd849c2cc0a5490168348ebfe`
 
 ### English
 
-Which strategy avoids treating a final release gate as the only security control in development?
+A CodeQL workflow runs on pull\_request, but no scan is triggered when a change enters the repository's merge queue. Which additional event is documented for scanning the queued merge group?
 
-1. Give developers security feedback before merge.
+1. workflow\_dispatch
 
-   Early feedback helps avoid introducing vulnerabilities instead of discovering everything at release time.
+   Manual dispatch can start a run but is not the merge-queue event.
 
-2. Combine early detection with enforced merge checks. **[CORRECT]**
+2. merge\_group **[CORRECT]**
 
-   Detection supplies findings; enforced checks decide whether changes can proceed. They complement one another.
+   The merge\_group event triggers analysis for changes added to a merge queue.
 
-3. Coordinate a focused backlog-remediation campaign.
+3. release
 
-   A campaign organizes existing remediation work; it does not prevent every new vulnerability.
+   A release event occurs in a different workflow stage, not on merge-queue grouping.
 
-4. Keep monitoring after fixes reach the default branch.
+4. issues
 
-   New advisories and code changes can introduce fresh risk after an earlier fix.
+   Issue activity is not a trigger for validating the queued merge commit.
 
-**Concept:** Layered preventive operations
+**Concept:** Code scanning in merge queues
 
 **Authored coaching hints:**
 
-- Consider when feedback arrives and whether remediation remains necessary.
-- A preventive control and a release condition can address different failure modes.
+- A queued merge group is not the same event as opening a pull request.
+- Choose the event representing the commit set that the queue will merge.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-¿Qué estrategia evita tratar una condición final de lanzamiento como el único control de seguridad del desarrollo?
+Un flujo CodeQL se ejecuta con pull\_request, pero no inicia un análisis al entrar un cambio en la cola de fusión. ¿Qué evento adicional está documentado para analizar el grupo en cola?
 
-1. Dar información de seguridad a los desarrolladores antes de fusionar.
+1. workflow\_dispatch
 
-   La información temprana ayuda a evitar vulnerabilidades en vez de descubrirlas todas al lanzar una versión.
+   El inicio manual permite ejecutar un flujo, pero no es el evento de cola.
 
-2. Combinar detección temprana con comprobaciones de fusión obligatorias. **[CORRECT]**
+2. merge\_group **[CORRECT]**
 
-   La detección aporta hallazgos; las comprobaciones obligatorias deciden si los cambios pueden continuar. Se complementan.
+   merge\_group inicia el análisis de cambios añadidos a una cola de fusión.
 
-3. Coordinar una campaña enfocada en corregir alertas pendientes.
+3. release
 
-   Una campaña organiza correcciones pendientes; no previene todas las vulnerabilidades nuevas.
+   El evento release pertenece a otra etapa, no a la agrupación de la cola.
 
-4. Seguir supervisando tras incorporar correcciones a la rama predeterminada.
+4. issues
 
-   Los avisos nuevos y los cambios de código pueden introducir riesgos después de una corrección.
+   La actividad de incidencias no valida el commit de fusión en cola.
 
-**Concept:** Operaciones preventivas por capas
+**Concept:** Análisis de código en colas de fusión
 
 **Authored coaching hints:**
 
-- Considera cuándo llega la información y si todavía se necesita corregir el problema.
-- Un control preventivo y una condición de lanzamiento pueden abordar fallos distintos.
+- Un grupo en cola no es el mismo evento que abrir una solicitud.
+- Elige el evento del conjunto de commits que fusionará la cola.
 
 </details>
 
@@ -20891,34 +20891,34 @@ Which strategy avoids treating a final release gate as the only security control
 
 ### Português (Brasil)
 
-Qual estratégia evita tratar uma condição final de lançamento como o único controle de segurança do desenvolvimento?
+Um fluxo CodeQL executa com pull\_request, mas não inicia análise quando uma mudança entra na fila de mesclagem. Qual evento adicional é documentado para analisar o grupo enfileirado?
 
-1. Fornecer informações de segurança aos desenvolvedores antes do merge.
+1. workflow\_dispatch
 
-   As informações antecipadas ajudam a evitar vulnerabilidades em vez de descobri-las apenas no lançamento.
+   O acionamento manual inicia um fluxo, mas não é o evento da fila.
 
-2. Combinar detecção antecipada com verificações obrigatórias de merge. **[CORRECT]**
+2. merge\_group **[CORRECT]**
 
-   A detecção fornece resultados; as verificações obrigatórias decidem se as alterações podem prosseguir. Os controles se complementam.
+   merge\_group inicia a análise de mudanças adicionadas à fila de mesclagem.
 
-3. Coordenar uma campanha focada na correção de alertas pendentes.
+3. release
 
-   Uma campanha organiza correções pendentes; não previne todas as novas vulnerabilidades.
+   O evento release pertence a outra etapa, não ao agrupamento da fila.
 
-4. Continuar monitorando após incorporar correções à branch padrão.
+4. issues
 
-   Novos avisos e alterações de código podem introduzir riscos após uma correção anterior.
+   A atividade de issues não valida o commit de mesclagem enfileirado.
 
-**Concept:** Operações preventivas em camadas
+**Concept:** Análise de código em filas de mesclagem
 
 **Authored coaching hints:**
 
-- Considere quando as informações chegam e se ainda é necessário corrigir a falha.
-- Um controle preventivo e uma condição de lançamento podem abordar falhas diferentes.
+- Um grupo enfileirado não é o mesmo evento que abrir um pull request.
+- Escolha o evento do conjunto de commits que a fila vai mesclar.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/code-security/getting-started/github-security-features>
+**Official supporting source:** <https://docs.github.com/en/code-security/reference/code-scanning/workflow-configuration-options>
 
 <!-- certification-coach-question:ghas-operations-037:467f5cdda4d5e5babf1dd93645991b19bfb3ca172a14799cf24bf9e8f7894736 -->
 ## Question 191: Security operations: best practices, prioritization, remediation
@@ -21250,7 +21250,7 @@ Qual fonte de evidências uma investigação deve consultar para atribuir açõe
 
 **Official supporting source:** <https://docs.github.com/en/code-security/concepts/security-at-scale/audit-security-alerts>
 
-<!-- certification-coach-question:ghas-operations-040:f2cb2599141d65f64e8d23f9ab525d426a123f56210908cb8fe3d310e5b377b1 -->
+<!-- certification-coach-question:ghas-operations-040:85825bf47d1cf6738f31e80cbc0ecb771efba032b03c48ece90be9fe5d09d775 -->
 ## Question 194: Security operations: best practices, prioritization, remediation
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -21261,68 +21261,68 @@ Qual fonte de evidências uma investigação deve consultar para atribuir açõe
 
 **Question ID:** `ghas-operations-040`
 
-**Content revision:** `f2cb2599141d65f64e8d23f9ab525d426a123f56210908cb8fe3d310e5b377b1`
+**Content revision:** `85825bf47d1cf6738f31e80cbc0ecb771efba032b03c48ece90be9fe5d09d775`
 
-**en review revision:** `cbdc326c7561791a4a323e17735bbd3ace6558816ff9b76648916d297066db8f`
-**es review revision:** `5608da6b58d2e4975274265c2d80c183327c760d015ce0e0e3952b15622ff840`
-**pt-BR review revision:** `2d088a5b3bb699db3aaa55e3a8b4cc108e9576f620f385fca964d6e40be82308`
+**en review revision:** `8c64eaac0cc79b369004d08ef51d9b8d22839ac928396af2e717e4f52c67a205`
+**es review revision:** `4776b9765524caf79939c42cd9494b34109e5c133559ba8b67c55c0ba22e305b`
+**pt-BR review revision:** `ca30555e134c360f149496abda0bf1c039b34c14b9407c214a49a56076b6e7b3`
 
 ### English
 
-Copilot Autofix suggests a patch for a code scanning alert. What remains necessary before reporting successful remediation?
+An enterprise administrator disallows Copilot Autofix for code scanning. A repository administrator wants to enable it locally. What must happen first?
 
-1. Document a justified false-positive dismissal.
+1. Switch the repository from default to advanced setup
 
-   A false-positive dismissal needs evidence that the reported vulnerability does not apply to the analyzed code.
+   Copilot Autofix policy applies across default and advanced CodeQL setup.
 
-2. Record accepted risk and its rationale.
+2. Generate a new SARIF category for the same findings
 
-   Accepted risk acknowledges an unresolved issue; it must not be reported as a verified code fix.
+   An analysis category does not override enterprise policy.
 
-3. Verify the fix with fresh, relevant analysis. **[CORRECT]**
+3. Reverse the enterprise setting at an authorized level **[CORRECT]**
 
-   A fix is established by relevant analysis of the changed code, not by merely editing or dismissing an alert.
+   Disabling at enterprise level prevents lower levels from enabling it until that policy is reversed.
 
-4. Reopen the alert when the dismissal is no longer justified.
+4. Assign a Copilot seat to each repository collaborator
 
-   A changed assumption or newly applicable code path can invalidate an earlier dismissal.
+   A collaborator license assignment does not override the enterprise feature restriction.
 
-**Concept:** Generated fix verification
+**Concept:** Autofix policy inheritance
 
 **Authored coaching hints:**
 
-- Separate evidence about a finding from a decision to tolerate risk.
-- Choose a disposition that remains truthful when another reviewer reads it.
+- Higher-level feature restrictions constrain lower-level choices.
+- Changing analysis mechanics does not change policy authority.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Copilot Autofix sugiere un parche para una alerta de código. ¿Qué sigue siendo necesario antes de informar de una corrección exitosa?
+Un administrador empresarial desautoriza Copilot Autofix para análisis de código. Un administrador de repositorio quiere habilitarlo localmente. ¿Qué debe ocurrir primero?
 
-1. Documentar un descarte justificado como falso positivo.
+1. Cambiar de configuración predeterminada a avanzada
 
-   Descartar como falso positivo requiere evidencia de que la vulnerabilidad no se aplica al código analizado.
+   La política de Copilot Autofix se aplica a la configuración CodeQL predeterminada y avanzada.
 
-2. Registrar el riesgo aceptado y su justificación.
+2. Generar una categoría SARIF nueva para los hallazgos
 
-   Aceptar un riesgo reconoce un problema sin corregir; no debe informarse como una corrección verificada.
+   Una categoría de análisis no anula la política empresarial.
 
-3. Verificar la corrección con análisis reciente y pertinente. **[CORRECT]**
+3. Revertir la opción empresarial desde un nivel autorizado **[CORRECT]**
 
-   Una corrección se demuestra con análisis pertinente del código modificado, no solo editando o descartando una alerta.
+   Desactivar en la empresa impide habilitar en niveles inferiores hasta revertir esa política.
 
-4. Reabrir la alerta cuando el descarte ya no esté justificado.
+4. Asignar una licencia Copilot a cada colaborador
 
-   Un supuesto que cambia o una ruta de código ahora aplicable puede invalidar un descarte anterior.
+   Asignar licencias a colaboradores no anula la restricción empresarial.
 
-**Concept:** Verificación de correcciones generadas
+**Concept:** Herencia de políticas de Autofix
 
 **Authored coaching hints:**
 
-- Distingue la evidencia sobre un hallazgo de una decisión de tolerar el riesgo.
-- Elige una resolución que siga siendo veraz cuando la lea otra persona.
+- Las restricciones superiores limitan las opciones inferiores.
+- Cambiar la mecánica del análisis no cambia la autoridad de la política.
 
 </details>
 
@@ -21331,34 +21331,34 @@ Copilot Autofix sugiere un parche para una alerta de código. ¿Qué sigue siend
 
 ### Português (Brasil)
 
-O Copilot Autofix sugere um patch para um alerta de código. O que continua necessário antes de relatar uma correção bem-sucedida?
+Um administrador empresarial proíbe Copilot Autofix para análise de código. Um administrador de repositório quer habilitá-lo localmente. O que precisa ocorrer primeiro?
 
-1. Documentar uma dispensa justificada como falso positivo.
+1. Mudar da configuração padrão para a avançada
 
-   Dispensar como falso positivo exige evidências de que a vulnerabilidade não se aplica ao código analisado.
+   A política de Copilot Autofix se aplica à configuração CodeQL padrão e avançada.
 
-2. Registrar o risco aceito e sua justificativa.
+2. Gerar nova categoria SARIF para os achados
 
-   Aceitar um risco reconhece uma falha não corrigida; isso não deve ser relatado como correção verificada.
+   Uma categoria de análise não substitui a política empresarial.
 
-3. Verificar a correção com análise recente e pertinente. **[CORRECT]**
+3. Reverter a opção empresarial em um nível autorizado **[CORRECT]**
 
-   Uma correção é demonstrada por análise pertinente do código alterado, não apenas por editar ou dispensar um alerta.
+   Desativar na empresa impede habilitar em níveis inferiores até reverter essa política.
 
-4. Reabrir o alerta quando a dispensa deixar de ser justificada.
+4. Atribuir uma licença Copilot a cada colaborador
 
-   Uma premissa alterada ou um caminho de código agora aplicável pode invalidar uma dispensa anterior.
+   Atribuir licenças aos colaboradores não substitui a restrição empresarial.
 
-**Concept:** Verificação de correções geradas
+**Concept:** Herança de políticas de Autofix
 
 **Authored coaching hints:**
 
-- Diferencie evidências sobre um resultado de uma decisão de tolerar o risco.
-- Escolha uma decisão que continue verdadeira quando outra pessoa a revisar.
+- Restrições superiores limitam as opções inferiores.
+- Mudar a mecânica da análise não muda a autoridade da política.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-code-scanning-alerts/resolve-alerts>
+**Official supporting source:** <https://docs.github.com/en/code-security/concepts/code-scanning/autofix-for-code-scanning>
 
 <!-- certification-coach-question:ghas-operations-041:b0d5c10d20249d7b22e0404c5254e9923fdf100271a52fc0ca75061c3a89ba7a -->
 ## Question 195: Security operations: best practices, prioritization, remediation
@@ -22570,7 +22570,7 @@ Qual status indica tanto herança ativa da configuração quanto restrições a 
 
 **Official supporting source:** <https://docs.github.com/en/code-security/reference/security-at-scale/configuration-statuses>
 
-<!-- certification-coach-question:ghas-administration-011:d9f11fc21764d4101b2d3e12a4099b42a13c0c13a411233757dc46b7dacd4f68 -->
+<!-- certification-coach-question:ghas-administration-011:b4a503e3b5c269809545ac256b2b265d9b52e298300dc910c1edbc1d1db75713 -->
 ## Question 206: GitHub Security suites administration
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -22581,68 +22581,68 @@ Qual status indica tanto herança ativa da configuração quanto restrições a 
 
 **Question ID:** `ghas-administration-011`
 
-**Content revision:** `d9f11fc21764d4101b2d3e12a4099b42a13c0c13a411233757dc46b7dacd4f68`
+**Content revision:** `b4a503e3b5c269809545ac256b2b265d9b52e298300dc910c1edbc1d1db75713`
 
-**en review revision:** `0a146443e4a0a877a5968c0de0b6b6f703afb80136cc0de9004b5723e9ad5cdb`
-**es review revision:** `8e8f682853672bd2fbd6b50c392e83afa5bb446f95e53b8cc31e740134885d96`
-**pt-BR review revision:** `56fba0d314dcbb961e6d13e264a07f9464b196973bfa0e7c84a30d16d30841ce`
+**en review revision:** `1d436a7c1d455954ee1f201d994c371d10e768093b0f38eb2b5e46791159fa6e`
+**es review revision:** `9cd996ea9b6972896779414833371dbabb29cd667d3685f4a8b0ad91e7550677`
+**pt-BR review revision:** `241531df26310d1e3da650fd196812119fb1328a34657720053625ab4f15f8e7`
 
 ### English
 
-A team needs the predefined security manager organization role assigned. Which role must perform that delegation?
+In an organization on GitHub Enterprise Cloud with Secret Protection enabled, a response team must manage secret-scanning results and bypass requests without controlling every security feature. Which role design best fits least privilege?
 
-1. External security researcher
+1. Assign organization owner to every responder
 
-   A researcher reports a suspected issue; reporting alone grants no repository administration permissions.
+   Organization owner grants broad authority beyond the requested response duties.
 
-2. Repository developer
+2. Assign the predefined security manager role
 
-   Developers implement and test fixes in the code they maintain; access still depends on assigned permissions.
+   The predefined role includes organization-wide security-feature settings beyond this narrow scope.
 
-3. Security manager
+3. Assign repository admin across the organization
 
-   Security managers can manage security settings and alerts organization-wide without general repository write access.
+   Repository admin across repositories also grants unnecessary general administration privileges.
 
-4. Organization owner **[CORRECT]**
+4. Create a custom organization role for these duties **[CORRECT]**
 
-   Organization owners can assign organization roles, including security manager.
+   Use a Read base with View secret scanning alerts; Dismiss, reopen, or assign secret scanning alerts; and Review and manage secret scanning bypass requests. Adding repository permissions to custom organization roles is currently in public preview.
 
-**Concept:** Authority to assign security managers
+**Concept:** Narrow custom security roles
 
 **Authored coaching hints:**
 
-- Separate implementation work from organization-wide authority.
-- Choose the role whose normal responsibility matches the task.
+- Compare the requested duties with the full predefined role's scope.
+- Least privilege may require a role smaller than the standard security role.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Un equipo necesita que se le asigne el rol organizativo predefinido security manager. ¿Qué rol debe realizar esa delegación?
+En una organización de GitHub Enterprise Cloud con Secret Protection habilitado, un equipo debe gestionar resultados de secretos y solicitudes de omisión sin controlar todas las funciones de seguridad. ¿Qué diseño de rol aplica mejor el mínimo privilegio?
 
-1. Investigador de seguridad externo
+1. Asignar propietario de organización a cada responsable
 
-   Un investigador comunica un posible problema; informar no otorga permisos de administración del repositorio.
+   Propietario de organización concede autoridad amplia ajena a esas tareas.
 
-2. Desarrollador del repositorio
+2. Asignar el rol de administrador de seguridad predefinido
 
-   Los desarrolladores implementan y prueban correcciones en el código que mantienen; el acceso depende de los permisos asignados.
+   El rol predefinido incluye ajustes de seguridad de toda la organización, fuera de ese ámbito.
 
-3. Security manager
+3. Asignar admin de repositorio en toda la organización
 
-   Los security managers pueden gestionar ajustes y alertas de seguridad en toda la organización sin acceso general de escritura al código.
+   Admin de repositorio también concede administración general innecesaria.
 
-4. Organization owner **[CORRECT]**
+4. Crear un rol de organización personalizado para esas tareas **[CORRECT]**
 
-   Los organization owners pueden asignar roles de organización, incluido security manager.
+   Usa la base Read con permisos para ver alertas de secretos; descartarlas, reabrirlas o asignarlas; y revisar y gestionar solicitudes de omisión del análisis de secretos. Añadir permisos de repositorio a roles de organización personalizados está en versión preliminar pública.
 
-**Concept:** Autoridad para asignar security managers
+**Concept:** Roles de seguridad personalizados limitados
 
 **Authored coaching hints:**
 
-- Distingue el trabajo de implementación de la autoridad en toda la organización.
-- Elige el rol cuya responsabilidad habitual corresponde a la tarea.
+- Compara las tareas solicitadas con el ámbito completo del rol predefinido.
+- El mínimo privilegio puede requerir un rol menor que el estándar.
 
 </details>
 
@@ -22651,34 +22651,34 @@ Un equipo necesita que se le asigne el rol organizativo predefinido security man
 
 ### Português (Brasil)
 
-Uma equipe precisa receber a função organizacional predefinida security manager. Qual função deve realizar essa delegação?
+Em uma organização do GitHub Enterprise Cloud com Secret Protection habilitado, uma equipe deve gerenciar resultados de segredos e solicitações de bypass sem controlar todos os recursos de segurança. Qual desenho de função aplica melhor o menor privilégio?
 
-1. Pesquisador de segurança externo
+1. Atribuir proprietário da organização a cada responsável
 
-   Um pesquisador relata uma possível falha; relatar não concede permissões de administração do repositório.
+   Proprietário da organização concede autoridade ampla além dessas tarefas.
 
-2. Desenvolvedor do repositório
+2. Atribuir a função predefinida de gerente de segurança
 
-   Desenvolvedores implementam e testam correções no código que mantêm; o acesso depende das permissões atribuídas.
+   A função predefinida inclui configurações de segurança de toda a organização, fora desse escopo.
 
-3. Security manager
+3. Atribuir admin de repositório em toda a organização
 
-   Security managers podem gerenciar configurações e alertas de segurança em toda a organização sem acesso geral de escrita no código.
+   Admin de repositório também concede administração geral desnecessária.
 
-4. Organization owner **[CORRECT]**
+4. Criar função de organização personalizada para essas tarefas **[CORRECT]**
 
-   Organization owners podem atribuir funções de organização, incluindo security manager.
+   Use a base Read com permissões para visualizar alertas de segredos; descartá-los, reabri-los ou atribuí-los; e revisar e gerenciar solicitações de bypass da verificação de segredos. Adicionar permissões de repositório a funções de organização personalizadas está em versão prévia pública.
 
-**Concept:** Autoridade para atribuir security managers
+**Concept:** Funções de segurança personalizadas restritas
 
 **Authored coaching hints:**
 
-- Diferencie o trabalho de implementação da autoridade em toda a organização.
-- Escolha a função cuja responsabilidade habitual corresponde à tarefa.
+- Compare as tarefas solicitadas com o escopo completo da função predefinida.
+- O menor privilégio pode exigir uma função menor que a padrão.
 
 </details>
 
-**Official supporting source:** <https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization>
+**Official supporting source:** <https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-peoples-access-to-your-organization-with-roles/permissions-of-custom-organization-roles>
 
 <!-- certification-coach-question:ghas-administration-012:a1904747f03d8958f73819ae0678d7277ac2200b49daaced52d3e207a2fa0242 -->
 ## Question 207: GitHub Security suites administration
@@ -22790,7 +22790,7 @@ Qual combinação de permissões a função predefinida security manager oferece
 
 **Official supporting source:** <https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization>
 
-<!-- certification-coach-question:ghas-administration-013:491eeffd0afee079df9b42364a7489620ef5ad05793ff7e505c62110690de0f9 -->
+<!-- certification-coach-question:ghas-administration-013:b723a981f46ace9975b8fc40e84ac6b5356c73cbeb75a7d3e745829df2df2e5a -->
 ## Question 208: GitHub Security suites administration
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -22801,68 +22801,68 @@ Qual combinação de permissões a função predefinida security manager oferece
 
 **Question ID:** `ghas-administration-013`
 
-**Content revision:** `491eeffd0afee079df9b42364a7489620ef5ad05793ff7e505c62110690de0f9`
+**Content revision:** `b723a981f46ace9975b8fc40e84ac6b5356c73cbeb75a7d3e745829df2df2e5a`
 
-**en review revision:** `326d3ea1a188ae59ea763fc8e67c18dfbafa7964ca99c1015f4c716bf0ed8fd4`
-**es review revision:** `d78910c4f96264dc986a9daa0e05e880c8c96eee3dc1cae2aebef9fe5f6e97fc`
-**pt-BR review revision:** `cadf7cd69caa33c149ad49f1605023528f2c24b299873b6c969c375cc432788f`
+**en review revision:** `d64d81f7cb30e0911417c1a7a6fcfc47b0718daf00d65db4fe6b33c0bdff0ae0`
+**es review revision:** `8137d280500205e96d98e2ae3c7e4f2d869bbf2c0be8f97756fe7841605661d7`
+**pt-BR review revision:** `392b2b7e6ef04ada0866323f594aa12b6a162eec736de308b049f57dccc16ee2`
 
 ### English
 
-Which capability is NOT granted solely by the predefined security manager role?
+A member has an explicit Write grant on one repository and also the organization's security manager role. The owner removes only security manager. What should the access review expect on that repository?
 
-1. Assign the security manager organization role.
+1. The independent Write grant becomes Read automatically
 
-   Assignment of this organization role is an organization-owner responsibility.
+   Security manager permissions are additional to existing access; removing the role does not downgrade that grant.
 
-2. Configure organization-level security features.
+2. All repository access is removed with security manager
 
-   The role grants security administration authority; feature licensing remains a separate requirement.
+   Removing one role is not revocation of every independent repository permission.
 
-3. Read repositories and manage security alerts organization-wide.
+3. The independent Write grant becomes Admin automatically
 
-   Security manager grants repository read access and write access to security alerts across the organization.
+   Security-role removal does not promote a separate repository grant.
 
-4. Write application code across all repositories. **[CORRECT]**
+4. The independently granted Write access remains **[CORRECT]**
 
-   Security manager alone does not grant general write permission to application source code.
+   Review independent grants separately; the Write access was not supplied by security manager.
 
-**Concept:** Security administration is not code authorship
+**Concept:** Independent grants during security-role removal
 
 **Authored coaching hints:**
 
-- Distinguish code access from authority over security alerts and settings.
-- A specialized organization role need not be a general repository administrator.
+- Identify which grant originally supplied code-write access.
+- Removing an additive role is not the same as revoking all access paths.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-¿Qué capacidad NO se concede únicamente por el rol predefinido security manager?
+Un miembro tiene una concesión explícita Write en un repositorio y el rol de administrador de seguridad de la organización. El propietario retira solo ese rol. ¿Qué debe prever la revisión de acceso?
 
-1. Asignar el rol de organización security manager.
+1. La concesión Write independiente pasa a Read
 
-   La asignación de este rol corresponde a un organization owner.
+   Los permisos de seguridad se añaden al acceso existente; retirar el rol no degrada esa concesión.
 
-2. Configurar funciones de seguridad de la organización.
+2. Se elimina todo acceso al retirar el rol de seguridad
 
-   El rol concede autoridad administrativa de seguridad; las licencias de funciones siguen siendo un requisito aparte.
+   Retirar un rol no revoca todos los permisos independientes del repositorio.
 
-3. Leer repositorios y gestionar alertas de seguridad en toda la organización.
+3. La concesión Write independiente pasa a Admin
 
-   Security manager concede lectura de repositorios y escritura sobre alertas de seguridad en toda la organización.
+   Retirar el rol de seguridad no eleva una concesión separada.
 
-4. Escribir código de aplicación en todos los repositorios. **[CORRECT]**
+4. Permanece el acceso Write concedido independientemente **[CORRECT]**
 
-   Security manager por sí solo no concede escritura general sobre el código fuente de las aplicaciones.
+   Revisa las concesiones por separado; Write no procedía del rol de seguridad.
 
-**Concept:** Administrar seguridad no equivale a escribir código
+**Concept:** Concesiones independientes al retirar roles de seguridad
 
 **Authored coaching hints:**
 
-- Distingue acceso al código de autoridad sobre alertas y ajustes de seguridad.
-- Un rol especializado de organización no tiene por qué ser administrador general de repositorios.
+- Identifica qué concesión proporcionó originalmente acceso de escritura.
+- Retirar un rol aditivo no revoca todas las vías de acceso.
 
 </details>
 
@@ -22871,30 +22871,30 @@ Which capability is NOT granted solely by the predefined security manager role?
 
 ### Português (Brasil)
 
-Qual capacidade NÃO é concedida apenas pela função predefinida security manager?
+Um membro tem uma concessão explícita Write em um repositório e a função de gerente de segurança da organização. O proprietário remove apenas essa função. O que a revisão de acesso deve prever?
 
-1. Atribuir a função de organização security manager.
+1. A concessão Write independente passa para Read
 
-   A atribuição dessa função é responsabilidade de um organization owner.
+   Permissões de segurança se somam ao acesso existente; remover a função não reduz essa concessão.
 
-2. Configurar recursos de segurança da organização.
+2. Todo acesso é removido com a função de segurança
 
-   A função concede autoridade administrativa de segurança; as licenças de recursos continuam sendo um requisito separado.
+   Remover uma função não revoga todas as permissões independentes do repositório.
 
-3. Ler repositórios e gerenciar alertas de segurança em toda a organização.
+3. A concessão Write independente passa para Admin
 
-   Security manager concede leitura dos repositórios e escrita nos alertas de segurança em toda a organização.
+   Remover a função de segurança não promove uma concessão separada.
 
-4. Escrever código da aplicação em todos os repositórios. **[CORRECT]**
+4. O acesso Write concedido independentemente permanece **[CORRECT]**
 
-   Security manager por si só não concede escrita geral no código-fonte das aplicações.
+   Revise as concessões separadamente; Write não vinha da função de segurança.
 
-**Concept:** Administrar segurança não equivale a escrever código
+**Concept:** Concessões independentes ao remover funções de segurança
 
 **Authored coaching hints:**
 
-- Diferencie acesso ao código de autoridade sobre alertas e configurações de segurança.
-- Uma função especializada de organização não precisa ser administradora geral de repositórios.
+- Identifique qual concessão forneceu originalmente acesso de escrita.
+- Remover uma função aditiva não revoga todos os caminhos de acesso.
 
 </details>
 
@@ -23450,7 +23450,7 @@ Qual acesso mínimo ao repositório permite consultar rulesets ativos sem admini
 
 **Official supporting source:** <https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets>
 
-<!-- certification-coach-question:ghas-administration-019:5caae9bfa17f0ea24f872f010d1f6c6ef5f6e429253262ed314cde5d45fc112f -->
+<!-- certification-coach-question:ghas-administration-019:2c07c3964bef3144d30d4da00d174d53e32445a377d72dce26c04f5dd6df49dd -->
 ## Question 214: GitHub Security suites administration
 
 - [ ] English content approved: I verified the question, choices, correct answer, explanations, concept, hints, and supporting documentation.
@@ -23461,68 +23461,68 @@ Qual acesso mínimo ao repositório permite consultar rulesets ativos sem admini
 
 **Question ID:** `ghas-administration-019`
 
-**Content revision:** `5caae9bfa17f0ea24f872f010d1f6c6ef5f6e429253262ed314cde5d45fc112f`
+**Content revision:** `2c07c3964bef3144d30d4da00d174d53e32445a377d72dce26c04f5dd6df49dd`
 
-**en review revision:** `bab1b1b2578fd3adabf3f7f5adfe78c4471771b8a9202bb9b30d4b02aacffa95`
-**es review revision:** `06b1e0bbc4c3225c67b4c1e45a5b7f789948f45e4d3ae7d525a3c163d5696106`
-**pt-BR review revision:** `40e849d170ef02cffb38c3bd324d8d83092975b51ee9860f1e8e4f46208d3ac7`
+**en review revision:** `5e3e3adcd650a112f219cb677fcbfc33d1efe8d7864053ea19964512b7e5f58a`
+**es review revision:** `3a3a0fba171854178322d30e52a25b0546c0fc731d2af0e74c0daf17f82d8837`
+**pt-BR review revision:** `a3d379dcfc38191f79b9d5b0a8558502220b3cf3dcbd498b8f1c3e189af26ddf`
 
 ### English
 
-Contributors without push-protection bypass rights must obtain approval for exceptions. Which delegated-bypass setting supplies that review path?
+An approved migration bot must skip push protection entirely for its commits. The organization has accepted this narrowly scoped exception. Which delegated-bypass capability implements that requirement?
 
-1. Configure designated bypass reviewers. **[CORRECT]**
+1. Grant the bot a push-protection exemption **[CORRECT]**
 
-   Delegated bypass routes requests from contributors without bypass rights to designated reviewers.
+   An exemption skips push protection for that selected actor's commits and should be tightly scoped.
 
-2. Grant an explicit bypass privilege.
+2. Grant the bot permission to bypass detected blocks
 
-   A bypass privilege allows selected actors to bypass; it is not the same as requesting approval.
+   Bypass permission lets an actor bypass blocks; it does not skip protection entirely.
 
-3. Grant a push-protection exemption.
+3. Add the bot as a bypass-request reviewer
 
-   An exemption skips push protection for selected actors, which differs from reviewing individual requests.
+   Reviewing others' requests does not implement actor-level scanning exemption.
 
-4. Retain ordinary repository permissions.
+4. Approve one pending request from the bot
 
-   Bypass delegation does not itself grant general repository administration or code access.
+   One request approval is limited to that request, not the bot's future commits.
 
-**Concept:** Delegated bypass approval boundary
+**Concept:** Push-protection exemptions versus bypass rights
 
 **Authored coaching hints:**
 
-- A delegated exception should not expand unrelated permissions.
-- Separate requesting an exception from being authorized to approve one.
+- The requirement distinguishes skipping a check from overriding its result.
+- Keep an actor-wide exception separate from approval of one push.
 
 <details>
 <summary>Español — same answer key and option order</summary>
 
 ### Español
 
-Los contribuidores sin derechos de omisión de push protection deben obtener aprobación para excepciones. ¿Qué ajuste de omisión delegada aporta esa revisión?
+Un bot de migración autorizado debe omitir completamente la protección de inserciones de sus commits. La organización aceptó esa excepción limitada. ¿Qué capacidad la implementa?
 
-1. Configurar revisores de omisión designados. **[CORRECT]**
+1. Conceder al bot una exención de protección de inserciones **[CORRECT]**
 
-   La omisión delegada dirige las solicitudes de contribuidores sin derechos de omisión a revisores designados.
+   Una exención omite la protección para los commits del actor seleccionado y debe limitarse cuidadosamente.
 
-2. Conceder un privilegio de omisión explícito.
+2. Permitir al bot omitir bloqueos detectados
 
-   Un privilegio de omisión permite a actores seleccionados omitir el bloqueo; no equivale a solicitar aprobación.
+   El permiso de omisión permite superar bloqueos, no saltarse toda la protección.
 
-3. Conceder una exención de push protection.
+3. Añadir al bot como revisor de solicitudes
 
-   Una exención omite push protection para actores seleccionados, a diferencia de revisar solicitudes individuales.
+   Revisar solicitudes ajenas no establece una exención del actor.
 
-4. Conservar los permisos ordinarios del repositorio.
+4. Aprobar una solicitud pendiente del bot
 
-   La delegación de omisiones no concede por sí misma administración general ni acceso al código.
+   Aprobar una solicitud solo abarca esa solicitud, no los commits futuros del bot.
 
-**Concept:** Límite de aprobación de omisión delegada
+**Concept:** Exenciones frente a permisos de omisión
 
 **Authored coaching hints:**
 
-- Una excepción delegada no debe ampliar permisos ajenos a ella.
-- Distingue solicitar una excepción de estar autorizado para aprobarla.
+- Distingue saltarse una comprobación de invalidar su resultado.
+- Separa una excepción del actor de la aprobación de un envío.
 
 </details>
 
@@ -23531,30 +23531,30 @@ Los contribuidores sin derechos de omisión de push protection deben obtener apr
 
 ### Português (Brasil)
 
-Contribuidores sem direitos de bypass de push protection precisam obter aprovação para exceções. Qual configuração de bypass delegado fornece essa revisão?
+Um bot de migração autorizado deve ignorar completamente a proteção de push dos seus commits. A organização aceitou essa exceção restrita. Qual capacidade a implementa?
 
-1. Configurar revisores de bypass designados. **[CORRECT]**
+1. Conceder ao bot uma isenção de proteção de push **[CORRECT]**
 
-   O bypass delegado encaminha solicitações de contribuidores sem direitos de bypass aos revisores designados.
+   Uma isenção ignora a proteção para commits do ator selecionado e deve ser cuidadosamente restrita.
 
-2. Conceder um privilégio explícito de bypass.
+2. Permitir ao bot contornar bloqueios detectados
 
-   Um privilégio de bypass permite que atores selecionados contornem o bloqueio; não equivale a solicitar aprovação.
+   A permissão de bypass permite contornar bloqueios, não ignorar toda a proteção.
 
-3. Conceder uma isenção de push protection.
+3. Adicionar o bot como revisor de solicitações
 
-   Uma isenção pula push protection para atores selecionados, diferentemente de revisar solicitações individuais.
+   Revisar solicitações de outros não estabelece uma isenção do ator.
 
-4. Manter as permissões normais do repositório.
+4. Aprovar uma solicitação pendente do bot
 
-   A delegação de bypass não concede por si só administração geral nem acesso ao código.
+   Aprovar uma solicitação abrange apenas aquela solicitação, não os commits futuros do bot.
 
-**Concept:** Limite de aprovação de bypass delegado
+**Concept:** Isenções versus permissões de bypass
 
 **Authored coaching hints:**
 
-- Uma exceção delegada não deve ampliar permissões não relacionadas.
-- Diferencie solicitar uma exceção de estar autorizado a aprová-la.
+- Diferencie ignorar uma verificação de substituir seu resultado.
+- Separe uma exceção do ator da aprovação de um push.
 
 </details>
 

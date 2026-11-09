@@ -8,6 +8,9 @@ installed.
 
 ### Advanced Security question-bank refresh
 
+- Replace 33 overlapping objectives with distinct detection, remediation,
+  configuration, API, and access-control decisions in all three languages;
+  regenerate unchecked revision-specific human-review attestations.
 - Rewrite all 225 Advanced Security questions in English, Spanish, and Brazilian
   Portuguese with original, concise feature/configuration recognition and short
   practical scenarios across the full July 2026 GH-500 blueprint.

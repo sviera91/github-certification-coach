@@ -901,23 +901,23 @@ export const translations = {
             ]
         },
         "ghas-secrets-006": {
-            "prompt": "Una comprobación de validez no puede verificar una credencial detectada porque su proveedor no admite esas comprobaciones. ¿Cuál es la interpretación correcta?",
+            "prompt": "El resultado de validez mostrado para un token de un socio compatible es anterior a un cambio en el proveedor. Las comprobaciones están habilitadas. ¿Qué control solicita un resultado actual?",
             "choices": [
-                "El secreto se puede publicar sin riesgo",
-                "El estado de la credencial sigue sin verificarse",
-                "El analizador debería eliminar la alerta automáticamente",
-                "La protección de inserciones del repositorio está deshabilitada"
+                "Close as revoked",
+                "Verify secret",
+                "Report leak",
+                "Reopen alert"
             ],
             "explanations": [
-                "Una comprobación no admitida no demuestra que sea segura.",
-                "Sin resultado del proveedor, la validez sigue siendo desconocida.",
-                "La falta de validación no justifica eliminar el hallazgo.",
-                "Una comprobación de validez no informa la configuración de protección de inserciones."
+                "Cerrar registra una resolución; no solicita otra comprobación al proveedor.",
+                "Verify secret realiza una comprobación de validez bajo demanda para un secreto compatible.",
+                "Report leak es un flujo separado para tokens de acceso personal de GitHub elegibles.",
+                "Reabrir cambia el estado de la alerta, no la fecha de su validación."
             ],
-            "concept": "Límites de la comprobación de validez",
+            "concept": "Actualización de validez bajo demanda",
             "hints": [
-                "¿El proveedor verificó la credencial correctamente?",
-                "¿Qué conclusión corresponde cuando la validación no está disponible?"
+                "Piensa qué operación contacta al proveedor emisor.",
+                "Un resultado almacenado y una comprobación nueva son operaciones distintas."
             ]
         },
         "ghas-secrets-007": {
@@ -1201,23 +1201,23 @@ export const translations = {
             ]
         },
         "ghas-secrets-021": {
-            "prompt": "Un token aparece en un comentario de incidencia y en un commit. ¿Qué respuesta aborda el riesgo de credenciales en ambas ubicaciones?",
+            "prompt": "Una integración de respuesta ya conoce el número de una alerta de secretos. ¿Qué solicitud REST enumera sus ubicaciones registradas, en lugar de otras alertas?",
             "choices": [
-                "Revoca o rota el token y luego limpia las copias expuestas",
-                "Cerrar la alerta del commit y dejar intacto el comentario",
-                "Cambiar el título de la incidencia y seguir usando el token",
-                "Ejecutar CodeQL sin cambiar la credencial"
+                "GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}/locations",
+                "GET /repos/{owner}/{repo}/secret-scanning/alerts",
+                "GET /orgs/{org}/secret-scanning/alerts",
+                "GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}"
             ],
             "explanations": [
-                "Invalidar la credencial contiene el uso indebido y la limpieza trata las copias restantes.",
-                "Cerrar una alerta no quita otra exposición.",
-                "Cambiar el nombre del contenido no invalida un token.",
-                "El análisis de CodeQL no puede revocar una credencial expuesta."
+                "El subrecurso locations enumera las apariciones de la alerta de secretos indicada.",
+                "La colección del repositorio enumera alertas, no ubicaciones de una alerta.",
+                "La colección de organización abarca alertas de repositorios elegibles, no apariciones de una alerta.",
+                "Las alertas de código son otro recurso y no enumeran ubicaciones de secretos."
             ],
-            "concept": "Contención de credenciales en varias ubicaciones",
+            "concept": "Enumeración de apariciones de secretos",
             "hints": [
-                "¿Dónde más podría seguir expuesto el mismo valor?",
-                "¿Qué paso neutraliza su reutilización independientemente de la limpieza?"
+                "Determina si se solicita una colección de alertas o de apariciones.",
+                "La identidad de la alerta ya se conoce."
             ]
         },
         "ghas-secrets-022": {
@@ -1241,23 +1241,23 @@ export const translations = {
             ]
         },
         "ghas-secrets-023": {
-            "prompt": "Un repositorio contiene una credencial realista en un archivo de pruebas. ¿Qué debería verificar la persona mantenedora antes de decidir no corregirla?",
+            "prompt": "El proveedor confirmó la revocación y los mantenedores retiraron el token expuesto de los archivos actuales. La alerta de secretos sigue abierta. ¿Qué completa el flujo de la alerta?",
             "choices": [
-                "Que el repositorio no tenga despliegues de producción",
-                "Que la alerta sea anterior a la rama",
-                "Que el valor sea intencionalmente inoperante y no pueda autenticar",
-                "Que el nombre del archivo contenga la palabra test"
+                "Esperar a que la limpieza cierre la alerta",
+                "Ejecutar otra vez el análisis de CodeQL",
+                "Cerrar la alerta con el motivo adecuado",
+                "Volver a publicar el patrón personalizado"
             ],
             "explanations": [
-                "El código no productivo también puede contener credenciales utilizables.",
-                "La antigüedad de una rama no determina si un secreto funciona.",
-                "Un valor de prueba es inocuo solo si no puede conceder acceso.",
-                "El nombre del archivo no demuestra que la credencial sea inerte."
+                "Retirar un token de los archivos no cierra automáticamente su alerta.",
+                "CodeQL analiza debilidades de código; ejecutarlo no resuelve una alerta de credenciales.",
+                "Tras remediar, hay que cerrar manualmente la alerta y registrar su motivo.",
+                "Publicar un detector no sirve para cerrar esta alerta ya remediada."
             ],
-            "concept": "Evaluación del riesgo de datos de prueba",
+            "concept": "Cierre de alertas tras la remediación",
             "hints": [
-                "¿Qué propiedad del valor determina si es peligroso?",
-                "¿Su ubicación demuestra que no puede autenticar?"
+                "Distingue la remediación en el proveedor del estado en GitHub.",
+                "¿Qué paso actualiza el registro de la propia alerta?"
             ]
         },
         "ghas-secrets-024": {
@@ -1381,43 +1381,43 @@ export const translations = {
             ]
         },
         "ghas-secrets-030": {
-            "prompt": "Un repositorio privado de una organización necesita análisis de secretos y protección de inserciones. ¿Qué derecho de uso de Advanced Security corresponde?",
+            "prompt": "El análisis de secretos ya detecta tokens de proveedores. Un equipo también necesita detección integrada de claves privadas y cadenas de conexión no vinculadas a un proveedor concreto. ¿Qué extensión corresponde?",
             "choices": [
-                "GitHub Packages",
-                "GitHub Secret Protection",
-                "GitHub Code Security",
-                "GitHub Actions"
+                "Comprobaciones de validez de socios",
+                "Patrones genéricos",
+                "Patrones personalizados de organización",
+                "Exenciones de protección de inserciones"
             ],
             "explanations": [
-                "Packages aloja artefactos y no es el producto de seguridad.",
-                "Secret Protection incluye funciones de análisis de secretos y protección de inserciones.",
-                "Code Security se centra en análisis de código y funciones avanzadas de cadena de suministro.",
-                "Actions ejecuta flujos de automatización, no concede este derecho de producto."
+                "Las comprobaciones de validez evalúan credenciales detectadas compatibles; no añaden formatos genéricos.",
+                "Los patrones genéricos cubren claves privadas y cadenas de conexión sin un proveedor concreto.",
+                "Los patrones personalizados requieren expresiones propias; se piden formatos integrados.",
+                "Las exenciones omiten la prevención para ciertos actores; no amplían la detección."
             ],
-            "concept": "Alcance del producto Secret Protection",
+            "concept": "Detección de secretos genéricos",
             "hints": [
-                "¿El requisito es detectar credenciales o analizar código y dependencias?",
-                "¿Qué producto agrupa funciones que previenen y detectan filtraciones de secretos?"
+                "Distingue un proveedor conocido de una estructura general de credencial.",
+                "No se solicita un formato de token propietario."
             ]
         },
         "ghas-secrets-031": {
-            "prompt": "Una expresión regular personalizada debe detectar un formato nuevo de credencial sin coincidir con identificadores comunes. ¿Cómo debería evaluar esa meta quien la crea?",
+            "prompt": "Una expresión de secretos funciona en otro comprobador, pero usa construcciones no compatibles con el motor de patrones de GitHub. ¿Qué objetivo de compatibilidad debe usar su autor?",
             "choices": [
-                "Reemplazar la expresión regular por el nombre del repositorio",
-                "Comparar el número de alertas de Dependabot antes y después",
-                "Ejecutar una prueba con ejemplos que deben coincidir y valores similares que no",
-                "Probar solo una credencial conocida y publicar de inmediato"
+                "La sintaxis RegExp de JavaScript",
+                "Todas las construcciones y modificadores PCRE",
+                "El subconjunto PCRE admitido por Hyperscan",
+                "Los comodines pathspec de Git"
             ],
             "explanations": [
-                "El nombre del repositorio no describe la sintaxis de credenciales.",
-                "El recuento de alertas de dependencias no mide la precisión del patrón de secretos.",
-                "Los ejemplos positivos y negativos revelan tanto omisiones como falsos positivos.",
-                "Un ejemplo no demuestra precisión ante cadenas similares."
+                "Un comprobador de JavaScript puede aceptar sintaxis no disponible en este motor.",
+                "GitHub no admite todas las construcciones PCRE ni los modificadores de opciones de Hyperscan.",
+                "Los patrones personalizados usan Hyperscan y su subconjunto documentado de PCRE.",
+                "Pathspec selecciona rutas; no es el lenguaje regex para secretos personalizados."
             ],
-            "concept": "Validación de cobertura de patrones",
+            "concept": "Compatibilidad regex de patrones personalizados",
             "hints": [
-                "¿Qué ejemplos prueban si la expresión es útil y selectiva?",
-                "¿Qué podría no revelar una única prueba positiva?"
+                "Una prueba correcta en un motor no demuestra portabilidad.",
+                "Consulta la sintaxis documentada del detector, no solo los ejemplos."
             ]
         },
         "ghas-secrets-032": {
@@ -1441,23 +1441,23 @@ export const translations = {
             ]
         },
         "ghas-secrets-033": {
-            "prompt": "Una organización ve alertas recurrentes por un formato de credencial propio que los detectores integrados no reconocen. ¿Qué configuración resuelve esa brecha?",
+            "prompt": "Un patrón personalizado ya captura la longitud y el alfabeto del token. También debe exigir un dígito dentro del token, sin restringir el texto circundante. ¿Qué campo corresponde?",
             "choices": [
-                "Definir y probar un patrón personalizado de análisis de secretos",
-                "Agregar el formato de credencial a `dependabot.yml`",
-                "Crear una base de datos de CodeQL para el token",
-                "Agregar un identificador SPDX al repositorio"
+                "Additional match requirements",
+                "Before secret",
+                "After secret",
+                "Pattern name"
             ],
             "explanations": [
-                "Un patrón personalizado agrega detección para formatos de secretos propios de la organización.",
-                "La configuración de Dependabot controla las actualizaciones de dependencias.",
-                "Una base de CodeQL modela código fuente para analizarlo con consultas.",
-                "Los identificadores SPDX describen licencias de software."
+                "Additional match requirements permite exigir que el propio secreto coincida con una expresión de dígitos.",
+                "Before secret restringe el contenido anterior, no el interior del secreto.",
+                "After secret restringe el contenido posterior, no la composición interna del secreto.",
+                "Pattern name etiqueta el detector, pero no impone condiciones de coincidencia."
             ],
-            "concept": "Ampliación de la cobertura de detección de secretos",
+            "concept": "Restricciones internas de patrones personalizados",
             "hints": [
-                "¿Qué tipo de detector falta para este formato de credencial?",
-                "¿Qué función permite definir un patrón propio de coincidencia?"
+                "Determina si la condición afecta al valor capturado o a sus vecinos.",
+                "El formato básico del token ya está configurado."
             ]
         },
         "ghas-secrets-034": {
@@ -1481,23 +1481,23 @@ export const translations = {
             ]
         },
         "ghas-secrets-035": {
-            "prompt": "Solo un grupo pequeño de respuesta debería aprobar solicitudes de omisión de la protección de inserciones. ¿Qué configuración satisface mejor ese requisito?",
+            "prompt": "Una solicitud para omitir la protección figura como Approved, pero sus commits no llegaron al repositorio. ¿Qué interpretación corresponde a los estados documentados?",
             "choices": [
-                "Deshabilitar la protección de inserciones en la empresa",
-                "Usar un tema del repositorio como señal de aprobación",
-                "Configurar la omisión delegada con un equipo revisor de alcance adecuado",
-                "Dar permisos de propietario de la organización a cada persona colaboradora"
+                "La aprobación confirma que se enviaron los commits",
+                "La aprobación exime permanentemente al colaborador",
+                "La aprobación permite el envío, pero no lo ejecuta",
+                "La aprobación cierra el incidente de credenciales"
             ],
             "explanations": [
-                "Deshabilitar la protección elimina por completo el flujo de aprobación.",
-                "Un tema no autoriza ni registra una decisión de omisión.",
-                "La omisión delegada permite asignar deliberadamente la autoridad de aprobación.",
-                "El acceso de propietario de la organización es más amplio de lo necesario."
+                "Approved contempla expresamente commits que todavía no se han enviado.",
+                "Aprobar una solicitud no exime al actor de la protección futura.",
+                "El colaborador aún debe enviar los commits; aprobar no los publica.",
+                "Aprobar una omisión no revoca credenciales ni completa la remediación."
             ],
-            "concept": "Revisión de omisiones con privilegios mínimos",
+            "concept": "Aprobación frente a entrega de una omisión",
             "hints": [
-                "¿Quién necesita autoridad para aprobar una excepción?",
-                "¿Qué configuración limita el poder de aprobación sin quitar el bloqueo?"
+                "Distingue el permiso para una operación de su ejecución.",
+                "Interpreta el estado según la entrega de los commits."
             ]
         },
         "ghas-secrets-036": {
@@ -1521,23 +1521,23 @@ export const translations = {
             ]
         },
         "ghas-secrets-037": {
-            "prompt": "Un patrón personalizado detecta una credencial propia en el historial confirmado. ¿Qué configuración adicional permite bloquear futuras inserciones mediante pushes compatibles?",
+            "prompt": "Una organización publicó un patrón y habilitó su protección de inserciones. Un repositorio tiene análisis de secretos, pero la protección de inserciones local está desactivada. ¿Qué permite bloquear allí los envíos compatibles?",
             "choices": [
-                "Habilitar la protección de inserciones para el patrón personalizado publicado",
-                "Agregar el patrón a `dependabot.yml`",
-                "Crear una suite de consultas de análisis de código",
-                "Deshabilitar el análisis histórico"
+                "Habilitar la protección de inserciones del repositorio",
+                "Volver a publicar el patrón en la empresa",
+                "Aumentar la muestra de simulación de la organización",
+                "Renombrar el patrón en la organización"
             ],
             "explanations": [
-                "Un patrón personalizado publicado puede habilitarse para la protección de inserciones.",
-                "La configuración de Dependabot no controla la prevención de secretos al insertar.",
-                "Las suites de consultas analizan código, no bloquean este formato de credencial.",
-                "Detener el análisis histórico no impide inserciones nuevas."
+                "La protección del patrón de organización solo se aplica donde está habilitada la protección del repositorio.",
+                "Una copia empresarial no sustituye el requisito de habilitación del repositorio.",
+                "La muestra de simulación evalúa coincidencias; no activa la prevención local.",
+                "Renombrar el detector no cambia la protección configurada en el repositorio."
             ],
-            "concept": "Detección frente a prevención de secretos",
+            "concept": "Aplicabilidad de la prevención de patrones",
             "hints": [
-                "¿Qué función actúa antes de que un push compatible llegue al repositorio?",
-                "¿Detectar equivale a bloquear futuras exposiciones?"
+                "Revisa los requisitos del repositorio por separado del detector compartido.",
+                "La publicación y la prevención local son capas de configuración distintas."
             ]
         },
         "ghas-secrets-038": {
@@ -1801,23 +1801,23 @@ export const translations = {
             ]
         },
         "ghas-supply-011": {
-            "prompt": "Una organización habilita alertas de Dependabot, pero quiere pull requests automáticos para paquetes vulnerables. ¿Qué distinción importa?",
+            "prompt": "Una dependencia está en 1.2.0. La primera versión corregida es 1.2.4 y resuelve el grafo sin romperlo; 2.0.0 es más reciente. ¿Qué destino corresponde al objetivo de las actualizaciones de seguridad?",
             "choices": [
-                "Las alertas fusionan automáticamente todas las actualizaciones",
-                "Las actualizaciones de versiones son necesarias para generar alertas de vulnerabilidad",
-                "Las actualizaciones de seguridad deshabilitan el gráfico de dependencias",
-                "Las alertas señalan riesgos; las actualizaciones proponen correcciones"
+                "2.0.0 porque siempre eligen la más reciente",
+                "1.2.0 con el aviso en una lista de exclusión",
+                "La versión 1.x más alta sin considerar la primera corregida",
+                "1.2.4 como mínima versión corregida resoluble"
             ],
             "explanations": [
-                "Dependabot no fusiona automáticamente todos los cambios propuestos.",
-                "Las alertas dependen de datos de dependencias y avisos, no de la programación de versiones.",
-                "Las actualizaciones de seguridad no reemplazan el inventario de dependencias.",
-                "Las alertas y los pull requests automatizados de seguridad son capacidades distintas."
+                "Elegir siempre la más reciente no describe la corrección mínima ni su objetivo de compatibilidad.",
+                "Conservar la versión vulnerable e ignorar el aviso no actualiza a una corrección.",
+                "No se selecciona incondicionalmente la versión menor más alta.",
+                "Dependabot busca la mínima versión corregida que permita resolver el grafo."
             ],
-            "concept": "Cobertura de alertas frente a actualizaciones",
+            "concept": "Selección de la mínima versión corregida",
             "hints": [
-                "¿Qué función informa al equipo y cuál crea una propuesta de corrección?",
-                "¿Una notificación cambia por sí sola la versión de la dependencia?"
+                "Distingue corregir una vulnerabilidad de mantener versiones recientes.",
+                "El caso ya establece que la primera versión corregida permite resolver el grafo."
             ]
         },
         "ghas-supply-012": {
@@ -1921,23 +1921,23 @@ export const translations = {
             ]
         },
         "ghas-supply-017": {
-            "prompt": "Un equipo pospone una alerta de Dependabot hasta una fecha de revisión. ¿Qué debería esperar cuando termine ese período?",
+            "prompt": "Una regla para dependencias de desarrollo descartó automáticamente una alerta de Dependabot. Después, la dependencia pasa a clasificarse como producción. ¿Qué puede ocurrir al cambiar sus metadatos?",
             "choices": [
-                "El gráfico de dependencias se deshabilita permanentemente",
-                "Posponer no corrige la vulnerabilidad",
-                "El paquete se actualiza automáticamente en la fecha límite",
-                "El aviso se quita de GitHub Advisory Database"
+                "El descarte original es permanente aunque cambien los metadatos",
+                "La alerta puede reabrirse automáticamente",
+                "Hay que crear manualmente otra alerta para el ámbito de producción",
+                "La alerta solo se reabre cuando se publica una versión corregida"
             ],
             "explanations": [
-                "Cambiar el estado de una alerta no deshabilita el inventario de dependencias.",
-                "Posponer aplaza la atención, pero no demuestra que se haya corregido.",
-                "El período de aplazamiento no es una programación de actualizaciones.",
-                "La clasificación del repositorio no retira un aviso publicado."
+                "El descarte automático no es permanente cuando cambian los metadatos que lo justificaban.",
+                "Las alertas descartadas automáticamente pueden reabrirse cuando cambia su ámbito u otros metadatos.",
+                "La alerta existente puede reabrirse; no hace falta crear manualmente otra.",
+                "Cambiar los metadatos puede reabrir la alerta sin esperar una versión corregida."
             ],
-            "concept": "Momento de notificación de clasificación automática",
+            "concept": "Reapertura de alertas por metadatos",
             "hints": [
-                "¿Qué aplaza el período de espera?",
-                "¿Qué evento debería impulsar al equipo a revisar el riesgo?"
+                "La elegibilidad de la regla dependía del ámbito de la dependencia.",
+                "Piensa si el descarte automático es permanente."
             ]
         },
         "ghas-supply-018": {
@@ -2061,23 +2061,23 @@ export const translations = {
             ]
         },
         "ghas-supply-024": {
-            "prompt": "Un socio solicita una lista de bibliotecas que usa un repositorio, no de proyectos que lo consumen. ¿Qué representa la SBOM exportada del repositorio?",
+            "prompt": "Tras solicitar un SBOM por REST, una automatización consulta el sbom_url devuelto y recibe HTTP 202. ¿Qué comportamiento sigue el flujo documentado?",
             "choices": [
-                "Dependencias y metadatos del repositorio",
-                "Todos los repositorios que dependen de este repositorio",
-                "Cada paquete publicado en GitHub",
-                "Solo vulnerabilidades de la base de avisos"
+                "Seguir consultando; seguir la redirección 302 cuando esté listo",
+                "Interpretar la respuesta 202 como documento SPDX completo",
+                "Tratar 202 como error permanente de autorización",
+                "Solicitar una generación nueva después de cada consulta"
             ],
             "explanations": [
-                "La SBOM exporta el inventario de componentes del gráfico de dependencias.",
-                "Los proyectos dependientes no aparecen en la SBOM del repositorio.",
-                "Una SBOM no es un catálogo de todos los paquetes de GitHub.",
-                "La SBOM registra componentes, no solo vulnerabilidades."
+                "El flujo devuelve 202 mientras prepara y redirige con 302 a la descarga terminada.",
+                "Una respuesta pendiente no es el artefacto SBOM completo.",
+                "202 indica procesamiento aceptado aquí, no una denegación permanente.",
+                "Hay que consultar la URL devuelta, no iniciar generaciones repetidas."
             ],
-            "concept": "Dependencias frente a dependientes en SBOM",
+            "concept": "Exportación asíncrona de SBOM",
             "hints": [
-                "¿Se solicitan paquetes que usa el proyecto o proyectos que lo usan?",
-                "¿Qué lado de la relación aparece en una SBOM exportada?"
+                "Distingue la generación pendiente del artefacto descargable.",
+                "Usa la URL de continuación que devuelve el servicio."
             ]
         },
         "ghas-supply-025": {
@@ -2121,23 +2121,23 @@ export const translations = {
             ]
         },
         "ghas-supply-027": {
-            "prompt": "Una alerta de Dependabot identifica un paquete transitivo vulnerable. ¿Qué información ayuda a encontrar una corrección práctica?",
+            "prompt": "Una dependencia npm A solo permite B 1.x, pero la corrección de B empieza en 2.0. Dependabot propone actualizar A y B. ¿Por qué puede necesitar cambiar el padre no vulnerable?",
             "choices": [
-                "Los motivos de omisión de la protección de inserciones",
-                "La cantidad actual de consultas de CodeQL",
-                "Los repositorios dependientes de la SBOM",
-                "Ruta de dependencia y corrección disponible"
+                "La versión mayor de A siempre debe coincidir con la de B",
+                "La entrada de A en el lockfile anula por sí sola su rango para B",
+                "Hay que actualizar A para descartar la vulnerabilidad de B como falso positivo",
+                "Un padre más nuevo puede permitir la versión corregida de B"
             ],
             "explanations": [
-                "Los motivos de omisión de secretos no explican el origen del paquete.",
-                "La cantidad de consultas no identifica una ruta de corrección de dependencias.",
-                "La SBOM exportada no enumera dependientes.",
-                "La ruta identifica qué paquete padre incorpora el componente y la alerta puede indicar una versión corregida."
+                "Los números de versión mayor del padre y del hijo no tienen que coincidir.",
+                "Editar solo el lockfile no elimina la restricción incompatible declarada por el padre.",
+                "Es una vulnerabilidad real del hijo, no un falso positivo por la versión del padre.",
+                "Actualizar A puede eliminar la restricción que excluía B 2.0."
             ],
-            "concept": "Corrección eficaz de dependencias",
+            "concept": "Restricciones del padre en correcciones transitivas",
             "hints": [
-                "¿Qué dependencia padre podría actualizarse para quitar la versión transitiva?",
-                "¿Qué detalle de la alerta señala una versión corregida disponible?"
+                "El gestor debe satisfacer el rango de versiones declarado por el padre.",
+                "La corrección también debe producir un grafo de dependencias resoluble."
             ]
         },
         "ghas-supply-028": {
@@ -2201,23 +2201,23 @@ export const translations = {
             ]
         },
         "ghas-supply-031": {
-            "prompt": "Las alertas de Dependabot están habilitadas, pero el equipo quiere pull requests automáticos para paquetes vulnerables. ¿Qué suposición debería evitar?",
+            "prompt": "Una entrada de dependabot.yml usa target-branch: release para actualizaciones rutinarias de versión. ¿Qué debe esperar el mantenedor de las actualizaciones de seguridad?",
             "choices": [
-                "Que las actualizaciones de seguridad requieran una dependencia vulnerable corregible",
-                "Que los datos de alertas provengan de dependencias y avisos",
-                "Que las actualizaciones propuestas deban revisarse",
-                "Que habilitar solo alertas garantice pull requests de actualización de seguridad"
+                "Pasan a release junto con las de versión",
+                "Se ejecutan en todas las ramas con manifiesto",
+                "Alternan entre release y la rama predeterminada",
+                "Siguen dirigidas a la rama predeterminada"
             ],
             "explanations": [
-                "Puede que una alerta no tenga una versión corregida disponible.",
-                "Dependabot relaciona avisos con datos de dependencias.",
-                "Las propuestas automáticas aún requieren revisión y pruebas.",
-                "Las alertas y los pull requests de seguridad tienen condiciones de habilitación distintas."
+                "target-branch cambia el destino de las actualizaciones de versión, no de seguridad.",
+                "Las actualizaciones de seguridad no se distribuyen a toda rama con manifiesto.",
+                "Esta opción no establece una alternancia de ramas para actualizaciones de seguridad.",
+                "Las actualizaciones de seguridad apuntan a la rama predeterminada, independientemente de esta entrada."
             ],
-            "concept": "Configuración de actualizaciones frente a generación de alertas",
+            "concept": "Ámbito de ramas de actualizaciones de seguridad",
             "hints": [
-                "¿Qué función propone una corrección en vez de notificar un riesgo?",
-                "¿Qué configuración conviene verificar además de generar alertas?"
+                "Comprueba a qué tipo de actualización se aplica la personalización.",
+                "Compartir un archivo de configuración no hace universales todas sus opciones."
             ]
         },
         "ghas-supply-032": {
@@ -2261,23 +2261,23 @@ export const translations = {
             ]
         },
         "ghas-supply-034": {
-            "prompt": "Una alerta de Dependabot no muestra una versión corregida. ¿Qué debería hacer la persona mantenedora?",
+            "prompt": "Una solicitud de actualización de seguridad de Dependabot tiene una puntuación de compatibilidad alta. ¿Qué evidencia resume esa puntuación?",
             "choices": [
-                "Suponer que el paquete no es vulnerable",
-                "Deshabilitar alertas para el ecosistema",
-                "Evaluar exposición y mitigaciones, seguir la alerta y revisarla cuando cambien las opciones",
-                "Cerrar la alerta porque no hay actualización"
+                "El porcentaje de rutas vulnerables eliminadas",
+                "El porcentaje de pruebas locales que cubren el paquete",
+                "El porcentaje de ejecuciones CI correctas en otros repositorios públicos",
+                "El porcentaje de versiones verificadas sin vulnerabilidades"
             ],
             "explanations": [
-                "La alerta demuestra una vulnerabilidad conocida aunque no haya parche.",
-                "Deshabilitar alertas futuras reduce visibilidad, no mitiga este problema.",
-                "La falta de corrección no elimina el riesgo; importan la mitigación y la reevaluación.",
-                "Cerrar no corrige la dependencia vulnerable."
+                "La puntuación no mide alcanzabilidad ni eliminación de vulnerabilidades.",
+                "No mide cobertura local ni demuestra compatibilidad con este proyecto.",
+                "Resume el éxito de CI en otros repositorios públicos para esa transición de versiones.",
+                "No certifica la seguridad del historial de versiones de un paquete."
             ],
-            "concept": "Respuesta ante dependencias sin parche",
+            "concept": "Procedencia de la puntuación de compatibilidad",
             "hints": [
-                "¿La falta de una corrección equivale a ausencia de riesgo?",
-                "¿Qué mantiene bajo revisión una vulnerabilidad conocida mientras no haya solución?"
+                "Pregunta de quién es la CI que produjo la evidencia.",
+                "La evidencia de compatibilidad no es gravedad de vulnerabilidades."
             ]
         },
         "ghas-supply-035": {
@@ -2341,23 +2341,23 @@ export const translations = {
             ]
         },
         "ghas-supply-038": {
-            "prompt": "Hay una alerta abierta, pero no aparece ningún pull request de actualización de seguridad. ¿Qué dos condiciones conviene investigar?",
+            "prompt": "Dependabot informa que se alcanzó el límite de solicitudes de actualización de seguridad. Las de versión tienen otro límite configurable. ¿Qué libera la capacidad de seguridad agotada?",
             "choices": [
-                "Si CodeQL tiene una ejecución programada y una categoría SARIF",
-                "Si la alerta se asignó a un equipo y el repositorio tiene estrellas",
-                "Si las actualizaciones de seguridad están habilitadas y si hay una corrección compatible",
-                "Si el repositorio tiene un patrón personalizado y un encabezado SPDX"
+                "Aumentar open-pull-requests-limit para versiones",
+                "Cambiar el calendario de versiones a diario",
+                "Fusionar o cerrar solicitudes de actualización de seguridad",
+                "Mover el destino de versiones a otra rama"
             ],
             "explanations": [
-                "La programación de CodeQL y las categorías SARIF son independientes de Dependabot.",
-                "La asignación y la popularidad no demuestran que exista una corrección compatible.",
-                "La función debe estar disponible y la vulnerabilidad debe tener una ruta de actualización viable.",
-                "Los patrones de secretos y encabezados SPDX no crean pull requests de seguridad."
+                "El límite configurable de versiones no aumenta el límite separado de seguridad.",
+                "Un calendario más frecuente no libera capacidad para solicitudes de seguridad.",
+                "Completar o cerrar solicitudes de seguridad libera capacidad en ese grupo.",
+                "Cambiar la rama de versiones no libera plazas de actualización de seguridad."
             ],
-            "concept": "Solución de problemas de actualizaciones de seguridad",
+            "concept": "Límites separados de solicitudes de Dependabot",
             "hints": [
-                "¿Qué debe estar habilitado y qué debe existir para proponer una actualización?",
-                "¿Una alerta válida podría no tener una versión compatible disponible?"
+                "Identifica qué grupo de solicitudes menciona el error.",
+                "La configuración rutinaria puede no controlar las actualizaciones de seguridad."
             ]
         },
         "ghas-supply-039": {
@@ -2381,23 +2381,23 @@ export const translations = {
             ]
         },
         "ghas-supply-040": {
-            "prompt": "Un flujo debe fallar si un pull request incorpora un paquete con licencia prohibida y seguir informando vulnerabilidades. ¿Qué configuración corresponde?",
+            "prompt": "Un flujo de revisión de dependencias debe bloquear vulnerabilidades de dependencias de ejecución, no las usadas solo en desarrollo. ¿Qué entrada selecciona ese ámbito de bloqueo?",
             "choices": [
-                "Configura la política de licencias de la acción",
-                "Agregar la licencia a `registries` de `dependabot.yml`",
-                "Excluir la ruta del paquete en `secret_scanning.yml`",
-                "Descartar el aviso del paquete"
+                "fail-on-scopes: runtime",
+                "fail-on-severity: high",
+                "deny-licenses: MIT",
+                "allow-ghsas: GHSA-abcd-1234-5679"
             ],
             "explanations": [
-                "La acción de revisión admite políticas de licencias y ajustes de gravedad de vulnerabilidades.",
-                "Las entradas de registro configuran orígenes, no reglas de licencias.",
-                "Las exclusiones de secretos no afectan las comprobaciones de licencias.",
-                "Descartar un aviso no aplica una política de licencias."
+                "fail-on-scopes selecciona los ámbitos cuyas vulnerabilidades hacen fallar la comprobación.",
+                "La gravedad selecciona impacto, no uso en ejecución frente a desarrollo.",
+                "Los identificadores de licencia expresan una política de licencias, no ámbito vulnerable.",
+                "Una excepción de aviso omite ese aviso, en vez de seleccionar dependencias de ejecución."
             ],
-            "concept": "Política de dependencias con alcance limitado",
+            "concept": "Bloqueo por ámbito en revisión de dependencias",
             "hints": [
-                "¿Qué acción de pull request evalúa riesgo de paquetes y política de licencias?",
-                "¿Dónde debería configurarse una regla sobre identificadores de licencia permitidos?"
+                "Distingue el ámbito de uso de la gravedad y la licencia.",
+                "La política se refiere a dónde se usa la dependencia."
             ]
         },
         "ghas-ecosystem-041": {
@@ -2441,43 +2441,43 @@ export const translations = {
             ]
         },
         "ghas-secrets-041": {
-            "prompt": "Dos alertas muestran el mismo tipo de secreto, pero solo uno tiene un resultado de validez del proveedor. ¿Qué debería concluir el equipo de respuesta?",
+            "prompt": "Una comprobación del proveedor indica que un token expuesto está inactivo. El equipo no investigó el período anterior a la revocación. ¿Qué seguimiento responde a la pregunta pendiente del incidente?",
             "choices": [
-                "Evaluar cada resultado en su contexto; la falta de validación no demuestra seguridad",
-                "La alerta sin resultado debe ser un falso positivo",
-                "Ambas credenciales están activas porque una lo estaba",
-                "El analizador valida todos los tipos de secretos de la misma manera"
+                "Revisar los registros del proveedor por uso no autorizado",
+                "Repetir la limpieza para demostrar que no se usó",
+                "Tratar el estado inactivo como auditoría de acceso",
+                "Descartar la detección como error de formato"
             ],
             "explanations": [
-                "Los resultados pueden variar según el tipo o la disponibilidad y requieren interpretación individual.",
-                "La falta de comprobación no demuestra que la detección sea falsa.",
-                "El estado de una credencial no determina el de otra.",
-                "La compatibilidad con validez del proveedor no es igual para todos los tipos."
+                "El estado inactivo no determina si se abusó del token cuando funcionaba.",
+                "Retirar copias no muestra quién usó el token antes de la revocación.",
+                "La validez describe el uso posible actual, no el historial de accesos.",
+                "Una credencial real inactiva no se convierte por ello en falso positivo."
             ],
-            "concept": "Comprobación de validez según el contexto",
+            "concept": "Uso indebido histórico tras desactivar tokens",
             "hints": [
-                "¿Qué indica el resultado para cada credencial individual?",
-                "¿Se puede generalizar a otra alerta el estado de validación de una?"
+                "Distingue la utilidad actual de la credencial de la actividad pasada.",
+                "¿Qué evidencia revelaría usos anteriores a la contención?"
             ]
         },
         "ghas-supply-041": {
-            "prompt": "La acción de revisión de dependencias no informa cambios aunque un pull request actualiza un archivo de bloqueo. ¿Qué debería comprobar el equipo antes de considerarlo una revisión limpia?",
+            "prompt": "Una configuración de revisión de dependencias contiene allow-licenses y deny-licenses. El equipo quiere solo una lista de licencias permitidas. ¿Qué corrección respeta la restricción documentada?",
             "choices": [
-                "Que el flujo de CodeQL se ejecute cada noche",
-                "Que el gráfico resuelva manifiestos compatibles para el estado base y el estado de dependencias propuesto",
-                "Que el repositorio no tenga alertas de análisis de secretos",
-                "Que la SBOM enumere repositorios dependientes"
+                "Conservar ambas; la lista de denegación tiene prioridad",
+                "Eliminar deny-licenses y conservar allow-licenses",
+                "Mover deny-licenses al mismo archivo local",
+                "Sustituir ambas listas por fail-on-scopes"
             ],
             "explanations": [
-                "La programación de CodeQL no garantiza datos para la revisión de dependencias.",
-                "Una diferencia útil requiere información de dependencias para ambos estados comparados.",
-                "Las alertas de secretos no determinan la cobertura de cambios de paquetes.",
-                "La SBOM del repositorio no enumera repositorios dependientes."
+                "La restricción documentada permite solo una de esas dos entradas de licencias.",
+                "Eliminar la lista de denegación conserva la política solicitada y evita la combinación prohibida.",
+                "Mover la entrada en conflicto no hace compatibles ambas políticas.",
+                "El filtrado por ámbito no aplica una lista de licencias permitidas."
             ],
-            "concept": "Integridad del inventario base y propuesto",
+            "concept": "Entradas de licencias mutuamente excluyentes",
             "hints": [
-                "¿Qué dos estados de dependencias compara la revisión?",
-                "¿La falta de inventario podría hacer que un resultado vacío no sea concluyente?"
+                "Una preferencia de política no anula el contrato de entradas.",
+                "Distingue primero la validez de configuración de la selección de licencias."
             ]
         },
         "ghas-code-001": {
@@ -2601,23 +2601,23 @@ export const translations = {
             ]
         },
         "ghas-code-007": {
-            "prompt": "Una integración carga SARIF directamente mediante la API de análisis de código sin `partialFingerprints`. ¿Qué riesgo debería atender su responsable?",
+            "prompt": "Un productor SARIF almacena la ubicación y el mensaje de cada hallazgo junto con descripciones reutilizables de detectores. ¿Dónde corresponde la evidencia de cada aparición?",
             "choices": [
-                "Sin huellas, pueden aparecer alertas duplicadas",
-                "La API convierte cada resultado en una alerta de Dependabot",
-                "El repositorio obtiene automáticamente una base de CodeQL",
-                "La carga deshabilita todos los análisis futuros"
+                "En run.results, con referencia a la regla",
+                "En tool.driver.rules, sustituyendo su descripción",
+                "En run.automationDetails, sustituyendo la categoría",
+                "En el campo version de SARIF, junto a la versión"
             ],
             "explanations": [
-                "La API puede procesar resultados sin huellas, pero podrían aparecer duplicados.",
-                "Las cargas SARIF crean hallazgos de análisis de código, no alertas de dependencias.",
-                "Cargar resultados no genera una base de CodeQL.",
-                "Una carga de análisis no deshabilita análisis futuros."
+                "Cada resultado contiene detalles de una aparición y puede referenciar su regla.",
+                "Las reglas describen detectores y no deben sustituirse por evidencia de cada aparición.",
+                "Los detalles de automatización identifican análisis, no ubicaciones de hallazgos individuales.",
+                "El campo version identifica el formato SARIF, no los hallazgos del analizador."
             ],
-            "concept": "Manejo de huellas en cargas de API",
+            "concept": "Reglas frente a resultados SARIF",
             "hints": [
-                "¿Qué podría ocurrir si faltan datos de identidad del resultado?",
-                "¿Qué propiedad SARIF ayuda a evitar hallazgos repetidos entre cargas?"
+                "Distingue una definición de detector de una instancia de su salida.",
+                "¿Qué estructura cambia al analizar otro código con las mismas reglas?"
             ]
         },
         "ghas-code-008": {
@@ -2861,23 +2861,23 @@ export const translations = {
             ]
         },
         "ghas-code-020": {
-            "prompt": "Un repositorio carga resultados de dos configuraciones del mismo analizador. ¿Cuál es el propósito principal de la categoría?",
+            "prompt": "Un resultado SARIF aceptado aparece en el análisis de código, pero su única ubicación es una línea sin cambios fuera del diff de una solicitud. ¿Por qué puede carecer de anotación en la comprobación?",
             "choices": [
-                "Nombrar el ecosistema de dependencias",
-                "Identificar y distinguir el conjunto de resultados del análisis",
-                "Definir la gravedad de la alerta",
-                "Elegir un patrón de análisis de secretos"
+                "Los resultados SARIF aceptados nunca generan anotaciones",
+                "Las líneas señaladas deben añadirse o editarse en el diff",
+                "Cada solicitud necesita una categoría de análisis nueva",
+                "La regla debe usar un identificador CVE como ruleId"
             ],
             "explanations": [
-                "Los ecosistemas de dependencias se configuran aparte.",
-                "Una categoría etiqueta un análisis concreto, como una ejecución de herramienta o configuración.",
-                "La gravedad describe un hallazgo individual, no la etiqueta del conjunto.",
-                "Los patrones de secretos tienen su propia configuración."
+                "El análisis de código puede anotar solicitudes con resultados SARIF elegibles.",
+                "Para mostrarse en la comprobación, las líneas deben estar entre las añadidas o editadas.",
+                "Las categorías separan conjuntos; cambiarlas no mueve ubicaciones al diff.",
+                "Una regla no necesita llamarse con un CVE para poder mostrarse."
             ],
-            "concept": "Etiquetas de categoría de análisis",
+            "concept": "Elegibilidad de anotaciones SARIF en solicitudes",
             "hints": [
-                "¿Qué debería distinguir una etiqueta estable entre análisis separados?",
-                "¿La categoría describe un conjunto de resultados o el riesgo de un hallazgo individual?"
+                "La aceptación de carga y la visualización contextual tienen requisitos distintos.",
+                "Compara la ubicación del hallazgo con las líneas modificadas."
             ]
         },
         "ghas-code-021": {
@@ -3001,23 +3001,23 @@ export const translations = {
             ]
         },
         "ghas-code-027": {
-            "prompt": "Un análisis de terceros termina correctamente, pero no aparecen alertas nuevas en GitHub. ¿Qué etapa debería verificar su responsable?",
+            "prompt": "Una herramienta genera un archivo SARIF de 12 MB después de comprimirlo con gzip. ¿Qué cambio atiende la restricción documentada por archivo?",
             "choices": [
-                "Que la carga SARIF terminara y se aceptara para el repositorio y la categoría previstos",
-                "Que se ejecutara la comprobación de validez de secretos",
-                "Que Dependabot tenga un pull request de actualización abierto",
-                "Que el repositorio tenga una versión reciente"
+                "Reducir el archivo comprimido por debajo de 10 MB",
+                "Declarar SARIF 2.0.0 como versión del archivo",
+                "Reintentar el mismo contenido con otra categoría",
+                "Cambiar la gravedad de todos los resultados a warning"
             ],
             "explanations": [
-                "El análisis correcto y la incorporación correcta de resultados son etapas distintas.",
-                "Las comprobaciones de validez no importan resultados de análisis de código.",
-                "Las actualizaciones de Dependabot no incorporan SARIF.",
-                "Una versión publicada no demuestra que se haya cargado un análisis."
+                "GitHub rechaza archivos SARIF comprimidos con gzip mayores de 10 MB; hay que reducir el contenido.",
+                "GitHub admite SARIF 2.1.0; cambiar la versión no reduce el tamaño.",
+                "La categoría separa conjuntos de análisis, pero no aumenta el límite de carga.",
+                "Cambiar la gravedad no reduce el archivo de forma fiable ni cambia el límite."
             ],
-            "concept": "Éxito del análisis frente a incorporación",
+            "concept": "Tamaño de carga SARIF comprimida",
             "hints": [
-                "¿La herramienta terminó el análisis y GitHub aceptó sus resultados?",
-                "¿Qué transferencia puede fallar después de completar el análisis?"
+                "Evalúa el límite sobre el contenido comprimido, no sobre la salida correcta de la herramienta.",
+                "Cambiar metadatos no amplía la capacidad de carga."
             ]
         },
         "ghas-code-028": {
@@ -3301,23 +3301,23 @@ export const translations = {
             ]
         },
         "ghas-operations-012": {
-            "prompt": "Se expuso una credencial de producción. ¿Qué acción elimina su autoridad, en vez de limitarse a cambiar el contenido del repositorio?",
+            "prompt": "Los responsables revocaron un token expuesto. Una integración de producción programada aún lo referencia y falla al autenticarse. ¿Qué seguimiento la restaura sin deshacer la contención?",
             "choices": [
-                "Resolver la alerta con un motivo preciso.",
-                "Revocar o rotar la credencial expuesta.",
-                "Eliminar el secreto del código fuente actual.",
-                "Revisar la exposición y la actividad del proveedor."
+                "Crear otro token y conservar la configuración actual del servicio",
+                "Configurar el servicio con una credencial de reemplazo",
+                "Volver a desplegar usando el mismo valor de credencial revocada",
+                "Reintentar el trabajo sin cambiar las credenciales de ejecución"
             ],
             "explanations": [
-                "Resolver la alerta registra la respuesta; cambiar el estado no revoca por sí mismo la credencial.",
-                "Revocar o rotar elimina la autoridad de la credencial en su proveedor; borrar un archivo no lo hace.",
-                "Limpiar el código evita seguir distribuyendo el secreto, pero no invalida copias ya filtradas.",
-                "La revisión del incidente ayuda a determinar uso indebido e impacto; no equivale a cambiar la validez de la credencial."
+                "Crear un token no actualiza el servicio que aún referencia el valor revocado.",
+                "La remediación incluye actualizar los servicios que usaban el token comprometido.",
+                "Volver a desplegar el valor revocado no restaura su autoridad en el proveedor.",
+                "Reintentar con la misma credencial revocada no repara la autenticación."
             ],
-            "concept": "Contención de credenciales",
+            "concept": "Reemplazo de credenciales en servicios dependientes",
             "hints": [
-                "Distingue eliminar una credencial de eliminar su autoridad.",
-                "El registro de alerta y la exposición subyacente son cosas distintas."
+                "La contención terminó; el fallo pendiente está en un consumidor.",
+                "¿Qué sistema proporciona realmente el material de autenticación?"
             ]
         },
         "ghas-operations-013": {
@@ -3421,23 +3421,23 @@ export const translations = {
             ]
         },
         "ghas-operations-018": {
-            "prompt": "La clasificación automática oculta una clase de alertas de bajo riesgo. ¿Qué evidencia debe acompañar la regla para explicar los hallazgos suprimidos?",
+            "prompt": "Una auditoría necesita las alertas de Dependabot descartadas por clasificación automática, separadas de las manuales. ¿Qué filtro documentado de motivo de cierre selecciona ese conjunto?",
             "choices": [
-                "Revisión periódica de excepciones",
-                "Informes limitados por permisos",
-                "Audit log",
-                "Justificación del descarte de alertas"
+                "resolution:revoked",
+                "resolution:false-positive",
+                "resolution:fix-started",
+                "resolution:auto-dismiss"
             ],
             "explanations": [
-                "Revisar excepciones comprueba si siguen siendo válidos los supuestos de riesgo y la responsabilidad anteriores.",
-                "Los informes deben respetar el acceso a alertas, no distribuir detalles sensibles a lectores no autorizados.",
-                "Los registros de auditoría conservan eventos admitidos de secretos y Dependabot; no incluyen eventos de la cronología de alertas de código.",
-                "Una justificación útil explica por qué se descartó un hallazgo sin insinuar que se corrigió."
+                "La revocación corresponde a credenciales, no al motivo de clasificación automática.",
+                "La etiqueta de falso positivo no identifica específicamente la clasificación automática.",
+                "Iniciar una corrección no es el motivo documentado de descarte automático.",
+                "Las alertas descartadas automáticamente usan el motivo resolution:auto-dismiss."
             ],
-            "concept": "Resolución automática de alertas auditable",
+            "concept": "Auditoría de alertas de dependencias autodescartadas",
             "hints": [
-                "Distingue la comodidad operativa de la evidencia duradera de gobernanza.",
-                "Piensa qué necesitaría una revisión futura para entender la decisión."
+                "El informe necesita el mecanismo de cierre, no solo el estado abierto o cerrado.",
+                "Usa el motivo documentado, en vez de deducirlo de la gravedad."
             ]
         },
         "ghas-operations-019": {
@@ -3461,43 +3461,43 @@ export const translations = {
             ]
         },
         "ghas-operations-020": {
-            "prompt": "¿Qué suite amplía la cobertura de seguridad predeterminada de CodeQL aceptando algunos hallazgos adicionales de menor precisión?",
+            "prompt": "Un paso init de CodeQL carga un config-file con consultas adicionales. El flujo debe añadir security-extended sin sustituir esa lista configurada. ¿Qué entrada lo consigue?",
             "choices": [
-                "Suite .qls personalizada",
-                "default",
-                "security-extended",
-                "security-and-quality"
+                "queries: security-extended",
+                "disable-default-queries: true",
+                "queries: +security-extended",
+                "category: security-extended"
             ],
             "explanations": [
-                "Una suite personalizada selecciona consultas por metadatos, ubicación u otros criterios y requiere configuración avanzada.",
-                "La suite default prioriza hallazgos de seguridad de alta precisión y menos falsos positivos.",
-                "Incluye las consultas de default más otras de seguridad de menor precisión; puede aumentar la clasificación necesaria.",
-                "Esta suite de configuración avanzada añade consultas de mantenibilidad y fiabilidad a security-extended."
+                "Sin el prefijo más, las consultas adicionales del flujo sustituyen a las del archivo.",
+                "Desactivar consultas predeterminadas no combina ambas listas adicionales.",
+                "El prefijo más combina las consultas adicionales del flujo con la lista configurada.",
+                "Category etiqueta un análisis; no selecciona ni combina consultas."
             ],
-            "concept": "Equilibrio de cobertura de seguridad ampliada",
+            "concept": "Configuración aditiva de consultas CodeQL",
             "hints": [
-                "Compara precisión, amplitud y los tipos de hallazgos buscados.",
-                "Un conjunto de consultas más amplio cambia tanto la detección como la carga de clasificación."
+                "Considera la precedencia entre el flujo y la configuración referenciada.",
+                "El nombre de una suite no expresa cómo combinar dos listas."
             ]
         },
         "ghas-operations-021": {
-            "prompt": "Con la configuración avanzada de CodeQL, ¿qué suite integrada también detecta problemas de mantenibilidad y fiabilidad?",
+            "prompt": "Consultas Java existentes de CodeQL no detectan flujos por una biblioteca interna porque su comportamiento no está modelado. ¿Qué paquete aporta modelos a esas consultas, no consultas ejecutables nuevas?",
             "choices": [
-                "Suite .qls personalizada",
-                "default",
-                "security-extended",
-                "security-and-quality"
+                "Un archivo de resultados SARIF",
+                "Una instantánea de dependencias",
+                "Una lista de consultas .qls personalizada",
+                "Un paquete de modelos CodeQL"
             ],
             "explanations": [
-                "Una suite personalizada selecciona consultas por metadatos, ubicación u otros criterios y requiere configuración avanzada.",
-                "La suite default prioriza hallazgos de seguridad de alta precisión y menos falsos positivos.",
-                "Incluye las consultas de default más otras de seguridad de menor precisión; puede aumentar la clasificación necesaria.",
-                "Esta suite de configuración avanzada añade consultas de mantenibilidad y fiabilidad a security-extended."
+                "SARIF contiene resultados, no semántica de bibliotecas para futuros análisis de flujo.",
+                "Una instantánea registra relaciones de paquetes, no orígenes y sumideros de CodeQL.",
+                "Una lista selecciona consultas, pero no aporta los modelos de comportamiento faltantes.",
+                "Un paquete de modelos amplía la semántica de bibliotecas disponible para consultas existentes."
             ],
-            "concept": "Alcance de seguridad y calidad",
+            "concept": "Modelado de bibliotecas para CodeQL",
             "hints": [
-                "Compara precisión, amplitud y los tipos de hallazgos buscados.",
-                "Un conjunto de consultas más amplio cambia tanto la detección como la carga de clasificación."
+                "Distingue añadir comprobaciones de enseñar una biblioteca a las existentes.",
+                "El comportamiento no reconocido está en una dependencia Java, no en el calendario."
             ]
         },
         "ghas-operations-022": {
@@ -3601,23 +3601,23 @@ export const translations = {
             ]
         },
         "ghas-operations-027": {
-            "prompt": "Un equipo quiere que los resultados de seguridad limiten las fusiones. ¿Qué mecanismo aporta aplicación obligatoria, en vez de otro detector?",
+            "prompt": "Una comprobación de seguridad obligatoria solo debe aceptarse de la GitHub App de análisis instalada, no de otra integración que publique el mismo nombre. ¿Qué configuración lo permite?",
             "choices": [
-                "Code scanning",
-                "Repository rulesets",
-                "Push protection",
-                "Dependency review"
+                "Seleccionar cualquier origen para la comprobación",
+                "Seleccionar la App de análisis como origen esperado",
+                "Asignar el mismo nombre a todas las integraciones",
+                "Exigir historial lineal en vez de la comprobación"
             ],
             "explanations": [
-                "Code scanning puede detectar vulnerabilidades del código fuente al analizar un pull request.",
-                "Los rulesets pueden exigir comprobaciones y otras condiciones antes de aceptar cambios.",
-                "Push protection bloquea secretos compatibles durante un push, antes de que entren en el repositorio.",
-                "Dependency review aporta información sobre dependencias modificadas antes de la fusión."
+                "Cualquier origen no aplica el límite de identidad solicitado.",
+                "Una comprobación obligatoria puede indicar la GitHub App que debe aportar el resultado.",
+                "Compartir el nombre no establece quién emitió de forma fiable el resultado.",
+                "El historial lineal restringe commits, no el emisor del estado de seguridad."
             ],
-            "concept": "Aplicación obligatoria de comprobaciones de corrección",
+            "concept": "Vinculación del origen de comprobaciones obligatorias",
             "hints": [
-                "Sitúa el control en el momento en que proporciona información.",
-                "Distingue un detector de la política que exige su resultado."
+                "Una etiqueta conocida no demuestra quién envió el resultado.",
+                "La política trata del emisor del resultado, no solo de su aprobación."
             ]
         },
         "ghas-operations-028": {
@@ -3741,63 +3741,63 @@ export const translations = {
             ]
         },
         "ghas-operations-034": {
-            "prompt": "La cifra de alertas de un equipo baja tras dejar de ejecutarse varias funciones de seguridad. ¿Qué comprobación evita informar falsamente que se redujo el riesgo?",
+            "prompt": "Un repositorio se archivó hoy. Un analista consulta la vista de seguridad de la semana pasada, cuando sus alertas estaban abiertas. ¿Qué interpretación coincide con el modelo documentado?",
             "choices": [
-                "Comparar los permisos de alertas de ambas personas.",
-                "Usar el ámbito de la rama predeterminada al interpretar las métricas.",
-                "Exportar los datos disponibles de la vista como CSV.",
-                "Comprobar la cobertura antes de concluir que el riesgo es bajo."
+                "El estado del repositorio y las alertas vuelven a la semana pasada",
+                "Los repositorios archivados desaparecen de toda vista histórica",
+                "El cierre actual reescribe todos los estados históricos",
+                "Los filtros usan estado actual; las alertas usan estado histórico"
             ],
             "explanations": [
-                "Los datos de Security overview se filtran según los permisos de quien los consulta.",
-                "Las vistas de Security overview informan sobre las ramas predeterminadas de repositorios accesibles.",
-                "Varias páginas de Security overview permiten exportar CSV para análisis posteriores.",
-                "Una vista sin alertas puede reflejar detección deshabilitada o problemas no detectados, no ausencia de vulnerabilidades."
+                "Los atributos usados como filtros reflejan el estado actual, no la fecha histórica.",
+                "El repositorio puede aparecer si el filtro incluye los archivados.",
+                "El estado histórico puede seguir abierto aunque archivar cerrara las alertas hoy.",
+                "El panel combina estados históricos de alertas con atributos actuales de repositorios."
             ],
-            "concept": "Informes de corrección conscientes de la cobertura",
+            "concept": "Estado histórico frente a filtros actuales",
             "hints": [
-                "Trata los resultados del panel como observaciones con un ámbito, no como una prueba universal.",
-                "Comprueba tanto lo medido como lo que la persona tiene permiso para ver."
+                "El intervalo elegido no retrocede necesariamente todos los atributos del repositorio.",
+                "Considera por separado el historial de alertas y el filtrado de repositorios."
             ]
         },
         "ghas-operations-035": {
-            "prompt": "Los mantenedores necesitan coordinar una corrección con un investigador antes de publicar detalles. ¿Qué función permite este flujo?",
+            "prompt": "Los mantenedores de un proyecto público y un investigador invitado deben colaborar en un parche bajo embargo mientras el aviso sigue en borrador. ¿Qué espacio permite colaborar en código de forma privada?",
             "choices": [
-                "Repository security advisories",
-                "GitHub Advisory Database",
-                "SECURITY.md",
-                "Private vulnerability reporting"
+                "Una bifurcación privada temporal vinculada al aviso",
+                "Una bifurcación pública con una rama de nombre neutro",
+                "Una solicitud en borrador en el repositorio público",
+                "Una incidencia pública con detalles contraídos"
             ],
             "explanations": [
-                "Los avisos del repositorio permiten discutir en privado, coordinar correcciones y publicar después.",
-                "La base es una colección de avisos de seguridad publicados que se puede consultar.",
-                "Una política de seguridad explica las versiones compatibles y cómo informar de vulnerabilidades.",
-                "Esta función ofrece a investigadores un canal privado para informar a quienes mantienen el repositorio."
+                "Los avisos de seguridad permiten colaborar en parches mediante una bifurcación privada temporal.",
+                "Un nombre neutro no vuelve confidencial el código de una bifurcación pública.",
+                "El estado borrador no hace privados los cambios de un repositorio público.",
+                "El contenido contraído sigue siendo público y no impone un embargo."
             ],
-            "concept": "Flujo de corrección de privado a público",
+            "concept": "Espacio para parches bajo embargo",
             "hints": [
-                "Distingue instrucciones, recepción confidencial, corrección coordinada y datos de referencia públicos.",
-                "Considera el público y la fase de divulgación."
+                "Distingue las etiquetas de flujo de la visibilidad real.",
+                "Se necesita compartir código en privado antes de divulgarlo."
             ]
         },
         "ghas-operations-036": {
-            "prompt": "¿Qué estrategia evita tratar una condición final de lanzamiento como el único control de seguridad del desarrollo?",
+            "prompt": "Un flujo CodeQL se ejecuta con pull_request, pero no inicia un análisis al entrar un cambio en la cola de fusión. ¿Qué evento adicional está documentado para analizar el grupo en cola?",
             "choices": [
-                "Dar información de seguridad a los desarrolladores antes de fusionar.",
-                "Combinar detección temprana con comprobaciones de fusión obligatorias.",
-                "Coordinar una campaña enfocada en corregir alertas pendientes.",
-                "Seguir supervisando tras incorporar correcciones a la rama predeterminada."
+                "workflow_dispatch",
+                "merge_group",
+                "release",
+                "issues"
             ],
             "explanations": [
-                "La información temprana ayuda a evitar vulnerabilidades en vez de descubrirlas todas al lanzar una versión.",
-                "La detección aporta hallazgos; las comprobaciones obligatorias deciden si los cambios pueden continuar. Se complementan.",
-                "Una campaña organiza correcciones pendientes; no previene todas las vulnerabilidades nuevas.",
-                "Los avisos nuevos y los cambios de código pueden introducir riesgos después de una corrección."
+                "El inicio manual permite ejecutar un flujo, pero no es el evento de cola.",
+                "merge_group inicia el análisis de cambios añadidos a una cola de fusión.",
+                "El evento release pertenece a otra etapa, no a la agrupación de la cola.",
+                "La actividad de incidencias no valida el commit de fusión en cola."
             ],
-            "concept": "Operaciones preventivas por capas",
+            "concept": "Análisis de código en colas de fusión",
             "hints": [
-                "Considera cuándo llega la información y si todavía se necesita corregir el problema.",
-                "Un control preventivo y una condición de lanzamiento pueden abordar fallos distintos."
+                "Un grupo en cola no es el mismo evento que abrir una solicitud.",
+                "Elige el evento del conjunto de commits que fusionará la cola."
             ]
         },
         "ghas-operations-037": {
@@ -3861,23 +3861,23 @@ export const translations = {
             ]
         },
         "ghas-operations-040": {
-            "prompt": "Copilot Autofix sugiere un parche para una alerta de código. ¿Qué sigue siendo necesario antes de informar de una corrección exitosa?",
+            "prompt": "Un administrador empresarial desautoriza Copilot Autofix para análisis de código. Un administrador de repositorio quiere habilitarlo localmente. ¿Qué debe ocurrir primero?",
             "choices": [
-                "Documentar un descarte justificado como falso positivo.",
-                "Registrar el riesgo aceptado y su justificación.",
-                "Verificar la corrección con análisis reciente y pertinente.",
-                "Reabrir la alerta cuando el descarte ya no esté justificado."
+                "Cambiar de configuración predeterminada a avanzada",
+                "Generar una categoría SARIF nueva para los hallazgos",
+                "Revertir la opción empresarial desde un nivel autorizado",
+                "Asignar una licencia Copilot a cada colaborador"
             ],
             "explanations": [
-                "Descartar como falso positivo requiere evidencia de que la vulnerabilidad no se aplica al código analizado.",
-                "Aceptar un riesgo reconoce un problema sin corregir; no debe informarse como una corrección verificada.",
-                "Una corrección se demuestra con análisis pertinente del código modificado, no solo editando o descartando una alerta.",
-                "Un supuesto que cambia o una ruta de código ahora aplicable puede invalidar un descarte anterior."
+                "La política de Copilot Autofix se aplica a la configuración CodeQL predeterminada y avanzada.",
+                "Una categoría de análisis no anula la política empresarial.",
+                "Desactivar en la empresa impide habilitar en niveles inferiores hasta revertir esa política.",
+                "Asignar licencias a colaboradores no anula la restricción empresarial."
             ],
-            "concept": "Verificación de correcciones generadas",
+            "concept": "Herencia de políticas de Autofix",
             "hints": [
-                "Distingue la evidencia sobre un hallazgo de una decisión de tolerar el riesgo.",
-                "Elige una resolución que siga siendo veraz cuando la lea otra persona."
+                "Las restricciones superiores limitan las opciones inferiores.",
+                "Cambiar la mecánica del análisis no cambia la autoridad de la política."
             ]
         },
         "ghas-operations-041": {
@@ -4101,23 +4101,23 @@ export const translations = {
             ]
         },
         "ghas-administration-011": {
-            "prompt": "Un equipo necesita que se le asigne el rol organizativo predefinido security manager. ¿Qué rol debe realizar esa delegación?",
+            "prompt": "En una organización de GitHub Enterprise Cloud con Secret Protection habilitado, un equipo debe gestionar resultados de secretos y solicitudes de omisión sin controlar todas las funciones de seguridad. ¿Qué diseño de rol aplica mejor el mínimo privilegio?",
             "choices": [
-                "Investigador de seguridad externo",
-                "Desarrollador del repositorio",
-                "Security manager",
-                "Organization owner"
+                "Asignar propietario de organización a cada responsable",
+                "Asignar el rol de administrador de seguridad predefinido",
+                "Asignar admin de repositorio en toda la organización",
+                "Crear un rol de organización personalizado para esas tareas"
             ],
             "explanations": [
-                "Un investigador comunica un posible problema; informar no otorga permisos de administración del repositorio.",
-                "Los desarrolladores implementan y prueban correcciones en el código que mantienen; el acceso depende de los permisos asignados.",
-                "Los security managers pueden gestionar ajustes y alertas de seguridad en toda la organización sin acceso general de escritura al código.",
-                "Los organization owners pueden asignar roles de organización, incluido security manager."
+                "Propietario de organización concede autoridad amplia ajena a esas tareas.",
+                "El rol predefinido incluye ajustes de seguridad de toda la organización, fuera de ese ámbito.",
+                "Admin de repositorio también concede administración general innecesaria.",
+                "Usa la base Read con permisos para ver alertas de secretos; descartarlas, reabrirlas o asignarlas; y revisar y gestionar solicitudes de omisión del análisis de secretos. Añadir permisos de repositorio a roles de organización personalizados está en versión preliminar pública."
             ],
-            "concept": "Autoridad para asignar security managers",
+            "concept": "Roles de seguridad personalizados limitados",
             "hints": [
-                "Distingue el trabajo de implementación de la autoridad en toda la organización.",
-                "Elige el rol cuya responsabilidad habitual corresponde a la tarea."
+                "Compara las tareas solicitadas con el ámbito completo del rol predefinido.",
+                "El mínimo privilegio puede requerir un rol menor que el estándar."
             ]
         },
         "ghas-administration-012": {
@@ -4141,23 +4141,23 @@ export const translations = {
             ]
         },
         "ghas-administration-013": {
-            "prompt": "¿Qué capacidad NO se concede únicamente por el rol predefinido security manager?",
+            "prompt": "Un miembro tiene una concesión explícita Write en un repositorio y el rol de administrador de seguridad de la organización. El propietario retira solo ese rol. ¿Qué debe prever la revisión de acceso?",
             "choices": [
-                "Asignar el rol de organización security manager.",
-                "Configurar funciones de seguridad de la organización.",
-                "Leer repositorios y gestionar alertas de seguridad en toda la organización.",
-                "Escribir código de aplicación en todos los repositorios."
+                "La concesión Write independiente pasa a Read",
+                "Se elimina todo acceso al retirar el rol de seguridad",
+                "La concesión Write independiente pasa a Admin",
+                "Permanece el acceso Write concedido independientemente"
             ],
             "explanations": [
-                "La asignación de este rol corresponde a un organization owner.",
-                "El rol concede autoridad administrativa de seguridad; las licencias de funciones siguen siendo un requisito aparte.",
-                "Security manager concede lectura de repositorios y escritura sobre alertas de seguridad en toda la organización.",
-                "Security manager por sí solo no concede escritura general sobre el código fuente de las aplicaciones."
+                "Los permisos de seguridad se añaden al acceso existente; retirar el rol no degrada esa concesión.",
+                "Retirar un rol no revoca todos los permisos independientes del repositorio.",
+                "Retirar el rol de seguridad no eleva una concesión separada.",
+                "Revisa las concesiones por separado; Write no procedía del rol de seguridad."
             ],
-            "concept": "Administrar seguridad no equivale a escribir código",
+            "concept": "Concesiones independientes al retirar roles de seguridad",
             "hints": [
-                "Distingue acceso al código de autoridad sobre alertas y ajustes de seguridad.",
-                "Un rol especializado de organización no tiene por qué ser administrador general de repositorios."
+                "Identifica qué concesión proporcionó originalmente acceso de escritura.",
+                "Retirar un rol aditivo no revoca todas las vías de acceso."
             ]
         },
         "ghas-administration-014": {
@@ -4261,23 +4261,23 @@ export const translations = {
             ]
         },
         "ghas-administration-019": {
-            "prompt": "Los contribuidores sin derechos de omisión de push protection deben obtener aprobación para excepciones. ¿Qué ajuste de omisión delegada aporta esa revisión?",
+            "prompt": "Un bot de migración autorizado debe omitir completamente la protección de inserciones de sus commits. La organización aceptó esa excepción limitada. ¿Qué capacidad la implementa?",
             "choices": [
-                "Configurar revisores de omisión designados.",
-                "Conceder un privilegio de omisión explícito.",
-                "Conceder una exención de push protection.",
-                "Conservar los permisos ordinarios del repositorio."
+                "Conceder al bot una exención de protección de inserciones",
+                "Permitir al bot omitir bloqueos detectados",
+                "Añadir al bot como revisor de solicitudes",
+                "Aprobar una solicitud pendiente del bot"
             ],
             "explanations": [
-                "La omisión delegada dirige las solicitudes de contribuidores sin derechos de omisión a revisores designados.",
-                "Un privilegio de omisión permite a actores seleccionados omitir el bloqueo; no equivale a solicitar aprobación.",
-                "Una exención omite push protection para actores seleccionados, a diferencia de revisar solicitudes individuales.",
-                "La delegación de omisiones no concede por sí misma administración general ni acceso al código."
+                "Una exención omite la protección para los commits del actor seleccionado y debe limitarse cuidadosamente.",
+                "El permiso de omisión permite superar bloqueos, no saltarse toda la protección.",
+                "Revisar solicitudes ajenas no establece una exención del actor.",
+                "Aprobar una solicitud solo abarca esa solicitud, no los commits futuros del bot."
             ],
-            "concept": "Límite de aprobación de omisión delegada",
+            "concept": "Exenciones frente a permisos de omisión",
             "hints": [
-                "Una excepción delegada no debe ampliar permisos ajenos a ella.",
-                "Distingue solicitar una excepción de estar autorizado para aprobarla."
+                "Distingue saltarse una comprobación de invalidar su resultado.",
+                "Separa una excepción del actor de la aprobación de un envío."
             ]
         },
         "ghas-administration-020": {
@@ -5403,23 +5403,23 @@ export const translations = {
             ]
         },
         "ghas-secrets-006": {
-            "prompt": "Uma verificação de validade não consegue validar uma credencial detectada porque o provedor não oferece suporte a essas verificações. Qual é a interpretação correta?",
+            "prompt": "O resultado de validade exibido para um token de parceiro compatível é anterior a uma mudança no provedor. As verificações estão habilitadas. Qual controle solicita um resultado atual?",
             "choices": [
-                "O segredo pode ser publicado com segurança",
-                "O status da credencial continua sem verificação",
-                "O scanner deve remover o alerta automaticamente",
-                "A proteção de push do repositório está desabilitada"
+                "Close as revoked",
+                "Verify secret",
+                "Report leak",
+                "Reopen alert"
             ],
             "explanations": [
-                "Uma verificação sem suporte não comprova segurança.",
-                "Sem resultado do provedor, a validade continua desconhecida.",
-                "A falta de validação não justifica remover a descoberta.",
-                "Uma verificação de validade não informa a configuração da proteção de push."
+                "Fechar registra uma resolução; não solicita outra verificação ao provedor.",
+                "Verify secret realiza uma verificação de validade sob demanda para um segredo compatível.",
+                "Report leak é um fluxo separado para tokens de acesso pessoal do GitHub elegíveis.",
+                "Reabrir altera o estado do alerta, não a data de sua validação."
             ],
-            "concept": "Limites da verificação de validade",
+            "concept": "Atualização de validade sob demanda",
             "hints": [
-                "O provedor validou a credencial com sucesso?",
-                "Qual conclusão cabe quando a validação não está disponível?"
+                "Considere qual operação contata o provedor emissor.",
+                "Um resultado armazenado e uma nova verificação são operações diferentes."
             ]
         },
         "ghas-secrets-007": {
@@ -5703,23 +5703,23 @@ export const translations = {
             ]
         },
         "ghas-secrets-021": {
-            "prompt": "Um token aparece em um comentário de issue e em um commit. Qual resposta trata o risco da credencial nos dois locais?",
+            "prompt": "Uma integração de resposta já conhece o número de um alerta de segredos. Qual solicitação REST lista suas localizações registradas, em vez de outros alertas?",
             "choices": [
-                "Revogue ou troque o token e limpe as cópias expostas",
-                "Encerrar o alerta do commit e deixar o comentário intacto",
-                "Renomear a issue e continuar usando o token",
-                "Executar CodeQL sem alterar a credencial"
+                "GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}/locations",
+                "GET /repos/{owner}/{repo}/secret-scanning/alerts",
+                "GET /orgs/{org}/secret-scanning/alerts",
+                "GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}"
             ],
             "explanations": [
-                "Invalidar a credencial contém o uso indevido e a limpeza trata as cópias restantes.",
-                "Encerrar um alerta não remove outra exposição.",
-                "Renomear o conteúdo não invalida um token.",
-                "A análise CodeQL não pode revogar uma credencial exposta."
+                "O sub-recurso locations enumera as ocorrências do alerta de segredos indicado.",
+                "A coleção do repositório lista alertas, não localizações de um alerta.",
+                "A coleção da organização abrange alertas de repositórios elegíveis, não ocorrências de um alerta.",
+                "Alertas de código são outro recurso e não enumeram localizações de segredos."
             ],
-            "concept": "Contenção de credenciais em vários locais",
+            "concept": "Enumeração de ocorrências de segredos",
             "hints": [
-                "Onde mais o mesmo valor pode continuar exposto?",
-                "Qual etapa neutraliza a reutilização independentemente da limpeza?"
+                "Determine se o recurso solicitado é uma coleção de alertas ou de ocorrências.",
+                "A identidade do alerta já é conhecida."
             ]
         },
         "ghas-secrets-022": {
@@ -5743,23 +5743,23 @@ export const translations = {
             ]
         },
         "ghas-secrets-023": {
-            "prompt": "Um repositório contém uma credencial realista em um arquivo de teste. O que a pessoa mantenedora deve verificar antes de decidir não corrigi-la?",
+            "prompt": "O provedor confirmou a revogação e os mantenedores removeram o token exposto dos arquivos atuais. O alerta de segredos continua aberto. O que conclui o fluxo do alerta?",
             "choices": [
-                "Que o repositório não tenha implantação de produção",
-                "Que o alerta seja mais antigo que a branch",
-                "Que o valor seja intencionalmente inoperante e não possa autenticar",
-                "Que o nome do arquivo contenha a palavra test"
+                "Esperar a limpeza fechar o alerta",
+                "Executar novamente a análise CodeQL",
+                "Fechar o alerta com o motivo adequado",
+                "Publicar novamente o padrão personalizado"
             ],
             "explanations": [
-                "Código não produtivo também pode conter credenciais utilizáveis.",
-                "A idade de uma branch não determina se um segredo funciona.",
-                "Um valor de teste é inofensivo somente se não puder conceder acesso.",
-                "O nome do arquivo não comprova que a credencial seja inerte."
+                "Remover um token dos arquivos não fecha automaticamente seu alerta.",
+                "CodeQL analisa falhas no código; executá-lo não resolve um alerta de credenciais.",
+                "Após a remediação, feche manualmente o alerta e registre o motivo.",
+                "Publicar um detector não serve para fechar este alerta já remediado."
             ],
-            "concept": "Avaliação de risco de dados de teste",
+            "concept": "Fechamento de alertas após remediação",
             "hints": [
-                "Qual propriedade do valor determina se ele é perigoso?",
-                "O local prova que ele não pode autenticar?"
+                "Separe a remediação no provedor do estado no GitHub.",
+                "Qual etapa atualiza o registro do próprio alerta?"
             ]
         },
         "ghas-secrets-024": {
@@ -5883,43 +5883,43 @@ export const translations = {
             ]
         },
         "ghas-secrets-030": {
-            "prompt": "Um repositório privado de uma organização precisa de análise de segredos e proteção de push. Qual direito de Advanced Security é pertinente?",
+            "prompt": "A verificação de segredos já detecta tokens de provedores. Uma equipe também precisa de detecção integrada de chaves privadas e strings de conexão sem vínculo com um provedor específico. Qual extensão atende?",
             "choices": [
-                "GitHub Packages",
-                "GitHub Secret Protection",
-                "GitHub Code Security",
-                "GitHub Actions"
+                "Verificações de validade de parceiros",
+                "Padrões genéricos",
+                "Padrões personalizados da organização",
+                "Isenções de proteção de push"
             ],
             "explanations": [
-                "Packages hospeda artefatos e não é o produto de segurança.",
-                "Secret Protection inclui recursos de análise de segredos e proteção de push.",
-                "Code Security se concentra em análise de código e recursos avançados da cadeia de suprimentos.",
-                "Actions executa fluxos de automação, não concede esse direito do produto."
+                "Verificações de validade avaliam credenciais detectadas compatíveis; não acrescentam formatos genéricos.",
+                "Padrões genéricos cobrem chaves privadas e strings de conexão sem um provedor específico.",
+                "Padrões personalizados exigem expressões próprias; a solicitação pede formatos integrados.",
+                "Isenções ignoram a prevenção para certos atores; não ampliam a detecção."
             ],
-            "concept": "Escopo do produto Secret Protection",
+            "concept": "Detecção de segredos genéricos",
             "hints": [
-                "O requisito é detectar credenciais ou analisar código e dependências?",
-                "Qual produto reúne recursos que previnem e detectam vazamentos de segredos?"
+                "Diferencie um provedor conhecido de uma estrutura geral de credencial.",
+                "Não se trata de um formato de token proprietário."
             ]
         },
         "ghas-secrets-031": {
-            "prompt": "Uma expressão regular personalizada deve detectar um novo formato de credencial sem corresponder a IDs comuns. Como a pessoa autora deve avaliar esse objetivo?",
+            "prompt": "Uma expressão de segredos funciona em outro testador, mas usa construções incompatíveis com o mecanismo de padrões do GitHub. Qual alvo de compatibilidade o autor deve usar?",
             "choices": [
-                "Substituir a expressão regular pelo nome do repositório",
-                "Comparar a quantidade de alertas do Dependabot antes e depois",
-                "Executar uma simulação com exemplos que devem corresponder e valores semelhantes que não devem",
-                "Testar somente uma credencial conhecida e publicar imediatamente"
+                "A sintaxe RegExp do JavaScript",
+                "Todas as construções e modificadores PCRE",
+                "O subconjunto PCRE aceito pelo Hyperscan",
+                "Os curingas pathspec do Git"
             ],
             "explanations": [
-                "O nome do repositório não descreve a sintaxe de credenciais.",
-                "A contagem de alertas de dependências não mede a precisão do padrão de segredos.",
-                "Exemplos positivos e negativos revelam omissões e falsos positivos.",
-                "Um exemplo não demonstra precisão diante de strings semelhantes."
+                "Um testador JavaScript pode aceitar sintaxe indisponível neste mecanismo.",
+                "O GitHub não aceita todas as construções PCRE nem modificadores de opções do Hyperscan.",
+                "Padrões personalizados usam Hyperscan e seu subconjunto documentado de PCRE.",
+                "Pathspec seleciona caminhos; não é a linguagem regex dos segredos personalizados."
             ],
-            "concept": "Validação de cobertura de padrões",
+            "concept": "Compatibilidade regex de padrões personalizados",
             "hints": [
-                "Quais exemplos testam se a expressão é útil e seletiva?",
-                "O que um único teste positivo pode deixar de revelar?"
+                "Um teste bem-sucedido em um mecanismo não comprova portabilidade.",
+                "Consulte a sintaxe documentada do detector, não apenas os exemplos."
             ]
         },
         "ghas-secrets-032": {
@@ -5943,23 +5943,23 @@ export const translations = {
             ]
         },
         "ghas-secrets-033": {
-            "prompt": "Uma organização vê alertas recorrentes para um formato de credencial proprietário que os detectores internos não reconhecem. Qual configuração resolve essa lacuna?",
+            "prompt": "Um padrão personalizado já captura o comprimento e o alfabeto do token. Ele também deve exigir um dígito dentro do token, sem restringir o texto ao redor. Qual campo atende?",
             "choices": [
-                "Definir e testar um padrão personalizado de análise de segredos",
-                "Adicionar o formato da credencial a `dependabot.yml`",
-                "Criar um banco de dados CodeQL para o token",
-                "Adicionar um identificador SPDX ao repositório"
+                "Additional match requirements",
+                "Before secret",
+                "After secret",
+                "Pattern name"
             ],
             "explanations": [
-                "Um padrão personalizado adiciona detecção para formatos de segredos próprios da organização.",
-                "A configuração do Dependabot controla atualizações de dependências.",
-                "Um banco CodeQL modela o código-fonte para análise por consultas.",
-                "Identificadores SPDX descrevem licenças de software."
+                "Additional match requirements permite exigir que o próprio segredo corresponda a uma expressão de dígitos.",
+                "Before secret restringe o conteúdo anterior, não o interior do segredo.",
+                "After secret restringe o conteúdo posterior, não a composição interna do segredo.",
+                "Pattern name identifica o detector, mas não impõe condições de correspondência."
             ],
-            "concept": "Ampliação da cobertura de detecção de segredos",
+            "concept": "Restrições internas em padrões personalizados",
             "hints": [
-                "Que tipo de detector falta para esse formato de credencial?",
-                "Qual recurso permite definir um padrão próprio de correspondência?"
+                "Determine se a condição afeta o valor capturado ou seus vizinhos.",
+                "O formato básico do token já está configurado."
             ]
         },
         "ghas-secrets-034": {
@@ -5983,23 +5983,23 @@ export const translations = {
             ]
         },
         "ghas-secrets-035": {
-            "prompt": "Somente um pequeno grupo de resposta deve aprovar solicitações de bypass da proteção de push. Qual configuração atende melhor a esse requisito?",
+            "prompt": "Uma solicitação de bypass aparece como Approved, mas seus commits não chegaram ao repositório. Qual interpretação corresponde aos estados documentados?",
             "choices": [
-                "Desabilitar a proteção de push na empresa",
-                "Usar um tópico do repositório como sinal de aprovação",
-                "Configurar bypass delegado com uma equipe revisora de escopo apropriado",
-                "Dar permissões de proprietária da organização a cada colaborador"
+                "A aprovação confirma que os commits foram enviados",
+                "A aprovação isenta permanentemente o colaborador",
+                "A aprovação permite o envio, mas não o executa",
+                "A aprovação encerra o incidente de credenciais"
             ],
             "explanations": [
-                "Desabilitar a proteção remove completamente o fluxo de aprovação.",
-                "Um tópico não autoriza nem registra uma decisão de bypass.",
-                "O bypass delegado permite atribuir deliberadamente a autoridade de aprovação.",
-                "O acesso de proprietária da organização é mais amplo que o necessário."
+                "Approved contempla explicitamente commits que ainda não foram enviados.",
+                "Aprovar uma solicitação não isenta o ator da proteção futura.",
+                "O colaborador ainda deve enviar os commits; aprovar não os publica.",
+                "Aprovar um bypass não revoga credenciais nem conclui a remediação."
             ],
-            "concept": "Revisão de bypass com privilégio mínimo",
+            "concept": "Aprovação versus entrega de bypass",
             "hints": [
-                "Quem precisa de autoridade para aprovar uma exceção?",
-                "Qual configuração restringe o poder de aprovação sem remover o bloqueio?"
+                "Diferencie a permissão para uma operação de sua execução.",
+                "Interprete o estado no contexto da entrega dos commits."
             ]
         },
         "ghas-secrets-036": {
@@ -6023,23 +6023,23 @@ export const translations = {
             ]
         },
         "ghas-secrets-037": {
-            "prompt": "Um padrão personalizado detecta uma credencial própria no histórico confirmado. Qual configuração adicional permite bloquear futuras introduções por pushes compatíveis?",
+            "prompt": "Uma organização publicou um padrão e habilitou sua proteção de push. Um repositório tem verificação de segredos, mas a proteção de push local está desativada. O que permite bloquear os pushes compatíveis ali?",
             "choices": [
-                "Habilitar a proteção de push para o padrão personalizado publicado",
-                "Adicionar o padrão a `dependabot.yml`",
-                "Criar uma suíte de consultas de análise de código",
-                "Desabilitar a análise histórica"
+                "Habilitar a proteção de push no repositório",
+                "Publicar novamente o padrão na empresa",
+                "Aumentar a amostra de simulação da organização",
+                "Renomear o padrão na organização"
             ],
             "explanations": [
-                "Um padrão personalizado publicado pode ser habilitado para proteção de push.",
-                "A configuração do Dependabot não controla a prevenção de segredos no push.",
-                "Suítes de consultas analisam código, não bloqueiam esse formato de credencial.",
-                "Parar a análise histórica não impede novos pushes."
+                "A proteção do padrão da organização só se aplica onde a proteção de push do repositório está habilitada.",
+                "Uma cópia empresarial não substitui o requisito de habilitação do repositório.",
+                "A amostra da simulação avalia correspondências; não ativa a prevenção local.",
+                "Renomear o detector não altera a proteção configurada no repositório."
             ],
-            "concept": "Detecção versus prevenção de segredos",
+            "concept": "Aplicabilidade da prevenção de padrões",
             "hints": [
-                "Qual recurso atua antes que um push compatível chegue ao repositório?",
-                "Detectar equivale a bloquear exposições futuras?"
+                "Confira os requisitos do repositório separadamente do detector compartilhado.",
+                "Publicação e prevenção local são camadas distintas de configuração."
             ]
         },
         "ghas-secrets-038": {
@@ -6303,23 +6303,23 @@ export const translations = {
             ]
         },
         "ghas-supply-011": {
-            "prompt": "Uma organização habilita alertas do Dependabot, mas quer pull requests automáticos para pacotes vulneráveis. Qual distinção importa?",
+            "prompt": "Uma dependência está em 1.2.0. A primeira versão corrigida é 1.2.4 e resolve o grafo sem quebrá-lo; 2.0.0 é mais recente. Qual destino corresponde ao objetivo das atualizações de segurança?",
             "choices": [
-                "Alertas mesclam automaticamente todas as atualizações de pacotes",
-                "Atualizações de versão são necessárias para criar alertas de vulnerabilidade",
-                "Atualizações de segurança desabilitam o gráfico de dependências",
-                "Alertas sinalizam riscos; atualizações podem propor correções"
+                "2.0.0 porque sempre escolhem a mais recente",
+                "1.2.0 com o aviso em uma lista de exclusão",
+                "A versão 1.x mais alta sem considerar a primeira corrigida",
+                "1.2.4 como mínima versão corrigida resolvível"
             ],
             "explanations": [
-                "O Dependabot não mescla automaticamente todas as alterações propostas.",
-                "Alertas dependem de dados de dependências e avisos, não do cronograma de versões.",
-                "Atualizações de segurança não substituem o inventário de dependências.",
-                "Alertas e pull requests automáticos de atualização de segurança são recursos distintos."
+                "Escolher sempre a mais recente não descreve a correção mínima nem seu objetivo de compatibilidade.",
+                "Manter a versão vulnerável e ignorar o aviso não atualiza para uma correção.",
+                "Não há seleção incondicional da versão menor mais alta.",
+                "O Dependabot busca a mínima versão corrigida que permita resolver o grafo."
             ],
-            "concept": "Cobertura de alertas versus atualizações",
+            "concept": "Seleção da mínima versão corrigida",
             "hints": [
-                "Qual recurso informa a equipe e qual cria uma proposta de correção?",
-                "Uma notificação altera por si só a versão da dependência?"
+                "Diferencie corrigir uma vulnerabilidade de manter versões recentes.",
+                "O caso já estabelece que a primeira versão corrigida permite resolver o grafo."
             ]
         },
         "ghas-supply-012": {
@@ -6423,23 +6423,23 @@ export const translations = {
             ]
         },
         "ghas-supply-017": {
-            "prompt": "Uma equipe adia um alerta do Dependabot até uma data de revisão. O que deve esperar quando esse período terminar?",
+            "prompt": "Uma regra para dependências de desenvolvimento descartou automaticamente um alerta do Dependabot. Depois, a dependência passa a ser classificada como produção. O que pode ocorrer com a mudança dos metadados?",
             "choices": [
-                "O gráfico de dependências é desabilitado permanentemente",
-                "Adiar não corrige a vulnerabilidade",
-                "O pacote é atualizado automaticamente no prazo final",
-                "O aviso é removido do GitHub Advisory Database"
+                "O descarte original é permanente apesar das mudanças de metadados",
+                "O alerta pode ser reaberto automaticamente",
+                "É preciso criar manualmente outro alerta para o escopo de produção",
+                "O alerta só reabre quando uma versão corrigida é publicada"
             ],
             "explanations": [
-                "Alterar o estado de um alerta não desabilita o inventário de dependências.",
-                "Adiar posterga a atenção, mas não comprova que houve correção.",
-                "O período de adiamento não é um cronograma de atualização.",
-                "A triagem do repositório não retira um aviso publicado."
+                "O descarte automático não é permanente quando os metadados que o justificavam mudam.",
+                "Alertas descartados automaticamente podem reabrir quando o escopo ou outros metadados mudam.",
+                "O alerta existente pode reabrir; não é necessário criar manualmente outro.",
+                "Mudar os metadados pode reabrir o alerta sem esperar uma versão corrigida."
             ],
-            "concept": "Momento da notificação de triagem automática",
+            "concept": "Reabertura de alertas por metadados",
             "hints": [
-                "O que o período de adiamento posterga?",
-                "Qual evento deve levar a equipe a revisar o risco?"
+                "A elegibilidade da regra dependia do escopo da dependência.",
+                "Considere se o descarte automático é permanente."
             ]
         },
         "ghas-supply-018": {
@@ -6563,23 +6563,23 @@ export const translations = {
             ]
         },
         "ghas-supply-024": {
-            "prompt": "Um parceiro solicita uma lista de bibliotecas usadas por um repositório, e não de projetos que o consomem. O que a SBOM exportada do repositório representa?",
+            "prompt": "Após solicitar um SBOM por REST, uma automação consulta o sbom_url retornado e recebe HTTP 202. Qual comportamento segue o fluxo documentado?",
             "choices": [
-                "Dependências e metadados do repositório",
-                "Todos os repositórios que dependem deste repositório",
-                "Cada pacote publicado no GitHub",
-                "Somente vulnerabilidades do banco de avisos"
+                "Continuar consultando; seguir o redirecionamento 302 quando pronto",
+                "Interpretar a resposta 202 como documento SPDX completo",
+                "Tratar 202 como falha permanente de autorização",
+                "Solicitar nova geração após cada consulta"
             ],
             "explanations": [
-                "A SBOM exporta o inventário de componentes do gráfico de dependências.",
-                "Projetos dependentes não aparecem na SBOM do repositório.",
-                "Uma SBOM não é um catálogo de todos os pacotes do GitHub.",
-                "A SBOM registra componentes, não somente vulnerabilidades."
+                "O fluxo retorna 202 enquanto prepara e redireciona com 302 para o download concluído.",
+                "Uma resposta pendente não é o artefato SBOM completo.",
+                "202 indica processamento aceito aqui, não uma negação permanente.",
+                "Consulte a URL retornada, em vez de iniciar gerações repetidas."
             ],
-            "concept": "Dependências versus dependentes na SBOM",
+            "concept": "Exportação assíncrona de SBOM",
             "hints": [
-                "O pedido trata dos pacotes usados pelo projeto ou dos projetos que o usam?",
-                "Qual lado da relação de dependência aparece em uma SBOM exportada?"
+                "Diferencie a geração pendente do artefato para download.",
+                "Use a URL de continuação retornada pelo serviço."
             ]
         },
         "ghas-supply-025": {
@@ -6623,23 +6623,23 @@ export const translations = {
             ]
         },
         "ghas-supply-027": {
-            "prompt": "Um alerta do Dependabot identifica um pacote transitivo vulnerável. Que informação ajuda a encontrar uma correção prática?",
+            "prompt": "Uma dependência npm A só permite B 1.x, mas a correção de B começa em 2.0. O Dependabot propõe atualizar A e B. Por que pode ser necessário alterar o pai não vulnerável?",
             "choices": [
-                "Os motivos de bypass da proteção de push",
-                "A quantidade atual de consultas CodeQL",
-                "Os repositórios dependentes da SBOM",
-                "Caminho da dependência e correção disponível"
+                "A versão principal de A sempre deve coincidir com a de B",
+                "A entrada de A no lockfile sozinha substitui seu intervalo para B",
+                "É preciso atualizar A para descartar a vulnerabilidade de B como falso positivo",
+                "Um pai mais novo pode permitir a versão corrigida de B"
             ],
             "explanations": [
-                "Motivos de bypass de segredos não explicam a origem do pacote.",
-                "A quantidade de consultas não identifica um caminho de correção de dependência.",
-                "A SBOM exportada não lista dependentes.",
-                "O caminho identifica qual pacote pai traz o componente, e o alerta pode indicar uma versão corrigida."
+                "Os números de versão principal do pai e do filho não precisam coincidir.",
+                "Editar apenas o lockfile não remove a restrição incompatível declarada pelo pai.",
+                "É uma vulnerabilidade real do filho, não um falso positivo pela versão do pai.",
+                "Atualizar A pode remover a restrição que excluía B 2.0."
             ],
-            "concept": "Correção eficaz de dependências",
+            "concept": "Restrições do pai em correções transitivas",
             "hints": [
-                "Qual dependência pai poderia ser atualizada para remover a versão transitiva?",
-                "Qual detalhe do alerta aponta para uma versão corrigida disponível?"
+                "O gerenciador precisa satisfazer o intervalo de versões declarado pelo pai.",
+                "A correção também deve produzir um grafo de dependências resolvível."
             ]
         },
         "ghas-supply-028": {
@@ -6703,23 +6703,23 @@ export const translations = {
             ]
         },
         "ghas-supply-031": {
-            "prompt": "Os alertas do Dependabot estão habilitados, mas a equipe quer pull requests automáticos para pacotes vulneráveis. Qual suposição deve evitar?",
+            "prompt": "Uma entrada de dependabot.yml define target-branch: release para atualizações rotineiras de versão. O que o mantenedor deve esperar das atualizações de segurança?",
             "choices": [
-                "Que atualizações de segurança exigem uma dependência vulnerável corrigível",
-                "Que os dados de alerta vêm da correspondência entre dependências e avisos",
-                "Que atualizações propostas devem ser revisadas",
-                "Que habilitar somente alertas garante pull requests de atualização de segurança"
+                "Elas passam para release junto com as de versão",
+                "Elas rodam em todas as branches com manifesto",
+                "Elas alternam entre release e a branch padrão",
+                "Elas continuam direcionadas à branch padrão"
             ],
             "explanations": [
-                "Pode não haver uma versão corrigida para um alerta.",
-                "O Dependabot relaciona avisos a dados de dependências.",
-                "Propostas automáticas ainda exigem revisão e testes.",
-                "Alertas e pull requests de segurança têm condições de habilitação distintas."
+                "target-branch altera o destino de atualizações de versão, não de segurança.",
+                "Atualizações de segurança não se distribuem a toda branch com manifesto.",
+                "Essa opção não cria alternância de branches para atualizações de segurança.",
+                "Atualizações de segurança apontam para a branch padrão, independentemente dessa entrada."
             ],
-            "concept": "Configuração de atualizações versus geração de alertas",
+            "concept": "Escopo de branches de atualizações de segurança",
             "hints": [
-                "Qual recurso propõe uma correção em vez de notificar um risco?",
-                "Qual configuração deve ser verificada além da geração de alertas?"
+                "Confira a qual tipo de atualização a personalização se aplica.",
+                "Compartilhar um arquivo de configuração não torna todas as opções universais."
             ]
         },
         "ghas-supply-032": {
@@ -6763,23 +6763,23 @@ export const translations = {
             ]
         },
         "ghas-supply-034": {
-            "prompt": "Um alerta do Dependabot não mostra uma versão corrigida. O que a pessoa mantenedora deve fazer?",
+            "prompt": "Um pull request de atualização de segurança do Dependabot tem pontuação alta de compatibilidade. Qual evidência essa pontuação resume?",
             "choices": [
-                "Presumir que o pacote não é vulnerável",
-                "Desabilitar alertas para o ecossistema",
-                "Avaliar exposição e mitigações, acompanhar o alerta e revisá-lo quando as opções mudarem",
-                "Encerrar o alerta porque não há atualização"
+                "A porcentagem de caminhos vulneráveis removidos",
+                "A porcentagem de testes locais que cobrem o pacote",
+                "A porcentagem de execuções de CI aprovadas em outros repositórios públicos",
+                "A porcentagem de versões verificadas sem vulnerabilidades"
             ],
             "explanations": [
-                "O alerta comprova uma vulnerabilidade conhecida mesmo sem patch.",
-                "Desabilitar alertas futuros reduz visibilidade, em vez de mitigar o problema.",
-                "A falta de correção não elimina o risco; mitigação e reavaliação continuam importantes.",
-                "Encerrar não corrige a dependência vulnerável."
+                "A pontuação não mede alcançabilidade nem eliminação de vulnerabilidades.",
+                "Ela não mede cobertura local nem comprova compatibilidade com este projeto.",
+                "Ela resume o sucesso de CI em outros repositórios públicos para essa transição de versões.",
+                "Ela não certifica a segurança do histórico de versões de um pacote."
             ],
-            "concept": "Resposta a dependência sem patch",
+            "concept": "Origem da pontuação de compatibilidade",
             "hints": [
-                "A ausência de correção equivale à ausência de risco?",
-                "O que mantém uma vulnerabilidade conhecida em revisão enquanto não há solução?"
+                "Pergunte de quem é a CI que produziu a evidência.",
+                "Evidência de compatibilidade não é gravidade de vulnerabilidades."
             ]
         },
         "ghas-supply-035": {
@@ -6843,23 +6843,23 @@ export const translations = {
             ]
         },
         "ghas-supply-038": {
-            "prompt": "Há um alerta aberto, mas nenhum pull request de atualização de segurança aparece. Quais duas condições são mais relevantes para investigar?",
+            "prompt": "O Dependabot informa que atingiu o limite de pull requests de atualização de segurança. Atualizações de versão têm outro limite configurável. Qual ação libera a capacidade de segurança esgotada?",
             "choices": [
-                "Se o CodeQL tem uma execução agendada e uma categoria SARIF",
-                "Se o alerta foi atribuído a uma equipe e o repositório tem estrelas",
-                "Se as atualizações de segurança estão habilitadas e se existe uma correção compatível",
-                "Se o repositório tem um padrão personalizado e um cabeçalho SPDX"
+                "Aumentar open-pull-requests-limit para versões",
+                "Mudar o agendamento de versões para diário",
+                "Mesclar ou fechar pull requests de atualização de segurança",
+                "Mover o destino de versões para outra branch"
             ],
             "explanations": [
-                "Cronogramas do CodeQL e categorias SARIF são independentes das atualizações do Dependabot.",
-                "Atribuição e popularidade não comprovam que exista uma correção compatível.",
-                "O recurso precisa estar disponível e a vulnerabilidade precisa ter um caminho de atualização viável.",
-                "Padrões de segredos e cabeçalhos SPDX não criam pull requests de segurança."
+                "O limite configurável de versões não aumenta o limite separado de segurança.",
+                "Um agendamento mais frequente não libera capacidade para pull requests de segurança.",
+                "Concluir ou fechar pull requests de segurança libera capacidade nesse grupo.",
+                "Mudar a branch de versões não libera vagas de atualização de segurança."
             ],
-            "concept": "Solução de problemas de atualizações de segurança",
+            "concept": "Limites separados de pull requests do Dependabot",
             "hints": [
-                "O que precisa estar habilitado e o que precisa existir para propor uma atualização?",
-                "Um alerta válido pode não ter uma versão compatível disponível?"
+                "Identifique qual grupo de pull requests o erro menciona.",
+                "A configuração rotineira pode não controlar atualizações de segurança."
             ]
         },
         "ghas-supply-039": {
@@ -6883,23 +6883,23 @@ export const translations = {
             ]
         },
         "ghas-supply-040": {
-            "prompt": "Um fluxo deve falhar quando um pull request introduzir um pacote com licença proibida e continuar relatando vulnerabilidades. Qual configuração é apropriada?",
+            "prompt": "Um fluxo de revisão de dependências deve bloquear vulnerabilidades de dependências de execução, não as usadas apenas em desenvolvimento. Qual entrada seleciona esse escopo de bloqueio?",
             "choices": [
-                "Configure a política de licença da ação",
-                "Adicionar a licença a `registries` em `dependabot.yml`",
-                "Excluir o caminho do pacote em `secret_scanning.yml`",
-                "Descartar o aviso do pacote"
+                "fail-on-scopes: runtime",
+                "fail-on-severity: high",
+                "deny-licenses: MIT",
+                "allow-ghsas: GHSA-abcd-1234-5679"
             ],
             "explanations": [
-                "A ação de revisão oferece política de licença e configurações de gravidade de vulnerabilidade.",
-                "Entradas de registro configuram origens, não regras de licença.",
-                "Exclusões da análise de segredos não afetam verificações de licença.",
-                "Descartar um aviso não aplica a política de licença."
+                "fail-on-scopes seleciona os escopos cujas vulnerabilidades fazem a verificação falhar.",
+                "A gravidade seleciona impacto, não uso em execução versus desenvolvimento.",
+                "Identificadores de licença expressam uma política de licenças, não escopo vulnerável.",
+                "Uma exceção de aviso ignora aquele aviso, em vez de selecionar dependências de execução."
             ],
-            "concept": "Política de dependências com escopo",
+            "concept": "Bloqueio por escopo na revisão de dependências",
             "hints": [
-                "Qual ação de pull request avalia risco de pacotes e política de licença?",
-                "Onde uma regra sobre identificadores de licença permitidos deve ser configurada?"
+                "Separe o escopo de uso da gravidade e da licença.",
+                "A política se refere a onde a dependência é usada."
             ]
         },
         "ghas-ecosystem-041": {
@@ -6943,43 +6943,43 @@ export const translations = {
             ]
         },
         "ghas-secrets-041": {
-            "prompt": "Dois alertas mostram o mesmo tipo de segredo, mas somente um tem resultado de validade do provedor. O que a equipe de resposta deve concluir?",
+            "prompt": "Uma verificação do provedor indica que um token exposto está inativo. A equipe não investigou o período anterior à revogação. Qual acompanhamento responde à questão restante do incidente?",
             "choices": [
-                "Avaliar cada resultado em seu contexto; a falta de validação não comprova segurança",
-                "O alerta sem resultado deve ser um falso positivo",
-                "As duas credenciais estão ativas porque uma estava ativa",
-                "O scanner valida todos os tipos de segredos da mesma forma"
+                "Revisar logs do provedor por uso não autorizado",
+                "Repetir a limpeza para comprovar que não houve uso",
+                "Tratar o estado inativo como auditoria de acesso",
+                "Descartar a detecção como erro de formato"
             ],
             "explanations": [
-                "Os resultados podem variar por tipo ou disponibilidade e exigem interpretação individual.",
-                "A falta de verificação não prova que a detecção seja falsa.",
-                "O status de uma credencial não determina o de outra.",
-                "O suporte à validade do provedor não é igual para todos os tipos."
+                "O estado inativo não determina se houve abuso do token enquanto funcionava.",
+                "Remover cópias não mostra quem usou o token antes da revogação.",
+                "A validade descreve a usabilidade atual, não o histórico de acessos.",
+                "Uma credencial real inativa não se torna, por isso, um falso positivo."
             ],
-            "concept": "Verificação de validade dependente do contexto",
+            "concept": "Uso indevido histórico após desativar tokens",
             "hints": [
-                "O que o resultado informa para cada credencial individual?",
-                "É possível generalizar o status de validação de um alerta para outro?"
+                "Separe a usabilidade atual da credencial da atividade passada.",
+                "Qual evidência revelaria usos anteriores à contenção?"
             ]
         },
         "ghas-supply-041": {
-            "prompt": "A ação de revisão de dependências não relata alterações, embora um pull request atualize um arquivo de bloqueio. O que a equipe deve verificar antes de considerar a revisão limpa?",
+            "prompt": "Uma configuração de revisão de dependências contém allow-licenses e deny-licenses. A equipe quer apenas uma lista de licenças permitidas. Qual correção respeita a restrição documentada?",
             "choices": [
-                "Se o fluxo CodeQL executa toda noite",
-                "Se o gráfico resolve manifestos compatíveis para o estado base e o estado de dependências proposto",
-                "Se o repositório não tem alertas da análise de segredos",
-                "Se a SBOM lista repositórios dependentes"
+                "Manter ambas; a lista de bloqueio tem prioridade",
+                "Remover deny-licenses e manter allow-licenses",
+                "Mover deny-licenses para o mesmo arquivo local",
+                "Substituir ambas as listas por fail-on-scopes"
             ],
             "explanations": [
-                "O cronograma do CodeQL não garante dados para a revisão de dependências.",
-                "Uma diferença útil exige informações de dependências para os dois estados comparados.",
-                "Alertas de segredos não determinam a cobertura das alterações de pacotes.",
-                "A SBOM do repositório não lista repositórios dependentes."
+                "A restrição documentada permite apenas uma dessas duas entradas de licenças.",
+                "Remover a lista de bloqueio preserva a política solicitada e evita a combinação proibida.",
+                "Mover a entrada conflitante não torna as duas políticas compatíveis.",
+                "A filtragem por escopo não aplica uma lista de licenças permitidas."
             ],
-            "concept": "Integridade do inventário base e proposto",
+            "concept": "Entradas de licenças mutuamente exclusivas",
             "hints": [
-                "Quais dois estados de dependências a revisão compara?",
-                "A falta de inventário pode tornar inconclusivo um resultado vazio?"
+                "Uma preferência de política não anula o contrato de entradas.",
+                "Diferencie primeiro a validade da configuração da seleção de licenças."
             ]
         },
         "ghas-code-001": {
@@ -7103,23 +7103,23 @@ export const translations = {
             ]
         },
         "ghas-code-007": {
-            "prompt": "Uma integração envia SARIF diretamente pela API de análise de código sem `partialFingerprints`. Qual risco a pessoa responsável deve tratar?",
+            "prompt": "Um produtor SARIF armazena a localização e a mensagem de cada achado junto de descrições reutilizáveis de detectores. Onde deve ficar a evidência de cada ocorrência?",
             "choices": [
-                "Sem impressões digitais, podem surgir duplicatas",
-                "A API converte cada resultado em um alerta do Dependabot",
-                "O repositório recebe automaticamente um banco CodeQL",
-                "O envio desabilita todas as análises futuras"
+                "Em run.results, referenciando a regra",
+                "Em tool.driver.rules, substituindo sua descrição",
+                "Em run.automationDetails, substituindo a categoria",
+                "No campo version do SARIF, junto da versão"
             ],
             "explanations": [
-                "A API pode processar resultados sem impressões digitais, mas duplicatas podem aparecer.",
-                "Envios SARIF criam descobertas de análise de código, não alertas de dependências.",
-                "Enviar resultados não gera um banco CodeQL.",
-                "Um envio de análise não desabilita verificações futuras."
+                "Cada resultado contém detalhes de uma ocorrência e pode referenciar sua regra.",
+                "Regras descrevem detectores e não devem ser substituídas pela evidência de cada ocorrência.",
+                "Detalhes de automação identificam análises, não localizações de achados individuais.",
+                "O campo version identifica o formato SARIF, não os achados do analisador."
             ],
-            "concept": "Tratamento de impressões digitais no envio pela API",
+            "concept": "Regras versus resultados SARIF",
             "hints": [
-                "O que pode acontecer quando faltam dados de identidade do resultado?",
-                "Qual propriedade SARIF ajuda a evitar descobertas repetidas entre envios?"
+                "Separe uma definição de detector de uma instância de sua saída.",
+                "Qual estrutura muda ao analisar outro código com as mesmas regras?"
             ]
         },
         "ghas-code-008": {
@@ -7363,23 +7363,23 @@ export const translations = {
             ]
         },
         "ghas-code-020": {
-            "prompt": "Um repositório envia resultados de duas configurações do mesmo analisador. Qual é a principal finalidade da categoria?",
+            "prompt": "Um resultado SARIF aceito aparece na análise de código, mas sua única localização é uma linha inalterada fora do diff de um pull request. Por que ele pode não ter anotação na verificação?",
             "choices": [
-                "Nomear o ecossistema de dependências",
-                "Identificar e distinguir o conjunto de resultados da análise",
-                "Definir a gravidade do alerta",
-                "Escolher um padrão de análise de segredos"
+                "Resultados SARIF aceitos nunca geram anotações",
+                "As linhas indicadas devem ser adicionadas ou editadas no diff",
+                "Cada pull request precisa de uma nova categoria de análise",
+                "A regra deve usar um identificador CVE como ruleId"
             ],
             "explanations": [
-                "Ecossistemas de dependências são configurados separadamente.",
-                "Uma categoria identifica uma análise, como uma execução de ferramenta ou configuração.",
-                "A gravidade descreve uma descoberta individual, não o rótulo do conjunto.",
-                "Padrões de segredos têm sua própria configuração."
+                "A análise de código pode anotar pull requests com resultados SARIF elegíveis.",
+                "Para aparecer na verificação, as linhas precisam estar entre as adicionadas ou editadas.",
+                "Categorias separam conjuntos; alterá-las não move localizações para o diff.",
+                "Uma regra não precisa ter um CVE como nome para poder aparecer."
             ],
-            "concept": "Rótulos de categoria de análise",
+            "concept": "Elegibilidade de anotações SARIF em pull requests",
             "hints": [
-                "O que um rótulo estável deve distinguir entre análises separadas?",
-                "A categoria descreve um conjunto de resultados ou o risco de uma descoberta individual?"
+                "Aceitação do upload e exibição contextual têm requisitos diferentes.",
+                "Compare a localização do achado com as linhas alteradas."
             ]
         },
         "ghas-code-021": {
@@ -7503,23 +7503,23 @@ export const translations = {
             ]
         },
         "ghas-code-027": {
-            "prompt": "Uma análise de terceiros termina com sucesso, mas nenhum alerta novo aparece no GitHub. Qual etapa a pessoa responsável deve verificar?",
+            "prompt": "Uma ferramenta gera um arquivo SARIF de 12 MB após compressão gzip. Qual mudança atende à restrição documentada por arquivo?",
             "choices": [
-                "Se o envio SARIF terminou e foi aceito para o repositório e a categoria pretendidos",
-                "Se a verificação de validade de segredos executou",
-                "Se o Dependabot tem um pull request de atualização aberto",
-                "Se o repositório tem uma versão recente"
+                "Reduzir o arquivo comprimido para menos de 10 MB",
+                "Declarar SARIF 2.0.0 como versão do arquivo",
+                "Reenviar o mesmo conteúdo com outra categoria",
+                "Mudar a gravidade de todos os resultados para warning"
             ],
             "explanations": [
-                "Análise bem-sucedida e ingestão de resultados bem-sucedida são etapas distintas.",
-                "Verificações de validade não importam resultados de análise de código.",
-                "Atualizações do Dependabot não incorporam SARIF.",
-                "Uma versão publicada não comprova que uma análise foi enviada."
+                "O GitHub rejeita arquivos SARIF comprimidos com gzip maiores que 10 MB; reduza o conteúdo.",
+                "O GitHub aceita SARIF 2.1.0; alterar a versão não reduz o tamanho.",
+                "A categoria separa conjuntos de análise, mas não aumenta o limite de upload.",
+                "Alterar a gravidade não reduz o arquivo de forma confiável nem muda o limite."
             ],
-            "concept": "Sucesso da análise versus ingestão",
+            "concept": "Tamanho de upload SARIF comprimido",
             "hints": [
-                "A ferramenta concluiu a análise e o GitHub aceitou os resultados?",
-                "Qual transferência pode falhar após a análise terminar?"
+                "Avalie o limite sobre o conteúdo comprimido, não sobre a saída bem-sucedida da ferramenta.",
+                "Alterar metadados não amplia a capacidade de upload."
             ]
         },
         "ghas-code-028": {
@@ -7803,23 +7803,23 @@ export const translations = {
             ]
         },
         "ghas-operations-012": {
-            "prompt": "Uma credencial de produção foi exposta. Qual ação elimina sua autoridade, em vez de apenas alterar o conteúdo do repositório?",
+            "prompt": "Os responsáveis revogaram um token exposto. Uma integração de produção agendada ainda o referencia e falha ao autenticar. Qual acompanhamento a restaura sem desfazer a contenção?",
             "choices": [
-                "Resolver o alerta com um motivo preciso.",
-                "Revogar ou rotacionar a credencial exposta.",
-                "Remover o segredo do código-fonte atual.",
-                "Revisar a exposição e a atividade do provedor."
+                "Criar outro token e manter a configuração atual do serviço",
+                "Configurar o serviço com uma credencial substituta",
+                "Implantar novamente usando o mesmo valor de credencial revogada",
+                "Repetir o trabalho sem mudar as credenciais de execução"
             ],
             "explanations": [
-                "Resolver o alerta registra a resposta; alterar o status não revoga por si só a credencial.",
-                "Revogar ou rotacionar elimina a autoridade da credencial no provedor; excluir um arquivo não faz isso.",
-                "Limpar o código evita continuar distribuindo o segredo, mas não invalida cópias já vazadas.",
-                "A revisão do incidente ajuda a determinar uso indevido e impacto; não equivale a alterar a validade da credencial."
+                "Criar um token não atualiza o serviço que ainda referencia o valor revogado.",
+                "A remediação inclui atualizar os serviços que usavam o token comprometido.",
+                "Implantar novamente o valor revogado não restaura sua autoridade no provedor.",
+                "Repetir com a mesma credencial revogada não repara a autenticação."
             ],
-            "concept": "Contenção de credenciais",
+            "concept": "Substituição de credenciais em serviços dependentes",
             "hints": [
-                "Diferencie remover uma credencial de remover sua autoridade.",
-                "O registro do alerta e a exposição subjacente são coisas diferentes."
+                "A contenção terminou; a falha restante está em um consumidor.",
+                "Qual sistema fornece de fato o material de autenticação?"
             ]
         },
         "ghas-operations-013": {
@@ -7923,23 +7923,23 @@ export const translations = {
             ]
         },
         "ghas-operations-018": {
-            "prompt": "A triagem automática oculta uma classe de alertas de baixo risco. Quais evidências devem acompanhar a regra para explicar os resultados suprimidos?",
+            "prompt": "Uma auditoria precisa dos alertas do Dependabot descartados por triagem automática, separados dos manuais. Qual filtro documentado de motivo de fechamento seleciona esse conjunto?",
             "choices": [
-                "Revisão periódica de exceções",
-                "Relatórios limitados por permissões",
-                "Audit log",
-                "Justificativa da dispensa de alertas"
+                "resolution:revoked",
+                "resolution:false-positive",
+                "resolution:fix-started",
+                "resolution:auto-dismiss"
             ],
             "explanations": [
-                "Revisar exceções verifica se as premissas de risco e a responsabilidade anteriores continuam válidas.",
-                "Os relatórios devem respeitar o acesso aos alertas, sem distribuir detalhes sensíveis a leitores não autorizados.",
-                "Os logs de auditoria registram eventos suportados de segredos e Dependabot; não incluem eventos da linha do tempo dos alertas de código.",
-                "Uma justificativa útil explica por que um resultado foi dispensado sem sugerir que ele foi corrigido."
+                "Revogação se refere a credenciais, não ao motivo da triagem automática.",
+                "Um rótulo de falso positivo não identifica especificamente a triagem automática.",
+                "Iniciar uma correção não é o motivo documentado de descarte automático.",
+                "Alertas descartados automaticamente usam o motivo resolution:auto-dismiss."
             ],
-            "concept": "Decisão automática de alertas auditável",
+            "concept": "Auditoria de alertas de dependências autodescartados",
             "hints": [
-                "Diferencie conveniência operacional de evidências duradouras de governança.",
-                "Pense no que uma revisão futura precisaria para entender a decisão."
+                "O relatório precisa do mecanismo de fechamento, não apenas do estado aberto ou fechado.",
+                "Use o motivo documentado, em vez de deduzi-lo da gravidade."
             ]
         },
         "ghas-operations-019": {
@@ -7963,43 +7963,43 @@ export const translations = {
             ]
         },
         "ghas-operations-020": {
-            "prompt": "Qual suíte amplia a cobertura de segurança padrão do CodeQL aceitando alguns resultados adicionais de menor precisão?",
+            "prompt": "Uma etapa init do CodeQL carrega um config-file com consultas adicionais. O fluxo deve acrescentar security-extended sem substituir essa lista configurada. Qual entrada faz isso?",
             "choices": [
-                "Suíte .qls personalizada",
-                "default",
-                "security-extended",
-                "security-and-quality"
+                "queries: security-extended",
+                "disable-default-queries: true",
+                "queries: +security-extended",
+                "category: security-extended"
             ],
             "explanations": [
-                "Uma suíte personalizada seleciona consultas por metadados, localização ou outros critérios e exige configuração avançada.",
-                "A suíte default prioriza resultados de segurança de alta precisão e menos falsos positivos.",
-                "Inclui as consultas de default e outras de segurança com menor precisão; a carga de triagem pode aumentar.",
-                "Essa suíte de configuração avançada adiciona consultas de manutenibilidade e confiabilidade a security-extended."
+                "Sem o prefixo mais, as consultas adicionais do fluxo substituem as do arquivo.",
+                "Desativar consultas padrão não combina as duas listas adicionais.",
+                "O prefixo mais combina as consultas adicionais do fluxo com a lista configurada.",
+                "Category identifica uma análise; não seleciona nem combina consultas."
             ],
-            "concept": "Compromisso da cobertura de segurança ampliada",
+            "concept": "Configuração aditiva de consultas CodeQL",
             "hints": [
-                "Compare precisão, abrangência e os tipos de resultados desejados.",
-                "Um conjunto mais amplo de consultas altera tanto a detecção quanto a carga de triagem."
+                "Considere a precedência entre o fluxo e a configuração referenciada.",
+                "O nome de uma suíte não expressa como combinar duas listas."
             ]
         },
         "ghas-operations-021": {
-            "prompt": "Com a configuração avançada do CodeQL, qual suíte integrada também detecta problemas de manutenibilidade e confiabilidade?",
+            "prompt": "Consultas Java existentes do CodeQL não detectam fluxos por uma biblioteca interna porque seu comportamento não está modelado. Qual pacote fornece modelos a essas consultas, não novas consultas executáveis?",
             "choices": [
-                "Suíte .qls personalizada",
-                "default",
-                "security-extended",
-                "security-and-quality"
+                "Um arquivo de resultados SARIF",
+                "Um snapshot de dependências",
+                "Uma lista personalizada de consultas .qls",
+                "Um pacote de modelos CodeQL"
             ],
             "explanations": [
-                "Uma suíte personalizada seleciona consultas por metadados, localização ou outros critérios e exige configuração avançada.",
-                "A suíte default prioriza resultados de segurança de alta precisão e menos falsos positivos.",
-                "Inclui as consultas de default e outras de segurança com menor precisão; a carga de triagem pode aumentar.",
-                "Essa suíte de configuração avançada adiciona consultas de manutenibilidade e confiabilidade a security-extended."
+                "SARIF contém resultados, não semântica de bibliotecas para futuras análises de fluxo.",
+                "Um snapshot registra relações de pacotes, não fontes e destinos do CodeQL.",
+                "Uma lista seleciona consultas, mas não fornece os modelos de comportamento ausentes.",
+                "Um pacote de modelos amplia a semântica de bibliotecas disponível às consultas existentes."
             ],
-            "concept": "Escopo de segurança e qualidade",
+            "concept": "Modelagem de bibliotecas para CodeQL",
             "hints": [
-                "Compare precisão, abrangência e os tipos de resultados desejados.",
-                "Um conjunto mais amplo de consultas altera tanto a detecção quanto a carga de triagem."
+                "Diferencie adicionar verificações de ensinar uma biblioteca às existentes.",
+                "O comportamento não reconhecido está em uma dependência Java, não no agendamento."
             ]
         },
         "ghas-operations-022": {
@@ -8103,23 +8103,23 @@ export const translations = {
             ]
         },
         "ghas-operations-027": {
-            "prompt": "Uma equipe quer que os resultados das verificações de segurança restrinjam o merge. Qual mecanismo fornece imposição, em vez de outro detector?",
+            "prompt": "Uma verificação de segurança obrigatória só deve ser aceita da GitHub App de análise instalada, não de outra integração que publique o mesmo nome. Qual configuração atende?",
             "choices": [
-                "Code scanning",
-                "Repository rulesets",
-                "Push protection",
-                "Dependency review"
+                "Selecionar qualquer origem para a verificação",
+                "Selecionar a App de análise como origem esperada",
+                "Dar o mesmo nome a todas as integrações",
+                "Exigir histórico linear em vez da verificação"
             ],
             "explanations": [
-                "Code scanning pode detectar vulnerabilidades do código-fonte ao analisar um pull request.",
-                "Os rulesets podem exigir verificações e outras condições antes de aceitar alterações.",
-                "Push protection bloqueia segredos compatíveis durante um push, antes que entrem no repositório.",
-                "Dependency review fornece informações sobre dependências alteradas antes do merge."
+                "Qualquer origem não aplica o limite de identidade solicitado.",
+                "Uma verificação obrigatória pode indicar a GitHub App que deve fornecer o resultado.",
+                "Compartilhar o nome não estabelece quem emitiu o resultado de forma confiável.",
+                "O histórico linear restringe commits, não o emissor do status de segurança."
             ],
-            "concept": "Imposição de verificações de correção",
+            "concept": "Vinculação da origem de verificações obrigatórias",
             "hints": [
-                "Posicione o controle no momento em que fornece informações.",
-                "Diferencie um detector da política que exige seu resultado."
+                "Um rótulo conhecido não comprova quem enviou o resultado.",
+                "A política trata do emissor do resultado, não apenas de sua aprovação."
             ]
         },
         "ghas-operations-028": {
@@ -8243,63 +8243,63 @@ export const translations = {
             ]
         },
         "ghas-operations-034": {
-            "prompt": "A contagem de alertas de uma equipe cai após vários recursos de segurança pararem de executar. Qual verificação evita relatar falsamente isso como redução de risco?",
+            "prompt": "Um repositório foi arquivado hoje. Um analista consulta a visão de segurança da semana passada, quando seus alertas estavam abertos. Qual interpretação corresponde ao modelo documentado?",
             "choices": [
-                "Comparar as permissões de alertas das duas pessoas.",
-                "Usar o escopo da branch padrão ao interpretar as métricas.",
-                "Exportar os dados disponíveis da visualização como CSV.",
-                "Verificar a cobertura antes de concluir que o risco é baixo."
+                "O estado do repositório e dos alertas volta à semana passada",
+                "Repositórios arquivados somem de toda visão histórica",
+                "O fechamento atual reescreve todos os estados históricos",
+                "Filtros usam estado atual; alertas usam estado histórico"
             ],
             "explanations": [
-                "Os dados de Security overview são filtrados pelas permissões de quem os consulta.",
-                "As visualizações de Security overview informam sobre as branches padrão dos repositórios acessíveis.",
-                "Várias páginas de Security overview permitem exportar CSV para análises posteriores.",
-                "Uma visualização sem alertas pode refletir detecção desabilitada ou falhas não detectadas, não ausência de vulnerabilidades."
+                "Os atributos usados como filtros refletem o estado atual, não a data histórica.",
+                "O repositório pode aparecer se o filtro incluir os arquivados.",
+                "O estado histórico pode continuar aberto embora arquivar tenha fechado os alertas hoje.",
+                "O painel combina estados históricos de alertas com atributos atuais dos repositórios."
             ],
-            "concept": "Relatórios de correção atentos à cobertura",
+            "concept": "Estado histórico versus filtros atuais",
             "hints": [
-                "Trate os resultados do painel como observações com escopo, não como prova universal.",
-                "Verifique tanto o que foi medido quanto o que a pessoa tem permissão para ver."
+                "O intervalo escolhido não faz necessariamente todos os atributos voltarem no tempo.",
+                "Considere separadamente o histórico de alertas e a filtragem de repositórios."
             ]
         },
         "ghas-operations-035": {
-            "prompt": "Mantenedores precisam coordenar uma correção com um pesquisador antes de publicar detalhes. Qual recurso permite esse fluxo?",
+            "prompt": "Os mantenedores de um projeto público e um pesquisador convidado precisam colaborar em um patch sob embargo enquanto o aviso está em rascunho. Qual espaço permite colaboração privada no código?",
             "choices": [
-                "Repository security advisories",
-                "GitHub Advisory Database",
-                "SECURITY.md",
-                "Private vulnerability reporting"
+                "Um fork privado temporário vinculado ao aviso",
+                "Um fork público com branch de nome neutro",
+                "Um pull request em rascunho no repositório público",
+                "Uma issue pública com detalhes recolhidos"
             ],
             "explanations": [
-                "Os avisos do repositório permitem discussão privada, correções coordenadas e publicação posterior.",
-                "A base é uma coleção pesquisável de avisos de segurança publicados.",
-                "Uma política de segurança explica as versões com suporte e como relatar vulnerabilidades.",
-                "Esse recurso oferece a pesquisadores um canal privado para relatar problemas aos mantenedores."
+                "Avisos de segurança permitem colaborar em patches usando um fork privado temporário.",
+                "Um nome neutro não torna confidencial o código de um fork público.",
+                "O estado de rascunho não torna privadas as mudanças de um repositório público.",
+                "O conteúdo recolhido continua público e não impõe um embargo."
             ],
-            "concept": "Fluxo de correção do privado ao público",
+            "concept": "Espaço para patches sob embargo",
             "hints": [
-                "Diferencie instruções, recebimento confidencial, correção coordenada e dados públicos de referência.",
-                "Considere o público e a etapa de divulgação."
+                "Diferencie rótulos de fluxo da visibilidade real.",
+                "É necessário compartilhar código em privado antes da divulgação."
             ]
         },
         "ghas-operations-036": {
-            "prompt": "Qual estratégia evita tratar uma condição final de lançamento como o único controle de segurança do desenvolvimento?",
+            "prompt": "Um fluxo CodeQL executa com pull_request, mas não inicia análise quando uma mudança entra na fila de mesclagem. Qual evento adicional é documentado para analisar o grupo enfileirado?",
             "choices": [
-                "Fornecer informações de segurança aos desenvolvedores antes do merge.",
-                "Combinar detecção antecipada com verificações obrigatórias de merge.",
-                "Coordenar uma campanha focada na correção de alertas pendentes.",
-                "Continuar monitorando após incorporar correções à branch padrão."
+                "workflow_dispatch",
+                "merge_group",
+                "release",
+                "issues"
             ],
             "explanations": [
-                "As informações antecipadas ajudam a evitar vulnerabilidades em vez de descobri-las apenas no lançamento.",
-                "A detecção fornece resultados; as verificações obrigatórias decidem se as alterações podem prosseguir. Os controles se complementam.",
-                "Uma campanha organiza correções pendentes; não previne todas as novas vulnerabilidades.",
-                "Novos avisos e alterações de código podem introduzir riscos após uma correção anterior."
+                "O acionamento manual inicia um fluxo, mas não é o evento da fila.",
+                "merge_group inicia a análise de mudanças adicionadas à fila de mesclagem.",
+                "O evento release pertence a outra etapa, não ao agrupamento da fila.",
+                "A atividade de issues não valida o commit de mesclagem enfileirado."
             ],
-            "concept": "Operações preventivas em camadas",
+            "concept": "Análise de código em filas de mesclagem",
             "hints": [
-                "Considere quando as informações chegam e se ainda é necessário corrigir a falha.",
-                "Um controle preventivo e uma condição de lançamento podem abordar falhas diferentes."
+                "Um grupo enfileirado não é o mesmo evento que abrir um pull request.",
+                "Escolha o evento do conjunto de commits que a fila vai mesclar."
             ]
         },
         "ghas-operations-037": {
@@ -8363,23 +8363,23 @@ export const translations = {
             ]
         },
         "ghas-operations-040": {
-            "prompt": "O Copilot Autofix sugere um patch para um alerta de código. O que continua necessário antes de relatar uma correção bem-sucedida?",
+            "prompt": "Um administrador empresarial proíbe Copilot Autofix para análise de código. Um administrador de repositório quer habilitá-lo localmente. O que precisa ocorrer primeiro?",
             "choices": [
-                "Documentar uma dispensa justificada como falso positivo.",
-                "Registrar o risco aceito e sua justificativa.",
-                "Verificar a correção com análise recente e pertinente.",
-                "Reabrir o alerta quando a dispensa deixar de ser justificada."
+                "Mudar da configuração padrão para a avançada",
+                "Gerar nova categoria SARIF para os achados",
+                "Reverter a opção empresarial em um nível autorizado",
+                "Atribuir uma licença Copilot a cada colaborador"
             ],
             "explanations": [
-                "Dispensar como falso positivo exige evidências de que a vulnerabilidade não se aplica ao código analisado.",
-                "Aceitar um risco reconhece uma falha não corrigida; isso não deve ser relatado como correção verificada.",
-                "Uma correção é demonstrada por análise pertinente do código alterado, não apenas por editar ou dispensar um alerta.",
-                "Uma premissa alterada ou um caminho de código agora aplicável pode invalidar uma dispensa anterior."
+                "A política de Copilot Autofix se aplica à configuração CodeQL padrão e avançada.",
+                "Uma categoria de análise não substitui a política empresarial.",
+                "Desativar na empresa impede habilitar em níveis inferiores até reverter essa política.",
+                "Atribuir licenças aos colaboradores não substitui a restrição empresarial."
             ],
-            "concept": "Verificação de correções geradas",
+            "concept": "Herança de políticas de Autofix",
             "hints": [
-                "Diferencie evidências sobre um resultado de uma decisão de tolerar o risco.",
-                "Escolha uma decisão que continue verdadeira quando outra pessoa a revisar."
+                "Restrições superiores limitam as opções inferiores.",
+                "Mudar a mecânica da análise não muda a autoridade da política."
             ]
         },
         "ghas-operations-041": {
@@ -8603,23 +8603,23 @@ export const translations = {
             ]
         },
         "ghas-administration-011": {
-            "prompt": "Uma equipe precisa receber a função organizacional predefinida security manager. Qual função deve realizar essa delegação?",
+            "prompt": "Em uma organização do GitHub Enterprise Cloud com Secret Protection habilitado, uma equipe deve gerenciar resultados de segredos e solicitações de bypass sem controlar todos os recursos de segurança. Qual desenho de função aplica melhor o menor privilégio?",
             "choices": [
-                "Pesquisador de segurança externo",
-                "Desenvolvedor do repositório",
-                "Security manager",
-                "Organization owner"
+                "Atribuir proprietário da organização a cada responsável",
+                "Atribuir a função predefinida de gerente de segurança",
+                "Atribuir admin de repositório em toda a organização",
+                "Criar função de organização personalizada para essas tarefas"
             ],
             "explanations": [
-                "Um pesquisador relata uma possível falha; relatar não concede permissões de administração do repositório.",
-                "Desenvolvedores implementam e testam correções no código que mantêm; o acesso depende das permissões atribuídas.",
-                "Security managers podem gerenciar configurações e alertas de segurança em toda a organização sem acesso geral de escrita no código.",
-                "Organization owners podem atribuir funções de organização, incluindo security manager."
+                "Proprietário da organização concede autoridade ampla além dessas tarefas.",
+                "A função predefinida inclui configurações de segurança de toda a organização, fora desse escopo.",
+                "Admin de repositório também concede administração geral desnecessária.",
+                "Use a base Read com permissões para visualizar alertas de segredos; descartá-los, reabri-los ou atribuí-los; e revisar e gerenciar solicitações de bypass da verificação de segredos. Adicionar permissões de repositório a funções de organização personalizadas está em versão prévia pública."
             ],
-            "concept": "Autoridade para atribuir security managers",
+            "concept": "Funções de segurança personalizadas restritas",
             "hints": [
-                "Diferencie o trabalho de implementação da autoridade em toda a organização.",
-                "Escolha a função cuja responsabilidade habitual corresponde à tarefa."
+                "Compare as tarefas solicitadas com o escopo completo da função predefinida.",
+                "O menor privilégio pode exigir uma função menor que a padrão."
             ]
         },
         "ghas-administration-012": {
@@ -8643,23 +8643,23 @@ export const translations = {
             ]
         },
         "ghas-administration-013": {
-            "prompt": "Qual capacidade NÃO é concedida apenas pela função predefinida security manager?",
+            "prompt": "Um membro tem uma concessão explícita Write em um repositório e a função de gerente de segurança da organização. O proprietário remove apenas essa função. O que a revisão de acesso deve prever?",
             "choices": [
-                "Atribuir a função de organização security manager.",
-                "Configurar recursos de segurança da organização.",
-                "Ler repositórios e gerenciar alertas de segurança em toda a organização.",
-                "Escrever código da aplicação em todos os repositórios."
+                "A concessão Write independente passa para Read",
+                "Todo acesso é removido com a função de segurança",
+                "A concessão Write independente passa para Admin",
+                "O acesso Write concedido independentemente permanece"
             ],
             "explanations": [
-                "A atribuição dessa função é responsabilidade de um organization owner.",
-                "A função concede autoridade administrativa de segurança; as licenças de recursos continuam sendo um requisito separado.",
-                "Security manager concede leitura dos repositórios e escrita nos alertas de segurança em toda a organização.",
-                "Security manager por si só não concede escrita geral no código-fonte das aplicações."
+                "Permissões de segurança se somam ao acesso existente; remover a função não reduz essa concessão.",
+                "Remover uma função não revoga todas as permissões independentes do repositório.",
+                "Remover a função de segurança não promove uma concessão separada.",
+                "Revise as concessões separadamente; Write não vinha da função de segurança."
             ],
-            "concept": "Administrar segurança não equivale a escrever código",
+            "concept": "Concessões independentes ao remover funções de segurança",
             "hints": [
-                "Diferencie acesso ao código de autoridade sobre alertas e configurações de segurança.",
-                "Uma função especializada de organização não precisa ser administradora geral de repositórios."
+                "Identifique qual concessão forneceu originalmente acesso de escrita.",
+                "Remover uma função aditiva não revoga todos os caminhos de acesso."
             ]
         },
         "ghas-administration-014": {
@@ -8763,23 +8763,23 @@ export const translations = {
             ]
         },
         "ghas-administration-019": {
-            "prompt": "Contribuidores sem direitos de bypass de push protection precisam obter aprovação para exceções. Qual configuração de bypass delegado fornece essa revisão?",
+            "prompt": "Um bot de migração autorizado deve ignorar completamente a proteção de push dos seus commits. A organização aceitou essa exceção restrita. Qual capacidade a implementa?",
             "choices": [
-                "Configurar revisores de bypass designados.",
-                "Conceder um privilégio explícito de bypass.",
-                "Conceder uma isenção de push protection.",
-                "Manter as permissões normais do repositório."
+                "Conceder ao bot uma isenção de proteção de push",
+                "Permitir ao bot contornar bloqueios detectados",
+                "Adicionar o bot como revisor de solicitações",
+                "Aprovar uma solicitação pendente do bot"
             ],
             "explanations": [
-                "O bypass delegado encaminha solicitações de contribuidores sem direitos de bypass aos revisores designados.",
-                "Um privilégio de bypass permite que atores selecionados contornem o bloqueio; não equivale a solicitar aprovação.",
-                "Uma isenção pula push protection para atores selecionados, diferentemente de revisar solicitações individuais.",
-                "A delegação de bypass não concede por si só administração geral nem acesso ao código."
+                "Uma isenção ignora a proteção para commits do ator selecionado e deve ser cuidadosamente restrita.",
+                "A permissão de bypass permite contornar bloqueios, não ignorar toda a proteção.",
+                "Revisar solicitações de outros não estabelece uma isenção do ator.",
+                "Aprovar uma solicitação abrange apenas aquela solicitação, não os commits futuros do bot."
             ],
-            "concept": "Limite de aprovação de bypass delegado",
+            "concept": "Isenções versus permissões de bypass",
             "hints": [
-                "Uma exceção delegada não deve ampliar permissões não relacionadas.",
-                "Diferencie solicitar uma exceção de estar autorizado a aprová-la."
+                "Diferencie ignorar uma verificação de substituir seu resultado.",
+                "Separe uma exceção do ator da aprovação de um push."
             ]
         },
         "ghas-administration-020": {

@@ -46,6 +46,25 @@ test("all six banks have both complete translations and localized domains withou
     assert.equal(domainTranslations.length, 35);
     assert.deepEqual(exams.find(exam => exam.id === "agentic").officialLanguages, ["en"]);
 });
+test("Security translations preserve technical options and actionable paths at their answer indices", () => {
+    const exam = exams.find(exam => exam.id === "security");
+    const cases = [
+        ["ghas-ecosystem-009", "Repository > Insights > Dependency graph"],
+        ["ghas-supply-013", "`registries`"],
+        ["ghas-code-009", "`manual`"],
+        ["ghas-operations-026", "Show paths"],
+        ["ghas-operations-038", "is:open severity:high branch:main"],
+        ["ghas-administration-025", "POST /orgs/{org}/code-security/configurations/{configuration_id}/attach"],
+    ];
+    for (const [id, expected] of cases) {
+        const question = exam.questions.find(question => question.id === id);
+        assert.ok(question, id);
+        assert.equal(question.choices[question.correct], expected, id);
+        for (const language of ["es", "pt-BR"]) {
+            assert.deepEqual(question.translations[language].choices, question.choices, `${id} ${language}`);
+        }
+    }
+});
 test("switching languages preserves answer key, attempt identity, revision, deadline, and persisted progress", async t => {
     const exam = exams[0];
     const { engine, directory } = await fixture(t, { catalog: [exam] });

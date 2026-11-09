@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 import { createEngine } from "./engine.mjs";
 import { questions } from "./questions.mjs";
 import { startServer } from "./server.mjs";
-import { quotasFor, revisionFor, reviewRevisionFor, publicExam, validateBank, assemble, approved, mergeApprovals } from "./bank-utils.mjs";
+import { quotasFor, revisionFor, reviewRevisionFor, publicExam, validateBank, assemble, approved, mergeApprovals, localizedQuestion } from "./bank-utils.mjs";
 import { domainTranslations, hasTranslation } from "./i18n.mjs";
 import { exams } from "./exams.mjs";
 
@@ -28,6 +28,30 @@ async function fixture(t, options = {}) {
     return { engine, directory, sent };
 }
 const first = questions[0].id;
+test("Foundations localization preserves executable syntax, Markdown, shortcuts, and English interface choices", () => {
+    const exam = exams.find(exam => exam.id === "foundations");
+    const cases = [
+        ["ghf-008", "git fetch origin"],
+        ["ghf-024", "Command+Option+K"],
+        ["ghf-037", "## Setup"],
+        ["ghf-040", "```"],
+        ["ghf-043", "octo-org/site#42"],
+        ["ghf-048", "\\*note\\*"],
+        ["ghf-050", "."],
+        ["ghf-052", "Profile menu -> Feature preview"],
+        ["ghf-054", ">"],
+        ["ghf-060", "Blame"],
+    ];
+    for (const [id, correctLiteral] of cases) {
+        const question = exam.questions.find(question => question.id === id);
+        for (const language of ["en", "es", "pt-BR"]) {
+            const localized = localizedQuestion(question, language);
+            assert.deepEqual(localized.choices, question.choices, `${id} ${language}: literal choices changed`);
+            assert.equal(localized.choices[localized.correct], correctLiteral, `${id} ${language}: answer alignment changed`);
+            assert.deepEqual(localized.explanations, language === "en" ? question.explanations : question.translations[language].explanations);
+        }
+    }
+});
 test("all six banks have both complete translations and localized domains without changing fixed keys", () => {
     assert.equal(exams.length, 6);
     assert.equal(exams.reduce((total, exam) => total + exam.questions.length, 0), 1350);

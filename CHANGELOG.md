@@ -6,6 +6,21 @@ installed.
 
 ## Unreleased
 
+### Foundations question-bank refresh
+
+- Rewrite all 225 Foundations questions and their Spanish and Brazilian
+  Portuguese variants with original, concise feature, command, file, role,
+  navigation, and short-scenario questions.
+- Add practical GitHub website knowledge, including contextual keyboard
+  shortcuts, command palette settings, repository navigation, and Markdown.
+  Keep technical literals and English interface paths aligned across languages.
+- Preserve the seven domain quotas, four-choice single-answer format,
+  75-question/100-minute mock policy, and private saved learner state.
+- Regenerate the revision-based trilingual review packet. Content remains
+  AI-authored Preview; this refresh does not grant human approval.
+- Stage this certification's changes for the coordinated six-bank release;
+  no version bump or release is included.
+
 ### Website redesign and platform separation
 
 - Replace the landing page's rose theme with a white Primer design, native

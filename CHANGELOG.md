@@ -6,6 +6,18 @@ installed.
 
 ## Unreleased
 
+### Actions question-bank refresh
+
+- Rewrite all 225 Actions questions in English, Spanish, and Brazilian Portuguese
+  with original, concise YAML/file/command recognition and short practical
+  scenarios across the full January 2026 GH-200 blueprint.
+- Refresh answer choices, explanations, conceptual hints, and official sources;
+  regenerate only the Actions human-review packet. Content remains AI-authored
+  Preview, not official questions or human-approved material.
+- Preserve question IDs, exact domain quotas, four-choice single-answer behavior,
+  75-question/100-minute practice, private progress, and saved-attempt snapshots.
+  Keep this entry Unreleased for the coordinated six-bank version change.
+
 ### Website redesign and platform separation
 
 - Replace the landing page's rose theme with a white Primer design, native

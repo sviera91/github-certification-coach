@@ -124,6 +124,14 @@ with largest remainders constrained to the published percentage ranges. No quest
 can repeat previously seen questions. A full mock is disabled if its bank
 cannot cover the required domain quotas. Learning modes can focus on one domain.
 
+The refreshed Actions bank uses original, concise YAML, command, file,
+configuration, and short-scenario questions across the full GH-200 blueprint.
+All 225 questions and their Spanish and Brazilian Portuguese variants are
+rewritten; assessment examples inform format only, not copied question content.
+The bank remains AI-authored Preview pending revision-specific human review.
+Its domain quotas, four-choice single-answer format, and practice timing are
+unchanged. Existing saved attempts retain their original question snapshots.
+
 ## Practice modes and navigation
 
 ### Languages

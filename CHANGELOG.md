@@ -6,6 +6,22 @@ installed.
 
 ## Unreleased
 
+### Administration question-bank refresh
+
+- Rewrite all 225 Administration questions and their Spanish and Brazilian
+  Portuguese variants using original, concise role, policy, protocol, command,
+  configuration, and short-scenario questions.
+- Cover the complete July 2026 blueprint rather than overfit the smaller
+  practice assessment: identities, enterprise administration, security,
+  Actions, and usage monitoring. Name relevant platform, role, and scope.
+- Keep technical syntax and English interface paths aligned across languages.
+  Preserve domain quotas, four-choice single-answer questions,
+  75-question/100-minute mocks, and private saved learner state.
+- Regenerate the revision-based trilingual review packet. Content remains
+  AI-authored Preview; this refresh does not grant human approval.
+- Stage this certification's changes for the coordinated six-bank release;
+  no version bump or release is included.
+
 ### Website redesign and platform separation
 
 - Replace the landing page's rose theme with a white Primer design, native

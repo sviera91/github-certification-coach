@@ -6,7 +6,7 @@ validated certification-readiness assessment. They remain Preview until
 every current question revision has been reviewed and approved by a human
 and the full pool/coverage targets are met.
 
-Current version: **0.4.2-preview**. See the [changelog](CHANGELOG.md) for release
+Current version: **0.5.0-preview**. See the [changelog](CHANGELOG.md) for release
 history; the canvas version badge links to it.
 
 **Learner progress stays on each person's computer, outside this repository.**

@@ -6,6 +6,14 @@ installed.
 
 ## Unreleased
 
+No unreleased changes.
+
+## 0.5.0-preview - 2026-11-10
+
+One coordinated release for all six question-bank refreshes, desktop update
+notifications, and the previously unreleased Lite/website changes. Question
+content remains AI-authored Preview requiring revision-specific human review.
+
 ### Desktop update notifications
 
 - Add an English, Spanish, and Brazilian Portuguese "Update available" banner
@@ -39,7 +47,6 @@ installed.
   review packet. Content remains AI-authored Preview with no human approval granted.
 - Preserve IDs, exact domain quotas, four-choice single-answer behavior,
   75-question/120-minute practice, private progress, and saved-attempt snapshots.
-  Keep this entry Unreleased for the coordinated six-bank version change.
 
 ### Administration question-bank refresh
 
@@ -57,8 +64,6 @@ installed.
   75-question/100-minute mocks, and private saved learner state.
 - Regenerate the revision-based trilingual review packet. Content remains
   AI-authored Preview; this refresh does not grant human approval.
-- Stage this certification's changes for the coordinated six-bank release;
-  no version bump or release is included.
 
 ### Actions question-bank refresh
 
@@ -70,7 +75,6 @@ installed.
   Preview, not official questions or human-approved material.
 - Preserve question IDs, exact domain quotas, four-choice single-answer behavior,
   75-question/100-minute practice, private progress, and saved-attempt snapshots.
-  Keep this entry Unreleased for the coordinated six-bank version change.
 
 ### Advanced Security question-bank refresh
 
@@ -85,7 +89,6 @@ installed.
   AI-authored Preview, not official questions or human-approved material.
 - Preserve question IDs, exact domain quotas, four-choice single-answer behavior,
   75-question/100-minute practice, private progress, and saved-attempt snapshots.
-  Keep this entry Unreleased for the coordinated six-bank version change.
 
 ### Foundations question-bank refresh
 
@@ -101,8 +104,6 @@ installed.
   75-question/100-minute mock policy, and private saved learner state.
 - Regenerate the revision-based trilingual review packet. Content remains
   AI-authored Preview; this refresh does not grant human approval.
-- Stage this certification's changes for the coordinated six-bank release;
-  no version bump or release is included.
 
 ### Copilot question-bank refresh
 

@@ -18,7 +18,7 @@
     "export:reviews": "node export-reviews.mjs",
     "review:export": "node review-packets.mjs export",
     "review:import": "node review-packets.mjs import",
-    "test": "node --test prototype.test.mjs study.test.mjs client.test.mjs markdown.test.mjs install.test.mjs review-packets.test.mjs lite.test.mjs"
+    "test": "node --test prototype.test.mjs study.test.mjs client.test.mjs markdown.test.mjs install.test.mjs review-packets.test.mjs lite.test.mjs \"tests/*.test.mjs\""
   },
   "devDependencies": {
     "@noble/hashes": "2.4.0",

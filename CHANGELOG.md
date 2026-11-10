@@ -6,17 +6,22 @@ installed.
 
 ## Unreleased
 
-### Actions question-bank refresh
+### Foundations question-bank refresh
 
-- Rewrite all 225 Actions questions in English, Spanish, and Brazilian Portuguese
-  with original, concise YAML/file/command recognition and short practical
-  scenarios across the full January 2026 GH-200 blueprint.
-- Refresh answer choices, explanations, conceptual hints, and official sources;
-  regenerate only the Actions human-review packet. Content remains AI-authored
-  Preview, not official questions or human-approved material.
-- Preserve question IDs, exact domain quotas, four-choice single-answer behavior,
-  75-question/100-minute practice, private progress, and saved-attempt snapshots.
-  Keep this entry Unreleased for the coordinated six-bank version change.
+- Rewrite all 225 Foundations questions and their Spanish and Brazilian
+  Portuguese variants with original, concise feature, command, file, role,
+  navigation, and short-scenario questions.
+- Add practical GitHub website knowledge, including contextual keyboard
+  shortcuts, command palette settings, repository navigation, and Markdown.
+  Keep technical literals and English interface paths aligned across languages.
+- Replace seven overlapping objectives with distinct archive, merge, fork,
+  team-permission, community-default, license-search, and profile-curation tasks.
+- Preserve the seven domain quotas, four-choice single-answer format,
+  75-question/100-minute mock policy, and private saved learner state.
+- Regenerate the revision-based trilingual review packet. Content remains
+  AI-authored Preview; this refresh does not grant human approval.
+- Stage this certification's changes for the coordinated six-bank release;
+  no version bump or release is included.
 
 ### Copilot question-bank refresh
 

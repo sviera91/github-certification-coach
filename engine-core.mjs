@@ -6,7 +6,7 @@ import { translate } from "./i18n.mjs";
 
 export const COMPLETION_TOOL = "certification_coach_complete_hint";
 export const INSIGHT_TOOL = "certification_coach_complete_insight";
-export const APP_VERSION = "0.5.0-preview";
+export const APP_VERSION = "0.5.1-preview";
 const modes = new Set(["exam", "learn", "coach"]);
 const progressFilters = new Set(["all", "unanswered", "incorrect", "flagged"]);
 const isRecord = value => value !== null && typeof value === "object" && !Array.isArray(value);
@@ -14,7 +14,7 @@ export class InputError extends Error {}
 
 export function createEngine({ persistence, send, sessionId, now = Date.now, timeout = 120000,
     log = () => {}, catalog = exams, random = randomInt, reviewDefaults = bundledReviews }) {
-    let store = { version: 3, selectedExamId: catalog[0].id, language: "en", attempts: {}, studies: {}, mocks: {}, history: {}, approvals: {} };
+    let store = { version: 3, selectedExamId: catalog[0].id, language: "en", attempts: {}, studies: {}, mocks: {}, history: {}, approvals: {}, studyArchives: {} };
     let serial = Promise.resolve();
     const jobs = new Map();
     const approvals = () => mergeApprovals(reviewDefaults, store.approvals);
@@ -59,7 +59,8 @@ export function createEngine({ persistence, send, sessionId, now = Date.now, tim
         if (saved !== undefined) {
             if (!isRecord(saved) || ![2, 3].includes(saved.version) || !isRecord(saved.attempts) ||
                 saved.version === 3 && !["studies", "mocks", "history"].every(key => isRecord(saved[key])) ||
-                saved.approvals !== undefined && !isRecord(saved.approvals)) {
+                saved.approvals !== undefined && !isRecord(saved.approvals) ||
+                saved.studyArchives !== undefined && !isRecord(saved.studyArchives)) {
                 throw new Error("Invalid saved certification state.");
             }
             definition(saved.selectedExamId);
@@ -69,7 +70,8 @@ export function createEngine({ persistence, send, sessionId, now = Date.now, tim
                 validateAttempt(attempt, id);
             }
             store = { ...saved, version: 3, language: saved.language ?? "en", approvals: saved.approvals ?? {},
-                studies: saved.studies ?? {}, mocks: saved.mocks ?? {}, history: saved.history ?? {} };
+                studies: saved.studies ?? {}, mocks: saved.mocks ?? {}, history: saved.history ?? {},
+                studyArchives: saved.studyArchives ?? {} };
             for (const [id, attempt] of Object.entries(store.attempts)) {
                 const bucket = attempt.mode === "exam" ? store.mocks : store.studies;
                 if (saved.version === 2) {
@@ -111,6 +113,19 @@ export function createEngine({ persistence, send, sessionId, now = Date.now, tim
                         domain.percentage !== Math.round(domain.correct / domain.total * 100) || !Array.isArray(domain.resources)) ||
                     result.guidance !== undefined && !isRecord(result.guidance))) {
                     throw new Error("Invalid mock history.");
+                }
+            }
+            const archiveIds = new Set();
+            for (const [id, archives] of Object.entries(store.studyArchives)) {
+                definition(id);
+                if (!Array.isArray(archives)) throw new Error("Invalid saved study archive.");
+                for (const item of archives) {
+                    if (!isRecord(item) || typeof item.id !== "string" || !item.id || archiveIds.has(item.id) ||
+                        !Number.isFinite(item.archivedAt) || item.snapshot?.mode === "exam" || item.snapshot?.submitted) {
+                        throw new Error("Invalid saved study archive.");
+                    }
+                    validateAttempt(item.snapshot, id);
+                    archiveIds.add(item.id);
                 }
             }
             for (const attempt of allAttempts()) if (attempt.mode === "exam" && attempt.submitted) archive(attempt, attempt.reason ?? "submitted");
@@ -253,6 +268,17 @@ export function createEngine({ persistence, send, sessionId, now = Date.now, tim
             }),
         };
     }
+    function studyUpdate(attempt) {
+        if (!attempt || attempt.mode === "exam") return null;
+        const previous = new Map(attempt.questions.map(question => [question.id, revisionFor(question)]));
+        const current = definition(attempt.examId).questions;
+        const ids = new Set(current.map(question => question.id));
+        const unchanged = current.filter(question => previous.get(question.id) === revisionFor(question)).length;
+        const added = current.filter(question => !previous.has(question.id)).length;
+        const revised = current.length - unchanged - added;
+        const removed = attempt.questions.filter(question => !ids.has(question.id)).length;
+        return { available: Boolean(revised || added || removed), unchanged, revised, added, removed };
+    }
     function state() {
         const attempt = selected();
         const done = finished(attempt);
@@ -261,6 +287,11 @@ export function createEngine({ persistence, send, sessionId, now = Date.now, tim
             appVersion: APP_VERSION,
             language: store.language,
             history: store.history[store.selectedExamId] ?? [],
+            studyUpdate: studyUpdate(attempt),
+            studyArchives: (store.studyArchives[store.selectedExamId] ?? []).map(item => ({
+                id: item.id, archivedAt: item.archivedAt, total: item.snapshot.questions.length,
+                answered: item.snapshot.entries.filter(entry => entry.answers.length).length,
+            })),
             selectedExamId: store.selectedExamId,
             catalog: catalog.map(exam => ({ ...publicExam(exam, approvals(), store.language),
                 attempt: store.attempts[exam.id] ? {
@@ -406,8 +437,22 @@ EXERCISE_DATA_JSON=${JSON.stringify(data)}`;
             const beforeJobs = new Map(jobs);
             const outgoing = [];
             try {
-                await settle();
-                if (action === "inspect_question" || action === "review_question") {
+                const settled = await settle();
+                if (action === "inspect_study_archive") {
+                    const examId = store.selectedExamId;
+                    if (store.mocks[examId] && !finished(store.mocks[examId])) {
+                        throw new InputError("Finish this certification's active attempt before reviewing its answer key.");
+                    }
+                    const item = (store.studyArchives[examId] ?? []).find(item => item.id === input.archiveId);
+                    const question = Number.isInteger(input.questionIndex) && item?.snapshot.questions[input.questionIndex];
+                    if (!question) throw new InputError("Choose a valid archived study question.");
+                    const contentLanguage = store.language === "en" || question.translations?.[store.language] ? store.language : "en";
+                    if (settled) await save();
+                    return { archiveId: item.id, archivedAt: item.archivedAt, index: input.questionIndex,
+                        total: item.snapshot.questions.length, contentLanguage,
+                        question: localizedQuestion(question, contentLanguage),
+                        entry: structuredClone(item.snapshot.entries[input.questionIndex]) };
+                } else if (action === "inspect_question" || action === "review_question") {
                     const exam = definition(input.examId);
                     if (store.mocks[exam.id] && !finished(store.mocks[exam.id])) {
                         throw new InputError("Finish this certification's active attempt before reviewing its answer key.");
@@ -524,6 +569,27 @@ EXERCISE_DATA_JSON=${JSON.stringify(data)}`;
                     } else if (action === "position") {
                         entryFor(attempt, input.questionId);
                         attempt.position = input.questionId;
+                    } else if (action === "update_study") {
+                        if (attempt.mode === "exam") throw new InputError("Question updates are available only in study modes.");
+                        if (!studyUpdate(attempt).available) throw new InputError("This study already uses the current questions.");
+                        const oldQuestions = new Map(attempt.questions.map((question, index) =>
+                            [question.id, { revision: revisionFor(question), entry: attempt.entries[index] }]));
+                        const kept = new Set(definition(attempt.examId).questions
+                            .filter(question => oldQuestions.get(question.id)?.revision === revisionFor(question))
+                            .map(question => question.id));
+                        cancelJobs(attempt);
+                        const snapshot = structuredClone(attempt);
+                        (store.studyArchives[attempt.examId] ??= []).unshift({
+                            id: randomUUID(), archivedAt: now(), snapshot,
+                        });
+                        attempt.id = randomUUID();
+                        attempt.questions = structuredClone(definition(attempt.examId).questions);
+                        attempt.entries = attempt.questions.map(question => kept.has(question.id) ?
+                            oldQuestions.get(question.id).entry : { id: question.id, answers: [], messages: [], flagged: false });
+                        attempt.domains = structuredClone(definition(attempt.examId).domains);
+                        if (!attempt.entries.some(entry => entry.id === attempt.position)) attempt.position = attempt.entries[0].id;
+                        if (!attempt.domains.some(domain => domain.name === attempt.domainFilter)) attempt.domainFilter = "";
+                        delete attempt.legacy;
                     } else if (action === "reset_study") {
                         if (attempt.mode === "exam" || input.confirm !== true) throw new InputError("Confirm resetting this certification's study progress.");
                         cancelJobs(attempt);

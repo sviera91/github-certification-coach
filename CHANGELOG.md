@@ -8,6 +8,27 @@ installed.
 
 No unreleased changes.
 
+## 0.5.1-preview - 2026-11-10
+
+### Safe question-bank updates
+
+- Show a localized "New questions available" notice when a saved study workspace
+  differs from the installed bank, with unchanged/revised/new/removed counts and
+  an information icon supporting hover, keyboard focus, touch, and Escape.
+- Load updated questions only when the learner clicks the button. Preserve
+  answers, unchecked selections, flags, and completed coaching for identical
+  question IDs and full revision fingerprints. Revised and new questions start
+  unanswered; interrupted coaching cannot update the wrong question revision.
+- Atomically keep the entire previous workspace in a local, read-only archive,
+  with question navigation, original answer keys, previous selections, flags,
+  and saved coaching available for later review. Retain archives across updates,
+  restarts, and study resets; nothing is uploaded.
+- Leave saved work unchanged when loading questions fails. Preserve other
+  certifications and all mock snapshots/results; block archived answer-key
+  review during live mocks.
+- Include English, Spanish, and Brazilian Portuguese interfaces and the same
+  safe workflow in browser-only Lite using its existing local storage.
+
 ## 0.5.0-preview - 2026-11-10
 
 One coordinated release for all six question-bank refreshes, desktop update

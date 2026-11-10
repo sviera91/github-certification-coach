@@ -6,6 +6,7 @@ let liteAPI;
 const $ = id => document.getElementById(id);
 let state, index = 0, busy = false, signature = "", view = "catalog", reviewFilter = "attention";
 let reviewingQuestion;
+let archivedQuestion;
 let reportContext, reportReturnView = "catalog";
 let connectionErrorText;
 let updateStatus, updateSignature;
@@ -196,7 +197,7 @@ async function act(action, extra = {}) {
     syncBusy();
     try {
         if (["answer", "flag"].includes(action) && state.attempt?.mode !== "exam") pinnedQuestion = extra.questionId;
-        if (["study_filter", "reset_study"].includes(action)) pinnedQuestion = undefined;
+        if (["study_filter", "reset_study", "update_study"].includes(action)) pinnedQuestion = undefined;
         update(await api(action, { attemptId: state?.attempt?.id, ...extra }));
         return true;
     } catch (error) {
@@ -208,6 +209,10 @@ async function act(action, extra = {}) {
     }
 }
 function update(value) {
+    if (view === "archive" && state?.selectedExamId !== value.selectedExamId) {
+        archivedQuestion = undefined;
+        view = "prep";
+    }
     if (state?.attempt?.id !== value.attempt?.id) {
         index = Math.max(0, value.attempt?.entries.findIndex(entry => entry.id === value.attempt.position) ?? 0);
         unsavedSelections.clear();
@@ -238,6 +243,10 @@ async function goQuestion(questionIndex) {
 }
 function render() {
     if (!state) return;
+    if (view === "archive" && state.attempt?.mode === "exam" && !state.attempt.finished) {
+        archivedQuestion = undefined;
+        view = "prep";
+    }
     if ($("lite-loading")) $("lite-loading").hidden = true;
     const exam = selectedExam();
     localizePage(document, state.language ?? "en");
@@ -256,22 +265,37 @@ function render() {
     $("notice").textContent = t(preview ?
         "Unofficial, AI-authored Preview. Human content review is still required. Practice scores are not official scaled scores or a guarantee of passing." :
         "Unofficial practice with a human-reviewed question bank. Practice scores are not official scaled scores or a guarantee of passing.");
-    for (const id of ["catalog", "setup", "attempt", "review", "content-review", "report"]) {
-        const visible = ({ catalog: "catalog", setup: "prep", attempt: "attempt", review: "review", "content-review": "content", report: "report" })[id];
+    for (const id of ["catalog", "setup", "attempt", "review", "content-review", "study-archive", "report"]) {
+        const visible = ({ catalog: "catalog", setup: "prep", attempt: "attempt", review: "review", "content-review": "content", "study-archive": "archive", report: "report" })[id];
         $(id).hidden = view !== visible;
     }
+    renderStudyUpdate();
     $("back-catalog").hidden = view === "catalog";
     if (view === "catalog") renderCatalog();
     if (view === "prep") renderPrep(exam);
     if (view === "attempt" && state.attempt) renderAttempt(exam);
     if (view === "review" && state.attempt) renderReview();
     if (view === "content" && reviewingQuestion) renderContentReview();
+    if (view === "archive" && archivedQuestion) renderStudyArchive();
     if (view === "report") updateReport();
     $("content-language-note").hidden = !state.attempt || state.attempt.contentLanguage === (state.language ?? "en") || (state.language ?? "en") === "en";
     syncBusy();
     for (const [id, name] of [["choose-mode", "arrow-switch"], ["retry-question", "sync"], ["reset-study", "sync"],
-        ["explain-further", "light-bulb"], ["bank-review", "book"]]) setIcon($(id), name);
+        ["explain-further", "light-bulb"], ["bank-review", "book"], ["question-update-info", "info"],
+        ["study-archives", "history"], ["prep-study-archives", "history"]]) setIcon($(id), name);
     tick();
+}
+function renderStudyUpdate() {
+    const update = state.studyUpdate;
+    $("question-update").hidden = !update?.available || !["prep", "attempt"].includes(view);
+    if (update?.available) $("question-update-summary").textContent = t(
+        "{unchanged} unchanged (progress kept), {revised} revised, {added} new, {removed} removed.",
+        update);
+    const activeMock = state.attempt?.mode === "exam" && !state.attempt.finished;
+    for (const id of ["study-archives", "prep-study-archives"]) {
+        $(id).hidden = !state.studyArchives?.length;
+        $(id).disabled = busy || activeMock || Boolean(unsavedSelections.size);
+    }
 }
 function renderCatalog() {
     $("exam-cards").replaceChildren(...state.catalog.map(exam => {
@@ -392,14 +416,7 @@ function renderAttempt(exam) {
     $("explain-further").disabled = busy || Boolean(question.insight?.pending);
     renderInsight($("deep-explanation"), question.insight);
     $("coaching").hidden = attempt.mode !== "coach";
-    $("messages").replaceChildren(...question.messages.map(message => {
-        const node = text("div", "", `message ${message.role}`);
-        const content = text("div", "", message.role === "coach" ? "markdown-content" : "learner-message");
-        if (message.role === "coach") content.append(renderMarkdown(document, message.text));
-        else content.textContent = message.text;
-        node.append(text("strong", t(message.role === "coach" ? "Copilot coach" : "You"), "message-author"), content);
-        return node;
-    }));
+    $("messages").replaceChildren(...question.messages.map(messageNode));
     $("pending").hidden = !question.pending;
     $("coach-error").textContent = question.error ? (hasTranslation(question.error) ? t(question.error) : t("System message: {message}", { message: question.error })) : "";
     $("reasoning").value = drafts.get(key(question)) ?? "";
@@ -417,6 +434,14 @@ function renderAttempt(exam) {
     $("next").disabled = indices.indexOf(index) === indices.length - 1 || busy || Boolean(unsavedSelections.size);
     $("score").hidden = study || !attempt.score;
     if (!study && attempt.score) renderScore(attempt.score);
+}
+function messageNode(message) {
+    const node = text("div", "", `message ${message.role}`);
+    const content = text("div", "", message.role === "coach" ? "markdown-content" : "learner-message");
+    if (message.role === "coach") content.append(renderMarkdown(document, message.text));
+    else content.textContent = message.text;
+    node.append(text("strong", t(message.role === "coach" ? "Copilot coach" : "You"), "message-author"), content);
+    return node;
 }
 function renderInsight(node, insight) {
     node.replaceChildren();
@@ -544,7 +569,7 @@ function syncBusy() {
     document.querySelector("main").setAttribute("aria-busy", String(busy));
     if (busy) $("send").disabled = true;
     if (!busy && state.attempt && view === "attempt") syncComposer(state.attempt.entries[index], state.attempt);
-    for (const id of ["back-catalog", "choose-mode", "finish", "language", "study-mode", "study-domain", "study-filter", "reset-study"]) {
+    for (const id of ["back-catalog", "choose-mode", "finish", "language", "study-mode", "study-domain", "study-filter", "reset-study", "load-questions"]) {
         $(id).disabled = busy || Boolean(unsavedSelections.size);
     }
 }
@@ -612,6 +637,83 @@ $("reset-study").onclick = async () => {
         await act("reset_study", { confirm: true });
     }
 };
+$("load-questions").onclick = async () => {
+    if (unsavedSelections.size) return;
+    if (await act("update_study")) {
+        view = "attempt";
+        render();
+        $("question").tabIndex = -1;
+        $("question").focus();
+    }
+};
+function showQuestionUpdateHelp() { $("question-update-tooltip").hidden = false; }
+function hideQuestionUpdateHelp() { $("question-update-tooltip").hidden = true; }
+$("question-update-help").onmouseenter = showQuestionUpdateHelp;
+$("question-update").onmouseleave = () => {
+    if (document.activeElement !== $("question-update-info")) hideQuestionUpdateHelp();
+};
+$("question-update-info").onfocus = showQuestionUpdateHelp;
+$("question-update-info").onclick = showQuestionUpdateHelp;
+$("question-update-info").onblur = hideQuestionUpdateHelp;
+$("question-update-info").onkeydown = event => {
+    if (event.key === "Escape") { event.preventDefault(); hideQuestionUpdateHelp(); }
+};
+for (const id of ["study-archives", "prep-study-archives"]) $(id).onclick = () => {
+    if (unsavedSelections.size || !state.studyArchives?.length) return;
+    return inspectStudyArchive(state.studyArchives[0].id, 0);
+};
+async function inspectStudyArchive(archiveId, questionIndex) {
+    if (busy) return;
+    busy = true;
+    syncBusy();
+    try {
+        archivedQuestion = await api("inspect_study_archive", { archiveId, questionIndex });
+        view = "archive";
+    } catch (error) { showError(error); }
+    finally { busy = false; render(); }
+}
+function renderStudyArchive() {
+    const item = archivedQuestion;
+    const { question, entry } = item;
+    $("archive-snapshot").replaceChildren(...state.studyArchives.map(archive =>
+        option(t("{date} — {answered}/{total} answered", {
+            date: new Date(archive.archivedAt).toLocaleString(state.language ?? "en"),
+            answered: archive.answered, total: archive.total,
+        }), archive.id)));
+    for (const opt of $("archive-snapshot").options) opt.selected = opt.value === item.archiveId;
+    $("archive-position").textContent = t("Question {n} of {total} / {domain}",
+        { n: item.index + 1, total: item.total, domain: domainName(question.domain) });
+    $("archive-question").textContent = question.prompt;
+    $("archive-question").lang = item.contentLanguage;
+    const saved = [t("Saved checked choices: {choices}", {
+        choices: entry.answers.length ? entry.answers.map(choice => choice + 1).join(", ") : t("Unanswered"),
+    })];
+    if (entry.draft !== undefined) saved.push(t("Unchecked selection: option {n}", { n: entry.draft + 1 }));
+    if (entry.flagged) saved.push(t("Flagged"));
+    $("archive-answer-state").textContent = saved.join(" · ");
+    $("archive-answers").replaceChildren(...question.choices.map((choice, choiceIndex) =>
+        text("p", `${choiceIndex + 1}. ${choice}${choiceIndex === question.correct ? ` ${t("(correct)")}` : ""}\n${question.explanations[choiceIndex]}`,
+            `explanation${choiceIndex === question.correct ? " correct" : ""}`)));
+    $("archive-answers").lang = item.contentLanguage;
+    $("archive-source").href = question.source;
+    $("archive-messages").replaceChildren(...entry.messages.map(messageNode));
+    const insight = text("div", "", "ai-insight");
+    renderInsight(insight, entry.insight);
+    $("archive-messages").append(insight);
+    if (entry.error) $("archive-messages").append(text("p", hasTranslation(entry.error) ? t(entry.error) : entry.error, "feedback-danger"));
+    $("archive-previous").disabled = busy || item.index === 0;
+    $("archive-next").disabled = busy || item.index + 1 === item.total;
+    $("archive-jump").value = item.index + 1;
+    $("archive-jump").max = item.total;
+}
+$("archive-snapshot").onchange = () => inspectStudyArchive($("archive-snapshot").value, 0);
+$("archive-previous").onclick = () => inspectStudyArchive(archivedQuestion.archiveId, archivedQuestion.index - 1);
+$("archive-next").onclick = () => inspectStudyArchive(archivedQuestion.archiveId, archivedQuestion.index + 1);
+$("archive-jump-form").onsubmit = event => {
+    event.preventDefault();
+    return inspectStudyArchive(archivedQuestion.archiveId, Number($("archive-jump").value) - 1);
+};
+$("archive-back").onclick = () => navigate("prep");
 $("resume").onclick = () => navigate("attempt");
 $("bank-review").onclick = async () => {
     if (!selectedExam().questionCount) return;
@@ -755,6 +857,7 @@ $("language").onchange = async () => {
     }
     if (await act("set_language", { language: $("language").value })) {
         if (view === "content" && reviewingQuestion) await inspectQuestion(reviewingQuestion.index);
+        if (view === "archive" && archivedQuestion) await inspectStudyArchive(archivedQuestion.archiveId, archivedQuestion.index);
     }
 };
 try { update(await api()); } catch (error) { showError(error); }

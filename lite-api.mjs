@@ -1,7 +1,7 @@
 import { createEngine, InputError } from "./engine-core.mjs";
 
 const actions = new Set(["select_exam", "set_language", "start", "select", "answer", "flag",
-    "finish", "position", "study_filter", "reset_study", "retry_question"]);
+    "finish", "position", "study_filter", "reset_study", "retry_question", "update_study", "inspect_study_archive"]);
 
 export function browserPersistence(indexedDB = globalThis.indexedDB) {
     let connection;

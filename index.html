@@ -31,6 +31,17 @@
     <p id="notice" class="notice">Unofficial practice. AI-authored questions require human review.</p>
     <p id="content-language-note" class="notice" hidden data-i18n="This saved attempt predates translations and remains in English. New attempts use your selected language."></p>
     <div id="error" role="alert" hidden></div>
+    <aside id="question-update" class="flash question-update" role="status" hidden>
+      <div class="toolbar">
+        <strong data-i18n="New questions available">New questions available</strong>
+        <div id="question-update-help" class="question-update-help">
+          <button id="question-update-info" class="btn" type="button" aria-label="About question updates" aria-describedby="question-update-tooltip" data-i18n-label="About question updates"></button>
+          <span id="question-update-tooltip" class="question-update-tooltip" role="tooltip" hidden data-i18n="Loading new questions keeps answers, flags, and coaching for unchanged questions. Revised and new questions start unanswered. A local, read-only archive keeps your previous questions and progress for review. In-flight coaching is interrupted; mock results are not changed."></span>
+        </div>
+        <button id="load-questions" class="btn btn-primary" data-i18n="Load new questions">Load new questions</button>
+      </div>
+      <p id="question-update-summary"></p>
+    </aside>
     <section id="catalog" hidden>
       <h2>Which certification are you preparing for?</h2>
       <p class="muted">Your saved attempt is kept separately for each certification. Timed mocks keep counting down while you are away. The Agentic AI Business Professional beta is outside this release.</p>
@@ -55,6 +66,7 @@
       </div>
       <p class="muted">AI coaching uses the attached Copilot conversation and its usage limits. No separate model API key is needed.</p>
       <section id="mock-history"></section>
+      <p><button id="prep-study-archives" class="btn" hidden>Review study archives</button></p>
       <hr><h3>Human content review</h3>
       <p id="bank-review-note" class="muted"></p><button id="bank-review" class="btn">Review question bank</button>
     </section>
@@ -66,6 +78,7 @@
           <label for="study-domain"><span>Domain</span> <select id="study-domain" class="form-select"></select></label>
           <label for="study-filter"><span>Show questions</span> <select id="study-filter" class="form-select"><option value="all">All questions</option><option value="unanswered">Not yet answered</option><option value="incorrect">Previously incorrect</option><option value="flagged">Flagged</option></select></label>
           <button id="reset-study" class="btn">Reset study progress</button>
+          <button id="study-archives" class="btn" hidden>Review study archives</button>
         </div>
         <p id="study-progress" role="status"></p><p class="muted">Study is ungraded. Your answers and coaching are saved across sessions and shared between Learn and AI Coach.</p>
       </div>
@@ -121,6 +134,19 @@
       <div class="footer-actions"><button id="approve-question" class="btn btn-primary">Mark revision human-approved</button><button id="revoke-question" class="btn" hidden>Revoke approval</button></div>
       <div class="footer-actions"><button id="content-previous" class="btn">Previous question</button><button id="content-next" class="btn">Next question</button><button id="content-back" class="btn">Back to preparation</button></div>
       <form id="content-jump-form" class="footer-actions"><label for="content-jump">Question number</label><input id="content-jump" class="form-control" type="number" min="1" required><button class="btn" type="submit">Go</button></form>
+    </section>
+    <section id="study-archive" class="Box card" hidden>
+      <h2>Study archive</h2>
+      <p class="notice">Read-only local history. These are your previous questions and saved work, not the current study bank. Reviewing an archive does not change your progress.</p>
+      <label for="archive-snapshot">Saved before loading new questions <select id="archive-snapshot" class="form-select"></select></label>
+      <p id="archive-position" class="eyebrow"></p>
+      <h3 id="archive-question"></h3>
+      <p id="archive-answer-state"></p>
+      <div id="archive-answers"></div>
+      <a id="archive-source" target="_blank" rel="noreferrer">Read the GitHub documentation</a>
+      <h3>Saved coaching</h3><div id="archive-messages"></div>
+      <div class="footer-actions"><button id="archive-previous" class="btn">Previous question</button><button id="archive-next" class="btn">Next question</button><button id="archive-back" class="btn">Back to preparation</button></div>
+      <form id="archive-jump-form" class="footer-actions"><label for="archive-jump">Question number</label><input id="archive-jump" class="form-control" type="number" min="1" required><button class="btn" type="submit">Go</button></form>
     </section>
     <section id="report" class="card" hidden>
       <h2 id="report-title">Report an issue</h2>

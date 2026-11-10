@@ -6,7 +6,7 @@ validated certification-readiness assessment. They remain Preview until
 every current question revision has been reviewed and approved by a human
 and the full pool/coverage targets are met.
 
-Current version: **0.5.0-preview**. See the [changelog](CHANGELOG.md) for release
+Current version: **0.5.1-preview**. See the [changelog](CHANGELOG.md) for release
 history; the canvas version badge links to it.
 
 **Learner progress stays on each person's computer, outside this repository.**
@@ -458,13 +458,42 @@ $COPILOT_HOME/extensions/certification-coach/artifacts/coach-state.json
 This is **outside the cloned source repository**. Each learner has their own
 local file; there is no central progress store, GitHub upload, or cross-device
 sync. It contains answers, flags, coaching, AI insights, saved position/filters,
-and the latest 10 mock-result summaries per certification.
+the latest 10 mock-result summaries per certification, and read-only study
+archives created when loading updated questions.
 
 One shared study workspace and the most recent mock are retained independently
 per certification. Starting a mock does not replace study progress. Workspaces
 snapshot their exact question content and keys so later bank edits do not
-silently change existing answers or grading. Resetting study deliberately loads
-the current bank.
+silently change existing answers or grading.
+
+When a saved Learn/AI Coach workspace differs from the installed bank, a
+**New questions available** notice shows counts of unchanged, revised, new, and
+removed questions. Hover over, focus, or tap its information icon for an
+explanation. Nothing changes until the learner selects **Load new questions**:
+
+- Answers, unchecked selections, flags, and completed coaching carry over only
+  when the question ID and full content revision are identical, including
+  translations, answer key, explanations, hints, and source.
+- Revised and new questions start unanswered and unflagged. Removed questions
+  leave the current workspace. In-flight coaching is interrupted explicitly;
+  late responses cannot attach to the updated workspace.
+- The entire previous workspace is saved in a local, read-only archive in the
+  same atomic write as the update. **Review study archives**, available in study
+  controls and preparation, shows previous questions, original answer keys,
+  checked choices, unchecked selections, flags, and saved coaching. Archives are
+  retained across later updates and study resets, without automatic pruning.
+- A failed save leaves both the existing study and archive list unchanged, with
+  an explicit error. Other certifications, active mocks, and historical mock
+  results are not migrated. Archive answer-key review is blocked during an
+  active mock for that certification.
+
+The notice is based on question content, not an app version number. Continuing
+with previous questions remains possible simply by not selecting the update.
+Resetting study still loads the current bank but clears active study progress;
+use **Load new questions** instead to preserve compatible progress and archive
+the previous workspace. Lite offers the same workflow using browser-local
+storage; clearing that site's data also removes its archives. Archives are never
+uploaded or distributed with the extension.
 
 State version 2 upgrades atomically to version 3. Saved Learn/Coach checks,
 drafts, flags, and conversations are recovered where still present; a completed

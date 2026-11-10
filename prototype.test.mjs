@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { mkdtemp, rm, readFile, writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { createEngine } from "./engine.mjs";
+import { createEngine, APP_VERSION } from "./engine.mjs";
 import { questions } from "./questions.mjs";
 import { startServer } from "./server.mjs";
 import { quotasFor, revisionFor, reviewRevisionFor, publicExam, validateBank, assemble, approved, mergeApprovals, localizedQuestion } from "./bank-utils.mjs";
@@ -626,7 +626,7 @@ test("a pending release lookup does not block practice state", async t => {
     try {
         const state = await fetch(`${url.origin}/api/state`, { headers });
         assert.equal(state.status, 200);
-        assert.equal((await state.json()).appVersion, "0.4.2-preview");
+        assert.equal((await state.json()).appVersion, APP_VERSION);
     } finally {
         resolve({ status: "none" });
         await check;

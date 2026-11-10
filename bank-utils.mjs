@@ -123,7 +123,7 @@ export function validateBank(exam) {
             question.hints.some(value => typeof value !== "string" || !value.trim())) fail("concept and at least two hints required");
         try {
             const url = new URL(question.source);
-            if (url.protocol !== "https:" || !["docs.github.com", "learn.microsoft.com", "learn.github.com"].includes(url.hostname)) fail("official HTTPS source required");
+            if (url.protocol !== "https:" || !["docs.github.com", "learn.microsoft.com", "learn.github.com", "github.blog"].includes(url.hostname)) fail("official HTTPS source required");
         } catch { fail("invalid source URL"); }
         if (question.translations) for (const language of ["es", "pt-BR"]) {
             const translation = question.translations[language];

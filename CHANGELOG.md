@@ -6,6 +6,21 @@ installed.
 
 ## Unreleased
 
+### Desktop update notifications
+
+- Add an English, Spanish, and Brazilian Portuguese "Update available" banner
+  linking to published release notes and manual installation instructions.
+- Check public GitHub release metadata while a canvas is open, caching successes
+  for 24 hours and deferring retries for at least an hour (longer when GitHub
+  requests it). Preview installs include published prereleases; stable installs
+  see stable releases only.
+- Cache concurrent checks, bound network requests, and show an explicit
+  nonblocking warning when checking fails. No learner data or GitHub credentials
+  are sent, and no update is downloaded or installed automatically.
+- Preserve learner progress and saved-attempt snapshots. Lite does not make
+  these extension-update requests. Existing installations need one manual
+  update to receive the notifier; merging a PR alone does not publish a release.
+
 ### Agentic AI Developer question-bank refresh
 
 - Correct 108 questions across all three languages, replacing repeated answer

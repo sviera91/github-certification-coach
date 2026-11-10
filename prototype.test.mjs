@@ -526,12 +526,20 @@ test("provider failures surface instead of manufacturing a hint", async t => {
 });
 test("HTTP capability authentication, origin checks, input limits and page CSP", async t => {
     const { engine } = await fixture(t);
-    const server = await startServer({ engine });
+    let checks = 0;
+    const status = { status: "available", version: "0.5.0-preview",
+        url: "https://github.com/sviera91/github-certification-coach/releases/tag/v0.5.0-preview" };
+    const server = await startServer({ engine, updates: { getStatus: async () => { checks++; return status; } } });
     t.after(server.close);
     const url = new URL(server.url);
     const token = url.searchParams.get("token");
     const headers = { "x-coach-token": token, "Content-Type": "application/json" };
     assert.equal((await fetch(`${url.origin}/api/state`)).status, 403);
+    assert.equal((await fetch(`${url.origin}/api/updates`)).status, 403);
+    assert.equal((await fetch(`${url.origin}/api/updates`, { headers: { ...headers, Origin: "https://attacker.example" } })).status, 403);
+    assert.equal(checks, 0);
+    assert.deepEqual(await (await fetch(`${url.origin}/api/updates`, { headers })).json(), status);
+    assert.equal(checks, 1);
     const page = await fetch(url);
     assert.equal(page.status, 200);
     assert.match(page.headers.get("content-security-policy"), /default-src 'none'/);
@@ -557,4 +565,24 @@ test("HTTP capability authentication, origin checks, input limits and page CSP",
     assert.ok(state.attempt.entries.every(entry => !("correctAnswer" in entry)));
     assert.equal((await post(JSON.stringify({ action: "answer", questionId: first, choice: -1 }))).status, 400);
     assert.equal((await post(JSON.stringify({ action: "start", mode: "coach" }))).status, 400);
+});
+test("a pending release lookup does not block practice state", async t => {
+    const { engine } = await fixture(t);
+    let resolve, entered;
+    const started = new Promise(done => { entered = done; });
+    const pending = new Promise(done => { resolve = done; });
+    const server = await startServer({ engine, updates: { getStatus: () => { entered(); return pending; } } });
+    t.after(server.close);
+    const url = new URL(server.url);
+    const headers = { "x-coach-token": url.searchParams.get("token") };
+    const check = fetch(`${url.origin}/api/updates`, { headers });
+    await started;
+    try {
+        const state = await fetch(`${url.origin}/api/state`, { headers });
+        assert.equal(state.status, 200);
+        assert.equal((await state.json()).appVersion, "0.4.2-preview");
+    } finally {
+        resolve({ status: "none" });
+        await check;
+    }
 });

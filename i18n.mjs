@@ -1,4 +1,11 @@
 const entries = [
+    ["How to update", "Cómo actualizar", "Como atualizar"],
+    ["Release notes", "Notas de la versión", "Notas da versão"],
+    ["Check releases", "Consultar versiones", "Consultar versões"],
+    ["Update available: v{version}", "Actualización disponible: v{version}", "Atualização disponível: v{version}"],
+    ["Update check unavailable", "Comprobación de actualizaciones no disponible", "Verificação de atualizações indisponível"],
+    ["Install the newer extension and restart Copilot. Your saved progress is preserved.", "Instala la extensión más reciente y reinicia Copilot. Tu progreso guardado se conserva.", "Instale a extensão mais recente e reinicie o Copilot. Seu progresso salvo será preservado."],
+    ["Could not check for updates. Check releases manually; practice remains available.", "No se pudieron comprobar las actualizaciones. Consulta las versiones manualmente; puedes seguir practicando.", "Não foi possível verificar atualizações. Consulte as versões manualmente; você pode continuar praticando."],
     ["Could not read browser progress: {message}", "No se pudo leer el progreso del navegador: {message}", "Não foi possível ler o progresso do navegador: {message}"],
     ["This clears this certification's Learn answers and flags in this browser. Mock results are not changed. This cannot be undone.", "Esto borra las respuestas y marcas de Aprender de esta certificación en este navegador. No cambia los resultados de simulacros. No se puede deshacer.", "Isso apaga as respostas e marcações de Aprender desta certificação neste navegador. Não altera resultados de simulados. Não é possível desfazer."],
     ["Certification Coach Lite", "Preparación para certificaciones Lite", "Preparação para certificações Lite"],

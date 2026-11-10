@@ -71,6 +71,27 @@ Copilot. The installer copies an explicit runtime-file allowlist and leaves
 your existing `artifacts/` directory untouched. Never copy another person's
 entire installed extension folder: it may contain their private progress.
 
+### Update notifications
+
+The desktop canvas shows **Update available** when a newer version is published
+as a GitHub Release. It links to release notes and the manual instructions above;
+it never downloads, executes, or installs an update. Merging a PR or pushing a
+tag alone does not trigger a notification. Release tags must use semantic
+versions such as `v0.4.3-preview` or `v1.0.0`.
+
+The extension checks the public repository's 100 most recent releases when a
+canvas opens, then caches successful checks for 24 hours while it stays running.
+Open panels refresh that cached status every minute; restarting the extension
+starts a fresh check. Preview installations include published prereleases;
+stable installations ignore them. Drafts never trigger notifications.
+Network requests time out after five seconds. Failures show a nonblocking
+warning with a manual releases link and retry after at least an hour, honoring
+longer GitHub retry/rate-limit delays. No releases means no update banner.
+
+Existing users need one manual update to receive this feature. Progress remains
+local, and saved attempts keep their question snapshots. Lite hides this banner
+and does not perform extension-update checks.
+
 If the canvas is not discovered after restarting, verify that your desktop
 build supports custom canvases. A browser or VS Code Copilot installation alone
 cannot host it.
@@ -449,6 +470,12 @@ site, but no answers, chat, progress, or local page URL (referrers are disabled)
 An unavailable image is labeled without blocking practice. Badge artwork
 identifies an exam; it does not mean you earned the credential or that GitHub
 endorses this project. See [third-party notices](THIRD-PARTY-NOTICES.md).
+
+Desktop update checks make unauthenticated, metadata-only requests to
+`api.github.com` for public releases. GitHub receives ordinary connection
+metadata, but no answers, scores, coaching text, local capability tokens, or
+GitHub account credentials. Checks do not read learner artifacts or affect
+practice. Their cache is in memory, not in the learner progress file.
 
 The repository does not collect or sync learner state. `artifacts/`, attempt
 files, dependencies, logs, environment files, and local research artifacts are

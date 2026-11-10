@@ -11,9 +11,9 @@ const script = (await readFile(new URL("./client.mjs", import.meta.url), "utf8")
     .replace(/^const \{ renderMarkdown \} = await import.*$/m, "")
     .replace("import.meta.url", JSON.stringify("http://127.0.0.1/client.mjs?token=test"));
 const AsyncFunction = Object.getPrototypeOf(async function () {}).constructor;
-async function mount({ reject = false, score, mode = "coach", count = 1, history = [] } = {}) {
+async function mount({ reject = false, score, mode = "coach", count = 1, history = [], updateStatus = { status: "none" } } = {}) {
     const { document, window } = parseHTML(html);
-    const intervals = [], requests = [];
+    const intervals = [], requests = [], updateRequests = [];
     const reviewed = new Set();
     const exam = { id: "foundations", name: "Foundations", badgeUrl: "https://learn.github.com/assets/badge-ghf--AVHlfQC.png", phase: 1, reviewedCount: 0, questionCount: count,
         poolTarget: 225, status: "Preview", fullLengthAvailable: true, attemptSize: 75, minutes: 100,
@@ -30,6 +30,11 @@ async function mount({ reject = false, score, mode = "coach", count = 1, history
         },
     };
     const fetch = async (url, options) => {
+        if (url === "/api/updates") {
+            updateRequests.push({ url, options });
+            if (updateStatus instanceof Error) throw updateStatus;
+            return { ok: true, json: async () => structuredClone(updateStatus) };
+        }
         if (options.method === "POST") {
             const request = JSON.parse(options.body);
             requests.push(request);
@@ -106,8 +111,47 @@ async function mount({ reject = false, score, mode = "coach", count = 1, history
         radio.checked = true;
         await radio.onchange();
     };
-    return { document, $, model, requests, intervals, type, submit, choose };
+    return { document, $, model, requests, intervals, type, submit, choose, updateRequests,
+        setUpdateStatus: value => { updateStatus = value; } };
 }
+test("desktop update banner is localized and links to manual installation without affecting the attempt", async () => {
+    const status = { status: "available", version: "0.5.0-preview",
+        url: "https://github.com/sviera91/github-certification-coach/releases/tag/v0.5.0-preview" };
+    const { $, model, intervals, requests, updateRequests, setUpdateStatus } = await mount({ updateStatus: status });
+    assert.equal($("update-banner").hidden, false);
+    assert.equal($("update-title").textContent, "Update available: v0.5.0-preview");
+    assert.equal($("update-release").getAttribute("href"), status.url);
+    assert.match($("update-instructions").getAttribute("href"), /#install-for-employees-and-partners$/);
+    assert.equal(updateRequests[0].options.headers["x-coach-token"], "test");
+    assert.equal(requests.length, 0);
+    for (const [language, expected] of [["es", "Actualización disponible: v0.5.0-preview"], ["pt-BR", "Atualização disponível: v0.5.0-preview"]]) {
+        $("language").querySelector(`option[value="${language}"]`).selected = true;
+        await $("language").onchange();
+        assert.equal($("update-title").textContent, expected);
+        assert.equal(model.attempt.id, "test-attempt");
+    }
+    setUpdateStatus({ status: "current" });
+    await intervals[2]();
+    assert.equal($("update-banner").hidden, true);
+});
+test("update-check failures are visible without blocking mock selections or claiming no update exists", async () => {
+    const { $, model, choose } = await mount({ mode: "exam", updateStatus: new Error("offline") });
+    assert.equal($("update-banner").hidden, false);
+    assert.equal($("update-title").textContent, "Update check unavailable");
+    assert.equal($("update-release").getAttribute("href"), "https://github.com/sviera91/github-certification-coach/releases");
+    await choose(1);
+    assert.equal(model.attempt.entries[0].selected, 1);
+    assert.equal(model.attempt.finished, false);
+    assert.equal($("error").hidden, true);
+});
+test("no-release metadata stays unobtrusive and unsafe release links are rejected", async () => {
+    const { $, intervals, setUpdateStatus } = await mount();
+    assert.equal($("update-banner").hidden, true);
+    setUpdateStatus({ status: "available", version: "0.5.0", url: "javascript:alert(1)" });
+    await intervals[2]();
+    assert.equal($("update-title").textContent, "Update check unavailable");
+    assert.doesNotMatch($("update-release").getAttribute("href"), /^javascript:/);
+});
 test("composer uses accessible icon button, disables blank sends and clears accepted messages", async () => {
     const { $, model, type, submit, intervals, requests } = await mount();
     assert.equal($("send").getAttribute("aria-label"), "Send message");

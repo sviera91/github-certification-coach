@@ -1,273 +1,5403 @@
-// PREVIEW: original educational questions; AI-reviewed, not human-approved.
-// Blueprint: GH-500, skills measured July 2026 (GH-300 is GitHub Copilot).
-// https://learn.github.com/certification/GHAS
-// https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-500
-// Preview pool quotas: 42 / 41 / 41 / 30 / 41 / 30.
-// Domain display strings below follow the requested preview-bank labels.
-// Published weight ranges: 15–20 / 15–20 / 15–20 / 10–15 / 15–20 / 10–15 percent.
-// AI self-review included every answer, distractor, explanation, hint, and domain assignment.
-// Human review is still required before any question is approved.
-const D = {
-  ecosystem: "Describe GitHub Security suites, features, and ecosystem",
-  secrets: "Configure and use Secret Protection",
-  supply: "Configure and use supply chain security",
-  code: "Configure and use Code Security",
-  operations: "Security operations: best practices, prioritization, remediation",
-  administration: "GitHub Security suites administration",
-};
-const S = {
-  suites: "https://docs.github.com/en/get-started/learning-about-github/about-github-advanced-security",
-  secrets: "https://docs.github.com/en/code-security/concepts/secret-security/secret-scanning",
-  push: "https://docs.github.com/en/code-security/concepts/secret-security/push-protection",
-  validity: "https://docs.github.com/en/code-security/concepts/secret-security/validity-checks",
-  custom: "https://docs.github.com/en/code-security/how-tos/secure-your-secrets/customize-leak-detection/define-custom-patterns",
-  graph: "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependency-graph",
-  review: "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependency-review",
-  dependabot: "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-alerts",
-  updates: "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-security-updates",
-  versions: "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-version-updates",
-  code: "https://docs.github.com/en/code-security/concepts/code-scanning/code-scanning",
-  codeql: "https://docs.github.com/en/code-security/concepts/code-scanning/codeql/codeql-code-scanning",
-  alerts: "https://docs.github.com/en/code-security/concepts/code-scanning/code-scanning-alerts",
-  sarif: "https://docs.github.com/en/code-security/reference/code-scanning/sarif-files/sarif-support",
-  campaigns: "https://docs.github.com/en/code-security/concepts/security-at-scale/about-security-campaigns",
-  configurations: "https://docs.github.com/en/code-security/how-tos/secure-at-scale/configure-organization-security/establish-complete-coverage/create-custom-configuration",
-  overview: "https://docs.github.com/en/code-security/concepts/security-at-scale/security-overview",
-  roles: "https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization",
-  advisory: "https://docs.github.com/en/code-security/concepts/vulnerability-reporting-and-management/about-repository-security-advisories",
-  triage: "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-auto-triage-rules",
-  sbom: "https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/establish-provenance-and-integrity/export-dependencies-as-sbom",
-  options: "https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference",
-  queries: "https://docs.github.com/en/code-security/concepts/code-scanning/codeql/codeql-query-suites",
-  advanced: "https://docs.github.com/en/code-security/how-tos/find-and-fix-code-vulnerabilities/configure-code-scanning/configuring-advanced-setup-for-code-scanning",
-  database: "https://docs.github.com/en/code-security/concepts/vulnerability-reporting-and-management/about-the-github-advisory-database",
-  metrics: "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-alert-metrics",
-};
-
+// Original practice content, not copied from certification assessments.
 export const questions = [
-  {id:"ghas-ecosystem-001",domain:D.ecosystem,prompt:"A service commits a provider API token but has no vulnerable dependencies. Which capability is designed to detect this exposure?",choices:["Secret scanning","Dependency review","Dependabot version updates","CodeQL query packs"],correct:0,explanations:["Secret scanning detects exposed credentials.","Dependency review evaluates dependency changes.","Version updates refresh package versions.","Query packs analyze code rather than validate provider credentials."],concept:"Credential detection",hints:["What kind of asset was exposed?","Is the risk a package version or an authentication capability?"],source:S.secrets},
-  {id:"ghas-ecosystem-002",domain:D.ecosystem,prompt:"A reviewer wants to see whether a pull request adds a package with a known vulnerability. Which feature best matches that moment in development?",choices:["Secret scanning history scans","Dependency review","A repository security advisory","Push protection"],correct:1,explanations:["History scans seek credentials, not dependency changes.","Dependency review evaluates dependencies changed by a pull request.","An advisory coordinates vulnerability disclosure rather than inspecting dependency diffs.","Push protection checks for secrets in pushes."],concept:"Pre-merge dependency inspection",hints:["What changed in this pull request?","Which control provides feedback before the dependency is merged?"],source:S.review},
-  {id:"ghas-ecosystem-003",domain:D.ecosystem,prompt:"An application passes untrusted request data to a dangerous operation. Which GitHub capability is designed to analyze this source-code behavior?",choices:["Dependency graph","Secret scanning","Code scanning with CodeQL","Dependabot version updates"],correct:2,explanations:["The dependency graph inventories packages.","Secret scanning searches for exposed credentials.","CodeQL can analyze data flow to identify vulnerable code paths.","Version updates do not inspect application data flow."],concept:"Static analysis purpose",hints:["Is the issue in an external package or the application logic?","What evidence would connect input to the operation?"],source:S.codeql},
-  {id:"ghas-ecosystem-004",domain:D.ecosystem,prompt:"A security director needs a cross-repository view of enabled protections and security risk rather than opening every repository separately. Where should they start?",choices:["A single pull request's Files changed tab","The package registry","The repository commit graph","Security overview"],correct:3,explanations:["Files changed covers one pull request.","A registry stores packages rather than aggregating security posture.","The commit graph shows development history.","Security overview aggregates security information across repositories."],concept:"Portfolio security visibility",hints:["What is the required scope?","Is the goal individual code review or organizational posture?"],source:S.overview},
-  {id:"ghas-ecosystem-005",domain:D.ecosystem,prompt:"A team proposes replacing dependency alerts with secret scanning because both appear in the security interface. What is the best response?",choices:["Secret scanning also evaluates all package advisories","The tools address different risks and should complement each other","Dependency alerts only detect credentials in lockfiles","Either feature provides identical findings"],correct:1,explanations:["Secret scanning does not replace package advisory matching.","Credential exposure and vulnerable dependencies require complementary detection.","Dependency alerts concern vulnerable package versions.","The features use different evidence and produce different alerts."],concept:"Complementary security controls",hints:["What evidence produces each type of alert?","Could the same repository contain both risk types?"],source:S.suites},
-  {id:"ghas-ecosystem-006",domain:D.ecosystem,prompt:"Why combine push protection with scans of existing repository history?",choices:["A blocked push automatically removes old credentials","Historical scans make prevention unnecessary","Prevention limits new leaks while historical scanning finds existing exposures","Both controls only inspect the default branch's latest file contents"],correct:2,explanations:["Blocking a new push does not clean existing history.","Existing detection does not prevent new credential exposure.","The controls cover new introductions and already committed secrets.","Secret scanning examines Git history across branches."],concept:"Preventive and detective layering",hints:["When does each control act?","What happens to secrets committed before protection was enabled?"],source:S.push},
-  {id:"ghas-ecosystem-007",domain:D.ecosystem,prompt:"A project already uses an external static analyzer that produces supported SARIF. Must it replace the analyzer with CodeQL to show findings in GitHub code scanning?",choices:["No; it can upload supported SARIF results","Yes; GitHub accepts only CodeQL findings","Yes; SARIF only stores dependency alerts","No; it should upload the results as secret patterns"],correct:0,explanations:["Code scanning supports SARIF output from third-party tools.","CodeQL is not the only supported analysis source.","SARIF represents static analysis results.","Secret patterns are credential detectors, not a result-ingestion format."],concept:"Analysis ecosystem interoperability",hints:["Is the display platform the same as the analysis engine?","What is the purpose of a common results format?"],source:S.code},
-  {id:"ghas-ecosystem-008",domain:D.ecosystem,prompt:"An engineering lead says enabling security tools guarantees that a repository is vulnerability-free. Which correction is most accurate?",choices:["Only repositories with dependencies need manual review","A clean scan certifies all business logic","Dismissed alerts prove that no risk exists","Detection has coverage limits, so secure design and human review remain necessary"],correct:3,explanations:["Application logic also needs review.","Static analysis does not certify every business rule.","Dismissal records a decision, not proof of safety.","Tools support secure development but do not guarantee complete detection."],concept:"Detection limitations",hints:["What can a tool observe?","Can absence of a finding establish absence of every vulnerability?"],source:S.code},
-  {id:"ghas-ecosystem-009",domain:D.ecosystem,prompt:"A team only runs security analysis immediately before a quarterly release. Which change best implements a prevention-first approach?",choices:["Add pull-request analysis and pre-merge dependency checks","Hide low-severity findings until release","Replace checks with a release checklist alone","Scan only archived repositories"],correct:0,explanations:["Earlier checks give developers feedback before risky changes merge.","Hiding alerts changes visibility, not prevention.","A checklist alone does not analyze changes.","Archived repositories do not represent active change introduction."],concept:"Shift-left feedback",hints:["When is a newly introduced issue easiest to correct?","Which event is closest to development?"],source:S.review},
-  {id:"ghas-ecosystem-010",domain:D.ecosystem,prompt:"Which statement correctly separates the dependency graph from Dependabot alerts?",choices:["The graph detects hardcoded passwords; alerts inventory packages","The graph inventories dependencies; alerts identify known vulnerabilities affecting them","The graph patches source code; alerts build binaries","The graph and alerts are interchangeable names"],correct:1,explanations:["Credential detection belongs to secret scanning.","The graph provides dependency data used for vulnerability matching.","Neither capability builds binaries or directly patches application logic.","Inventory and vulnerability notifications are distinct functions."],concept:"Inventory versus vulnerability detection",hints:["What information exists before a vulnerability is disclosed?","Which capability adds advisory context?"],source:S.graph},
-  {id:"ghas-ecosystem-011",domain:D.ecosystem,prompt:"A maintainer wants automated pull requests that move vulnerable packages to patched versions. Which capability is the direct fit?",choices:["Security overview","Push protection","Dependabot security updates","Custom secret patterns"],correct:2,explanations:["Overview aggregates posture rather than proposing package patches.","Push protection prevents credential leaks.","Security updates propose fixes for vulnerable dependencies when possible.","Custom patterns detect organization-specific credentials."],concept:"Automated dependency remediation",hints:["Is the desired output an alert or a proposed code change?","What triggered the need for an update?"],source:S.updates},
-  {id:"ghas-ecosystem-012",domain:D.ecosystem,prompt:"A researcher privately reports a vulnerability in a maintained library. Which GitHub mechanism best supports coordinated disclosure and a private fix discussion?",choices:["A public issue containing the full exploit details","A dependency review check","A secret-scanning bypass request","A repository security advisory"],correct:3,explanations:["A public issue can disclose the vulnerability prematurely.","Dependency review inspects dependency changes.","A bypass request concerns blocked secrets.","Repository security advisories support private vulnerability collaboration."],concept:"Coordinated vulnerability disclosure",hints:["Who should see the report before a patch is ready?","Is this a dependency change or a vulnerability in the maintained project?"],source:S.advisory},
-  {id:"ghas-ecosystem-013",domain:D.ecosystem,prompt:"A company wants developers to fix related code-scanning findings together with a deadline and a named contact. Which feature is intended for this coordination?",choices:["Security campaigns","Git tags","Custom secret patterns","Dependency submission"],correct:0,explanations:["Campaigns organize selected alerts into collaborative remediation work.","Tags identify repository revisions.","Secret patterns define credential detection.","Dependency submission contributes inventory data."],concept:"Campaign-based remediation",hints:["Is the requirement detection or organizing existing work?","Which mechanism provides a shared remediation objective?"],source:S.campaigns},
-  {id:"ghas-ecosystem-014",domain:D.ecosystem,prompt:"What is the main security consequence of dismissing a valid code-scanning alert without changing the affected code?",choices:["The analyzer rewrites the vulnerable operation","The vulnerable behavior can remain despite the alert's changed status","The package registry revokes access","The next build automatically removes the path"],correct:1,explanations:["Dismissal does not rewrite source code.","Alert state and actual remediation are different.","Code-scanning dismissal does not revoke registry access.","Builds do not inherently remove dismissed code paths."],concept:"Alert state versus risk",hints:["What artifact actually contains the weakness?","Does changing a tracking state change program behavior?"],source:S.alerts},
-  {id:"ghas-ecosystem-015",domain:D.ecosystem,prompt:"An organization wants security specialists to oversee alerts without making every specialist an organization owner. Which built-in organizational role is designed for this work?",choices:["Billing manager","Outside collaborator","Security manager","Repository reader only"],correct:2,explanations:["Billing management does not provide security oversight.","Outside collaborator describes membership scope, not an organization security role.","Security managers receive organization security-management capabilities.","Read-only repository access is not the security-manager role."],concept:"Security-specific administration",hints:["Which responsibilities actually need delegation?","Can security authority be separated from full organization ownership?"],source:S.roles},
-  {id:"ghas-ecosystem-016",domain:D.ecosystem,prompt:"A manager assumes public-repository security availability proves identical access for every private repository. What should the administrator do?",choices:["Treat visibility as irrelevant to availability","Enable a public fork to transfer all entitlements","Assume all security features are always paid everywhere","Check the specific feature's private-repository eligibility and licensing"],correct:3,explanations:["Visibility can affect feature availability.","A public fork does not transfer private-repository entitlements.","Public-repository security features can be available without paid private coverage.","Availability must be checked for the feature, repository ownership, and deployment."],concept:"Feature eligibility",hints:["Which repository characteristics affect access?","Would a public-repository example settle private entitlement?"],source:S.suites},
-  {id:"ghas-ecosystem-017",domain:D.ecosystem,prompt:"Why should a dependency security program track transitive packages as well as directly declared packages?",choices:["Indirect packages can also contain known vulnerabilities","Only direct dependencies execute code","Transitive packages cannot be upgraded","Advisories apply only to package manifests"],correct:0,explanations:["Dependencies of dependencies can introduce exploitable weaknesses.","Indirect packages can execute as part of the application.","Indirect versions can often change through parent-package or lockfile updates.","Advisories describe packages and affected versions, not only manifest files."],concept:"Transitive dependency risk",hints:["What does a dependency itself depend on?","Does execution stop at the first layer of a package graph?"],source:S.graph},
-  {id:"ghas-ecosystem-018",domain:D.ecosystem,prompt:"What is the best distinction between a code-scanning alert and a secret-scanning alert?",choices:["Both are always generated from package version advisories","One describes a potential code weakness; the other describes an exposed credential","Code scanning only reports credentials; secret scanning only reports syntax errors","Both require identical remediation steps"],correct:1,explanations:["Package advisory matching is a supply-chain function.","The two alert families represent different underlying risks.","This reverses and misstates their purposes.","Code changes and credential revocation address different problems."],concept:"Alert taxonomy",hints:["What evidence is attached to each alert?","Would editing logic invalidate a leaked credential?"],source:S.suites},
-  {id:"ghas-ecosystem-019",domain:D.ecosystem,prompt:"A team wants to import resolved dependencies from a build that static manifest parsing misses. Which mechanism supplies this information to GitHub's dependency graph?",choices:["SARIF upload","A custom CodeQL query","Dependency submission API","A push-protection bypass reason"],correct:2,explanations:["SARIF imports analysis findings, not dependency inventory.","Queries inspect code rather than submit a build dependency snapshot.","The dependency submission API adds resolved dependency data.","Bypass reasons document secret exceptions."],concept:"Build-time dependency inventory",hints:["What kind of data is being imported?","Is the receiving system an alert engine or an inventory graph?"],source:S.graph},
-  {id:"ghas-ecosystem-020",domain:D.ecosystem,prompt:"A risk review requests a machine-readable inventory of repository dependencies. Which deliverable best serves that purpose?",choices:["A list of dismissed secret alerts","A CodeQL source-to-sink trace","A screenshot of commit activity","An exported software bill of materials"],correct:3,explanations:["Dismissed secret alerts are not a component inventory.","A dataflow trace explains a code finding.","Commit activity does not enumerate dependency components.","An SBOM records software components in a machine-readable form."],concept:"SBOM purpose",hints:["What does the reviewer need to inventory?","Which artifact is designed for downstream tooling?"],source:S.graph},
-  {id:"ghas-ecosystem-021",domain:D.ecosystem,prompt:"A security analyst identifies a high-priority alert, while the application team understands the affected behavior. Which division of responsibility is most effective?",choices:["Security prioritizes and advises; application owners implement and validate a fix","Security dismisses it because developers own the code","Developers wait for a billing administrator to patch it","Only the original committer may investigate"],correct:0,explanations:["Shared ownership combines risk expertise with application knowledge.","Ownership does not justify dismissing a valid finding.","Billing administration is not code remediation.","Remediation is not restricted to the original author."],concept:"Shared remediation ownership",hints:["Who understands risk context?","Who can validate application behavior after the change?"],source:S.campaigns},
-  {id:"ghas-ecosystem-022",domain:D.ecosystem,prompt:"Which result most directly demonstrates a successful preventive dependency control?",choices:["More dependency alerts are hidden","A proposed vulnerable dependency is rejected before merge","An old issue is closed without a patch","A security dashboard has fewer repositories"],correct:1,explanations:["Visibility reduction does not prove prevention.","A pre-merge check can prevent introducing a known-vulnerable version.","Closing an issue does not remove a vulnerable component.","Reduced dashboard scope can hide risk."],concept:"Measuring prevention",hints:["Did the risk enter the protected branch?","Could a smaller visible count reflect missing data instead?"],source:S.review},
-  {id:"ghas-ecosystem-023",domain:D.ecosystem,prompt:"An enterprise uses GitHub Actions for most projects but another CI system for one project. Which statement about CodeQL is accurate?",choices:["CodeQL cannot run outside Actions","External CI can upload only secret alerts","The CLI can run in external CI and upload results for code scanning","External CI requires converting findings into dependency manifests"],correct:2,explanations:["The CodeQL CLI supports external CI.","Code-scanning results can be uploaded from external systems.","External CI is a documented CodeQL integration path.","Dependency manifests are not static-analysis result files."],concept:"External CI integration",hints:["Which component performs analysis?","Does storing findings in GitHub require GitHub to execute the build?"],source:S.codeql},
-  {id:"ghas-ecosystem-024",domain:D.ecosystem,prompt:"A developer asks whether Copilot Autofix suggestions can be merged without review because they originate from a security alert. What is the best guidance?",choices:["Security origin guarantees functional correctness","A suggestion proves all related alerts are resolved","Disable tests when using an automatically generated fix","Review and test the suggestion against the vulnerability and intended behavior"],correct:3,explanations:["Security-focused suggestions can still contain mistakes.","A proposed fix is not proof of full remediation.","Tests remain important for generated changes.","Human validation checks both security intent and regressions."],concept:"Responsible autofix use",hints:["Is a proposed change equivalent to verified behavior?","What evidence would show the fix preserves functionality?"],source:S.code},
-  {id:"ghas-ecosystem-025",domain:D.ecosystem,prompt:"An organization wants consistent feature-enablement settings across groups of repositories. Which capability packages those settings for reuse?",choices:["Security configurations","Repository releases","Dependency lockfiles","SARIF fingerprints"],correct:0,explanations:["Security configurations collect security feature enablement settings.","Releases package project versions.","Lockfiles record resolved dependencies.","Fingerprints identify analysis results rather than settings bundles."],concept:"Reusable security configuration",hints:["Is the reusable item code, results, or settings?","What must be applied across repositories?"],source:S.configurations},
-  {id:"ghas-ecosystem-026",domain:D.ecosystem,prompt:"A policy requires a clean dependency review before merge, but the team only displays the dependency diff to reviewers. What is missing for automated enforcement?",choices:["A custom token regex","A dependency review action check required by merge rules","A public security advisory","A larger dependency graph screenshot"],correct:1,explanations:["Token regexes do not enforce package policy.","The action plus required-check enforcement can gate merging.","An advisory coordinates disclosure, not merge eligibility.","A screenshot cannot enforce a check."],concept:"Visibility versus enforcement",hints:["Can displaying information alone block a merge?","Which component produces a check and which makes it mandatory?"],source:S.review},
-  {id:"ghas-ecosystem-027",domain:D.ecosystem,prompt:"A leaked token was deleted from the latest commit. Why can it still be a security concern?",choices:["GitHub turns deleted strings into new tokens","Only dependency updates can delete secrets","It may remain in history or copies and still authenticate","Deleting a file automatically transfers the token to another repository"],correct:2,explanations:["GitHub does not issue new tokens from deleted text.","Secrets can be removed from code independently of dependency updates.","Credential validity and retained copies outlast a file edit.","File deletion does not transfer credentials."],concept:"Persistence of credential exposure",hints:["What other copies may exist?","What determines whether the issuing service still accepts a credential?"],source:S.secrets},
-  {id:"ghas-ecosystem-028",domain:D.ecosystem,prompt:"Which security question is best answered by dependency review rather than by a whole-repository package inventory?",choices:["Which components exist in the current repository?","Which other public repositories depend on this package?","Which manifest declares a current dependency?","Which dependency risks would this pull request introduce?"],correct:3,explanations:["The graph supports current inventory exploration.","Dependents are graph information.","The graph records declaring manifests.","Dependency review evaluates the change between revisions."],concept:"Change-focused analysis",hints:["Is the question about a snapshot or a delta?","Why does the pull-request boundary matter?"],source:S.review},
-  {id:"ghas-ecosystem-029",domain:D.ecosystem,prompt:"A team uses a local credential check and asks whether server-side push protection is redundant. What is the strongest reason to retain both?",choices:["Server-side checks can cover pushes when local tooling is absent or bypassed","Local tools always rewrite remote history","Push protection replaces credential rotation","Using two checks guarantees detection of every password"],correct:0,explanations:["Server-side enforcement does not depend solely on developer workstation setup.","Local hooks do not inherently rewrite remote history.","Already exposed credentials still need revocation or rotation.","Layering improves coverage but does not guarantee universal detection."],concept:"Defense in depth",hints:["Where does each control execute?","What happens on a workstation without the local hook?"],source:S.push},
-  {id:"ghas-ecosystem-030",domain:D.ecosystem,prompt:"Which approach makes a security overview most useful during rollout?",choices:["Count only alerts and ignore feature coverage","Review both risk findings and which repositories have protections enabled","Treat an unscanned repository as clean","Compare teams only by raw alert totals"],correct:1,explanations:["Alert counts alone omit detection coverage.","Findings and coverage together contextualize posture.","No scan is not evidence of a clean result.","Raw totals vary with repository size and scanning coverage."],concept:"Coverage-aware posture interpretation",hints:["Could fewer findings mean fewer scans?","What context is needed to interpret a portfolio count?"],source:S.overview},
-  {id:"ghas-ecosystem-031",domain:D.ecosystem,prompt:"A vulnerability is disclosed today in a dependency that has not changed for months. Which capability can notify maintainers about this newly known risk?",choices:["A license-only pull-request check","Secret scanning validity checks","Dependabot alerts","A branch naming rule"],correct:2,explanations:["A license check does not monitor newly published vulnerability data.","Validity checks assess credentials.","Dependabot alerts use vulnerability information affecting known dependencies.","Branch naming rules do not match packages to advisories."],concept:"New advisory detection",hints:["Did the code change or did vulnerability knowledge change?","Which system combines package inventory with advisories?"],source:S.dependabot},
-  {id:"ghas-ecosystem-032",domain:D.ecosystem,prompt:"Why is a required pre-merge code-scanning check not a substitute for detecting secrets during a push?",choices:["Code scanning always runs before Git accepts a push","Secrets are safe until a release is tagged","Dependency review revokes credentials automatically","A secret can enter repository history before pull-request checks run"],correct:3,explanations:["Code scanning workflows generally analyze repository events after code reaches GitHub.","A credential can be used without a release.","Dependency review does not revoke credentials.","Push-time prevention closes an earlier exposure window."],concept:"Control timing",hints:["What has already happened when a pull-request workflow starts?","When does possession of a credential become dangerous?"],source:S.push},
-  {id:"ghas-ecosystem-033",domain:D.ecosystem,prompt:"Which request belongs primarily to supply-chain security rather than credential security?",choices:["Assess an introduced library version and its license","Revoke a leaked service token","Detect an internal API-key format","Approve a secret push-protection exception"],correct:0,explanations:["Package versions and licenses are dependency concerns.","Revocation responds to credential exposure.","Custom token formats belong to secret detection.","Push-protection exceptions concern credential controls."],concept:"Security suite boundaries",hints:["What is the object being evaluated?","Is the concern a component or an authentication secret?"],source:S.review},
-  {id:"ghas-ecosystem-034",domain:D.ecosystem,prompt:"A security team wants an external ticketing integration to react when code-scanning alert states change. Which supported integration mechanism is appropriate?",choices:["Subscribe only to workflow_run events and treat each successful run as an alert closure","Subscribe to code_scanning_alert webhook events","Subscribe only to pull_request events and treat every merge as a verified security fix","Subscribe to dependabot_alert events for all source-analysis findings"],correct:1,explanations:["Workflow completion does not directly represent individual alert state changes.","The code_scanning_alert webhook exposes alert events.","Merging a pull request does not necessarily resolve a particular alert.","Dependabot events concern dependency alerts rather than code-scanning alerts."],concept:"Security event integration",hints:["What event should trigger the integration?","Which interface publishes the particular security object's changes?"],source:S.code},
-  {id:"ghas-ecosystem-035",domain:D.ecosystem,prompt:"A startup asks whether buying Code Security alone should be assumed to enable every Secret Protection capability in private repositories. What is the accurate approach?",choices:["Assume the product names are synonyms","Use public-repository behavior as proof","Evaluate Code Security and Secret Protection entitlements separately","Assume all private repositories inherit every security product"],correct:2,explanations:["The products address different security areas.","Public availability does not establish private entitlement.","Separate product packaging requires checking the relevant entitlement.","Private repositories do not automatically receive every product."],concept:"Security product packaging",hints:["Are the product scopes identical?","Which feature's documentation establishes its availability?"],source:S.suites},
-  {id:"ghas-ecosystem-036",domain:D.ecosystem,prompt:"A repository uses a language not supported by CodeQL. Which plan preserves the possibility of GitHub code-scanning visibility?",choices:["Rename files to a supported extension","Run CodeQL and interpret no alerts as full coverage","Use Dependabot to analyze all application logic","Evaluate a suitable analyzer that exports supported SARIF"],correct:3,explanations:["Renaming does not make unsupported code analyzable.","No findings from unsupported analysis do not establish coverage.","Dependabot does not analyze arbitrary application logic.","Third-party SARIF can extend the code-scanning tooling ecosystem."],concept:"Unsupported language strategy",hints:["What must understand the source language?","Can result storage accept findings from another engine?"],source:S.code},
-  {id:"ghas-ecosystem-037",domain:D.ecosystem,prompt:"A campaign fixes dozens of related injection alerts. What additional use of the campaign most directly strengthens secure development?",choices:["Use the related fixes to teach developers the common unsafe pattern","Turn off future analysis of those files","Dismiss all future injection alerts automatically","Replace dependency monitoring with the campaign report"],correct:0,explanations:["Related remediation work can reinforce reusable secure-coding knowledge.","Disabling analysis removes future detection.","Future findings still require risk-based evaluation.","Code campaigns do not replace dependency monitoring."],concept:"Remediation as learning",hints:["What knowledge can transfer between similar findings?","How can a one-time cleanup reduce future introductions?"],source:S.campaigns},
-  {id:"ghas-ecosystem-038",domain:D.ecosystem,prompt:"A project displays a green dependency-review check. Which conclusion is justified?",choices:["Every application code path is secure","The checked dependency changes passed that check's configured policy","No secret exists anywhere in Git history","All dependencies will remain safe after future disclosures"],correct:1,explanations:["Dependency checks do not certify application logic.","A passing check is scoped to its inputs and policy.","Secret exposure is a separate detection concern.","Future vulnerability disclosures can change risk."],concept:"Scope of security assurance",hints:["What exactly did the check evaluate?","Which risks fall outside its inputs?"],source:S.review},
-  {id:"ghas-ecosystem-039",domain:D.ecosystem,prompt:"A maintainer wants scheduled non-security update proposals for supported dependencies. Which feature differs from security updates by serving this goal?",choices:["Secret scanning","Code scanning","Dependabot version updates","Security advisory publication"],correct:2,explanations:["Secret scanning detects credentials.","Code scanning analyzes source weaknesses.","Version updates keep dependencies current according to configuration.","Publishing an advisory discloses a vulnerability rather than scheduling refreshes."],concept:"Version versus security updates",hints:["Must a vulnerability exist to justify the update?","What controls routine package maintenance?"],source:S.versions},
-  {id:"ghas-ecosystem-040",domain:D.ecosystem,prompt:"An alerting program finds issues but no team owns the remediation queue. What improvement most directly closes the operational gap?",choices:["Increase scan frequency without assigning work","Add another dashboard with the same counts","Automatically close every old alert","Define owners, priorities, and a verified remediation workflow"],correct:3,explanations:["More findings do not establish accountability.","Duplicate visibility does not create ownership.","Age alone does not make a vulnerability safe.","An actionable workflow connects detection to verified risk reduction."],concept:"Detection-to-remediation lifecycle",hints:["What must happen after detection?","Who confirms that risk was actually removed?"],source:S.campaigns},
-  {id:"ghas-secrets-001",domain:D.secrets,prompt:"A production credential appears in a secret-scanning alert. What is the most important immediate remediation?",choices:["Delete the current file while leaving the credential active","Revoke or rotate the credential with its issuer","Rewrite repository history while leaving the credential active","Make the repository private while leaving the credential active"],correct:1,explanations:["Copies and history can retain a credential removed from the current file.","Issuer-side revocation or rotation prevents use of the exposed credential.","History cleanup cannot invalidate copies already obtained.","Changing visibility does not revoke a copied credential."],concept:"Credential revocation",hints:["Which system decides whether the credential authenticates?","What action protects against copies already obtained?"],source:S.secrets},
-  {id:"ghas-secrets-002",domain:D.secrets,prompt:"An old feature branch contains a token removed from the current default branch. What scanning scope is relevant?",choices:["Only the latest default-branch tree is scanned","Only files changed in the last pull request are scanned","Secret scanning examines Git history across all repository branches","Only tagged releases are scanned"],correct:2,explanations:["Secret scanning is not limited to the current default-branch tree.","Its scope extends beyond a single pull request.","History across branches can expose older committed credentials.","Release tagging is not required for detection."],concept:"Historical scan scope",hints:["Does deleting current content remove earlier commits?","Which branches may retain a credential?"],source:S.secrets},
-  {id:"ghas-secrets-003",domain:D.secrets,prompt:"A push is blocked because an earlier incoming commit contains a supported secret, even though the final tree no longer has it. Which response addresses the cause without an exception?",choices:["Remove the secret from the affected incoming commits before retrying","Add another deletion commit after the already clean final tree","Delete the value only from the uncommitted working copy","Retry the unchanged history through a GitHub web file upload"],correct:0,explanations:["The incoming history must no longer contain the detected secret.","An additional deletion does not remove the earlier commit's credential.","Uncommitted edits do not repair the commits being pushed.","Changing the entry point does not make introducing a detected secret an appropriate fix."],concept:"Remediating a blocked push",hints:["Which revisions does the incoming push contain?","Does a clean final tree imply that every earlier incoming commit is clean?"],source:S.push},
-  {id:"ghas-secrets-004",domain:D.secrets,prompt:"A supported provider token has validity status unknown. What conclusion is appropriate?",choices:["It is definitely revoked","It is definitely active","It is a false positive","Its validity has not been established; investigate rather than assuming safety"],correct:3,explanations:["Unknown does not mean revoked.","Unknown does not confirm activity.","Validation uncertainty does not establish a false positive.","The status warrants further investigation of the credential and issuer."],concept:"Unknown validity interpretation",hints:["What does an inconclusive check prove?","Could a service limitation affect validation?"],source:S.validity},
-  {id:"ghas-secrets-005",domain:D.secrets,prompt:"Two real leaked credentials are otherwise similar, but one is confirmed active and one is confirmed inactive. Which should normally receive the most urgent containment attention?",choices:["The inactive credential because inactivity implies greater current access","The active credential because it can still grant access","Always the older alert, regardless of current validity","Neither credential until a confirmed misuse report arrives"],correct:1,explanations:["Inactivity reduces immediate authentication risk, though historical investigation may remain necessary.","An active exposed credential poses immediate misuse risk.","Alert age alone should not outweigh confirmed current authentication capability.","Containment should not wait for evidence that someone exploited a known leak."],concept:"Validity-based prioritization",hints:["What can each credential do at present?","How does containment differ from investigating past use?"],source:S.validity},
-  {id:"ghas-secrets-006",domain:D.secrets,prompt:"A security administrator enables automatic validity checks for supported secrets. What external interaction should the organization understand?",choices:["GitHub publishes each secret in a public advisory","GitHub never transmits the credential outside its own systems","GitHub sends the credential to its issuer to test validity through supported APIs","GitHub asks Dependabot to upgrade the token"],correct:2,explanations:["Validity checks are not public disclosure.","Issuer interaction is part of supported validity checking.","The issuer's APIs can establish whether the secret remains active.","Dependabot updates packages, not credentials."],concept:"Validity-check data flow",hints:["Who can determine whether a provider credential works?","Which service owns its authentication state?"],source:S.validity},
-  {id:"ghas-secrets-007",domain:D.secrets,prompt:"An organization uses an internal credential format not covered by built-in patterns. What should it configure?",choices:["A custom secret-scanning pattern matching the format","A validity-check setting without a detector for the new format","An exclusion for every file containing the new credential prefix","A repository description documenting the credential prefix"],correct:0,explanations:["Custom patterns extend credential detection to organization-specific formats.","Validity checks do not define an organization-specific detection regex.","Exclusions suppress detection rather than extend it.","Documentation alone does not configure a detector."],concept:"Custom credential detection",hints:["What distinguishes these credentials syntactically?","Which setting defines recognition rather than response or exclusion?"],source:S.custom},
-  {id:"ghas-secrets-008",domain:D.secrets,prompt:"Before publishing a broad custom token pattern, how can an administrator inspect repository matches without creating alerts?",choices:["Publish the pattern first and then dismiss generated findings","Test one synthetic example and assume it represents repository-wide results","Enable push protection before the required publication step","Use Save and dry run, then review the sampled matches"],correct:3,explanations:["Publishing creates operational findings before validation.","A single example does not show sampled repository matches.","Push-protection enablement follows successful testing and publication.","Dry runs test repository matches without creating alerts."],concept:"Custom-pattern dry runs",hints:["What environment's matches does the administrator need to inspect?","Which workflow separates evaluation from alert generation?"],source:S.custom},
-  {id:"ghas-secrets-009",domain:D.secrets,prompt:"A custom pattern matches thousands of ordinary order identifiers as well as tokens. What is the best next step?",choices:["Narrow the pattern using the real credential format and contextual requirements, then dry-run again","Dismiss all matching files as safe forever","Disable all secret scanning in the organization","Change every match's validity to active"],correct:0,explanations:["More precise format and context reduce false positives while preserving intended matches.","Blanket dismissal can hide actual credentials.","Disabling all scanning removes unrelated protections.","An administrator cannot establish validity by relabeling arbitrary matches."],concept:"Pattern precision tuning",hints:["What syntax separates credentials from identifiers?","How would you test both positive and negative examples?"],source:S.custom},
-  {id:"ghas-secrets-010",domain:D.secrets,prompt:"A new custom pattern passed its dry run but has not been published. Why is its push-protection enablement not yet available?",choices:["All custom patterns are detection-only","The pattern must be published after a successful dry run before enabling push protection","Only CodeQL patterns support blocking","The pattern must first match a real production secret"],correct:1,explanations:["Published custom patterns can support push protection.","Publication follows testing before the push-protection option becomes available.","Push protection belongs to secret detection, not CodeQL query syntax.","A production leak is not a prerequisite."],concept:"Custom-pattern activation sequence",hints:["Which lifecycle state follows testing?","Is evaluating a pattern equivalent to activating it?"],source:S.custom},
-  {id:"ghas-secrets-011",domain:D.secrets,prompt:"A contributor selects I'll fix it later when bypassing repository push protection. What alert state does this reason produce?",choices:["No alert is ever created","A closed false-positive alert","An open secret-scanning alert","A closed used-in-tests alert"],correct:2,explanations:["Repository-level bypasses create alerts.","False positive is a different bypass reason.","Deferring remediation leaves the alert open.","Used in tests is a different reason with a closed alert."],concept:"Deferred-fix bypass lifecycle",hints:["Has remediation been completed?","How should the tracking state reflect remaining work?"],source:S.push},
-  {id:"ghas-secrets-012",domain:D.secrets,prompt:"A developer relies on account-level push protection rather than repository-level enablement. Which destination scope is documented for this user protection?",choices:["Every private and internal repository on every Server deployment","Only repositories owned by the user's employer","Every local commit before it leaves the workstation","Public repositories on GitHub.com"],correct:3,explanations:["User push protection is specific to GitHub.com and does not provide universal private or Server coverage.","The documented scope is not limited to the user's employer.","Server-side protection does not inspect every offline local commit.","Account-level user protection stops secret pushes to public repositories on GitHub.com."],concept:"User push-protection destination scope",hints:["Which level of protection is enabled?","How do account settings differ from an organization's repository policy?"],source:S.push},
-  {id:"ghas-secrets-013",domain:D.secrets,prompt:"A company wants non-designated contributors to request approval before bypassing a blocked secret. Which capability fits?",choices:["Delegated bypass for push protection","Account-level user protection alone","Exempting all write-access contributors from push protection","Default self-bypass with no designated review requirement"],correct:0,explanations:["Delegated bypass gives designated reviewers control over requests.","User protection alone does not implement this organization review flow.","Exemptions skip protection rather than require approval.","Unrestricted self-bypass does not provide the requested delegated approval."],concept:"Delegated bypass governance",hints:["Who should decide whether an exception is justified?","Which alternatives skip review rather than govern it?"],source:S.push},
-  {id:"ghas-secrets-014",domain:D.secrets,prompt:"Which distinction matters when configuring push-protection bypass privileges versus exemptions?",choices:["Both mean that pushes are never scanned","Bypass privileges allow bypass and request review; exemptions skip push protection for the actor","Exemptions require a request on every push","Bypass privileges revoke all detected tokens"],correct:1,explanations:["The two actor treatments have different effects.","Privileged actors can handle bypasses; exempt actors do not trigger the control.","Exempt actors skip protection rather than requesting each time.","Bypass authority does not revoke issuer credentials."],concept:"Bypass privileges versus exemptions",hints:["Does the actor encounter a block at all?","How does skipping a control differ from approving an exception?"],source:S.push},
-  {id:"ghas-secrets-015",domain:D.secrets,prompt:"A user bypasses account-level push protection in a public repository that has no repository-level push protection. What should the team avoid assuming?",choices:["That the user's public push can be inspected for supported secrets","That user protection is account-specific","That the bypass necessarily creates a repository secret-scanning alert","That repository protection is configured separately"],correct:2,explanations:["User push protection does inspect public pushes.","Account-specific scope is documented.","User-only bypass does not generate such an alert unless repository protection is also enabled.","Repository-level protection is a separate configuration."],concept:"User versus repository bypass alerts",hints:["Which protection level was enabled?","Are all bypass audit and alert behaviors shared across levels?"],source:S.push},
-  {id:"ghas-secrets-016",domain:D.secrets,prompt:"Which activity is covered by push protection beyond a command-line Git push?",choices:["Reading an existing issue","Downloading a release artifact","Viewing an already committed file","Committing a file through the GitHub web interface"],correct:3,explanations:["Reading issue content is not a content introduction.","Downloading artifacts is not a repository write.","Viewing existing content does not introduce a secret.","Push protection covers commits made through the GitHub UI."],concept:"Push-protection entry points",hints:["Which operation introduces new repository content?","Is the transport limited to a local Git client?"],source:S.push},
-  {id:"ghas-secrets-017",domain:D.secrets,prompt:"A maintainer believes secret scanning cannot find a credential pasted into a pull-request description. What is the accurate response for documented scanning scope?",choices:["Pull-request titles, descriptions, and comments are included in secret scanning","Only executable source files can contain detectable secrets","Only the final merge commit is scanned","Descriptions are checked only for dependency licenses"],correct:0,explanations:["Documented secret scanning includes pull-request text surfaces.","Credentials can appear in non-executable content.","Scanning extends beyond merge commits.","License review does not define secret scanning of descriptions."],concept:"Non-code secret exposure",hints:["Where else do developers paste diagnostic information?","Is a credential less sensitive outside a source file?"],source:S.secrets},
-  {id:"ghas-secrets-018",domain:D.secrets,prompt:"A repository is clean under existing detectors. Why can a new secret-scanning alert appear later without a new commit?",choices:["Every scan invents replacement tokens","GitHub periodically rescans when support for new secret types is added","The dependency graph changes secret validity","Closed pull requests always become open alerts"],correct:1,explanations:["Scans detect content rather than generate credentials.","Newly supported patterns can match existing historical content.","Dependency inventory does not determine credential validity.","Pull-request state does not mechanically create secret alerts."],concept:"Rescanning with new detectors",hints:["Can detection capabilities change while code stays constant?","What happens to historical content when a new pattern is supported?"],source:S.secrets},
-  {id:"ghas-secrets-019",domain:D.secrets,prompt:"A scanner detects a private key whose use is not tied to one named provider. Which extension of detection is most relevant?",choices:["Dependabot grouping","A license denylist","Generic secret patterns","A compiled-language build mode"],correct:2,explanations:["Grouping changes dependency update pull requests.","License rules do not identify private keys.","Generic patterns cover secret types not specific to one provider.","Build mode controls code extraction."],concept:"Generic versus provider patterns",hints:["Is the credential associated with a specific service?","What category describes provider-independent secret formats?"],source:S.secrets},
-  {id:"ghas-secrets-020",domain:D.secrets,prompt:"An incident owner has revoked an exposed key and verified replacement deployment. How should they use the secret alert's resolution information?",choices:["Mark false positive because the key no longer works","Erase the alert before documenting the incident","Leave it open permanently regardless of remediation","Record a resolution consistent with the completed revocation"],correct:3,explanations:["A real leaked key is not retroactively a false positive.","Deleting evidence undermines traceability.","An accurate resolved state reflects completed containment.","Resolution should accurately describe remediation performed."],concept:"Accurate secret alert closure",hints:["Was the original detection genuine?","What fact should the resolution reason preserve?"],source:S.secrets},
-  {id:"ghas-secrets-021",domain:D.secrets,prompt:"A team discovers the same credential in several historical locations. Which action most directly contains all copies' authentication risk?",choices:["Invalidate the credential at the issuing service","Delete only the newest matching file","Dismiss all but one location as duplicates","Move the repository to another organization"],correct:0,explanations:["Issuer-side invalidation affects every copy of the same credential.","Other commits and copies can remain.","Reducing duplicate tracking does not stop authentication.","Repository ownership does not invalidate external credentials."],concept:"Multi-location credential containment",hints:["Are the locations different credentials or copies of one?","Which action acts on identity rather than storage?"],source:S.secrets},
-  {id:"ghas-secrets-022",domain:D.secrets,prompt:"A custom token detector should apply to many repositories in one organization. Where should the administrator define the shared pattern?",choices:["In each package's lockfile","At the organization level, with secret scanning enabled for target repositories","In a repository release note","As a dependency-review severity threshold"],correct:1,explanations:["Lockfiles describe dependencies, not organization detectors.","Organization custom patterns provide shared detection across eligible enabled repositories.","Release notes do not configure scanning.","Severity thresholds govern dependency policy."],concept:"Organization custom patterns",hints:["What is the intended management scope?","Do target repositories need the underlying scanner enabled?"],source:S.custom},
-  {id:"ghas-secrets-023",domain:D.secrets,prompt:"A detector matches a token-like value in a test fixture. Which fact must be established before treating it as harmless test data?",choices:["The fixture directory is named tests","The pull request has a test label","The value cannot grant real access in the relevant environment","The file is excluded from compilation"],correct:2,explanations:["A path name does not determine credential privileges.","A label does not invalidate a real token.","Actual authentication capability determines whether the value poses credential-access risk.","Noncompiled files can still expose usable credentials."],concept:"Test-data risk assessment",hints:["Does intended use determine actual capability?","Which environment would accept this value?"],source:S.secrets},
-  {id:"ghas-secrets-024",domain:D.secrets,prompt:"A maintainer wants extended metadata checks for supported credentials. Which prerequisite should they verify?",choices:["Every alert is dismissed","CodeQL advanced setup is enabled","A version-update schedule exists","Validity checks are enabled"],correct:3,explanations:["Dismissal is not a prerequisite for metadata checks.","CodeQL setup is independent of secret metadata.","Dependency update schedules are unrelated.","Extended metadata checks require validity checks to be enabled."],concept:"Extended metadata prerequisite",hints:["Which secret-checking capability underlies additional issuer context?","Is this related to source-code analysis or credential validation?"],source:S.validity},
-  {id:"ghas-secrets-025",domain:D.secrets,prompt:"A blocked push is bypassed under repository-level protection. Which governance evidence does GitHub record in addition to the alert?",choices:["A bypass event in the audit log","An automatically published CVE","A dependency license override","An automatic production deployment rollback"],correct:0,explanations:["Repository bypasses produce audit events.","Bypassing a token block does not publish a CVE.","License policy is unrelated to the secret exception.","GitHub does not inherently control production rollback for the bypass."],concept:"Push-bypass auditability",hints:["How can administrators later review exceptions?","Which record captures a security-relevant action?"],source:S.push},
-  {id:"ghas-secrets-026",domain:D.secrets,prompt:"A contributor's push contains a detector match that is demonstrably not a credential. Under an allowed bypass workflow, which reason best preserves accurate records?",choices:["I'll fix it later","It's a false positive","The package is outdated","The token is active"],correct:1,explanations:["Deferral implies real work remains rather than a mistaken match.","False positive accurately records a noncredential match.","Package age is not a secret bypass reason.","Active is a validation state and contradicts the scenario."],concept:"False-positive bypass classification",hints:["Was a real secret exposed?","Which description explains the detector's mistake rather than postponing a fix?"],source:S.push},
-  {id:"ghas-secrets-027",domain:D.secrets,prompt:"A security policy excludes a directory from secret alert generation because it contains fixtures. What trade-off should reviewers evaluate?",choices:["Exclusion automatically revokes tokens there","Excluded content cannot contain credentials","Real leaks in excluded content may become less visible","Exclusion makes the directory read-only"],correct:2,explanations:["Detection exclusions do not revoke credentials.","Fixture locations can still contain real secrets.","Reducing scanning scope can conceal genuine exposures.","Scanning configuration does not determine file write permissions."],concept:"Detection exclusion risk",hints:["What evidence supports the exclusion?","Could future contributors put different content in the same location?"],source:S.secrets},
-  {id:"ghas-secrets-028",domain:D.secrets,prompt:"Why should developers avoid pasting full detected token values into a broad incident discussion?",choices:["Tokens become invalid when quoted","Discussion text is never retained","Secret values cannot be copied","It creates additional copies and exposes credentials to more readers"],correct:3,explanations:["Quoting does not revoke a token.","Discussion text may persist.","Readers can copy visible credential values.","Minimizing propagation reduces further exposure during response."],concept:"Safe secret incident collaboration",hints:["Who can read the destination?","What information is necessary to coordinate without reproducing the credential?"],source:S.secrets},
-  {id:"ghas-secrets-029",domain:D.secrets,prompt:"A token alert is marked inactive after a check. Which follow-up remains reasonable?",choices:["Investigate the exposure and whether unauthorized use occurred before the token became inactive","Assume the token never worked","Republish the token as approved documentation","Re-enable it to remove the inactive label"],correct:0,explanations:["Current inactivity does not rule out earlier misuse.","Inactive describes current validity, not all historical states.","Republishing secrets is unnecessary and can propagate sensitive information.","Reactivation would increase risk rather than remediate exposure."],concept:"Historical exposure investigation",hints:["Does a present-time check describe the entire incident timeline?","What could have happened before the credential stopped working?"],source:S.validity},
-  {id:"ghas-secrets-030",domain:D.secrets,prompt:"Which statement accurately describes the benefit of enabling push protection after historical secrets have been discovered?",choices:["It invalidates every token already in history","It helps prevent future introductions but existing exposures still need remediation","It replaces all issuer-side credential controls","It makes prior clones forget historical commits"],correct:1,explanations:["Enabling detection does not revoke issuer credentials.","Prevention and cleanup of existing leaks are separate tasks.","Credential lifecycle controls remain necessary.","Remote protection cannot erase other copies."],concept:"Protection enablement boundaries",hints:["Can a new control undo past distribution?","Which work concerns old exposure versus future changes?"],source:S.push},
-  {id:"ghas-secrets-031",domain:D.secrets,prompt:"A dry run finds no matches for a custom pattern, even though approved synthetic examples should match. What should happen before publication?",choices:["Assume all historical content is safe","Enable bypass exemptions for all users","Test and correct the pattern with expected matching and nonmatching samples","Create a dependency security update"],correct:2,explanations:["A broken detector can produce an empty result.","Exemptions do not repair matching logic.","Representative tests establish whether the detector recognizes the intended format.","Package updates do not validate credential regexes."],concept:"Pattern recall validation",hints:["Can an empty result indicate a detector problem?","Which known examples would distinguish no exposure from no recognition?"],source:S.custom},
-  {id:"ghas-secrets-032",domain:D.secrets,prompt:"A team plans to rely on push protection to detect every possible password format. Which caveat matters?",choices:["Push protection checks only package versions","Every random string is automatically blocked","Custom patterns are forbidden","Detection depends on supported and configured patterns, so it is not a universal secret oracle"],correct:3,explanations:["Package version checking is a different control.","Blocking all random strings would not describe documented behavior.","Organizations can configure custom patterns.","Pattern coverage and configuration bound what can be detected."],concept:"Push-protection detection limits",hints:["How does the system distinguish credentials from ordinary text?","What happens to a format no detector recognizes?"],source:S.push},
-  {id:"ghas-secrets-033",domain:D.secrets,prompt:"An organization wants a shared detector for internal tokens but also wants findings from built-in provider patterns. What configuration best fits?",choices:["Add the custom pattern while retaining relevant built-in scanning","Replace all built-in patterns with the internal regex","Disable provider alerts whenever custom patterns exist","Convert provider tokens into package names"],correct:0,explanations:["Custom detection can extend existing coverage.","Replacing unrelated coverage would omit provider secrets.","Custom patterns do not require disabling provider detection.","Package names are unrelated to credential matching."],concept:"Extending secret detection coverage",hints:["Does adding a new format require removing existing formats?","What risks would a replacement strategy leave uncovered?"],source:S.secrets},
-  {id:"ghas-secrets-034",domain:D.secrets,prompt:"A repository API write attempts to introduce a recognized secret. Does using the REST API inherently avoid push protection?",choices:["Yes; only Git clients are checked","No; documented protection includes REST API requests that introduce repository content","Yes; only release tags are checked","No; because Dependabot validates API tokens in all requests"],correct:1,explanations:["Coverage extends beyond Git clients.","REST-based repository writes are among documented covered paths.","Protection is not limited to tags.","The relevant mechanism is push protection, not Dependabot."],concept:"API content-write protection",hints:["Is the concern the client or the content being introduced?","Which product owns secret-introduction prevention?"],source:S.push},
-  {id:"ghas-secrets-035",domain:D.secrets,prompt:"A team wants designated reviewers to evaluate urgent secret bypass requests without granting them full organization ownership. What should it configure?",choices:["A public branch with no scanning","A dependency-review exclusion","Appropriate delegated bypass privileges","Organization-owner status for every contributor"],correct:2,explanations:["Removing protection does not provide controlled review.","Dependency exclusions do not govern secret bypasses.","Delegated bypass privileges support targeted exception authority.","Broad ownership exceeds the requested responsibility."],concept:"Least-privilege bypass review",hints:["What exact decision must these reviewers make?","How much authority is necessary for that decision?"],source:S.push},
-  {id:"ghas-secrets-036",domain:D.secrets,prompt:"Which observation justifies classifying a custom-pattern match as a false positive rather than merely a low-priority real leak?",choices:["The secret belongs to a staging service","The token grants read-only access","The file is seldom edited","The matched value is an order number and cannot authenticate"],correct:3,explanations:["Staging credentials can still be genuine secrets.","Read-only credentials can still expose data.","File edit frequency does not determine secret validity.","A noncredential match is a detector false positive."],concept:"False positive versus lower impact",hints:["Is the detector wrong about the type of value?","How does limited privilege differ from no authentication capability?"],source:S.custom},
-  {id:"ghas-secrets-037",domain:D.secrets,prompt:"A security lead asks how to reduce repeated internal-token leaks after revoking one. Which follow-up is preventive?",choices:["Enable a tested custom detector with push protection for that credential format","Close the incident without changing controls","Use the old token as an example in every README","Dismiss future matches from the same team"],correct:0,explanations:["Format-aware push protection can stop subsequent introductions.","Closing tracking alone does not reduce recurrence.","Replicating the value creates additional secret copies.","Blanket team dismissal can hide real leaks."],concept:"Preventing secret recurrence",hints:["What mechanism can act before the next exposure?","Can the token's recognizable structure support a control?"],source:S.custom},
-  {id:"ghas-secrets-038",domain:D.secrets,prompt:"What is the primary reason to configure a secret-scanning alert recipient who can coordinate with the credential owner?",choices:["Recipients automatically become token issuers","Detection is useful only if someone can carry out containment","Notifications revoke all detected credentials","Recipient settings change the secret's permissions"],correct:1,explanations:["Receiving an alert does not make a person the issuer.","Routing to an actionable owner connects detection with response.","Notification delivery is not credential revocation.","Notification configuration does not change token permissions."],concept:"Actionable secret notifications",hints:["Who can arrange issuer-side changes?","What action should follow receipt of an alert?"],source:S.secrets},
-  {id:"ghas-secrets-039",domain:D.secrets,prompt:"An attacker might have copied a real token from a public commit before it was removed. Which evidence best demonstrates containment of future authentication with that token?",choices:["The pull request was closed","The README no longer includes the value","The issuer confirms the token is revoked","The alert notification was read"],correct:2,explanations:["Closing a pull request does not invalidate credentials.","Current text does not determine the validity of copied credentials.","Issuer-side revocation prevents future authentication with that token.","Reading a notification does not contain access."],concept:"Verifying credential containment",hints:["What can a copied token still do?","Which authority can stop its use regardless of location?"],source:S.secrets},
-  {id:"ghas-secrets-040",domain:D.secrets,prompt:"An administrator sees many secret alerts after first enabling scanning on an old repository. What is the best interpretation?",choices:["All secrets were necessarily introduced that day","Enabling scanning generated real credentials","The alerts must all be false positives","Historical scanning can reveal exposures that predate enablement"],correct:3,explanations:["Detection time can differ from introduction time.","Scanning does not generate credentials.","Age does not establish false-positive status.","Newly enabled analysis can discover old content."],concept:"Detection time versus exposure time",hints:["When was the credential committed?","When did the detector first inspect it?"],source:S.secrets},
-  {id:"ghas-supply-001",domain:D.supply,prompt:"A package appears only through a parent library. How should a maintainer identify why it is in the project?",choices:["Inspect the dependency graph's transitive paths","Search the secret alert list","Change the repository visibility","Disable all indirect dependency detection"],correct:0,explanations:["Transitive paths show the chain introducing the package.","Secret alerts do not explain dependency relationships.","Visibility does not reveal the dependency chain.","Disabling detection removes useful evidence."],concept:"Tracing indirect dependencies",hints:["Which package introduced the component?","Where is the relationship between dependencies represented?"],source:S.graph},
-  {id:"ghas-supply-002",domain:D.supply,prompt:"A compliance reviewer requests the dependency graph's built-in SBOM export. Which format should they expect?",choices:["SARIF for code findings","SPDX describing software components","A Git patch containing secret alerts","A CodeQL database"],correct:1,explanations:["SARIF is an analysis-results format.","The graph's native SBOM export uses SPDX.","Secret alerts are not a software component inventory.","CodeQL databases represent code for analysis."],concept:"Native SBOM export format",hints:["Is the artifact an inventory or an analysis result?","Which standard describes software components and licensing?"],source:S.sbom},
-  {id:"ghas-supply-003",domain:D.supply,prompt:"A build resolves dependencies that GitHub cannot discover from checked-in manifest files alone. What should the team add?",choices:["A custom secret pattern","A manual CodeQL language name","Dependency submission from the build","A branch rename"],correct:2,explanations:["Secret patterns do not record package inventories.","Language selection does not submit resolved packages.","Build dependency snapshots can supplement manifest-derived data.","Branch names do not supply dependency information."],concept:"Supplemental dependency snapshots",hints:["Where are the missing versions actually known?","How could build results reach the dependency graph?"],source:S.graph},
-  {id:"ghas-supply-004",domain:D.supply,prompt:"A pull request upgrades one direct package, and its lockfile changes several nested packages. What does dependency review help assess?",choices:["Only the top-level package's display name","Only newly added source files","Whether the author has signed in recently","Security-relevant changes to direct and indirect dependencies"],correct:3,explanations:["Review is not limited to a direct package name.","Dependency review concerns package changes.","Login activity is not the dependency diff.","Lockfile changes can reveal indirect dependency updates and vulnerabilities."],concept:"Lockfile change review",hints:["What information is recorded in a lockfile?","Can a direct upgrade change more than one installed component?"],source:S.review},
-  {id:"ghas-supply-005",domain:D.supply,prompt:"A dependency-review workflow reports a vulnerable addition, but maintainers can still merge. Which configuration completes the merge gate?",choices:["Require the dependency-review check through applicable merge rules","Add a release label to the workflow","Enable secret-scanning validity checks","Move the lockfile into documentation"],correct:0,explanations:["A required check connects a failing result to merge prevention.","Labels do not make a check mandatory.","Credential validity does not govern dependency checks.","Moving lockfiles can reduce visibility rather than enforce review."],concept:"Required dependency-review checks",hints:["Who interprets the failed status when deciding merge eligibility?","Is running a check the same as requiring it?"],source:S.review},
-  {id:"ghas-supply-006",domain:D.supply,prompt:"A legal policy prohibits a particular dependency license. Which dependency-review action capability is relevant?",choices:["Token validity checks","Configured license allow or deny lists","Custom CodeQL database extraction","Secret push bypass exemptions"],correct:1,explanations:["Token checks concern credentials.","The action can evaluate dependency licenses against configured policy.","Code extraction does not implement dependency license lists.","Secret bypasses do not enforce legal dependency policy."],concept:"Dependency license policy",hints:["Which metadata describes usage terms?","Is this a vulnerability-severity rule or a separate compliance rule?"],source:S.review},
-  {id:"ghas-supply-007",domain:D.supply,prompt:"A team wants dependency review to fail only for newly introduced vulnerabilities at or above its chosen severity threshold. What should it configure?",choices:["Only a license denylist","Only the dependency-update schedule","The dependency-review action's severity threshold","Only the comments emitted by the review action"],correct:2,explanations:["License restrictions do not express minimum vulnerability severity.","Update scheduling does not establish review failure policy.","The action supports a configurable failure severity.","Changing comment presentation does not define the failure threshold."],concept:"Review severity thresholds",hints:["Which configuration expresses a risk cutoff?","Which alternatives affect a different policy dimension or presentation?"],source:S.review},
-  {id:"ghas-supply-008",domain:D.supply,prompt:"When does Dependabot alert analysis primarily evaluate a repository's dependencies?",choices:["Only after a release is downloaded","Only on arbitrary local branches","Only while a developer is editing files offline","On the repository's default branch as supported dependency or vulnerability data changes"],correct:3,explanations:["Release downloads are not required for alert creation.","Repository alert monitoring is centered on the default branch.","Offline edits are not visible to GitHub.","Dependabot monitors default-branch dependencies and new vulnerability information."],concept:"Dependabot alert scope",hints:["Which revision represents the repository's established dependency state?","Can new advisory data create an alert without a commit?"],source:S.dependabot},
-  {id:"ghas-supply-009",domain:D.supply,prompt:"A security update proposes a patched version with a high compatibility score. What does that score establish?",choices:["Observed CI success in other public repositories for that update, not a guarantee for this application","Formal proof that all application tests pass","A guarantee of no breaking API changes","That the original advisory was a false positive"],correct:0,explanations:["Compatibility scores summarize relevant observed CI results.","The score does not execute or prove this application's complete test suite.","Other projects' success cannot guarantee local API compatibility.","Compatibility information does not invalidate an advisory."],concept:"Compatibility score limitations",hints:["Whose tests produced the score?","What still needs validation in this repository?"],source:S.updates},
-  {id:"ghas-supply-010",domain:D.supply,prompt:"Which minimum capabilities should be enabled for Dependabot security updates to operate on supported repository dependencies?",choices:["Only CodeQL advanced setup","Dependency graph and Dependabot alerts, along with security updates","Only a public security advisory","Only custom secret patterns"],correct:1,explanations:["CodeQL is independent of dependency update automation.","Security updates rely on dependency inventory and vulnerability alerts.","Publishing an advisory does not configure this repository's updates.","Secret patterns do not supply dependency information."],concept:"Security update prerequisites",hints:["How does the updater know what is vulnerable?","Which feature supplies the package inventory?"],source:S.updates},
-  {id:"ghas-supply-011",domain:D.supply,prompt:"A dependency submitted only through the submission API receives an alert but no security-update pull request. Which documented distinction can explain this?",choices:["API-submitted dependencies cannot have advisories","All alerts must produce a pull request","Security updates are triggered for dependencies specified in a manifest or lockfile","CodeQL must run before every dependency update"],correct:2,explanations:["Submitted dependencies can receive vulnerability alerts.","An alert does not guarantee automated remediation.","The graph may contain more dependencies than security updates can directly update.","CodeQL is not a security-update prerequisite."],concept:"Alert coverage versus update coverage",hints:["Does the updater have an editable dependency declaration?","Can inventory coverage exceed automated update coverage?"],source:S.updates},
-  {id:"ghas-supply-012",domain:D.supply,prompt:"Where should a repository commit configuration for routine Dependabot version updates?",choices:["A SARIF result file","An open secret alert's comment","A security-advisory description","A .github/dependabot.yml file"],correct:3,explanations:["SARIF stores static analysis results.","Secret alert comments do not configure package maintenance.","An advisory description is not update configuration.","The dependabot.yml file defines version-update ecosystems, directories, and schedules."],concept:"Version update configuration location",hints:["Is the configuration repository content or an alert state?","Which configuration is read by Dependabot?"],source:S.options},
-  {id:"ghas-supply-013",domain:D.supply,prompt:"A monorepo has manifests in several directories. What information must version-update configuration provide so Dependabot knows where to look?",choices:["The relevant package ecosystem and manifest directory settings","Only a daily update schedule, relying on it to identify every package manager","Only a registry credential, relying on it to locate all manifests","Only the default branch name, relying on it to identify all update targets"],correct:0,explanations:["Ecosystem and directory identify supported dependency declarations.","Frequency does not specify which ecosystem and directories to inspect.","Registry authentication does not identify repository manifest locations.","Branch targeting does not replace ecosystem and directory configuration."],concept:"Monorepo update targeting",hints:["What distinct information locates and interprets a dependency declaration?","Does the time of a check identify its targets?"],source:S.options},
-  {id:"ghas-supply-014",domain:D.supply,prompt:"The team wants fewer security-update pull requests while retaining automated fixes for related vulnerable packages in one ecosystem. What should it consider?",choices:["Turning off security updates and relying only on alert notifications","Grouped Dependabot security updates","Changing only the routine version-update interval","Adding all affected packages to a broad ignore rule"],correct:1,explanations:["Notifications alone do not retain automated fix pull requests.","Grouping can combine compatible security updates into fewer pull requests.","Routine update timing does not provide the requested security-update grouping.","Broad ignores can suppress updates rather than consolidate fixes."],concept:"Grouped security updates",hints:["What output needs consolidation?","Which alternatives reduce work by removing the desired automation?"],source:S.updates},
-  {id:"ghas-supply-015",domain:D.supply,prompt:"A maintainer expects one grouped Dependabot security pull request to combine npm security fixes, pip security fixes, and routine version refreshes. What is the documented limitation?",choices:["Security groups can cross ecosystems but cannot mix update types","Security groups can mix update types but cannot cross ecosystems","Security groups do not combine different ecosystems or mix security updates with version updates","Security groups can combine both when all packages have the same severity"],correct:2,explanations:["Different ecosystems are not combined by grouped security updates.","Security and version updates remain separate.","Security-update groups have ecosystem and update-type boundaries.","Matching severities do not remove the ecosystem and update-type boundaries."],concept:"Security update grouping boundaries",hints:["Which boundaries apply to the proposed group?","Does a shared risk rating change how different package managers are updated?"],source:S.updates},
-  {id:"ghas-supply-016",domain:D.supply,prompt:"A low-risk development dependency alert is automatically dismissed by a rule. What happened to the installed dependency?",choices:["It was necessarily upgraded","It was deleted from every branch","Its vulnerable code was rewritten","Its alert state changed; remediation was not inherently performed"],correct:3,explanations:["Auto-dismissal does not imply an upgrade.","Rules do not remove packages from every branch.","Triage does not rewrite package code.","Auto-dismissal is alert management rather than remediation."],concept:"Auto-triage is not patching",hints:["What object does the rule act on?","Is changing alert state equivalent to changing the resolved package?"],source:S.triage},
-  {id:"ghas-supply-017",domain:D.supply,prompt:"Why can enabling a low-risk auto-dismiss rule reduce notifications even when alerts are still available for reporting?",choices:["Rules are applied before alert notifications are sent","GitHub deletes all matching advisory records","The rule disables the dependency graph","All developers lose repository access"],correct:0,explanations:["Alerts dismissed on creation do not send their usual notifications.","Advisory records are not deleted by repository rules.","Inventory can remain enabled.","Notification reduction does not require removing access."],concept:"Auto-triage notification timing",hints:["At which point in the lifecycle is the rule evaluated?","Can reporting visibility differ from notification delivery?"],source:S.triage},
-  {id:"ghas-supply-018",domain:D.supply,prompt:"A security reviewer wants to audit alerts dismissed automatically by Dependabot. What is supported?",choices:["They are permanently unavailable","Filter and review auto-dismissed alerts, with reopening available","Only package authors can see them","They are converted into CodeQL findings"],correct:1,explanations:["Automatic dismissal does not erase alerts.","Auto-dismissed alerts remain available for reporting and review.","Repository permissions govern access rather than package authorship alone.","Alert families are not converted by triage."],concept:"Reviewing automated triage",hints:["Is dismissal deletion?","How can the team validate that its automation remains appropriate?"],source:S.triage},
-  {id:"ghas-supply-019",domain:D.supply,prompt:"A custom auto-triage policy should affect only one low-risk package and weakness category. Which inputs are appropriate?",choices:["Severity alone across every package","Package ecosystem alone across every weakness category","Targeted package and CWE metadata, with other relevant risk criteria","A blanket development-scope condition without package or weakness restrictions"],correct:2,explanations:["Severity alone can include unrelated packages and weakness categories.","An ecosystem is broader than the intended package-specific exception.","Custom rules can target package, CWE, severity, and related alert metadata.","Development scope alone does not express the requested narrow exception."],concept:"Metadata-targeted auto-triage",hints:["What facts distinguish the approved exception?","Which candidate criteria include alerts outside that scope?"],source:S.triage},
-  {id:"ghas-supply-020",domain:D.supply,prompt:"A dependency-review action runs before a build submits its dependency snapshot. Why can this be a problem?",choices:["The action revokes build credentials","Every late snapshot creates a duplicate CVE","The build can no longer write a lockfile","Review may compare incomplete dependency data because of a race"],correct:3,explanations:["Dependency review does not inherently revoke credentials.","Snapshot timing does not create CVE identifiers.","Review does not inherently prevent lockfile writes.","Missing snapshots can cause incomplete dependency comparisons."],concept:"Dependency submission ordering",hints:["What data must exist before a comparison is meaningful?","Could parallel execution produce a partial view?"],source:S.review},
-  {id:"ghas-supply-021",domain:D.supply,prompt:"How should a team most directly avoid a dependency-submission and review race in one GitHub Actions workflow?",choices:["Run submission steps before dependency review","Run dependency review before checkout in every case","Disable snapshot generation","Dismiss all alerts while the build runs"],correct:0,explanations:["Ordering ensures review can use submitted dependency data.","Review still needs relevant repository and snapshot inputs.","Removing snapshots loses the missing dependency coverage.","Dismissal does not resolve missing comparison data."],concept:"Reliable dependency review orchestration",hints:["Which operation produces input for the other?","How can workflow dependencies make availability explicit?"],source:S.review},
-  {id:"ghas-supply-022",domain:D.supply,prompt:"Submission and review must run in separate workflows. Which documented action option helps handle snapshots that are not ready yet?",choices:["A secret bypass exemption","retry-on-snapshot-warnings with an appropriate timeout","A license allowlist containing every license","A CodeQL build-mode override"],correct:1,explanations:["Bypass exemptions do not coordinate dependency data.","Retry options can wait for dependency snapshots to become available.","Permissive license policy does not repair incomplete data.","CodeQL extraction mode is unrelated."],concept:"Snapshot availability retries",hints:["Is the condition permanent failure or temporary missing input?","Which behavior waits rather than accepting incomplete evidence?"],source:S.review},
-  {id:"ghas-supply-023",domain:D.supply,prompt:"An SBOM export lists packages and licenses. What should auditors avoid concluding from the inventory alone?",choices:["It can support component review","It describes recorded dependencies at export time","It certifies that every listed component is vulnerability-free","It can be processed by other tools"],correct:2,explanations:["Component review is a valid use.","The export is a dependency snapshot.","An inventory is not a security certification.","Machine-readable inventories support downstream tooling."],concept:"SBOM assurance limits",hints:["Does identifying a component prove its safety?","What additional vulnerability and usage context is needed?"],source:S.sbom},
-  {id:"ghas-supply-024",domain:D.supply,prompt:"Does the dependency graph's exported SBOM include all other projects that depend on this repository?",choices:["Yes; every private dependent is included","Yes; it includes only dependents and no dependencies","Yes; it lists every GitHub organization","No; it inventories dependencies, not dependents"],correct:3,explanations:["The SBOM does not enumerate all private dependents.","Its focus is the project's dependencies.","Organizations are not the component inventory.","Dependencies are included; projects relying on this project are not."],concept:"SBOM dependencies versus dependents",hints:["Which direction do the graph relationships point?","Is the inventory about what this project uses or who uses it?"],source:S.sbom},
-  {id:"ghas-supply-025",domain:D.supply,prompt:"An update cannot be merged immediately because it breaks a critical integration. What is the best response to the valid dependency vulnerability?",choices:["Document the risk and mitigation, assign upgrade work, and reassess the exception","Call it a false positive solely because upgrading is difficult","Assume closing the update pull request removes the vulnerability","Disable the graph for the whole organization"],correct:0,explanations:["A documented exception and owned remediation preserve accountability.","Upgrade difficulty does not invalidate the finding.","Closing a proposal leaves the current vulnerable version.","Disabling inventory hides unrelated risk."],concept:"Dependency exception management",hints:["Is the risk invalid or temporarily unresolved?","What makes an exception reviewable rather than forgotten?"],source:S.dependabot},
-  {id:"ghas-supply-026",domain:D.supply,prompt:"A dependency is used only during development. Why should the team avoid automatically treating every vulnerability in it as harmless?",choices:["Development packages cannot read files","Build and test tools may access source, credentials, or publishing paths","All development dependencies ship to production unchanged","Development scope makes every advisory a false positive"],correct:1,explanations:["Development tools can read repository and environment data.","Development environments can contain sensitive resources and privileged workflows.","Production packaging depends on the project.","Scope informs risk but does not nullify every vulnerability."],concept:"Development dependency context",hints:["What privileges does the build environment have?","Can a nonproduction tool influence release integrity?"],source:S.triage},
-  {id:"ghas-supply-027",domain:D.supply,prompt:"A patched package version is available, but the application's lockfile still resolves the vulnerable version. What should the maintainer verify before claiming remediation?",choices:["Only that the patched release exists upstream","Only that the manifest's allowed range includes the patched release","The resolved dependency versions actually changed to safe versions","Only that a security-update pull request has been opened"],correct:2,explanations:["An upstream fix does not change this application's installed dependency.","An allowed range can still resolve to an old lockfile version.","The effective dependency resolution must remove affected versions.","An open proposal has not necessarily changed the effective dependency state."],concept:"Effective dependency remediation",hints:["What does the application actually install?","Which evidence describes a proposed fix versus an applied one?"],source:S.graph},
-  {id:"ghas-supply-028",domain:D.supply,prompt:"How does dependency review complement existing Dependabot alerts?",choices:["It prevents all future disclosures","It replaces the need for a dependency graph","It revokes leaked package-registry tokens","It evaluates proposed dependency changes before they become established default-branch risk"],correct:3,explanations:["No review can prevent future advisory discoveries.","Dependency review uses graph data.","Credential revocation is a separate response.","Change-time review complements monitoring of existing dependencies."],concept:"Preventing versus detecting dependency risk",hints:["Which tool sees proposed changes?","Which tool monitors dependencies already present?"],source:S.review},
-  {id:"ghas-supply-029",domain:D.supply,prompt:"A repository uses several package managers. Which is the safest configuration assumption for Dependabot?",choices:["Verify support and configure the relevant ecosystem and directories for each","One arbitrary ecosystem entry covers every package manager","CodeQL language detection configures all package updates","The repository name determines the update ecosystem"],correct:0,explanations:["Support and configuration are ecosystem-specific.","One ecosystem entry does not describe unrelated managers.","CodeQL and Dependabot have distinct configuration.","Repository names do not define package-manager support."],concept:"Multi-ecosystem update configuration",hints:["How are manifests parsed?","Does support for one manager imply support for another?"],source:S.options},
-  {id:"ghas-supply-030",domain:D.supply,prompt:"A team wants updates to workflow action references, not just application packages. Which Dependabot configuration area is relevant?",choices:["The secret-scanning generic-pattern option","The github-actions package ecosystem","The code-scanning SARIF category","A security-advisory collaborator list"],correct:1,explanations:["Generic secret patterns detect credentials.","Dependabot supports updating action and reusable-workflow references.","SARIF categories separate analysis results.","Collaborator lists do not schedule workflow dependency updates."],concept:"Workflow dependency maintenance",hints:["Are action references also dependencies?","Which ecosystem describes workflow usage?"],source:S.versions},
-  {id:"ghas-supply-031",domain:D.supply,prompt:"A developer configures a version-update ignore rule and assumes matching vulnerability alerts will disappear. What is the correct distinction?",choices:["Ignore rules revoke vulnerable package versions","Version configuration controls every alert's existence","Update pull-request configuration is not a general filter suppressing Dependabot alerts","Ignoring a package proves it is safe"],correct:2,explanations:["Ignore rules do not alter package validity or vulnerabilities.","Alerts and update automation are separate concerns.","dependabot.yml update behavior does not generally determine which vulnerability alerts exist.","Ignoring a package is a maintenance decision, not a safety finding."],concept:"Update settings versus alert generation",hints:["Is the setting about proposing changes or detecting risk?","What data source creates the alert?"],source:S.updates},
-  {id:"ghas-supply-032",domain:D.supply,prompt:"What should maintainers review before merging a Dependabot security-update pull request?",choices:["Only whether the branch name starts with dependabot","Only whether the package has many users","Only whether the alert is old","Tests, relevant release notes, and whether the resolved version addresses the vulnerability"],correct:3,explanations:["A branch prefix does not prove correctness.","Popularity is not compatibility validation.","Age does not establish that the update is safe.","Review should verify remediation and application compatibility."],concept:"Reviewing automated updates",hints:["Which evidence shows security improvement?","Which evidence shows the application still works?"],source:S.versions},
-  {id:"ghas-supply-033",domain:D.supply,prompt:"A maintainer wants fewer routine update pull requests for a set of related libraries. Which option is more appropriate than disabling version updates?",choices:["Define suitable update groups in dependabot.yml","Turn off the dependency graph","Mark all advisories as false positives","Replace dependency review with secret scanning"],correct:0,explanations:["Groups consolidate related update work while keeping automation.","Disabling inventory removes useful security information.","Advisory classification should reflect validity, not workload.","Secret scanning does not maintain package versions."],concept:"Routine update workload management",hints:["Can review units be combined without suppressing updates?","Which configuration changes pull-request granularity?"],source:S.options},
-  {id:"ghas-supply-034",domain:D.supply,prompt:"A known-vulnerable library has no patched release. What should the application team do?",choices:["Assume no alert means no risk","Evaluate mitigation, removal, or replacement while tracking the upstream fix","Fabricate a safe version in the lockfile","Dismiss it as fixed because no update is available"],correct:1,explanations:["The scenario contains a valid known vulnerability.","Risk can require compensating action when no upgrade exists.","An invented version cannot establish a valid safe dependency.","Lack of a patch is not remediation."],concept:"Unpatched dependency response",hints:["Is an upgrade the only way to reduce exposure?","What application behavior depends on the vulnerable component?"],source:S.dependabot},
-  {id:"ghas-supply-035",domain:D.supply,prompt:"Which graph information helps a reviewer distinguish a direct dependency from an indirect one?",choices:["The package's security severity alone","The package's license alone","The dependency relationship and its introducing path","The package's release date alone"],correct:2,explanations:["Severity describes vulnerability impact, not how the package entered the graph.","License terms do not establish declaration relationships.","Graph relationships and paths explain direct versus transitive inclusion.","A release date does not identify the dependency chain."],concept:"Direct versus transitive classification",hints:["Which metadata expresses a relationship rather than a package property?","What chain links the component to the application's manifest?"],source:S.graph},
-  {id:"ghas-supply-036",domain:D.supply,prompt:"A policy owner proposes automatically dismissing every low-severity alert across all packages. What is the strongest review concern?",choices:["Auto-triage can never use severity","Dismissal always uninstalls packages","Rules cannot be reviewed later","A broad rule can hide contextually important risks and needs targeted criteria and oversight"],correct:3,explanations:["Severity can be a rule criterion.","Dismissal changes tracking rather than installation.","Auto-dismissed alerts remain reviewable.","Context and targeted policy reduce unintended risk acceptance."],concept:"Safe triage rule design",hints:["Can the same severity have different impact in different environments?","How will the team detect inappropriate automatic decisions?"],source:S.triage},
-  {id:"ghas-supply-037",domain:D.supply,prompt:"A newly exported SBOM is requested after a dependency upgrade. Why not reuse last month's export as proof of the current inventory?",choices:["An SBOM reflects a particular dependency state and may become stale","SBOM files automatically mutate whenever code changes","All package inventories are permanently identical","Exporting again invalidates the repository's licenses"],correct:0,explanations:["A prior snapshot may not describe newly resolved dependencies.","Downloaded exports do not automatically track repository changes.","Inventories change with dependency updates.","Exporting does not alter license terms."],concept:"SBOM snapshot freshness",hints:["Which repository state did the earlier export represent?","What changed since that artifact was generated?"],source:S.sbom},
-  {id:"ghas-supply-038",domain:D.supply,prompt:"A team sees no security-update pull request for an open dependency alert. What is the best initial investigation?",choices:["Assume the advisory is invalid","Check patch availability, supported update inputs, and update errors","Close the alert because automation is silent","Turn on a random CodeQL language"],correct:1,explanations:["Missing automation does not disprove a vulnerability.","Automation depends on available fixes and the ability to resolve and edit dependencies.","Silence is not evidence of remediation.","CodeQL language selection does not repair dependency update resolution."],concept:"Security update troubleshooting",hints:["What must an updater know and be able to change?","Is there a patched version it can resolve?"],source:S.updates},
-  {id:"ghas-supply-039",domain:D.supply,prompt:"A dependency graph entry lists a vulnerable transitive package under two different direct libraries. What should remediation verify?",choices:["Upgrading one parent necessarily changes the other's nested resolution","Every occurrence of a package name always resolves to one shared version","All affected resolution paths are addressed rather than only one parent","Only directly declared packages need vulnerability remediation"],correct:2,explanations:["Independent parent constraints can retain another vulnerable copy.","Package managers can retain multiple versions of the same package.","Multiple parent paths can retain an affected version independently.","Indirect packages can also be affected and reachable."],concept:"Multiple transitive paths",hints:["Could one parent still install the vulnerable version?","What does the full graph show after the change?"],source:S.graph},
-  {id:"ghas-supply-040",domain:D.supply,prompt:"A dependency-review action accepts a configured license exception for one package. What should reviewers still consider?",choices:["That all vulnerabilities in the package are automatically waived","That future versions can never change license metadata","That no review evidence is needed","Whether the narrow exception is authorized and vulnerability policy still passes"],correct:3,explanations:["License exceptions do not inherently waive vulnerability checks.","Licensing metadata can change across releases.","Exceptions should preserve documented justification.","Different policy dimensions need separate validation and scoped approval."],concept:"Scoped dependency exceptions",hints:["Which policy dimension was excepted?","Does approval for one criterion imply approval for every risk?"],source:S.review},
-  {id:"ghas-ecosystem-041",domain:D.ecosystem,prompt:"Which situation best illustrates why security feature enablement and security outcome should be measured separately?",choices:["A repository has code scanning enabled but its analysis has been failing","A repository has both direct and transitive dependencies","Two developers review the same pull request","A project documents its release process"],correct:0,explanations:["Enabled configuration does not prove analysis is producing usable results.","Dependency types alone do not demonstrate a configuration-outcome gap.","Multiple reviewers are not evidence of failed analysis.","Release documentation does not establish scan success or failure."],concept:"Enablement versus effective coverage",hints:["What evidence shows a protection actually ran?","Can a configured control fail to produce current findings?"],source:S.code},
-  {id:"ghas-ecosystem-042",domain:D.ecosystem,prompt:"A team must prevent credentials from entering history, inspect risky library changes, and analyze application data flow. Which set of capabilities matches all three needs?",choices:["Dependency graph, SBOM export, and version-update schedules","Push protection, dependency review, and CodeQL analysis","Secret alert dismissal, advisory drafts, and release tags","CodeQL query suites, code-scanning categories, and SARIF fingerprints"],correct:1,explanations:["Inventory and update schedules do not cover all three introduction risks.","These controls address credential introduction, dependency changes, and application behavior respectively.","Tracking and disclosure artifacts do not implement all three checks.","These are code-analysis components, not credential and dependency controls."],concept:"Selecting layered product capabilities",hints:["What evidence would each risk require a detector to inspect?","Does the proposed set cover all three distinct assets?"],source:S.suites},
-  {id:"ghas-secrets-041",domain:D.secrets,prompt:"A validity check needs a token plus its associated service host. Why can examining only the token string be insufficient?",choices:["Host context changes every token into a password","Token syntax proves the token is inactive","Some issuers require contextual information to determine whether a credential is active","Dependency graph parsing must supply every token's hostname"],correct:2,explanations:["Context does not change the credential type.","Syntax alone does not prove revocation.","Some supported checks combine a credential with host or URL context.","The dependency graph is not a universal source of credential context."],concept:"Context-dependent validity checking",hints:["What does the issuer need to identify the correct authentication endpoint?","Can identical token formats exist across service instances?"],source:S.validity},
-  {id:"ghas-supply-041",domain:D.supply,prompt:"The head commit of a pull request has a dependency snapshot, but the base commit does not. How should a custom review integration treat a missing-snapshot warning?",choices:["As proof that the base has no dependencies","As approval to merge without review","As a secret-scanning false positive","As incomplete comparison evidence requiring snapshot readiness or controlled retry"],correct:3,explanations:["Missing data is not an empty inventory.","An incomplete comparison does not justify bypassing policy.","The warning concerns dependency data rather than credentials.","Review needs adequate snapshots for both sides of the comparison."],concept:"Base and head inventory completeness",hints:["Which two states are being compared?","How does unknown input differ from an empty input?"],source:S.review},
-  {id:"ghas-code-001",domain:D.code,prompt:"A repository needs CodeQL coverage quickly and has no specialized build or query requirements. Which setup is the best starting point?",choices:["Default setup","A custom external CI pipeline from scratch","A manually edited SARIF file","Only a dependency submission workflow"],correct:0,explanations:["Default setup selects analysis languages, queries, and triggers with minimal configuration.","External CI is possible but adds unnecessary setup for this requirement.","Editing results does not perform analysis.","Dependency submission inventories packages rather than scanning code."],concept:"Selecting default setup",hints:["How much customization is actually required?","Which path minimizes configuration while providing native analysis?"],source:S.codeql},
-  {id:"ghas-code-002",domain:D.code,prompt:"A project requires a custom build sequence and additional published query packs. Which CodeQL approach provides direct workflow customization?",choices:["Default setup alone with no editable build workflow","Advanced setup with a repository workflow","A manual SARIF upload without executing analysis","Only changing the repository's displayed alert severity filters"],correct:1,explanations:["Default setup alone does not supply the requested custom workflow control.","Advanced setup provides an editable CodeQL analysis workflow.","An upload step consumes results but does not implement extraction and queries.","Display filters do not configure build steps or query packs."],concept:"Selecting advanced setup",hints:["Which requirements exceed automatic setup?","Where can the team express custom analysis steps?"],source:S.codeql},
-  {id:"ghas-code-003",domain:D.code,prompt:"What is the correct conceptual order for a CodeQL analysis?",choices:["Publish an advisory, then inventory packages","Dismiss alerts, then extract secrets","Create a code database, run queries, and publish analysis results","Upload a lockfile, then revoke credentials"],correct:2,explanations:["Advisory publication is not the CodeQL pipeline.","Dismissal and secret extraction do not describe CodeQL analysis.","CodeQL represents code as data and evaluates queries against that database.","Lockfiles and revocation belong to other security tasks."],concept:"CodeQL analysis pipeline",hints:["What do the queries operate on?","How does analyzed code become findings displayed in GitHub?"],source:S.codeql},
-  {id:"ghas-code-004",domain:D.code,prompt:"A CodeQL finding includes a path from request input to an unsafe operation. What is the most useful first review?",choices:["Only count how many files changed","Assume every request is trusted","Dismiss it because multiple functions are involved","Inspect the source, transformations, and sink along the reported flow"],correct:3,explanations:["File counts do not establish dataflow safety.","Trust must be established rather than assumed.","Cross-function flow can be relevant to a vulnerability.","The path provides evidence for evaluating whether untrusted data reaches a dangerous use."],concept:"Dataflow evidence interpretation",hints:["Where does the value originate?","What checks or transformations occur before its sensitive use?"],source:S.alerts},
-  {id:"ghas-code-005",domain:D.code,prompt:"A third-party tool exports SARIF 1.0, but GitHub rejects the upload. Which format requirement should the integration check?",choices:["Generate supported SARIF 2.1.0 output","Convert results to a dependency lockfile","Rename the file extension without changing its structure","Convert the results to a secret regex"],correct:0,explanations:["GitHub code scanning supports SARIF 2.1.0.","Lockfiles are not analysis-result containers.","Renaming does not change the SARIF version or schema.","Regexes do not represent analysis results."],concept:"SARIF version compatibility",hints:["Is the declared format version supported?","Can a filename repair incompatible content?"],source:S.sarif},
-  {id:"ghas-code-006",domain:D.code,prompt:"A custom analyzer produces duplicate alerts after every run because result paths change with each build directory. What should the integration stabilize?",choices:["The repository description","File paths, rule identifiers, and result fingerprint data","The number of dependency licenses","The secret-scanning notification list"],correct:1,explanations:["Descriptions do not identify code results.","Stable result identity helps GitHub correlate logically identical findings.","License counts do not control code-scanning identity.","Secret notifications do not correlate SARIF results."],concept:"Stable SARIF result identity",hints:["How can the platform recognize the same issue across runs?","Which result attributes change unnecessarily?"],source:S.sarif},
-  {id:"ghas-code-007",domain:D.code,prompt:"A SARIF upload through the REST endpoint omits partialFingerprints. Which limitation should the integration owner consider?",choices:["The API automatically revokes its token","All findings become dependency alerts","Results may display but duplicate alerts can occur without stable fingerprints","The repository must be deleted and recreated"],correct:2,explanations:["Fingerprint omission does not inherently revoke authentication.","SARIF results remain code-scanning findings.","Fingerprint data helps correlate results and avoid duplicates.","Recreating the repository does not solve result identity."],concept:"API upload fingerprint handling",hints:["What information identifies the same logical finding?","Does an accepted upload guarantee ideal cross-run correlation?"],source:S.sarif},
-  {id:"ghas-code-008",domain:D.code,prompt:"An advanced CodeQL workflow analyzes Java and JavaScript. Why might it use a language matrix?",choices:["To convert Java into JavaScript","To make every language use the same compiler","To turn off language-specific extraction","To run appropriate analysis jobs for the selected languages"],correct:3,explanations:["A matrix does not translate languages.","Different languages can require different extraction behavior.","Language selection does not eliminate extraction requirements.","Matrix jobs let workflows apply analysis to multiple supported languages."],concept:"Language matrix configuration",hints:["What differs between the analysis targets?","How can a workflow repeat a job with controlled language inputs?"],source:S.advanced},
-  {id:"ghas-code-009",domain:D.code,prompt:"A custom build fails before CodeQL analysis completes. Why is interpreting zero new alerts as a clean scan incorrect?",choices:["The failed pipeline may not have produced a valid analysis result","CodeQL failures prove all queries passed","Build logs replace security analysis automatically","Zero alerts always means every source file was checked"],correct:0,explanations:["Analysis completion and coverage must be verified before interpreting findings.","Failure is not successful query execution.","Logs are diagnostic evidence, not substitute analysis.","An empty list does not establish successful coverage."],concept:"Scan failure versus clean result",hints:["Did the analyzer finish successfully?","What evidence distinguishes no findings from no usable analysis?"],source:S.code},
-  {id:"ghas-code-010",domain:D.code,prompt:"A security team chooses security-extended instead of the default CodeQL query suite. What trade-off should it expect?",choices:["Only dependency license findings","Additional security queries with potentially more lower-confidence findings","No default security queries at all","Guaranteed elimination of false positives"],correct:1,explanations:["These are code-analysis query suites, not license checks.","The extended suite includes default queries and additional queries with lower precision.","It includes rather than removes the default suite.","Broader coverage can increase false positives."],concept:"Extended query-suite trade-offs",hints:["Does broader detection always preserve the same precision?","What does the extended suite add to the default set?"],source:S.queries},
-  {id:"ghas-code-011",domain:D.code,prompt:"What is a CodeQL query pack used for in customized analysis?",choices:["Storing revoked tokens","Scheduling Dependabot updates","Distributing queries and their required dependencies","Replacing every package manifest"],correct:2,explanations:["Query packs are not credential stores.","Dependabot uses separate configuration.","Published query packs package reusable analysis logic and dependencies.","They do not replace application dependency declarations."],concept:"Reusable CodeQL query packs",hints:["What artifact makes analysis logic portable?","How are query dependencies supplied consistently?"],source:S.codeql},
-  {id:"ghas-code-012",domain:D.code,prompt:"A code-scanning alert has general severity Warning and security severity High. Which severity does GitHub prefer for its displayed security risk?",choices:["Warning, because general severity always overrides security severity","A combined Warning-High severity from a separate ranking scale","Whichever severity value was added to the result first","High, when security severity is present"],correct:3,explanations:["Security severity takes preference when present.","GitHub does not define this combined severity scale.","Field insertion order is not the documented precedence rule.","GitHub displays and uses security severity in preference to general severity."],concept:"General versus security severity",hints:["What does each severity field describe?","Which precedence rule applies when both are available?"],source:S.alerts},
-  {id:"ghas-code-013",domain:D.code,prompt:"A fix is merged for a code-scanning alert. What should confirm remediation in the scanning workflow?",choices:["Successful subsequent analysis of the relevant code no longer reports the issue","The pull request's ordinary unit-test job passed, without running analysis","A previous scan of the parent commit was successful","An administrator manually dismissed the alert before rescanning"],correct:0,explanations:["Code scanning can close an alert when analysis confirms the triggering problem is fixed.","Ordinary tests can help but do not establish the scanner's result for the changed code.","A parent-commit scan does not verify the proposed fix.","Dismissal records a disposition, not a confirming analysis."],concept:"Verifying code-scanning fixes",hints:["Which revision was examined?","What distinguishes analysis evidence from a tracking decision?"],source:S.code},
-  {id:"ghas-code-014",domain:D.code,prompt:"An alert is demonstrably a false positive because a validated sanitizer is effective on every reported path. What is the appropriate tracking action?",choices:["Delete all scanning configuration","Dismiss the specific alert with the appropriate reason and supporting context","Mark every future alert from the tool as safe","Rewrite unrelated dependencies"],correct:1,explanations:["A local false positive does not justify removing all detection.","A justified, scoped dismissal preserves the decision context.","Other alerts may describe real weaknesses.","Unrelated dependency changes do not address this finding."],concept:"Evidence-based code-alert dismissal",hints:["How narrow is the evidence?","What explanation would let another reviewer reproduce the decision?"],source:S.alerts},
-  {id:"ghas-code-015",domain:D.code,prompt:"An external CI job must report CodeQL findings in GitHub. Which sequence is appropriate?",choices:["Create a public issue for every query match","Upload the compiler binary as an SBOM","Run CodeQL analysis in CI and upload the resulting supported SARIF","Paste the database contents into a secret pattern"],correct:2,explanations:["Issues are not the code-scanning ingestion path.","Compiler binaries are not dependency inventories or findings.","External CodeQL analysis can feed GitHub code scanning through SARIF.","Secret patterns do not ingest code databases."],concept:"External analysis result delivery",hints:["Which artifact represents query findings?","What format does the GitHub code-scanning platform ingest?"],source:S.codeql},
-  {id:"ghas-code-016",domain:D.code,prompt:"Why retain both pull-request-triggered and periodic code analysis when appropriate?",choices:["Schedules make all pull-request checks unnecessary","Periodic scans revoke leaked credentials","Pull-request scans cannot inspect application code","Change-time feedback catches new issues, while recurring scans can reevaluate existing code with current analysis"],correct:3,explanations:["Periodic scans do not provide the same immediate change feedback.","Code analysis does not revoke provider credentials.","Pull-request scanning is designed to analyze proposed changes.","Different triggers support prevention and ongoing assessment."],concept:"Analysis trigger strategy",hints:["What changes besides repository content over time?","Which trigger gives feedback closest to a proposed change?"],source:S.code},
-  {id:"ghas-code-017",domain:D.code,prompt:"Two runs of the same analyzer cover different components of one repository and should retain separate result sets. Which SARIF integration concept is relevant?",choices:["Distinct analysis categories or automation identifiers","A new ruleId for every result on every run","Identical category and automation identifiers for both component scans","Different file extensions for otherwise identical upload files"],correct:0,explanations:["Categories distinguish analyses for the same tool and repository context.","Changing rule identifiers each run undermines stable result correlation.","Reusing the same analysis identity can cause separate runs to replace each other's results.","Upload filenames alone do not establish distinct analysis identities."],concept:"Separating analysis categories",hints:["Are these the same analysis or different analysis configurations?","What information lets results remain distinct while each scan stays stable over time?"],source:S.sarif},
-  {id:"ghas-code-018",domain:D.code,prompt:"A third-party SARIF result lacks the remediation guidance present in some CodeQL findings. Which interpretation is accurate?",choices:["The result must be a secret-scanning alert","Not all tools or custom queries provide every property seen in default CodeQL alerts","All third-party uploads are invalid","GitHub always invents missing remediation instructions"],correct:1,explanations:["Missing guidance does not change the alert family.","Result detail depends partly on the producing tool and query metadata.","Valid third-party results can have fewer properties.","The platform does not guarantee invented guidance for missing fields."],concept:"Tool-dependent alert detail",hints:["Who supplies the finding's metadata?","Does a shared display imply identical content from every producer?"],source:S.alerts},
-  {id:"ghas-code-019",domain:D.code,prompt:"Several request handlers pass unsafe data into the same vulnerable operation. Why might code scanning display one alert with multiple paths?",choices:["Only one handler can be executed","The paths are necessarily false positives","Related paths to the same vulnerability may be grouped under one alert","Only the shortest path is analyzed"],correct:2,explanations:["Multiple handlers can be reachable.","Multiple paths do not establish a false positive.","GitHub can group related paths to show a vulnerability's full scope.","The display can include multiple paths rather than only one."],concept:"Multiple-path alert grouping",hints:["What is shared by the reported flows?","Would one alert necessarily mean one entry point?"],source:S.alerts},
-  {id:"ghas-code-020",domain:D.code,prompt:"A repository includes generated test assets that receive code-scanning findings. What should a reviewer know about GitHub's file category labels?",choices:["Developers manually set every alert's file category","Test labels guarantee the issue is harmless","File categories are dependency license categories","GitHub derives such file categories from paths; context still requires review"],correct:3,explanations:["GitHub categorizes source files by path.","Test code can still create security risk.","These labels describe code location, not package licensing.","Path-based labels help contextualize findings but do not decide risk acceptance."],concept:"Code-location category labels",hints:["What does the label describe: location or exploitability?","Can a test-related process have meaningful privileges?"],source:S.alerts},
-  {id:"ghas-code-021",domain:D.code,prompt:"An organization uses an internal framework that CodeQL does not fully model. What can improve dataflow understanding?",choices:["Add appropriate framework models through supported CodeQL customization","Rename all framework methods to safe","Disable every flow query","Treat missing alerts as proof the framework sanitizes data"],correct:0,explanations:["Models can describe how data flows through custom dependencies.","Names alone do not establish safe behavior.","Disabling queries loses detection rather than improving understanding.","Missing models can cause missed flows."],concept:"Custom framework modeling",hints:["What behavior is unknown to the analyzer?","How could analysis learn the framework's sources, sinks, and flow steps?"],source:S.codeql},
-  {id:"ghas-code-022",domain:D.code,prompt:"A scan takes too long after custom queries are added. What is a useful first optimization step that preserves risk awareness?",choices:["Dismiss all existing alerts","Measure which analysis stage or query causes the delay before narrowing coverage","Disable the default branch scan without checking logs","Remove every query with a high severity"],correct:1,explanations:["Dismissal does not improve query execution time.","Evidence-based profiling supports targeted performance changes.","Blindly removing scans can create coverage gaps.","Severity does not directly identify performance cost."],concept:"Evidence-driven scan optimization",hints:["Where is time actually spent?","What security coverage would a proposed optimization remove?"],source:S.codeql},
-  {id:"ghas-code-023",domain:D.code,prompt:"A maintainer adds pull_request path filters to an analysis workflow. What should they evaluate?",choices:["Whether filtering makes all existing alerts false positives","Whether paths automatically revoke tokens","Whether relevant code changes could now avoid the intended analysis","Whether dependency licenses are renamed"],correct:2,explanations:["Trigger filters do not invalidate prior findings.","Path filters do not affect issuer credentials.","Narrowing triggers can unintentionally skip security-relevant changes.","Workflow trigger paths do not rename license metadata."],concept:"Trigger filtering coverage",hints:["Which changes will actually start the workflow?","Could shared code outside the selected paths affect the application?"],source:S.advanced},
-  {id:"ghas-code-024",domain:D.code,prompt:"A team wants a SARIF finding to link to the correct repository file. What must the integration represent consistently?",choices:["The package-registry hostname only","The organization's billing contact","The alert's notification count","Source locations and their paths relative to the analyzed repository root"],correct:3,explanations:["Registry location does not identify a source finding.","Billing contacts do not map source locations.","Notification counts are unrelated to file mapping.","Consistent source URIs allow GitHub to match findings to committed files."],concept:"SARIF source-location mapping",hints:["Which file did the analyzer inspect?","How does an absolute CI path map to a repository-relative location?"],source:S.sarif},
-  {id:"ghas-code-025",domain:D.code,prompt:"CodeQL analyzes Java and Kotlin in the same supported language family. Which language identifier is documented for this analysis?",choices:["java-kotlin","jvm-anything","kotlin-only","java-script"],correct:0,explanations:["java-kotlin is the documented identifier for Java, Kotlin, or both.","This is not the documented identifier.","This is not the combined supported language identifier.","JavaScript is a different language family."],concept:"CodeQL language identifiers",hints:["Do related source languages share an analysis extractor?","Which identifier explicitly names both languages?"],source:S.codeql},
-  {id:"ghas-code-026",domain:D.code,prompt:"A project wants CodeQL analysis for both JavaScript and TypeScript. Which documented language identifier covers both?",choices:["typescript-isolated","javascript-typescript","java-kotlin","ecmascript-all"],correct:1,explanations:["This is not the documented combined identifier.","javascript-typescript covers JavaScript, TypeScript, or both.","This identifies the Java/Kotlin family.","This is not the documented CodeQL identifier."],concept:"Combined JavaScript and TypeScript analysis",hints:["Are the languages analyzed through a shared family?","Which spelling corresponds to the documented extractor?"],source:S.codeql},
-  {id:"ghas-code-027",domain:D.code,prompt:"A CodeQL workflow upload fails after analysis succeeded. What is the best interpretation of the repository's unchanged alert list?",choices:["Every issue was fixed","No further diagnosis is necessary","The analysis may exist in CI but was not successfully ingested into GitHub","The application must contain no supported code"],correct:2,explanations:["An upload failure does not indicate code remediation.","Delivery failure needs investigation.","Analysis execution and result ingestion are separate stages.","An ingestion problem does not prove language incompatibility."],concept:"Analysis versus ingestion success",hints:["Did both production and delivery of results complete?","Which stage supplies the repository's visible alert state?"],source:S.code},
-  {id:"ghas-code-028",domain:D.code,prompt:"A developer says a CodeQL database is a database of known CVEs. Which description is correct?",choices:["It stores only revoked secrets","It is the dependency graph's SPDX export","It is the GitHub Advisory Database mirror","It represents the analyzed code so queries can reason about program structure and behavior"],correct:3,explanations:["Credential revocation is unrelated to CodeQL databases.","SPDX exports inventory dependencies.","The Advisory Database stores vulnerability knowledge, not the code representation used by CodeQL.","CodeQL treats code as data for query-based analysis."],concept:"CodeQL database purpose",hints:["What input is extracted before running code queries?","Is the database about the project's code or published vulnerability records?"],source:S.codeql},
-  {id:"ghas-code-029",domain:D.code,prompt:"An organization broadens analysis from default to security-extended and receives more findings. Which conclusion is most defensible before triage?",choices:["Coverage changed, so additional findings need review rather than automatic rejection","Every new result is necessarily a false positive","The application became vulnerable only when the suite changed","The dependency graph must have been corrupted"],correct:0,explanations:["Additional queries can reveal existing issues or lower-confidence matches.","Extended findings can include real vulnerabilities.","Detection timing is not necessarily introduction timing.","Query-suite changes do not imply dependency-graph corruption."],concept:"Interpreting suite expansion",hints:["Did the code change or only the questions asked of it?","How does broader coverage affect the need for triage?"],source:S.queries},
-  {id:"ghas-code-030",domain:D.code,prompt:"A team wants code-quality findings in addition to the broader security query set. Which built-in suite adds maintainability and reliability queries?",choices:["default only","security-and-quality","A Dependabot update group","A generic secret pattern"],correct:1,explanations:["The default suite emphasizes precise security queries rather than the expanded quality set.","security-and-quality extends security-extended with maintainability and reliability checks.","Update groups manage dependency proposals.","Secret patterns detect credentials."],concept:"Security and quality query suite",hints:["Which suite expands beyond vulnerability checks?","What kinds of findings concern long-term code health?"],source:S.queries},
-  {id:"ghas-operations-001",domain:D.operations,prompt:"An incident report references CVE-YYYY-NNNN. What does the CVE identifier primarily identify?",choices:["A specific repository's alert instance","A broad class of coding weakness","A specific vulnerability record in the CVE system","A required remediation deadline"],correct:2,explanations:["One vulnerability can affect many repository alert instances.","CWE identifiers classify weakness types.","A CVE identifier names a particular tracked vulnerability, not a weakness category.","A CVE identifier does not encode an organization's deadline."],concept:"CVE versus alert identity",hints:["Can the same identifier affect many projects?","Is it naming an instance, a weakness category, or a disclosure record?"],source:S.advisory},
-  {id:"ghas-operations-002",domain:D.operations,prompt:"A triage team groups several unrelated injection findings under a CWE. What does that grouping represent?",choices:["A single publicly tracked vulnerability","An advisory's patched-version range","A unique repository alert instance","A shared weakness category rather than one specific vulnerability"],correct:3,explanations:["CVE identifies a particular vulnerability rather than a recurring weakness category.","Affected and patched versions describe individual advisory applicability.","Repository alert identity differs from a general weakness classification.","CWE describes weakness types that can recur in different vulnerabilities."],concept:"CWE classification",hints:["Can different products make the same kind of mistake?","What distinguishes a type of defect from one disclosed occurrence?"],source:"https://docs.github.com/en/code-security/reference/supply-chain-security/criteria-for-preset-rules"},
-  {id:"ghas-operations-003",domain:D.operations,prompt:"What does a GHSA identifier identify in GitHub's vulnerability ecosystem?",choices:["A GitHub security advisory record","An organization-wide remediation policy","A CodeQL database build","A dependency-review run's status"],correct:0,explanations:["Each advisory has a unique GHSA identifier.","Policies have separate configuration and identity.","CodeQL database builds are not GHSA records.","A check run is not a security advisory."],concept:"GHSA record identity",hints:["Which database assigns this identifier?","Could the advisory also link to a CVE?"],source:S.database},
-  {id:"ghas-operations-004",domain:D.operations,prompt:"A vulnerability has a high EPSS score. What does that signal mean?",choices:["Its fix is guaranteed to be easy","The model estimates a relatively high likelihood of exploitation in the next 30 days","Every affected repository is already compromised","Its source code must be public"],correct:1,explanations:["EPSS estimates exploitation, not remediation effort.","EPSS predicts near-term exploitation likelihood.","A probability estimate is not evidence every installation was exploited.","EPSS does not determine source visibility."],concept:"EPSS interpretation",hints:["Is the metric about impact, likelihood, or effort?","Does a forecast establish that a specific incident occurred?"],source:S.database},
-  {id:"ghas-operations-005",domain:D.operations,prompt:"A dependency advisory has EPSS probability 2% and percentile 90. Which interpretation is correct?",choices:["There is a 90% exploitation probability","Exactly 2% of this repository's files are affected","Its modeled exploitation probability is 2%, ranking above about 90% of scored vulnerabilities","The patch is 90% compatible"],correct:2,explanations:["Percentile is relative ranking, not the event probability.","EPSS does not measure affected file percentage.","Probability and percentile describe likelihood and relative position respectively.","Patch compatibility is a different metric."],concept:"EPSS probability versus percentile",hints:["What does percentile compare against?","Which number is the modeled event probability?"],source:S.database},
-  {id:"ghas-operations-006",domain:D.operations,prompt:"Two alerts have the same severity, but only one affects an internet-facing production path with an available exploit. What should guide remediation order?",choices:["Severity alone, treating every equally rated alert as equally urgent","Age alone, always working oldest first","Patch effort alone, always fixing the easiest issue first","Exposure, exploitability, asset impact, and available mitigation"],correct:3,explanations:["Equal severity does not establish equal practical risk.","Age can matter but does not capture the stated exposure difference.","Ease of fixing is not the sole measure of urgency.","Context differentiates risks with identical severity labels."],concept:"Context-aware risk prioritization",hints:["Which facts differ between the two deployments?","What would a severity-only queue fail to account for?"],source:S.metrics},
-  {id:"ghas-operations-007",domain:D.operations,prompt:"A critical alert is dismissed as accepted risk. Which record makes the decision most useful for future review?",choices:["Rationale, accountable owner, compensating controls, and a review date","Only a thumbs-up reaction","Only the number of alerts remaining","A statement that dismissal patched the code"],correct:0,explanations:["A reviewable exception captures context and accountability.","A reaction does not explain risk acceptance.","Queue size does not justify this decision.","Dismissal does not patch vulnerable code."],concept:"Documented risk acceptance",hints:["What would a new reviewer need to understand the decision?","When should the team revisit assumptions?"],source:S.alerts},
-  {id:"ghas-operations-008",domain:D.operations,prompt:"A false-positive assessment covers one path, but the alert also lists other paths to the unsafe operation. What should happen before dismissal?",choices:["Assume every path has the same validation as the reviewed path","Review all relevant reported paths for the asserted protection","Dismiss the alert because at least one safe path exists","Treat the shared sink as proof that all input is trusted"],correct:1,explanations:["Different paths can have different checks.","Evidence must address the full scope of the finding.","One safe path does not make other unsafe paths harmless.","A shared sink can receive both validated and unvalidated input."],concept:"Complete dataflow triage",hints:["What evidence exists for the unreviewed paths?","Which shared components do not necessarily imply shared validation?"],source:S.alerts},
-  {id:"ghas-operations-009",domain:D.operations,prompt:"A security campaign needs to be actionable for developers. Which design is most effective?",choices:["Include every unrelated alert with no owner","Use a deadline without any support contact","Select a coherent alert set, explain priority, identify a contact, and set a remediation target","Use only raw repository counts"],correct:2,explanations:["An unbounded unrelated set makes ownership and focus difficult.","A deadline alone omits support and context.","Campaigns work best as clear, collaborative remediation objectives.","Counts alone do not tell developers what to fix."],concept:"Actionable campaign design",hints:["Can an assigned developer identify the concrete next step?","Who helps resolve uncertainty about the remediation?"],source:S.campaigns},
-  {id:"ghas-operations-010",domain:D.operations,prompt:"A campaign reaches its target date with unresolved valid alerts. What should the security lead do?",choices:["Declare them fixed because the date passed","Remove them from every report","Treat the deadline as automatic risk acceptance","Review remaining owners and blockers, escalate risk, and update the remediation plan"],correct:3,explanations:["Time passing does not change vulnerable behavior.","Hiding alerts obscures remaining work.","Risk acceptance requires an accountable decision.","Review and escalation keep unresolved risk visible and owned."],concept:"Campaign follow-through",hints:["What did the date signify?","What evidence shows whether the underlying risk remains?"],source:S.campaigns},
-  {id:"ghas-operations-011",domain:D.operations,prompt:"An organization closes many alerts by disabling analysis on active repositories. Why is this not reliable evidence of risk reduction?",choices:["Reduced detection can reduce visible findings without fixing vulnerabilities","Every disabled scan necessarily discovers more issues","Disabling analysis automatically rotates credentials","Repository count is the only valid outcome metric"],correct:0,explanations:["Reporting coverage and actual remediation must be distinguished.","Disabled analysis does not inherently detect anything.","Analysis settings do not rotate external credentials.","Outcome assessment needs more than repository counts."],concept:"Avoiding misleading closure metrics",hints:["What changed: code or visibility?","What denominator is needed when comparing alert totals?"],source:S.overview},
-  {id:"ghas-operations-012",domain:D.operations,prompt:"A pull request addresses a vulnerability but breaks required authorization behavior. Should it be considered a successful remediation?",choices:["Yes, because fewer alerts matter more than behavior","No; the fix must address the weakness while preserving intended security and functionality","Yes, if an automated tool suggested it","No, because security changes must never modify code"],correct:1,explanations:["Alert count alone does not establish a correct fix.","Regression validation is part of successful remediation.","Generated changes still require review.","Code changes are often necessary to remediate vulnerabilities."],concept:"Security regression validation",hints:["What security properties must remain true after the change?","Could removing one symptom introduce another weakness?"],source:S.code},
-  {id:"ghas-operations-013",domain:D.operations,prompt:"A dependency has high severity but low EPSS. Which conclusion is most appropriate?",choices:["It is not a real vulnerability","It can never be exploited","It may have high impact despite lower modeled near-term exploitation likelihood","The package is automatically approved"],correct:2,explanations:["Low predicted exploitation does not invalidate the advisory.","Probabilities can change and are not impossibility statements.","Severity and exploitation likelihood describe different risk dimensions.","A model score does not grant policy approval."],concept:"Severity versus exploitation likelihood",hints:["What harm could exploitation cause?","How does likelihood differ from impact?"],source:S.database},
-  {id:"ghas-operations-014",domain:D.operations,prompt:"An advisory has no EPSS value. How should a triage team interpret the missing value?",choices:["As a guaranteed zero probability","As a guarantee of exploitation","As proof that the alert was dismissed","As unavailable data, requiring other risk evidence rather than an invented score"],correct:3,explanations:["Missing data is not a numeric zero.","Absence of a score does not prove exploitation.","Score availability is not the alert's state.","EPSS coverage depends on corresponding CVE data and should not be fabricated."],concept:"Missing exploitation metrics",hints:["What conditions are needed for an advisory to have EPSS data?","Which other context remains available?"],source:S.database},
-  {id:"ghas-operations-015",domain:D.operations,prompt:"A security team wants to triage all open dependency alerts with fixes available and high exploitability. Which approach best fits GitHub's metrics views?",choices:["Combine patch-availability and exploitability filters, then review application context","Sort repositories by name only","Dismiss alerts without patches and stop tracking them","Filter only by the author's email address"],correct:0,explanations:["Combined metrics help focus actionable risk while retaining context.","Alphabetical ordering does not identify urgent fixable risk.","No patch does not mean no risk or no mitigation.","Author identity alone is not this risk selection."],concept:"Risk-focused dependency filters",hints:["Which alerts can be acted on immediately?","Which evidence suggests likely near-term exploitation?"],source:S.metrics},
-  {id:"ghas-operations-016",domain:D.operations,prompt:"A bulk dismissal proposal includes valid, false-positive, and uninvestigated alerts. What is the best response?",choices:["Dismiss them all under the same reason to save time","Separate alerts by evidence and disposition before applying bulk actions","Treat all old alerts as false positives","Use the most optimistic assessment for every alert"],correct:1,explanations:["A uniform reason would misrepresent different situations.","Bulk action should not replace alert-specific or genuinely shared justification.","Age does not establish a false positive.","Uncertainty should not be converted into assumed safety."],concept:"Evidence-preserving bulk triage",hints:["Do all selected alerts share the same justification?","What would the audit trail imply after the action?"],source:S.triage},
-  {id:"ghas-operations-017",domain:D.operations,prompt:"A team tunes away noisy CodeQL findings by removing an entire query category. What should be reviewed before accepting the change?",choices:["Only whether the alert list looks smaller","Only whether YAML syntax is valid","Which true-positive risks lose coverage and whether a narrower tuning option exists","Only whether workflow runtime decreases"],correct:2,explanations:["A smaller list may hide real risk.","Valid syntax does not establish a sound detection policy.","Coverage loss must be weighed against precision and workload gains.","Runtime is only one part of the trade-off."],concept:"Risk-aware detection tuning",hints:["What security questions will no longer be asked?","Can the noisy condition be scoped more narrowly?"],source:S.queries},
-  {id:"ghas-operations-018",domain:D.operations,prompt:"A maintainer receives a private vulnerability report and needs to collaborate on a fix before disclosure. What is the safest GitHub-centered workflow?",choices:["Post the full report in a public issue immediately","Paste confidential details into a public dependency-review comment","Wait until a public exploit appears before responding","Use private collaboration through a repository security advisory and coordinate publication"],correct:3,explanations:["Immediate public disclosure can expose users before a patch.","Public comments can prematurely disclose sensitive vulnerability information.","Delaying response increases exposure.","Private advisory workflows support coordinated remediation and disclosure."],concept:"Private remediation coordination",hints:["Who needs the information before a fix is ready?","How can disclosure timing protect affected users?"],source:S.advisory},
-  {id:"ghas-operations-019",domain:D.operations,prompt:"A maintainer requests a CVE for a draft GitHub security advisory. Does that request itself publish the advisory?",choices:["No; requesting a CVE does not itself make the advisory public","Yes; every CVE request immediately publishes the draft","Yes; private collaboration becomes impossible","No; because GitHub can never assign CVEs"],correct:0,explanations:["CVE reservation and advisory publication are distinct steps.","Requesting an identifier does not inherently publish the advisory.","Private collaboration can continue before publication.","GitHub is a CVE Numbering Authority in eligible cases."],concept:"CVE reservation versus publication",hints:["Is reserving an identifier the same as disclosing details?","Which action controls advisory visibility?"],source:S.advisory},
-  {id:"ghas-operations-020",domain:D.operations,prompt:"A support engineer asks to copy a production token from a secret alert into a troubleshooting ticket. What is the best collaboration approach?",choices:["Share it with everyone so any person can test it","Use a restricted alert reference and necessary redacted context instead","Publish it in the advisory database","Treat a ticket as an approved credential store"],correct:1,explanations:["Broad sharing propagates the credential.","Restricted references and redacted context support response without needless exposure.","Advisories are not a credential-sharing channel.","Ticketing tools should not be assumed to be credential stores."],concept:"Least-exposure incident communication",hints:["Who needs access to the sensitive value itself?","Could a reference preserve context without duplicating the secret?"],source:S.secrets},
-  {id:"ghas-operations-021",domain:D.operations,prompt:"A risk exception was justified because a vulnerable endpoint was unreachable. The service is now exposed publicly. What should happen?",choices:["Retain the exception forever because it was once approved","Delete the original evidence","Reassess the exception and remediation priority because its assumptions changed","Treat the endpoint as patched automatically"],correct:2,explanations:["Risk acceptance depends on continuing validity of assumptions.","Evidence supports understanding why reassessment is necessary.","Changed exposure can materially change risk.","Exposure changes do not fix vulnerable code."],concept:"Revalidating exceptions",hints:["What facts supported the original decision?","Are those facts still true?"],source:S.alerts},
-  {id:"ghas-operations-022",domain:D.operations,prompt:"A repository's alert count increases after previously missing languages are scanned. How should leaders evaluate the increase?",choices:["As proof that developers introduced every issue yesterday","As proof the scanner is broken","As a reason to remove the new language coverage","As potentially improved visibility, comparing coverage and introduction dates before judging performance"],correct:3,explanations:["Discovery and introduction dates can differ.","More findings can result from valid expanded analysis.","Removing coverage hides rather than resolves findings.","Coverage-aware interpretation avoids confusing discovery with regression."],concept:"Coverage-adjusted security trends",hints:["What changed in the measurement process?","Were these issues previously observable?"],source:S.overview},
-  {id:"ghas-operations-023",domain:D.operations,prompt:"An organization wants to measure remediation effectiveness rather than only scanner activity. Which evidence is strongest?",choices:["Validated fixes and reduced unresolved risk over time, interpreted with coverage","Total workflow log lines","Number of times the dashboard was opened","The number of notification recipients"],correct:0,explanations:["Verified remediation is closer to risk reduction than activity counts.","Log volume does not prove vulnerabilities were fixed.","Dashboard viewing is activity, not an outcome.","More recipients do not establish remediation."],concept:"Outcome-focused security metrics",hints:["Did the underlying issue change?","Could activity increase while risk remains unchanged?"],source:S.metrics},
-  {id:"ghas-operations-024",domain:D.operations,prompt:"A code alert is assigned to a developer who no longer maintains the affected service. What is the best operational response?",choices:["Assume assignment alone guarantees completion","Reassign to the current accountable owner and preserve context and urgency","Close it because the original assignee left","Remove it from campaign tracking"],correct:1,explanations:["Assignment without an active owner can stall.","Accurate ownership keeps remediation actionable.","Personnel changes do not remove a vulnerability.","Removing tracking can hide unresolved risk."],concept:"Maintaining alert ownership",hints:["Who can change and test this service now?","What context must survive the handoff?"],source:S.campaigns},
-  {id:"ghas-operations-025",domain:D.operations,prompt:"An automatically generated fix removes an unsafe operation but also suppresses all validation errors. What should the reviewer do?",choices:["Merge because the original sink disappeared","Dismiss the alert before tests run","Review the changed security behavior and revise or reject the fix if necessary","Disable the query to match the new behavior"],correct:2,explanations:["Removing a sink does not establish correct error handling.","Dismissal is not validation.","Generated fixes require security and functional review.","Changing detection to accommodate a bad fix hides risk."],concept:"Autofix semantic review",hints:["What behavior changed beyond the reported issue?","Could the new control flow create another security problem?"],source:S.code},
-  {id:"ghas-operations-026",domain:D.operations,prompt:"A team plans to accept risk because a vulnerable function appears unused. Which evidence would best support the assessment?",choices:["A lack of direct imports, without checking indirect callers","A package-wide test pass, without testing the affected path","A developer's recollection that the feature is rarely used","A documented reachability and usage analysis for the affected deployment"],correct:3,explanations:["Indirect usage can still make the function reachable.","General tests may not establish whether the vulnerable behavior can execute.","Recollection is weaker than a reproducible deployment-specific assessment.","Deployment-specific evidence can support a scoped risk assessment."],concept:"Reachability-based triage",hints:["Which evidence actually establishes execution paths?","Which configuration and deployment were evaluated?"],source:S.metrics},
-  {id:"ghas-operations-027",domain:D.operations,prompt:"A campaign concentrates on one weakness pattern across several services. What remediation strategy provides the best reusable benefit?",choices:["Identify the common cause, share a reviewed fix pattern, and validate it in each service","Apply an unreviewed identical patch to every repository","Dismiss all findings in files with similar names","Assume one fixed repository proves all others are safe"],correct:0,explanations:["Shared knowledge helps, while per-service validation respects context.","Similar findings can have different code requirements.","Names do not prove false positives.","One fix does not modify other repositories."],concept:"Reusable remediation with local validation",hints:["What part of the solution transfers?","What still depends on each service's behavior?"],source:S.campaigns},
-  {id:"ghas-operations-028",domain:D.operations,prompt:"An alert was automatically dismissed under a policy, but new metadata increases its risk. What capability should the team understand?",choices:["Auto-dismissal permanently erases the alert","Auto-dismissed alerts can be reviewed and may be reopened when metadata changes","A policy makes future risk changes impossible","New metadata only affects commit messages"],correct:1,explanations:["Auto-dismissed alerts remain available.","Metadata changes can alter whether the dismissal policy remains appropriate.","Policies do not freeze vulnerability knowledge.","Risk metadata belongs to the alert context."],concept:"Reopening auto-triaged risk",hints:["What assumptions did the rule use?","Can changing facts make an earlier disposition obsolete?"],source:S.triage},
-  {id:"ghas-operations-029",domain:D.operations,prompt:"A fix is deployed for the default branch but a supported release branch still contains the same vulnerability. What should the response owner evaluate?",choices:["Whether a default-branch fix can be treated as automatically applied to every release","Whether older supported releases can be omitted from the response merely because they are not default","Whether supported releases need a backport or other mitigation","Whether closing the default-branch alert also proves installed releases are patched"],correct:2,explanations:["Branch changes do not automatically propagate into other release lines.","Support commitments and affected versions still matter.","Supported versions can require separate remediation work.","An alert's default-branch state does not establish every deployed version's safety."],concept:"Supported-version remediation scope",hints:["Which versions are users still running?","What changes actually reached each supported release?"],source:S.advisory},
-  {id:"ghas-operations-030",domain:D.operations,prompt:"A valid alert cannot be fixed within the target period. Which response best preserves governance?",choices:["Choose false positive to stop reminders","Remove the repository from reports","Wait silently until a scanner update","Escalate with impact, mitigation, accountable approval, and a revised plan"],correct:3,explanations:["False positive would misrepresent a genuine issue.","Removing reporting conceals risk.","Silence does not manage the missed target.","Explicit escalation and an approved plan make unresolved risk accountable."],concept:"Remediation-target exceptions",hints:["Who can accept the residual risk?","What temporary measures reduce exposure while work continues?"],source:S.campaigns},
-  {id:"ghas-operations-031",domain:D.operations,prompt:"A dependency patch resolves one advisory but the same installed package remains affected by another. What should the team conclude?",choices:["Remediation is advisory- and version-specific; assess the remaining alert separately","Any upgrade resolves every advisory for that package","The second alert must be a duplicate","The dependency graph should be disabled"],correct:0,explanations:["Different vulnerabilities can have different affected and patched ranges.","An upgrade may fix some but not all vulnerabilities.","Same-package alerts need not describe the same issue.","Disabling inventory does not remove the remaining vulnerability."],concept:"Advisory-specific remediation validation",hints:["Are the patched-version ranges identical?","What does each remaining advisory say about the installed version?"],source:S.database},
-  {id:"ghas-operations-032",domain:D.operations,prompt:"An operations dashboard shows many closed alerts. Which distinction is essential when explaining actual risk reduction?",choices:["Closed alerts always represent deployed fixes","Fixed, dismissed, and automatically dismissed outcomes may have different meanings","Every dismissal means the original alert was false","All closure reasons can be treated as equivalent"],correct:1,explanations:["Closure can reflect triage rather than remediation.","Closure reasons distinguish remediation from risk decisions and automation.","Valid findings can be dismissed for other reasons.","Combining all reasons can overstate reduction in underlying risk."],concept:"Interpreting closure dispositions",hints:["Why did each alert leave the open queue?","Which outcomes changed vulnerable code or credentials?"],source:S.triage},
-  {id:"ghas-operations-033",domain:D.operations,prompt:"A reviewer sees multiple repository alerts referencing the same GHSA. What can legitimately explain this?",choices:["GHSA identifiers must be unique to each repository alert","The advisory database generated random duplicates","The same advisory can affect several repositories or dependency locations","All but one alert should be deleted automatically"],correct:2,explanations:["GHSA identifies an advisory rather than a single repository instance.","Repeated references can be legitimate.","One vulnerability can have many affected dependency instances.","Each affected instance may need separate remediation."],concept:"Advisory versus affected instances",hints:["Is a disclosure record the same thing as an installation?","How many projects can use the same vulnerable package?"],source:S.database},
-  {id:"ghas-operations-034",domain:D.operations,prompt:"A secret is revoked, but investigation indicates unauthorized use before revocation. What should the response team do?",choices:["Assume revocation reverses all past access","Reopen the token at the provider","Publish the full token to warn users","Continue incident investigation and impact response while keeping the credential invalid"],correct:3,explanations:["Revocation prevents future use, not past consequences.","Reactivation would restore exposure.","Publishing the token adds unnecessary disclosure.","Containment and investigation address different parts of incident response."],concept:"Containment versus incident impact",hints:["What can revocation undo?","Which consequences may persist after authentication is blocked?"],source:S.secrets},
-  {id:"ghas-operations-035",domain:D.operations,prompt:"A team writes regression tests after fixing a vulnerable input-handling path. What should those tests primarily establish?",choices:["The unsafe case is rejected or handled safely while valid behavior still works","Only that the alert count is hidden","Only that the workflow file parses","That every future vulnerability is impossible"],correct:0,explanations:["Tests should cover the security condition and legitimate application behavior.","Hiding counts does not test the application.","Workflow syntax does not establish the code fix.","Tests provide evidence for tested behavior, not universal guarantees."],concept:"Security regression test objectives",hints:["Which input previously triggered the weakness?","What valid behavior should the fix preserve?"],source:S.code},
-  {id:"ghas-operations-036",domain:D.operations,prompt:"Security and development disagree about whether a reported sanitizer is effective. What is the best next step?",choices:["Dismiss based on whoever has more repository permissions","Inspect the modeled flow and implementation together, using reproducible evidence","Stop all future scanning","Replace the discussion with an unverified severity label"],correct:1,explanations:["Permission level is not evidence of correctness.","Collaborative evidence-based review can establish whether the path is protected.","Removing scanning does not resolve the technical question.","A label alone does not demonstrate sanitizer behavior."],concept:"Cross-role technical triage",hints:["What claim can be tested or traced?","Which code or analysis evidence would resolve the disagreement?"],source:S.alerts},
-  {id:"ghas-operations-037",domain:D.operations,prompt:"An organization wants to address newly introduced vulnerabilities separately from its historical backlog. Which program combines the goals effectively?",choices:["Only quarterly backlog reviews","Only a release-day scan","Preventive pull-request checks plus owned, prioritized backlog remediation","Automatically dismiss every old finding"],correct:2,explanations:["Backlog reviews alone do not prevent new introductions.","Release-day feedback arrives late and omits sustained backlog ownership.","Prevention and backlog remediation address different phases of risk.","Age-based dismissal can hide unresolved vulnerabilities."],concept:"Balancing prevention and backlog reduction",hints:["Which control acts on new changes?","Which process handles risks already present?"],source:S.campaigns},
-  {id:"ghas-operations-038",domain:D.operations,prompt:"A security campaign contains a proposed fix that developers do not understand. What is the best use of the campaign's named contact?",choices:["Automatically approve the patch without review","Transfer ownership of every repository permanently","Override all tests for the campaign","Clarify risk, expected remediation, and review support so developers can implement safely"],correct:3,explanations:["A named contact is not a reason to bypass review.","Campaign contact does not imply repository ownership transfer.","Tests remain necessary.","The contact supports collaboration and resolution of remediation questions."],concept:"Campaign support responsibilities",hints:["Why does a campaign identify a person to contact?","What information blocks safe progress?"],source:S.campaigns},
-  {id:"ghas-operations-039",domain:D.operations,prompt:"A company adds a custom CodeQL pack to enforce an internal security rule. How should it evaluate the pack before broad adoption?",choices:["Test representative vulnerable and safe examples, review findings, and assess coverage and precision","Assume custom queries cannot produce false positives","Treat successful package download as validation","Remove all standard queries first"],correct:0,explanations:["Representative tests check intended detection and unintended matches.","Custom queries can be wrong or imprecise.","Download success only proves distribution worked.","Removing standard coverage is not required to evaluate additions."],concept:"Validating custom detection",hints:["What should the detector find?","What safe cases should it leave unflagged?"],source:S.codeql},
-  {id:"ghas-operations-040",domain:D.operations,prompt:"An alert remains valid but has low current business impact. Which classification avoids confusing risk acceptance with detector error?",choices:["False positive solely because impact is low","A documented lower-priority or accepted-risk decision with continued review","Fixed without a code change","Invalid because the service is small"],correct:1,explanations:["Low impact does not make a true finding false.","Risk decisions should preserve the finding's validity and context.","A fixed disposition needs remediation evidence.","Service size alone does not invalidate the issue."],concept:"Validity versus priority",hints:["Is the technical claim wrong?","How does a real issue's priority differ from its existence?"],source:S.alerts},
-  {id:"ghas-operations-041",domain:D.operations,prompt:"A new high-risk alert arrives while a lower-risk cleanup campaign is underway. What should the security team do?",choices:["Ignore all work outside the campaign until it ends","Assign urgency only by alert creation order","Reassess priorities using current risk and route the urgent issue without losing campaign accountability","Automatically add every new alert to the existing campaign"],correct:2,explanations:["Campaign scope should not block urgent response.","Chronology alone is not risk prioritization.","Operational prioritization must adapt to new risk while keeping ongoing work owned.","Unbounded campaign growth can undermine its coherent objective."],concept:"Adaptive security prioritization",hints:["Has the risk landscape changed?","Can urgent incident work and planned remediation remain separately accountable?"],source:S.metrics},
-  {id:"ghas-administration-001",domain:D.administration,prompt:"An organization wants new private repositories to receive a tested baseline automatically. Which configuration should the administrator set?",choices:["Only a template README explaining security","Only a configuration attached to one existing repository","Only an enterprise billing contact","A security configuration selected as the default for newly created private and internal repositories"],correct:3,explanations:["Documentation does not automatically apply feature settings.","An existing attachment does not itself define defaults for future repositories.","Billing contacts do not configure scanning baselines.","Default security configurations can target newly created repository visibility groups."],concept:"New-repository security defaults",hints:["Which repositories do not exist yet?","What setting governs creation-time application?"],source:S.configurations},
-  {id:"ghas-administration-002",domain:D.administration,prompt:"A repository is transferred into an organization that has a default security configuration. What should the receiving administrator do?",choices:["Apply an appropriate configuration explicitly rather than assume the new-repository default applied","Assume the default always attaches during transfer","Disable all security features before checking","Treat transfer as proof all alerts are resolved"],correct:0,explanations:["The documented new-repository default is not automatically applied to transferred repositories.","Transfer differs from creating a new repository in the organization.","Disabling controls is not necessary to assess configuration.","Ownership transfer does not fix vulnerabilities."],concept:"Transferred-repository configuration",hints:["Was the repository newly created or moved?","What events does the default configuration actually cover?"],source:S.configurations},
-  {id:"ghas-administration-003",domain:D.administration,prompt:"A security configuration enables a feature, but administrators want repository owners unable to change that configured setting locally. Which option is relevant?",choices:["The dependency-review license list","Enforce configuration","The CodeQL database name","A repository discussion category"],correct:1,explanations:["License lists control dependency policy, not configuration mutability.","Enforcement blocks local changes to enabled or disabled features covered by the configuration.","Database names do not govern repository settings.","Discussion categories do not enforce security configuration."],concept:"Security configuration enforcement",hints:["Is the issue applying a setting or preventing drift?","Which option controls whether local owners can override configured values?"],source:S.configurations},
-  {id:"ghas-administration-004",domain:D.administration,prompt:"An enforced configuration leaves a feature as not set or keeps its existing value. What should administrators avoid assuming?",choices:["That enabled settings can be included","That different repositories may retain different existing values","That every unspecified feature is also locked by enforcement","That configurations can include multiple security products"],correct:2,explanations:["Enabled settings can be included.","Preserving existing values can preserve repository differences.","Features not set by the configuration are not enforced as explicit enabled or disabled values.","Configurations can collect settings from multiple security areas."],concept:"Enforcement scope of unspecified settings",hints:["Did the configuration actually choose a value for this feature?","What does preserving an existing value imply?"],source:S.configurations},
-  {id:"ghas-administration-005",domain:D.administration,prompt:"An enterprise migrates a security process from GitHub Enterprise Cloud to GitHub Enterprise Server. What should it verify before promising feature parity?",choices:["Only that the Cloud documentation mentions the feature","Only that the same repository settings have been exported","Only that both deployments use an enterprise subscription","The installed Server version, feature documentation, licensing, and infrastructure prerequisites"],correct:3,explanations:["Cloud availability does not prove support in a particular Server release.","Exported settings cannot enable a capability absent from the destination.","Subscription category alone does not establish release-specific support.","Server features and operational requirements can vary by release and deployment."],concept:"Cloud versus Server planning",hints:["Which deployment's documentation applies?","What technical prerequisites exist beyond copied settings?"],source:S.suites},
-  {id:"ghas-administration-006",domain:D.administration,prompt:"A security team needs organization-wide alert access and security settings management without full organization ownership. Which role best fits?",choices:["Security manager","Billing manager","Outside collaborator with no repository grants","Repository triage access to one project"],correct:0,explanations:["The security-manager role is intended for organization-wide security responsibilities.","Billing administration does not provide the requested security authority.","No repository grants do not provide security oversight.","One repository's triage role does not cover organization settings."],concept:"Organization security manager role",hints:["What is the scope of responsibility?","Which role delegates security management specifically?"],source:S.roles},
-  {id:"ghas-administration-007",domain:D.administration,prompt:"What additional access implication should be considered before assigning the security-manager role?",choices:["It grants unrestricted ownership of every enterprise","It includes read access to all repositories in the organization","It grants no repository visibility","It permits only invoice review"],correct:1,explanations:["The role is organization-scoped and not unrestricted enterprise ownership.","Organization-wide repository read access accompanies the security role.","The role includes broad security visibility and repository read permissions.","Invoice review is not its purpose."],concept:"Security-manager access footprint",hints:["What code visibility is necessary for organization-wide security work?","What should access reviewers understand beyond the role's name?"],source:S.roles},
-  {id:"ghas-administration-008",domain:D.administration,prompt:"An auditor needs to know who dismissed dependency alerts and why. Which evidence is more appropriate than current alert counts alone?",choices:["The repository star history","The latest dependency lockfile only","Security audit events and alert timelines with dismissal context","The organization's public profile"],correct:2,explanations:["Stars do not record security decisions.","Lockfiles record versions, not decision actors and reasons.","Audit records and timelines provide action, actor, time, and justification context.","Public profiles do not contain alert decision histories."],concept:"Auditing alert governance",hints:["Is the question about present state or prior actions?","Where are actors and reasons recorded?"],source:"https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-dependabot-alerts/view-dependabot-alerts"},
-  {id:"ghas-administration-009",domain:D.administration,prompt:"An administrator rolls out security features to hundreds of repositories. Which sequence best controls rollout risk?",choices:["Apply untested settings everywhere and stop monitoring","Disable all repository access before reading the policy","Rely only on a message asking maintainers to enable features","Pilot representative repositories, verify successful coverage and cost implications, then expand with monitoring"],correct:3,explanations:["Unvalidated broad changes can create widespread failures.","Removing access is not a prerequisite to rollout.","Requests alone do not verify implementation.","A staged, measured rollout validates configuration, operations, and budget."],concept:"Controlled organization rollout",hints:["Which repository types could behave differently?","What evidence should a pilot produce before expansion?"],source:S.configurations},
-  {id:"ghas-administration-010",domain:D.administration,prompt:"A governance script must enumerate and update security settings at scale. What is the right integration strategy?",choices:["Use the documented security APIs with scoped permissions and inspect responses","Scrape developers' private browser data","Store an organization-owner token in every repository","Assume one successful request means all repositories changed"],correct:0,explanations:["Documented APIs support controlled automation and verifiable results.","Private browser data is not an appropriate management interface.","Duplicating powerful credentials violates least privilege.","Partial failures and differing repository conditions need per-result checking."],concept:"API-based security governance",hints:["Which authority does the automation actually need?","How will it detect partial application rather than assume success?"],source:"https://docs.github.com/en/rest/code-security/configurations"},
-  {id:"ghas-administration-011",domain:D.administration,prompt:"A security dashboard does not show a repository that an analyst expects to inspect. What should be checked before assuming the repository has no alerts?",choices:["Only whether the repository's latest build passed","The analyst's role and repository permissions, plus the view's filters","Only whether the analyst receives email notifications","Only whether another organization uses the same security configuration"],correct:1,explanations:["Build success does not establish dashboard visibility or lack of findings.","Overview data is permission-scoped and filters can narrow results.","Notification preferences do not establish access to a view.","Another organization's configuration does not determine this analyst's visible scope."],concept:"Permission-scoped security overview",hints:["Is the absence a risk result or a visibility issue?","Which scope and filters are active?"],source:S.overview},
-  {id:"ghas-administration-012",domain:D.administration,prompt:"An enterprise owner needs repository-level details from an organization's security overview. Which nuance matters?",choices:["Enterprise ownership automatically gives every organization permission","Every public reader can see private alert details","Appropriate organization-level roles and access are still required for detailed security data","Only billing access is required"],correct:2,explanations:["Enterprise ownership should not be assumed to bypass organization-level detail permissions.","Private security data is access-controlled.","Detailed visibility requires the appropriate organization role or repository access.","Billing authority does not substitute for security access."],concept:"Enterprise versus organization visibility",hints:["Which scope owns the repository-level data?","Does enterprise administration imply all organization permissions?"],source:S.overview},
-  {id:"ghas-administration-013",domain:D.administration,prompt:"A configuration uses CodeQL default setup but the organization already has specialized advanced workflows. What should be reviewed before application?",choices:["Only whether advanced workflows use the default query suite","Only whether both setups use GitHub Actions","Only whether the same languages appear in both configurations","How the chosen setting treats repositories with active advanced setup"],correct:3,explanations:["Matching query suites do not settle setup compatibility.","A shared execution platform does not determine configuration behavior.","Matching languages do not establish how existing setup will be handled.","Configuration options can distinguish enabling default setup from allowing existing advanced setup."],concept:"Preserving specialized CodeQL setup",hints:["What setup state already exists?","Which configuration behavior could preserve or disrupt that state?"],source:S.configurations},
-  {id:"ghas-administration-014",domain:D.administration,prompt:"The organization selects Enabled with advanced setup allowed in a supported security configuration. Which behavior is documented?",choices:["Enable default setup where CodeQL is not actively running while allowing active advanced setup","Delete all advanced workflows immediately","Run only secret scanning and never CodeQL","Make unsupported languages supported automatically"],correct:0,explanations:["This option supports baseline enablement without replacing active advanced analysis.","Its purpose is to allow active advanced setup.","The setting concerns CodeQL.","Configuration cannot add language support to the engine."],concept:"Advanced-setup-aware baseline",hints:["Why would this option mention advanced setup?","Which repositories still need analysis enabled?"],source:S.configurations},
-  {id:"ghas-administration-015",domain:D.administration,prompt:"A private-repository security configuration enables paid Code Security and Secret Protection features. What must administrators account for?",choices:["Only the security configuration's creation, assuming attachment has no cost implications","Relevant entitlement, usage costs or licensing, and repository eligibility","An assumption that security-product entitlement makes all analysis compute free","An assumption that public-repository availability covers all private use"],correct:1,explanations:["Applying paid features can incur usage or licensing consequences.","Private/internal feature rollout can have licensing and usage implications.","Product entitlement does not establish that every runner or Actions cost is included.","Public availability is not proof of private entitlement."],concept:"Budget-aware security enablement",hints:["Which repository visibility and products are involved?","Which costs concern product access versus execution resources?"],source:S.configurations},
-  {id:"ghas-administration-016",domain:D.administration,prompt:"A configuration successfully enables CodeQL, but no runner can execute the analysis jobs. What should the administrator verify?",choices:["Only that the organization owns a Code Security entitlement","Only that the selected query suite exists","Runner availability, labels, permissions, and analysis execution status","Only that CodeQL supports the source language"],correct:2,explanations:["Entitlement does not provide an available correctly configured runner by itself.","A valid query selection does not schedule compute.","An enabled workflow needs suitable execution infrastructure and authorization.","Language support is necessary but does not resolve an unavailable runner."],concept:"Operational prerequisites for scanning",hints:["What is the reported execution blocker?","Which conditions can be valid while a job remains unable to start?"],source:S.configurations},
-  {id:"ghas-administration-017",domain:D.administration,prompt:"Organization policy requires dependency review across repositories rather than optional per-team use. What supported approach is relevant?",choices:["Publish an optional workflow template without requiring its use","Enable Dependabot alerts and assume they block every dependency pull request","Enable dependency graphs without a required review check","Repository rulesets enforcing a required dependency-review workflow where supported"],correct:3,explanations:["Optional templates do not ensure repository adoption or enforcement.","Existing dependency alerts do not automatically implement this merge gate.","Inventory enablement does not itself create a required merge check.","Rulesets can enforce an organization-wide required dependency-review workflow."],concept:"Organization-wide dependency enforcement",hints:["Which candidate makes participation mandatory?","Which mechanism connects analysis with merge eligibility?"],source:S.review},
-  {id:"ghas-administration-018",domain:D.administration,prompt:"A team asks for a permanent exemption from secret push protection for a convenience script. What should the administrator assess first?",choices:["Whether a narrower privilege or workflow change can meet the need without skipping protection","Whether to extend the same exemption to all accounts maintained by the team","Whether a one-time successful run is sufficient justification for permanent exemption","Whether the script's private repository alone makes all secret checks unnecessary"],correct:0,explanations:["Exemption skips the control, so less broad alternatives deserve evaluation.","Broader exemption should not be the starting assumption.","One successful run does not justify removing ongoing protection indefinitely.","Private visibility does not eliminate the risk of exposed credentials."],concept:"Minimizing protection exemptions",hints:["What authority does the script actually need?","How does exception scope compare with the demonstrated requirement?"],source:S.push},
-  {id:"ghas-administration-019",domain:D.administration,prompt:"A configuration rollout reports mixed success across repository groups. How should automation report completion?",choices:["Declare success if the first repository changed","Record per-repository outcomes and investigate failures or ineligible cases","Hide repositories that failed to apply the configuration","Assume every response is transient and retry without limits"],correct:1,explanations:["The first success does not describe the entire rollout.","Granular outcomes preserve accurate coverage and actionable failure information.","Hiding failures overstates compliance.","Unbounded blind retries can repeat permanent failures or cause rate limiting."],concept:"Verifiable bulk administration",hints:["Can a bulk operation partially succeed?","Which repositories still need action?"],source:"https://docs.github.com/en/rest/code-security/configurations"},
-  {id:"ghas-administration-020",domain:D.administration,prompt:"An enforced configuration initially worked, but posture reporting later shows drift or detachment. What is the right response?",choices:["Assume enforcement can never be disrupted","Remove the repository from inventory","Investigate configuration status and documented enforcement exceptions, then restore the intended baseline","Dismiss all alerts in the affected repository"],correct:2,explanations:["Documentation notes conditions that can break enforcement.","Removing inventory hides the gap.","Monitoring and reconciliation are necessary even for enforced settings.","Alert dismissal does not repair feature settings."],concept:"Monitoring enforced configuration health",hints:["What is the current attachment and enforcement state?","Could a repository change have affected enforcement eligibility?"],source:S.configurations},
-  {id:"ghas-administration-021",domain:D.administration,prompt:"An administrator wants to leave repository-specific feature choices unchanged while applying other baseline settings. Which configuration option is appropriate for those features?",choices:["Disable them all","Force-enable them all","Delete the repository's analysis history","Keep existing settings rather than explicitly enable or disable"],correct:3,explanations:["Disabling overrides local choices.","Enabling also overrides local choices.","Deleting history is unrelated to preserving settings.","Keeping existing values preserves the repository-specific choice."],concept:"Selective security configuration",hints:["Which values should the baseline own?","What does a non-overriding setting communicate?"],source:S.configurations},
-  {id:"ghas-administration-022",domain:D.administration,prompt:"The security team recommends a query suite for default setup across the organization. What should administrators understand about this decision?",choices:["It selects analysis coverage and precision characteristics, not dependency update policy","It changes every dependency license","It automatically revokes all old tokens","It makes all future alerts human-approved"],correct:0,explanations:["Query suites govern which CodeQL checks run and their trade-offs.","Query selection does not change licensing terms.","CodeQL settings do not revoke credentials.","Analysis findings still need review and disposition."],concept:"Organization query-suite governance",hints:["Which engine uses the selected suite?","What risk and workload trade-offs come from broader queries?"],source:S.queries},
-  {id:"ghas-administration-023",domain:D.administration,prompt:"A repository maintainer should remediate alerts but should not receive unnecessary organization-wide settings authority. Which access strategy best fits?",choices:["Grant organization owner to every maintainer","Use repository-scoped permissions sufficient for the required security tasks","Publish all private alerts to avoid granting access","Remove all security specialists from the organization"],correct:1,explanations:["Organization ownership exceeds this responsibility.","Least privilege aligns access scope with actual remediation duties.","Public disclosure is not an access-management solution.","Removing specialists does not provide maintainers appropriate permissions."],concept:"Repository-scoped least privilege",hints:["Which repository and actions are needed?","What authority is unrelated to this person's work?"],source:S.roles},
-  {id:"ghas-administration-024",domain:D.administration,prompt:"A security integration's token can read alerts but cannot update them. What is the appropriate administration response?",choices:["Disable all alert access checks","Embed an organization-owner credential in the integration's logs","Check the endpoint's documented permission requirements and grant only the necessary scope","Interpret permission failure as an empty alert list"],correct:2,explanations:["Authorization protects sensitive security operations.","Logging powerful credentials creates a serious exposure.","Read and write operations can require different permissions.","A denied request is not evidence that no alerts exist."],concept:"Security API permission troubleshooting",hints:["Which specific operation failed?","Does read authority imply authority to change state?"],source:"https://docs.github.com/en/rest/code-scanning/code-scanning"},
-  {id:"ghas-administration-025",domain:D.administration,prompt:"A security overview report is used to compare organizations. What scope limitation must the report owner communicate?",choices:["It includes all local unpushed branches","It always includes repositories the viewer cannot access","It measures production exploitation directly","Its views concern default-branch information within the viewer's permitted scope"],correct:3,explanations:["Unpushed local content is not visible to GitHub.","Overview respects permissions.","Detection metrics are not direct proof of exploitation.","Documented overview scope is default branches and accessible repositories."],concept:"Security overview reporting scope",hints:["Which branches and repositories are visible?","What should a reader not infer from a missing row?"],source:S.overview},
-  {id:"ghas-administration-026",domain:D.administration,prompt:"After acquiring a company, an enterprise inventories new organizations' security settings. Which rollout approach best preserves meaningful differences while improving consistency?",choices:["Use reviewed configurations for groups with different requirements and verify coverage","Assume every organization has identical licensing and runner setup","Copy one workflow everywhere without testing","Treat an inventory spreadsheet as completed enforcement"],correct:0,explanations:["Configurations can reflect different security needs while providing reusable baselines.","Entitlement and infrastructure can vary.","Untested copying can break specialized projects.","An inventory records state but does not apply controls."],concept:"Differentiated baseline governance",hints:["Which differences are legitimate operational requirements?","How can a baseline be standardized without assuming identical projects?"],source:S.configurations},
-  {id:"ghas-administration-027",domain:D.administration,prompt:"A security-manager team contains people who no longer perform security duties. What should an access review prioritize?",choices:["Keep every member because alerts are historical","Remove unnecessary role assignments and team memberships while preserving current responsibilities","Make the team an enterprise owner","Disable scanning so the role becomes unnecessary"],correct:1,explanations:["Historical alerts do not justify indefinite broad access.","Periodic access review should align privileges with current duties.","Increasing authority worsens unnecessary access.","Removing detection is not a proper substitute for access management."],concept:"Security-role lifecycle review",hints:["Who needs organization-wide security visibility now?","How does team membership affect inherited authority?"],source:S.roles},
-  {id:"ghas-administration-028",domain:D.administration,prompt:"A new organizational security configuration has been created but not applied to existing repositories. What should administrators conclude?",choices:["Creating it automatically remediated existing vulnerabilities","Its name alone enforces settings everywhere","A configuration definition still needs appropriate application and verification","All prior repository settings were necessarily deleted"],correct:2,explanations:["Configuration creation is not vulnerability remediation.","Naming a definition does not attach it to every repository.","Defining, applying, and verifying a baseline are separate responsibilities.","Creation alone does not establish repository changes."],concept:"Definition versus application",hints:["Which repositories are actually attached?","What evidence proves the intended settings took effect?"],source:S.configurations},
-  {id:"ghas-administration-029",domain:D.administration,prompt:"An enterprise wants every security exception to be attributable to an authorized decision maker. Which governance design best supports this?",choices:["Share one broad bypass identity among all contributors","Exempt every automation account permanently","Hide exception reasons from reviewers","Use scoped bypass authority, recorded reasons, and audit review"],correct:3,explanations:["Shared identities weaken attribution.","Blanket exemptions remove review without a demonstrated need.","Concealed reasons undermine accountability.","Scoped authority and auditable evidence make exception decisions reviewable."],concept:"Auditable exception authority",hints:["Can the organization tell who made the decision?","What evidence explains why protection was bypassed?"],source:S.push},
-  {id:"ghas-administration-030",domain:D.administration,prompt:"A security rollout is complete by configuration count, but several repositories have never produced successful analysis. What is the best final acceptance criterion?",choices:["Verify effective feature coverage, successful execution, and an actionable alert-response path","Count only how many configurations exist","Count only how many enablement emails were sent","Assume the settings page is sufficient proof of operation"],correct:0,explanations:["Acceptance should cover operational detection and response rather than configured intent alone.","Definition counts do not prove application or execution.","Messages do not demonstrate controls are working.","A setting can be enabled while analysis fails."],concept:"Operational rollout acceptance",hints:["What evidence shows the control works end to end?","Who acts on a valid finding after a successful scan?"],source:S.configurations},
+    {
+        "id": "ghas-ecosystem-001",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Which separately purchasable GitHub product includes both code scanning and dependency review?",
+        "choices": [
+            "GitHub Team",
+            "GitHub Enterprise Cloud",
+            "GitHub Code Security",
+            "GitHub Secret Protection"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Team is a GitHub plan; it is not the separately purchased code-analysis product.",
+            "Enterprise Cloud is a hosting plan, not a substitute for the applicable security product entitlement.",
+            "This product includes code scanning, dependency review, and premium Dependabot capabilities.",
+            "This product focuses on detecting and preventing credential exposure."
+        ],
+        "concept": "Code Security product scope",
+        "hints": [
+            "Separate product licensing from the underlying GitHub plan.",
+            "Compare the type of risk each product addresses."
+        ],
+        "source": "https://docs.github.com/en/code-security/getting-started/github-security-features"
+    },
+    {
+        "id": "ghas-ecosystem-002",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Which paid security product groups credential-leak detection with push protection?",
+        "choices": [
+            "GitHub Team",
+            "GitHub Enterprise Cloud",
+            "GitHub Code Security",
+            "GitHub Secret Protection"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Team is a GitHub plan; it is not the separately purchased code-analysis product.",
+            "Enterprise Cloud is a hosting plan, not a substitute for the applicable security product entitlement.",
+            "This product includes code scanning, dependency review, and premium Dependabot capabilities.",
+            "This product focuses on detecting and preventing credential exposure."
+        ],
+        "concept": "Secret Protection product scope",
+        "hints": [
+            "Separate product licensing from the underlying GitHub plan.",
+            "Compare the type of risk each product addresses."
+        ],
+        "source": "https://docs.github.com/en/code-security/getting-started/github-security-features"
+    },
+    {
+        "id": "ghas-ecosystem-003",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Which dependency capability can an organization use without purchasing Code Security or Secret Protection?",
+        "choices": [
+            "Private-repository secret scanning",
+            "Dependabot alerts",
+            "Private-repository code scanning",
+            "Public-repository code scanning"
+        ],
+        "correct": 1,
+        "explanations": [
+            "On GitHub.com, private-repository secret scanning requires the applicable Secret Protection or legacy GHAS entitlement.",
+            "Basic Dependabot vulnerability alerts are available without purchasing either paid security product.",
+            "On GitHub.com, this requires an eligible organization plan and Code Security entitlement or applicable legacy GHAS licensing.",
+            "Code scanning is available free for public repositories; setup and permissions still matter."
+        ],
+        "concept": "Basic dependency alerts without a separate supply-chain license",
+        "hints": [
+            "Check repository visibility and the specific feature entitlement separately.",
+            "An umbrella security label does not mean every capability has identical availability."
+        ],
+        "source": "https://docs.github.com/en/code-security/getting-started/github-security-features"
+    },
+    {
+        "id": "ghas-ecosystem-004",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "An authorized analyst wants security overview for an organization, not one repository. Which English UI route opens that scope?",
+        "choices": [
+            "Repository > Security and quality > Secret scanning",
+            "Organization > Security and quality",
+            "Repository > Insights > Dependency graph",
+            "Repository > Security and quality > Code scanning"
+        ],
+        "correct": 1,
+        "explanations": [
+            "This repository view contains credential-exposure alerts for authorized users.",
+            "The organization tab provides security overview across accessible repositories.",
+            "The dependency graph is an inventory reached through the repository Insights tab.",
+            "This repository view lists findings from code analysis tools."
+        ],
+        "concept": "Organization security navigation",
+        "hints": [
+            "Keep repository scope distinct from organization scope.",
+            "Consider whether you are inspecting findings or the dependency inventory."
+        ],
+        "source": "https://docs.github.com/en/code-security/getting-started/github-security-features"
+    },
+    {
+        "id": "ghas-ecosystem-005",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Which security overview view answers “Which repositories have not adopted the security features?”",
+        "choices": [
+            "Overview",
+            "Campaigns",
+            "Coverage",
+            "Risk"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Overview summarizes detection, remediation, and prevention trends.",
+            "Campaigns coordinates targeted remediation work and tracks progress.",
+            "Coverage shows adoption of security features across repositories.",
+            "Risk helps investigate repositories and alerts representing current exposure."
+        ],
+        "concept": "Security feature adoption",
+        "hints": [
+            "Decide whether you need adoption, exposure, trends, or coordinated work.",
+            "Match the question to the purpose of the view, not its visual layout."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/security-at-scale/security-overview"
+    },
+    {
+        "id": "ghas-ecosystem-006",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Which security overview view is intended for investigating current exposure across alert types?",
+        "choices": [
+            "Overview",
+            "Campaigns",
+            "Coverage",
+            "Risk"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Overview summarizes detection, remediation, and prevention trends.",
+            "Campaigns coordinates targeted remediation work and tracks progress.",
+            "Coverage shows adoption of security features across repositories.",
+            "Risk helps investigate repositories and alerts representing current exposure."
+        ],
+        "concept": "Cross-feature risk investigation",
+        "hints": [
+            "Decide whether you need adoption, exposure, trends, or coordinated work.",
+            "Match the question to the purpose of the view, not its visual layout."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/security-at-scale/security-overview"
+    },
+    {
+        "id": "ghas-ecosystem-007",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Where does security overview summarize trends in detection, remediation, and prevention?",
+        "choices": [
+            "Overview",
+            "Campaigns",
+            "Coverage",
+            "Risk"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Overview summarizes detection, remediation, and prevention trends.",
+            "Campaigns coordinates targeted remediation work and tracks progress.",
+            "Coverage shows adoption of security features across repositories.",
+            "Risk helps investigate repositories and alerts representing current exposure."
+        ],
+        "concept": "Security trend dashboard",
+        "hints": [
+            "Decide whether you need adoption, exposure, trends, or coordinated work.",
+            "Match the question to the purpose of the view, not its visual layout."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/security-at-scale/security-overview"
+    },
+    {
+        "id": "ghas-ecosystem-008",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Which security overview view coordinates a selected remediation effort across repositories?",
+        "choices": [
+            "Coverage",
+            "Risk",
+            "Overview",
+            "Campaigns"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Coverage shows adoption of security features across repositories.",
+            "Risk helps investigate repositories and alerts representing current exposure.",
+            "Overview summarizes detection, remediation, and prevention trends.",
+            "Campaigns coordinates targeted remediation work and tracks progress."
+        ],
+        "concept": "Campaign coordination surface",
+        "hints": [
+            "Decide whether you need adoption, exposure, trends, or coordinated work.",
+            "Match the question to the purpose of the view, not its visual layout."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/security-at-scale/security-overview"
+    },
+    {
+        "id": "ghas-ecosystem-009",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "In the English repository UI, where can you browse the recognized dependency inventory?",
+        "choices": [
+            "Repository > Insights > Dependency graph",
+            "Repository > Security and quality > Code scanning",
+            "Repository > Security and quality > Secret scanning",
+            "Organization > Security and quality"
+        ],
+        "correct": 0,
+        "explanations": [
+            "The dependency graph is an inventory reached through the repository Insights tab.",
+            "This repository view lists findings from code analysis tools.",
+            "This repository view contains credential-exposure alerts for authorized users.",
+            "The organization tab provides security overview across accessible repositories."
+        ],
+        "concept": "Dependency inventory navigation",
+        "hints": [
+            "Keep repository scope distinct from organization scope.",
+            "Consider whether you are inspecting findings or the dependency inventory."
+        ],
+        "source": "https://docs.github.com/en/code-security/getting-started/github-security-features"
+    },
+    {
+        "id": "ghas-ecosystem-010",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Which English UI route lists repository findings from CodeQL and other integrated static analyzers?",
+        "choices": [
+            "Repository > Security and quality > Code scanning",
+            "Repository > Security and quality > Secret scanning",
+            "Organization > Security and quality",
+            "Repository > Insights > Dependency graph"
+        ],
+        "correct": 0,
+        "explanations": [
+            "This repository view lists findings from code analysis tools.",
+            "This repository view contains credential-exposure alerts for authorized users.",
+            "The organization tab provides security overview across accessible repositories.",
+            "The dependency graph is an inventory reached through the repository Insights tab."
+        ],
+        "concept": "Code-analysis findings navigation",
+        "hints": [
+            "Keep repository scope distinct from organization scope.",
+            "Consider whether you are inspecting findings or the dependency inventory."
+        ],
+        "source": "https://docs.github.com/en/code-security/getting-started/github-security-features"
+    },
+    {
+        "id": "ghas-ecosystem-011",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "An authorized responder needs repository credential-exposure alerts. Which English UI route fits?",
+        "choices": [
+            "Repository > Insights > Dependency graph",
+            "Repository > Security and quality > Code scanning",
+            "Repository > Security and quality > Secret scanning",
+            "Organization > Security and quality"
+        ],
+        "correct": 2,
+        "explanations": [
+            "The dependency graph is an inventory reached through the repository Insights tab.",
+            "This repository view lists findings from code analysis tools.",
+            "This repository view contains credential-exposure alerts for authorized users.",
+            "The organization tab provides security overview across accessible repositories."
+        ],
+        "concept": "Credential-alert navigation",
+        "hints": [
+            "Keep repository scope distinct from organization scope.",
+            "Consider whether you are inspecting findings or the dependency inventory."
+        ],
+        "source": "https://docs.github.com/en/code-security/getting-started/github-security-features"
+    },
+    {
+        "id": "ghas-ecosystem-012",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Which detector matches recognized dependency versions against reviewed vulnerability advisories?",
+        "choices": [
+            "Dependabot alerts",
+            "Dependency review",
+            "Code scanning",
+            "Secret scanning"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Dependabot alerts relate known vulnerabilities to dependencies in the dependency graph.",
+            "Dependency review highlights the impact of dependency changes in a pull request.",
+            "Code scanning analyzes source code for vulnerabilities and coding errors.",
+            "Secret scanning identifies exposed credentials rather than vulnerable package versions."
+        ],
+        "concept": "Advisory-based dependency detection",
+        "hints": [
+            "Identify whether the evidence is code, a credential, or a package.",
+            "Detection mechanisms use different inputs; compare those inputs."
+        ],
+        "source": "https://docs.github.com/en/code-security/getting-started/github-security-features"
+    },
+    {
+        "id": "ghas-ecosystem-013",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Which capability investigates unsafe source-code behavior rather than matching package versions or credential patterns?",
+        "choices": [
+            "Dependabot alerts",
+            "Dependency review",
+            "Code scanning",
+            "Secret scanning"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Dependabot alerts relate known vulnerabilities to dependencies in the dependency graph.",
+            "Dependency review highlights the impact of dependency changes in a pull request.",
+            "Code scanning analyzes source code for vulnerabilities and coding errors.",
+            "Secret scanning identifies exposed credentials rather than vulnerable package versions."
+        ],
+        "concept": "Source-code vulnerability detection",
+        "hints": [
+            "Identify whether the evidence is code, a credential, or a package.",
+            "Detection mechanisms use different inputs; compare those inputs."
+        ],
+        "source": "https://docs.github.com/en/code-security/getting-started/github-security-features"
+    },
+    {
+        "id": "ghas-ecosystem-014",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Which capability searches repository content for exposed authentication material?",
+        "choices": [
+            "Secret scanning",
+            "Dependabot alerts",
+            "Dependency review",
+            "Code scanning"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Secret scanning identifies exposed credentials rather than vulnerable package versions.",
+            "Dependabot alerts relate known vulnerabilities to dependencies in the dependency graph.",
+            "Dependency review highlights the impact of dependency changes in a pull request.",
+            "Code scanning analyzes source code for vulnerabilities and coding errors."
+        ],
+        "concept": "Credential-pattern detection",
+        "hints": [
+            "Identify whether the evidence is code, a credential, or a package.",
+            "Detection mechanisms use different inputs; compare those inputs."
+        ],
+        "source": "https://docs.github.com/en/code-security/getting-started/github-security-features"
+    },
+    {
+        "id": "ghas-ecosystem-015",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Which feature explains the security impact of dependency additions and removals in a pull request?",
+        "choices": [
+            "Secret scanning",
+            "Dependabot alerts",
+            "Dependency review",
+            "Code scanning"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Secret scanning identifies exposed credentials rather than vulnerable package versions.",
+            "Dependabot alerts relate known vulnerabilities to dependencies in the dependency graph.",
+            "Dependency review highlights the impact of dependency changes in a pull request.",
+            "Code scanning analyzes source code for vulnerabilities and coding errors."
+        ],
+        "concept": "Dependency-change review",
+        "hints": [
+            "Identify whether the evidence is code, a credential, or a package.",
+            "Detection mechanisms use different inputs; compare those inputs."
+        ],
+        "source": "https://docs.github.com/en/code-security/getting-started/github-security-features"
+    },
+    {
+        "id": "ghas-ecosystem-016",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Which feature maintains recognized direct and transitive dependency relationships in GitHub rather than exporting an inventory snapshot?",
+        "choices": [
+            "Software bill of materials (SBOM)",
+            "Artifact attestations",
+            "GitHub Advisory Database",
+            "Dependency graph"
+        ],
+        "correct": 3,
+        "explanations": [
+            "An SBOM exports a dependency inventory; it is not proof that all components are safe.",
+            "Attestations provide verifiable build provenance and integrity evidence.",
+            "This database provides published vulnerability advisories rather than a repository inventory.",
+            "The dependency graph inventories recognized dependencies and their relationships."
+        ],
+        "concept": "Dependency relationship inventory",
+        "hints": [
+            "Separate inventory, provenance, vulnerability information, and upgrade automation.",
+            "Ask which artifact or process supplies the evidence you need."
+        ],
+        "source": "https://docs.github.com/en/code-security/getting-started/github-security-features"
+    },
+    {
+        "id": "ghas-ecosystem-017",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Which control can stop a supported credential from entering a repository at push time?",
+        "choices": [
+            "Code scanning",
+            "Repository rulesets",
+            "Push protection",
+            "Dependency review"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Code scanning can identify source-code vulnerabilities during pull request analysis.",
+            "Rulesets can require checks and other conditions before changes are accepted.",
+            "Push protection blocks supported secrets during a push, before they enter the repository.",
+            "Dependency review supplies pre-merge feedback about changed dependencies."
+        ],
+        "concept": "Credential prevention at entry",
+        "hints": [
+            "Place the control at the point where it supplies feedback.",
+            "Distinguish a detector from the policy that requires its result."
+        ],
+        "source": "https://docs.github.com/en/code-security/getting-started/github-security-features"
+    },
+    {
+        "id": "ghas-ecosystem-018",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Which mechanism makes a passing check a required merge condition rather than merely showing its findings?",
+        "choices": [
+            "Push protection",
+            "Dependency review",
+            "Code scanning",
+            "Repository rulesets"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Push protection blocks supported secrets during a push, before they enter the repository.",
+            "Dependency review supplies pre-merge feedback about changed dependencies.",
+            "Code scanning can identify source-code vulnerabilities during pull request analysis.",
+            "Rulesets can require checks and other conditions before changes are accepted."
+        ],
+        "concept": "Detection versus enforcement",
+        "hints": [
+            "Place the control at the point where it supplies feedback.",
+            "Distinguish a detector from the policy that requires its result."
+        ],
+        "source": "https://docs.github.com/en/code-security/getting-started/github-security-features"
+    },
+    {
+        "id": "ghas-ecosystem-019",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Which capability provides verifiable evidence of where and how a build artifact was produced?",
+        "choices": [
+            "Dependency graph",
+            "Software bill of materials (SBOM)",
+            "Artifact attestations",
+            "GitHub Advisory Database"
+        ],
+        "correct": 2,
+        "explanations": [
+            "The dependency graph inventories recognized dependencies and their relationships.",
+            "An SBOM exports a dependency inventory; it is not proof that all components are safe.",
+            "Attestations provide verifiable build provenance and integrity evidence.",
+            "This database provides published vulnerability advisories rather than a repository inventory."
+        ],
+        "concept": "Build provenance evidence",
+        "hints": [
+            "Separate inventory, provenance, vulnerability information, and upgrade automation.",
+            "Ask which artifact or process supplies the evidence you need."
+        ],
+        "source": "https://docs.github.com/en/code-security/getting-started/github-security-features"
+    },
+    {
+        "id": "ghas-ecosystem-020",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Which export gives a component inventory for downstream supply-chain analysis without certifying that the components are safe?",
+        "choices": [
+            "GitHub Advisory Database",
+            "Dependency graph",
+            "Software bill of materials (SBOM)",
+            "Artifact attestations"
+        ],
+        "correct": 2,
+        "explanations": [
+            "This database provides published vulnerability advisories rather than a repository inventory.",
+            "The dependency graph inventories recognized dependencies and their relationships.",
+            "An SBOM exports a dependency inventory; it is not proof that all components are safe.",
+            "Attestations provide verifiable build provenance and integrity evidence."
+        ],
+        "concept": "SBOM inventory limits",
+        "hints": [
+            "Separate inventory, provenance, vulnerability information, and upgrade automation.",
+            "Ask which artifact or process supplies the evidence you need."
+        ],
+        "source": "https://docs.github.com/en/code-security/getting-started/github-security-features"
+    },
+    {
+        "id": "ghas-ecosystem-021",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Where can a developer look up published vulnerability records across package ecosystems rather than inspect one repository’s dependencies?",
+        "choices": [
+            "GitHub Advisory Database",
+            "Dependency graph",
+            "Software bill of materials (SBOM)",
+            "Artifact attestations"
+        ],
+        "correct": 0,
+        "explanations": [
+            "This database provides published vulnerability advisories rather than a repository inventory.",
+            "The dependency graph inventories recognized dependencies and their relationships.",
+            "An SBOM exports a dependency inventory; it is not proof that all components are safe.",
+            "Attestations provide verifiable build provenance and integrity evidence."
+        ],
+        "concept": "Public vulnerability intelligence",
+        "hints": [
+            "Separate inventory, provenance, vulnerability information, and upgrade automation.",
+            "Ask which artifact or process supplies the evidence you need."
+        ],
+        "source": "https://docs.github.com/en/code-security/getting-started/github-security-features"
+    },
+    {
+        "id": "ghas-ecosystem-022",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Which feature supports private collaboration on a repository vulnerability followed by coordinated public disclosure?",
+        "choices": [
+            "SECURITY.md",
+            "Private vulnerability reporting",
+            "Repository security advisories",
+            "GitHub Advisory Database"
+        ],
+        "correct": 2,
+        "explanations": [
+            "A security policy explains supported versions and how to report vulnerabilities.",
+            "This feature gives researchers a private reporting channel to repository maintainers.",
+            "Repository advisories support private discussion, coordinated fixes, and subsequent publication.",
+            "The database is a searchable collection of published security advisories."
+        ],
+        "concept": "Coordinated advisory workflow",
+        "hints": [
+            "Distinguish instructions, confidential intake, coordinated repair, and public reference data.",
+            "Consider the audience and the disclosure stage."
+        ],
+        "source": "https://docs.github.com/en/code-security/getting-started/github-security-features"
+    },
+    {
+        "id": "ghas-ecosystem-023",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Which repository file convention communicates supported versions and the preferred vulnerability-reporting process?",
+        "choices": [
+            "GitHub Advisory Database",
+            "SECURITY.md",
+            "Private vulnerability reporting",
+            "Repository security advisories"
+        ],
+        "correct": 1,
+        "explanations": [
+            "The database is a searchable collection of published security advisories.",
+            "A security policy explains supported versions and how to report vulnerabilities.",
+            "This feature gives researchers a private reporting channel to repository maintainers.",
+            "Repository advisories support private discussion, coordinated fixes, and subsequent publication."
+        ],
+        "concept": "Security policy communication",
+        "hints": [
+            "Distinguish instructions, confidential intake, coordinated repair, and public reference data.",
+            "Consider the audience and the disclosure stage."
+        ],
+        "source": "https://docs.github.com/en/code-security/getting-started/github-security-features"
+    },
+    {
+        "id": "ghas-ecosystem-024",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Which enabled repository feature lets an external researcher confidentially report a suspected flaw to maintainers?",
+        "choices": [
+            "Private vulnerability reporting",
+            "Repository security advisories",
+            "GitHub Advisory Database",
+            "SECURITY.md"
+        ],
+        "correct": 0,
+        "explanations": [
+            "This feature gives researchers a private reporting channel to repository maintainers.",
+            "Repository advisories support private discussion, coordinated fixes, and subsequent publication.",
+            "The database is a searchable collection of published security advisories.",
+            "A security policy explains supported versions and how to report vulnerabilities."
+        ],
+        "concept": "Confidential vulnerability intake",
+        "hints": [
+            "Distinguish instructions, confidential intake, coordinated repair, and public reference data.",
+            "Consider the audience and the disclosure stage."
+        ],
+        "source": "https://docs.github.com/en/code-security/getting-started/github-security-features"
+    },
+    {
+        "id": "ghas-ecosystem-025",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Who normally implements and regression-tests an application-code fix once the security team has explained the finding?",
+        "choices": [
+            "Repository developer",
+            "Security manager",
+            "Organization owner",
+            "External security researcher"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Developers implement and test fixes in the code they maintain; access still depends on assigned permissions.",
+            "Security managers can manage security settings and alerts organization-wide without general repository write access.",
+            "Organization owners can assign organization roles, including security manager.",
+            "A researcher reports a suspected issue; reporting alone grants no repository administration permissions."
+        ],
+        "concept": "Developer remediation responsibility",
+        "hints": [
+            "Separate implementation work from organization-wide authority.",
+            "Choose the role whose normal responsibility matches the task."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-code-scanning-alerts/resolve-alerts"
+    },
+    {
+        "id": "ghas-ecosystem-026",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Which organization role fits cross-repository alert triage and security-setting management without general code-write access?",
+        "choices": [
+            "Security manager",
+            "Organization owner",
+            "External security researcher",
+            "Repository developer"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Security managers can manage security settings and alerts organization-wide without general repository write access.",
+            "Organization owners can assign organization roles, including security manager.",
+            "A researcher reports a suspected issue; reporting alone grants no repository administration permissions.",
+            "Developers implement and test fixes in the code they maintain; access still depends on assigned permissions."
+        ],
+        "concept": "Specialized security responsibility",
+        "hints": [
+            "Separate implementation work from organization-wide authority.",
+            "Choose the role whose normal responsibility matches the task."
+        ],
+        "source": "https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization"
+    },
+    {
+        "id": "ghas-ecosystem-027",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Who can assign the predefined security manager role to an organization member or team?",
+        "choices": [
+            "External security researcher",
+            "Repository developer",
+            "Security manager",
+            "Organization owner"
+        ],
+        "correct": 3,
+        "explanations": [
+            "A researcher reports a suspected issue; reporting alone grants no repository administration permissions.",
+            "Developers implement and test fixes in the code they maintain; access still depends on assigned permissions.",
+            "Security managers can manage security settings and alerts organization-wide without general repository write access.",
+            "Organization owners can assign organization roles, including security manager."
+        ],
+        "concept": "Accountability for security-role delegation",
+        "hints": [
+            "Separate implementation work from organization-wide authority.",
+            "Choose the role whose normal responsibility matches the task."
+        ],
+        "source": "https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization"
+    },
+    {
+        "id": "ghas-ecosystem-028",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Which participant reports a suspected vulnerability but gains no administration rights simply by making the report?",
+        "choices": [
+            "Security manager",
+            "Organization owner",
+            "External security researcher",
+            "Repository developer"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Security managers can manage security settings and alerts organization-wide without general repository write access.",
+            "Organization owners can assign organization roles, including security manager.",
+            "A researcher reports a suspected issue; reporting alone grants no repository administration permissions.",
+            "Developers implement and test fixes in the code they maintain; access still depends on assigned permissions."
+        ],
+        "concept": "Reporter versus administrator",
+        "hints": [
+            "Separate implementation work from organization-wide authority.",
+            "Choose the role whose normal responsibility matches the task."
+        ],
+        "source": "https://docs.github.com/en/code-security/getting-started/github-security-features"
+    },
+    {
+        "id": "ghas-ecosystem-029",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Which code-analysis use is available free on GitHub.com without a private-repository Code Security entitlement?",
+        "choices": [
+            "Public-repository code scanning",
+            "Private-repository secret scanning",
+            "Dependabot alerts",
+            "Private-repository code scanning"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Code scanning is available free for public repositories; setup and permissions still matter.",
+            "On GitHub.com, private-repository secret scanning requires the applicable Secret Protection or legacy GHAS entitlement.",
+            "Basic Dependabot vulnerability alerts are available without purchasing either paid security product.",
+            "On GitHub.com, this requires an eligible organization plan and Code Security entitlement or applicable legacy GHAS licensing."
+        ],
+        "concept": "Public code-analysis availability",
+        "hints": [
+            "Check repository visibility and the specific feature entitlement separately.",
+            "An umbrella security label does not mean every capability has identical availability."
+        ],
+        "source": "https://docs.github.com/en/code-security/getting-started/github-security-features"
+    },
+    {
+        "id": "ghas-ecosystem-030",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Which capability specifically needs Code Security or applicable legacy GHAS entitlement on a GitHub.com organization’s private repositories?",
+        "choices": [
+            "Dependabot alerts",
+            "Private-repository code scanning",
+            "Public-repository code scanning",
+            "Private-repository secret scanning"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Basic Dependabot vulnerability alerts are available without purchasing either paid security product.",
+            "On GitHub.com, this requires an eligible organization plan and Code Security entitlement or applicable legacy GHAS licensing.",
+            "Code scanning is available free for public repositories; setup and permissions still matter.",
+            "On GitHub.com, private-repository secret scanning requires the applicable Secret Protection or legacy GHAS entitlement."
+        ],
+        "concept": "Private code-analysis licensing",
+        "hints": [
+            "Check repository visibility and the specific feature entitlement separately.",
+            "An umbrella security label does not mean every capability has identical availability."
+        ],
+        "source": "https://docs.github.com/en/code-security/getting-started/github-security-features"
+    },
+    {
+        "id": "ghas-ecosystem-031",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Security overview shows zero alerts for a repository. What is the sound interpretation step before calling it low risk?",
+        "choices": [
+            "Export the available view data as CSV.",
+            "Check feature coverage before concluding risk is low.",
+            "Compare the viewers’ alert permissions.",
+            "Use default-branch scope when interpreting the metrics."
+        ],
+        "correct": 1,
+        "explanations": [
+            "Several security overview pages support CSV exports for further analysis.",
+            "An empty alert view can reflect disabled detection or undetected issues, not absence of vulnerabilities.",
+            "Security overview data is filtered by the current viewer’s permissions.",
+            "Security overview views report on the default branches of accessible repositories."
+        ],
+        "concept": "Empty dashboard interpretation",
+        "hints": [
+            "Treat dashboard results as observations with scope, not as universal proof.",
+            "Check both what was measured and what the viewer is permitted to see."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/security-at-scale/security-overview"
+    },
+    {
+        "id": "ghas-ecosystem-032",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Two people see different totals in the same organization’s security overview. What should they check before assuming the data is inconsistent?",
+        "choices": [
+            "Check feature coverage before concluding risk is low.",
+            "Compare the viewers’ alert permissions.",
+            "Use default-branch scope when interpreting the metrics.",
+            "Export the available view data as CSV."
+        ],
+        "correct": 1,
+        "explanations": [
+            "An empty alert view can reflect disabled detection or undetected issues, not absence of vulnerabilities.",
+            "Security overview data is filtered by the current viewer’s permissions.",
+            "Security overview views report on the default branches of accessible repositories.",
+            "Several security overview pages support CSV exports for further analysis."
+        ],
+        "concept": "Permission-filtered security reporting",
+        "hints": [
+            "Treat dashboard results as observations with scope, not as universal proof.",
+            "Check both what was measured and what the viewer is permitted to see."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/security-at-scale/security-overview"
+    },
+    {
+        "id": "ghas-ecosystem-033",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "A feature branch has a finding absent from the organization dashboard. Which scope should the analyst consider first?",
+        "choices": [
+            "Check feature coverage before concluding risk is low.",
+            "Compare the viewers’ alert permissions.",
+            "Use default-branch scope when interpreting the metrics.",
+            "Export the available view data as CSV."
+        ],
+        "correct": 2,
+        "explanations": [
+            "An empty alert view can reflect disabled detection or undetected issues, not absence of vulnerabilities.",
+            "Security overview data is filtered by the current viewer’s permissions.",
+            "Security overview views report on the default branches of accessible repositories.",
+            "Several security overview pages support CSV exports for further analysis."
+        ],
+        "concept": "Overview default-branch boundary",
+        "hints": [
+            "Treat dashboard results as observations with scope, not as universal proof.",
+            "Check both what was measured and what the viewer is permitted to see."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/security-at-scale/security-overview"
+    },
+    {
+        "id": "ghas-ecosystem-034",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "An analyst needs to combine available security overview data with an internal reporting dataset. Which supported handoff fits?",
+        "choices": [
+            "Compare the viewers’ alert permissions.",
+            "Use default-branch scope when interpreting the metrics.",
+            "Export the available view data as CSV.",
+            "Check feature coverage before concluding risk is low."
+        ],
+        "correct": 2,
+        "explanations": [
+            "Security overview data is filtered by the current viewer’s permissions.",
+            "Security overview views report on the default branches of accessible repositories.",
+            "Several security overview pages support CSV exports for further analysis.",
+            "An empty alert view can reflect disabled detection or undetected issues, not absence of vulnerabilities."
+        ],
+        "concept": "Security overview data export",
+        "hints": [
+            "Treat dashboard results as observations with scope, not as universal proof.",
+            "Check both what was measured and what the viewer is permitted to see."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/security-at-scale/security-overview"
+    },
+    {
+        "id": "ghas-ecosystem-035",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Which practice most directly shifts vulnerability discovery away from a release-only review?",
+        "choices": [
+            "Keep monitoring after fixes reach the default branch.",
+            "Give developers security feedback before merge.",
+            "Combine early detection with enforced merge checks.",
+            "Coordinate a focused backlog-remediation campaign."
+        ],
+        "correct": 1,
+        "explanations": [
+            "New advisories and code changes can introduce fresh risk after an earlier fix.",
+            "Early feedback helps avoid introducing vulnerabilities instead of discovering everything at release time.",
+            "Detection supplies findings; enforced checks decide whether changes can proceed. They complement one another.",
+            "A campaign organizes existing remediation work; it does not prevent every new vulnerability."
+        ],
+        "concept": "Shift-left feedback timing",
+        "hints": [
+            "Consider when feedback arrives and whether remediation remains necessary.",
+            "A preventive control and a release condition can address different failure modes."
+        ],
+        "source": "https://docs.github.com/en/code-security/getting-started/github-security-features"
+    },
+    {
+        "id": "ghas-ecosystem-036",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "How should prevention-first feedback and mandatory merge gates work together?",
+        "choices": [
+            "Coordinate a focused backlog-remediation campaign.",
+            "Keep monitoring after fixes reach the default branch.",
+            "Give developers security feedback before merge.",
+            "Combine early detection with enforced merge checks."
+        ],
+        "correct": 3,
+        "explanations": [
+            "A campaign organizes existing remediation work; it does not prevent every new vulnerability.",
+            "New advisories and code changes can introduce fresh risk after an earlier fix.",
+            "Early feedback helps avoid introducing vulnerabilities instead of discovering everything at release time.",
+            "Detection supplies findings; enforced checks decide whether changes can proceed. They complement one another."
+        ],
+        "concept": "Complementary SDLC controls",
+        "hints": [
+            "Consider when feedback arrives and whether remediation remains necessary.",
+            "A preventive control and a release condition can address different failure modes."
+        ],
+        "source": "https://docs.github.com/en/code-security/getting-started/github-security-features"
+    },
+    {
+        "id": "ghas-ecosystem-037",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Which current campaign type can organize source-code findings and trigger Copilot Autofix suggestions?",
+        "choices": [
+            "Default-branch code scanning alerts",
+            "Secret scanning alerts",
+            "Dependabot vulnerability alerts",
+            "Required status check failures"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Code scanning campaigns include alerts on the default branch; they can trigger Copilot Autofix suggestions.",
+            "Secret scanning campaigns are documented as public preview; credential remediation is not provided by Copilot Autofix.",
+            "The current campaign documentation lists code scanning and secret scanning, not Dependabot alerts as a campaign type.",
+            "A failed required check is a merge-policy result, not a supported security campaign alert type."
+        ],
+        "concept": "Code campaign support",
+        "hints": [
+            "Use the documented alert types rather than assuming every security list is supported.",
+            "Separate campaign coordination from the actual remediation mechanism."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/security-at-scale/about-security-campaigns"
+    },
+    {
+        "id": "ghas-ecosystem-038",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Which documented campaign alert type is in public preview and does not receive credential fixes from Copilot Autofix?",
+        "choices": [
+            "Secret scanning alerts",
+            "Dependabot vulnerability alerts",
+            "Required status check failures",
+            "Default-branch code scanning alerts"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Secret scanning campaigns are documented as public preview; credential remediation is not provided by Copilot Autofix.",
+            "The current campaign documentation lists code scanning and secret scanning, not Dependabot alerts as a campaign type.",
+            "A failed required check is a merge-policy result, not a supported security campaign alert type.",
+            "Code scanning campaigns include alerts on the default branch; they can trigger Copilot Autofix suggestions."
+        ],
+        "concept": "Secret campaign preview boundary",
+        "hints": [
+            "Use the documented alert types rather than assuming every security list is supported.",
+            "Separate campaign coordination from the actual remediation mechanism."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/security-at-scale/about-security-campaigns"
+    },
+    {
+        "id": "ghas-ecosystem-039",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "A repository’s known findings were fixed last month. Which practice addresses risk introduced by later code or advisory changes?",
+        "choices": [
+            "Give developers security feedback before merge.",
+            "Combine early detection with enforced merge checks.",
+            "Coordinate a focused backlog-remediation campaign.",
+            "Keep monitoring after fixes reach the default branch."
+        ],
+        "correct": 3,
+        "explanations": [
+            "Early feedback helps avoid introducing vulnerabilities instead of discovering everything at release time.",
+            "Detection supplies findings; enforced checks decide whether changes can proceed. They complement one another.",
+            "A campaign organizes existing remediation work; it does not prevent every new vulnerability.",
+            "New advisories and code changes can introduce fresh risk after an earlier fix."
+        ],
+        "concept": "Continuous security lifecycle",
+        "hints": [
+            "Consider when feedback arrives and whether remediation remains necessary.",
+            "A preventive control and a release condition can address different failure modes."
+        ],
+        "source": "https://docs.github.com/en/code-security/getting-started/github-security-features"
+    },
+    {
+        "id": "ghas-ecosystem-040",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Which automation keeps supported dependency versions current even without a newly disclosed vulnerability?",
+        "choices": [
+            "Dependabot alerts",
+            "Code scanning",
+            "Dependabot version updates",
+            "Dependabot security updates"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Alerts notify maintainers of known vulnerable dependencies; an alert is not itself an upgrade pull request.",
+            "Code scanning analyzes application source rather than performing package version upgrades.",
+            "Version updates propose dependency upgrades even when no vulnerability advisory requires them.",
+            "Security updates propose changes to resolve known vulnerabilities in dependencies."
+        ],
+        "concept": "Routine dependency maintenance",
+        "hints": [
+            "Differentiate staying current from responding to an identified vulnerability.",
+            "Consider whether the requested output is an alert, a dependency change, or source-code analysis."
+        ],
+        "source": "https://docs.github.com/en/code-security/getting-started/github-security-features"
+    },
+    {
+        "id": "ghas-secrets-001",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "A developer commits a live cloud access token and finds a secret-scanning alert. What should happen first?",
+        "choices": [
+            "Revoke or rotate the token",
+            "Dismiss the alert as a false positive",
+            "Wait for the next scheduled scan",
+            "Rewrite the repository history"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Provider-side revocation stops use of the exposed credential.",
+            "Dismissal changes alert status, not token validity.",
+            "A later scan does not contain an active credential.",
+            "History cleanup alone leaves the credential usable."
+        ],
+        "concept": "Credential revocation",
+        "hints": [
+            "What action invalidates the credential itself?",
+            "Which step reduces the immediate exposure?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/secret-security/secret-scanning"
+    },
+    {
+        "id": "ghas-secrets-002",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "Secret scanning is enabled after a repository has existed for years. Which content is within its Git-history scan scope?",
+        "choices": [
+            "Only new commits to the default branch",
+            "The full Git history across repository branches",
+            "Only files still visible at current branch tips across the repository",
+            "Only pull requests opened after secret scanning was enabled"
+        ],
+        "correct": 1,
+        "explanations": [
+            "The scan is not limited to commits made after activation.",
+            "Secret scanning examines repository history across branches.",
+            "Current files alone omit secrets removed from later revisions.",
+            "Older commits are not excluded by the enablement date."
+        ],
+        "concept": "Historical scan scope",
+        "hints": [
+            "What repository content can retain an earlier leak?",
+            "Does enabling the feature erase prior commits?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/secret-security/secret-scanning"
+    },
+    {
+        "id": "ghas-secrets-003",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "Push protection blocks a commit because it contains a real provider token. What should the author do to proceed safely?",
+        "choices": [
+            "Rename the file so the scanner cannot recognize it",
+            "Disable secret scanning for the repository",
+            "Remove the token; rotate it if exposed",
+            "Choose a bypass reason and leave the token in the change"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Changing a filename does not neutralize a credential.",
+            "Disabling detection weakens protection rather than correcting the secret.",
+            "Removing the credential and handling its exposure addresses the block safely.",
+            "A bypass permits the push; it does not make the token safe."
+        ],
+        "concept": "Responding to a blocked push",
+        "hints": [
+            "What triggered the block, and is the value a real credential?",
+            "Which correction removes the sensitive value rather than evading detection?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/secret-security/push-protection"
+    },
+    {
+        "id": "ghas-secrets-004",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "A secret-scanning alert shows no validity result for a detected token. What does that status establish?",
+        "choices": [
+            "The alert is necessarily a false positive",
+            "The token was confirmed revoked",
+            "The token was confirmed active",
+            "No validity conclusion is available from that result"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Validity status alone does not classify the detection as false.",
+            "An unknown result does not confirm revocation.",
+            "Missing validation is not proof of an active token.",
+            "Unknown means the service could not determine validity."
+        ],
+        "concept": "Interpreting validity status",
+        "hints": [
+            "What does the result actually say about verification?",
+            "Can lack of a check prove either valid or revoked?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/secret-security/validity-checks"
+    },
+    {
+        "id": "ghas-secrets-005",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "An incident team has many secret alerts and wants to investigate credentials that may still work first. Which signal helps prioritize that review?",
+        "choices": [
+            "Whether a validity check reports the secret as active",
+            "The number of files in the repository",
+            "The age of the branch name",
+            "Whether the alert was created on a weekday"
+        ],
+        "correct": 0,
+        "explanations": [
+            "A positive validity result indicates a credential may still be usable.",
+            "Repository size does not establish credential status.",
+            "Branch naming age is unrelated to validity.",
+            "Alert creation day is not an activity check."
+        ],
+        "concept": "Validity-based prioritization",
+        "hints": [
+            "Which signal relates directly to credential usability?",
+            "What can a provider validation result tell responders?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/secret-security/validity-checks"
+    },
+    {
+        "id": "ghas-secrets-006",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "A supported partner token's displayed validity result predates a provider-side change. Partner validity checks are enabled. Which alert control requests a current result?",
+        "choices": [
+            "Close as revoked",
+            "Verify secret",
+            "Report leak",
+            "Reopen alert"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Closing records a resolution; it does not request another provider check.",
+            "Verify secret performs an on-demand validity check for a supported secret.",
+            "Report leak is a separate workflow for eligible leaked GitHub personal access tokens.",
+            "Reopening changes alert disposition, not the age of its validation result."
+        ],
+        "concept": "On-demand validity refresh",
+        "hints": [
+            "Consider which operation contacts the issuing provider.",
+            "A stored result and a new check are different operations."
+        ],
+        "source": "https://docs.github.com/en/code-security/tutorials/remediate-leaked-secrets/evaluating-alerts"
+    },
+    {
+        "id": "ghas-secrets-007",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "A company issues credentials with a format that GitHub's built-in patterns do not recognize. What can Secret Protection add for this format?",
+        "choices": [
+            "A Dependabot registry entry",
+            "A repository ruleset that rewrites commits",
+            "A custom secret-scanning pattern",
+            "A CodeQL query pack for dependency alerts"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Registries tell Dependabot where packages are hosted.",
+            "Rulesets govern repository actions but do not define secret detectors.",
+            "Custom patterns extend detection to organization-specific secret formats.",
+            "CodeQL query packs analyze source code, not secret formats."
+        ],
+        "concept": "Custom credential detection",
+        "hints": [
+            "Is the credential format provider-specific or unique to the organization?",
+            "Which detection mechanism accepts a pattern for an organization-specific secret?"
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/secure-your-secrets/customize-leak-detection/define-custom-patterns"
+    },
+    {
+        "id": "ghas-secrets-008",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "An administrator has drafted a custom secret pattern and wants to assess matches before publishing it. Which step is intended for that check?",
+        "choices": [
+            "Publish the pattern before enabling push protection",
+            "Upload SARIF results from an external scanner",
+            "Dismiss existing alerts to treat the matches as known",
+            "Run a dry run on representative repository content"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Publishing and enabling push protection are later activation steps, not a prepublication check.",
+            "SARIF uploads external analysis results; it does not preview a custom secret pattern.",
+            "Dismissing alerts changes their handling, but does not test the pattern's matching behavior.",
+            "A dry run previews pattern matches in repository content before publication."
+        ],
+        "concept": "Custom-pattern dry runs",
+        "hints": [
+            "What should be checked before turning a new detector on?",
+            "Which pattern workflow previews matches without publishing the pattern?"
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/secure-your-secrets/customize-leak-detection/define-custom-patterns"
+    },
+    {
+        "id": "ghas-secrets-009",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "During a pilot, a custom secret pattern flags synthetic identifiers that cannot authenticate. What should the administrator adjust before enabling the detector?",
+        "choices": [
+            "Adjust the expression and test representative positive and negative examples",
+            "Publish it and dismiss every resulting alert",
+            "Use the same expression as a package version constraint",
+            "Exclude the repository from all security features"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Testing both matches and nonmatches helps reduce false positives.",
+            "Publishing a noisy pattern transfers avoidable triage to responders.",
+            "Package constraints do not define secret formats.",
+            "Turning off all security features is broader than tuning one detector."
+        ],
+        "concept": "Pattern precision tuning",
+        "hints": [
+            "What evidence shows whether a proposed match is a real secret?",
+            "Which step can refine recall without accepting known false matches?"
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/secure-your-secrets/customize-leak-detection/define-custom-patterns"
+    },
+    {
+        "id": "ghas-secrets-010",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "A custom pattern's dry run produces acceptable results. What sequence makes it an active detector?",
+        "choices": [
+            "Wait for Dependabot to import the pattern",
+            "Publish the pattern, then enable push protection for it if prevention is needed",
+            "Enable push protection first, then discard the pattern",
+            "Create a branch protection rule with the regex"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Dependabot does not manage secret-scanning patterns.",
+            "A pattern must be published before its optional push-protection setting can be enabled.",
+            "A protection setting cannot activate an unpublished detector.",
+            "Branch rules do not register custom secret patterns."
+        ],
+        "concept": "Custom-pattern activation sequence",
+        "hints": [
+            "What lifecycle step follows successful testing?",
+            "Does the prevention toggle apply before the detector is published?"
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/secure-your-secrets/customize-leak-detection/define-custom-patterns"
+    },
+    {
+        "id": "ghas-secrets-011",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "A contributor bypasses push protection because a blocked token is needed briefly for a test. What should the team do next?",
+        "choices": [
+            "Delete the bypass audit event",
+            "Disable all future secret alerts",
+            "Assess the secret; promptly revoke or remove it",
+            "Assume the token is safe because GitHub recorded a reason"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Audit records should remain available for review.",
+            "Suppressing alerts does not address the credential.",
+            "A bypass does not remove exposure or make a credential harmless.",
+            "Recording a reason documents the decision but does not neutralize the secret."
+        ],
+        "concept": "Deferred-fix bypass lifecycle",
+        "hints": [
+            "What does a bypass change, and what remains exposed?",
+            "Which follow-up handles both the exception and the credential risk?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/secret-security/push-protection"
+    },
+    {
+        "id": "ghas-secrets-012",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "A GitHub.com user has user-level push protection enabled but has not enabled repository-level secret scanning. Which statement describes the user-level control?",
+        "choices": [
+            "It scans the full history of every private repository in the account",
+            "It creates a repository alert for each bypass without secret scanning",
+            "It replaces organization-managed Secret Protection",
+            "It blocks supported secret pushes to public repositories"
+        ],
+        "correct": 3,
+        "explanations": [
+            "User-level protection is not a full-history private-repository scan.",
+            "A bypass alert is not guaranteed by the user-only control.",
+            "Account-level controls do not replace repository or organization features.",
+            "User-level push protection is an account-scoped control for public repositories."
+        ],
+        "concept": "User push-protection destination scope",
+        "hints": [
+            "Which repositories does the account-level feature cover?",
+            "Is user-level prevention the same as repository-level alerting?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/secret-security/push-protection"
+    },
+    {
+        "id": "ghas-secrets-013",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "An enterprise wants contributors to request approval instead of independently bypassing a push-protection block. Which control matches that policy?",
+        "choices": [
+            "Delegated bypass for push protection",
+            "A Dependabot ignore rule",
+            "A required code review",
+            "A secret-scanning validity check"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Delegated bypass routes an exception request for approval.",
+            "Dependabot ignore rules affect dependency updates.",
+            "Code review is not the delegated push-protection bypass workflow.",
+            "Validity checks assess detected credentials rather than approve bypasses."
+        ],
+        "concept": "Delegated bypass governance",
+        "hints": [
+            "Which action needs an approver rather than a contributor-only decision?",
+            "What feature puts bypass authority under a review process?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/secret-security/push-protection"
+    },
+    {
+        "id": "ghas-secrets-014",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "A security team wants a contributor to bypass a specific blocked push after review, without exempting future matching secrets. What should it use?",
+        "choices": [
+            "A repository-wide disablement of push protection",
+            "A bypass request or approved bypass for that push",
+            "A global exclusion for the secret's file path",
+            "A new custom pattern that never matches"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Disabling protection is broader than granting a reviewed exception.",
+            "A bypass applies to the reviewed push rather than creating a permanent exception.",
+            "A path exclusion can hide future detections in that location.",
+            "A pattern that never matches disables detection for its format."
+        ],
+        "concept": "Bypass privileges versus exclusions",
+        "hints": [
+            "Is the intent to approve one push or suppress later detection?",
+            "Which mechanism scopes the exception to the blocked event?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/secret-security/push-protection"
+    },
+    {
+        "id": "ghas-secrets-015",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "A repository administrator wants visibility when someone bypasses repository-level push protection. What should they expect?",
+        "choices": [
+            "The push is rejected after the commit is already stored",
+            "Only a Dependabot alert is generated",
+            "A secret-scanning alert may be created",
+            "The bypass silently changes the secret into a test value"
+        ],
+        "correct": 2,
+        "explanations": [
+            "The bypass permits the push rather than rejecting it afterward.",
+            "Dependabot alerts concern vulnerable dependencies.",
+            "Repository-level bypasses can produce an alert for follow-up.",
+            "A bypass does not alter the credential's value or exposure."
+        ],
+        "concept": "Repository bypass visibility",
+        "hints": [
+            "What should remain visible after a contributor overrides prevention?",
+            "Which detection record can support follow-up on a bypass?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/secret-security/push-protection"
+    },
+    {
+        "id": "ghas-secrets-016",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "A repository receives changes through command-line pushes and a GitHub web edit. Which statement about push protection is accurate?",
+        "choices": [
+            "It applies only to commits created in the web editor",
+            "It is a scheduled scan that runs after merging",
+            "It checks package advisories instead of credentials",
+            "Multiple supported GitHub push entry points"
+        ],
+        "correct": 3,
+        "explanations": [
+            "The control is not limited to web-created commits.",
+            "Push protection acts during the push, not as a scheduled post-merge scan.",
+            "Dependency advisories are a separate security function.",
+            "Protection covers supported pushes through multiple supported interfaces."
+        ],
+        "concept": "Push-protection entry points",
+        "hints": [
+            "When in the contribution flow should the secret be blocked?",
+            "Is this control limited to one interface or one type of finding?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/secret-security/push-protection"
+    },
+    {
+        "id": "ghas-secrets-017",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "A team member pastes a credential into a pull-request comment rather than a source file. Which statement is accurate?",
+        "choices": [
+            "Supported pull-request content",
+            "Secret scanning only scans compiled binaries",
+            "Comments are checked only by CodeQL",
+            "The credential is safe because it is outside Git history"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Secret scanning includes supported pull-request content, not only code files.",
+            "Binary analysis is not the sole scope of secret scanning.",
+            "CodeQL is not the only feature that can inspect textual content.",
+            "A secret in a comment can still be exposed."
+        ],
+        "concept": "Non-code secret exposure",
+        "hints": [
+            "Where was the credential published?",
+            "Can text in collaboration features expose a usable secret?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/secret-security/secret-scanning"
+    },
+    {
+        "id": "ghas-secrets-018",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "GitHub adds detection support for a newly recognized provider token. What can secret scanning do with existing repositories?",
+        "choices": [
+            "Stop scanning older branches permanently",
+            "Rescan repository content for the new secret type",
+            "Change all historical commits to remove matching values",
+            "Rotate every credential without involving its provider"
+        ],
+        "correct": 1,
+        "explanations": [
+            "New detectors do not inherently disable historical branch scans.",
+            "GitHub periodically rescans repositories as new secret types are added.",
+            "Detection does not rewrite commit history.",
+            "Credential rotation is performed with the issuing provider."
+        ],
+        "concept": "Rescanning with new detectors",
+        "hints": [
+            "What changed in the detection capability?",
+            "Can new pattern support reveal earlier exposures?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/secret-security/secret-scanning"
+    },
+    {
+        "id": "ghas-secrets-019",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "A scanner detects a provider-issued token and notifies the service provider through its partner integration. How does that differ from generic detection?",
+        "choices": [
+            "Partner patterns are only for package manifests",
+            "Both types prevent every secret from being committed",
+            "Partner patterns may add provider validation",
+            "Generic patterns automatically revoke every provider token"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Package manifests are not the defining scope of partner patterns.",
+            "Detection does not guarantee every leak is blocked.",
+            "Partner integration can validate a known provider credential; generic detection has no such provider-specific check.",
+            "A detector does not itself revoke every credential."
+        ],
+        "concept": "Provider and generic patterns",
+        "hints": [
+            "Does the credential type have a service provider able to validate it?",
+            "Which distinction is about provider integration rather than format alone?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/secret-security/secret-scanning"
+    },
+    {
+        "id": "ghas-secrets-020",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "A secret-scanning finding appears to match a test fixture, but the team has not verified whether the value is inert. What is the sound response?",
+        "choices": [
+            "Close it because test directories are always safe",
+            "Delete the alert without checking the credential",
+            "Assume a validity check will always identify test values",
+            "Confirm the value is nonfunctional or revoked before closing the alert as resolved"
+        ],
+        "correct": 3,
+        "explanations": [
+            "A test location does not prove a value is harmless.",
+            "Removing a record does not verify or contain the credential.",
+            "Validity checks are not guaranteed for every secret type.",
+            "Resolution should reflect evidence that the credential cannot be used."
+        ],
+        "concept": "Accurate alert closure",
+        "hints": [
+            "What evidence supports a safe closure?",
+            "Can a filename or folder name prove a credential is inert?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/secret-security/secret-scanning"
+    },
+    {
+        "id": "ghas-secrets-021",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "A response integration already has a secret-scanning alert number. Which REST request lists that alert's recorded secret locations, rather than listing other alerts?",
+        "choices": [
+            "GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}/locations",
+            "GET /repos/{owner}/{repo}/secret-scanning/alerts",
+            "GET /orgs/{org}/secret-scanning/alerts",
+            "GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}"
+        ],
+        "correct": 0,
+        "explanations": [
+            "The locations subresource enumerates occurrences belonging to the specified secret alert.",
+            "The repository alert collection lists alerts, not one alert's location records.",
+            "The organization collection spans alerts across eligible repositories, not one alert's occurrences.",
+            "Code-scanning alerts are a different resource and do not enumerate secret locations."
+        ],
+        "concept": "Secret occurrence enumeration",
+        "hints": [
+            "Determine whether the requested resource is a collection of alerts or of occurrences.",
+            "The alert identity is already known."
+        ],
+        "source": "https://docs.github.com/en/rest/secret-scanning/secret-scanning#list-locations-for-a-secret-scanning-alert"
+    },
+    {
+        "id": "ghas-secrets-022",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "Several repositories need consistent detection of an organization-issued token format. Which configuration scope lets security administrators share the detector?",
+        "choices": [
+            "In the code-scanning SARIF upload",
+            "Organization custom-pattern settings",
+            "In each developer's local Git configuration",
+            "In a Dependabot package registry"
+        ],
+        "correct": 1,
+        "explanations": [
+            "SARIF uploads findings rather than configuring credential detection.",
+            "Organization custom patterns can be applied across chosen repositories.",
+            "Local Git settings do not publish an organization detector.",
+            "Dependabot registries provide package access, not secret patterns."
+        ],
+        "concept": "Organization custom patterns",
+        "hints": [
+            "What scope should own a detector shared by multiple repositories?",
+            "Which configuration belongs to the secret-detection feature itself?"
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/secure-your-secrets/customize-leak-detection/define-custom-patterns"
+    },
+    {
+        "id": "ghas-secrets-023",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "The provider has confirmed revocation, and maintainers have removed the exposed token from current files. Its secret-scanning alert remains open. What completes the alert workflow?",
+        "choices": [
+            "Wait for cleanup to close the alert",
+            "Rerun the CodeQL analysis workflow",
+            "Close the alert with the appropriate reason",
+            "Republish the repository's custom pattern"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Removing a token from files does not automatically close its secret-scanning alert.",
+            "CodeQL analyzes code weaknesses; rerunning it does not resolve a credential alert.",
+            "After remediation, manually close the alert and record its resolution reason.",
+            "Publishing a detector is unrelated to closing this remediated credential alert."
+        ],
+        "concept": "Secret alert closure after remediation",
+        "hints": [
+            "Separate provider remediation from GitHub alert disposition.",
+            "Which step updates the alert record itself?"
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-secret-scanning-alerts/resolving-alerts"
+    },
+    {
+        "id": "ghas-secrets-024",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "A team expects provider-backed validity results, but the alert lacks that information. Which prerequisite should they check?",
+        "choices": [
+            "Whether the repository has a package lockfile",
+            "Whether CodeQL uses the security-extended suite",
+            "Whether the token was committed on the default branch",
+            "Check secret-type support and feature availability"
+        ],
+        "correct": 3,
+        "explanations": [
+            "A lockfile is unrelated to credential validation.",
+            "CodeQL query selection does not enable provider validation.",
+            "The branch location alone does not determine support for validity checks.",
+            "Validity checks are available only for supported secret types and configurations."
+        ],
+        "concept": "Validity-check support",
+        "hints": [
+            "Does the detected credential type have a supported validation integration?",
+            "Which capability is separate from finding the secret in source?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/secret-security/validity-checks"
+    },
+    {
+        "id": "ghas-secrets-025",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "An administrator reviews a push-protection bypass. Which information is useful for understanding and auditing the exception?",
+        "choices": [
+            "The contributor, reason, and affected secret or push context",
+            "The repository's Dependabot schedule only",
+            "The CodeQL database size",
+            "The number of stars the repository has"
+        ],
+        "correct": 0,
+        "explanations": [
+            "The bypass record provides context for reviewing who bypassed and why.",
+            "Dependency schedules do not explain a secret-protection exception.",
+            "Database size does not describe the bypass event.",
+            "Popularity is not evidence about the decision."
+        ],
+        "concept": "Push-bypass auditability",
+        "hints": [
+            "What facts explain the decision to override the block?",
+            "Which record helps reviewers investigate an exception afterward?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/secret-security/push-protection"
+    },
+    {
+        "id": "ghas-secrets-026",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "Push protection flags a value that the author verifies is a nonfunctional placeholder. Which bypass reason most accurately records the situation?",
+        "choices": [
+            "The provider has no security policy",
+            "It's a false positive",
+            "It's used in tests",
+            "It's a low-impact credential"
+        ],
+        "correct": 1,
+        "explanations": [
+            "A provider policy does not determine whether a value is a false match.",
+            "A verified placeholder that is not a credential is a false positive.",
+            "A test location alone does not identify why detection was incorrect.",
+            "A real low-impact credential remains a credential."
+        ],
+        "concept": "False-positive bypass classification",
+        "hints": [
+            "Is the detected value actually a credential?",
+            "Which reason distinguishes incorrect detection from a deliberate test use?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/secret-security/push-protection"
+    },
+    {
+        "id": "ghas-secrets-027",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "A repository uses `.github/secret_scanning.yml` with `paths-ignore` for generated documentation. What is the main consequence?",
+        "choices": [
+            "The rule encrypts files in excluded paths",
+            "The file suppresses Dependabot alerts for matching packages",
+            "Excluded paths bypass secret scanning and push protection",
+            "It hides alerts but leaves push protection active for those paths"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Path exclusions do not encrypt or otherwise neutralize credentials.",
+            "Secret-scanning exclusions do not suppress package vulnerability alerts.",
+            "The configuration excludes matching paths from secret scanning and push protection.",
+            "The exclusion affects push protection too; it is not merely an alert-visibility setting."
+        ],
+        "concept": "Detection exclusion risk",
+        "hints": [
+            "What security coverage is reduced by an ignored path?",
+            "Could a real credential appear in the excluded content?"
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/code-security/how-tos/secure-your-secrets/customize-leak-detection/exclude-folders-and-files"
+    },
+    {
+        "id": "ghas-secrets-028",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "Responders need to discuss an exposed credential in a public repository. Which practice avoids creating another leak?",
+        "choices": [
+            "Paste the complete token into a public issue for context",
+            "Add the token to a pull-request description",
+            "Include the value in a commit message naming the incident",
+            "Share a redacted alert reference and coordinate in a restricted channel"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Public issue text can create another exposure.",
+            "Pull-request descriptions can be exposed and scanned too.",
+            "Commit messages can persist in repository history.",
+            "A redacted reference supports investigation without redisclosing the credential."
+        ],
+        "concept": "Safe secret-incident collaboration",
+        "hints": [
+            "Can the discussion repeat the sensitive value?",
+            "What communication preserves context without reproducing the credential?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/secret-security/secret-scanning"
+    },
+    {
+        "id": "ghas-secrets-029",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "A secret is found in an old commit but is absent from the current file. Why can it still require response?",
+        "choices": [
+            "The value remains in Git history and may still be usable",
+            "Secret scanning reports only values in the current branch",
+            "An old commit automatically invalidates the credential",
+            "The alert proves the token has never been copied"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Removing a value from the latest file does not erase earlier commits or invalidate it.",
+            "Secret scanning covers repository history on branches.",
+            "Commit age does not revoke a credential.",
+            "Detection cannot establish whether the value was copied elsewhere."
+        ],
+        "concept": "Historical exposure investigation",
+        "hints": [
+            "Could the value remain accessible in an earlier revision?",
+            "Does disappearance from the latest file revoke a credential?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/secret-security/secret-scanning"
+    },
+    {
+        "id": "ghas-secrets-030",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "Secret scanning already detects provider-issued tokens. A team also needs built-in detection of private keys and connection strings that are not tied to one provider. Which extension fits?",
+        "choices": [
+            "Partner validity checks",
+            "Generic patterns",
+            "Organization custom patterns",
+            "Push-protection exemptions"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Validity checks evaluate supported detected credentials, not add generic formats.",
+            "Generic patterns cover secrets such as private keys and connection strings without a specific provider.",
+            "Custom patterns require organization-defined expressions; the request is for built-in formats.",
+            "Exemptions skip prevention for selected actors; they do not extend detection."
+        ],
+        "concept": "Generic secret detection",
+        "hints": [
+            "Distinguish a known provider from a general credential structure.",
+            "The requirement is not a proprietary token format."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/secret-security/secret-scanning"
+    },
+    {
+        "id": "ghas-secrets-031",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "A custom secret expression works in a different regex tester but uses constructs GitHub's custom-pattern engine does not support. Which compatibility target should the author use?",
+        "choices": [
+            "JavaScript RegExp syntax",
+            "All PCRE constructs and modifiers",
+            "Hyperscan's supported PCRE subset",
+            "Git pathspec wildcard syntax"
+        ],
+        "correct": 2,
+        "explanations": [
+            "A JavaScript tester can accept syntax unavailable to the custom-pattern engine.",
+            "GitHub does not support all PCRE constructs or Hyperscan option modifiers.",
+            "Custom patterns use Hyperscan and its documented subset of PCRE syntax.",
+            "Pathspec syntax selects paths; it is not the custom secret regex language."
+        ],
+        "concept": "Custom-pattern regex compatibility",
+        "hints": [
+            "A successful test in one regex engine is not portable proof.",
+            "Check the detector's documented syntax rather than only the examples."
+        ],
+        "source": "https://docs.github.com/en/code-security/reference/secret-security/custom-patterns"
+    },
+    {
+        "id": "ghas-secrets-032",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "A team enables push protection and assumes no credential can ever reach the repository. Which assessment is most accurate?",
+        "choices": [
+            "It retroactively revokes every secret in history",
+            "It scans only dependency manifests",
+            "It prevents credentials from being shared outside GitHub",
+            "Blocks supported pushes, not every secret leak"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Push protection does not revoke historical credentials.",
+            "Dependency manifests are not its only content scope.",
+            "A repository control cannot prevent all external disclosure.",
+            "Coverage depends on supported secret types and push paths; protection is not a universal guarantee."
+        ],
+        "concept": "Push-protection detection limits",
+        "hints": [
+            "What kinds of coverage can a preventive control reasonably guarantee?",
+            "Could an unsupported or already exposed secret fall outside this control?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/secret-security/push-protection"
+    },
+    {
+        "id": "ghas-secrets-033",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "A custom pattern already captures the token's length and alphabet. It must also require a digit inside the token, without constraining surrounding text. Which field fits?",
+        "choices": [
+            "Additional match requirements",
+            "Before secret",
+            "After secret",
+            "Pattern name"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Additional match requirements can require the secret itself to match a digit expression.",
+            "Before secret constrains preceding content, not characters inside the secret.",
+            "After secret constrains following content, not the secret's internal composition.",
+            "Pattern name labels the detector but does not impose matching conditions."
+        ],
+        "concept": "Internal constraints in custom patterns",
+        "hints": [
+            "Identify whether the condition concerns the captured value or its neighbors.",
+            "The token's basic format is already configured."
+        ],
+        "source": "https://docs.github.com/en/code-security/reference/secret-security/custom-patterns"
+    },
+    {
+        "id": "ghas-secrets-034",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "A repository integration writes content through the GitHub REST API. Which statement should the team use when assessing push-protection coverage?",
+        "choices": [
+            "Replace the integration with Dependabot",
+            "Check the documented API behavior and enable the supported repository-level protection path",
+            "Assume every API write bypasses all secret checks",
+            "Assume user-level push protection creates repository alerts for API writes"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Dependabot does not protect API writes from secret exposure.",
+            "API behavior and repository configuration determine which protections apply.",
+            "A blanket bypass claim is not a safe assumption about supported write paths.",
+            "User-level protections do not substitute for repository-level coverage and alerting."
+        ],
+        "concept": "API content-write protection",
+        "hints": [
+            "Which write interface is being used, and what does its documentation promise?",
+            "What should be verified before claiming an integration is covered or exempt?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/secret-security/push-protection"
+    },
+    {
+        "id": "ghas-secrets-035",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "A push-protection bypass request is marked Approved, but its commits have not reached the repository. Which interpretation follows the documented request statuses?",
+        "choices": [
+            "Approval confirms the commits were pushed",
+            "Approval permanently exempts the contributor",
+            "Approval permits the push but does not perform it",
+            "Approval closes the related credential incident"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Approved explicitly allows for commits that have not yet been pushed.",
+            "A request approval is not an actor-level exemption from future protection.",
+            "The contributor still has to push; approval alone does not publish commits.",
+            "Bypass approval does not revoke a credential or finish incident remediation."
+        ],
+        "concept": "Bypass approval versus delivery",
+        "hints": [
+            "Distinguish permission to perform an operation from its execution.",
+            "Read the status in the context of the commits' delivery."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/secure-your-secrets/manage-bypass-requests/review-bypass-requests"
+    },
+    {
+        "id": "ghas-secrets-036",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "A real API key is valid but currently grants access only to a low-risk test service. Which bypass reason is more accurate than calling it a false positive?",
+        "choices": [
+            "It's a false positive",
+            "The scanner found a package advisory",
+            "The key is not a credential",
+            "It's used in tests"
+        ],
+        "correct": 3,
+        "explanations": [
+            "A valid key is not a false match just because its impact seems limited.",
+            "Secret detection does not report package advisories.",
+            "The scenario confirms the value is a real API key.",
+            "A real credential used in a test context is not automatically a false positive."
+        ],
+        "concept": "False positive versus lower impact",
+        "hints": [
+            "Is the finding incorrect, or is a real secret used in a limited context?",
+            "Which distinction preserves an accurate record of the detection?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/secret-security/push-protection"
+    },
+    {
+        "id": "ghas-secrets-037",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "An organization published a custom pattern and enabled push protection for that pattern. One repository has secret scanning but repository-level push protection is off. What is required for this pattern to block supported pushes there?",
+        "choices": [
+            "Enable push protection on that repository",
+            "Republish the pattern at enterprise scope",
+            "Increase the organization's dry-run sample",
+            "Rename the pattern in organization settings"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Organization custom-pattern push protection applies only where repository push protection is enabled.",
+            "An enterprise-scoped copy does not replace the repository enablement requirement.",
+            "Dry-run sampling evaluates matches; it does not enable repository prevention.",
+            "Renaming a detector does not change repository-level protection settings."
+        ],
+        "concept": "Custom-pattern prevention applicability",
+        "hints": [
+            "Check the repository prerequisites independently of the shared detector.",
+            "Publication and local prevention are separate configuration layers."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/secure-your-secrets/customize-leak-detection/define-custom-patterns"
+    },
+    {
+        "id": "ghas-secrets-038",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "A team wants the repository's security responders to receive secret-scanning alerts. What should an administrator configure?",
+        "choices": [
+            "An SPDX license identifier",
+            "Review alert access and notification settings",
+            "The package manager's registry URL",
+            "A CodeQL build mode"
+        ],
+        "correct": 1,
+        "explanations": [
+            "SPDX identifiers describe licenses, not alert recipients.",
+            "Alert access and notification settings determine who can see or receive supported alerts.",
+            "Registry URLs configure package retrieval.",
+            "Build mode affects compiled-code analysis."
+        ],
+        "concept": "Actionable secret notifications",
+        "hints": [
+            "Who needs access to review and remediate the alert?",
+            "Which settings govern alert visibility and delivery rather than detection syntax?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/secret-security/secret-scanning"
+    },
+    {
+        "id": "ghas-secrets-039",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "A developer removes a leaked token from the latest file and closes its alert. What evidence should responders still seek?",
+        "choices": [
+            "A successful CodeQL query-pack download",
+            "A green dependency-review check",
+            "Confirmation from the provider that the credential was revoked or replaced",
+            "A smaller repository size"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Query-pack retrieval is unrelated to credential containment.",
+            "Dependency review checks dependency changes, not token status.",
+            "Provider confirmation verifies that the exposed credential cannot be used.",
+            "Repository size says nothing about token validity."
+        ],
+        "concept": "Verifying credential containment",
+        "hints": [
+            "What proves the original credential is no longer usable?",
+            "Does deleting the visible occurrence invalidate copies already taken?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/secret-security/secret-scanning"
+    },
+    {
+        "id": "ghas-secrets-040",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "Secret scanning reports a credential months after it was committed. Which statement best describes the timing?",
+        "choices": [
+            "The credential became exposed only when the alert was created",
+            "The late alert proves the credential was never used",
+            "Detection automatically resets the credential's expiration date",
+            "The alert time is when detection occurred, not necessarily when exposure began"
+        ],
+        "correct": 3,
+        "explanations": [
+            "An alert timestamp does not define when the value first became public.",
+            "Delayed detection does not establish whether the credential was used.",
+            "Scanning cannot change provider-side credential expiration.",
+            "A finding can be discovered after the original commit and exposure."
+        ],
+        "concept": "Detection time versus exposure time",
+        "hints": [
+            "When did the value first enter an accessible location?",
+            "Does the alert timestamp necessarily mark the beginning of exposure?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/secret-security/secret-scanning"
+    },
+    {
+        "id": "ghas-supply-001",
+        "domain": "Configure and use supply chain security",
+        "prompt": "A vulnerable package is not listed directly in a manifest, but appears in the dependency graph. What should the maintainer inspect to learn how it entered the project?",
+        "choices": [
+            "The package's SPDX license only",
+            "The transitive dependency path",
+            "The repository's secret-scanning bypass history",
+            "The CodeQL query suite"
+        ],
+        "correct": 1,
+        "explanations": [
+            "License metadata does not show how a package was included.",
+            "A path view traces indirect relationships back to a direct dependency.",
+            "Bypass history records secret exceptions, not package ancestry.",
+            "Query suites analyze source code."
+        ],
+        "concept": "Tracing indirect dependencies",
+        "hints": [
+            "Which relationship connects the package to a declared dependency?",
+            "What graph detail explains how a transitive component arrived?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependency-graph"
+    },
+    {
+        "id": "ghas-supply-002",
+        "domain": "Configure and use supply chain security",
+        "prompt": "A procurement team requests a machine-readable list of a repository's current dependencies. Which GitHub artifact fits this request?",
+        "choices": [
+            "A Dependabot bypass record",
+            "A branch protection ruleset",
+            "An exported SBOM in SPDX format",
+            "A code-scanning SARIF file"
+        ],
+        "correct": 2,
+        "explanations": [
+            "A bypass record documents an exception to secret protection.",
+            "Rulesets govern repository policies, not software composition output.",
+            "GitHub can export the dependency graph as an SPDX SBOM.",
+            "SARIF contains code-analysis results rather than the dependency inventory."
+        ],
+        "concept": "Native SBOM export format",
+        "hints": [
+            "What artifact inventories software components for downstream tools?",
+            "Which standard format does GitHub's dependency-graph export use?"
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/establish-provenance-and-integrity/export-dependencies-as-sbom"
+    },
+    {
+        "id": "ghas-supply-003",
+        "domain": "Configure and use supply chain security",
+        "prompt": "A build resolves dependencies that are absent from parseable repository manifests. Which mechanism can add that build's dependency snapshot to GitHub?",
+        "choices": [
+            "SARIF upload",
+            "A custom secret pattern",
+            "Dependabot auto-triage",
+            "Dependency submission API"
+        ],
+        "correct": 3,
+        "explanations": [
+            "SARIF uploads code-analysis findings.",
+            "Secret patterns detect credential formats.",
+            "Auto-triage changes alert handling, not dependency inventory.",
+            "Dependency submission adds resolved dependency data to the graph."
+        ],
+        "concept": "Supplemental dependency snapshots",
+        "hints": [
+            "What data is missing from static manifest parsing?",
+            "Which interface submits a resolved build inventory?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependency-graph"
+    },
+    {
+        "id": "ghas-supply-004",
+        "domain": "Configure and use supply chain security",
+        "prompt": "A pull request changes a lockfile and upgrades a transitive package. Which feature shows the dependency impact before merging?",
+        "choices": [
+            "Dependency review",
+            "Dependabot alerts only",
+            "Secret scanning history",
+            "CodeQL data-flow analysis"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Dependency review displays added, removed, and updated dependencies in the pull request.",
+            "Alerts report vulnerable dependencies but do not provide the full change diff.",
+            "History scanning searches for exposed credentials.",
+            "Data-flow analysis evaluates paths through application code."
+        ],
+        "concept": "Lockfile change review",
+        "hints": [
+            "What changed in the pull request beyond the direct manifest entry?",
+            "Which view summarizes package additions and version changes before merge?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependency-review"
+    },
+    {
+        "id": "ghas-supply-005",
+        "domain": "Configure and use supply chain security",
+        "prompt": "Branch protection currently treats dependency review as informational. Which control changes the workflow result into a required merge condition?",
+        "choices": [
+            "Set a Dependabot update schedule",
+            "Require dependency review before merging",
+            "Enable the dependency graph without requiring a check",
+            "Add a CODEOWNERS entry for the lockfile"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Schedules create update proposals, not merge requirements.",
+            "A failing check blocks merging only when repository policy requires it to pass.",
+            "An inventory feature alone does not enforce a status check.",
+            "CODEOWNERS requests review but does not make this action a required status."
+        ],
+        "concept": "Required dependency-review checks",
+        "hints": [
+            "What turns a workflow result into an enforcement condition?",
+            "Does a failed check block merges without a repository rule requiring success?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependency-review"
+    },
+    {
+        "id": "ghas-supply-006",
+        "domain": "Configure and use supply chain security",
+        "prompt": "A pull request introduces a package under a license prohibited by company policy. Which dependency-review action setting can enforce that policy?",
+        "choices": [
+            "A CodeQL query suite",
+            "A Dependabot `registries` credential",
+            "A license allowlist or denylist",
+            "A secret-scanning `paths-ignore` entry"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Query suites select code-analysis rules.",
+            "Registry credentials authenticate package retrieval.",
+            "The dependency-review action can evaluate license identifiers against policy.",
+            "Path exclusions configure secret-scanning scope."
+        ],
+        "concept": "Dependency license policy",
+        "hints": [
+            "Which pull-request check evaluates license metadata for changed packages?",
+            "Is the restriction about package terms or secret detection?"
+        ],
+        "source": "https://docs.github.com/en/code-security/tutorials/secure-your-dependencies/customize-dependency-review-action"
+    },
+    {
+        "id": "ghas-supply-007",
+        "domain": "Configure and use supply chain security",
+        "prompt": "A repository wants its dependency-review workflow to fail only when a newly introduced vulnerability is at least high severity. Which setting expresses that threshold?",
+        "choices": [
+            "`schedule: weekly`",
+            "`paths-ignore: high`",
+            "`query-filters: security-extended`",
+            "`fail-on-severity: high`"
+        ],
+        "correct": 3,
+        "explanations": [
+            "A schedule controls when Dependabot checks for updates.",
+            "`paths-ignore` is not a dependency-review severity option.",
+            "Query filters configure code analysis, not dependency review.",
+            "`fail-on-severity` sets the vulnerability severity threshold for the action."
+        ],
+        "concept": "Review severity thresholds",
+        "hints": [
+            "Which action input directly names a vulnerability severity cutoff?",
+            "What setting should distinguish high findings from lower severities?"
+        ],
+        "source": "https://docs.github.com/en/code-security/tutorials/secure-your-dependencies/customize-dependency-review-action"
+    },
+    {
+        "id": "ghas-supply-008",
+        "domain": "Configure and use supply chain security",
+        "prompt": "A new advisory is published for a package already present in a repository's dependency graph. Which feature notifies maintainers about the affected dependency?",
+        "choices": [
+            "Dependabot alerts",
+            "Dependabot version updates",
+            "Dependency submission",
+            "Secret scanning"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Dependabot alerts match repository dependencies to advisories in GitHub Advisory Database.",
+            "Version updates maintain packages but are not the vulnerability-notification feature.",
+            "Submission adds dependency data rather than advisory notifications.",
+            "Secret scanning detects exposed credentials."
+        ],
+        "concept": "Dependabot alert scope",
+        "hints": [
+            "What connects newly published vulnerability data to existing packages?",
+            "Which feature reports known vulnerable dependencies in the graph?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-alerts"
+    },
+    {
+        "id": "ghas-supply-009",
+        "domain": "Configure and use supply chain security",
+        "prompt": "A dependency is several releases behind, but no advisory marks its version vulnerable. Which statement distinguishes the two conditions?",
+        "choices": [
+            "It cannot appear in the dependency graph",
+            "Outdated does not mean vulnerable",
+            "It must have a Dependabot security alert",
+            "It is safe to ignore all future updates"
+        ],
+        "correct": 1,
+        "explanations": [
+            "The dependency graph can list packages regardless of alert status.",
+            "Being behind the latest release is different from matching a known vulnerable range.",
+            "Alerts depend on known vulnerability data, not merely a newer release.",
+            "An outdated package can still need maintenance or later security updates."
+        ],
+        "concept": "Vulnerable versus outdated",
+        "hints": [
+            "Is the concern a known affected version or simply an older release?",
+            "What evidence causes a vulnerability alert rather than a routine update?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-alerts"
+    },
+    {
+        "id": "ghas-supply-010",
+        "domain": "Configure and use supply chain security",
+        "prompt": "A repository has a Dependabot alert for a vulnerable package but receives no proposed fix. Which setting should an administrator verify first?",
+        "choices": [
+            "Whether the README has an SPDX header",
+            "Whether CodeQL scans on a schedule",
+            "Whether security updates are enabled",
+            "Whether the repository has a custom secret pattern"
+        ],
+        "correct": 2,
+        "explanations": [
+            "An SPDX header does not configure Dependabot.",
+            "CodeQL scheduling is independent of Dependabot security updates.",
+            "Security-update pull requests are created when that update feature is enabled and a fix is available.",
+            "Secret-pattern configuration does not enable package updates."
+        ],
+        "concept": "Security update enablement",
+        "hints": [
+            "What feature creates a proposed package fix after an alert?",
+            "Do alerts alone guarantee an automatic update pull request?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-security-updates"
+    },
+    {
+        "id": "ghas-supply-011",
+        "domain": "Configure and use supply chain security",
+        "prompt": "A dependency is at 1.2.0. Version 1.2.4 is the first patched release and resolves without breaking the graph; 2.0.0 is newer. Which target follows Dependabot security updates' documented objective?",
+        "choices": [
+            "2.0.0 because security updates always choose latest",
+            "1.2.0 with the advisory added to an ignore list",
+            "The highest 1.x release regardless of the patch boundary",
+            "1.2.4 as the minimum resolving patched version"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Always choosing the latest release describes neither the minimal security fix nor its compatibility goal.",
+            "Keeping the vulnerable version and ignoring an advisory is not an upgrade to a fix.",
+            "Security updates are not an unconditional highest-minor release selection.",
+            "Dependabot seeks the minimum patched version that can resolve the dependency graph."
+        ],
+        "concept": "Minimal patched-version selection",
+        "hints": [
+            "Distinguish correcting a vulnerability from routine version freshness.",
+            "The scenario already establishes that the first patched release resolves."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-security-updates"
+    },
+    {
+        "id": "ghas-supply-012",
+        "domain": "Configure and use supply chain security",
+        "prompt": "A maintainer needs to set package ecosystems, directories, and update schedules for Dependabot. Which repository file should they edit?",
+        "choices": [
+            "`.github/dependabot.yml`",
+            "`.github/codeql.yml`",
+            "`.github/secret_scanning.yml`",
+            "`CODEOWNERS`"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Dependabot update behavior is configured in `.github/dependabot.yml`.",
+            "This is not the default file for Dependabot schedules and ecosystems.",
+            "This file configures secret-scanning path exclusions.",
+            "CODEOWNERS assigns code review responsibility."
+        ],
+        "concept": "Version update configuration location",
+        "hints": [
+            "Which configuration owns Dependabot's package update entries?",
+            "Where are ecosystem, directory, and schedule settings defined?"
+        ],
+        "source": "https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference"
+    },
+    {
+        "id": "ghas-supply-013",
+        "domain": "Configure and use supply chain security",
+        "prompt": "A private package source must be available to Dependabot updates. Which section of `.github/dependabot.yml` declares registry definitions?",
+        "choices": [
+            "`ignore`",
+            "`registries`",
+            "`groups`",
+            "`updates`"
+        ],
+        "correct": 1,
+        "explanations": [
+            "`ignore` excludes matching dependencies or versions from updates.",
+            "The top-level `registries` section defines registry access for Dependabot.",
+            "`groups` combines compatible package updates.",
+            "`updates` configures ecosystem-specific update jobs and can reference registries."
+        ],
+        "concept": "Dependabot registry configuration",
+        "hints": [
+            "Which configuration section defines package sources used by Dependabot?",
+            "Does this section define a source, a schedule, or an update exclusion?"
+        ],
+        "source": "https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference"
+    },
+    {
+        "id": "ghas-supply-014",
+        "domain": "Configure and use supply chain security",
+        "prompt": "A team wants fewer Dependabot pull requests by combining compatible package updates. Where can it define package grouping rules?",
+        "choices": [
+            "A `queries` block in a CodeQL workflow",
+            "The repository's SPDX SBOM",
+            "The `groups` configuration in `.github/dependabot.yml`",
+            "A `paths-ignore` block in `.github/secret_scanning.yml`"
+        ],
+        "correct": 2,
+        "explanations": [
+            "CodeQL query configuration is for code analysis.",
+            "An SBOM is inventory output, not update policy.",
+            "Dependabot grouping rules are defined in its YAML configuration.",
+            "Secret-scanning exclusions do not group package updates."
+        ],
+        "concept": "Grouped security updates",
+        "hints": [
+            "Which configuration controls how Dependabot combines package update pull requests?",
+            "What file already defines ecosystems and schedules?"
+        ],
+        "source": "https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference"
+    },
+    {
+        "id": "ghas-supply-015",
+        "domain": "Configure and use supply chain security",
+        "prompt": "A repository configures Dependabot groups for routine version updates. What should the team verify before assuming security-update pull requests use those same groups?",
+        "choices": [
+            "Whether the repository has a secret-scanning alert",
+            "Whether CodeQL uses a compiled-language build mode",
+            "Whether its SBOM contains dependents",
+            "Security-update grouping is enabled in this scope"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Secret alerts do not determine package-update grouping.",
+            "CodeQL build modes do not configure Dependabot.",
+            "SBOM dependents are not included in the exported inventory.",
+            "Security-update grouping has an enablement setting that may be needed for applicable directories."
+        ],
+        "concept": "Security update grouping boundaries",
+        "hints": [
+            "Are routine update groups and security-update groups always enabled together?",
+            "Which configuration scope should be checked for grouped security pull requests?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-security-updates"
+    },
+    {
+        "id": "ghas-supply-016",
+        "domain": "Configure and use supply chain security",
+        "prompt": "A Dependabot auto-triage rule snoozes an alert. What does that action do?",
+        "choices": [
+            "Changes alert handling, not the package",
+            "Releases a fixed package version automatically",
+            "Removes the vulnerable package from every branch",
+            "Disables future advisory matching"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Triage rules manage alert treatment, not source changes.",
+            "A snooze does not publish a package fix.",
+            "An alert rule cannot rewrite every dependency declaration.",
+            "Snoozing is not the same as disabling vulnerability detection."
+        ],
+        "concept": "Auto-triage is not patching",
+        "hints": [
+            "Did the dependency version change, or only the alert's handling?",
+            "Which separate mechanism would propose a code update?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-auto-triage-rules"
+    },
+    {
+        "id": "ghas-supply-017",
+        "domain": "Configure and use supply chain security",
+        "prompt": "A Dependabot alert was auto-dismissed under a rule for development-only dependencies. Its dependency is later classified as production. What can happen when the alert metadata changes?",
+        "choices": [
+            "The original dismissal remains permanent despite metadata changes",
+            "The alert can be automatically reopened",
+            "A new alert must be manually created for the production scope",
+            "The alert can reopen only after a patched version is published"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Automatic dismissal is not permanent when the metadata underlying it changes.",
+            "Auto-dismissed alerts can reopen when metadata such as dependency scope changes.",
+            "The existing auto-dismissed alert can reopen; a manually created replacement is unnecessary.",
+            "Metadata changes can trigger reopening without waiting for a patched release."
+        ],
+        "concept": "Metadata-driven alert reopening",
+        "hints": [
+            "The rule's original eligibility depended on dependency scope.",
+            "Consider whether automatic dismissal is permanent."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-auto-triage-rules"
+    },
+    {
+        "id": "ghas-supply-018",
+        "domain": "Configure and use supply chain security",
+        "prompt": "An auto-triage rule dismisses alerts that meet a metadata condition. What safeguard best reduces accidental suppression of important findings?",
+        "choices": [
+            "Disable notifications for alerts matched by the rule",
+            "Limit the rule to one ecosystem and rarely review matches",
+            "Review rule criteria and audit affected alerts regularly",
+            "Apply the rule to all matches and defer manual review"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Turning off notifications reduces visibility rather than preventing unsafe suppression.",
+            "A narrower scope can help, but rarely reviewing matches leaves mistakes undiscovered.",
+            "Reviewing conditions and affected alerts helps catch unintended dismissals.",
+            "Applying a rule broadly before review can suppress unrelated vulnerability alerts."
+        ],
+        "concept": "Reviewing automated triage",
+        "hints": [
+            "What risk follows from a rule that matches too broadly?",
+            "Which practice provides oversight without abandoning automation?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-auto-triage-rules"
+    },
+    {
+        "id": "ghas-supply-019",
+        "domain": "Configure and use supply chain security",
+        "prompt": "An organization wants an auto-triage rule to target a specific package ecosystem and dependency scope. Which information should its conditions use?",
+        "choices": [
+            "The contributor's push-protection bypass reason",
+            "A SARIF source line",
+            "The repository's star count",
+            "The alert's package and dependency metadata"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Push-protection reasons belong to secret scanning.",
+            "SARIF locations describe code-analysis findings.",
+            "Repository popularity does not describe dependency risk.",
+            "Dependabot rules can target alert metadata such as package and scope."
+        ],
+        "concept": "Metadata-targeted auto-triage",
+        "hints": [
+            "Which attributes distinguish the package alerts that should match?",
+            "What kind of data should an alert-handling rule evaluate?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-auto-triage-rules"
+    },
+    {
+        "id": "ghas-supply-020",
+        "domain": "Configure and use supply chain security",
+        "prompt": "A build workflow submits a dependency snapshot before its dependency-resolution job finishes. What is the likely issue?",
+        "choices": [
+            "Unresolved dependencies may be missing from the inventory",
+            "Secret scanning will convert the snapshot to SARIF",
+            "Dependabot will infer every package from the workflow name",
+            "The snapshot will automatically include package dependents"
+        ],
+        "correct": 0,
+        "explanations": [
+            "A snapshot should reflect the resolved dependency set from the build.",
+            "Secret scanning does not transform dependency submissions.",
+            "Workflow names do not identify resolved packages.",
+            "A repository SBOM lists dependencies, not all projects that depend on the repository."
+        ],
+        "concept": "Dependency submission ordering",
+        "hints": [
+            "At what point is the build's full dependency set known?",
+            "Could an early snapshot omit components that resolution has not produced?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependency-graph"
+    },
+    {
+        "id": "ghas-supply-021",
+        "domain": "Configure and use supply chain security",
+        "prompt": "A team wants dependency checks to run on changes targeting its main branch. Where does it configure the dependency-review action trigger?",
+        "choices": [
+            "In a CodeQL query pack",
+            "In a GitHub Actions workflow triggered by `pull_request`",
+            "In `dependabot.yml` under `registries`",
+            "In the repository's SBOM"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Query packs configure static analysis.",
+            "The action is run from a workflow, commonly on pull requests.",
+            "Registries configure package sources, not workflow events.",
+            "An SBOM is an exported inventory, not a workflow trigger."
+        ],
+        "concept": "Dependency-review workflow orchestration",
+        "hints": [
+            "What event should evaluate the proposed dependency diff before merging?",
+            "Which file type declares GitHub Actions event triggers?"
+        ],
+        "source": "https://docs.github.com/en/code-security/tutorials/secure-your-dependencies/customize-dependency-review-action"
+    },
+    {
+        "id": "ghas-supply-022",
+        "domain": "Configure and use supply chain security",
+        "prompt": "A dependency-review action cannot find dependency data for a pull request. Which foundation should an administrator verify?",
+        "choices": [
+            "That the repository has a CodeQL database",
+            "That custom secret patterns are published",
+            "Enable graph support for that ecosystem",
+            "That push protection is set to block"
+        ],
+        "correct": 2,
+        "explanations": [
+            "CodeQL databases contain code for query analysis.",
+            "Secret patterns do not supply package metadata.",
+            "Dependency review relies on dependency-graph data and supported ecosystems.",
+            "Push protection scans for credentials, not package inventory."
+        ],
+        "concept": "Dependency-review data prerequisites",
+        "hints": [
+            "What source of package inventory does dependency review use?",
+            "Which repository feature should be enabled for dependency information?"
+        ],
+        "source": "https://docs.github.com/en/code-security/tutorials/secure-your-dependencies/customize-dependency-review-action"
+    },
+    {
+        "id": "ghas-supply-023",
+        "domain": "Configure and use supply chain security",
+        "prompt": "A generated SPDX SBOM is used as evidence that every deployed component is safe. Which limitation should reviewers keep in mind?",
+        "choices": [
+            "An SBOM automatically patches vulnerable packages",
+            "An SBOM contains only direct dependencies",
+            "An SBOM replaces a dependency graph",
+            "An inventory is not a vulnerability assessment"
+        ],
+        "correct": 3,
+        "explanations": [
+            "An SBOM reports components rather than applying package fixes.",
+            "The export can include transitive paths and dependencies.",
+            "GitHub exports the graph state; it does not replace the graph.",
+            "Inventory supports transparency but does not prove security."
+        ],
+        "concept": "SBOM assurance limits",
+        "hints": [
+            "What question does a component inventory answer, and what does it not prove?",
+            "Does listing a component establish that its version has no known vulnerabilities?"
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/establish-provenance-and-integrity/export-dependencies-as-sbom"
+    },
+    {
+        "id": "ghas-supply-024",
+        "domain": "Configure and use supply chain security",
+        "prompt": "After requesting a repository SBOM through the REST API, automation polls the returned sbom_url and receives HTTP 202. Which behavior follows the documented export flow?",
+        "choices": [
+            "Continue polling; follow the 302 redirect when ready",
+            "Parse the 202 response as the completed SPDX document",
+            "Treat 202 as a permanent authorization failure",
+            "Submit a new generation request after every poll"
+        ],
+        "correct": 0,
+        "explanations": [
+            "The export flow uses 202 while preparing and a 302 redirect to the completed download.",
+            "A pending response is not the finished SBOM artifact.",
+            "202 indicates accepted processing here, not a permanent denial of access.",
+            "Poll the returned URL instead of repeatedly starting separate generation requests."
+        ],
+        "concept": "Asynchronous SBOM export",
+        "hints": [
+            "Distinguish pending generation from the downloadable artifact.",
+            "Use the continuation URL returned by the service."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/establish-provenance-and-integrity/export-dependencies-as-sbom"
+    },
+    {
+        "id": "ghas-supply-025",
+        "domain": "Configure and use supply chain security",
+        "prompt": "A package has no fixed version yet, but its Dependabot alert is valid. Which response preserves visibility while the team mitigates the risk?",
+        "choices": [
+            "Remove the direct reference and assume transitive copies are gone",
+            "Keep the alert open and record the scoped mitigation",
+            "Dismiss it as fixed without a patched version",
+            "Suppress all ecosystem alerts until a patch is published"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Removing one direct reference may leave another path and does not preserve alert tracking.",
+            "A scoped mitigation keeps the valid alert visible for later reassessment.",
+            "Without a patched release, marking the alert fixed overstates remediation.",
+            "Suppressing an entire ecosystem hides unrelated risks instead of containing this issue."
+        ],
+        "concept": "Dependency exception management",
+        "hints": [
+            "Is the vulnerability resolved, or only temporarily mitigated?",
+            "What keeps the issue visible for review when no fixed version exists?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-alerts"
+    },
+    {
+        "id": "ghas-supply-026",
+        "domain": "Configure and use supply chain security",
+        "prompt": "A team prioritizes a vulnerable dependency using both CVSS and EPSS. What distinction should guide its interpretation?",
+        "choices": [
+            "Both scores measure package age",
+            "EPSS identifies the fixed version; CVSS counts dependency paths",
+            "CVSS describes severity; EPSS estimates exploitation probability",
+            "CVSS measures exploit likelihood; EPSS describes license compatibility"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Neither score is a package-age metric.",
+            "Fixed versions and dependency paths are separate alert details.",
+            "CVSS rates vulnerability severity, while EPSS estimates exploitation likelihood.",
+            "License compatibility is not what EPSS measures."
+        ],
+        "concept": "EPSS versus CVSS",
+        "hints": [
+            "Which signal describes impact and which estimates exploitation likelihood?",
+            "Are these scores interchangeable measures of the same property?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-alert-metrics"
+    },
+    {
+        "id": "ghas-supply-027",
+        "domain": "Configure and use supply chain security",
+        "prompt": "An npm dependency A allows only B 1.x, but B's fix starts at 2.0. Dependabot proposes upgrading A as well as B. Why can changing the non-vulnerable parent be necessary?",
+        "choices": [
+            "A's version must always match B's major version",
+            "A's lockfile entry alone overrides its declared range for B",
+            "A must be upgraded before B's vulnerability can be dismissed as false positive",
+            "A newer parent can permit B's patched version"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Parent and child major-version numbers do not have to match.",
+            "A lockfile edit alone does not remove the parent's incompatible version constraint.",
+            "This is a real child vulnerability, not a false positive caused by the parent's version.",
+            "Updating A can relax the constraint that otherwise excludes B 2.0."
+        ],
+        "concept": "Parent constraints in transitive remediation",
+        "hints": [
+            "The package manager must satisfy the parent's declared version range.",
+            "A valid fix must also yield a resolvable dependency graph."
+        ],
+        "source": "https://docs.github.com/en/code-security/reference/supply-chain-security/troubleshoot-dependabot/dependabot-errors"
+    },
+    {
+        "id": "ghas-supply-028",
+        "domain": "Configure and use supply chain security",
+        "prompt": "A dependency-review workflow should load repository-specific policy from a local YAML file. Which action input points to the documented default file path?",
+        "choices": [
+            "`config-file: './.github/dependency-review-config.yml'`",
+            "`config-file: './.github/dependency-review.yml'`",
+            "`config-file: './.github/dependency-review-config.yaml'`",
+            "`config-file: './.github/dependency-config.yml'`"
+        ],
+        "correct": 0,
+        "explanations": [
+            "This is the documented default example path for the local dependency-review configuration file.",
+            "This filename is not the documented default path for the action configuration.",
+            "The action can use another path, but this is not its documented default example.",
+            "The action can use another path, but this is not its documented default example."
+        ],
+        "concept": "Dependency-review configuration path",
+        "hints": [
+            "Which input names a file instead of setting a policy directly?",
+            "Where is the documented repository-local dependency-review configuration stored?"
+        ],
+        "source": "https://docs.github.com/en/code-security/tutorials/secure-your-dependencies/customize-dependency-review-action"
+    },
+    {
+        "id": "ghas-supply-029",
+        "domain": "Configure and use supply chain security",
+        "prompt": "A repository wants one Dependabot pull request to combine routine updates from multiple package ecosystems. Which configuration feature is designed for that?",
+        "choices": [
+            "A CodeQL query suite",
+            "Multi-ecosystem groups in `dependabot.yml`",
+            "A single `paths-ignore` list",
+            "The dependency graph's SBOM export"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Query suites select code-analysis rules.",
+            "Multi-ecosystem groups coordinate eligible updates across ecosystems.",
+            "Path exclusions configure secret-scanning scope.",
+            "SBOM export generates an inventory, not grouped updates."
+        ],
+        "concept": "Multi-ecosystem update configuration",
+        "hints": [
+            "Does the desired grouping cross ecosystem boundaries?",
+            "Which Dependabot option groups updates from more than one package manager?"
+        ],
+        "source": "https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference"
+    },
+    {
+        "id": "ghas-supply-030",
+        "domain": "Configure and use supply chain security",
+        "prompt": "A workflow pins actions such as `actions/checkout` to version tags. Which Dependabot ecosystem can propose updates to those references?",
+        "choices": [
+            "`docker`",
+            "`pip`",
+            "`github-actions`",
+            "`npm`"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Docker monitors container image dependencies.",
+            "pip handles Python packages.",
+            "Dependabot supports a `github-actions` ecosystem for workflow action references.",
+            "npm tracks JavaScript packages, not workflow action references."
+        ],
+        "concept": "Workflow dependency maintenance",
+        "hints": [
+            "Which package ecosystem identifies reusable actions in workflow files?",
+            "What type of dependency is written in an Actions `uses` field?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-version-updates"
+    },
+    {
+        "id": "ghas-supply-031",
+        "domain": "Configure and use supply chain security",
+        "prompt": "A dependabot.yml entry sets target-branch: release for routine version updates. What should the maintainer expect for Dependabot security updates?",
+        "choices": [
+            "They move to release with the version updates",
+            "They run on every branch containing a manifest",
+            "They alternate between release and the default branch",
+            "They still target the repository's default branch"
+        ],
+        "correct": 3,
+        "explanations": [
+            "target-branch changes version-update targeting; it does not redirect security updates.",
+            "Security updates do not automatically fan out to every branch with a manifest.",
+            "The branch setting does not establish an alternating security-update schedule.",
+            "Dependabot security updates target the default branch, independently of this version-update entry."
+        ],
+        "concept": "Dependabot security-update branch scope",
+        "hints": [
+            "Check which update type the branch customization applies to.",
+            "A shared configuration file does not make all options universal."
+        ],
+        "source": "https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference"
+    },
+    {
+        "id": "ghas-supply-032",
+        "domain": "Configure and use supply chain security",
+        "prompt": "The update passes CI, but changes a transitive package as well as its parent. What should the maintainer still evaluate before merging?",
+        "choices": [
+            "Review the parent and transitive changes even when CI passes",
+            "Treat passing CI as proof the updated package is safe everywhere",
+            "Assume updating erases the package's advisory record",
+            "Stop checking dependency paths after the direct package changes"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Local checks help validate the proposed change but do not guarantee all behavior.",
+            "A passing workflow cannot guarantee safety in every environment.",
+            "Updating a package does not erase its advisory record.",
+            "The graph remains useful for tracking the new version and its dependencies."
+        ],
+        "concept": "Reviewing automated updates",
+        "hints": [
+            "What evidence is specific to this repository's tested change?",
+            "Does passing CI remove the need to inspect scope and behavior?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-version-updates"
+    },
+    {
+        "id": "ghas-supply-033",
+        "domain": "Configure and use supply chain security",
+        "prompt": "Routine Dependabot version updates create more pull requests than a team can review. Which setting can cap the number of open update pull requests?",
+        "choices": [
+            "`category` in a SARIF upload",
+            "`open-pull-requests-limit` in `dependabot.yml`",
+            "`fail-on-severity` in the dependency-review action",
+            "`paths-ignore` in `secret_scanning.yml`"
+        ],
+        "correct": 1,
+        "explanations": [
+            "SARIF categories distinguish code-scanning analyses.",
+            "Dependabot uses this option to limit open pull requests for an update entry.",
+            "`fail-on-severity` sets a review-action vulnerability threshold.",
+            "`paths-ignore` concerns secret-scanning paths."
+        ],
+        "concept": "Routine update workload management",
+        "hints": [
+            "Which option limits outstanding update proposals?",
+            "Is the problem update volume or vulnerability severity?"
+        ],
+        "source": "https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference"
+    },
+    {
+        "id": "ghas-supply-034",
+        "domain": "Configure and use supply chain security",
+        "prompt": "A Dependabot security-update pull request has a high compatibility score. Which evidence does that score summarize?",
+        "choices": [
+            "The percentage of vulnerable call paths removed",
+            "The percentage of this repository's tests covering the package",
+            "The percentage of passing CI runs in other public repositories",
+            "The percentage of package versions verified free of vulnerabilities"
+        ],
+        "correct": 2,
+        "explanations": [
+            "The score is not a reachability or vulnerability-elimination measurement.",
+            "It does not measure local test coverage or prove this project's compatibility.",
+            "It summarizes CI success in other public repositories for that dependency version transition.",
+            "The score does not certify the security of a package's release history."
+        ],
+        "concept": "Compatibility-score provenance",
+        "hints": [
+            "Ask whose CI produced the underlying evidence.",
+            "Compatibility evidence is different from vulnerability severity."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-security-updates"
+    },
+    {
+        "id": "ghas-supply-035",
+        "domain": "Configure and use supply chain security",
+        "prompt": "A vulnerability report marks a package as transitive. What does that classification mean?",
+        "choices": [
+            "It is not reachable from any declared package",
+            "It is present only as a development dependency",
+            "It was reported through a SARIF upload",
+            "Another dependency brings it into the project"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Transitive status alone does not prove the package is unreachable.",
+            "Dependency relationship and runtime scope are separate properties.",
+            "SARIF is a code-analysis format, not a dependency classification.",
+            "A transitive dependency is brought in by another dependency."
+        ],
+        "concept": "Direct versus transitive classification",
+        "hints": [
+            "Does the project declare this package or inherit it from another package?",
+            "What relationship does the dependency graph show?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependency-graph"
+    },
+    {
+        "id": "ghas-supply-036",
+        "domain": "Configure and use supply chain security",
+        "prompt": "A team wants version updates only for selected packages, except for one package it has chosen to exclude. Which Dependabot configuration expresses both policies?",
+        "choices": [
+            "Set `allow` for selected dependencies, then exclude one with `ignore`",
+            "Set `ignore` for selected dependencies, then exclude one with `allow`",
+            "Set `registries` for selected dependencies, then exclude one with `ignore`",
+            "Set `groups` for selected dependencies, then exclude one with `ignore`"
+        ],
+        "correct": 0,
+        "explanations": [
+            "`allow` selects dependencies for updates; a matching `ignore` rule is applied afterward and excludes that match.",
+            "`ignore` filters matching dependencies rather than selecting which dependencies receive updates.",
+            "`registries` configures access to package sources, not a dependency-selection policy.",
+            "`groups` combines updates; it neither selects the allowed set nor expresses exclusions."
+        ],
+        "concept": "Dependabot allow and ignore",
+        "hints": [
+            "Which rules select dependencies, and which rule takes precedence for an excluded match?",
+            "How can a narrow exclusion coexist with an update allowlist?"
+        ],
+        "source": "https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference"
+    },
+    {
+        "id": "ghas-supply-037",
+        "domain": "Configure and use supply chain security",
+        "prompt": "An analyst exports a repository SBOM on Monday and compares it with a release from last quarter. What does the export represent?",
+        "choices": [
+            "The set of repositories that depend on this project",
+            "The current dependency-graph state when the SBOM is generated",
+            "An immutable record of every dependency used in all past builds",
+            "Only components with Dependabot alerts"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Dependents are not included in the exported repository SBOM.",
+            "GitHub exports the current dependency-graph state for the repository.",
+            "A current export is not a historical archive of all builds.",
+            "An SBOM includes dependencies whether or not they have alerts."
+        ],
+        "concept": "SBOM snapshot freshness",
+        "hints": [
+            "What time does a newly generated inventory describe?",
+            "Does a current graph export preserve all past release contents?"
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/establish-provenance-and-integrity/export-dependencies-as-sbom"
+    },
+    {
+        "id": "ghas-supply-038",
+        "domain": "Configure and use supply chain security",
+        "prompt": "Dependabot reports that the security-update pull-request limit is reached. Version updates have a separate configurable limit. Which action addresses the exhausted security-update capacity?",
+        "choices": [
+            "Raise open-pull-requests-limit for version updates",
+            "Change the version-update schedule to daily",
+            "Merge or close existing security-update pull requests",
+            "Move the version-update target to another branch"
+        ],
+        "correct": 2,
+        "explanations": [
+            "The configurable version-update limit does not raise the separate security-update limit.",
+            "A more frequent schedule does not free security-update pull-request capacity.",
+            "Finishing or closing existing security-update pull requests frees that pool's capacity.",
+            "Changing a version-update branch does not release security-update slots."
+        ],
+        "concept": "Separate Dependabot pull-request limits",
+        "hints": [
+            "Identify which pull-request pool the error names.",
+            "Configuration for routine updates may not govern security updates."
+        ],
+        "source": "https://docs.github.com/en/code-security/reference/supply-chain-security/troubleshoot-dependabot/dependabot-errors"
+    },
+    {
+        "id": "ghas-supply-039",
+        "domain": "Configure and use supply chain security",
+        "prompt": "A vulnerable library appears through two different direct dependencies. Why should a maintainer inspect each dependency path?",
+        "choices": [
+            "The graph shows only one path by design",
+            "The package must be a direct dependency",
+            "Secret scanning needs each path to validate the credential",
+            "Updating one parent may leave another path to the vulnerable version"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Dependency paths are not limited to one relationship.",
+            "The scenario specifically describes indirect inclusion.",
+            "Secret validation is unrelated to package graph paths.",
+            "A transitive package can be brought in through multiple parents."
+        ],
+        "concept": "Multiple transitive paths",
+        "hints": [
+            "Could another parent still introduce the same vulnerable version?",
+            "What should be checked after changing only one direct dependency?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependency-graph"
+    },
+    {
+        "id": "ghas-supply-040",
+        "domain": "Configure and use supply chain security",
+        "prompt": "A dependency-review workflow should block vulnerabilities in runtime dependencies, not development-only dependencies. Which action input selects that blocking scope?",
+        "choices": [
+            "fail-on-scopes: runtime",
+            "fail-on-severity: high",
+            "deny-licenses: MIT",
+            "allow-ghsas: GHSA-abcd-1234-5679"
+        ],
+        "correct": 0,
+        "explanations": [
+            "fail-on-scopes selects dependency scopes whose vulnerabilities cause the check to fail.",
+            "Severity selects impact levels, not runtime versus development dependency use.",
+            "License identifiers express license policy, not vulnerable dependency scope.",
+            "An advisory exception skips a specific advisory rather than selects runtime dependencies."
+        ],
+        "concept": "Dependency-review scope gating",
+        "hints": [
+            "Separate deployment scope from severity and license metadata.",
+            "The policy concerns where a dependency is used."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/manage-your-dependency-security/configure-dependency-review-action"
+    },
+    {
+        "id": "ghas-ecosystem-041",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Which automation proposes dependency-upgrade pull requests specifically to address known vulnerabilities?",
+        "choices": [
+            "Code scanning",
+            "Dependabot version updates",
+            "Dependabot security updates",
+            "Dependabot alerts"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Code scanning analyzes application source rather than performing package version upgrades.",
+            "Version updates propose dependency upgrades even when no vulnerability advisory requires them.",
+            "Security updates propose changes to resolve known vulnerabilities in dependencies.",
+            "Alerts notify maintainers of known vulnerable dependencies; an alert is not itself an upgrade pull request."
+        ],
+        "concept": "Vulnerability-driven dependency upgrades",
+        "hints": [
+            "Differentiate staying current from responding to an identified vulnerability.",
+            "Consider whether the requested output is an alert, a dependency change, or source-code analysis."
+        ],
+        "source": "https://docs.github.com/en/code-security/getting-started/github-security-features"
+    },
+    {
+        "id": "ghas-ecosystem-042",
+        "domain": "Describe GitHub Security suites, features, and ecosystem",
+        "prompt": "Which security resource can integrations query through GitHub’s REST or GraphQL API for published advisory information?",
+        "choices": [
+            "SECURITY.md",
+            "Private vulnerability reporting",
+            "Repository security advisories",
+            "GitHub Advisory Database"
+        ],
+        "correct": 3,
+        "explanations": [
+            "A security policy explains supported versions and how to report vulnerabilities.",
+            "This feature gives researchers a private reporting channel to repository maintainers.",
+            "Repository advisories support private discussion, coordinated fixes, and subsequent publication.",
+            "The database is a searchable collection of published security advisories."
+        ],
+        "concept": "Advisory ecosystem integration",
+        "hints": [
+            "Distinguish instructions, confidential intake, coordinated repair, and public reference data.",
+            "Consider the audience and the disclosure stage."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/report-and-fix-vulnerabilities/fix-reported-vulnerabilities/browse-advisory-database"
+    },
+    {
+        "id": "ghas-secrets-041",
+        "domain": "Configure and use Secret Protection",
+        "prompt": "A provider-backed check now reports an exposed token as inactive. The team has not investigated the period before revocation. Which follow-up addresses the remaining incident question?",
+        "choices": [
+            "Review provider logs for unauthorized use",
+            "Repeat repository cleanup to prove non-use",
+            "Treat inactive status as an access audit",
+            "Dismiss the detection as a format mismatch"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Inactive status does not establish whether the token was abused while it worked.",
+            "Removing copies does not show who used the token before revocation.",
+            "Validity describes present usability, not a history of access attempts.",
+            "An inactive real credential is not thereby a pattern false positive."
+        ],
+        "concept": "Historical misuse after token deactivation",
+        "hints": [
+            "Separate current credential usability from past activity.",
+            "Which evidence could reveal use before containment?"
+        ],
+        "source": "https://docs.github.com/en/code-security/tutorials/remediate-leaked-secrets/evaluating-alerts"
+    },
+    {
+        "id": "ghas-supply-041",
+        "domain": "Configure and use supply chain security",
+        "prompt": "A dependency-review action configuration contains both allow-licenses and deny-licenses. The team wants an allowlist-only policy. Which correction matches the documented input constraint?",
+        "choices": [
+            "Keep both; the denylist always takes precedence",
+            "Remove deny-licenses and retain allow-licenses",
+            "Move deny-licenses into the same local config file",
+            "Replace both lists with fail-on-scopes"
+        ],
+        "correct": 1,
+        "explanations": [
+            "The documented constraint permits only one of these two license inputs.",
+            "Removing the denylist preserves the requested allowlist and avoids the prohibited combination.",
+            "Moving the conflicting input does not make the two policies compatible.",
+            "Dependency scope filtering does not enforce a license allowlist."
+        ],
+        "concept": "Mutually exclusive review license inputs",
+        "hints": [
+            "A policy preference does not override an action's input contract.",
+            "First distinguish configuration validity from the choice of allowed licenses."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/manage-your-dependency-security/configure-dependency-review-action"
+    },
+    {
+        "id": "ghas-code-001",
+        "domain": "Configure and use Code Security",
+        "prompt": "A repository needs a quick CodeQL configuration and has no special workflow requirements. Which setup should its administrator consider first?",
+        "choices": [
+            "A SARIF-only upload",
+            "A Dependabot update entry",
+            "Default setup",
+            "Advanced setup"
+        ],
+        "correct": 2,
+        "explanations": [
+            "SARIF upload imports results produced by another analysis process.",
+            "Dependabot entries configure package updates.",
+            "Default setup automatically selects languages, a query suite, and scan events.",
+            "Advanced setup is intended for customized workflow control."
+        ],
+        "concept": "Selecting default setup",
+        "hints": [
+            "Does the repository need customization, or a straightforward managed start?",
+            "Which setup chooses common CodeQL defaults automatically?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/code-scanning/codeql/codeql-code-scanning"
+    },
+    {
+        "id": "ghas-code-002",
+        "domain": "Configure and use Code Security",
+        "prompt": "A team must define custom build commands and scan events in a CodeQL workflow. Which setup provides that control?",
+        "choices": [
+            "Default setup with no workflow changes",
+            "Dependabot version updates",
+            "Secret-scanning custom patterns",
+            "Advanced setup with a customizable workflow"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Default setup manages common configuration without those workflow edits.",
+            "Dependabot updates packages rather than building CodeQL databases.",
+            "Secret patterns detect credential formats.",
+            "Advanced setup provides a customizable workflow for CodeQL analysis."
+        ],
+        "concept": "Selecting advanced setup",
+        "hints": [
+            "What part of analysis must the team control directly?",
+            "Which setup exposes the CodeQL workflow for customization?"
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/find-and-fix-code-vulnerabilities/configure-code-scanning/configuring-advanced-setup-for-code-scanning"
+    },
+    {
+        "id": "ghas-code-003",
+        "domain": "Configure and use Code Security",
+        "prompt": "Which sequence describes how CodeQL produces code-scanning findings?",
+        "choices": [
+            "Create a database, run queries, publish results",
+            "Export an SPDX SBOM, run Dependabot, and upload a secret pattern",
+            "Build a SARIF file from a repository's license list",
+            "Run a query before creating any representation of the code"
+        ],
+        "correct": 0,
+        "explanations": [
+            "CodeQL represents the code in a database, queries it, then presents results.",
+            "An SBOM and secret patterns serve different security features.",
+            "License inventory is not the CodeQL analysis pipeline.",
+            "Queries operate on a database representation of the code."
+        ],
+        "concept": "CodeQL analysis pipeline",
+        "hints": [
+            "What representation does the query engine analyze?",
+            "Which steps turn source code into repository alerts?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/code-scanning/codeql/codeql-code-scanning"
+    },
+    {
+        "id": "ghas-code-004",
+        "domain": "Configure and use Code Security",
+        "prompt": "A CodeQL alert traces request input through a source to a dangerous sink. How should the developer use that trace?",
+        "choices": [
+            "Assume CodeQL has automatically rewritten the path",
+            "Validate the reported data flow in the code",
+            "Treat the trace as proof that an attacker already exploited the code",
+            "Dismiss the alert because data flow is only a dependency finding"
+        ],
+        "correct": 1,
+        "explanations": [
+            "An alert trace does not itself edit source code.",
+            "A trace explains a potential flow that the team should assess in context.",
+            "Static analysis evidence does not prove exploitation occurred.",
+            "Dataflow is code-analysis evidence, not dependency inventory."
+        ],
+        "concept": "Dataflow evidence interpretation",
+        "hints": [
+            "What does the source-to-sink path show about the code?",
+            "What must be validated before choosing a remediation?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/code-scanning/code-scanning-alerts"
+    },
+    {
+        "id": "ghas-code-005",
+        "domain": "Configure and use Code Security",
+        "prompt": "A third-party analyzer is preparing results for GitHub code scanning. Which SARIF version should its output use?",
+        "choices": [
+            "3.0.0",
+            "A custom format unrelated to SARIF",
+            "2.1.0",
+            "1.0.0"
+        ],
+        "correct": 2,
+        "explanations": [
+            "SARIF 3.0.0 is not the supported version described for uploads.",
+            "The upload must be a compatible SARIF file.",
+            "GitHub supports a subset of SARIF 2.1.0 for code-scanning uploads.",
+            "Version 1.0.0 is not the documented supported format."
+        ],
+        "concept": "SARIF version compatibility",
+        "hints": [
+            "Which standard version does GitHub document for code-scanning results?",
+            "What file format allows third-party analysis to create GitHub alerts?"
+        ],
+        "source": "https://docs.github.com/en/code-security/reference/code-scanning/sarif-files/sarif-support"
+    },
+    {
+        "id": "ghas-code-006",
+        "domain": "Configure and use Code Security",
+        "prompt": "A third-party tool uploads the same finding on every scan, but GitHub creates repeated alerts. Which SARIF data helps match the result across runs?",
+        "choices": [
+            "A new random category for every analysis",
+            "The repository's `dependabot.yml` schedule",
+            "The alert's display title alone",
+            "Stable paths and fingerprints"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Changing categories can separate analyses rather than identify a stable result.",
+            "Dependabot schedules do not affect SARIF matching.",
+            "A title alone is not the documented fingerprint mechanism.",
+            "Stable rule identity, paths, and fingerprints let GitHub track logically identical findings."
+        ],
+        "concept": "Stable SARIF result identity",
+        "hints": [
+            "Which result properties should remain consistent across analyses?",
+            "What metadata helps distinguish a continuing finding from a new one?"
+        ],
+        "source": "https://docs.github.com/en/code-security/reference/code-scanning/sarif-files/sarif-support"
+    },
+    {
+        "id": "ghas-code-007",
+        "domain": "Configure and use Code Security",
+        "prompt": "A SARIF producer stores each finding's location and message alongside reusable detector descriptions. Where should per-occurrence evidence go?",
+        "choices": [
+            "In run.results, referencing the relevant rule",
+            "In tool.driver.rules, replacing the rule description",
+            "In run.automationDetails, replacing the analysis category",
+            "In the SARIF version field, alongside the schema version"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Each result holds occurrence details and can reference its detector's rule.",
+            "Rules describe detectors and should not be replaced with each occurrence's evidence.",
+            "Automation details identify the analysis rather than individual finding locations.",
+            "The version field identifies the SARIF format, not analyzer findings."
+        ],
+        "concept": "SARIF rules versus results",
+        "hints": [
+            "Separate a detector definition from one instance of its output.",
+            "Which structure changes when the same rules analyze a different codebase?"
+        ],
+        "source": "https://docs.github.com/en/code-security/reference/code-scanning/sarif-files/sarif-support"
+    },
+    {
+        "id": "ghas-code-008",
+        "domain": "Configure and use Code Security",
+        "prompt": "An advanced CodeQL workflow must analyze both Java and Python. Which configuration should the maintainer inspect?",
+        "choices": [
+            "The secret-scanning `paths-ignore` list",
+            "A matrix listing both languages",
+            "The repository's SBOM SPDX version",
+            "The Dependabot `registries` section"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Secret-scanning exclusions do not configure code scanning.",
+            "The CodeQL workflow defines which languages each analysis job scans.",
+            "An SPDX version does not select CodeQL languages.",
+            "Registries configure package access."
+        ],
+        "concept": "Language matrix configuration",
+        "hints": [
+            "Which languages are actually passed to the analysis job?",
+            "Where does an advanced workflow declare its analysis matrix?"
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/find-and-fix-code-vulnerabilities/configure-code-scanning/configuring-advanced-setup-for-code-scanning"
+    },
+    {
+        "id": "ghas-code-009",
+        "domain": "Configure and use Code Security",
+        "prompt": "A C/C++ project needs explicit build commands that CodeQL's autodetection cannot supply. Which build mode fits its advanced workflow?",
+        "choices": [
+            "`autobuild`",
+            "`security-extended`",
+            "`manual`",
+            "`none`"
+        ],
+        "correct": 2,
+        "explanations": [
+            "`autobuild` attempts to detect and run a supported build system.",
+            "`security-extended` names a query suite, not a build mode.",
+            "`manual` lets the workflow run the project's explicit build steps for extraction.",
+            "`none` analyzes without running a build, which may reduce accuracy."
+        ],
+        "concept": "Compiled-language build modes",
+        "hints": [
+            "Can CodeQL infer the required build, or must the workflow provide its steps?",
+            "Which mode uses build commands defined by the workflow?"
+        ],
+        "source": "https://docs.github.com/en/code-security/reference/code-scanning/codeql/build-options-for-compiled-languages"
+    },
+    {
+        "id": "ghas-code-010",
+        "domain": "Configure and use Code Security",
+        "prompt": "A team wants broader security coverage than CodeQL's default query suite and accepts reviewing additional findings. Which suite should it evaluate?",
+        "choices": [
+            "`default` only",
+            "`dependabot`",
+            "`secret-scanning`",
+            "`security-extended`"
+        ],
+        "correct": 3,
+        "explanations": [
+            "The default suite does not provide the requested expansion.",
+            "Dependabot manages dependency alerts and updates.",
+            "Secret scanning detects credentials rather than CodeQL queries.",
+            "The extended suite adds security queries beyond the default selection."
+        ],
+        "concept": "Extended query-suite trade-offs",
+        "hints": [
+            "Which CodeQL suite extends the default security queries?",
+            "What operational cost can accompany broader query coverage?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/code-scanning/codeql/codeql-query-suites"
+    },
+    {
+        "id": "ghas-code-011",
+        "domain": "Configure and use Code Security",
+        "prompt": "A team wants to include a maintained set of additional CodeQL queries in advanced analysis. Which artifact should it configure?",
+        "choices": [
+            "A CodeQL query pack",
+            "A dependency-review license list",
+            "A secret-scanning path exclusion",
+            "An SPDX SBOM"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Query packs package reusable CodeQL queries for analysis.",
+            "License lists configure dependency-review policy.",
+            "Path exclusions configure secret-scanning scope.",
+            "An SBOM inventories software components."
+        ],
+        "concept": "Reusable CodeQL query packs",
+        "hints": [
+            "What packages a reusable set of analysis queries?",
+            "Which CodeQL configuration can add queries beyond the built-in selection?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/code-scanning/codeql/codeql-code-scanning"
+    },
+    {
+        "id": "ghas-code-012",
+        "domain": "Configure and use Code Security",
+        "prompt": "A code-scanning alert is labeled high severity. What does that label primarily describe?",
+        "choices": [
+            "The percentage of tests that failed",
+            "Potential impact, not exploitation certainty",
+            "The probability that the code was already attacked",
+            "The number of repositories using the dependency"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Test failure rate is not the meaning of alert severity.",
+            "Severity characterizes the issue's potential impact in the alert context.",
+            "A severity label does not prove exploitation occurred.",
+            "Repository counts are separate dependency information."
+        ],
+        "concept": "Security severity interpretation",
+        "hints": [
+            "What property of the weakness does severity communicate?",
+            "Does a high severity label prove an attacker used the flaw?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/code-scanning/code-scanning-alerts"
+    },
+    {
+        "id": "ghas-code-013",
+        "domain": "Configure and use Code Security",
+        "prompt": "An eligible CodeQL alert offers an autofix suggestion. What should the maintainer do with it?",
+        "choices": [
+            "Dismiss the alert without inspecting the source",
+            "Use the suggestion to update every dependency",
+            "Review, test, and adapt the proposed change before merging",
+            "Assume the suggestion is guaranteed correct and merge automatically"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Dismissal does not remediate the code.",
+            "Autofix addresses code-scanning alerts, not every dependency update.",
+            "Autofix proposes a potential correction that still needs validation.",
+            "A generated suggestion is not a guarantee of correctness."
+        ],
+        "concept": "Autofix does not guarantee a fix",
+        "hints": [
+            "What remains the maintainer's responsibility after a suggestion appears?",
+            "Could a proposed edit require context-specific testing?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/code-scanning/autofix-for-code-scanning"
+    },
+    {
+        "id": "ghas-code-014",
+        "domain": "Configure and use Code Security",
+        "prompt": "A developer believes a code-scanning alert is a false positive. What should they do before dismissing it?",
+        "choices": [
+            "Dismiss it because the workflow passed",
+            "Change the alert's title",
+            "Delete the repository's CodeQL database",
+            "Review the code and record evidence"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Passing a workflow does not establish that a specific finding is invalid.",
+            "Renaming an alert does not evaluate the reported behavior.",
+            "Deleting a database does not justify dismissing an alert.",
+            "The alert should be assessed against the code and its dismissal reason recorded."
+        ],
+        "concept": "Evidence-based code-alert dismissal",
+        "hints": [
+            "What evidence would show the flagged behavior cannot occur or is not a flaw?",
+            "Which action records an intentional triage decision?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/code-scanning/code-scanning-alerts"
+    },
+    {
+        "id": "ghas-code-015",
+        "domain": "Configure and use Code Security",
+        "prompt": "A company runs CodeQL analysis in an external CI service rather than GitHub Actions. How can its findings appear in GitHub code scanning?",
+        "choices": [
+            "Run CodeQL CLI in external CI and upload SARIF",
+            "Convert alerts to a Dependabot lockfile",
+            "Create a custom secret-scanning pattern for each result",
+            "Enable default setup and leave the external results local"
+        ],
+        "correct": 0,
+        "explanations": [
+            "CodeQL CLI supports analysis in external CI with results uploaded to GitHub.",
+            "A lockfile represents dependencies, not code-scanning findings.",
+            "Secret patterns detect credentials rather than import results.",
+            "Local-only results are not uploaded to the repository."
+        ],
+        "concept": "External analysis result delivery",
+        "hints": [
+            "Where is the analysis running, and where must its findings be sent?",
+            "Which interface supports CodeQL outside GitHub Actions?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/code-scanning/codeql/codeql-code-scanning"
+    },
+    {
+        "id": "ghas-code-016",
+        "domain": "Configure and use Code Security",
+        "prompt": "A team wants code scanning on pull requests and on a recurring schedule for newly disclosed issues. Which configuration should define these events?",
+        "choices": [
+            "The Dependabot registry credentials",
+            "Configure the scan events",
+            "The dependency graph export settings",
+            "The repository's secret-pattern regex"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Registry credentials configure package access.",
+            "Code scanning can run on repository events and on a schedule, depending on its setup.",
+            "SBOM export does not schedule code analysis.",
+            "A secret regex does not define scan triggers."
+        ],
+        "concept": "Analysis trigger strategy",
+        "hints": [
+            "When should analysis run to provide pre-merge and recurring feedback?",
+            "Which setup owns code-scanning events and schedule?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/code-scanning/code-scanning"
+    },
+    {
+        "id": "ghas-code-017",
+        "domain": "Configure and use Code Security",
+        "prompt": "Two SARIF uploads from the same tool analyze separate product areas. Which input can keep their analyses distinct in GitHub?",
+        "choices": [
+            "The repository's default Dependabot schedule",
+            "A secret-scanning bypass reason",
+            "A stable, meaningful `category` for each analysis",
+            "A different random `ruleId` on every scan"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Dependabot schedules do not separate SARIF analyses.",
+            "Bypass reasons are unrelated to code-scanning categories.",
+            "The category identifies a particular analysis and helps keep result sets separate.",
+            "Changing rule IDs between runs undermines stable alert tracking."
+        ],
+        "concept": "Separating analysis categories",
+        "hints": [
+            "What metadata labels the analysis run for a distinct source or configuration?",
+            "Which upload field helps distinguish multiple analyses from one tool?"
+        ],
+        "source": "https://docs.github.com/en/code-security/reference/code-scanning/sarif-files/sarif-support"
+    },
+    {
+        "id": "ghas-code-018",
+        "domain": "Configure and use Code Security",
+        "prompt": "A third-party SARIF alert has less context than a default CodeQL alert. What should the maintainer understand?",
+        "choices": [
+            "GitHub automatically fills every missing SARIF field from source code",
+            "The alert is invalid because it is not from CodeQL",
+            "The repository has no code-scanning access",
+            "Third-party findings may omit CodeQL-specific details"
+        ],
+        "correct": 3,
+        "explanations": [
+            "GitHub does not guarantee every optional detail can be reconstructed.",
+            "Code scanning supports compatible third-party SARIF findings.",
+            "A difference in alert details does not establish an access failure.",
+            "Alert details depend on the information supplied by each analysis tool."
+        ],
+        "concept": "Tool-dependent alert detail",
+        "hints": [
+            "Which tool generated the result and what did it include?",
+            "Could an alert be valid while showing fewer analysis properties?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/code-scanning/code-scanning-alerts"
+    },
+    {
+        "id": "ghas-code-019",
+        "domain": "Configure and use Code Security",
+        "prompt": "Several source paths reach the same unsafe operation. How can code scanning present those related findings?",
+        "choices": [
+            "Present one alert with multiple paths to the same issue",
+            "Create a separate alert for each path to the same issue",
+            "Keep only the shortest path as evidence",
+            "Merge paths from different issues into one alert"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Related paths can be grouped under one alert for their underlying issue.",
+            "A separate alert for each path can fragment one weakness into duplicates.",
+            "Dropping paths loses useful evidence about how the issue can be reached.",
+            "Different weaknesses should not be merged into one alert."
+        ],
+        "concept": "Multiple-path alert grouping",
+        "hints": [
+            "Do these paths represent distinct weaknesses or routes to one weakness?",
+            "How can one alert show several ways the same issue is reached?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/code-scanning/code-scanning-alerts"
+    },
+    {
+        "id": "ghas-code-020",
+        "domain": "Configure and use Code Security",
+        "prompt": "An accepted SARIF result appears in code scanning, but its only location is on an unchanged line outside a pull request's diff. Why might it lack a pull-request check annotation?",
+        "choices": [
+            "Accepted SARIF results never produce pull-request annotations",
+            "The identified lines must be added or edited in the diff",
+            "Each pull request needs a newly invented analysis category",
+            "The rule must use a CVE identifier as its ruleId"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Code scanning can annotate pull requests using eligible SARIF results.",
+            "For check display, the identified lines must be present in added or edited diff lines.",
+            "Categories distinguish result sets; changing them does not move locations into a diff.",
+            "An arbitrary rule need not be named with a CVE to qualify for display."
+        ],
+        "concept": "SARIF pull-request annotation eligibility",
+        "hints": [
+            "Upload acceptance and contextual check display have different requirements.",
+            "Compare the finding's source location with the pull request's changed lines."
+        ],
+        "source": "https://docs.github.com/en/code-security/reference/code-scanning/sarif-files/sarif-support"
+    },
+    {
+        "id": "ghas-code-021",
+        "domain": "Configure and use Code Security",
+        "prompt": "A repository using CodeQL default setup now requires a customized workflow. What should its maintainer do when switching to advanced setup?",
+        "choices": [
+            "Delete all existing code-scanning alerts",
+            "Replace the CodeQL workflow with a Dependabot schedule",
+            "Use `Switch to advanced`; confirm `Disable CodeQL`",
+            "Enable advanced setup while leaving default setup active"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Removing alerts does not change which setup runs.",
+            "Dependabot schedules do not configure code scanning.",
+            "GitHub's switch flow disables default CodeQL setup before the advanced workflow is configured.",
+            "The setup types are switched rather than left active together for the same CodeQL configuration."
+        ],
+        "concept": "Switching CodeQL setup types",
+        "hints": [
+            "Which setup must be disabled as the repository moves to its customizable workflow?",
+            "What does the switch confirmation change before advanced configuration?"
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/find-and-fix-code-vulnerabilities/configure-code-scanning/configuring-advanced-setup-for-code-scanning"
+    },
+    {
+        "id": "ghas-code-022",
+        "domain": "Configure and use Code Security",
+        "prompt": "A CodeQL analysis stops producing alerts after a workflow edit. What should the maintainer inspect first?",
+        "choices": [
+            "The repository's SPDX license list",
+            "The secret-scanning validity status",
+            "Dependabot's open pull-request limit",
+            "Check run logs and upload status"
+        ],
+        "correct": 3,
+        "explanations": [
+            "License metadata does not diagnose a CodeQL run.",
+            "Validity status is about detected credentials.",
+            "The Dependabot limit only caps update pull requests.",
+            "Logs and workflow configuration reveal analysis or upload failures."
+        ],
+        "concept": "Evidence-driven scan troubleshooting",
+        "hints": [
+            "Did the job analyze the intended languages and finish uploading results?",
+            "Which run evidence distinguishes a configuration failure from a clean scan?"
+        ],
+        "source": "https://docs.github.com/en/code-security/reference/code-scanning/workflow-configuration-options"
+    },
+    {
+        "id": "ghas-code-023",
+        "domain": "Configure and use Code Security",
+        "prompt": "A CodeQL workflow uses a `pull_request.paths-ignore` filter for documentation. Another source file in the same pull request changes. What should the team expect?",
+        "choices": [
+            "The workflow may run; `paths-ignore` filters triggers, not analyzed files",
+            "Only non-ignored files are analyzed because the filter excludes those paths",
+            "The filter removes matching documentation from Git history",
+            "The filter dismisses alerts in ignored paths"
+        ],
+        "correct": 0,
+        "explanations": [
+            "A matching source-file change can start the workflow; the trigger filter does not exclude files from the analysis itself.",
+            "Workflow path filters do not automatically remove matched files from the analysis scope.",
+            "A workflow filter does not rewrite or remove repository history.",
+            "The trigger filter does not dismiss code-scanning alerts for matching paths."
+        ],
+        "concept": "Trigger filtering versus analysis exclusions",
+        "hints": [
+            "Does a workflow trigger filter control execution or file selection inside a run?",
+            "What can happen when a non-ignored file also changes?"
+        ],
+        "source": "https://docs.github.com/en/code-security/reference/code-scanning/workflow-configuration-options"
+    },
+    {
+        "id": "ghas-code-024",
+        "domain": "Configure and use Code Security",
+        "prompt": "A SARIF alert points to the wrong file after upload. Which property should the integration verify first?",
+        "choices": [
+            "That the CodeQL database has more queries",
+            "That `artifactLocation.uri` maps consistently to the repository's source path",
+            "That the Dependabot schedule matches the upload time",
+            "That the secret pattern contains a capture group"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Query count does not fix a mismatched source path.",
+            "SARIF source locations need paths GitHub can map to repository files.",
+            "Dependabot schedules do not control SARIF file locations.",
+            "Secret regex groups do not locate code-scanning results."
+        ],
+        "concept": "SARIF source-location mapping",
+        "hints": [
+            "Which result field identifies the affected source file?",
+            "Do uploaded paths match the repository layout used by analysis?"
+        ],
+        "source": "https://docs.github.com/en/code-security/reference/code-scanning/sarif-files/sarif-support"
+    },
+    {
+        "id": "ghas-code-025",
+        "domain": "Configure and use Code Security",
+        "prompt": "An advanced CodeQL workflow needs to analyze Kotlin. Which language identifier groups Kotlin with Java?",
+        "choices": [
+            "`jvm-bytecode`",
+            "`java` only",
+            "`java-kotlin`",
+            "`kotlin-java`"
+        ],
+        "correct": 2,
+        "explanations": [
+            "This is not the supported CodeQL language key.",
+            "The documented combined identifier includes Kotlin.",
+            "CodeQL uses `java-kotlin` for Java, Kotlin, or both.",
+            "The reversed label is not the documented identifier."
+        ],
+        "concept": "CodeQL language identifiers",
+        "hints": [
+            "Which configured language key covers the JVM languages in this repository?",
+            "How does CodeQL name the Java-and-Kotlin analysis target?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/code-scanning/codeql/codeql-code-scanning"
+    },
+    {
+        "id": "ghas-code-026",
+        "domain": "Configure and use Code Security",
+        "prompt": "A codebase contains both JavaScript and TypeScript. How should the CodeQL workflow name that language analysis?",
+        "choices": [
+            "`javascript` and `typescript` as unrelated required databases",
+            "`node-web`",
+            "`typescript-only`",
+            "`javascript-typescript`"
+        ],
+        "correct": 3,
+        "explanations": [
+            "The documented language identifier combines these languages.",
+            "This is not the listed CodeQL language identifier.",
+            "The combined analysis supports both languages.",
+            "CodeQL uses `javascript-typescript` to analyze JavaScript, TypeScript, or both."
+        ],
+        "concept": "Combined JavaScript and TypeScript analysis",
+        "hints": [
+            "Does CodeQL treat these source files as one supported analysis target?",
+            "Which configured identifier includes both languages?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/code-scanning/codeql/codeql-code-scanning"
+    },
+    {
+        "id": "ghas-code-027",
+        "domain": "Configure and use Code Security",
+        "prompt": "A third-party tool produces a SARIF file that is 12 MB after gzip compression. Which change addresses GitHub's documented per-file upload constraint?",
+        "choices": [
+            "Reduce the compressed file below the 10 MB limit",
+            "Change its declared SARIF version to 2.0.0",
+            "Retry the same payload with a new category",
+            "Change every result's severity to warning"
+        ],
+        "correct": 0,
+        "explanations": [
+            "GitHub rejects gzip-compressed SARIF files larger than 10 MB; reduce the payload.",
+            "GitHub code scanning supports SARIF 2.1.0, and changing the version does not reduce size.",
+            "A category distinguishes analysis sets but does not increase the upload size limit.",
+            "Relabeling severity does not reliably shrink the file or change its size ceiling."
+        ],
+        "concept": "Compressed SARIF upload size",
+        "hints": [
+            "Evaluate the limit against the compressed payload, not the tool's success exit code.",
+            "Metadata changes do not enlarge an upload allowance."
+        ],
+        "source": "https://docs.github.com/en/code-security/reference/code-scanning/sarif-files/sarif-support"
+    },
+    {
+        "id": "ghas-code-028",
+        "domain": "Configure and use Code Security",
+        "prompt": "What does a CodeQL database represent in the analysis process?",
+        "choices": [
+            "An SPDX software inventory",
+            "A queryable representation of source code",
+            "A catalog of vulnerable package versions",
+            "A history of repository push-protection bypasses"
+        ],
+        "correct": 1,
+        "explanations": [
+            "An SPDX inventory is an SBOM, not a CodeQL database.",
+            "CodeQL databases represent source code and relevant structure for queries.",
+            "Vulnerable package records are advisory and dependency data.",
+            "Bypass events belong to push protection."
+        ],
+        "concept": "CodeQL database purpose",
+        "hints": [
+            "What does the query engine need to inspect beyond raw text?",
+            "Which artifact prepares a codebase for CodeQL queries?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/code-scanning/codeql/codeql-code-scanning"
+    },
+    {
+        "id": "ghas-code-029",
+        "domain": "Configure and use Code Security",
+        "prompt": "After switching to an expanded CodeQL query suite, a team sees additional alerts. What is the best interpretation?",
+        "choices": [
+            "The repository has switched to Dependabot",
+            "The extra alerts prove that the build was compromised",
+            "More queries may run, so review the new findings",
+            "The new alerts must all be false positives"
+        ],
+        "correct": 2,
+        "explanations": [
+            "CodeQL query selection does not switch dependency tooling.",
+            "Finding more issues does not prove a compromise.",
+            "Broader suites can increase the query set and require normal alert triage.",
+            "A new result should be assessed, not dismissed wholesale."
+        ],
+        "concept": "Interpreting suite expansion",
+        "hints": [
+            "What changed in the selected analysis coverage?",
+            "How should new findings be evaluated before changing the suite?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/code-scanning/codeql/codeql-query-suites"
+    },
+    {
+        "id": "ghas-code-030",
+        "domain": "Configure and use Code Security",
+        "prompt": "A project wants its CodeQL analysis to include security findings as well as code-quality checks. Which query suite is designed for both?",
+        "choices": [
+            "`security-extended` only",
+            "`default` only",
+            "`github-actions`",
+            "`security-and-quality`"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Security-extended focuses on additional security queries.",
+            "Default is the standard suite rather than the combined quality suite.",
+            "`github-actions` is a language identifier, not a query suite.",
+            "The security-and-quality suite includes security and quality query coverage."
+        ],
+        "concept": "Security and quality query suite",
+        "hints": [
+            "Does the team need only security checks or quality checks too?",
+            "Which named suite combines both query goals?"
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/code-scanning/codeql/codeql-query-suites"
+    },
+    {
+        "id": "ghas-operations-001",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "Which identifier names a specific publicly disclosed vulnerability rather than a weakness category or advisory record?",
+        "choices": [
+            "CVE",
+            "CWE",
+            "GHSA",
+            "CVSS"
+        ],
+        "correct": 0,
+        "explanations": [
+            "A CVE identifies a publicly disclosed vulnerability, not a general weakness class.",
+            "A CWE identifies a category of software weakness, such as improper input validation.",
+            "A GHSA identifier uniquely names an advisory in the GitHub Advisory Database.",
+            "CVSS expresses vulnerability severity; it is not a vulnerability or advisory identifier."
+        ],
+        "concept": "Vulnerability identity",
+        "hints": [
+            "Separate an individual vulnerability from a recurring weakness category.",
+            "An identifier names something; a score measures a property."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/vulnerability-reporting-and-management/github-advisory-database"
+    },
+    {
+        "id": "ghas-operations-002",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "A training report groups findings by the underlying weakness, such as improper input validation. Which classification belongs there?",
+        "choices": [
+            "CVSS",
+            "CVE",
+            "CWE",
+            "GHSA"
+        ],
+        "correct": 2,
+        "explanations": [
+            "CVSS expresses vulnerability severity; it is not a vulnerability or advisory identifier.",
+            "A CVE identifies a publicly disclosed vulnerability, not a general weakness class.",
+            "A CWE identifies a category of software weakness, such as improper input validation.",
+            "A GHSA identifier uniquely names an advisory in the GitHub Advisory Database."
+        ],
+        "concept": "Weakness taxonomy",
+        "hints": [
+            "Separate an individual vulnerability from a recurring weakness category.",
+            "An identifier names something; a score measures a property."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/vulnerability-reporting-and-management/github-advisory-database"
+    },
+    {
+        "id": "ghas-operations-003",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "Which identifier is assigned to every record in the GitHub Advisory Database, including records without a CVE?",
+        "choices": [
+            "CVSS",
+            "CVE",
+            "CWE",
+            "GHSA"
+        ],
+        "correct": 3,
+        "explanations": [
+            "CVSS expresses vulnerability severity; it is not a vulnerability or advisory identifier.",
+            "A CVE identifies a publicly disclosed vulnerability, not a general weakness class.",
+            "A CWE identifies a category of software weakness, such as improper input validation.",
+            "A GHSA identifier uniquely names an advisory in the GitHub Advisory Database."
+        ],
+        "concept": "GitHub advisory identity",
+        "hints": [
+            "Separate an individual vulnerability from a recurring weakness category.",
+            "An identifier names something; a score measures a property."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/vulnerability-reporting-and-management/github-advisory-database"
+    },
+    {
+        "id": "ghas-operations-004",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "Which signal represents vulnerability severity rather than the predicted probability of exploitation?",
+        "choices": [
+            "CVSS",
+            "EPSS",
+            "Reachability",
+            "Dependency scope"
+        ],
+        "correct": 0,
+        "explanations": [
+            "CVSS measures severity; business exposure and exploitation likelihood require additional context.",
+            "EPSS estimates the probability of exploitation in the wild; it does not prove a specific application is exploitable.",
+            "Reachability analysis examines whether application code can reach vulnerable dependency code, where supported.",
+            "Dependency scope distinguishes production and development use; development dependencies can still matter to security."
+        ],
+        "concept": "Severity versus exploitation probability",
+        "hints": [
+            "Do not equate intrinsic severity with the likelihood or impact of exploitation here.",
+            "Combine independent signals and account for missing analysis."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-dependabot-alerts/view-dependabot-alerts"
+    },
+    {
+        "id": "ghas-operations-005",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "Which signal estimates exploitation in the wild and should be combined with repository-specific context?",
+        "choices": [
+            "CVSS",
+            "EPSS",
+            "Reachability",
+            "Dependency scope"
+        ],
+        "correct": 1,
+        "explanations": [
+            "CVSS measures severity; business exposure and exploitation likelihood require additional context.",
+            "EPSS estimates the probability of exploitation in the wild; it does not prove a specific application is exploitable.",
+            "Reachability analysis examines whether application code can reach vulnerable dependency code, where supported.",
+            "Dependency scope distinguishes production and development use; development dependencies can still matter to security."
+        ],
+        "concept": "EPSS interpretation",
+        "hints": [
+            "Do not equate intrinsic severity with the likelihood or impact of exploitation here.",
+            "Combine independent signals and account for missing analysis."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-dependabot-alerts/view-dependabot-alerts"
+    },
+    {
+        "id": "ghas-operations-006",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "Where supported, which analysis asks whether application code can call the vulnerable dependency code?",
+        "choices": [
+            "CVSS",
+            "EPSS",
+            "Reachability",
+            "Dependency scope"
+        ],
+        "correct": 2,
+        "explanations": [
+            "CVSS measures severity; business exposure and exploitation likelihood require additional context.",
+            "EPSS estimates the probability of exploitation in the wild; it does not prove a specific application is exploitable.",
+            "Reachability analysis examines whether application code can reach vulnerable dependency code, where supported.",
+            "Dependency scope distinguishes production and development use; development dependencies can still matter to security."
+        ],
+        "concept": "Dependency reachability evidence",
+        "hints": [
+            "Do not equate intrinsic severity with the likelihood or impact of exploitation here.",
+            "Combine independent signals and account for missing analysis."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-dependabot-alerts/view-dependabot-alerts"
+    },
+    {
+        "id": "ghas-operations-007",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "Which alert context distinguishes a package used at runtime from one declared only for development?",
+        "choices": [
+            "CVSS",
+            "EPSS",
+            "Reachability",
+            "Dependency scope"
+        ],
+        "correct": 3,
+        "explanations": [
+            "CVSS measures severity; business exposure and exploitation likelihood require additional context.",
+            "EPSS estimates the probability of exploitation in the wild; it does not prove a specific application is exploitable.",
+            "Reachability analysis examines whether application code can reach vulnerable dependency code, where supported.",
+            "Dependency scope distinguishes production and development use; development dependencies can still matter to security."
+        ],
+        "concept": "Production and development dependency context",
+        "hints": [
+            "Do not equate intrinsic severity with the likelihood or impact of exploitation here.",
+            "Combine independent signals and account for missing analysis."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-dependabot-alerts/view-dependabot-alerts"
+    },
+    {
+        "id": "ghas-operations-008",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "An advisory identifies a patched release. What makes the proposed dependency remediation ready for a safe merge decision?",
+        "choices": [
+            "Review the fixed version and test upgrade compatibility.",
+            "Use severity and other signals when reachability is unavailable.",
+            "Lower priority cautiously and reassess an Unreachable result.",
+            "Prioritize exposed production use with credible exploit evidence."
+        ],
+        "correct": 0,
+        "explanations": [
+            "A published fix makes remediation actionable, but compatibility and actual adoption still need verification.",
+            "Unavailable analysis is unknown, not a finding that vulnerable code is unreachable.",
+            "An unreachable result can change with code or advisory updates and is not sufficient alone for dismissal.",
+            "Production exposure and exploitation evidence can make a dependency urgent beyond its severity label."
+        ],
+        "concept": "Actionable patch validation",
+        "hints": [
+            "Absence of evidence is different from evidence that a path is absent.",
+            "Prioritization should reflect exposure, exploitability, and remediation evidence."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-dependabot-alerts/view-dependabot-alerts"
+    },
+    {
+        "id": "ghas-operations-009",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "Two findings have similar severity. Which response best prioritizes one used in an exposed production path with credible exploitation evidence?",
+        "choices": [
+            "Lower priority cautiously and reassess an Unreachable result.",
+            "Prioritize exposed production use with credible exploit evidence.",
+            "Review the fixed version and test upgrade compatibility.",
+            "Use severity and other signals when reachability is unavailable."
+        ],
+        "correct": 1,
+        "explanations": [
+            "An unreachable result can change with code or advisory updates and is not sufficient alone for dismissal.",
+            "Production exposure and exploitation evidence can make a dependency urgent beyond its severity label.",
+            "A published fix makes remediation actionable, but compatibility and actual adoption still need verification.",
+            "Unavailable analysis is unknown, not a finding that vulnerable code is unreachable."
+        ],
+        "concept": "Contextual remediation priority",
+        "hints": [
+            "Absence of evidence is different from evidence that a path is absent.",
+            "Prioritization should reflect exposure, exploitability, and remediation evidence."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-dependabot-alerts/view-dependabot-alerts"
+    },
+    {
+        "id": "ghas-operations-010",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "A Dependabot alert says “Reachability unavailable.” What is the appropriate prioritization response?",
+        "choices": [
+            "Lower priority cautiously and reassess an Unreachable result.",
+            "Prioritize exposed production use with credible exploit evidence.",
+            "Review the fixed version and test upgrade compatibility.",
+            "Use severity and other signals when reachability is unavailable."
+        ],
+        "correct": 3,
+        "explanations": [
+            "An unreachable result can change with code or advisory updates and is not sufficient alone for dismissal.",
+            "Production exposure and exploitation evidence can make a dependency urgent beyond its severity label.",
+            "A published fix makes remediation actionable, but compatibility and actual adoption still need verification.",
+            "Unavailable analysis is unknown, not a finding that vulnerable code is unreachable."
+        ],
+        "concept": "Missing reachability is not safety evidence",
+        "hints": [
+            "Absence of evidence is different from evidence that a path is absent.",
+            "Prioritization should reflect exposure, exploitability, and remediation evidence."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-dependabot-alerts/view-dependabot-alerts"
+    },
+    {
+        "id": "ghas-operations-011",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "How should an analyst treat an “Unreachable” dependency finding when no other dismissal justification exists?",
+        "choices": [
+            "Review the fixed version and test upgrade compatibility.",
+            "Use severity and other signals when reachability is unavailable.",
+            "Lower priority cautiously and reassess an Unreachable result.",
+            "Prioritize exposed production use with credible exploit evidence."
+        ],
+        "correct": 2,
+        "explanations": [
+            "A published fix makes remediation actionable, but compatibility and actual adoption still need verification.",
+            "Unavailable analysis is unknown, not a finding that vulnerable code is unreachable.",
+            "An unreachable result can change with code or advisory updates and is not sufficient alone for dismissal.",
+            "Production exposure and exploitation evidence can make a dependency urgent beyond its severity label."
+        ],
+        "concept": "Cautious use of unreachable verdicts",
+        "hints": [
+            "Absence of evidence is different from evidence that a path is absent.",
+            "Prioritization should reflect exposure, exploitability, and remediation evidence."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-dependabot-alerts/view-dependabot-alerts"
+    },
+    {
+        "id": "ghas-operations-012",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "Responders revoked an exposed token. A scheduled production integration still references it and now fails authentication. Which follow-up restores the integration without reversing containment?",
+        "choices": [
+            "Create a replacement token but retain the service's current configuration",
+            "Configure the service to use a replacement credential",
+            "Redeploy the service using the same revoked credential value",
+            "Retry the scheduled job without changing its runtime credentials"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Creating a token alone does not update the service that still references the revoked value.",
+            "The remediation workflow includes updating services that used the compromised token.",
+            "Redeploying the old revoked value does not restore its authority at the provider.",
+            "Retrying with the same revoked credential does not repair authentication."
+        ],
+        "concept": "Dependent-service credential replacement",
+        "hints": [
+            "Containment is complete; the remaining failure is in a credential consumer.",
+            "Which system actually supplies the integration's authentication material?"
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-secret-scanning-alerts/resolving-alerts"
+    },
+    {
+        "id": "ghas-operations-013",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "A developer has changed the code for a code scanning alert. What is needed before calling the issue fixed?",
+        "choices": [
+            "Verify the fix with fresh, relevant analysis.",
+            "Reopen the alert when the dismissal is no longer justified.",
+            "Document a justified false-positive dismissal.",
+            "Record accepted risk and its rationale."
+        ],
+        "correct": 0,
+        "explanations": [
+            "A fix is established by relevant analysis of the changed code, not by merely editing or dismissing an alert.",
+            "A changed assumption or newly applicable code path can invalidate an earlier dismissal.",
+            "A false-positive dismissal needs evidence that the reported vulnerability does not apply to the analyzed code.",
+            "Accepted risk acknowledges an unresolved issue; it must not be reported as a verified code fix."
+        ],
+        "concept": "Evidence-based fix verification",
+        "hints": [
+            "Separate evidence about a finding from a decision to tolerate risk.",
+            "Choose a disposition that remains truthful when another reviewer reads it."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-code-scanning-alerts/resolve-alerts"
+    },
+    {
+        "id": "ghas-operations-014",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "A team deliberately tolerates a real code vulnerability for now. Which disposition describes that decision honestly?",
+        "choices": [
+            "Verify the fix with fresh, relevant analysis.",
+            "Reopen the alert when the dismissal is no longer justified.",
+            "Document a justified false-positive dismissal.",
+            "Record accepted risk and its rationale."
+        ],
+        "correct": 3,
+        "explanations": [
+            "A fix is established by relevant analysis of the changed code, not by merely editing or dismissing an alert.",
+            "A changed assumption or newly applicable code path can invalidate an earlier dismissal.",
+            "A false-positive dismissal needs evidence that the reported vulnerability does not apply to the analyzed code.",
+            "Accepted risk acknowledges an unresolved issue; it must not be reported as a verified code fix."
+        ],
+        "concept": "Accepted risk versus fixed status",
+        "hints": [
+            "Separate evidence about a finding from a decision to tolerate risk.",
+            "Choose a disposition that remains truthful when another reviewer reads it."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-code-scanning-alerts/resolve-alerts"
+    },
+    {
+        "id": "ghas-operations-015",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "A reviewer demonstrates that an alert’s modeled unsafe path cannot occur in the analyzed implementation. Which documented disposition fits?",
+        "choices": [
+            "Verify the fix with fresh, relevant analysis.",
+            "Reopen the alert when the dismissal is no longer justified.",
+            "Document a justified false-positive dismissal.",
+            "Record accepted risk and its rationale."
+        ],
+        "correct": 2,
+        "explanations": [
+            "A fix is established by relevant analysis of the changed code, not by merely editing or dismissing an alert.",
+            "A changed assumption or newly applicable code path can invalidate an earlier dismissal.",
+            "A false-positive dismissal needs evidence that the reported vulnerability does not apply to the analyzed code.",
+            "Accepted risk acknowledges an unresolved issue; it must not be reported as a verified code fix."
+        ],
+        "concept": "Evidence-supported false-positive dismissal",
+        "hints": [
+            "Separate evidence about a finding from a decision to tolerate risk.",
+            "Choose a disposition that remains truthful when another reviewer reads it."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-code-scanning-alerts/resolve-alerts"
+    },
+    {
+        "id": "ghas-operations-016",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "A bulk dismissal is approved for findings sharing a verified condition. What record best preserves why they were not treated as fixes?",
+        "choices": [
+            "Audit log",
+            "Alert dismissal rationale",
+            "Periodic exception review",
+            "Permission-scoped reporting"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Audit logs record supported secret scanning and Dependabot events; code scanning alert timeline events are not included.",
+            "A meaningful rationale explains why a finding was dismissed rather than implying it was fixed.",
+            "Revisiting exceptions tests whether earlier risk assumptions and ownership still hold.",
+            "Security reporting must respect alert access rather than distributing sensitive details to unauthorized readers."
+        ],
+        "concept": "Bulk dismissal documentation",
+        "hints": [
+            "Distinguish operational convenience from durable governance evidence.",
+            "Ask what a future reviewer would need to understand the decision."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/security-at-scale/audit-security-alerts"
+    },
+    {
+        "id": "ghas-operations-017",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "A risk exception was based on an old deployment assumption. Which governance practice detects when that justification becomes stale?",
+        "choices": [
+            "Periodic exception review",
+            "Permission-scoped reporting",
+            "Audit log",
+            "Alert dismissal rationale"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Revisiting exceptions tests whether earlier risk assumptions and ownership still hold.",
+            "Security reporting must respect alert access rather than distributing sensitive details to unauthorized readers.",
+            "Audit logs record supported secret scanning and Dependabot events; code scanning alert timeline events are not included.",
+            "A meaningful rationale explains why a finding was dismissed rather than implying it was fixed."
+        ],
+        "concept": "Exception reassessment",
+        "hints": [
+            "Distinguish operational convenience from durable governance evidence.",
+            "Ask what a future reviewer would need to understand the decision."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/security-at-scale/audit-security-alerts"
+    },
+    {
+        "id": "ghas-operations-018",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "An auditor needs Dependabot alerts dismissed automatically by auto-triage, separate from manual dismissals. Which documented close-reason filter selects that population?",
+        "choices": [
+            "resolution:revoked",
+            "resolution:false-positive",
+            "resolution:fix-started",
+            "resolution:auto-dismiss"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Revocation is a credential-response concept, not the auto-triage close reason.",
+            "A false-positive label does not specifically identify automatic triage activity.",
+            "Starting a fix is not the documented close reason for automatic dismissal.",
+            "Auto-dismissed Dependabot alerts use the resolution:auto-dismiss close reason."
+        ],
+        "concept": "Auditing automatically dismissed dependency alerts",
+        "hints": [
+            "The report needs the mechanism of closure, not only the current open or closed state.",
+            "Use the documented reason rather than infer it from alert severity."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-auto-triage-rules"
+    },
+    {
+        "id": "ghas-operations-019",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "Which built-in CodeQL suite is the baseline choice when high precision and fewer false positives are the priority?",
+        "choices": [
+            "security-and-quality",
+            "Custom .qls suite",
+            "default",
+            "security-extended"
+        ],
+        "correct": 2,
+        "explanations": [
+            "This advanced-setup suite adds maintainability and reliability queries to security-extended.",
+            "A custom query suite selects queries by metadata, location, or other criteria and requires advanced setup.",
+            "The default suite emphasizes high-precision security findings and fewer false positives.",
+            "This includes default queries plus additional, lower-precision security queries; triage may increase."
+        ],
+        "concept": "High-precision CodeQL baseline",
+        "hints": [
+            "Compare precision, breadth, and the kinds of findings sought.",
+            "A broader query set changes triage workload as well as detection."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/code-scanning/codeql/codeql-query-suites"
+    },
+    {
+        "id": "ghas-operations-020",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "A CodeQL init step loads a config-file containing additional queries. The workflow must add security-extended without replacing that configured additional-query list. Which input does that?",
+        "choices": [
+            "queries: security-extended",
+            "disable-default-queries: true",
+            "queries: +security-extended",
+            "category: security-extended"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Without the plus prefix, workflow additional queries replace those from the configuration file.",
+            "Disabling defaults is not how to combine workflow and configuration-file additions.",
+            "The plus prefix combines workflow-specified additional queries with the configured list.",
+            "Category labels an analysis; it does not select or merge query lists."
+        ],
+        "concept": "Additive CodeQL query configuration",
+        "hints": [
+            "Consider precedence between workflow inputs and the referenced configuration.",
+            "A suite name alone does not express how to combine two lists."
+        ],
+        "source": "https://docs.github.com/en/code-security/reference/code-scanning/workflow-configuration-options"
+    },
+    {
+        "id": "ghas-operations-021",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "Existing CodeQL Java queries miss flows through an internal library because its behavior is not modeled. Which package type supplies library models to those queries, rather than a new set of executable queries?",
+        "choices": [
+            "A SARIF result archive",
+            "A dependency snapshot",
+            "A custom .qls query list",
+            "A CodeQL model pack"
+        ],
+        "correct": 3,
+        "explanations": [
+            "SARIF contains analysis results, not library semantics for evaluating future data flow.",
+            "A dependency snapshot records package relationships, not sources and sinks for CodeQL.",
+            "A query list selects queries but does not supply missing library behavior models.",
+            "A model pack extends the library or framework semantics available to existing queries."
+        ],
+        "concept": "Library modeling for CodeQL",
+        "hints": [
+            "Distinguish selecting more checks from teaching existing checks about a library.",
+            "The unsupported behavior is in a Java dependency, not in the query schedule."
+        ],
+        "source": "https://docs.github.com/en/code-security/reference/code-scanning/workflow-configuration-options"
+    },
+    {
+        "id": "ghas-operations-022",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "Which approach selects a tailored CodeQL query set by metadata or location rather than choosing an unchanged built-in suite?",
+        "choices": [
+            "Custom .qls suite",
+            "default",
+            "security-extended",
+            "security-and-quality"
+        ],
+        "correct": 0,
+        "explanations": [
+            "A custom query suite selects queries by metadata, location, or other criteria and requires advanced setup.",
+            "The default suite emphasizes high-precision security findings and fewer false positives.",
+            "This includes default queries plus additional, lower-precision security queries; triage may increase.",
+            "This advanced-setup suite adds maintainability and reliability queries to security-extended."
+        ],
+        "concept": "Risk-tailored CodeQL query selection",
+        "hints": [
+            "Compare precision, breadth, and the kinds of findings sought.",
+            "A broader query set changes triage workload as well as detection."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/code-scanning/codeql/codeql-query-suites"
+    },
+    {
+        "id": "ghas-operations-023",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "A multi-language repository adopts one CodeQL suite name. What review is needed before assuming equal weakness detection across languages?",
+        "choices": [
+            "Use alert volume alone as the detection-success metric.",
+            "Review each language’s query coverage against relevant weaknesses.",
+            "Measure useful findings and false-positive workload in a pilot.",
+            "Treat every language as having identical query coverage."
+        ],
+        "correct": 1,
+        "explanations": [
+            "More alerts can include more false positives; count alone does not show detection value.",
+            "CodeQL queries differ by language; a suite name does not imply identical checks for every language.",
+            "Broader suites add lower-precision queries, so a pilot can evaluate whether their extra findings justify triage effort.",
+            "The documented query lists are language-specific; equal suite labels do not establish equal coverage."
+        ],
+        "concept": "Language-aware detection tailoring",
+        "hints": [
+            "Detection coverage should reflect the languages and risks actually present.",
+            "Evaluate analysis usefulness as well as the raw number of findings."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/code-scanning/codeql/codeql-query-suites"
+    },
+    {
+        "id": "ghas-operations-024",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "Which evaluation best informs an organization deciding whether to expand beyond the default CodeQL suite?",
+        "choices": [
+            "Use alert volume alone as the detection-success metric.",
+            "Review each language’s query coverage against relevant weaknesses.",
+            "Measure useful findings and false-positive workload in a pilot.",
+            "Treat every language as having identical query coverage."
+        ],
+        "correct": 2,
+        "explanations": [
+            "More alerts can include more false positives; count alone does not show detection value.",
+            "CodeQL queries differ by language; a suite name does not imply identical checks for every language.",
+            "Broader suites add lower-precision queries, so a pilot can evaluate whether their extra findings justify triage effort.",
+            "The documented query lists are language-specific; equal suite labels do not establish equal coverage."
+        ],
+        "concept": "Query-suite workload planning",
+        "hints": [
+            "Detection coverage should reflect the languages and risks actually present.",
+            "Evaluate analysis usefulness as well as the raw number of findings."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/code-scanning/codeql/codeql-query-suites"
+    },
+    {
+        "id": "ghas-operations-025",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "An alert total falls after a workflow failure. Which English UI surface helps check whether analysis actually ran?",
+        "choices": [
+            "Affected branches",
+            "Assignees",
+            "Show paths",
+            "Tool status page"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Affected branches shows the state of an alert on branches other than the default branch.",
+            "Assignees identifies the person responsible for fixing an alert rather than validating an analysis run.",
+            "For data-flow alerts, Show paths traces the source-to-sink steps that support triage.",
+            "The tool status page shows when analysis ran and helps identify analysis problems."
+        ],
+        "concept": "Analysis health before risk conclusions",
+        "hints": [
+            "Check which evidence answers the immediate analysis question.",
+            "A clean result is meaningful only if the intended analysis actually ran."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-code-scanning-alerts/assess-alerts"
+    },
+    {
+        "id": "ghas-operations-026",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "For a CodeQL data-flow alert, which English UI control displays the steps from untrusted input to the unsafe operation?",
+        "choices": [
+            "Show paths",
+            "Tool status page",
+            "Affected branches",
+            "Assignees"
+        ],
+        "correct": 0,
+        "explanations": [
+            "For data-flow alerts, Show paths traces the source-to-sink steps that support triage.",
+            "The tool status page shows when analysis ran and helps identify analysis problems.",
+            "Affected branches shows the state of an alert on branches other than the default branch.",
+            "Assignees identifies the person responsible for fixing an alert rather than validating an analysis run."
+        ],
+        "concept": "Data-flow evidence for triage",
+        "hints": [
+            "Check which evidence answers the immediate analysis question.",
+            "A clean result is meaningful only if the intended analysis actually ran."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-code-scanning-alerts/assess-alerts"
+    },
+    {
+        "id": "ghas-operations-027",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "A required security status check should be satisfied only by the installed scanning GitHub App, not another integration posting the same status name. Which rule configuration addresses that?",
+        "choices": [
+            "Select any source for the required check",
+            "Select the scanning App as the expected source",
+            "Give all integrations the same check name",
+            "Require a linear history instead of the check"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Any source does not enforce the requested identity boundary for status updates.",
+            "A required status check can specify the GitHub App expected to supply its result.",
+            "Sharing a status name does not establish the trusted issuer of a result.",
+            "Linear history constrains commit structure, not the issuer of a security status."
+        ],
+        "concept": "Required-check source binding",
+        "hints": [
+            "A familiar check label is not proof of who submitted it.",
+            "The policy concerns the issuer of the result, not only whether it passed."
+        ],
+        "source": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets"
+    },
+    {
+        "id": "ghas-operations-028",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "Which selection makes a code scanning campaign a focused learning and remediation exercise rather than an unrelated alert dump?",
+        "choices": [
+            "Group related default-branch code scanning alerts.",
+            "Name a campaign point of contact.",
+            "Assign alerts to eligible repository writers.",
+            "Track remediation progress for the selected alerts."
+        ],
+        "correct": 0,
+        "explanations": [
+            "Related findings let developers reuse remediation knowledge; code campaigns target default-branch alerts.",
+            "A named contact gives contributors a clear route for questions, reviews, and collaboration.",
+            "Code and secret campaign alerts can be assigned to users with write access; secret alert access may be raised temporarily.",
+            "Campaign tracking measures the focused remediation effort; campaign creation is not itself a fix."
+        ],
+        "concept": "Focused campaign scoping",
+        "hints": [
+            "Separate the campaign’s scope, coordination, ownership, and progress.",
+            "A remediation program needs traceable work, not only a smaller displayed count."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/security-at-scale/about-security-campaigns"
+    },
+    {
+        "id": "ghas-operations-029",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "Developers need a clear route for campaign questions and fix reviews. Which campaign practice addresses that need?",
+        "choices": [
+            "Group related default-branch code scanning alerts.",
+            "Name a campaign point of contact.",
+            "Assign alerts to eligible repository writers.",
+            "Track remediation progress for the selected alerts."
+        ],
+        "correct": 1,
+        "explanations": [
+            "Related findings let developers reuse remediation knowledge; code campaigns target default-branch alerts.",
+            "A named contact gives contributors a clear route for questions, reviews, and collaboration.",
+            "Code and secret campaign alerts can be assigned to users with write access; secret alert access may be raised temporarily.",
+            "Campaign tracking measures the focused remediation effort; campaign creation is not itself a fix."
+        ],
+        "concept": "Campaign collaboration contact",
+        "hints": [
+            "Separate the campaign’s scope, coordination, ownership, and progress.",
+            "A remediation program needs traceable work, not only a smaller displayed count."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/security-at-scale/about-security-campaigns"
+    },
+    {
+        "id": "ghas-operations-030",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "After launching a campaign, which ongoing activity shows whether its selected remediation work is progressing?",
+        "choices": [
+            "Assign alerts to eligible repository writers.",
+            "Track remediation progress for the selected alerts.",
+            "Group related default-branch code scanning alerts.",
+            "Name a campaign point of contact."
+        ],
+        "correct": 1,
+        "explanations": [
+            "Code and secret campaign alerts can be assigned to users with write access; secret alert access may be raised temporarily.",
+            "Campaign tracking measures the focused remediation effort; campaign creation is not itself a fix.",
+            "Related findings let developers reuse remediation knowledge; code campaigns target default-branch alerts.",
+            "A named contact gives contributors a clear route for questions, reviews, and collaboration."
+        ],
+        "concept": "Campaign remediation measurement",
+        "hints": [
+            "Separate the campaign’s scope, coordination, ownership, and progress.",
+            "A remediation program needs traceable work, not only a smaller displayed count."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/security-at-scale/about-security-campaigns"
+    },
+    {
+        "id": "ghas-operations-031",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "Which proposed alert group should not be promised a security campaign based on the currently documented campaign types?",
+        "choices": [
+            "Default-branch SQL injection code scanning alerts",
+            "Credential-exposure secret scanning alerts in public preview",
+            "Known-vulnerability Dependabot dependency alerts",
+            "Default-branch path traversal code scanning alerts"
+        ],
+        "correct": 2,
+        "explanations": [
+            "These are code scanning alerts on the default branch, a documented campaign alert type.",
+            "Secret scanning campaigns are explicitly documented, with a public-preview qualification.",
+            "Current campaign documentation lists code scanning and secret scanning, not Dependabot vulnerability alerts.",
+            "These are also default-branch code scanning alerts and can be grouped for a campaign."
+        ],
+        "concept": "Campaign support versus blueprint wording",
+        "hints": [
+            "Check whether the documented campaign alert types include the proposed detector.",
+            "A blueprint objective is not an availability guarantee for every related feature."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/security-at-scale/about-security-campaigns"
+    },
+    {
+        "id": "ghas-operations-032",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "A campaign needs named remediation ownership for its code and secret alerts. Which supported action establishes it?",
+        "choices": [
+            "Track remediation progress for the selected alerts.",
+            "Group related default-branch code scanning alerts.",
+            "Name a campaign point of contact.",
+            "Assign alerts to eligible repository writers."
+        ],
+        "correct": 3,
+        "explanations": [
+            "Campaign tracking measures the focused remediation effort; campaign creation is not itself a fix.",
+            "Related findings let developers reuse remediation knowledge; code campaigns target default-branch alerts.",
+            "A named contact gives contributors a clear route for questions, reviews, and collaboration.",
+            "Code and secret campaign alerts can be assigned to users with write access; secret alert access may be raised temporarily."
+        ],
+        "concept": "Eligible campaign alert ownership",
+        "hints": [
+            "Separate the campaign’s scope, coordination, ownership, and progress.",
+            "A remediation program needs traceable work, not only a smaller displayed count."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/security-at-scale/about-security-campaigns"
+    },
+    {
+        "id": "ghas-operations-033",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "A cross-team report contains sensitive alert details. Which reporting approach preserves the alert-access boundary?",
+        "choices": [
+            "Audit log",
+            "Alert dismissal rationale",
+            "Periodic exception review",
+            "Permission-scoped reporting"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Audit logs record supported secret scanning and Dependabot events; code scanning alert timeline events are not included.",
+            "A meaningful rationale explains why a finding was dismissed rather than implying it was fixed.",
+            "Revisiting exceptions tests whether earlier risk assumptions and ownership still hold.",
+            "Security reporting must respect alert access rather than distributing sensitive details to unauthorized readers."
+        ],
+        "concept": "Confidential security reporting",
+        "hints": [
+            "Distinguish operational convenience from durable governance evidence.",
+            "Ask what a future reviewer would need to understand the decision."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/security-at-scale/audit-security-alerts"
+    },
+    {
+        "id": "ghas-operations-034",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "A repository was archived today. An analyst views last week's security overview, when its alerts were open. Which interpretation matches the dashboard's documented data model?",
+        "choices": [
+            "Both repository status and alert state revert to last week",
+            "Archived repositories vanish from every historical view",
+            "Current closure rewrites every historical alert state",
+            "Repository filters use current status; alert state is historical"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Repository attributes used for filtering reflect current state, not the selected historical date.",
+            "An archived repository can appear when the archived-repository filter includes it.",
+            "Historical alert state can remain open even though archiving closed alerts today.",
+            "The dashboard combines historical alert states with current repository attributes."
+        ],
+        "concept": "Historical dashboard state versus current filters",
+        "hints": [
+            "The selected date range need not time-travel every repository attribute.",
+            "Consider alert history and repository filtering separately."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/security-at-scale/security-overview"
+    },
+    {
+        "id": "ghas-operations-035",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "A public project's maintainers and an invited researcher need to collaborate on an embargoed patch while the security advisory remains a draft. Which workspace supports private code collaboration?",
+        "choices": [
+            "A temporary private fork associated with the advisory",
+            "A normal public fork with a neutral branch name",
+            "A draft pull request in the public repository",
+            "A public issue with details hidden in collapsed text"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Repository security advisories support private patch collaboration in a temporary private fork.",
+            "A neutral name does not make code in a public fork confidential.",
+            "Draft pull-request status does not make a public repository's changes private.",
+            "Collapsed public issue content remains publicly accessible and is not an embargo boundary."
+        ],
+        "concept": "Embargoed patch workspace",
+        "hints": [
+            "Distinguish workflow labels from actual repository visibility.",
+            "The need is to share code privately before disclosure."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/vulnerability-reporting-and-management/repository-security-advisories"
+    },
+    {
+        "id": "ghas-operations-036",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "A CodeQL workflow runs on pull_request, but no scan is triggered when a change enters the repository's merge queue. Which additional event is documented for scanning the queued merge group?",
+        "choices": [
+            "workflow_dispatch",
+            "merge_group",
+            "release",
+            "issues"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Manual dispatch can start a run but is not the merge-queue event.",
+            "The merge_group event triggers analysis for changes added to a merge queue.",
+            "A release event occurs in a different workflow stage, not on merge-queue grouping.",
+            "Issue activity is not a trigger for validating the queued merge commit."
+        ],
+        "concept": "Code scanning in merge queues",
+        "hints": [
+            "A queued merge group is not the same event as opening a pull request.",
+            "Choose the event representing the commit set that the queue will merge."
+        ],
+        "source": "https://docs.github.com/en/code-security/reference/code-scanning/workflow-configuration-options"
+    },
+    {
+        "id": "ghas-operations-037",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "A code scanning alert is fixed on the default branch but still open on a release branch. Which English UI section distinguishes those states?",
+        "choices": [
+            "Assignees",
+            "Show paths",
+            "Tool status page",
+            "Affected branches"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Assignees identifies the person responsible for fixing an alert rather than validating an analysis run.",
+            "For data-flow alerts, Show paths traces the source-to-sink steps that support triage.",
+            "The tool status page shows when analysis ran and helps identify analysis problems.",
+            "Affected branches shows the state of an alert on branches other than the default branch."
+        ],
+        "concept": "Branch-specific remediation verification",
+        "hints": [
+            "Check which evidence answers the immediate analysis question.",
+            "A clean result is meaningful only if the intended analysis actually ran."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-code-scanning-alerts/assess-alerts"
+    },
+    {
+        "id": "ghas-operations-038",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "Which literal code scanning filter selects open high-severity alerts on main?",
+        "choices": [
+            "is:closed severity:high branch:main",
+            "is:open severity:high branch:main",
+            "is:open severity:low branch:main",
+            "is:open severity:high branch:release"
+        ],
+        "correct": 1,
+        "explanations": [
+            "This matches closed high-severity code scanning alerts present on main.",
+            "This matches open high-severity code scanning alerts on main.",
+            "This restricts open alerts to low severity rather than high severity.",
+            "This uses release as the branch scope rather than main."
+        ],
+        "concept": "Scoped alert-list filtering",
+        "hints": [
+            "Read each qualifier as a constraint on the result set.",
+            "Distinguish alert state from severity and branch scope."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-code-scanning-alerts/assess-alerts"
+    },
+    {
+        "id": "ghas-operations-039",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "Which evidence source should an investigator consult to attribute supported security-alert actions to actors?",
+        "choices": [
+            "Audit log",
+            "Alert dismissal rationale",
+            "Periodic exception review",
+            "Permission-scoped reporting"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Audit logs record supported secret scanning and Dependabot events; code scanning alert timeline events are not included.",
+            "A meaningful rationale explains why a finding was dismissed rather than implying it was fixed.",
+            "Revisiting exceptions tests whether earlier risk assumptions and ownership still hold.",
+            "Security reporting must respect alert access rather than distributing sensitive details to unauthorized readers."
+        ],
+        "concept": "Security-action auditability",
+        "hints": [
+            "Distinguish operational convenience from durable governance evidence.",
+            "Ask what a future reviewer would need to understand the decision."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/security-at-scale/audit-security-alerts"
+    },
+    {
+        "id": "ghas-operations-040",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "An enterprise administrator disallows Copilot Autofix for code scanning. A repository administrator wants to enable it locally. What must happen first?",
+        "choices": [
+            "Switch the repository from default to advanced setup",
+            "Generate a new SARIF category for the same findings",
+            "Reverse the enterprise setting at an authorized level",
+            "Assign a Copilot seat to each repository collaborator"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Copilot Autofix policy applies across default and advanced CodeQL setup.",
+            "An analysis category does not override enterprise policy.",
+            "Disabling at enterprise level prevents lower levels from enabling it until that policy is reversed.",
+            "A collaborator license assignment does not override the enterprise feature restriction."
+        ],
+        "concept": "Autofix policy inheritance",
+        "hints": [
+            "Higher-level feature restrictions constrain lower-level choices.",
+            "Changing analysis mechanics does not change policy authority."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/code-scanning/autofix-for-code-scanning"
+    },
+    {
+        "id": "ghas-operations-041",
+        "domain": "Security operations: best practices, prioritization, remediation",
+        "prompt": "A dismissed alert becomes applicable after a code change invalidates its original justification. Which disposition is appropriate?",
+        "choices": [
+            "Document a justified false-positive dismissal.",
+            "Record accepted risk and its rationale.",
+            "Verify the fix with fresh, relevant analysis.",
+            "Reopen the alert when the dismissal is no longer justified."
+        ],
+        "correct": 3,
+        "explanations": [
+            "A false-positive dismissal needs evidence that the reported vulnerability does not apply to the analyzed code.",
+            "Accepted risk acknowledges an unresolved issue; it must not be reported as a verified code fix.",
+            "A fix is established by relevant analysis of the changed code, not by merely editing or dismissing an alert.",
+            "A changed assumption or newly applicable code path can invalidate an earlier dismissal."
+        ],
+        "concept": "Revisiting alert dismissals",
+        "hints": [
+            "Separate evidence about a finding from a decision to tolerate risk.",
+            "Choose a disposition that remains truthful when another reviewer reads it."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-code-scanning-alerts/resolve-alerts"
+    },
+    {
+        "id": "ghas-administration-001",
+        "domain": "GitHub Security suites administration",
+        "prompt": "An authorized GitHub.com organization administrator needs to create a security configuration. Which English UI route is correct?",
+        "choices": [
+            "Repository > Settings > Rules > Rulesets",
+            "Organization > Security and quality > Risk",
+            "Repository > Insights > Dependency graph",
+            "Organization > Settings > Advanced Security > Configurations"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Repository rulesets govern branch, tag, or push constraints rather than organization security configurations.",
+            "Risk is an investigation view, not the editor for security configurations.",
+            "This route opens dependency inventory rather than organization enablement policies.",
+            "Organization security configurations are administered in this settings area."
+        ],
+        "concept": "Organization configuration administration",
+        "hints": [
+            "Choose the administrative scope before choosing the setting.",
+            "Configuration administration and alert investigation are different tasks."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/secure-at-scale/configure-organization-security/establish-complete-coverage/create-custom-configuration"
+    },
+    {
+        "id": "ghas-administration-002",
+        "domain": "GitHub Security suites administration",
+        "prompt": "Which English configuration policy applies a selected baseline automatically to newly created repositories of a chosen visibility?",
+        "choices": [
+            "Apply the configuration to selected repositories.",
+            "Use as default for newly created repositories",
+            "Enforce configuration",
+            "Keep existing settings"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Applying attaches the configuration to selected existing repositories rather than merely defining a future default.",
+            "This policy automatically applies the selected configuration to new repositories of the chosen visibility.",
+            "Enforcement prevents repository administrators changing features explicitly enabled or disabled by the configuration.",
+            "Leaving a feature unset preserves its existing setting; that feature is not enforced by this configuration."
+        ],
+        "concept": "New-repository configuration defaults",
+        "hints": [
+            "Separate a default for future repositories from an action on existing ones.",
+            "Being selected, applied, and enforced are different states."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/secure-at-scale/configure-organization-security/establish-complete-coverage/create-custom-configuration"
+    },
+    {
+        "id": "ghas-administration-003",
+        "domain": "GitHub Security suites administration",
+        "prompt": "A repository is transferred into an organization with a default security configuration. What configuration action is still needed?",
+        "choices": [
+            "Check the attached configuration and its enforcement status.",
+            "Review paid-feature entitlement before applying at scale.",
+            "Apply an appropriate configuration manually after transfer.",
+            "Create a custom configuration for the required feature mix."
+        ],
+        "correct": 2,
+        "explanations": [
+            "Repository behavior depends on the configuration relationship and enforcement, not its display name alone.",
+            "Applying paid features to private or internal repositories can consume licensed usage and requires the applicable entitlement.",
+            "Organization defaults apply to newly created repositories, not automatically to transferred repositories.",
+            "Custom configurations let the organization choose a tailored combination of feature enablement settings."
+        ],
+        "concept": "Transferred repository coverage",
+        "hints": [
+            "Check whether the repository is new, transferred, or already managed.",
+            "Do not assume a default retroactively changes every repository."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/secure-at-scale/configure-organization-security/establish-complete-coverage/create-custom-configuration"
+    },
+    {
+        "id": "ghas-administration-004",
+        "domain": "GitHub Security suites administration",
+        "prompt": "Which English policy prevents repository administrators from changing features explicitly enabled or disabled by their applied configuration?",
+        "choices": [
+            "Keep existing settings",
+            "Apply the configuration to selected repositories.",
+            "Use as default for newly created repositories",
+            "Enforce configuration"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Leaving a feature unset preserves its existing setting; that feature is not enforced by this configuration.",
+            "Applying attaches the configuration to selected existing repositories rather than merely defining a future default.",
+            "This policy automatically applies the selected configuration to new repositories of the chosen visibility.",
+            "Enforcement prevents repository administrators changing features explicitly enabled or disabled by the configuration."
+        ],
+        "concept": "Configuration enforcement boundary",
+        "hints": [
+            "Separate a default for future repositories from an action on existing ones.",
+            "Being selected, applied, and enforced are different states."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/secure-at-scale/configure-organization-security/establish-complete-coverage/create-custom-configuration"
+    },
+    {
+        "id": "ghas-administration-005",
+        "domain": "GitHub Security suites administration",
+        "prompt": "In an enforced security configuration, which choice leaves a feature’s current enablement untouched and unenforced by that configuration?",
+        "choices": [
+            "Keep existing settings",
+            "Apply the configuration to selected repositories.",
+            "Use as default for newly created repositories",
+            "Enforce configuration"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Leaving a feature unset preserves its existing setting; that feature is not enforced by this configuration.",
+            "Applying attaches the configuration to selected existing repositories rather than merely defining a future default.",
+            "This policy automatically applies the selected configuration to new repositories of the chosen visibility.",
+            "Enforcement prevents repository administrators changing features explicitly enabled or disabled by the configuration."
+        ],
+        "concept": "Unset settings under enforcement",
+        "hints": [
+            "Separate a default for future repositories from an action on existing ones.",
+            "Being selected, applied, and enforced are different states."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/secure-at-scale/configure-organization-security/establish-complete-coverage/create-custom-configuration"
+    },
+    {
+        "id": "ghas-administration-006",
+        "domain": "GitHub Security suites administration",
+        "prompt": "A repository group needs an enablement mix different from the GitHub-recommended baseline. Which administrative approach fits?",
+        "choices": [
+            "Apply an appropriate configuration manually after transfer.",
+            "Create a custom configuration for the required feature mix.",
+            "Check the attached configuration and its enforcement status.",
+            "Review paid-feature entitlement before applying at scale."
+        ],
+        "correct": 1,
+        "explanations": [
+            "Organization defaults apply to newly created repositories, not automatically to transferred repositories.",
+            "Custom configurations let the organization choose a tailored combination of feature enablement settings.",
+            "Repository behavior depends on the configuration relationship and enforcement, not its display name alone.",
+            "Applying paid features to private or internal repositories can consume licensed usage and requires the applicable entitlement."
+        ],
+        "concept": "Custom configuration design",
+        "hints": [
+            "Check whether the repository is new, transferred, or already managed.",
+            "Do not assume a default retroactively changes every repository."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/secure-at-scale/configure-organization-security/establish-complete-coverage/create-custom-configuration"
+    },
+    {
+        "id": "ghas-administration-007",
+        "domain": "GitHub Security suites administration",
+        "prompt": "A new-repository default has been saved. How does an administrator bring already existing repositories under that configuration?",
+        "choices": [
+            "Enforce configuration",
+            "Keep existing settings",
+            "Apply the configuration to selected repositories.",
+            "Use as default for newly created repositories"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Enforcement prevents repository administrators changing features explicitly enabled or disabled by the configuration.",
+            "Leaving a feature unset preserves its existing setting; that feature is not enforced by this configuration.",
+            "Applying attaches the configuration to selected existing repositories rather than merely defining a future default.",
+            "This policy automatically applies the selected configuration to new repositories of the chosen visibility."
+        ],
+        "concept": "Existing repository configuration attachment",
+        "hints": [
+            "Separate a default for future repositories from an action on existing ones.",
+            "Being selected, applied, and enforced are different states."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/secure-at-scale/configure-organization-security/establish-complete-coverage/create-custom-configuration"
+    },
+    {
+        "id": "ghas-administration-008",
+        "domain": "GitHub Security suites administration",
+        "prompt": "Which configuration status means a repository attachment is in progress rather than complete?",
+        "choices": [
+            "attaching",
+            "enforced",
+            "failed",
+            "attached"
+        ],
+        "correct": 0,
+        "explanations": [
+            "The configuration is still being applied; this transient state is not completion evidence.",
+            "The configuration is active and enforced, restricting changes to controlled feature enablement.",
+            "A failed attachment needs investigation and is not evidence that the intended features are active.",
+            "The configuration is actively applied and the repository inherits its settings."
+        ],
+        "concept": "Pending configuration application",
+        "hints": [
+            "A request being accepted is not the same as a completed attachment.",
+            "Interpret the repository’s current relationship to the configuration."
+        ],
+        "source": "https://docs.github.com/en/code-security/reference/security-at-scale/configuration-statuses"
+    },
+    {
+        "id": "ghas-administration-009",
+        "domain": "GitHub Security suites administration",
+        "prompt": "Which configuration status requires investigating an unsuccessful attachment rather than counting the repository as covered?",
+        "choices": [
+            "enforced",
+            "failed",
+            "attached",
+            "attaching"
+        ],
+        "correct": 1,
+        "explanations": [
+            "The configuration is active and enforced, restricting changes to controlled feature enablement.",
+            "A failed attachment needs investigation and is not evidence that the intended features are active.",
+            "The configuration is actively applied and the repository inherits its settings.",
+            "The configuration is still being applied; this transient state is not completion evidence."
+        ],
+        "concept": "Failed configuration attachment",
+        "hints": [
+            "A request being accepted is not the same as a completed attachment.",
+            "Interpret the repository’s current relationship to the configuration."
+        ],
+        "source": "https://docs.github.com/en/code-security/reference/security-at-scale/configuration-statuses"
+    },
+    {
+        "id": "ghas-administration-010",
+        "domain": "GitHub Security suites administration",
+        "prompt": "Which status indicates both active configuration inheritance and restrictions on repository-admin enablement changes?",
+        "choices": [
+            "attaching",
+            "enforced",
+            "failed",
+            "attached"
+        ],
+        "correct": 1,
+        "explanations": [
+            "The configuration is still being applied; this transient state is not completion evidence.",
+            "The configuration is active and enforced, restricting changes to controlled feature enablement.",
+            "A failed attachment needs investigation and is not evidence that the intended features are active.",
+            "The configuration is actively applied and the repository inherits its settings."
+        ],
+        "concept": "Enforced configuration relationship",
+        "hints": [
+            "A request being accepted is not the same as a completed attachment.",
+            "Interpret the repository’s current relationship to the configuration."
+        ],
+        "source": "https://docs.github.com/en/code-security/reference/security-at-scale/configuration-statuses"
+    },
+    {
+        "id": "ghas-administration-011",
+        "domain": "GitHub Security suites administration",
+        "prompt": "In an organization on GitHub Enterprise Cloud with Secret Protection enabled, a response team must manage secret-scanning results and bypass requests without controlling every security feature. Which role design best fits least privilege?",
+        "choices": [
+            "Assign organization owner to every responder",
+            "Assign the predefined security manager role",
+            "Assign repository admin across the organization",
+            "Create a custom organization role for these duties"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Organization owner grants broad authority beyond the requested response duties.",
+            "The predefined role includes organization-wide security-feature settings beyond this narrow scope.",
+            "Repository admin across repositories also grants unnecessary general administration privileges.",
+            "Use a Read base with View secret scanning alerts; Dismiss, reopen, or assign secret scanning alerts; and Review and manage secret scanning bypass requests. Adding repository permissions to custom organization roles is currently in public preview."
+        ],
+        "concept": "Narrow custom security roles",
+        "hints": [
+            "Compare the requested duties with the full predefined role's scope.",
+            "Least privilege may require a role smaller than the standard security role."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-peoples-access-to-your-organization-with-roles/permissions-of-custom-organization-roles"
+    },
+    {
+        "id": "ghas-administration-012",
+        "domain": "GitHub Security suites administration",
+        "prompt": "Which permission combination is supplied by the predefined security manager role without requiring general code-write access?",
+        "choices": [
+            "Configure organization-level security features.",
+            "Read repositories and manage security alerts organization-wide.",
+            "Write application code across all repositories.",
+            "Assign the security manager organization role."
+        ],
+        "correct": 1,
+        "explanations": [
+            "The role grants security administration authority; feature licensing remains a separate requirement.",
+            "Security manager grants repository read access and write access to security alerts across the organization.",
+            "Security manager alone does not grant general write permission to application source code.",
+            "Assignment of this organization role is an organization-owner responsibility."
+        ],
+        "concept": "Security manager least privilege",
+        "hints": [
+            "Distinguish code access from authority over security alerts and settings.",
+            "A specialized organization role need not be a general repository administrator."
+        ],
+        "source": "https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization"
+    },
+    {
+        "id": "ghas-administration-013",
+        "domain": "GitHub Security suites administration",
+        "prompt": "A member has an explicit Write grant on one repository and also the organization's security manager role. The owner removes only security manager. What should the access review expect on that repository?",
+        "choices": [
+            "The independent Write grant becomes Read automatically",
+            "All repository access is removed with security manager",
+            "The independent Write grant becomes Admin automatically",
+            "The independently granted Write access remains"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Security manager permissions are additional to existing access; removing the role does not downgrade that grant.",
+            "Removing one role is not revocation of every independent repository permission.",
+            "Security-role removal does not promote a separate repository grant.",
+            "Review independent grants separately; the Write access was not supplied by security manager."
+        ],
+        "concept": "Independent grants during security-role removal",
+        "hints": [
+            "Identify which grant originally supplied code-write access.",
+            "Removing an additive role is not the same as revoking all access paths."
+        ],
+        "source": "https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization"
+    },
+    {
+        "id": "ghas-administration-014",
+        "domain": "GitHub Security suites administration",
+        "prompt": "Without custom alert permissions, which minimum standard repository role can view the full code scanning alert summary, not just pull request annotations?",
+        "choices": [
+            "Triage",
+            "Write",
+            "Admin",
+            "Read"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Triage provides issue and pull request management beyond Read, but is below the write access needed for the full code scanning alert list.",
+            "Write is the minimum standard repository role for the full code scanning alert summary, absent additional custom alert permissions.",
+            "Admin includes repository administration and can view the alert summary, but is broader than the minimum role needed.",
+            "Read permits viewing code scanning pull request annotations and inspecting active rulesets, but not the full code scanning alert list by itself."
+        ],
+        "concept": "Repository code-alert visibility",
+        "hints": [
+            "Compare the minimum standard role rather than every role with broader authority.",
+            "Viewing annotations, viewing an alert list, and administering a repository are distinct permissions."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/manage-security-alerts/manage-code-scanning-alerts/assess-alerts"
+    },
+    {
+        "id": "ghas-administration-015",
+        "domain": "GitHub Security suites administration",
+        "prompt": "A branch matches two rulesets and a branch protection rule. How are their applicable restrictions resolved?",
+        "choices": [
+            "All applicable rules combine; the stricter duplicate requirement wins.",
+            "Grant bypass only to explicitly selected eligible actors.",
+            "Match the ruleset’s branch or tag target patterns.",
+            "Inspect active rulesets with repository read access."
+        ],
+        "correct": 0,
+        "explanations": [
+            "Rulesets layer with other rulesets and branch protection; they do not have a priority ordering.",
+            "Rulesets can name roles, teams, or GitHub Apps for bypass instead of implicitly exempting everyone.",
+            "Branch and tag rulesets apply to the refs targeted by their configured patterns.",
+            "Readers can inspect active rulesets without receiving permission to change them."
+        ],
+        "concept": "Policy layering without priority order",
+        "hints": [
+            "Check rule targeting, applicability, and explicit bypass actors.",
+            "Multiple policy sources can constrain the same change."
+        ],
+        "source": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets"
+    },
+    {
+        "id": "ghas-administration-016",
+        "domain": "GitHub Security suites administration",
+        "prompt": "A ruleset needs a narrow exception for an approved automation app. Which governance approach fits?",
+        "choices": [
+            "All applicable rules combine; the stricter duplicate requirement wins.",
+            "Grant bypass only to explicitly selected eligible actors.",
+            "Match the ruleset’s branch or tag target patterns.",
+            "Inspect active rulesets with repository read access."
+        ],
+        "correct": 1,
+        "explanations": [
+            "Rulesets layer with other rulesets and branch protection; they do not have a priority ordering.",
+            "Rulesets can name roles, teams, or GitHub Apps for bypass instead of implicitly exempting everyone.",
+            "Branch and tag rulesets apply to the refs targeted by their configured patterns.",
+            "Readers can inspect active rulesets without receiving permission to change them."
+        ],
+        "concept": "Ruleset bypass actor governance",
+        "hints": [
+            "Check rule targeting, applicability, and explicit bypass actors.",
+            "Multiple policy sources can constrain the same change."
+        ],
+        "source": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets"
+    },
+    {
+        "id": "ghas-administration-017",
+        "domain": "GitHub Security suites administration",
+        "prompt": "What does the English ruleset enforcement state Active do?",
+        "choices": [
+            "Keep the definition without enforcing its rules.",
+            "Grant every repository reader permission to edit rules.",
+            "Give repository writers an automatic bypass exemption.",
+            "Enforce the configured rules on matching targets."
+        ],
+        "correct": 3,
+        "explanations": [
+            "Retaining a ruleset without enforcement describes Disabled rather than Active.",
+            "Readers can inspect active rulesets; activation does not give readers rule-editing authority.",
+            "An Active ruleset does not automatically exempt all writers; bypass actors are configured separately.",
+            "Active means enforcing the rules on matching targets, subject to the configured bypass policy."
+        ],
+        "concept": "Active ruleset enforcement",
+        "hints": [
+            "Interpret enforcement state separately from policy content.",
+            "Visibility of a rule does not necessarily mean authority to edit it."
+        ],
+        "source": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets"
+    },
+    {
+        "id": "ghas-administration-018",
+        "domain": "GitHub Security suites administration",
+        "prompt": "Which minimum repository access lets a contributor inspect active rulesets without administering them?",
+        "choices": [
+            "Admin",
+            "Read",
+            "Triage",
+            "Write"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Admin includes repository administration and can view the alert summary, but is broader than the minimum role needed.",
+            "Read permits viewing code scanning pull request annotations and inspecting active rulesets, but not the full code scanning alert list by itself.",
+            "Triage provides issue and pull request management beyond Read, but is below the write access needed for the full code scanning alert list.",
+            "Write is the minimum standard repository role for the full code scanning alert summary, absent additional custom alert permissions."
+        ],
+        "concept": "Read-only policy transparency",
+        "hints": [
+            "Compare the minimum standard role rather than every role with broader authority.",
+            "Viewing annotations, viewing an alert list, and administering a repository are distinct permissions."
+        ],
+        "source": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets"
+    },
+    {
+        "id": "ghas-administration-019",
+        "domain": "GitHub Security suites administration",
+        "prompt": "An approved migration bot must skip push protection entirely for its commits. The organization has accepted this narrowly scoped exception. Which delegated-bypass capability implements that requirement?",
+        "choices": [
+            "Grant the bot a push-protection exemption",
+            "Grant the bot permission to bypass detected blocks",
+            "Add the bot as a bypass-request reviewer",
+            "Approve one pending request from the bot"
+        ],
+        "correct": 0,
+        "explanations": [
+            "An exemption skips push protection for that selected actor's commits and should be tightly scoped.",
+            "Bypass permission lets an actor bypass blocks; it does not skip protection entirely.",
+            "Reviewing others' requests does not implement actor-level scanning exemption.",
+            "One request approval is limited to that request, not the bot's future commits."
+        ],
+        "concept": "Push-protection exemptions versus bypass rights",
+        "hints": [
+            "The requirement distinguishes skipping a check from overriding its result.",
+            "Keep an actor-wide exception separate from approval of one push."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/secret-security/delegated-bypass"
+    },
+    {
+        "id": "ghas-administration-020",
+        "domain": "GitHub Security suites administration",
+        "prompt": "A person is added as a push-protection bypass reviewer. What should remain separate from that delegated duty?",
+        "choices": [
+            "Configure designated bypass reviewers.",
+            "Grant an explicit bypass privilege.",
+            "Grant a push-protection exemption.",
+            "Retain ordinary repository permissions."
+        ],
+        "correct": 3,
+        "explanations": [
+            "Delegated bypass routes requests from contributors without bypass rights to designated reviewers.",
+            "A bypass privilege allows selected actors to bypass; it is not the same as requesting approval.",
+            "An exemption skips push protection for selected actors, which differs from reviewing individual requests.",
+            "Bypass delegation does not itself grant general repository administration or code access."
+        ],
+        "concept": "Bypass delegation versus repository administration",
+        "hints": [
+            "A delegated exception should not expand unrelated permissions.",
+            "Separate requesting an exception from being authorized to approve one."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/secret-security/delegated-bypass"
+    },
+    {
+        "id": "ghas-administration-021",
+        "domain": "GitHub Security suites administration",
+        "prompt": "On GHES 3.19 with Actions installed, both Secret Protection and Code Security controls are missing. Which prerequisites should be checked?",
+        "choices": [
+            "Check site-installed features and the applicable security license.",
+            "Check that GitHub Actions is installed on the instance.",
+            "Use the GHES 3.19 documentation for that deployment.",
+            "Review organization-level enablement after site prerequisites."
+        ],
+        "correct": 0,
+        "explanations": [
+            "On GHES 3.19, the configuration UI depends on site-installed features and product entitlement.",
+            "GHES 3.19 code scanning default setup and Dependabot security updates require GitHub Actions installation.",
+            "A named Server release can differ from current Cloud behavior; release-specific documentation governs the comparison.",
+            "Installing a capability on Server does not replace applying appropriate organization and repository settings."
+        ],
+        "concept": "Versioned Server feature availability",
+        "hints": [
+            "Use the documentation for the installed Server release, not Cloud assumptions.",
+            "Check installation prerequisites separately from organization settings."
+        ],
+        "source": "https://docs.github.com/en/enterprise-server@3.19/code-security/how-tos/secure-at-scale/configure-organization-security/establish-complete-coverage/create-custom-configuration"
+    },
+    {
+        "id": "ghas-administration-022",
+        "domain": "GitHub Security suites administration",
+        "prompt": "On GHES 3.19, what installation prerequisite is shared by code scanning default setup and Dependabot security updates?",
+        "choices": [
+            "Check site-installed features and the applicable security license.",
+            "Check that GitHub Actions is installed on the instance.",
+            "Use the GHES 3.19 documentation for that deployment.",
+            "Review organization-level enablement after site prerequisites."
+        ],
+        "correct": 1,
+        "explanations": [
+            "On GHES 3.19, the configuration UI depends on site-installed features and product entitlement.",
+            "GHES 3.19 code scanning default setup and Dependabot security updates require GitHub Actions installation.",
+            "A named Server release can differ from current Cloud behavior; release-specific documentation governs the comparison.",
+            "Installing a capability on Server does not replace applying appropriate organization and repository settings."
+        ],
+        "concept": "Server Actions prerequisite",
+        "hints": [
+            "Use the documentation for the installed Server release, not Cloud assumptions.",
+            "Check installation prerequisites separately from organization settings."
+        ],
+        "source": "https://docs.github.com/en/enterprise-server@3.19/code-security/how-tos/secure-at-scale/configure-organization-security/establish-complete-coverage/create-custom-configuration"
+    },
+    {
+        "id": "ghas-administration-023",
+        "domain": "GitHub Security suites administration",
+        "prompt": "An Enterprise Cloud owner lacks security overview data for an organization where they have no organization role. What action does the permissions reference prescribe?",
+        "choices": [
+            "Join an organization team with repository read access.",
+            "Enable security email notifications for the organization.",
+            "Join the organization as an organization owner.",
+            "Rely on enterprise ownership without an organization role."
+        ],
+        "correct": 2,
+        "explanations": [
+            "Read or triage repository access does not grant organization security overview alert views.",
+            "Notification preferences do not create the organization roles needed to view security data.",
+            "The permissions reference directs enterprise owners to join as organization owners to see that organization’s repository data.",
+            "Enterprise ownership alone does not grant unrestricted security overview data for every organization."
+        ],
+        "concept": "Enterprise ownership versus organization security access",
+        "hints": [
+            "Enterprise ownership and organization-level security access are separate roles.",
+            "Check the role within the organization whose data is missing."
+        ],
+        "source": "https://docs.github.com/en/code-security/reference/permissions/security-overview"
+    },
+    {
+        "id": "ghas-administration-024",
+        "domain": "GitHub Security suites administration",
+        "prompt": "Which literal REST operation lists the security configurations available to an organization?",
+        "choices": [
+            "POST /orgs/{org}/code-security/configurations",
+            "POST /orgs/{org}/code-security/configurations/{configuration_id}/attach",
+            "GET /repos/{owner}/{repo}/code-security-configuration",
+            "GET /orgs/{org}/code-security/configurations"
+        ],
+        "correct": 3,
+        "explanations": [
+            "This endpoint creates an organization security configuration rather than attaching an existing one.",
+            "This endpoint attaches an existing configuration to selected repositories with appropriate authorization.",
+            "This endpoint retrieves the security configuration associated with one repository.",
+            "This endpoint lists security configurations available to the organization."
+        ],
+        "concept": "Configuration discovery API",
+        "hints": [
+            "Distinguish reading configuration definitions from applying them.",
+            "Match the HTTP method and resource scope to the requested operation."
+        ],
+        "source": "https://docs.github.com/en/rest/code-security/configurations"
+    },
+    {
+        "id": "ghas-administration-025",
+        "domain": "GitHub Security suites administration",
+        "prompt": "An authorized automation already knows a security configuration ID. Which REST operation applies it to selected repositories?",
+        "choices": [
+            "POST /orgs/{org}/code-security/configurations/{configuration_id}/attach",
+            "GET /repos/{owner}/{repo}/code-security-configuration",
+            "GET /orgs/{org}/code-security/configurations",
+            "POST /orgs/{org}/code-security/configurations"
+        ],
+        "correct": 0,
+        "explanations": [
+            "This endpoint attaches an existing configuration to selected repositories with appropriate authorization.",
+            "This endpoint retrieves the security configuration associated with one repository.",
+            "This endpoint lists security configurations available to the organization.",
+            "This endpoint creates an organization security configuration rather than attaching an existing one."
+        ],
+        "concept": "Bulk configuration attachment API",
+        "hints": [
+            "Distinguish reading configuration definitions from applying them.",
+            "Match the HTTP method and resource scope to the requested operation."
+        ],
+        "source": "https://docs.github.com/en/rest/code-security/configurations"
+    },
+    {
+        "id": "ghas-administration-026",
+        "domain": "GitHub Security suites administration",
+        "prompt": "Which literal REST operation reads the security configuration associated with a single repository?",
+        "choices": [
+            "POST /orgs/{org}/code-security/configurations/{configuration_id}/attach",
+            "GET /repos/{owner}/{repo}/code-security-configuration",
+            "GET /orgs/{org}/code-security/configurations",
+            "POST /orgs/{org}/code-security/configurations"
+        ],
+        "correct": 1,
+        "explanations": [
+            "This endpoint attaches an existing configuration to selected repositories with appropriate authorization.",
+            "This endpoint retrieves the security configuration associated with one repository.",
+            "This endpoint lists security configurations available to the organization.",
+            "This endpoint creates an organization security configuration rather than attaching an existing one."
+        ],
+        "concept": "Repository configuration readback",
+        "hints": [
+            "Distinguish reading configuration definitions from applying them.",
+            "Match the HTTP method and resource scope to the requested operation."
+        ],
+        "source": "https://docs.github.com/en/rest/code-security/configurations"
+    },
+    {
+        "id": "ghas-administration-027",
+        "domain": "GitHub Security suites administration",
+        "prompt": "An API call attempting to override an enforced enablement setting appears successful. What verifies whether it actually changed anything?",
+        "choices": [
+            "Investigate changes to default-setup language exclusions.",
+            "Review the central configuration instead of forcing a local override.",
+            "Read back effective feature settings after the API call.",
+            "Check required Actions availability and policy."
+        ],
+        "correct": 2,
+        "explanations": [
+            "Changing which languages default setup excludes is a documented circumstance that can break enforcement.",
+            "Repository administrators cannot alter enablement explicitly controlled by an enforced configuration.",
+            "An API attempt to override an enforced enablement setting can appear successful without changing that setting.",
+            "Disabling Actions or making required actions unavailable can break code scanning configuration enforcement."
+        ],
+        "concept": "Effective-state automation verification",
+        "hints": [
+            "Verify effective state, not just the transport response.",
+            "Central enforcement and automation permissions remain independent constraints."
+        ],
+        "source": "https://docs.github.com/en/code-security/reference/security-at-scale/configuration-enforcement"
+    },
+    {
+        "id": "ghas-administration-028",
+        "domain": "GitHub Security suites administration",
+        "prompt": "An enforced configuration previously enabled code scanning, but analysis stops after repository policy changes. Which dependency should be checked?",
+        "choices": [
+            "Read back effective feature settings after the API call.",
+            "Check required Actions availability and policy.",
+            "Investigate changes to default-setup language exclusions.",
+            "Review the central configuration instead of forcing a local override."
+        ],
+        "correct": 1,
+        "explanations": [
+            "An API attempt to override an enforced enablement setting can appear successful without changing that setting.",
+            "Disabling Actions or making required actions unavailable can break code scanning configuration enforcement.",
+            "Changing which languages default setup excludes is a documented circumstance that can break enforcement.",
+            "Repository administrators cannot alter enablement explicitly controlled by an enforced configuration."
+        ],
+        "concept": "Configuration enforcement prerequisites",
+        "hints": [
+            "Verify effective state, not just the transport response.",
+            "Central enforcement and automation permissions remain independent constraints."
+        ],
+        "source": "https://docs.github.com/en/code-security/reference/security-at-scale/configuration-enforcement"
+    },
+    {
+        "id": "ghas-administration-029",
+        "domain": "GitHub Security suites administration",
+        "prompt": "Which English configuration option enables CodeQL default setup where needed while preserving repositories actively using advanced setup?",
+        "choices": [
+            "Enforce configuration",
+            "Use as default for newly created repositories",
+            "Enabled with advanced setup allowed",
+            "Keep existing settings"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Enforcement locks controlled enablement settings; it does not author an approved custom workflow.",
+            "A new-repository default chooses future configuration attachment, not detailed custom workflow content.",
+            "This option enables default setup where CodeQL is not actively running and allows existing advanced setup.",
+            "Keeping existing settings avoids imposing a new enablement value for that feature."
+        ],
+        "concept": "Default setup with approved advanced workflows",
+        "hints": [
+            "Preserve approved analysis while evaluating what the central rollout will change.",
+            "Feature enablement and the detailed analysis workflow are different layers."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/secure-at-scale/configure-organization-security/establish-complete-coverage/create-custom-configuration"
+    },
+    {
+        "id": "ghas-administration-030",
+        "domain": "GitHub Security suites administration",
+        "prompt": "Before applying paid security features to many private and internal repositories, which administrative review prevents assuming the base plan is enough?",
+        "choices": [
+            "Review paid-feature entitlement before applying at scale.",
+            "Apply an appropriate configuration manually after transfer.",
+            "Create a custom configuration for the required feature mix.",
+            "Check the attached configuration and its enforcement status."
+        ],
+        "correct": 0,
+        "explanations": [
+            "Applying paid features to private or internal repositories can consume licensed usage and requires the applicable entitlement.",
+            "Organization defaults apply to newly created repositories, not automatically to transferred repositories.",
+            "Custom configurations let the organization choose a tailored combination of feature enablement settings.",
+            "Repository behavior depends on the configuration relationship and enforcement, not its display name alone."
+        ],
+        "concept": "License-aware security rollout",
+        "hints": [
+            "Check whether the repository is new, transferred, or already managed.",
+            "Do not assume a default retroactively changes every repository."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/secure-at-scale/configure-organization-security/establish-complete-coverage/create-custom-configuration"
+    }
 ];

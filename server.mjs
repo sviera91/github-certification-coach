@@ -3,7 +3,7 @@ import { randomBytes, timingSafeEqual } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import { InputError } from "./engine.mjs";
 
-export async function startServer({ engine, log = () => {} }) {
+export async function startServer({ engine, log = () => {}, updates }) {
     const token = randomBytes(32).toString("hex");
     const nonce = randomBytes(24).toString("base64");
     const [html, css, client, primer, sendIcon, i18n, icons] = await Promise.all([
@@ -45,6 +45,10 @@ export async function startServer({ engine, log = () => {} }) {
                 return res.end(scripts.get(url.pathname));
             }
             if (req.method === "GET" && url.pathname === "/api/state") return reply(200, await engine.getState());
+            if (req.method === "GET" && url.pathname === "/api/updates") {
+                if (!updates) return reply(503, { error: "Update checks are not configured." });
+                return reply(200, await updates.getStatus());
+            }
             if (req.method === "POST" && url.pathname === "/api/action") {
                 if (!req.headers["content-type"]?.startsWith("application/json")) return reply(415, { error: "JSON required." });
                 let size = 0, chunks = [];

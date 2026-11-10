@@ -8,6 +8,7 @@ let state, index = 0, busy = false, signature = "", view = "catalog", reviewFilt
 let reviewingQuestion;
 let reportContext, reportReturnView = "catalog";
 let connectionErrorText;
+let updateStatus, updateSignature;
 let confirmResolve, confirmFocus;
 let pinnedQuestion;
 const openedHistory = new Set();
@@ -141,6 +142,39 @@ function showError(error, translated = false) {
         t("System message: {message}", { message: error.message });
     $("error").hidden = false;
 }
+function renderUpdate() {
+    const signature = JSON.stringify([state?.language, updateStatus]);
+    if (signature === updateSignature) return;
+    updateSignature = signature;
+    const visible = !isLite && ["available", "error"].includes(updateStatus?.status);
+    $("update-banner").hidden = !visible;
+    if (!visible) return;
+    const failed = updateStatus.status === "error";
+    $("update-banner").classList.toggle("flash-warn", failed);
+    $("update-title").textContent = t(failed ? "Update check unavailable" : "Update available: v{version}", { version: updateStatus.version });
+    $("update-message").textContent = t(failed ? "Could not check for updates. Check releases manually; practice remains available." :
+        "Install the newer extension and restart Copilot. Your saved progress is preserved.");
+    $("update-release").textContent = t(failed ? "Check releases" : "Release notes");
+    $("update-release").href = failed ? "https://github.com/sviera91/github-certification-coach/releases" : updateStatus.url;
+}
+async function refreshUpdates() {
+    try {
+        const response = await fetch("/api/updates", {
+            method: "GET", headers: { "x-coach-token": token }, signal: AbortSignal.timeout(8000),
+        });
+        if (!response.ok) throw new Error("Update status request failed.");
+        const value = await response.json();
+        if (!["available", "current", "none", "error"].includes(value?.status) ||
+            value.status === "available" && (typeof value.version !== "string" ||
+            !value.url?.startsWith("https://github.com/sviera91/github-certification-coach/releases/tag/"))) {
+            throw new Error("Invalid update status.");
+        }
+        updateStatus = value;
+    } catch {
+        updateStatus = { status: "error" };
+    }
+    renderUpdate();
+}
 async function api(action, extra = {}) {
     if (isLite) {
         liteAPI ??= (await import("./lite-api.mjs")).createLiteAPI();
@@ -218,6 +252,7 @@ function render() {
         exam.status !== "Human-reviewed bank";
     $("release-status").textContent = t(preview ? "Unofficial Preview" : "Unofficial practice");
     $("app-version").textContent = `v${state.appVersion}`;
+    renderUpdate();
     $("notice").textContent = t(preview ?
         "Unofficial, AI-authored Preview. Human content review is still required. Practice scores are not official scaled scores or a guarantee of passing." :
         "Unofficial practice with a human-reviewed question bank. Practice scores are not official scaled scores or a guarantee of passing.");
@@ -736,3 +771,7 @@ setInterval(async () => {
     }
 }, 1500);
 setInterval(tick, 1000);
+if (!isLite) {
+    void refreshUpdates();
+    setInterval(refreshUpdates, 60000);
+}

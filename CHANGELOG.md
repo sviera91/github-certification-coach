@@ -6,6 +6,87 @@ installed.
 
 ## Unreleased
 
+### Desktop update notifications
+
+- Add an English, Spanish, and Brazilian Portuguese "Update available" banner
+  linking to published release notes and manual installation instructions.
+- Check public GitHub release metadata while a canvas is open, caching successes
+  for 24 hours and deferring retries for at least an hour (longer when GitHub
+  requests it). Preview installs include published prereleases; stable installs
+  see stable releases only.
+- Cache concurrent checks, bound network requests, and show an explicit
+  nonblocking warning when checking fails. No learner data or GitHub credentials
+  are sent, and no update is downloaded or installed automatically.
+- Preserve learner progress and saved-attempt snapshots. Lite does not make
+  these extension-update requests. Existing installations need one manual
+  update to receive the notifier; merging a PR alone does not publish a release.
+
+### Agentic AI Developer question-bank refresh
+
+- Correct 108 questions across all three languages, replacing repeated answer
+  and objective chunks with distinct applied decisions. Retain small purposeful
+  overlaps rather than requiring every related concept to be globally unique.
+- Add optional all-language template-diversity checks and regressions covering
+  repeated prose, reordered choice sets, question clauses, and technical
+  punctuation. These heuristics supplement, not replace, semantic human review.
+- Refresh all 225 GH-600 questions in English, Spanish, and Brazilian Portuguese
+  across the full official blueprint, emphasizing applied agent workflows,
+  configuration/log/artifact interpretation, and close but distinguishable choices.
+- Use official learning material and documentation as content authority. Transfer
+  writing principles from the other certification assessments without claiming
+  verified GH-600 exam-format fidelity; no GH-600 practice assessment was used.
+- Refresh explanations, non-revealing hints, sources, and only the Agentic human
+  review packet. Content remains AI-authored Preview with no human approval granted.
+- Preserve IDs, exact domain quotas, four-choice single-answer behavior,
+  75-question/120-minute practice, private progress, and saved-attempt snapshots.
+  Keep this entry Unreleased for the coordinated six-bank version change.
+
+### Administration question-bank refresh
+
+- Rewrite all 225 Administration questions and their Spanish and Brazilian
+  Portuguese variants using original, concise role, policy, protocol, command,
+  configuration, and short-scenario questions.
+- Cover the complete July 2026 blueprint rather than overfit the smaller
+  practice assessment: identities, enterprise administration, security,
+  Actions, and usage monitoring. Name relevant platform, role, and scope.
+- Replace fourteen overlapping questions with distinct transfer, ruleset import,
+  typed input, audit API, rate-limit, webhook, appliance-command, support, and
+  budget-boundary decisions across all three practice languages.
+- Keep technical syntax and English interface paths aligned across languages.
+  Preserve domain quotas, four-choice single-answer questions,
+  75-question/100-minute mocks, and private saved learner state.
+- Regenerate the revision-based trilingual review packet. Content remains
+  AI-authored Preview; this refresh does not grant human approval.
+- Stage this certification's changes for the coordinated six-bank release;
+  no version bump or release is included.
+
+### Actions question-bank refresh
+
+- Rewrite all 225 Actions questions in English, Spanish, and Brazilian Portuguese
+  with original, concise YAML/file/command recognition and short practical
+  scenarios across the full January 2026 GH-200 blueprint.
+- Refresh answer choices, explanations, conceptual hints, and official sources;
+  regenerate only the Actions human-review packet. Content remains AI-authored
+  Preview, not official questions or human-approved material.
+- Preserve question IDs, exact domain quotas, four-choice single-answer behavior,
+  75-question/100-minute practice, private progress, and saved-attempt snapshots.
+  Keep this entry Unreleased for the coordinated six-bank version change.
+
+### Advanced Security question-bank refresh
+
+- Replace 33 overlapping objectives with distinct detection, remediation,
+  configuration, API, and access-control decisions in all three languages;
+  regenerate unchecked revision-specific human-review attestations.
+- Rewrite all 225 Advanced Security questions in English, Spanish, and Brazilian
+  Portuguese with original, concise feature/configuration recognition and short
+  practical scenarios across the full July 2026 GH-500 blueprint.
+- Refresh answer choices, explanations, conceptual hints, and official sources;
+  regenerate only the Advanced Security human-review packet. Content remains
+  AI-authored Preview, not official questions or human-approved material.
+- Preserve question IDs, exact domain quotas, four-choice single-answer behavior,
+  75-question/100-minute practice, private progress, and saved-attempt snapshots.
+  Keep this entry Unreleased for the coordinated six-bank version change.
+
 ### Foundations question-bank refresh
 
 - Rewrite all 225 Foundations questions and their Spanish and Brazilian

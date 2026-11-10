@@ -9,6 +9,8 @@ import { startServer } from "./server.mjs";
 import { quotasFor, revisionFor, reviewRevisionFor, publicExam, validateBank, assemble, approved, mergeApprovals, localizedQuestion } from "./bank-utils.mjs";
 import { domainTranslations, hasTranslation } from "./i18n.mjs";
 import { exams } from "./exams.mjs";
+import { checkDiversity } from "./bank-diversity.mjs";
+import { spawnSync } from "node:child_process";
 
 const catalog = ["foundations", "copilot"].map(id => ({
     id, name: id, phase: 1, attemptSize: 4, minutes: 6, relaxedMinutes: id === "foundations" ? 120 : undefined,
@@ -28,6 +30,54 @@ async function fixture(t, options = {}) {
     return { engine, directory, sent };
 }
 const first = questions[0].id;
+test("diversity checks reject repeated prose hidden behind different scenarios", () => {
+    const repeated = ["Use the approved plan with scoped evidence.", " USE the approved plan with scoped evidence. ", "Use the approved plan\nwith scoped evidence."];
+    const bank = repeated.map((answer, i) => ({
+        id: `q-${i}`, prompt: `Scenario ${i}?`, correct: 0,
+        choices: [answer, `Other ${i}`, `Alternative ${i}`, `Different ${i}`],
+    }));
+    assert.deepEqual(checkDiversity(bank.slice(0, 2)), []);
+    assert.ok(checkDiversity(bank).some(issue => issue.startsWith("Repeated correct-answer prose")));
+});
+test("diversity checks recognize repeated unordered choices and their answer", () => {
+    const bank = [
+        ["Read", "Write", "Admin", "Maintain"],
+        ["Admin", "Maintain", "Write", "Read"],
+        ["Maintain", "Read", "Admin", "Write"],
+    ].map((choices, i) => ({ id: `q-${i}`, prompt: `Scenario ${i}?`, choices, correct: choices.indexOf("Write") }));
+    assert.deepEqual(checkDiversity(bank), ["Repeated choice set and answer (q-0, q-1, q-2)"]);
+});
+test("diversity checks reject repeated long question clauses after varied scenarios", () => {
+    const bank = Array.from({ length: 4 }, (_, i) => ({
+        id: `q-${i}`, prompt: `Scenario ${i}. Which response best satisfies every requirement in this specific agent task?`,
+        correct: 0, choices: [`A${i}`, `B${i}`, `C${i}`, `D${i}`],
+    }));
+    assert.ok(checkDiversity(bank).some(issue => issue.startsWith("Repeated question template")));
+});
+test("diversity checks preserve distinct technical punctuation and legitimate short labels", () => {
+    const bank = [">", "/", "."].map((token, i) => ({
+        id: `q-${i}`, prompt: `Scenario ${i}?`, correct: 0,
+        choices: [`Select the literal token \`${token}\` here`, `B${i}`, `C${i}`, `D${i}`],
+    }));
+    assert.deepEqual(checkDiversity(bank), []);
+    assert.deepEqual(checkDiversity(bank.map(q => ({ ...q, choices: ["CODEOWNERS", ...q.choices.slice(1)] }))), []);
+});
+test("the corrected Agentic bank clears template checks in all three languages", () => {
+    const exam = exams.find(exam => exam.id === "agentic");
+    for (const language of ["en", "es", "pt-BR"]) {
+        const bank = exam.questions.map(q => language === "en" ? q : { ...q, ...q.translations[language] });
+        assert.deepEqual(checkDiversity(bank), [], language);
+    }
+});
+test("bank checker rejects unknown diversity targets and unsupported options", () => {
+    for (const option of ["--diversity=missing", "--diversity=", "--unrecognized"]) {
+        const result = spawnSync(process.execPath, ["check-banks.mjs", option], {
+            cwd: fileURLToPath(new URL(".", import.meta.url)), encoding: "utf8",
+        });
+        assert.equal(result.status, 1, option);
+        assert.match(result.stderr, /Unknown diversity exam ID|Usage:/, option);
+    }
+});
 test("Foundations localization preserves executable syntax, Markdown, shortcuts, and English interface choices", () => {
     const exam = exams.find(exam => exam.id === "foundations");
     const cases = [
@@ -91,6 +141,45 @@ test("all six banks have both complete translations and localized domains withou
     }
     assert.equal(domainTranslations.length, 35);
     assert.deepEqual(exams.find(exam => exam.id === "agentic").officialLanguages, ["en"]);
+});
+test("Agentic translations preserve configuration, command, and evidence literals at their answer indices", () => {
+    const exam = exams.find(exam => exam.id === "agentic");
+    const cases = [
+        ["agentic-085", "copilot-setup-steps"],
+        ["agentic-088", '{"type":"local","command":"node","args":["server.mjs"]}'],
+        ["agentic-130", "github.run_id + github.sha"],
+        ["agentic-133", "gh run view 731 --log-failed"],
+        ["agentic-149", "Files changed"],
+        ["agentic-186", "name: report-${{ matrix.worker }}"],
+        ["agentic-192", "fail-fast: false"],
+    ];
+    for (const [id, expected] of cases) {
+        const question = exam.questions.find(question => question.id === id);
+        assert.ok(question, id);
+        assert.equal(question.choices[question.correct], expected, id);
+        for (const language of ["es", "pt-BR"]) {
+            assert.deepEqual(question.translations[language].choices, question.choices, `${id} ${language}`);
+        }
+    }
+    for (const [id, literal] of [
+        ["agentic-025", "test-results"],
+        ["agentic-045", "https://api.githubcopilot.com/mcp/"],
+        ["agentic-070", "/mcp show SERVER-NAME"],
+        ["agentic-198", "CODEOWNERS"],
+    ]) {
+        const question = exam.questions.find(question => question.id === id);
+        assert.ok(question, id);
+        for (const language of ["en", "es", "pt-BR"]) {
+            const choices = language === "en" ? question.choices : question.translations[language].choices;
+            assert.ok(choices[question.correct].includes(literal), `${id} ${language}`);
+        }
+    }
+    const artifactQuestion = exam.questions.find(question => question.id === "agentic-025");
+    const yaml = "- name: Upload test results\n  uses: actions/upload-artifact@v4\n  with:\n    name: test-results\n    path: results/";
+    for (const language of ["en", "es", "pt-BR"]) {
+        const prompt = language === "en" ? artifactQuestion.prompt : artifactQuestion.translations[language].prompt;
+        assert.ok(prompt.includes(yaml), `agentic-025 ${language}`);
+    }
 });
 test("switching languages preserves answer key, attempt identity, revision, deadline, and persisted progress", async t => {
     const exam = exams[0];
@@ -483,12 +572,20 @@ test("provider failures surface instead of manufacturing a hint", async t => {
 });
 test("HTTP capability authentication, origin checks, input limits and page CSP", async t => {
     const { engine } = await fixture(t);
-    const server = await startServer({ engine });
+    let checks = 0;
+    const status = { status: "available", version: "0.5.0-preview",
+        url: "https://github.com/sviera91/github-certification-coach/releases/tag/v0.5.0-preview" };
+    const server = await startServer({ engine, updates: { getStatus: async () => { checks++; return status; } } });
     t.after(server.close);
     const url = new URL(server.url);
     const token = url.searchParams.get("token");
     const headers = { "x-coach-token": token, "Content-Type": "application/json" };
     assert.equal((await fetch(`${url.origin}/api/state`)).status, 403);
+    assert.equal((await fetch(`${url.origin}/api/updates`)).status, 403);
+    assert.equal((await fetch(`${url.origin}/api/updates`, { headers: { ...headers, Origin: "https://attacker.example" } })).status, 403);
+    assert.equal(checks, 0);
+    assert.deepEqual(await (await fetch(`${url.origin}/api/updates`, { headers })).json(), status);
+    assert.equal(checks, 1);
     const page = await fetch(url);
     assert.equal(page.status, 200);
     assert.match(page.headers.get("content-security-policy"), /default-src 'none'/);
@@ -514,4 +611,24 @@ test("HTTP capability authentication, origin checks, input limits and page CSP",
     assert.ok(state.attempt.entries.every(entry => !("correctAnswer" in entry)));
     assert.equal((await post(JSON.stringify({ action: "answer", questionId: first, choice: -1 }))).status, 400);
     assert.equal((await post(JSON.stringify({ action: "start", mode: "coach" }))).status, 400);
+});
+test("a pending release lookup does not block practice state", async t => {
+    const { engine } = await fixture(t);
+    let resolve, entered;
+    const started = new Promise(done => { entered = done; });
+    const pending = new Promise(done => { resolve = done; });
+    const server = await startServer({ engine, updates: { getStatus: () => { entered(); return pending; } } });
+    t.after(server.close);
+    const url = new URL(server.url);
+    const headers = { "x-coach-token": url.searchParams.get("token") };
+    const check = fetch(`${url.origin}/api/updates`, { headers });
+    await started;
+    try {
+        const state = await fetch(`${url.origin}/api/state`, { headers });
+        assert.equal(state.status, 200);
+        assert.equal((await state.json()).appVersion, "0.4.2-preview");
+    } finally {
+        resolve({ status: "none" });
+        await check;
+    }
 });

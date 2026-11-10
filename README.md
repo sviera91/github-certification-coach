@@ -71,6 +71,27 @@ Copilot. The installer copies an explicit runtime-file allowlist and leaves
 your existing `artifacts/` directory untouched. Never copy another person's
 entire installed extension folder: it may contain their private progress.
 
+### Update notifications
+
+The desktop canvas shows **Update available** when a newer version is published
+as a GitHub Release. It links to release notes and the manual instructions above;
+it never downloads, executes, or installs an update. Merging a PR or pushing a
+tag alone does not trigger a notification. Release tags must use semantic
+versions such as `v0.4.3-preview` or `v1.0.0`.
+
+The extension checks the public repository's 100 most recent releases when a
+canvas opens, then caches successful checks for 24 hours while it stays running.
+Open panels refresh that cached status every minute; restarting the extension
+starts a fresh check. Preview installations include published prereleases;
+stable installations ignore them. Drafts never trigger notifications.
+Network requests time out after five seconds. Failures show a nonblocking
+warning with a manual releases link and retry after at least an hour, honoring
+longer GitHub retry/rate-limit delays. No releases means no update banner.
+
+Existing users need one manual update to receive this feature. Progress remains
+local, and saved attempts keep their question snapshots. Lite hides this banner
+and does not perform extension-update checks.
+
 If the canvas is not discovered after restarting, verify that your desktop
 build supports custom canvases. A browser or VS Code Copilot installation alone
 cannot host it.
@@ -123,6 +144,14 @@ technical syntax remain literal across translations. These AI-authored Preview
 questions are not copied assessment items or a claim of real-exam equivalence;
 each new revision still needs human review in [the Foundations packet](reviews/foundations.md).
 
+The refreshed Administration bank uses original, concise questions about roles,
+policies, protocols, configuration, commands, and short applied scenarios across
+the July 2026 blueprint. Questions identify relevant platform and scope;
+technical syntax and English interface paths remain literal across translations.
+These AI-authored Preview questions are not copied assessment items or a claim
+of real-exam equivalence; each new revision still needs human review in
+[the Administration packet](reviews/administration.md).
+
 Full-length practice targets 75 questions from a 225-question original pool.
 This is our practice policy, not a guarantee of the number of items on a real
 exam. Official details are linked on the preparation screen. Sampling follows
@@ -130,6 +159,43 @@ published domain weights (midpoints when ranges are published), apportioned
 with largest remainders constrained to the published percentage ranges. No question repeats within an attempt; later attempts
 can repeat previously seen questions. A full mock is disabled if its bank
 cannot cover the required domain quotas. Learning modes can focus on one domain.
+
+The refreshed Actions bank uses original, concise YAML, command, file,
+configuration, and short-scenario questions across the full GH-200 blueprint.
+All 225 questions and their Spanish and Brazilian Portuguese variants are
+rewritten; assessment examples inform format only, not copied question content.
+The bank remains AI-authored Preview pending revision-specific human review.
+Its domain quotas, four-choice single-answer format, and practice timing are
+unchanged. Existing saved attempts retain their original question snapshots.
+
+The refreshed Advanced Security bank uses original, concise feature, configuration,
+file, command, and short-scenario questions across the full GH-500 blueprint.
+All 225 questions and their Spanish and Brazilian Portuguese variants are
+rewritten; assessment examples inform format only, not copied question content.
+The bank remains AI-authored Preview pending revision-specific human review.
+Its domain quotas, four-choice single-answer format, and practice timing are
+unchanged. Existing saved attempts retain their original question snapshots.
+
+The refreshed Agentic AI Developer bank covers all 225 questions in English,
+Spanish, and Brazilian Portuguese with applied agent-workflow scenarios,
+configuration and evidence interpretation, and plausible parallel choices.
+The GH-600 blueprint and official learning/documentation define its content;
+general writing lessons from the other certification assessments inform style.
+No GH-600 practice assessment was used to verify its question format, so this
+is not a claim of real-exam fidelity. The bank remains AI-authored Preview
+pending revision-specific human review. Domain quotas, four-choice single-answer
+behavior, 75-question/120-minute practice, and saved-attempt snapshots are unchanged.
+
+The diversity correction replaces repeated learning objectives, rather than
+rephrasing identical answers. For a template-regression check, run
+`npm run check:banks -- --diversity=agentic` (or `--diversity` for all six banks).
+This checks all three languages for repeated answer prose, full choice sets,
+and long question clauses, while keeping technical punctuation distinct.
+Repeated short feature names can be legitimate. These heuristics do not prove
+semantic diversity or replace one-best-answer and human content review.
+Small, purposeful overlaps can reinforce a concept; repeated chunks of the same
+decision with changed scenario nouns are not acceptable.
+The default bank check remains structural so bank-review PRs stay independent.
 
 The Copilot bank combines concise knowledge checks, client-specific command and
 setting selections, and short applied scenarios. Its 225 original questions and
@@ -440,6 +506,12 @@ site, but no answers, chat, progress, or local page URL (referrers are disabled)
 An unavailable image is labeled without blocking practice. Badge artwork
 identifies an exam; it does not mean you earned the credential or that GitHub
 endorses this project. See [third-party notices](THIRD-PARTY-NOTICES.md).
+
+Desktop update checks make unauthenticated, metadata-only requests to
+`api.github.com` for public releases. GitHub receives ordinary connection
+metadata, but no answers, scores, coaching text, local capability tokens, or
+GitHub account credentials. Checks do not read learner artifacts or affect
+practice. Their cache is in memory, not in the learner progress file.
 
 The repository does not collect or sync learner state. `artifacts/`, attempt
 files, dependencies, logs, environment files, and local research artifacts are

@@ -1,8 +1,9 @@
 import { joinSession, createCanvas } from "@github/copilot-sdk/extension";
 import path from "node:path";
 import os from "node:os";
-import { createEngine, COMPLETION_TOOL, INSIGHT_TOOL } from "./engine.mjs";
+import { createEngine, APP_VERSION, COMPLETION_TOOL, INSIGHT_TOOL } from "./engine.mjs";
 import { startServer } from "./server.mjs";
+import { createUpdateChecker } from "./updates.mjs";
 
 const panels = new Map();
 let session;
@@ -13,6 +14,7 @@ const log = error => {
 };
 const directory = path.join(process.env.COPILOT_HOME || path.join(os.homedir(), ".copilot"),
     "extensions", "certification-coach", "artifacts");
+const updates = createUpdateChecker({ version: APP_VERSION, log });
 const engine = createEngine({
     directory,
     send: options => {
@@ -55,7 +57,7 @@ session = await joinSession({
         open: async context => {
             let panel = panels.get(context.instanceId);
             if (!panel) {
-                panel = await startServer({ engine, log });
+                panel = await startServer({ engine, log, updates });
                 panels.set(context.instanceId, panel);
             }
             return { title: "GitHub Certification Coach", url: panel.url };

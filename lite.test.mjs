@@ -135,6 +135,7 @@ test("Pages output uses relative assets, disables desktop-only controls, and pub
     assert.ok(document.querySelector('[data-mode="coach"]').classList.contains("desktop-only"));
     assert.ok(document.querySelector("#explain-further").classList.contains("desktop-only"));
     assert.ok(document.querySelector("#bank-review").classList.contains("desktop-only"));
+    assert.ok(document.querySelector("#update-banner").classList.contains("desktop-only"));
     assert.equal(document.querySelector("#content-review").classList.contains("desktop-only"), true);
     assert.ok(!document.toString().includes("__TOKEN__"));
     assert.ok(!document.toString().includes("__NONCE__"));

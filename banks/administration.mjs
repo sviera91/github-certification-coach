@@ -1,231 +1,5403 @@
-// Preview: original practice material, not exam items or human-approved content.
-// Blueprint: GH-100 study guide, skills measured as of July 2026.
-// https://learn.github.com/certification/ADMIN
-// https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-100
+// Original practice content, not copied from certification assessments.
 export const questions = [
-  { id: "admin-001", domain: "Manage GitHub identities and access", prompt: "A company wants its identity provider to create GitHub accounts and control their entire lifecycle. Employees must not use those accounts for public contributions. Which account model fits?", choices: ["Enterprise Managed Users", "Personal accounts with organization SAML SSO", "Personal accounts with mandatory email verification", "Outside collaborators with repository invitations"], correct: 0, explanations: ["The IdP provisions managed accounts, whose collaboration is restricted to the enterprise.", "Organization SSO links personal accounts but does not make their lifecycle enterprise-managed.", "Email verification does not give the IdP control of account provisioning.", "Outside collaboration grants repository access, not an enterprise-managed account lifecycle."], concept: "Choosing an enterprise identity model", hints: ["Who must own the account lifecycle rather than just access?", "Which collaboration boundary does the company require?"], source: "https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/identity-and-access-management/enterprise-managed-users" },
-  { id: "admin-002", domain: "Manage GitHub identities and access", prompt: "Engineers need to contribute to public open-source projects using the same GitHub identities they use for work. The company wants SAML protection for its enterprise resources. Which design best meets both requirements?", choices: ["Managed user accounts with public repositories enabled", "Personal accounts with enterprise SAML SSO", "One shared managed account per engineering team", "Anonymous access to private work repositories"], correct: 1, explanations: ["Managed user accounts cannot create public content or collaborate outside their enterprise.", "Personal accounts can support outside collaboration while SAML protects enterprise resources.", "Shared accounts undermine individual identity and do not remove managed-user restrictions.", "Anonymous private-repository access does not provide authenticated enterprise collaboration."], concept: "Personal accounts versus managed users", hints: ["Is control of the identity itself required here?", "How does the account model affect contributions outside work?"], source: "https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/enterprise-fundamentals/choose-an-enterprise-type" },
-  { id: "admin-003", domain: "Manage GitHub identities and access", prompt: "After SAML SSO is enabled for an organization using personal accounts, a member can sign in to GitHub but is redirected to the IdP before opening an organization's private repository. What explains this?", choices: ["The member's GitHub password must match the IdP password", "SAML automatically converts the member to a managed user", "GitHub account authentication and SAML access to organization resources are separate", "The member must create another personal account for each SAML-protected organization"], correct: 2, explanations: ["SAML does not require synchronized GitHub and IdP passwords.", "Enabling organization SAML does not convert personal accounts to managed users.", "Personal-account sign-in and the organization's SAML session are distinct requirements.", "A personal account can be linked to the external identity without creating one account per organization."], concept: "Authentication layers with SAML", hints: ["Which identity establishes the GitHub session?", "What additional boundary protects the organization's resources?"], source: "https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-saml-single-sign-on-for-your-organization/about-identity-and-access-management-with-saml-single-sign-on" },
-  { id: "admin-004", domain: "Manage GitHub identities and access", prompt: "An organization already uses SAML SSO with personal accounts. It now needs supported IdP-driven membership provisioning and removal instead of manual invitations. Which integration addresses this lifecycle requirement?", choices: ["CODEOWNERS", "A required status check", "Repository deploy keys", "SCIM provisioning"], correct: 3, explanations: ["CODEOWNERS routes review requests rather than provisioning organization members.", "Status checks govern changes, not identity lifecycle.", "Deploy keys authenticate Git operations for a repository, not membership provisioning.", "SCIM automates identity information exchange and supported membership lifecycle operations."], concept: "SCIM membership provisioning", hints: ["Does signing in automatically handle every membership lifecycle event?", "Which standard exchanges provisioning information between identity systems?"], source: "https://docs.github.com/en/organizations/managing-saml-single-sign-on-for-your-organization/about-scim-for-organizations" },
-  { id: "admin-005", domain: "Manage GitHub identities and access", prompt: "An administrator says team synchronization and SCIM are interchangeable because both involve an IdP. Which distinction is most useful when designing organization access?", choices: ["SCIM handles provisioning lifecycle; team synchronization aligns team membership with IdP groups", "Team synchronization replaces all GitHub authentication", "SCIM defines branch approval requirements", "Team synchronization automatically makes every member an organization owner"], correct: 0, explanations: ["These integrations solve different lifecycle and group-membership problems.", "Synchronizing groups is not an authentication protocol.", "SCIM does not configure repository review rules.", "Group synchronization does not inherently grant organization ownership."], concept: "SCIM versus team synchronization", hints: ["Are account lifecycle and project-group membership the same task?", "What would need updating when a person changes departments?"], source: "https://docs.github.com/en/enterprise-cloud@latest/organizations/organizing-members-into-teams/synchronizing-a-team-with-an-identity-provider-group" },
-  { id: "admin-006", domain: "Manage GitHub identities and access", prompt: "A team is synchronized with an IdP group. A GitHub team maintainer needs to add another synchronized member. Where should the authoritative membership change normally be made?", choices: ["In the repository's CODEOWNERS file", "In the connected IdP group", "In a branch ruleset bypass list", "In the member's local Git configuration"], correct: 1, explanations: ["CODEOWNERS assigns review responsibility without changing synchronized group membership.", "The connected IdP group is the membership source for the synchronized team.", "A bypass list changes rule exceptions rather than the team's membership source.", "Local Git configuration cannot update an IdP-managed team."], concept: "Authoritative synchronized membership", hints: ["Which system supplies the membership list?", "Would a repository-local setting survive an identity synchronization?"], source: "https://docs.github.com/en/enterprise-cloud@latest/organizations/organizing-members-into-teams/synchronizing-a-team-with-an-identity-provider-group" },
-  { id: "admin-007", domain: "Manage GitHub identities and access", prompt: "Before enforcing two-factor authentication in an organization using personal accounts, an owner wants to reduce avoidable access disruption. Which preparation is most appropriate?", choices: ["Share an owner's recovery codes with every member", "Disable audit logging during enforcement", "Review readiness, notify affected collaborators, and have them configure 2FA", "Replace all repository permissions with public visibility"], correct: 2, explanations: ["Recovery codes are private credentials and must not be distributed to members.", "Disabling observability does not prepare users for authentication requirements.", "Readiness review and advance communication reduce disruption from enforcement.", "Public visibility exposes content and does not solve authentication readiness."], concept: "Safe rollout of organization 2FA", hints: ["Who could lose access when an authentication requirement changes?", "What can administrators establish before enforcing the policy?"], source: "https://docs.github.com/en/organizations/keeping-your-organization-secure/managing-two-factor-authentication-for-your-organization/requiring-two-factor-authentication-in-your-organization" },
-  { id: "admin-008", domain: "Manage GitHub identities and access", prompt: "A user successfully authenticates through SAML but still cannot open a particular private repository. Other organization repositories work. What should the administrator check first?", choices: ["Whether the organization's SAML configuration must be recreated", "Whether requiring signed commits would enable browser access", "Whether a required-review rule prevents reading the repository", "Whether the user has effective permission to that repository"], correct: 3, explanations: ["Successful SAML access elsewhere points away from rebuilding organization-wide authentication.", "Commit signatures govern commit verification, not private-repository read authorization.", "Review requirements govern merging changes, not reading a private repository.", "Authentication does not itself grant access to every private repository."], concept: "Authentication versus authorization", hints: ["Does a verified identity automatically receive access to all resources?", "Which repository-specific assignments could explain the difference?"], source: "https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization" },
-  { id: "admin-009", domain: "Manage GitHub identities and access", prompt: "A support specialist must label and close issues in a private repository but must not push code. Which built-in repository role is the least-privileged fit?", choices: ["Triage", "Write", "Maintain", "Admin"], correct: 0, explanations: ["Triage supports proactive issue management without code write access.", "Write permits code changes beyond the stated support duties.", "Maintain includes broader repository management than issue triage requires.", "Admin includes sensitive settings and destructive capabilities beyond this need."], concept: "Least-privilege issue management", hints: ["Which tasks concern collaboration rather than code modification?", "What is the narrowest role designed for those tasks?"], source: "https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization" },
-  { id: "admin-010", domain: "Manage GitHub identities and access", prompt: "A developer must push feature branches and contribute changes to an organization's private repository. They do not administer the repository. Which built-in role is the minimum suitable choice?", choices: ["Read", "Write", "Maintain", "Admin"], correct: 1, explanations: ["Read does not allow pushing branches to the repository.", "Write is intended for contributors who actively push code.", "Maintain adds management capabilities unnecessary for ordinary code contribution.", "Admin grants settings and destructive privileges beyond this task."], concept: "Code contributor permissions", hints: ["Is the user modifying repository content or repository governance?", "Which minimum permission supports pushing code?"], source: "https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization" },
-  { id: "admin-011", domain: "Manage GitHub identities and access", prompt: "A project coordinator needs broad day-to-day repository management without sensitive or destructive administrator operations. Which built-in role is designed for this?", choices: ["Read", "Triage", "Maintain", "Admin"], correct: 2, explanations: ["Read is for viewing and discussion rather than broad repository management.", "Triage focuses on collaboration management without the wider maintenance role.", "Maintain targets project managers who do not need sensitive or destructive actions.", "Admin explicitly includes sensitive and destructive operations."], concept: "Repository maintenance role", hints: ["How does routine project management differ from full administration?", "Which role deliberately stops short of sensitive administrator powers?"], source: "https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization" },
-  { id: "admin-012", domain: "Manage GitHub identities and access", prompt: "An external auditor needs to inspect code and discuss findings in one private repository, with no code changes or issue triage. Which repository role is the least-privileged fit?", choices: ["Admin", "Maintain", "Write", "Read"], correct: 3, explanations: ["Admin would expose sensitive repository administration capabilities.", "Maintain grants management capabilities the audit does not require.", "Write permits code changes outside the auditor's remit.", "Read supports viewing and discussion without code write privileges."], concept: "Read-only audit access", hints: ["What actions are explicitly outside the auditor's scope?", "Which role supports inspection without modification?"], source: "https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization" },
-  { id: "admin-013", domain: "Manage GitHub identities and access", prompt: "Every member of an organization can currently read all its private repositories through base permissions. The company wants each private repository to require an explicit grant. What is the most direct organization-level change?", choices: ["Set organization base permissions to No permission and review explicit grants", "Set every team's repository role to Read while keeping the existing base permission", "Require signed commits on default branches", "Remove direct repository grants while keeping the existing base permission"], correct: 0, explanations: ["No permission removes the blanket base grant; team and direct grants still need review.", "Weaker team grants do not remove access already granted by organization base permissions.", "Signed commits govern commit verification rather than repository visibility permissions.", "Removing direct grants leaves the blanket base grant in place."], concept: "Organization base permissions", hints: ["Which grant applies before team-specific permissions are considered?", "What other grants remain after changing the baseline?"], source: "https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/setting-base-permissions-for-an-organization" },
-  { id: "admin-014", domain: "Manage GitHub identities and access", prompt: "A member has Read through one team and Write through another on the same repository. No other restrictions apply. What is their effective repository role?", choices: ["Read, because the more restrictive team wins", "Write, because access grants are cumulative", "Triage, because GitHub averages the roles", "No access, because multiple team grants conflict"], correct: 1, explanations: ["A weaker team grant does not override a stronger repository grant.", "The user's strongest applicable repository permission governs these cumulative grants.", "GitHub does not average repository roles.", "Membership in multiple teams does not invalidate their access grants."], concept: "Effective repository permissions", hints: ["Does another grant act as a denial?", "What happens when a person receives different levels of access?"], source: "https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization" },
-  { id: "admin-015", domain: "Manage GitHub identities and access", prompt: "A parent team has Read access to a repository. A nested child team needs Write access. Which approach matches GitHub's team permission model?", choices: ["Remove the child team because nested teams cannot access repositories", "Make the parent team an organization owner", "Grant Write to the child team in addition to its inherited access", "Set the parent to Write and rely on the child to deny it"], correct: 2, explanations: ["Nested child teams can access repositories and inherit parent permissions.", "Organization ownership is neither a team role nor necessary for repository contribution.", "A child inherits parent access and can receive an additional stronger grant.", "Child teams cannot use a weaker role to deny inherited parent permissions."], concept: "Nested-team inheritance", hints: ["What does a child team inherit from its parent?", "Can an additional grant expand access without changing every sibling?"], source: "https://docs.github.com/en/organizations/organizing-members-into-teams/about-teams" },
-  { id: "admin-016", domain: "Manage GitHub identities and access", prompt: "An agency employee needs access to one private repository but should not become an organization member. Which collaboration mechanism fits?", choices: ["Organization ownership", "Enterprise ownership", "Membership in every internal team", "Outside collaborator access to that repository"], correct: 3, explanations: ["Organization ownership is far broader than one-repository collaboration.", "Enterprise ownership is inappropriate for a contractor's project access.", "Team membership requires organization membership and expands the scope unnecessarily.", "Outside collaborators receive access to specified repositories without organization membership."], concept: "Outside collaborator scope", hints: ["Is organization-wide membership necessary for this engagement?", "Which access mechanism is attached directly to a repository?"], source: "https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/adding-outside-collaborators-to-repositories-in-your-organization" },
-  { id: "admin-017", domain: "Manage GitHub identities and access", prompt: "A finance analyst only needs organization billing access. Which built-in organization role is more appropriate than making the analyst an owner?", choices: ["Billing manager", "Repository administrator", "Team maintainer", "Outside collaborator"], correct: 0, explanations: ["Billing managers can manage organization billing without full organization ownership.", "Repository administration does not provide the intended organization billing role.", "Team maintainers manage teams rather than organization billing.", "Outside collaboration is repository access, not a billing-management assignment."], concept: "Separating billing responsibilities", hints: ["Does the task require control over repositories and members?", "Which responsibility can be delegated independently of organization ownership?"], source: "https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization" },
-  { id: "admin-018", domain: "Manage GitHub identities and access", prompt: "A person must manage a team's membership and settings but should not control the whole organization. Which team role should an owner consider?", choices: ["Enterprise owner", "Team maintainer", "Organization billing manager", "Repository Read"], correct: 1, explanations: ["Enterprise ownership grants unrelated authority across the enterprise.", "Team maintainers administer their team without needing organization ownership.", "Billing management does not confer team administration.", "A repository role does not itself delegate team management."], concept: "Delegated team administration", hints: ["At which scope does the responsibility belong?", "Can team management be delegated without granting organization-wide control?"], source: "https://docs.github.com/en/organizations/organizing-members-into-teams/assigning-the-team-maintainer-role-to-a-team-member" },
-  { id: "admin-019", domain: "Manage GitHub identities and access", prompt: "During an access review, a developer keeps repository Write access after being removed from the expected team. What should the owner investigate next?", choices: ["Whether commit-signature enforcement needs to be enabled", "Whether deleting the developer's SSH key alone would remove the repository role", "Other teams, direct repository grants, and organization base permissions", "Whether the developer has local clones"], correct: 2, explanations: ["Commit-signature requirements do not identify the remaining authorization grant.", "Revoking one credential does not remove an independently granted repository role.", "Another applicable grant can preserve access after one team's grant disappears.", "Local clones retain data but do not grant live repository Write access."], concept: "Tracing residual permissions", hints: ["Could the removed team have been only one access path?", "Which grants exist above or alongside that team?"], source: "https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/managing-an-individuals-access-to-an-organization-repository" },
-  { id: "admin-020", domain: "Manage GitHub identities and access", prompt: "An enterprise owner is investigating a private repository in an organization where the owner has no repository access. Which assumption should they avoid?", choices: ["Enterprise policy administration and repository access have different scopes", "A repository grant may still be needed to inspect content", "Organization owners can help establish appropriate repository access", "Enterprise ownership automatically grants access to every private repository"], correct: 3, explanations: ["This distinction correctly separates enterprise governance from repository authorization.", "Private content still requires the relevant access permissions.", "Appropriate organization-level administrators can arrange authorized access.", "Enterprise ownership alone does not automatically grant all private repository access."], concept: "Enterprise ownership boundaries", hints: ["Does policy authority imply content access everywhere?", "Which scope actually controls a private repository's authorization?"], source: "https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/enterprise-fundamentals/roles-in-an-enterprise" },
-  { id: "admin-021", domain: "Manage GitHub identities and access", prompt: "An organization on a plan supporting custom repository roles needs a tailored responsibility beyond a standard role. What is the correct design approach?", choices: ["Choose a suitable inherited base role and add only the required supported permissions", "Use a custom role to subtract Write inherited from a team", "Give every recipient organization ownership first", "Edit each recipient's Git client to define the new role"], correct: 0, explanations: ["Custom repository roles extend an inherited base role with supported additional permissions.", "Custom roles do not negate access already granted through other paths.", "Organization ownership defeats the purpose of narrowly tailored repository permissions.", "Repository roles are server-side authorization settings, not local Git configuration."], concept: "Custom repository role design", hints: ["Is the role additive or a deny mechanism?", "What minimum baseline fits the intended responsibility?"], source: "https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-peoples-access-to-your-organization-with-roles/managing-custom-repository-roles-for-an-organization" },
-  { id: "admin-022", domain: "Manage GitHub identities and access", prompt: "An administrator wants the same workforce team to be available across multiple organizations in an enterprise that supports enterprise teams. Which scope best fits this requirement?", choices: ["A repository-only collaborator list", "An enterprise team", "A CODEOWNERS entry in one repository", "A single repository deploy key"], correct: 1, explanations: ["A repository collaborator list does not centrally model a cross-organization team.", "Enterprise teams provide an enterprise-level team construct across organizations.", "CODEOWNERS defines review responsibility within a repository, not enterprise membership.", "Deploy keys authenticate Git access and do not represent workforce teams."], concept: "Enterprise-level team scope", hints: ["Is the group intended to stop at one organization boundary?", "Which administrative scope matches its reuse?"], source: "https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/enterprise-fundamentals/teams-in-an-enterprise" },
-  { id: "admin-023", domain: "Manage GitHub identities and access", prompt: "Before selecting an IdP for Enterprise Managed Users, an architect wants the least integration uncertainty. Which choice follows GitHub's recommended paved path?", choices: ["Choose any SAML implementation without checking provisioning support", "Use separate unsupported vendors for authentication and account provisioning", "Use a supported partner IdP for both authentication and SCIM provisioning", "Replace provisioning with shared passwords"], correct: 2, explanations: ["SAML compatibility alone does not establish managed-user provisioning support.", "Splitting unsupported integrations increases uncertainty instead of following the paved path.", "GitHub recommends a single partner IdP for authentication and provisioning.", "Shared passwords do not provide supported individual managed-user provisioning."], concept: "Supported managed-user IdP architecture", hints: ["Which two identity functions must work together?", "What reduces integration and support complexity?"], source: "https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/identity-and-access-management/enterprise-managed-users" },
-  { id: "admin-024", domain: "Manage GitHub identities and access", prompt: "A managed employee leaves an Enterprise Managed Users enterprise. Which system should drive the account's supported deprovisioning lifecycle?", choices: ["The employee's local Git credential helper", "A repository branch protection rule", "A manual edit to every CODEOWNERS file", "The enterprise's IdP and SCIM provisioning integration"], correct: 3, explanations: ["Removing a local credential does not centrally deprovision a managed account.", "Branch rules restrict changes rather than account lifecycle.", "Review-routing files are not the authority for account deprovisioning.", "Managed-account lifecycle is controlled through the configured identity provider integration."], concept: "Managed-user offboarding", hints: ["Where was the managed identity originally provisioned?", "How can offboarding cover the identity rather than one credential?"], source: "https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/identity-and-access-management/enterprise-managed-users" },
-  { id: "admin-025", domain: "Manage GitHub identities and access", prompt: "A personal-account organization requires SAML SSO. A correctly scoped classic PAT works for the user's own repositories but cannot access the organization's private repository even though the user has access in the browser. Which credential-specific step should be checked?", choices: ["Whether the PAT is authorized for that organization's SAML SSO", "Whether the user's SSH key is authorized instead of the PAT", "Whether browser cookies should be embedded into the PAT value", "Whether the user's GitHub password must be changed to match the IdP password"], correct: 0, explanations: ["Classic PATs need SSO authorization to access organizations enforcing SAML SSO.", "SSH authorization does not authorize a separate PAT credential.", "A PAT is not extended by appending browser session material.", "SAML does not require the GitHub password to match the IdP password."], concept: "SAML authorization of classic PATs", hints: ["Can a browser session and an API credential have different authorization state?", "What additional organization boundary applies to this credential?"], source: "https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating-with-single-sign-on/authorizing-a-personal-access-token-for-use-with-single-sign-on" },
-  { id: "admin-026", domain: "Manage GitHub identities and access", prompt: "A user's SSH key works with personal repositories but fails against a SAML-protected organization where the user already has repository permission. Which check is most directly related to SSO?", choices: ["Check whether the local branch is named main", "Check whether the SSH key is authorized for the organization's SSO", "Change the repository license", "Make the user an enterprise billing manager"], correct: 1, explanations: ["Branch naming does not authorize an SSH credential for SAML.", "An SSH key must be authorized for access to a SAML-protected organization.", "A repository's software license does not control SSH authorization.", "Billing authority is unrelated to SSH SSO credential authorization."], concept: "SAML authorization of SSH keys", hints: ["Which credential is this Git connection using?", "Is that credential separately linked to the organization's identity requirement?"], source: "https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating-with-single-sign-on/authorizing-an-ssh-key-for-use-with-single-sign-on" },
-  { id: "admin-027", domain: "Manage GitHub identities and access", prompt: "An organization plans to enforce SAML SSO. Which preparation best protects continuity if the IdP becomes unavailable?", choices: ["Store the IdP password in a public issue", "Turn every private repository public", "Securely retain and test the documented SAML recovery process", "Remove all organization owners"], correct: 2, explanations: ["Publishing a password compromises authentication rather than preserving safe recovery.", "Public visibility exposes data and is not an SSO recovery mechanism.", "Documented recovery procedures and protected recovery codes support authorized emergency access.", "Removing owners reduces recovery capability and operational oversight."], concept: "SAML recovery readiness", hints: ["What happens if the identity service is the failed dependency?", "Which emergency access material needs protection before enforcement?"], source: "https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-saml-single-sign-on-for-your-organization/accessing-your-organization-if-your-identity-provider-is-unavailable" },
-  { id: "admin-028", domain: "Manage GitHub identities and access", prompt: "An organization owner wants only selected administrators to change organization membership. A proposal gives every developer the owner role for convenience. What is the strongest reason to reject it?", choices: ["Owners cannot manage membership, so the proposal would not work at all", "Repository Write already includes all organization settings", "Owner authority automatically expires after the developer's next code push", "Organization ownership grants broad administrative authority beyond normal development"], correct: 3, explanations: ["Owners can manage organization membership; the concern is excessive authority.", "Repository Write does not equal organization-wide administration.", "Ownership does not automatically expire after a code contribution.", "Least privilege requires limiting the broad organization owner role."], concept: "Limiting organization ownership", hints: ["At which scope does everyday code contribution happen?", "What additional responsibilities come with the proposed role?"], source: "https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization" },
-  { id: "admin-029", domain: "Manage GitHub identities and access", prompt: "A vendor contract ends. The vendor is an outside collaborator on two private repositories. What is the most targeted access-removal action?", choices: ["Remove the vendor's collaborator access from the relevant repositories", "Delete the entire organization", "Remove all employee teams", "Disable GitHub Actions across the enterprise"], correct: 0, explanations: ["Removing the specific collaborator grants addresses the ended engagement without unrelated disruption.", "Deleting the organization is disproportionate and destructive.", "Employee team removal does not specifically address the vendor's direct grants.", "Disabling Actions does not revoke the vendor's repository access."], concept: "Scoped collaborator offboarding", hints: ["Where is this person's access granted?", "Which change removes that access without affecting unrelated work?"], source: "https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/removing-an-outside-collaborator-from-an-organization-repository" },
-  { id: "admin-030", domain: "Manage GitHub identities and access", prompt: "An access reviewer finds a contractor in a secret team and assumes the team has no repository permissions because it is hidden. Which correction is accurate?", choices: ["Secret teams cannot receive repository permissions", "Team visibility and repository access permissions are separate settings", "Secret teams automatically deny all inherited access", "Secret teams grant enterprise ownership to their members"], correct: 1, explanations: ["Secret teams can be granted repository access.", "Hiding a team does not remove the repository permissions assigned to it.", "Visibility is not an explicit deny mechanism.", "Secret-team membership does not confer enterprise ownership."], concept: "Team visibility versus authorization", hints: ["Does hiding a group's existence change what its members can do?", "Which setting actually grants repository access?"], source: "https://docs.github.com/en/organizations/organizing-members-into-teams/about-teams" },
-  { id: "admin-031", domain: "Manage GitHub identities and access", prompt: "A valid CODEOWNERS entry names the database team, which has Write access. Changes can still merge without that team's approval. What additional control is needed?", choices: ["Require only a successful build status check", "Require any one review without a code-owner condition", "Require code-owner review through an applicable branch rule or ruleset", "Require commit signatures instead of review"], correct: 2, explanations: ["A build result validates CI, not the database team's approval.", "An arbitrary review need not come from the designated code owners.", "CODEOWNERS identifies owners; an applicable rule makes their approval required.", "Commit signing does not establish code-owner approval."], concept: "Review ownership versus enforcement", hints: ["Does assigning a reviewer itself block a merge?", "Which layer turns review expectations into an enforced requirement?"], source: "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners" },
-  { id: "admin-032", domain: "Manage GitHub identities and access", prompt: "An enterprise enforces a policy preventing organization members from changing repository visibility. A repository administrator cannot select a different visibility. What is the best explanation?", choices: ["Repository Admin always overrides enterprise policy", "Only the user's local Git version controls visibility changes", "The restriction must be an IdP group synchronization error", "Enterprise policy can constrain organization and repository administrators"], correct: 3, explanations: ["Repository administration does not bypass an enforced enterprise restriction.", "Visibility is controlled on GitHub, not by the local Git version.", "An explicit enterprise visibility policy need not involve identity synchronization.", "Higher-scope enforced policies limit the choices available at lower scopes."], concept: "Policy hierarchy and delegated administration", hints: ["Can a lower-scope role exceed an enforced enterprise boundary?", "Which administrative layer imposed the restriction?"], source: "https://docs.github.com/en/enterprise-cloud@latest/admin/enforcing-policies/enforcing-policies-for-your-enterprise/enforcing-repository-management-policies-in-your-enterprise" },
-  { id: "admin-033", domain: "Manage GitHub identities and access", prompt: "In an enterprise using personal accounts, a repository owner wants confidential project access limited to explicitly authorized people. Why should they choose private rather than internal visibility?", choices: ["Internal repositories are generally accessible to enterprise members, not just the project team", "Private repositories cannot use teams", "Internal visibility automatically requires approval from CODEOWNERS to read code", "Private visibility removes the need to assign permissions"], correct: 0, explanations: ["Internal visibility is intended for enterprise-wide collaboration rather than project-only confidentiality.", "Teams can receive private-repository permissions.", "CODEOWNERS governs review ownership rather than read access.", "Private repositories still require appropriate explicit access management."], concept: "Internal repository access boundary", hints: ["Who is the intended audience for enterprise inner-source repositories?", "Which visibility matches an explicitly limited project audience?"], source: "https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories" },
-  { id: "admin-034", domain: "Manage GitHub identities and access", prompt: "A developer creates a fine-grained PAT with repository Contents write permission. The developer only has Read on the selected repository. Can the PAT elevate the developer to Write?", choices: ["Yes, because token permissions override repository roles", "No, the token cannot grant access the user does not have", "Yes, if its expiration is more than one year away", "No, because fine-grained PATs can never write repository contents"], correct: 1, explanations: ["A token's requested permissions do not override the user's underlying access.", "Personal access tokens are bounded by the generating user's access.", "Expiration length does not elevate authorization.", "Fine-grained PATs can write contents when both token and user permissions allow it."], concept: "Token permissions bounded by user access", hints: ["Whose identity does a PAT represent?", "Can delegation create authority absent from that identity?"], source: "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens" },
-  { id: "admin-035", domain: "Manage GitHub identities and access", prompt: "A user has repository Write but cannot change the repository's access-management settings. Which explanation best matches built-in repository roles?", choices: ["All authenticated users can change repository access", "Write and Admin are identical outside public repositories", "Code contribution permission does not include all repository administration", "SAML always blocks repository settings for all members"], correct: 2, explanations: ["Authentication alone does not confer repository administration.", "Write and Admin remain distinct roles for private repositories.", "Write supports contribution while Admin includes broader sensitive settings.", "SAML does not impose a universal ban on authorized repository settings access."], concept: "Contribution versus repository administration", hints: ["Does pushing code require authority to grant other people access?", "Which role boundary separates those responsibilities?"], source: "https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization" },
-  { id: "admin-036", domain: "Manage GitHub identities and access", prompt: "A central security group needs visibility into organization security alerts without routine organization ownership. On an eligible organization, which built-in role is designed for this responsibility?", choices: ["Billing manager", "Team member only", "Outside collaborator with no repository grants", "Security manager"], correct: 3, explanations: ["Billing managers handle billing rather than organization-wide security alerts.", "Ordinary team membership alone does not provide the security-management role.", "No repository grants do not establish organization-wide security visibility.", "Security manager delegates security responsibilities without full organization ownership."], concept: "Delegated security management", hints: ["Which responsibility should be separated from general organization ownership?", "Does the role need a security-specific organization scope?"], source: "https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization" },
-  { id: "admin-037", domain: "Manage GitHub identities and access", prompt: "A company's IdP group changes after a reorganization, but the connected GitHub team still shows former members. What is the most useful first investigation?", choices: ["Check the IdP group connection and synchronization state", "Rewrite the repository history", "Rotate the repository's release tag names", "Replace all branch rules with public visibility"], correct: 0, explanations: ["The source group mapping and sync state directly explain stale synchronized membership.", "Git history does not control team synchronization.", "Release tag names do not determine workforce membership.", "Visibility changes do not repair identity-group synchronization and may expose data."], concept: "Diagnosing synchronization drift", hints: ["Which data should have flowed from the source system?", "Where could the mapping or synchronization process have diverged?"], source: "https://docs.github.com/en/enterprise-cloud@latest/organizations/organizing-members-into-teams/synchronizing-a-team-with-an-identity-provider-group" },
-  { id: "admin-038", domain: "Manage GitHub identities and access", prompt: "An organization using personal accounts removes a departing employee's organization membership. Which statement about the employee's personal GitHub account is correct?", choices: ["The account is automatically deleted from GitHub", "The account remains the individual's; organization access and account existence are separate", "The account automatically becomes an enterprise managed user", "The account's public repositories are transferred to the organization"], correct: 1, explanations: ["Organization removal does not delete an independently owned personal account.", "Personal-account lifecycle remains separate from membership in one organization.", "Membership removal does not convert account models.", "The organization does not acquire personal public repositories through offboarding."], concept: "Personal-account offboarding boundaries", hints: ["Who owns a personal account outside the organization?", "Which relationship is actually being removed?"], source: "https://docs.github.com/en/organizations/managing-membership-in-your-organization/removing-a-member-from-your-organization" },
-  { id: "admin-039", domain: "Manage GitHub identities and access", prompt: "A new organization wants to avoid a single administrator becoming an operational point of failure. What is the most appropriate ownership practice?", choices: ["Use one shared owner login for the whole team", "Grant ownership to every repository contributor", "Maintain multiple trusted individual owners with strong authentication", "Remove ownership after initial setup"], correct: 2, explanations: ["Shared logins weaken attribution and safe credential management.", "Every contributor does not need broad organization authority.", "Multiple trusted owners preserve continuity while retaining individual accountability.", "An organization still needs authorized owners for administration and recovery."], concept: "Resilient organization ownership", hints: ["How can administrative continuity coexist with least privilege?", "Why is individual accountability important for emergency administration?"], source: "https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/maintaining-ownership-continuity-for-your-organization" },
-  { id: "admin-040", domain: "Manage GitHub identities and access", prompt: "An administrator wants to verify who can currently access a sensitive repository, not merely who appeared in an old incident log. Which evidence is most directly useful?", choices: ["A historical export of repository contributors alone", "A list of commit author names alone", "The organization's public member list alone", "Current direct, team, and inherited repository access grants"], correct: 3, explanations: ["Historical contribution does not establish present authorization.", "Commit author metadata does not prove current authorization.", "Public membership visibility omits private membership and repository-specific grants.", "Current effective grants establish present repository access."], concept: "Current-state access auditing", hints: ["Are historical activity and current permissions the same evidence?", "Which routes can grant access without appearing in a public member list?"], source: "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository" },
-  { id: "admin-041", domain: "Manage GitHub identities and access", prompt: "A GitHub App installation is limited to a documentation repository. A developer argues that installing the app proves it should also access the finance repository. What should the administrator explain?", choices: ["Installation repository selection is an authorization boundary and must be explicitly changed if approved", "All installed apps automatically access every private repository", "App names determine repository access through matching prefixes", "The developer's browser SAML session expands the installation's repository selection"], correct: 0, explanations: ["An installation receives access only to its approved repository selection and permissions.", "Installation does not imply unrestricted private-repository access.", "Naming conventions do not authorize an app.", "A browser session does not broaden an app installation's repository selection."], concept: "Integration access boundaries", hints: ["Which repositories were actually approved for the installation?", "Is the app using the developer's browser permissions or its own grant?"], source: "https://docs.github.com/en/apps/using-github-apps/installing-a-github-app-from-a-third-party" },
-  { id: "admin-042", domain: "Manage GitHub identities and access", prompt: "A member needs temporary elevated repository access for a migration. Which administration plan best preserves least privilege after the work?", choices: ["Grant permanent organization ownership and skip review", "Grant only the required access, record the purpose, and remove it after the migration", "Share another administrator's PAT until the migration ends", "Change the repository to public during the migration"], correct: 1, explanations: ["Permanent ownership is broader and longer-lived than the temporary task.", "Scoped, attributable access with an explicit removal step limits lasting privilege.", "Sharing a PAT removes individual accountability and exposes another user's credentials.", "Public visibility exposes data rather than safely delegating migration access."], concept: "Time-bounded access administration", hints: ["What authority and duration does the work actually require?", "How will the extra grant be identified and removed afterward?"], source: "https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/managing-an-individuals-access-to-an-organization-repository" },
-  { id: "admin-043", domain: "Manage GitHub identities and access", prompt: "A user proposes creating a second personal GitHub account for corporate work and calls it an Enterprise Managed User. Which fact determines whether the account is actually enterprise-managed?", choices: ["Its username contains the company name", "Its primary email uses the company domain", "It was provisioned and is governed through the enterprise's managed-user IdP integration", "Its profile lists the company as the employer"], correct: 2, explanations: ["A naming convention does not change an account's identity model.", "A corporate email does not make a personal account enterprise-managed.", "Enterprise Managed Users depends on the configured enterprise identity provisioning model.", "Profile employer text is not an account provisioning mechanism."], concept: "Recognizing genuinely managed identities", hints: ["Is the account model determined by profile appearance?", "Which system controls creation and lifecycle?"], source: "https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/identity-and-access-management/enterprise-managed-users" },
-  { id: "admin-044", domain: "Administer GitHub Enterprise environment", prompt: "A regulated company must run its GitHub deployment on infrastructure it administers and schedule appliance upgrades itself. Which deployment best fits?", choices: ["GitHub Enterprise Cloud with personal accounts", "GitHub Enterprise Cloud with managed users", "GitHub Enterprise Cloud with data residency", "GitHub Enterprise Server"], correct: 3, explanations: ["Personal-account Cloud enterprises remain hosted and operated by GitHub.", "Managed users change identity management, not who operates the Cloud deployment.", "Cloud data residency selects a supported region without making the service self-hosted.", "Enterprise Server is deployed and administered on the customer's infrastructure."], concept: "Self-hosted enterprise deployment", hints: ["Who must operate the application infrastructure?", "Does regional cloud hosting equal administering an appliance?"], source: "https://docs.github.com/en/enterprise-server@latest/admin/overview/about-github-enterprise-server" },
-  { id: "admin-045", domain: "Administer GitHub Enterprise environment", prompt: "An enterprise wants GitHub to operate the service, with managed identities and a choice of supported data-residency region. Which offering should the administrator evaluate?", choices: ["GitHub Enterprise Cloud with data residency", "A public repository on a personal Free account", "GitHub Enterprise Server installed on a laptop", "An organization using personal accounts on GitHub.com without data residency"], correct: 0, explanations: ["This offering combines GitHub-operated hosting, managed users, and supported residency regions.", "A public personal repository does not provide this enterprise residency configuration.", "Enterprise Server requires customer-operated infrastructure.", "Standard GitHub.com organization hosting does not select this data-residency deployment."], concept: "Cloud data-residency deployment", hints: ["Which option changes the enterprise's hosting location without self-hosting?", "How are identities handled in that offering?"], source: "https://docs.github.com/en/enterprise-cloud@latest/admin/data-residency/about-github-enterprise-cloud-with-data-residency" },
-  { id: "admin-046", domain: "Administer GitHub Enterprise environment", prompt: "A new employee cannot push to one private repository, while coworkers with the expected team grant can. Which response belongs with the organization's administrators before escalating to GitHub Support?", choices: ["Ask Support to replace GitHub's authentication service", "Inspect the employee's effective permissions and credential authorization", "Generate a full enterprise disaster-recovery restore", "Migrate every repository to a different deployment"], correct: 1, explanations: ["A single-user access issue does not establish a platform authentication failure.", "Administrators can inspect and correct scoped access and credential configuration.", "A restore is disproportionate and does not diagnose a user-specific permission problem.", "A deployment migration is unrelated to the immediate authorization check."], concept: "Administrator-resolvable access issues", hints: ["Is the failure broad or limited to one identity?", "Which settings are under the organization's direct control?"], source: "https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/managing-an-individuals-access-to-an-organization-repository" },
-  { id: "admin-047", domain: "Administer GitHub Enterprise environment", prompt: "A GitHub Enterprise Server incident persists after documented local checks. Support requests appliance diagnostics and recent sanitized logs. Which artifact is the best match?", choices: ["Only a GHES diagnostic file with no recent log archive", "A Git bundle of one developer's feature branch", "A GitHub Enterprise Server support bundle", "Only an export of repository audit events"], correct: 2, explanations: ["A diagnostic overview alone does not include the requested recent service-log collection.", "A Git bundle contains repository history rather than appliance diagnostics.", "A support bundle includes diagnostic information and sanitized service logs.", "Audit events do not replace the appliance diagnostics and service logs requested."], concept: "Support bundle purpose", hints: ["What evidence concerns the appliance rather than one repository?", "Which artifact combines settings information with logs?"], source: "https://docs.github.com/en/enterprise-server@latest/support/contacting-github-support/providing-data-to-github-support" },
-  { id: "admin-048", domain: "Administer GitHub Enterprise environment", prompt: "A GHES administrator has collected a support bundle. What is the safest handling practice before sending it?", choices: ["Attach it to a public repository issue for transparency", "Send it to every developer through a shared chat", "Assume sanitization means the bundle contains no sensitive operational information", "Treat it as sensitive and share it through the authorized support channel"], correct: 3, explanations: ["Public posting can expose internal operational details.", "Broad sharing unnecessarily expands access to diagnostic information.", "Sanitized logs can still contain sensitive environment and operational context.", "Authorized support handling limits exposure of diagnostic data."], concept: "Protecting diagnostic artifacts", hints: ["Does removal of credentials eliminate all sensitive context?", "Who actually needs this evidence to resolve the case?"], source: "https://docs.github.com/en/enterprise-server@latest/support/contacting-github-support/providing-data-to-github-support" },
-  { id: "admin-049", domain: "Administer GitHub Enterprise environment", prompt: "Support asks for a GHES settings-and-environment overview without the larger recent-log archive. Which artifact should the administrator generate?", choices: ["A diagnostic file", "A repository source archive", "A workflow artifact from an unrelated build", "A CODEOWNERS file"], correct: 0, explanations: ["The diagnostic file summarizes instance settings and environment.", "Source archives contain code rather than appliance configuration diagnostics.", "An unrelated build artifact is not an instance diagnostic overview.", "CODEOWNERS documents review ownership rather than system environment."], concept: "Diagnostics versus support bundles", hints: ["Is the request for system context or repository contents?", "Which support artifact omits the larger log collection?"], source: "https://docs.github.com/en/enterprise-server@latest/support/contacting-github-support/providing-data-to-github-support" },
-  { id: "admin-050", domain: "Administer GitHub Enterprise environment", prompt: "Teams repeatedly merge changes without reviews despite a written two-approval standard. Which administrative improvement most directly turns the standard into a control?", choices: ["Add a pull-request template asking for two approvals but no enforcement rule", "Configure an applicable pull-request rule requiring two approvals", "Require only a successful build status check", "Enable automatic review requests without making approval required"], correct: 1, explanations: ["A template is guidance rather than a merge gate.", "A required-approval rule blocks merges that do not satisfy the configured standard.", "Build success does not prove that two reviewers approved.", "Requesting reviews does not by itself make those reviews mandatory."], concept: "Enforcing developer-process standards", hints: ["Which mechanism evaluates a pull request before merge?", "How can the desired process be checked rather than merely described?"], source: "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets" },
-  { id: "admin-051", domain: "Administer GitHub Enterprise environment", prompt: "An organization wants new repositories to start with consistent pull-request guidance and contributor expectations. Which approach provides reusable starting content without claiming to enforce reviews?", choices: ["Organization billing budgets", "A mandatory shared administrator password", "Repository templates containing contributor documentation and pull-request templates", "An enterprise IP allow list"], correct: 2, explanations: ["Billing budgets do not initialize collaboration documentation.", "Shared passwords are not a safe process-standardization mechanism.", "Repository templates can distribute a consistent initial structure and guidance.", "IP allow lists constrain network access rather than repository content templates."], concept: "Standardizing repository starting practices", hints: ["Does the requirement concern initial content or runtime access?", "Which feature reuses a repository's structure when creating another?"], source: "https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository" },
-  { id: "admin-052", domain: "Administer GitHub Enterprise environment", prompt: "A company publishes production releases from tags and wants to prevent accidental tag updates or deletion. Which control should an administrator consider on a supporting plan?", choices: ["A branch-only ruleset targeting the default branch", "Only require code-owner review for pull requests", "Only require signed commits on the default branch", "A tag ruleset targeting the release-tag pattern"], correct: 3, explanations: ["A branch-only rule does not directly protect matching tag references.", "Pull-request reviews do not restrict later tag updates or deletion.", "Commit verification does not prevent a tag reference from being moved or deleted.", "Tag rulesets can restrict updates and deletion for matching release tags."], concept: "Release-reference governance", hints: ["Which Git references identify the releases?", "What kind of rule can target those references directly?"], source: "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets" },
-  { id: "admin-053", domain: "Administer GitHub Enterprise environment", prompt: "A GHES deployment has a high-availability replica. A stakeholder proposes canceling historical backups. What should the administrator explain?", choices: ["Replication can propagate corruption or deletion, so historical backups remain necessary", "A replica preserves every prior state indefinitely", "High availability automatically creates off-site historical snapshots", "Backups and replicas serve identical recovery objectives"], correct: 0, explanations: ["A replica improves availability but does not replace recoverable historical snapshots.", "Replicas track live changes rather than preserving every historical state.", "Off-site historical backups are not automatically provided by HA replication.", "Availability failover and historical recovery address different failure modes."], concept: "Availability versus historical recovery", hints: ["What happens when an unwanted change replicates successfully?", "Which recovery objective requires an older known-good state?"], source: "https://docs.github.com/en/enterprise-server@latest/admin/monitoring-and-managing-your-instance/configuring-high-availability/about-high-availability-configuration" },
-  { id: "admin-054", domain: "Administer GitHub Enterprise environment", prompt: "Before a GHES storage expansion, an operator suggests resizing a live volume immediately to avoid planning overhead. Which response best follows the documented operational approach?", choices: ["Proceed because storage changes cannot affect application data", "Use the version-specific procedure, plan maintenance, and confirm recovery readiness", "Delete large repositories without owner approval first", "Disable authentication permanently before resizing"], correct: 1, explanations: ["Storage changes can disrupt services and require documented precautions.", "Supported procedures and maintenance planning reduce risk to persistent instance data.", "Unapproved deletion is destructive and not a safe capacity-management prerequisite.", "Permanent authentication removal is unrelated and unsafe."], concept: "Controlled GHES infrastructure changes", hints: ["What could go wrong when changing an in-use persistent volume?", "Which documentation and recovery prerequisites should govern the change?"], source: "https://docs.github.com/en/enterprise-server@latest/admin/monitoring-managing-and-updating-your-instance/updating-the-virtual-machine-and-physical-resources/increasing-storage-capacity" },
-  { id: "admin-055", domain: "Administer GitHub Enterprise environment", prompt: "A GHES upgrade proposal assumes the newest release can always be installed directly over any older release. What should an administrator do instead?", choices: ["Use the version number's alphabetical order", "Skip release notes to reduce upgrade time", "Check supported upgrade paths and release-specific prerequisites before scheduling", "Upgrade only the browser extensions"], correct: 2, explanations: ["Version compatibility is not determined by alphabetical ordering.", "Release notes can contain required prerequisites and upgrade caveats.", "GHES upgrades must follow documented supported paths for the installed version.", "Browser extensions do not upgrade the GHES appliance."], concept: "Supported GHES upgrade planning", hints: ["Can release distance change the allowed upgrade sequence?", "What evidence establishes compatibility for the installed version?"], source: "https://docs.github.com/en/enterprise-server@latest/admin/upgrading-your-instance/preparing-to-upgrade/overview-of-the-upgrade-process" },
-  { id: "admin-056", domain: "Administer GitHub Enterprise environment", prompt: "A GHES administrator has a recent successful backup job but has never rehearsed recovery. Which activity most directly improves confidence in disaster recovery?", choices: ["Review backup completion messages without exercising a restore", "Increase backup frequency without checking restoration", "Treat HA replication health as proof of historical backup restorability", "Test a documented restore in an appropriate isolated environment"], correct: 3, explanations: ["Completion messages alone do not validate the full recovery procedure.", "Frequency improves recovery-point options but does not prove the restore works.", "A healthy replica and a restorable historical backup are different recovery capabilities.", "A controlled restore test validates both the data and recovery process."], concept: "Validating recovery readiness", hints: ["Does collecting recovery data prove it can be used?", "How can recovery be exercised without risking production?"], source: "https://docs.github.com/en/enterprise-server@latest/admin/backing-up-and-restoring-your-instance/configuring-backups-on-your-instance" },
-  { id: "admin-057", domain: "Administer GitHub Enterprise environment", prompt: "A stakeholder asks whether GitHub Enterprise Cloud with managed users eliminates the organization's identity administration responsibilities. Which answer is accurate?", choices: ["GitHub hosts the platform, but the enterprise still administers its IdP integration and access policies", "GitHub automatically designs all of the customer's IdP groups", "Managed users remove every need for access reviews", "The customer must patch GitHub's Cloud application servers"], correct: 0, explanations: ["Cloud operations and customer identity governance remain separate responsibilities.", "The customer still governs identity-provider group design and assignments.", "Managed provisioning does not eliminate access governance.", "GitHub operates Cloud application infrastructure rather than requiring customer patching."], concept: "Cloud shared administration responsibilities", hints: ["Which responsibilities concern operating the platform?", "Which responsibilities concern deciding who should access company resources?"], source: "https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/identity-and-access-management/enterprise-managed-users" },
-  { id: "admin-058", domain: "Administer GitHub Enterprise environment", prompt: "A procurement team totals organization member counts to estimate enterprise licenses, counting the same employee in three organizations three times. What should the administrator clarify?", choices: ["Enterprise licenses are always billed once per repository", "Enterprise seat counting accounts for unique users rather than simply summing duplicate memberships", "Only repository owners consume seats", "Every team creates a separate license for each member"], correct: 1, explanations: ["Enterprise seat licensing is not simply a per-repository charge.", "Duplicate memberships must be reconciled against enterprise license-consumption rules.", "Licensed usage is not limited to repository owners.", "Team membership is not independently billed as a new seat for every team."], concept: "Unique enterprise license consumers", hints: ["Is a seat associated with a person or each organization membership?", "What happens when the same identity appears in multiple organizations?"], source: "https://docs.github.com/en/enterprise-cloud@latest/billing/managing-the-plan-for-your-github-account/about-per-user-pricing" },
-  { id: "admin-059", domain: "Administer GitHub Enterprise environment", prompt: "An organization on a paid seat-based plan adds an outside collaborator to several private repositories, excluding forks. How should the administrator approach the seat impact?", choices: ["Assume outside collaborators can never consume paid seats", "Count a separate seat for every repository invitation", "Apply the plan's rules for the collaborator as a unique seat consumer, not one seat per repository", "Assume only collaborators who push daily can consume seats"], correct: 2, explanations: ["Outside collaborators on private repositories can count toward paid seat usage.", "A unique outside collaborator is not counted once for each repository.", "The documented model counts the collaborator once within the relevant account scope.", "Seat consumption is not determined by daily push frequency."], concept: "Outside-collaborator licensing", hints: ["Does multiple-repository access create multiple identities?", "Which collaborator category matters for paid organization seats?"], source: "https://docs.github.com/en/enterprise-cloud@latest/billing/managing-the-plan-for-your-github-account/about-per-user-pricing" },
-  { id: "admin-060", domain: "Administer GitHub Enterprise environment", prompt: "A finance team asks why its GitHub bill exceeds the base enterprise seat subscription. What is the most accurate first explanation to investigate?", choices: ["Each additional team membership automatically creates another enterprise seat", "Enterprise pricing always charges a separate seat for each repository a user can access", "SAML redirects create a separate licensed seat per login", "The bill can include additional subscriptions and metered product usage"], correct: 3, explanations: ["Team assignments do not automatically create separate enterprise user seats.", "Repository access is not billed as a new enterprise seat for each repository.", "SAML authentication frequency does not define separate licensed identities.", "Seat subscriptions and usage-based products can both contribute to the bill."], concept: "Subscription versus consumption billing", hints: ["Does the account use products beyond the base plan?", "Which billing lines reflect consumption rather than people?"], source: "https://docs.github.com/en/enterprise-cloud@latest/billing/managing-the-plan-for-your-github-account/about-per-user-pricing" },
-  { id: "admin-061", domain: "Administer GitHub Enterprise environment", prompt: "An administrator wants a current license-utilization baseline before a renewal conversation. Which evidence should they prioritize?", choices: ["The enterprise's license-usage information and relevant billing records", "Only the number of repositories created this year", "A sum of organization member counts without deduplicating identities", "Only contributors who pushed code in the last twenty-four hours"], correct: 0, explanations: ["Enterprise license and billing records reflect the licensed usage being evaluated.", "Repository creation is not the unit of enterprise seat consumption.", "Duplicate memberships can overstate unique licensed users.", "A one-day contribution subset misses licensed users with other valid activity patterns."], concept: "License-utilization evidence", hints: ["Which source directly records entitlement and consumption?", "Are repository-content counts a reliable proxy for licensed people?"], source: "https://docs.github.com/en/enterprise-cloud@latest/billing/how-tos/manage-plan-and-licenses/view-enterprise-usage" },
-  { id: "admin-062", domain: "Administer GitHub Enterprise environment", prompt: "A Cloud service issue affects many repositories after local access and network configuration checks. What information makes a support escalation most actionable?", choices: ["Only the phrase GitHub is broken", "Affected scope, timestamps, reproducible symptoms, and relevant request identifiers", "An unredacted list of all user passwords", "A demand to delete the enterprise immediately"], correct: 1, explanations: ["An unspecific report provides little diagnostic value.", "Scoped and reproducible evidence helps Support correlate and investigate the failure.", "Passwords must not be shared as diagnostic evidence.", "Enterprise deletion is destructive and does not provide troubleshooting context."], concept: "Actionable support escalation", hints: ["What would let another operator reproduce or locate the failing request?", "Which details describe impact without exposing credentials?"], source: "https://docs.github.com/en/support/contacting-github-support/creating-a-support-ticket" },
-  { id: "admin-063", domain: "Administer GitHub Enterprise environment", prompt: "Before treating a widespread GitHub.com outage report as a local configuration defect, which official resource should an administrator check?", choices: ["An unrelated public repository's README", "A developer's local reflog", "GitHub Status", "A random social-media repost without a source"], correct: 2, explanations: ["An unrelated README is not authoritative service-health information.", "A local reflog describes local reference changes, not platform availability.", "GitHub Status reports official service incidents and operational state.", "Unverified reposts are not a substitute for the official status source."], concept: "Platform incident triage", hints: ["Could this be a shared upstream incident?", "Where does the service operator publish health information?"], source: "https://docs.github.com/en/support/learning-about-github-support/about-github-support" },
-  { id: "admin-064", domain: "Administer GitHub Enterprise environment", prompt: "An enterprise plans to adopt Cloud data residency and assumes every third-party app used on GitHub.com will work unchanged. Which preparation is most appropriate?", choices: ["Assume all apps are automatically installed on the new host", "Publish private repository contents to test compatibility", "Disable all authentication policies indefinitely", "Review feature and integration compatibility for the GHE.com environment"], correct: 3, explanations: ["App installation and host compatibility must be established rather than assumed.", "Public disclosure is not a safe compatibility test.", "Removing authentication is not required for integration planning.", "Data-residency deployments have host and feature considerations that integrations must support."], concept: "Data-residency integration readiness", hints: ["Does moving to a different GitHub host affect integration endpoints?", "Which dependencies should be checked before migration?"], source: "https://docs.github.com/en/enterprise-cloud@latest/admin/data-residency/about-github-enterprise-cloud-with-data-residency" },
-  { id: "admin-065", domain: "Administer GitHub Enterprise environment", prompt: "A GHES administrator wants a failover replica to actively serve ordinary write traffic alongside the primary simply because it exists. Which correction matches the documented HA design?", choices: ["GHES HA uses an active/passive arrangement rather than automatic active/active writes", "A replica is only a ZIP archive of source code", "All replicas accept independent writes and merge later", "Failover never requires traffic-routing planning"], correct: 0, explanations: ["The documented HA replica is a standby with replication, not an independent active writer.", "A replica is an appliance, not merely a source archive.", "Independent concurrent writes are not the documented active/passive model.", "Traffic redirection must be planned and managed for failover."], concept: "GHES HA operating model", hints: ["Which appliance is authoritative during normal operation?", "What does standby mean for application traffic?"], source: "https://docs.github.com/en/enterprise-server@latest/admin/monitoring-and-managing-your-instance/configuring-high-availability/about-high-availability-configuration" },
-  { id: "admin-066", domain: "Administer GitHub Enterprise environment", prompt: "A GHES incident happened six days ago, and Support needs logs covering that period. The default support bundle contains only the recent default window. What should the administrator evaluate?", choices: ["A source ZIP from the default branch", "An extended support bundle covering the longer documented window", "The repository's license file", "Changing the appliance clock to six days earlier"], correct: 1, explanations: ["A source ZIP does not provide historical appliance logs.", "The extended bundle includes a longer recent log window than the default bundle.", "A software license file is unrelated to service logs.", "Changing the system clock does not recover older logs and can create operational problems."], concept: "Selecting diagnostic time coverage", hints: ["Does the requested incident fall inside the default collection window?", "Which supported collection option broadens that coverage?"], source: "https://docs.github.com/en/enterprise-server@latest/support/contacting-github-support/providing-data-to-github-support" },
-  { id: "admin-067", domain: "Administer GitHub Enterprise environment", prompt: "An enterprise wants consistent CI behavior across many repositories while allowing centrally maintained fixes. Which standardization mechanism should administrators recommend?", choices: ["Copy a workflow once and never track future changes", "Store executable CI instructions only in an email", "Use versioned reusable workflows governed by enterprise policy", "Give every repository an unrelated unreviewed workflow"], correct: 2, explanations: ["Untracked copies drift and do not receive controlled central updates.", "Email is not an executable, version-controlled CI standard.", "Reusable workflows provide a versioned shared implementation with policy governance.", "Unrelated unreviewed workflows undermine consistency."], concept: "Centrally governed workflow standards", hints: ["How will a common CI fix reach many repositories?", "What makes the shared implementation auditable and reusable?"], source: "https://docs.github.com/en/actions/sharing-automations/reusing-workflows" },
-  { id: "admin-068", domain: "Administer GitHub Enterprise environment", prompt: "An administrator is explaining GitHub deployment choices to a risk committee. Which distinction is accurate?", choices: ["Enterprise Managed Users is a replacement for GitHub Enterprise Server backups", "Cloud data residency means the customer patches GitHub's application servers", "Personal accounts and managed users are two names for the same lifecycle model", "Deployment location and identity model are related design choices but not the same concept"], correct: 3, explanations: ["Managed identities do not provide backup or disaster recovery.", "Cloud data residency remains a GitHub-operated service.", "The two account models differ in provisioning, ownership, and collaboration boundaries.", "Hosting, residency, and identity lifecycle must each be evaluated explicitly."], concept: "Separating hosting and identity decisions", hints: ["Who operates the platform, and who governs the identities?", "Can changing authentication alone relocate stored data?"], source: "https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/enterprise-fundamentals/choose-an-enterprise-type" },
-  { id: "admin-069", domain: "Administer GitHub Enterprise environment", prompt: "A GHES operator finds that every repository is slow and the appliance's persistent data volume is nearly full. Which next step best fits administrator responsibility?", choices: ["Investigate capacity and follow the documented version-specific storage expansion procedure", "Give all users repository Admin to improve disk throughput", "Remove SAML because it allocates repository storage", "Ask developers to rename their local remotes"], correct: 0, explanations: ["Instance capacity is an operational issue administrators can investigate and remediate safely.", "Repository role changes do not increase storage capacity.", "Removing authentication is not a storage-capacity remedy.", "Remote names on workstations do not expand appliance persistent storage."], concept: "GHES capacity administration", hints: ["Does the symptom point to authorization or a shared resource constraint?", "Which instance metric supports a concrete operational action?"], source: "https://docs.github.com/en/enterprise-server@latest/admin/monitoring-managing-and-updating-your-instance/updating-the-virtual-machine-and-physical-resources/increasing-storage-capacity" },
-  { id: "admin-070", domain: "Administer GitHub Enterprise environment", prompt: "A department wants each repository to identify the team responsible for reviewing infrastructure changes. Which file is purpose-built for that convention?", choices: ["dependabot.yml", "CODEOWNERS", "LICENSE", ".gitignore"], correct: 1, explanations: ["Dependabot configuration controls dependency updates, not code ownership routing.", "CODEOWNERS maps paths to responsible people or teams for review requests.", "LICENSE states legal terms rather than reviewer responsibility.", ".gitignore excludes files from tracking rather than assigning reviewers."], concept: "Documenting review responsibility", hints: ["Which convention maps paths to reviewers?", "Is the goal dependency automation, legal terms, or ownership?"], source: "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners" },
-  { id: "admin-071", domain: "Administer GitHub Enterprise environment", prompt: "A company publishes a branching standard but has not agreed how exceptions will be approved. What is the best administrative rollout plan?", choices: ["Give all users permanent bypass privileges", "Enforce it immediately without checking existing release workflows", "Pilot the controls, document scoped exceptions, and validate affected workflows before broad enforcement", "Delete branches that do not match the proposal without consulting maintainers"], correct: 2, explanations: ["Universal permanent bypass defeats the proposed standard.", "Unvalidated enforcement risks disrupting legitimate release workflows.", "A pilot and explicit exception process balance governance with operational continuity.", "Unapproved branch deletion is destructive and not a responsible rollout."], concept: "Governance change management", hints: ["What legitimate workflows could an untested rule interrupt?", "How can exceptions remain explicit rather than becoming unrestricted bypass?"], source: "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets" },
-  { id: "admin-072", domain: "Administer GitHub Enterprise environment", prompt: "A stakeholder wants GitHub Support to decide which employees should receive Write access to a finance repository. Who should own that business authorization decision?", choices: ["Any unauthenticated visitor", "The author of the most recent commit", "The Git client vendor", "The organization's authorized administrators and resource owners"], correct: 3, explanations: ["Visitors have no authority to determine private business access.", "Commit authorship alone does not assign access-governance responsibility.", "A Git client vendor does not control the company's authorization policy.", "Business access decisions belong to the customer's authorized governance process."], concept: "Customer versus Support responsibilities", hints: ["Is the request troubleshooting a platform defect or deciding entitlement?", "Who understands and authorizes the business need for access?"], source: "https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/managing-an-individuals-access-to-an-organization-repository" },
-  { id: "admin-073", domain: "Administer GitHub Enterprise environment", prompt: "An enterprise owns GitHub subscriptions and wants to determine whether a specific add-on is included before enabling it broadly. Which approach is safest?", choices: ["Check the current product entitlement and billing documentation for the actual account", "Assume every enterprise feature has unlimited included usage", "Treat visibility of an enablement button as proof that all consumption is prepaid", "Enable the add-on everywhere and investigate only after invoicing"], correct: 0, explanations: ["Entitlements and usage charges depend on the actual product and account agreement.", "Enterprise subscriptions do not imply unlimited included usage for all products.", "A feature may be available to enable while its usage still incurs additional charges.", "Broad enablement without checking billing can create avoidable costs."], concept: "Entitlement-aware administration", hints: ["What distinguishes availability from included consumption?", "Which account-specific evidence should precede broad enablement?"], source: "https://docs.github.com/en/enterprise-cloud@latest/billing/managing-the-plan-for-your-github-account/about-per-user-pricing" },
-  { id: "admin-074", domain: "Implement secure software development and compliance", prompt: "A repository branch matches two active rulesets: one requires reviews and another requires a security status check. What must a normal non-bypass merge satisfy?", choices: ["Only the ruleset created first", "Both applicable rulesets", "Only the ruleset with the shorter name", "Neither, because overlapping rulesets cancel each other"], correct: 1, explanations: ["Creation order does not discard other applicable active rulesets.", "Applicable rulesets are layered, so both review and status requirements apply.", "Ruleset names do not determine precedence.", "Overlapping rulesets do not cancel their requirements."], concept: "Layered ruleset enforcement", hints: ["Are rulesets mutually exclusive selections?", "What does it mean for multiple controls to apply to the same branch?"], source: "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets" },
-  { id: "admin-075", domain: "Implement secure software development and compliance", prompt: "On a plan supporting ruleset evaluation, an organization wants to observe the likely effects of a proposed rule without blocking developers yet. Which enforcement state is appropriate?", choices: ["Active with every developer granted permanent bypass", "Disabled with no evaluation data", "Evaluate", "Delete the ruleset after each push"], correct: 2, explanations: ["Universal bypass weakens the test and differs from nonblocking rule evaluation.", "Disabled rules do not provide the intended enforcement evaluation.", "Evaluate reports rule outcomes without enforcing the rules.", "Repeated deletion prevents a stable pilot and useful evaluation history."], concept: "Nonblocking ruleset rollout", hints: ["How can a control be assessed without rejecting work?", "Which state distinguishes observation from enforcement?"], source: "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets" },
-  { id: "admin-076", domain: "Implement secure software development and compliance", prompt: "A release automation app needs a narrowly approved exception to a branch ruleset. Which design best preserves accountability?", choices: ["Disable every branch rule for all contributors", "Give every organization member bypass access", "Have the app use an owner's shared password", "Grant a documented bypass only to the approved app for the relevant ruleset"], correct: 3, explanations: ["Global removal discards unrelated protections.", "Broad bypass defeats the intended limited exception.", "Shared passwords obscure attribution and are inappropriate app credentials.", "A scoped app bypass keeps the exception explicit while retaining other governance."], concept: "Scoped ruleset bypass", hints: ["Which principal actually needs the exception?", "How can the rest of the contributor population remain governed?"], source: "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets" },
-  { id: "admin-077", domain: "Implement secure software development and compliance", prompt: "An organization wants ordinary contributors to be unable to rewrite the history of its main branch with a force push. Which rule directly addresses this?", choices: ["Block force pushes on the target branch", "Require an issue template", "Enable dependency graph", "Require a repository description"], correct: 0, explanations: ["Blocking force pushes prevents that class of history-rewriting update.", "Issue templates do not constrain Git reference updates.", "Dependency graph identifies software dependencies rather than controlling force pushes.", "Descriptions are metadata and do not protect branch history."], concept: "Preventing branch-history rewrites", hints: ["Which Git operation rewrites an existing branch reference?", "Does the proposed control govern reference updates or repository metadata?"], source: "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets" },
-  { id: "admin-078", domain: "Implement secure software development and compliance", prompt: "A pull request receives approval, then its author pushes substantial new code. The organization wants that older approval not to satisfy the review requirement. Which setting addresses this?", choices: ["Allow force pushes", "Dismiss stale pull-request approvals when new commits are pushed", "Make the repository internal", "Disable required status checks"], correct: 1, explanations: ["Force-push permission does not invalidate outdated approvals.", "Dismissing stale approvals requires review of changes made after the approval.", "Visibility does not determine whether an approval is stale.", "Removing status checks weakens a separate validation control."], concept: "Review freshness", hints: ["What did the reviewer actually approve?", "How should approval validity change when the reviewed code changes?"], source: "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets" },
-  { id: "admin-079", domain: "Implement secure software development and compliance", prompt: "A required status check must be reported by the approved CI GitHub App, not another integration using the same check name. Which configuration is most directly relevant?", choices: ["Require a check by name while accepting results from any source", "Require signed commits without constraining the status-check producer", "Select the expected source app for the required status check", "Require the branch to be up to date without constraining the check source"], correct: 2, explanations: ["A name alone does not identify the approved integration as the producer.", "Commit signatures authenticate commits rather than status-check provenance.", "Binding the required check to an expected app constrains which producer satisfies it.", "Up-to-date requirements address tested branch state, not the check producer's identity."], concept: "Required-check provenance", hints: ["Is a check's name sufficient to establish who produced it?", "What additional identity can be associated with the requirement?"], source: "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets" },
-  { id: "admin-080", domain: "Implement secure software development and compliance", prompt: "A compliance team wants commits on a protected branch to carry verified cryptographic signatures. Which rule is the closest match?", choices: ["Require linear history", "Require two pull-request approvals", "Block force pushes", "Require signed commits"], correct: 3, explanations: ["Linear history governs merge structure rather than cryptographic signatures.", "Reviewer approval does not establish a verified signature on each commit.", "Force-push restrictions protect reference updates rather than verify commit signatures.", "The signed-commit rule enforces GitHub's documented signature verification requirements."], concept: "Commit-signature requirements", hints: ["Which control concerns commit integrity rather than review text?", "What evidence does GitHub verify for a signed commit?"], source: "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets" },
-  { id: "admin-081", domain: "Implement secure software development and compliance", prompt: "On a plan supporting push rulesets, an organization wants to block commits containing files matching a prohibited path pattern. Which control fits the requirement?", choices: ["A push ruleset restricting file paths", "A README warning alone", "An issue milestone", "An organization billing role"], correct: 0, explanations: ["Push rulesets can restrict matching file paths in incoming commits.", "A warning is advisory and does not block a push.", "Milestones track work rather than inspect incoming file paths.", "Billing roles do not constrain repository contents."], concept: "File-path restrictions on pushes", hints: ["Must the control act before code reaches the repository?", "Which rule family inspects pushed content rather than only merges?"], source: "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets" },
-  { id: "admin-082", domain: "Implement secure software development and compliance", prompt: "A company wants to control whether its private repositories may be forked. Which administrative surface is directly relevant?", choices: ["Only default-branch force-push restrictions", "Enterprise and organization repository-forking policies", "Only organization OAuth App restrictions", "Only rules requiring code-owner approval before merge"], correct: 1, explanations: ["Force-push restrictions do not determine whether a private fork may be created.", "Forking policies control whether private repository forks are permitted within supported boundaries.", "OAuth approval does not replace private-repository forking policy.", "Merge approvals govern changes rather than fork creation."], concept: "Private-repository forking governance", hints: ["Where can centrally enforced repository-management policies be set?", "Is the desired restriction on changes to a branch or creation of a repository fork?"], source: "https://docs.github.com/en/enterprise-cloud@latest/admin/enforcing-policies/enforcing-policies-for-your-enterprise/enforcing-repository-management-policies-in-your-enterprise" },
-  { id: "admin-083", domain: "Implement secure software development and compliance", prompt: "A user connects from an IP address on an enterprise allow list but lacks permission to a private repository. What should the administrator expect?", choices: ["The allow list automatically grants repository Write", "The repository becomes readable to anyone on that network", "The user still needs repository authorization", "The allow list substitutes for SAML and every other authentication requirement"], correct: 2, explanations: ["An allowed network address does not grant a repository role.", "Network allowance does not make private content public to the network.", "IP restrictions are an additional access condition, not a replacement for permissions.", "Network policy does not replace identity and resource authorization controls."], concept: "Network controls versus authorization", hints: ["Does satisfying one access condition satisfy all of them?", "Which control determines who may read the private repository?"], source: "https://docs.github.com/en/enterprise-cloud@latest/admin/configuring-settings/hardening-security-for-your-enterprise/restricting-network-traffic-to-your-enterprise-with-an-ip-allow-list" },
-  { id: "admin-084", domain: "Implement secure software development and compliance", prompt: "A security administrator needs a repeatable bundle of repository security settings that can be applied across many eligible repositories. Which feature should they evaluate?", choices: ["Only a repository template containing a security policy document", "Only a branch ruleset requiring reviews", "Only an export of existing security alerts", "Security configurations"], correct: 3, explanations: ["A copied policy document does not configure live repository security features.", "Branch review rules do not bundle the repository's security feature settings.", "An alert export reports findings rather than applying feature configuration.", "Security configurations group security feature settings for application at scale."], concept: "Security configurations at scale", hints: ["Is the objective to report findings or apply a consistent feature configuration?", "Which feature manages multiple security settings together?"], source: "https://docs.github.com/en/code-security/concepts/security-at-scale/about-security-configurations" },
-  { id: "admin-085", domain: "Implement secure software development and compliance", prompt: "An organization has attached a security configuration to repositories but wants to prevent repository administrators from overriding the managed settings where enforcement is supported. What should it configure?", choices: ["Enforcement for the security configuration", "A longer repository description", "A shared notification email only", "A default issue assignee"], correct: 0, explanations: ["Enforcement constrains repository-level changes to the managed configuration settings.", "Descriptions do not lock security feature settings.", "Notifications do not enforce configuration consistency.", "Issue assignment is unrelated to security-setting overrides."], concept: "Enforced security configurations", hints: ["Does attaching a configuration necessarily prohibit local overrides?", "Which additional policy state controls that distinction?"], source: "https://docs.github.com/en/code-security/concepts/security-at-scale/about-security-configurations" },
-  { id: "admin-086", domain: "Implement secure software development and compliance", prompt: "A security manager wants to find repositories with missing protections and compare alert risk across the organization rather than opening each repository separately. Which view is designed for this?", choices: ["The organization audit log alone", "Security overview", "The billing usage report alone", "A single repository's dependency graph"], correct: 1, explanations: ["Historical administrative events do not provide the same coverage-and-risk overview.", "Security overview provides organization-level visibility into coverage and security risk.", "Product charges do not by themselves summarize missing protections and alerts.", "One dependency graph does not aggregate all repository security coverage."], concept: "Organization security posture visibility", hints: ["Is the required evidence repository-local or aggregated?", "Which view joins coverage with security risk?"], source: "https://docs.github.com/en/code-security/security-overview/about-security-overview" },
-  { id: "admin-087", domain: "Implement secure software development and compliance", prompt: "A GitHub Enterprise Cloud auditor sees only three months of non-Git events in the default audit-log view and needs an event from four months ago. What is the best next step within the documented retention period?", choices: ["Assume all events older than three months are permanently deleted", "Search repository issue titles instead", "Use an explicit created date range in the audit-log search", "Change the user's timezone to recover the event"], correct: 2, explanations: ["Default display scope is shorter than the documented non-Git audit retention.", "Issue titles do not substitute for administrative audit events.", "An explicit date range can retrieve older retained events beyond the default view.", "Timezone changes do not expand the audit-log search window."], concept: "Audit display window versus retention", hints: ["Are the default view and the retained data window identical?", "Which search constraint controls the time period?"], source: "https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/security-and-compliance/audit-log-for-an-enterprise" },
-  { id: "admin-088", domain: "Implement secure software development and compliance", prompt: "A compliance policy requires enterprise audit evidence to remain searchable for several years, beyond GitHub's native retention. Which design best addresses this?", choices: ["Rely on the default audit-log page forever", "Keep only screenshots of the enterprise home page", "Increase repository artifact retention and assume it affects audit events", "Stream or export audit events to an approved external retention system"], correct: 3, explanations: ["The native audit log has finite retention rather than indefinite storage.", "Home-page screenshots do not preserve event-level audit evidence.", "Workflow artifact retention does not set enterprise audit-log retention.", "External retention can preserve audit evidence according to the organization's policy."], concept: "Long-term compliance evidence retention", hints: ["What happens when the platform's retention window expires?", "Which system must take responsibility for the longer retention obligation?"], source: "https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/streaming-the-audit-log-for-your-enterprise" },
-  { id: "admin-089", domain: "Implement secure software development and compliance", prompt: "An investigation must connect suspicious API activity to a particular access token rather than just its user. Which enterprise audit capability is most relevant?", choices: ["Identifying audit-log events performed by an access token", "Filtering only by actor and assuming all the actor's credentials are equivalent", "Using token expiration dates alone to infer every API call", "Using repository commit author names alone to identify API credentials"], correct: 0, explanations: ["Token-specific audit identification helps trace the credential used for audited activity.", "Actor-only filtering cannot distinguish multiple credentials used by that person.", "Expiration metadata does not enumerate the token's activity.", "Commit author attribution does not establish which API credential performed an action."], concept: "Credential-level audit attribution", hints: ["Can one person use multiple independent credentials?", "Which audit dimension distinguishes those credentials?"], source: "https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/identifying-audit-log-events-performed-by-an-access-token" },
-  { id: "admin-090", domain: "Implement secure software development and compliance", prompt: "Secret scanning detects a live production credential in repository history. What is the most important immediate containment action?", choices: ["Only delete the visible line from the latest README", "Revoke or rotate the credential at its issuing service", "Rename the repository", "Dismiss the alert because the repository is private"], correct: 1, explanations: ["Removing a visible line does not invalidate the exposed credential or historical copies.", "Revocation or rotation prevents further use of the exposed credential.", "Repository naming does not change credential validity.", "Private repository exposure still warrants credential containment."], concept: "Responding to exposed credentials", hints: ["Can removing text invalidate a credential already copied elsewhere?", "Where is the credential's actual authority controlled?"], source: "https://docs.github.com/en/code-security/secret-scanning/introduction/about-secret-scanning" },
-  { id: "admin-091", domain: "Implement secure software development and compliance", prompt: "A team wants supported hardcoded secrets blocked before they enter a repository, rather than relying only on alerts after the push. Which feature should it enable where available?", choices: ["Dependabot version updates", "A release-note template", "Secret scanning push protection", "A branch description"], correct: 2, explanations: ["Dependency updates do not inspect pushed code for embedded credentials.", "Release-note templates do not block secret-bearing pushes.", "Push protection checks supported secrets during a push and can block it.", "Descriptions are not content-scanning controls."], concept: "Preventing secret introduction", hints: ["At which point must the protection act?", "Which security capability inspects credentials during the push operation?"], source: "https://docs.github.com/en/code-security/concepts/secret-security/about-push-protection" },
-  { id: "admin-092", domain: "Implement secure software development and compliance", prompt: "A repository uses delegated bypass for push protection. A developer says a detected value is a test fixture. What is the best governed response?", choices: ["Disable push protection organization-wide", "Put the value into a different file to evade the detector", "Give every contributor permanent bypass", "Use the configured bypass-request process with justification and authorized review"], correct: 3, explanations: ["Global disablement is disproportionate to one disputed detection.", "Moving a secret to evade detection does not establish that it is safe.", "Permanent universal bypass discards the delegated review boundary.", "Delegated bypass allows an authorized decision with context instead of blanket disablement."], concept: "Governed push-protection exceptions", hints: ["How can a disputed detection be assessed without weakening everyone else's protection?", "Who is authorized to approve this exception?"], source: "https://docs.github.com/en/code-security/concepts/secret-security/delegated-bypass" },
-  { id: "admin-093", domain: "Implement secure software development and compliance", prompt: "An organization issues an internal credential format that is not covered by a supported built-in secret pattern. On an eligible plan, what should administrators evaluate?", choices: ["A tested custom secret-scanning pattern", "Only enable validity checks for existing supported provider patterns", "Only enable dependency vulnerability alerts", "Only require a code-scanning status check for CodeQL findings"], correct: 0, explanations: ["Custom patterns can detect organization-specific secrets and should be validated before rollout.", "Validity checking existing patterns does not define a detector for the new credential format.", "Dependency vulnerability alerts do not identify custom embedded credentials.", "A CodeQL status requirement does not itself add a custom secret pattern."], concept: "Organization-specific secret detection", hints: ["Does a custom credential necessarily match a built-in provider pattern?", "How can detection be tailored and tested before broad enablement?"], source: "https://docs.github.com/en/code-security/how-tos/secure-your-secrets/customize-leak-detection/define-custom-patterns" },
-  { id: "admin-094", domain: "Implement secure software development and compliance", prompt: "An administrator sees no secret-scanning alerts and concludes that the repository contains no sensitive credentials of any kind. What is the most accurate assessment?", choices: ["No alerts prove all historical data is safe", "Detection coverage depends on enabled features and recognized patterns, so absence of alerts is not proof", "Secret scanning can only inspect repository names", "A private repository can never contain an exposed secret"], correct: 1, explanations: ["The absence of detections is not a guarantee of complete sensitive-data coverage.", "Coverage and configuration limit what the scanner can detect.", "Secret scanning examines supported repository content, not merely names.", "Secrets can be exposed to unauthorized parties even in private repositories."], concept: "Limits of security detection evidence", hints: ["What assumptions about detection coverage underlie the conclusion?", "Is no detected issue equivalent to proving no issue exists?"], source: "https://docs.github.com/en/code-security/secret-scanning/introduction/about-secret-scanning" },
-  { id: "admin-095", domain: "Implement secure software development and compliance", prompt: "After rotating a leaked token, a maintainer wants to close the secret-scanning alert. Which closure practice best supports future investigation?", choices: ["Choose any reason merely to reduce the open count", "Delete the audit evidence first", "Record the accurate resolution and retain relevant response context", "Mark the alert false positive even though the token was live"], correct: 2, explanations: ["An arbitrary reason corrupts the incident record.", "Destroying evidence undermines later review.", "Accurate resolution preserves the distinction between containment and false detection.", "A live leaked token is not a false positive merely because it was rotated."], concept: "Accurate security-alert resolution", hints: ["What will a future reviewer need to understand about the incident?", "Does remediation change whether the original detection was real?"], source: "https://docs.github.com/en/code-security/secret-scanning/managing-alerts-from-secret-scanning/resolving-alerts" },
-  { id: "admin-096", domain: "Implement secure software development and compliance", prompt: "An eligible repository needs CodeQL scanning with minimal initial workflow configuration. Which setup should its administrator normally evaluate first?", choices: ["Handwritten SARIF with no analysis engine", "A README claiming that scans are enabled", "Dependabot version updates as a complete CodeQL replacement", "Code scanning default setup"], correct: 3, explanations: ["SARIF is a results format and does not itself analyze source code.", "Documentation alone does not configure analysis.", "Dependency updates and CodeQL source analysis address different risks.", "GitHub recommends default setup as the starting point for eligible repositories."], concept: "Starting CodeQL with default setup", hints: ["Does the repository require custom build orchestration initially?", "Which setup minimizes the amount of workflow code to maintain?"], source: "https://docs.github.com/en/code-security/code-scanning/enabling-code-scanning/configuring-default-setup-for-code-scanning" },
-  { id: "admin-097", domain: "Implement secure software development and compliance", prompt: "A repository needs a CodeQL workflow with custom build steps and analysis behavior that default setup does not provide. Which direction is appropriate?", choices: ["Use advanced setup and maintain the required analysis workflow", "Configure only Dependabot version-update schedules", "Change only the branch ruleset's required review count", "Upload an existing SARIF report and assume that configures future custom CodeQL builds"], correct: 0, explanations: ["Advanced setup supports customized CodeQL workflows and build configuration.", "Dependency-update schedules do not customize source-analysis builds.", "Review-count requirements do not define CodeQL build steps.", "Uploading results does not establish a recurring customized CodeQL analysis workflow."], concept: "Custom CodeQL analysis workflows", hints: ["Which setup offers direct control over the analysis workflow?", "What extra maintenance comes with that control?"], source: "https://docs.github.com/en/code-security/code-scanning/creating-an-advanced-setup-for-code-scanning/configuring-advanced-setup-for-code-scanning" },
-  { id: "admin-098", domain: "Implement secure software development and compliance", prompt: "A company already uses a third-party static analyzer and wants its supported results displayed as GitHub code-scanning alerts. Which interchange format should the integration produce?", choices: ["A ZIP of repository screenshots", "SARIF", "A plain-text list of Git branch names", "An unstructured billing CSV"], correct: 1, explanations: ["Screenshots do not provide structured code-scanning result ingestion.", "GitHub code scanning supports appropriately formatted SARIF results.", "Branch names are not a static-analysis findings format.", "Billing CSV records do not encode code-scanning results."], concept: "Third-party code-scanning interoperability", hints: ["Does GitHub require its own analyzer for every displayed finding?", "Which standardized format represents static-analysis results?"], source: "https://docs.github.com/en/code-security/code-scanning/introduction-to-code-scanning/about-code-scanning" },
-  { id: "admin-099", domain: "Implement secure software development and compliance", prompt: "A security team needs to detect unsafe data flow in its own application code, not just known vulnerabilities in third-party packages. Which GitHub capability best matches?", choices: ["Dependabot version updates alone", "Repository license detection", "Code scanning with CodeQL", "Organization membership visibility"], correct: 2, explanations: ["Version updates maintain dependencies rather than analyze application data flow.", "License detection does not identify unsafe source-code behavior.", "CodeQL analyzes source-code behavior using security queries.", "Membership visibility does not inspect application code."], concept: "Source-code analysis versus dependency maintenance", hints: ["Is the risk in a package version or in the application's implementation?", "Which tool reasons about code behavior?"], source: "https://docs.github.com/en/code-security/code-scanning/introduction-to-code-scanning/about-code-scanning" },
-  { id: "admin-100", domain: "Implement secure software development and compliance", prompt: "A developer believes a code-scanning finding is a false positive. Which response best preserves the integrity of the security process?", choices: ["Disable all scans immediately", "Delete the workflow so the alert is no longer visible", "Dismiss every alert from the same language without review", "Inspect the evidence and dismiss only if justified, recording the appropriate reason"], correct: 3, explanations: ["One disputed finding does not justify losing all analysis coverage.", "Removing analysis hides future findings instead of evaluating this one.", "Language-wide dismissal is not an evidence-based assessment.", "A justified, accurately recorded dismissal preserves a useful security record."], concept: "Evidence-based code-scanning triage", hints: ["What evidence distinguishes a false positive from a real issue?", "How can the decision remain understandable to another reviewer?"], source: "https://docs.github.com/en/code-security/code-scanning/managing-code-scanning-alerts/resolving-code-scanning-alerts" },
-  { id: "admin-101", domain: "Implement secure software development and compliance", prompt: "On a supporting plan, an organization wants merges blocked when a chosen code-scanning tool reports alerts meeting defined severity criteria. Which control is designed for this?", choices: ["A ruleset requiring code-scanning results with the selected tool and thresholds", "Only enable scan execution without a merge requirement", "Only require signed commits", "Only require one review without a scanning condition"], correct: 0, explanations: ["The code-scanning ruleset requirement can enforce tool-specific alert thresholds before merge.", "Producing analysis results does not by itself enforce the desired alert-based merge gate.", "Commit signatures do not evaluate code-scanning alert severity.", "A human review requirement does not implement tool-specific scanning thresholds."], concept: "Code-scanning merge protection", hints: ["Must this be a visible signal or an enforced gate?", "Which control can evaluate scanning results against explicit criteria?"], source: "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets" },
-  { id: "admin-102", domain: "Implement secure software development and compliance", prompt: "A repository includes a language unsupported by CodeQL. Which administration plan is technically sound?", choices: ["Assume CodeQL analyzes every possible programming language", "Check supported language coverage and use an appropriate additional analyzer where needed", "Mark all files as JavaScript regardless of their actual language", "Disable dependency security to compensate"], correct: 1, explanations: ["CodeQL language support is finite and documented.", "Coverage review and a suitable additional tool address actual analysis gaps.", "Mislabeling source files does not create valid language analysis.", "Removing unrelated dependency protection does not fill a source-analysis gap."], concept: "Analysis-language coverage planning", hints: ["What must an analysis engine understand about the source?", "How can unsupported code still receive meaningful analysis?"], source: "https://docs.github.com/en/code-security/code-scanning/introduction-to-code-scanning/about-code-scanning-with-codeql" },
-  { id: "admin-103", domain: "Implement secure software development and compliance", prompt: "An administrator plans to enable paid security capabilities on hundreds of private repositories. What should be checked before broad rollout?", choices: ["Only whether GitHub Actions is enabled, assuming that includes every security product", "Only whether the organization uses SAML, assuming that prepays security features", "The account's security-product entitlement and license-consumption implications", "Only whether repositories are private, assuming private visibility makes all security usage free"], correct: 2, explanations: ["Actions availability does not establish every security-product entitlement.", "SAML configuration does not determine whether security-product consumption is prepaid.", "Private-repository security features can depend on purchased products and licensed usage.", "Private visibility does not universally include every paid security capability."], concept: "Security feature entitlement awareness", hints: ["Is technical availability the same as an included entitlement?", "What consumption could broad enablement create?"], source: "https://docs.github.com/en/billing/concepts/product-billing/github-advanced-security" },
-  { id: "admin-104", domain: "Implement secure software development and compliance", prompt: "Dependabot alerts are missing for a supported dependency that the team expected GitHub to inventory. Which underlying capability should administrators inspect first?", choices: ["Secret-scanning custom patterns", "CodeQL query-pack selection", "The pull-request approval count", "Dependency graph and its recognized dependency data"], correct: 3, explanations: ["Secret patterns identify credentials rather than installed package versions.", "Source-analysis query packs do not supply Dependabot's dependency inventory.", "Review requirements do not establish which packages are known to GitHub.", "Dependabot alerts depend on recognized dependencies in the dependency graph."], concept: "Dependency inventory as alert input", hints: ["How would GitHub know which package versions the repository uses?", "Which data source is compared against vulnerability advisories?"], source: "https://docs.github.com/en/code-security/dependabot/dependabot-alerts/about-dependabot-alerts" },
-  { id: "admin-105", domain: "Implement secure software development and compliance", prompt: "A team wants automatic pull requests for routine dependency freshness even when no vulnerability is known. Which feature is the best fit?", choices: ["Dependabot version updates", "Only Dependabot alerts", "Only secret scanning", "Only code-owner review requests"], correct: 0, explanations: ["Version updates check configured dependencies on a schedule for newer versions.", "Alerts report known vulnerabilities rather than routinely updating all dependencies.", "Secret scanning detects credentials, not dependency freshness.", "Code-owner review routes reviews without generating version-update pull requests."], concept: "Version updates versus vulnerability alerts", hints: ["Is the trigger a known security advisory or routine maintenance?", "Which dependency automation is schedule-driven?"], source: "https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/about-dependabot-version-updates" },
-  { id: "admin-106", domain: "Implement secure software development and compliance", prompt: "An organization wants Dependabot version updates for npm packages in a monorepo subdirectory on a weekly schedule. Where should repository-specific package ecosystem, directory, and schedule configuration be defined?", choices: ["CODEOWNERS only", ".github/dependabot.yml", "Only a GitHub Actions schedule with no Dependabot configuration", "Only the repository's security policy document"], correct: 1, explanations: ["CODEOWNERS does not define dependency-update schedules.", "The Dependabot configuration file declares ecosystems, directories, and update schedules.", "An Actions cron schedule alone does not configure Dependabot version updates.", "A written security policy does not define the executable update configuration."], concept: "Dependabot version-update configuration", hints: ["Which configuration belongs with the version-controlled repository?", "What information does an updater need to locate packages and choose its cadence?"], source: "https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuring-dependabot-version-updates" },
-  { id: "admin-107", domain: "Implement secure software development and compliance", prompt: "Dependabot cannot authenticate to a private package registry. The existing credential is stored only as an Actions secret. Which change should the administrator evaluate?", choices: ["Print the credential in every build log", "Make the private registry anonymous", "Configure the registry in Dependabot and provide an appropriately scoped Dependabot secret", "Add the credential directly to dependabot.yml"], correct: 2, explanations: ["Logging a registry credential exposes it.", "Anonymous registry access unnecessarily removes authentication.", "Dependabot has its own secret context and private-registry configuration.", "Registry credentials should be referenced through secrets rather than committed as plaintext."], concept: "Private registry authentication for Dependabot", hints: ["Do separate automation features automatically share the same secret store?", "Where should the credential be referenced without committing its value?"], source: "https://docs.github.com/en/code-security/dependabot/working-with-dependabot/configuring-access-to-private-registries-for-dependabot" },
-  { id: "admin-108", domain: "Implement secure software development and compliance", prompt: "A pull request updates a lock file and introduces a transitive dependency with a known vulnerability. Which feature is specifically designed to expose dependency changes and their security impact during pull-request review?", choices: ["Secret scanning", "A repository access review", "A GitHub App installation log", "Dependency review"], correct: 3, explanations: ["Secret scanning detects credentials rather than package-version changes.", "An access review evaluates authorization, not dependency diffs.", "Installation logs track integrations rather than package vulnerability changes.", "Dependency review shows dependency changes, including indirect dependencies and known vulnerabilities."], concept: "Dependency risk at pull-request time", hints: ["Which review surface understands package manifests and lock-file diffs?", "Does the team need current inventory or the impact of this specific change?"], source: "https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/about-dependency-review" },
-  { id: "admin-109", domain: "Implement secure software development and compliance", prompt: "A maintainer of a public repository needs to privately collaborate with selected researchers on a vulnerability before public disclosure. Which feature best supports this?", choices: ["A draft repository security advisory", "A normal public issue with a security label", "A public discussion with only maintainers mentioned", "A published release containing the exploit details immediately"], correct: 0, explanations: ["Draft security advisories support private vulnerability coordination before publication.", "A label does not make a public issue confidential.", "Mentioning selected people does not restrict a public discussion's audience.", "Immediate public release defeats the requested private coordination period."], concept: "Private vulnerability coordination", hints: ["What distinguishes pre-disclosure collaboration from ordinary public project discussion?", "Which security feature supports a controlled publication lifecycle?"], source: "https://docs.github.com/en/code-security/security-advisories/working-with-repository-security-advisories/about-repository-security-advisories" },
-  { id: "admin-110", domain: "Implement secure software development and compliance", prompt: "An organization wants researchers to know which versions it supports and how to report a vulnerability safely. Which repository document is intended for this guidance?", choices: ["CODEOWNERS", "SECURITY.md", "dependabot.yml", "CODE_OF_CONDUCT.md"], correct: 1, explanations: ["CODEOWNERS identifies reviewers, not the project's vulnerability-reporting policy.", "SECURITY.md communicates supported versions and vulnerability-reporting instructions.", "Dependabot configuration controls updates rather than disclosure instructions.", "A code of conduct governs participation behavior rather than vulnerability reporting."], concept: "Communicating a security policy", hints: ["Which document should a researcher consult before opening a public issue?", "Are support versions and private reporting part of ownership or security policy?"], source: "https://docs.github.com/en/code-security/getting-started/adding-a-security-policy-to-your-repository" },
-  { id: "admin-111", domain: "Implement secure software development and compliance", prompt: "A public-project maintainer has prepared a security advisory and needs a recognized vulnerability identifier as part of coordinated disclosure. Which GitHub capability should they consider?", choices: ["Create a branch with CVE in its name", "Use an issue number as an automatic CVE replacement", "Request a CVE through the repository security-advisory process", "Tag every release as vulnerable without publishing an advisory"], correct: 2, explanations: ["Branch names do not allocate recognized CVE identifiers.", "Repository issue numbers are not automatically CVE identifiers.", "The advisory workflow supports requesting a CVE for eligible vulnerabilities.", "Release tagging alone does not request a vulnerability identifier."], concept: "Vulnerability identification and disclosure", hints: ["Who allocates a standardized vulnerability identifier?", "Which structured disclosure workflow supports that request?"], source: "https://docs.github.com/en/code-security/security-advisories/working-with-repository-security-advisories/about-repository-security-advisories" },
-  { id: "admin-112", domain: "Implement secure software development and compliance", prompt: "A security queue contains many Dependabot alerts. Which prioritization approach is most defensible?", choices: ["Always remediate alphabetically by package name", "Dismiss older alerts first regardless of impact", "Use severity alone and deliberately ignore exploitability and application context", "Use severity, exploitability signals, dependency context, and application exposure"], correct: 3, explanations: ["Alphabetical order does not reflect security risk.", "Age alone does not establish that an alert is safe to dismiss.", "Severity alone can miss important differences in exploitation likelihood and exposure.", "Multiple risk signals and actual usage context support meaningful prioritization."], concept: "Risk-based vulnerability triage", hints: ["Which findings are most likely to harm this application?", "Why might identical severity ratings still imply different operational priorities?"], source: "https://docs.github.com/en/code-security/dependabot/dependabot-alerts/viewing-and-updating-dependabot-alerts" },
-  { id: "admin-113", domain: "Implement secure software development and compliance", prompt: "A team accepts a Dependabot alert temporarily because the affected code path is not reachable in its deployment. What is the best recordkeeping practice?", choices: ["Document the justified disposition and revisit it if assumptions change", "Mark the package fixed even though its version has not changed", "Remove every dependency manifest to hide the alert", "Disable all vulnerability alerts permanently"], correct: 0, explanations: ["Recorded rationale makes the accepted risk auditable and supports later reassessment.", "An unchanged vulnerable package should not be falsely described as patched.", "Removing manifests undermines dependency visibility rather than addressing risk.", "A scoped accepted risk does not justify permanently disabling every alert."], concept: "Documented vulnerability risk acceptance", hints: ["What assumptions make the current decision defensible?", "How could future deployment changes invalidate that decision?"], source: "https://docs.github.com/en/code-security/dependabot/dependabot-alerts/viewing-and-updating-dependabot-alerts" },
-  { id: "admin-114", domain: "Implement secure software development and compliance", prompt: "An enterprise wants a practical security response plan for repository incidents. Which content is most useful?", choices: ["Only an annual target for fewer alerts", "Named responders, escalation paths, containment steps, communication rules, and evidence preservation", "Only a list of enabled scanning products with no response responsibilities", "A rule to delete every affected repository before investigation"], correct: 1, explanations: ["A metric alone does not tell responders how to act during an incident.", "Roles, escalation, containment, communication, and evidence form an actionable response process.", "Detection coverage alone does not explain who must act on an incident or how.", "Immediate indiscriminate deletion risks data loss and destroys evidence."], concept: "Operational security response planning", hints: ["What must responders know in the first minutes of an incident?", "How will responsibility and evidence handling remain clear under pressure?"], source: "https://docs.github.com/en/support/learning-about-github-support/understanding-how-github-support-can-help-during-a-security-incident" },
-  { id: "admin-115", domain: "Implement secure software development and compliance", prompt: "A human user needs a supported API operation that reads issues in two organization repositories. A PAT is appropriate for this short-lived task. Which token design best follows least privilege?", choices: ["A classic token with every available scope and no expiry", "A token belonging to an organization owner shared with the user", "A fine-grained token limited to the organization, selected repositories, required permissions, and a suitable expiry", "A token for all repositories with unnecessary administration permissions"], correct: 2, explanations: ["Broad scopes and indefinite lifetime exceed the task's needs.", "Sharing another person's token weakens attribution and credential safety.", "Fine-grained repository and permission selection narrows the credential's authority.", "Unnecessary all-repository administration access violates least privilege."], concept: "Fine-grained PAT scope design", hints: ["What resources and operations does this task actually need?", "How can the credential's duration be limited alongside its permissions?"], source: "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens" },
-  { id: "admin-116", domain: "Implement secure software development and compliance", prompt: "A member creates a fine-grained PAT for an organization that requires token approval. It remains pending and cannot access the intended private repository. What is the appropriate next action?", choices: ["Recreate it repeatedly until approval is bypassed", "Switch the repository to public solely for the token", "Assume token creation automatically satisfies organization approval", "Have an authorized administrator review the pending token request"], correct: 3, explanations: ["Recreation does not remove the organization's approval policy.", "Changing visibility exposes content instead of following access governance.", "Token creation and organization approval are distinct steps.", "The administrator should review the requested access under the configured policy."], concept: "Fine-grained PAT approval workflow", hints: ["Which policy step has not yet completed?", "Who can decide whether the requested organization access is appropriate?"], source: "https://docs.github.com/en/organizations/managing-programmatic-access-to-your-organization/reviewing-and-revoking-personal-access-tokens-in-your-organization" },
-  { id: "admin-117", domain: "Implement secure software development and compliance", prompt: "An organization wants to limit the lifetime of tokens accessing its resources instead of relying only on each developer's preference. Which governance control should it evaluate?", choices: ["A supported organization PAT maximum-lifetime policy for the relevant token type", "A repository artifact-retention setting", "A branch deletion restriction", "A CODEOWNERS entry for the authentication directory"], correct: 0, explanations: ["PAT policies can constrain token lifetimes for organization access.", "Artifact retention does not control API-token expiry.", "Branch deletion rules do not set credential lifetimes.", "Code ownership routes reviews rather than enforcing token expiration."], concept: "Token-lifetime governance", hints: ["At which scope can credential rules be enforced consistently?", "Does data retention control how long an access credential works?"], source: "https://docs.github.com/en/organizations/managing-programmatic-access-to-your-organization/setting-a-personal-access-token-policy-for-your-organization" },
-  { id: "admin-118", domain: "Implement secure software development and compliance", prompt: "A fine-grained PAT approved for an organization is later found to be overprivileged. The owner wants to remove that token's organization access without removing the user's legitimate membership. Which action is most targeted?", choices: ["Remove every team in the organization", "Revoke that token's access through organization token management", "Delete the user's personal public repositories", "Disable all GitHub API access for every account"], correct: 1, explanations: ["Team deletion disrupts unrelated people and does not target one credential.", "Token-specific revocation removes the excessive credential grant without broad membership changes.", "The organization does not address its token exposure by deleting personal repositories.", "A global API ban is disproportionate to one approved token."], concept: "Targeted token-access revocation", hints: ["Is the risk tied to the person or one credential?", "Which management surface identifies the specific approved credential?"], source: "https://docs.github.com/en/organizations/managing-programmatic-access-to-your-organization/reviewing-and-revoking-personal-access-tokens-in-your-organization" },
-  { id: "admin-119", domain: "Implement secure software development and compliance", prompt: "A long-running organization integration uses an employee's PAT. The employee is leaving. Which redesign most directly reduces dependence on that individual's continuing access?", choices: ["Copy the PAT into more repositories", "Remove the PAT's expiration only", "Use a GitHub App with an appropriate installation and narrowly scoped permissions", "Rename the PAT to service-account without changing its owner"], correct: 2, explanations: ["More copies increase credential exposure without changing ownership.", "Expiry is not the only dependency; PAT access remains tied to the user.", "An installation-based app is better suited to organization automation independent of one employee.", "A display name does not change the token's identity or lifecycle."], concept: "Automation identity independence", hints: ["What happens to automation when its human credential owner loses access?", "Which integration model has an installation identity?"], source: "https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/deciding-when-to-build-a-github-app" },
-  { id: "admin-120", domain: "Implement secure software development and compliance", prompt: "A personal-account enterprise wants to restrict classic PAT access to organization resources. Which statement is important when assessing the policy's scope?", choices: ["The policy automatically revokes all SSH keys and every GitHub App", "The policy prevents everyone from reading the organization's public repositories", "The policy removes the need to review fine-grained PAT settings", "Classic PAT restrictions do not govern every other authentication mechanism"], correct: 3, explanations: ["Token-type restrictions are not universal revocation of SSH and app access.", "Public resources remain publicly accessible despite PAT restrictions.", "Classic and fine-grained token controls require their own policy assessment.", "Administrators must separately govern other credentials and integrations."], concept: "PAT policy boundaries", hints: ["Which credential type does the policy actually target?", "What alternative authentication paths remain outside that control?"], source: "https://docs.github.com/en/organizations/managing-programmatic-access-to-your-organization/setting-a-personal-access-token-policy-for-your-organization" },
-  { id: "admin-121", domain: "Implement secure software development and compliance", prompt: "A vendor integration only needs read-only access to repository contents on selected repositories. Why is a GitHub App generally preferable to a broadly scoped OAuth App for this design?", choices: ["GitHub Apps offer fine-grained permissions and installation repository selection", "GitHub Apps never require security review", "GitHub Apps automatically have unrestricted enterprise-owner privileges", "OAuth Apps cannot call any GitHub API"], correct: 0, explanations: ["Apps can request narrowly defined operations and selected repository access.", "Fine-grained permissions reduce risk but do not eliminate integration review.", "Installation does not confer unrestricted enterprise ownership.", "OAuth Apps can use APIs; their authorization model differs."], concept: "GitHub App least-privilege advantages", hints: ["How much authority does the integration genuinely need?", "Which model can separate repository-content reading from broader repository control?"], source: "https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/deciding-when-to-build-a-github-app" },
-  { id: "admin-122", domain: "Implement secure software development and compliance", prompt: "An OAuth App requests the classic repo scope even though the business description says it only reads source. What should an administrator focus on during review?", choices: ["Only the vendor's claim that its current implementation makes read requests", "The actual scope's broad authority, not just the vendor's description", "Only whether one employee already authorized it", "Only whether the organization requires SAML, assuming that narrows OAuth scopes"], correct: 1, explanations: ["Present intent does not reduce the authority granted by the requested scope.", "The requested scope determines available authority and may exceed the stated business need.", "One user's authorization does not substitute for organization policy review.", "SAML authentication does not redefine the capabilities of an OAuth scope."], concept: "Reviewing OAuth scope risk", hints: ["Is stated intent the same as granted capability?", "What can the requested scope authorize beyond reading source?"], source: "https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/scopes-for-oauth-apps" },
-  { id: "admin-123", domain: "Implement secure software development and compliance", prompt: "A GitHub App integration needs to act as its installation for repository automation rather than on behalf of a signed-in user. Which credential is appropriate?", choices: ["The app's public client ID by itself", "Any employee's browser cookie", "An installation access token", "A repository webhook URL without authentication"], correct: 2, explanations: ["A public client ID identifies an app but is not an installation authorization token.", "Browser cookies are not appropriate installation credentials.", "An installation token represents the app installation's approved access.", "A webhook endpoint URL does not authenticate outbound GitHub API calls."], concept: "Installation versus user authentication", hints: ["Which principal should appear to perform the automation?", "Which credential represents the installed app's grant?"], source: "https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-as-a-github-app-installation" },
-  { id: "admin-124", domain: "Implement secure software development and compliance", prompt: "An installed GitHub App requests additional permissions after an update. What should the organization owner do?", choices: ["Assume old approval automatically authorizes all future permissions", "Immediately grant the app organization ownership", "Share an administrator PAT so the app can bypass the request", "Review the new capabilities and approve only if they meet policy and business need"], correct: 3, explanations: ["Additional requested permissions have their own approval decision.", "App permission review does not require unrestricted organization ownership.", "A shared PAT bypasses the intended integration governance.", "Owners can evaluate and accept or decline requested additional permissions."], concept: "Reviewing GitHub App permission changes", hints: ["Does a prior decision cover a newly expanded capability set?", "What new operations would approval permit?"], source: "https://docs.github.com/en/apps/using-github-apps/approving-updated-permissions-for-a-github-app" },
-  { id: "admin-125", domain: "Implement secure software development and compliance", prompt: "A GitHub App installed in an organization is no longer approved for any use. Which action most directly removes that installation's authorized access?", choices: ["Uninstall the app from the organization", "Revoke one employee's unrelated PAT", "Remove only the app's webhook subscription while leaving its installation access intact", "Delete one user's local Git credential cache"], correct: 0, explanations: ["Uninstallation removes the organization's app installation and its access.", "An unrelated PAT does not govern the app installation's authorization.", "Disabling notifications does not itself revoke the installation's API access.", "A user's local credential cache does not control installation credentials."], concept: "Retiring an organization integration", hints: ["Where was the integration's access granted?", "Which action revokes that grant rather than merely hiding references to it?"], source: "https://docs.github.com/en/apps/using-github-apps/reviewing-and-modifying-installed-github-apps" },
-  { id: "admin-126", domain: "Implement secure software development and compliance", prompt: "A REST API client receives a rate-limit response with x-ratelimit-remaining equal to zero. Which response behavior is appropriate?", choices: ["Retry continuously without delay", "Wait until the indicated reset time and reduce unnecessary calls", "Create many copies of the same request in parallel", "Assume every rate limit can be removed by renaming the token"], correct: 1, explanations: ["Immediate repeated retries cannot replenish the exhausted primary allowance.", "Rate-limit headers identify when the primary allowance resets.", "More parallel requests increase pressure instead of restoring allowance.", "Token labels do not determine the underlying rate-limit policy."], concept: "Handling primary REST rate limits", hints: ["Which headers describe the exhausted allowance?", "When should the client expect capacity to become available again?"], source: "https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api" },
-  { id: "admin-127", domain: "Implement secure software development and compliance", prompt: "A REST response includes Retry-After while the client is rate limited. Which behavior follows GitHub's guidance?", choices: ["Ignore it if the client is authenticated", "Multiply the request concurrency immediately", "Wait for the indicated interval before retrying", "Retry only with a different User-Agent string"], correct: 2, explanations: ["Authentication does not exempt clients from Retry-After guidance.", "Higher concurrency can worsen throttling.", "The server-provided interval indicates how long the client should wait.", "Changing a client header does not satisfy the required backoff."], concept: "Respecting server-directed API backoff", hints: ["What does the service explicitly communicate about retry timing?", "Could a faster retry loop improve a throttled situation?"], source: "https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api" },
-  { id: "admin-128", domain: "Implement secure software development and compliance", prompt: "A client still has primary API allowance remaining but receives throttling after a burst of concurrent requests. Which explanation should the administrator consider?", choices: ["All authenticated requests are exempt from throttling", "Primary allowance guarantees unlimited concurrency", "Only public APIs can be rate limited", "Secondary rate limits can apply independently of the primary allowance"], correct: 3, explanations: ["Authenticated clients remain subject to rate limits.", "Primary remaining requests do not guarantee an acceptable request pattern.", "Private-resource API requests can also be throttled.", "Secondary limits protect the service against excessive concurrency and other abusive patterns."], concept: "Independent secondary rate limits", hints: ["Do request volume and request pattern represent the same constraint?", "What additional safeguards protect API availability?"], source: "https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api" },
-  { id: "admin-129", domain: "Implement secure software development and compliance", prompt: "A compliance integration repeatedly downloads unchanged repository metadata and hits API limits. Which optimization best reduces unnecessary requests while preserving freshness?", choices: ["Use event notifications where appropriate and conditional requests or caching for unchanged data", "Retry every failure with unlimited immediate parallelism", "Rotate between employees' PATs to evade throttling", "Request broader token permissions without changing the call pattern"], correct: 0, explanations: ["Event-driven updates and conditional retrieval reduce redundant polling.", "Unbounded retries worsen load and can trigger additional limits.", "Credential rotation is not a responsible substitute for efficient API use.", "Broader permissions do not make redundant requests necessary or efficient."], concept: "Efficient API integration design", hints: ["Does unchanged data need a full download every time?", "Can the service notify the integration when relevant changes occur?"], source: "https://docs.github.com/en/rest/using-the-rest-api/best-practices-for-using-the-rest-api" },
-  { id: "admin-130", domain: "Implement secure software development and compliance", prompt: "An architect compares a PAT-backed service with a GitHub App using installation tokens. Which rate-limit assumption is safest?", choices: ["Every credential type has the same fixed allowance in every account", "Check the documented limits for the credential and enterprise context; installation limits can scale under documented rules", "Installation tokens are always unlimited", "More OAuth scopes always increase the primary limit"], correct: 1, explanations: ["Limits vary by authentication method and relevant account context.", "Installation-token limits have documented scaling and enterprise-specific behavior.", "Installation credentials are still rate limited.", "Broader scopes are not a general mechanism for increasing primary allowance."], concept: "Credential-aware rate-limit planning", hints: ["Which identity and account context determine the allowance?", "Why should a capacity estimate avoid a universal requests-per-hour assumption?"], source: "https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api" },
-  { id: "admin-131", domain: "Implement secure software development and compliance", prompt: "An organization wants members to request approval before third-party OAuth Apps access its organization resources. Which policy is directly relevant?", choices: ["A required signed-commit rule", "A Dependabot ignore rule", "OAuth App access restrictions", "A repository release-tag naming rule"], correct: 2, explanations: ["Commit-signature rules do not govern third-party OAuth authorization.", "Dependency ignore rules do not approve app access.", "OAuth App restrictions let organization owners govern app access to organization resources.", "Release-tag rules do not determine OAuth access."], concept: "Organization OAuth App governance", hints: ["Which integration type is being authorized?", "Where can organization owners require review of that access?"], source: "https://docs.github.com/en/organizations/managing-oauth-access-to-your-organizations-data/about-oauth-app-access-restrictions" },
-  { id: "admin-132", domain: "Implement secure software development and compliance", prompt: "A service receives GitHub webhook deliveries over HTTPS. It needs to verify that each payload came from the configured sender and was not modified. Which additional control is appropriate?", choices: ["Trust every request with GitHub in the User-Agent", "Check only that the JSON parses", "Publish the webhook secret in the repository for verification", "Validate the webhook signature using the configured secret and a timing-safe comparison"], correct: 3, explanations: ["User-Agent values are not cryptographic proof of origin.", "Valid JSON can still be forged.", "Publishing the secret allows attackers to forge signatures.", "Signature verification authenticates the payload using the shared webhook secret."], concept: "Webhook payload authenticity", hints: ["Can a network client forge ordinary request headers?", "Which evidence depends on a secret known only to the intended parties?"], source: "https://docs.github.com/en/webhooks/using-webhooks/validating-webhook-deliveries" },
-  { id: "admin-133", domain: "Implement secure software development and compliance", prompt: "An integration needs prompt notification when repositories are created and does not need to poll every few seconds. Which mechanism should an administrator evaluate?", choices: ["A supported organization or enterprise webhook for the relevant event", "A monthly manual audit-log export", "A required status check on one existing repository", "A scheduled workflow that checks once per week"], correct: 0, explanations: ["Webhooks notify configured receivers of subscribed events as they occur.", "Monthly export does not meet prompt event-notification requirements.", "A repository status check is not a subscription to organization repository-creation events.", "Weekly polling cannot provide prompt creation notifications."], concept: "Event-driven administrative integrations", hints: ["Is the desired interaction a repeated query or a notification?", "Which event source can push relevant changes to the receiver?"], source: "https://docs.github.com/en/webhooks/about-webhooks" },
-  { id: "admin-134", domain: "Implement secure software development and compliance", prompt: "An enterprise ruleset requires review on a set of repositories. A repository administrator creates a local ruleset with no review requirement and claims this removes the enterprise control. What is correct?", choices: ["The newest local ruleset automatically wins", "The applicable enterprise requirement still applies", "An empty local ruleset deletes all inherited policies", "Repository Admin silently bypasses every enterprise ruleset"], correct: 1, explanations: ["Newer local rules do not override applicable higher-scope requirements.", "Applicable rulesets layer rather than allowing local weakening of the enterprise requirement.", "An empty ruleset does not erase other active rulesets.", "Administrative role alone is not universal bypass of every ruleset."], concept: "Non-overridable higher-scope rules", hints: ["Are local rules replacements or additional applicable controls?", "What would happen to enterprise governance if an empty local rule negated it?"], source: "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets" },
-  { id: "admin-135", domain: "Implement secure software development and compliance", prompt: "A CodeQL alert includes a path showing untrusted input reaching a sensitive operation. What should a responder inspect to assess the finding?", choices: ["Only whether all dependency versions are current", "Only whether the commit has a verified signature", "The source-to-sink flow, relevant code, and application validation context", "Only whether a reviewer approved the pull request"], correct: 2, explanations: ["Current dependencies do not prove that application input handling is safe.", "A verified signature does not establish that the code is free of vulnerabilities.", "The reported flow and surrounding logic support a technical risk assessment.", "Prior approval is not a technical analysis of the reported data flow."], concept: "Interpreting code-scanning evidence", hints: ["What evidence links the input to the sensitive operation?", "Could surrounding validation affect whether the path is dangerous?"], source: "https://docs.github.com/en/code-security/code-scanning/managing-code-scanning-alerts/assessing-code-scanning-alerts-for-your-repository" },
-  { id: "admin-136", domain: "Implement secure software development and compliance", prompt: "A private repository has dependency alerts enabled, but the team wants Dependabot to attempt remediation pull requests for vulnerable supported dependencies. What additional capability should it enable?", choices: ["Only repository discussions", "Only organization SAML SSO", "Only a required commit-signature rule", "Dependabot security updates"], correct: 3, explanations: ["Discussions do not generate dependency remediation changes.", "SSO protects access rather than repairing package versions.", "Commit signatures do not generate dependency upgrades.", "Security updates attempt to open fixes for supported vulnerable dependencies."], concept: "Alerts versus automated vulnerability fixes", hints: ["Does identifying a vulnerable package necessarily create a fix?", "Which automation is specifically triggered by dependency vulnerabilities?"], source: "https://docs.github.com/en/code-security/dependabot/dependabot-security-updates/about-dependabot-security-updates" },
-  { id: "admin-137", domain: "Implement secure software development and compliance", prompt: "An administrator writes a script that needs a PAT and proposes committing the token beside the script so coworkers can run it. Which alternative is appropriate?", choices: ["Keep the credential in an approved secret store and inject it only into authorized execution", "Base64-encode the token and commit it", "Put the token in an untracked branch and assume it is inaccessible", "Use a less descriptive variable name to conceal the token"], correct: 0, explanations: ["A secret store separates sensitive credentials from distributed source code.", "Base64 is reversible encoding, not protection for a committed credential.", "A branch is not a secret-management boundary.", "Obscure variable names do not protect an exposed credential."], concept: "Protecting administrative API credentials", hints: ["Who can retrieve a credential once it is in distributed repository history?", "What separates the script's source from its runtime authority?"], source: "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens" },
-  { id: "admin-138", domain: "Implement secure software development and compliance", prompt: "An enterprise security team needs source IP addresses in its audit investigations and finds them absent from the current events. What should it check?", choices: ["Whether enabling an IP allow list alone automatically adds the audit fields", "Whether enterprise audit-log IP-address display has been enabled and applies to the events", "Whether SAML authentication alone guarantees source-IP fields in every audit event", "Whether filtering by actor adds missing source-IP metadata"], correct: 1, explanations: ["Network access restriction and audit IP-address display are distinct controls.", "IP information is an optional audit-log setting with documented applicability.", "SAML identity linkage does not guarantee this optional field for every event.", "A search filter narrows records rather than adding uncollected metadata."], concept: "Audit source-IP visibility", hints: ["Is every potentially useful audit field displayed by default?", "Which enterprise-level setting controls this particular evidence?"], source: "https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/displaying-ip-addresses-in-the-audit-log-for-your-enterprise" },
-  { id: "admin-139", domain: "Implement secure software development and compliance", prompt: "Dependabot opens a pull request upgrading a vulnerable library. What is the most appropriate merge policy?", choices: ["Merge every bot change without tests because it is automatically safe", "Reject all automated updates regardless of vulnerability", "Apply the repository's testing and review requirements while assessing the security fix", "Disable branch rules whenever the author is a bot"], correct: 2, explanations: ["Automated authorship does not guarantee compatibility or eliminate review needs.", "Blanket rejection prevents useful supported vulnerability remediation.", "Security updates still need appropriate validation under the repository's governance.", "Broadly disabling rules removes controls instead of evaluating the proposed change."], concept: "Validating automated remediation", hints: ["Can a secure package upgrade still affect application behavior?", "Which existing controls establish confidence in a change?"], source: "https://docs.github.com/en/code-security/dependabot/working-with-dependabot/managing-pull-requests-for-dependency-updates" },
-  { id: "admin-140", domain: "Implement secure software development and compliance", prompt: "An executive asks whether enabling CodeQL, Dependabot, and secret scanning guarantees compliance with every security requirement. Which response is accurate?", choices: ["Yes, enabling the three features replaces all governance and response processes", "Yes, a zero-alert dashboard is a universal compliance certificate", "No, so all automated security checks should be removed", "No; these controls provide evidence and risk reduction within a broader governance, review, and response program"], correct: 3, explanations: ["Feature enablement does not establish universal regulatory or operational compliance.", "No alerts do not certify all requirements or prove complete detection coverage.", "Limits of automation do not negate its security value.", "Security tooling supports, rather than replaces, contextual governance and incident response."], concept: "Security tools within compliance governance", hints: ["Does configuring a detector prove every organizational requirement is satisfied?", "What responsibilities remain after tools produce findings?"], source: "https://docs.github.com/en/code-security/security-overview/about-security-overview" },
-  { id: "admin-141", domain: "Manage GitHub Actions", prompt: "An enterprise permits only actions and reusable workflows hosted inside the enterprise. A workflow using actions/checkout is blocked. Why?", choices: ["GitHub-authored actions are also outside the enterprise unless the policy explicitly allows them", "actions/checkout can only run in public repositories", "The policy applies only to reusable workflows, never actions", "Repository Write automatically overrides the policy"], correct: 0, explanations: ["Enterprise-only policy also excludes GitHub-authored actions outside the enterprise.", "Checkout supports private repositories with appropriate access.", "The policy governs both actions and reusable workflows.", "Repository permissions do not override enforced enterprise Actions policy."], concept: "Enterprise action-allowance boundaries", hints: ["Where is the action's source repository hosted relative to the enterprise?", "Does official authorship automatically create a policy exception?"], source: "https://docs.github.com/en/enterprise-cloud@latest/admin/enforcing-policies/enforcing-policies-for-your-enterprise/enforcing-policies-for-github-actions-in-your-enterprise" },
-  { id: "admin-142", domain: "Manage GitHub Actions", prompt: "An organization wants an action reference to identify an immutable source revision rather than a movable release label. Which reference is strongest?", choices: ["A mutable major-version tag", "The action's full-length commit SHA", "The action repository's default branch", "The latest tag without a version"], correct: 1, explanations: ["Major-version tags can be moved by the publisher.", "A full commit SHA identifies a specific immutable action revision.", "A default branch can change with future commits.", "An unpinned latest tag does not establish immutable source identity."], concept: "Immutable action references", hints: ["Which Git references can be moved to another revision?", "What identifies a particular commit rather than a naming convention?"], source: "https://docs.github.com/en/actions/reference/security/secure-use" },
-  { id: "admin-143", domain: "Manage GitHub Actions", prompt: "An organization keeps a reusable workflow in a private repository and wants approved sibling repositories to call it. Besides caller syntax, what must administrators configure?", choices: ["Only grant the caller's GITHUB_TOKEN contents: write", "Only configure the caller's runner labels", "The source repository's Actions access settings and applicable allowance policies", "Only add the source maintainers to the caller's CODEOWNERS file"], correct: 2, explanations: ["Token operation permissions alone do not enable private workflow sharing.", "Runner labels select execution machines rather than authorize source sharing.", "Private sharing requires permitted access to the source and compliance with Actions policies.", "Review ownership does not grant reusable-workflow access."], concept: "Private reusable-workflow sharing", hints: ["Can another repository read private automation solely because its name is known?", "Which source-side boundary governs sharing?"], source: "https://docs.github.com/en/actions/sharing-automations/sharing-actions-and-workflows-with-your-organization" },
-  { id: "admin-144", domain: "Manage GitHub Actions", prompt: "A central workflow should be callable as a reusable workflow by repository jobs. Which trigger must its workflow definition include?", choices: ["Only schedule", "Only push", "Only workflow_dispatch", "workflow_call"], correct: 3, explanations: ["A schedule triggers timed runs rather than enabling reusable-workflow calls.", "Push alone does not declare a callable reusable workflow.", "Manual dispatch is different from being called by another workflow job.", "workflow_call declares the reusable-workflow interface."], concept: "Reusable-workflow entry point", hints: ["Is this workflow started by a human, an event, or another workflow?", "Which trigger declares inputs and secrets for a caller?"], source: "https://docs.github.com/en/actions/sharing-automations/reusing-workflows" },
-  { id: "admin-145", domain: "Manage GitHub Actions", prompt: "A developer puts a reusable workflow reference under steps[*].uses and gets a validation error. What is the correct structure?", choices: ["Call the reusable workflow with jobs.<job_id>.uses", "Put the workflow path in jobs.<job_id>.runs-on", "Put the workflow path in jobs.<job_id>.needs", "Put the workflow path in the caller's top-level on field"], correct: 0, explanations: ["Reusable workflows are called at job level rather than as ordinary action steps.", "runs-on selects a runner rather than a callable workflow.", "needs identifies job dependencies rather than reusable workflow files.", "on declares triggering events rather than the reusable workflow to execute."], concept: "Job-level reusable-workflow calls", hints: ["Does a reusable workflow describe a single action step or a set of jobs?", "At which YAML level can that larger execution unit be invoked?"], source: "https://docs.github.com/en/actions/sharing-automations/reusing-workflows" },
-  { id: "admin-146", domain: "Manage GitHub Actions", prompt: "A reusable deployment workflow needs callers to select a deployment target through a typed interface without treating the target name as a credential. What should it define?", choices: ["Only a workflow output for the target", "A typed workflow_call input for the target", "Only a secret whose value is the nonsecret target name", "Only a hardcoded target inside the called workflow"], correct: 1, explanations: ["Outputs return results rather than accept caller-selected configuration.", "workflow_call inputs provide a typed interface for nonsecret caller configuration.", "Secret passing does not supply the requested typed nonsecret input contract.", "A hardcoded target does not let callers choose it through an interface."], concept: "Reusable-workflow input contracts", hints: ["Is the value secret or ordinary configuration?", "How should a reusable workflow validate what its caller supplies?"], source: "https://docs.github.com/en/actions/sharing-automations/reusing-workflows" },
-  { id: "admin-147", domain: "Manage GitHub Actions", prompt: "A reusable workflow calls another reusable workflow that needs a deployment secret. The outer caller passed that secret only to the first workflow. What must the first called workflow do?", choices: ["Assume all secrets automatically reach every nested workflow", "Print the secret so the next workflow can read the logs", "Explicitly pass the needed secret onward through the supported call interface", "Put the secret into a public workflow output"], correct: 2, explanations: ["Secrets are passed directly to called workflows, not automatically through all nesting levels.", "Logs are not a safe secret transport.", "Each nested call must pass the secret it requires.", "Public or broadly accessible outputs are not a safe credential channel."], concept: "Secrets across nested reusable workflows", hints: ["Does a direct caller's grant automatically propagate through every later call?", "At which boundary must the next workflow receive its credentials?"], source: "https://docs.github.com/en/actions/sharing-automations/reusing-workflows" },
-  { id: "admin-148", domain: "Manage GitHub Actions", prompt: "A caller grants a reusable workflow a read-only GITHUB_TOKEN. The called workflow tries to request write access. What is the relevant permission rule?", choices: ["Called workflows always receive repository Admin", "Reusable workflows ignore the caller's token permissions", "A workflow name containing deploy grants write access", "A called workflow cannot elevate the token permissions granted by its caller"], correct: 3, explanations: ["Reusable workflow invocation does not grant repository administration.", "Caller permissions constrain the called workflow.", "Naming does not authorize token capabilities.", "Permissions can be maintained or reduced through the call chain, not elevated."], concept: "Permission ceilings in workflow reuse", hints: ["Can a delegated component grant itself authority absent from its caller?", "What should happen to privileges along a reusable call chain?"], source: "https://docs.github.com/en/actions/sharing-automations/reusing-workflows" },
-  { id: "admin-149", domain: "Manage GitHub Actions", prompt: "A reusable build workflow must return a nonsecret package version to the caller. Which supported interface should it expose?", choices: ["A workflow output mapped from the relevant job output", "Only a step-local environment variable with no output mapping", "Only a runner-local file with no transfer or output mapping", "A workflow input populated after the called workflow has completed"], correct: 0, explanations: ["Reusable workflow outputs expose selected job results to the caller.", "A local environment variable does not automatically become a caller-visible workflow output.", "Runner-local files are not automatically shared across unrelated execution environments.", "Inputs provide data to the called workflow rather than return its completed result."], concept: "Reusable-workflow outputs", hints: ["How can a caller consume a value without depending on shared disk state?", "Which declared interface exposes a completed workflow's result?"], source: "https://docs.github.com/en/actions/sharing-automations/reusing-workflows" },
-  { id: "admin-150", domain: "Manage GitHub Actions", prompt: "An administrator wants one central CI implementation to be called by many repositories, rather than copied into each repository at creation time. Which feature is the better fit?", choices: ["A repository template used only during creation", "A reusable workflow", "A pull-request description template", "A copied workflow file with no upstream reference"], correct: 1, explanations: ["Creation templates produce copies that do not inherently remain linked.", "Reusable workflows let callers reference a centrally maintained implementation.", "PR description templates do not implement CI jobs.", "Unlinked copies drift and require independent maintenance."], concept: "Reusable execution versus copied templates", hints: ["Should future runs execute a referenced implementation or an independent copy?", "What will happen when the central CI logic is fixed?"], source: "https://docs.github.com/en/actions/sharing-automations/reusing-workflows" },
-  { id: "admin-151", domain: "Manage GitHub Actions", prompt: "A platform team needs a directly callable reusable unit containing several jobs with dependencies, not merely several steps inside one job. Which abstraction best fits?", choices: ["A JavaScript action alone", "A composite action alone", "A reusable workflow", "A Docker container action alone"], correct: 2, explanations: ["A JavaScript action runs as an action step rather than defining the caller's job graph.", "Composite actions combine steps within a job rather than defining a multi-job graph.", "Reusable workflows can encapsulate multiple jobs and their dependencies.", "A container action packages step execution rather than an entire multi-job workflow."], concept: "Actions versus reusable workflows", hints: ["Is the shared unit a sequence of steps or an entire job graph?", "Which abstraction can select different runners for different jobs?"], source: "https://docs.github.com/en/actions/sharing-automations/reusing-workflows" },
-  { id: "admin-152", domain: "Manage GitHub Actions", prompt: "Most organization workflows only read repository contents. A few publishing jobs require write permissions. Which default token design is safest?", choices: ["Default every job to all write permissions", "Use an owner's PAT in every workflow", "Remove all token permissions from publishing jobs without changing their tasks", "Use restrictive defaults and grant only the permissions required by specific jobs"], correct: 3, explanations: ["Universal write authority expands the impact of compromised workflows.", "A shared owner PAT is broader and longer-lived than job-scoped authorization.", "Publishing tasks still need their narrowly required authority.", "Restrictive defaults with explicit job-level exceptions follow least privilege."], concept: "Least-privilege workflow token defaults", hints: ["Should every job inherit a publishing job's authority?", "At which scope can a necessary exception be narrowed?"], source: "https://docs.github.com/en/actions/security-for-github-actions/security-guides/automatic-token-authentication" },
-  { id: "admin-153", domain: "Manage GitHub Actions", prompt: "A workflow's GITHUB_TOKEN cannot read a second private repository. The job already has contents: read for its own repository. What is the best explanation and next design step?", choices: ["The automatic token is scoped to the workflow repository; arrange separately authorized access to the second repository", "contents: read grants read access to every private repository in the enterprise", "The second repository must be made public", "Changing the token to contents: write automatically expands it to sibling repositories"], correct: 0, explanations: ["GITHUB_TOKEN is repository-scoped; cross-repository access needs an appropriate separate grant.", "Token permissions do not automatically extend its repository boundary.", "Public exposure is unnecessary for authorized cross-repository automation.", "Increasing an operation's privilege does not expand the token's repository boundary."], concept: "GITHUB_TOKEN repository boundary", hints: ["Does a permission specify an operation, a resource boundary, or both?", "Which repository issued the automatic token for this run?"], source: "https://docs.github.com/en/actions/security-for-github-actions/security-guides/automatic-token-authentication" },
-  { id: "admin-154", domain: "Manage GitHub Actions", prompt: "Under default fork pull-request protections, a workflow triggered by pull_request from an external fork cannot read the repository's deployment secret. What is the best interpretation?", choices: ["The fork author must rename the secret to match the base repository", "Secrets are withheld from fork-triggered workflows to protect against untrusted code", "Increasing GITHUB_TOKEN to contents: write would automatically expose every stored secret", "A successful build in the fork automatically unlocks base-repository secrets"], correct: 1, explanations: ["Secret names do not override the fork execution boundary.", "Default fork protections avoid exposing repository secrets to untrusted submissions.", "Token operation permissions do not by themselves grant stored-secret access.", "Build success does not establish the trust needed to expose deployment credentials."], concept: "Forked pull-request secret isolation", hints: ["Who controls the code proposed by an external fork?", "What would happen if that code could read deployment credentials?"], source: "https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions" },
-  { id: "admin-155", domain: "Manage GitHub Actions", prompt: "A workflow uses pull_request_target with secrets and then checks out and executes code from an untrusted pull-request head. What is the central risk?", choices: ["The event guarantees that the submitted code was reviewed", "The checkout operation automatically removes all privileges", "Untrusted code may execute in a privileged context and steal credentials", "Log masking prevents the code from sending credentials over the network"], correct: 2, explanations: ["The event does not establish trust in submitted pull-request code.", "Checking out untrusted code does not inherently strip the workflow's credentials.", "Combining privileged execution with attacker-controlled code can expose tokens and secrets.", "Log masking does not prevent malicious code from exfiltrating values through other channels."], concept: "Privileged pull-request event risks", hints: ["Which code is trusted, and which context holds credentials?", "Does the event's execution context make checked-out code safe?"], source: "https://docs.github.com/en/actions/reference/security/secure-use" },
-  { id: "admin-156", domain: "Manage GitHub Actions", prompt: "An organization wants a human gate before running workflows submitted by selected outside contributors. Which policy should administrators evaluate?", choices: ["Require code-owner review on every historical commit", "Set repository artifact retention to one day", "Give all outside contributors repository Write", "Configure workflow-run approval requirements for fork pull requests"], correct: 3, explanations: ["Historical commit review is not the workflow-run approval policy.", "Artifact retention does not gate execution of untrusted workflow submissions.", "Write access expands contributor authority rather than adding an execution gate.", "Fork workflow approval policies define when a trusted person must approve execution."], concept: "External workflow-run approvals", hints: ["Is the desired gate before execution or only before merge?", "Which setting evaluates the outside contributor's workflow run?"], source: "https://docs.github.com/en/actions/managing-workflow-runs/approving-workflow-runs-from-public-forks" },
-  { id: "admin-157", domain: "Manage GitHub Actions", prompt: "A caller needs to pass only one deployment credential to a reusable workflow. Which choice best makes the credential boundary explicit?", choices: ["Declare and pass that named secret rather than unnecessarily inheriting every available secret", "Put the credential in a public workflow input default", "Pass every organization secret regardless of need", "Assume no declaration or forwarding is ever necessary"], correct: 0, explanations: ["Explicit named secret passing limits the called workflow to the required credential.", "Public defaults are not an appropriate secret store.", "Unneeded secret inheritance broadens credential exposure.", "Reusable workflows need supported secret passing rather than assumptions."], concept: "Minimal reusable-workflow secret interfaces", hints: ["How many credentials does the called workflow actually need?", "Which interface makes the granted secret set easiest to review?"], source: "https://docs.github.com/en/actions/sharing-automations/reusing-workflows" },
-  { id: "admin-158", domain: "Manage GitHub Actions", prompt: "A regulated team calls a central reusable workflow and wants a reviewable, stable revision for each release. Which referencing practice best supports that goal?", choices: ["Always use the default branch with no change control", "Reference an approved commit SHA and update it through reviewed changes", "Omit the workflow version entirely", "Use a mutable release tag and forbid all dependency review"], correct: 1, explanations: ["An unpinned branch can change without a caller repository change.", "A reviewed SHA pin gives a stable reference and an explicit update trail.", "Remote reusable workflow references require an appropriate ref.", "Mutable tags do not provide the same immutable revision guarantee."], concept: "Controlled reusable-workflow versioning", hints: ["How will the caller's reviewers see a central workflow upgrade?", "Which reference stays attached to one exact revision?"], source: "https://docs.github.com/en/actions/sharing-automations/reusing-workflows" },
-  { id: "admin-159", domain: "Manage GitHub Actions", prompt: "A team chooses standard GitHub-hosted Ubuntu runners rather than persistent self-hosted machines. Which execution property is useful for job isolation?", choices: ["Every job permanently shares the same writable home directory", "Customers must patch the underlying hosted VM operating system themselves", "Each job receives a fresh GitHub-hosted virtual machine", "All job secrets are stored in the runner image permanently"], correct: 2, explanations: ["Standard hosted Ubuntu jobs do not intentionally reuse one persistent writable home directory.", "GitHub manages the hosted runner environment rather than requiring customer OS patching.", "Standard GitHub-hosted Ubuntu runners use fresh virtual machines for jobs.", "Secrets are not intended to be permanently embedded in the hosted image."], concept: "Standard hosted-runner isolation", hints: ["Which state should remain after a job on a disposable hosted VM?", "How does that compare with a persistent machine the organization maintains?"], source: "https://docs.github.com/en/actions/concepts/runners/github-hosted-runners" },
-  { id: "admin-160", domain: "Manage GitHub Actions", prompt: "An organization installs self-hosted runners on its own virtual machines. Who is responsible for keeping the runner operating systems and additional installed tools secure and current?", choices: ["GitHub automatically patches every customer-installed tool", "The public action author manages all customer VMs", "No one, because runner registration freezes the image", "The organization operating the self-hosted machines"], correct: 3, explanations: ["GitHub does not manage the full customer-owned self-hosted environment.", "An action author does not operate the customer's runner fleet.", "Registration does not eliminate ongoing patching requirements.", "Self-hosted runner operators maintain their operating systems and installed software."], concept: "Self-hosted operational ownership", hints: ["Who controls the underlying machine?", "Does runner-agent registration transfer responsibility for the rest of the software stack?"], source: "https://docs.github.com/en/actions/concepts/runners/about-self-hosted-runners" },
-  { id: "admin-161", domain: "Manage GitHub Actions", prompt: "Two jobs run sequentially on the same persistent self-hosted runner. Why should administrators not assume the second job starts from a clean environment?", choices: ["Self-hosted runners do not inherently guarantee a fresh machine for each job", "All GitHub Actions jobs intentionally share secrets across repositories", "The second job always runs as a different operating system", "Repository branch protection automatically wipes the machine"], correct: 0, explanations: ["State can persist on a self-hosted machine unless operators enforce isolation and cleanup.", "Secrets are scoped; universal cross-repository sharing is not the model.", "Sequential jobs do not inherently change the operating system.", "Branch protection does not reset runner disks or processes."], concept: "Persistent runner state", hints: ["What happens to files and processes on a machine that is reused?", "Which isolation properties must operators provide themselves?"], source: "https://docs.github.com/en/actions/concepts/runners/about-self-hosted-runners" },
-  { id: "admin-162", domain: "Manage GitHub Actions", prompt: "A public repository accepts untrusted pull requests. Its proposed self-hosted runner can reach an internal production network. What is the strongest concern?", choices: ["A read-only GITHUB_TOKEN necessarily removes every operating-system and network capability", "Untrusted workflow code could compromise the runner and reachable internal resources", "Removing repository secrets automatically isolates all internal network services", "Required pull-request reviews automatically isolate the runner network"], correct: 1, explanations: ["GitHub token permissions do not sandbox the underlying machine or its network.", "Self-hosted execution can expose the machine and its network to untrusted code.", "Secret removal alone does not remove network reachability or machine-level credentials.", "Review requirements do not themselves sandbox a machine or its network."], concept: "Trust boundaries for self-hosted execution", hints: ["What can arbitrary code reach from this machine?", "Does reviewing a merge protect every earlier workflow execution?"], source: "https://docs.github.com/en/actions/reference/security/secure-use" },
-  { id: "admin-163", domain: "Manage GitHub Actions", prompt: "An administrator needs to authorize only selected repositories to use a sensitive self-hosted runner pool. A developer proposes using a unique runner label as the entire security boundary. What is the better design?", choices: ["Use labels only and allow all repositories into the pool", "Give every workflow the runner registration token", "Use runner-group access policies; use labels for routing among authorized runners", "Rely on the runner hostname being difficult to guess"], correct: 2, explanations: ["A routing label is not a replacement for a repository access policy.", "Registration credentials should not be distributed as job authorization.", "Groups control authorized access while labels help select matching runners.", "Obscure hostnames do not establish authorization."], concept: "Runner authorization versus scheduling labels", hints: ["Which setting grants access, and which selects a suitable machine?", "Would knowing a label be a sufficient security approval?"], source: "https://docs.github.com/en/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups" },
-  { id: "admin-164", domain: "Manage GitHub Actions", prompt: "A repository's jobs cannot use a self-hosted runner even though their labels match. The runner is in a group restricted to selected repositories. What should an administrator check?", choices: ["Whether contents: write would override runner-group restrictions", "Whether creating an environment secret would authorize the runner", "Whether disabling required status checks would authorize the runner", "Whether the repository is included in the runner group's access policy"], correct: 3, explanations: ["Repository token capabilities do not override runner-group authorization.", "Secret availability and runner-pool authorization are separate controls.", "Merge requirements do not grant runner-group access.", "Matching labels are insufficient if the group does not authorize the repository."], concept: "Diagnosing runner-group access failures", hints: ["Does matching the scheduling criteria prove the job is authorized?", "Which list defines the repositories allowed to use this pool?"], source: "https://docs.github.com/en/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups" },
-  { id: "admin-165", domain: "Manage GitHub Actions", prompt: "An enterprise shares a runner group with an organization, and that group has a restrictive enterprise access policy. Can an organization owner broaden access beyond the enterprise restriction?", choices: ["No; organization-level administration remains constrained by enterprise runner-group policy", "Yes; the organization can silently erase all inherited restrictions", "Yes; any repository contributor can override it through runs-on", "Yes; granting the job a write-capable GITHUB_TOKEN overrides the group policy"], correct: 0, explanations: ["Enterprise restrictions bound the organization's permitted runner access.", "Lower-scope settings do not erase enterprise-imposed boundaries.", "runs-on selects execution targets rather than overriding access policy.", "Repository token permissions do not override runner-group authorization."], concept: "Enterprise runner-group policy hierarchy", hints: ["Who owns the shared runner pool?", "Can a consumer organization grant more access than the provider permits?"], source: "https://docs.github.com/en/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups" },
-  { id: "admin-166", domain: "Manage GitHub Actions", prompt: "A workflow uses runs-on: [self-hosted, linux, gpu]. How are runners matched when the repository is authorized to use them?", choices: ["A runner needs only one of the listed labels", "A runner must match all listed labels", "GitHub ignores labels after self-hosted", "The labels are interpreted as a priority-ordered fallback list"], correct: 1, explanations: ["The label array is not an any-one-label match.", "All specified labels must match the eligible runner.", "Additional labels narrow the self-hosted selection.", "The array is not a sequential fallback mechanism."], concept: "Runner label intersection", hints: ["Is this an intersection of requirements or a list of alternatives?", "What hardware and platform properties must one selected runner satisfy?"], source: "https://docs.github.com/en/actions/hosting-your-own-runners/using-self-hosted-runners-in-a-workflow" },
-  { id: "admin-167", domain: "Manage GitHub Actions", prompt: "A GPU job remains queued while an online, authorized runner is idle. The runner has linux and x64 labels, but the job also requests gpu. What is the most direct diagnosis?", choices: ["The workflow needs organization billing-manager permission", "Queued jobs never use self-hosted runners", "No eligible runner matches the complete requested label set", "The repository must disable secret scanning"], correct: 2, explanations: ["Billing roles do not satisfy runner-label requirements.", "Self-hosted jobs can run when an eligible runner is available.", "The idle runner lacks the requested gpu label and is not a full match.", "Secret scanning is unrelated to runner scheduling labels."], concept: "Diagnosing unmatched runner labels", hints: ["Does online status alone make a runner suitable?", "Which requested property is missing from the idle machine?"], source: "https://docs.github.com/en/actions/hosting-your-own-runners/using-self-hosted-runners-in-a-workflow" },
-  { id: "admin-168", domain: "Manage GitHub Actions", prompt: "A previously working self-hosted runner appears offline after a firewall change. Which evidence should the administrator inspect first?", choices: ["The repository's code-owner approvals", "The workflow's application test assertion failures", "The artifact-retention policy", "Runner service logs and outbound connectivity to required GitHub endpoints"], correct: 3, explanations: ["Code-owner approvals do not diagnose runner-service connectivity.", "Test assertions run inside jobs and do not first explain an offline runner service.", "Stored artifact retention does not determine service connectivity.", "Service logs and required outbound connections directly test the suspected network failure."], concept: "Self-hosted connectivity troubleshooting", hints: ["Which component maintains the connection to GitHub?", "What changed immediately before the runner went offline?"], source: "https://docs.github.com/en/actions/how-tos/manage-runners/self-hosted-runners/monitor-and-troubleshoot" },
-  { id: "admin-169", domain: "Manage GitHub Actions", prompt: "A team is designing an autoscaled self-hosted runner fleet and wants each machine to accept only one job before being replaced. Which runner lifecycle fits?", choices: ["Ephemeral self-hosted runners with external log preservation", "A single persistent runner with no cleanup", "A shared interactive workstation used by all developers", "A runner that registers once and never updates"], correct: 0, explanations: ["Ephemeral runners process one job; external logs preserve evidence after disposal.", "A persistent uncleaned runner does not provide one-job lifecycle isolation.", "Shared workstations mix interactive activity with automation and do not meet the lifecycle goal.", "Permanent registration without updates does not provide disposable execution."], concept: "Ephemeral runner lifecycle design", hints: ["What should happen to the runner after its assigned job?", "Where will diagnostics survive if the machine is destroyed?"], source: "https://docs.github.com/en/actions/hosting-your-own-runners/autoscaling-with-self-hosted-runners" },
-  { id: "admin-170", domain: "Manage GitHub Actions", prompt: "A platform team already operates Kubernetes and wants GitHub's Kubernetes-based solution for orchestrating self-hosted runner scale sets. Which component should it evaluate?", choices: ["Dependabot dependency groups", "Actions Runner Controller", "Repository ruleset evaluation", "GitHub Pages"], correct: 1, explanations: ["Dependency groups organize updates, not runner pods.", "Actions Runner Controller orchestrates self-hosted runner scale sets on Kubernetes.", "Ruleset evaluation observes repository rules rather than creating runner capacity.", "Pages hosts static sites rather than administering runner fleets."], concept: "Kubernetes runner orchestration", hints: ["Which solution manages the lifecycle of runner workloads on Kubernetes?", "Is the requirement CI capacity or repository governance?"], source: "https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners-with-actions-runner-controller/about-actions-runner-controller" },
-  { id: "admin-171", domain: "Manage GitHub Actions", prompt: "A build must reach a private internal package server. The organization is evaluating self-hosted runners on its network. Which additional administration responsibility is essential?", choices: ["Assume GitHub automatically configures every internal firewall", "Expose the package server publicly without authentication", "Control runner network access, machine isolation, and credentials for the private resource", "Grant every external pull request access to production network routes"], correct: 2, explanations: ["Self-hosted network configuration remains the operator's responsibility.", "Public unauthenticated access is not required for private connectivity.", "Private-network placement needs explicit network and credential boundaries.", "Untrusted submissions should not inherit unnecessary production-network reachability."], concept: "Private-resource access from self-hosted runners", hints: ["What authority comes from placing code execution inside the private network?", "Which boundaries must the runner operator maintain?"], source: "https://docs.github.com/en/actions/concepts/runners/about-self-hosted-runners" },
-  { id: "admin-172", domain: "Manage GitHub Actions", prompt: "An eligible enterprise wants GitHub-managed runner infrastructure with private access through its Azure VNET. Which documented option should it evaluate?", choices: ["Assume any standard hosted runner automatically joins the VNET", "Use GitHub Pages as a private network tunnel", "Disable the VNET firewall and publish every service", "Azure private networking for supported GitHub-hosted larger runners"], correct: 3, explanations: ["Standard runners are not automatically attached to the enterprise's Azure network.", "Pages does not provide this runner-networking integration.", "Publishing internal services discards the private-network requirement.", "Supported larger runners can use the enterprise's Azure private-network configuration."], concept: "Azure private networking for hosted runners", hints: ["Does using managed compute rule out customer-controlled network policy?", "Which runner category supports this documented integration?"], source: "https://docs.github.com/en/enterprise-cloud@latest/admin/configuring-settings/configuring-private-networking-for-hosted-compute-products/about-azure-private-networking-for-github-hosted-runners-in-your-enterprise" },
-  { id: "admin-173", domain: "Manage GitHub Actions", prompt: "After moving supported larger runners into Azure private networking, an organization blocks all outbound traffic and jobs stop communicating with GitHub. What should it do?", choices: ["Review required connectivity and allow documented outbound destinations while retaining deliberate network restrictions", "Assume private networking eliminates all need to communicate with GitHub", "Change only inbound rules while continuing to deny every required outbound connection", "Increase workflow token permissions without changing the network rules"], correct: 0, explanations: ["Private networking still requires supported service connectivity under appropriate network policy.", "Runner orchestration and supported Actions operations still depend on service connections.", "Inbound-only changes do not restore the blocked required egress.", "Application permissions cannot repair denied network connectivity."], concept: "Network policy without breaking runner control traffic", hints: ["Which connections are required for the runner to receive and report work?", "Can deny-by-default coexist with explicit supported egress?"], source: "https://docs.github.com/en/enterprise-cloud@latest/admin/configuring-settings/configuring-private-networking-for-hosted-compute-products/about-azure-private-networking-for-github-hosted-runners-in-your-enterprise" },
-  { id: "admin-174", domain: "Manage GitHub Actions", prompt: "A private deployment endpoint requires a small stable source-IP allow list. Standard hosted-runner ranges are too broad for the organization. Which design should administrators evaluate?", choices: ["Allow one observed standard-runner address and assume every later job reuses it", "Supported larger runners with static IPs or a controlled self-hosted network egress", "Set a concurrency group to reserve a standard hosted-runner public IP", "Set contents: write to allocate a fixed outbound address"], correct: 1, explanations: ["An address observed on one standard hosted run is not a stable future allocation.", "These options can provide controlled stable egress appropriate to the endpoint's policy.", "Concurrency controls scheduling rather than public-IP allocation.", "Token operation permissions do not allocate networking addresses."], concept: "Stable runner egress planning", hints: ["Does the endpoint require authorization by identity, network origin, or both?", "Which runner choices give operators control over egress addresses?"], source: "https://docs.github.com/en/actions/reference/runners/github-hosted-runners" },
-  { id: "admin-175", domain: "Manage GitHub Actions", prompt: "A self-hosted runner sits behind a corporate HTTP proxy and cannot register. Which configuration area should the administrator inspect?", choices: ["Pull-request approval count only", "Dependency update schedules only", "The runner's supported proxy configuration and required endpoint reachability", "Commit-signature verification only"], correct: 2, explanations: ["Review counts do not establish runner-service internet connectivity.", "Dependency schedules do not configure the runner's proxy.", "Runner proxy settings and endpoint access directly affect registration and communication.", "Commit verification does not route network requests through a proxy."], concept: "Runner proxy administration", hints: ["Which process needs to use the organization's egress path?", "What network configuration does the runner service actually inherit?"], source: "https://docs.github.com/en/actions/hosting-your-own-runners/using-a-proxy-server-with-self-hosted-runners" },
-  { id: "admin-176", domain: "Manage GitHub Actions", prompt: "Workflow turnaround increased, but job execution durations are unchanged. Most added time is spent queued before a runner starts. What should administrators investigate first?", choices: ["Application compiler optimization only", "Replacing every action with a longer shell script", "Increasing artifact-retention days", "Runner availability, concurrency limits, and matching group or label capacity"], correct: 3, explanations: ["Unchanged execution duration does not point first to compilation speed.", "Longer scripts do not address waiting for a runner.", "Artifact retention does not create runner capacity.", "Queue growth points to scheduling eligibility or available execution capacity."], concept: "Queue-time versus run-time diagnosis", hints: ["Where in the workflow lifecycle is the added delay?", "Would faster code help a job that has not started?"], source: "https://docs.github.com/en/actions/hosting-your-own-runners/using-self-hosted-runners-in-a-workflow" },
-  { id: "admin-177", domain: "Manage GitHub Actions", prompt: "An organization intentionally disables automatic runner-agent updates in its managed self-hosted images. What obligation remains?", choices: ["Maintain a process to update the runner software within GitHub's documented support requirements", "Never update the image again", "Assume OS updates automatically replace the GitHub runner application", "Require users to bypass repository branch rules"], correct: 0, explanations: ["Disabling automatic updates transfers update scheduling to the runner operator.", "Outdated runner software can stop receiving jobs under GitHub's update requirements.", "Operating-system updates do not necessarily update the separately installed runner application.", "Branch-rule bypass does not update runner software."], concept: "Controlled runner-agent updates", hints: ["Who now owns the update cadence?", "What happens if a managed image stays behind the required runner version?"], source: "https://docs.github.com/en/actions/hosting-your-own-runners/autoscaling-with-self-hosted-runners" },
-  { id: "admin-178", domain: "Manage GitHub Actions", prompt: "A production environment requires reviewer approval and stores a deployment secret. When should a referencing job gain access to that environment secret?", choices: ["As soon as the workflow run is queued, before environment review", "After the environment's required approval and protection conditions are satisfied", "Whenever any earlier build job succeeds, even without environment approval", "As soon as a reviewer approves the pull request, regardless of environment review"], correct: 1, explanations: ["Queueing does not satisfy the environment's required reviewer gate.", "Environment secrets are gated by the environment's protection requirements.", "Build success does not replace the environment approval requirement.", "Pull-request review and required environment approval are separate controls."], concept: "Environment-gated deployment secrets", hints: ["At what boundary should production credentials become available?", "What must happen before a protected deployment job proceeds?"], source: "https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment" },
-  { id: "admin-179", domain: "Manage GitHub Actions", prompt: "An organization secret should be usable by only three deployment repositories. Which configuration best fits?", choices: ["Give the secret to all repositories and rely on its obscure name", "Commit the value to a shared repository", "Set the organization secret's repository access policy to the selected repositories", "Expose the value as a public organization variable"], correct: 2, explanations: ["An obscure name does not enforce a repository boundary.", "Committed credentials are distributed with repository history.", "Organization secret access policies can limit use to selected repositories.", "Variables are not a replacement for confidential secret storage."], concept: "Selected-repository organization secrets", hints: ["Which repositories have a legitimate need for this credential?", "What setting enforces that list rather than merely documenting it?"], source: "https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions" },
-  { id: "admin-180", domain: "Manage GitHub Actions", prompt: "A job references an environment. The same secret name is configured at organization, repository, and environment scopes. Which value takes precedence for the job?", choices: ["The organization value because it is highest in the hierarchy", "The longest string value", "All three values concatenated", "The environment value"], correct: 3, explanations: ["For duplicate secret names, the more specific scope takes precedence.", "Secret precedence is not based on value length.", "Duplicate secret values are not concatenated.", "The environment-level secret is the most specific applicable value."], concept: "Secret-scope precedence", hints: ["Is this hierarchy about broad policy enforcement or value specificity?", "Which configured scope is closest to the deployment job?"], source: "https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions" },
-  { id: "admin-181", domain: "Manage GitHub Actions", prompt: "A repository secret named SERVICE_KEY exists, but a shell step reading $SERVICE_KEY gets an empty value. The workflow never maps the secret to an environment variable. What should be changed?", choices: ["Explicitly map the secrets context value to the step's environment variable", "Assume every secret automatically becomes a shell variable", "Reference vars.SERVICE_KEY while leaving the value stored only as a secret", "Add contents: write and assume that exports the secret into the process"], correct: 0, explanations: ["A step-level env mapping supplies the stored secret to the shell under the intended name.", "Creating a secret does not automatically export every secret to every shell.", "The vars context reads configuration variables, not the separate secret store.", "Repository token permissions do not automatically populate shell environment variables."], concept: "Supplying secrets to workflow steps", hints: ["Where does a shell process obtain its environment variables?", "How is the stored secret referenced by the workflow definition?"], source: "https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions" },
-  { id: "admin-182", domain: "Manage GitHub Actions", prompt: "A workflow transforms a secret and prints the transformed result. A developer assumes GitHub's log masking guarantees it cannot leak. What is the right assessment?", choices: ["Every possible transformed secret is always automatically recognized", "Automatic masking is not a complete guarantee; avoid logging secrets and protect derived values explicitly", "Masking encrypts all artifacts for every repository visitor", "Base64 encoding automatically makes output safe to publish"], correct: 1, explanations: ["Masking cannot guarantee recognition of every transformed sensitive value.", "Credential-safe workflow design must avoid disclosure rather than rely exclusively on masking.", "Log masking is not universal artifact encryption.", "Base64 is reversible and does not make credentials public-safe."], concept: "Limits of automatic log redaction", hints: ["Would the transformed text still match the originally registered secret?", "Can a reversible representation retain the same sensitivity?"], source: "https://docs.github.com/en/actions/reference/security/secure-use" },
-  { id: "admin-183", domain: "Manage GitHub Actions", prompt: "An enterprise replaces a long-lived cloud deployment key with OIDC. Which cloud-side trust configuration is essential?", choices: ["Trust any token from any repository without restrictions", "Use only the workflow's display name as the security boundary", "Restrict accepted OIDC claims to the intended repository and deployment context", "Publish the former cloud key so OIDC can discover it"], correct: 2, explanations: ["Unrestricted trust could let unrelated workflows obtain cloud authority.", "Display names are not sufficient claim-based authorization boundaries.", "Cloud trust must validate the issuer, audience, and appropriate subject or other supported claims.", "OIDC does not require publishing a long-lived credential."], concept: "Scoped cloud trust for workflow OIDC", hints: ["Which workflow identities should the cloud provider actually trust?", "What evidence distinguishes an authorized deployment from an unrelated workflow?"], source: "https://docs.github.com/en/actions/security-for-github-actions/security-hardening-your-deployments/about-security-hardening-with-openid-connect" },
-  { id: "admin-184", domain: "Manage GitHub Actions", prompt: "A workflow sets id-token: write and an engineer claims this alone grants administrator access to the cloud subscription. Which correction is accurate?", choices: ["The setting grants unrestricted GitHub repository Write", "The setting installs a cloud administrator automatically", "The setting bypasses the cloud provider's trust policy", "It permits requesting an OIDC token; cloud trust and role assignments determine cloud authority"], correct: 3, explanations: ["The id-token permission does not grant repository-content write permissions.", "Cloud administrator roles are not automatically installed by workflow permissions.", "Cloud-side validation and authorization still apply.", "OIDC token issuance and cloud authorization are separate steps."], concept: "OIDC issuance versus cloud authorization", hints: ["Is obtaining identity evidence the same as granting resource permissions?", "Which system decides what the exchanged cloud credential may do?"], source: "https://docs.github.com/en/actions/security-for-github-actions/security-hardening-your-deployments/about-security-hardening-with-openid-connect" },
-  { id: "admin-185", domain: "Manage GitHub Actions", prompt: "An organization keeps deployment secrets in a third-party vault and supports federated authentication. Which integration best avoids duplicating long-lived vault credentials in every repository?", choices: ["Authenticate the workflow to the vault with scoped OIDC trust and retrieve only authorized runtime secrets", "Copy the vault root token into every workflow file", "Disable vault access controls for GitHub-hosted runners", "Use the repository name as the only vault password"], correct: 0, explanations: ["Federation can provide short-lived access subject to the vault's scoped trust and policies.", "A root token in source grants excessive authority and exposes it.", "Hosted execution does not justify removing vault authorization.", "A public repository name is not an authentication secret."], concept: "Federated third-party vault integration", hints: ["Must the workflow hold a permanent bootstrap credential?", "How can the vault authorize one workflow identity and a limited secret path?"], source: "https://docs.github.com/en/actions/security-for-github-actions/security-hardening-your-deployments/about-security-hardening-with-openid-connect" },
-  { id: "admin-186", domain: "Manage GitHub Actions", prompt: "An organization changes the value stored in a repository secret after a suspected cloud-key leak. Why might the incident still be uncontained?", choices: ["Repository secrets cannot be updated", "Updating GitHub's stored value does not revoke the old credential at the cloud provider", "Changing a secret always disables every external credential automatically", "The secret name must be shortened before rotation works"], correct: 1, explanations: ["Authorized administrators can update stored secrets.", "The credential issuer must revoke or rotate the exposed key independently.", "GitHub secret replacement does not universally revoke third-party keys.", "Secret-name length does not determine external credential validity."], concept: "Secret replacement versus issuer revocation", hints: ["Where is the exposed credential actually validated?", "Can someone still use an old copied value outside GitHub?"], source: "https://docs.github.com/en/actions/reference/security/secure-use" },
-  { id: "admin-187", domain: "Manage GitHub Actions", prompt: "A caller passes a deployment credential as an ordinary reusable-workflow input because both inputs and secrets accept values. Which design is better?", choices: ["Use a public input default containing the credential", "Put the credential in the reusable workflow's filename", "Declare and pass it through the reusable workflow's secret interface", "Return the credential as a nonsecret workflow output"], correct: 2, explanations: ["Public defaults expose the credential.", "Filenames are visible metadata rather than confidential credential transport.", "The secret interface expresses sensitive data and uses the intended handling.", "Nonsecret outputs unnecessarily expose credential material."], concept: "Secrets versus ordinary workflow inputs", hints: ["Does the value have confidentiality requirements?", "Which part of the reusable interface communicates and preserves that distinction?"], source: "https://docs.github.com/en/actions/sharing-automations/reusing-workflows" },
-  { id: "admin-188", domain: "Manage GitHub Actions", prompt: "A workflow triggered by a Dependabot pull request needs an approved registry credential, but its ordinary Actions secret is unavailable under the restricted execution context. What should administrators evaluate?", choices: ["Grant all bot workflows unrestricted enterprise ownership", "Commit the registry password so all contexts can read it", "Disable dependency updates permanently", "Configure an appropriately scoped Dependabot secret and retain the workflow's trust restrictions"], correct: 3, explanations: ["Enterprise ownership is unrelated and far too broad.", "Committing credentials defeats secret isolation.", "The missing credential can be addressed without abandoning dependency maintenance.", "Dependabot-triggered workflows have special secret handling that administrators should configure explicitly."], concept: "Dependabot-triggered workflow secret context", hints: ["Which actor triggered the workflow?", "Does that execution context use the same available secrets as a trusted push?"], source: "https://docs.github.com/en/code-security/dependabot/working-with-dependabot/troubleshooting-dependabot-on-github-actions" },
-  { id: "admin-189", domain: "Manage GitHub Actions", prompt: "A workflow inserts an untrusted issue title directly into an inline shell script using an expression. What change best reduces script-injection risk?", choices: ["Pass the untrusted value through an environment variable and quote it appropriately, or use a suitable action input", "Assume issue titles cannot contain shell metacharacters", "Grant the job more token permissions", "Hide the script in a longer YAML file without changing interpolation"], correct: 0, explanations: ["Separating data from generated shell source reduces injection risk when handled safely.", "User-controlled issue text can contain shell-significant characters.", "More permissions increase impact instead of preventing injection.", "File length does not change the unsafe interpolation behavior."], concept: "Workflow script-injection prevention", hints: ["Is user-controlled text becoming executable source code?", "How can the shell receive it as data rather than script syntax?"], source: "https://docs.github.com/en/actions/reference/security/secure-use" },
-  { id: "admin-190", domain: "Manage GitHub Actions", prompt: "A deployment command accepts a credential either as a command-line argument or via standard input. Why should the workflow prefer an appropriate non-argument secret channel?", choices: ["Command-line arguments automatically revoke credentials", "Arguments can be exposed through process inspection or logging", "Standard input always grants repository Admin", "GitHub requires all secrets to be committed before use"], correct: 1, explanations: ["Argument placement does not revoke a credential.", "Command-line arguments may be visible to other processes or included in logs.", "Input delivery does not determine repository authorization.", "Secrets should not be committed to source for workflow execution."], concept: "Avoiding credential exposure in process arguments", hints: ["Who might inspect the process invocation?", "Can a command receive confidential data without putting it in its visible argument list?"], source: "https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions" },
-  { id: "admin-191", domain: "Manage GitHub Actions", prompt: "An administrator pins a third-party action to a full commit SHA and says no code review of that revision is necessary. What is the best correction?", choices: ["Pinning guarantees the action contains no malicious behavior", "A mutable tag is always safer than a SHA", "Pinning prevents reference drift but does not prove the pinned code is trustworthy", "SHA pinning automatically restricts every outbound network call"], correct: 2, explanations: ["An immutable revision can still contain unsafe or malicious code.", "Mutable tags provide weaker source-revision stability.", "Integrity of the reference and trust in the referenced implementation are distinct.", "Pinning does not implement network egress restrictions."], concept: "Integrity versus trust in actions", hints: ["What exactly does an immutable reference guarantee?", "Could the chosen revision already contain unwanted behavior?"], source: "https://docs.github.com/en/actions/reference/security/secure-use" },
-  { id: "admin-192", domain: "Manage GitHub Actions", prompt: "Only the publish job needs packages: write; test jobs only need contents: read. How should token permissions be configured?", choices: ["Grant packages: write at workflow level to every job for convenience", "Use one shared enterprise-owner PAT for all jobs", "Remove all permissions and expect publication to work", "Grant minimal workflow defaults and packages: write only to the publish job"], correct: 3, explanations: ["Workflow-wide write authority unnecessarily reaches test jobs.", "A shared owner PAT is broader than the job-specific need.", "Publication requires the appropriate supported package permissions.", "Job-specific grants confine elevated capability to the operation that needs it."], concept: "Job-specific token permission elevation", hints: ["Which job actually performs the write?", "How can a compromised test job be denied publishing authority?"], source: "https://docs.github.com/en/actions/security-for-github-actions/security-guides/automatic-token-authentication" },
-  { id: "admin-193", domain: "Manage GitHub Actions", prompt: "A branch receives frequent pushes, and stale CI runs consume runner capacity after newer commits arrive. Which workflow control can cancel obsolete runs in the same intended group?", choices: ["A concurrency group with cancel-in-progress configured appropriately", "A longer artifact-retention period", "More organization owners", "A secret with the same name as the branch"], correct: 0, explanations: ["Concurrency grouping can cancel in-progress runs superseded within the configured group.", "Artifact retention affects storage, not cancellation of active stale runs.", "Ownership does not manage workflow concurrency.", "Secret naming does not control workflow scheduling."], concept: "Canceling superseded workflow runs", hints: ["Which runs represent work superseded by a newer event?", "How can the workflow identify the runs that should share one scheduling boundary?"], source: "https://docs.github.com/en/actions/using-jobs/using-concurrency" },
-  { id: "admin-194", domain: "Manage GitHub Actions", prompt: "An integration test occasionally hangs indefinitely on a self-hosted runner and blocks later work. Which workflow setting most directly bounds the job's allowed execution time?", choices: ["retention-days on an uploaded artifact", "timeout-minutes on the job", "The repository's base permissions", "The number of issue assignees"], correct: 1, explanations: ["Artifact retention limits stored artifact lifetime, not job runtime.", "A job timeout stops execution after its configured runtime bound.", "Base repository permissions do not set execution duration.", "Issue assignment does not control runner timeouts."], concept: "Bounding workflow execution", hints: ["Is the problem waiting to start or continuing too long after starting?", "Which setting measures the job's execution duration?"], source: "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax" },
-  { id: "admin-195", domain: "Manage GitHub Actions", prompt: "A team wants to cache a build directory that also contains a deployment token. What should the administrator require?", choices: ["Cache the directory unchanged because cache keys are passwords", "Use the token value itself as the cache key", "Exclude credentials and sensitive files from cached paths", "Make the cache larger to improve secret isolation"], correct: 2, explanations: ["Cache keys do not create a secure credential-storage boundary.", "Putting a token in a key exposes sensitive data in metadata.", "Workflow caches should not store secrets or other sensitive material.", "Cache size does not determine confidentiality or access isolation."], concept: "Credential-safe workflow caching", hints: ["Who may be able to restore a workflow cache?", "Is a performance optimization an appropriate secret store?"], source: "https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows" },
-  { id: "admin-196", domain: "Monitor and optimize GitHub usage", prompt: "An enterprise must determine who changed an organization policy and when. Which evidence source is the best starting point?", choices: ["Only the current organization owner list", "The current policy value alone", "Only repository Git commit history", "The enterprise audit log"], correct: 3, explanations: ["The people who could act do not establish who actually made this change.", "Current state does not identify the actor or time of a past change.", "Git history does not generally record organization policy administration.", "Audit events record supported administrative actions with actor and time information."], concept: "Attributing administrative changes", hints: ["Does present configuration explain its change history?", "Which record is designed to connect an action to an actor and timestamp?"], source: "https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/security-and-compliance/audit-log-for-an-enterprise" },
-  { id: "admin-197", domain: "Monitor and optimize GitHub usage", prompt: "An investigator knows the actor, repository, and approximate date of a suspicious administrative action. How should they make the enterprise audit search more useful?", choices: ["Combine relevant actor, repository, and created-date filters, adding an action filter if known", "Search only the actor while deliberately ignoring the known repository and dates", "Search local commit messages instead of administrative events", "Review only the current team-membership list"], correct: 0, explanations: ["Scoped audit filters narrow the evidence without assuming an unknown action type.", "Ignoring available scope and time information adds unnecessary investigation noise.", "Commit messages do not substitute for administrative audit records.", "Current team state does not identify the requested historical action."], concept: "Focused audit-log searches", hints: ["Which known facts can reduce unrelated results?", "How does a time-bounded search improve incident investigation?"], source: "https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/searching-the-audit-log-for-your-enterprise" },
-  { id: "admin-198", domain: "Monitor and optimize GitHub usage", prompt: "A GitHub Enterprise Cloud investigator needs Git events from two weeks ago, but no external archive was configured. Which retention caveat matters?", choices: ["Git events have the same multi-year retention as an external archive", "Native enterprise audit-log Git events have a shorter seven-day retention window", "Git events are stored indefinitely in repository issue comments", "Changing the audit view's page size restores expired events"], correct: 1, explanations: ["Native Git-event retention is not equivalent to an independently configured long-term archive.", "Git events are retained for seven days in the enterprise audit log.", "Issue comments do not automatically preserve these audit events.", "Display settings cannot restore events beyond the retention window."], concept: "Git-event retention limits", hints: ["Are Git events retained for the same duration as other audit events?", "Was an external system preserving this evidence before it expired?"], source: "https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/security-and-compliance/audit-log-for-an-enterprise" },
-  { id: "admin-199", domain: "Monitor and optimize GitHub usage", prompt: "An enterprise streams audit logs to a compliance system. A new dashboard shows no events for an hour, even though users are active. What should administrators investigate?", choices: ["Assume the enterprise had no activity without checking", "Delete the destination to reset compliance history", "The streaming configuration, destination ingestion health, and recent delivery evidence", "The names of local Git branches only"], correct: 2, explanations: ["An empty destination can reflect an ingestion failure rather than no source activity.", "Deletion destroys evidence and does not diagnose the pipeline.", "Both source delivery and destination ingestion must work for continuous evidence.", "Local branch names do not establish streaming pipeline health."], concept: "Monitoring audit-stream completeness", hints: ["Could the missing data reflect the reporting pipeline rather than user behavior?", "Which stages connect the source events to the dashboard?"], source: "https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/streaming-the-audit-log-for-your-enterprise" },
-  { id: "admin-200", domain: "Monitor and optimize GitHub usage", prompt: "A license report identifies users with little recent activity. What is the most responsible optimization step before removing access?", choices: ["Remove all low-activity users immediately, including service owners", "Assume every inactive-looking user has left the company", "Use only the number of recent code pushes to decide who retains a license", "Validate business need, identity status, automation dependencies, and the offboarding process"], correct: 3, explanations: ["Unreviewed removal can interrupt legitimate work and automation.", "Recent activity alone does not prove employment or access need.", "A push-only metric misses reviewers, auditors, and other legitimate low-frequency users.", "Contextual review distinguishes reclaimable seats from necessary low-frequency access."], concept: "Safe license-reclamation decisions", hints: ["What legitimate roles may produce little daily activity?", "Which dependencies could break if this identity loses access?"], source: "https://docs.github.com/en/enterprise-cloud@latest/billing/managing-the-plan-for-your-github-account/about-per-user-pricing" },
-  { id: "admin-201", domain: "Monitor and optimize GitHub usage", prompt: "An enterprise's total GitHub spending rose while its user count stayed flat. Which breakdown is most useful before recommending seat reductions?", choices: ["Metered usage by product, SKU, time period, and responsible scope", "Only the total number of organization owners", "Only the current total number of licensed users", "Only the number of successful workflow runs, ignoring their duration and runner type"], correct: 0, explanations: ["Product-level consumption can explain cost changes unrelated to seat counts.", "Owner counts alone do not explain metered-product charges.", "An unchanged seat count does not explain growth in other consumption categories.", "Run counts omit important compute and storage cost dimensions."], concept: "Separating seat costs from metered growth", hints: ["Could the cost change come from workload consumption rather than people?", "Which report dimensions identify the actual charging source?"], source: "https://docs.github.com/en/billing/tutorials/automate-usage-reporting" },
-  { id: "admin-202", domain: "Monitor and optimize GitHub usage", prompt: "An administrator creates a budget and assumes it always stops all GitHub product usage at the threshold. Which statement is accurate?", choices: ["Every budget universally blocks every product at exactly the same threshold", "Alerts and stop-usage behavior depend on the product and budget configuration", "Budgets automatically delete repositories to reduce costs", "A budget substitutes for repository authorization"], correct: 1, explanations: ["GitHub documents product-specific differences rather than a universal hard stop.", "Administrators must check the supported control and its configured behavior.", "Budgets do not work by indiscriminately deleting repositories.", "Spending controls do not replace access permissions."], concept: "Budget alerts versus usage enforcement", hints: ["Is notification the same thing as enforcement?", "Which product-specific behavior must be verified?"], source: "https://docs.github.com/en/billing/concepts/budgets-and-alerts" },
-  { id: "admin-203", domain: "Monitor and optimize GitHub usage", prompt: "An enterprise needs departmental attribution for supported metered GitHub spending. Which billing construct should it evaluate rather than maintaining only one undifferentiated enterprise total?", choices: ["A branch naming rule", "A security advisory draft", "Cost centers", "A CODEOWNERS entry alone"], correct: 2, explanations: ["Branch names do not establish a billing attribution structure.", "Advisory drafts manage vulnerabilities rather than departmental costs.", "Cost centers organize supported billing attribution for enterprise resources.", "Code ownership does not itself assign metered spending to billing cost centers."], concept: "Departmental cost attribution", hints: ["What structure connects consumed resources to a financial owner?", "Is code-review responsibility automatically equivalent to billing attribution?"], source: "https://docs.github.com/en/billing/concepts/cost-centers" },
-  { id: "admin-204", domain: "Monitor and optimize GitHub usage", prompt: "A public repository moves builds from standard GitHub-hosted runners to larger runners. The team assumes public visibility makes all runner execution free. What should the administrator clarify?", choices: ["Public visibility guarantees every runner type is free", "Larger runners consume only repository seat licenses", "Larger runners always draw from the same free allowance as standard runners", "The public-repository free allowance for standard runners does not make larger runners universally free"], correct: 3, explanations: ["Public standard-runner treatment does not apply universally to larger runners.", "Larger-runner usage has its own billing rather than simply consuming enterprise seats.", "Larger runners have different billing treatment from standard included-runner allowances.", "Runner type and documented billing rules must be assessed separately."], concept: "Runner-class billing differences", hints: ["Does a billing exception apply to every compute category?", "Which runner category did the team change?"], source: "https://docs.github.com/en/billing/managing-billing-for-your-products/managing-billing-for-github-actions/about-billing-for-github-actions" },
-  { id: "admin-205", domain: "Monitor and optimize GitHub usage", prompt: "A team stops running workflows but continues retaining large artifacts. Why might Actions-related storage usage remain relevant?", choices: ["Stored artifacts persist until expiration or deletion under the applicable retention policy", "Stopping workflows automatically deletes all prior artifacts immediately", "Artifacts become free simply because their workflow is inactive", "Only running jobs can occupy stored artifact space"], correct: 0, explanations: ["Execution stopping does not itself remove already retained artifact data.", "Prior artifacts are not automatically deleted solely because no new workflow runs occur.", "Inactivity does not universally remove storage billing implications.", "Stored artifacts occupy space independently of current job execution."], concept: "Persistent artifact storage consumption", hints: ["Is compute lifetime the same as stored-data lifetime?", "What event actually ends retention of the artifacts?"], source: "https://docs.github.com/en/billing/managing-billing-for-your-products/managing-billing-for-github-actions/about-billing-for-github-actions" },
-  { id: "admin-206", domain: "Monitor and optimize GitHub usage", prompt: "An organization wants lower artifact storage costs, but release evidence must be retained for an established compliance period. Which optimization is appropriate?", choices: ["Delete all artifacts regardless of purpose", "Apply purpose-specific retention and remove unnecessary artifacts without violating evidence obligations", "Increase every artifact's retention to the maximum", "Store production credentials inside artifacts to combine storage categories"], correct: 1, explanations: ["Blanket deletion can violate release-evidence requirements.", "Different artifact classes can have different justified retention and cleanup policies.", "Maximum retention increases storage when shorter periods would suffice.", "Credentials do not belong in artifacts and do not solve retention costs."], concept: "Evidence-aware artifact retention", hints: ["Which stored outputs are compliance evidence versus disposable build products?", "How can retention reflect those different purposes?"], source: "https://docs.github.com/en/organizations/managing-organization-settings/configuring-the-retention-period-for-github-actions-artifacts-and-logs-in-your-organization" },
-  { id: "admin-207", domain: "Monitor and optimize GitHub usage", prompt: "Builds repeatedly download identical dependencies, and cache-hit rates are low because every run uses a completely unique key with no useful restore strategy. What should administrators recommend?", choices: ["Disable all package verification", "Grant the workflow more repository administration permissions", "Review cache keys and restore strategy against dependency inputs, then measure the effect", "Store all deployment secrets in the cache"], correct: 2, explanations: ["Removing verification weakens supply-chain security rather than improving cache design.", "Repository administration does not improve cache key reuse.", "Dependency-aware keys can improve reuse while preserving valid invalidation.", "Caches must not be used as secret stores."], concept: "Measuring useful dependency-cache reuse", hints: ["Which changes should invalidate the dependency cache?", "Can repeated identical dependency inputs produce a reusable key?"], source: "https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows" },
-  { id: "admin-208", domain: "Monitor and optimize GitHub usage", prompt: "Usage reports show many completed CI runs testing commits already superseded by newer pushes on the same branch. Which optimization best targets that waste?", choices: ["Remove every required test", "Increase the artifact-retention window", "Make the repository public to avoid reviewing the workflow", "Use carefully scoped concurrency cancellation for obsolete runs"], correct: 3, explanations: ["Eliminating tests sacrifices validation instead of removing redundant work.", "Artifact retention does not prevent redundant execution.", "Visibility changes are not an appropriate substitute for workflow optimization.", "Canceling superseded runs can reclaim capacity without discarding current validation."], concept: "Reducing redundant CI consumption", hints: ["Which runs no longer provide useful feedback?", "Can the latest required validation continue while obsolete work is canceled?"], source: "https://docs.github.com/en/actions/using-jobs/using-concurrency" },
-  { id: "admin-209", domain: "Monitor and optimize GitHub usage", prompt: "A platform-independent lint job runs on a more expensive operating-system runner than necessary. How should an administrator evaluate a cost change?", choices: ["Validate it on an appropriate lower-cost runner and compare actual runtime and billed usage", "Assume all operating systems have identical rates forever", "Delete the lint check without evaluating alternatives", "Choose only the lowest advertised per-minute rate without checking compatibility or duration"], correct: 0, explanations: ["Compatibility, duration, and current pricing together determine the useful cost outcome.", "Hosted runner rates and billing treatment can vary by platform.", "Removing required quality validation is not necessary to evaluate compute efficiency.", "A lower unit rate does not guarantee a lower total cost or a correct execution environment."], concept: "Operating-system-aware CI cost optimization", hints: ["Does this workload actually require the current operating system?", "Why should both execution time and current pricing be compared?"], source: "https://docs.github.com/en/billing/managing-billing-for-your-products/managing-billing-for-github-actions/about-billing-for-github-actions" },
-  { id: "admin-210", domain: "Monitor and optimize GitHub usage", prompt: "A team proposes moving every workflow to the largest runner because each job might finish faster. Which measurement best tests whether that is a cost optimization?", choices: ["Only the number of CPUs advertised", "End-to-end completion time and total billed consumption for representative workloads", "Only the workflow file's line count", "Only the number of repository contributors"], correct: 1, explanations: ["More CPUs do not guarantee proportional speedup or lower cost.", "Representative time and consumption measurements reveal actual performance and cost tradeoffs.", "YAML line count does not measure compute utilization.", "Contributor count does not establish the efficiency of a runner size."], concept: "Measured runner right-sizing", hints: ["Can doubling compute cost less if runtime falls enough?", "Which workloads may not benefit from additional parallel hardware?"], source: "https://docs.github.com/en/actions/using-github-hosted-runners/using-larger-runners/about-larger-runners" },
-  { id: "admin-211", domain: "Monitor and optimize GitHub usage", prompt: "An organization considers self-hosted runners because GitHub does not charge Actions execution for them. Which cost factor still belongs in the decision?", choices: ["Only the GitHub-hosted per-minute price, assuming it is billed identically for self-hosted execution", "No other costs; free execution means zero total operating expense", "Infrastructure, patching, security isolation, scaling, and operational support", "Only the virtual machine purchase price, ignoring ongoing administration"], correct: 2, explanations: ["Self-hosted execution does not use the same GitHub-hosted execution billing model.", "GitHub execution billing is not the full cost of operating a runner fleet.", "Customer-operated compute has infrastructure and administration costs even without an Actions execution charge.", "Purchase cost alone omits continuing security and operational expense."], concept: "Total cost of self-hosted runners", hints: ["Who pays for and maintains the machines?", "What work disappears from the hosted-service bill but remains with the organization?"], source: "https://docs.github.com/en/actions/concepts/runners/about-self-hosted-runners" },
-  { id: "admin-212", domain: "Monitor and optimize GitHub usage", prompt: "A department has assigned many Copilot seats but low measured engagement. What is the most useful next action?", choices: ["Assume assignment proves successful adoption", "Immediately remove every seat without consulting teams", "Use Git commit count alone to rank individual developers", "Compare entitlement and usage evidence, then investigate onboarding and genuine business need"], correct: 3, explanations: ["Assignment measures access provision, not necessarily active use.", "Unreviewed removal may discard valuable access or interrupt adoption efforts.", "Commit count alone is not a sound individual productivity or Copilot-value measure.", "Usage and entitlement context can identify both enablement gaps and reclaimable seats."], concept: "Entitlement versus adoption", hints: ["Does having access mean the feature is being used effectively?", "What nontechnical barriers might explain low engagement?"], source: "https://docs.github.com/en/copilot/concepts/billing-and-usage/copilot-usage-metrics/copilot-metrics" },
-  { id: "admin-213", domain: "Monitor and optimize GitHub usage", prompt: "After a new workflow policy, average delivery time improves. A dashboard owner claims the policy alone caused the improvement. Which interpretation is more defensible?", choices: ["The timing suggests a hypothesis; compare workload mix and other changes before claiming causation", "Any two metrics moving together establish causation", "Faster delivery proves every security control is unnecessary", "A dashboard cannot inform any operational decision"], correct: 0, explanations: ["Contextual comparison helps separate policy effects from other changing conditions.", "Correlation and timing alone do not prove causation.", "Delivery speed does not determine whether security governance is needed.", "Metrics can inform decisions when their limitations are acknowledged."], concept: "Interpreting adoption and performance trends", hints: ["What else changed during the measurement period?", "Were the compared workloads and populations similar?"], source: "https://docs.github.com/en/billing/tutorials/automate-usage-reporting" },
-  { id: "admin-214", domain: "Monitor and optimize GitHub usage", prompt: "An enterprise reports fewer active users this month but also merged several organizations and changed the reporting population. What should an administrator do before declaring adoption has declined?", choices: ["Ignore the population change", "Normalize the time window, population, and metric definitions before comparing periods", "Use only the largest daily number from each period", "Delete the prior report because it is inconvenient"], correct: 1, explanations: ["A changed population can produce misleading raw comparisons.", "Comparable definitions and populations are prerequisites for interpreting a trend.", "Picking peaks introduces selection bias and does not normalize coverage.", "Discarding history prevents transparent analysis."], concept: "Comparable usage-report baselines", hints: ["Do both reports measure the same people and period length?", "Could a denominator change explain the apparent trend?"], source: "https://docs.github.com/en/billing/tutorials/automate-usage-reporting" },
-  { id: "admin-215", domain: "Monitor and optimize GitHub usage", prompt: "A manager wants to rank developer productivity using only counts of enterprise audit events. What is the best administrative guidance?", choices: ["Audit events are a complete measure of software quality", "The largest event count always identifies the most productive engineer", "Audit logs support activity attribution and compliance, not a complete individual productivity measure", "Delete low-count users automatically"], correct: 2, explanations: ["Administrative event counts do not measure all dimensions of software quality.", "Event volume varies by task and does not establish individual value.", "The audit log's purpose and coverage limit how its activity counts should be interpreted.", "Access removal requires authorization review rather than a simplistic activity ranking."], concept: "Limits of audit-derived productivity metrics", hints: ["What kinds of work produce no relevant administrative event?", "Was this data source designed to measure individual output quality?"], source: "https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/security-and-compliance/audit-log-for-an-enterprise" },
-  { id: "admin-216", domain: "Monitor and optimize GitHub usage", prompt: "API throttling rises after a new compliance integration is deployed. Which evidence should administrators collect to find a useful optimization?", choices: ["Only the integration's approved permission list", "Only its token's expiration date", "Only the total number of organization members", "Request frequency, endpoint mix, concurrency, response headers, and retry behavior"], correct: 3, explanations: ["Permissions describe authority but not actual request frequency and retry behavior.", "Expiration metadata does not explain bursts or redundant polling.", "Member count alone does not reveal the integration's call pattern.", "Request-pattern evidence identifies redundant polling, bursts, and incorrect retry handling."], concept: "Diagnosing API consumption patterns", hints: ["Which characteristics can trigger primary or secondary limits?", "What did the new integration change about the request pattern?"], source: "https://docs.github.com/en/rest/using-the-rest-api/best-practices-for-using-the-rest-api" },
-  { id: "admin-217", domain: "Monitor and optimize GitHub usage", prompt: "Two metered-usage reports disagree because one covers a calendar month and the other a rolling thirty-day interval. What should happen before investigating a billing defect?", choices: ["Align the date ranges, scopes, units, and report definitions", "Assume the larger report must be fraudulent", "Add the reports together as if they were disjoint", "Remove repository permissions from every user"], correct: 0, explanations: ["Comparable scope and periods are necessary before reconciling report totals.", "A reporting-window mismatch is not evidence of fraud.", "Overlapping periods cannot be summed as independent consumption.", "Authorization removal does not reconcile report definitions."], concept: "Reconciling metered-usage reports", hints: ["Do the reports actually describe the same interval and resources?", "Which definitions must match before totals should agree?"], source: "https://docs.github.com/en/billing/tutorials/automate-usage-reporting" },
-  { id: "admin-218", domain: "Monitor and optimize GitHub usage", prompt: "Several organization owners independently report the same employee as a license consumer. A central report sums those rows and appears to exceed the enterprise's unique user count. What should be checked?", choices: ["Whether the employee has several local clones", "Whether the report deduplicates identities according to the enterprise licensing scope", "Whether every repository uses the same default branch name", "Whether all organizations use identical issue templates"], correct: 1, explanations: ["Local clones do not create additional enterprise user identities.", "Repeated memberships must be reconciled to the documented unique-user licensing model.", "Branch naming does not deduplicate license consumers.", "Issue templates do not affect seat-count identity matching."], concept: "Deduplicating license-consumption reporting", hints: ["Can the same identity appear in several source reports?", "What is the unit being licensed rather than the number of report rows?"], source: "https://docs.github.com/en/enterprise-cloud@latest/billing/managing-the-plan-for-your-github-account/about-per-user-pricing" },
-  { id: "admin-219", domain: "Monitor and optimize GitHub usage", prompt: "Support needs evidence from a GHES performance incident, including appliance context and relevant logs. Which collection plan best supports analysis while respecting confidentiality?", choices: ["Post the bundle publicly so anyone can help interpret it", "Send only a current screenshot of license consumption", "Collect the documented support bundle covering the incident and provide scoped details through the support channel", "Delete the logs before escalating to minimize the archive"], correct: 2, explanations: ["Public sharing can expose internal operational information despite credential sanitization.", "Seat-consumption evidence does not supply the requested appliance logs and context.", "A correctly scoped support bundle and incident details provide actionable evidence with controlled handling.", "Deleting evidence impairs incident analysis."], concept: "Diagnostic evidence for performance escalation", hints: ["What can Support correlate with the reported incident period?", "Which collection path preserves useful context without broad disclosure?"], source: "https://docs.github.com/en/enterprise-server@latest/support/contacting-github-support/providing-data-to-github-support" },
-  { id: "admin-220", domain: "Monitor and optimize GitHub usage", prompt: "A Cloud API problem persists after the administrator checks permissions and rate-limit responses. What should a useful Support handoff include?", choices: ["Only a claim that every GitHub product is unavailable", "A shared owner password so Support can impersonate any employee", "An instruction to remove all enterprise policies without investigation", "Representative failing requests, sanitized responses, timestamps, request identifiers, and affected scope"], correct: 3, explanations: ["An unsupported broad claim obscures the actual impact.", "Passwords should not be shared for a support handoff.", "Removing all policies is not an evidence-based escalation.", "Specific sanitized request evidence helps Support locate and diagnose the failure."], concept: "Evidence-based Cloud support handoff", hints: ["What distinguishes the failing request from successful ones?", "Which information lets the service operator correlate its own logs?"], source: "https://docs.github.com/en/support/contacting-github-support/creating-a-support-ticket" },
-  { id: "admin-221", domain: "Monitor and optimize GitHub usage", prompt: "GHES clone and web-response times worsen during heavy activity. Before purchasing more hardware, which investigation best supports a capacity decision?", choices: ["Correlate workload timing with relevant instance resource and service-health metrics", "Increase CPU allocation without measuring CPU utilization", "Add memory without inspecting memory pressure or other bottlenecks", "Migrate storage before checking disk latency and throughput"], correct: 0, explanations: ["Correlated utilization and service evidence help identify the actual bottleneck.", "More CPU may not help an instance limited by memory or storage.", "Unmeasured memory expansion may leave the actual limiting resource unchanged.", "Storage migration should follow evidence of a storage bottleneck."], concept: "Evidence-driven GHES capacity planning", hints: ["Which shared resource may be saturated during the slow period?", "What would demonstrate that more hardware addresses the limiting factor?"], source: "https://docs.github.com/en/enterprise-server@latest/admin/monitoring-and-managing-your-instance/monitoring-your-instance/about-the-monitor-dashboards" },
-  { id: "admin-222", domain: "Monitor and optimize GitHub usage", prompt: "A platform team pilots a larger runner for one build type. Which result would best justify wider adoption?", choices: ["The runner has a more impressive name", "Representative measurements show acceptable reliability and a worthwhile time-versus-cost improvement", "One unusually fast run is the only evidence", "Every other build type is assumed to scale identically"], correct: 1, explanations: ["Names do not measure operational benefit.", "Representative reliability, duration, and cost evidence support a measured rollout.", "One outlier is not a reliable capacity decision baseline.", "Different workloads can have different bottlenecks and scaling behavior."], concept: "Validating performance-optimization pilots", hints: ["How can the pilot distinguish a repeatable benefit from a single outlier?", "Which tradeoff matters besides the shortest observed runtime?"], source: "https://docs.github.com/en/actions/using-github-hosted-runners/using-larger-runners/about-larger-runners" },
-  { id: "admin-223", domain: "Monitor and optimize GitHub usage", prompt: "An API integration exceeds limits because it repeatedly polls unchanged data. A developer proposes borrowing several coworkers' PATs. What should administrators recommend instead?", choices: ["Share all available owner credentials", "Remove every audit trail to reduce API records", "Improve polling, caching, event use, and backoff under a correctly scoped integration identity", "Disable SAML for the whole enterprise"], correct: 2, explanations: ["Shared credentials expand risk and obscure attribution.", "Audit removal does not address redundant API traffic.", "Efficient request design addresses the root cause without credential-sharing workarounds.", "SSO removal does not make inefficient API behavior appropriate."], concept: "Responsible API capacity optimization", hints: ["Does adding borrowed identities reduce unnecessary work?", "Which changes improve efficiency while preserving accountability?"], source: "https://docs.github.com/en/rest/using-the-rest-api/best-practices-for-using-the-rest-api" },
-  { id: "admin-224", domain: "Monitor and optimize GitHub usage", prompt: "A finance owner wants to use a GitHub metered-product budget to control an existing prepaid volume-license contract. What limitation should the administrator explain?", choices: ["Budget alerts rewrite every prepaid contract automatically", "A budget permanently suspends all licensed users at its threshold", "Budget settings determine repository visibility", "Metered budgets and alerts are not available for prepaid volume licenses"], correct: 3, explanations: ["Budget configuration does not amend a prepaid agreement.", "Universal user suspension is not the documented behavior of all budgets.", "Spending controls do not set repository visibility.", "GitHub distinguishes metered budgets from prepaid volume-license management."], concept: "Budget applicability to licensing models", hints: ["Is the expense usage-metered or already committed by contract?", "Does the budget feature apply to that purchasing model?"], source: "https://docs.github.com/en/billing/concepts/budgets-and-alerts" },
-  { id: "admin-225", domain: "Monitor and optimize GitHub usage", prompt: "A cost review finds one repository responsible for a large share of metered usage. Which next step balances optimization with business continuity?", choices: ["Review product-level drivers with the owning team, then test targeted changes and measure the outcome", "Delete the repository immediately because high spending proves waste", "Remove every user in its organization", "Disable all security controls before examining the report"], correct: 0, explanations: ["Joint analysis can distinguish valuable workload from avoidable cost and validate safe improvements.", "High spending alone does not justify destructive removal of a business-critical repository.", "Broad access removal does not diagnose the consumption driver.", "Removing security controls without analysis introduces risk and may not address cost."], concept: "Accountable consumption optimization", hints: ["What business workload is producing the charge?", "How can the proposed saving be tested without removing necessary capability?"], source: "https://docs.github.com/en/billing/tutorials/automate-usage-reporting" },
+    {
+        "id": "admin-001",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "What defines an Enterprise Managed Users account in GitHub Enterprise Cloud?",
+        "choices": [
+            "A personal account restricted by repository rulesets",
+            "An outside collaborator invited to selected repositories",
+            "An account provisioned and authenticated through the enterprise IdP",
+            "A personal account linked to an organization SAML identity"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Rulesets govern repository activity, not account ownership.",
+            "A repository invitation does not establish an IdP-managed identity.",
+            "The IdP manages the managed account's lifecycle and authentication.",
+            "SAML linking alone does not create a managed account."
+        ],
+        "concept": "Managed account ownership",
+        "hints": [
+            "Separate ownership of an account from permission to use resources.",
+            "Consider the boundary between enterprise and public collaboration."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/identity-and-access-management/enterprise-managed-users"
+    },
+    {
+        "id": "admin-002",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "In a GitHub Enterprise Cloud enterprise with personal accounts, who creates and maintains each member's GitHub account?",
+        "choices": [
+            "The enterprise SCIM service",
+            "The organization's team maintainer",
+            "The enterprise billing manager",
+            "The individual user"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Enterprise-level account provisioning is an EMU capability.",
+            "Team maintenance does not include ownership of members' accounts.",
+            "Billing authority does not include personal-account creation.",
+            "Users own and maintain personal accounts even when SAML protects enterprise access."
+        ],
+        "concept": "Personal account responsibility",
+        "hints": [
+            "Separate ownership of an account from permission to use resources.",
+            "Consider the boundary between enterprise and public collaboration."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/enterprise-fundamentals/choose-an-enterprise-type"
+    },
+    {
+        "id": "admin-003",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "What does SAML SSO add for personal accounts accessing a protected GitHub Enterprise Cloud organization?",
+        "choices": [
+            "Authentication against the organization's external IdP",
+            "Automatic provisioning of new personal accounts",
+            "Automatic assignment of repository Admin access",
+            "Replacement of GitHub account sign-in"
+        ],
+        "correct": 0,
+        "explanations": [
+            "SAML adds an external authentication requirement for protected resources.",
+            "SAML authentication is not an account-provisioning service.",
+            "Repository authorization is separate from SAML authentication.",
+            "Personal-account sign-in remains required."
+        ],
+        "concept": "SAML authentication scope",
+        "hints": [
+            "Distinguish sign-in, lifecycle provisioning, and group membership.",
+            "Identify which system supplies the information GitHub needs."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/managing-iam/using-saml-for-enterprise-iam/configuring-saml-single-sign-on-for-your-enterprise"
+    },
+    {
+        "id": "admin-004",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "Which protocol provisions and updates managed user accounts for GitHub Enterprise Cloud?",
+        "choices": [
+            "SSH",
+            "SCIM",
+            "SAML",
+            "WebAuthn"
+        ],
+        "correct": 1,
+        "explanations": [
+            "SSH authenticates connections, not account provisioning.",
+            "SCIM supplies account-lifecycle provisioning.",
+            "SAML handles federated authentication.",
+            "WebAuthn supports public-key authentication."
+        ],
+        "concept": "Identity provisioning protocol",
+        "hints": [
+            "Distinguish sign-in, lifecycle provisioning, and group membership.",
+            "Identify which system supplies the information GitHub needs."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/identity-and-access-management/enterprise-managed-users"
+    },
+    {
+        "id": "admin-005",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "For personal accounts on GitHub Enterprise Cloud, what is the primary purpose of team synchronization?",
+        "choices": [
+            "Set repository roles directly in the IdP",
+            "Replace the organization's SAML authentication",
+            "Reflect IdP group membership in a GitHub team",
+            "Create personal accounts for all IdP users"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Repository access for the team is configured on GitHub.",
+            "It complements rather than replaces SAML.",
+            "Team synchronization updates team membership from connected IdP groups.",
+            "It is not a personal-account provisioning service."
+        ],
+        "concept": "Team synchronization purpose",
+        "hints": [
+            "Distinguish sign-in, lifecycle provisioning, and group membership.",
+            "Identify which system supplies the information GitHub needs."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/organizations/organizing-members-into-teams/synchronizing-a-team-with-an-identity-provider-group"
+    },
+    {
+        "id": "admin-006",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "Which partner IdP supports OIDC authentication for Enterprise Managed Users?",
+        "choices": [
+            "Okta",
+            "PingFederate",
+            "OneLogin",
+            "Microsoft Entra ID"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Okta's partner EMU authentication integration uses SAML.",
+            "PingFederate is not the documented EMU OIDC partner.",
+            "OneLogin is not the documented EMU OIDC partner.",
+            "Microsoft Entra ID supports the documented EMU OIDC integration."
+        ],
+        "concept": "EMU OIDC provider",
+        "hints": [
+            "Distinguish sign-in, lifecycle provisioning, and group membership.",
+            "Identify which system supplies the information GitHub needs."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/identity-and-access-management/enterprise-managed-users"
+    },
+    {
+        "id": "admin-007",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "Which identity design follows GitHub's recommended partner integration for EMU authentication and provisioning?",
+        "choices": [
+            "Use one partner IdP for both functions",
+            "Use Okta for SSO and Microsoft Entra ID for SCIM",
+            "Use Microsoft Entra ID for SSO and Okta for SCIM",
+            "Use SAML alone for both functions"
+        ],
+        "correct": 0,
+        "explanations": [
+            "A single partner IdP provides the documented paved-path integration.",
+            "This mixed-provider combination is explicitly unsupported.",
+            "The reverse mixed-provider combination is also unsupported.",
+            "SAML alone does not provide lifecycle provisioning."
+        ],
+        "concept": "Supported EMU integration",
+        "hints": [
+            "Distinguish sign-in, lifecycle provisioning, and group membership.",
+            "Identify which system supplies the information GitHub needs."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/identity-and-access-management/enterprise-managed-users"
+    },
+    {
+        "id": "admin-008",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "In GitHub Enterprise Cloud's English SAML configuration, what belongs in Public Certificate?",
+        "choices": [
+            "A repository's TLS client certificate",
+            "The IdP's public certificate for verifying SAML responses",
+            "The IdP's private signing key",
+            "A member's personal SSH public key"
+        ],
+        "correct": 1,
+        "explanations": [
+            "A repository client certificate does not verify the IdP's SAML signatures.",
+            "GitHub uses the public certificate to verify signed SAML responses.",
+            "The IdP must retain its private signing key.",
+            "A user's SSH key authenticates Git connections."
+        ],
+        "concept": "SAML response verification",
+        "hints": [
+            "Distinguish sign-in, lifecycle provisioning, and group membership.",
+            "Identify which system supplies the information GitHub needs."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/managing-iam/using-saml-for-enterprise-iam/configuring-saml-single-sign-on-for-your-enterprise"
+    },
+    {
+        "id": "admin-009",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "When configuring enterprise SAML for personal accounts in GitHub Enterprise Cloud, what is the Sign on URL?",
+        "choices": [
+            "The IdP's issuer identifier rather than its login endpoint",
+            "The enterprise's ordinary GitHub home page",
+            "The IdP's HTTPS endpoint for SSO requests",
+            "GitHub's assertion consumer service endpoint"
+        ],
+        "correct": 2,
+        "explanations": [
+            "The issuer identifies the sender and is configured separately.",
+            "The enterprise home page is not the IdP's authentication endpoint.",
+            "This field directs authentication requests to the IdP.",
+            "The assertion consumer service receives responses at GitHub rather than sign-in requests at the IdP."
+        ],
+        "concept": "SAML endpoint configuration",
+        "hints": [
+            "Distinguish sign-in, lifecycle provisioning, and group membership.",
+            "Identify which system supplies the information GitHub needs."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/managing-iam/using-saml-for-enterprise-iam/configuring-saml-single-sign-on-for-your-enterprise"
+    },
+    {
+        "id": "admin-010",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "Which description distinguishes two-factor authentication from signing in with a password alone?",
+        "choices": [
+            "It grants an additional repository role",
+            "It provisions a second GitHub account",
+            "It creates an additional organization membership",
+            "It requires an additional authentication factor"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Authentication factors do not grant repository roles.",
+            "2FA does not create accounts.",
+            "2FA does not assign organization membership.",
+            "2FA adds another factor to verify account access."
+        ],
+        "concept": "Authentication factors",
+        "hints": [
+            "Separate proof of identity from access to a particular resource.",
+            "Check whether the question concerns a personal account or enterprise access."
+        ],
+        "source": "https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/about-two-factor-authentication"
+    },
+    {
+        "id": "admin-011",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "For a personal account on GitHub.com, what can a passkey satisfy in a single sign-in step?",
+        "choices": [
+            "Both the password and 2FA requirements",
+            "Only the organization's SAML requirement",
+            "Only the password requirement",
+            "Only the repository authorization requirement"
+        ],
+        "correct": 0,
+        "explanations": [
+            "A passkey can satisfy both account password and 2FA requirements.",
+            "An account passkey does not replace organization SAML.",
+            "Passkeys can meet 2FA as well as password requirements.",
+            "Repository permissions remain separate from account authentication."
+        ],
+        "concept": "Passkey sign-in",
+        "hints": [
+            "Separate proof of identity from access to a particular resource.",
+            "Check whether the question concerns a personal account or enterprise access."
+        ],
+        "source": "https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/about-two-factor-authentication"
+    },
+    {
+        "id": "admin-012",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "A GitHub.com personal-account user loses their 2FA device but has saved recovery codes. Which credential supports recovery?",
+        "choices": [
+            "The enterprise's license file",
+            "An unused 2FA recovery code",
+            "The organization's SAML signing certificate",
+            "The repository's CODEOWNERS file"
+        ],
+        "correct": 1,
+        "explanations": [
+            "A license file cannot prove possession of a personal account.",
+            "Saved recovery codes provide a documented recovery method.",
+            "An IdP certificate cannot recover personal-account 2FA.",
+            "Code ownership is unrelated to account recovery."
+        ],
+        "concept": "Account recovery preparation",
+        "hints": [
+            "Separate proof of identity from access to a particular resource.",
+            "Check whether the question concerns a personal account or enterprise access."
+        ],
+        "source": "https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/about-two-factor-authentication"
+    },
+    {
+        "id": "admin-013",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "As a GitHub Enterprise Cloud organization owner using the English UI, where do you require 2FA for personal accounts?",
+        "choices": [
+            "Repository Settings → Rules → Rulesets",
+            "Enterprise People → Enterprise teams",
+            "Organization Settings → Authentication security",
+            "Organization Settings → Member privileges"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Rulesets govern repository contributions, not account 2FA.",
+            "Enterprise teams manages groups rather than the organization's 2FA setting.",
+            "Authentication security contains the organization's 2FA requirement.",
+            "Member privileges controls organization member capabilities."
+        ],
+        "concept": "Organization 2FA navigation",
+        "hints": [
+            "Start at the administrative scope named in the question.",
+            "Match the setting's purpose, not just a familiar menu label."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/organizations/keeping-your-organization-secure/managing-two-factor-authentication-for-your-organization/requiring-two-factor-authentication-in-your-organization"
+    },
+    {
+        "id": "admin-014",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "An enterprise owner is configuring enterprise-wide SAML for personal accounts in GitHub Enterprise Cloud's English UI. Which section contains Require SAML authentication?",
+        "choices": [
+            "Enterprise People → Enterprise teams",
+            "Organization Settings → Member privileges",
+            "Repository Settings → Collaborators & teams",
+            "Enterprise Settings → Authentication security"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Enterprise teams contains team administration.",
+            "Member privileges governs organization permissions.",
+            "Repository access settings do not configure enterprise authentication.",
+            "Enterprise Authentication security contains the enterprise SAML requirement."
+        ],
+        "concept": "Enterprise SAML navigation",
+        "hints": [
+            "Start at the administrative scope named in the question.",
+            "Match the setting's purpose, not just a familiar menu label."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/managing-iam/using-saml-for-enterprise-iam/configuring-saml-single-sign-on-for-your-enterprise"
+    },
+    {
+        "id": "admin-015",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "Which SCIM configuration is available for a GitHub Enterprise Cloud enterprise that uses personal accounts rather than EMU?",
+        "choices": [
+            "Organization-level SCIM with organization-level SAML",
+            "Enterprise-level SCIM with enterprise-level SAML",
+            "Enterprise-level SCIM without SAML",
+            "Organization-level SCIM that creates managed accounts"
+        ],
+        "correct": 0,
+        "explanations": [
+            "For personal accounts, SCIM provisions organization access with organization-level SAML.",
+            "Enterprise-level SCIM account provisioning requires EMU.",
+            "Removing SAML does not enable enterprise SCIM for personal accounts.",
+            "Organization SCIM does not turn personal accounts into managed accounts."
+        ],
+        "concept": "SCIM scope for personal accounts",
+        "hints": [
+            "Distinguish sign-in, lifecycle provisioning, and group membership.",
+            "Identify which system supplies the information GitHub needs."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/managing-iam/using-saml-for-enterprise-iam/configuring-saml-single-sign-on-for-your-enterprise"
+    },
+    {
+        "id": "admin-016",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "Where is a managed user's profile email maintained for Enterprise Managed Users?",
+        "choices": [
+            "In the team's repository permissions",
+            "In the identity provider",
+            "In the user's GitHub personal settings",
+            "In the repository's contributor settings"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Team permissions control access, not identity profile attributes.",
+            "The IdP supplies managed-user profile names and email addresses.",
+            "Managed users cannot change their profile email on GitHub.",
+            "Contributor settings do not own managed-user profile data."
+        ],
+        "concept": "Managed profile attributes",
+        "hints": [
+            "Separate ownership of an account from permission to use resources.",
+            "Consider the boundary between enterprise and public collaboration."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/identity-and-access-management/enterprise-managed-users"
+    },
+    {
+        "id": "admin-017",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "A GitHub Enterprise Cloud organization team using personal accounts is synchronized with an IdP group. Where must its membership changes be made?",
+        "choices": [
+            "In repository collaborator invitations",
+            "In the enterprise billing contact list",
+            "In the connected IdP group",
+            "In the team's GitHub member editor"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Repository invitations do not change the connected IdP group.",
+            "Billing contacts are unrelated to synchronized membership.",
+            "The IdP controls membership once the team is synchronized.",
+            "GitHub does not allow manual team membership edits for synchronized teams."
+        ],
+        "concept": "Membership source of truth",
+        "hints": [
+            "Trace all membership and permission sources.",
+            "Distinguish enterprise, organization, team, and repository boundaries."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/organizations/organizing-members-into-teams/synchronizing-a-team-with-an-identity-provider-group"
+    },
+    {
+        "id": "admin-018",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "A user signs in successfully but lacks permission to push to an organization repository. Which distinction explains the failure?",
+        "choices": [
+            "Authorization succeeded; authentication is insufficient",
+            "SCIM provisioning automatically grants push access",
+            "A valid sign-in automatically grants Write access",
+            "Authentication succeeded; authorization is insufficient"
+        ],
+        "correct": 3,
+        "explanations": [
+            "The user already authenticated, but lacks the required permission.",
+            "Provisioning does not automatically confer repository write privileges.",
+            "Authentication alone does not grant Write.",
+            "Sign-in proves identity; repository permissions determine allowed actions."
+        ],
+        "concept": "Authentication versus authorization",
+        "hints": [
+            "Separate proof of identity from access to a particular resource.",
+            "Check whether the question concerns a personal account or enterprise access."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization"
+    },
+    {
+        "id": "admin-019",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "For personal accounts in a SAML-enforced GitHub Enterprise Cloud organization, what additional step permits an existing SSH key to access protected resources?",
+        "choices": [
+            "Authorize the SSH key for the organization",
+            "Add the key to the SAML Public Certificate field",
+            "Upload the private key to the organization's IdP",
+            "Assign the user the enterprise Billing manager role"
+        ],
+        "correct": 0,
+        "explanations": [
+            "The SSH credential must be authorized for the protected organization.",
+            "The SAML certificate field verifies IdP signatures, not SSH users.",
+            "Private SSH keys should remain private and are not the SSO authorization step.",
+            "Billing authority does not authorize an SSH credential."
+        ],
+        "concept": "SAML-authorized SSH credentials",
+        "hints": [
+            "Separate proof of identity from access to a particular resource.",
+            "Check whether the question concerns a personal account or enterprise access."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/managing-iam/using-saml-for-enterprise-iam/configuring-saml-single-sign-on-for-your-enterprise"
+    },
+    {
+        "id": "admin-020",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "What happens to IdP-synchronized team membership when a personal-account user's linked SAML identity is revoked in GitHub Enterprise Cloud?",
+        "choices": [
+            "The user's personal account becomes a managed account",
+            "The user is removed from teams mapped to IdP groups",
+            "The user becomes a team maintainer",
+            "The user receives direct repository Write access"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Revoking a SAML link does not change the account model.",
+            "Revoking the linked identity removes membership in mapped teams.",
+            "Revocation does not promote users.",
+            "Revocation does not replace team access with a direct grant."
+        ],
+        "concept": "Linked identity and team access",
+        "hints": [
+            "Trace all membership and permission sources.",
+            "Distinguish enterprise, organization, team, and repository boundaries."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/organizations/organizing-members-into-teams/synchronizing-a-team-with-an-identity-provider-group"
+    },
+    {
+        "id": "admin-021",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "Which standard repository role is the least privileged for viewing code and discussing issues in a private organization repository?",
+        "choices": [
+            "Write",
+            "Maintain",
+            "Read",
+            "Triage"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Write adds code contribution permissions.",
+            "Maintain adds broader repository management.",
+            "Read supports viewing and discussion without broader management rights.",
+            "Triage adds issue and pull-request management."
+        ],
+        "concept": "Read-only contribution",
+        "hints": [
+            "Identify the smallest set of capabilities the task requires.",
+            "Separate reading, contribution, maintenance, and administration."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization"
+    },
+    {
+        "id": "admin-022",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "Which standard role fits someone who manages other contributors' issues and pull requests but must not push code to an organization repository?",
+        "choices": [
+            "Read",
+            "Write",
+            "Admin",
+            "Triage"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Read does not provide the full triage capability set.",
+            "Write grants unnecessary code-pushing rights.",
+            "Admin grants unnecessary sensitive administrative powers.",
+            "Triage supports proactive issue and pull-request management without write access."
+        ],
+        "concept": "Triage without code writes",
+        "hints": [
+            "Identify the smallest set of capabilities the task requires.",
+            "Separate reading, contribution, maintenance, and administration."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization"
+    },
+    {
+        "id": "admin-023",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "What is the lowest standard repository role that permits pushing code, subject to applicable branch rules?",
+        "choices": [
+            "Write",
+            "Read",
+            "Triage",
+            "Maintain"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Write is the first standard role that permits pushing code.",
+            "Read permits viewing, not pushing.",
+            "Triage manages issues and pull requests without write access.",
+            "Maintain can push but grants more privileges than required."
+        ],
+        "concept": "Code contribution role",
+        "hints": [
+            "Identify the smallest set of capabilities the task requires.",
+            "Separate reading, contribution, maintenance, and administration."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization"
+    },
+    {
+        "id": "admin-024",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "Which standard organization-repository role is intended for project managers who manage the repository without sensitive or destructive administrative actions?",
+        "choices": [
+            "Admin",
+            "Maintain",
+            "Triage",
+            "Write"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Admin includes the sensitive powers the task excludes.",
+            "Maintain is designed for repository management without sensitive or destructive actions.",
+            "Triage is focused on issues and pull requests.",
+            "Write is focused on contributing code."
+        ],
+        "concept": "Repository maintenance boundary",
+        "hints": [
+            "Identify the smallest set of capabilities the task requires.",
+            "Separate reading, contribution, maintenance, and administration."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization"
+    },
+    {
+        "id": "admin-025",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "Which standard repository role can manage individual and team access to an organization repository?",
+        "choices": [
+            "Write",
+            "Triage",
+            "Admin",
+            "Maintain"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Write does not allow managing repository access.",
+            "Triage does not administer access permissions.",
+            "Admin includes management of repository access.",
+            "Maintain does not include individual and team access administration."
+        ],
+        "concept": "Repository access administration",
+        "hints": [
+            "Identify the smallest set of capabilities the task requires.",
+            "Separate reading, contribution, maintenance, and administration."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization"
+    },
+    {
+        "id": "admin-026",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "Which organization role includes administrative access to every repository owned by that organization?",
+        "choices": [
+            "Organization member",
+            "Billing manager",
+            "Team maintainer",
+            "Organization owner"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Members receive access through base permissions and explicit grants.",
+            "Billing management does not grant organization-wide repository administration.",
+            "Team maintainers administer their team, not every repository.",
+            "Organization owners have admin access to all organization repositories."
+        ],
+        "concept": "Organization owner authority",
+        "hints": [
+            "Identify the smallest set of capabilities the task requires.",
+            "Separate reading, contribution, maintenance, and administration."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization"
+    },
+    {
+        "id": "admin-027",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "An organization owner on GitHub Enterprise Cloud wants to change members' default repository permissions. Which English UI path contains Base permissions?",
+        "choices": [
+            "Organization Settings → Member privileges",
+            "Organization Settings → Authentication security",
+            "Enterprise People → Enterprise teams",
+            "Repository Settings → Rules → Rulesets"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Member privileges contains organization-wide base permissions.",
+            "Authentication security controls authentication requirements.",
+            "Enterprise teams manages enterprise groups.",
+            "Rulesets govern repository activity rather than membership defaults."
+        ],
+        "concept": "Base-permission navigation",
+        "hints": [
+            "Start at the administrative scope named in the question.",
+            "Match the setting's purpose, not just a familiar menu label."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/setting-base-permissions-for-an-organization"
+    },
+    {
+        "id": "admin-028",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "In a GitHub Enterprise Cloud organization with personal accounts, what identifies an outside collaborator?",
+        "choices": [
+            "A team maintainer who manages synchronized groups",
+            "A non-member with access to one or more organization repositories",
+            "An organization member without administrative permissions",
+            "An enterprise owner who manages organization policies"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Team maintainers are not defined by outside-collaborator status.",
+            "Outside collaborators have repository access without organization membership.",
+            "A non-admin member is still an organization member.",
+            "Enterprise ownership is an enterprise administrative role."
+        ],
+        "concept": "Outside collaboration boundary",
+        "hints": [
+            "Trace all membership and permission sources.",
+            "Distinguish enterprise, organization, team, and repository boundaries."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization"
+    },
+    {
+        "id": "admin-029",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "An organization member has base Read permission and a direct Write grant on a private repository. What is their effective repository role?",
+        "choices": [
+            "Triage",
+            "No access",
+            "Write",
+            "Read"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Neither grant specifies Triage, and Write is available.",
+            "The member has two valid sources of access.",
+            "The higher direct repository grant takes precedence over base Read.",
+            "Base Read does not reduce a higher explicit grant."
+        ],
+        "concept": "Effective permission grants",
+        "hints": [
+            "Trace all membership and permission sources.",
+            "Distinguish enterprise, organization, team, and repository boundaries."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/setting-base-permissions-for-an-organization"
+    },
+    {
+        "id": "admin-030",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "Does becoming an enterprise owner automatically provide access to every organization's private repository content in GitHub Enterprise Cloud?",
+        "choices": [
+            "Yes; enterprise ownership directly grants repository Admin everywhere",
+            "No; an enterprise owner can never join organizations",
+            "Yes; the billing entitlement includes all private code",
+            "No; the owner can join organizations to gain access"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Enterprise ownership does not automatically grant this content access.",
+            "Enterprise owners can join organizations they own.",
+            "Billing authority does not provide blanket access to private code.",
+            "Enterprise owners do not receive organization content access by default but can join organizations."
+        ],
+        "concept": "Enterprise owner content boundary",
+        "hints": [
+            "Identify the smallest set of capabilities the task requires.",
+            "Separate reading, contribution, maintenance, and administration."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/managing-accounts-and-repositories/managing-roles-in-your-enterprise/abilities-of-roles"
+    },
+    {
+        "id": "admin-031",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "Which predefined enterprise role fits a finance administrator who needs enterprise billing settings but not enterprise-wide policy administration?",
+        "choices": [
+            "Billing manager",
+            "Enterprise owner",
+            "App manager",
+            "User"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Billing manager provides the billing authority required.",
+            "Enterprise owner adds unnecessary control over members and policies.",
+            "App manager manages enterprise-owned GitHub App registrations.",
+            "User has no enterprise administrative access by default."
+        ],
+        "concept": "Delegated enterprise billing",
+        "hints": [
+            "Identify the smallest set of capabilities the task requires.",
+            "Separate reading, contribution, maintenance, and administration."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/managing-accounts-and-repositories/managing-roles-in-your-enterprise/abilities-of-roles"
+    },
+    {
+        "id": "admin-032",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "How can a GitHub Enterprise Cloud owner delegate a selected set of enterprise-settings permissions without granting full enterprise ownership?",
+        "choices": [
+            "Grant base Write permission in one organization",
+            "Create and assign a custom enterprise role",
+            "Assign repository Admin on one repository",
+            "Make the user an organization team maintainer"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Organization base permissions apply to repositories, not enterprise administration.",
+            "Custom enterprise roles define selected enterprise permissions.",
+            "Repository Admin controls a repository, not enterprise settings.",
+            "Team maintenance does not grant enterprise-settings permissions."
+        ],
+        "concept": "Granular enterprise delegation",
+        "hints": [
+            "Identify the smallest set of capabilities the task requires.",
+            "Separate reading, contribution, maintenance, and administration."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/managing-accounts-and-repositories/managing-roles-in-your-enterprise/abilities-of-roles"
+    },
+    {
+        "id": "admin-033",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "Which GitHub Enterprise Cloud construct groups users centrally for enterprise role assignments and access to multiple organizations?",
+        "choices": [
+            "Repository collaborator list",
+            "Organization base permission",
+            "Enterprise team",
+            "Organization project"
+        ],
+        "correct": 2,
+        "explanations": [
+            "A repository collaborator list is scoped to one repository.",
+            "Base permissions are a default access level, not a central group.",
+            "Enterprise teams can receive enterprise roles and be added to organizations.",
+            "Projects organize work rather than enterprise membership and roles."
+        ],
+        "concept": "Enterprise team purpose",
+        "hints": [
+            "Trace all membership and permission sources.",
+            "Distinguish enterprise, organization, team, and repository boundaries."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/managing-accounts-and-repositories/managing-users-in-your-enterprise/create-enterprise-teams"
+    },
+    {
+        "id": "admin-034",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "An enterprise owner wants to create an enterprise team in GitHub Enterprise Cloud's English UI. Which route is documented?",
+        "choices": [
+            "Organization Settings → Member privileges → Create Enterprise team",
+            "Repository Settings → Collaborators & teams → Create Enterprise team",
+            "Enterprise Settings → Authentication security → Create Enterprise team",
+            "Enterprise People → Enterprise teams → Create Enterprise team"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Organization member privileges does not create enterprise teams.",
+            "Repository collaborator administration does not create enterprise teams.",
+            "Authentication security configures sign-in requirements, not team creation.",
+            "The enterprise People tab contains Enterprise teams and its creation control."
+        ],
+        "concept": "Enterprise team navigation",
+        "hints": [
+            "Start at the administrative scope named in the question.",
+            "Match the setting's purpose, not just a familiar menu label."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/managing-accounts-and-repositories/managing-users-in-your-enterprise/create-enterprise-teams"
+    },
+    {
+        "id": "admin-035",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "When an enterprise team is granted organization access in GitHub Enterprise Cloud, what repository access do its members initially receive through organization membership?",
+        "choices": [
+            "The organization's base repository permissions",
+            "Admin on every organization repository",
+            "Write on every organization repository",
+            "No organization membership until invitations are accepted"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Members are added directly and receive the organization's base permission level.",
+            "Team organization access does not automatically grant Admin.",
+            "Write is not automatic unless it is the applicable base level or separately granted.",
+            "The documented enterprise-team flow adds members without invitations."
+        ],
+        "concept": "Enterprise team organization access",
+        "hints": [
+            "Trace all membership and permission sources.",
+            "Distinguish enterprise, organization, team, and repository boundaries."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/managing-accounts-and-repositories/managing-users-in-your-enterprise/create-enterprise-teams"
+    },
+    {
+        "id": "admin-036",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "What is the documented effect of removing someone from an enterprise team in GitHub Enterprise Cloud?",
+        "choices": [
+            "Every independent repository grant is revoked",
+            "Privileges granted by the team are removed",
+            "The account is deleted from GitHub",
+            "The user is removed from the enterprise account"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Independent grants are not automatically revoked by a team-membership change.",
+            "Removal withdraws the privileges associated with that team.",
+            "Team removal does not delete the user's account.",
+            "Removing team membership does not itself remove enterprise membership."
+        ],
+        "concept": "Enterprise team offboarding scope",
+        "hints": [
+            "Trace all membership and permission sources.",
+            "Distinguish enterprise, organization, team, and repository boundaries."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/managing-accounts-and-repositories/managing-users-in-your-enterprise/create-enterprise-teams"
+    },
+    {
+        "id": "admin-037",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "For an enterprise using EMU, how are changes in an IdP group propagated to a linked enterprise team's membership?",
+        "choices": [
+            "Through SSH certificate authentication",
+            "Through WebAuthn authentication",
+            "Through SCIM synchronization",
+            "Through SAML assertions alone"
+        ],
+        "correct": 2,
+        "explanations": [
+            "SSH certificates authenticate connections rather than provision team membership.",
+            "WebAuthn verifies authentication rather than synchronize groups.",
+            "EMU enterprise-team group synchronization uses SCIM.",
+            "SAML assertions authenticate users rather than synchronize these group memberships."
+        ],
+        "concept": "EMU enterprise-team synchronization",
+        "hints": [
+            "Distinguish sign-in, lifecycle provisioning, and group membership.",
+            "Identify which system supplies the information GitHub needs."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/managing-accounts-and-repositories/managing-users-in-your-enterprise/create-enterprise-teams"
+    },
+    {
+        "id": "admin-038",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "An enterprise team is added to an organization in GitHub Enterprise Cloud. Can organization administrators remove permissions granted to that team by enterprise administrators?",
+        "choices": [
+            "Yes; any organization owner can override enterprise grants",
+            "Yes; assigning Read always cancels enterprise grants",
+            "No; organization administrators cannot grant the team any additional access",
+            "No; enterprise-granted permissions cannot be removed at organization level"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Organization ownership does not authorize removal of these inherited grants.",
+            "A lower local grant does not cancel higher enterprise-granted permissions.",
+            "Organization administrators can grant additional access and organization roles.",
+            "Organization administrators cannot remove enterprise-granted team permissions."
+        ],
+        "concept": "Enterprise team permission inheritance",
+        "hints": [
+            "Identify which administrative level owns the control.",
+            "Consider inherited requirements as well as local settings."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/managing-accounts-and-repositories/managing-users-in-your-enterprise/create-enterprise-teams"
+    },
+    {
+        "id": "admin-039",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "A repository administrator on GitHub Enterprise Cloud is auditing who has access to a private organization repository. Which English UI area lists its collaborators and teams?",
+        "choices": [
+            "Repository Settings → Collaborators & teams",
+            "Repository Settings → Webhooks",
+            "Organization Settings → Authentication security",
+            "Organization Settings → Member privileges"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Collaborators & teams is the repository access-management area.",
+            "Webhooks lists event delivery integrations.",
+            "Authentication security concerns sign-in requirements, not this repository's access list.",
+            "Member privileges sets organization-wide defaults rather than listing this repository's grants."
+        ],
+        "concept": "Repository access audit",
+        "hints": [
+            "Start at the administrative scope named in the question.",
+            "Match the setting's purpose, not just a familiar menu label."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository"
+    },
+    {
+        "id": "admin-040",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "To whom do an organization's base repository permissions apply?",
+        "choices": [
+            "All members of every enterprise organization",
+            "Organization members",
+            "All outside collaborators",
+            "All users of GitHub.com"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Membership in another organization does not confer this organization's base permissions.",
+            "Base permissions apply to members of that organization.",
+            "Outside collaborators are explicitly outside base-permission scope.",
+            "Organization settings do not grant access to all GitHub users."
+        ],
+        "concept": "Base-permission population",
+        "hints": [
+            "Trace all membership and permission sources.",
+            "Distinguish enterprise, organization, team, and repository boundaries."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/setting-base-permissions-for-an-organization"
+    },
+    {
+        "id": "admin-041",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "In GitHub Enterprise Cloud, two active rulesets target the same branch and require different numbers of approving reviews. For a contributor without bypass, which requirement applies?",
+        "choices": [
+            "Only the repository-level ruleset",
+            "The less restrictive review requirement",
+            "The more restrictive review requirement",
+            "Only the most recently created ruleset"
+        ],
+        "correct": 2,
+        "explanations": [
+            "A local ruleset does not replace other applicable rulesets.",
+            "The weaker requirement does not override the stronger one.",
+            "Applicable rules aggregate, and the most restrictive version of the same rule applies.",
+            "Rulesets do not use creation-order priority."
+        ],
+        "concept": "Ruleset aggregation",
+        "hints": [
+            "Identify which administrative level owns the control.",
+            "Consider inherited requirements as well as local settings."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets"
+    },
+    {
+        "id": "admin-042",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "What is the minimum repository access needed to view its active rulesets in GitHub Enterprise Cloud?",
+        "choices": [
+            "Triage",
+            "Maintain",
+            "Admin",
+            "Read"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Triage is more access than required for viewing rulesets.",
+            "Maintain is unnecessary for viewing active rules.",
+            "Admin is required for many changes, not for merely viewing active rulesets.",
+            "Anyone with Read access can view active repository rulesets."
+        ],
+        "concept": "Ruleset visibility for auditors",
+        "hints": [
+            "Identify the smallest set of capabilities the task requires.",
+            "Separate reading, contribution, maintenance, and administration."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets"
+    },
+    {
+        "id": "admin-043",
+        "domain": "Manage GitHub identities and access",
+        "prompt": "A GitHub Enterprise Cloud owner enforces a policy restricting repository visibility changes across organizations. Who can relax that enterprise-enforced restriction?",
+        "choices": [
+            "An enterprise owner changing the enterprise policy",
+            "An organization owner changing a local preference",
+            "A repository administrator changing repository settings",
+            "A team maintainer changing team membership"
+        ],
+        "correct": 0,
+        "explanations": [
+            "The restriction is owned and enforced at enterprise scope.",
+            "An organization cannot override an enforced enterprise policy.",
+            "Repository administration cannot bypass an enterprise-enforced policy.",
+            "Team maintenance does not control enterprise policy."
+        ],
+        "concept": "Enterprise policy authority",
+        "hints": [
+            "Identify which administrative level owns the control.",
+            "Consider inherited requirements as well as local settings."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/enforcing-policies/enforcing-policies-for-your-enterprise/enforcing-repository-management-policies-in-your-enterprise"
+    },
+    {
+        "id": "admin-044",
+        "domain": "Administer GitHub Enterprise environment",
+        "prompt": "Which deployment lets an enterprise host GitHub in its own data center or a supported cloud environment?",
+        "choices": [
+            "GitHub Enterprise Cloud with data residency",
+            "GitHub Enterprise Server",
+            "GitHub Enterprise Cloud with personal accounts",
+            "GitHub Enterprise Cloud with EMU"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Cloud data residency provides regional hosting, not a self-hosted appliance.",
+            "GitHub Enterprise Server is self-hosted on customer-managed infrastructure.",
+            "Cloud with personal accounts remains a GitHub-operated service.",
+            "Cloud with EMU changes identity control, not infrastructure ownership."
+        ],
+        "concept": "Self-hosted deployment",
+        "hints": [
+            "Separate hosting responsibility from the identity model.",
+            "Consider data location, operations, and collaboration requirements independently."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/billing/concepts/enterprise-billing/combined-enterprise-use"
+    },
+    {
+        "id": "admin-045",
+        "domain": "Administer GitHub Enterprise environment",
+        "prompt": "Which operational task is handled by GitHub rather than the customer when using GitHub Enterprise Cloud instead of GitHub Enterprise Server?",
+        "choices": [
+            "Defining the organization's review standards",
+            "Assigning enterprise billing administrators",
+            "Maintaining and upgrading the hosted platform",
+            "Choosing repository collaborators"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Customers still define their developer-process standards.",
+            "Customers still choose their enterprise administrators.",
+            "GitHub operates the Cloud platform, avoiding customer-managed platform upgrades.",
+            "Customers still manage repository access."
+        ],
+        "concept": "Cloud operations boundary",
+        "hints": [
+            "Separate hosting responsibility from the identity model.",
+            "Consider data location, operations, and collaboration requirements independently."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/data-residency/about-github-enterprise-cloud-with-data-residency"
+    },
+    {
+        "id": "admin-046",
+        "domain": "Administer GitHub Enterprise environment",
+        "prompt": "An enterprise needs GitHub-operated hosting on GitHub.com and IdP-controlled user-account lifecycles, without selecting regional data residency. Which deployment fits?",
+        "choices": [
+            "GitHub Enterprise Cloud with personal accounts",
+            "GitHub Enterprise Server with local accounts",
+            "GitHub Enterprise Server with SAML authentication",
+            "GitHub Enterprise Cloud with EMU on GitHub.com"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Personal accounts remain individually owned.",
+            "Server is customer-hosted and local accounts lack the required IdP lifecycle.",
+            "Server SAML does not make the deployment a GitHub-operated Cloud service.",
+            "EMU is available on GitHub.com and provides IdP-managed accounts."
+        ],
+        "concept": "Cloud managed-identity deployment",
+        "hints": [
+            "Separate hosting responsibility from the identity model.",
+            "Consider data location, operations, and collaboration requirements independently."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/enterprise-fundamentals/choose-an-enterprise-type"
+    },
+    {
+        "id": "admin-047",
+        "domain": "Administer GitHub Enterprise environment",
+        "prompt": "What combination is required for GitHub Enterprise Cloud with data residency?",
+        "choices": [
+            "Enterprise Managed Users on a dedicated GHE.com subdomain",
+            "Personal accounts on a dedicated GitHub.com organization",
+            "Local accounts on a customer-hosted GHES appliance",
+            "Personal accounts on an arbitrary custom GitHub.com domain"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Data-resident Cloud enterprises use EMU and a dedicated GHE.com subdomain.",
+            "A GitHub.com organization with personal accounts is not the data-residency model.",
+            "GHES is a separate self-hosted deployment.",
+            "An arbitrary custom domain does not establish a data-resident Cloud enterprise."
+        ],
+        "concept": "Data-residency identity and host",
+        "hints": [
+            "Separate hosting responsibility from the identity model.",
+            "Consider data location, operations, and collaboration requirements independently."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/data-residency/about-github-enterprise-cloud-with-data-residency"
+    },
+    {
+        "id": "admin-048",
+        "domain": "Administer GitHub Enterprise environment",
+        "prompt": "What does adopting EMU require for an existing GitHub.com enterprise that currently uses personal accounts?",
+        "choices": [
+            "A billing-manager role assignment",
+            "Migration to a new enterprise account",
+            "An in-place conversion of every personal account",
+            "A repository visibility change to internal"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Billing role assignments do not change the account model.",
+            "GitHub documents migration to a new enterprise account for this identity-model change.",
+            "Existing personal accounts are not converted in place into managed accounts.",
+            "Changing visibility does not change enterprise identity type."
+        ],
+        "concept": "Identity-model migration",
+        "hints": [
+            "Separate hosting responsibility from the identity model.",
+            "Consider data location, operations, and collaboration requirements independently."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/enterprise-fundamentals/choose-an-enterprise-type"
+    },
+    {
+        "id": "admin-049",
+        "domain": "Administer GitHub Enterprise environment",
+        "prompt": "In a combined GitHub Enterprise Cloud and Server deployment, how are most administrative policies managed?",
+        "choices": [
+            "Exclusively in the Server Management Console for both deployments",
+            "Automatically through license-usage synchronization",
+            "Separately in each enterprise account",
+            "Exclusively in the Cloud account for both deployments"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Server's Management Console does not administer Cloud policies.",
+            "License synchronization does not synchronize enterprise policies.",
+            "Most administration, including policies, remains separate per enterprise account.",
+            "The Cloud account does not universally administer Server policies."
+        ],
+        "concept": "Hybrid administration boundaries",
+        "hints": [
+            "Separate hosting responsibility from the identity model.",
+            "Consider data location, operations, and collaboration requirements independently."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/billing/concepts/enterprise-billing/combined-enterprise-use"
+    },
+    {
+        "id": "admin-050",
+        "domain": "Administer GitHub Enterprise environment",
+        "prompt": "A repository moves from one GitHub.com organization to another, and nobody reuses its old location. What happens when an existing clone fetches using the old remote URL?",
+        "choices": [
+            "Fetch fails until the clone's entire commit history is downloaded again.",
+            "The old URL becomes a permanent independent copy of the repository.",
+            "The old URL grants the clone access regardless of its new permissions.",
+            "Git redirects to the new location; updating origin is still recommended."
+        ],
+        "correct": 3,
+        "explanations": [
+            "A transfer preserves Git history and redirects the old Git URL.",
+            "The old location redirects; it is not a second repository copy.",
+            "Redirection does not bypass authentication or repository authorization.",
+            "Git clone, fetch, and push requests redirect after transfer, but the new URL avoids reliance on that redirect."
+        ],
+        "concept": "Repository transfers redirect Git URLs without bypassing access checks.",
+        "hints": [
+            "Separate the repository's location from its Git history.",
+            "Consider whether a redirect also changes authorization."
+        ],
+        "source": "https://docs.github.com/en/repositories/creating-and-managing-repositories/transferring-a-repository"
+    },
+    {
+        "id": "admin-051",
+        "domain": "Administer GitHub Enterprise environment",
+        "prompt": "A reproducible GitHub Enterprise Cloud product error remains after administrators verify configuration. Which evidence best helps an entitled support engineer reproduce it?",
+        "choices": [
+            "Steps, exact errors, affected URLs, and expected results",
+            "Contract dates, license quantities, and invoice numbers",
+            "Team names, job titles, and billing contact details",
+            "Repository counts, renewal dates, and purchase orders"
+        ],
+        "correct": 0,
+        "explanations": [
+            "These details identify the failing behavior and how to reproduce it.",
+            "Commercial details do not describe the failing behavior.",
+            "Administrative contact details do not provide reproduction instructions.",
+            "Inventory and procurement data do not reproduce the product error."
+        ],
+        "concept": "Actionable support escalation",
+        "hints": [
+            "Separate customer-controlled settings from product or service faults.",
+            "Match the evidence and entitlement to the affected deployment."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/support/contacting-github-support/creating-a-support-ticket"
+    },
+    {
+        "id": "admin-052",
+        "domain": "Administer GitHub Enterprise environment",
+        "prompt": "Why may GitHub Support ask a GitHub Enterprise Server administrator to provide diagnostics and a support bundle?",
+        "choices": [
+            "The bundle automatically changes the instance's configuration",
+            "Support does not have direct access to the customer's environment",
+            "Support bundles replace the enterprise's licensing agreement",
+            "Diagnostics automatically grant Support permanent administrative access"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Generating a bundle collects information rather than reconfiguring the instance.",
+            "Administrators supply environment information and logs for investigation.",
+            "Bundles provide troubleshooting evidence, not licensing rights.",
+            "Diagnostic files do not grant persistent administrative access."
+        ],
+        "concept": "Server support evidence boundary",
+        "hints": [
+            "Separate customer-controlled settings from product or service faults.",
+            "Match the evidence and entitlement to the affected deployment."
+        ],
+        "source": "https://docs.github.com/en/enterprise-server@3.19/support/contacting-github-support/providing-data-to-github-support"
+    },
+    {
+        "id": "admin-053",
+        "domain": "Administer GitHub Enterprise environment",
+        "prompt": "In GitHub Enterprise Server 3.19, which artifact is a plaintext overview of the instance's settings and environment?",
+        "choices": [
+            "Extended support bundle",
+            "Repository source archive",
+            "Diagnostic file",
+            "Support bundle"
+        ],
+        "correct": 2,
+        "explanations": [
+            "An extended bundle is also an archive with a longer log range.",
+            "A source archive contains repository files rather than instance diagnostics.",
+            "A diagnostic file summarizes settings and environment information.",
+            "A support bundle is an archive containing diagnostics and sanitized logs."
+        ],
+        "concept": "Server diagnostic artifact",
+        "hints": [
+            "Consider whether settings alone or logs are required.",
+            "Check the deployment topology and the documented administrative interface."
+        ],
+        "source": "https://docs.github.com/en/enterprise-server@3.19/support/contacting-github-support/providing-data-to-github-support"
+    },
+    {
+        "id": "admin-054",
+        "domain": "Administer GitHub Enterprise environment",
+        "prompt": "What does a GitHub Enterprise Server 3.19 support bundle add beyond a standalone diagnostic file?",
+        "choices": [
+            "A complete repository backup for disaster recovery",
+            "A source-code export of every repository",
+            "An export of organization membership without instance logs",
+            "Sanitized instance logs packaged with diagnostics"
+        ],
+        "correct": 3,
+        "explanations": [
+            "A support bundle is not a disaster-recovery backup.",
+            "Its purpose is collecting diagnostic evidence, not exporting all source code.",
+            "Membership-only data omits the logs included in a support bundle.",
+            "Support bundles combine diagnostic information with relevant sanitized logs."
+        ],
+        "concept": "Support bundle contents",
+        "hints": [
+            "Consider whether settings alone or logs are required.",
+            "Check the deployment topology and the documented administrative interface."
+        ],
+        "source": "https://docs.github.com/en/enterprise-server@3.19/support/contacting-github-support/providing-data-to-github-support"
+    },
+    {
+        "id": "admin-055",
+        "domain": "Administer GitHub Enterprise environment",
+        "prompt": "An administrator has an administrative SSH session on GitHub Enterprise Server 3.19. Which utility retrieves the instance's diagnostic information?",
+        "choices": [
+            "ghe-diagnostics",
+            "ghe-support-bundle",
+            "ghe-cluster-support-bundle",
+            "git archive"
+        ],
+        "correct": 0,
+        "explanations": [
+            "ghe-diagnostics produces the instance diagnostic information.",
+            "ghe-support-bundle collects a support archive rather than only diagnostics.",
+            "The cluster utility collects a topology-specific support bundle.",
+            "git archive packages repository content, not instance diagnostics."
+        ],
+        "concept": "Server diagnostics utility",
+        "hints": [
+            "Consider whether settings alone or logs are required.",
+            "Check the deployment topology and the documented administrative interface."
+        ],
+        "source": "https://docs.github.com/en/enterprise-server@3.19/support/contacting-github-support/providing-data-to-github-support"
+    },
+    {
+        "id": "admin-056",
+        "domain": "Administer GitHub Enterprise environment",
+        "prompt": "For a standalone GitHub Enterprise Server 3.19 instance, which documented SSH command downloads a support bundle to the local machine?",
+        "choices": [
+            "git bundle create repository.bundle --all",
+            "ssh -p 122 admin@HOSTNAME -- 'ghe-support-bundle -o' > support-bundle.tgz",
+            "ssh -p 122 admin@HOSTNAME -- 'ghe-diagnostics' > diagnostics.txt",
+            "git archive --format=tar HEAD > repository.tar"
+        ],
+        "correct": 1,
+        "explanations": [
+            "git bundle exports Git objects, not instance diagnostics and logs.",
+            "This administrative SSH command streams the support archive to a local file.",
+            "This command downloads diagnostics without the support-bundle logs.",
+            "git archive exports repository source, not a Server support bundle."
+        ],
+        "concept": "Downloading a Server support bundle",
+        "hints": [
+            "Consider whether settings alone or logs are required.",
+            "Check the deployment topology and the documented administrative interface."
+        ],
+        "source": "https://docs.github.com/en/enterprise-server@3.19/support/contacting-github-support/providing-data-to-github-support"
+    },
+    {
+        "id": "admin-057",
+        "domain": "Administer GitHub Enterprise environment",
+        "prompt": "Which support-bundle utility is documented for GitHub Enterprise Server 3.19 instances using clustering or geo-replication?",
+        "choices": [
+            "git bundle",
+            "git archive",
+            "ghe-cluster-support-bundle",
+            "ghe-diagnostics"
+        ],
+        "correct": 2,
+        "explanations": [
+            "git bundle transports Git objects.",
+            "git archive exports a repository tree.",
+            "The cluster utility is documented for cluster and geo-replication topologies.",
+            "ghe-diagnostics produces diagnostic information rather than the required topology-wide bundle."
+        ],
+        "concept": "Topology-aware support collection",
+        "hints": [
+            "Consider whether settings alone or logs are required.",
+            "Check the deployment topology and the documented administrative interface."
+        ],
+        "source": "https://docs.github.com/en/enterprise-server@3.19/support/contacting-github-support/providing-data-to-github-support"
+    },
+    {
+        "id": "admin-058",
+        "domain": "Administer GitHub Enterprise environment",
+        "prompt": "An administrator can access the GitHub Enterprise Server 3.19 Management Console but not SSH. Which English UI path downloads diagnostics?",
+        "choices": [
+            "Management Console → Support → Download support bundle",
+            "Repository Settings → Collaborators & teams",
+            "Organization Settings → Authentication security",
+            "Management Console → Support → Download diagnostics info"
+        ],
+        "correct": 3,
+        "explanations": [
+            "This downloads a bundle with logs, not the standalone diagnostic file requested.",
+            "Repository access administration does not produce instance diagnostics.",
+            "Organization authentication settings do not export Server diagnostics.",
+            "The Support tab offers Download diagnostics info without requiring SSH."
+        ],
+        "concept": "Management Console diagnostics",
+        "hints": [
+            "Start at the administrative scope named in the question.",
+            "Match the setting's purpose, not just a familiar menu label."
+        ],
+        "source": "https://docs.github.com/en/enterprise-server@3.19/support/contacting-github-support/providing-data-to-github-support"
+    },
+    {
+        "id": "admin-059",
+        "domain": "Administer GitHub Enterprise environment",
+        "prompt": "For an enterprise customer, what is GitHub Premium Support?",
+        "choices": [
+            "A paid supplemental tier with additional support commitments",
+            "The default Enterprise support included with user licensing",
+            "A professional-services engagement limited to implementation consulting",
+            "A community forum dedicated to enterprise administration"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Premium Support supplements Enterprise support with plan-specific commitments.",
+            "Included Enterprise support is not the supplemental Premium offering.",
+            "Premium Support is a support tier, not merely an implementation project.",
+            "Community forums do not provide the Premium Support service commitments."
+        ],
+        "concept": "Enterprise support tiers",
+        "hints": [
+            "Separate customer-controlled settings from product or service faults.",
+            "Match the evidence and entitlement to the affected deployment."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/support/learning-about-github-support/about-github-premium-support"
+    },
+    {
+        "id": "admin-060",
+        "domain": "Administer GitHub Enterprise environment",
+        "prompt": "A GitHub Enterprise Cloud customer with Premium Support has critical service errors blocking production workflows and directly affecting business operations. Which documented ticket priority fits?",
+        "choices": [
+            "Low",
+            "Urgent",
+            "High",
+            "Normal"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Low covers non-time-sensitive questions and suggestions.",
+            "Urgent covers critical production service failures with direct business impact for Premium Support customers.",
+            "High covers the documented limited-impact account or security cases.",
+            "Normal covers limited or moderate issues and general questions."
+        ],
+        "concept": "Premium Support incident priority",
+        "hints": [
+            "Separate customer-controlled settings from product or service faults.",
+            "Match the evidence and entitlement to the affected deployment."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/support/learning-about-github-support/about-ticket-priority"
+    },
+    {
+        "id": "admin-061",
+        "domain": "Administer GitHub Enterprise environment",
+        "prompt": "A repository administrator wants changes to the default branch to arrive through pull requests rather than direct pushes. Which branch-ruleset rule establishes that standard?",
+        "choices": [
+            "Require linear history",
+            "Block force pushes",
+            "Require a pull request before merging",
+            "Require signed commits"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Linear history restricts merge-commit structure, not the contribution route.",
+            "Blocking force pushes does not prevent ordinary direct pushes.",
+            "The pull-request rule requires changes to be associated with a pull request, subject to bypass settings.",
+            "Signed commits verify signatures but do not require a pull request."
+        ],
+        "concept": "Pull-request branching standard",
+        "hints": [
+            "Distinguish written conventions from enforced controls.",
+            "Identify the artifact or rule that governs this part of development."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets"
+    },
+    {
+        "id": "admin-062",
+        "domain": "Administer GitHub Enterprise environment",
+        "prompt": "Which repository file assigns individuals or organization teams responsibility for reviewing changes to matching paths?",
+        "choices": [
+            "CONTRIBUTING.md",
+            "SECURITY.md",
+            "README.md",
+            "CODEOWNERS"
+        ],
+        "correct": 3,
+        "explanations": [
+            "CONTRIBUTING.md describes contribution guidelines without assigning path-based review owners.",
+            "SECURITY.md describes security reporting policy.",
+            "README.md introduces the project rather than defining review routing.",
+            "CODEOWNERS maps paths to owners and triggers review requests for eligible pull requests."
+        ],
+        "concept": "Path-based review ownership",
+        "hints": [
+            "Distinguish written conventions from enforced controls.",
+            "Identify the artifact or rule that governs this part of development."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners"
+    },
+    {
+        "id": "admin-063",
+        "domain": "Administer GitHub Enterprise environment",
+        "prompt": "A repository has CODEOWNERS, but code-owner approval must be mandatory before merging protected changes. What additional control is needed?",
+        "choices": [
+            "Require review from code owners in the branch protection or ruleset",
+            "Add the owners to the repository's watchers",
+            "Mention the owners only in the pull-request template",
+            "Give the owners a repository notification subscription"
+        ],
+        "correct": 0,
+        "explanations": [
+            "CODEOWNERS requests reviews; an enforced review rule makes owner approval required.",
+            "Watching affects notifications, not merge requirements.",
+            "A template mention does not enforce approval.",
+            "Notification subscriptions do not enforce merge gates."
+        ],
+        "concept": "Enforcing code-owner approval",
+        "hints": [
+            "Distinguish written conventions from enforced controls.",
+            "Identify the artifact or rule that governs this part of development."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners"
+    },
+    {
+        "id": "admin-064",
+        "domain": "Administer GitHub Enterprise environment",
+        "prompt": "What anchors a GitHub release to a specific point in repository history?",
+        "choices": [
+            "A project milestone",
+            "A Git tag",
+            "A moving branch tip",
+            "A pull-request number"
+        ],
+        "correct": 1,
+        "explanations": [
+            "A milestone groups work rather than locating a release in Git history.",
+            "GitHub releases are based on Git tags marking points in repository history.",
+            "A branch tip changes as commits arrive and is not the release's version anchor.",
+            "A pull-request number identifies a proposed change, not the release tag."
+        ],
+        "concept": "Release version anchors",
+        "hints": [
+            "Distinguish written conventions from enforced controls.",
+            "Identify the artifact or rule that governs this part of development."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/repositories/releasing-projects-on-github/about-releases"
+    },
+    {
+        "id": "admin-065",
+        "domain": "Administer GitHub Enterprise environment",
+        "prompt": "In the English GitHub release editor, which control preserves an unfinished release for later work instead of publishing it?",
+        "choices": [
+            "Generate release notes",
+            "This is a pre-release",
+            "Save draft",
+            "Publish release"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Generating notes prepares text without saving the release as a draft.",
+            "A pre-release designation is not the same as keeping a release unpublished.",
+            "Save draft retains the release for further preparation.",
+            "Publish release makes the release public to its permitted audience."
+        ],
+        "concept": "Release preparation state",
+        "hints": [
+            "Start at the administrative scope named in the question.",
+            "Match the setting's purpose, not just a familiar menu label."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/repositories/releasing-projects-on-github/managing-releases-in-a-repository"
+    },
+    {
+        "id": "admin-066",
+        "domain": "Administer GitHub Enterprise environment",
+        "prompt": "Which mechanism supplies reusable prompts or structure in the issue and pull-request creation experience?",
+        "choices": [
+            "Repository topic tags",
+            "CODEOWNERS path assignments",
+            "Project milestone descriptions",
+            "Issue and pull-request templates"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Topics classify repositories rather than structure new contributions.",
+            "CODEOWNERS routes code reviews rather than structure issue and pull-request descriptions.",
+            "Milestones group related work rather than supply creation templates.",
+            "Templates structure the information contributors provide when creating issues and pull requests."
+        ],
+        "concept": "Standardized contribution intake",
+        "hints": [
+            "Distinguish written conventions from enforced controls.",
+            "Identify the artifact or rule that governs this part of development."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/communities/using-templates-to-encourage-useful-issues-and-pull-requests/about-issue-and-pull-request-templates"
+    },
+    {
+        "id": "admin-067",
+        "domain": "Administer GitHub Enterprise environment",
+        "prompt": "Which approach shares a centrally maintained, multi-job CI workflow across repositories without copying its implementation into each caller?",
+        "choices": [
+            "Call a reusable workflow",
+            "Generate independent copies from a workflow template",
+            "Package only a step sequence in a composite action",
+            "Maintain separate full workflow copies in each repository"
+        ],
+        "correct": 0,
+        "explanations": [
+            "A reusable workflow shares workflow-level logic, including multiple jobs.",
+            "Templates help create workflows but produce copies rather than a shared implementation.",
+            "A composite action reuses steps within a job, not an entire multi-job workflow.",
+            "Independent copies duplicate the implementation and its maintenance."
+        ],
+        "concept": "Reusable process standards",
+        "hints": [
+            "Distinguish written conventions from enforced controls.",
+            "Identify the artifact or rule that governs this part of development."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/actions/concepts/workflows-and-actions/reusing-workflow-configurations"
+    },
+    {
+        "id": "admin-068",
+        "domain": "Administer GitHub Enterprise environment",
+        "prompt": "A single GitHub account is a member of several organizations within one GitHub Enterprise Cloud deployment. How does unique-user enterprise licensing count that person?",
+        "choices": [
+            "Once per team membership",
+            "Once across the enterprise deployment",
+            "Once per organization membership",
+            "Once per repository with Write access"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Team memberships do not multiply the person's enterprise license count.",
+            "The unique-user model counts one person once across organizations in the deployment.",
+            "Organization memberships do not multiply that person's licenses.",
+            "Repository grants do not multiply the person's enterprise license count."
+        ],
+        "concept": "Unique-user enterprise licensing",
+        "hints": [
+            "Separate licensed people from consumption of paid services.",
+            "Check the billing model and scope before counting or allocating charges."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/billing/concepts/enterprise-billing/combined-enterprise-use"
+    },
+    {
+        "id": "admin-069",
+        "domain": "Administer GitHub Enterprise environment",
+        "prompt": "In GitHub Enterprise Cloud with personal accounts, which outside collaborator consumes an enterprise license under the documented repository-access criterion?",
+        "choices": [
+            "One with only a pending public-repository invitation",
+            "One whose private-repository invitation failed",
+            "One with accepted access to a private non-fork repository",
+            "One with access only to public repositories"
+        ],
+        "correct": 2,
+        "explanations": [
+            "A pending invitation for public-only outside collaboration does not consume one.",
+            "Failed invitations are excluded from license consumption.",
+            "Outside collaborators with access to private non-fork repositories consume licenses.",
+            "Public-only outside collaboration does not consume an enterprise license."
+        ],
+        "concept": "Outside-collaborator license scope",
+        "hints": [
+            "Separate licensed people from consumption of paid services.",
+            "Check the billing model and scope before counting or allocating charges."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/billing/reference/github-license-users"
+    },
+    {
+        "id": "admin-070",
+        "domain": "Administer GitHub Enterprise environment",
+        "prompt": "Which pair names the two documented billing models for GitHub Enterprise user licenses?",
+        "choices": [
+            "Monthly and annual",
+            "Credit card and invoice",
+            "Cloud and Server",
+            "Usage-based and volume"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Monthly and annual describe billing frequency, not these license models.",
+            "Credit card and invoice concern payment arrangements, not license models.",
+            "Cloud and Server are deployment options rather than license billing models.",
+            "GitHub documents usage-based and volume models for enterprise licenses."
+        ],
+        "concept": "Enterprise license billing models",
+        "hints": [
+            "Separate licensed people from consumption of paid services.",
+            "Check the billing model and scope before counting or allocating charges."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/billing/concepts/enterprise-billing/billing-for-enterprises"
+    },
+    {
+        "id": "admin-071",
+        "domain": "Administer GitHub Enterprise environment",
+        "prompt": "Which statement correctly describes the relationship between GitHub Enterprise Cloud user licenses and paid feature consumption?",
+        "choices": [
+            "User licenses and billable feature usage can both contribute charges",
+            "User-license charges always include all paid feature consumption",
+            "Billable feature consumption replaces enterprise user-license charges",
+            "Each additional organization membership replaces feature charges"
+        ],
+        "correct": 0,
+        "explanations": [
+            "The bill can include enterprise licenses, paid feature usage, and extra purchased products.",
+            "Included allowances do not make all additional usage free.",
+            "Feature usage does not replace the enterprise-license component.",
+            "Organization membership does not substitute for feature billing."
+        ],
+        "concept": "License charges versus service consumption",
+        "hints": [
+            "Separate licensed people from consumption of paid services.",
+            "Check the billing model and scope before counting or allocating charges."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/billing/concepts/enterprise-billing/billing-for-enterprises"
+    },
+    {
+        "id": "admin-072",
+        "domain": "Administer GitHub Enterprise environment",
+        "prompt": "What is the purpose of cost centers in GitHub Enterprise Cloud billing?",
+        "choices": [
+            "Deduplicate Cloud and Server user licenses",
+            "Attribute metered spending to business units",
+            "Pool separate enterprise license contracts",
+            "Convert volume subscriptions to usage-based licenses"
+        ],
+        "correct": 1,
+        "explanations": [
+            "License synchronization, not cost centers, deduplicates users across deployments.",
+            "Cost centers allocate metered spending, not volume or subscription billing.",
+            "Cost centers do not combine separate license contracts.",
+            "Cost centers do not change the license billing model."
+        ],
+        "concept": "Enterprise cost allocation",
+        "hints": [
+            "Separate licensed people from consumption of paid services.",
+            "Check the billing model and scope before counting or allocating charges."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/billing/concepts/cost-centers"
+    },
+    {
+        "id": "admin-073",
+        "domain": "Administer GitHub Enterprise environment",
+        "prompt": "What is needed to deduplicate a person's license usage across GitHub Enterprise Cloud and GitHub Enterprise Server?",
+        "choices": [
+            "Connect both deployments to the same SAML IdP alone",
+            "Combine invoice contacts without license synchronization",
+            "Synchronize license usage between environments",
+            "Configure matching usernames without license synchronization"
+        ],
+        "correct": 2,
+        "explanations": [
+            "A shared IdP does not by itself synchronize license data.",
+            "Shared billing contacts do not establish license synchronization.",
+            "License synchronization enables GitHub to deduplicate users using documented identity-matching criteria.",
+            "Matching usernames alone do not synchronize license usage."
+        ],
+        "concept": "Combined deployment license synchronization",
+        "hints": [
+            "Separate licensed people from consumption of paid services.",
+            "Check the billing model and scope before counting or allocating charges."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/billing/concepts/enterprise-billing/combined-enterprise-use"
+    },
+    {
+        "id": "admin-074",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "An administrator has an existing ruleset definition and wants to import it through another repository's ruleset interface. Which file format does this import use?",
+        "choices": [
+            "JSON",
+            "CSV",
+            "TOML",
+            "SARIF"
+        ],
+        "correct": 0,
+        "explanations": [
+            "The ruleset import interface accepts a JSON ruleset definition.",
+            "CSV tables are not the ruleset import format.",
+            "TOML is not the documented format for this ruleset importer.",
+            "SARIF represents static-analysis results, not ruleset definitions."
+        ],
+        "concept": "Ruleset definitions can be imported from JSON files.",
+        "hints": [
+            "Identify the kind of object being transferred, not its enforcement result.",
+            "Distinguish a policy definition from an analysis report."
+        ],
+        "source": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/managing-rulesets-for-a-repository"
+    },
+    {
+        "id": "admin-075",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Which ruleset enforcement status records potential violations without blocking operations on GitHub Enterprise Cloud?",
+        "choices": [
+            "Active",
+            "Disabled",
+            "Evaluate",
+            "Archived"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Active rulesets enforce their requirements.",
+            "Disabled rulesets do not evaluate activity.",
+            "Evaluate measures effects without enforcing the rules.",
+            "Archived is not a ruleset enforcement status."
+        ],
+        "concept": "Nonblocking ruleset evaluation",
+        "hints": [
+            "Separate observing a policy from enforcing it.",
+            "An inactive policy need not collect evaluation results."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets"
+    },
+    {
+        "id": "admin-076",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "A release GitHub App needs an exception to one branch ruleset. Which change limits the exception to that integration?",
+        "choices": [
+            "Add that app to the bypass list",
+            "Grant bypass to the write role",
+            "Disable enforcement for the branch",
+            "Grant bypass to all repository admins"
+        ],
+        "correct": 0,
+        "explanations": [
+            "An app-specific entry scopes bypass to the installation actor.",
+            "A role-based exemption covers all users with that role.",
+            "Disabling enforcement exempts every actor.",
+            "An admin-wide exemption is broader than the integration."
+        ],
+        "concept": "Scoped ruleset exceptions",
+        "hints": [
+            "Identify the actor that actually performs the release.",
+            "Compare individual exceptions with role-wide exceptions."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets"
+    },
+    {
+        "id": "admin-077",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Which branch ruleset rule rejects non-fast-forward pushes by actors without bypass?",
+        "choices": [
+            "Require linear history",
+            "Restrict deletions",
+            "Block force pushes",
+            "Require signed commits"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Linear history prevents merge commits, not all history rewrites.",
+            "Deletion restrictions protect the branch reference from removal.",
+            "Blocking force pushes prevents non-fast-forward updates.",
+            "Signed commits can still rewrite branch history."
+        ],
+        "concept": "Protecting branch history",
+        "hints": [
+            "Separate commit shape from reference updates.",
+            "A signed history can still be rewritten."
+        ],
+        "source": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets"
+    },
+    {
+        "id": "admin-078",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Which review setting invalidates earlier approvals when a push changes the pull request's diff?",
+        "choices": [
+            "Dismiss stale pull request approvals when new commits are pushed",
+            "Require review from Code Owners",
+            "Require conversation resolution before merging",
+            "Require approval of the most recent reviewable push"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Stale-review dismissal removes approvals tied to the earlier diff.",
+            "Code-owner review selects responsible reviewers.",
+            "Conversation resolution addresses discussion threads.",
+            "Latest-push approval can retain earlier approvals."
+        ],
+        "concept": "Stale approval dismissal",
+        "hints": [
+            "Consider whether approvals are removed or merely supplemented.",
+            "Focus on what changes after the reviewed diff changes."
+        ],
+        "source": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets"
+    },
+    {
+        "id": "admin-079",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Which required status check attribute restricts its accepted results to a particular installed GitHub App?",
+        "choices": [
+            "The check name",
+            "The expected source",
+            "The workflow filename",
+            "The branch targeting pattern"
+        ],
+        "correct": 1,
+        "explanations": [
+            "A check name alone does not establish its producer.",
+            "The expected source binds the check to the chosen app.",
+            "A filename is not the check's authenticated producer.",
+            "Branch patterns select branches, not check producers."
+        ],
+        "concept": "Required check provenance",
+        "hints": [
+            "A check name alone does not establish its producer.",
+            "Look for the setting that constrains result origin."
+        ],
+        "source": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets"
+    },
+    {
+        "id": "admin-080",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Which branch rule requires cryptographically verified signatures on commits?",
+        "choices": [
+            "Require signed commits",
+            "Require linear history",
+            "Require a pull request before merging",
+            "Require status checks to pass"
+        ],
+        "correct": 0,
+        "explanations": [
+            "This rule requires verified commit signatures.",
+            "Linear history excludes merge commits without verifying signatures.",
+            "A pull request requirement controls the merge process.",
+            "Status checks report configured checks, not inherently commit signatures."
+        ],
+        "concept": "Commit signature enforcement",
+        "hints": [
+            "Distinguish authorship evidence from review approval.",
+            "Consider which control operates on each commit."
+        ],
+        "source": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets"
+    },
+    {
+        "id": "admin-081",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "On GitHub Enterprise Cloud, which push rule blocks files under a prohibited directory pattern across a private repository's fork network?",
+        "choices": [
+            "Restrict file extensions",
+            "Restrict file path length",
+            "Restrict file size",
+            "Restrict file paths"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Extension restrictions match file suffixes rather than directory patterns.",
+            "Path-length restrictions measure length, not directory identity.",
+            "Size restrictions measure file size.",
+            "File-path restrictions match prohibited path patterns."
+        ],
+        "concept": "Path-based push restrictions",
+        "hints": [
+            "Match the rule to the property being prohibited.",
+            "A directory name is not a file-size limit."
+        ],
+        "source": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets"
+    },
+    {
+        "id": "admin-082",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Which enterprise repository policy controls whether private and internal repositories can be forked in GitHub Enterprise Cloud?",
+        "choices": [
+            "Repository forking policy",
+            "Repository creation policy",
+            "Repository visibility policy",
+            "Repository transfer policy"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Forking policy governs creation of private and internal forks.",
+            "Creation policy controls who can create repositories.",
+            "Visibility policy controls visibility changes.",
+            "Transfer policy governs moving repository ownership."
+        ],
+        "concept": "Enterprise data protection policies",
+        "hints": [
+            "Identify the operation that creates a related copy.",
+            "Do not confuse copying with transferring ownership."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/enforcing-policies/enforcing-policies-for-your-enterprise/enforcing-repository-management-policies-in-your-enterprise"
+    },
+    {
+        "id": "admin-083",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "A user's address is on a GitHub Enterprise Cloud IP allow list. What access does this alone grant to private repositories?",
+        "choices": [
+            "Read access throughout the enterprise",
+            "Write access within the home organization",
+            "No additional repository permissions",
+            "Read access to explicitly listed repositories"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Network admission does not grant enterprise-wide read access.",
+            "The network list does not assign organization roles.",
+            "Repository authorization is still required independently.",
+            "IP entries describe networks, not repository grants."
+        ],
+        "concept": "Network controls versus authorization",
+        "hints": [
+            "Separate where a request originates from who may access data.",
+            "A network condition is only one part of access control."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/configuring-settings/hardening-security-for-your-enterprise/restricting-network-traffic-to-your-enterprise-with-an-ip-allow-list"
+    },
+    {
+        "id": "admin-084",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "In the English GitHub.com UI, which organization settings path lets an organization owner apply security configurations to repositories?",
+        "choices": [
+            "Settings > Member privileges",
+            "Settings > Advanced Security > Configurations",
+            "Settings > Authentication security",
+            "Settings > Third-party access"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Member privileges governs member capabilities, not security configuration assignment.",
+            "Configurations provides repository selection and configuration assignment.",
+            "Authentication security governs authentication controls.",
+            "Third-party access governs integrations rather than security bundles."
+        ],
+        "concept": "Applying organization security configurations",
+        "hints": [
+            "Look for repository security enablement rather than user authentication.",
+            "Consider the distinction between integration access and feature coverage."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/secure-at-scale/configure-organization-security/establish-complete-coverage/apply-custom-configuration"
+    },
+    {
+        "id": "admin-085",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Which security configuration option prevents repository administrators from changing its managed feature settings where enforcement is supported?",
+        "choices": [
+            "Set it as the default configuration",
+            "Enforce the configuration",
+            "Detach it from the repositories",
+            "Apply it to all current repositories"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Default assignment affects new repositories, not administrator override rights.",
+            "Enforcement restricts changes to the managed settings.",
+            "Detaching removes the managed configuration relationship.",
+            "Broad application does not itself enforce the managed settings."
+        ],
+        "concept": "Security configuration enforcement",
+        "hints": [
+            "Assignment scope and modification restrictions are different.",
+            "Keeping a managed relationship differs from preventing overrides."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/security-at-scale/about-security-configurations"
+    },
+    {
+        "id": "admin-086",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Who can view security data across all repositories in an organization through security overview, subject to feature availability?",
+        "choices": [
+            "All repository maintainers",
+            "All organization members",
+            "Organization owners and security managers",
+            "All outside collaborators"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Maintainer access is limited to authorized repositories.",
+            "Membership alone does not expose every repository's security data.",
+            "These roles have organization-wide security visibility.",
+            "Outside collaboration does not confer organization-wide visibility."
+        ],
+        "concept": "Security overview visibility boundaries",
+        "hints": [
+            "Consider whether a role is organization-wide or repository-scoped.",
+            "Access to one repository does not imply access to all alerts."
+        ],
+        "source": "https://docs.github.com/en/code-security/security-overview/about-security-overview"
+    },
+    {
+        "id": "admin-087",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "An enterprise owner cannot see an older non-Git event in the default audit-log view, but it is still within retention. What should they change first?",
+        "choices": [
+            "The enterprise's default branch",
+            "The repository's visibility",
+            "The audit-log date filter",
+            "The member's notification settings"
+        ],
+        "correct": 2,
+        "explanations": [
+            "The default branch does not control audit search dates.",
+            "Repository visibility is not an audit search time filter.",
+            "The default view covers less than the full retention window.",
+            "Notification settings do not expand audit-log searches."
+        ],
+        "concept": "Audit search window versus retention",
+        "hints": [
+            "The initial display window may be narrower than stored history.",
+            "Change the search scope before changing security policies."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/security-and-compliance/audit-log-for-an-enterprise"
+    },
+    {
+        "id": "admin-088",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Which design supports retaining GitHub Enterprise Cloud audit evidence beyond GitHub's native retention?",
+        "choices": [
+            "Save the audit-log search URL",
+            "Subscribe owners to email notifications",
+            "Increase repository archive frequency",
+            "Stream events to externally retained storage"
+        ],
+        "correct": 3,
+        "explanations": [
+            "A search URL does not preserve the underlying events.",
+            "Email notifications do not constitute a complete audit stream.",
+            "Repository archives preserve code, not enterprise audit events.",
+            "External storage can apply the organization's retention policy."
+        ],
+        "concept": "Audit evidence retention architecture",
+        "hints": [
+            "Consider where the event records themselves will persist.",
+            "A saved view is not a retained copy."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/streaming-the-audit-log-for-your-enterprise"
+    },
+    {
+        "id": "admin-089",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Which value supports identifying enterprise audit-log events performed by a particular access token?",
+        "choices": [
+            "The token owner's display name",
+            "The token's expiration date",
+            "The token's requested scopes",
+            "The token's SHA-256 hash"
+        ],
+        "correct": 3,
+        "explanations": [
+            "A display name does not distinguish a user's tokens.",
+            "Expiration dates are not unique token identifiers.",
+            "Many tokens can share the same scopes.",
+            "Token-specific audit searches use the token's hash."
+        ],
+        "concept": "Token-level audit attribution",
+        "hints": [
+            "A user can own several credentials.",
+            "Prefer an identifier tied to one credential rather than its capabilities."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/identifying-audit-log-events-performed-by-an-access-token"
+    },
+    {
+        "id": "admin-090",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "A valid production API key appears in a secret-scanning alert. Which action contains the credential exposure?",
+        "choices": [
+            "Revoke or rotate the key at its provider",
+            "Delete the latest commit containing the key",
+            "Close the alert as resolved",
+            "Make the repository read-only"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Provider-side revocation or rotation invalidates the exposed credential.",
+            "Deleting a commit does not invalidate copied credentials.",
+            "Closing an alert does not revoke a key.",
+            "Read-only access does not prevent use of an exposed key."
+        ],
+        "concept": "Containing a leaked credential",
+        "hints": [
+            "Distinguish removing evidence from disabling access.",
+            "The credential may already exist outside the repository."
+        ],
+        "source": "https://docs.github.com/en/code-security/secret-scanning/introduction/about-secret-scanning"
+    },
+    {
+        "id": "admin-091",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Which repository feature can block supported secrets during a push, before they enter the repository?",
+        "choices": [
+            "Secret-scanning push protection",
+            "Secret-scanning validity checks",
+            "Dependabot security updates",
+            "CodeQL default setup"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Push protection checks pushes for supported secret patterns.",
+            "Validity checks assess whether detected credentials remain active.",
+            "Security updates remediate vulnerable dependencies.",
+            "CodeQL analyzes application code rather than providing this push gate."
+        ],
+        "concept": "Preventive secret protection",
+        "hints": [
+            "Separate prevention at ingestion from post-detection triage.",
+            "Not every security feature runs during a push."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/secret-security/about-push-protection"
+    },
+    {
+        "id": "admin-092",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "With delegated bypass enabled, what must a contributor without bypass privileges do to push a blocked test credential?",
+        "choices": [
+            "Rename the branch and retry",
+            "Close the resulting scanning alert",
+            "Request a bypass for review",
+            "Add a comment to the commit"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Changing the branch name does not grant bypass privileges.",
+            "Closing an alert does not authorize the blocked push.",
+            "Delegated bypass routes an exception request to authorized reviewers.",
+            "A commit comment does not grant a bypass."
+        ],
+        "concept": "Delegated secret bypass review",
+        "hints": [
+            "Consider who is authorized to approve an exception.",
+            "A developer's classification is not itself an authorization."
+        ],
+        "source": "https://docs.github.com/en/code-security/concepts/secret-security/delegated-bypass"
+    },
+    {
+        "id": "admin-093",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Which secret-scanning capability detects an organization's own credential format when no built-in pattern covers it?",
+        "choices": [
+            "Custom patterns",
+            "Dependency submission",
+            "CodeQL query suites",
+            "Validity checks"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Custom patterns define matching rules for organization-specific secrets.",
+            "Dependency submission inventories software dependencies.",
+            "CodeQL queries analyze code rather than configure secret patterns.",
+            "Validity checks test detected credentials, not define new formats."
+        ],
+        "concept": "Custom secret detection",
+        "hints": [
+            "The missing capability is recognition of a format.",
+            "Distinguish discovery rules from credential validation."
+        ],
+        "source": "https://docs.github.com/en/code-security/how-tos/secure-your-secrets/customize-leak-detection/define-custom-patterns"
+    },
+    {
+        "id": "admin-094",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "What does an empty secret-scanning alert list establish about a repository?",
+        "choices": [
+            "Every credential in history has been revoked",
+            "No alerts are visible within the enabled coverage",
+            "All sensitive data formats have been scanned",
+            "No supported secret can enter a future commit"
+        ],
+        "correct": 1,
+        "explanations": [
+            "An empty list does not prove provider-side revocation.",
+            "Results depend on scanning coverage, settings, and access.",
+            "Secret scanning does not recognize every sensitive data format.",
+            "An empty list does not guarantee future prevention."
+        ],
+        "concept": "Limits of negative scanning evidence",
+        "hints": [
+            "Absence of findings is not proof of universal coverage.",
+            "Consider configuration, supported patterns, and visibility."
+        ],
+        "source": "https://docs.github.com/en/code-security/secret-scanning/introduction/about-secret-scanning"
+    },
+    {
+        "id": "admin-095",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "A leaked credential has been revoked, but its secret-scanning alert remains open. What should a maintainer record when closing it?",
+        "choices": [
+            "A false-positive reason because access ended",
+            "A test-secret reason because the token is inactive",
+            "A revoked reason reflecting the remediation",
+            "No reason because removing the file closes it"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Revocation does not make the original detection incorrect.",
+            "A production credential does not become a test secret.",
+            "The closure reason should reflect the actual revocation.",
+            "Removing a file does not automatically close the alert."
+        ],
+        "concept": "Accurate secret alert resolution",
+        "hints": [
+            "Classify the original finding separately from its current status.",
+            "Record the action actually taken to remediate it."
+        ],
+        "source": "https://docs.github.com/en/code-security/secret-scanning/managing-alerts-from-secret-scanning/resolving-alerts"
+    },
+    {
+        "id": "admin-096",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Which CodeQL setup chooses analysis languages and scan triggers without adding a customizable workflow file to the repository?",
+        "choices": [
+            "Default setup",
+            "External CI setup",
+            "Advanced setup",
+            "Dependency submission"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Default setup manages these choices without a checked-in workflow.",
+            "External CI requires configuring the external analysis process.",
+            "Advanced setup uses a customizable workflow file.",
+            "Dependency submission supplies inventory data, not CodeQL scans."
+        ],
+        "concept": "CodeQL default setup",
+        "hints": [
+            "Compare managed setup with workflow-file customization.",
+            "The question concerns code analysis, not dependency inventory."
+        ],
+        "source": "https://docs.github.com/en/code-security/code-scanning/enabling-code-scanning/configuring-default-setup-for-code-scanning"
+    },
+    {
+        "id": "admin-097",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "A repository needs custom build commands in its GitHub Actions CodeQL analysis. Which setup supports editing those steps?",
+        "choices": [
+            "Default setup with a different query suite",
+            "Advanced setup with a workflow file",
+            "Default setup with different runner labels",
+            "Default setup with different analysis languages"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Changing the query suite does not expose custom build steps.",
+            "Advanced setup exposes workflow steps for customization.",
+            "Runner labels select execution hosts rather than custom build steps.",
+            "Language selection does not provide custom build commands."
+        ],
+        "concept": "Custom CodeQL build configuration",
+        "hints": [
+            "Consider where executable build steps are defined.",
+            "Changing alert state does not change analysis execution."
+        ],
+        "source": "https://docs.github.com/en/code-security/code-scanning/creating-an-advanced-setup-for-code-scanning/configuring-advanced-setup-for-code-scanning"
+    },
+    {
+        "id": "admin-098",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Which result format lets a supported third-party analyzer upload findings to GitHub code scanning?",
+        "choices": [
+            "SPDX",
+            "SARIF",
+            "JUnit XML",
+            "LCOV"
+        ],
+        "correct": 1,
+        "explanations": [
+            "SPDX describes software bills of materials.",
+            "SARIF represents static-analysis results accepted by code scanning.",
+            "JUnit XML typically describes test results.",
+            "LCOV describes code coverage results."
+        ],
+        "concept": "Code scanning result interchange",
+        "hints": [
+            "Match the format to static-analysis findings.",
+            "Inventory, test, and coverage reports serve different purposes."
+        ],
+        "source": "https://docs.github.com/en/code-security/code-scanning/introduction-to-code-scanning/about-code-scanning"
+    },
+    {
+        "id": "admin-099",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Which capability analyzes supported application source code for unsafe data flows such as SQL injection?",
+        "choices": [
+            "Dependabot alerts",
+            "CodeQL code scanning",
+            "Secret-scanning validity checks",
+            "Dependency review"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Dependabot alerts identify known vulnerabilities in dependencies.",
+            "CodeQL can analyze source-to-sink data flows in supported code.",
+            "Validity checks assess detected credentials.",
+            "Dependency review examines dependency changes rather than application data flow."
+        ],
+        "concept": "Application analysis versus supply-chain analysis",
+        "hints": [
+            "Identify whether the risk lies in application logic or package versions.",
+            "Consider how untrusted input reaches a sensitive operation."
+        ],
+        "source": "https://docs.github.com/en/code-security/code-scanning/introduction-to-code-scanning/about-code-scanning"
+    },
+    {
+        "id": "admin-100",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "A reviewed code-scanning finding is demonstrably a false positive. How should a maintainer dismiss it?",
+        "choices": [
+            "Select the false-positive reason and document why",
+            "Delete the workflow's result files",
+            "Disable scanning for the language",
+            "Reduce repository visibility and rerun"
+        ],
+        "correct": 0,
+        "explanations": [
+            "A supported reason and comment preserve the triage rationale.",
+            "Deleting results is not an accountable dismissal.",
+            "Disabling a language removes coverage for other findings.",
+            "Visibility changes do not resolve a false-positive finding."
+        ],
+        "concept": "Documented code-scanning dismissal",
+        "hints": [
+            "Keep evidence of the decision without removing useful coverage.",
+            "A triage action should explain why the finding is inapplicable."
+        ],
+        "source": "https://docs.github.com/en/code-security/code-scanning/managing-code-scanning-alerts/resolving-code-scanning-alerts"
+    },
+    {
+        "id": "admin-101",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Which GitHub Enterprise Cloud ruleset control can block merges based on a chosen code-scanning tool and alert severity thresholds?",
+        "choices": [
+            "Require signed commits",
+            "Require linear history",
+            "Require deployments to succeed",
+            "Require code scanning results"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Signatures verify commits rather than vulnerability thresholds.",
+            "Linear history governs commit structure.",
+            "Deployment checks depend on environment deployment success.",
+            "This rule selects scanning tools and severity thresholds."
+        ],
+        "concept": "Security-based merge gates",
+        "hints": [
+            "A successful analysis run can still contain vulnerabilities.",
+            "Look for a control that evaluates findings, not just execution."
+        ],
+        "source": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets"
+    },
+    {
+        "id": "admin-102",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "On GitHub Enterprise Server 3.19, what prerequisite is explicitly required before repositories can use code scanning?",
+        "choices": [
+            "The organization owner publishes every repository",
+            "The repository owner links a GitHub.com public repository",
+            "The site administrator enables code scanning on the appliance",
+            "The user authorizes an OAuth App with repo scope"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Publishing repositories is neither required nor appropriate for private code.",
+            "A linked public repository is not this GHES prerequisite.",
+            "GHES requires appliance-level code-scanning enablement by the site administrator.",
+            "An OAuth grant does not enable the appliance feature."
+        ],
+        "concept": "GHES-specific code scanning prerequisites",
+        "hints": [
+            "Distinguish appliance administration from repository configuration.",
+            "Use documentation matching the deployed Server version."
+        ],
+        "source": "https://docs.github.com/en/enterprise-server@3.19/code-security/concepts/code-scanning/codeql/codeql-code-scanning"
+    },
+    {
+        "id": "admin-103",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "For private repositories on GitHub Team, which product pairing covers code scanning and secret scanning respectively?",
+        "choices": [
+            "GitHub Secret Protection; GitHub Code Security",
+            "GitHub Copilot Business; GitHub Code Security",
+            "GitHub Code Security; GitHub Secret Protection",
+            "GitHub Team alone; GitHub Secret Protection"
+        ],
+        "correct": 2,
+        "explanations": [
+            "The products are reversed: secret protection addresses credentials.",
+            "Copilot Business alone is not the code-scanning entitlement.",
+            "Code Security covers code scanning; Secret Protection covers secret scanning.",
+            "GitHub Team alone does not include private-repository code scanning."
+        ],
+        "concept": "Current security product licensing",
+        "hints": [
+            "Separate source-code vulnerability analysis from credential leak detection.",
+            "A base collaboration plan is not every security entitlement."
+        ],
+        "source": "https://docs.github.com/en/get-started/learning-about-github/about-github-advanced-security"
+    },
+    {
+        "id": "admin-104",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Which repository capability supplies dependency inventory used by Dependabot alerts?",
+        "choices": [
+            "CodeQL database",
+            "Secret-scanning custom patterns",
+            "Dependency graph",
+            "Repository security advisories"
+        ],
+        "correct": 2,
+        "explanations": [
+            "A CodeQL database represents source code for analysis.",
+            "Secret patterns identify credentials, not package inventory.",
+            "Dependabot alerts use the dependency graph to identify vulnerable dependencies.",
+            "Advisories describe vulnerabilities rather than inventorying this repository."
+        ],
+        "concept": "Dependency graph and vulnerability alerts",
+        "hints": [
+            "Alerts need both an inventory and vulnerability information.",
+            "Identify the repository's inventory component."
+        ],
+        "source": "https://docs.github.com/en/code-security/dependabot/dependabot-alerts/about-dependabot-alerts"
+    },
+    {
+        "id": "admin-105",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Which Dependabot feature opens pull requests to keep supported dependencies current even without a known vulnerability?",
+        "choices": [
+            "Dependabot version updates",
+            "Dependabot security updates",
+            "Dependency review",
+            "Dependabot alerts"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Version updates propose routine dependency upgrades.",
+            "Security updates target vulnerable dependencies.",
+            "Dependency review evaluates dependency changes in pull requests.",
+            "Alerts notify about known vulnerable dependencies."
+        ],
+        "concept": "Routine versus security dependency updates",
+        "hints": [
+            "Separate freshness maintenance from vulnerability remediation.",
+            "A notification is not an update pull request."
+        ],
+        "source": "https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/about-dependabot-version-updates"
+    },
+    {
+        "id": "admin-106",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Which file defines package ecosystems, directories, and schedules for Dependabot version updates?",
+        "choices": [
+            ".github/SECURITY.md",
+            ".github/CODEOWNERS",
+            ".github/dependabot.yml",
+            ".github/workflows/codeql.yml"
+        ],
+        "correct": 2,
+        "explanations": [
+            "SECURITY.md describes vulnerability reporting and supported versions.",
+            "CODEOWNERS defines code review responsibility.",
+            "Dependabot reads version-update configuration from this file.",
+            "A CodeQL workflow configures code analysis, not Dependabot schedules."
+        ],
+        "concept": "Dependabot configuration location",
+        "hints": [
+            "Match the filename to the automation being configured.",
+            "Security documentation differs from executable configuration."
+        ],
+        "source": "https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuring-dependabot-version-updates"
+    },
+    {
+        "id": "admin-107",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Dependabot needs a private registry credential. Which secret store should its registry configuration reference?",
+        "choices": [
+            "A Dependabot secret",
+            "An Actions secret only",
+            "A Codespaces secret only",
+            "A webhook secret"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Dependabot registry authentication uses Dependabot secrets.",
+            "Actions secrets alone are not supplied to Dependabot update jobs.",
+            "Codespaces secrets serve development environments, not update jobs.",
+            "Webhook secrets authenticate deliveries rather than package registry access."
+        ],
+        "concept": "Dependabot registry authentication",
+        "hints": [
+            "Secrets belong to distinct consumers and stores.",
+            "A credential's existence does not make it available to every feature."
+        ],
+        "source": "https://docs.github.com/en/code-security/dependabot/working-with-dependabot/configuring-access-to-private-registries-for-dependabot"
+    },
+    {
+        "id": "admin-108",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Which feature shows dependencies added or removed by a pull request and flags known vulnerabilities in those changes?",
+        "choices": [
+            "CodeQL database creation",
+            "Secret-scanning alert review",
+            "Dependency review",
+            "Repository advisory publication"
+        ],
+        "correct": 2,
+        "explanations": [
+            "CodeQL database creation prepares source-code analysis.",
+            "Secret review concerns credentials, not dependency diffs.",
+            "Dependency review exposes changed dependencies and associated vulnerability information.",
+            "Advisory publication discloses vulnerabilities rather than reviewing dependency changes."
+        ],
+        "concept": "Pull-request dependency risk",
+        "hints": [
+            "Focus on changes introduced before merging.",
+            "The relevant input is a dependency diff, not credential content."
+        ],
+        "source": "https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/about-dependency-review"
+    },
+    {
+        "id": "admin-109",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "A public repository maintainer must coordinate a vulnerability fix privately with invited researchers. Which feature supports that collaboration?",
+        "choices": [
+            "A public issue with a security label",
+            "A Dependabot alert dismissal",
+            "A published release discussion",
+            "A draft repository security advisory"
+        ],
+        "correct": 3,
+        "explanations": [
+            "A public issue exposes the vulnerability before coordinated disclosure.",
+            "Alert dismissal does not create a private collaboration workspace.",
+            "A published discussion is not private coordination.",
+            "Draft advisories support private discussion and coordinated fixes."
+        ],
+        "concept": "Private vulnerability coordination",
+        "hints": [
+            "Choose a disclosure workflow with restricted participants.",
+            "A label does not change public visibility."
+        ],
+        "source": "https://docs.github.com/en/code-security/security-advisories/working-with-repository-security-advisories/about-repository-security-advisories"
+    },
+    {
+        "id": "admin-110",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Which repository file documents supported versions and instructions for reporting vulnerabilities?",
+        "choices": [
+            "dependabot.yml",
+            "CODEOWNERS",
+            "SECURITY.md",
+            "CODE_OF_CONDUCT.md"
+        ],
+        "correct": 2,
+        "explanations": [
+            "dependabot.yml configures dependency update automation.",
+            "CODEOWNERS maps files to responsible reviewers.",
+            "SECURITY.md is the repository's security policy document.",
+            "CODE_OF_CONDUCT.md defines community behavior standards."
+        ],
+        "concept": "Repository vulnerability reporting policy",
+        "hints": [
+            "Identify guidance for researchers rather than automation settings.",
+            "Community behavior and vulnerability reporting are different policies."
+        ],
+        "source": "https://docs.github.com/en/code-security/getting-started/adding-a-security-policy-to-your-repository"
+    },
+    {
+        "id": "admin-111",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Where can a public repository maintainer request a CVE identifier for a vulnerability without an existing CVE?",
+        "choices": [
+            "In a branch protection rule",
+            "In a repository security advisory",
+            "In a Dependabot configuration file",
+            "In an organization audit-log search"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Branch protection does not allocate vulnerability identifiers.",
+            "GitHub can assign a CVE through the advisory workflow.",
+            "Dependabot configuration controls updates rather than CVE assignment.",
+            "Audit searches retrieve events, not vulnerability identifiers."
+        ],
+        "concept": "CVE assignment through GitHub",
+        "hints": [
+            "Consider how vulnerability disclosure is coordinated.",
+            "An identifier request is not a repository access policy."
+        ],
+        "source": "https://docs.github.com/en/code-security/security-advisories/working-with-repository-security-advisories/about-repository-security-advisories"
+    },
+    {
+        "id": "admin-112",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Which information most directly helps prioritize Dependabot alerts by security risk?",
+        "choices": [
+            "Alert age and package popularity",
+            "Package release date and update frequency",
+            "Severity, exploitability, and use",
+            "Maintainer activity and repository popularity"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Age and popularity do not establish exploitability or impact.",
+            "Release timing alone does not measure vulnerability exposure.",
+            "These signals connect vulnerability impact with actual use.",
+            "Maintenance and popularity alone do not measure this application's exposure."
+        ],
+        "concept": "Risk-based dependency triage",
+        "hints": [
+            "Separate display metadata from evidence of exposure.",
+            "Impact alone may not describe the affected code's use."
+        ],
+        "source": "https://docs.github.com/en/code-security/dependabot/dependabot-alerts/viewing-and-updating-dependabot-alerts"
+    },
+    {
+        "id": "admin-113",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "A team dismisses a Dependabot alert because the vulnerable code is not used. Which record best supports later reassessment?",
+        "choices": [
+            "The alert URL without a dismissal rationale",
+            "A fixed version without applicability evidence",
+            "The package version without a dismissal reason",
+            "The dismissal reason with usage evidence"
+        ],
+        "correct": 3,
+        "explanations": [
+            "An alert link locates the finding but does not explain acceptance.",
+            "A fixed version identifies a remedy, not why it was deferred.",
+            "A package version alone does not explain the decision.",
+            "A reason and evidence preserve the basis for reassessment."
+        ],
+        "concept": "Traceable dependency risk acceptance",
+        "hints": [
+            "Future reviewers need to understand the applicability decision.",
+            "Record why the affected functionality is not exposed."
+        ],
+        "source": "https://docs.github.com/en/code-security/dependabot/dependabot-alerts/viewing-and-updating-dependabot-alerts"
+    },
+    {
+        "id": "admin-114",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Which responsibilities should an enterprise security response plan assign to its own team rather than assume GitHub Support will perform?",
+        "choices": [
+            "Placing GitHub audit data on an indefinite legal hold",
+            "Repairing GitHub's underlying hosted infrastructure",
+            "Changing GitHub's native audit retention for one incident",
+            "Containment, evidence collection, and incident investigation"
+        ],
+        "correct": 3,
+        "explanations": [
+            "GitHub Support does not place audit data on investigation holds.",
+            "GitHub's hosted infrastructure is outside customer administration.",
+            "A support ticket does not extend native audit retention.",
+            "The organization owns incident response and preservation of its evidence."
+        ],
+        "concept": "Security incident response ownership",
+        "hints": [
+            "Distinguish assistance with product features from running the investigation.",
+            "Plan evidence preservation before records expire."
+        ],
+        "source": "https://docs.github.com/en/support/learning-about-github-support/understanding-how-github-support-can-help-during-a-security-incident"
+    },
+    {
+        "id": "admin-115",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "A supported REST operation only reads issues in two organization repositories. Which fine-grained PAT permission best fits?",
+        "choices": [
+            "Contents: write",
+            "Members: read",
+            "Administration: write",
+            "Issues: read"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Contents write access is unrelated and overprivileged.",
+            "Organization member access does not authorize reading repository issues.",
+            "Repository administration write access exceeds the task.",
+            "Read-only issue access matches the operation; select only the two repositories."
+        ],
+        "concept": "Fine-grained PAT least privilege",
+        "hints": [
+            "Match the resource permission to the endpoint's operation.",
+            "Repository selection and permission level both limit access."
+        ],
+        "source": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens"
+    },
+    {
+        "id": "admin-116",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "An organization requires approval of fine-grained PATs. Who can approve a member's pending token request?",
+        "choices": [
+            "An organization owner",
+            "Any repository contributor",
+            "Any member of the organization",
+            "The token creator acting alone"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Organization owners review and approve pending token requests.",
+            "Contribution rights do not grant organization token approval.",
+            "Ordinary membership does not confer token approval authority.",
+            "Creating a token does not bypass the organization's approval requirement."
+        ],
+        "concept": "Fine-grained PAT approval authority",
+        "hints": [
+            "Separate requesting access from authorizing it.",
+            "The policy is enforced at organization scope."
+        ],
+        "source": "https://docs.github.com/en/organizations/managing-programmatic-access-to-your-organization/setting-a-personal-access-token-policy-for-your-organization"
+    },
+    {
+        "id": "admin-117",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Which organization policy limits how long eligible personal access tokens may remain usable for its resources?",
+        "choices": [
+            "Repository archive policy",
+            "OAuth App approval policy",
+            "SAML session policy",
+            "Personal access token maximum lifetime policy"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Archiving controls repository activity, not token age.",
+            "OAuth approval governs applications, not PAT lifetime.",
+            "SAML session duration is not a PAT expiration policy.",
+            "Maximum lifetime policies govern PAT lifetimes for organization access."
+        ],
+        "concept": "Token expiration governance",
+        "hints": [
+            "Match the control to credential lifetime rather than browser sessions.",
+            "Approval and expiration solve different governance problems."
+        ],
+        "source": "https://docs.github.com/en/organizations/managing-programmatic-access-to-your-organization/setting-a-personal-access-token-policy-for-your-organization"
+    },
+    {
+        "id": "admin-118",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "In the English organization UI, an owner opens Settings > Personal access tokens > Active tokens. Which action removes one fine-grained PAT's access without removing its user?",
+        "choices": [
+            "Remove the user from all teams",
+            "Revoke that token's organization access",
+            "Delete every OAuth App authorization",
+            "Archive the affected repositories"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Team removal changes the user's legitimate access more broadly.",
+            "Revocation targets the selected token's access to organization resources.",
+            "OAuth authorizations are separate from this PAT.",
+            "Archiving changes repository behavior, not token authorization."
+        ],
+        "concept": "Targeted organization token revocation",
+        "hints": [
+            "Choose a control on the compromised credential, not the person's membership.",
+            "Different credential types have separate authorizations."
+        ],
+        "source": "https://docs.github.com/en/organizations/managing-programmatic-access-to-your-organization/reviewing-and-revoking-personal-access-tokens-in-your-organization"
+    },
+    {
+        "id": "admin-119",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Which authentication design avoids tying unattended repository automation to an employee's continued membership?",
+        "choices": [
+            "The employee's classic PAT",
+            "The employee's OAuth access token",
+            "A GitHub App installation token",
+            "The employee's fine-grained PAT"
+        ],
+        "correct": 2,
+        "explanations": [
+            "A classic PAT depends on its user's access.",
+            "An OAuth user token remains tied to that user.",
+            "Installation authentication acts as the installed app, not the employee.",
+            "A fine-grained PAT still depends on its user's access."
+        ],
+        "concept": "Service identity for long-lived integrations",
+        "hints": [
+            "Permission granularity does not remove a credential's user dependency.",
+            "Identify whether the actor is a person or an installation."
+        ],
+        "source": "https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/deciding-when-to-build-a-github-app"
+    },
+    {
+        "id": "admin-120",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "A member has a linked SAML identity and a classic PAT with suitable scopes. Organization policy permits the token, but it lacks SSO authorization. What is required?",
+        "choices": [
+            "Authorize the token for that organization",
+            "Disable the organization's SAML SSO",
+            "Regenerate the token with every scope",
+            "Convert the repository to internal visibility"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Classic PATs need authorization for the SSO organization.",
+            "Disabling SSO weakens policy and is not required.",
+            "Additional scopes do not replace SSO authorization.",
+            "Changing visibility does not supply the missing authorization."
+        ],
+        "concept": "Classic PAT SSO authorization",
+        "hints": [
+            "Separate scopes from the organization's identity authorization.",
+            "A usable token can still lack access to an SSO-protected organization."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating-with-single-sign-on/authorizing-a-personal-access-token-for-use-with-single-sign-on"
+    },
+    {
+        "id": "admin-121",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Which GitHub App property supports an integration that only needs read-only contents access to selected repositories?",
+        "choices": [
+            "Classic repo scope across the user's repositories",
+            "Fine-grained permissions and repository selection",
+            "Write access to every installed organization's repository",
+            "Organization owner access inherited from its creator"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Classic repo scope is broader and belongs to OAuth-style scope authorization.",
+            "GitHub Apps support selected repositories and specific permission levels.",
+            "Installation does not imply write access to every repository.",
+            "An app does not inherit organization ownership from its creator."
+        ],
+        "concept": "GitHub App least-privilege installation",
+        "hints": [
+            "Compare resource selection with broad user scopes.",
+            "Installation and permission level are separate access boundaries."
+        ],
+        "source": "https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/deciding-when-to-build-a-github-app"
+    },
+    {
+        "id": "admin-122",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "An OAuth App says it only reads private source code but requests repo scope. What capability does that scope actually include?",
+        "choices": [
+            "Read and write access to public and private repositories",
+            "Read-only access to the selected private repository",
+            "Only access to public repository metadata",
+            "Only access to repository security advisories"
+        ],
+        "correct": 0,
+        "explanations": [
+            "The broad repo scope includes write capabilities, subject to user access.",
+            "repo is not a fine-grained read-only repository grant.",
+            "repo extends beyond public metadata.",
+            "repo is not limited to security advisories."
+        ],
+        "concept": "OAuth scope review",
+        "hints": [
+            "Evaluate the requested scope, not the vendor's description.",
+            "A user-scoped grant is not the same as a selected-repository permission."
+        ],
+        "source": "https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/scopes-for-oauth-apps"
+    },
+    {
+        "id": "admin-123",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Which credential authenticates REST requests as a GitHub App installation after the app exchanges its JWT?",
+        "choices": [
+            "The app's webhook secret",
+            "The app's public key",
+            "An OAuth client identifier",
+            "An installation access token"
+        ],
+        "correct": 3,
+        "explanations": [
+            "A webhook secret validates deliveries, not installation API calls.",
+            "A public key cannot authorize installation API operations.",
+            "A client identifier alone does not authenticate these requests.",
+            "The exchanged installation token authorizes installation-level API operations."
+        ],
+        "concept": "GitHub App installation authentication",
+        "hints": [
+            "Distinguish app identity from the credential used for repository operations.",
+            "A verification secret is not an API access token."
+        ],
+        "source": "https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-as-a-github-app-installation"
+    },
+    {
+        "id": "admin-124",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "An installed GitHub App requests additional permissions. What happens if the organization owner does not approve them?",
+        "choices": [
+            "The app immediately receives the new permissions",
+            "The installation is automatically uninstalled",
+            "The app retains its existing permissions",
+            "The app's existing permissions are revoked"
+        ],
+        "correct": 2,
+        "explanations": [
+            "New permissions require approval.",
+            "Declining to approve does not automatically uninstall the app.",
+            "Existing permissions remain, though new functionality may not work.",
+            "Not approving an expansion does not revoke existing permissions."
+        ],
+        "concept": "Reviewing app permission expansion",
+        "hints": [
+            "An upgrade request is not an automatic authorization.",
+            "Separate existing access from requested new capabilities."
+        ],
+        "source": "https://docs.github.com/en/apps/using-github-apps/approving-updated-permissions-for-a-github-app"
+    },
+    {
+        "id": "admin-125",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Which action permanently removes a GitHub App installation's authorized access from an organization?",
+        "choices": [
+            "Delete the app's webhook subscription",
+            "Remove one repository from its installation",
+            "Suspend the installation temporarily",
+            "Uninstall the app from the organization"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Removing webhook delivery does not remove the app's API access.",
+            "Removing one repository leaves access to other selected repositories.",
+            "Suspension blocks access temporarily and is reversible.",
+            "Uninstalling removes that organization's installation."
+        ],
+        "concept": "Removing integration access",
+        "hints": [
+            "Distinguish temporary disablement from removing an installation.",
+            "Changing notification behavior does not revoke authorization."
+        ],
+        "source": "https://docs.github.com/en/apps/using-github-apps/reviewing-and-modifying-installed-github-apps"
+    },
+    {
+        "id": "admin-126",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "A REST request is rate limited with x-ratelimit-remaining: 0 and no Retry-After header. Which header tells the client when the primary window resets?",
+        "choices": [
+            "x-ratelimit-used",
+            "x-ratelimit-reset",
+            "x-ratelimit-resource",
+            "x-github-request-id"
+        ],
+        "correct": 1,
+        "explanations": [
+            "x-ratelimit-used reports consumption, not the reset time.",
+            "x-ratelimit-reset gives the reset time as UTC epoch seconds.",
+            "x-ratelimit-resource names the limit category.",
+            "The request identifier is for tracing rather than retry scheduling."
+        ],
+        "concept": "Primary REST rate-limit recovery",
+        "hints": [
+            "Use the server's timing information instead of immediate retries.",
+            "Consumption counts and reset timestamps serve different purposes."
+        ],
+        "source": "https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api"
+    },
+    {
+        "id": "admin-127",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "A rate-limited GitHub REST response includes Retry-After: 60. What should the client do before retrying?",
+        "choices": [
+            "Retry immediately with a new request identifier",
+            "Wait until 60 successful requests finish",
+            "Send 60 parallel requests",
+            "Wait at least 60 seconds"
+        ],
+        "correct": 3,
+        "explanations": [
+            "A new identifier does not bypass the rate limit.",
+            "The header specifies a delay, not a success count.",
+            "Parallel retries can worsen secondary throttling.",
+            "Retry-After specifies the minimum waiting period in seconds."
+        ],
+        "concept": "Server-directed retry timing",
+        "hints": [
+            "Interpret the response header's unit correctly.",
+            "Retrying more aggressively is not a recovery strategy."
+        ],
+        "source": "https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api"
+    },
+    {
+        "id": "admin-128",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "A REST client has primary allowance remaining but is throttled after many concurrent requests. Which mechanism can explain this?",
+        "choices": [
+            "Secondary rate limiting",
+            "Access token expiration",
+            "Primary REST rate limiting",
+            "SSO authorization revocation"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Secondary limits can apply independently of the primary allowance.",
+            "Expiration invalidates a credential rather than throttling request bursts.",
+            "The primary allowance has not been exhausted in this scenario.",
+            "Revocation removes authorization rather than throttling request concurrency."
+        ],
+        "concept": "Secondary API rate limits",
+        "hints": [
+            "The primary request counter is not the only protection.",
+            "Consider burst patterns and concurrent work."
+        ],
+        "source": "https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api"
+    },
+    {
+        "id": "admin-129",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "A REST GET response includes an ETag. Which request header lets the client check whether that representation has changed?",
+        "choices": [
+            "X-Hub-Signature-256",
+            "X-GitHub-Event",
+            "Retry-After",
+            "If-None-Match"
+        ],
+        "correct": 3,
+        "explanations": [
+            "X-Hub-Signature-256 validates webhook payload signatures.",
+            "X-GitHub-Event identifies a webhook event.",
+            "Retry-After is retry guidance in a response.",
+            "If-None-Match sends the saved ETag for a conditional request."
+        ],
+        "concept": "Conditional REST requests",
+        "hints": [
+            "Use a validator returned with the resource representation.",
+            "A webhook header serves a different transport workflow."
+        ],
+        "source": "https://docs.github.com/en/rest/using-the-rest-api/best-practices-for-using-the-rest-api"
+    },
+    {
+        "id": "admin-130",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "How does primary REST rate-limit accounting differ between a user's PAT and a GitHub App installation access token?",
+        "choices": [
+            "Both always share the repository owner's allowance",
+            "Each PAT has an independent allowance; all installations share the creator's allowance",
+            "The PAT uses the user's allowance; the installation token uses its installation allowance",
+            "Both always have identical allowances regardless of plan"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Installation requests are not charged to the repository owner's user bucket.",
+            "Additional PATs do not each create a separate user allowance.",
+            "User tokens and installation tokens have different primary limit accounting.",
+            "Authentication type and enterprise context can affect limits."
+        ],
+        "concept": "User versus installation rate-limit accounting",
+        "hints": [
+            "Determine which identity owns the request budget.",
+            "Do not infer a universal numeric limit across plans."
+        ],
+        "source": "https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api"
+    },
+    {
+        "id": "admin-131",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Which organization policy requires owner approval before OAuth Apps can access organization resources?",
+        "choices": [
+            "Fine-grained PAT approval",
+            "OAuth App access restrictions",
+            "Repository creation restrictions",
+            "GitHub App installation suspension"
+        ],
+        "correct": 1,
+        "explanations": [
+            "PAT approval applies to personal tokens, not OAuth App grants.",
+            "OAuth App restrictions govern approval of third-party OAuth access.",
+            "Repository creation restrictions do not approve OAuth integrations.",
+            "Suspension affects one GitHub App installation, a different app model."
+        ],
+        "concept": "Organization OAuth App approval",
+        "hints": [
+            "Choose the policy matching the application's authorization model.",
+            "GitHub Apps, OAuth Apps, and PATs have distinct controls."
+        ],
+        "source": "https://docs.github.com/en/organizations/managing-oauth-access-to-your-organizations-data/about-oauth-app-access-restrictions"
+    },
+    {
+        "id": "admin-132",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Which verification authenticates a GitHub webhook payload using its configured shared secret?",
+        "choices": [
+            "Compare the sender's IP with allowed addresses",
+            "Validate X-Hub-Signature-256 using HMAC-SHA256",
+            "Verify User-Agent against GitHub-Hookshot",
+            "Check X-GitHub-Delivery against prior delivery IDs"
+        ],
+        "correct": 1,
+        "explanations": [
+            "An IP check alone does not verify the payload's contents.",
+            "A secret-derived HMAC verifies authenticity and payload integrity.",
+            "A User-Agent string can be forged.",
+            "Delivery IDs help detect duplicates but do not authenticate contents."
+        ],
+        "concept": "Webhook authenticity and integrity",
+        "hints": [
+            "Sender-controlled headers alone do not prove authenticity.",
+            "The verification must bind the secret to the exact payload."
+        ],
+        "source": "https://docs.github.com/en/webhooks/using-webhooks/validating-webhook-deliveries"
+    },
+    {
+        "id": "admin-133",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Which integration mechanism sends event notifications when repositories are created instead of requiring repeated API polling?",
+        "choices": [
+            "A scheduled REST inventory job",
+            "An organization webhook subscription",
+            "A conditional GET loop",
+            "A saved audit-log search"
+        ],
+        "correct": 1,
+        "explanations": [
+            "A scheduled inventory job still polls for state.",
+            "Organization webhooks can deliver subscribed repository events.",
+            "Conditional GET requests still require polling.",
+            "A saved search does not deliver event notifications."
+        ],
+        "concept": "Event-driven integration design",
+        "hints": [
+            "Distinguish a pushed event from periodically checking state.",
+            "Choose a mechanism scoped to organization activity."
+        ],
+        "source": "https://docs.github.com/en/webhooks/about-webhooks"
+    },
+    {
+        "id": "admin-134",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "An organization team is named in CODEOWNERS but receives no review requests. Which team condition is required for code ownership?",
+        "choices": [
+            "The team is visible and has explicit write access",
+            "The team is secret and has read access",
+            "The team is visible and has triage access",
+            "The team is secret and its members individually have write access"
+        ],
+        "correct": 0,
+        "explanations": [
+            "A code-owner team must be visible and have its own write access.",
+            "A secret team with read access does not meet the requirements.",
+            "Triage is insufficient for code ownership.",
+            "Individual member access does not replace the team's required access or visibility."
+        ],
+        "concept": "CODEOWNERS team eligibility",
+        "hints": [
+            "Evaluate permissions granted to the team itself.",
+            "Membership permissions and team permissions are not interchangeable."
+        ],
+        "source": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners"
+    },
+    {
+        "id": "admin-135",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "What does a code-scanning alert's path view help a responder inspect?",
+        "choices": [
+            "The chain of dependency version upgrades",
+            "Data flow from source to sink",
+            "The execution order of workflow jobs",
+            "The list of files changed by a pull request"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Dependency upgrade history is not the alert's data-flow path.",
+            "The path traces how data reaches the reported vulnerable operation.",
+            "Workflow job order is not the application's data flow.",
+            "A changed-file list does not show the reported flow through code."
+        ],
+        "concept": "Interpreting CodeQL path findings",
+        "hints": [
+            "A highlighted path describes program behavior, not administrative history.",
+            "Follow the input through transformations to its destination."
+        ],
+        "source": "https://docs.github.com/en/code-security/code-scanning/managing-code-scanning-alerts/assessing-code-scanning-alerts-for-your-repository"
+    },
+    {
+        "id": "admin-136",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Which feature attempts remediation pull requests for vulnerable supported dependencies after Dependabot alerts are enabled?",
+        "choices": [
+            "Secret-scanning push protection",
+            "Dependabot security updates",
+            "Dependency review",
+            "Dependabot alert notifications"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Push protection blocks secrets rather than updating packages.",
+            "Security updates propose fixes when Dependabot can generate a compatible update.",
+            "Dependency review assesses changes but does not generate these remediation PRs.",
+            "Alert notifications report findings without themselves opening fix PRs."
+        ],
+        "concept": "Dependabot automated vulnerability remediation",
+        "hints": [
+            "Distinguish identifying a vulnerable package from proposing its fix.",
+            "Not every alert can produce a compatible update."
+        ],
+        "source": "https://docs.github.com/en/code-security/dependabot/dependabot-security-updates/about-dependabot-security-updates"
+    },
+    {
+        "id": "admin-137",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Where should a script obtain a required PAT instead of keeping it in a tracked source file?",
+        "choices": [
+            "A private repository's README",
+            "An encoded constant in the script",
+            "A commit message on a protected branch",
+            "An approved secret store at runtime"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Private repository access still exposes credentials to readers.",
+            "Encoding is not secure secret storage.",
+            "Branch protection does not conceal commit messages.",
+            "A secret store separates the credential from tracked source."
+        ],
+        "concept": "Secure personal access token handling",
+        "hints": [
+            "Access restrictions do not make committed credentials safe.",
+            "Encoding changes representation, not confidentiality."
+        ],
+        "source": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens"
+    },
+    {
+        "id": "admin-138",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "In the English GitHub Enterprise Cloud UI, an enterprise owner opens Settings > Audit log > Settings. Which option adds source IPs to eligible audit events?",
+        "choices": [
+            "Require fine-grained PAT approval",
+            "Require signed commits",
+            "Restrict repository forking",
+            "Enable source IP disclosure"
+        ],
+        "correct": 3,
+        "explanations": [
+            "PAT approval does not govern audit IP disclosure.",
+            "Commit signatures do not configure audit IP fields.",
+            "Forking policy does not enable source IP recording.",
+            "Source IP disclosure controls inclusion of IP data for eligible events."
+        ],
+        "concept": "Audit source IP disclosure",
+        "hints": [
+            "A network allow list and event field disclosure serve different purposes.",
+            "Do not assume every event exposes an address."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/displaying-ip-addresses-in-the-audit-log-for-your-enterprise"
+    },
+    {
+        "id": "admin-139",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "Dependabot opens a security update pull request. What should determine whether it is merged?",
+        "choices": [
+            "The bot author alone",
+            "The absence of a human-written title",
+            "The package name alone",
+            "The repository's required checks and review policy"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Bot authorship does not prove compatibility or satisfy all merge requirements.",
+            "Title authorship does not establish correctness.",
+            "The package name does not establish update safety.",
+            "Dependency updates should pass applicable checks and review before merging."
+        ],
+        "concept": "Reviewing automated dependency fixes",
+        "hints": [
+            "Automation proposes a change; it does not prove every effect.",
+            "Apply the same relevant integration controls to dependency changes."
+        ],
+        "source": "https://docs.github.com/en/code-security/dependabot/working-with-dependabot/managing-pull-requests-for-dependency-updates"
+    },
+    {
+        "id": "admin-140",
+        "domain": "Implement secure software development and compliance",
+        "prompt": "What does enabling repository security tools establish for an enterprise's compliance program?",
+        "choices": [
+            "Certification against every regulatory standard",
+            "Controls and findings that still require risk assessment",
+            "Proof that all vulnerabilities are absent",
+            "Replacement of incident response and access reviews"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Feature enablement is not universal regulatory certification.",
+            "Tools provide evidence and protections that require interpretation and response.",
+            "Scanning cannot prove the absence of all vulnerabilities.",
+            "Incident response and access governance remain necessary."
+        ],
+        "concept": "Security tooling and residual compliance risk",
+        "hints": [
+            "Distinguish a technical control from a compliance determination.",
+            "Consider responsibilities that remain after detection is enabled."
+        ],
+        "source": "https://docs.github.com/en/code-security/security-overview/about-security-overview"
+    },
+    {
+        "id": "admin-141",
+        "domain": "Manage GitHub Actions",
+        "prompt": "In GitHub Enterprise Cloud, who can relax an Actions restriction enforced by enterprise policy?",
+        "choices": [
+            "A repository administrator",
+            "An enterprise owner",
+            "An organization member",
+            "A workflow maintainer"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Repository settings cannot override it.",
+            "Enterprise owners control enterprise policies.",
+            "Membership does not grant policy control.",
+            "Editing YAML cannot relax enterprise policy."
+        ],
+        "concept": "Actions policy inheritance",
+        "hints": [
+            "Identify the enforcing scope.",
+            "Separate workflow edits from policy authority."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/enforcing-policies/enforcing-policies-for-your-enterprise/enforcing-policies-for-github-actions-in-your-enterprise"
+    },
+    {
+        "id": "admin-142",
+        "domain": "Manage GitHub Actions",
+        "prompt": "An enterprise permits only actions defined inside its own repositories. Why is actions/checkout blocked?",
+        "choices": [
+            "Its runner label is missing",
+            "Its repository must be forked first",
+            "GitHub-authored actions are outside that policy",
+            "Public actions require an environment secret"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Labels select runners, not allowed actions.",
+            "Forking is not a general prerequisite.",
+            "Enterprise-only permission excludes GitHub's external organizations.",
+            "A secret does not bypass action policy."
+        ],
+        "concept": "Enterprise-only action policies",
+        "hints": [
+            "Consider who owns the action repository.",
+            "Distinguish publisher trust from policy scope."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/enforcing-policies/enforcing-policies-for-your-enterprise/enforcing-policies-for-github-actions-in-your-enterprise"
+    },
+    {
+        "id": "admin-143",
+        "domain": "Manage GitHub Actions",
+        "prompt": "An enterprise owner wants Actions enabled in only two organizations. Which control matches that scope?",
+        "choices": [
+            "Enable Actions for specific organizations",
+            "Allow only enterprise actions and reusable workflows",
+            "Disable repository-level self-hosted runner creation",
+            "Require actions to use full-length commit SHAs"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Enterprise policy can select organizations.",
+            "Dependency restrictions do not select organizations that can use Actions.",
+            "Runner registration policy does not disable Actions itself.",
+            "Pinning controls dependencies, not organization availability."
+        ],
+        "concept": "Enterprise Actions availability",
+        "hints": [
+            "Match the setting to the organizational boundary.",
+            "Availability differs from job routing."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/enforcing-policies/enforcing-policies-for-your-enterprise/enforcing-policies-for-github-actions-in-your-enterprise"
+    },
+    {
+        "id": "admin-144",
+        "domain": "Manage GitHub Actions",
+        "prompt": "In an Actions allowlist, which pattern permits all actions and reusable workflows owned by octo-tools?",
+        "choices": [
+            "octo-tools",
+            "@octo-tools",
+            "*/octo-tools",
+            "octo-tools/*"
+        ],
+        "correct": 3,
+        "explanations": [
+            "The owner alone is not the documented pattern.",
+            "An @ prefix does not select an owner.",
+            "This selects a repository name under any owner.",
+            "The wildcard covers repositories under that owner."
+        ],
+        "concept": "Action allowlist syntax",
+        "hints": [
+            "Read owner and repository positions.",
+            "A wildcard expands one part of a reference."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/enforcing-policies/enforcing-policies-for-your-enterprise/enforcing-policies-for-github-actions-in-your-enterprise"
+    },
+    {
+        "id": "admin-145",
+        "domain": "Manage GitHub Actions",
+        "prompt": "Without a dependency lockfile, which action reference has the form required by a full-length commit-SHA pinning policy?",
+        "choices": [
+            "octo-tools/build@v2",
+            "octo-tools/build@0123456789abcdef0123456789abcdef01234567",
+            "octo-tools/build@main",
+            "octo-tools/build@0123456"
+        ],
+        "correct": 1,
+        "explanations": [
+            "A release tag is mutable.",
+            "This has the full 40-character commit form.",
+            "A branch can move.",
+            "An abbreviated SHA is not full-length."
+        ],
+        "concept": "Full-SHA action references",
+        "hints": [
+            "Distinguish commit identity from named references.",
+            "The policy specifies reference length."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/enforcing-policies/enforcing-policies-for-your-enterprise/enforcing-policies-for-github-actions-in-your-enterprise"
+    },
+    {
+        "id": "admin-146",
+        "domain": "Manage GitHub Actions",
+        "prompt": "Which dependency can still use a tag under the enterprise setting 'Require actions to be pinned to a full-length commit SHA'?",
+        "choices": [
+            "A GitHub-authored action",
+            "An internal JavaScript action fetched remotely",
+            "A reusable workflow",
+            "A verified Marketplace action"
+        ],
+        "correct": 2,
+        "explanations": [
+            "GitHub-authored actions are included.",
+            "Remotely referenced internal actions are included.",
+            "This policy permits tag references for reusable workflows.",
+            "Verified status does not exempt an action."
+        ],
+        "concept": "Pinning policy coverage",
+        "hints": [
+            "Actions and workflows are different dependency types.",
+            "Publisher identity does not define the exception."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/enforcing-policies/enforcing-policies-for-your-enterprise/enforcing-policies-for-github-actions-in-your-enterprise"
+    },
+    {
+        "id": "admin-147",
+        "domain": "Manage GitHub Actions",
+        "prompt": "Which action reference is outside the enterprise allowlist restrictions on remotely sourced actions?",
+        "choices": [
+            "./.github/actions/check",
+            "octo-tools/check@v1",
+            "actions/checkout@v6",
+            "partner/check@main"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Local filesystem actions are not restricted by this policy.",
+            "This is a remote action reference.",
+            "GitHub ownership does not make it local.",
+            "This also fetches a remote action."
+        ],
+        "concept": "Local action policy boundaries",
+        "hints": [
+            "Examine where the code is loaded from.",
+            "Repository ownership and filesystem locality differ."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/enforcing-policies/enforcing-policies-for-your-enterprise/enforcing-policies-for-github-actions-in-your-enterprise"
+    },
+    {
+        "id": "admin-148",
+        "domain": "Manage GitHub Actions",
+        "prompt": "Where must a reusable workflow file be stored in its repository?",
+        "choices": [
+            ".github/actions/build.yml",
+            "workflow-templates/build.yml",
+            ".github/workflows/shared/build.yml",
+            ".github/workflows/build.yml"
+        ],
+        "correct": 3,
+        "explanations": [
+            "This is not the workflow directory.",
+            "This is a template directory, not an executable workflow location.",
+            "Workflow subdirectories are unsupported.",
+            "Reusable workflows belong directly in .github/workflows."
+        ],
+        "concept": "Reusable workflow location",
+        "hints": [
+            "A reusable workflow is still a workflow.",
+            "Check whether nested directories are supported."
+        ],
+        "source": "https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows"
+    },
+    {
+        "id": "admin-149",
+        "domain": "Manage GitHub Actions",
+        "prompt": "Which trigger exposes a workflow for calls from other workflows?",
+        "choices": [
+            "workflow_call",
+            "workflow_dispatch",
+            "workflow_run",
+            "repository_dispatch"
+        ],
+        "correct": 0,
+        "explanations": [
+            "It declares the reusable workflow interface.",
+            "It enables manual or API dispatch.",
+            "It reacts to another workflow's run activity.",
+            "It receives a custom repository event."
+        ],
+        "concept": "Reusable workflow trigger",
+        "hints": [
+            "Calling a component differs from dispatching a run.",
+            "Look for an explicit input interface."
+        ],
+        "source": "https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows"
+    },
+    {
+        "id": "admin-150",
+        "domain": "Manage GitHub Actions",
+        "prompt": "At which YAML location does a caller reference a reusable workflow?",
+        "choices": [
+            "jobs.build.steps[0].run",
+            "on.workflow_call",
+            "jobs.build.uses",
+            "defaults.run"
+        ],
+        "correct": 2,
+        "explanations": [
+            "run executes shell commands in a step.",
+            "This declares the called workflow's trigger.",
+            "Reusable workflows are called at job level.",
+            "defaults configures shell execution defaults."
+        ],
+        "concept": "Job-level workflow calls",
+        "hints": [
+            "Separate a job from its steps.",
+            "The caller needs a component reference."
+        ],
+        "source": "https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows"
+    },
+    {
+        "id": "admin-151",
+        "domain": "Manage GitHub Actions",
+        "prompt": "A reusable workflow declares an input named enabled with type: boolean. Which caller with entry passes the boolean false rather than a string, number, or list?",
+        "choices": [
+            "enabled: [false]",
+            "enabled: false",
+            "enabled: \"false\"",
+            "enabled: 0"
+        ],
+        "correct": 1,
+        "explanations": [
+            "A list is not a boolean input value.",
+            "The unquoted false value has the required boolean type.",
+            "Quoting false makes the value a string rather than the declared boolean.",
+            "A numeric zero is not the declared boolean input type."
+        ],
+        "concept": "Values supplied to reusable workflow inputs must match their declared types.",
+        "hints": [
+            "Read the input's declared type before evaluating its value.",
+            "Consider how YAML quoting and collection syntax affect a value's type."
+        ],
+        "source": "https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows"
+    },
+    {
+        "id": "admin-152",
+        "domain": "Manage GitHub Actions",
+        "prompt": "An organization publishes ci.yml as a workflow template. Which repository and path are correct?",
+        "choices": [
+            "Repository .github; .github/workflows/ci.yml",
+            "Repository templates; .github/workflows/ci.yml",
+            "Repository .github; .github/workflow-templates/ci.yml",
+            "Repository .github; workflow-templates/ci.yml"
+        ],
+        "correct": 3,
+        "explanations": [
+            "This stores a workflow, not an organization template.",
+            "The organization template repository must be .github.",
+            "The extra .github directory is incorrect.",
+            "Templates use workflow-templates at the .github repository root."
+        ],
+        "concept": "Organization workflow template location",
+        "hints": [
+            "Distinguish the repository name from a directory.",
+            "Templates and runnable workflows have different locations."
+        ],
+        "source": "https://docs.github.com/en/actions/how-tos/reuse-automations/create-workflow-templates"
+    },
+    {
+        "id": "admin-153",
+        "domain": "Manage GitHub Actions",
+        "prompt": "Which file supplies display metadata for the organization workflow template ci.yml?",
+        "choices": [
+            "ci.properties.json",
+            "ci.metadata.yml",
+            "ci.action.yml",
+            "ci.properties.yml"
+        ],
+        "correct": 0,
+        "explanations": [
+            "The basename is followed by .properties.json.",
+            "This is not the documented metadata filename.",
+            "Action metadata is a different mechanism.",
+            "Template metadata uses JSON, not this YAML file."
+        ],
+        "concept": "Workflow template metadata",
+        "hints": [
+            "Match the template basename.",
+            "Presentation metadata is separate from workflow YAML."
+        ],
+        "source": "https://docs.github.com/en/actions/how-tos/reuse-automations/create-workflow-templates"
+    },
+    {
+        "id": "admin-154",
+        "domain": "Manage GitHub Actions",
+        "prompt": "Which placeholder lets an organization workflow template target each consuming repository's default branch?",
+        "choices": [
+            "${{ github.template_branch }}",
+            "$main-branch",
+            "$default-branch",
+            "${{ defaults.branch }}"
+        ],
+        "correct": 2,
+        "explanations": [
+            "This is not a supported template context.",
+            "This is not the documented placeholder.",
+            "GitHub replaces it when creating the workflow.",
+            "This is not a supported branch expression."
+        ],
+        "concept": "Template branch substitution",
+        "hints": [
+            "The value is substituted when creating a workflow.",
+            "Do not confuse template placeholders with runtime expressions."
+        ],
+        "source": "https://docs.github.com/en/actions/how-tos/reuse-automations/create-workflow-templates"
+    },
+    {
+        "id": "admin-155",
+        "domain": "Manage GitHub Actions",
+        "prompt": "Workflow A calls B with contents: read. Can B obtain contents: write by declaring it locally?",
+        "choices": [
+            "Yes, if B is private",
+            "No, a called workflow cannot elevate token permissions",
+            "Yes, if B uses a full commit SHA",
+            "No, reusable workflows cannot use GITHUB_TOKEN"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Visibility does not elevate permissions.",
+            "The caller's permissions are an upper bound.",
+            "Pinning does not grant token privileges.",
+            "Reusable workflows can use GITHUB_TOKEN."
+        ],
+        "concept": "Permission limits in workflow reuse",
+        "hints": [
+            "Follow permissions along the call chain.",
+            "Code identity and authorization are separate."
+        ],
+        "source": "https://docs.github.com/en/actions/reference/workflows-and-actions/reusing-workflow-configurations"
+    },
+    {
+        "id": "admin-156",
+        "domain": "Manage GitHub Actions",
+        "prompt": "A passes a secret to reusable workflow B, which calls C. What must B do for C to receive that secret?",
+        "choices": [
+            "Pass it to C explicitly or through permitted inheritance",
+            "Declare it only as a workflow-level environment variable in B",
+            "Grant C contents: read without mapping any secrets",
+            "Rely on A's secrets: inherit to skip the B-to-C call boundary"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Secrets move only across direct calls.",
+            "A local environment value is not a secret-passing interface.",
+            "Content permissions do not pass secret values.",
+            "Inheritance applies to direct calls, not every descendant."
+        ],
+        "concept": "Secrets across nested workflow calls",
+        "hints": [
+            "Trace each edge of the call chain.",
+            "A shared location does not imply shared credentials."
+        ],
+        "source": "https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows"
+    },
+    {
+        "id": "admin-157",
+        "domain": "Manage GitHub Actions",
+        "prompt": "An allowed reusable workflow in a private organization repository is inaccessible to another private repository. Which setting should its administrator check?",
+        "choices": [
+            "The runner group's repository access policy",
+            "The calling job's deployment environment protection",
+            "The called repository's branch protection rules",
+            "The called repository's Actions access policy"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Runner access does not grant private component access.",
+            "Environment approval does not grant access to the called repository.",
+            "Branch protection governs changes, not component sharing.",
+            "Private components require an explicit sharing access policy."
+        ],
+        "concept": "Sharing private workflow components",
+        "hints": [
+            "Check permission to fetch the component.",
+            "Allowing a dependency and sharing its repository are separate."
+        ],
+        "source": "https://docs.github.com/en/actions/reference/workflows-and-actions/reusing-workflow-configurations"
+    },
+    {
+        "id": "admin-158",
+        "domain": "Manage GitHub Actions",
+        "prompt": "A job only checks out repository files. Which GITHUB_TOKEN permission is appropriate for that operation?",
+        "choices": [
+            "contents: write",
+            "packages: write",
+            "contents: read",
+            "issues: read"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Checkout does not require repository writes.",
+            "Package writes do not authorize checkout.",
+            "Reading repository contents supports checkout.",
+            "Issue access is unrelated to reading files."
+        ],
+        "concept": "Least-privilege job tokens",
+        "hints": [
+            "Identify the resource being read.",
+            "Grant only what the operation needs."
+        ],
+        "source": "https://docs.github.com/en/actions/reference/security/secure-use"
+    },
+    {
+        "id": "admin-159",
+        "domain": "Manage GitHub Actions",
+        "prompt": "Which authentication approach avoids storing a long-lived cloud access key as an Actions secret?",
+        "choices": [
+            "A repository variable holding the key",
+            "OIDC federation with the cloud provider",
+            "A key embedded in a runner label",
+            "A cached credentials file shared across runs"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Variables do not eliminate long-lived credentials.",
+            "The provider issues short-lived credentials after validating identity.",
+            "Labels are not a credential store.",
+            "Caching credentials preserves and exposes them."
+        ],
+        "concept": "Federated workflow authentication",
+        "hints": [
+            "Consider credential lifetime and issuance.",
+            "Identity verification can replace a stored access key."
+        ],
+        "source": "https://docs.github.com/en/actions/concepts/security/openid-connect"
+    },
+    {
+        "id": "admin-160",
+        "domain": "Manage GitHub Actions",
+        "prompt": "Which job permission allows requesting a GitHub OIDC token for a third-party vault?",
+        "choices": [
+            "id-token: write",
+            "contents: write",
+            "secrets: read",
+            "deployments: write"
+        ],
+        "correct": 0,
+        "explanations": [
+            "It allows fetching an OIDC token, not writing cloud resources.",
+            "Repository content writes do not enable OIDC.",
+            "This is not a GITHUB_TOKEN permission key.",
+            "Deployment writes do not enable OIDC."
+        ],
+        "concept": "OIDC request permission",
+        "hints": [
+            "Separate token issuance from resource authorization.",
+            "The vault still evaluates its own trust policy."
+        ],
+        "source": "https://docs.github.com/en/actions/how-tos/secure-your-work/security-harden-deployments/oidc-in-hashicorp-vault"
+    },
+    {
+        "id": "admin-161",
+        "domain": "Manage GitHub Actions",
+        "prompt": "What should a Vault administrator restrict when trusting GitHub Actions OIDC?",
+        "choices": [
+            "Only the workflow's display name",
+            "Only the runner's temporary hostname",
+            "Only the order of workflow steps",
+            "Accepted identity claims and readable secret paths"
+        ],
+        "correct": 3,
+        "explanations": [
+            "A display name alone is not a robust trust boundary.",
+            "Temporary hostnames do not bind workflow identity.",
+            "Step ordering does not authorize vault access.",
+            "Claims bind identity; vault policies limit secret access."
+        ],
+        "concept": "Vault trust and authorization",
+        "hints": [
+            "Authentication and authorization need separate limits.",
+            "Bind access to the intended workload."
+        ],
+        "source": "https://docs.github.com/en/actions/how-tos/secure-your-work/security-harden-deployments/oidc-in-hashicorp-vault"
+    },
+    {
+        "id": "admin-162",
+        "domain": "Manage GitHub Actions",
+        "prompt": "An organization secret should be available to only three private repositories on GitHub Enterprise Cloud. Which access policy fits?",
+        "choices": [
+            "All repositories",
+            "Private repositories",
+            "Selected repositories",
+            "Repositories with matching runner labels"
+        ],
+        "correct": 2,
+        "explanations": [
+            "This also grants other repositories access.",
+            "This grants every eligible private repository access.",
+            "An explicit repository selection limits access.",
+            "Runner labels do not scope organization secrets."
+        ],
+        "concept": "Organization secret access",
+        "hints": [
+            "Scope credentials independently of runner routing.",
+            "Choose the smallest repository audience."
+        ],
+        "source": "https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets"
+    },
+    {
+        "id": "admin-163",
+        "domain": "Manage GitHub Actions",
+        "prompt": "DEPLOY_KEY exists at organization, repository, and production environment scope. Which value does a job referencing production receive?",
+        "choices": [
+            "The organization value",
+            "The environment value",
+            "The repository value",
+            "The most recently created value"
+        ],
+        "correct": 1,
+        "explanations": [
+            "A lower applicable scope overrides it.",
+            "Environment secrets take precedence over repository and organization secrets.",
+            "The environment overrides this value.",
+            "Creation order does not determine precedence."
+        ],
+        "concept": "Secret precedence",
+        "hints": [
+            "Find the applicable scopes for this job.",
+            "Precedence is structural, not chronological."
+        ],
+        "source": "https://docs.github.com/en/actions/reference/security/secrets"
+    },
+    {
+        "id": "admin-164",
+        "domain": "Manage GitHub Actions",
+        "prompt": "In a private GitHub Enterprise Cloud repository, a production job must wait for human approval before receiving deployment secrets. Which mechanism fits?",
+        "choices": [
+            "Environment secrets with required reviewers",
+            "Repository secrets with longer names",
+            "Organization secrets restricted to private repositories",
+            "Masked variables in a workflow template"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Environment protection can gate access to its secrets.",
+            "Names do not create an approval gate.",
+            "Repository visibility does not provide per-job approval.",
+            "Masking does not control job approval."
+        ],
+        "concept": "Gating deployment credentials",
+        "hints": [
+            "Choose a scope with deployment protection.",
+            "Storage and release of credentials are different controls."
+        ],
+        "source": "https://docs.github.com/en/actions/reference/security/secure-use"
+    },
+    {
+        "id": "admin-165",
+        "domain": "Manage GitHub Actions",
+        "prompt": "With default fork settings, why does a pull_request workflow from a public fork lack the base repository's deployment secret?",
+        "choices": [
+            "Secrets require a larger runner",
+            "Fork authors must rename the secret",
+            "Public repositories cannot store secrets",
+            "Fork pull requests do not receive these secrets by default"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Runner size does not grant secret access.",
+            "Renaming does not change the trust boundary.",
+            "Public repositories can store Actions secrets.",
+            "Withholding secrets protects against untrusted fork code."
+        ],
+        "concept": "Fork workflow secret boundaries",
+        "hints": [
+            "Consider the source of the submitted code.",
+            "A triggered run does not imply credential access."
+        ],
+        "source": "https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets"
+    },
+    {
+        "id": "admin-166",
+        "domain": "Manage GitHub Actions",
+        "prompt": "What does an expression referencing an unavailable Actions secret evaluate to?",
+        "choices": [
+            "The secret's name",
+            "The organization owner's token",
+            "An empty string",
+            "The previous run's value"
+        ],
+        "correct": 2,
+        "explanations": [
+            "GitHub does not substitute the name.",
+            "There is no owner-token fallback.",
+            "An unset secret reference returns an empty string.",
+            "Previous values are not a fallback."
+        ],
+        "concept": "Unavailable secret behavior",
+        "hints": [
+            "Missing credentials need explicit validation.",
+            "Do not assume automatic fallback values."
+        ],
+        "source": "https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets"
+    },
+    {
+        "id": "admin-167",
+        "domain": "Manage GitHub Actions",
+        "prompt": "A workflow transforms a secret into a new sensitive value. What should it do before logging could expose that value?",
+        "choices": [
+            "Rely on automatic masking of the original secret",
+            "Register the transformed value for masking",
+            "Mask only after the transformed value first appears in the log",
+            "Rely on disabling debug logging to hide all sensitive output"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Redaction of transformed values is not guaranteed.",
+            "Sensitive derived values need their own masking registration.",
+            "Masking must be in place before potential disclosure.",
+            "Sensitive output can appear in ordinary logs too."
+        ],
+        "concept": "Limits of automatic masking",
+        "hints": [
+            "Transformations change the text matched by redaction.",
+            "Prevent disclosure rather than testing with a real secret."
+        ],
+        "source": "https://docs.github.com/en/actions/reference/security/secure-use"
+    },
+    {
+        "id": "admin-168",
+        "domain": "Manage GitHub Actions",
+        "prompt": "An Actions log contains an unredacted cloud credential. Which response addresses both exposure and continued access?",
+        "choices": [
+            "Delete the exposed log and rotate the credential",
+            "Rename the secret and retain the same credential",
+            "Rerun the job with debug logging disabled",
+            "Reduce artifact retention without changing the credential"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Log removal limits exposure; rotation invalidates the leaked credential.",
+            "Renaming does not invalidate a credential.",
+            "A rerun does not revoke the exposed credential.",
+            "Artifact retention does not revoke credentials or remove this log."
+        ],
+        "concept": "Responding to workflow credential exposure",
+        "hints": [
+            "Consider who may already possess the disclosed value.",
+            "How long could that value remain usable?"
+        ],
+        "source": "https://docs.github.com/en/actions/reference/security/secure-use"
+    },
+    {
+        "id": "admin-169",
+        "domain": "Manage GitHub Actions",
+        "prompt": "Using GitHub CLI in a repository, which command creates or updates the production environment's API_KEY secret?",
+        "choices": [
+            "gh variable set API_KEY --env production",
+            "gh secret set API_KEY --org production",
+            "gh secret set API_KEY --repo production",
+            "gh secret set API_KEY --env production"
+        ],
+        "correct": 3,
+        "explanations": [
+            "This stores a variable, not an encrypted secret.",
+            "This targets an organization named production.",
+            "This targets a repository, not an environment.",
+            "The --env flag selects the environment secret scope."
+        ],
+        "concept": "CLI secret scope selection",
+        "hints": [
+            "Distinguish a variable from a secret.",
+            "The target is inside a repository."
+        ],
+        "source": "https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets"
+    },
+    {
+        "id": "admin-170",
+        "domain": "Manage GitHub Actions",
+        "prompt": "Which runner type gives an administrator direct control over physical hardware and installed operating-system software?",
+        "choices": [
+            "A standard GitHub-hosted runner",
+            "A GitHub-hosted larger runner",
+            "A self-hosted runner",
+            "A GitHub-hosted runner using a custom image"
+        ],
+        "correct": 2,
+        "explanations": [
+            "GitHub manages the underlying hosted machine.",
+            "More hosted resources do not transfer physical hardware control.",
+            "The customer deploys and administers the machine.",
+            "A custom image does not transfer physical hardware administration."
+        ],
+        "concept": "Runner hosting responsibilities",
+        "hints": [
+            "Distinguish machine ownership from resource size.",
+            "Control brings maintenance responsibilities."
+        ],
+        "source": "https://docs.github.com/en/actions/concepts/runners/self-hosted-runners"
+    },
+    {
+        "id": "admin-171",
+        "domain": "Manage GitHub Actions",
+        "prompt": "A self-hosted runner application updates automatically. Who remains responsible for patching its host operating system?",
+        "choices": [
+            "GitHub's hosted-runner image team",
+            "The administrator of the self-hosted machine",
+            "The maintainer of the checkout action",
+            "The repository's dependency update service"
+        ],
+        "correct": 1,
+        "explanations": [
+            "The hosted-image team does not administer this machine.",
+            "Runner application updates do not patch the host OS.",
+            "An action maintainer does not manage the host.",
+            "Dependency updates do not administer the host OS."
+        ],
+        "concept": "Runner application versus operating-system updates",
+        "hints": [
+            "Identify the component being updated.",
+            "Hosting ownership determines OS maintenance."
+        ],
+        "source": "https://docs.github.com/en/actions/concepts/runners/self-hosted-runners"
+    },
+    {
+        "id": "admin-172",
+        "domain": "Manage GitHub Actions",
+        "prompt": "An organization owner needs to restrict a self-hosted runner pool to selected repositories. Which feature provides the access boundary?",
+        "choices": [
+            "Runner groups",
+            "Runner display names",
+            "Workflow run names",
+            "Job output names"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Groups have repository access policies.",
+            "Names identify runners but do not grant access.",
+            "Run names are descriptive metadata.",
+            "Outputs pass data rather than control runner access."
+        ],
+        "concept": "Runner group authorization",
+        "hints": [
+            "Routing and authorization are separate concerns.",
+            "Look for a policy-bearing collection of runners."
+        ],
+        "source": "https://docs.github.com/en/actions/how-tos/manage-runners/self-hosted-runners/manage-access"
+    },
+    {
+        "id": "admin-173",
+        "domain": "Manage GitHub Actions",
+        "prompt": "Which workflow key selects a runner using labels such as self-hosted and linux?",
+        "choices": [
+            "needs",
+            "environment",
+            "permissions",
+            "runs-on"
+        ],
+        "correct": 3,
+        "explanations": [
+            "needs declares job dependencies.",
+            "environment selects a deployment environment.",
+            "permissions scopes the job token.",
+            "runs-on selects matching runner capabilities."
+        ],
+        "concept": "Runner label selection",
+        "hints": [
+            "Identify the job's execution platform.",
+            "Do not confuse deployment scope with machine selection."
+        ],
+        "source": "https://docs.github.com/en/actions/reference/runners/self-hosted-runners"
+    },
+    {
+        "id": "admin-174",
+        "domain": "Manage GitHub Actions",
+        "prompt": "A non-ARC job specifies runs-on: [self-hosted, linux, gpu]. Which runner matches?",
+        "choices": [
+            "Any runner with at least one listed label",
+            "Any Linux runner, regardless of its other labels",
+            "An accessible runner with all three labels",
+            "Any runner in a group named gpu"
+        ],
+        "correct": 2,
+        "explanations": [
+            "The label list is not an OR condition.",
+            "The other requested labels must also match.",
+            "All requested labels must match an accessible runner.",
+            "A group name does not substitute for matching labels."
+        ],
+        "concept": "Combining runner labels",
+        "hints": [
+            "Determine whether the constraints are cumulative.",
+            "Group access still applies to matching machines."
+        ],
+        "source": "https://docs.github.com/en/actions/reference/runners/self-hosted-runners"
+    },
+    {
+        "id": "admin-175",
+        "domain": "Manage GitHub Actions",
+        "prompt": "A self-hosted runner is registered directly to repository alpha. Which repositories can schedule jobs on that registration?",
+        "choices": [
+            "Every repository owned by alpha's organization",
+            "Only repository alpha",
+            "Every private repository in the enterprise",
+            "Any repository sharing alpha's runner labels"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Repository registrations are not organization-wide.",
+            "Repository-level runners are dedicated to that repository.",
+            "Enterprise sharing requires a different registration scope.",
+            "Matching labels do not grant cross-repository access."
+        ],
+        "concept": "Runner registration scope",
+        "hints": [
+            "Locate where the runner was registered.",
+            "Scope limits access before labels select a machine."
+        ],
+        "source": "https://docs.github.com/en/actions/concepts/runners/self-hosted-runners"
+    },
+    {
+        "id": "admin-176",
+        "domain": "Manage GitHub Actions",
+        "prompt": "What happens when a runner is registered to an organization without specifying a runner group?",
+        "choices": [
+            "It enters the default runner group",
+            "It creates a group named after its hostname",
+            "It becomes available to every enterprise organization",
+            "Its registration fails until a custom group exists"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Unspecified groups default to the organization's default group.",
+            "Hostnames do not automatically create groups.",
+            "Organization registration does not grant enterprise-wide access.",
+            "A custom group is not required."
+        ],
+        "concept": "Default runner group placement",
+        "hints": [
+            "Consider the organization's existing group structure.",
+            "Registration defaults do not expand organizational scope."
+        ],
+        "source": "https://docs.github.com/en/actions/how-tos/manage-runners/self-hosted-runners/manage-access"
+    },
+    {
+        "id": "admin-177",
+        "domain": "Manage GitHub Actions",
+        "prompt": "Which self-hosted configuration supports Docker container actions and service containers?",
+        "choices": [
+            "Windows with Docker installed",
+            "macOS with Docker installed",
+            "Linux with Docker installed",
+            "Linux with only a Git client installed"
+        ],
+        "correct": 2,
+        "explanations": [
+            "GitHub requires a Linux host for these jobs.",
+            "A macOS host does not meet this runner requirement.",
+            "These workflows require Linux and installed Docker.",
+            "A Git client does not supply the container runtime."
+        ],
+        "concept": "Container job host requirements",
+        "hints": [
+            "The workflow platform has host requirements.",
+            "A container runtime and a supported OS are both needed."
+        ],
+        "source": "https://docs.github.com/en/actions/reference/runners/self-hosted-runners"
+    },
+    {
+        "id": "admin-178",
+        "domain": "Manage GitHub Actions",
+        "prompt": "How many jobs does GitHub assign to a self-hosted runner registered with --ephemeral?",
+        "choices": [
+            "As many as its CPU count",
+            "All jobs in one workflow run",
+            "Jobs until a nightly cleanup",
+            "One job before deregistration"
+        ],
+        "correct": 3,
+        "explanations": [
+            "CPU count does not determine ephemeral lifetime.",
+            "A workflow run can contain multiple jobs.",
+            "Deregistration is not scheduled nightly.",
+            "GitHub deregisters the runner after one processed job."
+        ],
+        "concept": "Ephemeral runner lifetime",
+        "hints": [
+            "The isolation unit is a job, not a workflow.",
+            "Registration lifecycle differs from machine deletion."
+        ],
+        "source": "https://docs.github.com/en/actions/reference/runners/self-hosted-runners"
+    },
+    {
+        "id": "admin-179",
+        "domain": "Manage GitHub Actions",
+        "prompt": "After an ephemeral self-hosted runner deregisters, what ensures its workspace cannot contaminate the next machine?",
+        "choices": [
+            "Automation that destroys or wipes the host",
+            "Renaming the runner's registration",
+            "Reusing the same disk under a new runner label",
+            "Moving the runner into the default group"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Host cleanup remains the operator's responsibility.",
+            "A new name does not erase disk contents.",
+            "A label change does not clean the disk.",
+            "Group placement does not remove local data."
+        ],
+        "concept": "Ephemeral infrastructure cleanup",
+        "hints": [
+            "Deregistration is a GitHub-side operation.",
+            "Consider the state left on the host."
+        ],
+        "source": "https://docs.github.com/en/actions/reference/runners/self-hosted-runners"
+    },
+    {
+        "id": "admin-180",
+        "domain": "Manage GitHub Actions",
+        "prompt": "Which logging practice preserves troubleshooting evidence when ephemeral runner hosts are destroyed?",
+        "choices": [
+            "Keep logs only in the runner installation directory",
+            "Increase the workflow's displayed run number",
+            "Forward runner logs to external storage",
+            "Store logs only in the destroyed host's shell history"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Host destruction removes these local logs.",
+            "Run numbers do not preserve application logs.",
+            "External preservation survives host destruction.",
+            "Local shell history is neither durable nor sufficient."
+        ],
+        "concept": "Ephemeral runner observability",
+        "hints": [
+            "Evidence must outlive the resource.",
+            "Workflow logs and runner application logs differ."
+        ],
+        "source": "https://docs.github.com/en/actions/reference/runners/self-hosted-runners"
+    },
+    {
+        "id": "admin-181",
+        "domain": "Manage GitHub Actions",
+        "prompt": "A runner image is registered with --disableupdate. What maintenance obligation remains?",
+        "choices": [
+            "Update only when jobs request newly introduced features",
+            "Maintain runner versions within GitHub's update requirements",
+            "Keep one runner version for the entire image's operating-system lifecycle",
+            "Apply host OS patches without replacing the runner binary"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Runner update requirements apply beyond new-feature use.",
+            "Disabling automatic updates transfers update scheduling to the operator.",
+            "The OS lifecycle does not replace runner update requirements.",
+            "OS patches do not replace runner application updates."
+        ],
+        "concept": "Manually maintained runner versions",
+        "hints": [
+            "Disabling automation does not remove the requirement.",
+            "Distinguish application updates from host updates."
+        ],
+        "source": "https://docs.github.com/en/actions/reference/runners/self-hosted-runners"
+    },
+    {
+        "id": "admin-182",
+        "domain": "Manage GitHub Actions",
+        "prompt": "A self-hosted runner appears Offline. Which condition can directly explain that state?",
+        "choices": [
+            "It has no job waiting in the queue",
+            "Its last completed job failed a test",
+            "Its group contains only one repository",
+            "Its runner application cannot communicate with GitHub"
+        ],
+        "correct": 3,
+        "explanations": [
+            "A connected runner without work is Idle.",
+            "A test failure does not itself mean disconnected.",
+            "Group size does not define connectivity.",
+            "Offline indicates the runner is not connected."
+        ],
+        "concept": "Interpreting runner status",
+        "hints": [
+            "Status describes connectivity or execution state.",
+            "Separate a failed job from a disconnected runner."
+        ],
+        "source": "https://docs.github.com/en/actions/how-tos/manage-runners/self-hosted-runners/monitor-and-troubleshoot"
+    },
+    {
+        "id": "admin-183",
+        "domain": "Manage GitHub Actions",
+        "prompt": "On a Linux self-hosted runner, which command checks connectivity to required GitHub services using an authorized diagnostic token?",
+        "choices": [
+            "./config.sh --check --url URL --pat TOKEN",
+            "./config.sh --ephemeral --url URL --token TOKEN",
+            "./run.sh --labels network-check",
+            "./config.sh --remove --token TOKEN"
+        ],
+        "correct": 0,
+        "explanations": [
+            "The --check mode tests required service connectivity.",
+            "This registers an ephemeral runner.",
+            "This is not the documented connectivity check.",
+            "This removes a registration rather than checking connectivity."
+        ],
+        "concept": "Runner connectivity diagnostics",
+        "hints": [
+            "Use the runner's diagnostic mode.",
+            "Registration tokens and diagnostic credentials have different purposes."
+        ],
+        "source": "https://docs.github.com/en/actions/how-tos/manage-runners/self-hosted-runners/monitor-and-troubleshoot"
+    },
+    {
+        "id": "admin-184",
+        "domain": "Manage GitHub Actions",
+        "prompt": "Which files contain detailed per-job execution logs in a self-hosted runner installation?",
+        "choices": [
+            "_diag/Runner_*.log",
+            ".git/logs/HEAD",
+            "_diag/Worker_*.log",
+            ".github/workflows/*.yml"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Runner_ files describe the runner application.",
+            "Git reflogs are not runner execution logs.",
+            "Worker_ files contain each processed job's detailed logs.",
+            "These are workflow definitions, not execution logs."
+        ],
+        "concept": "Runner application and worker logs",
+        "hints": [
+            "Identify whether the issue concerns a process or a job.",
+            "The diagnostic directory contains different log types."
+        ],
+        "source": "https://docs.github.com/en/actions/how-tos/manage-runners/self-hosted-runners/monitor-and-troubleshoot"
+    },
+    {
+        "id": "admin-185",
+        "domain": "Manage GitHub Actions",
+        "prompt": "A job remains queued although several self-hosted runners are Idle. What should the administrator verify first?",
+        "choices": [
+            "Whether completed jobs have expired artifact downloads",
+            "Whether runner access, labels, and group match",
+            "Whether job steps need newer versions of their build dependencies",
+            "Whether the build needs more memory after it starts executing"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Artifact expiration does not explain an unassigned job.",
+            "Idle runners must still satisfy routing and access constraints.",
+            "Step dependencies matter after a runner receives the job.",
+            "Runtime memory does not explain this routing mismatch."
+        ],
+        "concept": "Diagnosing runner queue mismatches",
+        "hints": [
+            "Idle capacity is not necessarily eligible capacity.",
+            "Compare the job requirements with runner access."
+        ],
+        "source": "https://docs.github.com/en/actions/reference/runners/self-hosted-runners"
+    },
+    {
+        "id": "admin-186",
+        "domain": "Manage GitHub Actions",
+        "prompt": "What connection does a self-hosted runner need to receive jobs from GitHub Actions?",
+        "choices": [
+            "Outbound HTTPS to required GitHub services",
+            "Inbound HTTPS initiated by GitHub to the runner",
+            "An inbound SSH tunnel that GitHub opens for each job",
+            "Outbound access only to the repository's Git clone URL"
+        ],
+        "correct": 0,
+        "explanations": [
+            "The runner communicates with GitHub to obtain jobs.",
+            "GitHub does not require this inbound job-delivery listener.",
+            "Jobs are not delivered through inbound SSH tunnels.",
+            "Job delivery requires more than Git repository access."
+        ],
+        "concept": "Self-hosted runner network direction",
+        "hints": [
+            "Determine which side initiates communication.",
+            "Administrative login and job delivery are different channels."
+        ],
+        "source": "https://docs.github.com/en/actions/reference/runners/self-hosted-runners"
+    },
+    {
+        "id": "admin-187",
+        "domain": "Manage GitHub Actions",
+        "prompt": "Which GitHub-hosted runner option supports a static IP range for a downstream firewall allowlist?",
+        "choices": [
+            "Standard runners selected by ubuntu-latest",
+            "macOS larger runners",
+            "Linux or Windows larger runners",
+            "Any runner selected by a workflow template"
+        ],
+        "correct": 2,
+        "explanations": [
+            "The standard label does not provide dedicated static IPs.",
+            "This capability is not supported on macOS larger runners.",
+            "Linux and Windows larger runners support static IP addresses.",
+            "Templates do not supply a networking capability."
+        ],
+        "concept": "Hosted runner static addressing",
+        "hints": [
+            "Separate hosted runner classes and operating systems.",
+            "A routing label is not an IP allocation."
+        ],
+        "source": "https://docs.github.com/en/actions/concepts/runners/larger-runners"
+    },
+    {
+        "id": "admin-188",
+        "domain": "Manage GitHub Actions",
+        "prompt": "What connects eligible GitHub-hosted runners to an organization's Azure virtual network?",
+        "choices": [
+            "A workflow VPN step without a GitHub network configuration",
+            "Azure resources plus a GitHub private network configuration",
+            "An organization IP allowlist containing the Azure subnet range",
+            "A cloud login action authorized to read the private application's secrets"
+        ],
+        "correct": 1,
+        "explanations": [
+            "An ad hoc VPN is not the Azure private networking integration.",
+            "Both Azure resources and GitHub configuration are required.",
+            "An access allowlist does not attach a runner to a VNET.",
+            "Cloud authentication does not create network attachment."
+        ],
+        "concept": "Azure private networking setup",
+        "hints": [
+            "The integration spans two control planes.",
+            "Configuration values alone do not provision connectivity."
+        ],
+        "source": "https://docs.github.com/en/organizations/managing-organization-settings/configuring-private-networking-for-github-hosted-runners-in-your-organization"
+    },
+    {
+        "id": "admin-189",
+        "domain": "Manage GitHub Actions",
+        "prompt": "For Azure private networking with GitHub-hosted runners, which outbound filtering approach does current documentation recommend?",
+        "choices": [
+            "Freeze the IP list copied during initial setup",
+            "Allow only the private application's DNS name",
+            "Block GitHub domains after runner registration",
+            "Maintain DNS/domain controls using GitHub's published meta data"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Static copied IP lists can become stale.",
+            "The runner also needs GitHub service connectivity.",
+            "Registration does not eliminate ongoing GitHub communication.",
+            "Published domain lists track changing service requirements."
+        ],
+        "concept": "Maintaining runner network egress",
+        "hints": [
+            "Network dependencies change after deployment.",
+            "Private application access is not the only required traffic."
+        ],
+        "source": "https://docs.github.com/en/organizations/managing-organization-settings/configuring-private-networking-for-github-hosted-runners-in-your-organization"
+    },
+    {
+        "id": "admin-190",
+        "domain": "Manage GitHub Actions",
+        "prompt": "An Actions job uses GITHUB_TOKEN to access a private organization repository protected by a GitHub Enterprise Cloud IP allowlist. What must its network path satisfy?",
+        "choices": [
+            "The runner's source IP must be allowed",
+            "A valid GITHUB_TOKEN permits any runner source IP",
+            "Only the triggering user's browser IP must be allowed",
+            "An approved cloud login bypasses GitHub's source-IP check"
+        ],
+        "correct": 0,
+        "explanations": [
+            "The allowlist applies to this authenticated access.",
+            "A valid token does not bypass this network restriction.",
+            "The API request's source IP also matters.",
+            "Cloud authentication does not bypass GitHub's allowlist."
+        ],
+        "concept": "Runner access under IP allowlists",
+        "hints": [
+            "Authentication and network permission are separate checks.",
+            "Evaluate the address seen by GitHub."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/organizations/keeping-your-organization-secure/managing-security-settings-for-your-organization/managing-allowed-ip-addresses-for-your-organization"
+    },
+    {
+        "id": "admin-191",
+        "domain": "Manage GitHub Actions",
+        "prompt": "A privileged workflow_run job consumes an artifact from a fork's build. How should the artifact be treated?",
+        "choices": [
+            "As trusted because GitHub stores it",
+            "As trusted if the build concluded successfully",
+            "As untrusted input requiring validation",
+            "As safe to execute after renaming its extension"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Storage location does not establish producer trust.",
+            "Successful execution does not authenticate artifact contents.",
+            "A privileged consumer must validate lower-trust inputs.",
+            "Renaming does not remove malicious content."
+        ],
+        "concept": "Trust across workflow_run boundaries",
+        "hints": [
+            "Track who could influence the producer.",
+            "A status result does not certify data safety."
+        ],
+        "source": "https://docs.github.com/en/actions/reference/security/secure-use"
+    },
+    {
+        "id": "admin-192",
+        "domain": "Manage GitHub Actions",
+        "prompt": "Which pattern should an administrator reject in a privileged pull_request_target workflow?",
+        "choices": [
+            "Labeling the pull request using trusted code",
+            "Checking out and executing the fork's proposed code",
+            "Reading pull-request metadata without executing it",
+            "Limiting the job token to required permissions"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Trusted metadata operations can fit this event.",
+            "Untrusted code would execute in a privileged context.",
+            "Reading metadata is different from executing submitted code.",
+            "Least privilege reduces rather than introduces risk."
+        ],
+        "concept": "pull_request_target trust boundary",
+        "hints": [
+            "Identify which code revision runs.",
+            "Compare the code's provenance with the execution privileges."
+        ],
+        "source": "https://docs.github.com/en/actions/reference/security/secure-use"
+    },
+    {
+        "id": "admin-193",
+        "domain": "Manage GitHub Actions",
+        "prompt": "A completed build must retain a test report for later download. Which storage mechanism fits?",
+        "choices": [
+            "A dependency cache",
+            "A repository Actions secret",
+            "A runner-local workspace directory",
+            "A workflow artifact"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Caches optimize regeneration rather than preserve run deliverables.",
+            "Secrets store sensitive values, not downloadable run reports.",
+            "Local workspace files are not retained as GitHub run downloads.",
+            "Artifacts preserve files produced by a workflow run."
+        ],
+        "concept": "Artifacts for run deliverables",
+        "hints": [
+            "Distinguish a result from a reusable dependency.",
+            "The consumer needs the file after the job ends."
+        ],
+        "source": "https://docs.github.com/en/actions/concepts/workflows-and-actions/dependency-caching"
+    },
+    {
+        "id": "admin-194",
+        "domain": "Manage GitHub Actions",
+        "prompt": "What should a dependency cache contain to speed up repeat builds?",
+        "choices": [
+            "Regenerable downloaded dependencies",
+            "Signed release packages retained as long-term audit records",
+            "Production credentials retrieved for later deployments",
+            "Test reports retained for later manual download"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Caches accelerate reuse; jobs should tolerate cache misses.",
+            "Long-term records need durable retention, not disposable caches.",
+            "Secrets must not be stored in caches.",
+            "Run deliverables belong in artifacts, not dependency caches."
+        ],
+        "concept": "Safe dependency caching",
+        "hints": [
+            "Plan for cache misses.",
+            "Reusable acceleration is different from durable or secret storage."
+        ],
+        "source": "https://docs.github.com/en/actions/concepts/workflows-and-actions/dependency-caching"
+    },
+    {
+        "id": "admin-195",
+        "domain": "Manage GitHub Actions",
+        "prompt": "An enterprise disables creation of repository-level self-hosted runners. Which runner access may remain available?",
+        "choices": [
+            "New repository registrations created by administrators",
+            "Repository registrations created through workflow YAML",
+            "Organization or enterprise runners shared with the repository",
+            "Repository registrations created using a verified action"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Repository administrators cannot bypass the restriction.",
+            "YAML does not bypass the registration policy.",
+            "The restriction does not disable higher-scope shared runners.",
+            "A verified action does not override enterprise policy."
+        ],
+        "concept": "Restricting runner registration scope",
+        "hints": [
+            "A creation restriction has a defined scope.",
+            "Shared capacity and repository-owned registration differ."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/enforcing-policies/enforcing-policies-for-your-enterprise/enforcing-policies-for-github-actions-in-your-enterprise"
+    },
+    {
+        "id": "admin-196",
+        "domain": "Monitor and optimize GitHub usage",
+        "prompt": "Which enterprise audit-log qualifier finds events initiated by account alex rather than events affecting alex?",
+        "choices": [
+            "user:alex",
+            "actor:alex",
+            "author:alex",
+            "owner:alex"
+        ],
+        "correct": 1,
+        "explanations": [
+            "user identifies the affected user.",
+            "actor identifies the account initiating the action.",
+            "author is not this audit-log qualifier.",
+            "owner is not this audit-log qualifier."
+        ],
+        "concept": "Audit initiator versus affected user",
+        "hints": [
+            "Separate who acted from who was affected.",
+            "Use audit-specific search qualifiers."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/searching-the-audit-log-for-your-enterprise"
+    },
+    {
+        "id": "admin-197",
+        "domain": "Monitor and optimize GitHub usage",
+        "prompt": "Which enterprise audit-log query selects repository creation events on or after October 1, 2026?",
+        "choices": [
+            "event:repo.create after:2026-10-01",
+            "action:repo.create updated:>=2026-10-01",
+            "type:repo.create date:2026-10-01",
+            "action:repo.create created:>=2026-10-01"
+        ],
+        "correct": 3,
+        "explanations": [
+            "event and after are not these documented qualifiers.",
+            "The audit timestamp qualifier is created, not updated.",
+            "type and date are not these documented qualifiers.",
+            "action selects the event; created sets the time boundary."
+        ],
+        "concept": "Audit event and time filters",
+        "hints": [
+            "Combine the action and occurrence time.",
+            "Repository search syntax is not interchangeable with audit syntax."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/searching-the-audit-log-for-your-enterprise"
+    },
+    {
+        "id": "admin-198",
+        "domain": "Monitor and optimize GitHub usage",
+        "prompt": "For GitHub Enterprise Cloud, how long are non-Git enterprise audit events retained in GitHub's audit log?",
+        "choices": [
+            "180 days",
+            "7 days",
+            "30 days",
+            "Indefinitely"
+        ],
+        "correct": 0,
+        "explanations": [
+            "The Cloud enterprise audit log retains these events for 180 days.",
+            "Seven days applies to Git events.",
+            "This is not the documented Cloud audit retention.",
+            "Native retention is finite; external preservation is separate."
+        ],
+        "concept": "Cloud audit retention",
+        "hints": [
+            "Identify the deployment and event category.",
+            "A default display window differs from retention."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/security-and-compliance/audit-log-for-an-enterprise"
+    },
+    {
+        "id": "admin-199",
+        "domain": "Monitor and optimize GitHub usage",
+        "prompt": "Which retention period applies specifically to Git events in a GitHub Enterprise Cloud enterprise audit log?",
+        "choices": [
+            "180 days",
+            "90 days",
+            "7 days",
+            "The repository's artifact retention period"
+        ],
+        "correct": 2,
+        "explanations": [
+            "This is the broader audit-event retention, not Git-event retention.",
+            "The default UI window is not Git-event retention.",
+            "Cloud audit logs retain Git events for seven days.",
+            "Artifact retention is a separate setting."
+        ],
+        "concept": "Short-lived Git audit events",
+        "hints": [
+            "Not every event type has the same lifetime.",
+            "Plan collection before data expires."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/security-and-compliance/audit-log-for-an-enterprise"
+    },
+    {
+        "id": "admin-200",
+        "domain": "Monitor and optimize GitHub usage",
+        "prompt": "An enterprise audit-log API request returns 100 records and a Link header containing rel=\"next\". How should the integration collect the rest of the matching records?",
+        "choices": [
+            "Drop the date filter to force the API to return one larger page.",
+            "Follow the next-page URL until no next link remains.",
+            "Treat 100 records as the complete matching event set.",
+            "Repeat the identical first-page request until the count changes."
+        ],
+        "correct": 1,
+        "explanations": [
+            "Removing filters broadens the query and does not remove pagination.",
+            "The API provides pagination links for retrieving subsequent result pages.",
+            "A next-page link explicitly indicates more results are available.",
+            "Repeating the same first page does not advance through the results."
+        ],
+        "concept": "Audit evidence collectors must consume every result page.",
+        "hints": [
+            "Check response metadata before declaring collection complete.",
+            "Distinguish repeating a page from advancing through a result set."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/using-the-audit-log-api-for-your-enterprise"
+    },
+    {
+        "id": "admin-201",
+        "domain": "Monitor and optimize GitHub usage",
+        "prompt": "An authorized integration queries the enterprise audit-log API for clone, fetch, and push events. Which URL parameter specifically selects Git events?",
+        "choices": [
+            "include=web",
+            "per_page=100",
+            "order=asc",
+            "include=git"
+        ],
+        "correct": 3,
+        "explanations": [
+            "This selects web events rather than the requested Git events.",
+            "Page size controls pagination, not the event class.",
+            "Sort order does not select Git rather than web events.",
+            "This parameter selects Git events; include=all also includes web events."
+        ],
+        "concept": "Event-class selection and pagination are separate audit API controls.",
+        "hints": [
+            "Identify whether the request is about event type, order, or page size.",
+            "Separate Git operations from web-interface activity."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/using-the-audit-log-api-for-your-enterprise"
+    },
+    {
+        "id": "admin-202",
+        "domain": "Monitor and optimize GitHub usage",
+        "prompt": "A REST GET uses a valid Authorization header and If-None-Match. GitHub returns 304 Not Modified. How does this conditional response affect the primary rate limit?",
+        "choices": [
+            "It does not count against the primary rate limit.",
+            "It consumes the entire remaining primary allowance.",
+            "It always counts as two ordinary GET requests.",
+            "It restores all requests spent earlier in the hour."
+        ],
+        "correct": 0,
+        "explanations": [
+            "Correctly authorized conditional requests returning 304 do not consume primary allowance.",
+            "A 304 does not exhaust the authenticated client's allowance.",
+            "The documented conditional-request behavior does not double its rate-limit cost.",
+            "Avoiding a charge for this response does not refund previous requests."
+        ],
+        "concept": "Authorized conditional 304 responses avoid primary-rate-limit charges.",
+        "hints": [
+            "Distinguish an unchanged representation from a newly returned body.",
+            "Consider both the response status and the request's authentication."
+        ],
+        "source": "https://docs.github.com/en/rest/using-the-rest-api/best-practices-for-using-the-rest-api"
+    },
+    {
+        "id": "admin-203",
+        "domain": "Monitor and optimize GitHub usage",
+        "prompt": "An integration repeatedly reaches secondary REST limits while issuing many simultaneous requests. Which scheduling change follows GitHub's prevention guidance?",
+        "choices": [
+            "Remove authentication from all requests.",
+            "Retry each failed request immediately in every worker.",
+            "Queue requests and issue them serially.",
+            "Start more parallel workers with the same credential."
+        ],
+        "correct": 2,
+        "explanations": [
+            "Removing authentication does not solve concurrent-request pressure.",
+            "Immediate parallel retries sustain the burst instead of controlling it.",
+            "Serial requests reduce concurrency that can trigger secondary limits.",
+            "Additional concurrent workers worsen the scheduling behavior."
+        ],
+        "concept": "Request scheduling can prevent secondary throttling before retries are needed.",
+        "hints": [
+            "Look for the load pattern causing the throttling.",
+            "Distinguish controlling concurrency from changing credentials."
+        ],
+        "source": "https://docs.github.com/en/rest/using-the-rest-api/best-practices-for-using-the-rest-api"
+    },
+    {
+        "id": "admin-204",
+        "domain": "Monitor and optimize GitHub usage",
+        "prompt": "An integration receives 404 for a private repository that its administrator confirms exists. What should be checked first?",
+        "choices": [
+            "Whether the repository has enough stars",
+            "The integration's authentication and resource access",
+            "Whether the repository has a public release",
+            "The default artifact compression level"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Stars do not authorize API access.",
+            "GitHub can hide private resources behind 404 when access is insufficient.",
+            "Releases do not grant private repository access.",
+            "Compression is unrelated to API authorization."
+        ],
+        "concept": "Diagnosing private-resource API responses",
+        "hints": [
+            "A status code can avoid revealing private resource existence.",
+            "Check credentials before assuming deletion."
+        ],
+        "source": "https://docs.github.com/en/rest/using-the-rest-api/troubleshooting-the-rest-api"
+    },
+    {
+        "id": "admin-205",
+        "domain": "Monitor and optimize GitHub usage",
+        "prompt": "After validating a webhook signature, an integration must recognize a requested redelivery of an event it already processed. Which GitHub header retains the original delivery identifier?",
+        "choices": [
+            "X-GitHub-Event",
+            "User-Agent",
+            "Content-Type",
+            "X-GitHub-Delivery"
+        ],
+        "correct": 3,
+        "explanations": [
+            "This identifies an event type, which many different deliveries can share.",
+            "The user agent is not the unique delivery identifier.",
+            "The content type describes the representation rather than the individual delivery.",
+            "A requested redelivery preserves the original X-GitHub-Delivery value."
+        ],
+        "concept": "Delivery IDs support deduplication but do not replace signature validation.",
+        "hints": [
+            "Separate an event's type from an individual delivery's identity.",
+            "Consider which value should stay stable when that delivery is requested again."
+        ],
+        "source": "https://docs.github.com/en/webhooks/using-webhooks/best-practices-for-using-webhooks"
+    },
+    {
+        "id": "admin-206",
+        "domain": "Monitor and optimize GitHub usage",
+        "prompt": "How can an administrator distinguish primary from secondary REST API throttling when both may return 403 or 429?",
+        "choices": [
+            "Inspect the response message and rate-limit headers",
+            "Treat every 403 response as an expired token",
+            "Treat every 429 response as a missing repository",
+            "Count only the number of open pull requests"
+        ],
+        "correct": 0,
+        "explanations": [
+            "The message and headers explain the limiting condition.",
+            "403 can represent throttling or other failures.",
+            "429 indicates excessive requests, not missing repositories.",
+            "Pull-request counts do not classify throttling."
+        ],
+        "concept": "Classifying API throttling",
+        "hints": [
+            "HTTP status alone may be insufficient.",
+            "Use the diagnostic metadata returned with the error."
+        ],
+        "source": "https://docs.github.com/en/rest/using-the-rest-api/troubleshooting-the-rest-api"
+    },
+    {
+        "id": "admin-207",
+        "domain": "Monitor and optimize GitHub usage",
+        "prompt": "A GHES 3.19 administrator is investigating a nearly full root partition before choosing what to remove. Which utility checks for large files and deleted files with open handles?",
+        "choices": [
+            "ghe-config-apply",
+            "ghe-announce",
+            "ghe-check-disk-usage",
+            "ghe-cleanup-caches"
+        ],
+        "correct": 2,
+        "explanations": [
+            "This applies configuration changes rather than locating large or still-open deleted files.",
+            "This changes the user announcement banner, not disk diagnostics.",
+            "This utility investigates large files and deleted files whose handles remain open.",
+            "This removes caches rather than performing the specified disk-usage investigation."
+        ],
+        "concept": "Inspect disk usage before choosing a cleanup operation.",
+        "hints": [
+            "Distinguish investigation from a command that changes stored data.",
+            "Match the utility's documented purpose to the observed resource problem."
+        ],
+        "source": "https://docs.github.com/en/enterprise-server@3.19/admin/administering-your-instance/administering-your-instance-from-the-command-line/command-line-utilities"
+    },
+    {
+        "id": "admin-208",
+        "domain": "Monitor and optimize GitHub usage",
+        "prompt": "In a GHES 3.19 administrative SSH session, which command reads core.github-hostname without setting a new hostname or applying configuration changes?",
+        "choices": [
+            "ghe-config-check",
+            "ghe-config core.github-hostname",
+            "ghe-config core.github-hostname new.example.com",
+            "ghe-config-apply"
+        ],
+        "correct": 1,
+        "explanations": [
+            "This validates configuration rather than retrieving the requested value.",
+            "With only the key, ghe-config retrieves its current value.",
+            "Adding a value changes the setting rather than merely reading it.",
+            "This applies configuration changes instead of retrieving just this key."
+        ],
+        "concept": "ghe-config distinguishes retrieval from modification by its arguments.",
+        "hints": [
+            "Compare a key-only command with a key followed by a new value.",
+            "Separate reading configuration from validating or applying it."
+        ],
+        "source": "https://docs.github.com/en/enterprise-server@3.19/admin/administering-your-instance/administering-your-instance-from-the-command-line/command-line-utilities"
+    },
+    {
+        "id": "admin-209",
+        "domain": "Monitor and optimize GitHub usage",
+        "prompt": "During a GHES 3.19 incident, an SSH administrator wants to watch relevant installation log files as new entries arrive, not download a static bundle. Which utility fits?",
+        "choices": [
+            "ghe-support-bundle",
+            "ghe-config-check",
+            "ghe-nwo",
+            "ghe-logs-tail"
+        ],
+        "correct": 3,
+        "explanations": [
+            "A support bundle packages diagnostic evidence instead of following live logs.",
+            "This validates configuration rather than watching log entries arrive.",
+            "This maps a repository ID to its owner and name, not to live log output.",
+            "This utility tails relevant installation logs for ongoing observation."
+        ],
+        "concept": "Live log following and packaged diagnostic evidence serve different tasks.",
+        "hints": [
+            "Identify whether the responder needs a snapshot or ongoing output.",
+            "Match the requested observation to the utility's purpose."
+        ],
+        "source": "https://docs.github.com/en/enterprise-server@3.19/admin/administering-your-instance/administering-your-instance-from-the-command-line/command-line-utilities"
+    },
+    {
+        "id": "admin-210",
+        "domain": "Monitor and optimize GitHub usage",
+        "prompt": "An enterprise uses data residency at octocorp.ghe.com. Which account should its administrator use to create a support ticket about that enterprise?",
+        "choices": [
+            "The enterprise's GHE.com account.",
+            "A personal GitHub.com account using the same work email.",
+            "A GitHub.com account that administers a different enterprise.",
+            "A GHE.com account belonging to a different enterprise."
+        ],
+        "correct": 0,
+        "explanations": [
+            "Data-resident enterprise support tickets must use the corresponding GHE.com account.",
+            "Matching email addresses do not replace the required GHE.com account context.",
+            "Administration of another enterprise does not establish this data-resident account context.",
+            "The account must correspond to the enterprise that needs support."
+        ],
+        "concept": "Data-resident enterprises require their GHE.com account context in Support.",
+        "hints": [
+            "Check which host owns the enterprise identity.",
+            "Distinguish the support account context from the information included in a ticket."
+        ],
+        "source": "https://docs.github.com/en/support/contacting-github-support/creating-a-support-ticket"
+    },
+    {
+        "id": "admin-211",
+        "domain": "Monitor and optimize GitHub usage",
+        "prompt": "A GHES 3.19 administrator suspects background-job queues are backing up. Which utility displays the distribution of queued jobs and jobs currently processing?",
+        "choices": [
+            "ghe-es-index-status",
+            "ghe-announce",
+            "ghe-aqueduct-info",
+            "ghe-check-disk-usage"
+        ],
+        "correct": 2,
+        "explanations": [
+            "This reports Elasticsearch index status instead of background-job queue distribution.",
+            "This manages an announcement banner rather than inspecting background jobs.",
+            "This utility reports queued background jobs and those being processed.",
+            "This investigates large or still-open deleted files rather than job queues."
+        ],
+        "concept": "Choose monitoring evidence for the subsystem exhibiting the backlog.",
+        "hints": [
+            "Identify whether the bottleneck is a work queue, disk, or search index.",
+            "Distinguish observing a queue from notifying users about an incident."
+        ],
+        "source": "https://docs.github.com/en/enterprise-server@3.19/admin/administering-your-instance/administering-your-instance-from-the-command-line/command-line-utilities"
+    },
+    {
+        "id": "admin-212",
+        "domain": "Monitor and optimize GitHub usage",
+        "prompt": "An enterprise dormant-user report flags an account. How should the administrator use this evidence?",
+        "choices": [
+            "Assume no work occurred in private repositories during the period",
+            "Review measured activity and business need",
+            "Conclude that no token or SSH key was used during the period",
+            "Remove its assigned license immediately without checking business needs"
+        ],
+        "correct": 1,
+        "explanations": [
+            "The report excludes some private-repository work.",
+            "Review coverage and business need before reclaiming access.",
+            "Token and SSH activity are not all counted as active here.",
+            "Dormancy alone does not establish that access is unnecessary."
+        ],
+        "concept": "Interpreting dormant-user evidence",
+        "hints": [
+            "A metric has a documented scope.",
+            "Treat a flag as a review signal, not a complete verdict."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/managing-accounts-and-repositories/managing-users-in-your-enterprise/managing-dormant-users"
+    },
+    {
+        "id": "admin-213",
+        "domain": "Monitor and optimize GitHub usage",
+        "prompt": "Which activity can be missed by GitHub Enterprise Cloud's documented dormant-user activity definition?",
+        "choices": [
+            "Git operations on private repositories",
+            "Creating a pull request in the enterprise",
+            "Commenting on a pull request in the enterprise",
+            "Publishing a release in the enterprise"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Private-repository Git operations are not counted as active here.",
+            "Creating pull requests is a listed active behavior.",
+            "Pull-request comments are a listed active behavior.",
+            "Publishing releases is a listed active behavior."
+        ],
+        "concept": "Dormancy metric coverage",
+        "hints": [
+            "An activity report may exclude valid work.",
+            "Check the precise definition before interpreting absence."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/managing-accounts-and-repositories/managing-users-in-your-enterprise/managing-dormant-users"
+    },
+    {
+        "id": "admin-214",
+        "domain": "Monitor and optimize GitHub usage",
+        "prompt": "A team member made no commits but reviewed pull requests during the reporting period. How should an administrator assess activity?",
+        "choices": [
+            "Classify the member as inactive from commit count alone",
+            "Reassign the member's license without checking other activity",
+            "Use repository stars as the sole productivity measure",
+            "Include relevant review and collaboration activity"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Commits alone do not capture collaboration.",
+            "License decisions need broader context.",
+            "Stars are not a complete individual activity measure.",
+            "Pull-request review activity is meaningful recorded participation."
+        ],
+        "concept": "Assessing adoption beyond commits",
+        "hints": [
+            "Different roles contribute in different ways.",
+            "Use measures aligned with the work being performed."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/managing-accounts-and-repositories/managing-users-in-your-enterprise/managing-dormant-users"
+    },
+    {
+        "id": "admin-215",
+        "domain": "Monitor and optimize GitHub usage",
+        "prompt": "Where does an enterprise owner generate a dormant-user report in the current GitHub Enterprise Cloud English UI?",
+        "choices": [
+            "Repository > Insights > Traffic",
+            "Organization > Settings > Actions > Runners",
+            "Enterprise > Compliance > Reports > Dormant Users",
+            "Enterprise > Billing & Licensing > Budgets and alerts"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Repository traffic is not an enterprise dormant-user report.",
+            "Runner inventory does not generate this report.",
+            "Compliance reports include Dormant Users.",
+            "Budgets track spending rather than account dormancy."
+        ],
+        "concept": "Locating enterprise activity reports",
+        "hints": [
+            "Choose an enterprise-wide report rather than repository telemetry.",
+            "Activity review and spending controls have different entry points."
+        ],
+        "source": "https://docs.github.com/en/enterprise-cloud@latest/admin/managing-accounts-and-repositories/managing-users-in-your-enterprise/managing-dormant-users"
+    },
+    {
+        "id": "admin-216",
+        "domain": "Monitor and optimize GitHub usage",
+        "prompt": "Two teams share one cost center but need independently controlled budgets. Which documented cost-center design meets that requirement?",
+        "choices": [
+            "Use one shared budget with two alert thresholds.",
+            "Create a separate cost center for each team.",
+            "Create two budgets targeting the same shared cost center.",
+            "Add both enterprise teams as resources in the shared center."
+        ],
+        "correct": 1,
+        "explanations": [
+            "Multiple alert thresholds do not create independent team budgets.",
+            "A cost-center budget applies to the whole cost center, so independent team budgets need separate centers.",
+            "Both budgets still cover the shared center rather than separate team spending.",
+            "Adding separate team resources does not split the center's budget scope."
+        ],
+        "concept": "Independent budget boundaries require appropriate cost-center scope.",
+        "hints": [
+            "Distinguish naming a team from creating a budget boundary.",
+            "Check whether a cost-center budget applies to part or all of that center."
+        ],
+        "source": "https://docs.github.com/en/billing/concepts/cost-centers"
+    },
+    {
+        "id": "admin-217",
+        "domain": "Monitor and optimize GitHub usage",
+        "prompt": "Before comparing quantity values across GitHub billing report rows, which fields should be checked to avoid mixing incompatible measurements?",
+        "choices": [
+            "sku and unit_type",
+            "repository and username only",
+            "workflow_path and repository only",
+            "date and cost_center_name only"
+        ],
+        "correct": 0,
+        "explanations": [
+            "The SKU and unit identify what the quantity measures.",
+            "Ownership does not identify the measurement unit.",
+            "Workflow attribution does not define the unit.",
+            "Time and allocation do not establish comparable units."
+        ],
+        "concept": "Interpreting metered usage units",
+        "hints": [
+            "A number needs a product and a unit.",
+            "Compute and storage quantities are not interchangeable."
+        ],
+        "source": "https://docs.github.com/en/billing/reference/billing-reports"
+    },
+    {
+        "id": "admin-218",
+        "domain": "Monitor and optimize GitHub usage",
+        "prompt": "Which GitHub billing report field represents the billable amount after discounts and included-usage adjustments?",
+        "choices": [
+            "quantity",
+            "gross_amount",
+            "discount_amount",
+            "net_amount"
+        ],
+        "correct": 3,
+        "explanations": [
+            "Quantity measures units, not final charges.",
+            "Gross amount is before discount subtraction.",
+            "Discount amount is the reduction, not the billable total.",
+            "Net amount equals gross amount minus discount amount."
+        ],
+        "concept": "Gross versus net metered cost",
+        "hints": [
+            "Distinguish usage volume from money.",
+            "Apply adjustments before interpreting the billable amount."
+        ],
+        "source": "https://docs.github.com/en/billing/reference/billing-reports"
+    },
+    {
+        "id": "admin-219",
+        "domain": "Monitor and optimize GitHub usage",
+        "prompt": "Which downloadable billing report includes workflow_path for investigating which Actions workflow generated usage?",
+        "choices": [
+            "The summarized usage report",
+            "The dormant-user report",
+            "The detailed usage report",
+            "The repository traffic report"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Summarized reports do not include workflow_path.",
+            "Dormancy reports measure defined account activity.",
+            "Detailed usage reports include workflow-level attribution where applicable.",
+            "Traffic reports do not attribute metered workflow charges."
+        ],
+        "concept": "Workflow-level billing investigation",
+        "hints": [
+            "Choose the report's required granularity.",
+            "A summary may omit the field needed for attribution."
+        ],
+        "source": "https://docs.github.com/en/billing/reference/billing-reports"
+    },
+    {
+        "id": "admin-220",
+        "domain": "Monitor and optimize GitHub usage",
+        "prompt": "An enterprise Actions budget sends threshold alerts but has 'Stop usage when budget limit is reached' disabled. What happens when its amount is exceeded?",
+        "choices": [
+            "New covered Actions usage is blocked immediately",
+            "Usage continues while alerts notify",
+            "The budget automatically increases to match actual spending",
+            "Only the repository with the highest usage is blocked"
+        ],
+        "correct": 1,
+        "explanations": [
+            "Blocking requires the stop option, not alerts alone.",
+            "Without the stop option, the budget does not block usage.",
+            "An alert does not automatically increase a budget.",
+            "Alerts alone do not selectively block a repository."
+        ],
+        "concept": "Budget alerts versus enforcement",
+        "hints": [
+            "Notification and blocking are separate settings.",
+            "Read the actual stop-use configuration."
+        ],
+        "source": "https://docs.github.com/en/billing/how-tos/set-up-budgets"
+    },
+    {
+        "id": "admin-221",
+        "domain": "Monitor and optimize GitHub usage",
+        "prompt": "An Actions product budget with stop-use enabled is exhausted, while an overlapping runner-SKU budget still has capacity. Which budget controls further covered usage?",
+        "choices": [
+            "The exhausted applicable stop-use budget",
+            "Only the budget with the largest amount",
+            "Only the most recently created budget",
+            "Only the runner-SKU budget"
+        ],
+        "correct": 0,
+        "explanations": [
+            "Any exhausted applicable stop-use budget can block additional usage.",
+            "A larger budget does not override another hard limit.",
+            "Creation order does not determine precedence.",
+            "A SKU budget does not bypass an applicable product limit."
+        ],
+        "concept": "Overlapping budget enforcement",
+        "hints": [
+            "Multiple budgets can apply to the same usage.",
+            "Compare both scopes and enforcement settings."
+        ],
+        "source": "https://docs.github.com/en/billing/how-tos/set-up-budgets"
+    },
+    {
+        "id": "admin-222",
+        "domain": "Monitor and optimize GitHub usage",
+        "prompt": "A repository repeatedly evicts useful caches at its storage limit. Which change reduces cache thrashing without increasing the storage allowance?",
+        "choices": [
+            "Raise the repository cache storage allowance",
+            "Generate a unique cache key for every retry",
+            "Cache complete workspaces including generated files",
+            "Limit cache contents to frequently reused dependencies"
+        ],
+        "correct": 3,
+        "explanations": [
+            "This increases the allowance, contrary to the requirement.",
+            "Unique keys create additional entries and reduce reuse.",
+            "Broader paths consume more storage and can worsen eviction.",
+            "Reducing low-value cache contents preserves space for useful reuse."
+        ],
+        "concept": "Cache storage and eviction optimization",
+        "hints": [
+            "Compare cache creation rate with useful reuse.",
+            "Consider which stored files justify their space."
+        ],
+        "source": "https://docs.github.com/en/actions/reference/workflows-and-actions/dependency-caching"
+    },
+    {
+        "id": "admin-223",
+        "domain": "Monitor and optimize GitHub usage",
+        "prompt": "An organization pays for stopped, unused codespaces. Which policy reduces their future storage lifetime?",
+        "choices": [
+            "A shorter timeout before stopping idle codespaces",
+            "A smaller allowed codespace machine size",
+            "A shorter maximum codespace retention period",
+            "Fewer regions for codespace prebuild availability"
+        ],
+        "correct": 2,
+        "explanations": [
+            "Stopping a codespace does not end its retained storage lifetime.",
+            "Machine size does not set stopped-resource retention.",
+            "Retention constraints limit how long stopped codespaces persist.",
+            "Prebuild regions do not define these codespaces' deletion schedule."
+        ],
+        "concept": "Cleaning up unused development environments",
+        "hints": [
+            "Stopped compute can still leave stored data.",
+            "Choose a lifecycle control for the billed resource."
+        ],
+        "source": "https://docs.github.com/en/codespaces/managing-codespaces-for-your-organization/restricting-the-retention-period-for-codespaces"
+    },
+    {
+        "id": "admin-224",
+        "domain": "Monitor and optimize GitHub usage",
+        "prompt": "Eligible self-hosted jobs queue during short demand spikes, while machines sit idle most of the day. Which capacity strategy fits that pattern?",
+        "choices": [
+            "Keep peak capacity provisioned throughout quiet periods",
+            "Autoscale ephemeral runners with workload demand",
+            "Serialize all jobs onto one persistent runner",
+            "Increase each runner's CPU count without changing fleet size"
+        ],
+        "correct": 1,
+        "explanations": [
+            "A peak-sized fixed fleet preserves the measured idle capacity.",
+            "Demand-based scaling can match capacity to peaks and quiet periods.",
+            "Serializing all work aggravates peak queueing.",
+            "More CPU does not directly adapt fleet capacity to demand."
+        ],
+        "concept": "Demand-based runner resource optimization",
+        "hints": [
+            "Distinguish queue pressure from job runtime.",
+            "Match provisioning to the observed demand curve."
+        ],
+        "source": "https://docs.github.com/en/actions/reference/runners/self-hosted-runners"
+    },
+    {
+        "id": "admin-225",
+        "domain": "Monitor and optimize GitHub usage",
+        "prompt": "For an authenticated billing request, which route retrieves ENTERPRISE's usage summary for September 2026?",
+        "choices": [
+            "/enterprises/ENTERPRISE/settings/billing/usage/summary?year=2026&month=9",
+            "/enterprises/ENTERPRISE/settings/billing/usage/summary?created=2026-09",
+            "/orgs/ENTERPRISE/settings/billing/usage/summary?year=2026&month=9",
+            "/enterprises/ENTERPRISE/audit-log?phrase=created:2026-09"
+        ],
+        "correct": 0,
+        "explanations": [
+            "This selects the enterprise usage summary and documented time parameters.",
+            "created is not the documented billing summary time filter.",
+            "This targets an organization, not the enterprise.",
+            "The audit-log endpoint does not return billing usage summaries."
+        ],
+        "concept": "Automating enterprise cost reporting",
+        "hints": [
+            "Match the account scope and endpoint purpose.",
+            "Billing time filters differ from audit-log qualifiers."
+        ],
+        "source": "https://docs.github.com/en/billing/tutorials/automate-usage-reporting"
+    }
 ];

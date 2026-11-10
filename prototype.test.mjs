@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 import { createEngine } from "./engine.mjs";
 import { questions } from "./questions.mjs";
 import { startServer } from "./server.mjs";
-import { quotasFor, revisionFor, reviewRevisionFor, publicExam, validateBank, assemble, approved, mergeApprovals } from "./bank-utils.mjs";
+import { quotasFor, revisionFor, reviewRevisionFor, publicExam, validateBank, assemble, approved, mergeApprovals, localizedQuestion } from "./bank-utils.mjs";
 import { domainTranslations, hasTranslation } from "./i18n.mjs";
 import { exams } from "./exams.mjs";
 import { checkDiversity } from "./bank-diversity.mjs";
@@ -76,6 +76,30 @@ test("bank checker rejects unknown diversity targets and unsupported options", (
         });
         assert.equal(result.status, 1, option);
         assert.match(result.stderr, /Unknown diversity exam ID|Usage:/, option);
+    }
+});
+test("Foundations localization preserves executable syntax, Markdown, shortcuts, and English interface choices", () => {
+    const exam = exams.find(exam => exam.id === "foundations");
+    const cases = [
+        ["ghf-008", "git fetch origin"],
+        ["ghf-024", "Command+Option+K"],
+        ["ghf-037", "## Setup"],
+        ["ghf-040", "```"],
+        ["ghf-043", "octo-org/site#42"],
+        ["ghf-048", "\\*note\\*"],
+        ["ghf-050", "."],
+        ["ghf-052", "Profile menu -> Feature preview"],
+        ["ghf-054", ">"],
+        ["ghf-060", "Blame"],
+    ];
+    for (const [id, correctLiteral] of cases) {
+        const question = exam.questions.find(question => question.id === id);
+        for (const language of ["en", "es", "pt-BR"]) {
+            const localized = localizedQuestion(question, language);
+            assert.deepEqual(localized.choices, question.choices, `${id} ${language}: literal choices changed`);
+            assert.equal(localized.choices[localized.correct], correctLiteral, `${id} ${language}: answer alignment changed`);
+            assert.deepEqual(localized.explanations, language === "en" ? question.explanations : question.translations[language].explanations);
+        }
     }
 });
 test("question sources accept the official GitHub Blog but reject insecure and lookalike sources", () => {

@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { createUpdateChecker } from "./updates.mjs";
+import { createUpdateChecker } from "../updates.mjs";
 
 const DAY = 86400000;
 const HOUR = 3600000;

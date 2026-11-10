@@ -94,6 +94,18 @@ The Pages build publishes an explicit public runtime allowlist, not the
 installed extension directory. Never add progress, tokens, credentials,
 `artifacts/`, or another person's learner data to a commit or Pages artifact.
 
+## Parallel question-bank refreshes
+
+Keep each bank PR focused on its bank, translations, review packet, and an
+isolated `tests/<exam>.test.mjs` regression. `npm test` discovers these feature
+tests without adding imports to the shared prototype suite. Browser tests
+remain a separate command.
+
+For a coordinated multi-bank release, give one final integration PR ownership
+of the combined `CHANGELOG.md` and `README.md` updates. Merge that PR after the
+bank PRs rather than inserting competing sections into the same shared files.
+Keep the version unchanged until the coordinated release is ready.
+
 ## Future certification ideas
 
 See [the roadmap](ROADMAP.md). Azure, Terraform, GCP, and AWS are future ideas,

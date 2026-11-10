@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 import { createEngine } from "./engine.mjs";
 import { questions } from "./questions.mjs";
 import { startServer } from "./server.mjs";
-import { quotasFor, revisionFor, reviewRevisionFor, publicExam, validateBank, assemble, approved, mergeApprovals } from "./bank-utils.mjs";
+import { quotasFor, revisionFor, reviewRevisionFor, publicExam, validateBank, assemble, approved, mergeApprovals, localizedQuestion } from "./bank-utils.mjs";
 import { domainTranslations, hasTranslation } from "./i18n.mjs";
 import { exams } from "./exams.mjs";
 
@@ -28,6 +28,30 @@ async function fixture(t, options = {}) {
     return { engine, directory, sent };
 }
 const first = questions[0].id;
+test("Foundations localization preserves executable syntax, Markdown, shortcuts, and English interface choices", () => {
+    const exam = exams.find(exam => exam.id === "foundations");
+    const cases = [
+        ["ghf-008", "git fetch origin"],
+        ["ghf-024", "Command+Option+K"],
+        ["ghf-037", "## Setup"],
+        ["ghf-040", "```"],
+        ["ghf-043", "octo-org/site#42"],
+        ["ghf-048", "\\*note\\*"],
+        ["ghf-050", "."],
+        ["ghf-052", "Profile menu -> Feature preview"],
+        ["ghf-054", ">"],
+        ["ghf-060", "Blame"],
+    ];
+    for (const [id, correctLiteral] of cases) {
+        const question = exam.questions.find(question => question.id === id);
+        for (const language of ["en", "es", "pt-BR"]) {
+            const localized = localizedQuestion(question, language);
+            assert.deepEqual(localized.choices, question.choices, `${id} ${language}: literal choices changed`);
+            assert.equal(localized.choices[localized.correct], correctLiteral, `${id} ${language}: answer alignment changed`);
+            assert.deepEqual(localized.explanations, language === "en" ? question.explanations : question.translations[language].explanations);
+        }
+    }
+});
 test("question sources accept the official GitHub Blog but reject insecure and lookalike sources", () => {
     const exam = exams.find(exam => exam.id === "copilot");
     const errorsFor = source => validateBank({ ...exam, questions: [{ ...exam.questions[0], source }] });
@@ -67,25 +91,6 @@ test("all six banks have both complete translations and localized domains withou
     }
     assert.equal(domainTranslations.length, 35);
     assert.deepEqual(exams.find(exam => exam.id === "agentic").officialLanguages, ["en"]);
-});
-test("Security translations preserve technical options and actionable paths at their answer indices", () => {
-    const exam = exams.find(exam => exam.id === "security");
-    const cases = [
-        ["ghas-ecosystem-009", "Repository > Insights > Dependency graph"],
-        ["ghas-supply-013", "`registries`"],
-        ["ghas-code-009", "`manual`"],
-        ["ghas-operations-026", "Show paths"],
-        ["ghas-operations-038", "is:open severity:high branch:main"],
-        ["ghas-administration-025", "POST /orgs/{org}/code-security/configurations/{configuration_id}/attach"],
-    ];
-    for (const [id, expected] of cases) {
-        const question = exam.questions.find(question => question.id === id);
-        assert.ok(question, id);
-        assert.equal(question.choices[question.correct], expected, id);
-        for (const language of ["es", "pt-BR"]) {
-            assert.deepEqual(question.translations[language].choices, question.choices, `${id} ${language}`);
-        }
-    }
 });
 test("switching languages preserves answer key, attempt identity, revision, deadline, and persisted progress", async t => {
     const exam = exams[0];

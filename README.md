@@ -116,6 +116,13 @@ the other five use 100 minutes. Microsoft Learn paths or modules are linked wher
 verified; training is not copied, and completing it is not a prerequisite
 for practice.
 
+The refreshed Foundations bank uses original, concise questions about concrete
+GitHub operations, commands, files, roles, navigation, and short scenarios.
+Keyboard shortcuts specify relevant context; English interface paths and
+technical syntax remain literal across translations. These AI-authored Preview
+questions are not copied assessment items or a claim of real-exam equivalence;
+each new revision still needs human review in [the Foundations packet](reviews/foundations.md).
+
 Full-length practice targets 75 questions from a 225-question original pool.
 This is our practice policy, not a guarantee of the number of items on a real
 exam. Official details are linked on the preparation screen. Sampling follows
@@ -123,14 +130,6 @@ published domain weights (midpoints when ranges are published), apportioned
 with largest remainders constrained to the published percentage ranges. No question repeats within an attempt; later attempts
 can repeat previously seen questions. A full mock is disabled if its bank
 cannot cover the required domain quotas. Learning modes can focus on one domain.
-
-The refreshed Advanced Security bank uses original, concise feature, configuration,
-file, command, and short-scenario questions across the full GH-500 blueprint.
-All 225 questions and their Spanish and Brazilian Portuguese variants are
-rewritten; assessment examples inform format only, not copied question content.
-The bank remains AI-authored Preview pending revision-specific human review.
-Its domain quotas, four-choice single-answer format, and practice timing are
-unchanged. Existing saved attempts retain their original question snapshots.
 
 The Copilot bank combines concise knowledge checks, client-specific command and
 setting selections, and short applied scenarios. Its 225 original questions and

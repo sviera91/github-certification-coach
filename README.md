@@ -166,6 +166,11 @@ Small, purposeful overlaps can reinforce a concept; repeated chunks of the same
 decision with changed scenario nouns are not acceptable.
 The default bank check remains structural so bank-review PRs stay independent.
 
+The Copilot bank combines concise knowledge checks, client-specific command and
+setting selections, and short applied scenarios. Its 225 original questions and
+translations are AI-authored Preview material requiring human review, not copied
+assessment questions or a guarantee of matching a real exam.
+
 ## Practice modes and navigation
 
 ### Languages

@@ -116,13 +116,12 @@ the other five use 100 minutes. Microsoft Learn paths or modules are linked wher
 verified; training is not copied, and completing it is not a prerequisite
 for practice.
 
-The refreshed Administration bank uses original, concise questions about roles,
-policies, protocols, configuration, commands, and short applied scenarios across
-the July 2026 blueprint. Questions identify relevant platform and scope;
-technical syntax and English interface paths remain literal across translations.
-These AI-authored Preview questions are not copied assessment items or a claim
-of real-exam equivalence; each new revision still needs human review in
-[the Administration packet](reviews/administration.md).
+The refreshed Foundations bank uses original, concise questions about concrete
+GitHub operations, commands, files, roles, navigation, and short scenarios.
+Keyboard shortcuts specify relevant context; English interface paths and
+technical syntax remain literal across translations. These AI-authored Preview
+questions are not copied assessment items or a claim of real-exam equivalence;
+each new revision still needs human review in [the Foundations packet](reviews/foundations.md).
 
 Full-length practice targets 75 questions from a 225-question original pool.
 This is our practice policy, not a guarantee of the number of items on a real

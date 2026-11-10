@@ -6,20 +6,18 @@ installed.
 
 ## Unreleased
 
-### Administration question-bank refresh
+### Foundations question-bank refresh
 
-- Rewrite all 225 Administration questions and their Spanish and Brazilian
-  Portuguese variants using original, concise role, policy, protocol, command,
-  configuration, and short-scenario questions.
-- Cover the complete July 2026 blueprint rather than overfit the smaller
-  practice assessment: identities, enterprise administration, security,
-  Actions, and usage monitoring. Name relevant platform, role, and scope.
-- Replace fourteen overlapping questions with distinct transfer, ruleset import,
-  typed input, audit API, rate-limit, webhook, appliance-command, support, and
-  budget-boundary decisions across all three practice languages.
-- Keep technical syntax and English interface paths aligned across languages.
-  Preserve domain quotas, four-choice single-answer questions,
-  75-question/100-minute mocks, and private saved learner state.
+- Rewrite all 225 Foundations questions and their Spanish and Brazilian
+  Portuguese variants with original, concise feature, command, file, role,
+  navigation, and short-scenario questions.
+- Add practical GitHub website knowledge, including contextual keyboard
+  shortcuts, command palette settings, repository navigation, and Markdown.
+  Keep technical literals and English interface paths aligned across languages.
+- Replace seven overlapping objectives with distinct archive, merge, fork,
+  team-permission, community-default, license-search, and profile-curation tasks.
+- Preserve the seven domain quotas, four-choice single-answer format,
+  75-question/100-minute mock policy, and private saved learner state.
 - Regenerate the revision-based trilingual review packet. Content remains
   AI-authored Preview; this refresh does not grant human approval.
 - Stage this certification's changes for the coordinated six-bank release;

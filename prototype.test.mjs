@@ -28,20 +28,19 @@ async function fixture(t, options = {}) {
     return { engine, directory, sent };
 }
 const first = questions[0].id;
-test("Administration localization preserves workflow syntax, CLI commands, and English interface choices", () => {
-    const exam = exams.find(exam => exam.id === "administration");
+test("Foundations localization preserves executable syntax, Markdown, shortcuts, and English interface choices", () => {
+    const exam = exams.find(exam => exam.id === "foundations");
     const cases = [
-        ["admin-058", "Management Console → Support → Download diagnostics info"],
-        ["admin-148", ".github/workflows/build.yml"],
-        ["admin-149", "workflow_call"],
-        ["admin-150", "jobs.build.uses"],
-        ["admin-151", "enabled: false"],
-        ["admin-158", "contents: read"],
-        ["admin-169", "gh secret set API_KEY --env production"],
-        ["admin-201", "include=git"],
-        ["admin-205", "X-GitHub-Delivery"],
-        ["admin-208", "ghe-config core.github-hostname"],
-        ["admin-209", "ghe-logs-tail"],
+        ["ghf-008", "git fetch origin"],
+        ["ghf-024", "Command+Option+K"],
+        ["ghf-037", "## Setup"],
+        ["ghf-040", "```"],
+        ["ghf-043", "octo-org/site#42"],
+        ["ghf-048", "\\*note\\*"],
+        ["ghf-050", "."],
+        ["ghf-052", "Profile menu -> Feature preview"],
+        ["ghf-054", ">"],
+        ["ghf-060", "Blame"],
     ];
     for (const [id, correctLiteral] of cases) {
         const question = exam.questions.find(question => question.id === id);

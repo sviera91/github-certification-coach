@@ -28,6 +28,28 @@ async function fixture(t, options = {}) {
     return { engine, directory, sent };
 }
 const first = questions[0].id;
+test("question sources accept the official GitHub Blog but reject insecure and lookalike sources", () => {
+    const exam = exams.find(exam => exam.id === "copilot");
+    const errorsFor = source => validateBank({ ...exam, questions: [{ ...exam.questions[0], source }] });
+    assert.deepEqual(errorsFor("https://github.blog/changelog/2026-08-04-upcoming-deprecation-of-github-spark-on-github-com/"), []);
+    for (const source of ["http://github.blog/changelog/example", "https://github.blog.example.com/example",
+        "https://example.com/github.blog", "https://github.blog@outside.example/example"]) {
+        assert.deepEqual(errorsFor(source), [`${exam.questions[0].id}: official HTTPS source required`]);
+    }
+});
+test("Copilot translations preserve literal commands, file patterns, and navigation answer options", () => {
+    const copilot = exams.find(exam => exam.id === "copilot");
+    const technicalOption = /^(?:[/@#][\w/.-]*|npm install .+|copilot(?: .+)?|GET \/.+|\.github\/\S+|AGENTS\.md|"\S+"|\*\.cfg|\/cfg\/\*\*|\*\.cfg\.json|\/src\/\*\.cfg)$| (?:->|→) /;
+    for (const question of copilot.questions) {
+        question.choices.forEach((choice, index) => {
+            if (!technicalOption.test(choice)) return;
+            for (const language of ["es", "pt-BR"]) {
+                assert.equal(question.translations[language].choices[index], choice,
+                    `${question.id} ${language}: command/path option must retain its syntax and position`);
+            }
+        });
+    }
+});
 test("all six banks have both complete translations and localized domains without changing fixed keys", () => {
     assert.equal(exams.length, 6);
     assert.equal(exams.reduce((total, exam) => total + exam.questions.length, 0), 1350);

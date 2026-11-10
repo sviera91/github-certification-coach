@@ -132,6 +132,11 @@ The bank remains AI-authored Preview pending revision-specific human review.
 Its domain quotas, four-choice single-answer format, and practice timing are
 unchanged. Existing saved attempts retain their original question snapshots.
 
+The Copilot bank combines concise knowledge checks, client-specific command and
+setting selections, and short applied scenarios. Its 225 original questions and
+translations are AI-authored Preview material requiring human review, not copied
+assessment questions or a guarantee of matching a real exam.
+
 ## Practice modes and navigation
 
 ### Languages

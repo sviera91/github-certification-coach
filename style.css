@@ -8,6 +8,15 @@ h3 { font-size: 16px; }
 .eyebrow { font-size: 12px; font-weight: 600; color: var(--fgColor-muted); margin-bottom: 8px; }
 .notice { background: var(--bgColor-muted); border: 1px solid var(--borderColor-default); border-radius: var(--borderRadius-medium); padding: 16px; margin-bottom: 24px; font-size: 13px; }
 .update-banner { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px 16px; margin-bottom: 24px; }
+.question-update { position: relative; margin-bottom: 24px; }
+.question-update .toolbar { margin: 0; gap: 12px; }
+.question-update p { margin: 12px 0 0; }
+.question-update-help { display: inline-flex; }
+.question-update-help .btn { display: inline-flex; cursor: help; padding: 4px; }
+.question-update-tooltip { position: absolute; z-index: 2; top: 100%; left: 0; width: min(400px, 100%); padding: 12px; border: 1px solid var(--borderColor-default); border-radius: var(--borderRadius-medium); background: var(--bgColor-default); color: var(--fgColor-default); box-shadow: var(--shadow-floating-medium); font-weight: 400; }
+#archive-snapshot { max-width: 100%; }
+#archive-jump { width: 100px; }
+#archive-question, #archive-answers, #archive-messages { overflow-wrap: anywhere; white-space: pre-wrap; }
 .card { padding: 24px; min-width: 0; border: 1px solid var(--borderColor-default); border-radius: var(--borderRadius-medium); background: var(--bgColor-default); }
 .Label { display: inline-block; padding: 2px 8px; border: 1px solid var(--borderColor-default); border-radius: 24px; font-size: 12px; font-weight: 500; color: var(--fgColor-muted); }
 .modes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }

@@ -86,6 +86,61 @@ test("Learn persists unchecked drafts and fixed explanations across reload, incl
     await expect(page.locator("#explanations")).toBeHidden();
 });
 
+test("question updates explain preservation accessibly and keep a local, read-only archive across reload", async t => {
+    const { page } = await open(t, { viewport: { width: 390, height: 844 } });
+    await page.goto(base);
+    await chooseFoundations(page);
+    await page.locator('[data-mode="learn"]').click();
+    await expect(page.locator("#attempt")).toBeVisible();
+    const currentPrompt = await page.locator("#question").textContent();
+    await page.evaluate(async () => {
+        const { createLiteAPI, browserPersistence } = await import("./lite-api.mjs");
+        const api = createLiteAPI();
+        const { attempt } = await api();
+        await api("answer", { questionId: attempt.entries[0].id, choice: 1 });
+        await api("flag", { questionId: attempt.entries[0].id });
+        await api("answer", { questionId: attempt.entries[1].id, choice: 2 });
+        const storage = browserPersistence();
+        const saved = JSON.parse(await storage.read("coach-state.json"));
+        saved.studies.foundations.questions[0].prompt = "Previous archived scenario";
+        saved.attempts.foundations = saved.studies.foundations;
+        await storage.write(JSON.stringify(saved));
+    });
+    await page.reload();
+    await chooseFoundations(page);
+    await expect(page.locator("#question-update")).toBeVisible();
+    await expect(page.locator("#question-update-summary")).toHaveText(/224 unchanged.*1 revised.*0 new.*0 removed/);
+    await page.locator("#question-update-info").hover();
+    await expect(page.locator("#question-update-tooltip")).toBeVisible();
+    await expect(page.locator("#question-update-tooltip")).toContainText("local, read-only archive");
+    const tooltip = await page.locator("#question-update-tooltip").boundingBox();
+    assert.ok(tooltip.x >= 0 && tooltip.x + tooltip.width <= 390, "tooltip fits a mobile viewport");
+    await page.locator("#question-update-tooltip").hover();
+    await expect(page.locator("#question-update-tooltip")).toBeVisible();
+    await page.locator("#question-update-info").focus();
+    await page.keyboard.press("Escape");
+    await expect(page.locator("#question-update-tooltip")).toBeHidden();
+    await page.locator("#load-questions").click();
+    await expect(page.locator("#question-update")).toBeHidden();
+    await expect(page.locator("#question")).toHaveText(currentPrompt);
+    await expect(page.locator("#study-progress")).toContainText("1/225 answered");
+    await page.locator("#study-archives").click();
+    await expect(page.locator("#study-archive")).toBeVisible();
+    await expect(page.locator("#archive-question")).toHaveText("Previous archived scenario");
+    await expect(page.locator("#archive-answer-state")).toHaveText(/choices: 2.*Flagged/);
+    await expect(page.locator('#study-archive input[type="radio"], #study-archive textarea')).toHaveCount(0);
+    await page.reload();
+    await chooseFoundations(page);
+    await page.locator("#prep-study-archives").click();
+    await expect(page.locator("#archive-question")).toHaveText("Previous archived scenario");
+    await page.locator("#archive-back").click();
+    await page.locator('[data-mode="exam"]').click();
+    await page.locator("#choose-mode").click();
+    await page.locator("#confirmation-cancel").click();
+    await expect(page.locator("#attempt")).toBeVisible();
+    await expect(page.locator("#question-update")).toBeHidden();
+});
+
 test("Mock autosaves final choices, resumes, reviews before grading, and never shows Copilot actions", async t => {
     const { page } = await open(t);
     await page.goto(base);

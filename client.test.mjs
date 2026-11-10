@@ -11,7 +11,8 @@ const script = (await readFile(new URL("./client.mjs", import.meta.url), "utf8")
     .replace(/^const \{ renderMarkdown \} = await import.*$/m, "")
     .replace("import.meta.url", JSON.stringify("http://127.0.0.1/client.mjs?token=test"));
 const AsyncFunction = Object.getPrototypeOf(async function () {}).constructor;
-async function mount({ reject = false, score, mode = "coach", count = 1, history = [], updateStatus = { status: "none" } } = {}) {
+async function mount({ reject = false, score, mode = "coach", count = 1, history = [], studyUpdate = null, studyArchives = [],
+    updateStatus = { status: "none" } } = {}) {
     const { document, window } = parseHTML(html);
     const intervals = [], requests = [], updateRequests = [];
     const reviewed = new Set();
@@ -19,7 +20,7 @@ async function mount({ reject = false, score, mode = "coach", count = 1, history
         poolTarget: 225, status: "Preview", fullLengthAvailable: true, attemptSize: 75, minutes: 100,
         domains: [{ name: "Test", weight: 100, resources: [] }], resources: [], blueprintNote: "Fixture" };
     const model = {
-        appVersion: "0.4.2-preview", selectedExamId: "foundations", catalog: [exam], history,
+        appVersion: "0.4.2-preview", selectedExamId: "foundations", catalog: [exam], history, studyUpdate, studyArchives,
         attempt: {
             id: "test-attempt", examId: "foundations", mode, finished: Boolean(score), score,
             review: { unanswered: Array.from({ length: count }, (_, index) => `q${index + 1}`), flagged: [] },
@@ -50,8 +51,21 @@ async function mount({ reject = false, score, mode = "coach", count = 1, history
                     revision: `revision-${language}`, index: 0, total: 1,
                 }) };
             }
+            if (request.action === "inspect_study_archive") return { ok: true, json: async () => ({
+                archiveId: request.archiveId, archivedAt: 1000, index: request.questionIndex, total: 2, contentLanguage: model.language ?? "en",
+                question: { prompt: "Previous question", domain: "Test", correct: 1, choices: ["Old one", "Old two"],
+                    explanations: ["Old explanation one", "Old explanation two"], source: "https://docs.github.com/en" },
+                entry: { answers: [0], draft: 1, flagged: true, messages: [
+                    { role: "learner", text: "<script>PRIVATE OLD REASONING</script>" },
+                    { role: "coach", text: "**Old hint**" },
+                ], insight: { text: "Old deeper explanation" } },
+            }) };
             const entry = model.attempt.entries.find(item => item.id === request.questionId);
-            if (request.action === "review_question") {
+            if (request.action === "update_study") {
+                model.attempt.id = "updated-attempt";
+                model.studyUpdate = { ...model.studyUpdate, available: false };
+                model.studyArchives.unshift({ id: "archive-test", archivedAt: 1000, answered: 1, total: 2 });
+            } else if (request.action === "review_question") {
                 if (request.decision === "approve") reviewed.add(request.language);
                 else reviewed.delete(request.language);
             } else if (request.action === "position") {
@@ -133,6 +147,69 @@ test("desktop update banner is localized and links to manual installation withou
     setUpdateStatus({ status: "current" });
     await intervals[2]();
     assert.equal($("update-banner").hidden, true);
+});
+test("question update notice explains preservation on hover, focus and touch, localizes, and loads only on click", async () => {
+    const { $, requests, model } = await mount({ studyUpdate: { available: true, unchanged: 10, revised: 4, added: 2, removed: 1 } });
+    assert.equal($("question-update").hidden, false);
+    assert.match($("question-update-summary").textContent, /10 unchanged.*4 revised.*2 new.*1 removed/);
+    assert.equal(requests.length, 0, "showing the notice never starts an update");
+    assert.equal($("question-update-tooltip").hidden, true);
+    $("question-update-help").onmouseenter();
+    assert.equal($("question-update-tooltip").hidden, false);
+    assert.match($("question-update-tooltip").textContent, /read-only archive/);
+    $("question-update").onmouseleave();
+    assert.equal($("question-update-tooltip").hidden, true);
+    $("question-update-info").onfocus();
+    assert.equal($("question-update-tooltip").hidden, false);
+    $("question-update-info").onkeydown({ key: "Escape", preventDefault() {} });
+    assert.equal($("question-update-tooltip").hidden, true);
+    $("question-update-info").onclick();
+    assert.equal($("question-update-tooltip").hidden, false);
+    $("question-update-info").onblur();
+    for (const [language, label] of [["es", "Cargar nuevas preguntas"], ["pt-BR", "Carregar novas questões"]]) {
+        $("language").querySelector(`option[value="${language}"]`).selected = true;
+        await $("language").onchange();
+        assert.equal($("load-questions").textContent, label);
+        assert.notEqual($("question-update-info").getAttribute("aria-label"), "About question updates");
+    }
+    await $("load-questions").onclick();
+    assert.equal(requests.at(-1).action, "update_study");
+    assert.equal(requests.at(-1).attemptId, "test-attempt");
+    assert.equal(model.attempt.id, "updated-attempt");
+    assert.equal($("question-update").hidden, true);
+    assert.equal($("study-archives").hidden, false);
+});
+test("failed question updates leave the notice, study and archives unchanged and display a retryable error", async () => {
+    const { $, model } = await mount({ reject: true,
+        studyUpdate: { available: true, unchanged: 0, revised: 1, added: 0, removed: 0 } });
+    await $("load-questions").onclick();
+    assert.equal($("question-update").hidden, false);
+    assert.equal($("error").hidden, false);
+    assert.equal(model.attempt.id, "test-attempt");
+    assert.equal(model.studyArchives.length, 0);
+});
+test("archive review is read-only, preserves old work safely, and supports navigation and language changes", async () => {
+    const { $, requests, model } = await mount({ studyArchives: [{ id: "archive-test", archivedAt: 1000, answered: 1, total: 2 }] });
+    await $("study-archives").onclick();
+    assert.equal($("study-archive").hidden, false);
+    assert.equal($("question-update").hidden, true);
+    assert.equal($("archive-question").textContent, "Previous question");
+    assert.match($("archive-answer-state").textContent, /choices: 1.*option 2.*Flagged/);
+    assert.match($("archive-answers").textContent, /Old two \(correct\)/);
+    assert.equal($("archive-messages").querySelector("script"), null);
+    assert.equal($("archive-messages").querySelector(".learner-message").textContent, "<script>PRIVATE OLD REASONING</script>");
+    assert.equal($("archive-messages").querySelector(".coach strong").textContent, "Copilot coach");
+    assert.equal($("archive-messages").querySelector(".markdown-content strong").textContent, "Old hint");
+    assert.equal($("study-archive").querySelectorAll('input[type="radio"], textarea').length, 0);
+    await $("archive-next").onclick();
+    assert.equal(requests.at(-1).questionIndex, 1);
+    $("language").querySelector('option[value="es"]').selected = true;
+    await $("language").onchange();
+    assert.equal($("archive-question").lang, "es");
+    assert.equal(model.attempt.id, "test-attempt");
+    assert.equal(requests.some(request => ["answer", "select", "reset_study", "update_study"].includes(request.action)), false);
+    $("archive-back").onclick();
+    assert.equal($("setup").hidden, false);
 });
 test("update-check failures are visible without blocking mock selections or claiming no update exists", async () => {
     const { $, model, choose } = await mount({ mode: "exam", updateStatus: new Error("offline") });

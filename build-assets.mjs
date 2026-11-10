@@ -36,7 +36,7 @@ await build({
     bundle: true, format: "esm", platform: "browser", target: "es2022",
     outfile: path.join(vendor, "markdown-parser.mjs"), legalComments: "inline",
 });
-const icons = ["check-circle", "x-circle", "alert", "book", "history", "sync", "light-bulb", "arrow-switch"];
+const icons = ["check-circle", "x-circle", "alert", "book", "history", "sync", "light-bulb", "arrow-switch", "info"];
 const sprite = `<svg xmlns="http://www.w3.org/2000/svg" class="icon-definitions" aria-hidden="true"><defs>${icons.map(name => {
     const svg = octicons[name].toSVG({ width: 16, height: 16 });
     return `<symbol id="icon-${name}" viewBox="${svg.match(/viewBox="([^"]+)"/)[1]}">${svg.replace(/^<svg[^>]*>|<\/svg>$/g, "")}</symbol>`;

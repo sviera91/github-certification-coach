@@ -18,6 +18,28 @@ installed.
   75-question/100-minute practice, private progress, and saved-attempt snapshots.
   Keep this entry Unreleased for the coordinated six-bank version change.
 
+### Copilot question-bank refresh
+
+- Rewrite all 225 Copilot questions as original practice items, using a mix of
+  concise knowledge checks, command and setting selections, and short applied
+  scenarios rather than predominantly generic "best next step" questions.
+  Refresh distractors, explanations, concepts, and hints across all six domains.
+  Preserve domain quotas, single-answer format, and 75-question/100-minute mocks.
+- Add direct VS Code, Visual Studio, Xcode, and GitHub.com command questions;
+  organization/repository/enterprise settings paths; Pro versus Business
+  governance; exclusion roles, scope, and patterns; and zero-/one-/few-shot
+  recognition and application. Paths use GitHub.com's English interface labels.
+- Update Spanish and Brazilian Portuguese questions, choices, explanations,
+  concepts, and hints together, preserving literal commands and navigation labels.
+- Refresh the Copilot human-review packet. Revised content remains AI-authored
+  Preview material, not human approved or copied from assessment/exam questions.
+  Assessment structure informs the style, not the answer key: current public
+  documentation supports the content. This is not a reproduction of, or a
+  guarantee of equivalence to, a real exam.
+- Accept the official GitHub Blog as a supporting source alongside the existing
+  documentation hosts, including the Spark retirement notice. HTTPS and exact
+  hostname checks remain required.
+
 ### Website redesign and platform separation
 
 - Replace the landing page's rose theme with a white Primer design, native

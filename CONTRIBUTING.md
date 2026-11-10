@@ -13,12 +13,33 @@ No mock attempt or canvas installation is required.
 
 For each question, verify:
 
-- A clear scenario with exactly one best answer and plausible distractors.
+- A clear direct question or scenario with exactly one best answer and plausible
+  distractors.
 - The answer key agrees with every explanation and current official sources.
 - The question maps to the stated exam domain and assesses a useful concept.
 - Hints guide thinking without revealing the answer.
 - Spanish and Brazilian Portuguese preserve the English meaning and answer
   order, including explanations and hints.
+
+Use a mix of concise knowledge checks and applied scenarios, not only generic
+"best next step" questions. For commands, name the Copilot client and distinguish
+slash commands, participants, context references, and terminal commands. For
+administration, state the plan, role, and repository/organization/enterprise
+scope. Verify navigation paths against current official instructions, identify
+the interface language, and retain literal command syntax and UI labels in
+translations. Date source checks; do not assume menus or plan capabilities are
+permanent. Preserve blueprint breadth when replacing repetitive items.
+
+Keep each set of choices grammatically parallel: commands against commands,
+settings against settings, or comparable descriptions of behavior. Use
+similar levels of detail without padding answers to a fixed length. Do not make
+the correct answer consistently the longest or the only carefully qualified
+option. Assessment-style practice does not mean copying assessment wording,
+reproducing weak distractors, or retaining outdated product claims.
+
+Supporting sources must use HTTPS on GitHub Docs, Microsoft Learn, GitHub Learn,
+or the official GitHub Blog. Official changelog entries can establish retirement
+dates when an older exam guide still names the retired feature.
 
 Report problems through the question's **Report question issue** control or a
 [question issue](https://github.com/sviera91/github-certification-coach/issues/new?template=question.md).
